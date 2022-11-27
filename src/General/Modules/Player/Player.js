@@ -46,7 +46,7 @@ class Player {
   realm = "";
   race = "";
   talents = [];
-  gameType = ""; // Currently the options are Retail or Burning Crusade.
+  gameType = ""; // Currently the options are Retail or Classic
   activeModelID = { Raid: 0, Dungeon: 1 }; // Currently active Cast Model.
 
   // The players active stats from their character page. These are raw rather than being percentages.

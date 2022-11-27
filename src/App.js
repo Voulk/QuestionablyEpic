@@ -370,7 +370,7 @@ class App extends Component {
                       />
                     )}
                   />
-                  <Route
+                  {/*<Route
                     path="/legendaries"
                     render={() => (
                       <LegendaryCompare
@@ -381,8 +381,8 @@ class App extends Component {
                         simcSnack={this.handleSimCSnackOpen}
                         patronStatus={this.state.patronStatus}
                       />
-                    )}
-                  />
+                    )} 
+                  />*/}
                   <Route
                     path="/trinkets"
                     render={() => (

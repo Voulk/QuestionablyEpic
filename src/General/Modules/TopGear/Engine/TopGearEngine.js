@@ -332,7 +332,7 @@ function enchantItems(bonus_stats, setInt, castModel) {
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 64; // 16 x 2.
+  bonus_stats[highestWeight] += 128; // 64 x 2.
   enchants["Finger"] = "+64 " + highestWeight;
 
   // Chest
@@ -416,8 +416,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
   // Sockets
   const highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 16 * builtSet.setSockets;
-  enchants["Gems"] = highestWeight;
+  bonus_stats[highestWeight] += 88 * builtSet.setSockets;
+  //enchants["Gems"] = highestWeight;
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);

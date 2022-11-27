@@ -81,21 +81,10 @@ function TopGearReport(props) {
     itemList = topSet.itemList;
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
-    domGems = gameType === "Retail" && "domGemList" in topSet ? topSet.domGemList : "";
     statList = topSet.setStats;
 
     if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
-    if (domGems !== "") {
-      let domGemCounter = 0;
-      itemList.forEach((item) => {
-        if (item.hasDomSocket) {
-          item.domGemID = domGems[domGemCounter];
-          item.gemString = "&gems=" + domGems[domGemCounter];
-          domGemCounter += 1;
-        }
-      });
-    }
   } else {
     resultValid = false;
   }
