@@ -1,6 +1,6 @@
 
 import SPEC from "../../Engine/SPECS";
-import STAT from "../../Engine/STAT";
+import STAT, { STATCONVERSION } from "../../Engine/STAT";
 import { itemDB } from "Databases/ItemDB";
 import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
@@ -258,31 +258,16 @@ class Player {
     let statPerc = 1.0;
     switch (stat) {
       case "haste":
-        statPerc = 1 + this.activeStats.haste / 170 / 100;
+        statPerc = 1 + this.activeStats.haste / STATCONVERSION.HASTE / 100;
         break;
       case "crit":
-        statPerc = 1.05 + this.activeStats.crit / 180 / 100;
+        statPerc = 1.05 + this.activeStats.crit / STATCONVERSION.CRIT / 100;
         break;
       case "mastery":
-        statPerc = 1; // TODO
-        
-
-        if (this.spec === SPEC.HOLYPALADIN) {
-          statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.8 + 1; // 0.8 is our average mastery effectiveness.
-        } else if (this.spec === SPEC.RESTOSHAMAN) {
-          statPerc = 1 + (0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3) / 100; // .25 is placeholder for mastery effectiveness
-        } else if (this.spec === SPEC.RESTODRUID) {
-          statPerc = 1 + (0.04 + this.activeStats.mastery / 70 / 100) * 1.8; // 1.8 is the average HoT multiplier.
-        } else if (this.spec === SPEC.HOLYPRIEST) {
-          statPerc = 1 + (0.1 + this.activeStats.mastery / 27.95 / 100) * 0.9; // Assumes 10% echo of light overhealing. TODO: revisit.
-        } else if (this.spec === SPEC.DISCPRIEST) {
-          statPerc = 1 + (0.108 + this.activeStats.mastery / 25.9 / 100);
-        } else if (this.spec === SPEC.MISTWEAVERMONK) {
-          statPerc = 1; // TODO
-        }
+        statPerc = 1 + (8 * STATCONVERSION.MASTERY + this.activeStats.mastery) / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[this.spec];
         break;
       case "versatility":
-        statPerc = 1 + this.activeStats.versatility / 205 / 100;
+        statPerc = 1 + this.activeStats.versatility / STATCONVERSION.VERSATILITY / 100;
         break;
       default:
         break;

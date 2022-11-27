@@ -32,18 +32,40 @@ export const BASESTAT = {
 };
 
 export const STATDIMINISHINGRETURNS = {
-  CRIT: [1050, 1400, 1750, 2100, 2450],
-  MASTERY: [1050, 1400, 1750, 2100, 2450],
-  VERSATILITY: [1200, 1600, 2000, 2400, 2800],
-  HASTE: [990, 1320, 1650, 1980, 2310],
-  LEECH: [210, 210, 315, 315, 420, 420]
+  CRIT: [5400, 7200, 9000, 10800, 12600],
+  MASTERY: [5400, 7200, 9000, 10800, 12600],
+  VERSATILITY: [6150, 8200, 10250, 12300, 14350],
+  HASTE: [5100, 6800, 8500, 10200, 11900],
+  LEECH: [1100, 1100, 1650, 1650, 2200, 2200]
 
 }
 
-export const getMasteryPercentage = (spec, statQuantity) => {
-  return statQuantity / STATPERONEPERCENT.Retail.MASTERY * STATPERONEPERCENT.Retail.MASTERYMULT[spec];
+export const getMasteryPercentage = (statQuantity, spec) => {
+  return statQuantity / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[spec];
 }
 
+export const STATCONVERSION = {
+    LEECH: 110,
+    HASTE: 170,
+    CRIT: 180,
+    VERSATILITY: 205,
+    MASTERY: 180,
+    VERSATILITY_DR: 410,
+    MASTERYMULT: {
+      "Preservation Evoker": 1.8,
+      "Restoration Druid": 0.5,
+      "Mistweaver Monk": 4.2,
+      "Holy Paladin": 1.5,
+      "Holy Priest": 1.125,
+      "Discipline Priest": 1.35,
+      "Restoration Shaman": 3,
+    },
+
+}
+
+/**
+ * @deprecated
+ */
 export const STATPERONEPERCENT = {
   Retail: {
     LEECH: 110,

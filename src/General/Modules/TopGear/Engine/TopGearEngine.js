@@ -346,7 +346,7 @@ function enchantItems(bonus_stats, setInt, castModel) {
 
   // Wrists
   bonus_stats.leech += 75;
-  enchants["Wrists"] = "Devotion of Leech";
+  enchants["Wrist"] = "Devotion of Leech";
 
   // Legs - Also gives 3/4/5% mana.
   bonus_stats.intellect += 177;
