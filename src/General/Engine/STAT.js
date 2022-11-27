@@ -32,41 +32,58 @@ export const BASESTAT = {
 };
 
 export const STATDIMINISHINGRETURNS = {
-  CRIT: [1050, 1400, 1750, 2100, 2450],
-  MASTERY: [1050, 1400, 1750, 2100, 2450],
-  VERSATILITY: [1200, 1600, 2000, 2400, 2800],
-  HASTE: [990, 1320, 1650, 1980, 2310],
-  LEECH: [210, 210, 315, 315, 420, 420]
+  CRIT: [5400, 7200, 9000, 10800, 12600],
+  MASTERY: [5400, 7200, 9000, 10800, 12600],
+  VERSATILITY: [6150, 8200, 10250, 12300, 14350],
+  HASTE: [5100, 6800, 8500, 10200, 11900],
+  LEECH: [1100, 1100, 1650, 1650, 2200, 2200]
 
 }
 
+export const getMasteryPercentage = (statQuantity, spec) => {
+  return statQuantity / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[spec];
+}
+
+export const STATCONVERSION = {
+    LEECH: 110,
+    HASTE: 170,
+    CRIT: 180,
+    VERSATILITY: 205,
+    MASTERY: 180,
+    VERSATILITY_DR: 410,
+    MASTERYMULT: {
+      "Preservation Evoker": 1.8,
+      "Restoration Druid": 0.5,
+      "Mistweaver Monk": 4.2,
+      "Holy Paladin": 1.5,
+      "Holy Priest": 1.125,
+      "Discipline Priest": 1.35,
+      "Restoration Shaman": 3,
+    },
+
+}
+
+/**
+ * @deprecated
+ */
 export const STATPERONEPERCENT = {
   Retail: {
-    LEECH: 21,
-    HASTE: 33,
-    CRIT: 35,
-    VERSATILITY: 40,
-    VERSATILITY_DR: 80,
-    MASTERYA: {
-      "Preservation Evoker": 19.4,
-      "Restoration Druid": 70,
-      "Mistweaver Monk": 8.33,
-      "Holy Paladin": 23.33,
-      "Holy Priest": 28,
-      "Discipline Priest": 25.93,
-      "Restoration Shaman": 11.66,
-      "Preservation Evoker": 0,
+    LEECH: 110,
+    HASTE: 170,
+    CRIT: 180,
+    VERSATILITY: 205,
+    MASTERY: 180,
+    VERSATILITY_DR: 410,
+    MASTERYMULT: {
+      "Preservation Evoker": 1.8,
+      "Restoration Druid": 0.5,
+      "Mistweaver Monk": 4.2,
+      "Holy Paladin": 1.5,
+      "Holy Priest": 1.125,
+      "Discipline Priest": 1.35,
+      "Restoration Shaman": 3,
     },
-    MASTERY: {
-      "Druid-Restoration": 70,
-      "Preservation Evoker": 19.4,
-      "Monk-Mistweaver": 8.33,
-      "Paladin-Holy": 23.33,
-      "Priest-Holy": 28,
-      "Priest-Discipline": 25.93,
-      "Shaman-Restoration": 11.66,
-      "Preservation Evoker": 0,
-    },
+
   },
   Classic: {
     HASTE: 15.8,

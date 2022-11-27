@@ -178,8 +178,8 @@ export function processItem(line, player, contentType, type) {
   let itemID = -1;
   let itemSlot = "";
   let itemBonusIDs = [];
-  let itemLevel = -1;
-  let itemSocket = false;
+  let itemLevel = 0;
+  let itemSockets = 0;
   let itemTertiary = "";
   let dropLevel = 0;
   let levelOverride = 0; // A player can forgo the bonus_id system and override an items level if they wish by entering ilevel= at the end of an item.
@@ -234,8 +234,11 @@ export function processItem(line, player, contentType, type) {
       if ("level" in idPayload) {
         itemLevelGain += idPayload["level"];
       } else if ("socket" in idPayload) {
-        itemSocket = true;
-      } else if (bonus_id === "41") {
+        itemSockets = idPayload["socket"];
+      } else if ("base_level" in idPayload) {
+        itemBaseLevel = idPayload["base_level"];
+      }
+      else if (bonus_id === "41") {
         itemTertiary = "Leech";
       } else if (bonus_id === "7886" && itemID !== 171323) {
         // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.
@@ -274,11 +277,6 @@ export function processItem(line, player, contentType, type) {
             level: 0, // Irrelevant to legendaries.
           };
         } else {
-          itemEffect = {
-            type: "spec legendary",
-            name: idPayload["name_override"]["base"],
-            level: 0, // Irrelevant to legendaries.
-          };
         }
         // Legendaries
 
@@ -304,9 +302,14 @@ export function processItem(line, player, contentType, type) {
     }
     if (bonus_id === "7881") uniqueTag = "crafted";
   }
-  if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
+  //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
+  if (craftedStats.length !== 0) {
+    craftedStats.forEach(stat => {
+      missiveStats.push(stat_ids[stat]);
+    });
+  }
   if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
-
+  else itemLevel = itemBaseLevel + itemLevelGain;
   // Check Gems for Dom sockets
   if (gemID.length > 0) {
     gemID.forEach((gem) => {
@@ -318,7 +321,7 @@ export function processItem(line, player, contentType, type) {
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
-    let item = new Item(itemID, "", itemSlot, itemSocket || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel + itemLevelGain, bonusIDS);
+    let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
     item.vaultItem = type === "Vault";
     item.active = itemEquipped || item.vaultItem;
     item.isEquipped = itemEquipped;
@@ -342,9 +345,15 @@ export function processItem(line, player, contentType, type) {
   }
 }
 
+/**
+ * 
+ * @deprecated
+ * 
+ */
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
   let allocation = 0;
   let bonus_stats = {};
+
 
   if (["Chest", "Head", "Legs"].includes(slot)) {
     if (itemLevel >= 262) allocation = 84;
@@ -376,6 +385,7 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
   crafted_stats.forEach((stat) => {
     bonus_stats[stat_ids[stat]] = allocation;
   });
+
   return bonus_stats;
 }
 

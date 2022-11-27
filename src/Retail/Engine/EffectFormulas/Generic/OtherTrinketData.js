@@ -50,6 +50,29 @@ export const otherTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Sustaining Alchemist Stone                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Sustaining Alchemist Stone",
+    effects: [
+      { 
+        coefficient: 1.405902,
+        table: -1,
+        stat: "intellect",
+        duration: 10,
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                       Darkmoon Deck: Dance                                     */
     /* ---------------------------------------------------------------------------------------------- */
     /* There might be some special deck modifiers that we have to add later.

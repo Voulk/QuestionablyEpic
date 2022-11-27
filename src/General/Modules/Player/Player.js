@@ -1,6 +1,6 @@
 
 import SPEC from "../../Engine/SPECS";
-import STAT from "../../Engine/STAT";
+import STAT, { STATCONVERSION } from "../../Engine/STAT";
 import { itemDB } from "Databases/ItemDB";
 import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
@@ -46,7 +46,7 @@ class Player {
   realm = "";
   race = "";
   talents = [];
-  gameType = ""; // Currently the options are Retail or Burning Crusade.
+  gameType = ""; // Currently the options are Retail or Classic
   activeModelID = { Raid: 0, Dungeon: 1 }; // Currently active Cast Model.
 
   // The players active stats from their character page. These are raw rather than being percentages.
@@ -208,6 +208,7 @@ class Player {
   };
 
   catalyzeItem = (item) => {
+    return item; // The Item Catalyst isn't currently active.
     /*let tempArray = this.activeItems.filter(function (item) {
       return item.uniqueHash === unique;
     }); */
@@ -257,31 +258,16 @@ class Player {
     let statPerc = 1.0;
     switch (stat) {
       case "haste":
-        statPerc = 1 + this.activeStats.haste / 170 / 100;
+        statPerc = 1 + this.activeStats.haste / STATCONVERSION.HASTE / 100;
         break;
       case "crit":
-        statPerc = 1.05 + this.activeStats.crit / 180 / 100;
+        statPerc = 1.05 + this.activeStats.crit / STATCONVERSION.CRIT / 100;
         break;
       case "mastery":
-        statPerc = 1; // TODO
-        
-
-        if (this.spec === SPEC.HOLYPALADIN) {
-          statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.8 + 1; // 0.8 is our average mastery effectiveness.
-        } else if (this.spec === SPEC.RESTOSHAMAN) {
-          statPerc = 1 + (0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3) / 100; // .25 is placeholder for mastery effectiveness
-        } else if (this.spec === SPEC.RESTODRUID) {
-          statPerc = 1 + (0.04 + this.activeStats.mastery / 70 / 100) * 1.8; // 1.8 is the average HoT multiplier.
-        } else if (this.spec === SPEC.HOLYPRIEST) {
-          statPerc = 1 + (0.1 + this.activeStats.mastery / 27.95 / 100) * 0.9; // Assumes 10% echo of light overhealing. TODO: revisit.
-        } else if (this.spec === SPEC.DISCPRIEST) {
-          statPerc = 1 + (0.108 + this.activeStats.mastery / 25.9 / 100);
-        } else if (this.spec === SPEC.MISTWEAVERMONK) {
-          statPerc = 1; // TODO
-        }
+        statPerc = 1 + (8 * STATCONVERSION.MASTERY + this.activeStats.mastery) / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[this.spec];
         break;
       case "versatility":
-        statPerc = 1 + this.activeStats.versatility / 205 / 100;
+        statPerc = 1 + this.activeStats.versatility / STATCONVERSION.VERSATILITY / 100;
         break;
       default:
         break;
@@ -589,17 +575,17 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 940,
-        crit: 650,
-        mastery: 220,
-        versatility: 415,
+        intellect: 7500,
+        haste: 4000,
+        crit: 2100,
+        mastery: 1050,
+        versatility: 1400,
         stamina: 1900,
+        critMult: 2,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {

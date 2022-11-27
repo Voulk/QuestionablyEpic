@@ -18,7 +18,8 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
-    const trinketList = []
+    const trinketList = Object.keys(trinkets) || [];
+    const trinketAssignments = buildTrinkets(trinketList);
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
         talents[key] = value.points;
@@ -35,17 +36,17 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
     else if (type === "Primary") { 
         // With Boon gone, our primary ramp will generally be with Fiend. 
         // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast. 
-        return buildEvangRamp(applicators, trinketList['Fiend'], playstyle, talents, ["Shadowfiend"]); 
+        return buildEvangRamp(applicators, trinketAssignments['Fiend'], playstyle, talents, ["Shadowfiend"]); 
     }
     else if (type === "Secondary") {
         // 
-        return buildEvangRamp(applicators, trinketList['Fiend'], playstyle, talents, []); 
+        return buildEvangRamp(applicators, trinketAssignments['evang'], playstyle, talents, []); 
 
         // Further ramp types can be added here. 
     }
     else if (type === "RaptureLW") {
         // 
-        return buildRaptureRamp(applicators, trinketList['Fiend'], playstyle, talents, ["Light's Wrath"]); 
+        return buildRaptureRamp(applicators, '', playstyle, talents, ["Light's Wrath"]); 
 
         // Further ramp types can be added here. 
     }
@@ -66,18 +67,18 @@ const getPenance = (talents) => {
 const buildTrinkets = (trinkets) => {
     const onUse = {
         "Fiend": "",
-        "Boon": "",
+        "evang": "",
     }
 
     // 1.5 minute CD trinkets. We'll auto-include these in both Evang / Shell ramps. 
-    if (trinkets.includes("Flame of Battle")) { onUse.Fiend = "Flame of Battle"; onUse.Boon = "Flame of Battle"; }
-    if (trinkets.includes("Instructor's Divine Bell")) { onUse.Fiend = "Instructor's Divine Bell"; onUse.Boon = "Instructor's Divine Bell";}
-    
-    if (trinkets.includes("Instructor's Divine Bell (new)")) { onUse.Fiend = "Instructor's Divine Bell (new)"; onUse.Boon = "Instructor's Divine Bell (new)";}
-    if (trinkets.includes("Neural Synapse Enhancer")) { onUse.Fiend = "Neural Synapse Enhancer"; onUse.Boon = "Neural Synapse Enhancer";}
-    // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to Boon and the other to Fiend. 
-    if (trinkets.includes("Soulletting Ruby")) onUse.Boon = "Soulletting Ruby";
-    else if (trinkets.includes("Shadowed Orb of Torment")) onUse.Boon = "Shadowed Orb of Torment";
+    if (trinkets.includes("Time-Breaching Talon")) { onUse.Fiend = "Time-Breaching Talon"; }
+    if (trinkets.includes("Voidmender's Shadowgem")) { onUse.Fiend = "Voidmender's Shadowgem"; onUse.evang = "Voidmender's Shadowgem"; }
+
+
+    if (trinkets.includes("Neural Synapse Enhancer")) { onUse.Fiend = "Neural Synapse Enhancer"; onUse.evang = "Neural Synapse Enhancer";}
+    // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to our primary, and one to our secondary ramp. 
+    if (trinkets.includes("Soulletting Ruby")) onUse.evang = "Soulletting Ruby";
+    else if (trinkets.includes("Shadowed Orb of Torment")) onUse.evang = "Shadowed Orb of Torment";
     return onUse;
 }
 
@@ -226,25 +227,34 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
         else sequence.push('Renew');
     }
 
+    
+    
+    
+    sequence.push('Power Word: Radiance');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
-    sequence.push('Power Word: Radiance');
+    if (trinket === "Time-Breaching Talon") sequence.push("Time-Breaching Talon");
+    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
+    
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     sequence.push(getPenance(talents));
-    if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Smite');
-    sequence.push('Shadow Word: Death');
     //sequence.push('Mind Blast');
-    if (talents.divineStar) sequence.push("Divine Star");
+    //if (talents.divineStar) sequence.push("Divine Star");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
+    sequence.push("Smite");
+    sequence.push("Smite");
+    if (talents.mindgames) sequence.push('Mindgames');
+    sequence.push("Penance");
+    sequence.push('Shadow Word: Death');
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 4; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }

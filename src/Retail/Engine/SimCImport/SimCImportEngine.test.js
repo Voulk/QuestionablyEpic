@@ -79,6 +79,7 @@ trinket2=,id=178298,bonus_id=6784/1485/6616
 main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
 `
 
+
 describe("Test Curve IDs", () => {
     test("Evoker Starting Items", () => {
         expect(processCurve(30725, 59)).toEqual(229)
@@ -151,13 +152,15 @@ describe("Test Crafted Items", () => {
         //expect(item.uniqueEquip).toEqual("crafted");
     });
 
-    test("Shadowsteel Sabatons", () => {
-        const line = "feet=,id=171443,bonus_id=6893/7881,drop_level=60,crafted_stats=32/40";
+    test("Elemental Lariat", () => {
+        const line = "neck=,id=193001,gem_id=192980/192921/192920,bonus_id=8836/8840/8902/8960/8783/8782/8801/8791,crafted_stats=49/32";
         const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(262);
-        //expect(item.stats.versatility).toEqual(63);
-        //expect(item.stats.crit).toEqual(63);
-        expect(item.uniqueEquip).toEqual("crafted");
+        expect(item.level).toEqual(389);
+        expect(item.stats.crit).toEqual(468);
+        expect(item.stats.mastery).toEqual(468);
+        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
+        expect(item.socket).toEqual(3);
+        //expect(item.uniqueEquip).toEqual("crafted");
     });
 
     test("262 Crafted Items", () => {

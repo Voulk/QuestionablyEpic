@@ -139,9 +139,15 @@ const DISCCONSTANTS = {
     if (talents.trainOfThought) {
         // Can be mostly handled in RampGen.
     }
+    if (talents.blazeOfLight) {
+        //+7.5% to Penance / Smite.
+        discSpells['Penance'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
+        discSpells['Smite'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
+    }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
-        stats.critMult *= (1 + 0.1 * talents.divineAegis);
+        // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
+        stats.critMult *= (1 + 0.05 * talents.divineAegis);
 
     }
     if (talents.wrathUnleashed) {
@@ -494,7 +500,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const healingMult = getHealingMult(state, state.activeBuffs, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS) * (1 - spell.overheal) * healingMult * targetMult;
-    
+    //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
     if (!spellName.includes("hot")) {
@@ -545,7 +551,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
+export const runCastSequence = (sequence, incStats, settings = {}, incTalents = {}) => {
     //console.log("Running cast sequence");
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
@@ -553,7 +559,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     }
 
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
-
+    let stats = JSON.parse(JSON.stringify(incStats));
 
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
@@ -565,6 +571,16 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     const seq = [...sequence];
     const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+
+    // Setup Trinkets
+    if (settings.trinkets) {
+        Object.keys(settings.trinkets).forEach((key) => {
+            if (key in discSpells) {
+                const spell = discSpells[key][0];
+                spell.value = settings.trinkets[key];
+            }
+        })
+    }
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 

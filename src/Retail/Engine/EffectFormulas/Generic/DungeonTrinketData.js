@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
   {
@@ -133,11 +133,17 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+      
 
+      if (additionalData.player.getSpec() === "Discipline Priest") {
+          const buffValue = processedValue(data[0], itemLevel);
+          bonus_stats.hps = runDiscOnUseTrinket("Time-Breaching Talon", buffValue, additionalData.setStats, additionalData.castModel, additionalData.player)
+      }
+      else {
+        bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
+        bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
+      }
 
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
-
-      bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
 
       return bonus_stats;
     }
@@ -222,7 +228,6 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      console.log("Mote " + itemLevel + ": " + processedValue(data[0], itemLevel))
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
@@ -273,11 +278,20 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
+
       const critPerStack = processedValue(data[1], itemLevel)
       const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
 
-      bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
-      console.log("ilvl: " + itemLevel + ". Crit: " + bonus_stats.crit);
+      if (additionalData.player.getSpec() === "Discipline Priest") {
+
+        bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
+      }
+      else {
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+      }
+      
+
       return bonus_stats;
     }
   },

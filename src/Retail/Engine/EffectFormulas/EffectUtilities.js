@@ -1,6 +1,7 @@
 import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
+import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {
@@ -29,6 +30,14 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
                   * (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1);
   return value;
 }
+
+export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, castModel, player) {
+    const trinket = {}
+    trinket[trinketName] = trinketValue;
+    const rampHealing = allRampsHealing([], playerStats, {"playstyle": castModel.playstyle || "", "reporting": false}, {}, trinket, false) / 180;
+    return (rampHealing - player.getRampID('baseline', "Raid")) * (1 - 0.1);
+
+  }
 
 export function convertPPMToUptime(PPM, duration) {
   return 1.13 * (1 - Math.E ** -((PPM * duration) / 60));
