@@ -600,6 +600,7 @@ class Player {
         mastery: 1050,
         versatility: 800,
         stamina: 1900,
+        critMult: 2,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {

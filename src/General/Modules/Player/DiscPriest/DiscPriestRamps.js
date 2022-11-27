@@ -141,7 +141,8 @@ const DISCCONSTANTS = {
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
-        stats.critMult *= (1 + 0.1 * talents.divineAegis);
+        // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
+        stats.critMult *= (1 + 0.05 * talents.divineAegis);
 
     }
     if (talents.wrathUnleashed) {
@@ -545,7 +546,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
+export const runCastSequence = (sequence, incStats, settings = {}, incTalents = {}) => {
     //console.log("Running cast sequence");
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
@@ -553,7 +554,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     }
 
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
-
+    let stats = JSON.parse(JSON.stringify(incStats));
 
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.

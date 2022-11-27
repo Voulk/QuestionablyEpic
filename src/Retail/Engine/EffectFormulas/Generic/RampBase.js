@@ -128,7 +128,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
-    if (stats.includes("crit")) mult *= (1 + critChance * (currentStats['critMult'] || 1));
+    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * (currentStats['critMult'] || 1));
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
     return mult;
 }
