@@ -101,18 +101,11 @@ describe("Test Regular Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
-    test("Cabochon of the Infinite Flight", () => {
-        const line = "neck=,id=185820,bonus_id=7731/7359/6652/7574/1543/664";
-        const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(226);
-        //expect(item.stats.haste).toEqual(135);
-        expect(item.effect).toEqual("");
-    });
     test("Stitchflesh's Misplaced Signet w/ Socket", () => {
         const line = "finger1=,id=178736,bonus_id=7389/7359/6652/6935/1540/6646";
         const item = processItem(line, player, contentType, type)
         //expect(item.stats.versatility).toEqual(77);
-        expect(item.socket).toEqual(true)
+        expect(item.socket).toEqual(1)
     });
     test("Perfectly Forged Credentials Effect Item", () => {
         const line = "neck=,id=187552,bonus_id=6652/7575";
@@ -138,7 +131,7 @@ describe("Test Crafted Items", () => {
         const item = processItem(line, player, contentType, type)
         expect(item.level).toEqual(230);
         //expect(item.stats.mastery).toEqual(63);
-        expect(item.socket).toEqual(true);
+        expect(item.socket).toEqual(1);
         //expect(item.uniqueEquip).toEqual("crafted");
     });
 
@@ -148,7 +141,7 @@ describe("Test Crafted Items", () => {
         expect(item.level).toEqual(230);
         //expect(item.stats.versatility).toEqual(63);
         //expect(item.stats.mastery).toEqual(0);
-        expect(item.socket).toEqual(true);
+        expect(item.socket).toEqual(1);
         //expect(item.uniqueEquip).toEqual("crafted");
     });
 
@@ -180,8 +173,6 @@ describe("Test Legendary Items", () => {
         const line = "neck=,id=178927,bonus_id=6974/7194/6647/6648/6758/1532";
         const item = processItem(line, player, contentType, type)
         expect(item.level).toEqual(235);
-        expect(item.uniqueEquip).toEqual("legendary");
-        expect(item.effect).toEqual({type: "spec legendary", name: "Flash Concentration", level: 0});
     }); 
 
     test("Verdant Infusion on Gloves", () => {
@@ -189,8 +180,6 @@ describe("Test Legendary Items", () => {
         const item = processItem(line, player, contentType, type)
 
         expect(item.level).toEqual(225);
-        expect(item.uniqueEquip).toEqual("legendary");
-        expect(item.effect).toEqual({type: "spec legendary", name: "Verdant Infusion", level: 0});
     });
 });
 

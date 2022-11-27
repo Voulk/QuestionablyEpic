@@ -18,7 +18,7 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
-    const trinketList = Object.keys(trinkets) || [];
+    const trinketList = trinkets !== undefined ? Object.keys(trinkets) : [];
     const trinketAssignments = buildTrinkets(trinketList);
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
