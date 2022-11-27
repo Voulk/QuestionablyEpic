@@ -494,7 +494,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const healingMult = getHealingMult(state, state.activeBuffs, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS) * (1 - spell.overheal) * healingMult * targetMult;
-    
+    //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
     if (!spellName.includes("hot")) {
@@ -553,7 +553,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     }
 
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
-
 
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.

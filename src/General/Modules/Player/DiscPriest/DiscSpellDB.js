@@ -382,6 +382,17 @@ export const DISCSPELLS = {
         stat: "haste",
         value: 1.25, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Time-Breaching Talon": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldown: 150,
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "intellect",
+        value: 2900, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Instructor's Divine Bell (new)": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",

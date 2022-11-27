@@ -590,16 +590,15 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 940,
-        crit: 650,
-        mastery: 220,
-        versatility: 415,
+        intellect: 6500,
+        haste: 3000,
+        crit: 2500,
+        mastery: 1050,
+        versatility: 800,
         stamina: 1900,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
