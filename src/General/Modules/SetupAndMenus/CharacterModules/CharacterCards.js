@@ -47,14 +47,13 @@ import { STAT } from "../../../Engine/STAT";
 import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
-import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import { getTranslatedRaceName } from "Databases/RacesDB";
 import { getTranslatedClassName } from "locale/ClassNames.js";
 import { getTranslatedStats } from "locale/statsLocale.js";
-import { getTranslatedCovenantName } from "locale/covenants.js";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
+  "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Druid": require("Images/DruidSmall.jpg"),
   "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
@@ -189,7 +188,6 @@ export default function CharCards(props) {
   const [charName, setCharName] = React.useState(player.charName);
   const [healClass, setHealClass] = React.useState(player.getSpec());
   const [selectedRace, setSelectedRace] = React.useState(player.getRace());
-  const [selectedCovenant, setSelectedCovenant] = React.useState(player.getCovenant());
   const [intellect, setIntellect] = React.useState("1");
   const [critical, setCritical] = React.useState(player.getStatWeight(contentType, STAT.CRITICAL_STRIKE));
   const [haste, setHaste] = React.useState(player.getStatWeight(contentType, STAT.HASTE));
@@ -227,9 +225,6 @@ export default function CharCards(props) {
   };
   const handleChangeRace = (event) => {
     setSelectedRace(event.target.value);
-  };
-  const handleChangeCovenant = (event) => {
-    setSelectedCovenant(event.target.value);
   };
   const handleChangeRegion = (event) => {
     setRegion(event.target.value);
@@ -317,7 +312,7 @@ export default function CharCards(props) {
     };
 
     newPlayer.editChar(contentType, charName, server, region, selectedRace, weights);
-    newPlayer.setCovenant(selectedCovenant);
+
     setOpen(false);
     props.singleUpdate(newPlayer);
     props.charUpdatedSnack();
@@ -325,7 +320,7 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
-  const covenant = props.char.covenant;
+
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
   const availableClasses = classRaceDB;
@@ -387,21 +382,6 @@ export default function CharCards(props) {
                           border: "1px solid rgba(255, 255, 255, 0.12)",
                         })}
                       </Tooltip>
-                      {/* ---------------------------------------- Covenant Icon ---------------------------------------  */}
-                      {gameType === "Retail" ? (
-                        <Tooltip title={getTranslatedCovenantName(covenant, currentLanguage)} style={{ color: classColoursJS(spec) }} placement="top">
-                          {covenantIcons(covenant, {
-                            height: 20,
-                            width: 20,
-                            margin: "0px 5px 0px 5px",
-                            verticalAlign: "middle",
-                            borderRadius: 4,
-                            border: "1px solid rgba(255, 255, 255, 0.12)",
-                          })}
-                        </Tooltip>
-                      ) : (
-                        ""
-                      )}
                     </Typography>
                   </Grid>
                   {/* ---- Settings Button - More apparent for users how to edit characters ---- */}
@@ -537,34 +517,6 @@ export default function CharCards(props) {
                                       <div style={{ display: "inline-flex" }}>
                                         {raceIcons(key)}
                                         {getTranslatedRaceName(key, currentLanguage)}
-                                      </div>
-                                    </MenuItem>
-                                  );
-                                })}
-                          </Select>
-                        </FormControl>
-                      </Grid>
-                      {/* ------------------------------- Covenant Select ------------------------------ */}
-                      <Grid item xs={12}>
-                        <FormControl disabled={healClass === "" ? true : false} fullWidth variant="outlined" size="small" label={t("Covenant")}>
-                          <InputLabel id="CovSelector">{t("Covenant")}</InputLabel>
-                          <Select value={selectedCovenant} onChange={handleChangeCovenant} label={t("Covenant")}>
-                            {healClass === ""
-                              ? ""
-                              : ["kyrian", "venthyr", "necrolord", "night_fae"].map((key, i, arr) => {
-                                  let lastItem = i + 1 === arr.length ? false : true;
-                                  return (
-                                    <MenuItem divider={lastItem} key={"charChardCovenant" + i} value={key}>
-                                      <div style={{ display: "inline-flex" }}>
-                                        {covenantIcons(key, {
-                                          height: 20,
-                                          width: 20,
-                                          margin: "0px 5px 0px 5px",
-                                          verticalAlign: "middle",
-                                          borderRadius: 4,
-                                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                                        })}
-                                        {getTranslatedCovenantName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>
                                   );

@@ -9,6 +9,15 @@
 
 export const changeLog = [
   {
+    version: "10.0.0",
+    update: 1,
+    date: "11 October",
+    changes: [ 
+      "Added a new Sequence Generator module. You can now select a talent build and sequence and it'll tell you how much damage / healing it'll do.",
+      "Added support for the Evoker class.",
+      "Added Dragonflight trinkets & item database."
+  ]},
+  {
     version: "10.0.2 / 3.4.0",
     update: 1,
     date: "15 November",

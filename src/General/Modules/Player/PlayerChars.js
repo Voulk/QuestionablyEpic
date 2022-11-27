@@ -15,7 +15,8 @@ import ClassicPlayer from "./ClassicPlayer";
 class PlayerChars {
   constructor() {
     // Check our local storage for our characters.
-    let playerChars = JSON.parse(ls.get("allChar")) || [];
+    let playerChars = JSON.parse(ls.get("allChar")) || []; // DF
+
     //
     let charArray = [];
     // If we have characters in storage, loop through them and create a new Player object for each.
@@ -30,12 +31,8 @@ class PlayerChars {
         }
         else {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
-          if (player.covenant) newChar.setCovenant(player.covenant);
-          else newChar.setDefaultCovenant(player.spec);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
-          if (player.renown > 0) newChar.updateRenownLevel(player.renown);
-          if (player.dominationGemRanks) newChar.setDominationRanks(player.dominationGemRanks);
           newChar.setPlayerAvatars();
           charArray.push(newChar);
         }
@@ -51,7 +48,7 @@ class PlayerChars {
 
     this.allChar = charArray;
     /*this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)]; // This is the previous code. To be eventually removed */
-    this.activeChar = ls.get("activeChar") || 0;
+    this.activeChar = ls.get("activeChar") || 0; //activeCharDF
   }
 
   allChar = []; // An array of all our characters.
@@ -100,20 +97,19 @@ class PlayerChars {
   saveAllChar = () => {
     // Database TODO
 
-    // Local Storage
+    // Local Storage - Optional DF
     ls.set("allChar", JSON.stringify(this.allChar));
     ls.set("activeChar", this.activeChar);
   };
 
   // Add a new character to the array then save it.
-  addChar = (name, spec, region, realm, race, gameType, covenant = "") => {
+  addChar = (name, spec, region, realm, race, gameType) => {
     //alert("Adding new Character")
     if (gameType === "Classic" || gameType === "BurningCrusade") {
       this.allChar.push(new ClassicPlayer(name, spec, this.allChar.length, region, realm, race))
     }
     else {
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race)
-      if (covenant !== "") newChar.setCovenant(covenant);
       newChar.setPlayerAvatars();
       this.allChar.push(newChar);
     }

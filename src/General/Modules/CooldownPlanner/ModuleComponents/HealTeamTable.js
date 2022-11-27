@@ -35,7 +35,7 @@ const tableIcons = {
 
 export default function HealTeam() {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.currentLanguage;
+  const currentLanguage = i18n.language;
 
   let columns = [
     /* ------------------------------------- Healer Name Column ------------------------------------- */

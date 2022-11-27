@@ -312,4 +312,79 @@ export const filterIDS = {
     178079, // https://www.wowhead.com/npc=178079/the-jailer
     0, // Environmentals
   ],
+
+  // Eranog
+  2587: [
+    184972, // https://www.wowhead.com/beta/npc=184972/eranog
+    187593, // https://www.wowhead.com/beta/npc=187593/collapsing-flame
+    195584, // https://www.wowhead.com/beta/npc=195584/expanding-flame
+    199233, // https://www.wowhead.com/beta/npc=199233/flamescale-captain
+    187638, // https://www.wowhead.com/beta/npc=187638/flamescale-tarasek
+    199232, // https://www.wowhead.com/beta/npc=199232/molten-spike
+    0, // Environmentals
+  ],
+  // Terros
+  2639: [
+    190496, // https://www.wowhead.com/beta/npc=190496/terros
+    0, // Environmentals
+  ],
+  // The Primalist Council
+  2590: [
+    187768, // https://www.wowhead.com/beta/npc=187768/dathea-stormlash
+    187767, // https://www.wowhead.com/beta/npc=187767/embar-firepath
+    187771, // https://www.wowhead.com/beta/npc=187771/kadros-icewrath
+    188251, // https://www.wowhead.com/beta/npc=188251/earthen-pillar
+    187772, // https://www.wowhead.com/beta/npc=187772/opalfang
+    0, // Environmentals
+  ],
+  // Sennarth, The Cold Breath
+  2592: [
+    187967, // https://www.wowhead.com/beta/npc=187967/sennarth
+    189233, // https://www.wowhead.com/beta/npc=189233/caustic-spiderling
+    189234, // https://www.wowhead.com/beta/npc=189234/frostbreath-arachnid
+    0, // Environmentals
+  ],
+  //  Dathea, Ascended
+  2635: [
+    189813, // https://www.wowhead.com/beta/npc=189813/dathea-ascended
+    191856, // https://www.wowhead.com/beta/npc=191856/raging-tempest
+    194647, // https://www.wowhead.com/beta/npc=194647/thunder-caller
+    193413, // https://www.wowhead.com/beta/npc=193413/thunderstorm
+    197278, // https://www.wowhead.com/beta/npc=197278/thunderstorm
+    197671, // https://www.wowhead.com/beta/npc=197671/volatile-infuser
+    192934, // https://www.wowhead.com/beta/npc=192934/volatile-infuser
+    0, // Environmentals
+  ],
+  //  Kurog Grimtotem
+  2605: [
+    184986, // https://www.wowhead.com/beta/npc=184986/kurog-grimtotem
+    190688, // https://www.wowhead.com/beta/npc=190688/blazing-fiend
+    190586, // https://www.wowhead.com/beta/npc=190586/earth-breaker
+    190686, // https://www.wowhead.com/beta/npc=190686/frozen-destroyer
+    190699, // https://www.wowhead.com/beta/npc=190699/lava-pool
+    191510, // https://www.wowhead.com/beta/npc=191510/smoldering-hellion
+    190588, // https://www.wowhead.com/beta/npc=190588/tectonic-crusher
+    190690, // https://www.wowhead.com/beta/npc=190690/thundering-ravager
+    198311, // https://www.wowhead.com/beta/npc=198311/flamewrought-eradicator
+    198308, // https://www.wowhead.com/beta/npc=198308/icewrought-dominator
+    0, // Environmentals
+  ],
+  //  Broodkeeper Diurna
+  2614: [
+    190245, // https://www.wowhead.com/beta/npc=190245/broodkeeper-diurna
+    191230, // https://www.wowhead.com/beta/npc=191230/dragonspawn-flamebender
+    191232, // https://www.wowhead.com/beta/npc=191232/drakonid-stormbringer
+    191222, // https://www.wowhead.com/beta/npc=191222/juvenile-frost-proto-dragon
+    191225, // https://www.wowhead.com/beta/npc=191225/tarasek-earthreaver
+    191215, // https://www.wowhead.com/beta/npc=191215/tarasek-legionnaire
+    191206, // https://www.wowhead.com/beta/npc=191206/primalist-mage
+    196679, // https://www.wowhead.com/beta/npc=196679/frozen-shroud
+    197298, // https://www.wowhead.com/beta/npc=197298/nascent-proto-dragon
+    191447, // https://www.wowhead.com/beta/npc=191447/primal-proto-whelp
+    0, // Environmentals
+  ],
+  //  Raszageth the Storm-Eater
+  2607: [
+    0, // Environmentals
+  ],
 };

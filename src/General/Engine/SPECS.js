@@ -10,6 +10,7 @@ const SPEC = {
 
 // The spec identifiers used by warcraftlogs.
 const WCLSPEC = {
+  PRESEVOKER: "Evoker-Preservation",
   RESTODRUID: "Druid-Restoration",
   PRESEVOKER: "Evoker-Preservation",
   MISTWEAVERMONK: "Monk-Mistweaver",

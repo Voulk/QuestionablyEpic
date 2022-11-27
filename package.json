@@ -2,7 +2,6 @@
   "name": "questionably-epic-live",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://questionablyepic.com/",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
@@ -36,7 +35,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "reactstrap": "^8.6.0",
-    "recharts": "^1.8.5",
+    "recharts": "^2.1.16",
     "simple-oauth2": "^4.1.0",
     "typescript": "^3.9.7",
     "workerize": "^0.1.8"

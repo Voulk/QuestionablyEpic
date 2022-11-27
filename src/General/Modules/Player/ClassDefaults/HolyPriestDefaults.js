@@ -18,6 +18,11 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 7.6,
       CastsPerMinute: 28,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1,
+        c180: 1,
+
         oneMinute: 1,
         ninetySeconds: 1,
         twoMinutes: 1,
@@ -31,6 +36,11 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0.4,
       CastsPerMinute: 30,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1.2,
+        c180: 1,
+
         oneMinute: 1,
         ninetySeconds: 1,
         twoMinutes: 1,
@@ -51,18 +61,18 @@ export const holyPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.52,
-    crit: 0.63,
-    mastery: 0.62,
-    versatility: 0.6,
+    haste: 0.27,
+    crit: 0.32,
+    mastery: 0.33,
+    versatility: 0.3,
     leech: 0.81,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.59,
-    crit: 0.62,
-    mastery: 0.35,
-    versatility: 0.61,
+    haste: 0.3,
+    crit: 0.32,
+    mastery: 0.27,
+    versatility: 0.32,
     leech: 0.42,
   };
 

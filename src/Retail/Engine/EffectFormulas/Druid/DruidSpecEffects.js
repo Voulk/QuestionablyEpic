@@ -49,7 +49,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingHPS);
 
     // Return result.
-    bonus_stats.hps = expectedHPS;
+    bonus_stats.hps = 0;;
 
   } else if (effectName === "Memory of the Mother Tree") {
     let wildGrowthCPM = player.getSpellCPM(IDWILDGROWTH, contentType);
@@ -57,7 +57,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     let oneRejuv = 0.29 * 6 * player.getStatMultiplier("ALL") * 0.87 * processDruidRawHealing(player, 774);
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
-    bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+    //bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+    bonus_stats.hps = 0;
 
   } else if (effectName === "Verdant Infusion") {
     /* 
@@ -81,8 +82,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     ];
 
     spellExtensions.forEach((spell) => (power += ((spell.sp * durationIncrease) / spell.duration) * (1 - expectedOverhealing) * spell.extensionsPerMin));
-    bonus_stats.hps = Math.round((power / 60) * player.getStatMultiplier("ALL"));
-
+    //bonus_stats.hps = Math.round((power / 60) * player.getStatMultiplier("ALL"));
+    bonus_stats.hps = 0;
   } else if (effectName === "The Dark Titans Lesson" || effectName === "The Dark Titan's Lesson") {
     // Do Math
     const percentClearcastsUsed = 0.8;

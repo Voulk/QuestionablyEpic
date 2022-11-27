@@ -4,6 +4,10 @@ import { MenuItem, Grid, Typography, TextField, Tooltip, FormControl, InputLabel
 import { useTranslation } from "react-i18next";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { togglePlayerSettings } from "Redux/Actions";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -24,16 +28,25 @@ export default function RetailSettings(props) {
   const classes = useStyles();
   // const playerSpec = props.player.getSpec();
 
+  const playerSettings = useSelector((state) => state.playerSettings);
+
+  const dispatch = useDispatch();
+
+  const availableSettings = {
+    'groupBenefits': {value: playerSettings.groupBenefits, 'options': []},
+
+
+  }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
 
   // TODO: Delete hymnal?
-  /* ---------------------------------------- Hymnal State ---------------------------------------- */
-  const [hymnalValue, setHymnalValue] = useState(props.userSettings.hymnalAllies);
+  /* ---------------------------------------- Ignore Enchants ---------------------------------------- */
+  const [enchantItems, setEnchantItems] = useState(props.userSettings.enchantItems);
 
   /* -------------------------------------- Group Value State ------------------------------------- */
-  const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
+  const [groupValue, setgroupValue] = useState(availableSettings.groupBenefits.value);
 
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
@@ -58,12 +71,14 @@ export default function RetailSettings(props) {
   const specBuilds = props.player.getAllModels(props.contentType);
 
 
-  const updateHymnalValue = (value) => {
-    props.editSettings("hymnalAllies", setBounds(value, 0, 4));
-    setHymnalValue(setBounds(value, 0, 4));
+  const updateEnchantItems = (value) => {
+    dispatch(togglePlayerSettings(playerSettings));
+    props.editSettings("enchantItems", value);
+    setEnchantItems(value);
   };
 
   const updateGroupValue = (value) => {
+    dispatch(togglePlayerSettings({...playerSettings, groupBenefit: value}));
     props.editSettings("includeGroupBenefits", value);
     setgroupValue(value);
   };
@@ -154,8 +169,8 @@ export default function RetailSettings(props) {
           >
             <TextField
               label={t("Settings.Retail.Setting0Title")}
-              value={hymnalValue}
-              onChange={(e) => updateHymnalValue(e.target.value)}
+              value={enchantItems}
+              onChange={(e) => updateEnchantItems(e.target.value)}
               InputProps={{ variant: "outlined" }}
               select
               variant="outlined"
@@ -163,20 +178,11 @@ export default function RetailSettings(props) {
               fullWidth
               style={{ textAlign: "center", minWidth: 120 }}
             >
-              <MenuItem divider value={0} style={{ justifyContent: "center" }}>
-                {'0'}
+              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
+                {'Yes'}
               </MenuItem>
-              <MenuItem divider value={1} style={{ justifyContent: "center" }}>
-                {'1'}
-              </MenuItem>
-              <MenuItem divider value={2} style={{ justifyContent: "center" }}>
-                {'2'}
-              </MenuItem>
-              <MenuItem divider value={3} style={{ justifyContent: "center" }}>
-                {'3'}
-              </MenuItem>
-              <MenuItem divider value={4} style={{ justifyContent: "center" }}>
-                {'4'}
+              <MenuItem divider value={false} style={{ justifyContent: "center" }}>
+                {'No'}
               </MenuItem>
             </TextField>
           </Tooltip>
@@ -326,7 +332,7 @@ export default function RetailSettings(props) {
         ""
       )}
       {/* ------------------------------------- Catalyst Limit ---------------------------------------- */}
-      {props.autoSocket === true ? (
+      {props.catalystLimit === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Tooltip
             title={

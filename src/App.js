@@ -3,15 +3,14 @@ import "./App.css";
 import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
+import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
-import DominationAnalysis from "Retail/Modules/DominationGemAnalysis/DominationGemAnalysis";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
-import CovenantExploration from "Retail/Modules/Covenants/Components/CovenantExploration.js";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
 import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
@@ -29,6 +28,9 @@ import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/C
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import ReactGA from "react-ga";
+
+import { useDispatch } from "react-redux";
+import { togglePatronStatus } from "Redux/Actions";
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -60,7 +62,7 @@ class App extends Component {
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
-      patronStatus: "",
+      patronStatus: "Standard",
       charSnackState: false,
       charUpdateState: false,
       loginSnackState: false,
@@ -175,6 +177,8 @@ class App extends Component {
   /* -------------------------- Patron Status Handler ------------------------- */
   setPatron = (status) => {
     this.setState({ patronStatus: status });
+
+    //dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
   };
 
   /* ----------------------- Article List Handler ----------------------------- */
@@ -234,7 +238,7 @@ class App extends Component {
   /* ----------------------------- Logout Handler ----------------------------- */
   userLogout() {
     // Do other stuff later.
-    this.setState({ playerLoginID: 0 }); 
+    this.setState({ playerLoginID: 0 });
     this.setState({ playerBattleTag: "" });
     ls.remove("id");
     ls.remove("btag");
@@ -342,51 +346,57 @@ class App extends Component {
                       />
                     )}
                   />
-                  <Route path="/fightAnalysis" render={() => <FightAnalysis />} />
-                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule />} />
+                  <Route path="/fightAnalysis" render={() => <FightAnalysis patronStatus={this.state.patronStatus} />} />
+                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
-                  <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} />} />
-                  <Route path="/quickcompare" render={() => <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} />} />
+                  <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
+                  <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} patronStatus={this.state.patronStatus} />} />
+                  <Route
+                    path="/quickcompare"
+                    render={() => (
+                      <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus} />
+                    )}
+                  />
                   <Route
                     path="/topgear"
-                    render={() => <TopGear player={activePlayer} setTopResult={this.setTopResult} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus}/>}
-                  />
-                  <Route
-                    path="/legendaries"
                     render={() => (
-                      <LegendaryCompare player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                    )}
-                  />
-                  <Route
-                    path="/trinkets"
-                    render={() => (
-                      <TrinketAnalysis player={activePlayer} updatePlayerChar={this.updatePlayerChar} singleUpdate={this.updatePlayerChar} allChars={allChars} simcSnack={this.handleSimCSnackOpen} />
-                    )}
-                  />
-                  {/*<Route
-                    path="/dominationgems"
-                    render={() => (
-                      <DominationAnalysis
+                      <TopGear
                         player={activePlayer}
-                        updatePlayerChar={this.updatePlayerChar}
-                        singleUpdate={this.updatePlayerChar}
+                        setTopResult={this.setTopResult}
                         allChars={allChars}
                         simcSnack={this.handleSimCSnackOpen}
-                    /> 
-                    )}
-                  />*/}
-                  <Route
-                    path="/soulbinds"
-                    render={() => (
-                      <CovenantExploration
-                        player={activePlayer}
-                        updatePlayerChar={this.updatePlayerChar}
                         singleUpdate={this.updatePlayerChar}
-                        allChars={allChars}
-                        simcSnack={this.handleSimCSnackOpen}
+                        patronStatus={this.state.patronStatus}
                       />
                     )}
                   />
+                  {/*<Route
+                    path="/legendaries"
+                    render={() => (
+                      <LegendaryCompare
+                        player={activePlayer}
+                        updatePlayerChar={this.updatePlayerChar}
+                        singleUpdate={this.updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={this.handleSimCSnackOpen}
+                        patronStatus={this.state.patronStatus}
+                      />
+                    )} 
+                  />*/}
+                  <Route
+                    path="/trinkets"
+                    render={() => (
+                      <TrinketAnalysis
+                        player={activePlayer}
+                        updatePlayerChar={this.updatePlayerChar}
+                        singleUpdate={this.updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={this.handleSimCSnackOpen}
+                        patronStatus={this.state.patronStatus}
+                      />
+                    )}
+                  />
+
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                   <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />

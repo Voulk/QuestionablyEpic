@@ -64,7 +64,7 @@ class LogImport extends Component {
     // const filteredFights = fights.filter(fight => bossList.find(boss => fight.boss === boss.id));
     // filter LFR & Normal logs if cooldownImportFilter === true
     const filteredFights =
-      this.props.cooldownImportFilter === true ? fights.filter((name) => name.boss !== 0 && name.difficulty !== 1 && name.difficulty !== 2) : fights.filter((name) => name.boss !== 0);
+      this.props.cooldownImportFilter === true ? fights.filter((name) => name.boss !== 0 && name.difficulty !== 1 && name.difficulty !== 3) : fights.filter((name) => name.boss !== 0);
 
     // show message if log only contains lfr & normal logs (cooldown import only)
     if (filteredFights.length === 0 && this.props.cooldownImportFilter === true) {

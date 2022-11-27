@@ -226,8 +226,8 @@ export default function AddPlanDialog(props) {
         </Tabs>
         <TabPanel value={value} index={0}>
           <div sx={{ padding: "8px" }}>
-            <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
-              <Grid item xl={12}>
+            <Grid item container spacing={1} xs={12} alignItems="center" sx={{ marginTop: "1px" }}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Raid
                 </Typography>
@@ -252,7 +252,7 @@ export default function AddPlanDialog(props) {
                 </TextField>
               </Grid>
 
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Boss
                 </Typography>
@@ -273,7 +273,7 @@ export default function AddPlanDialog(props) {
                 </TextField>
               </Grid>
 
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Difficulty
                 </Typography>
@@ -286,7 +286,7 @@ export default function AddPlanDialog(props) {
                   </ToggleButton>
                 </ToggleButtonGroup>
               </Grid>
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Plan Type
                 </Typography>
@@ -301,7 +301,7 @@ export default function AddPlanDialog(props) {
                   </ToggleButton>
                 </ToggleButtonGroup>
               </Grid>
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   New Plan Name
                 </Typography>
@@ -335,7 +335,7 @@ export default function AddPlanDialog(props) {
 
         <TabPanel value={value} index={1}>
           <div sx={{ padding: "16px" }}>
-            <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
+            <Grid item container spacing={1} xs={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xs={12}>
                 <Paper sx={{ backgroundColor: "#5a5a5a", padding: "4px", borderColor: "limegreen", borderWidth: "1px", borderStyle: "Solid" }} elevation={0}>
                   <Typography variant="subtitle2" sx={{ color: "limegreen", fontSize: "0.85rem" }}>
@@ -371,7 +371,7 @@ export default function AddPlanDialog(props) {
                 )}
               </Grid>
 
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Import Type
                 </Typography>

@@ -3,7 +3,7 @@
 const userSettings = {
 
     // Editable Settings
-    hymnalAllies: 0,
+    enchantItems: false,
     includeGroupBenefits: false,
     autoSocket: false, // Automatically sockets viable items.
     dominationSockets: "auto",

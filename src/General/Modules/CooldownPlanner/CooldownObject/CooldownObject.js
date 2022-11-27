@@ -19,6 +19,9 @@ class Cooldowns {
     // Generate New Default on Load
     if (Object.entries(this.cooldowns).length > 0) {
       raidDB.map((key) => {
+        // bossList
+        //   .filter((filter) => filter.zoneID === key.ID)
+        //   .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Normal"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Normal"]["default"]));
         bossList
           .filter((filter) => filter.zoneID === key.ID)
           .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Heroic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Heroic"]["default"]));

@@ -1,6 +1,7 @@
 import { fightDuration, durationmaker, reduceTimestamps } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { classColoursERT } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
 import i18n from "i18next";
 
 /*=============================================
