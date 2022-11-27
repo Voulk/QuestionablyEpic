@@ -555,6 +555,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
 
 
+
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
 
@@ -564,6 +565,16 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     const seq = [...sequence];
     const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+
+    // Setup Trinkets
+    if (settings.trinkets) {
+        Object.keys(settings.trinkets).forEach((key) => {
+            if (key in discSpells) {
+                const spell = discSpells[key][0];
+                spell.value = settings.trinkets[key];
+            }
+        })
+    }
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 

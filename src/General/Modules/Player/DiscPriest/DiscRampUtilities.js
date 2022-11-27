@@ -79,6 +79,9 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, trinkets, repo
     const newFiendSeq = buildRamp('Primary', 10, trinkets, stats.haste || 0, settings.playstyle || "", talents);
     const raptureSeq = buildRamp('RaptureLW', 8, trinkets, stats.haste || 0, settings.playstyle || "", talents)
     const microSeq = buildRamp('Micro', 5, [], stats.haste || 0, settings.playstyle || "", talents)
+
+    // Run Sequences
+    settings.trinkets = trinkets;
     const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
     //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
     const evangRamp = runCastSequence(evangSeq, stats, {...settings, harshDiscipline: true}, talents);
@@ -90,9 +93,9 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, trinkets, repo
     rampResult.totalHealing = fiendRamp.totalHealing + evangRamp.totalHealing + miniRamp.totalHealing * 2 + raptureRamp.totalHealing * 2 + microRamp.totalHealing * 7;
     
     if (reporting) {
-        //rampResult.ramps.push({"tag": "Primary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(boonSeq), "totalHealing": Math.round(boonRamp.totalHealing)});
-        rampResult.ramps.push({"tag": "Fiend Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": fiendSeq, "totalHealing": Math.round(fiendRamp.totalHealing)});
-        rampResult.ramps.push({"tag": "Mini Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": rampShortener(miniSeq), "totalHealing": Math.round(miniRamp.totalHealing)});
+        rampResult.ramps.push({"tag": "Secondary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": (evangSeq), "totalHealing": Math.round(evangRamp.totalHealing)});
+        rampResult.ramps.push({"tag": "Fiend Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": newFiendSeq, "totalHealing": Math.round(fiendRamp.totalHealing)});
+        rampResult.ramps.push({"tag": "Mini Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": miniSeq, "totalHealing": Math.round(miniRamp.totalHealing)});
         rampResult.stats = stats;
 
         rampResult.damageBreakdown = addBreakdowns({}, fiendRamp.damageDone, miniRamp.damageDone);

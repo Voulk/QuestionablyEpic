@@ -72,12 +72,11 @@ const buildTrinkets = (trinkets) => {
 
     // 1.5 minute CD trinkets. We'll auto-include these in both Evang / Shell ramps. 
     if (trinkets.includes("Time-Breaching Talon")) { onUse.Fiend = "Time-Breaching Talon"; }
-    if (trinkets.includes("Flame of Battle")) { onUse.Fiend = "Flame of Battle"; onUse.evang = "Flame of Battle"; }
-    if (trinkets.includes("Instructor's Divine Bell")) { onUse.Fiend = "Instructor's Divine Bell"; onUse.evang = "Instructor's Divine Bell";}
-    
-    if (trinkets.includes("Instructor's Divine Bell (new)")) { onUse.Fiend = "Instructor's Divine Bell (new)"; onUse.evang = "Instructor's Divine Bell (new)";}
+    if (trinkets.includes("Voidmender's Shadowgem")) { onUse.Fiend = "Voidmender's Shadowgem"; onUse.evang = "Voidmender's Shadowgem"; }
+
+
     if (trinkets.includes("Neural Synapse Enhancer")) { onUse.Fiend = "Neural Synapse Enhancer"; onUse.evang = "Neural Synapse Enhancer";}
-    // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to Boon and the other to Fiend. 
+    // 2 minute or longer CD trinkets. These need to be assigned to a specific ramp. If we are wearing two such trinkets at once then assign one to our primary, and one to our secondary ramp. 
     if (trinkets.includes("Soulletting Ruby")) onUse.evang = "Soulletting Ruby";
     else if (trinkets.includes("Shadowed Orb of Torment")) onUse.evang = "Shadowed Orb of Torment";
     return onUse;
@@ -228,10 +227,12 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
         else sequence.push('Renew');
     }
 
-    if (trinket === "Time-Breaching Talon") sequence.push("Time-Breaching Talon");
+    
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
     sequence.push('Power Word: Radiance');
+    if (trinket === "Time-Breaching Talon") sequence.push("Time-Breaching Talon");
+    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
     

@@ -133,14 +133,14 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const buffValue = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
 
       if (additionalData.player.getSpec() === "Discipline Priest") {
+          const buffValue = processedValue(data[0], itemLevel);
           bonus_stats.hps = runDiscOnUseTrinket("Time-Breaching Talon", buffValue, additionalData.setStats, additionalData.castModel, additionalData.player)
-          console.log("BONUS HPS: " + bonus_stats.hps);
       }
       else {
-        bonus_stats.intellect = buffValue * data[0].efficiency;
+        bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
         bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
       }
 
@@ -278,10 +278,19 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
+
       const critPerStack = processedValue(data[1], itemLevel)
       const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
 
-      bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+      if (additionalData.player.getSpec() === "Discipline Priest") {
+
+        bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
+      }
+      else {
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+      }
+      
 
       return bonus_stats;
     }
