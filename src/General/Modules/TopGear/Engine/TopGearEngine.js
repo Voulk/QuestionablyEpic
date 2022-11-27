@@ -357,7 +357,6 @@ function enchantItems(bonus_stats, setInt, castModel) {
   let expected_uptime = convertPPMToUptime(1, 15);
   bonus_stats.intellect += 932 * expected_uptime;
   enchants["CombinedWeapon"] = "Sophic Devotion";
-
   return enchants;
 }
 
@@ -382,6 +381,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
+  console.log("SET STATS: " + JSON.stringify(setStats));
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;
@@ -412,7 +412,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
+  const enchants = settings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
 
   // Sockets
   const highestWeight = getHighestWeight(castModel);
@@ -438,28 +438,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
-  // Mechagon Rings
-  const mechaEffect = {
-    type: "special",
-    name: "",
-    ppm: 0,
-    ilvl: 0
-  }
-
-  itemSet.itemList.forEach(item => {
-    if (item.id === 169157) mechaEffect.ppm = 3.7; // Division
-    else if (item.id === 169158) mechaEffect.ppm = 3.8; // Recursion
-    else if (item.id === 169156) mechaEffect.ppm = 2.9; // Synergy
-    else if (item.id === 169076) mechaEffect.ppm = 1.6; // Maintenance
-
-    // Effects
-    if (item.id === 168977) {mechaEffect.name = "Rebooting Bit Band"; mechaEffect.ilvl = item.level; }
-    else if (item.id === 169159) { mechaEffect.name = "Overclocking Bit Band"; mechaEffect.ilvl = item.level; }
-    else if (item.id === 169161) { mechaEffect.name = "Protecting Bit Band"; mechaEffect.ilvl = item.level; }
-  })
-
-
-  if (mechaEffect.name !== "" && mechaEffect.ppm > 0) effectList.push(mechaEffect)
   //
 
   //effectStats.push(bonus_stats);
@@ -471,15 +449,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
-  // == Apply same set int bonus ==
-  // 5% int boost for wearing the same items.
-  // The system doesn't actually allow you to add items of different armor types so this is always on.
-  bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+
+  //bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
-
+    setStats.intellect *= 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList, reporting)
     if (reporting) report.ramp = setRamp;
     setStats.hps += setRamp.totalHealing / 180;
@@ -505,6 +482,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
+
+    // == Apply same set int bonus ==
+    // 5% int boost for wearing the same items.
+    // The system doesn't actually allow you to add items of different armor types so this is always on.
+    setStats.intellect *= 1.05;
+
     evalStats = setStats;
   }
 
@@ -533,14 +516,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
   if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 56;
-  }
-  // Fallen Order has a bug whereby having more than ~33% haste causes clones to behave irresponsibly and the average casts per clone drops heavily.
-  // A more precise formula could be offered by deducting the healing loss from the set. Instead this is a rather rougher patch which should automatically exclude
-  // any sets over the breakpoint. 
-  if (player.spec === "Mistweaver Monk") {
-    if (setStats.haste > 1120) hardScore -= 200;
-    else if (setStats.haste < 495) hardScore -= 75;
+    hardScore -= 500;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

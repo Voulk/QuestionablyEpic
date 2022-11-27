@@ -247,9 +247,9 @@
         "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
       },
       "Retail": {
-        "Setting0TextFieldLabel": "Allies",
-        "Setting0Title": "Hymnal Allies",
-        "Setting0Tooltip": "The equip effect of 'Cabalist's Hymnal' is increased by 5% per Ally",
+        "Setting0TextFieldLabel": "",
+        "Setting0Title": "Enchant Items",
+        "Setting0Tooltip": "Pick whether you'd like QE Live to enchant your items for you.",
         "Setting1Title": "Ally Buffs",
         "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
         "Setting3Title": "Add Sockets",
