@@ -332,27 +332,31 @@ function enchantItems(bonus_stats, setInt, castModel) {
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 32; // 16 x 2.
-  enchants["Finger"] = "+16 " + highestWeight;
-
-  // Bracers
-  bonus_stats.intellect += 15;
-  enchants["Wrist"] = "+15 int";
+  bonus_stats[highestWeight] += 64; // 16 x 2.
+  enchants["Finger"] = "+64 " + highestWeight;
 
   // Chest
-  // The mana enchant is actually close in value to +30 int, but for speeds sake it is not currently included.
-  bonus_stats.intellect += 30;
-  enchants["Chest"] = "+30 stats";
+  // There is a mana option too that we might include later.
+  bonus_stats.intellect += 105; 
+  enchants["Chest"] = "Waking Stats";
 
   // Cape
-  bonus_stats.leech += 30;
-  enchants["Back"] = "+30 leech";
+  bonus_stats.leech += 75;
+  enchants["Back"] = "Regenerative Leech";
 
-  // Weapon - Celestial Guidance
+  // Wrists
+  bonus_stats.leech += 75;
+  enchants["Wrists"] = "Devotion of Leech";
+
+  // Legs - Also gives 3/4/5% mana.
+  bonus_stats.intellect += 177;
+  enchants["Legs"] = "Temporal Spellthread";
+
+  // Weapon - Sophic Devotion
   // Eternal Grace is so poor that it isn't even compared.
-  let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect += (setInt + bonus_stats.intellect) * 0.05 * expected_uptime;
-  enchants["CombinedWeapon"] = "Celestial Guidance";
+  let expected_uptime = convertPPMToUptime(1, 15);
+  bonus_stats.intellect += 932 * expected_uptime;
+  enchants["CombinedWeapon"] = "Sophic Devotion";
 
   return enchants;
 }
