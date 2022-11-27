@@ -159,7 +159,7 @@ const DISCCONSTANTS = {
     }
     if (talents.harshDiscipline && settings.harshDiscipline) {
         // Can probably just add a buff on sequence start for the first Penance.
-        state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
+        //state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
     }
     if (talents.expiation) {
         discSpells["Mind Blast"][0].coeff *= 1.1;

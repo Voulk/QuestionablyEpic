@@ -228,27 +228,33 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     }
 
     
+    
+    
+    sequence.push('Power Word: Radiance');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
-    sequence.push('Power Word: Radiance');
     if (trinket === "Time-Breaching Talon") sequence.push("Time-Breaching Talon");
     if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
     
+    
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     sequence.push(getPenance(talents));
-    if (talents.mindgames) sequence.push('Mindgames');
     sequence.push('Smite');
-    sequence.push('Shadow Word: Death');
     //sequence.push('Mind Blast');
-    if (talents.divineStar) sequence.push("Divine Star");
+    //if (talents.divineStar) sequence.push("Divine Star");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
+    sequence.push("Smite");
+    sequence.push("Smite");
+    if (talents.mindgames) sequence.push('Mindgames');
+    sequence.push("Penance");
+    sequence.push('Shadow Word: Death');
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 4; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics. 
         sequence.push('Smite');
     }
