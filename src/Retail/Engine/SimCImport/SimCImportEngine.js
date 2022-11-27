@@ -321,7 +321,7 @@ export function processItem(line, player, contentType, type) {
       gemString += gem + ":";
     });
   }
-  console.log(itemID + ": " +  itemLevel + " / " + itemLevelGain);
+
   // Add the new item to our characters item collection.
   if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
@@ -350,10 +350,15 @@ export function processItem(line, player, contentType, type) {
   }
 }
 
+/**
+ * 
+ * @deprecated
+ * 
+ */
 function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
   let allocation = 0;
   let bonus_stats = {};
-  console.log("GETTING SECONDARY ALLOCATION" + slot + " " + itemLevel);
+
 
   if (["Chest", "Head", "Legs"].includes(slot)) {
     if (itemLevel >= 262) allocation = 84;
@@ -385,7 +390,7 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
   crafted_stats.forEach((stat) => {
     bonus_stats[stat_ids[stat]] = allocation;
   });
-  console.log(bonus_stats);
+
   return bonus_stats;
 }
 

@@ -47,7 +47,7 @@ export default function RetailSettings(props) {
 
   /* -------------------------------------- Group Value State ------------------------------------- */
   const [groupValue, setgroupValue] = useState(availableSettings.groupBenefits.value);
-  console.log(groupValue);
+
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
@@ -79,8 +79,6 @@ export default function RetailSettings(props) {
 
   const updateGroupValue = (value) => {
     dispatch(togglePlayerSettings({...playerSettings, groupBenefit: value}));
-    console.log("Post");
-    console.log(playerSettings);
     props.editSettings("includeGroupBenefits", value);
     setgroupValue(value);
   };
