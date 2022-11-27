@@ -277,11 +277,6 @@ export function processItem(line, player, contentType, type) {
             level: 0, // Irrelevant to legendaries.
           };
         } else {
-          itemEffect = {
-            type: "spec legendary",
-            name: idPayload["name_override"]["base"],
-            level: 0, // Irrelevant to legendaries.
-          };
         }
         // Legendaries
 

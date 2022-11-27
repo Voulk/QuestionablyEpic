@@ -87,11 +87,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
           break;
       }
     } 
-    else if (effectType === "generic legendary") {
-      // Generic legendaries are items wearable by all specs.
-      // These have very limited support currently since they're not very strong.
-      bonus_stats = getGenericLegendary(effectName, player, castModel, contentType, userSettings);
-    } 
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings, setStats);
       //testTrinkets(player, contentType); //TODO: Remove

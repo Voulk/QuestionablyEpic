@@ -140,7 +140,9 @@ const DISCCONSTANTS = {
         // Can be mostly handled in RampGen.
     }
     if (talents.blazeOfLight) {
-        // +7.5% to Penance / Smite.
+        //+7.5% to Penance / Smite.
+        discSpells['Penance'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
+        discSpells['Smite'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
