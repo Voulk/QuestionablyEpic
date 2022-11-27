@@ -9,6 +9,7 @@ import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
 import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
+import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
 import { getPriestConduit } from "./Priest/PriestConduitFormulas";
 import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
@@ -45,6 +46,12 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
       bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, effect);
+    } 
+    else if (effect.type === "embellishment") {
+      // A special effect is one that appears on an item slot where an effect isn't usually expected.
+      // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
+      // Does NOT include trinkets, legendaries, set bonuses etc.
+      bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, effect);
     } 
     // == Class specific effects ==
     // These can be single-slot effects like Legendaries, or entire set bonuses.

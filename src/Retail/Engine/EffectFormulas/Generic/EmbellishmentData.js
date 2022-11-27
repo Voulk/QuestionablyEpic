@@ -1,4 +1,10 @@
 
+
+export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, effect) => {
+  return {};
+
+}
+
 export const embellishmentData = [
     {
         /* ---------------------------------------------------------------------------------------------- */
@@ -16,6 +22,27 @@ export const embellishmentData = [
           },
           { 
             coefficient:-0.2887,
+            table: -7,
+            duration: 10,
+            ppm: 2,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Elemental Lariat                       
+        /* -------------------- */
+        /* Gain X of a secondary stat on one of your gems.
+        */
+        name: "Elemental Lariat",
+        effects: [
+          { 
+            coefficient: 0.722681,
             table: -7,
             duration: 10,
             ppm: 2,
