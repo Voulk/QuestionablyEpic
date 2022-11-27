@@ -334,7 +334,7 @@ export default function RetailSettings(props) {
         ""
       )}
       {/* ------------------------------------- Catalyst Limit ---------------------------------------- */}
-      {props.autoSocket === true ? (
+      {props.catalystLimit === true ? (
         <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Tooltip
             title={
