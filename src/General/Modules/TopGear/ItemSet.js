@@ -42,7 +42,6 @@ class ItemSet {
   // Classic Socket List
   bcSockets = {};
 
-  domSockets = 0; // Number of domination sockets.
 
 
 
@@ -58,7 +57,7 @@ class ItemSet {
   getStartingStats(gameType) {
     if (gameType === "Retail") {
       const stats = {
-        intellect: 450,
+        intellect: 2091,
         haste: 0,
         crit: 0,
         mastery: 0,
@@ -128,7 +127,6 @@ class ItemSet {
     this.setStats = setStats;
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
-    //this.domSockets = domSockets;
     return this;
   }
 

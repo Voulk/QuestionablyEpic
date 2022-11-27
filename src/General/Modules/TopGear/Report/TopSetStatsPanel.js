@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper, Grid, Typography, Divider } from "@mui/material";
-import { STATPERONEPERCENT, BASESTAT } from "../../../Engine/STAT";
+import { STATPERONEPERCENT, BASESTAT, getMasteryPercentage } from "../../../Engine/STAT";
 import { useTranslation } from "react-i18next";
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -18,7 +18,7 @@ export default function TopSetStatsPanel(props) {
           ["Intellect", statList.intellect],
           ["Haste", statList.haste / STATPERONEPERCENT.Retail.HASTE],
           ["Crit", statList.crit / STATPERONEPERCENT.Retail.CRIT],
-          ["Mastery", statList.mastery / STATPERONEPERCENT.Retail.MASTERYA[props.spec]],
+          ["Mastery", getMasteryPercentage(statList.mastery, props.spec)],
           ["Versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
           ["Leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
           ["Bonus HPS", statList.hps],
