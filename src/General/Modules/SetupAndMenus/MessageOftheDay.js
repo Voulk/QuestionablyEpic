@@ -6,7 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "This is the Developer version of QE Live. Expect to find bugs much more frequently here."
+      "-> Updated for Dragonflight!",
+      "-> Expect a bit of turbulence over the first few days.",
+      "-> Stuff WILL change in-game and as we collect more data."
   ],
   "Classic": [""]
   }

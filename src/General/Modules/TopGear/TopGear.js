@@ -93,8 +93,8 @@ export default function TopGear(props) {
   const [btnActive, setBtnActive] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus = props.patronStatus;
-  const topGearCaps = { Standard: 32, Basic: 32, Gold: 34, Diamond: 36, "Rolls Royce": 38, Sapphire: 38 };
-  const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 32; // TODO
+  const topGearCaps = { Standard: 30, Basic: 30, Gold: 34, Diamond: 36, "Rolls Royce": 38, Sapphire: 38 };
+  const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   useEffect(() => {
