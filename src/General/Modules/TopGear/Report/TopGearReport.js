@@ -83,7 +83,7 @@ function TopGearReport(props) {
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
 
-    if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
+    //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
   } else {
     resultValid = false;

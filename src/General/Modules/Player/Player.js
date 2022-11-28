@@ -617,8 +617,6 @@ class Player {
       const models = [
         { identifier: "Raid Default", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
-        { identifier: "Sinister Teachings", content: "Raid" },
-        { identifier: "Sinister Teachings", content: "Dungeon" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 

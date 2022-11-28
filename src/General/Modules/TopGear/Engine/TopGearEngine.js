@@ -619,10 +619,6 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
         specialSpells.push("4T28");
       }
   
-      if (effectList.filter(effect => effect.name === "Drape of Shame").length > 0) {
-        // We are wearing Drape of Shame and should account for it.
-        rampSettings["Drape of Shame"] = true; 
-      }
 
       if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
         itemSet.onUseTrinkets.forEach((trinket) => {
@@ -635,24 +631,12 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
         onUseTrinkets.push("Neural Synapse Enhancer");
       }
   
-      if (castModel.modelName === "Kyrian Evangelism") {
-        rampSettings['Pelagos'] = true;
-        if (itemSet.unity) rampSettings["Sphere's Harmony"] = true;
-      }
-      else if (castModel.modelName === "Venthyr Evangelism") {
-        rampSettings['Theotar'] = true;
-        if (itemSet.unity) rampSettings["Shadow Word: Manipulation"] = true;
-      }
-  
-      if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
-      if (itemSet.setLegendary === "Penitent One") rampSettings["Penitent One"] = true;
-  
 
-      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const boonSeq = buildRamp("Primary", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const fiendSeq = buildRamp("Secondary", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
       // The ramp sequence also includes any diminishing returns.
-      const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 }, true);
+      const setRamp = allRamps(boonSeq, setStats, rampSettings, {}, true);
 
       return setRamp;
   
