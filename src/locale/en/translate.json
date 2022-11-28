@@ -151,9 +151,9 @@
       },
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
-      "CooldownPlanner": "Cooldown Planner (Coming Soon)",
+      "CooldownPlanner": "Cooldown Planner (Returns Next Week)",
       "ExploreCovenants": "Covenants & Conduits",
-      "FightAnalysis": "Fight Analysis (Coming Soon)",
+      "FightAnalysis": "Fight Analysis (Returns Next Week)",
       "LegendaryAnalysis": "Legendary Breakdown",
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
@@ -175,8 +175,8 @@
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
-      "UpgradeFinder": "Upgrade Finder (Beta)",
-      "SequenceSandbox": "Sequence Sandbox (Advanced)"
+      "UpgradeFinder": "Upgrade Finder (Returns Wednesday)",
+      "SequenceSandbox": "Sequence Sandbox (Coming Soon)"
     },
     "Name": "Name",
     "No": "No",
