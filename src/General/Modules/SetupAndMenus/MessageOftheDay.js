@@ -6,9 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Warning: The prepatch is volatile and support for it is less thorough than it would be for a regular patch.",
-      "-> New features and modules will be released shortly before Dragonflight.",
-      "-> Evoker will be available in two weeks, matching it's in-game release date."
+      "-> Updated for Dragonflight!",
+      "-> Expect a bit of turbulence over the first few days.",
+      "-> Stuff WILL change in-game and as we collect more data."
   ],
   "Classic": [""]
   }

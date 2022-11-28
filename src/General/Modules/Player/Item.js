@@ -24,11 +24,11 @@ class Item {
   }
 
   id = 0; // The items ID
-  level = 200; // The items ilvl
+  level = 300; // The items ilvl
   name = ""; // Consider how to store this in a localised form.
   slot = "";
   softScore = 0;
-  socket = false;
+  socket = 0; // Items can once again have more than one socket so we'll store this is an int.
   tertiary = "";
   effect = "";
   uniqueHash = ""; // Technically not a hash.

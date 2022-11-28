@@ -37,19 +37,7 @@ export const classNameDB = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
   /* ---------------------------------------------------------------------------------------------- */
-  {
-    name: {
-      en: "Preservation Evoker",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
-    },
-    id: ["PreservationEvoker", "Preservation Evoker"],
-    cooldownPlannerMenu: true,
-    color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
-  },
+
   {
     name: {
       en: "Restoration Druid",
@@ -62,6 +50,32 @@ export const classNameDB = [
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
     icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
+  },
+  {
+    name: {
+      en: "Preservation Evoker",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: ["PreservationEvoker", "Preservation Evoker"],
+    cooldownPlannerMenu: true,
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+  },
+  {
+    name: {
+      en: "Devastation Evoker",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: ["DevastationEvoker", "Devastation Evoker"],
+    cooldownPlannerMenu: true,
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_devastation.jpg").default,
   },
   {
     name: {
@@ -175,7 +189,6 @@ export const getTranslatedClassName = (className, currentLanguage) => {
       return obj.id.includes(className);
     })
     .map((obj) => obj.name[currentLanguage]);
-
   return name;
 };
 export const getClassColour = (className) => {

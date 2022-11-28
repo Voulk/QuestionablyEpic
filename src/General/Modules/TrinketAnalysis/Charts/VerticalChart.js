@@ -56,12 +56,11 @@ export default class VerticalChart extends PureComponent {
     const data = this.props.data;
     const db = this.props.db;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
-    const iLvls = [239, 246, 252, 259, 262, 265, 272, 278, 285, 291, 298, 304, 311];
+    const iLvls = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 423, 426];
 
     /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
     // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
-    let iLvlsVisible = { 239: true, 246: true, 252: true, 259: true, 262: true, 265: true, 272: true, 278: true, 285: true, 
-                          291: true, 298: true, 304: true, 311: true };
+    let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 423: true, 426: true};
 
     const barColours = this.props.theme;
 
@@ -90,7 +89,7 @@ export default class VerticalChart extends PureComponent {
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&ilvl=252" + "&domain=" + currentLanguage}>
+            <a data-wowhead={"item=" + payload.value + "&ilvl=400" + "&domain=" + currentLanguage}>
               <img width={16} height={16} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </a>
           </foreignObject>

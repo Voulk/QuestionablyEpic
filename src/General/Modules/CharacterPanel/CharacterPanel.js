@@ -9,11 +9,10 @@ import { useSelector } from "react-redux";
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
 import Settings from "../Settings/Settings";
-import { covenantIcons, covenantColours } from "../CooldownPlanner/Functions/CovenantFunctions";
 // import ErrorTooltip from "./ErrorTooltip";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
-import { getTranslatedCovenantName } from "locale/covenants";
+
 
 const useStyles = makeStyles(() => ({
   simcerror: {
@@ -52,6 +51,7 @@ const getSimCStatus = (player, gameType) => {
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
+  "Preservation Evoker": require("Images/DruidSmall.jpg"),
   "Restoration Druid": require("Images/DruidSmall.jpg"),
   "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
@@ -82,7 +82,7 @@ export default function CharacterPanel(props) {
   // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLang;
   const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
-  const covenant = currentCharacter.covenant;
+
 
   const check = (simcStatus) => {
     let style = "";
@@ -200,24 +200,8 @@ export default function CharacterPanel(props) {
                           },
                     )}
                   </Tooltip>
-                </div>
-                {gameType === "Retail" ? (
-                  <div style={{ position: "absolute", bottom: 24, left: 1 }}>
-                    <Tooltip title={getTranslatedCovenantName(covenant, currentLanguage)} placement="left" arrow>
-                      {covenantIcons(covenant, {
-                        height: 22,
-                        width: 22,
-                        verticalAlign: "middle",
-                        borderRadius: "0px 4px 0px 0px",
-                        borderRight: "1px solid" + covenantColours(covenant),
-                        borderTop: "1px solid" + covenantColours(covenant),
-                      })}
-                    </Tooltip>
                   </div>
-                ) : (
-                  ""
-                )}
-              </div>
+                </div>
             </Grid>
           )}
           <Grid id="charPanelMainContainer" item xs sm container spacing={1}>

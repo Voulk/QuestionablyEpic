@@ -83,7 +83,7 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("GameTypeToggle.Retail")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_Shadowlands.png").default} alt={t("Shadowlands")} />
+            <img src={require("../../../Images/Logos/Logo_Dragonflight.png").default} alt={t("Dragonflight")} />
           </div>
         </Tooltip>
       </ToggleButton>

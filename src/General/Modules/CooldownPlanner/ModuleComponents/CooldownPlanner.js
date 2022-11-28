@@ -94,18 +94,38 @@ export default function CooldownPlanner(props) {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
   };
 
+  const changeRaid = (e) => {
+    setCurrentRaid(e.target.value);
+
+    let boss = bossList
+      .filter((obj) => {
+        return obj.zoneID === e.target.value;
+      })
+      .map((key, i) => key.DungeonEncounterID);
+    changeBoss(boss[0]);
+  };
+
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan, currentDif) => {
-    let raid = "";
-    if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
-      raid = 2296;
-    }
-    if ([2423, 2433, 2429, 2432, 2434, 2430, 2436, 2431, 2422, 2435].includes(currentBoss)) {
-      raid = 2450;
-    }
-    if ([2512, 2542, 2553, 2540, 2544, 2539, 2529, 2546, 2543, 2549, 2537].includes(currentBoss)) {
-      raid = 2481;
-    }
+    let raid = bossList
+      .filter((obj) => {
+        return obj.DungeonEncounterID === currentBoss;
+      })
+      .map((key, i) => key.zoneID)[0];
+
+    // // Here we need to determine what raid the boss belongs to. This could be done better.
+    // if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
+    //   raid = 2296;
+    // }
+    // if ([2423, 2433, 2429, 2432, 2434, 2430, 2436, 2431, 2422, 2435].includes(currentBoss)) {
+    //   raid = 2450;
+    // }
+    // if ([2512, 2542, 2553, 2540, 2544, 2539, 2529, 2546, 2543, 2549, 2537].includes(currentBoss)) {
+    //   raid = 2481;
+    // }
+    // if ([2587, 2639, 2590, 2592, 2635, 2605, 2614, 2607].includes(currentBoss)) {
+    //   raid = 2522;
+    // }
     setCurrentRaid(raid);
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
@@ -223,7 +243,7 @@ export default function CooldownPlanner(props) {
                       id="RaidSelector"
                       select
                       value={currentRaid}
-                      onChange={(e) => setCurrentRaid(e.target.value)}
+                      onChange={(e) => changeRaid(e)}
                       label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
                       size="small"
                       sx={{ minWidth: 200, width: "100%" }}
