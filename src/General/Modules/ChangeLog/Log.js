@@ -9,6 +9,13 @@
 
 export const changeLog = [
   {
+    version: "10.0.2",
+    update: 1,
+    date: "28 November",
+    changes: [ 
+      "Dragonflight Support",
+  ]},
+  {
     version: "10.0.0",
     update: 1,
     date: "11 October",

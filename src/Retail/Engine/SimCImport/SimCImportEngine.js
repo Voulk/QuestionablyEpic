@@ -66,7 +66,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   let checks = {
     class: false,
     version: true,
-    level: false,
+    level: true,
     length: length < 600,
   };
   let errorMessage = "";
@@ -78,7 +78,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
     let line = simCHeader[i];
 
     if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
-    else if (line.split("=")[0] === "level" && line.split("=")[1] === "70") checks.level = true;
+    else if (line.split("=")[0] === "level" && (line.split("=")[1] === "60" || line.split("=")[1] === "70")) checks.level = true;
   }
 
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";

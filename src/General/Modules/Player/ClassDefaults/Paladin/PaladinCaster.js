@@ -1,4 +1,4 @@
-export const paladinVenthyrSpellData = (contentType) => {
+export const paladinCasterSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
@@ -39,7 +39,7 @@ export const paladinVenthyrSpellData = (contentType) => {
   return spellList;
 };
 
-export const paladinVenthyrSpecialQueries = (contentType) => {
+export const paladinCasterSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
@@ -79,16 +79,16 @@ export const paladinVenthyrSpecialQueries = (contentType) => {
   return specialQueries;
 };
 
-export const paladinVenthyrStatWeights = (contentType) => {
+export const paladinCasterStatWeights = (contentType) => {
   let statWeights = {};
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.32,
-    crit: 0.26,
-    mastery: 0.31,
-    versatility: 0.28,
-    leech: 0.4,
+    haste: 0.39,
+    crit: 0.368,
+    mastery: 0.372,
+    versatility: 0.34,
+    leech: 0.55,
     defaults: true,
   };
   statWeights.Dungeon = {

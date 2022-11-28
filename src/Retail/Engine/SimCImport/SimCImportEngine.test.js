@@ -153,7 +153,6 @@ describe("Test Crafted Items", () => {
         expect(item.stats.mastery).toEqual(468);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
-        //expect(item.uniqueEquip).toEqual("crafted");
     });
 
     test("262 Crafted Items", () => {

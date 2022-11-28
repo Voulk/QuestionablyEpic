@@ -1,4 +1,4 @@
-export const paladinKyrianSpellData = (contentType) => {
+export const paladinMeleeSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
@@ -30,7 +30,7 @@ export const paladinKyrianSpellData = (contentType) => {
   return spellList;
 };
 
-export const paladinKyrianSpecialQueries = (contentType) => {
+export const paladinMeleeSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
@@ -65,24 +65,24 @@ export const paladinKyrianSpecialQueries = (contentType) => {
   return specialQueries;
 };
 
-export const paladinKyrianStatWeights = (contentType) => {
+export const paladinMeleeStatWeights = (contentType) => {
   let statWeights = {};
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.6,
-    crit: 0.53,
-    mastery: 0.59,
-    versatility: 0.55,
-    leech: 0.79,
+    haste: 0.411,
+    crit: 0.368,
+    mastery: 0.398,
+    versatility: 0.355,
+    leech: 0.55,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.64,
-    crit: 0.59,
-    mastery: 0.3,
-    versatility: 0.63,
+    haste: 0.416,
+    crit: 0.359,
+    mastery: 0.29,
+    versatility: 0.375,
     leech: 0.52,
     defaults: true,
   };
