@@ -37,19 +37,7 @@ export const classNameDB = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
   /* ---------------------------------------------------------------------------------------------- */
-  {
-    name: {
-      en: "Preservation Evoker",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
-    },
-    id: ["PreservationEvoker", "Preservation Evoker"],
-    cooldownPlannerMenu: true,
-    color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
-  },
+
   {
     name: {
       en: "Restoration Druid",
@@ -201,9 +189,6 @@ export const getTranslatedClassName = (className, currentLanguage) => {
       return obj.id.includes(className);
     })
     .map((obj) => obj.name[currentLanguage]);
-  console.log(className);
-  console.log(currentLanguage);
-  console.log(name);
   return name;
 };
 export const getClassColour = (className) => {

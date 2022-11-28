@@ -42,6 +42,16 @@ export const addBuff = (state, spell, spellName) => {
             
             if (buff.canStack) buff.stacks += 1;
         }
+    }
+    else if (spell.buffType === "function") {
+        const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
+            tickRate: spell.tickRate / getHaste(state.currentStats), canPartialTick: spell.canPartialTick || false, 
+            next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+        newBuff.attFunction = spell.function;
+        newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+        
+        state.activeBuffs.push(newBuff);
+
     }     
     else {
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
@@ -118,7 +128,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
-    if (stats.includes("crit")) mult *= (1 + critChance * currentStats['critMult']);
+    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * (currentStats['critMult'] || 1));
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
     return mult;
 }
@@ -153,6 +163,10 @@ export const getCurrentStats = (statArray, buffs) => {
 // Returns the players current haste percentage. 
 export const getHaste = (stats) => {
     return 1 + stats.haste / 170 / 100;
+}
+
+export const getCrit = (stats) => {
+    return 1 + stats.crit / 180 / 100;
 }
 
 export const addReport = (state, entry) => {

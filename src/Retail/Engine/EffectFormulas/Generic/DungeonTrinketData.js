@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
   {
@@ -133,11 +133,17 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+      
 
+      if (additionalData.player.getSpec() === "Discipline Priest") {
+          const buffValue = processedValue(data[0], itemLevel);
+          bonus_stats.hps = runDiscOnUseTrinket("Time-Breaching Talon", buffValue, additionalData.setStats, additionalData.castModel, additionalData.player)
+      }
+      else {
+        bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
+        bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
+      }
 
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
-
-      bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
 
       return bonus_stats;
     }
@@ -156,7 +162,7 @@ export const dungeonTrinketData = [
         secondaries: ['versatility'],
         cooldown: 120,
         mult: 5, // Singing Stone hits 1 target, and then bounces to 4.
-        efficiency: 0.9, //
+        efficiency: 0.7, //
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -214,15 +220,15 @@ export const dungeonTrinketData = [
       { 
         coefficient: 180.9063, // Note that this coefficient is for when the target is below 20% health.
         table: -8,
-        secondaries: ['versatility'],
+        secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: 0.78, //
+        efficiency: 0.85, //
+        targets: 5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) / data[0].cooldown;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
     }
@@ -262,7 +268,7 @@ export const dungeonTrinketData = [
         table: -7,
         stat: "crit",
         duration: 15,
-        cooldown: 90,
+        cooldown: 120,
       },
       { // This is the crit bonus effect. It's on a 20ppm.
         coefficient: 0.240273,
@@ -272,10 +278,19 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const critPerStack = processedValue(data[1], itemLevel)
-      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)-1)
 
-      bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+
+      const critPerStack = processedValue(data[1], itemLevel)
+      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
+
+      if (additionalData.player.getSpec() === "Discipline Priest") {
+
+        bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
+      }
+      else {
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+      }
+      
 
       return bonus_stats;
     }

@@ -50,7 +50,7 @@ export function getHighestStat(stats) {
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {
   let bonus_stats = {};
-  let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats};
+  let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)

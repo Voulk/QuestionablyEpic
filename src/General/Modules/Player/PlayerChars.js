@@ -15,7 +15,7 @@ import ClassicPlayer from "./ClassicPlayer";
 class PlayerChars {
   constructor() {
     // Check our local storage for our characters.
-    let playerChars = JSON.parse(ls.get("allCharDF")) || [];
+    let playerChars = JSON.parse(ls.get("allChar")) || []; // DF
 
     //
     let charArray = [];
@@ -48,7 +48,7 @@ class PlayerChars {
 
     this.allChar = charArray;
     /*this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)]; // This is the previous code. To be eventually removed */
-    this.activeChar = ls.get("activeCharDF") || 0;
+    this.activeChar = ls.get("activeChar") || 0; //activeCharDF
   }
 
   allChar = []; // An array of all our characters.
@@ -97,9 +97,9 @@ class PlayerChars {
   saveAllChar = () => {
     // Database TODO
 
-    // Local Storage
-    ls.set("allCharDF", JSON.stringify(this.allChar));
-    ls.set("activeCharDF", this.activeChar);
+    // Local Storage - Optional DF
+    ls.set("allChar", JSON.stringify(this.allChar));
+    ls.set("activeChar", this.activeChar);
   };
 
   // Add a new character to the array then save it.

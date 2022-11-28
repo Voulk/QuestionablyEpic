@@ -129,6 +129,19 @@ describe("Mote of Sanctification", () => {
     });
 });
 
+describe("Time-Breaching Talon", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Time-Breaching Talon");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${372}  | ${2919}
+    // add new test cases here
+    `.test("Time-Breaching Talon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
 describe("Horn of Valor", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Horn of Valor");;
@@ -229,6 +242,7 @@ describe("Alacritous Alchemist Stone", () => {
     });
 }); 
 
+/*
 describe("Darkmoon Deck: Dance", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Darkmoon Deck: Dance");
@@ -239,9 +253,9 @@ describe("Darkmoon Deck: Dance", () => {
 
     // add new test cases here
     `.test("Darkmoon Deck: Dance Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
+        expect(processedValue(effect, level)).toBe(expectedResult[0]);
     });
-});
+}); */
 
 
 /*

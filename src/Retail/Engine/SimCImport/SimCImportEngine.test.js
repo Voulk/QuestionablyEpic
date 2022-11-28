@@ -79,6 +79,7 @@ trinket2=,id=178298,bonus_id=6784/1485/6616
 main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
 `
 
+
 describe("Test Curve IDs", () => {
     test("Evoker Starting Items", () => {
         expect(processCurve(30725, 59)).toEqual(229)
@@ -100,18 +101,11 @@ describe("Test Regular Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
-    test("Cabochon of the Infinite Flight", () => {
-        const line = "neck=,id=185820,bonus_id=7731/7359/6652/7574/1543/664";
-        const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(226);
-        //expect(item.stats.haste).toEqual(135);
-        expect(item.effect).toEqual("");
-    });
     test("Stitchflesh's Misplaced Signet w/ Socket", () => {
         const line = "finger1=,id=178736,bonus_id=7389/7359/6652/6935/1540/6646";
         const item = processItem(line, player, contentType, type)
         //expect(item.stats.versatility).toEqual(77);
-        expect(item.socket).toEqual(true)
+        expect(item.socket).toEqual(1)
     });
     test("Perfectly Forged Credentials Effect Item", () => {
         const line = "neck=,id=187552,bonus_id=6652/7575";
@@ -137,7 +131,7 @@ describe("Test Crafted Items", () => {
         const item = processItem(line, player, contentType, type)
         expect(item.level).toEqual(230);
         //expect(item.stats.mastery).toEqual(63);
-        expect(item.socket).toEqual(true);
+        expect(item.socket).toEqual(1);
         //expect(item.uniqueEquip).toEqual("crafted");
     });
 
@@ -147,17 +141,19 @@ describe("Test Crafted Items", () => {
         expect(item.level).toEqual(230);
         //expect(item.stats.versatility).toEqual(63);
         //expect(item.stats.mastery).toEqual(0);
-        expect(item.socket).toEqual(true);
+        expect(item.socket).toEqual(1);
         //expect(item.uniqueEquip).toEqual("crafted");
     });
 
-    test("Shadowsteel Sabatons", () => {
-        const line = "feet=,id=171443,bonus_id=6893/7881,drop_level=60,crafted_stats=32/40";
+    test("Elemental Lariat", () => {
+        const line = "neck=,id=193001,gem_id=192980/192921/192920,bonus_id=8836/8840/8902/8960/8783/8782/8801/8791,crafted_stats=49/32";
         const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(262);
-        //expect(item.stats.versatility).toEqual(63);
-        //expect(item.stats.crit).toEqual(63);
-        expect(item.uniqueEquip).toEqual("crafted");
+        expect(item.level).toEqual(389);
+        expect(item.stats.crit).toEqual(468);
+        expect(item.stats.mastery).toEqual(468);
+        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
+        expect(item.socket).toEqual(3);
+        //expect(item.uniqueEquip).toEqual("crafted");
     });
 
     test("262 Crafted Items", () => {
@@ -177,8 +173,6 @@ describe("Test Legendary Items", () => {
         const line = "neck=,id=178927,bonus_id=6974/7194/6647/6648/6758/1532";
         const item = processItem(line, player, contentType, type)
         expect(item.level).toEqual(235);
-        expect(item.uniqueEquip).toEqual("legendary");
-        expect(item.effect).toEqual({type: "spec legendary", name: "Flash Concentration", level: 0});
     }); 
 
     test("Verdant Infusion on Gloves", () => {
@@ -186,8 +180,6 @@ describe("Test Legendary Items", () => {
         const item = processItem(line, player, contentType, type)
 
         expect(item.level).toEqual(225);
-        expect(item.uniqueEquip).toEqual("legendary");
-        expect(item.effect).toEqual({type: "spec legendary", name: "Verdant Infusion", level: 0});
     });
 });
 

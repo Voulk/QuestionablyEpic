@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
-import { covenantIcons, covenantColours } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { getTranslatedClassName } from "locale/ClassNames";
@@ -82,21 +81,10 @@ function TopGearReport(props) {
     itemList = topSet.itemList;
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
-    domGems = gameType === "Retail" && "domGemList" in topSet ? topSet.domGemList : "";
     statList = topSet.setStats;
 
     if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
-    if (domGems !== "") {
-      let domGemCounter = 0;
-      itemList.forEach((item) => {
-        if (item.hasDomSocket) {
-          item.domGemID = domGems[domGemCounter];
-          item.gemString = "&gems=" + domGems[domGemCounter];
-          domGemCounter += 1;
-        }
-      });
-    }
   } else {
     resultValid = false;
   }
@@ -261,20 +249,6 @@ function TopGearReport(props) {
                                           border: "1px solid " + classColoursJS(props.player.spec),
                                         })}
                                       </Tooltip>
-                                      {gameType === "Retail" ? (
-                                        <Tooltip title={t(props.player.covenant)} style={{ color: covenantColours(props.player.covenant) }} placement="top" arrow>
-                                          {covenantIcons(props.player.covenant, {
-                                            height: 22,
-                                            width: 22,
-                                            verticalAlign: "middle",
-                                            borderRadius: 4,
-                                            border: "1px solid" + covenantColours(props.player.covenant),
-                                            marginLeft: 4,
-                                          })}
-                                        </Tooltip>
-                                      ) : (
-                                        ""
-                                      )}
                                     </div>
 
                                     <Divider />

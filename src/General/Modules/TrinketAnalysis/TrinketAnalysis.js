@@ -173,7 +173,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [359, 372, 376, 379, 382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 423, 426];
+  const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 423, 426];
   
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(

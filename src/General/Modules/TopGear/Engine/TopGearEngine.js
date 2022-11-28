@@ -332,28 +332,31 @@ function enchantItems(bonus_stats, setInt, castModel) {
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 32; // 16 x 2.
-  enchants["Finger"] = "+16 " + highestWeight;
-
-  // Bracers
-  bonus_stats.intellect += 15;
-  enchants["Wrist"] = "+15 int";
+  bonus_stats[highestWeight] += 128; // 64 x 2.
+  enchants["Finger"] = "+64 " + highestWeight;
 
   // Chest
-  // The mana enchant is actually close in value to +30 int, but for speeds sake it is not currently included.
-  bonus_stats.intellect += 30;
-  enchants["Chest"] = "+30 stats";
+  // There is a mana option too that we might include later.
+  bonus_stats.intellect += 105; 
+  enchants["Chest"] = "Waking Stats";
 
   // Cape
-  bonus_stats.leech += 30;
-  enchants["Back"] = "+30 leech";
+  bonus_stats.leech += 75;
+  enchants["Back"] = "Regenerative Leech";
 
-  // Weapon - Celestial Guidance
+  // Wrists
+  bonus_stats.leech += 75;
+  enchants["Wrist"] = "Devotion of Leech";
+
+  // Legs - Also gives 3/4/5% mana.
+  bonus_stats.intellect += 177;
+  enchants["Legs"] = "Temporal Spellthread";
+
+  // Weapon - Sophic Devotion
   // Eternal Grace is so poor that it isn't even compared.
-  let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect += (setInt + bonus_stats.intellect) * 0.05 * expected_uptime;
-  enchants["CombinedWeapon"] = "Celestial Guidance";
-
+  let expected_uptime = convertPPMToUptime(1, 15);
+  bonus_stats.intellect += 932 * expected_uptime;
+  enchants["CombinedWeapon"] = "Sophic Devotion";
   return enchants;
 }
 
@@ -378,6 +381,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
+  console.log("SET STATS: " + JSON.stringify(setStats));
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;
@@ -408,12 +412,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
+  const enchants = userSettings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
 
   // Sockets
   const highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 16 * builtSet.setSockets;
-  enchants["Gems"] = highestWeight;
+  bonus_stats[highestWeight] += 88 * builtSet.setSockets;
+  //enchants["Gems"] = highestWeight;
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
@@ -434,28 +438,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
-  // Mechagon Rings
-  const mechaEffect = {
-    type: "special",
-    name: "",
-    ppm: 0,
-    ilvl: 0
-  }
-
-  itemSet.itemList.forEach(item => {
-    if (item.id === 169157) mechaEffect.ppm = 3.7; // Division
-    else if (item.id === 169158) mechaEffect.ppm = 3.8; // Recursion
-    else if (item.id === 169156) mechaEffect.ppm = 2.9; // Synergy
-    else if (item.id === 169076) mechaEffect.ppm = 1.6; // Maintenance
-
-    // Effects
-    if (item.id === 168977) {mechaEffect.name = "Rebooting Bit Band"; mechaEffect.ilvl = item.level; }
-    else if (item.id === 169159) { mechaEffect.name = "Overclocking Bit Band"; mechaEffect.ilvl = item.level; }
-    else if (item.id === 169161) { mechaEffect.name = "Protecting Bit Band"; mechaEffect.ilvl = item.level; }
-  })
-
-
-  if (mechaEffect.name !== "" && mechaEffect.ppm > 0) effectList.push(mechaEffect)
   //
 
   //effectStats.push(bonus_stats);
@@ -467,15 +449,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
-  // == Apply same set int bonus ==
-  // 5% int boost for wearing the same items.
-  // The system doesn't actually allow you to add items of different armor types so this is always on.
-  bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+
+  //bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
-
+    setStats.intellect *= 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList, reporting)
     if (reporting) report.ramp = setRamp;
     setStats.hps += setRamp.totalHealing / 180;
@@ -496,11 +477,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
     adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
     adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
-    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
+    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / (STATPERONEPERCENT.Retail.MASTERY / STATPERONEPERCENT.Retail.MASTERYMULT[player.spec]))) / 2;
     adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
+
+    // == Apply same set int bonus ==
+    // 5% int boost for wearing the same items.
+    // The system doesn't actually allow you to add items of different armor types so this is always on.
+    setStats.intellect *= 1.05;
+
     evalStats = setStats;
   }
 
@@ -529,14 +516,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
   if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 56;
-  }
-  // Fallen Order has a bug whereby having more than ~33% haste causes clones to behave irresponsibly and the average casts per clone drops heavily.
-  // A more precise formula could be offered by deducting the healing loss from the set. Instead this is a rather rougher patch which should automatically exclude
-  // any sets over the breakpoint. 
-  if (player.spec === "Mistweaver Monk") {
-    if (setStats.haste > 1120) hardScore -= 200;
-    else if (setStats.haste < 495) hardScore -= 75;
+    hardScore -= 500;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
@@ -601,8 +581,8 @@ function compileStats(stats, bonus_stats) {
 }
 
 function addBaseStats(stats, spec) {
-  stats.crit += 175;
-  stats.mastery += STATPERONEPERCENT.Retail.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
+  stats.crit += STATPERONEPERCENT.Retail.CRIT * 5;
+  stats.mastery += STATPERONEPERCENT.Retail.MASTERY * 8;
 
   return stats;
 }
