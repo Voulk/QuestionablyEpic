@@ -5253,6 +5253,22 @@ export const bossAbilities = {
         ru: "Хрупкая армия",
       },
     },
+
+    {
+      // https://www.wowhead.com/spell=370410/pulsing-flames
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 370410,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
+      importActive: true,
+      name: {
+        cn: "脉动烈焰",
+        de: "Pulsierende Flammen",
+        en: "Pulsing Flames",
+        fr: "Flammes vibrantes",
+        ru: "Пульсирующее пламя",
+      },
+    },
   ],
   2639: [
     /* ---------------------------------------------------------------------------------------------- */
@@ -6480,13 +6496,117 @@ export const bossAbilities = {
       },
     },
 
-    // https://www.wowhead.com/spell=384637/raging-winds
-    // https://www.wowhead.com/spell=391686/conductive-mark
-    // https://www.wowhead.com/spell=387627/blowback
-    // https://www.wowhead.com/spell=375424/raging-tempest
-    // https://www.wowhead.com/spell=384292/storm-bolt
-    // https://www.wowhead.com/spell=390449/thunderbolt
-    // https://www.wowhead.com/spell=388562/unstable-gusts
+    {
+      // https://www.wowhead.com/spell=384637/raging-winds
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 384637,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
+      importActive: false,
+      name: {
+        cn: "暴怒之风",
+        de: "Tobende Winde",
+        en: "Raging Winds",
+        fr: "Vents déchaînés",
+        ru: "Бушующие ветра",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=391686/conductive-mark
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391686,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
+      importActive: false,
+      name: {
+        cn: "传导印记",
+        de: "Leitfähiges Zeichen",
+        en: "Conductive Mark",
+        fr: "Marque conductrice",
+        ru: "Знак проводимости",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=387627/blowback
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 387627,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
+      importActive: false,
+      name: {
+        cn: "反冲",
+        de: "Gegenwind",
+        en: "Blowback",
+        fr: "Renvoi",
+        ru: "Встречный ветер",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375424/raging-tempest
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 375424,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_four_wind.jpg").default,
+      importActive: false,
+      name: {
+        cn: "狂怒风暴",
+        de: "Wütender Gewittersturm",
+        en: "Raging Tempest",
+        fr: "Tempête déchaînée",
+        ru: "Яростная буря",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=384292/storm-bolt
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 384292,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
+      importActive: false,
+      name: {
+        cn: "暴风箭",
+        de: "Sturmblitz",
+        en: "Storm Bolt",
+        fr: "Éclair de tempête",
+        ru: "Удар громовержца",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=390449/thunderbolt
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 390449,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_unrelentingstorm.jpg").default,
+      importActive: false,
+      name: {
+        cn: "雷霆之箭",
+        de: "Donnerblitz",
+        en: "Thunderbolt",
+        fr: "Trait de tonnerre",
+        ru: "Громовая стрела",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=388562/unstable-gusts
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388562,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind.jpg").default,
+      importActive: false,
+      name: {
+        cn: "无常阵风",
+        de: "Instabile Windstöße",
+        en: "Unstable Gusts",
+        fr: "Vents instables",
+        ru: "Нестабильные порывы",
+      },
+    },
   ],
   2605: [], //  Kurog Grimtotem
   2614: [], //  Broodkeeper Diurna
