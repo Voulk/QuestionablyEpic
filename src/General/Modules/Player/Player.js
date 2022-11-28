@@ -543,18 +543,16 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Melee Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 2));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3));
-      this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
+      this.castModels.push(new CastModel(spec, "Raid", "Caster Default", 2));
 
       this.activeStats = {
-        intellect: 6500,
-        haste: 2000,
+        intellect: 7000,
+        haste: 3200,
         crit: 1500,
-        mastery: 1800,
-        versatility: 1200,
+        mastery: 3100,
+        versatility: 1700,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
