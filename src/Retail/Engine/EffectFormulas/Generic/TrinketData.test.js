@@ -16,7 +16,7 @@ describe("Broodkeeper's Promise", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${398}  | ${[190, 2188]}
+    ${398}  | ${[95, 2188]}
     // add new test cases here
     `.test("Broodkeeper's Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);

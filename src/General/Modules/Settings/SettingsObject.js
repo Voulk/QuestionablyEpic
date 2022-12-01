@@ -4,7 +4,7 @@ const userSettings = {
 
     // Editable Settings
     enchantItems: false,
-    includeGroupBenefits: false,
+    includeGroupBenefits: true,
     autoSocket: false, // Automatically sockets viable items.
     dominationSockets: "auto",
     vaultDomGem: "none",

@@ -40,7 +40,7 @@ export default function SequenceSettings(props) {
     /* ------------------------------------ Retail Settings Shown ----------------------------------- */
     const possibleSettings = props.possibleSettings;
     const settingKeys = Object.keys(possibleSettings);
-    console.log(possibleSettings);
+    //console.log(possibleSettings);
   
 
   

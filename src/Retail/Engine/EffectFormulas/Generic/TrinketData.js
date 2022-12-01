@@ -31,7 +31,7 @@ export const raidTrinketData = [
       const versBoost = data[0].percentBoosted * data[0].boostValue + (1-data[0].percentBoosted)
       bonus_stats.versatility = processedValue(data[0], itemLevel, versBoost);
 
-      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versatilityBuff;
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility;
 
       // Healing Portion
       let healing = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * 2;

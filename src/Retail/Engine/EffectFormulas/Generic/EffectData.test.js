@@ -11,7 +11,7 @@ describe("Assembly Preserver's Band Data Check", () => {
 
     each`
     level   | expectedResult
-    ${379}  | ${25}
+    ${389}  | ${38338}
     // add new test cases here
     `.test("Assembly Preserver's Band Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
