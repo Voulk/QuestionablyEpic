@@ -1,16 +1,32 @@
 import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { effectData} from "./EffectData";
+import { embellishmentData } from "./EmbellishmentData";
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                         Generic Effects                                        */
 /* ---------------------------------------------------------------------------------------------- */
 // Generic effects (labelled "special" on the items themselves are effects attached to non-trinket items that don't fall into any other category)
 // Examples include the legendary cloak, Azshara's Staff, most Crucible of Storms items and so forth.
-// Shadowlands is light on them so far but we can expect to see more as the expansion progresses.
+// Dragonflight opened with a few, but there will be more over the expansion.
 
-export function getGenericEffect(effectName, player, contentType, itemLevel = 0, effectNotes = {}) {
+export function getGenericEffect(effectName, player, contentType, itemLevel = 0, setStats = {}, castModel = null, userSettings = {}) {
   let bonus_stats = {};
-  let activeEffect = effectData.find((effect) => effect.name === effectName);
+  
+  let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player};
+
+  /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
+  const effectsData = effectData.concat(embellishmentData/*, timewalkTrinketData*/)
+  let activeEffect = effectsData.find((effect) => effect.name === effectName);
+
+
+  if (activeEffect !== undefined) {
+    return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
+  }
+  else {
+    return {};
+  }
+
+  /*
 
   if (effectName === "Passable Credentials") {
     const effect = activeEffect.effects[0];
@@ -110,6 +126,7 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0,
   }
 
   return bonus_stats;
+  */
 }
 
 export function getDominationGemEffect(effectName, player, contentType, rank) {
