@@ -381,7 +381,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
-  console.log("SET STATS: " + JSON.stringify(setStats));
+
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;

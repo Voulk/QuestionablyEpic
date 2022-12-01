@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 export const classMenus = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  console.log(currentLanguage)
+
   const healerClasses = ["HolyPaladin", "RestorationDruid", "HolyPriest", "DisciplinePriest", "RestorationShaman", "MistweaverMonk", "PreservationEvoker"];
   const utilityClasses = ["HavocDemonHunter", "Warrior", "DeathKnight", "Druid", "ShadowPriest", "DevastationEvoker"];
 

@@ -175,7 +175,7 @@
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
-      "UpgradeFinder": "Upgrade Finder (Returns Wednesday)",
+      "UpgradeFinder": "Upgrade Finder (Returns Very Soon)",
       "SequenceSandbox": "Sequence Sandbox (Coming Soon)"
     },
     "Name": "Name",
@@ -311,7 +311,7 @@
       "FilterTooltip": "You can filter the graph by toggling these buttons"
     },
     "Submit": "Submit",
-    "Tier": "Tier",
+    "Tier": "Set",
     "TierSets": {
       "2Set": "2 Set HPS",
       "4Set": "4 Set HPS",

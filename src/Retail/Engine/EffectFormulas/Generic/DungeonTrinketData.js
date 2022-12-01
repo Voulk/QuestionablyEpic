@@ -222,7 +222,7 @@ export const dungeonTrinketData = [
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: 0.85, //
+        efficiency: 0.75, //
         targets: 5,
       },
     ],
