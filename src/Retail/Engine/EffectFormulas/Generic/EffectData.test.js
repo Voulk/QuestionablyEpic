@@ -1,21 +1,21 @@
-import { getProcessedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { getProcessedValue, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";
 
-describe("Passable Credentials Data Check", () => {
+describe("Assembly Preserver's Band Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeEffect = effectData.find((effect) => effect.name === "Passable Credentials");
+    const activeEffect = effectData.find((effect) => effect.name === "Assembly Preserver's Band");
     const effect = activeEffect.effects[0];
 
     each`
     level   | expectedResult
-    ${226}  | ${25}
+    ${389}  | ${38338}
     // add new test cases here
-    `.test("Passable Credientials Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+    `.test("Assembly Preserver's Band Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   
-        expect(true).toBe(true); // Holding the test file for new Dragonflight test cases.
+        expect(processedValue(effect, level)).toBe(expectedResult);
     });
 });
 

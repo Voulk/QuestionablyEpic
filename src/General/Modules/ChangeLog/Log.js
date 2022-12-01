@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 2,
+    date: "30 November",
+    changes: [ 
+      "Added Assembly Preserver's Band",
+      "Broodkeeper's Promise updated to match in-game nerfs.",
+  ]},
+  {
+    version: "10.0.2",
     update: 1,
     date: "28 November",
     changes: [ 

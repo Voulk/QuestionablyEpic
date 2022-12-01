@@ -46,7 +46,7 @@ export default function RetailSettings(props) {
   const [enchantItems, setEnchantItems] = useState(props.userSettings.enchantItems);
 
   /* -------------------------------------- Group Value State ------------------------------------- */
-  const [groupValue, setgroupValue] = useState(availableSettings.groupBenefits.value);
+  const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
 
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
@@ -81,6 +81,7 @@ export default function RetailSettings(props) {
     dispatch(togglePlayerSettings({...playerSettings, groupBenefit: value}));
     props.editSettings("includeGroupBenefits", value);
     setgroupValue(value);
+    console.log(props.userSettings);
   };
 
   const updateAutoSocketValue = (value) => {

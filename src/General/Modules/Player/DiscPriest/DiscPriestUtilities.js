@@ -8,7 +8,7 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
 
     // Baselines
     const discBaseline = allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false}, {}, [], false);
-    console.log("DISC BASELINE: " + discBaseline);
+    //console.log("DISC BASELINE: " + discBaseline);
     /*
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])
     const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, playstyle, ['Rapture'])
