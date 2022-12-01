@@ -311,7 +311,7 @@
       "FilterTooltip": "You can filter the graph by toggling these buttons"
     },
     "Submit": "Submit",
-    "Tier": "Tier",
+    "Tier": "Set",
     "TierSets": {
       "2Set": "2 Set HPS",
       "4Set": "4 Set HPS",

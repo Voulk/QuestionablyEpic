@@ -643,11 +643,6 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   let bonus_stats = {};
   let item_stats = { ...item.stats };
 
-  // Check if Dom Slot
-  if (item.hasDomSocket && "domGemID" in item && item.domGemID != 0) {
-    const effect = getDomGemEffect(item.domGemID);
-    bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
-  }
   // Calculate Effect.
   if (item.effect) {
     bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
@@ -681,7 +676,12 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add Retail Socket
   if (item.socket) {
-    score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+  }
+
+  // Add any group benefit, if we're interested in it.
+  if (userSettings.includeGroupBenefits && "bonus_stats" in item_stats && "allyStats" in bonus_stats) {
+    score += 0.35 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 
   // Classic specific sockets
