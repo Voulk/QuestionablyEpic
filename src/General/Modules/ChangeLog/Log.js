@@ -15,6 +15,8 @@ export const changeLog = [
     changes: [ 
       "Added Assembly Preserver's Band",
       "Broodkeeper's Promise updated to match in-game nerfs.",
+      "Added a lot more world quest trinkets.",
+      "Bugfix: The 'Ally Benefits' setting should once again work properly.",
   ]},
   {
     version: "10.0.2",

@@ -216,6 +216,78 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Dreamscape Prism                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Wind-Sealed Mana Capsule",
+    effects: [
+      { // Mana proc chance.
+        coefficient: 1.641399,
+        table: -7,
+        ppm: 1,
+      },
+      { // Mana Unleash
+        coefficient: 24.62098,
+        table: -7,
+        ppf: 1.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].ppm / 60;
+      bonus_stats.mana += processedValue(data[1], itemLevel) * data[1].ppf / 340 //additionalData.castModel.fightLength;
+      //bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Primal Ritual Shell                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Primal Ritual Shell",
+    effects: [
+      {  // Heal effect
+        coefficient: 165.8648,
+        table: -9,
+        secondaries: ['versatility', 'crit'],
+        efficiency: 0.75,
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Primal Ritual Shell                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Breezy Companion",
+    effects: [
+      {  // Heal effect
+        coefficient: 81.48583,
+        table: -9,
+        secondaries: ['versatility', 'crit'],
+        efficiency: 0.75,
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      return bonus_stats;
+    }
+  },
 
 
 ]
