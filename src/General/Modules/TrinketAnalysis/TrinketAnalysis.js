@@ -106,7 +106,7 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -130,15 +130,23 @@ export default function TrinketAnalysis(props) {
       1188, // De Other Side,
       1189, // Sanguine Depths,
       1194, // Tazavesh
+
+      1198, // Nokhud Offensive
+      1203, // The Azure Vault
+      1202, // Ruby Life Pools
+      1197, // Uldaman
+      1204, // Halls of Infusion
+      1199, // Neltharus
+      1196, // Brackenhide Hollow
+      1201, // Alge'thar Academy
+      721, // Halls of Valor
+      537, // Shadowmoon Burial Ground
+      313, // Jade Serpent
+      800, // Court of Stars
+
+
     ];
     const legionTimewalking = [
-      -24, // Legion Timewalking
-      707, // Vault of the Wardens
-      716, // Eye of Azshara
-      740, // Black Rook Hold
-      762, // Darkheart Thicket
-      767, // Neltharion's Lair
-      800, // Court of Stars
     ];
     const shadowlandsTheRest = [
       1192, // World Bosses

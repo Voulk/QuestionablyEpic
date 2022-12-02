@@ -318,7 +318,7 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const enemyTargets = 5;
+      const enemyTargets = additionalData.contentType === "Dungeon" ? 5 : 1;
 
       bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * enemyTargets;
 
