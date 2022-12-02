@@ -242,6 +242,20 @@ describe("Alacritous Alchemist Stone", () => {
     });
 }); 
 
+describe("Wind-Sealed Mana Capsule", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = otherTrinketData.find((trinket) => trinket.name === "Wind-Sealed Mana Capsule");;
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${316}  | ${[540, 8101]}
+    ${363}  | ${[1297, 19465]}
+    // add new test cases here
+    `.test("Wind-Sealed Mana Capsule Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+});
 /*
 describe("Darkmoon Deck: Dance", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
