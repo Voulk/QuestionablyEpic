@@ -41,6 +41,7 @@ class Item {
   source = {};
   onUse = false;
   setID = 0;
+  quality = 3;
   //canBeCatalyzed = false;
 
   // The stats on the item. These should already be adjusted for item level.
@@ -75,6 +76,7 @@ class Item {
     return !this.isCatalystItem && !this.isLegendary() && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
   }
 
+  /*
   getQualityColor() {
     const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity";
     if (isLegendary) return "#ff8000";
@@ -82,7 +84,22 @@ class Item {
     else if (this.level >= 340) return "#328CE3";
     else return "#1eff00";
 
+  } 
+  */
+  guessQualityColor() {
+    if (this.level >= 372) this.quality = 4;
+    else if (this.level >= 340) this.quality = 3;
+    else this.quality = 2;
   }
+
+  getQualityColor() {
+    const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity";
+    if (isLegendary) return "#ff8000";
+    else if (this.quality === 4) return "#a73fee";
+    else if (this.quality === 3) return "#328CE3";
+    else return "#1eff00";
+
+  } 
 
   isLegendary() {
     return this.effect !== "" && (this.effect.type === "unity" || this.effect.type === "spec legendary");

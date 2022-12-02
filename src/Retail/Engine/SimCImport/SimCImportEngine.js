@@ -193,8 +193,9 @@ export function processItem(line, player, contentType, type) {
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let uniqueTag = "";
+  let itemQuality = 3;
 
-  let specialAllocations = {}
+  let specialAllocations = {};
   let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
   let itemLevelGain = 0;
   
@@ -237,6 +238,9 @@ export function processItem(line, player, contentType, type) {
         itemSockets = idPayload["socket"];
       } else if ("base_level" in idPayload) {
         itemBaseLevel = idPayload["base_level"];
+      }
+      else if ("quality" in idPayload) {
+        itemQuality = idPayload["quality"];
       }
       else if (bonus_id === "41") {
         itemTertiary = "Leech";
@@ -337,10 +341,10 @@ export function processItem(line, player, contentType, type) {
       //item.id = 1044011
     } else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
-
+    item.quality = itemQuality;
     item.softScore = scoreItem(item, player, contentType);
 
-    return item;
+    return item;  
   } else {
     return null;
   }
