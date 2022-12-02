@@ -164,7 +164,7 @@ export function processCurve(curveID, dropLevel) {
         playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
         jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
 
-        return curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel);
+        return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
       }
     }
   }
@@ -318,7 +318,7 @@ export function processItem(line, player, contentType, type) {
   }
 
   // Add the new item to our characters item collection.
-  if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
+  if (itemLevel > 180 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
@@ -337,6 +337,7 @@ export function processItem(line, player, contentType, type) {
       //item.id = 1044011
     } else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
+
     item.softScore = scoreItem(item, player, contentType);
 
     return item;

@@ -139,21 +139,10 @@ describe("Top Gear full test", () => {
 
     });
 
-    /*
-    test("Test 1, Disc Priest Dom Gem Check", () => {
-        const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-        player.setDominationRanks({
-            "Shard of Bek": 2,
-            "Shard of Jas": 2,
-            "Shard of Rev": 2,
-            "Shard of Cor": 2,
-            "Shard of Tel": 2,
-            "Shard of Kyr": 2,
-            "Shard of Dyz": 4,
-            "Shard of Zed": 4,
-            "Shard of Oth": 4,
-          })
-        var lines = testDiscSet.split("\n");
+    test("Test 1, Holy Paladin Dragonflight Drakebreaker's set", () => {
+        const player = new Player("ub", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
+
+        var lines = drakebreakersPaladin.split("\n");
 
         for (var line = 0; line < lines.length; line++) {
             const item = processItem(lines[line], player, "Raid", "Regular")
@@ -162,16 +151,61 @@ describe("Top Gear full test", () => {
         }
         //console.log(player.activeItems);
         const wepCombos = buildWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {replaceDomGems: true}, player.getActiveModel("Raid"))
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+        const setEffects = result.itemSet.effectList;
 
-        const chaosBane = result.itemSet.effectList.filter((effect) => effect.name === "Chaos Bane");
+        expect(setEffects.filter(effect => effect.name === "Drakebreaker's Versatility").length).toEqual(1);
 
-        expect(chaosBane[0].rank).toEqual(4);
+    });
 
-        //console.log(gemSetFilter);
-    }) */
 
 });
+
+const drakebreakersPaladin = `
+# Ubpal - Holy - 2022-12-01 22:59 - US/Tichondrius
+# SimC Addon 10.0.2-03
+# WoW 10.0.2.46879, TOC 100002
+# Requires SimulationCraft 1000-01 or newer
+ 
+paladin="Ubpal"
+level=70
+race=draenei
+region=us
+server=tichondrius
+role=attack
+professions=alchemy=90/enchanting=50
+spec=holy
+ 
+talents=BEEAwtJ2KpR8WbGzhz/jy2AP8AAAAAAQSAAAAAAAUSCClIJp0EpIBlEolcgENRkkiEJJRJFJBFEB
+ 
+# Saved Loadout: mplus
+# talents=BEEAwtJ2KpR8WbGzhz/jy2AP8AAAAAAQSAAAAAAAUSCClIJp0EpIBlEolcgENRkkiEJJRJFJBFEB
+ 
+covenant=necrolord
+soulbind=plague_deviser_marileth:4,323074/213:11:1/323091/133:11:1/323081/177:11:1/283:11:1/323095/194:11:1/352108/129:11:1/352110
+# soulbind=emeni:5,342156/213:11:1/323921/161:11:1/324440/129:11:1/133:11:1/323919/177:11:1/351093/159:11:1/351094
+# soulbind=bonesmith_heirmir:10,326514/213:11:1/326507/159:11:1/326512/129:11:1/133:11:1/326572/194:11:1/350935/161:11:1/350936
+# conduits_available=164:11/167:11/176:11/177:11/182:11/184:11/193:11/194:11/195:11/196:11/213:11/284:11/142:11/159:11/161:11/163:11/129:11/133:11/141:11/197:11/209:11/283:11
+renown=80
+ 
+head=,id=193663,bonus_id=7977/6652/7937/8816/1594/8767
+neck=,id=195210,bonus_id=8776/8984,drop_level=70
+shoulder=,id=193741,bonus_id=7977/6652/8813/1594/8767
+back=,id=198961,enchant_id=6593,bonus_id=8978/6652/8815/1488/8766
+chest=,id=198582,bonus_id=8978/42/8816/1475/5855/8766
+wrist=,id=193698,bonus_id=7977/6652/7936/8815/1594/8767
+hands=,id=192008,bonus_id=6652/1468/8766
+waist=,id=193669,bonus_id=7974/41/7937/8814/1568/8766
+legs=,id=194350,bonus_id=8768,drop_level=70
+feet=,id=198583,bonus_id=8978/6652/8814/1488/8766
+finger1=,id=202117,enchant_id=6566
+finger2=,id=193804,bonus_id=7976/6652/7936/1581/8766
+trinket1=,id=193718,bonus_id=7977/6652/1594/8767
+trinket2=,id=198407,bonus_id=6652/1414/5858/8766
+main_hand=,id=197932,bonus_id=6652/1488/8766
+off_hand=,id=193645,bonus_id=7977/42/1594/8767
+
+`
 
 const testDiscSet = `
 head=,id=186325,gem_id=187286,bonus_id=7188/6652/1485/6646

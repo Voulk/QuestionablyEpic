@@ -24,5 +24,24 @@ export const effectData = [
       return bonus_stats;
     }
   },
+  {
+    /* -------------------- */
+    /* Drakebreaker's Versatility                       
+    /* -------------------- */
+    /* Flat 105 Versatility. We don't need to do anything fancy for it, just return 105 vers.
+    */
+    name: "Drakebreaker's Versatility",
+    effects: [
+      { 
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.versatility = 105;
+
+      return bonus_stats;
+    }
+  },
 
 ]
