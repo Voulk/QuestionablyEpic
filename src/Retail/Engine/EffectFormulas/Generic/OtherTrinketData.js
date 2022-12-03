@@ -211,8 +211,8 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
-      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      // Currently doesn't work.
+      //bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
       //bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
       return bonus_stats;
     }

@@ -118,26 +118,6 @@ describe("Top Gear full test", () => {
     });
 
 
-    // TODO: Tier Set Check
-    test("Test 1, Resto Druid Tier Check", () => {
-        const player = new Player("Mock31", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-
-        var lines = testDruidSetTier.split("\n");
-
-        for (var line = 0; line < lines.length; line++) {
-            const item = processItem(lines[line], player, "Raid", "Regular")
-            if (item) player.addActiveItem(item);
-
-        }
-        //console.log(player.activeItems);
-        const wepCombos = buildWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
-        const setEffects = result.itemSet.effectList;
-
-        expect(setEffects.filter(effect => effect.name === "Druid T28-2").length).toEqual(1);
-        expect(setEffects.filter(effect => effect.name === "Druid T28-4").length).toEqual(1);
-
-    });
 
     test("Test 1, Holy Paladin Dragonflight Drakebreaker's set", () => {
         const player = new Player("ub", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
@@ -157,6 +137,29 @@ describe("Top Gear full test", () => {
         expect(setEffects.filter(effect => effect.name === "Drakebreaker's Versatility").length).toEqual(1);
 
     });
+
+        // TODO: Revise and bring this back.
+        test("Test 1, Resto Druid Tier Check", () => {
+            const player = new Player("Mock31", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    
+            var lines = testDruidSetTier.split("\n");
+    
+            for (var line = 0; line < lines.length; line++) {
+                const item = processItem(lines[line], player, "Raid", "Regular")
+                if (item) player.addActiveItem(item);
+    
+            }
+            //console.log(player.activeItems);
+            const wepCombos = buildWepCombos(player, true);
+            const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+            const setEffects = result.itemSet.effectList;
+    
+            
+    
+            expect(setEffects.filter(effect => effect.name === "Druid T28-2").length).toEqual(1);
+            expect(setEffects.filter(effect => effect.name === "Druid T28-4").length).toEqual(1);
+    
+        });
 
 
 });
@@ -278,5 +281,5 @@ finger2=,id=178824,enchant_id=6166,bonus_id=7383/7359/6652/7193/1521/6646
 trinket1=,id=188263,bonus_id=7189/6652/1498/6646
 trinket2=,id=185818,bonus_id=7595/7359/6652/1527/6646
 main_hand=,id=189754,bonus_id=7189/6652/1498/6646
-off_hand=,id=178478,bonus_id=7145/1472/6616
+off_hand=,id=178478,bonus_id=7145/1512/6616
 `

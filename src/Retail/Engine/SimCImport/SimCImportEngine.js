@@ -322,6 +322,7 @@ export function processItem(line, player, contentType, type) {
   }
 
   // Add the new item to our characters item collection.
+
   if (itemLevel > 180 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
