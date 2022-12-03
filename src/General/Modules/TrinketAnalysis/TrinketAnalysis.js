@@ -115,9 +115,11 @@ export default function TrinketAnalysis(props) {
   const sourceHandler = (array, sources) => {
     let results = [];
     const shadowlandsRaids = [
-      1190, // Castle Nathria
-      1193, // Sanctum of Domination
-      1195, // Sepulcher
+      //1190, // Castle Nathria
+      //1193, // Sanctum of Domination
+      //1195, // Sepulcher
+      1200, // Vault of the Incarnates
+
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
