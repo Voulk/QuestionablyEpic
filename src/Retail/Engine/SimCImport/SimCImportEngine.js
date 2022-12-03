@@ -164,7 +164,7 @@ export function processCurve(curveID, dropLevel) {
         playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
         jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
 
-        return curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel);
+        return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
       }
     }
   }
@@ -193,8 +193,9 @@ export function processItem(line, player, contentType, type) {
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let uniqueTag = "";
+  let itemQuality = 3;
 
-  let specialAllocations = {}
+  let specialAllocations = {};
   let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
   let itemLevelGain = 0;
   
@@ -237,6 +238,9 @@ export function processItem(line, player, contentType, type) {
         itemSockets = idPayload["socket"];
       } else if ("base_level" in idPayload) {
         itemBaseLevel = idPayload["base_level"];
+      }
+      else if ("quality" in idPayload) {
+        itemQuality = idPayload["quality"];
       }
       else if (bonus_id === "41") {
         itemTertiary = "Leech";
@@ -318,7 +322,8 @@ export function processItem(line, player, contentType, type) {
   }
 
   // Add the new item to our characters item collection.
-  if (itemLevel > 60 && itemID !== 0 && getItem(itemID) !== "") {
+
+  if (itemLevel > 180 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
@@ -337,9 +342,10 @@ export function processItem(line, player, contentType, type) {
       //item.id = 1044011
     } else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
+    item.quality = itemQuality;
     item.softScore = scoreItem(item, player, contentType);
 
-    return item;
+    return item;  
   } else {
     return null;
   }

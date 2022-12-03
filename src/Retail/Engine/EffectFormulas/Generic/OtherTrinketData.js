@@ -42,6 +42,7 @@ export const otherTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.mana = 48300 / 420; // This is worse than using an Innervate potion, but that will be added later. 
 
       // TODO: Add potion.
 
@@ -210,8 +211,8 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
-      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      // Currently doesn't work.
+      //bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
       //bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
       return bonus_stats;
     }

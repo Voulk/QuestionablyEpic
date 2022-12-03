@@ -155,11 +155,6 @@ describe("Test Crafted Items", () => {
         expect(item.socket).toEqual(3);
     });
 
-    test("262 Crafted Items", () => {
-        const line = "finger1=,id=173133,enchant_id=6166,gem_id=173128,bonus_id=6647/7881/7960,drop_level=60,crafted_stats=32"
-        const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(262);
-    })
 
 });
 

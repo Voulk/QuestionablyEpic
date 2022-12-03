@@ -12,6 +12,7 @@ const userSettings = {
     upFinderToggle: "percent",
     catalystLimit: 1,
     upFinderLeech: false,
+    whisperingIncarnateIcon: "Frost",
 
     manaProfile: "Standard",
     raidBuffs: false,
