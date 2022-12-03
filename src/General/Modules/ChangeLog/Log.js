@@ -10,13 +10,22 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 3,
+    date: "3 December",
+    changes: [ 
+      "Added the Drakebreaker set bonuses",
+      "Imported items now match in-game quality instead of being estimates.",
+      "Bugfix: The 'Ally Benefits' setting should work.",
+      "Bugfix: The Trinket Chart toggle buttons should work again.",
+  ]},
+  {
+    version: "10.0.2",
     update: 2,
     date: "30 November",
     changes: [ 
       "Added Assembly Preserver's Band",
       "Broodkeeper's Promise updated to match in-game nerfs.",
       "Added a lot more world quest trinkets.",
-      "Bugfix: The 'Ally Benefits' setting should once again work properly.",
   ]},
   {
     version: "10.0.2",

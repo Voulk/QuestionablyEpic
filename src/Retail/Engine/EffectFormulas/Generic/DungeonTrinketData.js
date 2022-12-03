@@ -162,13 +162,14 @@ export const dungeonTrinketData = [
         secondaries: ['versatility'],
         cooldown: 120,
         mult: 5, // Singing Stone hits 1 target, and then bounces to 4.
-        efficiency: 0.7, //
+        efficiency: 0.62, //
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult * data[0].efficiency, "round") * player.getStatMults(data[0].secondaries) / data[0].cooldown;
+
       return bonus_stats;
     }
   },
@@ -222,7 +223,7 @@ export const dungeonTrinketData = [
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: 0.75, //
+        efficiency: 0.7, //
         targets: 5,
       },
     ],
