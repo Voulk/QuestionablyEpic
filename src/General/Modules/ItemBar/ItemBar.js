@@ -219,7 +219,7 @@ export default function ItemBar(props) {
 
   const isItemShadowlandsLegendary = getItemDB("Retail")
     .filter((key) => key.id === itemID)
-    .map((key) => key.shadowlandsLegendary)[0];
+    .map((key) => key.shadowlandsLegendary)[0]; // Change this to crafted.
 
   const isItemDomination =
     getItemDB("Retail")
