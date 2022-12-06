@@ -130,7 +130,7 @@ export default function ItemBar(props) {
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
 
         //if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
-        //else item.uniqueEquip = "legendary";
+        //item.uniqueEquip = "legendary";
         let bonusString = "";
         if (missives.includes("Haste")) bonusString += ":6649";
         if (missives.includes("Mastery")) bonusString += ":6648";
