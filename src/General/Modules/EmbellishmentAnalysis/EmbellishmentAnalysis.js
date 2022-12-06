@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
+import { embellishmentDB } from "Databases/EmbellishmentDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
 import MetricToggle from "./MetricToggle";
 // import Settings from "../Settings/Settings";
@@ -107,7 +108,7 @@ export default function EmbellishmentAnalysis(props) {
 
   //const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
 
-  const db = dominationGemDB.filter((gem) => gem.effect.rank === 0);
+  const db = embellishmentDB.filter((gem) => gem.effect.rank === 0);
   const helpText = [t("DominationSocketAnalysis.HelpText")];
   const classes = useStyles();
 
@@ -116,12 +117,12 @@ export default function EmbellishmentAnalysis(props) {
   for (var i = 0; i < db.length; i++) {
     const domGem = db[i];
     let gemAtLevels = {
-      id: domGem.gemID,
+      id: domGem.id,
       name: domGem.name["en"],
     };
 
     for (var x = 1; x <= 5; x++) {
-      gemAtLevels["r" + x] = getDomScoreAtRank(domGem.name["en"], x - 1, props.player, contentType, metric);
+      gemAtLevels["r" + x] = 0 // getDomScoreAtRank(domGem.name["en"], x - 1, props.player, contentType, metric);
     }
     activeGems.push(gemAtLevels);
   }
@@ -150,7 +151,7 @@ export default function EmbellishmentAnalysis(props) {
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<DomChart data={activeGems} db={db} />}
+                {<EmbelChart data={activeGems} db={db} />}
               </Paper>
             </Grid>
           </Grid>
