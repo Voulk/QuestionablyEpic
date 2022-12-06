@@ -231,7 +231,6 @@ export function processItem(line, player, contentType, type) {
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k].toString();
     let idPayload = bonus_IDs[bonus_id];
-    console.log(bonus_id + ": " + JSON.stringify(idPayload));
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevelGain += idPayload["level"];
