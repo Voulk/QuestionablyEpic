@@ -107,11 +107,7 @@ describe("Test Regular Items", () => {
         //expect(item.stats.versatility).toEqual(77);
         expect(item.socket).toEqual(1)
     });
-    test("Perfectly Forged Credentials Effect Item", () => {
-        const line = "neck=,id=187552,bonus_id=6652/7575";
-        const item = processItem(line, player, contentType, type)
-        expect(item.effect).toEqual({type: "special", name: "Passable Credentials"});
-    });
+
     test("Origin BoE Cape - Of the Aurora", () => {
         const line = "back=,id=190334,enchant_id=6204,bonus_id=7189/8072/8133/8138/1472/6646";
         const item = processItem(line, player, contentType, type)
