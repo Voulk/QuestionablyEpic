@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 4,
+    date: "5 December",
+    changes: [ 
+      "Crafted items can now be added manually via the Item Bar.",
+      "Fixed a bug with Mistweaver & Evoker dungeon stat valuation.",
+      "Bugfix: Leveling items should once again import correctly.",
+  ]},
+  {
+    version: "10.0.2",
     update: 3,
     date: "3 December",
     changes: [ 

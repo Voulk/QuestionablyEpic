@@ -10,6 +10,13 @@
     "Crit": "Crit",
     "Mastery": "Mastery",
     "Versatility": "Versatility",
+    "Haste / Mastery": "Haste / Mastery",
+    "Haste / Crit": "Haste / Crit",
+    "Haste / Versatility": "Haste / Versatility",
+    "Mastery / Versatility": "Mastery / Versatility",
+    "Crit / Mastery": "Mastery / Crit",
+    "Crit / Versatility": "Crit / Versatility",
+
     "Leech": "Leech",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Cancel",
