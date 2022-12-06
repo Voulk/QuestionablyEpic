@@ -5102,11 +5102,11 @@ export const bossAbilities = {
     },
     // https://www.wowhead.com/spell=370342/eruption
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 370342,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "喷发",
         de: "Eruption",
@@ -5117,11 +5117,11 @@ export const bossAbilities = {
     },
     // https://www.wowhead.com/spell=373327/destruction
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 373327,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_gizmo_supersappercharge.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "毁灭",
         de: "Zerstörung",
@@ -5132,11 +5132,11 @@ export const bossAbilities = {
     },
     // https://www.wowhead.com/beta/spell=396028/molten-spike
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 396028,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/trade_engineering.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "",
         de: "",
@@ -5147,11 +5147,11 @@ export const bossAbilities = {
     },
     // https://www.wowhead.com/beta/spell=396022/molten-spikes
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 396022,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_fomor_boss_pillar02.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "",
         de: "",
@@ -5188,21 +5188,6 @@ export const bossAbilities = {
         en: "Leaping Flames",
         fr: "",
         ru: "",
-      },
-    },
-    // https://www.wowhead.com/spell=390715/primal-rifts
-    {
-      cooldownPlannerActive: true,
-      createEvent: false,
-      guid: 390715,
-      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_head_dragon_01.jpg").default,
-      importActive: true,
-      name: {
-        cn: "原始裂隙",
-        de: "Urtümliche Risse",
-        en: "Primal Rifts",
-        fr: "Failles primordiales",
-        ru: "Изначальный портал",
       },
     },
 
@@ -5244,7 +5229,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 370307,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "坍缩军团",
         de: "Kollabierende Armee",
@@ -5257,16 +5242,32 @@ export const bossAbilities = {
     {
       // https://www.wowhead.com/spell=370410/pulsing-flames
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 370410,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "脉动烈焰",
         de: "Pulsierende Flammen",
         en: "Pulsing Flames",
         fr: "Flammes vibrantes",
         ru: "Пульсирующее пламя",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=370410/pulsing-flames
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 390715,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_head_dragon_01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "火焰裂隙",
+        de: "Flammenriss",
+        en: "Flamerift",
+        fr: "Faille enflammée",
+        ru: "Пламенный портал",
       },
     },
   ],

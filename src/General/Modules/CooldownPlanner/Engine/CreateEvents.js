@@ -25,6 +25,7 @@ import createFatescribeEvents from "./BossEvents/SanctumEvents/Fatescribe";
 import createKelthuzadEvents from "./BossEvents/SanctumEvents/Kelthuzad";
 import createGuardianEvents from "./BossEvents/SanctumEvents/Guardian";
 import createSylvanusEvents from "./BossEvents/SanctumEvents/Sylvanus";
+import createEranogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/1. Eranog"
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy) {
   let returnedEvents = [];
@@ -127,6 +128,10 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   /* ------------------------------------------- Jailer ------------------------------------------- */
   if (bossID === 2537) {
     returnedEvents = createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  if (bossID === 2587) {
+    returnedEvents = createEranogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
   }
 
   return returnedEvents;
