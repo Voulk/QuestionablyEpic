@@ -231,6 +231,7 @@ export function processItem(line, player, contentType, type) {
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k].toString();
     let idPayload = bonus_IDs[bonus_id];
+    console.log(bonus_id + ": " + JSON.stringify(idPayload));
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevelGain += idPayload["level"];
@@ -239,28 +240,10 @@ export function processItem(line, player, contentType, type) {
       } else if ("base_level" in idPayload) {
         itemBaseLevel = idPayload["base_level"];
       }
-      else if ("quality" in idPayload) {
-        itemQuality = idPayload["quality"];
-      }
       else if (bonus_id === "41") {
         itemTertiary = "Leech";
-      } else if (bonus_id === "7886" && itemID !== 171323) {
-        // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.
-        // Cosmic Protoweave
-        itemEffect = {
-          type: "special",
-          name: "Cosmic Protoweave",
-          level: itemLevel,
-        };
-      } else if (bonus_id === "7960" && itemID !== 171323) {
-        // This is a temporary measure to stop them from overwriting the Alch Stone effect. TODO.) {
-        // Cosmic Protoweave
-        itemEffect = {
-          type: "special",
-          name: "Ephemera Harmonizing Stone",
-          level: itemLevel,
-        };
-      } else if ("rawStats" in idPayload) {
+      }
+       else if ("rawStats" in idPayload) {
         idPayload["rawStats"].forEach((stat) => {
           if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
             let statName = stat["name"].toLowerCase();
@@ -271,21 +254,26 @@ export function processItem(line, player, contentType, type) {
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
         levelOverride = processCurve(curve, dropLevel);
+        console.log("Curve ID " + idPayload["curveId"] + ": " + levelOverride);
 
       } else if ("name_override" in idPayload) {
-        if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
-          // Unity
-          itemEffect = {
-            type: "unity",
-            name: "Unity",
-            level: 0, // Irrelevant to legendaries.
-          };
-        } else {
+          if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
+            // Unity
+            itemEffect = {
+              type: "unity",
+              name: "Unity",
+              level: 0, // Irrelevant to legendaries.
+            };
+          } 
         }
-        // Legendaries
+        if ("quality" in idPayload) {
+          itemQuality = idPayload["quality"];
+        } 
+        else {
+        }
+
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
-      }
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
