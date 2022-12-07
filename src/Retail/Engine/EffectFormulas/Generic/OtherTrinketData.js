@@ -211,8 +211,8 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      // Currently doesn't work.
-      //bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      // The mana proc currently gives 1 MP5 while active.
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
       //bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
       return bonus_stats;
     }
@@ -257,7 +257,7 @@ export const otherTrinketData = [
         coefficient: 165.8648,
         table: -9,
         secondaries: ['versatility', 'crit'],
-        efficiency: 0.75,
+        efficiency: 0.70,
         ppm: 2,
       },
     ],
