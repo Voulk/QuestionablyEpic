@@ -10,6 +10,7 @@ import ReactGA from "react-ga";
 import { dominationGemDB } from "Databases/DominationGemDB";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
+import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "./MetricToggle";
 // import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
@@ -64,11 +65,12 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(100 * estHPS) / 100;
 }
 
-const getDomScoreAtRank = (effectName, rank, player, contentType, metric) => {
-  const gemEffect = getDominationGemEffect(effectName, player, contentType, rank);
-
+const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric) => {
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, {});
+  console.log(effectName + ": " + itemLevel)
+  console.log(effect);
   if (metric === "hps") {
-    return 0 //getEstimatedHPS(gemEffect, player, contentType);
+    return getEstimatedHPS(effect, player, contentType) || 0 //getEstimatedHPS(gemEffect, player, contentType);
   } else if (metric === "dps") {
     return 0 //Math.round(100 * gemEffect.dps) / 100 || 0;
   }
@@ -106,7 +108,7 @@ export default function EmbellishmentAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const [metric, setMetric] = React.useState("hps");
 
-  //const itemLevels = [187, 194, 200, 207, 213, 220, 226, 230, 233, 239, 246, 252, 259];
+  const itemLevels = [356, 369, 382, 395, 408];
 
   const db = embellishmentDB.filter((gem) => gem.effect.rank === 0);
   const helpText = [t("DominationSocketAnalysis.HelpText")];
@@ -121,8 +123,8 @@ export default function EmbellishmentAnalysis(props) {
       name: domGem.name["en"],
     };
 
-    for (var x = 1; x <= 5; x++) {
-      gemAtLevels["r" + x] = 0 // getDomScoreAtRank(domGem.name["en"], x - 1, props.player, contentType, metric);
+    for (var x = 0; x < itemLevels.length; x++) {
+      gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.name["en"], itemLevels[x], props.player, contentType, metric);
     }
     activeGems.push(gemAtLevels);
   }

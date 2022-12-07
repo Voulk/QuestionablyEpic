@@ -9,8 +9,8 @@ const getRankDiff = (rank, map2) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */
   if (rank > 0) {
     // added a or 0 to handle NANs
-    return (map2["r" + rank] - map2["r" + (rank-1)]) || 0;
-  } else if (rank == 0) {
+    return (map2["r" + rank] - map2["r" + (rank-13)]) || 0;
+  } else if (rank == 356) {
     return map2["r" + rank];
   } else {
     return 0;
@@ -53,14 +53,14 @@ export default class EmbelChart extends PureComponent {
         arr.push({
           name: map2.id,
           //i161: map2.i161,
-          1: map2.r1,
-          2: getRankDiff(2, map2),
-          3: getRankDiff(3, map2),
-          4: getRankDiff(4, map2),
-          5: getRankDiff(5, map2)
+          356: map2.r356,
+          369: getRankDiff(369, map2),
+          382: getRankDiff(382, map2),
+          395: getRankDiff(395, map2),
+          408: getRankDiff(408, map2)
         });
       });
-
+    console.log(arr);
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
@@ -123,11 +123,11 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          <Bar dataKey={1} fill={"#208c81"} stackId="a" />
-          <Bar dataKey={2} fill={"#2aa497"} stackId="a" />
-          <Bar dataKey={3} fill={"#34bdad"} stackId="a" />
-          <Bar dataKey={4} fill={"#3ed6c4"} stackId="a" />
-          <Bar dataKey={5} fill={"#49f0db"} stackId="a" />
+          <Bar dataKey={356} fill={"#208c81"} stackId="a" />
+          <Bar dataKey={369} fill={"#2aa497"} stackId="a" />
+          <Bar dataKey={382} fill={"#34bdad"} stackId="a" />
+          <Bar dataKey={395} fill={"#3ed6c4"} stackId="a" />
+          <Bar dataKey={408} fill={"#49f0db"} stackId="a" />
 
         </BarChart>
       </ResponsiveContainer>

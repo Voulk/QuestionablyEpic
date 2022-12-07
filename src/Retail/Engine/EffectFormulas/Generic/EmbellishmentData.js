@@ -1,7 +1,16 @@
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, effect) => {
-  return {};
+
+    let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
+    let additionalData = {};
+
+    if (activeEffect !== undefined) {
+      return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
+    }
+    else {
+      return {};
+    }
 
 }
 
@@ -51,6 +60,7 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
+          bonus_stats.haste = 300; // Testing
           return bonus_stats;
         }
       },

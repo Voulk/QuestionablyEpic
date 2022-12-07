@@ -304,7 +304,7 @@ export function getItemIcon(id, gameType = "Retail") {
 }
 
 export function getEmbellishmentIcon(id) {
-  const gem = embellishmentDB.filter((embel) => embel.id === id);
+  const embel = embellishmentDB.filter((embel) => embel.id === id);
 
   if (embel[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
