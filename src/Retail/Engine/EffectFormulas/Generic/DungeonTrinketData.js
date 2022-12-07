@@ -92,7 +92,7 @@ export const dungeonTrinketData = [
         table: -1,
         duration: 15,
         cooldown: 180,
-        efficiency: 0.4, // The rune is tiny.
+        efficiency: 0.25, // The rune is tiny. This functionally is incompatible with most fight designs.
       },
       { // -Crit Portion
         coefficient: 0.907077, 
