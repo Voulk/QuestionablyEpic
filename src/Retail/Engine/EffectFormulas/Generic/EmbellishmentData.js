@@ -1,3 +1,4 @@
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, effect) => {
@@ -21,7 +22,7 @@ export const embellishmentData = [
         /* ---------------------------------------------------------------------------------------------- */
         /* Chance to gain X of your highest secondary stat, and lose X of your lowest secondary stat. 
         */
-        name: "Potent Venom",
+        name: "Venom-Steeped Stompers",
         effects: [
           { 
             coefficient: 0.722681,
@@ -51,16 +52,236 @@ export const embellishmentData = [
         name: "Elemental Lariat",
         effects: [
           { 
-            coefficient: 0.722681,
+            coefficient: 0.482408,
             table: -7,
-            duration: 10,
+            duration: 12,
             ppm: 2,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          bonus_stats.haste = 300; // Testing
+          const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
+          bonus_stats[playerBestSecondary] = runGenericPPMTrinket(data[0], itemLevel); // Testing
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Magazine of Healing Darts                       
+        /* -------------------- */
+        /* Sometimes fire a healing dart on heals.
+        */
+        name: "Magazine of Healing Darts",
+        effects: [
+          { 
+            coefficient: 44.02832,
+            table: -8,
+            ppm: 2,
+            secondaries: ['haste', 'crit', 'versatility'],
+            efficiency: 0.8,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Bronzed Grip Wrappings                      
+        /* -------------------- */
+        /* 
+        */
+        name: "Bronzed Grip Wrappings",
+        effects: [
+          { 
+            coefficient: 3.268828,
+            table: -7,
+            ppm: 4,
+            secondaries: ['haste', 'crit', 'versatility'],
+            efficiency: 0.84,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Blue Silken Lining                    
+        /* -------------------- */
+        /* Mastery while above 90% health.
+        */
+        name: "Blue Silken Lining",
+        effects: [
+          { 
+            coefficient: 0.20209,
+            table: -7,
+            uptime: 0.65,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.mastery = processedValue(data[0], itemLevel) * data[0].uptime;
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Shield of the Hearth                       
+        /* -------------------- */
+        /* Vers proc on damage taken
+        */
+        name: "Shield of the Hearth",
+        effects: [
+          { 
+            coefficient: 0.350165,
+            table: -7,
+            duration: 15,
+            ppm: 2.2,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel); // Testing
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Allied Wristguard of Companionship                  
+        /* -------------------- */
+        /* Mastery while above 90% health.
+        */
+        name: "Allied Wristguard of Companionship",
+        effects: [
+          { 
+            coefficient: 0.052152,
+            table: -7,
+            stacks: 3.9,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].stacks;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Toxic Thorn Footwraps (Thriving Thorns)               
+        /* -------------------- */
+        /* 
+        */
+        name: "Toxic Thorn Footwraps",
+        effects: [
+          { // Healing Effect
+            coefficient: 15.34544,
+            table: -9,
+            secondaries: ['haste', 'crit', 'versatility'],
+            efficiency: 0.8,
+            ppm: 2, // 4 / 2
+          },
+          { // Damage Effect
+            coefficient: 6.820023,
+            table: -9,
+            secondaries: ['haste', 'crit', 'versatility'],
+            ppm: 2, // 4 / 2
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Frostfire Legguards of Preparation (Prepared Time)            
+        /* -------------------- */
+        /* 
+        */
+        name: "Prepared Time",
+        effects: [
+          { 
+            coefficient: 0.645985,
+            table: -8, // No idea why this is -8
+            stacks: 0.2,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Playful Spirit's Fur (Magic Snowball)       
+        /* -------------------- */
+        /* 
+        */
+        name: "Playful Spirit's Fur",
+        effects: [
+          { 
+            coefficient: 24.55177,
+            table: -9, // No idea why this is -8
+            ppm: 1, // 2 / 2
+            secondaries: ['haste', 'crit', 'versatility'],
+            efficiency: 0.8,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Rallied to Victory            
+        /* -------------------- */
+        /* 
+        */
+        name: "Rallied to Victory",
+        effects: [
+          { 
+            coefficient: 0.74681,
+            table: -8, // No idea why this is -8
+            duration: 10,
+            ppm: 1,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
+          //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 4;
+
           return bonus_stats;
         }
       },

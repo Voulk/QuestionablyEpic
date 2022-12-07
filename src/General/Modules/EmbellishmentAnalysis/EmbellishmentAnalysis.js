@@ -123,7 +123,7 @@ export default function EmbellishmentAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.name["en"], itemLevels[x], props.player, contentType, metric);
+      gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric);
     }
     activeGems.push(gemAtLevels);
   }

@@ -97,7 +97,7 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Allied Wristguards of Time Dilation",
+      name: "Rallied to Victory",
       rank: 0,
     },
   },
@@ -267,7 +267,7 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Hood of Surging Time",
+      name: "Prepared Time",
       rank: 0, 
     },
   },
@@ -285,6 +285,57 @@ export const embellishmentDB = [
     effect: {
       type: "embellishment",
       name: "Bronzed Grip Wrappings",
+      rank: 0, 
+    },
+  },
+  {
+    id: 190523,
+    icon: "inv_plate_dragondungeon_c_01_pant",
+    armorType: 4, // Plate
+    name: {
+      en: "Frostfire Legguards of Preparation",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Prepared Time",
+      rank: 0, 
+    },
+  },
+  {
+    id: 190526,
+    icon: "inv_bracer_plate_raidwarriorprimalist_d_01",
+    armorType: 4, // Plate
+    name: {
+      en: "Allied Wristguard of Companionship",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Allied Wristguard of Companionship",
+      rank: 0, 
+    },
+  },
+  {
+    id: 190519,
+    icon: "inv_chest_plate_raidwarriorprimalist_d_01",
+    armorType: 4, // Plate
+    name: {
+      en: "Allied Chestplate of Generosity",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Rallied to Victory",
       rank: 0, 
     },
   },
