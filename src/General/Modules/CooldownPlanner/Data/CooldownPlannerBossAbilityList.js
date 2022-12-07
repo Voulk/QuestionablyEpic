@@ -5283,7 +5283,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 395686,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "觉醒之土",
         de: "Erweckte Erde",
@@ -5507,8 +5507,8 @@ export const bossAbilities = {
     },
     {
       //  https://www.wowhead.com/spell=381595/seismic-assault
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 381595,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
       importActive: false,
@@ -5523,7 +5523,7 @@ export const bossAbilities = {
     {
       //  https://www.wowhead.com/spell=381576/seismic-assault
       cooldownPlannerActive: false,
-      createEvent: false,
+      createEvent: true,
       guid: 381576,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
       importActive: false,
