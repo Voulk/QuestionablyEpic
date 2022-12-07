@@ -257,13 +257,14 @@ export const otherTrinketData = [
         coefficient: 165.8648,
         table: -9,
         secondaries: ['versatility', 'crit'],
-        efficiency: 0.75,
+        efficiency: 0.7,
         ppm: 2,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      console.log()
       return bonus_stats;
     }
   },

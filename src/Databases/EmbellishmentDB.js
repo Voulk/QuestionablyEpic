@@ -1,17 +1,8 @@
 export const embellishmentDB = [
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                           Unholy Gems                                          */
-  /* ---------------------------------------------------------------------------------------------- */
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                          Shard of Zed                                          */
-  /* ---------------------------------------------------------------------------------------------- */
-  // Your helpful spells and abilities have a chance to grant your target an Unholy Aura, draining 166 health from nearby enemies every 2 sec for 10 sec.
-  // Ranks: 166, 208, 250, 292, 334
-  /* ----------------------------------------- Rank 1 (0) ----------------------------------------- */
   {
     id: 193001,
     icon: "inv_10_jewelcrafting_necklace_necklace1_color3",
+    armorType: 0, // All
     name: {
       en: "Elemental Lariat",
       de: "",
@@ -25,4 +16,277 @@ export const embellishmentDB = [
       rank: 0,
     },
   },
+  {
+    id: 193460,
+    icon: "inv_mail_dragondungeon_c_01_boot",
+    armorType: 3, // Mail
+    name: {
+      en: "Venom-Steeped Stompers",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Venom-Steeped Stompers",
+      rank: 0,
+    },
+  },
+  {
+    id: 191532,
+    icon: "inv_misc_food_legion_gooamber_drop",
+    armorType: 0, // All
+    name: {
+      en: "Potion Absorption Inhibitor",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Potion Absorption Inhibitor",
+      rank: 0,
+    },
+  },
+  {
+    id: 193532,
+    icon: "inv_cloth_dragonquest_b_01_boot",
+    armorType: 1, 
+    name: {
+      en: "Blue Dragon Soles",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Blue Dragon Soles",
+      rank: 0,
+    },
+  },
+  {
+    id: 193526,
+    icon: "inv_shoulder_cloth_dragondungeon_c_01",
+    armorType: 1,
+    name: {
+      en: "Amice of the Blue",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Amice of the Blue",
+      rank: 0,
+    },
+  },
+  {
+    id: 193530,
+    icon: "inv_cloth_raidmageprimalist_d_01_bracer",
+    armorType: 1, // Cloth
+    name: {
+      en: "Allied Wristguards of Time Dilation",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Allied Wristguards of Time Dilation",
+      rank: 0,
+    },
+  },
+  {
+    id: 193520,
+    icon: "inv_cloth_dragonquest_b_01_shoulder",
+    armorType: 1, // Cloth
+    name: {
+      en: "Azureweave Vestments (2pc)",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Azureweave Vestments",
+      rank: 0, // Requires 2pc
+    },
+  },
+  {
+    id: 193465,
+    icon: "inv_mail_raidhunterprimalist_d_01_glove",
+    armorType: 3, // Mail
+    name: {
+      en: "Horizon Strider's Garments (2pc)",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Horizon Strider's Garments",
+      rank: 0, // Requires 2pc
+    },
+  },
+  {
+    id: 193457,
+    icon: "inv_belt_leather_raidrogueprimalist_d_01",
+    armorType: 2, // Leather
+    name: {
+      en: "Playful Spirit's Fur (2pc)",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Playful Spirit's Fur",
+      rank: 0, // Requires 2pc
+    },
+  },
+  {
+    id: 193537,
+    icon: "inv_cloth_dragonquest_b_01_pant",
+    armorType: 1, // Cloth
+    name: {
+      en: "Woven Chronocloth (2pc)",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Woven Chronocloth",
+      rank: 0, // Requires 2pc
+    },
+  },
+  {
+    id: 191623,
+    icon: "inv_belt_plate_challengedeathknight_d_01",
+    armorType: 4, // Plate  
+    name: {
+      en: "Unstable Frostfire Belt",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Unstable Frostfire Belt",
+      rank: 0, 
+    },
+  },
+  {
+    id: 193452,
+    icon: "inv_leather_dragondungeon_c_01_boot",
+    armorType: 2, // Leather
+    name: {
+      en: "Toxic Thorn Footwraps",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Toxic Thorn Footwraps",
+      rank: 0, 
+    },
+  },
+  {
+    id: 192081,
+    icon: "creatureportrait_blackrockv2_shieldgong",
+    armorType: 5, // Shields
+    name: {
+      en: "Shield of the Hearth",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Shield of the Hearth",
+      rank: 0, 
+    },
+  },
+  {
+    id: 198258,
+    icon: "inv_gizmo_runichealthinjector",
+    armorType: 0, // Extra
+    name: {
+      en: "Magazine of Healing Darts",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Magazine of Healing Darts",
+      rank: 0, 
+    },
+  },
+  {
+    id: 193944,
+    icon: "inv_10_tailoring_silkrare_color1",
+    armorType: 0, // Extra
+    name: {
+      en: "Blue Silken Lining",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Blue Silken Lining",
+      rank: 0, 
+    },
+  },
+  {
+    id: 193521,
+    icon: "inv_helm_cloth_dragondungeon_c_01",
+    armorType: 0, // Extra
+    name: {
+      en: "Hood of Surging Time",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Hood of Surging Time",
+      rank: 0, 
+    },
+  },
+  {
+    id: 193941,
+    icon: "inv_holiday_tow_spicebandage",
+    armorType: 0, // Extra
+    name: {
+      en: "Bronzed Grip Wrappings",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Bronzed Grip Wrappings",
+      rank: 0, 
+    },
+  },
+
 ];

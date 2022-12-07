@@ -82,7 +82,7 @@ export default class EmbelChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={2}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.5}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
