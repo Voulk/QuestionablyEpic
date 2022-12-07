@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 5,
+    date: "6 December",
+    changes: [ 
+      "In game hotfixes: Dreamscape Prism, Gnollhide Belt",
+      "Reduced the expected value of Miniature Singing stone in dungeon content."
+  ]},
+  {
+    version: "10.0.2",
     update: 4,
     date: "5 December",
     changes: [ 
