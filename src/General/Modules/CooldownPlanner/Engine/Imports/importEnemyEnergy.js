@@ -33,6 +33,5 @@ export default async function importEnemyHealth(starttime, endtime, reportid) {
     .catch(function (error) {
       console.log(error);
     });
-  console.log(energy);
   return energy;
 }

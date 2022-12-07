@@ -71,11 +71,28 @@ export default function createEranogEvents(bossID, difficulty, damageTakenData, 
   if (logGuids.includes(pulsingFlames)) {
     const pulsingFlamesEvents = damageTakenData.filter((filter) => filter.ability.guid === pulsingFlames);
     const threshold = 30000;
-    events.push(
-      pulsingFlamesEvents.map((key) => {
-        return { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: pulsingFlames };
-      })[0],
-    );
+    const firstPulse = pulsingFlamesEvents.map((key) => key)[0];
+
+    events.push({
+      time: moment.utc(fightDuration(firstPulse.timestamp, starttime)).startOf("second").format("mm:ss"),
+      bossAbility: pulsingFlames,
+    });
+
+    events.push({
+      time: moment
+        .utc(fightDuration(firstPulse.timestamp + 7000, starttime))
+        .startOf("second")
+        .format("mm:ss"),
+      bossAbility: pulsingFlames,
+    });
+
+    events.push({
+      time: moment
+        .utc(fightDuration(firstPulse.timestamp + 14000, starttime))
+        .startOf("second")
+        .format("mm:ss"),
+      bossAbility: pulsingFlames,
+    });
 
     let lastChosen = pulsingFlamesEvents.map((key) => key.timestamp)[0];
 
@@ -83,6 +100,20 @@ export default function createEranogEvents(bossID, difficulty, damageTakenData, 
       if (key.timestamp > lastChosen + threshold) {
         lastChosen = key.timestamp;
         events.push({ time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: pulsingFlames });
+        events.push({
+          time: moment
+            .utc(fightDuration(key.timestamp + 7000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: pulsingFlames,
+        });
+        events.push({
+          time: moment
+            .utc(fightDuration(key.timestamp + 14000, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: pulsingFlames,
+        });
       }
     });
   }
@@ -107,8 +138,6 @@ export default function createEranogEvents(bossID, difficulty, damageTakenData, 
 
     // time until we want to check for the next event. i.e 60 seconds after the 1st event.
     const threshold = 30000;
-    // time to add to create events after initial event
-    const timeBetweenEvents = 8000;
 
     // find the first event
     const firstEvent = flameRiftEventsReduced[0];

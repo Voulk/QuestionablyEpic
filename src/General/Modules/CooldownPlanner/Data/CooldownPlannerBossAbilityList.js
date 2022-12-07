@@ -5226,7 +5226,7 @@ export const bossAbilities = {
     // https://www.wowhead.com/spell=370307/collapsing-army
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 370307,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
       importActive: false,
