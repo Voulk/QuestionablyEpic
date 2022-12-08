@@ -231,7 +231,6 @@ export function processItem(line, player, contentType, type) {
   for (var k = 0; k < itemBonusIDs.length; k++) {
     let bonus_id = itemBonusIDs[k].toString();
     let idPayload = bonus_IDs[bonus_id];
-    console.log(bonus_id + ": " + JSON.stringify(idPayload));
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
         itemLevelGain += idPayload["level"];
@@ -254,7 +253,6 @@ export function processItem(line, player, contentType, type) {
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
         levelOverride = processCurve(curve, dropLevel);
-        console.log("Curve ID " + idPayload["curveId"] + ": " + levelOverride);
 
       } else if ("name_override" in idPayload) {
           if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {

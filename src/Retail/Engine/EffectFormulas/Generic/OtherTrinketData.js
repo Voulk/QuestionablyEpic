@@ -81,7 +81,7 @@ export const otherTrinketData = [
     name: "Darkmoon Deck: Dance",
     effects: [
       { 
-        coefficient: 20.32447, // 45.81175 - Damage
+        coefficient: 22.356917, // Previously: 20.32447, // 45.81175 - Damage
         table: -8,
         efficiency: 0.6,
         cooldown: 90
@@ -312,6 +312,28 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                          Gladiator's Insignia of Alacrity                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Gladiator's Insignia of Alacrity",
+    effects: [
+      { // Mastery portion
+        coefficient: 1.00266,
+        table: -1,
+        stat: "intellect",
+        duration: 20,
+        ppm: 1.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
+      return bonus_stats;
+    }
+  },
 
 ]
