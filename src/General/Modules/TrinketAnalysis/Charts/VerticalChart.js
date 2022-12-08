@@ -98,7 +98,7 @@ export default class VerticalChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.6}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.5}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
