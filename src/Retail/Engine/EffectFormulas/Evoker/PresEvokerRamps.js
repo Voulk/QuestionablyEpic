@@ -143,6 +143,21 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
+    // Natural Convergence makes Disintegrate channels 20% faster
+    if (talents.naturalConvergence) {
+        evokerSpells['Disintegrate'][0].castTime -= (evokerSpells['Disintegrate'][0].castTime * 0.2);
+        evokerSpells['Disintegrate'][1].tickRate += (evokerSpells['Disintegrate'][1].tickRate * 0.2);
+    }
+
+    if (talents.energyLoop) {
+        evokerSpells['Disintegrate'].push({
+            type: "buff",
+            name: "Energy Loop",
+            buffType: "damage",
+            buffDuration: evokerSpells['Disintegrate'][0].castTime,
+            coeff: 0.2, // 20% increased damage to Disintegrate
+        });
+    }
 
     // Fire Breath talents
     // Note that Lifegivers Flame should always come last.
@@ -151,14 +166,15 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // Lifegivers Flame
     if (talents.lifeGiversFlame) {
         evokerSpells['Fire Breath'].push({
-        spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
-        type: "heal",
-        school: "red",
-        coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
-        expectedOverheal: 0.15,
-        targets: 1,
-        secondaries: ['crit', 'vers']
+            spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
+            type: "heal",
+            school: "red",
+            coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
+            expectedOverheal: 0.15,
+            targets: 1,
+            secondaries: ['crit', 'vers']
         });
+
         evokerSpells['Fire Breath'].push({
             type: "buff",
             name: "Fire Breath",
@@ -359,11 +375,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraDamageBuff;
-    
-    mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
-    
 
-    return mult; 
+    mult *= (buffs.filter(function (buff) {return buff.name === "Energy Loop"}).length > 0 ? 1.2 : 1);
+
+    return mult;
 }
 
 /** A healing spells healing multiplier. It's base healing is directly multiplied by whatever the function returns.
@@ -718,14 +733,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
 
-    // Create Echo clones of each valid spell (spells that can be Echo'd).
+    // Create Echo clones of each valid spell that can be Echo'd.
     // and add them to the valid spell list
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
         // Make sure spell can be copied by Echo.
         // Right now this is almost anything but we'll expect them to make changes later in Alpha.
-
-        // TODO: This implementation should be revised to support VE Echo'd (multiple Lifebinds)
 
         if (!(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
             //let echoSpell = [...spellData];
@@ -756,8 +769,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
-        // Check for any expired atonements.
-        
         // ---- Heal over time and Damage over time effects ----
         // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
         // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
@@ -783,8 +794,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
                     func(state, spell);
+                }
 
-                } 
                 if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
                 else buff.next = buff.next + (buff.tickRate);
             });  

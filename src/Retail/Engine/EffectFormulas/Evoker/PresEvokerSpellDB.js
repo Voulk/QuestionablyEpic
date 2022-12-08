@@ -316,7 +316,7 @@ export const EVOKERSPELLDB = {
         type: "damage",
         school: "blue",
         essence: 3,
-        castTime: 3,
+        castTime: 3.0,
         coeff: 0.76,
         targets: 1,
         secondaries: ['crit', 'haste', 'vers'],
@@ -332,9 +332,18 @@ export const EVOKERSPELLDB = {
     }],
 }
 
+export const baseTalents = {
+    reversion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1},
+    dreamBreath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1},
+    echo: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1},
+}
+
 export const evokerTalents = {
     // Class Tree
     // Some pure utility based talents might not appear.
+    naturalConvergence: {points: 0, maxPoints: 1, icon: "spell_frost_frostblast", id: 369913, select: true, tier: 4}, // Disintegrate channels 20% faster.
+    lushGrowth: {points: 2, maxPoints: 2, icon: "inv_staff_2h_bloodelf_c_01", id: 375561, select: true, tier: 4}, // Green spells heal for 5% more (2 points).
+
 
     // Spec Tree
     reversion: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1},
@@ -361,8 +370,8 @@ export const evokerTalents = {
     resonatingSphere: {points: 0, maxPoints: 1, icon: "ability_evoker_bronze_01", id: 376236, select: true, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
     lifebind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 0, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
-    
-    
+
+
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Needs testing.
     sacralEmpowerment: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
     exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
@@ -376,8 +385,6 @@ export const evokerTalents = {
     cycleOfLife: {points: 0, maxPoints: 1, icon: "spell_lifegivingseed", id: 371871, select: true, tier: 3}, // Emerald Blossom leaves behind a sprout that absorbs 10% of healing over 15 seconds.
 
     rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},
-
-    naturalConvergence: {points: 0, maxPoints: 1, icon: "spell_frost_frostblast", id: 369913, select: true, tier: 4}, // Disintegrate channels 20% faster.
     //rescue: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
     innateMagic: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 375520, select: true, tier: 4}, // Essence regens 5% faster (2 charges).
     enkindled: {points: 2, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
@@ -389,8 +396,4 @@ export const evokerTalents = {
     bountifulBloom: {points: 1, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     panacea: {points: 1, maxPoints: 1, icon: "ability_druid_protectionofthegrove", id: 387761, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     protractedTalons: {points: 0, maxPoints: 1, icon: "ability_evoker_azurestrike", id: 369909, select: true, tier: 4}, // Azure Strike hits an additional target.
-    lushGrowth: {points: 2, maxPoints: 2, icon: "inv_staff_2h_bloodelf_c_01", id: 375561, select: true, tier: 4}, // Green spells heal for 5% more (2 points).
-
-
-
 };
