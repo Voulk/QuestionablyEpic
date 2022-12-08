@@ -81,7 +81,7 @@ export const otherTrinketData = [
     name: "Darkmoon Deck: Dance",
     effects: [
       { 
-        coefficient: 20.32447,
+        coefficient: 22.356917, // Previously: 20.32447, // 45.81175 - Damage
         table: -8,
         efficiency: 0.6,
         cooldown: 90
@@ -211,8 +211,8 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      // Currently doesn't work.
-      //bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      // The mana proc currently gives 1 MP5 while active.
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
       //bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
       return bonus_stats;
     }
@@ -270,7 +270,7 @@ export const otherTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                          Primal Ritual Shell                                   */
+    /*                                             Breezy Companion                                   */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
@@ -290,6 +290,51 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Blood of the Khansguard                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Blood of the Khansguard",
+    effects: [
+      { // Mastery portion
+        coefficient: 1.500168,
+        table: -1,
+        stat: "intellect",
+        duration: 15,
+        ppm: 1,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                          Gladiator's Insignia of Alacrity                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Gladiator's Insignia of Alacrity",
+    effects: [
+      { // Mastery portion
+        coefficient: 1.00266,
+        table: -1,
+        stat: "intellect",
+        duration: 20,
+        ppm: 1.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
 
 ]

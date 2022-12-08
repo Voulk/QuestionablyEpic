@@ -253,7 +253,6 @@ export function processItem(line, player, contentType, type) {
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
         levelOverride = processCurve(curve, dropLevel);
-        console.log("Curve ID " + idPayload["curveId"] + ": " + levelOverride);
 
       } else if ("name_override" in idPayload) {
           if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {

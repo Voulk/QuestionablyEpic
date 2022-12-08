@@ -477,7 +477,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // This is an occasionally off-by-one formula for leech that should be rewritten.
       stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
     } else {
-      const terMult = slot === "Finger" || slot === "Neck" ? 0.174027 : 0.442932;
+      const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
     }
   }
