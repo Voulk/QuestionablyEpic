@@ -506,7 +506,7 @@ export const genSpell = (state, spells) => {
 }
 
 
-const apl = ["Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
+const apl = ["Reversion", "Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
@@ -718,11 +718,15 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
 
-    // Create Echo clones.
+    // Create Echo clones of each valid spell (spells that can be Echo'd).
+    // and add them to the valid spell list
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
         // Make sure spell can be copied by Echo.
         // Right now this is almost anything but we'll expect them to make changes later in Alpha.
+
+        // TODO: This implementation should be revised to support VE Echo'd (multiple Lifebinds)
+
         if (!(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
             //let echoSpell = [...spellData];
             let echoSpell = JSON.parse(JSON.stringify(spellData));
@@ -752,7 +756,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
-        // Check for any expired atonements. 
+        // Check for any expired atonements.
         
         // ---- Heal over time and Damage over time effects ----
         // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
@@ -827,9 +831,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            if (seqType === "Auto") queuedSpell = seq.shift();
+            // If the sequence type is not "Auto" it should
+            // follow the given sequence list
+            if (seqType === "Manual") queuedSpell = seq.shift();
+            // if its is "Auto", use genSpell to auto generate a cast sequence
             else queuedSpell = genSpell(state, evokerSpells);
-    
+
             const fullSpell = evokerSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
@@ -880,7 +887,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
                     if (spellName === "Reversion") echoSpell[0].function = evokerSpells["Reversion"][0].function;
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
-  
+
                 }
 
                 // Remove all of our Echo buffs.

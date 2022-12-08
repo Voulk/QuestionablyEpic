@@ -60,7 +60,54 @@ describe("Test Base Spells", () => {
     // TODO: test more spells.
 });
 */
-describe("Evang Cast Sequence", () => {
+describe("Disintegrate Spam", () => {
+    // In game dmg, fresh lvl 70 character
+    // Disintegrate tick = 1900
+    const activeStats = {
+        intellect: 1,
+        haste: 4000,
+        crit: 600,
+        mastery: 600,
+        versatility: 600,
+        stamina: 2800,
+
+        critMult: 1,
+    };
+
+
+    const settings = {reporting: true};
+
+    const print = (name, base, healing) => {
+        let percInc = Math.round(10000*(healing / base - 1))/100;
+        console.log(name + ": " + healing + " (+" + percInc + "%)")
+    };
+
+    const talents = {...baseTalents};
+
+    test("Disintegrate should do 1900 dmg as per 10.0.2", () => {
+        const iter = 5;
+        const results = {dmgDone: 0};
+
+        for (let i = 0; i < iter; i++) {
+            const seq = ["Disintegrate"];
+
+            const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
+
+            console.log(`Damage done in single iteration: ${sequenceResult.totalDamage}`);
+
+            sequenceResult.report.map(console.log);
+
+            results.dmgDone += sequenceResult.totalDamage;
+        }
+
+        console.log(`Damage done over ${iter} iterations: ${results.dmgDone}. ` +
+                    `Damage in a single iteration: ${results.dmgDone / iter} ` +
+                    `Damage in a single cast: ${(results.dmgDone / iter)}`);
+    });
+});
+
+
+describe("Echo Ramp Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
     /*player.activeStats = {
             intellect: 1974,

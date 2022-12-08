@@ -235,10 +235,7 @@ export const EVOKERSPELLDB = {
             }
 
         }
-
-    },
-
-],
+    }],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
         spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze", cat: "cooldown"},
@@ -314,9 +311,25 @@ export const EVOKERSPELLDB = {
     }],
 
     // Disintegrate (Essence damage ability)
-
-    // 
-
+    "Disintegrate": [{
+        spellData: {id: 356995, icon: "ability_evoker_disintegrate", cat: "damage"},
+        type: "damage",
+        school: "blue",
+        essence: 3,
+        castTime: 3,
+        coeff: 0.76,
+        targets: 1,
+        secondaries: ['crit', 'haste'],
+    },
+    {
+        name: "Disintegrate (DoT)",
+        type: "buff",
+        buffType: "damage",
+        tickRate: 1,
+        buffDuration: 3,
+        coeff: 0.76,
+        secondaries: ['crit', 'haste'],
+    }],
 }
 
 export const evokerTalents = {
