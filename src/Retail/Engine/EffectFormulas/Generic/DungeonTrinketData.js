@@ -57,18 +57,18 @@ export const dungeonTrinketData = [
     name: "Kyrakka's Searing Embers",
     effects: [
       { // Healing Portion
-        coefficient: 161.5508, 
+        coefficient: 88.852905, // 161.5508, 
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 1,
+        ppm: 2,
         mult: 0.55, // Our expected overhealing.
       },
       { // Damage portion
         // Damage is split, so we don't need any kind of target multiplier in here.
-        coefficient: 48.30759, 
+        coefficient: 41.75107,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 1,
+        ppm: 2,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
