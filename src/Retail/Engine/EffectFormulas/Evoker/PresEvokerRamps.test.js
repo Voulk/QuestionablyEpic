@@ -62,13 +62,13 @@ describe("Test Base Spells", () => {
 */
 describe("Disintegrate Spam", () => {
     // In game dmg, fresh lvl 70 character
-    // Disintegrate tick = 1900
+    // Disintegrate tick = 1826
     const activeStats = {
-        intellect: 1,
-        haste: 4000,
+        intellect: 2089,
+        haste: 0,
         crit: 600,
         mastery: 600,
-        versatility: 600,
+        versatility: 0,
         stamina: 2800,
 
         critMult: 1,
@@ -84,7 +84,7 @@ describe("Disintegrate Spam", () => {
 
     const talents = {...baseTalents};
 
-    test("Disintegrate should do 1900 dmg as per 10.0.2", () => {
+    test("Disintegrate should do 1826 dmg as per 10.0.2 (max lvl 70)", () => {
         const iter = 5;
         const results = {dmgDone: 0};
 
@@ -93,16 +93,16 @@ describe("Disintegrate Spam", () => {
 
             const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
 
-            console.log(`Damage done in single iteration: ${sequenceResult.totalDamage}`);
-
-            sequenceResult.report.map(console.log);
+            // sequenceResult.report.map(console.log);
 
             results.dmgDone += sequenceResult.totalDamage;
         }
 
-        console.log(`Damage done over ${iter} iterations: ${results.dmgDone}. ` +
-                    `Damage in a single iteration: ${results.dmgDone / iter} ` +
-                    `Damage in a single cast: ${(results.dmgDone / iter)}`);
+        console.log(`Damage done over ${iter} iterations: ${results.dmgDone}\n` +
+                    `Damage in a single iteration: ${results.dmgDone / iter}\n` +
+                    `Damage in a single cast: ${Math.ceil(results.dmgDone / iter / 4)}\n`);
+
+        expect(Math.ceil((results.dmgDone / iter) / 4)).toBe(1826);
     });
 });
 

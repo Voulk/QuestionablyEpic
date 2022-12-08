@@ -319,7 +319,7 @@ export const EVOKERSPELLDB = {
         castTime: 3,
         coeff: 0.76,
         targets: 1,
-        secondaries: ['crit', 'haste'],
+        secondaries: ['crit', 'haste', 'vers'],
     },
     {
         name: "Disintegrate (DoT)",
@@ -328,7 +328,7 @@ export const EVOKERSPELLDB = {
         tickRate: 1,
         buffDuration: 3,
         coeff: 0.76,
-        secondaries: ['crit', 'haste'],
+        secondaries: ['crit', 'haste', 'vers'],
     }],
 }
 
