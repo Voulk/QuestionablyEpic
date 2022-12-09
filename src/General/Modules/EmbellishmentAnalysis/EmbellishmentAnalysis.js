@@ -12,7 +12,9 @@ import { embellishmentDB } from "Databases/EmbellishmentDB";
 import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "./MetricToggle";
-// import Settings from "../Settings/Settings";
+import CharacterPanel from "../CharacterPanel/CharacterPanel";
+import userSettings from "../Settings/SettingsObject";
+import Settings from "../Settings/Settings";
 // import userSettings from "../Settings/SettingsObject";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
@@ -48,6 +50,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const editSettings = (setting, newValue) => {
+  userSettings[setting] = newValue;
+};
 
 /* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
 function getEstimatedHPS(bonus_stats, player, contentType) {
@@ -138,7 +144,13 @@ export default function EmbellishmentAnalysis(props) {
 
   const itemLevels = [356, 369, 382, 395, 408];
 
-  const db = embellishmentDB.filter((gem) => gem.effect.rank === 0);
+  const db = embellishmentDB.filter((embel) => {
+    return embel.armorType === 0 ||
+      (embel.armorType === 4 && props.player.getSpec() === "Holy Paladin") ||
+      (embel.armorType === 3 && (props.player.getSpec() === "Restoration Shaman" || props.player.getSpec() === "Preservation Evoker")) ||
+      (embel.armorType === 2 && (props.player.getSpec() === "Restoration Druid" || props.player.getSpec() === "Mistweaver Monk")) ||
+      (embel.armorType === 1 && (props.player.getSpec() === "Holy Priest" || props.player.getSpec() === "Discipline Priest"))
+  });
   const helpText = [t("DominationSocketAnalysis.HelpText")];
   const classes = useStyles();
 
@@ -165,11 +177,25 @@ export default function EmbellishmentAnalysis(props) {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-            {t("DominationSocketAnalysis.Header")}
+            {t("EmbellishmentAnalysis.Header")}
           </Typography>
         </Grid>
         <Grid item xs={12}>
           <HelpText text={helpText} />
+        </Grid>
+        <Grid item xs={12}>
+          <CharacterPanel
+            player={props.player}
+            simcSnack={props.simcSnack}
+            allChars={props.allChars}
+            contentType={contentType}
+            userSettings={userSettings}
+            editSettings={editSettings}
+            singleUpdate={props.singleUpdate}
+            hymnalShow={true}
+            groupBuffShow={true}
+            autoSocket={true}
+          />
         </Grid>
         <Grid item xs={12}>
           <MetricToggle metric={metric} setMetric={setMetric} />

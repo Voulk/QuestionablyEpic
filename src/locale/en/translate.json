@@ -29,6 +29,9 @@
       "Update": "Update",
       "Version": "Version"
     },
+    "EmbellishmentAnalysis": {
+      "Header": "Embellishment Analysis"
+    },
     "CharacterCreator": {
       "AddChar": "Add Character",
       "CharName": "Character Name",

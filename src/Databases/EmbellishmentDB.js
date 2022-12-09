@@ -258,7 +258,7 @@ export const embellishmentDB = [
   {
     id: 193521,
     icon: "inv_helm_cloth_dragondungeon_c_01",
-    armorType: 0, // Extra
+    armorType: 1, // Extra
     name: {
       en: "Hood of Surging Time",
       de: "",
@@ -324,6 +324,40 @@ export const embellishmentDB = [
     },
   },
   {
+    id: 193453,
+    icon: "inv_leather_dragondungeon_c_01_chest",
+    armorType: 2,
+    name: {
+      en: "Allied Heartwarming Fur Coat",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Rally to Victory",
+      rank: 0, 
+    },
+  },
+  {
+    id: 193464,
+    icon: "inv_mail_dragondungeon_c_01_pant",
+    armorType: 3, 
+    name: {
+      en: "Allied Legguards of Sansok Khan",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Rallied to Victory",
+      rank: 0, 
+    },
+  },
+  {
     id: 190519,
     icon: "inv_chest_plate_raidwarriorprimalist_d_01",
     armorType: 4, // Plate
@@ -337,6 +371,40 @@ export const embellishmentDB = [
     effect: {
       type: "embellishment",
       name: "Rallied to Victory",
+      rank: 0, 
+    },
+  },
+  {
+    id: 190519,
+    icon: "inv_helm_leather_legiondungeon_c_02",
+    armorType: 2, // Leather
+    name: {
+      en: "Flaring Cowl",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Flaring Cowl",
+      rank: 0, 
+    },
+  },
+  {
+    id: 194894,
+    icon: "inv_staff_2h_inscription_c_01_red",
+    armorType: 2,
+    name: {
+      en: "Weathered Explorer's Stave",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Weathered Explorer's Stave",
       rank: 0, 
     },
   },
