@@ -88,8 +88,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric)
   const embel = embellishmentDB.filter(function (emb) {
     return emb.effect.name === effectName;
   });
-  console.log(effectName + ": " + itemLevel)
-  console.log(effect);
+
   let score = 0;
   if (metric === "hps") {
     score =  getEstimatedHPS(effect, player, contentType) || 0;

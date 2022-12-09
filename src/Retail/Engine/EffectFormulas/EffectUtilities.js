@@ -44,6 +44,42 @@ export function convertPPMToUptime(PPM, duration) {
   return 1.13 * (1 - Math.E ** -((PPM * duration) / 60));
 }
 
+export function getHighestStat(stats) {
+  let max = "";
+  let maxValue = -1;
+
+  for (var stat in stats) {
+    if (stats[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+      max = stat;
+      maxValue = stats[stat];
+    }
+  }
+
+  if (maxValue > 0) return max;
+  else {
+    reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
+    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
+  }
+}
+
+export function getLowestStat(stats) {
+  let min = "";
+  let minValue = 99999;
+
+  for (var stat in stats) {
+    if (stats[stat] < minValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+      min = stat;
+      minValue = stats[stat];
+    }
+  }
+
+  if (minValue < 99999) return min;
+  else {
+    reportError(this, "TrinketEffectFormulas", "No lowest stat found: " + JSON.stringify(stats));
+    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
+  }
+}
+
 export function getScalarValue(table, itemLevel) {
   if (table === -9) { // Was -8 in SL QE/L.
       return randPropPoints[itemLevel]["p8"];
