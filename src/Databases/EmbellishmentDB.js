@@ -156,6 +156,7 @@ export const embellishmentDB = [
     id: 193537,
     icon: "inv_cloth_dragonquest_b_01_pant",
     armorType: 1, // Cloth
+    pieces: 2,
     name: {
       en: "Woven Chronocloth (2pc)",
       de: "",

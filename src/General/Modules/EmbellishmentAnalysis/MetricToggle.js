@@ -43,6 +43,18 @@ export default function MetricToggle(props) {
           </div>
         </Tooltip>
       </ToggleButton>
+      <ToggleButton style={{ padding: 5, width: 75 }} value="both" aria-label="dpsLabel">
+        <Tooltip title={"Both"} arrow>
+          <div style={{ display: "inline-flex" }}>
+            <img
+              style={{ height: 18, width: 18, margin: "2px 5px 2px 0px", verticalAlign: "middle", borderRadius: 4 }}
+              src={require("Images/Resources/dpsIcon.png").default}
+              alt={"Both"}
+            />
+            <Typography variant="button">{"Both"}</Typography>
+          </div>
+        </Tooltip>
+      </ToggleButton>
     </ToggleButtonGroup>
   );
 }

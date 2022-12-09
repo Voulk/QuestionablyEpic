@@ -50,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 /* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
-// TODO: Remove this. It's just for testing.
 function getEstimatedHPS(bonus_stats, player, contentType) {
   let estHPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
@@ -58,22 +57,53 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
     } else if (key === "intellect") {
       estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
-    } else if (key === "hps") {
+    } 
+    else if (key === "mana") {
+      estHPS += value * player.getSpecialQuery("OneManaHealing", contentType)
+    }
+    else if (key === "hps") {
       estHPS += value;
     }
   }
   return Math.round(100 * estHPS) / 100;
 }
 
+function getEstimatedDPS(bonus_stats, player, contentType) {
+  let estDPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "crit", "versatility"].includes(key)) {
+      estDPS += (value * 0.35 / player.activeStats.intellect) * player.getDPS(contentType);
+    } else if (key === "intellect") {
+      estDPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } 
+    else if (key === "dps") {
+      estDPS += value;
+    }
+  }
+  return Math.round(100 * estDPS) / 100;
+}
+
 const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, {});
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, {}, "Retail", player.activeStats);
+  const embel = embellishmentDB.filter(function (emb) {
+    return emb.effect.name === effectName;
+  });
   console.log(effectName + ": " + itemLevel)
   console.log(effect);
+  let score = 0;
   if (metric === "hps") {
-    return getEstimatedHPS(effect, player, contentType) || 0 //getEstimatedHPS(gemEffect, player, contentType);
+    score =  getEstimatedHPS(effect, player, contentType) || 0;
   } else if (metric === "dps") {
-    return 0 //Math.round(100 * gemEffect.dps) / 100 || 0;
+    score = getEstimatedDPS(effect, player, contentType) || 0;
   }
+  else if (metric === "both") {
+    score = getEstimatedHPS(effect, player, contentType) + getEstimatedDPS(effect, player, contentType);
+  }
+
+  if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
+
+  return score;
+
 };
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.

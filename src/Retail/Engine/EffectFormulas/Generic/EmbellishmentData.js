@@ -1,10 +1,10 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
-export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, effect) => {
+export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats) => {
 
     let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
-    let additionalData = {};
+    let additionalData = {contentType: contentType, setStats: setStats};
 
     if (activeEffect !== undefined) {
       return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
@@ -40,6 +40,8 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
+          console.log("+++++++++++++++++")
+          console.log(additionalData.setStats);
           return bonus_stats;
         }
       },
@@ -250,13 +252,20 @@ export const embellishmentData = [
             secondaries: ['haste', 'crit', 'versatility'],
             efficiency: 0.8,
           },
+          {  // Damage
+            coefficient: 10.91173,
+            table: -9, // No idea why this is -8
+            ppm: 1, // 2 / 2
+            secondaries: ['haste', 'crit', 'versatility'],
+            efficiency: 1,
+          },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
+          bonus_stats.dps = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
           return bonus_stats;
         }
       },
@@ -281,6 +290,105 @@ export const embellishmentData = [
 
           bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
           //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 4;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Woven Chronocloth            
+        /* -------------------- */
+        /* 
+        */
+        name: "Woven Chronocloth",
+        effects: [
+          { 
+            coefficient: 1.478889,
+            table: -7, 
+            duration: 20,
+            ppm: 9,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          const uptime = data[0].ppm / 20 * (data[0].duration / 60);
+
+          bonus_stats.haste = processedValue(data[0], itemLevel) * uptime;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Unstable Frostfire Belt    
+        /* -------------------- */
+        /* 
+        */
+        name: "Unstable Frostfire Belt",
+        effects: [
+          {  // Damage
+            coefficient: 3.389522,
+            table: -8,
+            ppm: 3, 
+            ticks: 5,
+            secondaries: ['haste', 'crit', 'versatility'],
+
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO: Check if the DoT is hasted. The proc rate is not.
+
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * data[0].ticks / 60;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Amice of the Blue  
+        /* -------------------- */
+        /* 
+        */
+        name: "Amice of the Blue",
+        effects: [
+          {  // Damage
+            coefficient: 44.45392,
+            table: -8,
+            ppm: 2, 
+            secondaries: ['haste', 'crit', 'versatility'],
+
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO: Check if the DoT is hasted. The proc rate is not.
+
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Potion Absorption Inhibitor  
+        /* -------------------- */
+        /* 
+        */
+        name: "Potion Absorption Inhibitor",
+        effects: [
+          {  
+            potionIncrease: 0.5
+
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO: Check if the DoT is hasted. The proc rate is not.
+          const manaSaved = player.getSpecialQuery("chilledClarityExtension", additionalData.contentType);
+          bonus_stats.mana = manaSaved * 2 / player.getFightLength(additionalData.contentType);
+
 
           return bonus_stats;
         }
