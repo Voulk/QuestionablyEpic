@@ -1,4 +1,5 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats) => {
@@ -40,8 +41,12 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          console.log("+++++++++++++++++")
-          console.log(additionalData.setStats);
+          const highestSecondary = getHighestStat(additionalData.setStats);
+          const lowestSecondary = getLowestStat(additionalData.setStats);
+
+          bonus_stats[highestSecondary] = runGenericPPMTrinket(data[0], itemLevel);
+          bonus_stats[lowestSecondary] = runGenericPPMTrinket(data[1], itemLevel);
+
           return bonus_stats;
         }
       },
@@ -63,6 +68,7 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
+          
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
           bonus_stats[playerBestSecondary] = runGenericPPMTrinket(data[0], itemLevel); // Testing
           return bonus_stats;
@@ -81,7 +87,7 @@ export const embellishmentData = [
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
-            efficiency: 0.8,
+            efficiency: 0.75,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
