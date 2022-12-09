@@ -19,8 +19,8 @@ const EVOKERCONSTANTS = {
     baseMana: 250000,
 
     defaultEmpower: 1,
-    auraHealingBuff: 0.6, 
-    auraDamageBuff: 1.15, 
+    auraHealingBuff: 1,
+    auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
@@ -149,14 +149,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Disintegrate'][1].tickRate += (evokerSpells['Disintegrate'][1].tickRate * 0.2);
     }
 
+    // Energy Loop makes Disintegrate more damage and grants mana over it's duration.
     if (talents.energyLoop) {
-        evokerSpells['Disintegrate'].push({
-            type: "buff",
-            name: "Energy Loop",
-            buffType: "damage",
-            buffDuration: evokerSpells['Disintegrate'][0].castTime,
-            coeff: 0.2, // 20% increased damage to Disintegrate
-        });
+        evokerSpells['Disintegrate'][0].coeff *= 1.2;
+        evokerSpells['Disintegrate'][1].coeff *= 1.2;
     }
 
     // Fire Breath talents
@@ -212,6 +208,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers']
     })
+
     if (talents.enkindled) {
         evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
         evokerSpells['Living Flame D'][0].coeff *= (1 + 0.03 * talents.enkindled);
