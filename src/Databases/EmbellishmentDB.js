@@ -336,7 +336,7 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Rally to Victory",
+      name: "Rallied to Victory",
       rank: 0, 
     },
   },
@@ -375,7 +375,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 190519,
+    id: 193494,
     icon: "inv_helm_leather_legiondungeon_c_02",
     armorType: 2, // Leather
     name: {
@@ -391,6 +391,7 @@ export const embellishmentDB = [
       rank: 0, 
     },
   },
+  /*
   {
     id: 194894,
     icon: "inv_staff_2h_inscription_c_01_red",
@@ -407,6 +408,6 @@ export const embellishmentDB = [
       name: "Weathered Explorer's Stave",
       rank: 0, 
     },
-  },
+  }, */
 
 ];

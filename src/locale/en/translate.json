@@ -30,7 +30,8 @@
       "Version": "Version"
     },
     "EmbellishmentAnalysis": {
-      "Header": "Embellishment Analysis"
+      "Header": "Embellishment Analysis",
+      "HelpText": "An overview of all Embellishment effects available."
     },
     "CharacterCreator": {
       "AddChar": "Add Character",

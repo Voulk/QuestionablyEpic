@@ -2,11 +2,10 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket,
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
-export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats) => {
+export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
 
     let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
-    let additionalData = {contentType: contentType, setStats: setStats};
-
+    let additionalData = {contentType: contentType, setStats: setStats, settings: settings};
     if (activeEffect !== undefined) {
       return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
     }
@@ -231,14 +230,14 @@ export const embellishmentData = [
           { 
             coefficient: 0.645985,
             table: -8, // No idea why this is -8
-            stacks: 0.2,
+            stacks: {Raid: 0.2, Dungeon: 1.5} // Revisit dungeon stacks.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
 
-          bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks;
+          bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks[additionalData.contentType];
 
           return bonus_stats;
         }
@@ -293,9 +292,8 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-
           bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
-          //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 4;
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.5;
 
           return bonus_stats;
         }
@@ -327,6 +325,29 @@ export const embellishmentData = [
       },
       {
         /* -------------------- */
+        /* Blue Dragon Soles            
+        /* -------------------- */
+        /* 
+        */
+        name: "Blue Dragon Soles",
+        effects: [
+          { 
+            coefficient: 0.256837,
+            table: -1, 
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          const uptime = 4 / 60; // There isn't a way to play around this where it isn't terrible. This assumes it hits 4 spells per minute.
+
+          bonus_stats.intellect = processedValue(data[0], itemLevel) * uptime;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
         /* Unstable Frostfire Belt    
         /* -------------------- */
         /* 
@@ -347,6 +368,32 @@ export const embellishmentData = [
           // TODO: Check if the DoT is hasted. The proc rate is not.
 
           bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * data[0].ticks / 60;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Flaring Cowl
+        /* -------------------- */
+        /* 
+        */
+        name: "Flaring Cowl",
+        effects: [
+          {  // Damage
+            coefficient: 3.313529,
+            table: -8,
+            ppm: 20, // It ticks every 3 seconds.
+            targets: {Raid: 1, Dungeon: 3.5},
+            secondaries: ['crit', 'versatility'], // TODO: Check if the tick rate scales with Haste.
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO: Check if the DoT is hasted. The proc rate is not.
+
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * 
+                                data[0].ppm * data[0].targets[additionalData.contentType] / 60;
 
           return bonus_stats;
         }

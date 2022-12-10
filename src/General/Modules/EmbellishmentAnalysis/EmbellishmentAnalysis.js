@@ -70,6 +70,12 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
     else if (key === "hps") {
       estHPS += value;
     }
+    else if (key === "allyStats") {
+      // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
+      // it's a fair approximation. 
+      // These embellishments are good, but it's very spread out.
+      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+    }
   }
   return Math.round(100 * estHPS) / 100;
 }
@@ -80,17 +86,26 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
     if (["haste", "crit", "versatility"].includes(key)) {
       estDPS += (value * 0.35 / player.activeStats.intellect) * player.getDPS(contentType);
     } else if (key === "intellect") {
-      estDPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+      estDPS += (value / player.activeStats.intellect) * player.getDPS(contentType);
     } 
     else if (key === "dps") {
       estDPS += value;
     }
+    else if (key === "mastery") {
+      estDPS += 0;
+    }
+    else if (key === "allyStats") {
+      // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
+      // it's a fair approximation. 
+      // These embellishments are good, but it's very spread out.
+      estDPS += ((value * 0.32) / player.activeStats.intellect) * 35000 / 2;
+    }
   }
-  return Math.round(100 * estDPS) / 100;
+  return Math.max(0, Math.round(100 * estDPS) / 100);
 }
 
 const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, {}, "Retail", player.activeStats);
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, userSettings, "Retail", player.activeStats);
   const embel = embellishmentDB.filter(function (emb) {
     return emb.effect.name === effectName;
   });
@@ -151,7 +166,13 @@ export default function EmbellishmentAnalysis(props) {
       (embel.armorType === 2 && (props.player.getSpec() === "Restoration Druid" || props.player.getSpec() === "Mistweaver Monk")) ||
       (embel.armorType === 1 && (props.player.getSpec() === "Holy Priest" || props.player.getSpec() === "Discipline Priest"))
   });
-  const helpText = [t("DominationSocketAnalysis.HelpText")];
+  const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
+  const helpText = [
+    "Embellishments were extremely difficult to test and numbers might change as more data comes in.",
+    "Potion Absorption Inhibitor value varies heavily per spec, mostly based on how good extending Chilled Clarity is for you.",
+    "Note that the value of the slot some embellishments must be placed on is not included in the graph.",
+    "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
+  ];
   const classes = useStyles();
 
   let activeGems = [];
@@ -176,12 +197,7 @@ export default function EmbellishmentAnalysis(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-            {t("EmbellishmentAnalysis.Header")}
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <HelpText text={helpText} />
+          <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
