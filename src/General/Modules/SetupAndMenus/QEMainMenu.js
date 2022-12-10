@@ -67,10 +67,12 @@ export default function QEMainMenu(props) {
           "MainMenu.TopGear": ["/topgear", true, "TopGear"],
           "MainMenu.UpgradeFinder": ["/UpgradeFinder", false, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+          "MainMenu.SequenceSandbox": ["/sequenceGen", false, "SequenceSandbox"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
           "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
-          "MainMenu.SequenceSandbox": ["/sequenceGen", false, "SequenceSandbox"],
+          
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
       : {

@@ -56,6 +56,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
+      chilledClarityExtension: 33000,
       ConvokeChannelHPS: 480,
       OneManaHealing: 9.5,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
