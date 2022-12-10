@@ -176,7 +176,7 @@ export const addReport = (state, entry) => {
 }
 
 export const getHealth = (stats, talents) => {
-    return stats.stamina * 20 * (1 + talents.draconicLegacy * 0.02);
+    return stats.stamina * 20 * (1 + (talents.draconicLegacy ? talents.draconicLegacy : 0) * 0.02);
 }
 
 const getSqrt = (targets) => {
