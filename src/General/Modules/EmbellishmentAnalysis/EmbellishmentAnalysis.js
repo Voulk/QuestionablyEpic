@@ -192,7 +192,7 @@ export default function EmbellishmentAnalysis(props) {
 
   activeGems.sort((a, b) => (getHighestDomScore(a) < getHighestDomScore(b) ? 1 : -1));
 
-  console.log(activeGems);
+
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>

@@ -34,8 +34,8 @@ export const paladinMeleeSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 4.5,
-      chilledClarityExtension: 24000,
+      OneManaHealing: 6,
+      chilledClarityExtension: 27000,
       CastsPerMinute: 27,
       cooldownMult: {
         oneMinute: 1,

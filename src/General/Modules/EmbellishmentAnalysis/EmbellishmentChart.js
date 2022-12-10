@@ -46,7 +46,7 @@ export default class EmbelChart extends PureComponent {
     
     let arr = [];
     let cleanedArray = [];
-    console.log(data);
+
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
@@ -60,7 +60,7 @@ export default class EmbelChart extends PureComponent {
           408: getRankDiff(408, map2)
         });
       });
-    console.log(arr);
+
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 

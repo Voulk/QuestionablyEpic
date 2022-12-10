@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 7,
+    date: "10 December",
+    changes: [ 
+      "New Module: Embellishment Analysis.",
+      "This offers an easy way to see all Embellishment effects at once. Consult a guide before crafting anything."
+  ]},
+  {
+    version: "10.0.2",
     update: 6,
     date: "7 December",
     changes: [ 
