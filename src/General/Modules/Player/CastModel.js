@@ -66,7 +66,7 @@ class CastModel {
       hps: 60000,
       rawhps: 67200,
       dps: 7000,
-      fightLength: 340,
+      fightLength: 400,
       reportID: "Default",
       bossName: "Default",
     };
@@ -78,7 +78,7 @@ class CastModel {
       spellList = druidDefaultSpellData(contentType);
       specialQueries = druidDefaultSpecialQueries(contentType);
       this.baseStatWeights = druidDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 700 : 3600);
+      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
 
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Melee Default") {
@@ -117,7 +117,7 @@ class CastModel {
         spellList = monkDefaultSpellData("Raid");
         specialQueries = monkDefaultSpecialQueries("Raid");
         this.baseStatWeights = monkDefaultStatWeights("Raid");
-        this.fightInfo.dps = 1200;
+        this.fightInfo.dps = 9000;
       }
       else if (modelID === "Dungeon Default") {
         this.modelName = "Dungeon Default"

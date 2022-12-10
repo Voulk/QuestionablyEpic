@@ -152,6 +152,7 @@ export default function TrinketAnalysis(props) {
     ];
     const shadowlandsTheRest = [
       1192, // World Bosses
+      1201, // DF World Bosses
       -18, // PVP
       -17, // PVP
     ];
@@ -168,7 +169,8 @@ export default function TrinketAnalysis(props) {
           (item["sources"] &&
             ((shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
               (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && !legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("Dungeons")))));
+              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && !legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("Dungeons"))))
+        );
       });
     }
 

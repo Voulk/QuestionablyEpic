@@ -6,6 +6,7 @@ import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
+import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
@@ -350,6 +351,7 @@ class App extends Component {
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
+                  
                   <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} patronStatus={this.state.patronStatus} />} />
                   <Route
                     path="/quickcompare"
@@ -387,6 +389,19 @@ class App extends Component {
                     path="/trinkets"
                     render={() => (
                       <TrinketAnalysis
+                        player={activePlayer}
+                        updatePlayerChar={this.updatePlayerChar}
+                        singleUpdate={this.updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={this.handleSimCSnackOpen}
+                        patronStatus={this.state.patronStatus}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/embellishments"
+                    render={() => (
+                      <EmbellishmentAnalysis
                         player={activePlayer}
                         updatePlayerChar={this.updatePlayerChar}
                         singleUpdate={this.updatePlayerChar}
