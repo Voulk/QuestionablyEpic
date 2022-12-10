@@ -118,7 +118,7 @@ export default function createEranogEvents(bossID, difficulty, damageTakenData, 
     });
   }
 
-  // Stellar Decay
+  // Flame Rift
   if (logGuids.includes(flameRift)) {
     const clusterEvents = 1; // Number of events we'd like to see within X seconds of the first debuff.
     const clusterTimeframe = 5000; // We'll check this amount of time after our first event.

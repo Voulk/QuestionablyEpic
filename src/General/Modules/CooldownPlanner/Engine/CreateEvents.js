@@ -25,7 +25,14 @@ import createFatescribeEvents from "./BossEvents/SanctumEvents/Fatescribe";
 import createKelthuzadEvents from "./BossEvents/SanctumEvents/Kelthuzad";
 import createGuardianEvents from "./BossEvents/SanctumEvents/Guardian";
 import createSylvanusEvents from "./BossEvents/SanctumEvents/Sylvanus";
-import createEranogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/1. Eranog"
+import createEranogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/1. Eranog";
+import createTerrosEvents from "./BossEvents/VaultOfTheIncarnatesEvents/2. Terros";
+import createPrimalistCouncilEvents from "./BossEvents/VaultOfTheIncarnatesEvents/3. PrimalistCouncil";
+import createSennarthEvents from "./BossEvents/VaultOfTheIncarnatesEvents/4. Sennarth";
+import createDatheaEvents from "./BossEvents/VaultOfTheIncarnatesEvents/5. Dathea";
+import createKurogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/6. KurogGrimtotem";
+import createBroodkeeperEvents from "./BossEvents/VaultOfTheIncarnatesEvents/7. BroodKeeperDiurna";
+import createRaszagethEvents from "./BossEvents/VaultOfTheIncarnatesEvents/8. Raszageth";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy) {
   let returnedEvents = [];
@@ -130,8 +137,44 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
     returnedEvents = createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
   }
 
+  /* ------------------------------------------- Eranog ------------------------------------------- */
   if (bossID === 2587) {
     returnedEvents = createEranogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* ------------------------------------------- Terros ------------------------------------------- */
+  if (bossID === 2639) {
+    returnedEvents = createTerrosEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* -------------------------------------- Primalist Council ------------------------------------- */
+  if (bossID === 2590) {
+    returnedEvents = createPrimalistCouncilEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* ------------------------------------------ Sennarth ------------------------------------------ */
+  if (bossID === 2592) {
+    returnedEvents = createSennarthEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* ------------------------------------------- Dathea ------------------------------------------- */
+  if (bossID === 2635) {
+    returnedEvents = createDatheaEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* -------------------------------------------- Kurog ------------------------------------------- */
+  if (bossID === 2605) {
+    returnedEvents = createKurogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* ----------------------------------------- Broodkeeper ---------------------------------------- */
+  if (bossID === 2614) {
+    returnedEvents = createBroodkeeperEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* ------------------------------------------ Raszageth ----------------------------------------- */
+  if (bossID === 2607) {
+    returnedEvents = createRaszagethEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
   }
 
   return returnedEvents;

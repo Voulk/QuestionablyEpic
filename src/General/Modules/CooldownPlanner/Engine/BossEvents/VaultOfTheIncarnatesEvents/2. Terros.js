@@ -1,9 +1,14 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createEranogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy) {
+export default function createTerrosEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy) {
   let events = [];
   const seismicAssault = [381576, 381595];
+
+  const logGuids = damageTakenData
+  .map((key) => key.ability.guid)
+  .concat(debuffs.map((key) => key.ability.guid))
+  .concat(buffData.map((key) => key.ability.guid));
 
   const enemyData = enemyEnergy["series"].filter((filter) => filter.guid === 184972);
   const enemyEnergyData = Object.entries(enemyData[0]["data"]).map((key) => {

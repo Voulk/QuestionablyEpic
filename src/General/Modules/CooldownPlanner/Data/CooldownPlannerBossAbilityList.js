@@ -5703,11 +5703,11 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=374038/meteor-axes
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 374038,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "流星之斧",
         de: "Meteoräxte",
@@ -5719,11 +5719,11 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=373059/primal-blizzard
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 373059,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "原始暴风雪",
         de: "Urzeitlicher Blizzard",
@@ -5769,8 +5769,8 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=371624/conductive-mark
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 371624,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
       importActive: false,
@@ -6031,8 +6031,8 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=373817/chilling-aura
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 373817,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_coldhearted.jpg").default,
       importActive: false,
@@ -6047,11 +6047,11 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=371976/chilling-blast
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 371976,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_blueflamering.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "冰冷冲击",
         de: "Unterkühlende Welle",
@@ -6079,11 +6079,11 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=373405/gossamer-burst
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 373405,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/priest_icon_chakra.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "薄纱爆裂",
         de: "Gespinstausbruch",
@@ -6419,11 +6419,11 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=376943/cyclone
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 376943,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/creatureportrait_cyclone_nodebris.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "旋风",
         de: "Wirbelsturm",
@@ -6483,8 +6483,8 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=391717/static-discharge
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 391717,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_crashlightning.jpg").default,
       importActive: false,
