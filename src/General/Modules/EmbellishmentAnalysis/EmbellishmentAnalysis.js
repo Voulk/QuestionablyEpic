@@ -15,6 +15,7 @@ import MetricToggle from "./MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
 import Settings from "../Settings/Settings";
+import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 // import userSettings from "../Settings/SettingsObject";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
@@ -151,6 +152,7 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 export default function EmbellishmentAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
+    loadBannerAd(props.patronStatus);
   }, []);
 
   const { t } = useTranslation();
@@ -195,6 +197,7 @@ export default function EmbellishmentAnalysis(props) {
 
   return (
     <div className={classes.root}>
+      <div id="banner2"></div>
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
