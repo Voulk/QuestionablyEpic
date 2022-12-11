@@ -15,6 +15,7 @@ export default function createEranogEvents(bossID, difficulty, damageTakenData, 
     };
   });
 
+  events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
   /* ---------------------------------------------------------------------------------------------- */
   /*                                         Phase 1 Events                                         */
   /* ---------------------------------------------------------------------------------------------- */

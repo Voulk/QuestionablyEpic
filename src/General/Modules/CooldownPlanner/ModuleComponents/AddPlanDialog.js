@@ -61,7 +61,7 @@ export default function AddPlanDialog(props) {
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const expansion = 8; // shadowlands
+  const expansion = 9; // shadowlands
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
   const [logData, setLogData] = React.useState({

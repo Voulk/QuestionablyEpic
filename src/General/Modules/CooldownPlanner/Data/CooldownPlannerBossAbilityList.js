@@ -5357,8 +5357,8 @@ export const bossAbilities = {
 
     {
       //  https://www.wowhead.com/spell=391592/infused-fallout
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 391592,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_quicksand.jpg").default,
       importActive: false,
@@ -6609,7 +6609,219 @@ export const bossAbilities = {
       },
     },
   ],
-  2605: [], //  Kurog Grimtotem
-  2614: [], //  Broodkeeper Diurna
+  2605: [
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Kurog Grimtotem                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+      // https://www.wowhead.com/spell=373678/biting-chill
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 373678,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
+      importActive: true,
+      name: {
+        cn: "酷寒",
+        de: "Beißende Kälte",
+        en: "Biting Chill",
+        fr: "Frisson mordant",
+        ru: "Жгучий холод",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=372456/absolute-zero
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 372456,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_glacier.jpg").default,
+      importActive: true,
+      name: {
+        cn: "绝对零度",
+        de: "Absoluter Nullpunkt",
+        en: "Absolute Zero",
+        fr: "Zéro absolu",
+        ru: "Абсолютный нуль",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=374861/primal-shift
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 374861,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elementaldevastation.jpg").default,
+      importActive: false,
+      name: {
+        cn: "原始转换",
+        de: "Urverschiebung",
+        en: "Primal Shift",
+        fr: "Variation élémentaire",
+        ru: "Изначальный сдвиг",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=374779/primal-barrier
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 374779,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalcombinedfoozles_primordial.jpg").default,
+      importActive: false,
+      name: {
+        cn: "原始屏障",
+        de: "Urzeitliche Barriere",
+        en: "Primal Barrier",
+        fr: "Barrière primordiale",
+        ru: "Изначальный барьер",
+      },
+    },
+  ],
+  2614: [
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Broodkeeper Diurna                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    {
+      // https://www.wowhead.com/spell=375871/wildfire
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 375871,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_rainoffire.jpg").default,
+      importActive: true,
+      name: {
+        cn: "野火",
+        de: "Lauffeuer",
+        en: "Wildfire",
+        fr: "Flambée",
+        ru: "Дикий огонь",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=380175/greatstaff-of-the-broodkeeper
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 380175,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_staff_2h_broodkeeper_d_01.jpg").default,
+      importActive: true,
+      name: {
+        cn: "巢穴守护者的巨杖",
+        de: "Großstab der Bruthüterin",
+        en: "Greatstaff of the Broodkeeper",
+        fr: "Grand bâton de la garde-couvée",
+        ru: "Великий посох хранительницы стаи",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375457/chilling-tantrum
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 375457,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mount_dkmountfrost.jpg").default,
+      importActive: false,
+      name: {
+        cn: "寒冰怒气",
+        de: "Frostiger Tobsuchtsanfall",
+        en: "Chilling Tantrum",
+        fr: "Colère glaçante",
+        ru: "Леденящий гнев",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=396264/detonating-stoneslam
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 396264,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
+      importActive: true,
+      name: {
+        cn: "爆震石斫",
+        de: "Detonierendes Steinschmettern",
+        en: "Detonating Stoneslam",
+        fr: "Coup rocailleux explosif",
+        ru: "Детонирующий камень",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=388918/frozen-shroud
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 388918,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_mage_flameorb_blue.jpg").default,
+      importActive: true,
+      name: {
+        cn: "冷凝笼罩",
+        de: "Eishülle",
+        en: "Frozen Shroud",
+        fr: "Voile gelé",
+        ru: "Морозный покров",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=380176/empowered-greatstaff-of-the-broodkeeper
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 380176,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_staff_2h_broodkeeper_d_01.jpg").default,
+      importActive: true,
+      name: {
+        cn: "强化的巢穴守护者的巨杖",
+        de: "Ermächtigter Großstab der Bruthüterin",
+        en: "Empowered Greatstaff of the Broodkeeper",
+        fr: "Grand bâton de la garde-couvée renforcé",
+        ru: "Усиленный посох хранительницы стаи",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375829/clutchwatchers-rage
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 375829,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_shamanrage.jpg").default,
+      importActive: false,
+      name: {
+        cn: "龙巢看护者之怒",
+        de: "Wut der Gelegehüterin",
+        en: "Clutchwatcher's Rage",
+        fr: "Fureur de la Mère-de-la-Nichée",
+        ru: "Ярость хранительницы кладки",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375809/broodkeepers-bond
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 375809,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_item_protodragonegg_standard01.jpg").default,
+      importActive: false,
+      name: {
+        cn: "巢穴守护者的羁绊",
+        de: "Bindung der Bruthüterin",
+        en: "Broodkeeper's Bond",
+        fr: "Lien de la garde-couvée",
+        ru: "Связь с хранительницей стаи",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=375879/broodkeepers-fury
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 375879,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_focusedrage.jpg").default,
+      importActive: false,
+      name: {
+        cn: "巢穴守护者的愤怒",
+        de: "Wut der Bruthüterin",
+        en: "Broodkeeper's Fury",
+        fr: "Fureur de la garde-couvée",
+        ru: "Неистовство хранительницы стаи",
+      },
+    },
+  ],
   2607: [], //  Raszageth the Storm-Eater
 };

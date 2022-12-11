@@ -809,6 +809,12 @@ export function wclClassConverter(wclClass) {
     case "DemonHunter-Havoc":
       newClass = "HavocDemonHunter";
       break;
+    case "Evoker-Preservation":
+      newClass = "PreservationEvoker";
+      break;
+    case "Evoker-Devastation":
+      newClass = "DevestationEvoker";
+      break;
     default:
       newClass = "No Class";
       break;
