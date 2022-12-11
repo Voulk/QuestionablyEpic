@@ -10,6 +10,39 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 7,
+    date: "10 December",
+    changes: [ 
+      "New Module: Embellishment Analysis.",
+      "This offers an easy way to see all Embellishment effects at once. Consult a guide before crafting anything."
+  ]},
+  {
+    version: "10.0.2",
+    update: 6,
+    date: "7 December",
+    changes: [ 
+      "In game hotfixes: Kyrakka's Searing Embers, Irideus Fragment, Darkmoon Deck: Dance",
+      "Added the Blood of the Khansguard and Gladiator's Insignia of Alacrity trinkets."
+  ]},
+  {
+    version: "10.0.2",
+    update: 5,
+    date: "6 December",
+    changes: [ 
+      "In game hotfixes: Dreamscape Prism, Gnollhide Belt",
+      "Reduced the expected value of Miniature Singing stone in dungeon content."
+  ]},
+  {
+    version: "10.0.2",
+    update: 4,
+    date: "5 December",
+    changes: [ 
+      "Crafted items can now be added manually via the Item Bar.",
+      "Fixed a bug with Mistweaver & Evoker dungeon stat valuation.",
+      "Bugfix: Leveling items should once again import correctly.",
+  ]},
+  {
+    version: "10.0.2",
     update: 3,
     date: "3 December",
     changes: [ 

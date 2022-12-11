@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getProcessedValue, getDiminishedValue } from "../EffectUtilities";
+import { convertPPMToUptime, getProcessedValue, getDiminishedValue, getHighestStat } from "../EffectUtilities";
 import { trinket_data } from "./ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
@@ -29,23 +29,7 @@ export function getTrinketValue(trinketName, itemLevel) {
   }
 }
 
-export function getHighestStat(stats) {
-  let max = "";
-  let maxValue = -1;
 
-  for (var stat in stats) {
-    if (stats[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
-      max = stat;
-      maxValue = stats[stat];
-    }
-  }
-
-  if (maxValue > 0) return max;
-  else {
-    reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
-    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
-  }
-}
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {

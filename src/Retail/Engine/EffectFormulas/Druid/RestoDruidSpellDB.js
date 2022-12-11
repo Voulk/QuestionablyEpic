@@ -41,6 +41,61 @@ export const DRUIDSPELLDB = {
         statMods: {'crit': 0.3},
         secondaries: ['crit', 'vers', 'mastery']
     }],
+    "Wild Growth": [{
+        spellData: {id: 48438, icon: "ability_druid_flourish", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Swiftmend": [{
+        spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Convoke the Spirits": [{
+        spellData: {id: 323764, icon: "ability_ardenweald_druid", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Flourish": [{
+        spellData: {id: 197721, icon: "spell_druid_wildburst", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Regrowth": [{
+        spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 0.16,
+        coeff: 1.55, // Not final
+        expectedOverheal: 0.29,
+        holyPower: 1,
+        statMods: {'crit': 0.3},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
     "Wrath": [{
         spellData: {id: 5176, icon: "spell_nature_wrathv2", cat: "damage"},
         type: "damage",

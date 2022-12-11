@@ -51,7 +51,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // A special effect is one that appears on an item slot where an effect isn't usually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
-      bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, effect);
+      bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, setStats, userSettings);
     } 
     // == Class specific effects ==
     // These can be single-slot effects like Legendaries, or entire set bonuses.

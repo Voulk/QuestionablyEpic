@@ -61,9 +61,9 @@ describe("Kyrakka's Searing Embers", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${346}  | ${[53616, 16032]}
-    ${359}  | ${[55600, 16625]}
-    ${372}  | ${[57657, 17241]}
+    ${346}  | ${[29488, 13856]}
+    ${359}  | ${[30580, 14369]}
+    ${372}  | ${[31711, 14901]}
     // add new test cases here
     `.test("Kyrakka's Searing Embers Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);

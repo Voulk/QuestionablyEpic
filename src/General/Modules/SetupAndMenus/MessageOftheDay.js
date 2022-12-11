@@ -6,9 +6,8 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Updated for Dragonflight!",
+      "-> Consult Guides for best Spark crafts early on.",
       "-> Expect a bit of turbulence over the first few days.",
-      "-> Stuff WILL change in-game and as we collect more data."
   ],
   "Classic": [""]
   }

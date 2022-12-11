@@ -22,7 +22,7 @@ export const raidTrinketData = [
         percentBoosted: 0.9,
         boostValue: 2.33,
         efficiency: 0.5,
-        secondaries: ["versatility"], // Currently cannot Crit. TODO: Test Haste.
+        secondaries: ["haste", "versatility"], // Currently cannot Crit. TODO: Test Haste.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -31,7 +31,7 @@ export const raidTrinketData = [
       const versBoost = data[0].percentBoosted * data[0].boostValue + (1-data[0].percentBoosted)
       bonus_stats.versatility = processedValue(data[0], itemLevel, versBoost);
 
-      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility;
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
 
       // Healing Portion
       let healing = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * 2;
@@ -112,7 +112,7 @@ export const raidTrinketData = [
         bonus_stats.crit = sharedBuff;
         bonus_stats.versatility = sharedBuff;
       }     
-
+      
       return bonus_stats;
     }
   },

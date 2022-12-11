@@ -9,7 +9,7 @@ export const dungeonTrinketData = [
     */
     name: "Emerald Coach's Whistle",
     effects: [
-      { // Versatility Portion. 100% uptime.
+      { // Mastery portion
         coefficient: 0.780421,
         table: -7,
         stat: "mastery",
@@ -57,18 +57,18 @@ export const dungeonTrinketData = [
     name: "Kyrakka's Searing Embers",
     effects: [
       { // Healing Portion
-        coefficient: 161.5508, 
+        coefficient: 88.852905, // 161.5508, 
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 1,
+        ppm: 2,
         mult: 0.55, // Our expected overhealing.
       },
       { // Damage portion
         // Damage is split, so we don't need any kind of target multiplier in here.
-        coefficient: 48.30759, 
+        coefficient: 41.75107,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 1,
+        ppm: 2,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -92,7 +92,7 @@ export const dungeonTrinketData = [
         table: -1,
         duration: 15,
         cooldown: 180,
-        efficiency: 0.4, // The rune is tiny.
+        efficiency: 0.25, // The rune is tiny. This functionally is incompatible with most fight designs.
       },
       { // -Crit Portion
         coefficient: 0.907077, 
@@ -154,22 +154,23 @@ export const dungeonTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
+   // Singing Stone hits 1 target, and then bounces to a new target when it expires or when it's consumed.
+   // Each bounce is at full strength and it'll bounce four times total for 5 absorbs.
     name: "Miniature Singing Stone",
     effects: [
       { 
-        coefficient: 89.95994, // Note that this coefficient is for when the target is below 20% health.
+        coefficient: 89.95994, 
         table: -9,
         secondaries: ['versatility'],
         cooldown: 120,
-        mult: 5, // Singing Stone hits 1 target, and then bounces to 4.
-        efficiency: 0.62, //
+        mult: 5, 
+        efficiency: {Raid: 0.64, Dungeon: 0.5} //
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult * data[0].efficiency, "round") * player.getStatMults(data[0].secondaries) / data[0].cooldown;
-
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult * data[0].efficiency[additionalData.contentType], "round") * player.getStatMults(data[0].secondaries) / data[0].cooldown;
       return bonus_stats;
     }
   },
