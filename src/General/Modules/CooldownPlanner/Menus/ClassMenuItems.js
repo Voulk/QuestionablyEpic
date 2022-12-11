@@ -5,9 +5,10 @@ import { useTranslation } from "react-i18next";
 
 export const classMenus = () => {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.currentLanguage;
-  const healerClasses = ["HolyPaladin", "RestorationDruid", "HolyPriest", "DisciplinePriest", "RestorationShaman", "MistweaverMonk"];
-  const utilityClasses = ["HavocDemonHunter", "Warrior", "DeathKnight", "Druid", "ShadowPriest"];
+  const currentLanguage = i18n.language;
+
+  const healerClasses = ["HolyPaladin", "RestorationDruid", "HolyPriest", "DisciplinePriest", "RestorationShaman", "MistweaverMonk", "PreservationEvoker"];
+  const utilityClasses = ["HavocDemonHunter", "Warrior", "DeathKnight", "Druid", "ShadowPriest", "DevastationEvoker"];
 
   const healerHeader = <ListSubheader key={"Header1"}>{t("Healers")}</ListSubheader>;
   const healerMenuItems = () => {

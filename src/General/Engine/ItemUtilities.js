@@ -1,5 +1,6 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
+import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -237,12 +238,14 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
 }
 
 // Returns a translated item name based on an ID.
-export function getTranslatedDominationGem(id, lang) {
-  let temp = dominationGemDB.filter(function (gem) {
-    return gem.gemID === id;
+export function getTranslatedEmbellishment(id, lang) {
+
+  let temp = embellishmentDB.filter(function (embel) {
+
+    return embel.id === id;
   });
   if (temp.length > 0) return temp[0].name[lang];
-  else return "Unknown Gem";
+  else return "Unknown Effect";
 }
 
 // Grabs a specific item from whichever item database is currently selected.
@@ -297,6 +300,16 @@ export function getItemIcon(id, gameType = "Retail") {
   else if (item !== "") {
     reportError(this, "ItemUtilities", "Icon not found for ID", id);
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
+  }
+}
+
+export function getEmbellishmentIcon(id) {
+  const embel = embellishmentDB.filter((embel) => embel.id === id);
+
+  if (embel[0] === undefined) {
+    return "https://wow.zamimg.com/images/icons/socket-domination.gif";
+  } else {
+    return "https://wow.zamimg.com/images/wow/icons/large/" + embel[0].icon + ".jpg";
   }
 }
 
@@ -439,6 +452,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     bonus_stats: {},
   };
 
+  
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
@@ -463,7 +477,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       // This is an occasionally off-by-one formula for leech that should be rewritten.
       stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
     } else {
-      const terMult = slot === "Finger" || slot === "Neck" ? 0.174027 : 0.442932;
+      const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
     }
   }
@@ -643,11 +657,6 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
   let bonus_stats = {};
   let item_stats = { ...item.stats };
 
-  // Check if Dom Slot
-  if (item.hasDomSocket && "domGemID" in item && item.domGemID != 0) {
-    const effect = getDomGemEffect(item.domGemID);
-    bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
-  }
   // Calculate Effect.
   if (item.effect) {
     bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
@@ -681,7 +690,12 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add Retail Socket
   if (item.socket) {
-    score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+  }
+
+  // Add any group benefit, if we're interested in it.
+  if (userSettings.includeGroupBenefits && "bonus_stats" in item_stats && "allyStats" in bonus_stats) {
+    score += 0.35 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 
   // Classic specific sockets

@@ -24,6 +24,26 @@ export default function bossHeaders(props, style, QEmodule) {
       source = require("Images/Bosses/WorldBosses/nurgash.png").default;
     }
 
+    // Dragonflight World Bosses
+    if (props === 2640) {
+      // Basrikron, The Shale Wing
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BasrikronTheShaleWing.png").default;
+    }
+    if (props === 2651) {
+      // Strunraan, The Sky's Misery
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-StrunraanTheSkysMisery.png").default;
+    }
+    if (props === 2652) {
+      // Liskanoth, The Futurebane
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-LiskanothTheFuturebane.png").default;
+    }
+    if (props === 2653) {
+      // Bazual, The Dreaded Flame
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BazualTheDradedFlame.png").default;
+    }
+    //
+
+
     if (props === 2418) {
       source = require("Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png").default;
     }
@@ -118,6 +138,39 @@ export default function bossHeaders(props, style, QEmodule) {
     }
     if (props === 2464) {
       source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
+    }
+
+    // Eranog
+    if (props === 2480) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Eranog.png").default;
+    }
+    // Terros
+    if (props === 2500) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Terros.png").default;
+    }
+    // The Primalist Council
+    if (props === 2486) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png").default;
+    }
+    // Sennarth, The Cold Breath
+    if (props === 2482) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-SennarthTheColdBreath.png").default;
+    }
+    // Dathea, Ascended
+    if (props === 2502) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-DatheaAscended.png").default;
+    }
+    // Kurog Grimtotem
+    if (props === 2491) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-KurogGrimtotem.png").default;
+    }
+    // Broodkeeper Diurna
+    if (props === 2493) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-BroodkeeperDiurna.png").default;
+    }
+    // Raszageth the Storm-Eater
+    if (props === 2499) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
     }
   } else {
     // World Bosses
@@ -437,6 +490,39 @@ export default function bossHeaders(props, style, QEmodule) {
 
   if (props === 999 || props === 998) {
     source = require("Images/Classic/Raid/JournalImages/BOE.png").default;
+  }
+
+  // Eranog
+  if (props === 2587) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Eranog.png").default;
+  }
+  // Terros
+  if (props === 2639) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Terros.png").default;
+  }
+  // The Primalist Council
+  if (props === 2590) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png").default;
+  }
+  // Sennarth, The Cold Breath
+  if (props === 2592) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-SennarthTheColdBreath.png").default;
+  }
+  // Dathea, Ascended
+  if (props === 2635) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-DatheaAscended.png").default;
+  }
+  // Kurog Grimtotem
+  if (props === 2605) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-KurogGrimtotem.png").default;
+  }
+  // Broodkeeper Diurna
+  if (props === 2614) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-BroodkeeperDiurna.png").default;
+  }
+  // Raszageth the Storm-Eater
+  if (props === 2607) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;

@@ -119,8 +119,9 @@ export default function ItemBar(props) {
 
     if (gameType === "Retail") {
       const itemSlot = getItemProp(itemID, "slot", gameType);
+      const isCrafted = getItemProp(itemID, "crafted", gameType);
 
-      if (itemID >= 990001) {
+      if (isCrafted) {
         // Item is a legendary and gets special handling.
         const missiveStats = missives.toLowerCase().replace(/ /g, "").split("/");
         let itemAllocations = getItemAllocations(itemID, missiveStats);
@@ -128,23 +129,20 @@ export default function ItemBar(props) {
         item = new Item(itemID, itemName, itemSlot, itemSocket, itemTertiary, 0, itemLevel, "");
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
 
-        if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
-        else item.uniqueEquip = "legendary";
-        let bonusString = getLegendaryID(item.effect.name);
+        //if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
+        //item.uniqueEquip = "legendary";
+        let bonusString = "";
         if (missives.includes("Haste")) bonusString += ":6649";
         if (missives.includes("Mastery")) bonusString += ":6648";
         if (missives.includes("Crit")) bonusString += ":6647";
         if (missives.includes("Versatility")) bonusString += ":6650";
-        if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(itemSlot)) {
-          item.socket = true;
-          bonusString += ":6935";
-        }
 
         item.bonusIDS = bonusString;
-        item.id = getItemProp(itemID, "baseSlotID", "Retail");
+        item.guessQualityColor();
       } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
-        //item.setDominationGem(dominationSocket);
+        item.guessQualityColor();
+
       }
     } else {
       // Burning Crusade
@@ -218,7 +216,7 @@ export default function ItemBar(props) {
 
   const isItemShadowlandsLegendary = getItemDB("Retail")
     .filter((key) => key.id === itemID)
-    .map((key) => key.shadowlandsLegendary)[0];
+    .map((key) => key.crafted)[0]; // Change this to crafted.
 
   const isItemDomination =
     getItemDB("Retail")
@@ -299,7 +297,7 @@ export default function ItemBar(props) {
         /* -------------------------------------------------------------------------- */}
 
         <Grid item>
-          {isItemShadowlandsLegendary ? (
+          {false ? (
             <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemID === "" || gameType !== "Retail" ? true : false}>
               <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
               <Select key={"itemLevelSelect"} labelId="itemLevelSelectLabel" value={itemLevel} onChange={(e) => itemLevelChanged(e.target.value)} label={t("QuickCompare.ItemLevel")}>

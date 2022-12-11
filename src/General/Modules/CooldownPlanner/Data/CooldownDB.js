@@ -637,6 +637,79 @@ export const cooldownDB = [
   },
 
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Evoker                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  /* --------------------------------------- Base Abilities --------------------------------------- */
+  {
+    // https://www.wowhead.com/beta/spell=363534/rewind
+    name: {
+      en: "Rewind",
+      fr: "",
+      de: "",
+      ru: "",
+      cn: "",
+    },
+    guid: 363534,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_rewind.jpg").default,
+    duration: 1,
+    cooldown: 240,
+    class: "PreservationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    // https://www.wowhead.com/beta/spell=359816/dream-flight
+    name: {
+      en: "Dream Flight",
+      fr: "",
+      de: "",
+      ru: "",
+      cn: "",
+    },
+    guid: 359816,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_dreamflight.jpg").default,
+    duration: 15,
+    cooldown: 120,
+    class: "PreservationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    // https://www.wowhead.com/beta/spell=374227/zephyr
+    name: {
+      en: "Zephyr",
+      fr: "",
+      de: "",
+      ru: "",
+      cn: "",
+    },
+    guid: 374227,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_hoverblack.jpg").default,
+    duration: 8,
+    cooldown: 120,
+    class: "PreservationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    // https://www.wowhead.com/beta/spell=374227/zephyr
+    name: {
+      en: "Zephyr",
+      fr: "",
+      de: "",
+      ru: "",
+      cn: "",
+    },
+    guid: 374227,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_hoverblack.jpg").default,
+    duration: 8,
+    cooldown: 120,
+    class: "DevestationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                        Utility Cooldowns                                       */
   /* ---------------------------------------------------------------------------------------------- */
   {

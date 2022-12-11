@@ -1,6 +1,7 @@
 import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
+import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {
@@ -17,7 +18,7 @@ export function getDiminishedValue(statID, procValue, baseStat) {
 
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
 export function runGenericPPMTrinket(effect, itemLevel) {
-    const value = processedValue(effect.coefficient, effect.table, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
+    const value = processedValue(effect, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
     return value;
 }
 
@@ -26,12 +27,57 @@ export function runGenericPPMTrinket(effect, itemLevel) {
 export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 
   const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
-                  //* castModel.getSpecialQuery("twoMinutes", "cooldownMult");
+                  * (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1);
   return value;
 }
 
+export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, castModel, player) {
+    const trinket = {}
+    trinket[trinketName] = trinketValue;
+    const rampHealing = allRampsHealing([], playerStats, {"playstyle": castModel.playstyle || "", "reporting": false}, {}, trinket, false) / 180;
+    console.log(rampHealing);
+    return (rampHealing - player.getRampID('baseline', "Raid")) * (1 - 0.1);
+
+  }
+
 export function convertPPMToUptime(PPM, duration) {
   return 1.13 * (1 - Math.E ** -((PPM * duration) / 60));
+}
+
+export function getHighestStat(stats) {
+  let max = "";
+  let maxValue = -1;
+
+  for (var stat in stats) {
+    if (stats[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+      max = stat;
+      maxValue = stats[stat];
+    }
+  }
+
+  if (maxValue > 0) return max;
+  else {
+    reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
+    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
+  }
+}
+
+export function getLowestStat(stats) {
+  let min = "";
+  let minValue = 99999;
+
+  for (var stat in stats) {
+    if (stats[stat] < minValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+      min = stat;
+      minValue = stats[stat];
+    }
+  }
+
+  if (minValue < 99999) return min;
+  else {
+    reportError(this, "TrinketEffectFormulas", "No lowest stat found: " + JSON.stringify(stats));
+    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
+  }
 }
 
 export function getScalarValue(table, itemLevel) {

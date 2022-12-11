@@ -49,6 +49,8 @@ export default function Settings(props) {
     groupBuffShow: true,
     // Show the Auto Socket Settings
     autoSocket: true,
+
+    catalystLimit: false,
   };
 
   /* ------------------------------- Burning Crusade Settings Shown ------------------------------- */

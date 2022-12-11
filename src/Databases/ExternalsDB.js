@@ -147,6 +147,21 @@ export const externalsDB = [
     icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/PainSupression.jpg").default,
     cooldown: 180,
   },
+
+  {
+    guid: 357170,
+    name: {
+      en: "Time Dilation",
+      de: "Zeitverschiebung",
+      fr: "Dilatation temporelle",
+      ru: "Растяжение времени",
+      ch: "时间膨胀",
+    },
+    wowhead: "https://www.wowhead.com/spell=357170/time-dilation",
+    icon: require("Images/Classes/Evoker/ability_evoker_timedilation.jpg").default,
+    cooldown: 60,
+  },
+
   {
     // name: {
     //   en: "Fae Guardians",

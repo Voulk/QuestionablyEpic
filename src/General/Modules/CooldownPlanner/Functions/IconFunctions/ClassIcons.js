@@ -15,6 +15,7 @@ import MageIcon from "Images/Classes/Mage/Icons/MageIcon.jpg";
 import HunterIcon from "Images/Classes/Hunter/Icons/HunterIcon.jpg";
 import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
 import EvokerIcon from "Images/Classes/Evoker/classicon_evoker_preservation.jpg";
+import DevastationEvokerIcon from "Images/Classes/Evoker/classicon_evoker_devastation.jpg";
 
 export default function classIcons(props, style) {
   let src = "";
@@ -39,9 +40,15 @@ export default function classIcons(props, style) {
   }
 
   // Preservation Evoker
-  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation") {
+  if (props === "PreservationEvoker" || props === "Preservation Evoker" || props === "Evoker-Preservation" || props === "Evoker") {
     src = EvokerIcon;
     alt = "Preservation Evoker";
+  }
+
+  // Devastation Evoker
+  if (props === "DevastationEvoker" || props === "Devastation Evoker" || props === "Evoker-Devastation") {
+    src = DevastationEvokerIcon;
+    alt = "Devastation Evoker";
   }
 
   // Restoration Druid

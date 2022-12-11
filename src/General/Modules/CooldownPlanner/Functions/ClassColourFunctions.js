@@ -43,6 +43,9 @@ export function classColoursERT(props) {
   if (props === "DeathKnight") {
     return "|cffc31d39";
   }
+  if (props === "PreservationEvoker" || props === "DevestationEvoker") {
+    return "|cff33937f";
+  }
 }
 
 export function classColoursJS(props) {

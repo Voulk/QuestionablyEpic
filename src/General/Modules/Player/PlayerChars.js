@@ -15,7 +15,7 @@ import ClassicPlayer from "./ClassicPlayer";
 class PlayerChars {
   constructor() {
     // Check our local storage for our characters.
-    let playerChars = JSON.parse(ls.get("allCharDF")) || [];
+    let playerChars = JSON.parse(ls.get("allChar")) || []; // DF
 
     //
     let charArray = [];
@@ -33,7 +33,6 @@ class PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
-          if (player.renown > 0) newChar.updateRenownLevel(player.renown);
           newChar.setPlayerAvatars();
           charArray.push(newChar);
         }
@@ -49,7 +48,7 @@ class PlayerChars {
 
     this.allChar = charArray;
     /*this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)]; // This is the previous code. To be eventually removed */
-    this.activeChar = ls.get("activeCharDF") || 0;
+    this.activeChar = ls.get("activeChar") || 0; //activeCharDF
   }
 
   allChar = []; // An array of all our characters.
@@ -98,9 +97,9 @@ class PlayerChars {
   saveAllChar = () => {
     // Database TODO
 
-    // Local Storage
-    ls.set("allCharDF", JSON.stringify(this.allChar));
-    ls.set("activeCharDF", this.activeChar);
+    // Local Storage - Optional DF
+    ls.set("allChar", JSON.stringify(this.allChar));
+    ls.set("activeChar", this.activeChar);
   };
 
   // Add a new character to the array then save it.
@@ -112,7 +111,9 @@ class PlayerChars {
     else {
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race)
       newChar.setPlayerAvatars();
+      if (spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, []);
       this.allChar.push(newChar);
+
     }
     
     this.saveAllChar();

@@ -10,8 +10,11 @@ import { defensiveDB } from "Databases/DefensiveDB";
 // import i18n from "i18next";
 
 // Returns Seconds from 0 to Loglength
-export function addMissingTimestamps(loglength) {
-  let newarray = [{ timestamp: 0 }];
+export function addMissingTimestamps(loglength, abilityArray, uniqueArrayCD) {
+  let newObject = {};
+  abilityArray.map((key) => Object.assign(newObject, { [key]: 0 }));
+  uniqueArrayCD.map((key) => Object.assign(newObject, { [key]: 0 }));
+  let newarray = [{ timestamp: 0, ...newObject }];
   let ticks = [];
   let tickcount = 0;
   let length = moment.utc(loglength).startOf("second") / 1000;
@@ -19,7 +22,7 @@ export function addMissingTimestamps(loglength) {
     ticks = ticks.concat(tickcount + 1000);
     tickcount = tickcount + 1000;
   }
-  ticks.forEach((element) => newarray.push({ timestamp: element }));
+  ticks.forEach((element) => newarray.push({ timestamp: element, ...newObject }));
   return newarray;
 }
 
@@ -115,6 +118,7 @@ export async function importHealerLogData(starttime, endtime, reportid) {
   const apiWarrior = "&sourceclass=Warrior";
   const apiDemonHunter = "&sourceclass=DemonHunter";
   const apiDeathKnight = "&sourceclass=DeathKnight";
+  const apiEvoker = "&sourceclass=Evoker";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";
   const translate = "&translate=true";
   const START = "?start=";
@@ -209,6 +213,15 @@ export async function importHealerLogData(starttime, endtime, reportid) {
 
   await axios
     .get(APIHEALING + reportid + START + starttime + END + endtime + apiDeathKnight + translate + API2)
+    .then((result) => {
+      healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  await axios
+    .get(APIHEALING + reportid + START + starttime + END + endtime + apiEvoker + translate + API2)
     .then((result) => {
       healers = healers.concat(Object.keys(result.data.entries).map((key) => result.data.entries[key]));
     })
@@ -795,6 +808,12 @@ export function wclClassConverter(wclClass) {
       break;
     case "DemonHunter-Havoc":
       newClass = "HavocDemonHunter";
+      break;
+    case "Evoker-Preservation":
+      newClass = "PreservationEvoker";
+      break;
+    case "Evoker-Devastation":
+      newClass = "DevestationEvoker";
       break;
     default:
       newClass = "No Class";

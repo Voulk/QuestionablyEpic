@@ -106,7 +106,7 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "LegionTimewalking"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -115,9 +115,11 @@ export default function TrinketAnalysis(props) {
   const sourceHandler = (array, sources) => {
     let results = [];
     const shadowlandsRaids = [
-      1190, // Castle Nathria
-      1193, // Sanctum of Domination
-      1195, // Sepulcher
+      //1190, // Castle Nathria
+      //1193, // Sanctum of Domination
+      //1195, // Sepulcher
+      1200, // Vault of the Incarnates
+
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -130,18 +132,27 @@ export default function TrinketAnalysis(props) {
       1188, // De Other Side,
       1189, // Sanguine Depths,
       1194, // Tazavesh
+
+      1198, // Nokhud Offensive
+      1203, // The Azure Vault
+      1202, // Ruby Life Pools
+      1197, // Uldaman
+      1204, // Halls of Infusion
+      1199, // Neltharus
+      1196, // Brackenhide Hollow
+      1201, // Alge'thar Academy
+      721, // Halls of Valor
+      537, // Shadowmoon Burial Ground
+      313, // Jade Serpent
+      800, // Court of Stars
+
+
     ];
     const legionTimewalking = [
-      -24, // Legion Timewalking
-      707, // Vault of the Wardens
-      716, // Eye of Azshara
-      740, // Black Rook Hold
-      762, // Darkheart Thicket
-      767, // Neltharion's Lair
-      800, // Court of Stars
     ];
     const shadowlandsTheRest = [
       1192, // World Bosses
+      1201, // DF World Bosses
       -18, // PVP
       -17, // PVP
     ];
@@ -149,7 +160,7 @@ export default function TrinketAnalysis(props) {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true && sources.includes("LegionTimewalking") === true) {
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true) {
       results = array;
     } else {
       results = array.filter((item) => {
@@ -158,8 +169,7 @@ export default function TrinketAnalysis(props) {
           (item["sources"] &&
             ((shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
               (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && !legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("Dungeons")) ||
-              (legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("LegionTimewalking"))))
+              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && !legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("Dungeons"))))
         );
       });
     }
@@ -173,7 +183,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
-  const itemLevels = [359, 372, 376, 379, 382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 423, 426];
+  const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 423, 426];
   
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(

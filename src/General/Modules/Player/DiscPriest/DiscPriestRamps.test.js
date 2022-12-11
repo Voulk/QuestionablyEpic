@@ -73,7 +73,7 @@ describe("Evang Cast Sequence", () => {
         const fiendSeq = buildRamp('Secondary', 10, [], activeStats.haste, "", talentSet)
 
 
-        console.log(seq);
+        //console.log(seq);
 
         const settings = {'Power of the Dark Side': true, 'includeOverheal': true}
         const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents)

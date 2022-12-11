@@ -4,6 +4,9 @@ export const defaultPlans = {
   /* ---------------------------------------------------------------------------------------------- */
   2398: {
     // Shriekwing
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -30,6 +33,9 @@ export const defaultPlans = {
   },
   2418: {
     // Huntsman Altimor
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -62,6 +68,9 @@ export const defaultPlans = {
   },
   2402: {
     // Sun King's Salvation
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -88,6 +97,9 @@ export const defaultPlans = {
   },
   2405: {
     // Artificer Xy'mox
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -133,6 +145,9 @@ export const defaultPlans = {
   },
   2383: {
     // Hungering Destroyer
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { bossAbility: 329455, time: "00:24" },
@@ -164,6 +179,9 @@ export const defaultPlans = {
   },
   2406: {
     // Lady Inerva Darkvein
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:20", bossAbility: 331844 },
@@ -186,6 +204,9 @@ export const defaultPlans = {
   },
   2412: {
     // The Council of Blood
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -223,6 +244,9 @@ export const defaultPlans = {
   },
   2399: {
     // Sludgefist
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { bossAbility: 332687, time: "00:00" },
@@ -255,6 +279,9 @@ export const defaultPlans = {
   },
   2417: {
     // Stone Legion Generals
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -300,6 +327,9 @@ export const defaultPlans = {
   },
   2407: {
     // Sire Denathrius
+    Normal: {
+      default: [],
+    },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -356,11 +386,13 @@ export const defaultPlans = {
   /* ---------------------------------------------------------------------------------------------- */
   2423: {
     // The Tarragrue
+    Normal: { default: [] },
     Heroic: { default: [] },
     Mythic: { default: [] },
   },
   2433: {
     // The Eye of the Jailer
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -401,6 +433,7 @@ export const defaultPlans = {
   },
   2429: {
     // The Nine
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -426,6 +459,7 @@ export const defaultPlans = {
   },
   2432: {
     // Remnant of Ner'zhul
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:28", bossAbility: 351066 },
@@ -457,6 +491,7 @@ export const defaultPlans = {
   },
   2434: {
     // Soulrender Dormazain
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "01:28", bossAbility: 350801 },
@@ -491,6 +526,7 @@ export const defaultPlans = {
   },
   2430: {
     // Painsmith Raznal
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -543,6 +579,7 @@ export const defaultPlans = {
   },
   2436: {
     // Guardian of the First Ones
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:30", bossAbility: 355352 },
@@ -591,6 +628,7 @@ export const defaultPlans = {
   },
   2431: {
     // Fatescribe Roh-Kalo
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -641,6 +679,7 @@ export const defaultPlans = {
   },
   2422: {
     // Kel'Thuzad
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" },
@@ -684,6 +723,7 @@ export const defaultPlans = {
   },
   2435: {
     // Sylvanas Windrunner
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:09", bossAbility: 347670 },
@@ -769,6 +809,7 @@ export const defaultPlans = {
   /* ---------------------------------------------------------------------------------------------- */
   2512: {
     // Vigilant Guardian
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "01:30", bossAbility: 360409 }, // Exposed Core
@@ -796,6 +837,7 @@ export const defaultPlans = {
 
   2542: {
     // Skolex, the Insatiable Ravener
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:04", bossAbility: 359829 }, // Dust Flail
@@ -851,6 +893,7 @@ export const defaultPlans = {
 
   2553: {
     // Artificer Xy'mox
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:19", bossAbility: 362850 }, // Hyperlight Sparknova
@@ -891,6 +934,7 @@ export const defaultPlans = {
 
   2540: {
     // Dausegne, the Fallen Oracle
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:13", bossAbility: 365373 }, // Disintegration Halo 1
@@ -957,6 +1001,7 @@ export const defaultPlans = {
 
   2544: {
     // Prototype Pantheon
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:50", bossAbility: 360636 }, // Runecarver's Deathtouch
@@ -991,6 +1036,7 @@ export const defaultPlans = {
 
   2539: {
     // Lihuvim, Principal Architect
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 360159 }, // Unstable Mote
@@ -1041,6 +1087,7 @@ export const defaultPlans = {
 
   2529: {
     // Halondrus the Reclaimer
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -1123,6 +1170,7 @@ export const defaultPlans = {
 
   2546: {
     // Anduin Wrynn
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -1213,6 +1261,7 @@ export const defaultPlans = {
 
   2543: {
     // Lords of Dread
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:15", bossAbility: 361913 }, // Manifest Shadows
@@ -1255,6 +1304,7 @@ export const defaultPlans = {
 
   2549: {
     // Rygelon
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:10", bossAbility: 362275 }, // Celestial Collapse
@@ -1295,6 +1345,7 @@ export const defaultPlans = {
 
   2537: {
     // The Jailer, Zovaal
+    Normal: { default: [] },
     Heroic: {
       default: [
         { time: "00:00", bossAbility: "Phase 1" }, // Phase 1
@@ -1401,6 +1452,373 @@ export const defaultPlans = {
         { time: "10:51", bossAbility: 365436 }, // Torment
         { time: "11:00", bossAbility: 360378 }, // Meteor Cleave
       ],
+    },
+  },
+
+  2587: {
+    // Eranog
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [
+        { bossAbility: "Phase 1", time: "00:00" },
+        { bossAbility: 394917, time: "00:06" },
+        { bossAbility: 390715, time: "00:15" },
+        { bossAbility: 394917, time: "00:38" },
+        { bossAbility: 390715, time: "00:45" },
+        { bossAbility: 394917, time: "01:09" },
+        { bossAbility: 390715, time: "01:17" },
+        { bossAbility: "Phase 2", time: "01:30" },
+        { bossAbility: 370410, time: "01:38" },
+        { bossAbility: 370410, time: "01:45" },
+        { bossAbility: "Phase 1", time: "01:47" },
+        { bossAbility: 370410, time: "01:52" },
+        { bossAbility: 394917, time: "01:56" },
+        { bossAbility: 394917, time: "02:10" },
+        { bossAbility: 390715, time: "02:19" },
+        { bossAbility: 394917, time: "02:42" },
+        { bossAbility: 390715, time: "02:50" },
+        { bossAbility: 394917, time: "03:14" },
+        { bossAbility: "Phase 2", time: "03:17" },
+        { bossAbility: 370410, time: "03:28" },
+        { bossAbility: 370410, time: "03:35" },
+        { bossAbility: "Phase 1", time: "03:36" },
+        { bossAbility: 370410, time: "03:42" },
+        { bossAbility: 394917, time: "03:44" },
+        { bossAbility: 394917, time: "04:00" },
+        { bossAbility: 390715, time: "04:09" },
+        { bossAbility: "Phase 2", time: "04:19" },
+      ],
+    },
+    Mythic: {
+      default: [
+        { bossAbility: "Phase 1", time: "00:00" },
+        { bossAbility: 396023, time: "00:04" },
+        { bossAbility: 390715, time: "00:13" },
+        { bossAbility: 396023, time: "00:31" },
+        { bossAbility: 394917, time: "00:32" },
+        { bossAbility: 390715, time: "00:44" },
+        { bossAbility: 396023, time: "00:58" },
+        { bossAbility: 394917, time: "01:03" },
+        { bossAbility: 390715, time: "01:14" },
+        { bossAbility: 396023, time: "01:25" },
+        { bossAbility: "Phase 2", time: "01:30" },
+        { bossAbility: 394917, time: "01:31" },
+        { bossAbility: 370410, time: "01:38" },
+        { bossAbility: 370410, time: "01:45" },
+        { bossAbility: 370410, time: "01:52" },
+        { bossAbility: "Phase 1", time: "01:58" },
+        { bossAbility: 396023, time: "02:03" },
+        { bossAbility: 396023, time: "02:08" },
+        { bossAbility: 390715, time: "02:16" },
+        { bossAbility: 394917, time: "02:35" },
+        { bossAbility: 390715, time: "02:46" },
+        { bossAbility: 396023, time: "03:03" },
+        { bossAbility: 394917, time: "03:05" },
+        { bossAbility: 390715, time: "03:17" },
+        { bossAbility: "Phase 2", time: "03:28" },
+        { bossAbility: 396023, time: "03:30" },
+        { bossAbility: 394917, time: "03:36" },
+        { bossAbility: 370410, time: "03:40" },
+        { bossAbility: 370410, time: "03:47" },
+        { bossAbility: 370410, time: "03:54" },
+        { bossAbility: "Phase 1", time: "04:00" },
+        { bossAbility: 396023, time: "04:05" },
+        { bossAbility: 396023, time: "04:10" },
+        { bossAbility: 390715, time: "04:18" },
+      ],
+    },
+  },
+
+  2639: {
+    // Terros
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [
+        { bossAbility: 380487, time: "00:11" },
+        { bossAbility: 376279, time: "00:16" },
+        { bossAbility: 383073, time: "00:30" },
+        { bossAbility: 376279, time: "00:36" },
+        { bossAbility: 380487, time: "00:53" },
+        { bossAbility: 376279, time: "00:58" },
+        { bossAbility: 383073, time: "01:12" },
+        { bossAbility: 376279, time: "01:18" },
+        { bossAbility: 377166, time: "01:36" },
+        { bossAbility: 380487, time: "01:48" },
+        { bossAbility: 376279, time: "01:53" },
+        { bossAbility: 383073, time: "02:06" },
+        { bossAbility: 376279, time: "02:13" },
+        { bossAbility: 380487, time: "02:30" },
+        { bossAbility: 376279, time: "02:35" },
+        { bossAbility: 383073, time: "02:48" },
+        { bossAbility: 376279, time: "02:55" },
+        { bossAbility: 377166, time: "03:13" },
+        { bossAbility: 380487, time: "03:24" },
+        { bossAbility: 376279, time: "03:29" },
+        { bossAbility: 383073, time: "03:43" },
+        { bossAbility: 376279, time: "03:49" },
+        { bossAbility: 380487, time: "04:06" },
+        { bossAbility: 376279, time: "04:11" },
+        { bossAbility: 383073, time: "04:25" },
+        { bossAbility: 376279, time: "04:31" },
+        { bossAbility: 377166, time: "04:49" },
+        { bossAbility: 380487, time: "05:01" },
+      ],
+    },
+    Mythic: {
+      default: [
+        { bossAbility: 380487, time: "00:11" },
+        { bossAbility: 376279, time: "00:16" },
+        { bossAbility: 383073, time: "00:30" },
+        { bossAbility: 391592, time: "00:32" },
+        { bossAbility: 376279, time: "00:36" },
+        { bossAbility: 380487, time: "00:53" },
+        { bossAbility: 376279, time: "00:58" },
+        { bossAbility: 383073, time: "01:12" },
+        { bossAbility: 391592, time: "01:14" },
+        { bossAbility: 376279, time: "01:18" },
+        { bossAbility: 377166, time: "01:36" },
+        { bossAbility: 391592, time: "01:38" },
+        { bossAbility: 380487, time: "01:48" },
+        { bossAbility: 376279, time: "01:53" },
+        { bossAbility: 383073, time: "02:06" },
+        { bossAbility: 391592, time: "02:09" },
+        { bossAbility: 376279, time: "02:13" },
+        { bossAbility: 380487, time: "02:30" },
+        { bossAbility: 376279, time: "02:35" },
+        { bossAbility: 383073, time: "02:48" },
+        { bossAbility: 391592, time: "02:50" },
+        { bossAbility: 376279, time: "02:55" },
+        { bossAbility: 377166, time: "03:13" },
+        { bossAbility: 391592, time: "03:15" },
+        { bossAbility: 380487, time: "03:24" },
+        { bossAbility: 376279, time: "03:29" },
+        { bossAbility: 383073, time: "03:43" },
+        { bossAbility: 391592, time: "03:45" },
+        { bossAbility: 376279, time: "03:49" },
+        { bossAbility: 380487, time: "04:06" },
+        { bossAbility: 376279, time: "04:11" },
+        { bossAbility: 383073, time: "04:25" },
+        { bossAbility: 391592, time: "04:27" },
+        { bossAbility: 376279, time: "04:31" },
+        { bossAbility: 377166, time: "04:49" },
+        { bossAbility: 391592, time: "04:51" },
+        { bossAbility: 380487, time: "05:01" },
+        { bossAbility: 376279, time: "05:06" },
+        { bossAbility: 383073, time: "05:19" },
+        { bossAbility: 391592, time: "05:21" },
+        { bossAbility: 376279, time: "05:26" },
+        { bossAbility: 380487, time: "05:43" },
+        { bossAbility: 376279, time: "05:48" },
+        { bossAbility: 383073, time: "06:01" },
+        { bossAbility: 391592, time: "06:03" },
+      ],
+    },
+  },
+
+  2590: {
+    // The Primalist Council
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2592: {
+    // Sennarth, The Cold Breath
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2635: {
+    // Dathea, Ascended
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2605: {
+    // Kurog Grimtotem
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2614: {
+    // Broodkeeper Diurna
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [
+        { bossAbility: "Phase 1", time: "00:00" },
+        { bossAbility: 375871, time: "00:09" },
+        { bossAbility: 380175, time: "00:18" },
+        { bossAbility: 375829, time: "00:21" },
+        { bossAbility: 380175, time: "00:37" },
+        { bossAbility: 375871, time: "00:39" },
+        { bossAbility: 375829, time: "00:41" },
+        { bossAbility: 375457, time: "00:44" },
+        { bossAbility: 380175, time: "00:57" },
+        { bossAbility: 375829, time: "01:00" },
+        { bossAbility: 380175, time: "01:17" },
+        { bossAbility: 375829, time: "01:20" },
+        { bossAbility: 375871, time: "01:25" },
+        { bossAbility: 380175, time: "01:38" },
+        { bossAbility: 375829, time: "01:41" },
+        { bossAbility: 375871, time: "01:51" },
+        { bossAbility: 380175, time: "01:58" },
+        { bossAbility: 375829, time: "02:01" },
+        { bossAbility: 380175, time: "02:17" },
+        { bossAbility: 375871, time: "02:19" },
+        { bossAbility: 375829, time: "02:21" },
+        { bossAbility: 380175, time: "02:38" },
+        { bossAbility: 375871, time: "02:40" },
+        { bossAbility: 375829, time: "02:41" },
+        { bossAbility: 380175, time: "02:57" },
+        { bossAbility: 375829, time: "03:00" },
+        { bossAbility: 375871, time: "03:05" },
+        { bossAbility: 380175, time: "03:17" },
+        { bossAbility: 375829, time: "03:20" },
+        { bossAbility: 375871, time: "03:30" },
+        { bossAbility: 380175, time: "03:38" },
+        { bossAbility: 375829, time: "03:42" },
+        { bossAbility: 380175, time: "03:58" },
+        { bossAbility: 375871, time: "03:59" },
+        { bossAbility: 375829, time: "04:01" },
+        { bossAbility: 380175, time: "04:19" },
+        { bossAbility: 375871, time: "04:23" },
+        { bossAbility: 388918, time: "04:28" },
+        { bossAbility: 380175, time: "04:37" },
+        { bossAbility: 375871, time: "04:45" },
+        { bossAbility: 375871, time: "04:49" },
+        { bossAbility: "Phase 2", time: "04:50" },
+        { bossAbility: 380175, time: "04:57" },
+        { bossAbility: 388918, time: "05:08" },
+        { bossAbility: 375871, time: "05:11" },
+        { bossAbility: 380175, time: "05:19" },
+        { bossAbility: 375871, time: "05:35" },
+        { bossAbility: 380175, time: "05:37" },
+        { bossAbility: 375871, time: "05:41" },
+        { bossAbility: 388918, time: "05:47" },
+        { bossAbility: 380175, time: "05:58" },
+        { bossAbility: 375871, time: "06:02" },
+        { bossAbility: 380175, time: "06:18" },
+        { bossAbility: 375871, time: "06:25" },
+        { bossAbility: 388918, time: "06:27" },
+        { bossAbility: 375871, time: "06:30" },
+        { bossAbility: 380175, time: "06:38" },
+        { bossAbility: 375871, time: "06:49" },
+        { bossAbility: 375871, time: "06:53" },
+        { bossAbility: 380175, time: "06:57" },
+        { bossAbility: 388918, time: "07:08" },
+      ],
+    },
+    Mythic: {
+      // Heroic copy for now until better logs available
+      default: [
+        { bossAbility: "Phase 1", time: "00:00" },
+        { bossAbility: 375871, time: "00:09" },
+        { bossAbility: 380175, time: "00:18" },
+        { bossAbility: 375829, time: "00:21" },
+        { bossAbility: 380175, time: "00:37" },
+        { bossAbility: 375871, time: "00:39" },
+        { bossAbility: 375829, time: "00:41" },
+        { bossAbility: 375457, time: "00:44" },
+        { bossAbility: 380175, time: "00:57" },
+        { bossAbility: 375829, time: "01:00" },
+        { bossAbility: 380175, time: "01:17" },
+        { bossAbility: 375829, time: "01:20" },
+        { bossAbility: 375871, time: "01:25" },
+        { bossAbility: 380175, time: "01:38" },
+        { bossAbility: 375829, time: "01:41" },
+        { bossAbility: 375871, time: "01:51" },
+        { bossAbility: 380175, time: "01:58" },
+        { bossAbility: 375829, time: "02:01" },
+        { bossAbility: 380175, time: "02:17" },
+        { bossAbility: 375871, time: "02:19" },
+        { bossAbility: 375829, time: "02:21" },
+        { bossAbility: 380175, time: "02:38" },
+        { bossAbility: 375871, time: "02:40" },
+        { bossAbility: 375829, time: "02:41" },
+        { bossAbility: 380175, time: "02:57" },
+        { bossAbility: 375829, time: "03:00" },
+        { bossAbility: 375871, time: "03:05" },
+        { bossAbility: 380175, time: "03:17" },
+        { bossAbility: 375829, time: "03:20" },
+        { bossAbility: 375871, time: "03:30" },
+        { bossAbility: 380175, time: "03:38" },
+        { bossAbility: 375829, time: "03:42" },
+        { bossAbility: 380175, time: "03:58" },
+        { bossAbility: 375871, time: "03:59" },
+        { bossAbility: 375829, time: "04:01" },
+        { bossAbility: 380175, time: "04:19" },
+        { bossAbility: 375871, time: "04:23" },
+        { bossAbility: 388918, time: "04:28" },
+        { bossAbility: 380175, time: "04:37" },
+        { bossAbility: 375871, time: "04:45" },
+        { bossAbility: 375871, time: "04:49" },
+        { bossAbility: "Phase 2", time: "04:50" },
+        { bossAbility: 380175, time: "04:57" },
+        { bossAbility: 388918, time: "05:08" },
+        { bossAbility: 375871, time: "05:11" },
+        { bossAbility: 380175, time: "05:19" },
+        { bossAbility: 375871, time: "05:35" },
+        { bossAbility: 380175, time: "05:37" },
+        { bossAbility: 375871, time: "05:41" },
+        { bossAbility: 388918, time: "05:47" },
+        { bossAbility: 380175, time: "05:58" },
+        { bossAbility: 375871, time: "06:02" },
+        { bossAbility: 380175, time: "06:18" },
+        { bossAbility: 375871, time: "06:25" },
+        { bossAbility: 388918, time: "06:27" },
+        { bossAbility: 375871, time: "06:30" },
+        { bossAbility: 380175, time: "06:38" },
+        { bossAbility: 375871, time: "06:49" },
+        { bossAbility: 375871, time: "06:53" },
+        { bossAbility: 380175, time: "06:57" },
+        { bossAbility: 388918, time: "07:08" },
+      ],
+    },
+  },
+
+  2607: {
+    // Raszageth the Storm-Eater
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
     },
   },
 };

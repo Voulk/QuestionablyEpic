@@ -65,12 +65,14 @@ export default function QEMainMenu(props) {
     gameType === "Retail"
       ? {
           "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", false, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
+          "MainMenu.SequenceSandbox": ["/sequenceGen", false, "SequenceSandbox"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
+          "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
           "MainMenu.CooldownPlanner": ["/holydiver", false, "CooldownPlanner"],
-          "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
-          "MainMenu.SequenceSandbox": ["/sequenceGen", true, "SequenceSandbox"],
+          "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
+          
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
       : {

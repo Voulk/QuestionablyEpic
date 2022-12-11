@@ -54,19 +54,19 @@ export const cooldownTimelineColumns = () => {
                 .filter((obj) => {
                   return obj.guid === rowData.guid;
                 })
-                .map((obj) => obj.icon)}
+                .map((obj) => obj.icon)[0]}
               alt={cooldownDB
                 .filter((obj) => {
                   return obj.guid === rowData.guid;
                 })
-                .map((obj) => obj.icon)}
+                .map((obj) => obj.icon)[0]}
             />
           </a>
           {cooldownDB
             .filter((obj) => {
               return obj.guid === rowData.guid;
             })
-            .map((obj) => obj.name[currentLanguage])}
+            .map((obj) => obj.name[currentLanguage])[0]}
         </div>
       ),
     },

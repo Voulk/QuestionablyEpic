@@ -9,6 +9,7 @@ import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
 import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
+import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
 import { getPriestConduit } from "./Priest/PriestConduitFormulas";
 import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
@@ -40,15 +41,17 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
-    if (effectType === "unity") {
-      effectType = 'spec legendary'
-      effectName = getUnityEffect(player);
-    }
     if (effect.type === "special") {
       // A special effect is one that appears on an item slot where an effect isn't usually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
       bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, effect);
+    } 
+    else if (effect.type === "embellishment") {
+      // A special effect is one that appears on an item slot where an effect isn't usually expected.
+      // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
+      // Does NOT include trinkets, legendaries, set bonuses etc.
+      bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, setStats, userSettings);
     } 
     // == Class specific effects ==
     // These can be single-slot effects like Legendaries, or entire set bonuses.
@@ -83,11 +86,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
         default:
           break;
       }
-    } 
-    else if (effectType === "generic legendary") {
-      // Generic legendaries are items wearable by all specs.
-      // These have very limited support currently since they're not very strong.
-      bonus_stats = getGenericLegendary(effectName, player, castModel, contentType, userSettings);
     } 
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings, setStats);

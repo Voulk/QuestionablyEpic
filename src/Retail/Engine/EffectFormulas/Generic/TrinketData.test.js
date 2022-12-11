@@ -6,22 +6,23 @@ import Player from "General/Modules/Player/Player";
 import { trinket_data} from "./ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
+import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
 
-/*
+
 describe("Broodkeeper's Promise", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Broodkeeper's Promise");;
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${398}  | ${[190, 2188]}
+    ${398}  | ${[95, 2188]}
     // add new test cases here
     `.test("Broodkeeper's Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        //expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
-        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        //expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
-}); */
+}); 
 
 describe("Emerald Coach's Whistle", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -60,9 +61,9 @@ describe("Kyrakka's Searing Embers", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${346}  | ${[53616, 16032]}
-    ${359}  | ${[55600, 16625]}
-    ${372}  | ${[57657, 17241]}
+    ${346}  | ${[29488, 13856]}
+    ${359}  | ${[30580, 14369]}
+    ${372}  | ${[31711, 14901]}
     // add new test cases here
     `.test("Kyrakka's Searing Embers Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -128,6 +129,19 @@ describe("Mote of Sanctification", () => {
     });
 });
 
+describe("Time-Breaching Talon", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Time-Breaching Talon");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${372}  | ${2919}
+    // add new test cases here
+    `.test("Time-Breaching Talon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
 describe("Horn of Valor", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Horn of Valor");;
@@ -153,6 +167,109 @@ describe("Voidmender's Shadowgem", () => {
         expect(processedValue(effect, level)).toBe(expectedResult);
     });
 });
+
+describe("Spoils of Neltharus", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Spoils of Neltharus");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${346}  | ${1759}
+    ${359}  | ${1938}
+    ${372}  | ${2116}
+    // add new test cases here
+    `.test("Spoils of Neltharus Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
+describe("Static-Charged Scale", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = otherTrinketData.find((trinket) => trinket.name === "Static-Charged Scale");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${389}  | ${1358}
+    // World boss trinket. Only available at one item level.
+    `.test("Static-Charged Scale Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult);
+    });
+});
+
+describe("Conjured Chillglobe", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Conjured Chillglobe");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${389}  | ${[51980, 11735]}
+    ${402}  | ${[63917, 14430]}
+    ${415}  | ${[78067, 17624]} // 17625 in game. Can re-check minutiae later.
+    // add new test cases here
+    `.test("Conjured Chillglobe Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+});
+
+describe("Whispering Incarnate Icon", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Whispering Incarnate Icon");;
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${395}  | ${[445, 241]}
+    ${408}  | ${[503, 259]}
+    ${421}  | ${[567, 277]}
+    // add new test cases here
+    `.test("Whispering Incarnate Icon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+});
+
+describe("Alacritous Alchemist Stone", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = otherTrinketData.find((trinket) => trinket.name === "Alacritous Alchemist Stone");;
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${405}  | ${957}
+
+    // add new test cases here
+    `.test("Alacritous Alchemist Stone Icon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level, 1, "round")).toBe(expectedResult);
+    });
+}); 
+
+describe("Wind-Sealed Mana Capsule", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = otherTrinketData.find((trinket) => trinket.name === "Wind-Sealed Mana Capsule");;
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${316}  | ${[540, 8101]}
+    ${363}  | ${[1297, 19465]}
+    // add new test cases here
+    `.test("Wind-Sealed Mana Capsule Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+});
+/*
+describe("Darkmoon Deck: Dance", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Darkmoon Deck: Dance");
+    const effect = activeTrinket.effects[0];
+    each`
+    level   | expectedResult
+    ${372}  | ${[10034, 4701]}
+
+    // add new test cases here
+    `.test("Darkmoon Deck: Dance Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect, level)).toBe(expectedResult[0]);
+    });
+}); */
 
 
 /*
@@ -187,91 +304,10 @@ describe("Erupting Spear Fragment", () => {
     });
 });
 
-describe("Spoils of Neltharius", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Spoils of Neltharius");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${346}  | ${1759}
-    ${359}  | ${1938}
-    ${372}  | ${2116}
-    // add new test cases here
-    `.test("Spoils of Neltharius Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
-
-
-describe("Static-Charged Scale", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Static-Charged Scale");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${389}  | ${1358}
-    // World boss trinket. Only available at one item level.
-    `.test("Static-Charged Scale Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
 
 
 
-describe("Conjured Chillglobe", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Conjured Chillglobe");
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${389}  | ${[51980, 11735]}
-    ${402}  | ${[63917, 14430]}
-    ${389}  | ${[78067, 17625]}
-    // add new test cases here
-    `.test("Conjured Chillglobe Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
 
-describe("Whispering Incarnate Icon", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Whispering Incarnate Icon");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${395}  | ${445}
-    ${408}  | ${503}
-    ${421}  | ${567}
-    // add new test cases here
-    `.test("Whispering Incarnate Icon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
 
-describe("Darkmoon Deck: Dance", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Darkmoon Deck: Dance");
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${372}  | ${[10034, 4701]}
 
-    // add new test cases here
-    `.test("Darkmoon Deck: Dance Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-});
-
-describe("Alacritous Alchemist Stone", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Alacritous Alchemist Stone");;
-    const effect = activeTrinket.effects[0];
-    each`
-    level   | expectedResult
-    ${405}  | ${957}
-
-    // add new test cases here
-    `.test("Alacritous Alchemist Stone Icon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
-    });
-}); */
+*/

@@ -11,7 +11,6 @@ import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
-import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({

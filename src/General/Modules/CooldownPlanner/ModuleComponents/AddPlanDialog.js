@@ -61,7 +61,7 @@ export default function AddPlanDialog(props) {
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const expansion = 8; // shadowlands
+  const expansion = 9; // shadowlands
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
   const [logData, setLogData] = React.useState({
@@ -76,6 +76,7 @@ export default function AddPlanDialog(props) {
     enemyHealth: [],
     buffData: [],
     friendlyHealth: [],
+    enemyEnergy: [],
   });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
@@ -157,6 +158,7 @@ export default function AddPlanDialog(props) {
       enemyHealth: [],
       buffData: [],
       friendlyHealth: [],
+      enemyEnergy: [],
     });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
@@ -193,8 +195,24 @@ export default function AddPlanDialog(props) {
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
     const friendlyHealth = logData.friendlyHealth;
+    const enemyEnergy = logData.enemyEnergy;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject, friendlyHealth);
+    let transformedData = transformData(
+      startTime,
+      boss,
+      enemyCasts,
+      healerCasts,
+      healers,
+      difficulty,
+      damageTaken,
+      debuffData,
+      enemyHealth,
+      buffData,
+      importType,
+      nameObject,
+      friendlyHealth,
+      enemyEnergy,
+    );
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);
@@ -226,8 +244,8 @@ export default function AddPlanDialog(props) {
         </Tabs>
         <TabPanel value={value} index={0}>
           <div sx={{ padding: "8px" }}>
-            <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
-              <Grid item xl={12}>
+            <Grid item container spacing={1} xs={12} alignItems="center" sx={{ marginTop: "1px" }}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Raid
                 </Typography>
@@ -252,7 +270,7 @@ export default function AddPlanDialog(props) {
                 </TextField>
               </Grid>
 
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Boss
                 </Typography>
@@ -273,7 +291,7 @@ export default function AddPlanDialog(props) {
                 </TextField>
               </Grid>
 
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Difficulty
                 </Typography>
@@ -286,7 +304,7 @@ export default function AddPlanDialog(props) {
                   </ToggleButton>
                 </ToggleButtonGroup>
               </Grid>
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Plan Type
                 </Typography>
@@ -301,7 +319,7 @@ export default function AddPlanDialog(props) {
                   </ToggleButton>
                 </ToggleButtonGroup>
               </Grid>
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   New Plan Name
                 </Typography>
@@ -335,7 +353,7 @@ export default function AddPlanDialog(props) {
 
         <TabPanel value={value} index={1}>
           <div sx={{ padding: "16px" }}>
-            <Grid item container spacing={1} xl={12} alignItems="center" sx={{ marginTop: "1px" }}>
+            <Grid item container spacing={1} xs={12} alignItems="center" sx={{ marginTop: "1px" }}>
               <Grid item xs={12}>
                 <Paper sx={{ backgroundColor: "#5a5a5a", padding: "4px", borderColor: "limegreen", borderWidth: "1px", borderStyle: "Solid" }} elevation={0}>
                   <Typography variant="subtitle2" sx={{ color: "limegreen", fontSize: "0.85rem" }}>
@@ -371,7 +389,7 @@ export default function AddPlanDialog(props) {
                 )}
               </Grid>
 
-              <Grid item xl={12}>
+              <Grid item xs={12}>
                 <Typography color="primary" align="center">
                   Import Type
                 </Typography>

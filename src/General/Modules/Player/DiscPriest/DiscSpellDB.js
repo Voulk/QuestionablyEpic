@@ -30,7 +30,7 @@ export const DISCSPELLS = {
         castTime: 1.5,
         cost: 0.4,
         coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
-        atoneOverheal: 0.28,
+        atoneOverheal: 0.21,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -41,7 +41,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        atoneOverheal: 0.26,
+        atoneOverheal: 0.21,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -52,7 +52,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.376,
         school: "holy",
-        atoneOverheal: 0.27,
+        atoneOverheal: 0.21,
         secondaries: ['crit', 'vers'],
     }],
     "DefPenance": [{
@@ -84,7 +84,7 @@ export const DISCSPELLS = {
         coeff: 1.41,
         buffDuration: 9,
         school: "shadow",
-        atoneOverheal: 0.28,
+        atoneOverheal: 0.22,
         secondaries: ['crit', 'vers'],
     },
     {
@@ -105,7 +105,7 @@ export const DISCSPELLS = {
         coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
         school: "shadow",
-        atoneOverheal: 0.29,
+        atoneOverheal: 0.23,
         secondaries: ['crit', 'vers']
     }],
     "Power Word: Solace": [{
@@ -115,7 +115,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.752,
         cooldown: 15,
-        atoneOverheal: 0.3,
+        atoneOverheal: 0.25,
         school: "holy",
         secondaries: ['crit', 'vers']
     }],
@@ -126,7 +126,7 @@ export const DISCSPELLS = {
         cost: 0.5,
         coeff: 0.85,
         cooldown: 9,
-        atoneOverheal: 0.25,
+        atoneOverheal: 0.22,
         school: "shadow",
         secondaries: ['crit', 'vers']
     }],
@@ -304,6 +304,7 @@ export const DISCSPELLS = {
         cost: 0.3,
         coeff: 0.1292,
         aura: 1,
+        atoneOverheal: 0.16,
         school: "shadow",
         secondaries: ['crit', 'vers'],
     },
@@ -326,7 +327,7 @@ export const DISCSPELLS = {
         coeff: 0.46, // Unused. Change coefficient below instead.
         aura: 1,
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.22,
+        atoneOverheal: 0.18,
     },
     {
         castTime: 1.5,
@@ -335,7 +336,7 @@ export const DISCSPELLS = {
         coeff: 0.46, // 
         tickRate: 1.5,
         buffDuration: 15,
-        atoneOverheal: 0.22,
+        atoneOverheal: 0.18,
         secondaries: ['crit', 'vers'], // Shadowfiend scales with Haste but the DoT / HoT function will handle that. 
         canPartialTick: false,
     }],
@@ -382,6 +383,26 @@ export const DISCSPELLS = {
         stat: "haste",
         value: 1.25, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Time-Breaching Talon": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
+        type: "buff",
+        cooldown: 150,
+        castTime: 0,
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "intellect",
+        value: 2900, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
+    "Voidmender's Shadowgem": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
+        type: "buff",
+        castTime: 0,
+        cooldown: 90,
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "crit",
+        value: 2000, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
     "Instructor's Divine Bell (new)": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
@@ -400,8 +421,8 @@ export const baseTalents = {
     // Tier 1
     lightsPromise: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 322115, select: false, tier: 1},
     darkIndulgence: {points: 1, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true, tier: 1},
-    schism: {points: 0, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false, tier: 1},
-    brightPupil: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true, tier: 1},
+    schism: {points: 1, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false, tier: 1},
+    brightPupil: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true, tier: 1},
     enduringLuminescence: {points: 0, maxPoints: 1, icon: "ability_priest_holybolts01", id: 390685, select: true, tier: 1},
     powerWordSolace: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 129250, select: false, tier: 1, exclusive: "shieldDiscipline"},
     shieldDiscipline: {points: 0, maxPoints: 1, icon: "spell_holy_divineprotection", id: 197045, select: true, tier: 1, exclusive: "powerWordSolace"},
@@ -422,7 +443,7 @@ export const baseTalents = {
     twilightCorruption: {points: 0, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true, tier: 2},
     borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true, tier: 2},
     castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true, tier: 2},
-    stolenPsyche: {points: 0, maxPoints: 2, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
+    stolenPsyche: {points: 2, maxPoints: 2, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
 
     
     // Tier 3
@@ -433,7 +454,7 @@ export const baseTalents = {
     mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: false, tier: 3},
     divineAegis: {points: 2, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true, tier: 3},
     //sinsOfTheMany: {points: 0, maxPoints: 2, icon: "spell_holy_holyguidance", id: 280391, select: true, tier: 3},
-    blazeOfLight: {points: 0, maxPoints: 2, icon: "spell_holy_searinglight", id: 215768, select: true, tier: 3},
+    blazeOfLight: {points: 2, maxPoints: 2, icon: "spell_holy_searinglight", id: 215768, select: true, tier: 3},
     resplendentLight: {points: 0, maxPoints: 2, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true, tier: 3},
     harshDiscipline: {points: 2, maxPoints: 2, icon: "ability_paladin_handoflight", id: 373180, select: true, tier: 3},
     expiation: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowpower", id: 390832, select: true, tier: 3},
