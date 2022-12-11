@@ -359,7 +359,7 @@ class Player {
     this.activeStats.intellect = Math.round(stats.intellect * 1.05);
     this.activeStats.stamina = 2100; // Stamina is currently not compiled. This is a TODO, but is low impact and priority.
     if (this.spec === "Discipline Priest") {
-      this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
+      //this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
       this.getActiveModel("Raid").setRampInfo(stats);
     }
   };
