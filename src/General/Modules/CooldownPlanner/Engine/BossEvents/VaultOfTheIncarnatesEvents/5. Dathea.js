@@ -10,16 +10,9 @@ export default function createDatheaEvents(bossID, difficulty, damageTakenData, 
     .concat(debuffs.map((key) => key.ability.guid))
     .concat(buffData.map((key) => key.ability.guid));
 
-  //   const enemyData = enemyEnergy["series"].filter((filter) => filter.guid === 184972);
-  //   const enemyEnergyData = Object.entries(enemyData[0]["data"]).map((key) => {
-  //     return {
-  //       time: key[1][0],
-  //       energy: key[1][1],
-  //     };
-  //   });
+  events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
 
-  // Chilling Aura
-  // This needs to be looked at, maybe work off debuffs?
+  // staticDischarge
   if (logGuids.includes(staticDischarge)) {
     const staticDischargeEvents = damageTakenData.filter((filter) => filter.ability.guid === staticDischarge);
     const threshold = 10000;
