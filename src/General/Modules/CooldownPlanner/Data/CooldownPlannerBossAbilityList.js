@@ -6674,6 +6674,86 @@ export const bossAbilities = {
         ru: "Изначальный барьер",
       },
     },
+
+    {
+      // https://www.wowhead.com/spell=396106/flame-dominance
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 396106,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_immolation.jpg").default,
+      importActive: false,
+      name: {
+        cn: "炽燃统御",
+        de: "Flammenvorherrschaft",
+        en: "Flame Dominance",
+        fr: "Domination brûlante",
+        ru: "Пылающее превосходство",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=396109/frost-dominance
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 396109,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_deathknight_icygrip.jpg").default,
+      importActive: false,
+      name: {
+        cn: "冰霜统御",
+        de: "Frostvorherrschaft",
+        en: "Frost Dominance",
+        fr: "Domination givrante",
+        ru: "Леденящее превосходство",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=396085/earth-dominance
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 396085,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_earthbindtotem.jpg").default,
+      importActive: false,
+      name: {
+        cn: "大地统御",
+        de: "Erdvorherrschaft",
+        en: "Earth Dominance",
+        fr: "Domination terrestre",
+        ru: "Земляное превосходство",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=396113/storm-dominance
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 396113,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_deathknight_icygrip.jpg").default,
+      importActive: false,
+      name: {
+        cn: "风暴统御",
+        de: "Sturmvorherrschaft",
+        en: "Storm Dominance",
+        fr: "Domination orageuse",
+        ru: "Громовое превосходство",
+      },
+    },
+
+    {
+      // https://www.wowhead.com/spell=396201/blistering-presence
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 396201,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
+      importActive: false,
+      name: {
+        cn: "迅猛气息",
+        de: "Brandheiße Präsenz",
+        en: "Blistering Presence",
+        fr: "Présence torride",
+        ru: "Обжигающее присутствие",
+      },
+    },
   ],
   2614: [
     /* ---------------------------------------------------------------------------------------------- */

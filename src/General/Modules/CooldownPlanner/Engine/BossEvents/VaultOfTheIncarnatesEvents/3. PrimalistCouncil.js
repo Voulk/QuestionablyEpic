@@ -6,20 +6,12 @@ export default function createPrimalistCouncilEvents(bossID, difficulty, damageT
   const conductiveMark = 371624;
 
   const logGuids = damageTakenData
-  .map((key) => key.ability.guid)
-  .concat(debuffs.map((key) => key.ability.guid))
-  .concat(buffData.map((key) => key.ability.guid));
+    .map((key) => key.ability.guid)
+    .concat(debuffs.map((key) => key.ability.guid))
+    .concat(buffData.map((key) => key.ability.guid));
 
-  const enemyData = enemyEnergy["series"].filter((filter) => filter.guid === 184972);
-  const enemyEnergyData = Object.entries(enemyData[0]["data"]).map((key) => {
-    return {
-      time: key[1][0],
-      energy: key[1][1],
-    };
-  });
-
-// Flame Rift
-if (logGuids.includes(conductiveMark)) {
+  // Conductive Mark
+  if (logGuids.includes(conductiveMark)) {
     const clusterEvents = 1; // Number of events we'd like to see within X seconds of the first debuff.
     const clusterTimeframe = 20000; // We'll check this amount of time after our first event.
     const conductiveMarkEvents = debuffs.filter((filter) => filter.ability.guid === conductiveMark && filter.type === "applydebuff"); // filter dubuffs to stellar decay
