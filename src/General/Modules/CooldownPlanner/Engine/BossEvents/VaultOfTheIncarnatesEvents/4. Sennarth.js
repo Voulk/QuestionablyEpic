@@ -36,13 +36,13 @@ export default function createSennarthEvents(bossID, difficulty, damageTakenData
         .format("mm:ss"),
       bossAbility: chillingAura,
     });
-    events.push({
-      time: moment
-        .utc(fightDuration(firstPulse.timestamp + 20000, starttime))
-        .startOf("second")
-        .format("mm:ss"),
-      bossAbility: chillingAura,
-    });
+    // events.push({
+    //   time: moment
+    //     .utc(fightDuration(firstPulse.timestamp + 20000, starttime))
+    //     .startOf("second")
+    //     .format("mm:ss"),
+    //   bossAbility: chillingAura,
+    // });
 
     let lastChosen = chillingAuraEvents.map((key) => key.timestamp)[0];
 
@@ -60,13 +60,13 @@ export default function createSennarthEvents(bossID, difficulty, damageTakenData
             .format("mm:ss"),
           bossAbility: chillingAura,
         });
-        events.push({
-          time: moment
-            .utc(fightDuration(key.timestamp + 20000, starttime))
-            .startOf("second")
-            .format("mm:ss"),
-          bossAbility: chillingAura,
-        });
+        // events.push({
+        //   time: moment
+        //     .utc(fightDuration(key.timestamp + 20000, starttime))
+        //     .startOf("second")
+        //     .format("mm:ss"),
+        //   bossAbility: chillingAura,
+        // });
       }
     });
   }

@@ -6451,11 +6451,11 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=395501/blowback
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 395501,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "反冲",
         de: "Gegenwind",
@@ -6471,7 +6471,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 391382,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
-      importActive: false,
+      importActive: true,
       name: {
         cn: "反冲",
         de: "Gegenwind",
@@ -6515,8 +6515,8 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=391686/conductive-mark
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 391686,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
       importActive: false,
