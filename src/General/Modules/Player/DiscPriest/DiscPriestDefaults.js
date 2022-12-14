@@ -60,8 +60,8 @@ export const discPriestDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.41,
     crit: 0.38,
-    mastery: 0.33,
-    versatility: 0.34,
+    mastery: 0.335,
+    versatility: 0.348,
     leech: 0.57,
   };
   statWeights.Dungeon = {
