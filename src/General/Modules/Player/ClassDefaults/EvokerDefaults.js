@@ -45,7 +45,7 @@ export const evokerDefaultSpellData = (contentType) => {
     if (contentType === "Raid") {
       specialQueries = {
         OneManaHealing: 9.5,
-        chilledClarityExtension: 34000,
+        chilledClarityExtension: 32000,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
           c60: 1,

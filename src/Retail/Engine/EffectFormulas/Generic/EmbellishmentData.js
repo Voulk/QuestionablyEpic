@@ -58,7 +58,7 @@ export const embellishmentData = [
         name: "Elemental Lariat",
         effects: [
           { 
-            coefficient: 0.482408,
+            coefficient: 0.482408 * 0.95,
             table: -7,
             duration: 12,
             ppm: 2,
@@ -70,6 +70,7 @@ export const embellishmentData = [
           
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
           bonus_stats[playerBestSecondary] = runGenericPPMTrinket(data[0], itemLevel); // Testing
+
           return bonus_stats;
         }
       },
@@ -86,7 +87,7 @@ export const embellishmentData = [
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
-            efficiency: 0.75,
+            efficiency: 0.7,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -132,7 +133,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.20209,
             table: -7,
-            uptime: 0.65,
+            uptime: 0.7,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -215,6 +216,7 @@ export const embellishmentData = [
           // TODO
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          bonus_stats.dps = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
 
           return bonus_stats;
         }
@@ -384,7 +386,7 @@ export const embellishmentData = [
             coefficient: 3.313529,
             table: -8,
             ppm: 20, // It ticks every 3 seconds.
-            targets: {Raid: 1, Dungeon: 3.5},
+            targets: {Raid: 1, Dungeon: 1}, // Damage is split so target count doesn't matter.
             secondaries: ['crit', 'versatility'], // TODO: Check if the tick rate scales with Haste.
           },
         ],
