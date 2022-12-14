@@ -245,6 +245,7 @@ export default function TopGear(props) {
       catch (err) {
         setErrorMessage("Top Gear has crashed. Sorry! It's been automatically reported.");
         reportError("", "Top Gear Full Crash", err, JSON.stringify(props.player) || "");
+        console.log(err);
         setBtnActive(true);
       }
 

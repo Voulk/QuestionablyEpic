@@ -10,7 +10,7 @@
 export const changeLog = [
   {
     version: "10.0.2",
-    update: 8,
+    update: 9,
     date: "13 December",
     changes: [ 
       "Pushed a possible fix for an issue where Top Gear could crash immediately for some people.",
