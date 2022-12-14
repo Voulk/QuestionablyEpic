@@ -179,7 +179,7 @@ export async function apiGetPlayerImage2(region, charName, realm) {
 /*                          Sends Errors to QE API for Dev error checking                         */
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiSendError(player, errorType, errorMessage, result) {
-  const name = "";
+  const name = "10";
 
   let fetchUrl =
     "https://questionablyepic.com/api/addError.php?btag=" +
