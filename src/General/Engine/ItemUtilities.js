@@ -159,6 +159,49 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
   return temp;
 }
 
+
+export function getExpectedItemLevel(itemID, difficulty) {
+  let temp = itemList.filter(function (item) {
+    return item.id == itemID;
+  })
+  if (temp.length > 0) {
+    let itemLevel = 0;
+    const instanceID = itemSource[0].instanceId;
+    const bossID = itemSource[0].encounterId;
+    if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+    // 1195 is Sepulcher gear.
+    // World Bosses
+    else if (instanceID === 1205) itemLevel = 395;
+    
+    else if (instanceID === -1) {
+      itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+    } else if (instanceID === -16) itemLevel = 353;
+    else if (instanceID === -17) {
+      // Conquest
+      itemLevel = itemLevels.pvp[playerSettings.pvp];
+      //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
+    }
+    if (
+      bossID ===  2502 || // Dathea
+      bossID === 2424 || // Sire Denathrius
+      bossID === 2440 || // Kel'Thuzad
+      bossID === 2441 || // Sylvanas Windrunner
+      bossID === 2457 || // Lords of Dread
+      bossID === 2467 || // Rygelon
+      bossID === 2464 // 2464
+    )
+      itemLevel += 6; 
+  
+    return itemLevel;
+  }
+  else {
+    // Item not found.
+    return 0
+  }
+
+}
+
+
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;

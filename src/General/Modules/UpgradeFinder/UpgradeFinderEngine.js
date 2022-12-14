@@ -98,25 +98,21 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1190 || instanceID === 1193 || instanceID === 1195 || instanceID === -22) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
   // 1195 is Sepulcher gear.
   // World Bosses
-  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233;
-  // The 9.1 world boss drops 233 gear.
-  else if (instanceID === 1192 && bossID === 2468) itemLevel = 259;
-  // The 9.2 world boss drops 259 gear.
-  else if (instanceID === 1192) itemLevel = 207;
-  // The 9.0 world bosses drop 207 gear.
+  else if (instanceID === 1205) itemLevel = 395;
+  
   else if (instanceID === -1) {
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -16) itemLevel = 203;
+  } else if (instanceID === -16) itemLevel = 353;
   else if (instanceID === -17) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
   if (
-    bossID === 2425 || // Stone Legion Generals
+    bossID ===  2502 || // Dathea
     bossID === 2424 || // Sire Denathrius
     bossID === 2440 || // Kel'Thuzad
     bossID === 2441 || // Sylvanas Windrunner
@@ -124,7 +120,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
     bossID === 2467 || // Rygelon
     bossID === 2464 // 2464
   )
-    itemLevel += 7; // The final three bosses.
+    itemLevel += 6; 
 
   return itemLevel;
 }
