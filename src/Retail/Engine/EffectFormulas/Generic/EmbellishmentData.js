@@ -87,7 +87,7 @@ export const embellishmentData = [
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
-            efficiency: 0.7,
+            efficiency: 0.69,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
