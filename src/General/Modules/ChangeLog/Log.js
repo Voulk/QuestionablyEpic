@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 8,
+    date: "13 December",
+    changes: [ 
+      "Pushed a possible fix for an issue where Top Gear could crash immediately for some people.",
+      "Added the in-game 5% nerf to Lariat."
+  ]},
+  {
+    version: "10.0.2",
     update: 7,
     date: "10 December",
     changes: [ 
