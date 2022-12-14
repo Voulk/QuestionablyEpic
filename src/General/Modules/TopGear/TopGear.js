@@ -205,6 +205,7 @@ export default function TopGear(props) {
           // If top gear crashes for any reason, log the error and then terminate the worker.
           reportError("", "Top Gear Crash", err, strippedPlayer.spec);
           setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+          console.log(err);
           instance.terminate();
           setBtnActive(true);
         });
@@ -241,9 +242,10 @@ export default function TopGear(props) {
       try {
         unleashWorker();
       }
-      catch (error) {
+      catch (err) {
         setErrorMessage("Top Gear has crashed. Sorry! It's been automatically reported.");
         reportError("", "Top Gear Full Crash", err, JSON.stringify(props.player) || "");
+        setBtnActive(true);
       }
 
     };
@@ -265,7 +267,7 @@ export default function TopGear(props) {
         ];
 
   const activateItem = (unique, active) => {
-    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
+    if (selectedItemCount < TOPGEARCAP || active) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
