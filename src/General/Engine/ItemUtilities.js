@@ -162,14 +162,15 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
 export function getItemLevelBoost(bossID) {
   if (bossID ===  2502 || bossID === 2424) return 6;    // Dathea and Kurog 
   else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
+  else return 0;
 }
 
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter);
-    else if (instanceID === 1205) expectedItemLevel = 395;
+    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter);
+    else if (itemEncounter === 1205) expectedItemLevel = 395;
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 

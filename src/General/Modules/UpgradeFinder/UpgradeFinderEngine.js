@@ -124,6 +124,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
+  console.log(itemID + " " + itemLevel)
 
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   //let itemAllocations = getItemAllocations(itemID, []);
@@ -144,28 +145,21 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
-      const isRaid = primarySource === 1190 || primarySource === 1193 || primarySource === 1195 || primarySource === -22;
+      const isRaid = primarySource === 1200 || primarySource === -22;
 
       if (isRaid) {
         // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+          item.quality = 4;
           itemPoss.push(item);
         }
       } else if (primarySource === -1) {
-        /*
-      else if (itemSource.instanceId === 1194) {
-        // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
-        const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
-        itemPoss.push(item226);
-
-        const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
-        itemPoss.push(item233);
-      }*/
-        // Dungeons including Tazavesh
+        // M+ Dungeons
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+        item.quality = 4;
         itemPoss.push(item);
       } else if (primarySource !== -18) {
         /*
@@ -178,6 +172,7 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
         // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+        item.quality = 4;
 
         itemPoss.push(item);
       }
