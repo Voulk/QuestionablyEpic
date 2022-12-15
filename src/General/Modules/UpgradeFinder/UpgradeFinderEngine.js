@@ -1,7 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp } from "../../Engine/ItemUtilities";
+import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
@@ -94,11 +94,14 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
+
+
+
 function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID);
   // 1195 is Sepulcher gear.
   // World Bosses
   else if (instanceID === 1205) itemLevel = 395;
@@ -111,16 +114,6 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
-  if (
-    bossID ===  2502 || // Dathea
-    bossID === 2424 || // Sire Denathrius
-    bossID === 2440 || // Kel'Thuzad
-    bossID === 2441 || // Sylvanas Windrunner
-    bossID === 2457 || // Lords of Dread
-    bossID === 2467 || // Rygelon
-    bossID === 2464 // 2464
-  )
-    itemLevel += 6; 
 
   return itemLevel;
 }

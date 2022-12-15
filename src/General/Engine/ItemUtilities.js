@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import { GEMS } from "General/Engine/GEMS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import { CONSTANTS } from "./CONSTANTS";
-
+import { itemLevels } from "Databases/itemLevelsDB";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -159,65 +159,18 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
   return temp;
 }
 
-
-export function getExpectedItemLevel(itemID, difficulty) {
-  let temp = itemList.filter(function (item) {
-    return item.id == itemID;
-  })
-  if (temp.length > 0) {
-    let itemLevel = 0;
-    const instanceID = itemSource[0].instanceId;
-    const bossID = itemSource[0].encounterId;
-    if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
-    // 1195 is Sepulcher gear.
-    // World Bosses
-    else if (instanceID === 1205) itemLevel = 395;
-    
-    else if (instanceID === -1) {
-      itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-    } else if (instanceID === -16) itemLevel = 353;
-    else if (instanceID === -17) {
-      // Conquest
-      itemLevel = itemLevels.pvp[playerSettings.pvp];
-      //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
-    }
-    if (
-      bossID ===  2502 || // Dathea
-      bossID === 2424 || // Sire Denathrius
-      bossID === 2440 || // Kel'Thuzad
-      bossID === 2441 || // Sylvanas Windrunner
-      bossID === 2457 || // Lords of Dread
-      bossID === 2467 || // Rygelon
-      bossID === 2464 // 2464
-    )
-      itemLevel += 6; 
-  
-    return itemLevel;
-  }
-  else {
-    // Item not found.
-    return 0
-  }
-
+export function getItemLevelBoost(bossID) {
+  if (bossID ===  2502 || bossID === 2424) return 6;    // Dathea and Kurog 
+  else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
 }
-
 
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (
-      itemEncounter == 2425 || // Stone Legion Generals
-      itemEncounter == 2424 || // Sire Denathrius
-      itemEncounter == 2440 || // Kel'Thuzad
-      itemEncounter == 2441 || // Sylvanas Windrunner
-      itemEncounter == 2457 || // Lords of Dread
-      itemEncounter == 2467 || // Rygelon
-      itemEncounter == 2464 // The Jailer
-    )
-      expectedItemLevel += 7;
-    if (itemEncounter == 2456) expectedItemLevel = 233; // Mor'geth
-    if (itemEncounter == 2468) expectedItemLevel = 259; // Antros
+    if (item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter);
+    else if (instanceID === 1205) expectedItemLevel = 395;
+
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
 
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
