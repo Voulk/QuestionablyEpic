@@ -61,7 +61,7 @@ export default function AddPlanDialog(props) {
   const duplicatePlanNameCheck = bossPlans.includes(planName) ? true : false;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const expansion = 8; // shadowlands
+  const expansion = 9; // shadowlands
   const [value, setValue] = React.useState(0);
   const [reportid, setReportid] = React.useState(0);
   const [logData, setLogData] = React.useState({
@@ -76,6 +76,7 @@ export default function AddPlanDialog(props) {
     enemyHealth: [],
     buffData: [],
     friendlyHealth: [],
+    enemyEnergy: [],
   });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
@@ -157,6 +158,7 @@ export default function AddPlanDialog(props) {
       enemyHealth: [],
       buffData: [],
       friendlyHealth: [],
+      enemyEnergy: [],
     });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
@@ -193,8 +195,24 @@ export default function AddPlanDialog(props) {
     const enemyHealth = logData.enemyHealth;
     const buffData = logData.buffData;
     const friendlyHealth = logData.friendlyHealth;
+    const enemyEnergy = logData.enemyEnergy;
     // transform the imported data into plan data
-    let transformedData = transformData(startTime, boss, enemyCasts, healerCasts, healers, difficulty, damageTaken, debuffData, enemyHealth, buffData, importType, nameObject, friendlyHealth);
+    let transformedData = transformData(
+      startTime,
+      boss,
+      enemyCasts,
+      healerCasts,
+      healers,
+      difficulty,
+      damageTaken,
+      debuffData,
+      enemyHealth,
+      buffData,
+      importType,
+      nameObject,
+      friendlyHealth,
+      enemyEnergy,
+    );
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
     handleAddPlanDialogClose(true);

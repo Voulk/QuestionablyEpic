@@ -7,10 +7,10 @@ export default async function importEnemyHealth(starttime, endtime, reportid) {
   const END = "&end=";
   const HOSTILITY = "&hostility=1";
   // const sourceClass = "&sourceclass=Boss";
-  const resourceType = "&abilityid=1000";
+  const resourceType = "&abilityid=103";
   const translate = "&translate=true";
 
-  let health = [];
+  let energy = [];
 
   await axios
     .get(
@@ -27,12 +27,11 @@ export default async function importEnemyHealth(starttime, endtime, reportid) {
         API2,
     )
     .then((result) => {
-      health = result.data;
+      energy = result.data;
       //Object.keys(result.data.events).map((key) => result.data.events[key]);
     })
     .catch(function (error) {
       console.log(error);
     });
-
-  return health;
+  return energy;
 }

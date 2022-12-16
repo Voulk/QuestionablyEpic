@@ -31,7 +31,7 @@ class CooldownPlannerModule extends Component {
   render() {
     const helpText = [
       "Step 1: Start by clicking the Roster button and filling in your team.",
-      "Step 2: Import a log to use as a template for your cooldowns, or select a boss and difficulty to do it manually.",
+      "Step 2: Add plans using the Add button, import a log to use as a template for your cooldowns, or select a boss and difficulty to do it manually.",
       "Use the 'Import/Export' Buttons to share plans with your team, or export it to your ERT note with the ERT Note Button.",
       "Jump into Fight Analysis to overlay your assigned cooldowns on a log for the fight.",
     ];

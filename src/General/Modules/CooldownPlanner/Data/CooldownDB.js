@@ -2,9 +2,7 @@ export const cooldownDB = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Paladin                                            */
   /* ---------------------------------------------------------------------------------------------- */
-  /* --------------------------------------- Base Abilities --------------------------------------- */
   {
-    // Avenging Wrath
     name: {
       en: "Avenging Wrath",
       fr: "Courroux vengeur",
@@ -21,7 +19,38 @@ export const cooldownDB = [
     cdPlannerImport: true,
   },
   {
-    // Aura Mastery
+    name: {
+      en: "Avenging Crusader",
+      fr: "Croisé vengeur",
+      de: "Kreuzzug der Vergeltung",
+      ru: "Рыцарь-мститель",
+      ch: "复仇十字军",
+    },
+    guid: 216331,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_paladin_veneration.jpg").default,
+    duration: 20,
+    cooldown: 120,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    name: {
+      en: "Holy Avenger",
+      fr: "Vengeur sacré",
+      de: "Heiliger Rächer",
+      ru: "Святой каратель",
+      ch: "神圣复仇者",
+    },
+    guid: 105809,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_paladin_holyavenger.jpg").default,
+    duration: 20,
+    cooldown: 180,
+    class: "HolyPaladin",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
     name: {
       en: "Aura Mastery",
       fr: "Maîtrise des auras",
@@ -37,7 +66,6 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-  /* ------------------------------------- Covenant Abilities ------------------------------------- */
   {
     name: {
       en: "Divine Toll",
@@ -51,40 +79,8 @@ export const cooldownDB = [
     duration: 1,
     cooldown: 60,
     class: "HolyPaladin",
-    cdPlannerMenuActive: false,
-    cdPlannerImport: true,
-  },
-  {
-    name: {
-      en: "Ashen Hallow",
-      fr: "Bénédiction cendrée",
-      de: "Ascheweihung",
-      ru: "Пепельное освящение",
-      cn: "红烬圣土",
-    },
-    guid: 316958,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_paladin.jpg").default,
-    duration: 30,
-    cooldown: 240,
-    class: "HolyPaladin",
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
-  },
-  {
-    name: {
-      en: "Vanquisher's Hammer",
-      fr: "Marteau du vainqueur",
-      de: "Hammer des Bezwingers",
-      ru: "Молот покорителя",
-      cn: "征服者之锤",
-    },
-    guid: 328204,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_paladin.jpg").default,
-    duration: 1,
-    cooldown: 30,
-    class: "HolyPaladin",
-    cdPlannerMenuActive: false,
-    cdPlannerImport: false,
   },
   {
     name: {
@@ -105,7 +101,6 @@ export const cooldownDB = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
   /* ---------------------------------------------------------------------------------------------- */
-  /* --------------------------------------- Base Abilities --------------------------------------- */
   {
     name: {
       en: "Power Word: Barrier",
@@ -204,39 +199,6 @@ export const cooldownDB = [
   },
   {
     name: {
-      en: "Spirit Shell",
-      fr: "Carapace spirituelle",
-      de: "Geisthülle",
-      ru: "Щит души",
-      cn: "灵魂护壳",
-    },
-    guid: 109964,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_shaman_astralshift.jpg").default,
-    duration: 10,
-    cooldown: 60,
-    class: "DisciplinePriest",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
-  /* ------------------------------------- Covenant Abilities ------------------------------------- */
-  {
-    name: {
-      en: "Boon of the Ascended",
-      fr: "Faveur des transcendés",
-      de: "Segen der Aufgestiegenen",
-      ru: "Благословение перерожденных",
-      cn: "晋升者之赐",
-    },
-    guid: 325013,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_priest.jpg").default,
-    duration: 10,
-    cooldown: 180,
-    class: "Priest",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
-  {
-    name: {
       en: "Mindgames",
       fr: "Jeux d’esprit",
       de: "Gedankenspiele",
@@ -253,24 +215,23 @@ export const cooldownDB = [
   },
   {
     name: {
-      en: "Unholy Nova",
-      fr: "Nova impie",
-      de: "Unheilige Nova",
-      ru: "Нечестивое кольцо",
-      cn: "邪恶新星",
+      en: "Lightwell",
+      fr: "Puits de lumière",
+      de: "Lichtbrunnen",
+      ru: "Колодец Света",
+      cn: "光明之泉",
     },
-    guid: 324724,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_priest.jpg").default,
-    duration: 15,
-    cooldown: 60,
+    guid: 126135,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_summonlightwell.jpg").default,
+    duration: 180,
+    cooldown: 180,
     class: "Priest",
     cdPlannerMenuActive: true,
-    cdPlannerImport: false,
+    cdPlannerImport: true,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
   /* ---------------------------------------------------------------------------------------------- */
-  /* --------------------------------------- Base Abilities --------------------------------------- */
   {
     name: {
       en: "Incarnation: Tree of Life",
@@ -319,55 +280,6 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-  /* ------------------------------------- Covenant Abilities ------------------------------------- */
-  {
-    name: {
-      en: "Kindred Spirits",
-      fr: "Âmes sœurs",
-      de: "Seelenverwandtschaft",
-      ru: "Родственные души",
-      cn: "志趣相投",
-    },
-    guid: 326434,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_druid.jpg").default,
-    duration: 10,
-    cooldown: 60,
-    class: "RestorationDruid",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
-  {
-    name: {
-      en: "Ravenous Frenzy",
-      fr: "Frénésie vorace",
-      de: "Unersättliche Raserei",
-      ru: "Прожорливое бешенство",
-      cn: "饕餮狂乱",
-    },
-    guid: 323546,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_druid.jpg").default,
-    duration: 20,
-    cooldown: 180,
-    class: "RestorationDruid",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
-  {
-    name: {
-      en: "Adaptive Swarm",
-      fr: "Essaim adaptatif",
-      de: "Adaptiver Schwarm",
-      ru: "Адаптивный рой",
-      cn: "激变蜂群",
-    },
-    guid: 325727,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_maldraxxus_druid.jpg").default,
-    duration: 12,
-    cooldown: 25,
-    class: "RestorationDruid",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
   {
     name: {
       en: "Convoke the Spirits",
@@ -388,7 +300,6 @@ export const cooldownDB = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Monk                                              */
   /* ---------------------------------------------------------------------------------------------- */
-  /* --------------------------------------- Base Abilities --------------------------------------- */
   {
     name: {
       en: "Revival",
@@ -437,39 +348,6 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-  /* ------------------------------------- Covenant Abilities ------------------------------------- */
-  {
-    name: {
-      en: "Weapons of Order",
-      fr: "Armes de l’Ordre",
-      de: "Waffen der Ordnung",
-      ru: "Оружие ордена",
-      cn: "精序兵戈",
-    },
-    guid: 310454,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_monk.jpg").default,
-    duration: 30,
-    cooldown: 120,
-    class: "MistweaverMonk",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
-  {
-    name: {
-      en: "Fallen Order",
-      fr: "Ordre des défunts",
-      de: "Gefallener Orden",
-      ru: "Павший орден",
-      cn: "陨落僧众",
-    },
-    guid: 326860,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_monk.jpg").default,
-    duration: 24,
-    cooldown: 180,
-    class: "MistweaverMonk",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
   {
     name: {
       en: "Bonedust Brew",
@@ -486,26 +364,9 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-  {
-    name: {
-      en: "Faeline Stomp",
-      fr: "Piétinement de ligne faë",
-      de: "Faelinienstampfen",
-      ru: "Волшебная линия",
-      cn: "妖魂踏",
-    },
-    guid: 327104,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_monk.jpg").default,
-    duration: 30,
-    cooldown: 30,
-    class: "MistweaverMonk",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Shaman                                             */
   /* ---------------------------------------------------------------------------------------------- */
-  /* --------------------------------------- Base Abilities --------------------------------------- */
   {
     name: {
       en: "Healing Tide Totem",
@@ -554,39 +415,6 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-  /* ------------------------------------- Covenant Abilities ------------------------------------- */
-  {
-    name: {
-      en: "Vesper Totem",
-      fr: "Totem carillonneur",
-      de: "Vespertotem",
-      ru: "Тотем вечернего колокола",
-      cn: "暮钟图腾",
-    },
-    guid: 324386,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_bastion_shaman.jpg").default,
-    duration: 30,
-    cooldown: 60,
-    class: "RestorationShaman",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
-  {
-    name: {
-      en: "Chain Harvest",
-      fr: "Moisson en chaîne",
-      de: "Kettenernte",
-      ru: "Цепная жатва",
-      cn: "收割链",
-    },
-    guid: 320674,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_revendreth_shaman.jpg").default,
-    duration: 1,
-    cooldown: 90,
-    class: "RestorationShaman",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
-  },
   {
     name: {
       en: "Primordial Wave",
@@ -602,22 +430,6 @@ export const cooldownDB = [
     class: "RestorationShaman",
     cdPlannerMenuActive: false,
     cdPlannerImport: false,
-  },
-  {
-    name: {
-      en: "Fae Transfusion",
-      fr: "Transfusion faërique",
-      de: "Faetransfusion",
-      ru: "Волшебное переливание",
-      cn: "法夜输灵",
-    },
-    guid: 328923,
-    icon: require("Images/CooldownPlanner/SpellIcons/ability_ardenweald_shaman.jpg").default,
-    duration: 3,
-    cooldown: 120,
-    class: "RestorationShaman",
-    cdPlannerMenuActive: true,
-    cdPlannerImport: true,
   },
   {
     name: {
@@ -705,6 +517,22 @@ export const cooldownDB = [
     duration: 8,
     cooldown: 120,
     class: "DevestationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    name: {
+      en: "Stasis",
+      fr: "Stase",
+      de: "Stasis",
+      ru: "Стазис",
+      cn: "静滞",
+    },
+    guid: 370537,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_stasis.jpg").default,
+    duration: 30,
+    cooldown: 90,
+    class: "PreservationEvoker",
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
