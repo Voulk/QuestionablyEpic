@@ -65,7 +65,7 @@ export default function QEMainMenu(props) {
     gameType === "Retail"
       ? {
           "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-          "MainMenu.UpgradeFinder": ["/UpgradeFinder", false, "UpgradeFinder"],
+          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
           "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
           "MainMenu.SequenceSandbox": ["/sequenceGen", false, "SequenceSandbox"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],

@@ -25,7 +25,7 @@ export default function bossHeaders(props, style, QEmodule) {
     }
 
     // Dragonflight World Bosses
-    if (props === 2516) {
+    if (props === 2506) {
       // Basrikron, The Shale Wing
       source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BasrikronTheShaleWing.png").default;
     }

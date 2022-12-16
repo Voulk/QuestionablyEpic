@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 11,
+    date: "16 December",
+    changes: [ 
+      "Launched the Dragonflight version of Upgrade Finder.",
+      "Minor changes to expected overheal on Healing Darts."
+  ]},
+  {
+    version: "10.0.2",
     update: 10,
     date: "13 December",
     changes: [ 
