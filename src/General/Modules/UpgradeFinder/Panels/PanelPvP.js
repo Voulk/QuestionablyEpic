@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { rootStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, Paper } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -12,14 +12,6 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import withStyles from "@mui/styles/withStyles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "100%",
-    marginTop: 4,
-    padding: 4,
-  },
-}));
 
 const Accordion = withStyles({
   root: {
@@ -64,11 +56,11 @@ const pvpIcons = {
 const itemLevels = {
   raid: [187, 200, 213, 226],
   dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [382, 385, 389, 392, 395, 398, 402, 405, 408]
+  pvp: [382, 385, 389, 392, 395, 398, 402, 405, 408],
 };
 
 export default function PvPGearContainer(props) {
-  const classes = useStyles();
+  const classes = rootStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemList = props.itemList;

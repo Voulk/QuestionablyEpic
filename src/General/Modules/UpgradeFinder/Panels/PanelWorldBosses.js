@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { rootStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, Paper } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -13,14 +13,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import withStyles from "@mui/styles/withStyles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "100%",
-    marginTop: 4,
-    padding: 4,
-  },
-}));
 
 const Accordion = withStyles({
   root: {
@@ -51,7 +43,7 @@ const AccordionSummary = withStyles({
 })(MuiAccordionSummary);
 
 export default function WorldBossGearContainer(props) {
-  const classes = useStyles();
+  const classes = rootStyles();
   const { t } = useTranslation();
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;

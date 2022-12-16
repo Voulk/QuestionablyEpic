@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { raidStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -10,183 +10,11 @@ import { filterItemListBySource, filterClassicItemListBySource, getDifferentialB
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import PropTypes from "prop-types";
-import i18n from "i18next";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import withStyles from "@mui/styles/withStyles";
-
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    marginTop: 4,
-    padding: 4,
-  },
-  naxxramasHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Naxxramas.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  malygosHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Malygos.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  argentRaidHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/ArgentRaid.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  magtheridonHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/MagtheridonsLair.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  ulduarHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/Ulduar.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  vaultOfArchavonHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/VaultOfArchavon.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  obsidianSanctumHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/ObsidianSanctum.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  onyxiaLairHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/OnyxiaLair.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  icecrownCitadelHeaderStyle: {
-    backgroundImage: `url(${require("../../../../Images/Classic/Raid/IcecrownCitadel.jpg").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  nathriaHeader: {
-    backgroundImage: `url(${require("../../../../Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnatesLong.png").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  sepulcherHeader: {
-    backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  sanctumHeader: {
-    backgroundImage: `url(${require("Images/Bosses/SanctumOfDomination/SanctumArt.png").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  header: {
-    [theme.breakpoints.down("lg")]: {
-      justifyContent: "center",
-      display: "block",
-      marginLeft: "auto",
-      marginRight: "auto",
-      flexGrow: 1,
-      maxWidth: "100%",
-    },
-    [theme.breakpoints.up("md")]: {
-      justifyContent: "center",
-      display: "block",
-      marginLeft: "auto",
-      marginRight: "auto",
-      flexGrow: 1,
-      maxWidth: "100%",
-    },
-  },
-}));
 
 const Accordion = withStyles({
   root: {
@@ -229,22 +57,22 @@ const getDifficultyName = (difficulty) => {
   }
 };
 
-const getDifficultyNameClassic = (difficulty) => {
-  switch (difficulty) {
-    case 0:
-      return "10m Normal";
-    case 1:
-      return "10m Heroic";
-    case 2:
-      return "10m Hard Mode";
-    case 3:
-      return "25m Normal";
-    case 4:
-      return "25m Heroic";
-    case 5:
-      return "25m Hard Mode";
-  }
-};
+// const getDifficultyNameClassic = (difficulty) => {
+//   switch (difficulty) {
+//     case 0:
+//       return "10m Normal";
+//     case 1:
+//       return "10m Heroic";
+//     case 2:
+//       return "10m Hard Mode";
+//     case 3:
+//       return "25m Normal";
+//     case 4:
+//       return "25m Heroic";
+//     case 5:
+//       return "25m Hard Mode";
+//   }
+// };
 
 const getDifficultyBaseLevel = (difficulty) => {
   switch (difficulty) {
@@ -259,37 +87,8 @@ const getDifficultyBaseLevel = (difficulty) => {
   }
 };
 
-const raidImage = (raidID) => {
-  switch (raidID) {
-    case 1190:
-      return require("Images/Bosses/CastleNathria/CastleNathriaBackground.png").default;
-    case 1193:
-      return require("Images/Bosses/SanctumOfDomination/SanctumBackground.png").default;
-    case 1195:
-      return require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default;
-    case 754:
-      return require("Images/Classic/Raid/Naxxramas.jpg").default;
-    case 756:
-      return require("Images/Classic/Raid/Malygos.jpg").default;
-    case 759:
-      return require("Images/Classic/Raid/Ulduar.jpg").default;
-    case 753:
-      return require("Images/Classic/Raid/VaultOfArchavon.jpg").default;
-    case 755:
-      return require("Images/Classic/Raid/ObsidianSanctum.jpg").default;
-    case 760:
-      return require("Images/Classic/Raid/OnyxiaLair.jpg").default;
-    case 757:
-      return require("Images/Classic/Raid/ArgentRaid.jpg").default;
-    case 758:
-      return require("Images/Classic/Raid/IcecrownCitadel.jpg").default;
-
-    default:
-      return require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesBackground.png").default;
-  }
-};
 export default function RaidGearContainer(props) {
-  const classes = useStyles();
+  const classes = raidStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemList = props.itemList;

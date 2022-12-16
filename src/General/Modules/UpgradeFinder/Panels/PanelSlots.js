@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { rootStyles } from "./PanelStyles";
 import { Typography, Grid } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -59,15 +59,8 @@ const AccordionSummary = withStyles({
   expanded: {},
 })(MuiAccordionSummary);
 
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "100%",
-    padding: "8px 5px",
-  },
-}));
-
 export default function SlotsContainer(props) {
-  const classes = useStyles();
+  const classes = rootStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   let itemList = props.itemList;

@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { dungeonStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mui/material";
 import PropTypes from "prop-types";
 import ItemUpgradeCard from "./ItemUpgradeCard";
@@ -15,38 +15,6 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import withStyles from "@mui/styles/withStyles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "100%",
-    marginTop: 4,
-    padding: 4,
-  },
-  mythicHeader: {
-    backgroundImage: `url(${require("Images/Bosses/MythicLong.png").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-  mythicPlusHeader: {
-    backgroundImage: `url(${require("Images/Bosses/MythicPlusLong.png").default})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "101%",
-    borderRadius: "4px 0px 0px 4px",
-    height: 45,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "0.9rem",
-  },
-}));
 
 const Accordion = withStyles({
   root: {
@@ -77,7 +45,7 @@ const AccordionSummary = withStyles({
 })(MuiAccordionSummary);
 
 export default function MythicPlusGearContainer(props) {
-  const classes = useStyles();
+  const classes = dungeonStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
@@ -139,12 +107,11 @@ export default function MythicPlusGearContainer(props) {
                   <Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} />
                   {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
                   <Tab className={classes.mythicHeader} label={"Mythic"} {...a11yProps(1)} />
-
                 </Tabs>
               </AppBar>
             </Grid>
             <Grid item xs={12}>
-            <TabPanel key={"panel2"} value={tabvalue} index={0}>
+              <TabPanel key={"panel2"} value={tabvalue} index={0}>
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
@@ -198,8 +165,8 @@ export default function MythicPlusGearContainer(props) {
                   </Grid>
                 </div>
               </TabPanel>
-                              
-              <TabPanel key={"panel1"} value={tabvalue} index={1}> 
+
+              <TabPanel key={"panel1"} value={tabvalue} index={1}>
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
@@ -253,8 +220,6 @@ export default function MythicPlusGearContainer(props) {
                   </Grid>
                 </div>
               </TabPanel>
-
-
             </Grid>
           </Grid>
         </div>
