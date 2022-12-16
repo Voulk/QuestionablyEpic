@@ -198,8 +198,8 @@ export default function MythicPlusGearContainer(props) {
                   </Grid>
                 </div>
               </TabPanel>
-
-              <TabPanel key={"panel1"} value={tabvalue} index={1}>
+                              
+              <TabPanel key={"panel1"} value={tabvalue} index={1}> 
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>

@@ -104,12 +104,12 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID);
   // 1195 is Sepulcher gear.
   // World Bosses
-  else if (instanceID === 1205) itemLevel = 395;
+  else if (instanceID === 1205) itemLevel = 389;
   
   else if (instanceID === -1) {
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -16) itemLevel = 353;
-  else if (instanceID === -17) {
+  } else if (instanceID === -30) itemLevel = 359;
+  else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
@@ -124,7 +124,6 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
-  console.log(itemID + " " + itemLevel)
 
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   //let itemAllocations = getItemAllocations(itemID, []);

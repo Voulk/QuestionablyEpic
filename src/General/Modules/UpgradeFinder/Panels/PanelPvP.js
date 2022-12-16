@@ -50,21 +50,21 @@ const AccordionSummary = withStyles({
 })(MuiAccordionSummary);
 
 const getPVPItemLevel = (sourceID, difficulty) => {
-  if (sourceID === -17) {
+  if (sourceID === -31) {
     return itemLevels.pvp[difficulty];
-  } else if (sourceID === -16) return 203;
+  } else if (sourceID === -30) return 359;
   else return -1;
 };
 
 const pvpIcons = {
-  "-16": require("Images/Bosses/HonorIcon.jpg").default,
-  "-17": require("Images/Bosses/ConquestIcon.jpg").default,
+  "-30": require("Images/Bosses/HonorIcon.jpg").default,
+  "-31": require("Images/Bosses/ConquestIcon.jpg").default,
 };
 
 const itemLevels = {
   raid: [187, 200, 213, 226],
   dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [249, 252, 255, 259, 262, 265, 268, 272, 275],
+  pvp: [382, 385, 389, 392, 395, 398, 402, 405, 408]
 };
 
 export default function PvPGearContainer(props) {
