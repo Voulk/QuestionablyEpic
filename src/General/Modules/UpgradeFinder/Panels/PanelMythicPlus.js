@@ -135,15 +135,71 @@ export default function MythicPlusGearContainer(props) {
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
-                  <Tab className={classes.mythicHeader} label={"Mythic"} {...a11yProps(0)} />
                   {/* ------------------------------------------ Mythic + ------------------------------------------*/}
-                  <Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(1)} />
+                  <Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} />
+                  {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
+                  <Tab className={classes.mythicHeader} label={"Mythic"} {...a11yProps(1)} />
+
                 </Tabs>
               </AppBar>
             </Grid>
             <Grid item xs={12}>
-              <TabPanel key={"panel1"} value={tabvalue} index={0}>
+            <TabPanel key={"panel2"} value={tabvalue} index={0}>
+                <div className={classes.panel}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      {encounterDB["-1"].bossOrderMythicPlus.map((key, i) => (
+                        <Accordion
+                          key={encounterDB["-1"][key].name[currentLanguage] + "-accordian" + i}
+                          elevation={0}
+                          style={{
+                            backgroundColor: "rgba(255, 255, 255, 0.12)",
+                          }}
+                        >
+                          <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                            style={{
+                              verticalAlign: "middle",
+                            }}
+                          >
+                            <Typography
+                              variant="h6"
+                              color="primary"
+                              align="left"
+                              style={{
+                                // backgroundColor: "#35383e",
+                                borderRadius: "4px 4px 0px 0px",
+                                display: "flex",
+                              }}
+                            >
+                              <img style={{ height: 36, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][key].name[currentLanguage]} />
+                              <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+                              {encounterDB["-1"][key].name[currentLanguage]} -{" "}
+                              {
+                                [...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])]
+                                  .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                                  .filter((item) => item !== 0).length
+                              }{" "}
+                              Upgrades
+                            </Typography>
+                          </AccordionSummary>
+                          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                            <Grid xs={12} container spacing={1}>
+                              {[...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
+                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                              ))}
+                            </Grid>
+                          </AccordionDetails>
+                        </Accordion>
+                      ))}
+                    </Grid>
+                  </Grid>
+                </div>
+              </TabPanel>
+                              
+              <TabPanel key={"panel1"} value={tabvalue} index={1}> 
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
@@ -198,60 +254,7 @@ export default function MythicPlusGearContainer(props) {
                 </div>
               </TabPanel>
 
-              <TabPanel key={"panel2"} value={tabvalue} index={1}>
-                <div className={classes.panel}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={12}>
-                      {encounterDB["-1"].bossOrderMythicPlus.map((key, i) => (
-                        <Accordion
-                          key={encounterDB["-1"][key].name[currentLanguage] + "-accordian" + i}
-                          elevation={0}
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
-                        >
-                          <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                            style={{
-                              verticalAlign: "middle",
-                            }}
-                          >
-                            <Typography
-                              variant="h6"
-                              color="primary"
-                              align="left"
-                              style={{
-                                // backgroundColor: "#35383e",
-                                borderRadius: "4px 4px 0px 0px",
-                                display: "flex",
-                              }}
-                            >
-                              <img style={{ height: 36, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][key].name[currentLanguage]} />
-                              <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                              {encounterDB["-1"][key].name[currentLanguage]} -{" "}
-                              {
-                                [...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])]
-                                  .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                  .filter((item) => item !== 0).length
-                              }{" "}
-                              Upgrades
-                            </Typography>
-                          </AccordionSummary>
-                          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-                            <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
-                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                              ))}
-                            </Grid>
-                          </AccordionDetails>
-                        </Accordion>
-                      ))}
-                    </Grid>
-                  </Grid>
-                </div>
-              </TabPanel>
+
             </Grid>
           </Grid>
         </div>

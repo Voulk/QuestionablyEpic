@@ -126,7 +126,7 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>lvl 262</div>
+          <div>lvl 372</div>
           <div>M 0</div>
         </div>
       ),
@@ -135,8 +135,8 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 262</div>
-          <div>M 2</div>
+          <div>lvl 376</div>
+          <div>M 2/3</div>
         </div>
       ),
     },
@@ -144,8 +144,8 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 265</div>
-          <div>M 3</div>
+          <div>lvl 379</div>
+          <div>M 4/5</div>
         </div>
       ),
     },
@@ -153,8 +153,8 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 268</div>
-          <div>M 4</div>
+          <div>lvl 382</div>
+          <div>M 6</div>
         </div>
       ),
     },
@@ -162,8 +162,8 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 272</div>
-          <div>M 5</div>
+          <div>lvl 385</div>
+          <div>M 7/8</div>
         </div>
       ),
     },
@@ -171,8 +171,8 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 275</div>
-          <div>M 6-7</div>
+          <div>lvl 389</div>
+          <div>M 9</div>
         </div>
       ),
     },
@@ -180,8 +180,8 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 278</div>
-          <div>M 8-9</div>
+          <div>lvl 392</div>
+          <div>M 10-13</div>
         </div>
       ),
     },
@@ -189,8 +189,8 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 281</div>
-          <div>M 10-11</div>
+          <div>lvl 395</div>
+          <div>M 14</div>
         </div>
       ),
     },
@@ -198,8 +198,8 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 285</div>
-          <div>M 12-13</div>
+          <div>lvl 398</div>
+          <div>M 15/16</div>
         </div>
       ),
     },
@@ -207,8 +207,8 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 288</div>
-          <div>M 14-15</div>
+          <div>lvl 402</div>
+          <div>M 17/18</div>
         </div>
       ),
     },
@@ -216,7 +216,8 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 291</div>
+          <div>lvl 405</div>
+          <div>M 19/20</div>
         </div>
       ),
     },
@@ -224,7 +225,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 294</div>
+          <div>lvl 408</div>
         </div>
       ),
     },
@@ -232,7 +233,7 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 298</div>
+          <div>lvl 411</div>
         </div>
       ),
     },
@@ -240,7 +241,7 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 301</div>
+          <div>lvl 418</div>
         </div>
       ),
     },
@@ -248,7 +249,7 @@ export default function UpgradeFinderFront(props) {
       value: 14,
       label: (
         <div className={classes.labels}>
-          <div>lvl 304</div>
+          <div>lvl 421</div>
         </div>
       ),
     },

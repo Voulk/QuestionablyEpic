@@ -58,8 +58,8 @@ export default function WorldBossGearContainer(props) {
   const currentLanguage = i18n.language;
 
   const contentGenerator = () => {
-    return encounterDB[1192].bossOrder.map((key, i) => (
-      <Accordion key={encounterDB[1192][key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+    return encounterDB[1205].bossOrder.map((key, i) => (
+      <Accordion key={encounterDB[1205][key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
           <Typography
             variant="h6"
@@ -73,13 +73,13 @@ export default function WorldBossGearContainer(props) {
           >
             {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
             <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-            {encounterDB[1192][key].name[currentLanguage]} -{" "}
-            {[...filterItemListBySource(itemList, 1192, key, 207)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
+            {encounterDB[1205][key].name[currentLanguage]} -{" "}
+            {[...filterItemListBySource(itemList, 1205, key, 389)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
-            {[...filterItemListBySource(itemList, 1192, key, 207)].map((item, index) => (
+            {[...filterItemListBySource(itemList, 1205, key, 389)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
             ))}
           </Grid>
