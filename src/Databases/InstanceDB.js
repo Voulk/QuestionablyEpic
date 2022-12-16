@@ -1,10 +1,10 @@
 export const instanceDB = {
   "0": "Test Instance",
-  "-17": "PVP Season 1 (Conquest)",
-  "-16": "PVP Season 1 (Honor)",
+  "-31": "PVP Season 1 (Conquest)",
+  "-30": "PVP Season 1 (Honor)",
   "-1": "Dungeons",
   "1190": "Castle Nathria",
-  "1192": "World Bosses",
+  "1205": "World Bosses",
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
 };
@@ -1029,9 +1029,9 @@ export const encounterDB = {
   },
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
-  1192: {
-    bossOrder: [2640, 2651, 2652, 2653],
-    2651: {
+  1205: {
+    bossOrder: [2515, 2506, 2517, 2518],
+    2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
         fr: "Strunraan, le Malheur du ciel",
@@ -1040,7 +1040,7 @@ export const encounterDB = {
         ch: "斯图恩兰，苍天苦难",
       },
     },
-    2640: {
+    2506: {
       name: {
         en: "Basrikron, The Shale Wing",
         fr: "Basrikron, l’Aile de schiste",
@@ -1049,7 +1049,7 @@ export const encounterDB = {
         ch: "巴斯律孔，页岩之翼",
       },
     },
-    2653: {
+    2517: {
       name: {
         en: "Bazual, The Dreaded Flame",
         fr: "Bazual, la Flamme redoutée",
@@ -1058,7 +1058,7 @@ export const encounterDB = {
         ch: "巴祖阿尔，惊恐烈焰",
       },
     },
-    2652: {
+    2518: {
       name: {
         en: "Liskanoth, The Futurebane",
         fr: "Liskanoth, Fléau du futur",
@@ -1558,7 +1558,7 @@ export const encounterDB = {
   },
 
   /* --------------------------------------------- PVP -------------------------------------------- */
-  2: [-17, -16],
+  2: [-30, -31],
   /* ------------------------------------- Legion Timewalking ------------------------------------- */
   3: {
     bossOrder: [707, 716, 740, 762, 767, 800],

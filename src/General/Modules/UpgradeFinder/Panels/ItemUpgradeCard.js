@@ -90,8 +90,8 @@ export default function ItemCard(props) {
       return encounterDB[1194][item.source.encounterId].name[currentLanguage] + " (Tazavesh)";
     }
     /* ----------------------------- Raid Boss Name ----------------------------- */
-    if (item.source.instanceId === 1190 && item.source.encounterId > 0) {
-      return encounterDB[1190].bosses[item.source.encounterId].name[currentLanguage];
+    if (item.source.instanceId === 1200 && item.source.encounterId > 0) {
+      return encounterDB[1200].bosses[item.source.encounterId].name[currentLanguage];
     }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
@@ -104,20 +104,20 @@ export default function ItemCard(props) {
       return encounterDB[item.source.instanceId].bosses[item.source.encounterId].name[currentLanguage];
     }
     /* ------------------------------ World Bosses ------------------------------ */
-    if (item.source.instanceId === 1192 && item.source.encounterId > 0) {
-      return encounterDB[1192][item.source.encounterId].name[currentLanguage];
+    if (item.source.instanceId === 1205 && item.source.encounterId > 0) {
+      return encounterDB[1205][item.source.encounterId].name[currentLanguage];
     }
     /* ---------------------------------- Honor --------------------------------- */
-    if (item.source.instanceId === -16 || item.source.encounterId === -16) {
-      return getTranslatedPvP("-16", currentLanguage);
+    if (item.source.instanceId === -30 || item.source.encounterId === -30) {
+      return getTranslatedPvP("-30", currentLanguage);
     }
     /* ----------------------- Creation Catalyst --------------------------------- */
     if (item.source.instanceId === -22) {
       return t("CreationCatalyst");
     }
     /* -------------------------------- Conquest -------------------------------- */
-    if (item.source.instanceId === -17 || item.source.encounterId === -17) {
-      return getTranslatedPvP("-17", currentLanguage);
+    if (item.source.instanceId === -31 || item.source.encounterId === -31) {
+      return getTranslatedPvP("-31", currentLanguage);
     }
     /* -------------------------------- TBC Badge Gear -------------------------------- */
     if (item.source.instanceId === -4) {

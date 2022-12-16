@@ -1,7 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp } from "../../Engine/ItemUtilities";
+import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
@@ -94,33 +94,26 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
+
+
+
 function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
+  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID);
   // 1195 is Sepulcher gear.
   // World Bosses
-  else if (instanceID === 1205) itemLevel = 395;
+  else if (instanceID === 1205) itemLevel = 389;
   
   else if (instanceID === -1) {
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -16) itemLevel = 353;
-  else if (instanceID === -17) {
+  } else if (instanceID === -30) itemLevel = 359;
+  else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
-  if (
-    bossID ===  2502 || // Dathea
-    bossID === 2424 || // Sire Denathrius
-    bossID === 2440 || // Kel'Thuzad
-    bossID === 2441 || // Sylvanas Windrunner
-    bossID === 2457 || // Lords of Dread
-    bossID === 2467 || // Rygelon
-    bossID === 2464 // 2464
-  )
-    itemLevel += 6; 
 
   return itemLevel;
 }
@@ -151,28 +144,21 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
-      const isRaid = primarySource === 1190 || primarySource === 1193 || primarySource === 1195 || primarySource === -22;
+      const isRaid = primarySource === 1200 || primarySource === -22;
 
       if (isRaid) {
         // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+          item.quality = 4;
           itemPoss.push(item);
         }
       } else if (primarySource === -1) {
-        /*
-      else if (itemSource.instanceId === 1194) {
-        // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
-        const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
-        itemPoss.push(item226);
-
-        const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
-        itemPoss.push(item233);
-      }*/
-        // Dungeons including Tazavesh
+        // M+ Dungeons
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+        item.quality = 4;
         itemPoss.push(item);
       } else if (primarySource !== -18) {
         /*
@@ -185,6 +171,7 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
         // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+        item.quality = 4;
 
         itemPoss.push(item);
       }

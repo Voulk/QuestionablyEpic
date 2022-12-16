@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// this can probably be merged with the normal damagelog function
 export default async function importEnemyHealth(starttime, endtime, reportid) {
   const APIdamagetaken = "https://www.warcraftlogs.com:443/v1/report/tables/resources/";
   const API2 = "&api_key=92fc5d4ae86447df22a8c0917c1404dc";

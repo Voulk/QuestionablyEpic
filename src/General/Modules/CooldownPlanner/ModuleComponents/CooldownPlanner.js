@@ -55,13 +55,45 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
-  const expansion = 8; // shadowlands
-  const [currentRaid, setCurrentRaid] = useState(2481);
-  const [currentBoss, setCurrentBoss] = useState(2512);
+  const expansion = 9; // shadowlands
+  const [currentRaid, setCurrentRaid] = useState(2522);
+  const [currentBoss, setCurrentBoss] = useState(2587);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   const [currentPlan, setCurrentPlan] = useState("");
+
   const [data, setData] = useState([]);
   const columns = generateColumns(currentBoss, currentDifficulty);
+
+  // Console log plan data (used for importing default plans for a log)
+  // console.log(
+  //   data
+  //     // Map each element in the data array to a new object
+  //     // with the "bossAbility" and "time" properties
+  //     .map((key) => {
+  //       if (key.hasOwnProperty("bossAbility")) {
+  //         return { bossAbility: key.bossAbility, time: key.time };
+  //       }
+  //     })
+  //     // Remove any null elements from the array
+  //     .filter(Boolean)
+  //     // Sort the array by time in ascending order
+  //     .sort((a, b) => {
+  //       // Convert the time strings to Date objects for sorting
+  //       // Use the current date and set the hours and minutes from the time string
+  //       const date = new Date();
+  //       const timeA = new Date(date.setHours(...a.time.split(":")));
+  //       const timeB = new Date(date.setHours(...b.time.split(":")));
+
+  //       // Sort in ascending order by time
+  //       if (timeA < timeB) {
+  //         return -1;
+  //       } else if (timeA > timeB) {
+  //         return 1;
+  //       } else {
+  //         return 0;
+  //       }
+  //     }),
+  // );
 
   /* ------------------------------------------ Add Plan ------------------------------------------ */
   const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);
