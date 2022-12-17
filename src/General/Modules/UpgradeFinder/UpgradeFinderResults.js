@@ -10,7 +10,7 @@ import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import SlotsContainer from "./Panels/PanelSlots";
 import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
-import UFTabPanel from "./Panels/ufComponents/UFTabPanel";
+import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
 import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
 
 function a11yProps(index) {

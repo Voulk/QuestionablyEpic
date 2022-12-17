@@ -11,9 +11,9 @@ import { itemLevels } from "../../../../Databases/itemLevelsDB";
 import { useSelector } from "react-redux";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import UFAccordion from "./ufComponents/UFAccordian";
-import UFAccordionSummary from "./ufComponents/UFAccordianSummary";
-import UFTabPanel from "./ufComponents/UFTabPanel";
+import UFAccordion from "./ufComponents/ufAccordian";
+import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
+import UFTabPanel from "./ufComponents/ufTabPanel";
 
 export default function MythicPlusGearContainer(props) {
   const classes = dungeonStyles();

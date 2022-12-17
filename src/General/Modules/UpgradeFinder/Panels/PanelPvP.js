@@ -9,8 +9,8 @@ import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import UFAccordion from "./ufComponents/UFAccordian";
-import UFAccordionSummary from "./ufComponents/UFAccordianSummary";
+import UFAccordion from "./ufComponents/ufAccordian";
+import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 
 const getPVPItemLevel = (sourceID, difficulty) => {
   if (sourceID === -31) {

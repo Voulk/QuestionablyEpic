@@ -8,8 +8,8 @@ import { getDifferentialByID } from "../../../Engine/ItemUtilities";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { getTranslatedSlotName } from "locale/slotsLocale";
-import UFAccordion from "./ufComponents/UFAccordian";
-import UFAccordionSummary from "./ufComponents/UFAccordianSummary";
+import UFAccordion from "./ufComponents/ufAccordian";
+import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 
 function filterItemListBySlot(itemList, slot) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
