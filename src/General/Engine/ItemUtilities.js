@@ -99,7 +99,7 @@ export function getValidWeaponTypes(spec, slot) {
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
         case SPEC.PRESEVOKER:
-          return [0, 4, 5, 7, 13, 15];
+          return [0, 4, 5, 7, 10, 13, 15];
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
         case SPEC.HOLYPRIEST:
