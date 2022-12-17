@@ -1,6 +1,6 @@
 import React from "react";
 import { raidStyles } from "./PanelStyles";
-import { Typography, Grid, Divider, Paper, AppBar, Tabs, Tab, Box } from "@mui/material";
+import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
@@ -9,40 +9,11 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
-import PropTypes from "prop-types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import withStyles from "@mui/styles/withStyles";
-import MuiAccordion from "@mui/material/Accordion";
-import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-
-const Accordion = withStyles({
-  root: {
-    border: "1px solid rgba(255, 255, 255, 0.12)",
-    boxShadow: "none",
-    "&:not(:last-child)": {
-      borderBottom: 0,
-    },
-    "&:before": {
-      display: "none",
-    },
-    "&$expanded": {
-      margin: "auto",
-    },
-  },
-  expanded: {},
-})(MuiAccordion);
-
-const AccordionSummary = withStyles({
-  root: {
-    padding: "0px 16px 0px 0px",
-    backgroundColor: "#35383e",
-    "&$expanded": {
-      backgroundColor: "rgb(255 255 255 / 10%)",
-    },
-  },
-  expanded: {},
-})(MuiAccordionSummary);
+import UFAccordion from "./ufComponents/ufAccordian";
+import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
+import UFTabPanel from "./ufComponents/ufTabPanel";
 
 const getDifficultyName = (difficulty) => {
   switch (difficulty) {
@@ -94,22 +65,6 @@ export default function RaidGearContainer(props) {
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
   const gameType = useSelector((state) => state.gameType);
-
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
-  };
-
-  function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-      <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
-        {value === index && <Box p={0}>{children}</Box>}
-      </div>
-    );
-  }
 
   function a11yProps(index) {
     return {
@@ -177,15 +132,15 @@ export default function RaidGearContainer(props) {
             </Grid>
             <Grid item xs={12}>
               {shadowlandsList.map((raidID, index) => (
-                <TabPanel key={"panel" + index} value={tabvalue} index={index}>
+                <UFTabPanel key={"panel" + index} value={tabvalue} index={index}>
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
                       <Grid item xs={12}>
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <Accordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-                              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                              <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
                                   color="primary"
@@ -209,7 +164,7 @@ export default function RaidGearContainer(props) {
                                       : 0)}{" "}
                                   Upgrades
                                 </Typography>
-                              </AccordionSummary>
+                              </UFAccordionSummary>
                               <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                                 <Grid item xs={12} sm container direction="row" spacing={1}>
                                   <Grid item xs={12} container spacing={1}>
@@ -273,12 +228,12 @@ export default function RaidGearContainer(props) {
                                   )}
                                 </Grid>
                               </AccordionDetails>
-                            </Accordion>
+                            </UFAccordion>
                           ))}
                       </Grid>
                     </Grid>
                   </div>
-                </TabPanel>
+                </UFTabPanel>
               ))}
             </Grid>
           </Grid>
@@ -358,8 +313,8 @@ export default function RaidGearContainer(props) {
                         <Grid container spacing={1}>
                           <Grid item xs={12}>
                             {encounterDB[raidID].bossOrder.map((key, i) => (
-                              <Accordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-                                <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+                              <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                                <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                   <Typography
                                     variant="h6"
                                     color="primary"
@@ -379,7 +334,7 @@ export default function RaidGearContainer(props) {
                                     }{" "}
                                     Upgrades
                                   </Typography>
-                                </AccordionSummary>
+                                </UFAccordionSummary>
                                 <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                                   <Grid xs={12} container spacing={1}>
                                     {[...filterClassicItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
@@ -387,7 +342,7 @@ export default function RaidGearContainer(props) {
                                     ))}
                                   </Grid>
                                 </AccordionDetails>
-                              </Accordion>
+                              </UFAccordion>
                             ))}
                           </Grid>
                         </Grid>
