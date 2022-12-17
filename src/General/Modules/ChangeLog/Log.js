@@ -10,6 +10,22 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 11,
+    date: "16 December",
+    changes: [ 
+      "Launched the Dragonflight version of Upgrade Finder.",
+      "Minor changes to expected overheal on Healing Darts."
+  ]},
+  {
+    version: "10.0.2",
+    update: 10,
+    date: "13 December",
+    changes: [ 
+      "Pushed a possible fix for an issue where Top Gear could crash immediately for some people.",
+      "Added the in-game 5% nerf to Lariat."
+  ]},
+  {
+    version: "10.0.2",
     update: 7,
     date: "10 December",
     changes: [ 

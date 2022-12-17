@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import { GEMS } from "General/Engine/GEMS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import { CONSTANTS } from "./CONSTANTS";
-
+import { itemLevels } from "Databases/itemLevelsDB";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -159,24 +159,21 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
   return temp;
 }
 
+export function getItemLevelBoost(bossID) {
+  if (bossID ===  2502 || bossID === 2424) return 6;    // Dathea and Kurog 
+  else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
+  else return 0;
+}
+
 export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (
-      itemEncounter == 2425 || // Stone Legion Generals
-      itemEncounter == 2424 || // Sire Denathrius
-      itemEncounter == 2440 || // Kel'Thuzad
-      itemEncounter == 2441 || // Sylvanas Windrunner
-      itemEncounter == 2457 || // Lords of Dread
-      itemEncounter == 2467 || // Rygelon
-      itemEncounter == 2464 // The Jailer
-    )
-      expectedItemLevel += 7;
-    if (itemEncounter == 2456) expectedItemLevel = 233; // Mor'geth
-    if (itemEncounter == 2468) expectedItemLevel = 259; // Antros
-    //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter);
+    else if (item.source.instanceId === 1205) expectedItemLevel = 389;
 
+    //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+    if (item.id === 200676 && sourceInstance === 1205) {console.log(expectedItemLevel + JSON.stringify(item.source)); console.log(level); console.log(sourceBoss);}
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
 

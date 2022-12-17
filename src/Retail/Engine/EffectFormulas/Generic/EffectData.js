@@ -12,7 +12,7 @@ export const effectData = [
       { 
         coefficient: 98.46344,
         table: -9,
-        efficiency: 0.7,
+        efficiency: 0.45,
         ppm: 2,
         secondaries: ['crit', 'versatility'],
       },
@@ -20,7 +20,7 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      console.log(bonus_stats.hps);
+
       return bonus_stats;
     }
   },

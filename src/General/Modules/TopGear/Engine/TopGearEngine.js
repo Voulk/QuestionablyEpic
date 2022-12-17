@@ -44,7 +44,6 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
   //newPlayer.dominationGemRanks = player.dominationGemRanks;
   newPlayer.activeModelID = player.activeModelID;
-  newPlayer.covenant = player.covenant;
 
   return newPlayer;
 }

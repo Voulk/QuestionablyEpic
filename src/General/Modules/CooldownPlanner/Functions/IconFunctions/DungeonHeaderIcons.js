@@ -9,7 +9,6 @@ import SoA from "../../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAsce
 import DoS from "../../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg";
 import TtVM from "../../../../../Images/MythicPlus/TazaveshTheVeiledMarket/TazaveshTheVeiledMarket.jpg";
 /* ------------------------------------- Legion Timewalking ------------------------------------- */
-import CoS from "../../../../../Images/MythicPlus/LegionTimewalking/CourtOfStars.jpg";
 import BRH from "../../../../../Images/MythicPlus/LegionTimewalking/BlackrookHold.jpg";
 import NL from "../../../../../Images/MythicPlus/LegionTimewalking/NeltharionsLair.jpg";
 import DHT from "../../../../../Images/MythicPlus/LegionTimewalking/DarkheartThicket.jpg";
@@ -182,10 +181,6 @@ export default function DungeonHeaderIcons(props) {
   /*                                       Legion Timewalking                                       */
   /* ---------------------------------------------------------------------------------------------- */
 
-  /* --------------------------------------- Court of Stars --------------------------------------- */
-  if (props === 800) {
-    source = CoS;
-  }
   /* -------------------------------------- Neltharion's Lair ------------------------------------- */
   if (props === 767) {
     source = NL;

@@ -152,7 +152,7 @@ export default function TrinketAnalysis(props) {
     ];
     const shadowlandsTheRest = [
       1192, // World Bosses
-      1201, // DF World Bosses
+      1205, // DF World Bosses
       -18, // PVP
       -17, // PVP
     ];
