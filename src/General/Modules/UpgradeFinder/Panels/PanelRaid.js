@@ -11,9 +11,9 @@ import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import UFAccordion from "./ufComponents/ufAccordian";
-import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
-import UFTabPanel from "./ufComponents/ufTabPanel";
+import UFAccordion from "./ufComponents/UFAccordian";
+import UFAccordionSummary from "./ufComponents/UFAccordianSummary";
+import UFTabPanel from "./ufComponents/UFTabPanel";
 
 const getDifficultyName = (difficulty) => {
   switch (difficulty) {
