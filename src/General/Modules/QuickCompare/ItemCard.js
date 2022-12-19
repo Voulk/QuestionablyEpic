@@ -64,11 +64,23 @@ export default function ItemCard(props) {
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  let socket = [];
+  if (item.socket) {
+    for (let i = 0; i < item.socket; i++) {
+      socket.push (
+        <div style={{ marginRight: 4, display: "inline"}}>
+          <img src={socketImage} width={15} height={15} alt="Socket" />
+        </div>
+      );
+    }
+    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+  }
+  /*
   const socket = item.socket ? (
     <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
       <img src={socketImage} width={15} height={15} alt="Socket" />
     </div>
-  ) : null;
+  ) : null; */
 
   const deleteItemCard = () => {
     props.delete(item.uniqueHash);

@@ -687,7 +687,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add Retail Socket
   if (item.socket) {
-    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
   // Add any group benefit, if we're interested in it.

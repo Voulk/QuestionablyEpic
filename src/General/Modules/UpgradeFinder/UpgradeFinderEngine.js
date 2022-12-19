@@ -108,7 +108,8 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   else if (instanceID === 1205) itemLevel = 389;
   
   else if (instanceID === -1) {
-    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+    if ([1204, 1199, 1197, 1196].includes(bossID)) itemLevel = 372; // M0 only dungeons.
+    else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } else if (instanceID === -30) itemLevel = 359;
   else if (instanceID === -31) {
     // Conquest
