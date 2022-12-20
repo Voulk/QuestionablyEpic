@@ -397,6 +397,7 @@ export const DISCSPELLS = {
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
         castTime: 0,
+        cost: 0,
         cooldown: 90,
         buffDuration: 15,
         buffType: 'stats',

@@ -333,6 +333,7 @@ const DISCCONSTANTS = {
     if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
     if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
     if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
+    if (settings["Voidmender's Shadowgem"]) discSpells["Voidmender's Shadowgem"][0].value = settings["Voidmender's Shadowgem"];
     //
 
     // Setup mana costs & cooldowns.
@@ -578,6 +579,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             if (key in discSpells) {
                 const spell = discSpells[key][0];
                 spell.value = settings.trinkets[key];
+                
             }
         })
     }
