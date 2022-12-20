@@ -30,7 +30,7 @@ export const DISCSPELLS = {
         castTime: 1.5,
         cost: 0.4,
         coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
-        atoneOverheal: 0.21,
+        atoneOverheal: 0.20,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -41,7 +41,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        atoneOverheal: 0.21,
+        atoneOverheal: 0.19,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -52,7 +52,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.376,
         school: "holy",
-        atoneOverheal: 0.21,
+        atoneOverheal: 0.19,
         secondaries: ['crit', 'vers'],
     }],
     "DefPenance": [{
@@ -84,7 +84,7 @@ export const DISCSPELLS = {
         coeff: 1.41,
         buffDuration: 9,
         school: "shadow",
-        atoneOverheal: 0.22,
+        atoneOverheal: 0.20,
         secondaries: ['crit', 'vers'],
     },
     {
@@ -105,7 +105,7 @@ export const DISCSPELLS = {
         coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
         school: "shadow",
-        atoneOverheal: 0.23,
+        atoneOverheal: 0.22,
         secondaries: ['crit', 'vers']
     }],
     "Power Word: Solace": [{
@@ -126,7 +126,7 @@ export const DISCSPELLS = {
         cost: 0.5,
         coeff: 0.85,
         cooldown: 9,
-        atoneOverheal: 0.22,
+        atoneOverheal: 0.2,
         school: "shadow",
         secondaries: ['crit', 'vers']
     }],
@@ -138,7 +138,7 @@ export const DISCSPELLS = {
         coeff: 2.1875, 
         cooldown: 90,
         school: "holy",
-        atoneOverheal: 0.33,
+        atoneOverheal: 0.3,
         secondaries: ['crit', 'vers'],
     }],
     "Mindgames": [{
