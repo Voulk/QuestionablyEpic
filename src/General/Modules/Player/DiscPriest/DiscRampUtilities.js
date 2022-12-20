@@ -50,7 +50,7 @@ const addBreakdowns = (obj, newObj, miniRamp) => {
     return obj;
 }
 
-const getDefaultDiscTalents = (playstyle) => {
+export const getDefaultDiscTalents = (playstyle) => {
     return baseTalents;
 }
 
