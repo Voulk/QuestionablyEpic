@@ -233,7 +233,7 @@ export default function MythicPlusGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB["-1"][key].name[currentLanguage]} -{" "}
                               {
-                                [...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])]
+                                [...filterItemListBySource(itemList, "-1", key, 372)]
                                   .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
                                   .filter((item) => item !== 0).length
                               }{" "}
@@ -242,7 +242,7 @@ export default function MythicPlusGearContainer(props) {
                           </AccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
+                              {[...filterItemListBySource(itemList, "-1", key, 372)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>

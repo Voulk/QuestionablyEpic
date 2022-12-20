@@ -70,6 +70,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   const completedItemList = [];
 
+
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
@@ -107,7 +108,8 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
   else if (instanceID === 1205) itemLevel = 389;
   
   else if (instanceID === -1) {
-    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+    if ([1204, 1199, 1197, 1196].includes(bossID)) itemLevel = 372; // M0 only dungeons.
+    else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } else if (instanceID === -30) itemLevel = 359;
   else if (instanceID === -31) {
     // Conquest
@@ -124,7 +126,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
-
+  
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");

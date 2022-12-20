@@ -6,8 +6,8 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
+      "-> Strongly consider tier pieces in your early vaults.",
       "-> Consult Guides for best Spark crafts early on.",
-      "-> Expect a bit of turbulence over the first few days.",
   ],
   "Classic": [""]
   }
