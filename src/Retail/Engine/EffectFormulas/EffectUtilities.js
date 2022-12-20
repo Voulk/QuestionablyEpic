@@ -97,7 +97,7 @@ export function buildIdolTrinket(data, itemLevel, stat) {
   bonus_stats.mastery = uptime * bigProc / 4;
   bonus_stats.versatility = uptime * bigProc / 4;
 
-  bonus_stats[stat] += (smallPerGem * 8.5 * (1 - uptime));
+  bonus_stats[stat] += (smallPerGem * 8.25 * (1 - uptime)); // 8.5 is slightly more accurate but it tends to be slightly lossy. 
 
   return bonus_stats;
 

@@ -10,7 +10,7 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   let temp = db.filter(function (item) {
     return item.name === trinketName;
   });
-
+  
   const item = temp[0];
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
@@ -98,7 +98,7 @@ export default class VerticalChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.5}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.4}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
