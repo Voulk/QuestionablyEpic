@@ -10,7 +10,7 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   let temp = db.filter(function (item) {
     return item.name === trinketName;
   });
-  console.log(trinketName);
+
   const item = temp[0];
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];

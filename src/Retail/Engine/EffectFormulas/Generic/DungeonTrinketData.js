@@ -354,6 +354,29 @@ export const dungeonTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Infernal Writ                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Infernal Writ",
+    effects: [
+      { // Mastery portion
+        coefficient: 0.149006,
+        table: -7,
+        duration: 20,
+        ppm: { "Restoration Druid": 0.6, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.6, "Holy Priest": 0.6 }, // Baseline: 0.7
+        averageStacks: 10.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.crit = processedValue(data[0], itemLevel) * convertPPMToUptime(data[0].ppm[player.getSpec()], data[0].duration) * data[0].averageStacks;
+      console.log(processedValue(data, itemLevel) + " " + convertPPMToUptime(data[0].ppm[player.getSpec()], data[0].duration) + " " + data[0].averageStacks)
+      return bonus_stats;
+    }
+  },
 
 
 
