@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getProcessedValue, getDiminishedValue, getHighestStat } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../EffectUtilities";
 import { trinket_data } from "./ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
@@ -14,7 +14,7 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import SPEC from "../../../../General/Engine/SPECS";
 
 
-export function getTrinketValue(trinketName, itemLevel) {
+export function getTrinketValueSL(trinketName, itemLevel) {
   let activeTrinket = trinket_data.find((trinket) => trinket.name === trinketName);
   if (trinketName === "Soulletting Ruby") {
     const effect = activeTrinket.effects[0];
@@ -24,6 +24,25 @@ export function getTrinketValue(trinketName, itemLevel) {
   else {
     const effect = activeTrinket.effects[0];
     const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
+    return trinketValue;
+
+  }
+}
+
+export function getTrinketValue(trinketName, itemLevel) {
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
+
+  if (trinketName === "Voidmender's Shadowgem") {
+    const effect = activeTrinket.effects;
+
+    const critPerStack = processedValue(effect[1], itemLevel)
+    const effectiveCrit = processedValue(effect[0], itemLevel) + critPerStack * (effect[1].ppm * (effect[0].duration / 60)/2)
+    return effectiveCrit;
+  }
+  else {
+    const effect = activeTrinket.effects[0];
+    const trinketValue = processedValue(effect, itemLevel);
     return trinketValue;
 
   }

@@ -19,6 +19,7 @@ export const changeLog = [
       "Added Inferal Writ & the Jewelcrafting Idols to the trinket chart.",
       "Multi-gem items will now display every socket in Quick Compare.",
       "Primal Ritual Shell now shows which buff it's recommending.",
+      "Fixed an issue where on-use trinkets could be undervalued for Disc in Top Gear."
   ]},
   {
     version: "10.0.2",
