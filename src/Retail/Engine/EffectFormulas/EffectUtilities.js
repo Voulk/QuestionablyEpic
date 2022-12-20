@@ -35,7 +35,7 @@ export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, cast
     const trinket = {}
     trinket[trinketName] = trinketValue;
     const rampHealing = allRampsHealing([], playerStats, {"playstyle": castModel.playstyle || "", "reporting": false}, {}, trinket, false) / 180;
-    console.log(rampHealing);
+
     return (rampHealing - player.getRampID('baseline', "Raid")) * (1 - 0.1);
 
   }
@@ -79,6 +79,29 @@ export function getLowestStat(stats) {
     return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
   }
 }
+
+
+// We need to do four of these so we'll just outsource the work to this function instead of repeating ourselves.
+export function buildIdolTrinket(data, itemLevel, stat) {
+  let bonus_stats = {};
+  const gemsEquipped = 2; // TODO: Make this dynamically update based on the number of gems equipped.
+  const smallPerGem = processedValue(data[0], itemLevel);
+  const bigProc = processedValue(data[1], itemLevel);
+  //const uptime = data[0].ppm / Math.ceil(18 / gemsEquipped) * data[1].duration / 60;
+  const uptime = 15 / (18 / (data[0].ppm * gemsEquipped) * 60 + 15);
+
+  // Time to first proc
+  // Average remaining fight duration.
+  bonus_stats.haste =  + uptime * bigProc / 4; 
+  bonus_stats.crit = uptime * bigProc / 4;
+  bonus_stats.mastery = uptime * bigProc / 4;
+  bonus_stats.versatility = uptime * bigProc / 4;
+
+  bonus_stats[stat] += (smallPerGem * 8.25 * (1 - uptime)); // 8.5 is slightly more accurate but it tends to be slightly lossy. 
+
+  return bonus_stats;
+
+} 
 
 export function getScalarValue(table, itemLevel) {
   if (table === -9) { // Was -8 in SL QE/L.

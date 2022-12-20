@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
 
 export const otherTrinketData = [
   {
@@ -334,6 +334,102 @@ export const otherTrinketData = [
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
       return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Idol of the Dreamer                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Dreamer",
+    effects: [
+      { // Haste Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "haste");
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Idol of the Lifebinder                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Lifebinder",
+    effects: [
+      { // Small Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "crit");
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                Idol of the Spellweaver                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Spellweaver",
+    effects: [
+      { // Small Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "versatility");
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                               Idol of the Earth Warder                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Earth Warder",
+    effects: [
+      { // Small Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "mastery");
     }
   },
 

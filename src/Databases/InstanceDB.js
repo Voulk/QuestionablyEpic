@@ -1728,7 +1728,7 @@ export const encounterDB = {
       1197, // Uldaman: Legacy of Tyr
       1198, // The Nokhud Offensive
       1199, // Neltharus
-      1201, // Taz'algeth Academy
+      1201, // Alge'thar Academy
       1202, // Ruby Life Pools
       1204, // Halls of Infusion
       1203, // The Azure Vault
@@ -1742,7 +1742,7 @@ export const encounterDB = {
       // 1197, // Uldaman: Legacy of Tyr
       1198, // The Nokhud Offensive
       // 1199, // Neltharus
-      1201, // Taz'algeth Academy
+      1201, // Alge'thar Academy
       1202, // Ruby Life Pools
       1203, // The Azure Vault
       // 1204, // Halls of Infusion
@@ -1795,7 +1795,7 @@ export const encounterDB = {
     },
     1201: {
       name: {
-        en: "Taz'algeth Academy",
+        en: "Algeth'ar Academy",
         fr: "Académie de Taz’algeth",
         de: "Akademie von Taz'algeth",
         ru: "Академия Таз'алгет",
