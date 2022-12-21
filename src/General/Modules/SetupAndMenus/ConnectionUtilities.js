@@ -56,7 +56,7 @@ export async function apiSendTopGearSet(player, content, score, compared) {
   let hardScore = Math.round(score);
   let fetchUrl = "https://questionablyepic.com/api/addTopGear.php?btag=" + encodeURIComponent(name) + "&content=" + contentType + "&itemscompared=" + itemsCompared + 
                     "&hardscore=" + hardScore + "&pspec=" + encodeURIComponent(player.spec.replace(" ", ""));
-  console.log(fetchUrl)
+
   fetch(fetchUrl)
     .then((res) => res.text())
     .then((response) => {

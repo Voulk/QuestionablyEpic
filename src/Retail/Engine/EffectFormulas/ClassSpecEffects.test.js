@@ -9,13 +9,12 @@ import { getHolyPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/Hol
 
 // This is a dummy test unit and is not fully functional yet.
 describe("Shaman", () => {
-    const player = new Player("Voulk", "Holy Priest", 99, "NA", "Stonemaul", "Night Elf");
+    const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
 
     test("pc", () => {
-        getHolyPriestSpecEffect("Flash Concentration", player, contentType)
-
+        console.log(getMonkSpecEffect("Mistweaver T29-2", player, contentType))
     })
 
 
