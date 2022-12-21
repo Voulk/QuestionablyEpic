@@ -4,7 +4,6 @@ import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functio
 export default function createBroodkeeperEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy) {
   let events = [];
 
-  console.log(buffData);
   const clutchwatchersRage = 375829;
   const broodkeepersBond = 375809;
 
