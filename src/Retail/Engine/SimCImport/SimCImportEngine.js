@@ -290,6 +290,30 @@ export function processItem(line, player, contentType, type) {
       missiveStats.push("versatility");
       craftedStats = "";
     }
+    else if (bonus_id === "8790") {
+      // Haste / Crit Crafted Override
+      craftedStats = ["42", "36"]
+    }
+    else if (bonus_id === "8791") {
+      // Mast / Crit Crafted Override
+      craftedStats = ["49", "32"]
+    }
+    else if (bonus_id === "8792") {
+      // Haste / Vers Crafted Override
+      craftedStats = ["36", "40"]
+    }
+    else if (bonus_id === "8793") {
+      // Haste / Mast Crafted Override
+      craftedStats = ["36", "49"]
+    }
+    else if (bonus_id === "8794") {
+      // Vers / Mast Crafted Override
+      craftedStats = ["40", "49"]
+    }
+    else if (bonus_id === "8795") {
+      // Vers / Crit Crafted Override
+      craftedStats = ["40", "32"]
+    }
     if (bonus_id === "7881") uniqueTag = "crafted";
   }
   //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);

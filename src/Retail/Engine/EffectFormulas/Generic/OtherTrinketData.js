@@ -154,7 +154,7 @@ export const otherTrinketData = [
         coefficient: 1.560047,
         table: -7,
         stat: "haste",
-        duration: 10,
+        duration: 20,
         ppm: 1,
       },
     ],
