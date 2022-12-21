@@ -7,8 +7,8 @@ export function getItemSet(id, pieces, spec) {
     });
     if (temp.length > 0) {
       for (const [bonus, effectID] of Object.entries(temp[0].setBonuses)) {
-        //console.log("Getting bonuss" + bonus + ". ID: " + effectid + ". Pieces: " + pieces);
-        if (pieces >= bonus) effects.push({type: 'special', name: effectID, class: temp[0].class});
+        //console.log("Getting bonuss" + bonus + ". ID: " + effectID + ". Pieces: " + pieces);
+        if (pieces >= bonus) effects.push({type: 'set bonus', name: effectID, class: temp[0].class});
       }
       return effects;
     }
@@ -16,6 +16,66 @@ export function getItemSet(id, pieces, spec) {
   }
 
 export const itemSets = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                               Lost Landcaller's (Druid T29)                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    id: [1528],
+    class: "Restoration Druid",
+    setBonuses: {
+      2: "Druid T29-2", // 
+      4: "Druid T29-4"  // 
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                              Virtuous Silver Paladin T29                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    id: [1533],
+    class: "Holy Paladin",
+    setBonuses: {
+      2: "Paladin T29-2", // 
+      4: "Paladin T29-4"  // 
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                   Waking Fist - Monk T29                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    id: [1532],
+    class: "Holy Paladin",
+    setBonuses: {
+      2: "Mistweaver T29-2", // 
+      4: "Mistweaver T29-4"  // 
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 The Awakened - Evoker T29                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    id: [1530],
+    class: "Preservation Evoker",
+    setBonuses: {
+      2: "Evoker T29-2", // 
+      4: "Evoker T29-4"  // 
+    },
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                               Infused Earth - Shaman T29                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    id: [1536],
+    class: "Restoration Shaman",
+    setBonuses: {
+      2: "Shaman T29-2", // 
+      4: "Shaman T29-4"  // 
+    },
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   Drakebreaker's Vestments                                     */

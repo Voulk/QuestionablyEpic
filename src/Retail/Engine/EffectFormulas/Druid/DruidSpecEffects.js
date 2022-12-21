@@ -9,6 +9,17 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
 
+  if (effectName === "Druid T29-2") {
+    // +8% crit to almost everything that matters.
+    const percentEffected = 0.75; // TODO: Auto-calc this.
+    bonus_stats.crit = 8 * percentEffected * 170;
+
+  }
+  if (effectName === "Druid T29-4") {
+
+
+  }
+
   // Tier Sets
   if (effectName === "Druid T28-2") {
     // 

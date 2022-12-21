@@ -5257,8 +5257,8 @@ export const bossAbilities = {
 
     {
       // https://www.wowhead.com/spell=370410/pulsing-flames
-      cooldownPlannerActive: true,
-      createEvent: true,
+      cooldownPlannerActive: false,
+      createEvent: false,
       guid: 390715,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_head_dragon_01.jpg").default,
       importActive: false,
@@ -6903,5 +6903,127 @@ export const bossAbilities = {
       },
     },
   ],
-  2607: [], //  Raszageth the Storm-Eater
+  2607: [
+    //  Raszageth the Storm-Eater
+    {
+      // https://www.wowhead.com/spell=381613/static-charge
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 381615,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_lightningwhip.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Static Charge",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=385574/tempest-wing
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 385574,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_socererking_forcenova.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Tempest Wing",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=387261/stormsurge
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 387261,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_evoker_unravel.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Stormsurge",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=377612/hurricane-wing
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 377612,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_vigor01.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Hurricane Wing",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=388645/volatile-current
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 388643,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Volatile Current",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=385065/lightning-devastation
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 385065,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_diving01.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Lightning Devastation",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=385569/raging-storm
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 385569,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Raging Storm",
+        fr: "",
+        ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=399713/magnetic-charge
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 399713,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_siege_engineer_magnetic_lasso.jpg").default,
+      importActive: true,
+      name: {
+        cn: "",
+        de: "",
+        en: "Magnetic Charge",
+        fr: "",
+        ru: "",
+      },
+    },
+  ],
 };
