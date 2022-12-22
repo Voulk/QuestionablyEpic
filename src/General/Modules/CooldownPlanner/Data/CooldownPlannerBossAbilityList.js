@@ -7025,5 +7025,35 @@ export const bossAbilities = {
         ru: "",
       },
     },
+    {
+      // https://www.wowhead.com/spell=390817/thunderous-energy
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 390817,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_focusedpower.jpg").default,
+      importActive: false,
+      name: {
+        cn: "雷鸣能量",
+        de: "Donnernde Energie",
+        en: "Thunderous Energy",
+        fr: "Énergie tonitruante",
+        ru: "Дуга молнии",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=181089/encounter-event
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 181089,
+      icon: "",
+      importActive: false,
+      name: {
+        cn: "Encounter Event",
+        de: "Encounter Event",
+        en: "Encounter Event",
+        fr: "Encounter Event",
+        ru: "Encounter Event",
+      },
+    },
   ],
 };
