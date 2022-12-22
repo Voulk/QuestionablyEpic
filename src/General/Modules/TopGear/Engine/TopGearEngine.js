@@ -25,7 +25,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 const softSlice = 3000;
 const DR_CONST = 0.00497669230769231;
-const DR_CONSTLEECH = 0.04522569230769231;
+const DR_CONSTLEECH = 0.04922569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time) {

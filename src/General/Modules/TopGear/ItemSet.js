@@ -112,6 +112,7 @@ class ItemSet {
 
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
+        console.log("Adding set piece" + item.setID);
       }
       if (item.onUse) this.onUseTrinkets.push({name: item.effect.name, level: item.level});
         

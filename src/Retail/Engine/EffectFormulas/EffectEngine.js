@@ -4,6 +4,7 @@ import { getDiscPriestSpecEffect } from "./Priest/DiscPriestSpecEffects";
 import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
 import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
 import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
+import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
@@ -65,9 +66,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
         case "Restoration Druid":
           bonus_stats = getDruidSpecEffect(effectName, player, contentType);
           break;
-        case "Preservation Evoker":
-          bonus_stats = getDruidSpecEffect(effectName, player, contentType);
-          break;
         case "Holy Priest":
           bonus_stats = getHolyPriestSpecEffect(effectName, player, contentType);
           break;
@@ -81,7 +79,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
           bonus_stats = getShamanSpecEffect(effectName, player, contentType);
           break;
         case "Preservation Evoker":
-          //bonus_stats = getEvokerSpecEffect(effectName, player, contentType);
+          bonus_stats = getEvokerSpecEffect(effectName, player, contentType);
           break;
         default:
           break;
