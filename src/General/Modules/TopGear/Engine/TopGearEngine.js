@@ -612,6 +612,7 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
       let specialSpells = ["Rapture"];
       // Setup ramp cast sequences
       const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
+      console.log(onUseTrinkets);
       let trinketInfo = {};
       if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
         // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).

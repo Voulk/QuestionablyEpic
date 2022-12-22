@@ -207,6 +207,12 @@ class Player {
     this.activeItems = tempArray;
   };
 
+  activateAll = () => {
+    this.activeItems.forEach((item) => {
+      item.active = true;
+    })
+  }
+
   catalyzeItem = (item) => {
     return item; // The Item Catalyst isn't currently active.
     /*let tempArray = this.activeItems.filter(function (item) {

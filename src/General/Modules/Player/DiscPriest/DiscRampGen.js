@@ -226,18 +226,15 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
         else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
         else sequence.push('Renew');
     }
-
     
-    
-    
+    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
     sequence.push('Power Word: Radiance');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
     if (trinket === "Time-Breaching Talon") sequence.push("Time-Breaching Talon");
-    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
+    
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
-    
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');

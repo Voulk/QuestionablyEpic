@@ -504,7 +504,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
-    if (!spellName.includes("hot")) {
+    if (!spellName.includes("hot") || true) {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
         if (targetMult > 1) base += `, ${targetMult} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
@@ -561,7 +561,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
 
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
     let stats = JSON.parse(JSON.stringify(incStats));
-
+    stats.critMult = 2;
+    stats.versatility += 720 // Phial.
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
@@ -624,7 +625,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
         const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage") && state.t >= buff.expiration && buff.canPartialTick})
         expiringHots.forEach(buff => {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
-            const partialTickPercentage = (buff.next - state.t) / tickRate;
+            const partialTickPercentage = 1 - ((buff.next - state.t) / tickRate);
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
             

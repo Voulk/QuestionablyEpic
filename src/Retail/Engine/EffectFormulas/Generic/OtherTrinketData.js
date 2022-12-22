@@ -264,7 +264,7 @@ export const otherTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
-      console.log()
+
       return bonus_stats;
     }
   },

@@ -292,7 +292,7 @@ export function processItem(line, player, contentType, type) {
     }
     else if (bonus_id === "8790") {
       // Haste / Crit Crafted Override
-      craftedStats = ["42", "36"]
+      craftedStats = ["32", "36"]
     }
     else if (bonus_id === "8791") {
       // Mast / Crit Crafted Override
