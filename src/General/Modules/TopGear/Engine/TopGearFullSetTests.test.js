@@ -43,7 +43,6 @@ describe("Top Gear full test", () => {
         const wepCombos = buildWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
 
-        console.log(result.itemSet.effectList);
         expect(result.itemSet.effectList.filter(effect => effect.name === "Mistweaver T29-2").length).toEqual(1);
         //expect(result.itemSet.effectList.filter(effect => effect.name === "DPriest T29-4").length).toEqual(0);
         //expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1); 
