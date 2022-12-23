@@ -44,17 +44,9 @@ const DISCCONSTANTS = {
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
     if (settings['DefaultLoadout']) {
-        if (settings.playstyle === "Kyrian Evangelism") {
-            settings['Clarity of Mind'] = true;
-            settings['Pelagos'] = true;
-            settings['4T28'] = true;
-        }
-        else if (settings.playstyle === "Venthyr Evangelism") {
-            settings['Penitent One'] = true;
-            settings['Shadow Word: Manipulation'] = true;
-            settings['Theotar'] = true;
-            settings['4T28'] = true;
-        }
+        settings['T29_2'] = true;
+        settings['T29_4'] = false;
+
     }
 
     // ==== Talents ====
@@ -260,7 +252,32 @@ const DISCCONSTANTS = {
     if (settings.execute === "Always") discSpells["Shadow Word: Death"][0].coeff *= 2.5
     else if (settings.execute === "20% of the time") discSpells["Shadow Word: Death"][0].coeff *= (2.5 * 0.2 + 0.8);
         
-    
+    if (settings.T29_2) {
+        // Power Word: Shield increases the damage of the next cast by 10%.
+        discSpells["Power Word: Shield"].push({
+            type: "buff",
+            name: "Light Weaving",
+            buffType: 'special',
+            value: 1.1, // This is a 10% damage buff that's consumed on our next damage spell.
+            buffDuration: 15,
+            canStack: false,
+            stacks: 1,
+            maxStacks: 1,
+        })
+    }
+    if (settings.T29_4) {
+        // Power Word: Shield increases the damage of the next cast by 10%.
+        discSpells["Penance"].push({
+            type: "buff",
+            name: "T29_4",
+            buffType: 'special',
+            value: 0, // This is a 10% damage buff that's consumed on our next damage spell.
+            buffDuration: 15,
+            canStack: false,
+            stacks: 1,
+            maxStacks: 1,
+        })
+    }
 
 
     // ==== Legendaries ====
@@ -413,9 +430,14 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         if (!spellName.includes("PenanceTick")) state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
     }
     if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
+
     if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Smite") {
         mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.08);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
+    }
+    if (checkBuffActive(buffs, "Light Weaving")) {
+        mult *= 1.1;
+        state.activeBuffs = removeBuff(state.activeBuffs, "Light Weaving");
     }
     return mult; 
 }
@@ -454,6 +476,10 @@ const getHealingMult = (state, buffs, t, spellName, talents) => {
     if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Power Word: Shield") {
         mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.03);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
+    }
+    if (checkBuffActive(buffs, "Light Weaving")) {
+        mult *= 1.1;
+        state.activeBuffs = removeBuff(state.activeBuffs, "Light Weaving");
     }
     return mult;
 }
@@ -500,11 +526,13 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     const healingMult = getHealingMult(state, state.activeBuffs, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
-    const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS) * (1 - spell.overheal) * healingMult * targetMult;
+    const flatHealBonus = (spellName === "Power Word: Shield" && checkBuffActive(state.activeBuffs, "T29_4")) ? state.activeBuffs.filter(function (buff) {return buff.name === "T29_4"})[0].value : 0
+
+    const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS, flatHealBonus) * (1 - spell.overheal) * healingMult * targetMult;
     //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
-    if (!spellName.includes("hot")) {
+    if (!spellName.includes("hot") || true) {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
         if (targetMult > 1) base += `, ${targetMult} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
@@ -523,7 +551,6 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
             flatDamage: getSpellRaw(spell, currentStats, DISCCONSTANTS) * healingMult * 0.1 * state.talents.crystallineReflection
         };
         runDamage(state, reflection, "Crystalline Reflection", []);
-
     }
 }
 
@@ -539,7 +566,11 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
 
     if (!spellName.includes("dot")) addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage (${atonementHealing} atone)`)
     //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-
+    if (spellName === "PenanceTick" && checkBuffActive(state.activeBuffs, "T29_4")) {
+        addReport(state, `Penance added ${Math.round(damageVal * 0.6)} healing to 4T29 buff)`)
+        const buff = state.activeBuffs.filter(function (buff) {return buff.name === "T29_4"})[0]
+        buff.value += damageVal * 0.6;
+    }
 }
 
 /**
@@ -561,7 +592,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
 
     let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
     let stats = JSON.parse(JSON.stringify(incStats));
-
+    stats.critMult = 2;
+    stats.versatility += 720 // Phial.
 
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0;
@@ -624,7 +656,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
         const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage") && state.t >= buff.expiration && buff.canPartialTick})
         expiringHots.forEach(buff => {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
-            const partialTickPercentage = (buff.next - state.t) / tickRate;
+            const partialTickPercentage = 1 - ((buff.next - state.t) / tickRate);
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
             

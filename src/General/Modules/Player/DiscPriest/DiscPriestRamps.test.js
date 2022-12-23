@@ -21,14 +21,14 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 5605,
-        haste: 2353,
-        crit: 1523,
-        mastery: 188,
-        versatility: 1017,
+        intellect: 7500,
+        haste: 3800,
+        crit: 2400,
+        mastery: 1900,
+        versatility: 1100,
         stamina: 6559,
     
-        critMult: 1,
+        critMult: 2,
       };
     
     // Old Sequences
@@ -76,17 +76,20 @@ describe("Evang Cast Sequence", () => {
         //console.log(seq);
 
         const settings = {'Power of the Dark Side': true, 'includeOverheal': true}
-        const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents)
+        const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents, [])
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
         console.log("Baseline: " + baseline);
 
-        
+        const tier = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), {...settings, T29_4: true}, baseTalents)
+        console.log("Tier: " +  tier + " (" + Math.round(10000*(tier / baseline - 1))/100 + "%)");
+
+        /*
         runTalents("Pain and Suffering", baseline, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}, settings);
         runTalents("Painful Punishment", baseline, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}, settings);
         runTalents("Malicious Intent", baseline, {...baseTalents, maliciousIntent: {...baseTalents.maliciousIntent, points: 1}}, settings)
         runTalents("Stolen Psyche", baseline, {...baseTalents, stolenPsyche: {...baseTalents.stolenPsyche, points: 1}}, settings)
-        /*
-        runTalents("Sins of the Many", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings) */
+        
+        runTalents("Sins of the Many", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings) 
         //runTalents("Castigation", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings)
         runTalents("Aegis of Wrath", baseline, {...baseTalents, aegisOfWrath: {...baseTalents.aegisOfWrath, points: 1}}, settings)
         runTalents("Resplendent Light", baseline, {...baseTalents, resplendentLight: {...baseTalents.resplendentLight, points: 1}}, settings)
@@ -98,6 +101,9 @@ describe("Evang Cast Sequence", () => {
         runTalents("Expiation", baseline, {...baseTalents, expiation: {...baseTalents.expiation, points: 1}}, settings)
         runTalents("Twilight Equilibrium", baseline, {...baseTalents, twilightEquilibrium: {...baseTalents.twilightEquilibrium, points: 1}}, settings)
         runTalents("Weal & Woe", baseline, {...baseTalents, wealAndWoe: {...baseTalents.wealAndWoe, points: 1}}, settings)
+
+*   /
+
         /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
                 revelInPurity: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))
