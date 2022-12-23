@@ -30,7 +30,7 @@ export const DISCSPELLS = {
         castTime: 1.5,
         cost: 0.4,
         coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.2,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -41,7 +41,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        atoneOverheal: 0.12,
+        atoneOverheal: 0.18,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -52,7 +52,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.376,
         school: "holy",
-        atoneOverheal: 0.12,
+        atoneOverheal: 0.18,
         secondaries: ['crit', 'vers'],
     }],
     "DefPenance": [{
@@ -84,7 +84,7 @@ export const DISCSPELLS = {
         coeff: 1.41,
         buffDuration: 9,
         school: "shadow",
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.18,
         secondaries: ['crit', 'vers'],
     },
     {

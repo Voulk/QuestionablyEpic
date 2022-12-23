@@ -10,6 +10,17 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 13,
+    date: "22 December",
+    changes: [ 
+      "Added Disc Priest T29 set bonuses.",
+      "Bugfix: HoTs / DoTs should now scale their partial tick correctly with Haste.",
+      "Bugfix: Lariat should no longer sometimes import with incorrect secondaries.",
+      "Bugfix: Mistweaver set bonuses should now be correctly added to Top Gear."
+
+  ]},
+  {
+    version: "10.0.2",
     update: 12,
     date: "19 December",
     changes: [ 

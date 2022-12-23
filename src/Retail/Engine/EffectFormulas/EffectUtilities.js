@@ -34,7 +34,7 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, castModel, player) {
     const trinket = {}
     trinket[trinketName] = trinketValue;
-    const rampHealing = allRampsHealing([], playerStats, {"playstyle": castModel.playstyle || "", "reporting": false}, {}, trinket, false) / 180;
+    const rampHealing = allRampsHealing([], playerStats, {"playstyle": castModel.playstyle || "", "reporting": false, "DefaultLoadout": true}, {}, trinket, false) / 180;
 
     return (rampHealing - player.getRampID('baseline', "Raid")) * (1 - 0.1);
 

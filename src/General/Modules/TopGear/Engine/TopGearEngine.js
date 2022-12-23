@@ -612,12 +612,16 @@ export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting
       let specialSpells = ["Rapture"];
       // Setup ramp cast sequences
       const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-      console.log(onUseTrinkets);
+
       let trinketInfo = {};
-      if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
+      if (effectList.filter(effect => effect.name === "DPriest T29-4").length > 0) {
         // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
-        rampSettings["4T28"] = true; 
-        specialSpells.push("4T28");
+        rampSettings["T29_4"] = true; 
+        specialSpells.push("T29_4");
+      }
+      if (effectList.filter(effect => effect.name === "DPriest T29-2").length > 0) {
+        // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
+        rampSettings["T29_2"] = true; 
       }
   
 

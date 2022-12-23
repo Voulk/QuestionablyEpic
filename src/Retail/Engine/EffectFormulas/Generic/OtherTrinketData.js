@@ -254,10 +254,10 @@ export const otherTrinketData = [
     name: "Primal Ritual Shell",
     effects: [
       {  // Heal effect
-        coefficient: 165.8648,
+        coefficient: 182.4512,
         table: -9,
         secondaries: ['versatility', 'crit'],
-        efficiency: 0.7,
+        efficiency: 0.65,
         ppm: 2,
       },
     ],
