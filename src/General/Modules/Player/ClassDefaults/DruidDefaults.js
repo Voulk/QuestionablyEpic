@@ -62,7 +62,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
         c60: 1.2,
-        c90: 1.1,
+        c90: 1.25,
         c120: 1.1,
         c180: 1.05,
 
@@ -81,7 +81,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 30,
       cooldownMult: {
         c60: 1,
-        c90: 1,
+        c90: 1.1,
         c120: 1,
         c180: 1,
 

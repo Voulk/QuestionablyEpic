@@ -207,6 +207,12 @@ class Player {
     this.activeItems = tempArray;
   };
 
+  activateAll = () => {
+    this.activeItems.forEach((item) => {
+      item.active = true;
+    })
+  }
+
   catalyzeItem = (item) => {
     return item; // The Item Catalyst isn't currently active.
     /*let tempArray = this.activeItems.filter(function (item) {
@@ -264,7 +270,7 @@ class Player {
         statPerc = 1.05 + this.activeStats.crit / STATCONVERSION.CRIT / 100;
         break;
       case "mastery":
-        statPerc = 1 + (8 * STATCONVERSION.MASTERY + this.activeStats.mastery) / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[this.spec];
+        statPerc = 1 + (8 * STATCONVERSION.MASTERY + this.activeStats.mastery) / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[this.spec] / 100;
         break;
       case "versatility":
         statPerc = 1 + this.activeStats.versatility / STATCONVERSION.VERSATILITY / 100;

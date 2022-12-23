@@ -8,7 +8,7 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
 
   if (effectName === "Evoker T29-2") {
     // This needs a much more comprehensive formula.
-    const reversionPercent = 0.2;
+    const reversionPercent = 0.25;
     const critIncrease = 25;
     const uptime = 0.55;
     bonus_stats.crit = reversionPercent * critIncrease * 170 * uptime;

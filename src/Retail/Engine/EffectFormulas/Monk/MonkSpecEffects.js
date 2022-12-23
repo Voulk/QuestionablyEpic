@@ -15,7 +15,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   // Tier Sets
   if (effectName === "Mistweaver T29-2") {
     // This is a very raw formula that will be replaced almost immediately.
-    const uptime = 0.5; // TODO: Auto-calc this.
+    const uptime = 0.55; // TODO: Auto-calc this.
     const spellsHit = 0.35;
     bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
 

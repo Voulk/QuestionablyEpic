@@ -173,7 +173,6 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     else if (item.source.instanceId === 1205) expectedItemLevel = 389;
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
-    if (item.id === 200676 && sourceInstance === 1205) {console.log(expectedItemLevel + JSON.stringify(item.source)); console.log(level); console.log(sourceBoss);}
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
 

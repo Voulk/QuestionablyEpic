@@ -154,7 +154,7 @@ export const otherTrinketData = [
         coefficient: 1.560047,
         table: -7,
         stat: "haste",
-        duration: 10,
+        duration: 20,
         ppm: 1,
       },
     ],
@@ -254,17 +254,17 @@ export const otherTrinketData = [
     name: "Primal Ritual Shell",
     effects: [
       {  // Heal effect
-        coefficient: 165.8648,
+        coefficient: 182.4512,
         table: -9,
         secondaries: ['versatility', 'crit'],
-        efficiency: 0.7,
+        efficiency: 0.65,
         ppm: 2,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
-      console.log()
+
       return bonus_stats;
     }
   },
