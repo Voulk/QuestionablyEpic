@@ -131,16 +131,6 @@ describe("Test Crafted Items", () => {
         //expect(item.uniqueEquip).toEqual("crafted");
     });
 
-    test("Quick Oxxein Ring - Missive Version", () => {
-        const line = "finger2=,id=173133,enchant_id=6166,gem_id=173128,bonus_id=7461/6650,drop_level=60,crafted_stats=49";
-        const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(230);
-        //expect(item.stats.versatility).toEqual(63);
-        //expect(item.stats.mastery).toEqual(0);
-        expect(item.socket).toEqual(1);
-        //expect(item.uniqueEquip).toEqual("crafted");
-    });
-
     test("Elemental Lariat", () => {
         const line = "neck=,id=193001,gem_id=192980/192921/192920,bonus_id=8836/8840/8902/8960/8783/8782/8801/8791,crafted_stats=49/32";
         const item = processItem(line, player, contentType, type)
@@ -151,7 +141,17 @@ describe("Test Crafted Items", () => {
         expect(item.socket).toEqual(3);
     });
 
+    test("Elemental Lariat with wrong crafted_stats", () => {
+        const line = "neck=,id=193001,gem_id=192987,bonus_id=8836/8840/8902/8960/8783/8782/8802/8791/8845,crafted_stats=40/32";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(405);
+        expect(item.stats.crit).toEqual(536);
+        expect(item.stats.mastery).toEqual(536);
+        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
+        expect(item.socket).toEqual(3);
+    });
 
+    
 });
 
 describe("Test Legendary Items", () => {

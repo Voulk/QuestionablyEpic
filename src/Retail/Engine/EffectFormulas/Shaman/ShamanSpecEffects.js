@@ -21,7 +21,11 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
   }
   if (effectName === "Shaman T29-4") {
+    const effectIncrease = 2.15;
+    const crit = player.getStatPerc("crit") - 1;
+    const healingInc = ((effectIncrease * crit + (1-crit)) / (2 * crit + (1-crit))) - 1;
 
+    bonusStats.hps = healingInc * player.getHPS(contentType);
 
   }
 

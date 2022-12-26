@@ -48,7 +48,7 @@ export default class BCChart extends PureComponent {
 
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
-    console.log("item=" + 100 + "&domain=wotlk-" + currentLanguage);
+
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
