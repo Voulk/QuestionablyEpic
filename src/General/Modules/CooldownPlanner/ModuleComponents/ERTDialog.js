@@ -1,19 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  Button,
-  TextField,
-  Dialog,
-  Grid,
-  DialogContent,
-  DialogTitle,
-  Tooltip,
-  Typography,
-  FormGroup,
-  FormControlLabel,
-  Checkbox,
-} from "@mui/material";
-import { bossList } from "../Data/CooldownPlannerBossList";
+import { Button, TextField, Dialog, Grid, DialogContent, DialogTitle, Tooltip, Typography, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
+import { getBossName } from "../Data/CooldownPlannerBossList";
 import ertEngine from "../ModuleComponents/Engine/ERTEngine";
 
 export default function ExportERTDialog(props) {
@@ -23,7 +11,7 @@ export default function ExportERTDialog(props) {
   const [hideNoCooldownsChecked, setHideNoCooldownsChecked] = React.useState(false);
   const [ertData, setERTData] = React.useState([]);
   const currentLanguage = i18n.language;
-
+  console.log(currentLanguage);
   useEffect(() => {
     ertEngine(tableData, boss, currentLanguage, setERTData, hideNoCooldownsChecked);
   }, [tableData, hideNoCooldownsChecked]);
@@ -41,14 +29,8 @@ export default function ExportERTDialog(props) {
 
   const ertFormat = () => {
     let data = "";
-    const bossID = bossList
-      .filter((obj) => {
-        return obj.DungeonEncounterID === boss;
-      })
-      .map((key, i) => key.ID);
-    let currentBoss = t("BossNames." + bossID);
-    let newString = "|cffffff00" + currentBoss + " - " + currentPlan + "|r";
-
+    let currentBoss = getBossName(boss, currentLanguage);
+    let newString = `|cffffff00${currentBoss} - ${currentPlan}|r`;
     data = ertData;
     data.map((key) => (newString = newString.concat("\n", key.ert)));
     return newString;
