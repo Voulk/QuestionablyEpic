@@ -5,6 +5,8 @@ export default function createRaszagethEvents(bossID, difficulty, damageTakenDat
   let events = [];
   const encounterEvent = 181089;
   const thunderousEnergy = 390817;
+  const staticCharge = 381615;
+  const magneticCharge = 399713;
   const logGuids = damageTakenData
     .map((key) => key.ability.guid)
     .concat(debuffs.map((key) => key.ability.guid))
@@ -65,7 +67,7 @@ export default function createRaszagethEvents(bossID, difficulty, damageTakenDat
     });
   }
 
-  // Pulsing Flames
+  // thunderousEnergy
   if (logGuids.includes(thunderousEnergy)) {
     const thunderousEnergyEvents = damageTakenData.filter((filter) => filter.ability.guid === thunderousEnergy);
     const threshold = 5000;
@@ -85,5 +87,36 @@ export default function createRaszagethEvents(bossID, difficulty, damageTakenDat
       }
     });
   }
+
+  if (logGuids.includes(staticCharge)) {
+    const staticChargeDuration = 8000;
+    enemyCasts
+      .filter((filter) => filter.ability.guid === staticCharge)
+      .map((key) =>
+        events.push({
+          time: moment
+            .utc(fightDuration(key.timestamp + staticChargeDuration, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: staticCharge,
+        }),
+      );
+  }
+
+  if (logGuids.includes(magneticCharge)) {
+    const magneticChargeDuration = 8000;
+    enemyCasts
+      .filter((filter) => filter.ability.guid === magneticCharge)
+      .map((key) =>
+        events.push({
+          time: moment
+            .utc(fightDuration(key.timestamp + magneticChargeDuration, starttime))
+            .startOf("second")
+            .format("mm:ss"),
+          bossAbility: magneticCharge,
+        }),
+      );
+  }
+
   return events;
 }
