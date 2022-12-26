@@ -591,9 +591,7 @@ export const bossList = [
 ];
 
 export const getBossName = (encounterID, lang) => {
-  console.log(encounterID, lang);
   const boss = bossList.find((boss) => boss.DungeonEncounterID === encounterID);
-  console.log(bossList.find((boss) => boss.DungeonEncounterID === encounterID));
   if (boss) {
     return boss.name[lang];
   }
