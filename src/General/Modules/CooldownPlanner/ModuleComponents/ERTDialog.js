@@ -11,7 +11,6 @@ export default function ExportERTDialog(props) {
   const [hideNoCooldownsChecked, setHideNoCooldownsChecked] = React.useState(false);
   const [ertData, setERTData] = React.useState([]);
   const currentLanguage = i18n.language;
-  console.log(currentLanguage);
   useEffect(() => {
     ertEngine(tableData, boss, currentLanguage, setERTData, hideNoCooldownsChecked);
   }, [tableData, hideNoCooldownsChecked]);
