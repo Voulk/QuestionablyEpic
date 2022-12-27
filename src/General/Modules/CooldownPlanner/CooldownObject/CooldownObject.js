@@ -91,5 +91,38 @@ class Cooldowns {
     let defaultTimers = defaultPlans[bossID];
     return defaultTimers;
   };
+
+  // Replace values within an array of objects or nested objects.
+  replaceName = (arr, originalName, newName) =>
+    arr.map((obj) => {
+      // Create a new object with the same keys as the original object
+      const updatedObj = { ...obj };
+
+      // Replace the value for the "name" key with the new name if it matches the original name
+      if (updatedObj.name === originalName) {
+        updatedObj.name = newName;
+      }
+
+      // Replace the value for any keys that start with "name" and have a number at the end if they match the original name
+      Object.keys(updatedObj).forEach((key) => {
+        if (key.startsWith("name") && !isNaN(key.slice(-1))) {
+          if (updatedObj[key] === originalName) {
+            updatedObj[key] = newName;
+          }
+        }
+      });
+
+      // Recursively traverse the object and replace the name in all nested objects and arrays of objects if it matches the original name
+      Object.keys(updatedObj).forEach((key) => {
+        if (Array.isArray(updatedObj[key])) {
+          updatedObj[key] = this.replaceName(updatedObj[key], originalName, newName);
+        } else if (typeof updatedObj[key] === "object" && updatedObj[key] !== null) {
+          updatedObj[key] = this.replaceName([updatedObj[key]], originalName, newName)[0];
+        }
+      });
+
+      return updatedObj;
+    });
 }
+
 export default Cooldowns;
