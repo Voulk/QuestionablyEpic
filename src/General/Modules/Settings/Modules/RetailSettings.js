@@ -35,8 +35,9 @@ export default function RetailSettings(props) {
   const availableSettings = {
     'groupBenefits': {value: playerSettings.groupBenefits, 'options': []},
 
-
   }
+
+  console.log(playerSettings);
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -70,6 +71,9 @@ export default function RetailSettings(props) {
 
   const specBuilds = props.player.getAllModels(props.contentType);
 
+  const updateValue = (setting, value) => {
+
+  }
 
   const updateEnchantItems = (value) => {
     dispatch(togglePlayerSettings(playerSettings));
@@ -122,6 +126,12 @@ export default function RetailSettings(props) {
 
   return (
     <Grid container spacing={2} direction="row">
+
+      {Object.keys(availableSettings).map((key, i) => {
+        console.log(key);
+        console.log(availableSettings[key])
+        
+      })}
 
       {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
       <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
