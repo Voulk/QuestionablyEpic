@@ -589,3 +589,11 @@ export const bossList = [
     icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
   },
 ];
+
+export const getBossName = (encounterID, lang) => {
+  const boss = bossList.find((boss) => boss.DungeonEncounterID === encounterID);
+  if (boss) {
+    return boss.name[lang];
+  }
+  return null;
+};

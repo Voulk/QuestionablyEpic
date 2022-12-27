@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
 
 export const otherTrinketData = [
   {
@@ -154,7 +154,7 @@ export const otherTrinketData = [
         coefficient: 1.560047,
         table: -7,
         stat: "haste",
-        duration: 10,
+        duration: 20,
         ppm: 1,
       },
     ],
@@ -254,17 +254,17 @@ export const otherTrinketData = [
     name: "Primal Ritual Shell",
     effects: [
       {  // Heal effect
-        coefficient: 165.8648,
+        coefficient: 182.4512,
         table: -9,
         secondaries: ['versatility', 'crit'],
-        efficiency: 0.7,
+        efficiency: 0.65,
         ppm: 2,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
-      console.log()
+
       return bonus_stats;
     }
   },
@@ -334,6 +334,102 @@ export const otherTrinketData = [
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
       return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Idol of the Dreamer                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Dreamer",
+    effects: [
+      { // Haste Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "haste");
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Idol of the Lifebinder                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Lifebinder",
+    effects: [
+      { // Small Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "crit");
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                Idol of the Spellweaver                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Spellweaver",
+    effects: [
+      { // Small Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "versatility");
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                               Idol of the Earth Warder                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Idol of the Earth Warder",
+    effects: [
+      { // Small Proc
+        coefficient: 0.049358,
+        table: -7,
+        ppm: 2.2,
+      },
+      { // Split proc
+        coefficient: 0.839092,
+        table: -7,
+        duration: 15,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return buildIdolTrinket(data, itemLevel, "mastery");
     }
   },
 

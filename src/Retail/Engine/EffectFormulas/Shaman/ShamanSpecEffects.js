@@ -14,6 +14,22 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   const bonusStats = {};
 
   // Tier Sets
+  if (effectName === "Shaman T29-2") {
+    // +8% crit to almost everything that matters.
+    const uptime = 0.4; // TODO: Auto-calc this.
+    bonusStats.crit = 10 * uptime * 170;
+
+  }
+  if (effectName === "Shaman T29-4") {
+    const effectIncrease = 2.15;
+    const crit = player.getStatPerc("crit") - 1;
+    const healingInc = ((effectIncrease * crit + (1-crit)) / (2 * crit + (1-crit))) - 1;
+
+    bonusStats.hps = healingInc * player.getHPS(contentType);
+
+  }
+
+
   if (effectName === "Shaman T28-2") {
     // Crit heals give a stacking +2% crit buff to your next Chain Heal cast. 
 

@@ -128,7 +128,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
-    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * (currentStats['critMult'] || 1));
+    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * (currentStats['critMult'] || 2));
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
     return mult;
 }
@@ -183,8 +183,8 @@ const getSqrt = (targets) => {
     return Math.sqrt(targets);
 }
 
-const getSpellFlat = (spell) => {
-    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0))
+const getSpellFlat = (spell, flatBonus = 0) => {
+    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0) + flatBonus)
 }
 
 /**
@@ -194,8 +194,8 @@ const getSpellFlat = (spell) => {
  * @param {object} currentStats A players current stats, including any buffs.
  * @returns The raw damage or healing of the spell.
  */
-export const getSpellRaw = (spell, currentStats, specConstants) => {
-    return (getSpellFlat(spell) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
+export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0) => {
+    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
 }
 
 

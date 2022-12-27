@@ -29,7 +29,7 @@ export default function createPrimalistCouncilEvents(bossID, difficulty, damageT
     });
 
     // time until we want to check for the next event. i.e 60 seconds after the 1st event.
-    const threshold = 30000;
+    const threshold = 20000;
 
     // find the first event
     const firstEvent = conductiveMarkEventsReduced[0];

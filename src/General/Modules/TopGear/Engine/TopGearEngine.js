@@ -8,7 +8,7 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
-import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
+import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
@@ -25,7 +25,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 const softSlice = 3000;
 const DR_CONST = 0.00497669230769231;
-const DR_CONSTLEECH = 0.04522569230769231;
+const DR_CONSTLEECH = 0.04922569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time) {
@@ -608,34 +608,37 @@ const deepCopyFunction = (inObject) => {
 
 export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting = false) {
       // Setup any ramp settings or special effects that need to be taken into account.
-      let rampSettings = { playstyle: castModel.modelName };
+      let rampSettings = { playstyle: castModel.modelName, trinkets: {} };
       let specialSpells = ["Rapture"];
       // Setup ramp cast sequences
       const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-      if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
+
+      let trinketInfo = {};
+      if (effectList.filter(effect => effect.name === "DPriest T29-4").length > 0) {
         // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
-        rampSettings["4T28"] = true; 
-        specialSpells.push("4T28");
+        rampSettings["T29_4"] = true; 
+        specialSpells.push("T29_4");
+      }
+      if (effectList.filter(effect => effect.name === "DPriest T29-2").length > 0) {
+        // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
+        rampSettings["T29_2"] = true; 
       }
   
 
       if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
         itemSet.onUseTrinkets.forEach((trinket) => {
           rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+          trinketInfo[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+          rampSettings.trinkets[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+
         });
       }
-      if (effectList.filter(effect => effect.name === "Neural Synapse Enhancer").length > 0) {
-        // We are wearing Drape of Shame and should account for it.
-        rampSettings["Neural Synapse Enhancer"] = 573; 
-        onUseTrinkets.push("Neural Synapse Enhancer");
-      }
-  
 
       const boonSeq = buildRamp("Primary", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       const fiendSeq = buildRamp("Secondary", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
       // The ramp sequence also includes any diminishing returns.
-      const setRamp = allRamps(boonSeq, setStats, rampSettings, {}, true);
+      const setRamp = allRamps([], setStats, rampSettings, getDefaultDiscTalents("Default"), trinketInfo, false);
 
       return setRamp;
   

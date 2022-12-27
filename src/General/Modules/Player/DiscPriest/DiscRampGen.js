@@ -114,7 +114,7 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
     if (talents.divineStar) sequence.push("Divine Star");
-
+    sequence.push("Power Word: Shield");
     for (var i = 0; i < 3; i++) {
         sequence.push('Smite');
     }
@@ -148,6 +148,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
     for (var i = 0; i < 3; i++) {
         sequence.push('Smite');
     }
+    sequence.push("Power Word: Shield");
     sequence.push(getPenance(talents));
 
     for (var i = 0; i < 3; i++) {
@@ -194,6 +195,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
     for (var i = 0; i < 3; i++) {
         sequence.push('Smite');
     }
+    sequence.push("Power Word: Shield");
     sequence.push(getPenance(talents));
 
     for (var i = 0; i < 6; i++) {
@@ -227,17 +229,14 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
         else sequence.push('Renew');
     }
 
-    
-    
-    
+    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
     sequence.push('Power Word: Radiance');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
     if (trinket === "Time-Breaching Talon") sequence.push("Time-Breaching Talon");
-    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
+    
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
-    
     
     // For a Shadowfiend ramp we'll use our Bell / Flame along with our Fiend. 
     sequence.push('Schism');
@@ -252,6 +251,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push("Smite");
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push("Penance");
+    sequence.push("Power Word: Shield");
     sequence.push('Shadow Word: Death');
 
     for (var i = 0; i < 4; i++) {

@@ -9,8 +9,25 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
 
+  if (effectName === "Druid T29-2") {
+    // +8% crit to almost everything that matters.
+    const percentEffected = 0.75; // TODO: Auto-calc this.
+    bonus_stats.crit = 8 * percentEffected * 170;
+
+  }
+  if (effectName === "Druid T29-4") {
+    const effectiveCritChance = player.getStatPerc("crit") + (8 * 0.75 / 100) - 1;
+    const chanceOneCrit = 1-(Math.pow(1-effectiveCritChance, 3));
+
+    const effloCritsPerSec = chanceOneCrit / 2 * player.getStatPerc("haste");
+    const avgStacks = Math.min(5, effloCritsPerSec * 15);
+    const oneWildGrowth = 0.98 * 6 * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.2) * 1.05 * 0.85; // The extra healing from 2 additional WG targets a minute.
+
+    bonus_stats.hps = oneWildGrowth * (0.05 * avgStacks) * 4 / 60;
+  }
+
   // Tier Sets
-  if (effectName === "Druid T28-2") {
+  else if (effectName === "Druid T28-2") {
     // 
     const masteryMult = 1 + (player.getStatPerc("Mastery") - 1) * 2.6 // Avg Hots (high rejuv uptime + the hot itself + various other)
     const bloomHPS = 0.208 * player.getStatMultiplier("NOMAST") * player.getInt() * masteryMult / 8 * 0.78; // The shown healing is over 8 seconds so we'll divide it by 8 to get a per second amount.

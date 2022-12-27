@@ -99,7 +99,7 @@ export function getValidWeaponTypes(spec, slot) {
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
         case SPEC.PRESEVOKER:
-          return [0, 4, 5, 7, 13, 15];
+          return [0, 4, 5, 7, 10, 13, 15];
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
         case SPEC.HOLYPRIEST:
@@ -173,7 +173,6 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     else if (item.source.instanceId === 1205) expectedItemLevel = 389;
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
-    if (item.id === 200676 && sourceInstance === 1205) {console.log(expectedItemLevel + JSON.stringify(item.source)); console.log(level); console.log(sourceBoss);}
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
 
@@ -687,7 +686,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
 
   // Add Retail Socket
   if (item.socket) {
-    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
   // Add any group benefit, if we're interested in it.
