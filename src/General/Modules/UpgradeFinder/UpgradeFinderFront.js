@@ -241,12 +241,20 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 418</div>
+          <div>lvl 415</div>
         </div>
       ),
     },
     {
       value: 14,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 418</div>
+        </div>
+      ),
+    },
+    {
+      value: 15,
       label: (
         <div className={classes.labels}>
           <div>lvl 421</div>
@@ -420,7 +428,7 @@ export default function UpgradeFinderFront(props) {
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
-                  max={14}
+                  max={15}
                   change={props.setDungeonDifficulty}
                 />
               </div>
