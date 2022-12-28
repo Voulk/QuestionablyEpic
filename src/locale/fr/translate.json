@@ -345,20 +345,20 @@
       "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
-      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
-      "RaidDifficultyHeader": "Raid Difficulty",
-      "SimCBody1Good": "Import - All Set!",
-      "SimCBody1Invalid": "Import - Empty Item Slot",
-      "SimCBody1Missing": "Import - Missing",
-      "SimCBody2": "Current Equipped Gear:",
-      "SimCButton": "Import Gear",
+      "RaidDifficultyBody": "Sélectionnez jusqu'à deux difficultés pour trouver des mises à niveau à partir de",
+      "RaidDifficultyHeader": "Difficultée de Raid",
+      "SimCBody1Good": "Import - Tout paramétrer!",
+      "SimCBody1Invalid": "Import - Emplacement vide",
+      "SimCBody1Missing": "Import - Manquant",
+      "SimCBody2": "Equipement actuellement équipé:",
+      "SimCButton": "Import équipement",
       "SimCHeader": "SimC/QE Import"
     },
     "Welcome": {
-      "ContinueMessage": "To begin using the app, add one of your characters below.",
-      "CreateCharacter": "Create Character",
-      "GameTypeMessage": "Select which version you'd like to start with.",
-      "WelcomeTo": "Welcome To"
+      "ContinueMessage": "Pour commencer à utiliser l'application, ajoutez l'un de vos personnages ci-dessous.",
+      "CreateCharacter": "Créer personnage",
+      "GameTypeMessage": "Sélectionnez la version avec laquelle vous souhaitez commencer.",
+      "WelcomeTo": "Bienvenue à "
     },
     "Yes": "Oui",
     "itemTags": {
