@@ -6908,10 +6908,10 @@ export const bossAbilities = {
     {
       // https://www.wowhead.com/spell=381613/static-charge
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 381615,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_lightningwhip.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "",
         de: "",
@@ -6997,11 +6997,11 @@ export const bossAbilities = {
     },
     {
       // https://www.wowhead.com/spell=385569/raging-storm
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 385569,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "",
         de: "",
@@ -7013,16 +7013,61 @@ export const bossAbilities = {
     {
       // https://www.wowhead.com/spell=399713/magnetic-charge
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 399713,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_siege_engineer_magnetic_lasso.jpg").default,
-      importActive: true,
+      importActive: false,
       name: {
         cn: "",
         de: "",
         en: "Magnetic Charge",
         fr: "",
         ru: "",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=390817/thunderous-energy
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 390817,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_focusedpower.jpg").default,
+      importActive: false,
+      name: {
+        cn: "雷鸣能量",
+        de: "Donnernde Energie",
+        en: "Thunderous Energy",
+        fr: "Énergie tonitruante",
+        ru: "Дуга молнии",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=389870/storm-break
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 389870,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_lightning.jpg").default,
+      importActive: false,
+      name: {
+        cn: "风暴破击",
+        de: "Sturmbruch",
+        en: "Storm Break",
+        fr: "Tempête voyageuse",
+        ru: "Просвет бури",
+      },
+    },
+    {
+      // https://www.wowhead.com/spell=181089/encounter-event
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 181089,
+      icon: "",
+      importActive: false,
+      name: {
+        cn: "Encounter Event",
+        de: "Encounter Event",
+        en: "Encounter Event",
+        fr: "Encounter Event",
+        ru: "Encounter Event",
       },
     },
   ],
