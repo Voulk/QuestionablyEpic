@@ -72,7 +72,12 @@ function TopGearReport(props) {
   let differentials = {};
   let itemList = {};
   let statList = {};
-  let domGems = [];
+
+  if (result === null) {
+    // They shouldn't be here. Send them back to the home page.
+    history.push("/")
+    reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
+  }
 
   if (checkResult(result)) {
     topSet = result.itemSet;

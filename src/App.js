@@ -1,10 +1,9 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
-import LegendaryCompare from "Retail/Modules/Legendaries/LegendaryCompare.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
@@ -20,7 +19,6 @@ import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackBar";
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
@@ -30,15 +28,11 @@ import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import ReactGA from "react-ga";
 
-import { useDispatch } from "react-redux";
-import { togglePatronStatus } from "Redux/Actions";
-
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
 class App extends Component {
   constructor() {
     super();
-
     /* ---------------- Here we bind functions to this component ---------------- */
     /* ---------- This is so they can be used as props in other modules --------- */
     /* -------------------- And they will change states here -------------------- */
@@ -265,7 +259,7 @@ class App extends Component {
     if (ls.get("lang") === "undefined" || ls.get("lang") === undefined || ls.get("lang") === null) {
       ls.set("lang", "en");
     }
-
+    console.log("QE Live Initialised");
     this.setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
@@ -278,14 +272,6 @@ class App extends Component {
     i18n.changeLanguage(ls.get("lang") || "en");
   }
 
-  /* ---------------------------- Pageview Handler ---------------------------- */
-  usePageViews() {
-    let location = useLocation();
-
-    useEffect(() => {
-      ReactGA.send(["pageview", location.pathname]);
-    }, [location]);
-  }
 
   render() {
     let activePlayer = this.state.characters.getActiveChar();
@@ -352,7 +338,7 @@ class App extends Component {
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
                   
-                  <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} patronStatus={this.state.patronStatus} />} />
+                  <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
                   <Route
                     path="/quickcompare"
                     render={() => (
