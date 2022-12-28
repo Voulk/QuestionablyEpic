@@ -654,14 +654,14 @@ function applyClassicStatMods(spec, setStats) {
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
-export function scoreItem(item, player, contentType, gameType = "Retail") {
+export function scoreItem(item, player, contentType, gameType = "Retail", playerSettings = {}) {
   let score = 0;
   let bonus_stats = {};
   let item_stats = { ...item.stats };
 
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
+    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
   }
 
   // Multiply the item's stats by our stat weights.

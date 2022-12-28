@@ -51,9 +51,9 @@ export function getTrinketValue(trinketName, itemLevel) {
 
 
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {
+export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, playerSettings = {}, setStats = {}) {
   let bonus_stats = {};
-  const playerSettings = useSelector((state) => state.playerSettings);
+  
   let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
