@@ -152,7 +152,7 @@ export default function RetailSettings(props) {
               fullWidth
               value={playerSettings[key]['value']}
               onChange={(e) => updateValue(key, e.target.value)}
-              label={playerSettings[key]['tag']}
+              label={t("Settings.Retail." + key)}
               style={{ textAlign: "center", minWidth: 120 }}
             >
               {playerSettings[key]['options'].map((option, i) => {

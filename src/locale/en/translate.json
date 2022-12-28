@@ -285,7 +285,10 @@
         "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
         "Setting7TextFieldLabel": "Leech",
         "Setting7Title": "UF: Leech",
-        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
+
+        "enchantItems": "Enchant Items",
+        "includeGroupBenefits": "Ally Buffs"
       },
       "SettingsTitle": "Optional Settings"
     },
