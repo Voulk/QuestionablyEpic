@@ -152,15 +152,16 @@ export default function RetailSettings(props) {
               fullWidth
               value={playerSettings[key]['value']}
               onChange={(e) => updateValue(key, e.target.value)}
-              label={/*playerSettings[key]['tag']*/'Hello'}
+              label={playerSettings[key]['tag']}
               style={{ textAlign: "center", minWidth: 120 }}
             >
-                <MenuItem divider value={true} style={{ justifyContent: "center" }}>
-                  {'Yes'}
-                </MenuItem>
-                <MenuItem divider value={false} style={{ justifyContent: "center" }}>
-                  {'No'}
-                </MenuItem>
+              {playerSettings[key]['options'].map((option, i) => {
+                return (
+                  <MenuItem divider value={option} style={{ justifyContent: "center" }}>
+                    {t(option.toString())}
+                  </MenuItem>
+                )
+              })}
             </TextField>
           </Tooltip>
         </Grid>

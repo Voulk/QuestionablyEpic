@@ -1,6 +1,8 @@
 {
   "translations": {
     "Account": "Account",
+    "true": "Yes",
+    "false": "No",
     "Add": "Add",
     "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
