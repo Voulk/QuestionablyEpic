@@ -1,6 +1,8 @@
 {
   "translations": {
     "Account": "Account",
+    "true": "Yes",
+    "false": "No",
     "Add": "Add",
     "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
@@ -16,6 +18,13 @@
     "Mastery / Versatility": "Mastery / Versatility",
     "Crit / Mastery": "Mastery / Crit",
     "Crit / Versatility": "Crit / Versatility",
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "4": "4",
+    "5": "5",
+    "6": "6",
+    "7": "7",
 
     "Leech": "Leech",
     "Burning Crusade": "Burning Crusade",
@@ -283,7 +292,35 @@
         "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
         "Setting7TextFieldLabel": "Leech",
         "Setting7Title": "UF: Leech",
-        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices."
+        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
+
+        "enchantItems": {
+          "title": "Enchant Items",
+          "tooltip": ""
+        },
+
+        "includeGroupBenefits": {
+          "title": "Ally Buffs",
+          "tooltip": "Estimate value from stats you give to your group."
+        },
+        "incarnateAllies": {
+          "title": "Incarnate Icon Roles",
+          "tooltip": "Select which roles in your party are wearing the trinket."
+        },
+        "idolGems": {
+          "title": "JC Idol Trinkets",
+          "tooltip": "Select how many associated gems you have in your gear."
+        },
+        "alchStonePotions": {
+          "title": "Alch Stone",
+          "tooltip": "Number of extra potions Alch Stone gives you over a fight."
+        },
+        "upgradeFinderMetric": {
+          "title": "Upgrade Finder",
+          "tooltip": "Toggle to show Upgrade Finder in raw or % values."
+        }
+
+
       },
       "SettingsTitle": "Optional Settings"
     },

@@ -83,6 +83,7 @@ export default function TopGear(props) {
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [openDelete, setOpenDelete] = useState(false);
@@ -193,7 +194,7 @@ export default function TopGear(props) {
       let instance = new worker();
 
       instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel)
+        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
         .then((result) => {
           // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
@@ -213,7 +214,7 @@ export default function TopGear(props) {
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel)
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
         .then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);

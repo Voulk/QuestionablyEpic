@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
 
 export const raidTrinketData = [
   {
@@ -104,11 +104,12 @@ export const raidTrinketData = [
 
       // Ally buff
       let sharedBuff = runGenericPPMTrinket(data[1], itemLevel);
+      const iconSetting = getSetting(additionalData.settings, "incarnateAllies")
 
       // Check if buffs are active and if they are, add them to bonus stats.
-      if (additionalData.settings.whisperingIncarnateIcon === "Earth") bonus_stats.versatility = sharedBuff;
-      else if (additionalData.settings.whisperingIncarnateIcon === "Frost") bonus_stats.crit = sharedBuff;
-      else if (additionalData.settings.whisperingIncarnateIcon === "Both")  {
+      if (iconSetting === "Tank") bonus_stats.versatility = sharedBuff;
+      else if (iconSetting === "DPS") bonus_stats.crit = sharedBuff;
+      else if (iconSetting === "Tank + DPS")  {
         bonus_stats.crit = sharedBuff;
         bonus_stats.versatility = sharedBuff;
       }     
