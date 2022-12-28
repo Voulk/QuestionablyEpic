@@ -2,6 +2,7 @@ import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {
@@ -95,7 +96,7 @@ export function getLowestStat(stats) {
 export function buildIdolTrinket(data, itemLevel, stat, settings) {
   let bonus_stats = {};
   const gemsEquipped = getSetting(settings, "idolGems"); // TODO: Make this dynamically update based on the number of gems equipped.
-  
+
   const smallPerGem = processedValue(data[0], itemLevel);
   const bigProc = processedValue(data[1], itemLevel);
   //const uptime = data[0].ppm / Math.ceil(18 / gemsEquipped) * data[1].duration / 60;
