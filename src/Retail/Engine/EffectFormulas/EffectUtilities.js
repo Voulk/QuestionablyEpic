@@ -62,6 +62,16 @@ export function getHighestStat(stats) {
   }
 }
 
+export function getSetting(playerSettings, setting) {
+
+  if (setting in playerSettings) return playerSettings[setting].value;
+  else {
+    reportError("", "Setting", "Missing Setting", setting)
+    return 0;
+  }
+
+}
+
 export function getLowestStat(stats) {
   let min = "";
   let minValue = 99999;
@@ -82,9 +92,10 @@ export function getLowestStat(stats) {
 
 
 // We need to do four of these so we'll just outsource the work to this function instead of repeating ourselves.
-export function buildIdolTrinket(data, itemLevel, stat) {
+export function buildIdolTrinket(data, itemLevel, stat, settings) {
   let bonus_stats = {};
-  const gemsEquipped = 2; // TODO: Make this dynamically update based on the number of gems equipped.
+  const gemsEquipped = getSetting(settings, "idolGems"); // TODO: Make this dynamically update based on the number of gems equipped.
+  
   const smallPerGem = processedValue(data[0], itemLevel);
   const bigProc = processedValue(data[1], itemLevel);
   //const uptime = data[0].ppm / Math.ceil(18 / gemsEquipped) * data[1].duration / 60;

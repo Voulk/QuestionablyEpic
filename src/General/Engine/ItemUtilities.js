@@ -179,11 +179,6 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   return temp;
 }
 
-export function getSetting(setting) {
-  const playerSettings = useSelector((state) => state.playerSettings);
-  return playerSettings[setting].value;
-
-}
 
 export function filterItemListByType(itemList, slot) {
   let temp = itemList.filter(function (item) {

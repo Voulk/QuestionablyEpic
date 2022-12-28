@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
   {
@@ -20,7 +20,7 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
-      if (additionalData.settings.includeGroupBenefits.value) bonus_stats.allyStats = bonus_stats.mastery;
+      if (getSetting(additionalData.settings, 'includeGroupBenefits')) bonus_stats.allyStats = bonus_stats.mastery;
       return bonus_stats;
     }
   },

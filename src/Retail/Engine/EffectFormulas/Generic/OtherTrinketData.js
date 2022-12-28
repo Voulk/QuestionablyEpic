@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
 
 export const otherTrinketData = [
   {
@@ -41,10 +41,12 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
-      bonus_stats.mana = 48300 / 420; // This is worse than using an Innervate potion, but that will be added later. 
+      const extraPotions = getSetting(additionalData.settings, "alchStonePotions")
 
-      // TODO: Add potion.
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      bonus_stats.mana = 48300 * extraPotions / 420; // This is worse than using an Innervate potion, but that will be added later. 
+
 
       return bonus_stats;
     }
@@ -357,7 +359,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      return buildIdolTrinket(data, itemLevel, "haste");
+      return buildIdolTrinket(data, itemLevel, "haste", additionalData.settings);
     }
   },
   {
@@ -381,7 +383,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      return buildIdolTrinket(data, itemLevel, "crit");
+      return buildIdolTrinket(data, itemLevel, "crit", additionalData.settings);
     }
   },
   {
@@ -405,7 +407,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      return buildIdolTrinket(data, itemLevel, "versatility");
+      return buildIdolTrinket(data, itemLevel, "versatility", additionalData.settings);
     }
   },
   {
@@ -429,7 +431,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      return buildIdolTrinket(data, itemLevel, "mastery");
+      return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings);
     }
   },
 

@@ -18,6 +18,13 @@
     "Mastery / Versatility": "Mastery / Versatility",
     "Crit / Mastery": "Mastery / Crit",
     "Crit / Versatility": "Crit / Versatility",
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "4": "4",
+    "5": "5",
+    "6": "6",
+    "7": "7",
 
     "Leech": "Leech",
     "Burning Crusade": "Burning Crusade",
@@ -294,7 +301,7 @@
 
         "includeGroupBenefits": {
           "title": "Ally Buffs",
-          "tooltip": ""
+          "tooltip": "Estimate value from stats you give to your group."
         },
         "incarnateAllies": {
           "title": "Incarnate Icon Roles",
