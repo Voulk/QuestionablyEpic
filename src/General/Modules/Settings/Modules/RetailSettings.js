@@ -26,87 +26,29 @@ export default function RetailSettings(props) {
   const { t } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
-  // const playerSpec = props.player.getSpec();
 
   const playerSettings = useSelector((state) => state.playerSettings);
 
   const dispatch = useDispatch();
 
-  const availableSettings = {
-    'groupBenefits': {value: playerSettings.groupBenefits, 'options': []},
-
-  }
-
-  console.log(playerSettings);
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
-  //console.log(settingsCategories);
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
 
-  // TODO: Delete hymnal?
-  /* ---------------------------------------- Ignore Enchants ---------------------------------------- */
-  const [enchantItems, setEnchantItems] = useState(props.userSettings.enchantItems);
-
-  /* -------------------------------------- Group Value State ------------------------------------- */
-  const [groupValue, setgroupValue] = useState(props.userSettings.includeGroupBenefits);
-
   /* ----------------------------------- Paladin Playstyle State ---------------------------------- */
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
-  /* -------------------------------------- Auto-Socket State ------------------------------------- */
-  const [autoSocketValue, setAutoSocketValue] = useState(props.userSettings.autoSocket);
-
-  /* ------------------------------- Upgrade Finder HPS Toggle --------------------------------- */
-  const [upFinderToggle, setupFinderToggle] = useState(props.userSettings.upFinderToggle);
-
-  /* ------------------------------- Upgrade Finder: Leech --------------------------------- */
-  const [upFinderLeech, setupFinderLeech] = useState(props.userSettings.upFinderLeech);
-
-
-  /* ----------------------------------- Catalyst Limit State ---------------------------------- */
-  const [catalystLimit, setCatalystLimit] = useState(props.userSettings.catalystLimit);
-
-
-  /* ----------------------------------- Domination Socket State ---------------------------------- */
-  const [replaceDomGems, setReplaceDomGems] = useState(props.userSettings.replaceDomGems);
 
   const specBuilds = props.player.getAllModels(props.contentType);
 
   const updateValue = (setting, value) => {
-    console.log("Updating" + setting + "to" + value);
     const newPlayerSettings = {...playerSettings}
     newPlayerSettings[setting]['value'] = value;
     dispatch(togglePlayerSettings(newPlayerSettings));
   }
 
-  const updateEnchantItems = (value) => {
-    dispatch(togglePlayerSettings(playerSettings));
-    props.editSettings("enchantItems", value);
-    setEnchantItems(value);
-  };
-
-  const updateGroupValue = (value) => {
-    dispatch(togglePlayerSettings({...playerSettings, groupBenefit: value}));
-    props.editSettings("includeGroupBenefits", value);
-    setgroupValue(value);
-    console.log(props.userSettings);
-  };
-
-  const updateAutoSocketValue = (value) => {
-    props.editSettings("autoSocket", value);
-    setAutoSocketValue(value);
-  };
-
-  const updateReplaceDomGems = (value) => {
-    props.editSettings("replaceDomGems", value);
-    setReplaceDomGems(value);
-  };
-
-  const updateCatalystLimit = (value) => {
-    props.editSettings("catalystLimit", value);
-    setCatalystLimit(value);
-  };
 
   const updateSpecBuild = (value) => {
     //props.editSettings("vaultDomGem", value)
@@ -115,19 +57,6 @@ export default function RetailSettings(props) {
     props.singleUpdate(props.player);
   };
 
-  const updateUpFinderToggle = (value) => {
-    //props.editSettings("vaultDomGem", value)
-    props.editSettings("upFinderToggle", value);
-    setupFinderToggle(value);
-  };
-
-  const updateUpFinderLeech = (value) => {
-    //props.editSettings("vaultDomGem", value)
-    props.editSettings("upFinderLeech", value);
-    setupFinderLeech(value);
-  };
-
-  
 
   return (
     <Grid container spacing={2} direction="row">

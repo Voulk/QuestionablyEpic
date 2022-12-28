@@ -314,6 +314,10 @@
         "alchStonePotions": {
           "title": "Alch Stone",
           "tooltip": "Number of extra potions Alch Stone gives you over a fight."
+        },
+        "upgradeFinderMetric": {
+          "title": "Upgrade Finder",
+          "tooltip": "Toggle to show Upgrade Finder in raw or % values."
         }
 
 
