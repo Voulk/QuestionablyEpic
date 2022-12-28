@@ -18,7 +18,12 @@ const initialState = {
   gameType: ls.get("gameType") || "Retail",
   contentType: ls.get("contentType") || "Raid",
   playerSettings: {"includeGroupBenefits": {value: true, options: [true, false], category: "trinkets"},
-                    "enchantItems": {value: false, options: [true, false], category: "topGear"}},// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
+                    "incarnateAllies": {value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets"},
+                    "idolGems": {value: 2, options: [1, 2, 3, 4, 5, 6], category: "trinkets"},
+                    "alchStonePotions": {value: 1, options: [0, 1, 2], category: "trinkets"},
+                    "enchantItems": {value: false, options: [true, false], category: "topGear"},
+                    
+                    "upgradeFinderMetric": {value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder"}},// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
 };
 if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";

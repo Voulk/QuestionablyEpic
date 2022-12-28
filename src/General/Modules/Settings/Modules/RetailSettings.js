@@ -131,46 +131,8 @@ export default function RetailSettings(props) {
 
   return (
     <Grid container spacing={2} direction="row">
-      
-      {Object.keys(playerSettings).map((key, i) => {
-        return (
-          <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Tooltip
-            title={
-              <Typography align="center" variant="body2">
-                {"Hello There"}
-              </Typography>
-            }
-            placement="top-start"
-          >
-            <TextField
-              className={classes.select}
-              InputProps={{ variant: "outlined" }}
-              select
-              variant="outlined"
-              size="small"
-              fullWidth
-              value={playerSettings[key]['value']}
-              onChange={(e) => updateValue(key, e.target.value)}
-              label={t("Settings.Retail." + key)}
-              style={{ textAlign: "center", minWidth: 120 }}
-            >
-              {playerSettings[key]['options'].map((option, i) => {
-                return (
-                  <MenuItem divider value={option} style={{ justifyContent: "center" }}>
-                    {t(option.toString())}
-                  </MenuItem>
-                )
-              })}
-            </TextField>
-          </Tooltip>
-        </Grid>
-        )
-
-      })}
-
-      {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
-      <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+            {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
+            <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
         <Tooltip
           title={
             <Typography align="center" variant="body2">
@@ -203,260 +165,42 @@ export default function RetailSettings(props) {
         </Tooltip>
       </Grid>
 
-      {/* ------------------------- Cabalist's Hymnal Item ------------------------- */}
-      {props.hymnalShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+      {Object.keys(playerSettings).map((key, i) => {
+        return (
+          <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
           <Tooltip
             title={
               <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting0Tooltip")}
+                {t("Settings.Retail." + key + ".tooltip")}
               </Typography>
             }
             placement="top-start"
           >
             <TextField
-              label={t("Settings.Retail.Setting0Title")}
-              value={enchantItems}
-              onChange={(e) => updateEnchantItems(e.target.value)}
+              className={classes.select}
               InputProps={{ variant: "outlined" }}
               select
               variant="outlined"
               size="small"
               fullWidth
+              value={playerSettings[key]['value']}
+              onChange={(e) => updateValue(key, e.target.value)}
+              label={t("Settings.Retail." + key + ".title")}
               style={{ textAlign: "center", minWidth: 120 }}
             >
-              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
-                {'Yes'}
-              </MenuItem>
-              <MenuItem divider value={false} style={{ justifyContent: "center" }}>
-                {'No'}
-              </MenuItem>
+              {playerSettings[key]['options'].map((option, i) => {
+                return (
+                  <MenuItem divider value={option} style={{ justifyContent: "center" }}>
+                    {t(option.toString())}
+                  </MenuItem>
+                )
+              })}
             </TextField>
           </Tooltip>
         </Grid>
-      ) : (
-        ""
-      )}
+        )
 
-      {/* ------------------------- Group Buff (Treat Buff as Personal Throughput) ------------------------- */}
-      {props.groupBuffShow === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Tooltip
-            title={
-              <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting1Tooltip")}
-              </Typography>
-            }
-            placement="top-start"
-          >
-            <TextField
-              label={t("Settings.Retail.Setting1Title")}
-              value={groupValue}
-              onChange={(e) => updateGroupValue(e.target.value)}
-              InputProps={{ variant: "outlined" }}
-              select
-              variant="outlined"
-              size="small"
-              fullWidth
-              style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
-                {t("Yes")}
-              </MenuItem>
-              <MenuItem value={false} style={{ justifyContent: "center" }}>
-                {t("No")}
-              </MenuItem>
-            </TextField>
-          </Tooltip>
-        </Grid>
-      ) : (
-        ""
-      )}
-
-      {/* ----------------------------------------- Auto Socket Items ---------------------------------------- */}
-      {props.autoSocket === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Tooltip
-            title={
-              <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting3Tooltip")}
-              </Typography>
-            }
-            placement="top-start"
-          >
-            <TextField
-              className={classes.select}
-              value={autoSocketValue}
-              InputProps={{ variant: "outlined" }}
-              select
-              variant="outlined"
-              size="small"
-              fullWidth
-              onChange={(e) => updateAutoSocketValue(e.target.value)}
-              label={t("Settings.Retail.Setting3Title")}
-              style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
-                {t("Yes")}
-              </MenuItem>
-              <MenuItem value={false} style={{ justifyContent: "center" }}>
-                {t("No")}
-              </MenuItem>
-            </TextField>
-          </Tooltip>
-        </Grid>
-      ) : (
-        ""
-      )}
-        {/* ------------------------------------- Upgrade Finder HPS ---------------------------------------- */}
-        {props.autoSocket === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Tooltip
-            title={
-              <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting4Tooltip")}
-              </Typography>
-            }
-            placement="top-start"
-          >
-            <TextField
-              className={classes.select}
-              value={upFinderToggle}
-              InputProps={{ variant: "outlined" }}
-              select
-              variant="outlined"
-              size="small"
-              fullWidth
-              onChange={(e) => updateUpFinderToggle(e.target.value)}
-              label={t("Settings.Retail.Setting4Title")}
-              style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={'percent'} style={{ justifyContent: "center" }}>
-                {"Show % Upgrade"}
-              </MenuItem>
-              <MenuItem value={'hps'} style={{ justifyContent: "center" }}>
-                {"Show HPS"}
-              </MenuItem>
-            </TextField>
-          </Tooltip>
-        </Grid>
-      ) : (
-        ""
-      )}
-      {/* ------------------------------------- Upgrade Finder: Leech ---------------------------------------- */}
-      {props.autoSocket === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Tooltip
-            title={
-              <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting7Tooltip")}
-              </Typography>
-            }
-            placement="top-start"
-          >
-            <TextField
-              className={classes.select}
-              value={upFinderLeech}
-              InputProps={{ variant: "outlined" }}
-              select
-              variant="outlined"
-              size="small"
-              fullWidth
-              onChange={(e) => updateUpFinderLeech(e.target.value)}
-              label={t("Settings.Retail.Setting7Title")}
-              style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={true} style={{ justifyContent: "center" }}>
-                {t("Yes")}
-              </MenuItem>
-              <MenuItem value={false} style={{ justifyContent: "center" }}>
-                {t("No")}
-              </MenuItem>
-            </TextField>
-          </Tooltip>
-        </Grid>
-      ) : (
-        ""
-      )}
-      {/* ------------------------------------- Catalyst Limit ---------------------------------------- */}
-      {props.catalystLimit === true ? (
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-          <Tooltip
-            title={
-              <Typography align="center" variant="body2">
-                {t("Settings.Retail.Setting6Tooltip")}
-              </Typography>
-            }
-            placement="top-start"
-          >
-            <TextField
-              className={classes.select}
-              value={catalystLimit}
-              InputProps={{ variant: "outlined" }}
-              select
-              variant="outlined"
-              size="small"
-              fullWidth
-              onChange={(e) => updateCatalystLimit(e.target.value)}
-              label={t("Settings.Retail.Setting6Title")}
-              style={{ textAlign: "center", minWidth: 120 }}
-            >
-              <MenuItem divider value={0} style={{ justifyContent: "center" }}>
-                {'0'}
-              </MenuItem>
-              <MenuItem divider value={1} style={{ justifyContent: "center" }}>
-                {'1'}
-              </MenuItem>
-              <MenuItem divider value={2} style={{ justifyContent: "center" }}>
-                {'2'}
-              </MenuItem>
-              <MenuItem divider value={3} style={{ justifyContent: "center" }}>
-                {'3'}
-              </MenuItem>
-              <MenuItem divider value={4} style={{ justifyContent: "center" }}>
-                {'4'}
-              </MenuItem>
-              <MenuItem divider value={5} style={{ justifyContent: "center" }}>
-                {'5'}
-              </MenuItem>
-            </TextField>
-          </Tooltip>
-        </Grid>
-      ) : (
-        ""
-      )}
-      {/* --------------------------- Domination Socket for Great Vault Items --------------------------  */}
-      {/*<Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
-        <Tooltip
-          title={
-            <Typography align="center" variant="body2">
-              {t("Settings.Retail.Setting4Tooltip")}
-            </Typography>
-          }
-          placement="top-start"
-        >
-          <TextField
-            label={t("Settings.Retail.Setting4Title")}
-            className={classes.select}
-            key={"DominationSocket"}
-            InputProps={{ variant: "outlined" }}
-            select
-            variant="outlined"
-            size="small"
-            fullWidth
-            value={replaceDomGems}
-            onChange={(e) => updateReplaceDomGems(e.target.value)}
-            style={{ textAlign: "center", minWidth: 200 }}
-          >
-            <MenuItem divider value={true} style={{ justifyContent: "center" }}>
-              {t("Yes")}
-            </MenuItem>
-            <MenuItem value={false} style={{ justifyContent: "center" }}>
-              {t("No")}
-            </MenuItem>
-          </TextField>
-        </Tooltip>
-        </Grid>*/}
+      })}
     </Grid>
   );
 }

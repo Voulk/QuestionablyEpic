@@ -287,8 +287,29 @@
         "Setting7Title": "UF: Leech",
         "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
 
-        "enchantItems": "Enchant Items",
-        "includeGroupBenefits": "Ally Buffs"
+        "enchantItems": {
+          "title": "Enchant Items",
+          "tooltip": ""
+        },
+
+        "includeGroupBenefits": {
+          "title": "Ally Buffs",
+          "tooltip": ""
+        },
+        "incarnateAllies": {
+          "title": "Incarnate Icon Roles",
+          "tooltip": "Select which roles in your party are wearing the trinket."
+        },
+        "idolGems": {
+          "title": "JC Idol Trinkets",
+          "tooltip": "Select how many associated gems you have in your gear."
+        },
+        "alchStonePotions": {
+          "title": "Alch Stone",
+          "tooltip": "Number of extra potions Alch Stone gives you over a fight."
+        }
+
+
       },
       "SettingsTitle": "Optional Settings"
     },
