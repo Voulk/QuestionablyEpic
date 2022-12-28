@@ -131,13 +131,13 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;
-  item.softScore = scoreItem(item, player, contentType);
+  item.softScore = scoreItem(item, player, contentType, settings);
   item.source = itemSource;
 
   return item;
 }
 
-function buildItemPossibilities(player, contentType, playerSettings, userSettings) {
+function buildItemPossibilities(player, contentType, playerSettings, settings) {
   let itemPoss = [];
 
   // Grab items.
@@ -152,14 +152,14 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
         // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
           itemPoss.push(item);
         }
       } else if (primarySource === -1) {
         // M+ Dungeons
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
         itemPoss.push(item);
       } else if (primarySource !== -18) {
@@ -172,7 +172,7 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
       } */
         // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
 
         itemPoss.push(item);

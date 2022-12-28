@@ -47,6 +47,7 @@ export default function ItemBar(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [open, setOpen] = useState(false);
@@ -149,7 +150,7 @@ export default function ItemBar(props) {
       item = new ClassicItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
 
-    item.softScore = scoreItem(item, player, contentType, gameType);
+    item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
 
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
