@@ -1,53 +1,16 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
-import { Typography, Grid, Divider, Paper } from "@mui/material";
+import { rootStyles } from "./PanelStyles";
+import { Typography, Grid, Divider } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
-import MuiAccordion from "@mui/material/Accordion";
-import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import withStyles from "@mui/styles/withStyles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "100%",
-    marginTop: 4,
-    padding: 4,
-  },
-}));
-
-const Accordion = withStyles({
-  root: {
-    border: "1px solid rgba(255, 255, 255, 0.12)",
-    boxShadow: "none",
-    "&:not(:last-child)": {
-      borderBottom: 0,
-    },
-    "&:before": {
-      display: "none",
-    },
-    "&$expanded": {
-      margin: "auto",
-    },
-  },
-  expanded: {},
-})(MuiAccordion);
-
-const AccordionSummary = withStyles({
-  root: {
-    padding: "0px 16px 0px 0px",
-    backgroundColor: "#35383e",
-    "&$expanded": {
-      backgroundColor: "rgb(255 255 255 / 10%)",
-    },
-  },
-  expanded: {},
-})(MuiAccordionSummary);
+import UFAccordion from "./ufComponents/ufAccordian";
+import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 
 const getPVPItemLevel = (sourceID, difficulty) => {
   if (sourceID === -31) {
@@ -64,11 +27,11 @@ const pvpIcons = {
 const itemLevels = {
   raid: [187, 200, 213, 226],
   dungeon: [184, 184, 187, 190, 194, 194, 197, 200, 200, 200, 203, 203, 207, 207, 207, 210],
-  pvp: [382, 385, 389, 392, 395, 398, 402, 405, 408]
+  pvp: [382, 385, 389, 392, 395, 398, 402, 405, 408],
 };
 
 export default function PvPGearContainer(props) {
-  const classes = useStyles();
+  const classes = rootStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
@@ -77,14 +40,14 @@ export default function PvPGearContainer(props) {
 
   const contentGenerator = () => {
     return encounterDB[2].map((key, i) => (
-      <Accordion
+      <UFAccordion
         key={getTranslatedPvP(key, currentLanguage) + "-accordian" + i}
         elevation={0}
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.12)",
         }}
       >
-        <AccordionSummary
+        <UFAccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -112,7 +75,7 @@ export default function PvPGearContainer(props) {
             }{" "}
             Upgrades
           </Typography>
-        </AccordionSummary>
+        </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
             {[...filterItemListBySource(itemList, key, 0, getPVPItemLevel(key, difficulty), difficulty)].map((item, index) => (
@@ -120,7 +83,7 @@ export default function PvPGearContainer(props) {
             ))}
           </Grid>
         </AccordionDetails>
-      </Accordion>
+      </UFAccordion>
 
       // <Grid item xs={12} key={"pvpContainer-" + i}>
       //   <Paper style={{ backgroundColor: "#191c23", border: "1px solid rgba(255, 255, 255, 0.22)" }}>
