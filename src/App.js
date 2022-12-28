@@ -352,7 +352,7 @@ class App extends Component {
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
                   
-                  <Route path="/report" render={() => <TopGearReport player={activePlayer} result={this.state.topSet} patronStatus={this.state.patronStatus} />} />
+                  <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} patronStatus={this.state.patronStatus} />} />
                   <Route
                     path="/quickcompare"
                     render={() => (

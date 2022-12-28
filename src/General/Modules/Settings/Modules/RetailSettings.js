@@ -38,6 +38,8 @@ export default function RetailSettings(props) {
   }
 
   console.log(playerSettings);
+  //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
+  //console.log(settingsCategories);
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -72,7 +74,10 @@ export default function RetailSettings(props) {
   const specBuilds = props.player.getAllModels(props.contentType);
 
   const updateValue = (setting, value) => {
-
+    console.log("Updating" + setting + "to" + value);
+    const newPlayerSettings = {...playerSettings}
+    newPlayerSettings[setting]['value'] = value;
+    dispatch(togglePlayerSettings(newPlayerSettings));
   }
 
   const updateEnchantItems = (value) => {
@@ -126,11 +131,41 @@ export default function RetailSettings(props) {
 
   return (
     <Grid container spacing={2} direction="row">
+      
+      {Object.keys(playerSettings).map((key, i) => {
+        return (
+          <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+          <Tooltip
+            title={
+              <Typography align="center" variant="body2">
+                {"Hello There"}
+              </Typography>
+            }
+            placement="top-start"
+          >
+            <TextField
+              className={classes.select}
+              InputProps={{ variant: "outlined" }}
+              select
+              variant="outlined"
+              size="small"
+              fullWidth
+              value={playerSettings[key]['value']}
+              onChange={(e) => updateValue(key, e.target.value)}
+              label={/*playerSettings[key]['tag']*/'Hello'}
+              style={{ textAlign: "center", minWidth: 120 }}
+            >
+                <MenuItem divider value={true} style={{ justifyContent: "center" }}>
+                  {'Yes'}
+                </MenuItem>
+                <MenuItem divider value={false} style={{ justifyContent: "center" }}>
+                  {'No'}
+                </MenuItem>
+            </TextField>
+          </Tooltip>
+        </Grid>
+        )
 
-      {Object.keys(availableSettings).map((key, i) => {
-        console.log(key);
-        console.log(availableSettings[key])
-        
       })}
 
       {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}

@@ -20,7 +20,7 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
-      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.mastery;
+      if (additionalData.settings.includeGroupBenefits.value) bonus_stats.allyStats = bonus_stats.mastery;
       return bonus_stats;
     }
   },

@@ -3,7 +3,7 @@ import { trinket_data } from "./ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
-
+import { useSelector } from "react-redux";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
@@ -53,7 +53,8 @@ export function getTrinketValue(trinketName, itemLevel) {
 // TODO: Write proper comments. See Lingering Sunmote for an example.
 export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {
   let bonus_stats = {};
-  let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player};
+  const playerSettings = useSelector((state) => state.playerSettings);
+  let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)

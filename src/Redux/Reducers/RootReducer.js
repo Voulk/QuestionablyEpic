@@ -17,7 +17,7 @@ import ls from "local-storage";
 const initialState = {
   gameType: ls.get("gameType") || "Retail",
   contentType: ls.get("contentType") || "Raid",
-  playerSettings: {"groupBenefits": {value: true, options: [true, false], tag: "Ally Buffs", tooltip: ""}},// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
+  playerSettings: {"includeGroupBenefits": {value: true, options: [true, false], tag: "Ally Buffs", tooltip: "", category: "trinkets"}},// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
 };
 if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";
