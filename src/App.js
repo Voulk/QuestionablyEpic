@@ -18,7 +18,7 @@ import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackBar";
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
@@ -337,7 +337,7 @@ class App extends Component {
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
-                  
+
                   <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
                   <Route
                     path="/quickcompare"
@@ -396,7 +396,7 @@ class App extends Component {
                         patronStatus={this.state.patronStatus}
                       />
                     )}
-                  /> : ""}
+                  /> : <Redirect to="/" />}
 
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
