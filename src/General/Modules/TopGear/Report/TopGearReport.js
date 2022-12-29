@@ -5,13 +5,14 @@ import TopSetStatsPanel from "./TopSetStatsPanel";
 import { apiGetPlayerImage } from "../../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
 import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { getTranslatedClassName } from "locale/ClassNames";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
 function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
@@ -23,12 +24,7 @@ function TopGearReport(props) {
 
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
-    async function setImg() {
-      const img = await apiGetPlayerImage(props.player);
-      setBackgroundImage(img);
-    }
 
-    setImg();
   }, []);
 
   const classIcon = () => {
@@ -72,6 +68,7 @@ function TopGearReport(props) {
   let differentials = {};
   let itemList = {};
   let statList = {};
+  let history = useHistory();
 
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -80,6 +77,13 @@ function TopGearReport(props) {
   }
 
   if (checkResult(result)) {
+    async function setImg() {
+      const img = await apiGetPlayerImage(props.player);
+      setBackgroundImage(img);
+    }
+
+    setImg();
+
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;

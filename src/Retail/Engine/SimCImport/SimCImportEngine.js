@@ -11,7 +11,7 @@ const stat_ids = {
   49: "mastery",
 };
 
-export function runSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
+export function runSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, playerSettings) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -31,7 +31,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
     let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
-    processAllLines(player, contentType, lines, linkedItems, vaultItems);
+    processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings);
 
     snackHandler();
     closeDialog();
@@ -39,7 +39,7 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
   }
 }
 
-export function processAllLines(player, contentType, lines, linkedItems, vaultItems) {
+export function processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings) {
   for (var i = 8; i < lines.length; i++) {
     let line = lines[i];
     let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
@@ -48,7 +48,7 @@ export function processAllLines(player, contentType, lines, linkedItems, vaultIt
       if (line.includes("unknown")) {
         processToken(line, player, contentType, type);
       } else {
-        const item = processItem(line, player, contentType, type);
+        const item = processItem(line, player, contentType, type, playerSettings);
         if (item) player.addActiveItem(item);
       }
     }
@@ -172,7 +172,7 @@ export function processCurve(curveID, dropLevel) {
   return 0;
 }
 
-export function processItem(line, player, contentType, type) {
+export function processItem(line, player, contentType, type, playerSettings = {}) {
   // Split string.
   let infoArray = line.split(",");
   let itemID = -1;
@@ -353,7 +353,7 @@ export function processItem(line, player, contentType, type) {
     } else if (item.vaultItem) item.uniqueEquip = "vault";
     else item.uniqueEquip = uniqueTag;
     item.quality = itemQuality;
-    item.softScore = scoreItem(item, player, contentType);
+    item.softScore = scoreItem(item, player, contentType, playerSettings);
 
     return item;  
   } else {
