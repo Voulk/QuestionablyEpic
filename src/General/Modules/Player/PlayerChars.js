@@ -56,10 +56,22 @@ class PlayerChars {
 
   // Return the players active character.
   getActiveChar = () => {
-    if (this.allChar[this.activeChar] !== undefined) return this.allChar[this.activeChar];
-    else {
+    
+    if (this.allChar[this.activeChar] !== undefined) {
+      // The active character is valid. This is the expected behavior.
+      return this.allChar[this.activeChar];
+    }
+    else if (this.allChar[0] !== undefined) {
+      // The active character wasn't valid. Try and recover by using the players first character
       this.setActiveChar(0);
+      reportError("", "PlayerChars", "Active Char not found", JSON.stringify(this.allChar));
       return this.allChar[0];
+    }
+    else {
+      // The active character wasn't valid and neither was the first. 
+      // This is a guaranteed bug or error.
+      console.error("No valid characters found")
+      reportError("", "PlayerChars", "No Valid characters found", JSON.stringify(this.allChar));
     }
   };
 
