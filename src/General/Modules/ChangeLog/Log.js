@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 14,
+    date: "28 December",
+    changes: [ 
+      "Added Settings for Incarnate Icon, JC Idol Trinkets and Alacritous Alchemist Stone",
+      "Made a number of backend changes to try and fix grey screen errors.",
+      "Signet of Titanic Insight should now import with a socket.",
+  ]},
+  {
+    version: "10.0.2",
     update: 13,
     date: "22 December",
     changes: [ 

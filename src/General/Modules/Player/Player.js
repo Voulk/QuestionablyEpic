@@ -163,10 +163,10 @@ class Player {
     return this.sortItems(temp);
   };
 
-  scoreActiveItems = (contentType) => {
+  scoreActiveItems = (contentType, playerSettings) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType, this.gameType);
+      item.softScore = scoreItem(item, this, contentType, this.gameType, playerSettings);
 
       // Error checking
       if (item.softScore < 0) {
@@ -349,7 +349,7 @@ class Player {
   getActiveModel = (contentType) => {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
     else {
-      reportError(this, "Player", "Invalid Cast Model", this.getSpec());
+      //reportError(this, "Player", "Invalid Cast Model", this.getSpec());
       return this.castModels[0];
     }
   };

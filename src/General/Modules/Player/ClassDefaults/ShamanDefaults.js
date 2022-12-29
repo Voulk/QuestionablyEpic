@@ -113,7 +113,7 @@ export const shamanDefaultStatWeights = (contentType) => {
     crit: 0.38,
     mastery: 0.32,
     versatility: 0.36,
-    leech: 0.52,
+    leech: 0.43,
   };
   statWeights.Dungeon = {
     intellect: 1,

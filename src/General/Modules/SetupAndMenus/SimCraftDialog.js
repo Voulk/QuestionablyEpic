@@ -23,6 +23,7 @@ export default function SimCraftInput(props) {
   const [simC, setSimC] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
   const contentType = useSelector((state) => state.contentType);
+  const playerSettings = useSelector((state) => state.playerSettings);
   const characterCount = props.allChars.getAllChar().length || 0;
   const buttonVariant = props.variant;
   const gameType = useSelector((state) => state.gameType);
@@ -36,7 +37,7 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+    if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings);
     else runBCSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
   };
 

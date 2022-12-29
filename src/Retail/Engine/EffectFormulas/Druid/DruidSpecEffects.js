@@ -11,17 +11,18 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   if (effectName === "Druid T29-2") {
     // +8% crit to almost everything that matters.
-    const percentEffected = 0.75; // TODO: Auto-calc this.
+    const percentEffected = 0.78; // TODO: Auto-calc this.
     bonus_stats.crit = 8 * percentEffected * 170;
 
   }
   if (effectName === "Druid T29-4") {
-    const effectiveCritChance = player.getStatPerc("crit") + (8 * 0.75 / 100) - 1;
+    const effectiveCritChance = player.getStatPerc("crit") + (8 / 100) - 1;
     const chanceOneCrit = 1-(Math.pow(1-effectiveCritChance, 3));
 
     const effloCritsPerSec = chanceOneCrit / 2 * player.getStatPerc("haste");
     const avgStacks = Math.min(5, effloCritsPerSec * 15);
-    const oneWildGrowth = 0.98 * 6 * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.2) * 1.05 * 0.85; // The extra healing from 2 additional WG targets a minute.
+    const sotfBonus = (0.5 * 0.66) + 1; // 66% of our WG casts will line up with SotF.
+    const oneWildGrowth = 0.98 * 6 * sotfBonus * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.8) * 1.05; // The extra healing from 2 additional WG targets a minute.
 
     bonus_stats.hps = oneWildGrowth * (0.05 * avgStacks) * 4 / 60;
   }

@@ -83,12 +83,13 @@ function getSlots() {
 
 export default function QuickCompare(props) {
   const contentType = useSelector((state) => state.contentType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
     loadBottomBannerAd(props.patronStatus);
-  }, props.player.scoreActiveItems(contentType));
+  }, props.player.scoreActiveItems(contentType, playerSettings));
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;

@@ -117,7 +117,7 @@ export default function QEHeader(props) {
                 justifyContent="center"
                 alignItems="center"
                 spacing={1}
-                wrap={matches && gameType === "Retail" ? "" : "nowrap"}
+                wrap={matches && gameType === "Retail" ? "wrap" : "nowrap"}
                 style={{ paddingLeft: 10, paddingRight: 10 }}
               >
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
