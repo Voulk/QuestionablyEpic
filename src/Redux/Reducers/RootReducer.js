@@ -15,7 +15,7 @@ import ls from "local-storage";
 
 // Initial Store/State settings
 const initialState = {
-  gameType: ls.get("gameType") || "Retail",
+  gameType: "Retail",
   contentType: ls.get("contentType") || "Raid",
   playerSettings: {"includeGroupBenefits": {value: true, options: [true, false], category: "trinkets"},
                     "incarnateAllies": {value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets"},
