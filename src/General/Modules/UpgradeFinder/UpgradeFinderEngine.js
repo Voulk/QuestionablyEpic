@@ -5,7 +5,7 @@ import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getItemAllocations
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
-
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -217,7 +217,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   let differential = 0;
 
-  if (userSettings.upFinderToggle === "hps") differential = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
+  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
   else differential = (newScore - baseScore) / baseScore;
 
   return { item: item.id, level: item.level, score: differential };
