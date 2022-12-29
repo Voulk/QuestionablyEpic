@@ -338,7 +338,11 @@ class App extends Component {
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
 
+                  {this.state.topSet !== null ? // Check if a report exists. If it doesn't, then redirect to the main menu.
                   <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
+                  : ""}
+                  {activePlayer !== null ? // Test if we have an active character. If we don't, then redirect to the main menu to create one.
+                  <>
                   <Route
                     path="/quickcompare"
                     render={() => (
@@ -358,19 +362,6 @@ class App extends Component {
                       />
                     )}
                   />
-                  {/*<Route
-                    path="/legendaries"
-                    render={() => (
-                      <LegendaryCompare
-                        player={activePlayer}
-                        updatePlayerChar={this.updatePlayerChar}
-                        singleUpdate={this.updatePlayerChar}
-                        allChars={allChars}
-                        simcSnack={this.handleSimCSnackOpen}
-                        patronStatus={this.state.patronStatus}
-                      />
-                    )} 
-                  />*/}
                   <Route
                     path="/trinkets"
                     render={() => (
@@ -384,7 +375,7 @@ class App extends Component {
                       />
                     )}
                   />
-                  {activePlayer !== null ? <Route
+                   <Route
                     path="/embellishments"
                     render={() => (
                       <EmbellishmentAnalysis
@@ -396,7 +387,7 @@ class App extends Component {
                         patronStatus={this.state.patronStatus}
                       />
                     )}
-                  /> : <Redirect to="/" />}
+                  /></> : <Redirect to="/" />}
 
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
