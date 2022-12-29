@@ -1,6 +1,7 @@
 import Player from "./Player";
 import ls from "local-storage";
 import ClassicPlayer from "./ClassicPlayer";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 // On app start, load player data.
 // First, we will check if they are signed in and have character data.
 // If they do, load that, if they don't, we will try their localstorage instead.
@@ -57,7 +58,10 @@ class PlayerChars {
   // Return the players active character.
   getActiveChar = () => {
     
-    if (this.allChar[this.activeChar] !== undefined) {
+    if (this.allChar.length === 0) {
+      return null;
+    }
+    else if (this.allChar[this.activeChar] !== undefined) {
       // The active character is valid. This is the expected behavior.
       return this.allChar[this.activeChar];
     }
@@ -138,6 +142,8 @@ class PlayerChars {
     this.allChar.splice(this.activeChar, 1);
   };
 
+
+  // Delete a character with a specific index.
   delSpecificChar = (unique) => {
     let delIndex = 0;
     let tempArray = this.allChar.filter(function (char) {

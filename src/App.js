@@ -277,8 +277,7 @@ class App extends Component {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
 
-    
-
+  
     const vertical = "bottom";
     const horizontal = "left";
 
@@ -385,7 +384,7 @@ class App extends Component {
                       />
                     )}
                   />
-                  <Route
+                  {activePlayer !== null ? <Route
                     path="/embellishments"
                     render={() => (
                       <EmbellishmentAnalysis
@@ -397,7 +396,7 @@ class App extends Component {
                         patronStatus={this.state.patronStatus}
                       />
                     )}
-                  />
+                  /> : ""}
 
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
