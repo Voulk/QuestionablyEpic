@@ -22,7 +22,7 @@ i18n
       de: languageDE,
     },
     /* default language when load the website in browser */
-    lng: ls.get("lang") || "en",
+    lng: "en",
     /* When react i18next not finding any language to as default in browser */
     fallbackLng: "en",
     /* debugger For Development environment */

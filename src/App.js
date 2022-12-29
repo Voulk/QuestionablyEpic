@@ -269,7 +269,7 @@ class App extends Component {
     this.checkPatron(ls.get("email"));
     this.getArticleList();
 
-    i18n.changeLanguage(ls.get("lang") || "en");
+    //i18n.changeLanguage(ls.get("lang") || "en");
   }
 
 
@@ -277,11 +277,12 @@ class App extends Component {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
 
+    
+
     const vertical = "bottom";
     const horizontal = "left";
 
     return (
-      <ErrorBoundary>
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <Router basename={process.env.REACT_APP_HOMEPAGE}>
@@ -424,7 +425,7 @@ class App extends Component {
             </Router>
           </ThemeProvider>
         </StyledEngineProvider>
-      </ErrorBoundary>
+
     );
   }
 }
