@@ -332,19 +332,19 @@ function enchantItems(bonus_stats, setInt, castModel) {
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight] += 128; // 64 x 2.
-  enchants["Finger"] = "+64 " + highestWeight;
+  enchants["Finger"] = "+82 " + highestWeight;
 
   // Chest
   // There is a mana option too that we might include later.
-  bonus_stats.intellect += 105; 
+  bonus_stats.intellect += 150; 
   enchants["Chest"] = "Waking Stats";
 
   // Cape
-  bonus_stats.leech += 75;
+  bonus_stats.leech += 125;
   enchants["Back"] = "Regenerative Leech";
 
   // Wrists
-  bonus_stats.leech += 75;
+  bonus_stats.leech += 200;
   enchants["Wrist"] = "Devotion of Leech";
 
   // Legs - Also gives 3/4/5% mana.
