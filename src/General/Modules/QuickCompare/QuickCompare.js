@@ -126,14 +126,14 @@ export default function QuickCompare(props) {
     let player = props.player;
     player.deleteActiveItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
-    handleClickDelete();
+    //handleClickDelete();
   };
 
   const catalyzeItem = (unique) => {
     let player = props.player;
     player.catalyzeItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
-    // handleClickDelete();
+
   };
 
   /* ---------------------------------------------------------------------------------------------- */

@@ -170,7 +170,7 @@ export default function TopGear(props) {
     let player = props.player;
     player.deleteActiveItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
-    handleClickDelete();
+    //handleClickDelete();
   };
 
   const catalyzeItem = (unique) => {
