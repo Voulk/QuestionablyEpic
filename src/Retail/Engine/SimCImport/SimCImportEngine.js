@@ -161,10 +161,15 @@ export function processCurve(curveID, dropLevel) {
     for (var i = 0; i < curve.length; i++) {
       if (curve[i].playerLevel > dropLevel) {
         // We've found the right place in the curve. This is the lowest index that's higher than the drop level.
-        playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
-        jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
-
-        return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
+        if (curve[i].playerLevel !== 1) {
+          playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
+          jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
+          return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
+        } else {
+          playerLevelGap = 0;
+          jump = curve[i].itemLevel / playerLevelGap;
+          return Math.floor(jump * dropLevel);
+        }
       }
     }
   }
