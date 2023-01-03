@@ -49,6 +49,53 @@ export const effectData = [
   },
   {
     /* -------------------- */
+    /* Seal of Filial Duty                  
+    /* -------------------- */
+    /* An absorb ring that procs off dealing Fire damage.
+    */
+    name: "Seal of Filial Duty",
+    effects: [
+      { 
+        coefficient: 86.2502,
+        table: -9,
+        efficiency: {Raid: 0.7, Dungeon: 0.45},
+        ppm: 2,
+        specValue: { "Restoration Druid": 0, "Preservation Evoker": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.2, "Holy Priest": 0 },
+        secondaries: ['versatility', 'haste'],
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm * data[0].specValue / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Seal of Diurna's Chosen                 
+    /* -------------------- */
+    /* A DPS ring that procs off Fire damage.
+    */
+    name: "Seal of Filial Duty",
+    effects: [
+      { 
+        coefficient: 11.33085,
+        table: -9,
+        ppm: 2,
+        specValue: { "Restoration Druid": 0, "Preservation Evoker": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.2, "Holy Priest": 0 },
+        secondaries: ['versatility', 'haste'],
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * data[0].specValue / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
     /* Drakebreaker's Versatility                       
     /* -------------------- */
     /* Flat 105 Versatility. We don't need to do anything fancy for it, just return 105 vers.
