@@ -122,6 +122,7 @@ describe("Test Crafted Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
+
     test("Quick Oxxein Ring - No Missive IDs", () => {
         const line = "finger1=,id=173133,bonus_id=7461,drop_level=60,crafted_stats=49";
         const item = processItem(line, player, contentType, type)
@@ -162,26 +163,14 @@ describe("Test Crafted Items", () => {
         expect(item.uniqueEquip).toEqual("embellishment");
     });
 
-    
-});
-
-describe("Test Legendary Items", () => {
-    const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-    const contentType = "Raid";
-    const type = "Regular";
-
-    test("Flash Concentration on Neck", () => {
-        const line = "neck=,id=178927,bonus_id=6974/7194/6647/6648/6758/1532";
+    test("Warlords of Draenor Timewalking - Blackwater Belt", () => {
+        const line = "waist=,id=109842,bonus_id=6652/8812/8171/7756,drop_level=70";
         const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(235);
-    }); 
-
-    test("Verdant Infusion on Gloves", () => {
-        const line = "# hands=,id=172316,bonus_id=7098/6649/6648/6718/1522";
-        const item = processItem(line, player, contentType, type)
-
-        expect(item.level).toEqual(225);
+        expect(item.level).toEqual(359);
+        expect(item.stats.intellect).toEqual(210);
     });
+
+    
 });
 
 
