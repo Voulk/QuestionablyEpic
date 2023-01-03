@@ -16,9 +16,11 @@ export const changeLog = [
       "Entering the app for the first time through a module will now return you to the main menu instead of crashing.",
       "Added the Assembly Guardian's Ring effect",
       "Updated enchants to use Rank 3s.",
+      "Crafted rings should now be created with a socket when added manually.",
+      "Top Gear will now cap sets at two embellishments.",
       "Bugfix: Evokers can now enter staves manually.",
       "Bugfix: Deleting Items should no longer crash the app.",
-      "Crafted rings should now be created with a socket when added manually.",
+
 
   ]},
   {

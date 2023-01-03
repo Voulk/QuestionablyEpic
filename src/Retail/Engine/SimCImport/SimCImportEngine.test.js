@@ -149,6 +149,17 @@ describe("Test Crafted Items", () => {
         expect(item.stats.mastery).toEqual(536);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
+    test("Obsidian Seared Hexblade", () => {
+        const line = "main_hand=,id=190511,enchant_id=6628,bonus_id=8836/8840/8902/8801/8845/8791/8175/8960,crafted_stats=40/36";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(402);
+        expect(item.stats.crit).toEqual(176);
+        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
+        expect(item.socket).toEqual(0);
+        expect(item.uniqueEquip).toEqual("embellishment");
     });
 
     

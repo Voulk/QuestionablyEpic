@@ -139,6 +139,10 @@ class ItemSet {
 
       return false;
     } 
+    else if (this.uniques["embellishment"] && this.uniques["embellishment"] > 2) {
+
+      return false;
+    } 
     else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
       return false;
     }

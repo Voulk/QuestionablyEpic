@@ -272,6 +272,17 @@ export function processItem(line, player, contentType, type, playerSettings = {}
 
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
+        if ("effect" in idPayload) {
+          if ("spell" in idPayload["effect"]) {
+            itemEffect = {
+              type: "embellishment",
+              name: idPayload["effect"]["spell"]["name"],
+              level: (itemBaseLevel + itemLevelGain),
+            };
+
+          }
+
+        }
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
@@ -315,6 +326,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       craftedStats = ["40", "32"]
     }
     if (bonus_id === "7881") uniqueTag = "crafted";
+    else if (bonus_id === "8960") uniqueTag = "embellishment";
   }
   //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (craftedStats.length !== 0) {
@@ -351,7 +363,8 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       item.uniqueEquip = "unity";
       //item.id = 1044011
     } else if (item.vaultItem) item.uniqueEquip = "vault";
-    else item.uniqueEquip = uniqueTag;
+    else if (uniqueTag !== "") item.uniqueEquip = uniqueTag;
+
     item.quality = itemQuality;
     item.softScore = scoreItem(item, player, contentType, playerSettings);
 
