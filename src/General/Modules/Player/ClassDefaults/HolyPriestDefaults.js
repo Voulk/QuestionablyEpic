@@ -65,7 +65,7 @@ export const holyPriestDefaultStatWeights = (contentType) => {
     crit: 0.38,
     mastery: 0.37,
     versatility: 0.35,
-    leech: 0.52,
+    leech: 0.46,
   };
   statWeights.Dungeon = {
     intellect: 1,
@@ -73,7 +73,7 @@ export const holyPriestDefaultStatWeights = (contentType) => {
     crit: 0.38,
     mastery: 0.27,
     versatility: 0.349,
-    leech: 0.42,
+    leech: 0.34,
   };
 
   return statWeights[contentType];

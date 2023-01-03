@@ -10,6 +10,28 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 15,
+    date: "2 January",
+    changes: [ 
+      "Entering the app for the first time through a module will now return you to the main menu instead of crashing.",
+      "Added the Assembly Guardian's Ring effect",
+      "Updated enchants to use Rank 3s.",
+      "Bugfix: Evokers can now enter staves manually.",
+      "Bugfix: Deleting Items should no longer crash the app.",
+      "Crafted rings should now be created with a socket when added manually.",
+
+  ]},
+  {
+    version: "10.0.2",
+    update: 14,
+    date: "28 December",
+    changes: [ 
+      "Added Settings for Incarnate Icon, JC Idol Trinkets and Alacritous Alchemist Stone",
+      "Made a number of backend changes to try and fix grey screen errors.",
+      "Signet of Titanic Insight should now import with a socket.",
+  ]},
+  {
+    version: "10.0.2",
     update: 13,
     date: "22 December",
     changes: [ 

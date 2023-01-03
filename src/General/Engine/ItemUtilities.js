@@ -131,7 +131,7 @@ export function getValidWeaponTypesBySpec(spec) {
     case SPEC.HOLYPALADIN:
       return [0, 1, 4, 5, 6, 7, 8];
     case SPEC.PRESEVOKER:
-      return [0, 4, 5, 7, 13, 15];
+      return [0, 4, 5, 7, 10, 13, 15];
     case SPEC.RESTOSHAMAN:
       return [0, 1, 4, 5, 10, 13, 15];
     case SPEC.HOLYPRIEST:
@@ -178,6 +178,7 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
 
   return temp;
 }
+
 
 export function filterItemListByType(itemList, slot) {
   let temp = itemList.filter(function (item) {
@@ -648,14 +649,14 @@ function applyClassicStatMods(spec, setStats) {
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
-export function scoreItem(item, player, contentType, gameType = "Retail") {
+export function scoreItem(item, player, contentType, gameType = "Retail", playerSettings = {}) {
   let score = 0;
   let bonus_stats = {};
   let item_stats = { ...item.stats };
 
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
+    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
   }
 
   // Multiply the item's stats by our stat weights.

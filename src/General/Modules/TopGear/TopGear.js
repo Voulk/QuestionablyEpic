@@ -83,6 +83,7 @@ export default function TopGear(props) {
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [openDelete, setOpenDelete] = useState(false);
@@ -187,13 +188,12 @@ export default function TopGear(props) {
     const strippedPlayer = JSON.parse(JSON.stringify(props.player));
     const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
-
     if (gameType === "Retail") {
       const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
 
       instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel)
+        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
         .then((result) => {
           // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
@@ -213,7 +213,7 @@ export default function TopGear(props) {
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel)
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
         .then((result) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
@@ -227,12 +227,11 @@ export default function TopGear(props) {
           instance.terminate();
           setBtnActive(true);
         });
-    }
-    else {
+    } else {
       /* ---------------------------------------- Return error. --------------------------------------- */
-      reportError("", "Top Gear Invalid Game Type", "", gameType)
+      reportError("", "Top Gear Invalid Game Type", "", gameType);
     }
-  }
+  };
 
   const unleashTopGear = () => {
     /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
@@ -241,16 +240,14 @@ export default function TopGear(props) {
       // Special Error Code
       try {
         unleashWorker();
-      }
-      catch (err) {
+      } catch (err) {
         setErrorMessage("Top Gear has crashed. Sorry! It's been automatically reported.");
         reportError("", "Top Gear Full Crash", err, JSON.stringify(props.player) || "");
         console.log(err);
         setBtnActive(true);
       }
-
-    };
-  }
+    }
+  };
 
   const selectedItemCount = props.player.getSelectedItems().length;
   const helpBlurb = t("TopGear.HelpText" + gameType);
@@ -394,9 +391,11 @@ export default function TopGear(props) {
 
       {/*item deleted snackbar */}
       <Snackbar open={openDelete} autoHideDuration={3000} onClose={handleCloseDelete}>
-        <Alert onClose={handleCloseDelete} severity="error">
-          {t("QuickCompare.ItemDeleted")}
-        </Alert>
+        <div>
+          <Alert onClose={handleCloseDelete} severity="error">
+            {t("QuickCompare.ItemDeleted")}
+          </Alert>
+        </div>
       </Snackbar>
     </div>
   );

@@ -50,12 +50,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getTrinketAtItemLevel = (id, itemLevel, player, contentType) => {
+const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
-  item.softScore = scoreItem(item, player, contentType);
+  item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
 
   return item.softScore;
 };
@@ -183,6 +183,7 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
+  const playerSettings = useSelector((state) => state.playerSettings);
   const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 423, 426];
   
   const gameType = useSelector((state) => state.gameType);
@@ -223,7 +224,7 @@ export default function TrinketAnalysis(props) {
       activeTrinkets.push(trinketAtLevels);
     } else {
       for (var x = 0; x < itemLevels.length; x++) {
-        trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType);
+        trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
       }
       activeTrinkets.push(trinketAtLevels);
     }

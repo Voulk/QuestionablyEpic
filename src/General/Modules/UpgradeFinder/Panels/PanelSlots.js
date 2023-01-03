@@ -40,9 +40,6 @@ export default function SlotsContainer(props) {
 
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
 
-  // Filter out Legion TW items outside of Legion TW week.
-  itemList = itemList.filter((item) => item.level > 100 && ![707, 716, 740, 762, 767, 800].includes(item.source.encounterId));
-
   const slotList = [
     { slot: "Head", label: "head" },
     { slot: "Neck", label: "neck" },

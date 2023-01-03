@@ -20,6 +20,13 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
 
   }
+  if (effectName === "Mistweaver T29-4") {
+    // This is a very raw formula that will be replaced almost immediately.
+    const uptime = 0.55; // TODO: Auto-calc this.
+    const spellsHit = 0.35;
+    bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
+
+  }
   else if (effectName === "Mistweaver T28-2") {
     // Mistweaver Monk Sepulcher tier set 2pc
     // -- This is a draft formula and it can be improved upon. --

@@ -536,6 +536,22 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
+  {
+    name: {
+      en: "Emerald Communion",
+      fr: "Communion d’émeraude",
+      de: "Smaragdgrüne Zwiesprache",
+      ru: "Изумрудные грезы",
+      cn: "翡翠交融",
+    },
+    guid: 370960,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_green_01.jpg").default,
+    duration: 5,
+    cooldown: 180,
+    class: "PreservationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                        Utility Cooldowns                                       */

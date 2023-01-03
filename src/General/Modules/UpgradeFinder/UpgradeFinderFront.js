@@ -9,7 +9,6 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
-import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
@@ -104,6 +103,7 @@ export default function UpgradeFinderFront(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
+  const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
   const helpText =
@@ -241,12 +241,20 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 418</div>
+          <div>lvl 415</div>
         </div>
       ),
     },
     {
       value: 14,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 418</div>
+        </div>
+      ),
+    },
+    {
+      value: 15,
       label: (
         <div className={classes.labels}>
           <div>lvl 421</div>
@@ -420,7 +428,7 @@ export default function UpgradeFinderFront(props) {
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
-                  max={14}
+                  max={15}
                   change={props.setDungeonDifficulty}
                 />
               </div>

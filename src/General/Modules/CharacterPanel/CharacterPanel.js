@@ -72,7 +72,7 @@ export default function CharacterPanel(props) {
   const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
-  const playerStats = props.player.getActiveStats();
+  
   const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state) => state.gameType);
   const contentType = useSelector((state) => state.contentType);
@@ -81,8 +81,8 @@ export default function CharacterPanel(props) {
   const simcStatus = getSimCStatus(props.player, gameType);
   // const simcString = "UpgradeFinderFront.SimCBody1" + simcStatus;
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLang;
-  const currentCharacter = props.allChars.allChar[props.allChars.activeChar];
-
+  const currentCharacter = props.allChars.getActiveChar();
+  const playerStats = props.player !== null ? props.player.getActiveStats() : {};
 
   const check = (simcStatus) => {
     let style = "";
@@ -142,6 +142,7 @@ export default function CharacterPanel(props) {
   return (
     // disabled errortooltip until properly implemented
     //<ErrorTooltip title={errorMessage} open={simcStatus === "Invalid"} placement="bottom-end">
+    currentCharacter !== null ? (
     <Paper elevation={0} className={check(simcStatus)}>
       <div
         style={{
@@ -420,7 +421,7 @@ export default function CharacterPanel(props) {
           </Grid>
         </Grid>
       </div>
-    </Paper>
+    </Paper>) : ""
     //</ErrorTooltip>
   );
 }
