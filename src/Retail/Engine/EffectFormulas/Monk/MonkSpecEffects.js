@@ -22,9 +22,22 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   }
   if (effectName === "Mistweaver T29-4") {
     // This is a very raw formula that will be replaced almost immediately.
-    const uptime = 0.55; // TODO: Auto-calc this.
-    const spellsHit = 0.35;
-    bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
+
+    // TODO: Dancing Mist
+    // Upwelling, Misty Peaks included.
+    const percVivify = 0.09; // TODO: Auto-calc this.
+    const percEssenceFont = 0.21; // TODO: Auto-calc this.
+    const essenceFontCPM = 3;
+    const faelineStompCPM = 1.5;
+    const boltsPerMin = essenceFontCPM * (18 + 24 / 6) + faelineStompCPM * 5;
+    const renewingMistTick = 0.19665 * player.getStatMults(["intellect", "haste", "versatility", "crit"]);
+    const envMistTick = 0.43605 * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * 1.3;
+    const mistyPeaks = boltsPerMin * 0.1 * envMistTick; // Every tick has a 10% chance to proc 2s of Env Mists (1 tick);
+
+    const HPSHealingIncrease = percEssenceFont + percVivify * 0.1 * player.getHPS(contentType);
+    const HPSExtension = (renewingMistTick / 2 * boltsPerMin + mistyPeaks) / 60; // 18 seconds of extra HoT uptime per Essence Font cast.
+    
+    bonus_stats.hps = HPSHealingIncrease + HPSExtension;
 
   }
   else if (effectName === "Mistweaver T28-2") {

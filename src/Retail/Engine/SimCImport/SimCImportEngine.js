@@ -156,7 +156,7 @@ export function processCurve(curveID, dropLevel) {
   let jump = 0;
   let playerLevelGap = 0;
 
-  if (curve.length === 0 || curve === undefined) return 0;
+  if (curve.length === 0 || curve === undefined || dropLevel === 0) return 0;
   if (curve.length === 1) return curve[0].itemLevel;
   else {
     for (var i = 0; i < curve.length; i++) {
@@ -253,6 +253,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
         });
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
+
         levelOverride = processCurve(curve, dropLevel);
 
       } else if ("name_override" in idPayload) {
