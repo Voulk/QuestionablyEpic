@@ -22,7 +22,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     const effloCritsPerSec = chanceOneCrit / 2 * player.getStatPerc("haste");
     const avgStacks = Math.min(5, effloCritsPerSec * 15);
     const sotfBonus = (0.5 * 0.66) + 1; // 66% of our WG casts will line up with SotF.
-    const oneWildGrowth = 0.98 * 6 * sotfBonus * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.8) * 1.05; // The extra healing from 2 additional WG targets a minute.
+    const oneWildGrowth = 0.98 * 6 * sotfBonus * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.9) * 1.05; // The extra healing from 2 additional WG targets a minute.
 
     bonus_stats.hps = oneWildGrowth * (0.05 * avgStacks) * 4 / 60;
   }

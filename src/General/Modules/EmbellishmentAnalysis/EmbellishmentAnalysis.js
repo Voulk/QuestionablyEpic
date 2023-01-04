@@ -1,21 +1,20 @@
 import React, { useEffect } from "react";
 import { Paper, Typography, Grid, Tooltip } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "General/Engine/ItemUtilities";
 import EmbelChart from "./EmbellishmentChart";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
-import { dominationGemDB } from "Databases/DominationGemDB";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
-import { getDominationGemEffect } from "Retail/Engine/EffectFormulas/Generic/GenericEffectFormulas";
+
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "./MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import userSettings from "../Settings/SettingsObject";
-import Settings from "../Settings/Settings";
-import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
+import { loadBannerAd } from "General/Ads/AllAds";
+import { useHistory } from "react-router-dom";
+
 // import userSettings from "../Settings/SettingsObject";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
@@ -158,15 +157,16 @@ export default function EmbellishmentAnalysis(props) {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const [metric, setMetric] = React.useState("hps");
-
+  let history = useHistory();
   const itemLevels = [356, 369, 382, 395, 408];
 
+  const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
     return embel.armorType === 0 ||
-      (embel.armorType === 4 && props.player.getSpec() === "Holy Paladin") ||
-      (embel.armorType === 3 && (props.player.getSpec() === "Restoration Shaman" || props.player.getSpec() === "Preservation Evoker")) ||
-      (embel.armorType === 2 && (props.player.getSpec() === "Restoration Druid" || props.player.getSpec() === "Mistweaver Monk")) ||
-      (embel.armorType === 1 && (props.player.getSpec() === "Holy Priest" || props.player.getSpec() === "Discipline Priest"))
+      (embel.armorType === 4 && playerSpec === "Holy Paladin") ||
+      (embel.armorType === 3 && (playerSpec === "Restoration Shaman" || playerSpec === "Preservation Evoker")) ||
+      (embel.armorType === 2 && (playerSpec === "Restoration Druid" || playerSpec === "Mistweaver Monk")) ||
+      (embel.armorType === 1 && (playerSpec === "Holy Priest" || playerSpec === "Discipline Priest"))
   });
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
@@ -187,7 +187,8 @@ export default function EmbellishmentAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric);
+      if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric);
+      
     }
     activeGems.push(gemAtLevels);
   }

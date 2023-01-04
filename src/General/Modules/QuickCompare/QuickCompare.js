@@ -16,7 +16,7 @@ import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { getTranslatedSlotName } from "locale/slotsLocale";
-import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds"
+import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -133,7 +133,6 @@ export default function QuickCompare(props) {
     let player = props.player;
     player.catalyzeItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
-    // handleClickDelete();
   };
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -239,11 +238,13 @@ export default function QuickCompare(props) {
 
       {/*item deleted snackbar */}
       <Snackbar open={openDelete} autoHideDuration={3000} onClose={handleCloseDelete}>
-        <Alert onClose={handleCloseDelete} severity="error">
-          {t("QuickCompare.ItemDeleted")}
-        </Alert>
+        <div>
+          <Alert onClose={handleCloseDelete} severity="error">
+            {t("QuickCompare.ItemDeleted")}
+          </Alert>
+        </div>
       </Snackbar>
-    <div id="qelivead2"></div>
+      <div id="qelivead2"></div>
     </div>
   );
 }

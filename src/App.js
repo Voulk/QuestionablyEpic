@@ -18,7 +18,7 @@ import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackBar";
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
@@ -277,8 +277,7 @@ class App extends Component {
     let activePlayer = this.state.characters.getActiveChar();
     let allChars = this.state.characters;
 
-    
-
+  
     const vertical = "bottom";
     const horizontal = "left";
 
@@ -339,13 +338,18 @@ class App extends Component {
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
                   
+                  {this.state.topSet !== null ? // Check if a report exists. If it doesn't, then redirect to the main menu.
                   <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
+                  : ""}
+                  {activePlayer !== null ? // Test if we have an active character. If we don't, then redirect to the main menu to create one.
+                  <>
                   <Route
                     path="/quickcompare"
                     render={() => (
                       <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus} />
                     )}
                   />
+                  <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
                   <Route
                     path="/topgear"
                     render={() => (
@@ -359,19 +363,6 @@ class App extends Component {
                       />
                     )}
                   />
-                  {/*<Route
-                    path="/legendaries"
-                    render={() => (
-                      <LegendaryCompare
-                        player={activePlayer}
-                        updatePlayerChar={this.updatePlayerChar}
-                        singleUpdate={this.updatePlayerChar}
-                        allChars={allChars}
-                        simcSnack={this.handleSimCSnackOpen}
-                        patronStatus={this.state.patronStatus}
-                      />
-                    )} 
-                  />*/}
                   <Route
                     path="/trinkets"
                     render={() => (
@@ -385,7 +376,7 @@ class App extends Component {
                       />
                     )}
                   />
-                  <Route
+                   <Route
                     path="/embellishments"
                     render={() => (
                       <EmbellishmentAnalysis
@@ -397,12 +388,12 @@ class App extends Component {
                         patronStatus={this.state.patronStatus}
                       />
                     )}
-                  />
+                  /></> : <Redirect to="/" />}
 
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                   <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
-                  <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+
 
                   {/* ---------------------------------------------------------------------------------------------- */
                   /*                                         Classic Routes                                          */

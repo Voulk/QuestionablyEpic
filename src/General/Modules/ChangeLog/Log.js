@@ -10,6 +10,21 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 15,
+    date: "2 January",
+    changes: [ 
+      "Entering the app for the first time through a module will now return you to the main menu.",
+      "Added Mistweaver 4pc set bonus. Refined Evoker 4pc value.",
+      "Added the Assembly Guardian's Ring, and Seal of Filial Duty effects",
+      "Updated enchants to use Rank 3s.",
+      "Crafted rings should now be created with a socket when added manually.",
+      "Top Gear will now cap sets at two embellishments.",
+      "Bugfix: Evokers can now enter staves manually.",
+      "Bugfix: You should be able to delete items again.",
+
+  ]},
+  {
+    version: "10.0.2",
     update: 14,
     date: "28 December",
     changes: [ 
