@@ -85,7 +85,7 @@ export default function HealerInfoCards(props) {
       {/* ----------- Here we map an Accordian for each healer in the log ----------  */}
       {props.heals.map((key, index) => (
         <Grid item key={index}>
-          <Accordion style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
+          <Accordion disabled style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" className={classes.content} style={{ minHeight: 0 }}>
               {/* ------------------------ Healer Name + Ilvl + Spec -----------------------  */}
               <Typography
@@ -101,7 +101,7 @@ export default function HealerInfoCards(props) {
               </Typography>
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
-            <AccordionDetails style={{ padding: 8 }}>
+            <AccordionDetails  style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
                 <Grid
                   item

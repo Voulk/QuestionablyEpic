@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import CustomRoute from "./CustomRoute";
+import ReportRoute from "./ReportRoute";
 import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
@@ -337,21 +339,17 @@ class App extends Component {
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
-                  
-                  {this.state.topSet !== null ? // Check if a report exists. If it doesn't, then redirect to the main menu.
-                  <Route path="/report" render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
-                  : ""}
-                  {activePlayer !== null ? // Test if we have an active character. If we don't, then redirect to the main menu to create one.
-                  <>
-                  <Route
-                    path="/quickcompare"
+
+                  <CustomRoute 
+                    player={activePlayer} 
+                    path="/quickcompare" 
                     render={() => (
                       <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus} />
-                    )}
-                  />
-                  <Route path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
-                  <Route
+                      )} />
+                  <CustomRoute player={activePlayer} path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+                  <CustomRoute
                     path="/topgear"
+                    player={activePlayer}
                     render={() => (
                       <TopGear
                         player={activePlayer}
@@ -363,8 +361,9 @@ class App extends Component {
                       />
                     )}
                   />
-                  <Route
+                  <CustomRoute
                     path="/trinkets"
+                    player={activePlayer}
                     render={() => (
                       <TrinketAnalysis
                         player={activePlayer}
@@ -376,8 +375,9 @@ class App extends Component {
                       />
                     )}
                   />
-                   <Route
+                  <CustomRoute
                     path="/embellishments"
+                    player={activePlayer}
                     render={() => (
                       <EmbellishmentAnalysis
                         player={activePlayer}
@@ -388,7 +388,12 @@ class App extends Component {
                         patronStatus={this.state.patronStatus}
                       />
                     )}
-                  /></> : <Redirect to="/" />}
+                  />
+                  
+                  <ReportRoute 
+                    report={this.state.topSet} 
+                    path="/report" 
+                    render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
 
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
