@@ -122,6 +122,7 @@ describe("Test Crafted Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
+
     test("Quick Oxxein Ring - No Missive IDs", () => {
         const line = "finger1=,id=173133,bonus_id=7461,drop_level=60,crafted_stats=49";
         const item = processItem(line, player, contentType, type)
@@ -149,28 +150,27 @@ describe("Test Crafted Items", () => {
         expect(item.stats.mastery).toEqual(536);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
+    test("Obsidian Seared Hexblade", () => {
+        const line = "main_hand=,id=190511,enchant_id=6628,bonus_id=8836/8840/8902/8801/8845/8791/8175/8960,crafted_stats=40/36";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(402);
+        expect(item.stats.crit).toEqual(176);
+        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
+        expect(item.socket).toEqual(0);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
+    test("Warlords of Draenor Timewalking - Blackwater Belt", () => {
+        const line = "waist=,id=109842,bonus_id=6652/8812/8171/7756,drop_level=70";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(359);
+        expect(item.stats.intellect).toEqual(210);
     });
 
     
-});
-
-describe("Test Legendary Items", () => {
-    const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-    const contentType = "Raid";
-    const type = "Regular";
-
-    test("Flash Concentration on Neck", () => {
-        const line = "neck=,id=178927,bonus_id=6974/7194/6647/6648/6758/1532";
-        const item = processItem(line, player, contentType, type)
-        expect(item.level).toEqual(235);
-    }); 
-
-    test("Verdant Infusion on Gloves", () => {
-        const line = "# hands=,id=172316,bonus_id=7098/6649/6648/6718/1522";
-        const item = processItem(line, player, contentType, type)
-
-        expect(item.level).toEqual(225);
-    });
 });
 
 

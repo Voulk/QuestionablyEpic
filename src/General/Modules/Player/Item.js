@@ -18,6 +18,7 @@ class Item {
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
     this.setID = getItemProp(id, "itemSetId");
+    this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
 
