@@ -70,8 +70,8 @@ export default function QEMainMenu(props) {
           "MainMenu.SequenceSandbox": ["/sequenceGen", false, "SequenceSandbox"],
           "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
           "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
-          "MainMenu.CooldownPlanner": ["/cooldownplanner", true, "CooldownPlanner"],
-          "MainMenu.FightAnalysis": ["/fightAnalysis", true, "FightAnalysis"],
+          "MainMenu.CooldownPlanner": ["/cooldownplanner", false, "CooldownPlanner"],
+          "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
           
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }

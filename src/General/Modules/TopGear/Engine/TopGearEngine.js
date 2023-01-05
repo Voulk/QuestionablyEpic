@@ -10,11 +10,9 @@ import { applyDiminishingReturns, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
-import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
-import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import { getJSDocAugmentsTag } from "typescript";
+
 
 /**
  * == Top Gear Engine ==
