@@ -392,6 +392,7 @@ class App extends Component {
                   
                   <ReportRoute 
                     report={this.state.topSet} 
+                    player={activePlayer}
                     path="/report" 
                     render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
 

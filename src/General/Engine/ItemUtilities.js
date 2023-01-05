@@ -17,6 +17,7 @@ import { GEMS } from "General/Engine/GEMS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import { CONSTANTS } from "./CONSTANTS";
 import { itemLevels } from "Databases/itemLevelsDB";
+import { gemDB } from "Databases/GemDB";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -120,6 +121,23 @@ export function getValidWeaponTypes(spec, slot) {
     default:
       return [-1];
   }
+}
+
+export function getGemProp(id, prop) {
+    let temp = gemDB.filter(function (gem) {
+      return gem.id === id;
+    });
+
+    if (temp.length > 0) {
+      const gem = temp[0];
+
+      if (prop === "name") return gem.name.en;
+      else if (gem !== "" && prop in gem) return gem[prop];
+      else return ""
+
+    }
+    else return "";
+
 }
 
 export function getValidWeaponTypesBySpec(spec) {

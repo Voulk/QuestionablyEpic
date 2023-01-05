@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -60,7 +60,7 @@ export default function ItemCardReport(props) {
   };
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
-  const socketImage = socketImg[enchants["Gems"]];
+  const socketImage = getGemProp(enchants["Gems"], "icon");
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
   const isCatalysable = item.isCatalystItem;
@@ -86,13 +86,27 @@ export default function ItemCardReport(props) {
   let itemName = "";
   let isVault = item.vaultItem;
 
+  let socket = [];
+  if (item.socket) {
+    for (let i = 0; i < item.socket; i++) {
+      socket.push (
+        <div style={{ display: "inline" }}>
+        <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"], "name"))} arrow>
+          <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+        </Tooltip>
+      </div>
+      );
+    }
+    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+  }
+/*
   const socket = item.socket ? (
     <div style={{ display: "inline" }}>
-      <Tooltip title={t(capitalizeFirstLetter(enchants["Gems"]))} arrow>
+      <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"], "name"))} arrow>
         <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
       </Tooltip>
     </div>
-  ) : null;
+  ) : null; */
 
   const enchantCheck = (item) => {
     if (item.slot in enchants) {
@@ -168,7 +182,7 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container direction="row" xs={12} justifyContent="space-between">
+                <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                   <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
                       {socket} {statString}
