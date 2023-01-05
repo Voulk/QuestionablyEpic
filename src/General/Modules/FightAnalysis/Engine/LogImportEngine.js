@@ -62,7 +62,6 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   /* ---------------------- Import summary Info from the Logs Summary table. ---------------------- */
   /* ------------ This contains our data for Gear, Stats, Conduits, Soulbinds etc etc. ------------ */
   const summary = await importSummaryData(starttime, endtime, this.state.reportid);
-  console.log(summary);
 
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid, boss);
