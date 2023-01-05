@@ -95,11 +95,15 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
+function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID);
+  const boostedItems = [195480, 195526, 194301]
+  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID) + (boostedItems.includes(itemID) ? 6 : 0);
+
+
+
   // 1195 is Sepulcher gear.
   // World Bosses
   else if (instanceID === 1205) itemLevel = 389;
@@ -148,14 +152,14 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       if (isRaid) {
         // Sepulcher
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
           itemPoss.push(item);
         }
       } else if (primarySource === -1) {
         // M+ Dungeons
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
         itemPoss.push(item);
@@ -168,7 +172,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         itemPoss.push(item);
       } */
         // Exclude Nathria gear.
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
 
