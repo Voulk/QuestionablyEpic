@@ -155,16 +155,22 @@ export function processCurve(curveID, dropLevel) {
 
   let jump = 0;
   let playerLevelGap = 0;
-  if (curve.length === 0 || curve === undefined) return 0;
+
+  if (curve.length === 0 || curve === undefined || dropLevel === 0) return 0;
   if (curve.length === 1) return curve[0].itemLevel;
   else {
     for (var i = 0; i < curve.length; i++) {
-      if (curve[i].playerLevel > dropLevel) {
+      if (curve[i].playerLevel >= dropLevel) {
         // We've found the right place in the curve. This is the lowest index that's higher than the drop level.
-        playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
-        jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
-
-        return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
+        if (i > 0) {
+          playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
+          jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
+          return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
+        } else {
+          //playerLevelGap = 0;
+          //jump = curve[i].itemLevel / playerLevelGap;
+          return Math.floor(curve[i].itemLevel);
+        }
       }
     }
   }
@@ -252,6 +258,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
         });
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
+
         levelOverride = processCurve(curve, dropLevel);
 
       } else if ("name_override" in idPayload) {
@@ -272,6 +279,17 @@ export function processItem(line, player, contentType, type, playerSettings = {}
 
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
+        if ("effect" in idPayload) {
+          if ("spell" in idPayload["effect"]) {
+            itemEffect = {
+              type: "embellishment",
+              name: idPayload["effect"]["spell"]["name"],
+              level: (itemBaseLevel + itemLevelGain),
+            };
+
+          }
+
+        }
     }
     // Missives.
     // Missives are on every legendary, and are annoyingly also on some crafted items.
@@ -315,6 +333,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       craftedStats = ["40", "32"]
     }
     if (bonus_id === "7881") uniqueTag = "crafted";
+    else if (bonus_id === "8960") uniqueTag = "embellishment";
   }
   //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   if (craftedStats.length !== 0) {
@@ -351,7 +370,8 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       item.uniqueEquip = "unity";
       //item.id = 1044011
     } else if (item.vaultItem) item.uniqueEquip = "vault";
-    else item.uniqueEquip = uniqueTag;
+    else if (uniqueTag !== "") item.uniqueEquip = uniqueTag;
+
     item.quality = itemQuality;
     item.softScore = scoreItem(item, player, contentType, playerSettings);
 

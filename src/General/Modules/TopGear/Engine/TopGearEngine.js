@@ -6,14 +6,13 @@ import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/Eff
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
-import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
-import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+
 
 /**
  * == Top Gear Engine ==
@@ -356,12 +355,15 @@ function enchantItems(bonus_stats, setInt, castModel) {
   let expected_uptime = convertPPMToUptime(1, 15);
   bonus_stats.intellect += 932 * expected_uptime;
   enchants["CombinedWeapon"] = "Sophic Devotion";
+  //enchants["2H Weapon"] = "Sophic Devotion";
+  //enchants["1H Weapon"] = "Sophic Devotion";
   return enchants;
 }
 
 function dupObject(set) {
   return JSON.parse(JSON.stringify(set));
 }
+
 
 /**
  * This is our evaluation function. It takes a complete set of gear and assigns it a score based on the sets stats, effects, legendaries and more.
@@ -414,9 +416,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   const enchants = userSettings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
 
   // Sockets
-  const highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 88 * builtSet.setSockets;
-  enchants["Gems"] = highestWeight;
+  //const highestWeight = getHighestWeight(castModel);
+  //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
+  //enchants["Gems"] = highestWeight;
+  enchants["Gems"] = getGems(player.spec, builtSet.setSockets, bonus_stats);
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);

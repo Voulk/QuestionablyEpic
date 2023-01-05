@@ -10,15 +10,26 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 16,
+    date: "4 January",
+    changes: [ 
+      "Gems have been revamped and dual stat gems are now default. Primary gem will be added very soon. All items with sockets have gone up correspondingly.",
+      "Upgrade Finder: Very Rare raid items will now show at their correct item level.",
+      "Bugfix: Profile should once again be accessible."
+  ]},
+  {
+    version: "10.0.2",
     update: 15,
     date: "2 January",
     changes: [ 
-      "Entering the app for the first time through a module will now return you to the main menu instead of crashing.",
-      "Added the Assembly Guardian's Ring effect",
+      "Entering the app for the first time through a module will now return you to the main menu.",
+      "Added Mistweaver 4pc set bonus. Refined Evoker 4pc value.",
+      "Added the Assembly Guardian's Ring, and Seal of Filial Duty effects",
       "Updated enchants to use Rank 3s.",
-      "Bugfix: Evokers can now enter staves manually.",
-      "Bugfix: Deleting Items should no longer crash the app.",
       "Crafted rings should now be created with a socket when added manually.",
+      "Top Gear will now cap sets at two embellishments.",
+      "Bugfix: Evokers can now enter staves manually.",
+      "Bugfix: You should be able to delete items again.",
 
   ]},
   {
