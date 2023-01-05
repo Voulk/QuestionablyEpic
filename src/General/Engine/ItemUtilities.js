@@ -164,7 +164,7 @@ export function getGemProp(id, prop) {
     if (temp.length > 0) {
       const gem = temp[0];
 
-      if (prop === "name") return gem.name.en;
+      if (prop === "name") return gem.name.en || "";
       else if (gem !== "" && prop in gem) return gem[prop];
       else return ""
 
