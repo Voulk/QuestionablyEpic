@@ -189,7 +189,9 @@ export async function apiSendError(player, errorType, errorMessage, result) {
     "&emessage=" +
     encodeURIComponent(errorMessage) +
     "&eresult=" +
-    encodeURIComponent(result);
+    encodeURIComponent(result) +
+    "&eversion=" +
+    encodeURIComponent(16);
 
   fetch(fetchUrl)
     .then((res) => res.text())

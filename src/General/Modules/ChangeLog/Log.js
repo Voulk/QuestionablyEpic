@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 16,
+    date: "4 January",
+    changes: [ 
+      "Gems have been revamped and dual stat gems are now default. Primary gem will be added very soon. All items with sockets have gone up correspondingly.",
+      "Upgrade Finder: Very Rare raid items will now show at their correct item level.",
+      "Bugfix: Profile should once again be accessible."
+  ]},
+  {
+    version: "10.0.2",
     update: 15,
     date: "2 January",
     changes: [ 

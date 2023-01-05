@@ -17,6 +17,7 @@ import { GEMS } from "General/Engine/GEMS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import { CONSTANTS } from "./CONSTANTS";
 import { itemLevels } from "Databases/itemLevelsDB";
+import { gemDB } from "Databases/GemDB";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -122,6 +123,56 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+// This is an extremely simple function that just returns default gems.
+// We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
+export function getGems(spec, gemCount, bonus_stats) {
+  if (spec === "Preservation Evoker" || spec === "Holy Priest") {
+    // 
+    bonus_stats.mastery += 70 * gemCount;
+    bonus_stats.crit += 33 * gemCount;
+    return 192958;
+  }
+  else if (spec === "Restoration Druid" || spec === "Holy Paladin") {
+    bonus_stats.haste += 70 * gemCount;
+    bonus_stats.mastery += 33 * gemCount;
+    return 192948;
+  }
+  else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
+    bonus_stats.haste += 70 * gemCount;
+    bonus_stats.crit += 33 * gemCount;
+    return 192945;
+  }
+  else if (spec === "Restoration Shaman") {
+
+    bonus_stats.crit += 70 * gemCount;
+    bonus_stats.versatility += 33 * gemCount;
+    return 192923;
+  }
+  else {
+    // This should never be called.
+    bonus_stats.haste += 70 * gemCount;
+    bonus_stats.mastery += 33 * gemCount;
+    return 192948;
+  }
+}
+
+export function getGemProp(id, prop) {
+    let temp = gemDB.filter(function (gem) {
+      return gem.id === id;
+    });
+
+    if (temp.length > 0) {
+      const gem = temp[0];
+
+      if (prop === "name") return gem.name.en || "";
+      else if (gem !== "" && prop in gem) return gem[prop];
+      else return ""
+
+    }
+    else return "";
+
+}
+
 export function getValidWeaponTypesBySpec(spec) {
   switch (spec) {
     case SPEC.RESTODRUID:
@@ -169,7 +220,9 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter);
+    const boostedItems = [195480, 195526, 194301];
+    
+    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter) + (boostedItems.includes(item.id) ? 6 : 0);
     else if (item.source.instanceId === 1205) expectedItemLevel = 389;
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
@@ -651,12 +704,19 @@ function applyClassicStatMods(spec, setStats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item, player, contentType, gameType = "Retail", playerSettings = {}) {
   let score = 0;
-  let bonus_stats = {};
+  let bonus_stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0};
   let item_stats = { ...item.stats };
 
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    bonus_stats = compileStats(bonus_stats, effectStats);
+  }
+
+    // Add Retail Socket
+  if (item.socket) {
+    getGems(player.spec, item.socket || 1, bonus_stats);
+    //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
   // Multiply the item's stats by our stat weights.
@@ -685,10 +745,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
-  // Add Retail Socket
-  if (item.socket) {
-    score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
-  }
+
 
   // Add any group benefit, if we're interested in it.
   if (userSettings.includeGroupBenefits && "bonus_stats" in item_stats && "allyStats" in bonus_stats) {
