@@ -220,7 +220,9 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter);
+    const boostedItems = [195480, 195526, 194301];
+    
+    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter) + (boostedItems.includes(item.id) ? 6 : 0);
     else if (item.source.instanceId === 1205) expectedItemLevel = 389;
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
@@ -702,12 +704,13 @@ function applyClassicStatMods(spec, setStats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item, player, contentType, gameType = "Retail", playerSettings = {}) {
   let score = 0;
-  let bonus_stats = {};
+  let bonus_stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0};
   let item_stats = { ...item.stats };
 
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    bonus_stats = compileStats(bonus_stats, effectStats);
   }
 
     // Add Retail Socket
