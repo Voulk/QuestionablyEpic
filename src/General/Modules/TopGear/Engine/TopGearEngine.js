@@ -6,7 +6,7 @@ import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/Eff
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -364,33 +364,6 @@ function dupObject(set) {
   return JSON.parse(JSON.stringify(set));
 }
 
-// This is an extremely simple function that just returns default gems.
-// We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
-function getGems(spec, gemCount, bonus_stats) {
-  if (spec === "Preservation Evoker" || spec === "Holy Priest") {
-    // 
-    bonus_stats.mastery += 70 * gemCount;
-    bonus_stats.crit += 33 * gemCount;
-    return 192958;
-  }
-  else if (spec === "Restoration Druid" || spec === "Holy Paladin") {
-    bonus_stats.haste += 70 * gemCount;
-    bonus_stats.mastery += 33 * gemCount;
-    return 192948;
-  }
-  else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
-    bonus_stats.haste += 70 * gemCount;
-    bonus_stats.crit += 33 * gemCount;
-    return 192945;
-  }
-  else if (spec === "Restoration Shaman") {
-    bonus_stats.crit += 70 * gemCount;
-    bonus_stats.versatility += 33 * gemCount;
-    return 192923;
-  }
-
-
-}
 
 /**
  * This is our evaluation function. It takes a complete set of gear and assigns it a score based on the sets stats, effects, legendaries and more.
@@ -443,9 +416,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   const enchants = userSettings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
 
   // Sockets
-  const highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 88 * builtSet.setSockets;
-  enchants["Gems"] = highestWeight;
+  //const highestWeight = getHighestWeight(castModel);
+  //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
+  //enchants["Gems"] = highestWeight;
   enchants["Gems"] = getGems(player.spec, builtSet.setSockets, bonus_stats);
 
   // Add together the sets base stats & any enchants or gems we've added.

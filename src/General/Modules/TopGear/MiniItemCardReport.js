@@ -90,7 +90,7 @@ export default function ItemCardReport(props) {
   if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
       socket.push (
-        <div style={{ display: "inline" }}>
+        <div style={{ display: "inline", marginRight: "5px"}}>
         <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"], "name"))} arrow>
           <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
         </Tooltip>
@@ -185,7 +185,7 @@ export default function ItemCardReport(props) {
                 <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                   <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {socket} {statString}
+                      {statString} {socket}
                     </Typography>
                   </Grid>
                   <Grid item>{enchantCheck(item)}</Grid>
