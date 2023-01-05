@@ -10,6 +10,13 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 7,
+    date: "5 January",
+    changes: [ 
+      "Added the Raging Tempest set 2pc bonus.",
+  ]},
+  {
+    version: "10.0.2",
     update: 16,
     date: "4 January",
     changes: [ 

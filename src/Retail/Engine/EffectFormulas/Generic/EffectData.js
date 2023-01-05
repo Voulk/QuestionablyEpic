@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat } from "../EffectUtilities";
 
 export const effectData = [
 {
@@ -109,6 +109,26 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.versatility = 105;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Primal Storms 2pc                                              */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Increase your highest secondary by X. Need to find out what X is.
+    */
+    name: "Primal Storms 2pc",
+    effects: [
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO
+      const highestSecondary = getHighestStat(additionalData.setStats);
+
+      bonus_stats[highestSecondary] = 340;
 
       return bonus_stats;
     }
