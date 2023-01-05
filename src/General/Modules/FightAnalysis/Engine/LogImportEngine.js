@@ -62,6 +62,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   /* ---------------------- Import summary Info from the Logs Summary table. ---------------------- */
   /* ------------ This contains our data for Gear, Stats, Conduits, Soulbinds etc etc. ------------ */
   const summary = await importSummaryData(starttime, endtime, this.state.reportid);
+  console.log(summary);
 
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
   const damage = await importDamageLogData(starttime, endtime, this.state.reportid, boss);
@@ -388,13 +389,13 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
       type: key.type,
       stats: [
         {
-          intellect: key.combatantInfo.stats.Intellect.min,
-          crit: key.combatantInfo.stats.Crit.min,
-          haste: key.combatantInfo.stats.Haste.min,
-          mastery: key.combatantInfo.stats.Mastery.min,
-          versatility: key.combatantInfo.stats.Versatility.min,
-          leech: key.combatantInfo.stats.Leech.min,
-          ilvl: key.combatantInfo.stats["Item Level"].min,
+          intellect: key.combatantInfo.stats.Intellect ? key.combatantInfo.stats.Intellect["min"] : 0,
+          crit: key.combatantInfo.stats.Crit ? key.combatantInfo.stats.Crit["min"] : 0,
+          haste: key.combatantInfo.stats.Haste ? key.combatantInfo.stats.Haste["min"] : 0,
+          mastery: key.combatantInfo.stats.Mastery ? key.combatantInfo.stats.Mastery["min"] : 0,
+          versatility: key.combatantInfo.stats.Versatility ? key.combatantInfo.stats.Versatility["min"] : 0,
+          leech: key.combatantInfo.stats.Leech ? key.combatantInfo.stats.Leech["min"] : 0,
+          ilvl: key.combatantInfo.stats["Item Level"] ? key.combatantInfo.stats["Item Level"]["min"] : 0,
         },
       ],
     })),
