@@ -10,12 +10,14 @@ import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/
 import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
 import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
+import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
 
 import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
+import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
 import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
@@ -64,6 +66,7 @@ const getSpellDB = (spec) => {
   if (spec === "Holy Paladin") return PALADINSPELLDB;
   if (spec === "Restoration Druid") return DRUIDSPELLDB;
   if (spec === "Mistweaver Monk") return MONKSPELLS;
+  if (spec === "Holy Priest") return HOLYPRIESTSPELLDB;
 };
 
 const getTalentDB = (spec) => {
@@ -73,6 +76,7 @@ const getTalentDB = (spec) => {
   if (spec === "Holy Paladin") return palaTalents;
   if (spec === "Restoration Druid") return druidTalents;
   if (spec === "Mistweaver Monk") return null;
+  if (spec === "Holy Priest") return holyPriestTalents;
 }
 
 const getSpecSettings = (spec) => {
@@ -107,6 +111,7 @@ const getSequence = (spec) => {
   if (spec === "Holy Paladin") return paladinSequence;
   if (spec === "Restoration Druid") return druidSequence;
   if (spec === "Mistweaver Monk") return monkSequence;
+  if (spec === "Holy Priest") return holyPriestSequence;
 };
 
 
