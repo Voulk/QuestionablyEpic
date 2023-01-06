@@ -552,7 +552,38 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
-
+  {
+    name: {
+      en: "Time Spiral",
+      fr: "Spirale temporelle",
+      de: "Zeitspirale",
+      ru: "Спираль времени",
+      cn: "时间螺旋",
+    },
+    guid: 374968,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_timespiral.jpg").default,
+    duration: 10,
+    cooldown: 120,
+    class: "PreservationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    name: {
+      en: "Time Spiral",
+      fr: "Spirale temporelle",
+      de: "Zeitspirale",
+      ru: "Спираль времени",
+      cn: "时间螺旋",
+    },
+    guid: 374968,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_timespiral.jpg").default,
+    duration: 10,
+    cooldown: 120,
+    class: "DevastationEvoker",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                        Utility Cooldowns                                       */
   /* ---------------------------------------------------------------------------------------------- */
