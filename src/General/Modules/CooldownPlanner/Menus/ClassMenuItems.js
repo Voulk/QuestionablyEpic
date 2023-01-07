@@ -8,7 +8,7 @@ export const classMenus = () => {
   const currentLanguage = i18n.language;
 
   const healerClasses = ["HolyPaladin", "RestorationDruid", "HolyPriest", "DisciplinePriest", "RestorationShaman", "MistweaverMonk", "PreservationEvoker"];
-  const utilityClasses = ["HavocDemonHunter", "Warrior", "DeathKnight", "Druid", "ShadowPriest", "DevastationEvoker"];
+  const utilityClasses = ["HavocDemonHunter", "Warrior", "DeathKnight", "Druid", "ShadowPriest", "DevastationEvoker", "ShamanDPS"];
 
   const healerHeader = <ListSubheader key={"Header1"}>{t("Healers")}</ListSubheader>;
   const healerMenuItems = () => {
