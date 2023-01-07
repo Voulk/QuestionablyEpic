@@ -1,7 +1,7 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createKurogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy) {
+export default function createKurogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
   let events = [];
   const primalShift = 374861;
   const primalBarrier = 374779; // start / end of p2
@@ -86,7 +86,7 @@ export default function createKurogEvents(bossID, difficulty, damageTakenData, d
     const flameDominanceApplicationEvents = debuffs.filter((filter) => filter.ability.guid === flameDominance && filter.type === "applydebuff");
     const flameDominanceRemoveEvents = debuffs.filter((filter) => filter.ability.guid === flameDominance && filter.type === "removedebuff");
     const flameAltarStart = flameDominanceApplicationEvents[0].timestamp;
-    const flameAltarEnd = flameDominanceRemoveEvents[flameDominanceRemoveEvents.length - 1].timestamp;
+    const flameAltarEnd = flameDominanceRemoveEvents.length > 0 ? flameDominanceRemoveEvents[flameDominanceRemoveEvents.length - 1].timestamp : endTime;
     const interval = 15000; // 4 ticks
 
     for (var a = flameAltarStart; a <= flameAltarEnd; ) {
@@ -104,7 +104,7 @@ export default function createKurogEvents(bossID, difficulty, damageTakenData, d
     const frostDominanceApplicationEvents = debuffs.filter((filter) => filter.ability.guid === frostDominance && filter.type === "applydebuff");
     const frostDominanceRemoveEvents = debuffs.filter((filter) => filter.ability.guid === frostDominance && filter.type === "removedebuff");
     const frostAltarStart = frostDominanceApplicationEvents[0].timestamp;
-    const frostAltarEnd = frostDominanceRemoveEvents[frostDominanceRemoveEvents.length - 1].timestamp;
+    const frostAltarEnd = frostDominanceRemoveEvents.length > 0 ? frostDominanceRemoveEvents[frostDominanceRemoveEvents.length - 1].timestamp : endTime;
     const interval = 15000; // 4 ticks
 
     for (var a = frostAltarStart; a <= frostAltarEnd; ) {
@@ -122,7 +122,7 @@ export default function createKurogEvents(bossID, difficulty, damageTakenData, d
     const earthDominanceApplicationEvents = debuffs.filter((filter) => filter.ability.guid === earthDominance && filter.type === "applydebuff");
     const earthDominanceRemoveEvents = debuffs.filter((filter) => filter.ability.guid === earthDominance && filter.type === "removedebuff");
     const earthAltarStart = earthDominanceApplicationEvents[0].timestamp;
-    const earthAltarEnd = earthDominanceRemoveEvents[earthDominanceRemoveEvents.length - 1].timestamp;
+    const earthAltarEnd = earthDominanceRemoveEvents.length > 0 ? earthDominanceRemoveEvents[earthDominanceRemoveEvents.length - 1].timestamp : endTime;
     const interval = 15000; // 4 ticks
 
     for (var a = earthAltarStart; a <= earthAltarEnd; ) {
@@ -140,7 +140,7 @@ export default function createKurogEvents(bossID, difficulty, damageTakenData, d
     const stormDominanceApplicationEvents = debuffs.filter((filter) => filter.ability.guid === stormDominance && filter.type === "applydebuff");
     const stormDominanceRemoveEvents = debuffs.filter((filter) => filter.ability.guid === stormDominance && filter.type === "removedebuff");
     const stormAltarStart = stormDominanceApplicationEvents[0].timestamp;
-    const stormAltarEnd = stormDominanceRemoveEvents[stormDominanceRemoveEvents.length - 1].timestamp;
+    const stormAltarEnd = stormDominanceRemoveEvents.length > 0 ? stormDominanceRemoveEvents[stormDominanceRemoveEvents.length - 1].timestamp : endTime;
     const interval = 15000; // 4 ticks
 
     for (var a = stormAltarStart; a <= stormAltarEnd; ) {

@@ -8,10 +8,10 @@ export const classNameDB = [
   {
     name: {
       en: "Holy Paladin",
-      fr: "",
+      fr: "Holy Paladin",
       de: "Heilig Paladin",
       ru: "Паладин Света",
-      ch: "",
+      ch: "Holy Paladin",
     },
     id: ["HolyPaladin", "Holy Paladin", "Holy Paladin Classic"],
     color: "#F58CBA",
@@ -24,10 +24,10 @@ export const classNameDB = [
   {
     name: {
       en: "Discipline Priest",
-      fr: "",
+      fr: "Discipline Priest",
       de: "Disziplin Priester",
       ru: "Жрец Послушания",
-      ch: "",
+      ch: "Discipline Priest",
     },
     id: ["DisciplinePriest", "Discipline Priest"],
     cooldownPlannerMenu: true,
@@ -41,10 +41,10 @@ export const classNameDB = [
   {
     name: {
       en: "Restoration Druid",
-      fr: "",
+      fr: "Restoration Druid",
       de: "Wiederherstellung Druide",
       ru: "Друид Исцеления",
-      ch: "",
+      ch: "Restoration Druid",
     },
     id: ["RestorationDruid", "Restoration Druid", "Restoration Druid Classic"],
     cooldownPlannerMenu: true,
@@ -54,10 +54,10 @@ export const classNameDB = [
   {
     name: {
       en: "Preservation Evoker",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Preservation Evoker",
+      de: "Preservation Evoker",
+      ru: "Preservation Evoker",
+      ch: "Preservation Evoker",
     },
     id: ["PreservationEvoker", "Preservation Evoker"],
     cooldownPlannerMenu: true,
@@ -67,10 +67,10 @@ export const classNameDB = [
   {
     name: {
       en: "Devastation Evoker",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Devastation Evoker",
+      de: "Devastation Evoker",
+      ru: "Devastation Evoker",
+      ch: "Devastation Evoker",
     },
     id: ["DevastationEvoker", "Devastation Evoker"],
     cooldownPlannerMenu: true,
@@ -80,9 +80,9 @@ export const classNameDB = [
   {
     name: {
       en: "Druid",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Druid",
+      de: "Druid",
+      ru: "Druid",
       ch: "德鲁伊",
     },
     id: ["Druid"],
@@ -93,10 +93,10 @@ export const classNameDB = [
   {
     name: {
       en: "Havoc Demon Hunter",
-      fr: "",
+      fr: "Havoc Demon Hunter",
       de: "Verwüstung Dämonenjäger",
       ru: "Охотник на демонов Истребления",
-      ch: "",
+      ch: "Havoc Demon Hunter",
     },
     id: ["HavocDemonHunter", "HavocDemon Hunter"],
     cooldownPlannerMenu: true,
@@ -106,10 +106,10 @@ export const classNameDB = [
   {
     name: {
       en: "Warrior",
-      fr: "",
+      fr: "Warrior",
       de: "Krieger",
       ru: "Воин",
-      ch: "",
+      ch: "Warrior",
     },
     id: ["Warrior"],
     cooldownPlannerMenu: true,
@@ -119,10 +119,10 @@ export const classNameDB = [
   {
     name: {
       en: "Holy Priest",
-      fr: "",
+      fr: "Holy Priest",
       de: "Heilig Priester",
       ru: "Жрец Света",
-      ch: "",
+      ch: "Holy Priest",
     },
     id: ["HolyPriest", "Holy Priest", "Holy Priest Classic"],
     cooldownPlannerMenu: true,
@@ -132,10 +132,10 @@ export const classNameDB = [
   {
     name: {
       en: "Mistweaver Monk",
-      fr: "",
+      fr: "Mistweaver Monk",
       de: "Nebelwirker Mönch",
       ru: "Монах Ткач Туманов",
-      ch: "",
+      ch: "Mistweaver Monk",
     },
     id: ["MistweaverMonk", "Mistweaver Monk"],
     cooldownPlannerMenu: true,
@@ -145,10 +145,10 @@ export const classNameDB = [
   {
     name: {
       en: "Restoration Shaman",
-      fr: "",
+      fr: "Restoration Shaman",
       de: "Wiederherstellung Schamane",
       ru: "Шаман Исцеления",
-      ch: "",
+      ch: "Restoration Shaman",
     },
     id: ["RestorationShaman", "Restoration Shaman", "Restoration Shaman Classic"],
     cooldownPlannerMenu: true,
@@ -157,11 +157,25 @@ export const classNameDB = [
   },
   {
     name: {
+      en: "Shaman",
+      fr: "Chaman",
+      de: "Schamane",
+      ru: "Шаман",
+      ch: "萨满",
+    },
+    id: ["ShamanDPS"],
+    cooldownPlannerMenu: true,
+    color: "#0070DE",
+    icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg").default,
+  },
+
+  {
+    name: {
       en: "Death Knight",
-      fr: "",
+      fr: "Death Knight",
       de: "Todesritter",
       ru: "Рыцарь смерти",
-      ch: "",
+      ch: "Death Knight",
     },
     id: ["DeathKnight", "Death Knight"],
     cooldownPlannerMenu: true,
@@ -171,10 +185,10 @@ export const classNameDB = [
   {
     name: {
       en: "Shadow Priest",
-      fr: "",
-      de: "",
+      fr: "Shadow Priest",
+      de: "Shadow Priest",
       ru: "Жрец Тьмы",
-      ch: "",
+      ch: "Shadow Priest",
     },
     id: ["ShadowPriest", "Shadow Priest"],
     cooldownPlannerMenu: true,

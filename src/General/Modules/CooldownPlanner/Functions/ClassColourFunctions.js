@@ -16,7 +16,7 @@ export function classColoursERT(props) {
   if (props === "DisciplinePriest") {
     return "|cff808080";
   }
-  if (props === "RestorationShaman") {
+  if (props === "RestorationShaman" || props === "Shaman-Elemental" || props === "Shaman-Elemental") {
     return "|cff006fdc";
   }
   if (props === "MistweaverMonk") {

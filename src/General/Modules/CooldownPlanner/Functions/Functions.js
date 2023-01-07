@@ -756,7 +756,6 @@ export async function importRaidHealth(starttime, endtime, reportid) {
 
 // Potentially just convert the class names in the cooldown planner to match the WCL ones
 export function wclClassConverter(wclClass) {
-  console.log(wclClass)
   let newClass = "";
   switch (wclClass) {
     case "Priest-Holy":
@@ -785,6 +784,12 @@ export function wclClassConverter(wclClass) {
       break;
     case "Shaman-Restoration":
       newClass = "RestorationShaman";
+      break;
+    case "Shaman-Elemental":
+      newClass = "ShamanDPS";
+      break;
+    case "Shaman-Enhancement":
+      newClass = "ShamanDPS";
       break;
     case "Warrior-Fury":
       newClass = "Warrior";

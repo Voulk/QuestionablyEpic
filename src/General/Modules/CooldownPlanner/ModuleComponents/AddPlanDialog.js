@@ -187,6 +187,7 @@ export default function AddPlanDialog(props) {
 
   const importPlanToCooldownObject = (planName, boss, difficulty, importType) => {
     const startTime = logInfo[0].time;
+    const endTime = logInfo[0].timeend
     const enemyCasts = logData.enemyCasts;
     const healerCasts = logData.healerCasts;
     const healers = logData.healers;
@@ -212,6 +213,7 @@ export default function AddPlanDialog(props) {
       nameObject,
       friendlyHealth,
       enemyEnergy,
+      endTime
     );
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data
