@@ -8,7 +8,7 @@ import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
-import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
+import { checkDefaultSocket, getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
