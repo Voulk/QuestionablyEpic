@@ -142,6 +142,55 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
+    // Prayer Circle
+
+    // Healing Chorus
+
+    // Orison: +1 target, -3s cooldown
+
+    // Cosmic Ripple
+
+    // Renewed Faith: +6% healing on Renew targets
+
+    // Enlightenment: +10% mana regen
+
+    // Trail of Light: 18% of Heal / Flash Heal healing is duplicated.
+
+    // Everlasting Light: +15% increase to heal based on missing mana.
+
+    // Divine Service: PoM heals for +4% for each bounce remaining.
+
+    // Crisis Management: +8/15% crit chance on Heal / Flash Heal.
+
+    // Prismatic Echoes: +6/12% healing via Mastery.
+
+    // Prayers of the Virtuous: Prayer of Mending drops 1/2 additional times.
+
+    // Pontifex: Critical heals from Flash Heal / Heal increase the healing done by your next Holy Word by 10% - stacking up to 2.
+
+    // Empowered Renew: Renew instantly heals for 10% of its effect.
+
+    // Rapid Recovery: +35% Renew healing, but -3s duration
+
+    // Say your prayers: Prayer of Mending has a 15% chance to not consume a charge when it jumps to a new target.
+
+    // Resonant Words: Holy Word spell -> +25/50% healing on next Flash Heal / Heal.
+
+    // Desperate Times: Increase healing by 10/20% on friendly targets below 50% health.
+
+    // Light of the Naaru: Cooldowns of holy word spells are reduced by an additional 10/20% when cast with relevant spells.
+
+    // Harmonious Apparatus: CoH -> reduces CD of Sanc by 2s; PoM reduces CD of HW: Serenity by 2.
+
+    // Searing Light: Smite and Holy Nova deal +25% damage to targets afflicted by Holy Fire.
+
+    // Answered Prayers: After PoM heals 100 times, gain apotheosis for 10s.
+
+    // Lightweaver: Flash Heal reduces the CD of your next Heal within 20s by 30% and increases its healing by 15%. Stacks to 2.
+
+
+
+
 
     // Setup mana costs & cooldowns.
 

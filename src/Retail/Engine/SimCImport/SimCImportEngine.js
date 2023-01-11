@@ -332,6 +332,24 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       // Vers / Crit Crafted Override
       craftedStats = ["40", "32"]
     }
+
+    // Solo stat overrides. Currently used on Engineering items that have only one secondary.
+    else if (bonus_id === "8948") {
+      // Haste Crafted Override
+      craftedStats = ["36"]
+    }
+    else if (bonus_id === "8949") {
+      // Crit Crafted Override
+      craftedStats = ["32"]
+    }
+    else if (bonus_id === "8950") {
+      // Mastery Crafted Override
+      craftedStats = ["49"]
+    }
+    else if (bonus_id === "8951") {
+      // Versatility Crafted Override
+      craftedStats = ["40"]
+    }
     if (bonus_id === "7881") uniqueTag = "crafted";
     else if (bonus_id === "8960") uniqueTag = "embellishment";
   }

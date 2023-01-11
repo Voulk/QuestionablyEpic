@@ -18,11 +18,11 @@ import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSp
 import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
-import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
+import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 
-import LooksOneIcon from "@mui/icons-material/LooksOne";
+
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
 
@@ -75,7 +75,7 @@ const getTalentDB = (spec) => {
   if (spec === "Restoration Shaman") return null;
   if (spec === "Holy Paladin") return palaTalents;
   if (spec === "Restoration Druid") return druidTalents;
-  if (spec === "Mistweaver Monk") return null;
+  if (spec === "Mistweaver Monk") return monkTalents;
   if (spec === "Holy Priest") return holyPriestTalents;
 }
 
