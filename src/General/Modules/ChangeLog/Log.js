@@ -11,9 +11,12 @@ export const changeLog = [
   {
     version: "10.0.2",
     update: 7,
-    date: "5 January",
+    date: "11 January",
     changes: [ 
       "Added the Raging Tempest set 2pc bonus.",
+      "Engineering goggles should now import with the correct secondary stat.",
+      "Added single stat options when manually adding crafted items for Engineering.",
+      
   ]},
   {
     version: "10.0.2",

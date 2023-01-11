@@ -1,7 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { curveDB } from "../ItemCurves";
-import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
+import { checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 
 const stat_ids = {
@@ -452,14 +452,4 @@ function compileStats(stats, bonus_stats) {
   return stats;
 }
 
-function checkDefaultSocket(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
 
-  if (temp.length > 0) {
-    const socketType = temp[0].socketType;
-    if (socketType == "Prismatic") return 1;
-    else return 0;
-  } else return 0;
-}

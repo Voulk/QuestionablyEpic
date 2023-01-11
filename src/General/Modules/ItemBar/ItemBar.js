@@ -126,8 +126,8 @@ export default function ItemBar(props) {
         // Item is a legendary and gets special handling.
         const missiveStats = missives.toLowerCase().replace(" (engineering)", "").replace(/ /g, "").split("/");
         let itemAllocations = getItemAllocations(itemID, missiveStats);
-
-        item = new Item(itemID, itemName, itemSlot, itemSocket, itemTertiary, 0, itemLevel, "");
+        let craftedSocket = checkDefaultSocket(itemID);
+        item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
 
         //if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
