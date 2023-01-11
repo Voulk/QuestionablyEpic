@@ -164,7 +164,7 @@ export const dungeonTrinketData = [
         secondaries: ['versatility'],
         cooldown: 120,
         mult: 5, 
-        efficiency: {Raid: 0.64, Dungeon: 0.5} //
+        efficiency: {Raid: 0.62, Dungeon: 0.45} //
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -224,13 +224,13 @@ export const dungeonTrinketData = [
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: 0.7, //
+        efficiency: {Raid: 0.7, Dungeon: 0.9}, //
         targets: 5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
     }
@@ -366,7 +366,7 @@ export const dungeonTrinketData = [
         coefficient: 0.149006,
         table: -7,
         duration: 20,
-        ppm: { "Restoration Druid": 0.6, "Preservation Evoker": 0.75, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.6, "Holy Priest": 0.6 }, // Baseline: 0.7
+        ppm: { "Restoration Druid": 0.5, "Preservation Evoker": 0.7, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.4, "Holy Priest": 0.4 }, // Baseline: 0.7
         averageStacks: 10.5,
       },
     ],

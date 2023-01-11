@@ -16,7 +16,9 @@ export const changeLog = [
       "Added the Raging Tempest set 2pc bonus.",
       "Engineering goggles should now import with the correct secondary stat.",
       "Added single stat options when manually adding crafted items for Engineering.",
-      
+      "The crafted rings will now have a default socket when added manually.",
+      "Holy Paladin tier gear will now show up in upgrade finder."
+
   ]},
   {
     version: "10.0.2",
