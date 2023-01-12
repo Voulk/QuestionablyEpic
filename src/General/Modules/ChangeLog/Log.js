@@ -10,6 +10,17 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 7,
+    date: "11 January",
+    changes: [ 
+      "Added Holy Priest tier and the Raging Tempest set bonuses.",
+      "Engineering goggles should now import with the correct secondary stat.",
+      "Added single stat options when manually adding crafted items for Engineering.",
+      "The crafted rings will now have a default socket when added manually.",
+      "Holy Paladin tier gear will now show up in upgrade finder."
+  ]},
+  {
+    version: "10.0.2",
     update: 16,
     date: "4 January",
     changes: [ 

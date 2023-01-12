@@ -373,6 +373,19 @@ export function getGemIcon(id) {
   }
 }
 
+
+export function checkDefaultSocket(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0) {
+    const socketType = temp[0].socketType;
+    if (socketType == "Prismatic") return 1;
+    else return 0;
+  } else return 0;
+}
+
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
 export function getItemAllocations(id, missiveStats = []) {
   const item = getItem(id);

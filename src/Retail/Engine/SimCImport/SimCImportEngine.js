@@ -1,7 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { curveDB } from "../ItemCurves";
-import { calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
+import { checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 
 const stat_ids = {
@@ -332,6 +332,24 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       // Vers / Crit Crafted Override
       craftedStats = ["40", "32"]
     }
+
+    // Solo stat overrides. Currently used on Engineering items that have only one secondary.
+    else if (bonus_id === "8948") {
+      // Haste Crafted Override
+      craftedStats = ["36"]
+    }
+    else if (bonus_id === "8949") {
+      // Crit Crafted Override
+      craftedStats = ["32"]
+    }
+    else if (bonus_id === "8950") {
+      // Mastery Crafted Override
+      craftedStats = ["49"]
+    }
+    else if (bonus_id === "8951") {
+      // Versatility Crafted Override
+      craftedStats = ["40"]
+    }
     if (bonus_id === "7881") uniqueTag = "crafted";
     else if (bonus_id === "8960") uniqueTag = "embellishment";
   }
@@ -351,7 +369,6 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   }
 
   // Add the new item to our characters item collection.
-
   if (itemLevel > 180 && itemID !== 0 && getItem(itemID) !== "") {
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
@@ -434,14 +451,4 @@ function compileStats(stats, bonus_stats) {
   return stats;
 }
 
-function checkDefaultSocket(id) {
-  let temp = itemDB.filter(function (item) {
-    return item.id === id;
-  });
 
-  if (temp.length > 0) {
-    const socketType = temp[0].socketType;
-    if (socketType == "Prismatic") return 1;
-    else return 0;
-  } else return 0;
-}
