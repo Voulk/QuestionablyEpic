@@ -602,6 +602,22 @@ export const cooldownDB = [
   },
   {
     name: {
+      en: "Stasis",
+      fr: "Stase",
+      de: "Stasis",
+      ru: "Стазис",
+      cn: "静滞",
+    },
+    guid: 370537,
+    icon: require("Images/CooldownPlanner/SpellIcons/ability_evoker_stasis.jpg").default,
+    duration: 30,
+    cooldown: 90,
+    class: "PreservationEvoker",
+    cdPlannerMenuActive: false,
+    cdPlannerImport: false,
+  },
+  {
+    name: {
       en: "Emerald Communion",
       fr: "Communion d’émeraude",
       de: "Smaragdgrüne Zwiesprache",

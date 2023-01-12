@@ -40,7 +40,7 @@ export const paladinMeleeSpecialQueries = (contentType) => {
       cooldownMult: {
         oneMinute: 1,
         ninetySeconds: 1,
-        twoMinutes: 1.07,
+        twoMinutes: 1.2,
         twoMinutesOrb: 1.07,
         threeMinutes: 1,
       },

@@ -1,14 +1,38 @@
 
+
+
 export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
 
   /*
-    Holy Priest functionality coming soon.
+    Vastly improved Holy Priest formulas coming soon.
   */
- 
+  if (effectName === "HPriest T29-2") {
+    const pomCPM = player.getSpellCPM(33076, contentType) || 1;
+    const healCPM = player.getSpellCPM(2060, contentType) || 1;
+
+    const pohCPM = player.getSpellCPM(596, contentType) || 1;
+
+    const seren = player.getSpellHPS(2050, player, contentType);
+    const serenIncrease = 2 / 60 * Math.min(pomCPM, healCPM);
+
+    const sanc = player.getSpellHPS(34861, player, contentType);
+    const sancIncrease = 2 / 60 * Math.min(pomCPM, pohCPM);
+
+    bonus_stats.hps = Math.max(serenIncrease * seren, sancIncrease * sanc) ;
+
+  }
+  else if (effectName === "HPriest T29-4") {
+    const expectedUptime = 0.424;
+    const effectValue = 10;
+
+    bonus_stats.crit = expectedUptime * effectValue  * 180;
+
+
+  }
   // Tier Sets
-  if (effectName === "HPriest T28-2") {
+  else if (effectName === "HPriest T28-2") {
     // The Holy Priest 2pc averages to about ~160-180% more Serenity casts over a fight if procs are used primarily on Heal.
     // Using procs on Salv itself through Sanc can often be an even stronger choice, however the calculation becomes increasingly fuzzy.
     // It should be added to be comprehensive, but modelling it through Heal alone will still provide a sufficiently high value.
@@ -19,7 +43,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     const serenityAdjCPM = 2.8;
 
     //bonus_stats.hps = getSpellHealing('serenity', player, contentType) * (serenityAdjCPM - serenityBaseCPM) / 60;
-    bonus_stats.hps = 0;
+    bonus_stats.hps = 0; // Old tier sets are disabled.
     
   }
   else if (effectName === "HPriest T28-4") {
@@ -40,7 +64,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     const healFiller = healCost * healCPM;
     const poHFiller = (healFiller / 2500) * getSpellHealing('prayerOfHealing', player, contentType)
 
-    bonus_stats.hps = (healCPM * getSpellHealing('heal', player, contentType) - poHFiller) / 60; // TODO: Replace with non-placeholder value. Priority for next build.
+    bonus_stats.hps = 0; //(healCPM * getSpellHealing('heal', player, contentType) - poHFiller) / 60; // TODO: 
 
   }
   else if (effectName === "Shadow Word: Manipulation") {

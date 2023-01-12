@@ -23,6 +23,12 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const percentBuffed = 0.55;
     bonus_stats.hps = (percentBuffed * 0.06 * player.getHPS(contentType))
 
+    // Holy Shock portion
+    const percHolyShockAffected = 0.74;
+    const tierBoost = 0.2;
+    const holyShockPerc = 0.18;
+
+    bonus_stats.hps += (percHolyShockAffected * tierBoost * holyShockPerc * player.getHPS(contentType))
 
   }
   // Tier Sets

@@ -58,7 +58,7 @@ export function getHighestStat(stats) {
 
   if (maxValue > 0) return max;
   else {
-    reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
+    reportError(this, "EffectFormulas", "No highest stat found: " + JSON.stringify(stats));
     return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
   }
 }

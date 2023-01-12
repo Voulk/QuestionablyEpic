@@ -21,7 +21,7 @@ const initialState = {
                     "incarnateAllies": {value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets"},
                     "idolGems": {value: 2, options: [1, 2, 3, 4, 5, 6], category: "trinkets"},
                     "alchStonePotions": {value: 1, options: [0, 1, 2], category: "trinkets"},
-                    "enchantItems": {value: false, options: [true, false], category: "topGear"},
+                    "enchantItems": {value: true, options: [true, false], category: "topGear"},
                     // catalystLimit
                     "upgradeFinderMetric": {value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder"}},// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
