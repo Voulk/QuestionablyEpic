@@ -92,6 +92,11 @@ describe("Test Curve IDs", () => {
         expect(processCurve(16666, 59)).toEqual(183)
         
     });
+
+    test("Timewalking Item", () => {
+        expect(processCurve(56365, 70)).toEqual(359)
+        
+    });
     
     
 })
@@ -170,6 +175,14 @@ describe("Test Crafted Items", () => {
         expect(item.stats.intellect).toEqual(210);
     });
 
+    test("Engineering Wrists with Crit (override used)", () => {
+        const line = "wrist=,id=198332,enchant_id=6580,gem_id=201408,bonus_id=8836/8840/8902/7936/8802/8846/8949/8864,crafted_stats=49";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(418);
+        expect(item.stats.crit).toEqual(429);
+
+    });
+    
     
 });
 

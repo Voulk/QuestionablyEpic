@@ -7,6 +7,7 @@ import { cooldownDB } from "../Data/CooldownDB";
 export default function ClassCooldownMenuItems(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  
 
   let menuItems = cooldownDB
     .filter((obj) => {

@@ -785,6 +785,12 @@ export function wclClassConverter(wclClass) {
     case "Shaman-Restoration":
       newClass = "RestorationShaman";
       break;
+    case "Shaman-Elemental":
+      newClass = "ShamanDPS";
+      break;
+    case "Shaman-Enhancement":
+      newClass = "ShamanDPS";
+      break;
     case "Warrior-Fury":
       newClass = "Warrior";
       break;
@@ -813,7 +819,7 @@ export function wclClassConverter(wclClass) {
       newClass = "PreservationEvoker";
       break;
     case "Evoker-Devastation":
-      newClass = "DevestationEvoker";
+      newClass = "DevastationEvoker";
       break;
     default:
       newClass = "No Class";

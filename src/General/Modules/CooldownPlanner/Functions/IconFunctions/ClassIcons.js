@@ -16,6 +16,7 @@ import HunterIcon from "Images/Classes/Hunter/Icons/HunterIcon.jpg";
 import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
 import EvokerIcon from "Images/Classes/Evoker/classicon_evoker_preservation.jpg";
 import DevastationEvokerIcon from "Images/Classes/Evoker/classicon_evoker_devastation.jpg";
+import ShamanIcon from "Images/Classes/Shaman/Icons/class_shaman.jpg";
 
 export default function classIcons(props, style) {
   let src = "";
@@ -88,6 +89,11 @@ export default function classIcons(props, style) {
   if (props === "RestorationShaman" || props === "Restoration Shaman" || props === "Shaman-Restoration" || props === "Shaman" || props === "Restoration Shaman Classic") {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";
+  }
+  //  Shaman
+  if (props === "ShamanDPS" ) {
+    src = ShamanIcon;
+    alt = "Shaman";
   }
 
   // Mistweaver Monk

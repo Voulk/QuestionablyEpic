@@ -16,7 +16,7 @@ export function classColoursERT(props) {
   if (props === "DisciplinePriest") {
     return "|cff808080";
   }
-  if (props === "RestorationShaman") {
+  if (props === "RestorationShaman" || props === "Shaman-Elemental" || props === "Shaman-Elemental") {
     return "|cff006fdc";
   }
   if (props === "MistweaverMonk") {
@@ -43,7 +43,7 @@ export function classColoursERT(props) {
   if (props === "DeathKnight") {
     return "|cffc31d39";
   }
-  if (props === "PreservationEvoker" || props === "DevestationEvoker") {
+  if (props === "PreservationEvoker" || props === "DevastationEvoker") {
     return "|cff33937f";
   }
 }

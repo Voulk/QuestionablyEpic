@@ -20,7 +20,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
 
   }
-  if (effectName === "Mistweaver T29-4") {
+  else if (effectName === "Mistweaver T29-4") {
     // This is a very raw formula that will be replaced almost immediately.
 
     // TODO: Dancing Mist

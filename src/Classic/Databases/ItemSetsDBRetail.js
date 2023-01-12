@@ -111,6 +111,17 @@ export const itemSets = [
       2: "Drakebreaker's Versatility", // +5% Essence Font Healing, +2s HoT duration
     },
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Shroud of Raging Tempests                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    // 
+    id: [1523, 1521, 1524, 1525], // 1523 (Leather), 1525 (Plate), 1524 (Mail), 1521 (Cloth)
+    class: "All",
+    setBonuses: {
+      2: "Primal Storms 2pc", // +5% Essence Font Healing, +2s HoT duration
+    },
+  },
     {
       /* ---------------------------------------------------------------------------------------------- */
       /*                                 Grand Upwelling (Monk T28)                                     */
