@@ -6,10 +6,11 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {
+  if (statID === "intellect" || statID === undefined) return procValue;
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
-  
   const totalStat = baseStat + procValue;
   let currentStat = baseStat + procValue;
+
   for (var j = 0; j < DRBreakpoints.length; j++) {
     currentStat -= Math.max((totalStat - DRBreakpoints[j]) * 0.1, 0);
   }
@@ -18,9 +19,11 @@ export function getDiminishedValue(statID, procValue, baseStat) {
 }
 
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
-export function runGenericPPMTrinket(effect, itemLevel) {
-    const value = processedValue(effect, itemLevel) * convertPPMToUptime(effect.ppm, effect.duration);
-    return value;
+export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
+    const rawValue = processedValue(effect, itemLevel);
+    const diminishedValue = getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
+    const uptime = convertPPMToUptime(effect.ppm, effect.duration);
+    return diminishedValue * uptime;
 }
 
 // Other trinkets are generic on-use stat trinkets. These usually don't need anything special either and can be genericized. 

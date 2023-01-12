@@ -82,6 +82,86 @@ export const dungeonTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Ruby Whelp Shell                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    name: "Ruby Whelp Shell",
+    effects: [
+      { // Healing Portion - Single Target Heal
+        coefficient: 198.7088,
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+        efficiency: 0.55, // Our expected overhealing.
+      },
+      { // Healing Portion - Mending  Breath (AoE)
+        coefficient: 165.5901,
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+        targets: 4.5,
+        efficiency: 0.45, // Our expected overhealing.
+      },
+      { // Crit Stat Buff (Sleepy Ruby Warmth)
+        coefficient: 2.661627,
+        table: -7,
+        ppm: 1.01,
+        stat: "crit",
+        duration: 12,
+      },
+      { // Haste Stat Buff (Under Ruby Wings)
+        coefficient: 2.903762,
+        table: -7,
+        stat: "haste",
+        ppm: 1.01,
+        duration: 12,
+      },
+      { // ST Damage Portion
+        coefficient: 41.75107,
+        table: -9,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      let procRates = {
+        "STHeal": 0.167,
+        "AoEHeal": 0.167,
+        "STDamage": 0.167,
+        "AoEDamage": 0.167,
+        "CritProc": 0.167,
+        "HasteProc":  0.167,
+      }
+
+      // We still require more data using fully trained dragons to lock down specific ratios of abilities
+      // but these 80% ratios should be fair early estimates. 
+      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
+      if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = 0.8; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
+      else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.8; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
+      else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.8; procRates["HasteProc"] = 0.04; }
+      else if (whelpSetting === "Haste Buff") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.8; }
+      else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.8; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
+      else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.8; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
+      else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
+
+      // ST Heal
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency * procRates["STHeal"]) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+      // AoE Heal
+      bonus_stats.hps = processedValue(data[1], itemLevel, data[1].efficiency * procRates["AoEHeal"]) * player.getStatMults(data[1].secondaries) * (Math.sqrt(1 / data[1].targets) * data[1].targets) * data[0].ppm / 60;
+      // Crit Proc
+      bonus_stats.crit = runGenericPPMTrinket(data[2], itemLevel, additionalData.setStats) * procRates["CritProc"];
+      // Haste Proc
+      bonus_stats.haste = runGenericPPMTrinket(data[2], itemLevel, additionalData.setStats) * procRates["HasteProc"];
+
+      // ST DPS and AoE DPS TODO
+      //bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                   Tome of Unstable Power                                       */
     /* ---------------------------------------------------------------------------------------------- */
     // This is technically a party buff but because it comes with downside, that portion isn't currently included.

@@ -471,7 +471,7 @@ export function buildWepCombos(player, active = false, equipped = false) {
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
         item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
-        item.uniqueEquip = item.vaultItem ? "vault" : "";
+        item.uniqueEquip = item.vaultItem ? "vault" : (main_hand.uniqueEquip || off_hand.uniqueEquip);
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
         item.mainHandLevel = main_hand.level;
