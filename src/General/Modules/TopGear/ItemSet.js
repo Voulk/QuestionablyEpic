@@ -133,6 +133,7 @@ class ItemSet {
 
   verifySet(settings = {}) {
     // Verifies that the set is possible.
+    console.log(this.uniques);
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       return false;
     } else if (this.uniques["unity"] && this.uniques["unity"] > 1) {
