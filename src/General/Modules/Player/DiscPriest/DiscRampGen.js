@@ -2,8 +2,8 @@
 
 /**
  * This function will build a spell sequence for a specific ramp. There are three key ramp types included:
- * Fiend Ramps (+ Mindgames if Venthyr + Evang / Shell options)
- * Evang Ramps (Evang / Spirit Shell options): Includes applicators, specific trinket timings.
+ * Fiend Ramps (Evang options)
+ * Evang Ramps (without fiend): Includes applicators, specific trinket timings.
  * Mini Ramps: Includes a smaller number of applicators and then double radiance + DPS spells.
  *
  * @param {*} type Type describes which of the above ramp types to build a sequence for.
@@ -12,7 +12,7 @@
  *                      it with Shadowfiend and if we're using a 1.5 minute trinket we'll use it with every Evang ramp. The system also supports running two 3 minute trinkets and
  *                      alternating them.
  * @param {*} haste A players current haste in whatever set they're using.
- * @param {*} playstyle Playstyles currently include Kyrian Evangelism and Kyrian Spirit Shell but more are coming very soon, and building in new playstyles should be fairly fast and easy.
+ * @param {*} playstyle Playstyles (previous examples being Kyrian Evangelism and Kyrian Spirit Shell) but more are coming very soon, and building in new playstyles should be fairly fast and easy.
  * @param {*} specialSpells Special spells are those that can change our ramp in some way. Rapture is the most prominent current example.
  * @returns The function returns a sequence of spells (which might include trinket uses).
  */
@@ -61,7 +61,7 @@ const getPenance = (talents) => {
     else return "Penance";
 }
 
-// Most of the time we only have one on-use trinket which means we attach it to both ramps if we can, or Boon if we can't.
+// Most of the time we only have one on-use trinket which means we attach it to both ramps if we can.
 // This function will assign which ramp our on-use trinket is attached to if that's necessary.
 // This doesn't include every on-use trinket in the game, but is an easy framework to expand on if you have a specific trinket you'd like to add.
 const buildTrinkets = (trinkets) => {
@@ -70,7 +70,7 @@ const buildTrinkets = (trinkets) => {
         "evang": "",
     }
 
-    // 1.5 minute CD trinkets. We'll auto-include these in both Evang / Shell ramps.
+    // 1.5 minute CD trinkets. We'll auto-include these in both Evang ramps.
     if (trinkets.includes("Time-Breaching Talon")) { onUse.Fiend = "Time-Breaching Talon"; }
     if (trinkets.includes("Voidmender's Shadowgem")) { onUse.Fiend = "Voidmender's Shadowgem"; onUse.evang = "Voidmender's Shadowgem"; }
 
@@ -206,7 +206,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
  * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable.
  * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
  * @param {*} specialSpells Any special spells we'd like to include in the ramp like Rapture.
- * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism (coming soon), Venthyr Spirit Shell (coming soon).
+ * @param {*} playstyle Previous examples: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism, Venthyr Spirit Shell.
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
 export const buildEvangRamp = (applicators, trinket, playstyle, talents, specialSpells = []) => {
@@ -265,7 +265,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
  * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable.
  * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
  * @param {*} specialSpells Any special spells we'd like to include in the ramp like Rapture.
- * @param {*} playstyle Options: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evangelism (coming soon), Venthyr Spirit Shell (coming soon).
+ * @param {*} playstyle Previous examples: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism, Venthyr Spirit Shell.
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
  export const buildMindgamesRamp = (applicators, trinket, specialSpells, playstyle) => {
