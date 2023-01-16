@@ -110,11 +110,14 @@ export const dungeonTrinketData = [
         duration: 12,
       },
       { // Haste Stat Buff (Under Ruby Wings)
+        // Like other mega haste buffs, some specs are unable to take advantage of it in a useful way. 
+        // The spec multiplier ensures the rating is more practical, but it's acknowledged that this is somewhat spurious. 
         coefficient: 2.903762,
         table: -7,
         stat: "haste",
         ppm: 1.01,
         duration: 12,
+        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.7, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
       },
       { // ST Damage Portion
         coefficient: 41.75107,
@@ -133,16 +136,17 @@ export const dungeonTrinketData = [
         "CritProc": 0.167,
         "HasteProc":  0.167,
       }
-
+      const bigProc = 0.75;
+      const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      // but these 80% ratios should be fair early estimates. 
+      // but these 75% ratios should be fair early estimates if not slight underestimates.
       const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
-      if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = 0.8; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
-      else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.8; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
-      else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.8; procRates["HasteProc"] = 0.04; }
-      else if (whelpSetting === "Haste Buff") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.8; }
-      else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.8; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
-      else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.8; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
+      if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = bigProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "Haste Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = bigProc; }
+      else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = bigProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = bigProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
       console.log(itemLevel + " " + processedValue(data[2], itemLevel))
       // ST Heal
@@ -152,7 +156,7 @@ export const dungeonTrinketData = [
       // Crit Proc
       bonus_stats.crit = runGenericPPMTrinket(data[2], itemLevel, additionalData.setStats) * procRates["CritProc"];
       // Haste Proc
-      bonus_stats.haste = runGenericPPMTrinket(data[2], itemLevel, additionalData.setStats) * procRates["HasteProc"];
+      bonus_stats.haste = runGenericPPMTrinket(data[3], itemLevel, additionalData.setStats) * procRates["HasteProc"] * data[3].specMult[player.spec];
 
       // ST DPS and AoE DPS TODO
       //bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
