@@ -211,7 +211,7 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
 }
 
 export function getItemLevelBoost(bossID) {
-  if (bossID ===  2502 || bossID === 2424) return 6;    // Dathea and Kurog 
+  if (bossID ===  2502 || bossID === 2491) return 6;    // Dathea and Kurog 
   else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
   else return 0;
 }

@@ -99,7 +99,7 @@ export const dungeonTrinketData = [
         table: -9,
         secondaries: ['crit', 'versatility'],
         ppm: 1.01,
-        targets: 4.5,
+        targets: 3.5,
         efficiency: 0.45, // Our expected overhealing.
       },
       { // Crit Stat Buff (Sleepy Ruby Warmth)
@@ -144,7 +144,7 @@ export const dungeonTrinketData = [
       else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.8; procRates["AoEDamage"] = 0.04; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
       else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = 0.04; procRates["STHeal"] = 0.04; procRates["STDamage"] = 0.04; procRates["AoEDamage"] = 0.8; procRates["CritProc"] = 0.04; procRates["HasteProc"] = 0.04; }
       else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
-
+      console.log(itemLevel + " " + processedValue(data[2], itemLevel))
       // ST Heal
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency * procRates["STHeal"]) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
       // AoE Heal
@@ -300,11 +300,11 @@ export const dungeonTrinketData = [
     name: "Mote of Sanctification",
     effects: [
       { 
-        coefficient: 180.9063, // Note that this coefficient is for when the target is below 20% health.
+        coefficient: 180.9063, 
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: {Raid: 0.7, Dungeon: 0.9}, //
+        efficiency: {Raid: 0.65, Dungeon: 0.8}, //
         targets: 5,
       },
     ],
