@@ -19,8 +19,8 @@ const EVOKERCONSTANTS = {
     baseMana: 250000,
 
     defaultEmpower: 1,
-    auraHealingBuff: 0.6, 
-    auraDamageBuff: 1.15, 
+    auraHealingBuff: 1,
+    auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
@@ -143,6 +143,17 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
+    // Natural Convergence makes Disintegrate channels 20% faster
+    if (talents.naturalConvergence) {
+        evokerSpells['Disintegrate'][0].castTime -= (evokerSpells['Disintegrate'][0].castTime * 0.2);
+        evokerSpells['Disintegrate'][1].tickRate += (evokerSpells['Disintegrate'][1].tickRate * 0.2);
+    }
+
+    // Energy Loop makes Disintegrate more damage and grants mana over it's duration.
+    if (talents.energyLoop) {
+        evokerSpells['Disintegrate'][0].coeff *= 1.2;
+        evokerSpells['Disintegrate'][1].coeff *= 1.2;
+    }
 
     // Fire Breath talents
     // Note that Lifegivers Flame should always come last.
@@ -151,14 +162,15 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // Lifegivers Flame
     if (talents.lifeGiversFlame) {
         evokerSpells['Fire Breath'].push({
-        spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
-        type: "heal",
-        school: "red",
-        coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
-        expectedOverheal: 0.15,
-        targets: 1,
-        secondaries: ['crit', 'vers']
+            spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
+            type: "heal",
+            school: "red",
+            coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
+            expectedOverheal: 0.15,
+            targets: 1,
+            secondaries: ['crit', 'vers']
         });
+
         evokerSpells['Fire Breath'].push({
             type: "buff",
             name: "Fire Breath",
@@ -196,6 +208,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers']
     })
+
     if (talents.enkindled) {
         evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
         evokerSpells['Living Flame D'][0].coeff *= (1 + 0.03 * talents.enkindled);
@@ -359,11 +372,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
  */
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraDamageBuff;
-    
-    mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
-    
 
-    return mult; 
+    mult *= (buffs.filter(function (buff) {return buff.name === "Energy Loop"}).length > 0 ? 1.2 : 1);
+
+    return mult;
 }
 
 /** A healing spells healing multiplier. It's base healing is directly multiplied by whatever the function returns.
@@ -506,7 +518,7 @@ export const genSpell = (state, spells) => {
 }
 
 
-const apl = ["Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
+const apl = ["Reversion", "Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
@@ -718,11 +730,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
 
-    // Create Echo clones.
+    // Create Echo clones of each valid spell that can be Echo'd.
+    // and add them to the valid spell list
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
         
         // Make sure spell can be copied by Echo.
         // Right now this is almost anything but we'll expect them to make changes later in Alpha.
+
         if (!(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
             //let echoSpell = [...spellData];
             let echoSpell = JSON.parse(JSON.stringify(spellData));
@@ -752,8 +766,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
-        // Check for any expired atonements. 
-        
         // ---- Heal over time and Damage over time effects ----
         // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
         // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
@@ -779,8 +791,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
                     func(state, spell);
+                }
 
-                } 
                 if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
                 else buff.next = buff.next + (buff.tickRate);
             });  
@@ -827,9 +839,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            if (seqType === "Auto") queuedSpell = seq.shift();
+            // If the sequence type is not "Auto" it should
+            // follow the given sequence list
+            if (seqType === "Manual") queuedSpell = seq.shift();
+            // if its is "Auto", use genSpell to auto generate a cast sequence
             else queuedSpell = genSpell(state, evokerSpells);
-    
+
             const fullSpell = evokerSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
@@ -880,7 +895,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
                     if (spellName === "Reversion") echoSpell[0].function = evokerSpells["Reversion"][0].function;
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
-  
+
                 }
 
                 // Remove all of our Echo buffs.

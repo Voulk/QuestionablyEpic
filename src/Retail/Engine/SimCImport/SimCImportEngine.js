@@ -286,6 +286,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
               name: idPayload["effect"]["spell"]["name"],
               level: (itemBaseLevel + itemLevelGain),
             };
+            uniqueTag = "Embellishment";
 
           }
 
@@ -385,7 +386,6 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
     else if (item.effect.type && item.effect.type === "unity") {
       item.uniqueEquip = "unity";
-      //item.id = 1044011
     } else if (item.vaultItem) item.uniqueEquip = "vault";
     else if (uniqueTag !== "") item.uniqueEquip = uniqueTag;
 

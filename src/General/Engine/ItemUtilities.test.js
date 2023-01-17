@@ -120,12 +120,12 @@ describe("getValidWeaponTypes func", () => {
   const itemSubclass = getItemProp(178714, "itemSubClass");
   each`
     spec     | expectedResult
-    ${SPEC.RESTODRUID}   | ${true}
-    ${SPEC.DISCPRIEST}  | ${true}
-    ${SPEC.HOLYPALADIN}  | ${false}
-    ${SPEC.HOLYPRIEST}  | ${true}
+    ${SPEC.RESTODRUID}    |  ${true}
+    ${SPEC.DISCPRIEST}    | ${true}
+    ${SPEC.HOLYPALADIN}   | ${false}
+    ${SPEC.HOLYPRIEST}    | ${true}
     ${SPEC.MISTWEAVERMONK}  | ${true}
-    ${SPEC.RESTOSHAMAN}  | ${true}
+    ${SPEC.RESTOSHAMAN}   | ${true}
     // add new test cases here
     `.test("Checks if $spec can wear a Staff", ({ spec, expectedResult }) => {
     expect(getValidWeaponTypes(spec, "Weapons").includes(itemSubclass)).toBe(expectedResult);

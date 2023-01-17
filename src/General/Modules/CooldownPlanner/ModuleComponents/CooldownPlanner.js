@@ -39,6 +39,10 @@ const debug = false;
 export default function CooldownPlanner(props) {
   debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
 
+  if (ls.get("healerInfo") === null || ls.get("healerInfo").length === 0) {
+    ls.set("healerInfo", []);
+  }
+
   const LightTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
     [`& .${tooltipClasses.arrow}`]: {
       color: green[600],
@@ -145,19 +149,6 @@ export default function CooldownPlanner(props) {
       })
       .map((key, i) => key.zoneID)[0];
 
-    // // Here we need to determine what raid the boss belongs to. This could be done better.
-    // if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
-    //   raid = 2296;
-    // }
-    // if ([2423, 2433, 2429, 2432, 2434, 2430, 2436, 2431, 2422, 2435].includes(currentBoss)) {
-    //   raid = 2450;
-    // }
-    // if ([2512, 2542, 2553, 2540, 2544, 2539, 2529, 2546, 2543, 2549, 2537].includes(currentBoss)) {
-    //   raid = 2481;
-    // }
-    // if ([2587, 2639, 2590, 2592, 2635, 2605, 2614, 2607].includes(currentBoss)) {
-    //   raid = 2522;
-    // }
     setCurrentRaid(raid);
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
@@ -385,7 +376,7 @@ export default function CooldownPlanner(props) {
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
                       handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
-                      disabledCheck={RosterCheck}
+                      // disabledCheck={RosterCheck}
                       changeDifficulty={changeDifficulty}
                       currentRaid={currentRaid}
                       changeBoss={changeBoss}
@@ -403,7 +394,7 @@ export default function CooldownPlanner(props) {
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
-                      disabledCheck={RosterCheck}
+                      // disabledCheck={RosterCheck}
                     />
                   </Grid>
 
@@ -418,20 +409,38 @@ export default function CooldownPlanner(props) {
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
-                      disabledCheck={RosterCheck}
+                      // disabledCheck={RosterCheck}
                     />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} disabledCheck={RosterCheck} />
+                    <ImportPlanDialog
+                      cooldownObject={cooldownObject}
+                      loadPlanData={loadPlanData}
+                      // disabledCheck={RosterCheck}
+                    />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} disabledCheck={RosterCheck} currentPlan={currentPlan} />
+                    <ExportPlanDialog
+                      data={data}
+                      boss={currentBoss}
+                      planName={currentPlan}
+                      plan={data}
+                      currentDifficulty={currentDifficulty}
+                      //disabledCheck={RosterCheck}
+                      currentPlan={currentPlan}
+                    />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ExportERTDialog boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} update={props.update} tableData={data} />
+                    <ExportERTDialog
+                      boss={currentBoss}
+                      currentPlan={currentPlan}
+                      // disabledCheck={RosterCheck}
+                      update={props.update}
+                      tableData={data}
+                    />
                   </Grid>
                 </Grid>
 
