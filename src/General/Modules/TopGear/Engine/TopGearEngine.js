@@ -419,7 +419,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   //const highestWeight = getHighestWeight(castModel);
   //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
   //enchants["Gems"] = highestWeight;
-  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats);
+  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
   enchants["GemCount"] = builtSet.setSockets;
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);

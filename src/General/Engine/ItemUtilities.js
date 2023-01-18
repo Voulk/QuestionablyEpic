@@ -125,7 +125,7 @@ export function getValidWeaponTypes(spec, slot) {
 
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
-export function getGems(spec, gemCount, bonus_stats, topGear = true) {
+export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true) {
   let gemArray = []
   if (gemCount === 0) return [];
   if (spec === "Preservation Evoker" || spec === "Holy Priest") {
@@ -149,12 +149,16 @@ export function getGems(spec, gemCount, bonus_stats, topGear = true) {
       bonus_stats.intellect += 75;
       bonus_stats.haste += 66;
       gemArray.push(192985)
-
     }
-    if (gemCount > 1) {
+    if (gemCount > 1 && contentType === "Raid") {
       bonus_stats.haste += 70 * (gemCount - 1);
       bonus_stats.mastery += 33 * (gemCount - 1);
       gemArray.push(192948)
+    }
+    else if (gemCount > 1 && contentType === "Dungeon") {
+      bonus_stats.haste += 70 * (gemCount - 1);
+      bonus_stats.versatility += 33 * (gemCount - 1);
+      gemArray.push(192952)
     }
     return gemArray;
   }
@@ -180,8 +184,8 @@ export function getGems(spec, gemCount, bonus_stats, topGear = true) {
       gemArray.push(192982)
     }
     if (gemCount > 1) {
-      bonus_stats.crit += 70 * gemCount;
-      bonus_stats.versatility += 33 * gemCount;
+      bonus_stats.crit += 70 * (gemCount - 1);
+      bonus_stats.versatility += 33 * (gemCount - 1)* gemCount;
       gemArray.push(192923)
     }
 
@@ -767,7 +771,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
     // Add Retail Socket
   if (item.socket) {
-    getGems(player.spec, item.socket || 1, bonus_stats, false);
+    getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
