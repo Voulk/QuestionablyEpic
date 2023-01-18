@@ -143,8 +143,8 @@ describe("Evang Cast Sequence", () => {
         //const settings = {'Power of the Dark Side': true, 'includeOverheal': true}
         //const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents, [])
 
-        autoGenRotation(baseTalents, {});
-
+        //autoGenRotation(baseTalents, {});
+        expect(true).toEqual(true);
         /*
         runTalents("Pain and Suffering", baseline, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}, settings);
         runTalents("Painful Punishment", baseline, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}, settings);

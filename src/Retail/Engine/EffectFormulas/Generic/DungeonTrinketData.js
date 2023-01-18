@@ -136,7 +136,7 @@ export const dungeonTrinketData = [
         "CritProc": 0.167,
         "HasteProc":  0.167,
       }
-      const bigProc = 0.75;
+      const bigProc = 0.7;
       const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
       // but these 75% ratios should be fair early estimates if not slight underestimates.
