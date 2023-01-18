@@ -2642,6 +2642,8 @@ export const bossAbilities = {
       importActive: false,
       name: { cn: "火焰裂隙", de: "Flammenriss", en: "Flamerift", fr: "Faille enflammée", ru: "Пламенный портал" },
     },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* ----------------------------------------- Primal Council ----------------------------------------- */
   2590: [
@@ -3059,6 +3061,9 @@ export const bossAbilities = {
       importActive: false,
       name: { cn: "迅猛气息", de: "Brandheiße Präsenz", en: "Blistering Presence", fr: "Présence torride", ru: "Обжигающее присутствие" },
     },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* ---------------------------------------- Dathea, Ascended ---------------------------------------- */
   2607: [
@@ -3231,6 +3236,8 @@ export const bossAbilities = {
       importActive: false,
       name: { cn: "巢穴守护者的愤怒", de: "Wut der Bruthüterin", en: "Broodkeeper's Fury", fr: "Fureur de la garde-couvée", ru: "Неистовство хранительницы стаи" },
     },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* ------------------------------------ Raszageth the Storm-Eater ------------------------------------ */
   2635: [
@@ -3417,6 +3424,25 @@ export const bossAbilities = {
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind.jpg").default,
       importActive: false,
       name: { cn: "无常阵风", de: "Instabile Windstöße", en: "Unstable Gusts", fr: "Vents instables", ru: "Нестабильные порывы" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 181089,
+      icon: "",
+      importActive: false,
+      name: { cn: "Encounter Event", de: "Encounter Event", en: "Encounter Event", fr: "Encounter Event", ru: "Encounter Event" },
     },
   ],
   /* --------------------------------------------- Terros --------------------------------------------- */
