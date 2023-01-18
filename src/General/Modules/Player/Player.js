@@ -238,8 +238,8 @@ class Player {
       if (item.uniqueEquip === "vault") {
         newItem.uniqueEquip = "vault";
         newItem.vaultItem = true;
-        newItem.quality = 4;
       }
+      newItem.quality = 4;
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.
