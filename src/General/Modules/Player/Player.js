@@ -214,10 +214,6 @@ class Player {
   }
 
   catalyzeItem = (item) => {
-    return item; // The Item Catalyst isn't currently active.
-    /*let tempArray = this.activeItems.filter(function (item) {
-      return item.uniqueHash === unique;
-    }); */
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
@@ -227,7 +223,7 @@ class Player {
       "Restoration Shaman": "Theurgic Starspeaker's",
       "Mistweaver Monk": "of the Grand Upwelling",
       "Holy Paladin": "Luminous Chevalier's",
-      //"Preservation Evoker": "",
+      "Preservation Evoker": "of the Awakened",
     };
 
     const temp = itemDB.filter(function (item) {
