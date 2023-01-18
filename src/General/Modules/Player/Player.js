@@ -217,12 +217,12 @@ class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "of the Empyrean",
-      "Discipline Priest": "of the Empyrean",
-      "Restoration Druid": "of the Fixed Stars",
-      "Restoration Shaman": "Theurgic Starspeaker's",
-      "Mistweaver Monk": "of the Grand Upwelling",
-      "Holy Paladin": "Luminous Chevalier's",
+      "Holy Priest": "Draconic Hierophant's",
+      "Discipline Priest": "Draconic Hierophant's",
+      "Restoration Druid": "Lost Landcaller's",
+      "Restoration Shaman": "of Infused Earth",
+      "Mistweaver Monk": "of the Waking Fist",
+      "Holy Paladin": "Virtuous Silver",
       "Preservation Evoker": "of the Awakened",
     };
 
@@ -238,6 +238,7 @@ class Player {
       if (item.uniqueEquip === "vault") {
         newItem.uniqueEquip = "vault";
         newItem.vaultItem = true;
+        newItem.quality = 4;
       }
       this.activeItems = this.activeItems.concat(newItem);
     } else {

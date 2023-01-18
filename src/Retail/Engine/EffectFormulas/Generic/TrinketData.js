@@ -13,15 +13,16 @@ export const raidTrinketData = [
         coefficient: 0.096854,
         table: -7,
         stat: "versatility",
-        percentBoosted: 0.9,
+        percentBoosted: 0.75,
         boostValue: 1.5,
       },
       { // Heal over time portion. Remember this is on both yourself and your bonded target.
+        // The processed value here actually doesn't line up perfectly but is a close estimate. -6 is a difficult table and a precise formula isn't yet available.
         coefficient: 1.29544,
         table: -8, // -6 in spell data.
-        percentBoosted: 0.9,
+        percentBoosted: 0.75,
         boostValue: 2.33,
-        efficiency: 0.5,
+        efficiency: 0.7,
         secondaries: ["haste", "versatility"], // Currently cannot Crit. TODO: Test Haste.
       },
     ],
@@ -32,7 +33,7 @@ export const raidTrinketData = [
       bonus_stats.versatility = processedValue(data[0], itemLevel, versBoost);
 
       if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
-
+      console.log(itemLevel + ": " + processedValue(data[1], itemLevel))
       // Healing Portion
       let healing = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * 2;
       bonus_stats.hps = healing * data[1].efficiency * ( data[0].percentBoosted * data[1].boostValue + (1-data[1].percentBoosted));
