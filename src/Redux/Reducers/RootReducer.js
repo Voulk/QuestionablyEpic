@@ -20,7 +20,7 @@ const initialState = {
   playerSettings: {"includeGroupBenefits": {value: true, options: [true, false], category: "trinkets"},
                     "incarnateAllies": {value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets"},
                     "idolGems": {value: 2, options: [1, 2, 3, 4, 5, 6], category: "trinkets"},
-                    "rubyWhelpShell": {value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "ST Damage", "AoE Damage", "Crit Buff", "Haste Buff"], category: "trinkets"},
+                    "rubyWhelpShell": {value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets"}, // "ST Damage", "AoE Damage", 
                     "alchStonePotions": {value: 1, options: [0, 1, 2], category: "trinkets"},
                     "enchantItems": {value: true, options: [true, false], category: "topGear"},
                     // catalystLimit

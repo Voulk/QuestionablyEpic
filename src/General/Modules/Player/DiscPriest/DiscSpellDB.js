@@ -41,7 +41,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        atoneOverheal: 0.18,
+        atoneOverheal: 0.16,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
@@ -52,7 +52,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.376,
         school: "holy",
-        atoneOverheal: 0.18,
+        atoneOverheal: 0.16,
         secondaries: ['crit', 'vers'],
     }],
     "DefPenance": [{
@@ -115,7 +115,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 0.752,
         cooldown: 15,
-        atoneOverheal: 0.23,
+        atoneOverheal: 0.20,
         school: "holy",
         secondaries: ['crit', 'vers']
     }],
@@ -138,7 +138,7 @@ export const DISCSPELLS = {
         coeff: 2.1875, 
         cooldown: 90,
         school: "holy",
-        atoneOverheal: 0.3,
+        atoneOverheal: 0.25,
         secondaries: ['crit', 'vers'],
     }],
     "Mindgames": [{
@@ -222,7 +222,7 @@ export const DISCSPELLS = {
         tickRate: 3,
         targets: 1,
         buffDuration: 15,
-        overheal: 0.45,
+        overheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery'], // + Haste
         canPartialTick: true,
     }],
@@ -284,7 +284,7 @@ export const DISCSPELLS = {
         coeff: 0.18,
         school: "holy", // This is Radiant damage so Fire / Holy.
         secondaries: ['crit', 'vers'],
-        atoneOverheal: 0.15,
+        atoneOverheal: 0.14,
     },
     {
         castTime: 0,
@@ -464,7 +464,7 @@ export const baseTalents = {
     makeAmends: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 391079, select: true, tier: 3},
     wealAndWoe: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 390786, select: true, tier: 3},
     wrathUnleashed: {points: 0, maxPoints: 1, icon: "spell_priest_divinestar_holy", id: 390781, select: true, tier: 3},
-    twilightEquilibrium: {points: 0, maxPoints: 1, icon: "ability_priest_innerlightandshadow", id: 390705, select: true, tier: 3},
+    twilightEquilibrium: {points: 1, maxPoints: 1, icon: "ability_priest_innerlightandshadow", id: 390705, select: true, tier: 3},
     inescapableTorment: {points: 0, maxPoints: 1, icon: "spell_shadow_chilltouch", id: 373427, select: true, tier: 3},
 
     // Priest class tree

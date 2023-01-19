@@ -99,8 +99,8 @@ export const dungeonTrinketData = [
         table: -9,
         secondaries: ['crit', 'versatility'],
         ppm: 1.01,
-        targets: 3.5,
-        efficiency: 0.45, // Our expected overhealing.
+        targets: 3.2,
+        efficiency: 0.35, // Our expected overhealing. It's extremely high for this and it can also just whiff and hit pets. 
       },
       { // Crit Stat Buff (Sleepy Ruby Warmth)
         coefficient: 2.661627,
@@ -117,7 +117,7 @@ export const dungeonTrinketData = [
         stat: "haste",
         ppm: 1.01,
         duration: 12,
-        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.7, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
+        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.8, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
       },
       { // ST Damage Portion
         coefficient: 41.75107,
@@ -136,10 +136,9 @@ export const dungeonTrinketData = [
         "CritProc": 0.167,
         "HasteProc":  0.167,
       }
-      const bigProc = 0.7;
+      const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      // but these 75% ratios should be fair early estimates if not slight underestimates.
       const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
       if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }

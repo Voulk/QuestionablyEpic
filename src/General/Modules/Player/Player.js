@@ -580,10 +580,10 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 7500,
+        intellect: 7800,
         haste: 4000,
         crit: 2100,
-        mastery: 1050,
+        mastery: 1150,
         versatility: 1400,
         stamina: 1900,
         critMult: 2,
