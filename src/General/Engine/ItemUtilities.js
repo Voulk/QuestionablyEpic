@@ -125,28 +125,71 @@ export function getValidWeaponTypes(spec, slot) {
 
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
-export function getGems(spec, gemCount, bonus_stats) {
+export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true) {
+  let gemArray = []
+  if (gemCount === 0) return [];
   if (spec === "Preservation Evoker" || spec === "Holy Priest") {
     // 
-    bonus_stats.mastery += 70 * gemCount;
-    bonus_stats.crit += 33 * gemCount;
-    return 192958;
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.mastery += 66;
+      gemArray.push(192988)
+    }
+    if (gemCount > 1) {
+      bonus_stats.mastery += 70 * (gemCount - 1);
+      bonus_stats.crit += 33 * (gemCount - 1);
+      gemArray.push(192958)
+    }
+    return gemArray;
   }
   else if (spec === "Restoration Druid" || spec === "Holy Paladin") {
-    bonus_stats.haste += 70 * gemCount;
-    bonus_stats.mastery += 33 * gemCount;
-    return 192948;
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.haste += 66;
+      gemArray.push(192985)
+    }
+    if (gemCount > 1 && contentType === "Raid") {
+      bonus_stats.haste += 70 * (gemCount - 1);
+      bonus_stats.mastery += 33 * (gemCount - 1);
+      gemArray.push(192948)
+    }
+    else if (gemCount > 1 && contentType === "Dungeon") {
+      bonus_stats.haste += 70 * (gemCount - 1);
+      bonus_stats.versatility += 33 * (gemCount - 1);
+      gemArray.push(192952)
+    }
+    return gemArray;
   }
   else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
-    bonus_stats.haste += 70 * gemCount;
-    bonus_stats.crit += 33 * gemCount;
-    return 192945;
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.haste += 66;
+      gemArray.push(192985)
+    }
+    if (gemCount > 1) {
+      bonus_stats.haste += 70 * (gemCount - 1);
+      bonus_stats.crit += 33 * (gemCount - 1);
+      gemArray.push(192945);
+    }
+    return gemArray;
   }
   else if (spec === "Restoration Shaman") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.crit += 66;
+      gemArray.push(192982)
+    }
+    if (gemCount > 1) {
+      bonus_stats.crit += 70 * (gemCount - 1);
+      bonus_stats.versatility += 33 * (gemCount - 1)* gemCount;
+      gemArray.push(192923)
+    }
 
-    bonus_stats.crit += 70 * gemCount;
-    bonus_stats.versatility += 33 * gemCount;
-    return 192923;
+    return gemArray;
   }
   else {
     // This should never be called.
@@ -211,7 +254,7 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
 }
 
 export function getItemLevelBoost(bossID) {
-  if (bossID ===  2502 || bossID === 2424) return 6;    // Dathea and Kurog 
+  if (bossID ===  2502 || bossID === 2491) return 6;    // Dathea and Kurog 
   else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
   else return 0;
 }
@@ -471,7 +514,7 @@ export function buildWepCombos(player, active = false, equipped = false) {
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
         item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
-        item.uniqueEquip = item.vaultItem ? "vault" : "";
+        item.uniqueEquip = item.vaultItem ? "vault" : (main_hand.uniqueEquip || off_hand.uniqueEquip);
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
         item.mainHandLevel = main_hand.level;
@@ -537,8 +580,8 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   // This, on the other hand, is a close estimate that should be replaced ASAP.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
-      // This is an occasionally off-by-one formula for leech that should be rewritten.
-      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
+      // This is an occasionally off-by-one formula for leech that should eventually be replaced.
+      stats.leech = Math.ceil(194 + 1.2307 * (itemLevel - 376));
     } else {
       const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
       stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
@@ -728,7 +771,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
     // Add Retail Socket
   if (item.socket) {
-    getGems(player.spec, item.socket || 1, bonus_stats);
+    getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 

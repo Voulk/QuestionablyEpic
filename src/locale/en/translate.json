@@ -145,7 +145,7 @@
     "Filter": "Filter",
     "GameTypeToggle": {
       "Classic": "Change to Classic (Wrath of the Lich King)",
-      "Retail": "Change to Retail (Shadowlands)"
+      "Retail": "Change to Retail (Dragonflight)"
     },
     "HPS": "HPS",
     "HallOfFame": {
@@ -318,6 +318,10 @@
         "upgradeFinderMetric": {
           "title": "Upgrade Finder",
           "tooltip": "Toggle to show Upgrade Finder in raw or % values."
+        },
+        "rubyWhelpShell": {
+          "title": "Ruby Whelp Specialization",
+          "tooltip": "If you've trained your Ruby Whelp Shell, then you can pick its training target here."
         }
 
 

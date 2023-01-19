@@ -82,6 +82,89 @@ export const dungeonTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Ruby Whelp Shell                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    name: "Ruby Whelp Shell",
+    effects: [
+      { // Healing Portion - Single Target Heal
+        coefficient: 198.7088,
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+        efficiency: 0.55, // Our expected overhealing.
+      },
+      { // Healing Portion - Mending  Breath (AoE)
+        coefficient: 165.5901,
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+        targets: 3.2,
+        efficiency: 0.35, // Our expected overhealing. It's extremely high for this and it can also just whiff and hit pets. 
+      },
+      { // Crit Stat Buff (Sleepy Ruby Warmth)
+        coefficient: 2.661627,
+        table: -7,
+        ppm: 1.01,
+        stat: "crit",
+        duration: 12,
+      },
+      { // Haste Stat Buff (Under Ruby Wings)
+        // Like other mega haste buffs, some specs are unable to take advantage of it in a useful way. 
+        // The spec multiplier ensures the rating is more practical, but it's acknowledged that this is somewhat spurious. 
+        coefficient: 2.903762,
+        table: -7,
+        stat: "haste",
+        ppm: 1.01,
+        duration: 12,
+        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.8, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
+      },
+      { // ST Damage Portion
+        coefficient: 41.75107,
+        table: -9,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      let procRates = {
+        "STHeal": 0.167,
+        "AoEHeal": 0.167,
+        "STDamage": 0.167,
+        "AoEDamage": 0.167,
+        "CritProc": 0.167,
+        "HasteProc":  0.167,
+      }
+      const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
+      const smallProc = (1 - bigProc) / 5;
+      // We still require more data using fully trained dragons to lock down specific ratios of abilities
+      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
+      if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = bigProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "Haste Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = bigProc; }
+      else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = bigProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = bigProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
+      else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
+
+      // ST Heal
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency * procRates["STHeal"]) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+      // AoE Heal
+      bonus_stats.hps = processedValue(data[1], itemLevel, data[1].efficiency * procRates["AoEHeal"]) * player.getStatMults(data[1].secondaries) * (Math.sqrt(1 / data[1].targets) * data[1].targets) * data[0].ppm / 60;
+      // Crit Proc
+      bonus_stats.crit = runGenericPPMTrinket(data[2], itemLevel, additionalData.setStats) * procRates["CritProc"];
+      // Haste Proc
+      bonus_stats.haste = runGenericPPMTrinket(data[3], itemLevel, additionalData.setStats) * procRates["HasteProc"] * data[3].specMult[player.spec];
+
+      // ST DPS and AoE DPS TODO
+      //bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                   Tome of Unstable Power                                       */
     /* ---------------------------------------------------------------------------------------------- */
     // This is technically a party buff but because it comes with downside, that portion isn't currently included.
@@ -220,16 +303,17 @@ export const dungeonTrinketData = [
     name: "Mote of Sanctification",
     effects: [
       { 
-        coefficient: 180.9063, // Note that this coefficient is for when the target is below 20% health.
+        coefficient: 180.9063, 
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: {Raid: 0.7, Dungeon: 0.9}, //
+        efficiency: {Raid: 0.65, Dungeon: 0.85}, //
         targets: 5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
@@ -290,7 +374,7 @@ export const dungeonTrinketData = [
         bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
       }
       else {
-        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c90", "cooldownMult") || 1); 
       }
       
 

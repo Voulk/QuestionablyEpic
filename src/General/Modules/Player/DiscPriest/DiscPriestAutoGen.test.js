@@ -1,165 +1,16 @@
-import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-
+import { Stats } from 'fs';
+import Player from 'General/Modules/Player/Player';
+import { allRamps, allRampsHealing } from "./DiscRampUtilities";
+import { getSpellRaw, runCastSequence } from "./DiscPriestRamps";
+import { genStatWeights } from './DiscPriestUtilities';
+import { buildRamp } from "./DiscRampGen";
+import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
-/*
-describe("Test Base Spells", () => {
-    const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
-    const activeStats = {
-            intellect: 1974,
-            haste: 869,
-            crit: 1000,
-            mastery: 451,
-            versatility: 528,
-            stamina: 1900,
-    }
-    const critMult = 1.05 + activeStats.crit / 35 / 100; 
-    test("Smite", () => {
-        const spell = DISCSPELLS['Smite'][0];
 
-        const damage = getSpellRaw(spell, activeStats);
-
-        //expect(Math.round(damage)).toEqual(Math.round(1110*critMult));
-    });
-    test("Mind Blast", () => {
-        const spell = DISCSPELLS['Mind Blast'][0];
-        expect(Math.abs(getSpellRaw(spell, activeStats) - 1666*critMult)).toBeLessThan(3);
-    });
-    test("Solace", () => {
-        const spell = DISCSPELLS['Power Word: Solace'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 1680*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Schism", () => {
-        const spell = DISCSPELLS['Schism'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 3150*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Radiance", () => {
-        const spell = DISCSPELLS['Power Word: Radiance'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 2347*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Shield", () => {
-        const spell = DISCSPELLS['Power Word: Shield'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 3687*critMult)).toBeLessThan(errorMargin);
-    });
-
-    // TODO: test more spells.
-});
-*/
-/*
-describe("Disintegrate", () => {
-    // In game dmg, fresh lvl 70 character
-    // Disintegrate tick = 1826
-    const activeStats = {
-        intellect: 2089,
-        haste: 0,
-        crit: 600,
-        mastery: 600,
-        versatility: 0,
-        stamina: 2800,
-
-        critMult: 1,
-    };
-
-
-    const settings = {reporting: true};
-
-    const print = (name, base, healing) => {
-        let percInc = Math.round(10000*(healing / base - 1))/100;
-        console.log(name + ": " + healing + " (+" + percInc + "%)")
-    };
-
-    const talents = {...baseTalents};
-
-    
-    test("Disintegrate should do 1826 dmg as per 10.0.2 (max lvl 70)", () => {
-        const iter = 5;
-        const results = {dmgDone: 0};
-
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Disintegrate"];
-
-            const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
-
-            results.dmgDone += sequenceResult.totalDamage;
-        }
-
-        console.log(`Damage done over ${iter} iterations: ${results.dmgDone}\n` +
-                    `Damage in a single iteration: ${results.dmgDone / iter}\n` +
-                    `Damage in a single cast: ${Math.ceil(results.dmgDone / iter / 4)}\n`);
-
-        expect(Math.ceil((results.dmgDone / iter) / 4)).toBe(1826);
-    });
-
-    test("Disintegrate should tick faster if Natural Convergence is selected", () => {
-        const iter = 1;
-        const results = {numberOfCastsWithNC: 0, numberOfCastsWithoutNC: 0, timeElapsedNC: 0, timeElapsedWNC: 0};
-
-        const localTalents = {naturalConvergence: {points: 1}, ...talents};
-
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate"];
-
-            const sequenceResult = runCastSequence(seq, activeStats, settings, localTalents);
-
-            results.numberOfCastsWithNC += Math.floor((sequenceResult.totalDamage / 1826) / 4); // give the number of casts aprox.
-            results.timeElapsedNC += sequenceResult.t;
-        }
-
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate"];
-
-            const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
-
-            results.numberOfCastsWithoutNC += Math.floor((sequenceResult.totalDamage / 1826) / 4);
-            results.timeElapsedWNC += sequenceResult.t;
-        }
-
-        console.log(`Number of Casts with NC: ${results.numberOfCastsWithNC}\n` +
-                    `Number of Casts without NC: ${results.numberOfCastsWithoutNC}`);
-
-        console.log(`Time Elapsed with NC: ${results.timeElapsedNC}\n` +
-                    `Time Elapsed without NC: ${results.timeElapsedWNC}`);
-    });
-
-    test("Disintegrate should do 20% extra damage, and restore 7200 mana if talented into Energy Loop", () => {
-        const localTalents = {energyLoop: {points: 1}, ...talents};
-
-        const seq = ["Disintegrate"];
-
-        const baselineSequenceResult = runCastSequence(seq, activeStats, settings, talents);
-
-        const talentedSequenceResult = runCastSequence(seq, activeStats, settings, localTalents);
-
-        console.log(talentedSequenceResult);
-
-        // Each tick should do 1826 dmg for a total of 7304 dmg in 4 ticks.
-        // but the engine rounds up the total amount of dmg, so each tick actually do
-        // 1825.78 dmg (in the engine), so the result should go down to 7303
-        expect(baselineSequenceResult.totalDamage).toBe(7303);
-
-        const buffedDmg = baselineSequenceResult.totalDamage + (baselineSequenceResult.totalDamage * 0.20);
-
-        expect(talentedSequenceResult.totalDamage).toBe(buffedDmg);
-    }); 
-});*/
-
-
-describe("Echo Ramp Sequence", () => {
+describe("Evang Cast Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
     /*player.activeStats = {
             intellect: 1974,
@@ -170,93 +21,159 @@ describe("Echo Ramp Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 1,
-        haste: 4000,
-        crit: 600,
-        mastery: 600,
-        versatility: 600,
-        stamina: 2800,
-
-        critMult: 1,
-}
+        intellect: 7500,
+        haste: 3800,
+        crit: 2400,
+        mastery: 1900,
+        versatility: 1100,
+        stamina: 6559,
     
+        critMult: 2,
+      };
+    
+    // Old Sequences
+    //const boonSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture'])
+    //const boon4pc = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Kyrian Evangelism", ['Rapture', "4T28"])
+    //const fiendSeq = buildRamp('Fiend', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
+    //const evangSeq = buildRamp('Boon', 10, ["Instructor's Divine Bell (new)"], activeStats.haste, "Venthyr Evangelism", ['Rapture'])
 
-    const settings = {reporting: true}
+
+    const talentSet = {... baseTalents};
+
+    /*const seq = ["Shadow Word: Pain", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+                    "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+                    "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
+                    "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"]; 
+
+    const seq2 = ["Purge the Wicked", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+        "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
+        "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
+        "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"];  */
+    //const seq = ["Penance"];
+    //console.log(evangSeq)
 
     const print = (name, base, healing) => {
         let percInc = Math.round(10000*(healing / base - 1))/100;
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
-    
+    const runTalents = (talentName, baseline, talents, settings) => {
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talents)
+        print(talentName, baseline, allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, talents));
+    }
 
-    const talents = {...baseTalents, bountifulBloom: true, renewingBreath: 3, timelessMagic: 3, lifeforceMender: 3, callOfYsera: true, sacralEmpowerment: true,
-                        temporalCompression: true, lushGrowth: 2, attunedToTheDream: 2, lifeGiversFlame: false, cycleOfLife: true, fieldOfDreams: true}
+    const autoGenRotation = (talents, settings) => {
+        // We can also auto-gen our application portion but we won't just yet.
+        const applicationPortion = ["Purge the Wicked", "Power Word: Shield", "Renew", "Renew", "Renew", "Power Word: Shield", "Renew", "Renew", "Renew", "Renew", "Power Word: Shield", "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Shadowfiend"];
+        const dpsCooldownList = ["Mind Blast", "Penance", "Schism", "Mindgames", "Shadow Word: Death", ["Smite", "Smite"], "Smite", "Smite"] // Shadow Covenant
+        //const dpsCooldownList = ["Mind Blast", "Penance", "Schism"]
+        const dpsSpamList = ["Smite"]
+        let results = [];
+        const t1 = Date.now();
+        const sequenceList = permute(dpsCooldownList);
+        
+        console.log(sequenceList.length);
 
-    /*
-    test("Spell HPM", () => {
-        const spellList = Object.keys(EVOKERSPELLDB);
-        const spellHPMs = []
+        for (var i = 0; i < sequenceList.length; i++) {
+            const compiledSeq = applicationPortion.concat(sequenceList[i]).flat();
 
-        spellList.forEach(spellName => {
-            const seq = [spellName];
-            const spellData = {name: spellName}
-            const rawSpell = EVOKERSPELLDB[spellName];
+            const rampResult = runCastSequence(compiledSeq, activeStats, settings, talents);
 
-            const baseline = runCastSequence(seq, activeStats, settings, talents)
+        
+            results.push({"seq": sequenceList[i], "result": rampResult.totalHealing})
 
-            spellData.healing = Math.round(baseline.totalHealing) || 0;
-            spellData.hpm = Math.round(100*baseline.hpm)/100 || 0;
+            if (i % 5000 === 0) {
+                results = sortItems(results);
+                results = results.splice(0, 3);
 
-            if (rawSpell[0].empowered) spellData.name = spellData.name + " (4x EMPOWERED)";
-            if (rawSpell[0].essence) spellData.essenceCost = rawSpell[0].essence;
-            
+                if (i % 100000 === 0) {
+                    console.log(i);
+                }
+            }
 
-            spellHPMs.push(spellData);
-        })
+        } 
+        console.log(sortItems(results).splice(0, 3));
+        console.log("Time: " + (Date.now() - t1) / 1000 + "s")
+        
+    }
 
-        console.log(spellHPMs);
+    function sortItems(container) {
+        // Current default sorting is by HPS (soft score) but we could get creative here in future.
+        container.sort((a, b) => (a.result < b.result ? 1 : -1));
+      
+        return container;
+      }
 
-    });
-    */
+    function permute(permutation) {
+        var length = permutation.length,
+            result = [permutation.slice()],
+            c = new Array(length).fill(0),
+            i = 1, k, p;
+      
+        while (i < length) {
+          if (c[i] < i) {
+            k = i % 2 && c[i];
+            p = permutation[i];
+            permutation[i] = permutation[k];
+            permutation[k] = p;
+            ++c[i];
+            i = 1;
+            result.push(permutation.slice());
+          } else {
+            c[i] = 0;
+            ++i;
+          }
+        }
+        return result;
+      }
+
 
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
 
+        //console.log("Baseline: " + JSON.stringify(runCastSequence(seq, activeStats, {}, talents)))
+
+        const seq = buildRamp('Primary', 10, [], activeStats.haste, "", talentSet)
+        const fiendSeq = buildRamp('Secondary', 10, [], activeStats.haste, "", talentSet)
+
+
         //console.log(seq);
-        const iter = 1;
-        const results = {healingDone: 0, manaSpent: 0};
 
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Reversion", "Echo", "Echo", "Echo", "Fire Breath", "Echo", "Echo", "Spiritbloom"] 
-            const seq2 = ["Emerald Blossom", "Emerald Blossom", "Emerald Blossom", "Living Flame", "Living Flame"]
-            const baseline = runCastSequence(seq, activeStats, settings, talents)
+        //const settings = {'Power of the Dark Side': true, 'includeOverheal': true}
+        //const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents, [])
 
-            results.healingDone += baseline.totalHealing;
-            results.manaSpent += baseline.manaSpent;
-
-            console.log(baseline);
-
-            //console.log("Baseline: " + JSON.stringify(baseline));
-        }
-        
-        console.log(`Healing Done over ${iter} iterations: ` + results.healingDone / iter + " at cost: " + results.manaSpent / iter);
-        
+        //autoGenRotation(baseTalents, {});
+        expect(true).toEqual(true);
         /*
+        runTalents("Pain and Suffering", baseline, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}, settings);
+        runTalents("Painful Punishment", baseline, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}, settings);
+        runTalents("Malicious Intent", baseline, {...baseTalents, maliciousIntent: {...baseTalents.maliciousIntent, points: 1}}, settings)
+        runTalents("Stolen Psyche", baseline, {...baseTalents, stolenPsyche: {...baseTalents.stolenPsyche, points: 1}}, settings)
+        
+        runTalents("Sins of the Many", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings) 
+        //runTalents("Castigation", baseline, {...baseTalents, sinsOfTheMany: {...baseTalents.sinsOfTheMany, points: 1}}, settings)
+        runTalents("Aegis of Wrath", baseline, {...baseTalents, aegisOfWrath: {...baseTalents.aegisOfWrath, points: 1}}, settings)
+        runTalents("Resplendent Light", baseline, {...baseTalents, resplendentLight: {...baseTalents.resplendentLight, points: 1}}, settings)
+        runTalents("Wrath Unleashed", baseline, {...baseTalents, wrathUnleashed: {...baseTalents.wrathUnleashed, points: 1}}, settings)
+        runTalents("Divine Aegis", baseline, {...baseTalents, divineAegis: {...baseTalents.divineAegis, points: 1}}, settings)
+        runTalents("Harsh Discipline", baseline, {...baseTalents, harshDiscipline: {...baseTalents.harshDiscipline, points: 1}}, settings)
+        runTalents("Train of Thought", baseline, {...baseTalents, trainOfThought: {...baseTalents.trainOfThought, points: 1}}, settings)
+        runTalents("Contrition", baseline, {...baseTalents, contrition: {...baseTalents.contrition, points: 2}}, settings)
+        runTalents("Expiation", baseline, {...baseTalents, expiation: {...baseTalents.expiation, points: 1}}, settings)
+        runTalents("Twilight Equilibrium", baseline, {...baseTalents, twilightEquilibrium: {...baseTalents.twilightEquilibrium, points: 1}}, settings)
+        runTalents("Weal & Woe", baseline, {...baseTalents, wealAndWoe: {...baseTalents.wealAndWoe, points: 1}}, settings)
 
-        
-        
-        print("Malicious Scission", baseline, allRampsHealing(seq, activeStats, settings, {...talents, maliciousScission: true}))
-        
-        print("Stolen Psyche", baseline, allRampsHealing(seq, activeStats, settings, {...talents, stolenPsyche: 2}))
-        print("Lesson in Humility", baseline, allRampsHealing(seq, activeStats, settings, {...talents, lessonInHumility: 2}))
+*   /
 
+        /*
         print("PtW / Revel / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
                 revelInPurity: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))
         print("PtW / Swift Pen / Lesson in Humi / Evenfall / LW / Indem", baseline, allRampsHealing(seq2, activeStats, settings, {...imprTalents, 
-                swiftPenitence: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))                                                            
+                swiftPenitence: 2, purgeTheWicked: true, lessonInHumility: 2, evenfall: 2, indemnity: true}))      
+                
         */
+        
         //console.log(allRamps(seq, activeStats, settings, {...talents, stolenPsyche: 2}, true))
         //runCastSequence(seq, activeStats, settings, conduits);
 
