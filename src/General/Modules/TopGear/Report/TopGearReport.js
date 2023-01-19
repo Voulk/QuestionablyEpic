@@ -69,6 +69,7 @@ function TopGearReport(props) {
   let itemList = {};
   let statList = {};
   let history = useHistory();
+  let intSlot = false;
 
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -170,10 +171,10 @@ function TopGearReport(props) {
                           {itemList
                             .filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist")
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} />
                             ))}
                           {newWeaponCombos.map((item, index) => (
-                            <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
+                            <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} />
                           ))}
                         </Grid>
                       </Grid>
@@ -197,7 +198,7 @@ function TopGearReport(props) {
                                 key.slot === "Relics & Wands",
                             )
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} />
                             ))}
                         </Grid>
                       </Grid>

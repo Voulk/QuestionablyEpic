@@ -99,8 +99,8 @@ export const dungeonTrinketData = [
         table: -9,
         secondaries: ['crit', 'versatility'],
         ppm: 1.01,
-        targets: 3.5,
-        efficiency: 0.45, // Our expected overhealing.
+        targets: 3.2,
+        efficiency: 0.35, // Our expected overhealing. It's extremely high for this and it can also just whiff and hit pets. 
       },
       { // Crit Stat Buff (Sleepy Ruby Warmth)
         coefficient: 2.661627,
@@ -117,7 +117,7 @@ export const dungeonTrinketData = [
         stat: "haste",
         ppm: 1.01,
         duration: 12,
-        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.7, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
+        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.8, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
       },
       { // ST Damage Portion
         coefficient: 41.75107,
@@ -136,10 +136,9 @@ export const dungeonTrinketData = [
         "CritProc": 0.167,
         "HasteProc":  0.167,
       }
-      const bigProc = 0.75;
+      const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      // but these 75% ratios should be fair early estimates if not slight underestimates.
       const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
       if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
@@ -148,7 +147,7 @@ export const dungeonTrinketData = [
       else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = bigProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = bigProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
-      console.log(itemLevel + " " + processedValue(data[2], itemLevel))
+
       // ST Heal
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency * procRates["STHeal"]) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
       // AoE Heal
@@ -308,12 +307,13 @@ export const dungeonTrinketData = [
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: {Raid: 0.65, Dungeon: 0.8}, //
+        efficiency: {Raid: 0.65, Dungeon: 0.85}, //
         targets: 5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
@@ -374,7 +374,7 @@ export const dungeonTrinketData = [
         bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
       }
       else {
-        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c90", "cooldownMult") || 1); 
       }
       
 

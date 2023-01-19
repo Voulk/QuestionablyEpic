@@ -96,7 +96,7 @@ export default function ItemCard(props) {
             <Grid item>
               {item.canBeCatalyzed() ? (
                 <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
-                  <IconButton disabled={true} sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
+                  <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
                     <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
                   </IconButton>
                 </Tooltip>

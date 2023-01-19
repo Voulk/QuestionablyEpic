@@ -58,11 +58,11 @@ export const druidDefaultSpecialQueries = (contentType) => {
     specialQueries = {
       chilledClarityExtension: 33000,
       ConvokeChannelHPS: 480,
-      OneManaHealing: 9.5,
+      OneManaHealing: 9.55,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
         c60: 1.2,
-        c90: 1.25,
+        c90: 1.29,
         c120: 1.1,
         c180: 1.05,
 

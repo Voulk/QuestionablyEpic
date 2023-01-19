@@ -34,10 +34,15 @@ export const paladinMeleeSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      OneManaHealing: 6,
-      chilledClarityExtension: 25000,
+      OneManaHealing: 6.9,
+      chilledClarityExtension: 28000,
       CastsPerMinute: 27,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1.2,
+        c180: 1,
+
         oneMinute: 1,
         ninetySeconds: 1,
         twoMinutes: 1.2,
@@ -51,6 +56,11 @@ export const paladinMeleeSpecialQueries = (contentType) => {
       OneManaHealing: 0.7,
       CastsPerMinute: 30,
       cooldownMult: {
+        c60: 1,
+        c90: 1,
+        c120: 1.2,
+        c180: 1,
+
         oneMinute: 1,
         ninetySeconds: 1,
         twoMinutes: 1.25,
@@ -71,19 +81,19 @@ export const paladinMeleeStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.411,
-    crit: 0.368,
-    mastery: 0.398,
-    versatility: 0.355,
-    leech: 0.45,
+    haste: 0.421,
+    crit: 0.372,
+    mastery: 0.407,
+    versatility: 0.365,
+    leech: 0.44,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.416,
-    crit: 0.359,
-    mastery: 0.29,
-    versatility: 0.375,
+    haste: 0.426,
+    crit: 0.379,
+    mastery: 0.31,
+    versatility: 0.395,
     leech: 0.4,
     defaults: true,
   };

@@ -42,7 +42,7 @@ class ItemSet {
   // Classic Socket List
   bcSockets = {};
 
-
+  firstSocket = ""; // The slot of the first socket in the set. Used to work out where to put our int gem. No effect on scoring.
 
 
   // This is for testing purposes only. It will print every item in the collection to the console.
@@ -103,7 +103,10 @@ class ItemSet {
         }
       }
 
-      if (item.socket) setSockets += item.socket;
+      if (item.socket) {
+        if (this.firstSocket === "") {this.firstSocket = item.slot;}
+        setSockets += item.socket;
+      }
       //if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1

@@ -129,7 +129,7 @@ export default function ItemBar(props) {
         let craftedSocket = checkDefaultSocket(itemID);
         item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
-
+        if (item.slot === "Neck") item.socket = 3;
         //if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
         //item.uniqueEquip = "legendary";
         let bonusString = "";
@@ -142,6 +142,7 @@ export default function ItemBar(props) {
         item.guessQualityColor();
       } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
+        if (item.slot === "Neck" && itemSocket) item.socket = 3;
         item.guessQualityColor();
 
       }
