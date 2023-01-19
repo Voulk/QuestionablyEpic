@@ -373,7 +373,7 @@ export const dungeonTrinketData = [
         bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
       }
       else {
-        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown; // TODO: Add CD Mult.
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown * additionalData.castModel.getSpecialQuery("c90", "cooldownMult"); 
       }
       
 

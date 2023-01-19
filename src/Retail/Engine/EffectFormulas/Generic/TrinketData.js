@@ -22,7 +22,7 @@ export const raidTrinketData = [
         table: -8, // -6 in spell data.
         percentBoosted: 0.75,
         boostValue: 2.33,
-        efficiency: 0.7,
+        efficiency: 0.74,
         secondaries: ["haste", "versatility"], // Currently cannot Crit. TODO: Test Haste.
       },
     ],
