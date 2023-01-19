@@ -511,6 +511,17 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
+  {
+    name: { en: "Ascendance", cn: "升腾", de: "Aszendenz", fr: "Ascendance", ru: "Перерождение" },
+    guid: 114052,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_fire_elementaldevastation.jpg").default,
+    duration: 15,
+    cooldown: 180,
+    class: "RestorationShaman",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+    type: "cooldown",
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Evoker                                             */
