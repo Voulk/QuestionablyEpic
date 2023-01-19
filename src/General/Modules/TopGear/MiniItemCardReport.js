@@ -52,12 +52,6 @@ export default function ItemCardReport(props) {
   const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const socketImg = {
-    haste: hasteSocket,
-    crit: critSocket,
-    mastery: masterySocket,
-    versatility: versSocket,
-  };
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = getGemProp(enchants["Gems"], "icon");
@@ -85,14 +79,26 @@ export default function ItemCardReport(props) {
 
   let itemName = "";
   let isVault = item.vaultItem;
-
+  
   let socket = [];
   if (item.socket) {
-    for (let i = 0; i < item.socket; i++) {
+    let socketCount = item.socket;
+
+    if (props.firstSlot) {// This is our first gem and we can socket int here.
       socket.push (
         <div style={{ display: "inline", marginRight: "5px"}}>
-        <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"], "name"))} arrow>
-          <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+        <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][0], "name"))} arrow>
+          <img src={getGemProp(enchants["Gems"][0], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+        </Tooltip>
+      </div>
+      );
+      socketCount -= 1;
+    }
+    for (let i = 0; i < socketCount; i++) {
+      socket.push (
+        <div style={{ display: "inline", marginRight: "5px"}}>
+        <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][1], "name"))} arrow>
+          <img src={getGemProp(enchants["Gems"][1], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
         </Tooltip>
       </div>
       );

@@ -45,7 +45,7 @@ const DISCCONSTANTS = {
     // As always, Top Gear is able to provide a more complete picture. 
     if (settings['DefaultLoadout']) {
         settings['T29_2'] = true;
-        settings['T29_4'] = false;
+        settings['T29_4'] = true;
 
     }
 

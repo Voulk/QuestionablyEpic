@@ -40,7 +40,7 @@ export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, cast
     trinket[trinketName] = trinketValue;
     const rampHealing = allRampsHealing([], playerStats, {"playstyle": castModel.playstyle || "", "reporting": false, "DefaultLoadout": true}, {}, trinket, false) / 180;
 
-    return (rampHealing - player.getRampID('baseline', "Raid")) * (1 - 0.1);
+    return (rampHealing - player.getRampID('baseline', "Raid")) * (1 - 0.05);
 
   }
 

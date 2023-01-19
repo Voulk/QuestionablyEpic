@@ -299,7 +299,7 @@ export default function CooldownPlanner(props) {
                       value={currentBoss}
                       placeholder={"Boss"}
                       onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
-                      disabled={RosterCheck}
+                      // disabled={RosterCheck}
                       size="small"
                     >
                       {bossList
@@ -327,7 +327,7 @@ export default function CooldownPlanner(props) {
                       placeholder={t("Difficulty")}
                       value={currentDifficulty}
                       onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
-                      disabled={currentBoss === "" || RosterCheck ? true : false}
+                      disabled={currentBoss === "" ? true : false}
                       size="small"
                     >
                       {["Heroic", "Mythic"].map((key, i, arr) => {

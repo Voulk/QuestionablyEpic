@@ -60,16 +60,18 @@ describe("Test Base Spells", () => {
     // TODO: test more spells.
 });
 */
-// describe("Disintegrate", () => {
-//     // In game dmg, fresh lvl 70 character
-//     // Disintegrate tick = 1826
-//     const activeStats = {
-//         intellect: 2089,
-//         haste: 0,
-//         crit: 600,
-//         mastery: 600,
-//         versatility: 0,
-//         stamina: 2800,
+
+describe("Disintegrate", () => {
+    // In game dmg, fresh lvl 70 character
+    // Disintegrate tick = 1826
+    const activeStats = {
+        intellect: 2089,
+        haste: 0,
+        crit: 600,
+        mastery: 600,
+        versatility: 0,
+        stamina: 2800,
+
 
 //         critMult: 1,
 //     };
@@ -84,9 +86,11 @@ describe("Test Base Spells", () => {
 
 //     const talents = {...baseTalents};
 
-//     test("Disintegrate should do 1826 dmg as per 10.0.2 (max lvl 70)", () => {
-//         const iter = 5;
-//         const results = {dmgDone: 0};
+   
+    test("Disintegrate should do 1826 dmg as per 10.0.2 (max lvl 70)", () => {
+        const iter = 5;
+        const results = {dmgDone: 0};
+
 
 //         for (let i = 0; i < iter; i++) {
 //             const seq = ["Disintegrate"];
@@ -152,9 +156,10 @@ describe("Test Base Spells", () => {
 
 //         const buffedDmg = baselineSequenceResult.totalDamage + (baselineSequenceResult.totalDamage * 0.20);
 
-//         expect(talentedSequenceResult.totalDamage).toBe(buffedDmg);
-//     });
-// });
+        expect(talentedSequenceResult.totalDamage).toBe(buffedDmg);
+    }); 
+});*/
+
 
 
 describe("Echo Ramp Sequence", () => {

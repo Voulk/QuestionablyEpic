@@ -10,17 +10,28 @@ export default function createKurogEvents(bossID, difficulty, damageTakenData, d
   const earthDominance = 396085;
   const stormDominance = 396113;
   const blisteringPresence = 396201; // We will use the flame adds ID for the events
+  const primalAttunement = 396241; // P4
 
   const logGuids = damageTakenData
     .map((key) => key.ability.guid)
     .concat(debuffs.map((key) => key.ability.guid))
-    .concat(buffData.map((key) => key.ability.guid));
+    .concat(buffData.map((key) => key.ability.guid))
+    .concat(enemyCasts.map((key) => key.ability.guid));
 
   events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                          Phase Events                                          */
   /* ---------------------------------------------------------------------------------------------- */
+
+  if (logGuids.includes(primalAttunement)) {
+    const primalAttunementCast = buffData.filter((filter) => filter.ability.guid === primalAttunement);
+
+    events.push({
+      time: moment.utc(fightDuration(primalAttunementCast[0].timestamp, starttime)).startOf("second").format("mm:ss"),
+      bossAbility: "Phase 4",
+    });
+  }
 
   if (logGuids.includes(primalBarrier)) {
     const primalBarrierApplied = buffData.filter((filter) => filter.ability.guid === primalBarrier && filter.type === "applybuff");

@@ -10,6 +10,20 @@
 export const changeLog = [
   {
     version: "10.0.2",
+    update: 8,
+    date: "18 January",
+    changes: [ 
+      "Intellect gems will now appear in Top Gear.",
+      "Necks manually added with a socket, or in Upgrade Finder will now add 3 of them by default.",
+      "Ruby Whelp Shell now has a setting that lets you select its training mode.",
+      "Enabled the Creation Catalyst for Dragonflight (opens in-game next week).",
+      "Bugfix: Kurog Grimtotem will now show at the appropriate item level in Upgrade Finder.",
+      "Bugfix: Weapons with a UniqueEquip (like embellishments) will now be correctly limited.",
+      "Bugfix: Fixed a bug where leech was being underallocated on trinkets.",
+      "Added some missing Timewalking items.",
+  ]},
+  {
+    version: "10.0.2",
     update: 7,
     date: "11 January",
     changes: [ 
