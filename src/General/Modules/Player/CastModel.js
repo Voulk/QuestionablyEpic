@@ -63,7 +63,7 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 65000,
+      hps: 68000,
       rawhps: 70200,
       dps: 7000,
       fightLength: 400,

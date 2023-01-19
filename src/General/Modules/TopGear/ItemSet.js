@@ -104,7 +104,7 @@ class ItemSet {
       }
 
       if (item.socket) {
-        if (this.firstSocket === "") {this.firstSocket = item.slot; console.log(item.slot);}
+        if (this.firstSocket === "") {this.firstSocket = item.slot;}
         setSockets += item.socket;
       }
       //if (item.hasDomSocket) domSockets++;

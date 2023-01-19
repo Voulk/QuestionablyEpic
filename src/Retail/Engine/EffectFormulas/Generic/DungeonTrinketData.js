@@ -147,7 +147,7 @@ export const dungeonTrinketData = [
       else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = bigProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = bigProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
-      console.log(itemLevel + " " + processedValue(data[2], itemLevel))
+
       // ST Heal
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency * procRates["STHeal"]) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
       // AoE Heal
@@ -307,12 +307,13 @@ export const dungeonTrinketData = [
         table: -8,
         secondaries: ['versatility', 'crit'],
         cooldown: 90,
-        efficiency: {Raid: 0.65, Dungeon: 0.8}, //
+        efficiency: {Raid: 0.65, Dungeon: 0.85}, //
         targets: 5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
@@ -373,7 +374,7 @@ export const dungeonTrinketData = [
         bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
       }
       else {
-        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown * additionalData.castModel.getSpecialQuery("c90", "cooldownMult"); 
+        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c90", "cooldownMult") || 1); 
       }
       
 
