@@ -113,6 +113,14 @@ export const extendBuff = (activeBuffs, timer, spellName, extension) => {
     });
 }
 
+/** Check if a specific buff is active and returns the value of it.
+ * @param buffs An array of buff objects.
+ * @param buffName The name of the buff we're searching for.
+ */
+export const getBuffValue = (buffs, buffName) => {
+    const buff = buffs.filter(function (buff) {return buff.name === buffName})[0]
+    return buff.value || 0;
+}
 
 /**
  * Returns a spells stat multiplier based on which stats it scales with.

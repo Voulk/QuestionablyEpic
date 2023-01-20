@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -21,6 +21,8 @@ const DISCCONSTANTS = {
     auraHealingBuff: 1, 
     auraDamageBuff: 0.94,
     
+    atonementMults: {"shadow": 1, "holy": 1},
+    shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
     enemyTargets: 1, 
     sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
             11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
@@ -72,13 +74,13 @@ const DISCCONSTANTS = {
             type: "buffExtension",
             buffName: "Shadow Word: Pain",
 
-            extension: 0.7,
+            extension: 1.5,
         })
         discSpells['PenanceTick'].push(
         {
             type: "buffExtension",
             buffName: "Purge the Wicked",
-            extension: 0.7,
+            extension: 1.5,
     })
     }
     if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
@@ -135,6 +137,7 @@ const DISCCONSTANTS = {
         //+7.5% to Penance / Smite.
         discSpells['Penance'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
         discSpells['Smite'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
+        discSpells['Power Word: Solace'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
     }
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
@@ -188,7 +191,12 @@ const DISCCONSTANTS = {
 
         })
     }
+    if (talents.darkIndulgence) {
+        discSpells["Mind Blast"][0].cost *= 0.6; // 40% cost reduction.
+        discSpells["Mind Blast"][0].charges = 2;
+    }
     if (talents.twilightEquilibrium) {
+        // This is not required to be implemented here, and is done elsewhere.
 
     }
     if (talents.inescapableTorment) {
@@ -339,7 +347,7 @@ const DISCCONSTANTS = {
     // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
     // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
     if (settings['Power of the Dark Side']) {
-        state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: (1.5 + 0.1 * talents.darkIndulgence), stacks: 1, canStack: true})
+        state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
     }  
     
     // ==== Trinkets ====
@@ -402,7 +410,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
     }
     
-    let mult =  schism //* sins[activeAtones];
+    let mult = schism //* sins[activeAtones];
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
@@ -428,6 +436,9 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     if (checkBuffActive(buffs, "Twilight Equilibrium - Holy") && "school" in spell && spell.school === "holy" && !spellName.includes("dot")) {
         mult *= 1.15;
         if (!spellName.includes("PenanceTick")) state.activeBuffs = removeBuffStack(state.activeBuffs, "Twilight Equilibrium - Holy");
+    }
+    if (checkBuffActive(buffs, "Shadow Covenant") && "school" in spell && spell.school === "shadow") {
+        mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
     }
     if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
 
@@ -755,8 +766,10 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 if (state.talents.twilightEquilibrium && spell.type === 'damage') {
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
+                    const spellSchool = spell.school;
+                    if (DISCCONSTANTS.shadowCovenantSpells.includes(spellName) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) spellSchool = "shadow"
 
-                    if ('school' in spell && spell.school === "holy") {
+                    if ('school' in spell && spellSchool === "holy") {
                         // Check if buff already exists, if it does add a stack.
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Shadow"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Shadow", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
@@ -765,7 +778,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                             buff.expiration = state.t + spell.castTime + 6;
                         }
                     }
-                    else if ('school' in spell && spell.school === "shadow") {
+                    else if ('school' in spell && spellSchool === "shadow") {
                         // Check if buff already exists, if it does add a stack.
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Holy"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Holy", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});

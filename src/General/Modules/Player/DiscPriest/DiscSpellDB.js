@@ -101,11 +101,12 @@ export const DISCSPELLS = {
         spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
         type: "damage",
         castTime: 1.5,
-        cost: 2.5,
+        cost: 1.6,
         coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
         school: "shadow",
         atoneOverheal: 0.2,
+        charges: 1,
         secondaries: ['crit', 'vers']
     }],
     "Power Word: Solace": [{
@@ -113,11 +114,33 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0,
-        coeff: 0.752,
+        coeff: 0.752 * 0.85,
         cooldown: 15,
         atoneOverheal: 0.20,
         school: "holy",
         secondaries: ['crit', 'vers']
+    }],
+    "Shadow Covenant": [{
+        spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
+        type: "heal",
+        castTime: 1.5,
+        cost: 4.5,
+        coeff: 1.65,
+        cooldown: 30,
+        overheal: 0.40,
+        targets: 5,
+        school: "shadow",
+        secondaries: ['crit', 'vers']
+    },
+    {
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        buffDuration: 7,
+        buffType: "special",
+        value: 1.25,
+        name: "Shadow Covenant",
+        canStack: false,
     }],
     "Shadow Word: Death": [{
         spellData: {id: 32379, icon: "spell_shadow_demonicfortitude", cat: "damage"},
@@ -134,7 +157,7 @@ export const DISCSPELLS = {
         spellData: {id: 207948, icon: "inv_staff_2h_artifacttome_d_01", cat: "cooldown"},
         type: "damage",
         castTime: 2.5,
-        cost: 0,
+        cost: 2,
         coeff: 2.1875, 
         cooldown: 90,
         school: "holy",
