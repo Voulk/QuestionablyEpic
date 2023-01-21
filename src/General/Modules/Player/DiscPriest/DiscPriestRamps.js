@@ -25,7 +25,7 @@ const DISCCONSTANTS = {
     shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
     enemyTargets: 1, 
     sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
-            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
+            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01}, // TODO: Change when Sins buff goes live.
     shieldDisciplineEfficiency: 0.8,
 }   
 
@@ -142,7 +142,7 @@ const DISCCONSTANTS = {
     if (talents.divineAegis) {
         // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
         // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
-        stats.critMult *= (1 + 0.05 * talents.divineAegis);
+        stats.critMult *= (1 + 0.03 * talents.divineAegis);
 
     }
     if (talents.wrathUnleashed) {
@@ -767,7 +767,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
                     const spellSchool = spell.school;
-                    if (DISCCONSTANTS.shadowCovenantSpells.includes(spellName) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) spellSchool = "shadow"
+                    if (DISCCONSTANTS.shadowCovenantSpells.includes(spellName) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) spellSchool = "shadow";
 
                     if ('school' in spell && spellSchool === "holy") {
                         // Check if buff already exists, if it does add a stack.
@@ -788,8 +788,6 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                         }
                     }
                     // If Spell doesn't have a school, or if it does and it's not Holy / Shadow, then ignore.
-
-
                 }
 
                 // Penance ticks are a bit weird and need to be cleaned up when we're done with them. 

@@ -231,7 +231,7 @@ export const DISCSPELLS = {
         type: "heal",
         castTime: 1.5,
         cost: 2.7,
-        coeff: 0.32,
+        coeff: 0.32 * 1.25,
         atonement: 15,
         atonementPos: 'start',
         secondaries: ['crit', 'vers'],
@@ -241,7 +241,7 @@ export const DISCSPELLS = {
         castTime: 0,
         type: "buff",
         buffType: "heal",
-        coeff: 0.32, // 
+        coeff: 0.32 * 1.25, // 
         tickRate: 3,
         targets: 1,
         buffDuration: 15,
@@ -254,7 +254,7 @@ export const DISCSPELLS = {
         type: "heal",
         castTime: 1.5,
         cost: 3.6,
-        coeff: 2.03,
+        coeff: 2.03 * 1.25,
         cooldown: 0,
         atonement: 15,
         atonementPos: 'end',
@@ -289,7 +289,7 @@ export const DISCSPELLS = {
         type: "heal",
         castTime: 2,
         cost: 6.5,
-        coeff: 2.0475,
+        coeff: 2. * 2, // 100% buff applied.
         aura: 1,
         targets: 5,
         cooldown: 20,
