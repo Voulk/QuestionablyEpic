@@ -248,6 +248,7 @@ export const cooldownDB = [
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
   },
+
   {
     name: {
       en: "Tranquility",
@@ -295,6 +296,28 @@ export const cooldownDB = [
     class: "RestorationDruid",
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
+  },
+  {
+    name: { en: "Innervate", cn: "激活", de: "Anregen", fr: "Innervation", ru: "Озарение" },
+    guid: 29166,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_nature_lightning.jpg").default,
+    duration: 10,
+    cooldown: 180,
+    class: "Druid",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: false,
+    type: "utility",
+  },
+  {
+    name: { en: "Innervate", cn: "激活", de: "Anregen", fr: "Innervation", ru: "Озарение" },
+    guid: 29166,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_nature_lightning.jpg").default,
+    duration: 10,
+    cooldown: 180,
+    class: "RestorationDruid",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: false,
+    type: "utility",
   },
 
   /* ---------------------------------------------------------------------------------------------- */

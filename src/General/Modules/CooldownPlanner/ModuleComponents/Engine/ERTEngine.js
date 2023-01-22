@@ -108,7 +108,6 @@ export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCoo
             : ""
           : classColoursERT(key.class4) + key.name4 + "|r" + space + "{spell:" + key.cooldown4 + "}";
 
-      console.log(option0);
       return {
         ert:
           time +

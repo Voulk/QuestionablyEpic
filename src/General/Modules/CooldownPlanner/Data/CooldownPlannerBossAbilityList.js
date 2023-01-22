@@ -2552,7 +2552,7 @@ export const bossAbilities = {
       guid: 370648,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_volcano.jpg").default,
       importActive: false,
-      name: { cn: "原始涌流", de: "Urzeitlicher Fluss", en: "Primal Flow", fr: "Flux primordial", ru: "Первичный поток" },
+      name: { cn: "熔岩涌流", de: "Lavafluss", en: "Lava Flow", fr: "Flux de lave", ru: "Поток лавы" },
     },
     {
       cooldownPlannerActive: false,
@@ -2560,7 +2560,7 @@ export const bossAbilities = {
       guid: 370342,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
       importActive: false,
-      name: { cn: "喷发", de: "Eruption", en: "Eruption", fr: "Éruption", ru: "Извержение" },
+      name: { cn: "烧尽", de: "Verbrennen", en: "Incinerate", fr: "Incinérer", ru: "Испепеление" },
     },
     {
       cooldownPlannerActive: false,
@@ -2568,7 +2568,7 @@ export const bossAbilities = {
       guid: 373327,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_gizmo_supersappercharge.jpg").default,
       importActive: false,
-      name: { cn: "毁灭", de: "Zerstörung", en: "Destruction", fr: "Destruction", ru: "Разрушение" },
+      name: { cn: "烧尽", de: "Verbrennen", en: "Incinerate", fr: "Incinérer", ru: "Испепеление" },
     },
     {
       cooldownPlannerActive: false,
@@ -2576,7 +2576,7 @@ export const bossAbilities = {
       guid: 396028,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/trade_engineering.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Molten Spike", fr: "", ru: "" },
+      name: { cn: "熔火尖刺", de: "Geschmolzener Stachel", en: "Molten Spike", fr: "Pointe en fusion", ru: "Раскаленный шип" },
     },
     {
       cooldownPlannerActive: false,
@@ -2584,7 +2584,7 @@ export const bossAbilities = {
       guid: 396022,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_fomor_boss_pillar02.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Molten Spikes", fr: "", ru: "" },
+      name: { cn: "熔火尖刺", de: "Geschmolzene Stacheln", en: "Molten Spikes", fr: "Pointes en fusion", ru: "Раскаленные шипы" },
     },
     {
       cooldownPlannerActive: true,
@@ -2592,7 +2592,7 @@ export const bossAbilities = {
       guid: 396023,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_dragonroar.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Incinerating Roar", fr: "", ru: "" },
+      name: { cn: "焚火咆哮", de: "Einäscherndes Brüllen", en: "Incinerating Roar", fr: "Hurlement incinérant", ru: "Испепеляющий рык" },
     },
     {
       cooldownPlannerActive: true,
@@ -2600,7 +2600,7 @@ export const bossAbilities = {
       guid: 394917,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_ember.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Leaping Flames", fr: "", ru: "" },
+      name: { cn: "飞扑烈焰", de: "Springende Flammen", en: "Leaping Flames", fr: "Flammes bondissantes", ru: "Прыгучее пламя" },
     },
     {
       cooldownPlannerActive: false,
@@ -2608,7 +2608,7 @@ export const bossAbilities = {
       guid: 370615,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvelavalash.jpg").default,
       importActive: false,
-      name: { cn: "熔火横扫", de: "Geschmolzener Schwung", en: "Molten Swing", fr: "Frappe de la fournaise", ru: "Раскаленный удар" },
+      name: { cn: "熔火顺劈", de: "Geschmolzenes Spalten", en: "Molten Cleave", fr: "Frappe en fusion", ru: "Раскаленный удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -2616,7 +2616,7 @@ export const bossAbilities = {
       guid: 396040,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_greaterpyroblast.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Pyroblast", fr: "", ru: "" },
+      name: { cn: "炎爆术", de: "Pyroschlag", en: "Pyroblast", fr: "Explosion pyrotechnique", ru: "Огненная глыба" },
     },
     {
       cooldownPlannerActive: true,
@@ -2624,7 +2624,7 @@ export const bossAbilities = {
       guid: 370307,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
       importActive: false,
-      name: { cn: "坍缩军团", de: "Kollabierende Armee", en: "Collapsing Army", fr: "Armée en déclin", ru: "Хрупкая армия" },
+      name: { cn: "烈焰军团", de: "Flammenarmee", en: "Army of Flame", fr: "Armée de flammes", ru: "Армия пламени" },
     },
     {
       cooldownPlannerActive: true,
@@ -3136,6 +3136,22 @@ export const bossAbilities = {
     {
       cooldownPlannerActive: true,
       createEvent: false,
+      guid: 374215,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
+      importActive: true,
+      name: { cn: "雷霆打击", de: "Donnerschlag", en: "Thunder Strike", fr: "Frappe de la foudre", ru: "Громовой удар" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 376063,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_fireball02.jpg").default,
+      importActive: false,
+      name: { cn: "火焰箭", de: "Flammenblitz", en: "Flame Bolt", fr: "Trait de flamme", ru: "Стрела огня" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
       guid: "Intermission",
       icon: "",
       importActive: false,
@@ -3145,7 +3161,7 @@ export const bossAbilities = {
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
-  /* ---------------------------------------- Dathea, Ascended ---------------------------------------- */
+  /* ------------------------------------ Raszageth the Storm-Eater ------------------------------------ */
   2607: [
     {
       cooldownPlannerActive: true,
@@ -3153,15 +3169,15 @@ export const bossAbilities = {
       guid: 381615,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_lightningwhip.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Static Charge", fr: "", ru: "" },
+      name: { cn: "静电充能", de: "Statische Aufladung", en: "Static Charge", fr: "Charge statique", ru: "Статический разряд" },
     },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: 385574,
-      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_socererking_forcenova.jpg").default,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_evoker_hoverblue.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Tempest Wing", fr: "", ru: "" },
+      name: { cn: "风暴之翼", de: "Orkanschwinge", en: "Tempest Wing", fr: "Aile-tempête", ru: "Крыло бури" },
     },
     {
       cooldownPlannerActive: true,
@@ -3169,7 +3185,7 @@ export const bossAbilities = {
       guid: 387261,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_evoker_unravel.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Stormsurge", fr: "", ru: "" },
+      name: { cn: "风暴喷涌", de: "Sturmwoge", en: "Stormsurge", fr: "Éruption de tempête", ru: "Энергия бури" },
     },
     {
       cooldownPlannerActive: true,
@@ -3177,7 +3193,7 @@ export const bossAbilities = {
       guid: 377612,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_vigor01.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Hurricane Wing", fr: "", ru: "" },
+      name: { cn: "飓风龙翼", de: "Hurrikanschwinge", en: "Hurricane Wing", fr: "Aile ouragan", ru: "Ураганное крыло" },
     },
     {
       cooldownPlannerActive: true,
@@ -3185,7 +3201,7 @@ export const bossAbilities = {
       guid: 388643,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Volatile Current", fr: "", ru: "" },
+      name: { cn: "爆裂电流", de: "Instabiler Strom", en: "Volatile Current", fr: "Courant instable", ru: "Нестабильный поток" },
     },
     {
       cooldownPlannerActive: true,
@@ -3193,7 +3209,7 @@ export const bossAbilities = {
       guid: 385065,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_diving01.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Lightning Devastation", fr: "", ru: "" },
+      name: { cn: "闪电毁灭", de: "Blitzverheerung", en: "Lightning Devastation", fr: "Dévastation de foudre", ru: "Опустошающая молния" },
     },
     {
       cooldownPlannerActive: false,
@@ -3201,7 +3217,7 @@ export const bossAbilities = {
       guid: 385569,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Raging Storm", fr: "", ru: "" },
+      name: { cn: "肆虐风暴", de: "Tobender Sturm", en: "Raging Storm", fr: "Orage déchaîné", ru: "Бушующий шторм" },
     },
     {
       cooldownPlannerActive: true,
@@ -3209,7 +3225,71 @@ export const bossAbilities = {
       guid: 399713,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_siege_engineer_magnetic_lasso.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Magnetic Charge", fr: "", ru: "" },
+      name: { cn: "磁力充能", de: "Magnetische Ladung", en: "Magnetic Charge", fr: "Charge magnétique", ru: "Магнитный заряд" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 378829,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_overcharge.jpg").default,
+      importActive: true,
+      name: { cn: "积雷充能", de: "Fulminante Ladung", en: "Fulminating Charge", fr: "Charge fulminante", ru: "Сверкающий заряд" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 377467,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_overcharge.jpg").default,
+      importActive: true,
+      name: { cn: "积雷充能", de: "Fulminante Ladung", en: "Fulminating Charge", fr: "Charge fulminante", ru: "Сверкающий заряд" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 386410,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/achievement_raidprimalist_raszageth.jpg").default,
+      importActive: true,
+      name: { cn: "雷霆冲击", de: "Donnernder Einschlag", en: "Thunderous Blast", fr: "Explosion tonitruante", ru: "Громовой заряд" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 377322,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
+      importActive: false,
+      name: { cn: "肆虐风暴", de: "Tobender Sturm", en: "Raging Storm", fr: "Orage déchaîné", ru: "Бушующий шторм" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 382434,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_thunderstruck.jpg").default,
+      importActive: false,
+      name: { cn: "风暴新星", de: "Sturmnova", en: "Storm Nova", fr: "Nova de tempête", ru: "Взрыв бури" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391281,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_blacksmithing_craftedbar_electricalloy.jpg").default,
+      importActive: false,
+      name: { cn: "爆裂能量", de: "Knisternde Energie", en: "Crackling Energy", fr: "Énergie crépitante", ru: "Энергетическое напряжение" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 389870,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_lightning.jpg").default,
+      importActive: true,
+      name: { cn: "风暴破击", de: "Sturmbruch", en: "Storm Break", fr: "Tempête voyageuse", ru: "Просвет бури" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388431,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_evasivemaneuvers01.jpg").default,
+      importActive: false,
+      name: { cn: "毁灭帷幕", de: "Ruinöse Hülle", en: "Ruinous Shroud", fr: "Voile de ruine", ru: "Разрушительный покров" },
     },
     {
       cooldownPlannerActive: true,
@@ -3218,14 +3298,6 @@ export const bossAbilities = {
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_focusedpower.jpg").default,
       importActive: false,
       name: { cn: "雷鸣能量", de: "Donnernde Energie", en: "Thunderous Energy", fr: "Énergie tonitruante", ru: "Дуга молнии" },
-    },
-    {
-      cooldownPlannerActive: true,
-      createEvent: false,
-      guid: 389870,
-      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_lightning.jpg").default,
-      importActive: false,
-      name: { cn: "风暴破击", de: "Sturmbruch", en: "Storm Break", fr: "Tempête voyageuse", ru: "Просвет бури" },
     },
     {
       cooldownPlannerActive: false,
@@ -3319,7 +3391,7 @@ export const bossAbilities = {
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
-  /* ------------------------------------ Raszageth the Storm-Eater ------------------------------------ */
+  /* ---------------------------------------- Dathea, Ascended ---------------------------------------- */
   2635: [
     {
       cooldownPlannerActive: false,
