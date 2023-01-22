@@ -13,11 +13,6 @@ import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
 const debug = false;
 
 export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCooldownsChecked) {
-  console.log(tableData);
-  console.log(bossID);
-  console.log(lang);
-  console.log(hideNoCooldownsChecked);
-
   debug && console.log(" -- Debugging On -> ERTEngine.js --");
   const seperator = " - ";
   const space = " ";
@@ -151,7 +146,7 @@ export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCoo
       };
     });
   // debug && console.table(ertNoteTimeIcons);
-  debug && console.log(ertNoteTimeIcons);
+  // debug && console.log(ertNoteTimeIcons);
 
   setERTData(ertNoteTimeIcons);
 }
