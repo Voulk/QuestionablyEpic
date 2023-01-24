@@ -202,6 +202,13 @@ const DISCCONSTANTS = {
     if (talents.inescapableTorment) {
         // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
     }
+    if (talents.embraceShadow) {
+        discSpells["Shadow Covenant"][1].buffDuration += 8;
+    }
+    if (talents.twilightCorruption) {
+        // Shadow Covenant increases damage / healing by an extra 10%.
+        discSpells["Shadow Covenant"][1].value += 0.1;
+    }
     if (talents.crystallineReflection) {
         discSpells["Power Word: Shield"].push({
             name: "Crystalline Reflection",
@@ -521,13 +528,28 @@ const getAtoneTrans = (mastery) => {
     return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
-const getSqrt = (targets) => {
-    return Math.sqrt(targets);
+const getSqrt = (targets, sqrtMin) => {
+    return Math.min(Math.sqrt(sqrtMin / targets), 1) * targets;
 }
 
 // This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
 const getTime = (t) => {
     return Math.round(t*1000)/1000
+}
+
+// Some spells do more than the usual amount of atonement healing. An example might be through Abssal Reverie.
+// We'll handle those here.
+const getAtonementBonus = (state, spell) => {
+    return DISCCONSTANTS.atonementMults[getSpellSchool(state, spell)] || 1
+}
+
+// Get a spells school.
+// Generally this is just set in the SpellDB but Disc has an override too in Shadow Covenant that temporarily converts
+// some spells to Shadow so we'll handle all of that in this function here.
+const getSpellSchool = (state, spell) => {
+    if (DISCCONSTANTS.shadowCovenantSpells.includes(spell.name) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) return "shadow";
+    else return spell.school || "";
+
 }
 
 export const runHeal = (state, spell, spellName, specialMult = 1) => {
@@ -536,7 +558,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const currentStats = state.currentStats;
 
     const healingMult = getHealingMult(state, state.activeBuffs, state.t, spellName, state.talents); 
-    const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets) : spell.targets) || 1;
+    const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     const flatHealBonus = (spellName === "Power Word: Shield" && checkBuffActive(state.activeBuffs, "T29_4")) ? state.activeBuffs.filter(function (buff) {return buff.name === "T29_4"})[0].value : 0
 
     const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS, flatHealBonus) * (1 - spell.overheal) * healingMult * targetMult;
@@ -545,7 +567,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     if (!spellName.includes("hot") || true) {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
-        if (targetMult > 1) base += `, ${targetMult} targets`;
+        if (targetMult > 1) base += `, ${spell.targets} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
         base += ")";
         //if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.overheal * 100}%)`)
@@ -570,7 +592,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents, spell); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats, DISCCONSTANTS) * damMultiplier;
-    const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * (spell.atonementBonus || 1))
+    const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * getAtonementBonus(state, spell));
     // This is stat tracking, the atonement healing will be returned as part of our result.
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
@@ -766,8 +788,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 if (state.talents.twilightEquilibrium && spell.type === 'damage') {
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
-                    const spellSchool = spell.school;
-                    if (DISCCONSTANTS.shadowCovenantSpells.includes(spellName) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) spellSchool = "shadow";
+                    //const spellSchool = spell.school;
+                    const spellSchool = getSpellSchool(state, spell);
 
                     if ('school' in spell && spellSchool === "holy") {
                         // Check if buff already exists, if it does add a stack.

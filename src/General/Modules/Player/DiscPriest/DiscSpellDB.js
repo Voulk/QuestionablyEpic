@@ -121,7 +121,7 @@ export const DISCSPELLS = {
         secondaries: ['crit', 'vers']
     }],
     "Shadow Covenant": [{
-        spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
+        spellData: {id: 314867, icon: "spell_shadow_summonvoidwalker", cat: "heal"},
         type: "heal",
         castTime: 1.5,
         cost: 4.5,
@@ -207,6 +207,30 @@ export const DISCSPELLS = {
         targets: 6,
         secondaries: ['crit', 'vers'],
         //tags: ['sqrt'],
+        overheal: 0.4,
+    }],
+    "Halo": 
+    // 
+    [{
+        spellData: {id: 120517, icon: "ability_priest_halo", cat: "heal"},
+        type: "damage",
+        castTime: 1.5,
+        cost: 2,
+        coeff: 1.442,
+        aura: 1,
+        school: "holy",
+        secondaries: ['crit', 'vers'],
+        atoneOverheal: 0.24,
+    },
+    {
+        type: "heal",
+        castTime: 0,
+        coeff: 1.61,
+        aura: 1,
+        targets: 20,
+        secondaries: ['crit', 'vers', 'mastery'],
+        tags: ['sqrt'],
+        sqrtMin: 6,
         overheal: 0.4,
     }],
     "Power Word: Shield": [{
