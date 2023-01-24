@@ -65,7 +65,7 @@ describe("Evang Cast Sequence", () => {
     const autoGenRotation = (talents, settings) => {
         // We can also auto-gen our application portion but we won't just yet.
         const applicationPortion = ["Purge the Wicked", "Power Word: Shield", "Renew", "Renew", "Renew", "Power Word: Shield", "Renew", "Renew", "Renew", "Renew", "Power Word: Shield", "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Shadowfiend"];
-        const dpsCooldownList = ["Mind Blast", "Penance", "Schism", "Mindgames", "Shadow Word: Death", ["Smite", "Smite"], "Smite", "Smite"] // Shadow Covenant
+        const dpsCooldownList = ["Mind Blast", "Penance", "Schism", "Mind Blast", "Shadow Covenant", "Halo", "Power Word: Solace", "Light's Wrath"] // Shadow Covenant
         //const dpsCooldownList = ["Mind Blast", "Penance", "Schism"]
         const dpsSpamList = ["Smite"]
         let results = [];
@@ -143,8 +143,8 @@ describe("Evang Cast Sequence", () => {
         //const settings = {'Power of the Dark Side': true, 'includeOverheal': true}
         //const baseline = allRampsHealing([], JSON.parse(JSON.stringify(activeStats)), settings, baseTalents, [])
 
-        //autoGenRotation(baseTalents, {});
-        expect(true).toEqual(true);
+        autoGenRotation(baseTalents, {});
+        //expect(true).toEqual(true);
         /*
         runTalents("Pain and Suffering", baseline, {...baseTalents, painAndSuffering: {...baseTalents.painAndSuffering, points: 1}}, settings);
         runTalents("Painful Punishment", baseline, {...baseTalents, painfulPunishment: {...baseTalents.painfulPunishment, points: 1}}, settings);
