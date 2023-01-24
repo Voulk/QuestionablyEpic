@@ -5,6 +5,7 @@ import { defaultPlans } from "./DefaultPlans";
 class Cooldowns {
   constructor(plan) {
     this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || {};
+    this.roster = ls.get("healerInfo") || [];
     raidDB.map((key) => {
       bossList
         .filter((filter) => filter.zoneID === key.ID)
@@ -31,6 +32,9 @@ class Cooldowns {
       });
       this.updateCooldownsAll(this.cooldowns);
     }
+
+    // this.updateRosterToNewClasses(this.roster);
+    // this.updatePlansToNewClasses([...this.cooldowns]);
   }
 
   getCooldownsArray = () => {
@@ -92,6 +96,16 @@ class Cooldowns {
     return defaultTimers;
   };
 
+  updateRosterToNewClasses = (arr) => {
+    let updatedRoster = this.replaceClass(arr);
+    ls.set("healerInfo", updatedRoster);
+  };
+
+  updatePlansToNewClasses = (arr) => {
+    let updatedPlans = this.replaceClass(arr);
+    ls.set("cooldownPlans", JSON.stringify(updatedPlans));
+  };
+
   // Replace values within an array of objects or nested objects.
   replaceName = (arr, originalName, newName) =>
     arr.map((obj) => {
@@ -123,6 +137,64 @@ class Cooldowns {
 
       return updatedObj;
     });
+
+  checkClassKey = (obj, originalClass, newClass) => {
+    if (obj.class === originalClass) {
+      obj.class = newClass;
+    }
+
+    Object.keys(obj).forEach((key) => {
+      if (key.startsWith("class") && !isNaN(key.slice(-1))) {
+        if (obj[key] === originalClass) {
+          obj[key] = newClass;
+        }
+      }
+    });
+  };
+  // Replace values within an array of objects or nested objects.
+  replaceClass = (arr) => {
+    let classes = {
+      "Priest-Holy": "Priest",
+      "Priest-Discipline": "Priest",
+      "Druid-Restoration": "Druid",
+      "Druid-Feral": "Druid",
+      "Druid-Balance": "Druid",
+      "Druid-Guardian": "Druid",
+      "Paladin-Holy": "Paladin",
+      "Monk-Mistweaver": "Monk",
+      "Shaman-Restoration": "Shaman",
+      "Shaman-Elemental": "Shaman",
+      "Shaman-Enhancement": "Shaman",
+      "Warrior-Fury": "Warrior",
+      "Warrior-Protection": "Warrior",
+      "Warrior-Arms": "Warrior",
+      "DeathKnight-Frost": "DeathKnight",
+      "DeathKnight-Unholy": "DeathKnight",
+      "DeathKnight-Blood": "DeathKnight",
+      "Priest-Shadow": "ShadowPriest",
+      "DemonHunter-Havoc": "DemonHunter",
+      "Evoker-Preservation": "Evoker",
+      "Evoker-Devastation": "Evoker",
+    };
+    return arr.map((obj) => {
+      // Create a new object with the same keys as the original object
+      const updatedObj = { ...obj };
+      Object.entries(classes).forEach(([originalClass, newClass]) => {
+        this.checkClassKey(updatedObj, originalClass, newClass);
+
+        // Recursively traverse the object and replace the class in all nested objects and arrays of objects if it matches the original class
+        Object.keys(updatedObj).forEach((key) => {
+          if (Array.isArray(updatedObj[key])) {
+            updatedObj[key] = this.replaceClass(updatedObj[key]);
+          } else if (typeof updatedObj[key] === "object" && updatedObj[key] !== null) {
+            updatedObj[key] = this.replaceClass([updatedObj[key]])[0];
+          }
+        });
+      });
+
+      return updatedObj;
+    });
+  };
 }
 
 export default Cooldowns;
