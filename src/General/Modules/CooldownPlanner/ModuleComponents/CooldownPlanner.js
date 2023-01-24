@@ -67,6 +67,7 @@ export default function CooldownPlanner(props) {
 
   const [data, setData] = useState([]);
   const columns = generateColumns(currentBoss, currentDifficulty);
+  // console.log(cooldownObject.getCooldownsArray())
 
   // Console log plan data (used for importing default plans for a log)
   // console.log(
