@@ -1,25 +1,19 @@
 // import React from "react";
 
 export function classColoursERT(props) {
-  if (props === "HolyPaladin") {
+  if (props === "Paladin") {
     return "|cfff38bb9";
   }
-  if (props === "RestorationDruid" || props === "Druid") {
+  if (props === "Druid") {
     return "|cfffe7b09";
   }
-  if (props === "HolyPriest") {
+  if (props === "Priest") {
     return "|cffffff00";
   }
-  if (props === "ShadowPriest") {
-    return "|cfffefefe";
-  }
-  if (props === "DisciplinePriest") {
-    return "|cff808080";
-  }
-  if (props === "RestorationShaman" || props === "Shaman-Elemental" || props === "Shaman-Elemental") {
+  if (props === "Shaman") {
     return "|cff006fdc";
   }
-  if (props === "MistweaverMonk") {
+  if (props === "Monk") {
     return "|cff00fe95";
   }
   if (props === "Warrior") {
@@ -37,13 +31,13 @@ export function classColoursERT(props) {
   if (props === "Rogue") {
     return "|cfffef367";
   }
-  if (props === "HavocDemonHunter") {
+  if (props === "DemonHunter") {
     return "|cffa22fc8";
   }
   if (props === "DeathKnight") {
     return "|cffc31d39";
   }
-  if (props === "PreservationEvoker" || props === "DevastationEvoker") {
+  if (props === "Evoker") {
     return "|cff33937f";
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuItem } from "@mui/material";
+import { MenuItem, ListSubheader } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import { cooldownDB } from "../Data/CooldownDB";
@@ -11,13 +11,13 @@ export default function ClassCooldownMenuItems(props) {
   const ClassSpecs = {
     Paladin: ["Holy"],
     Priest: ["Holy", "Discipline", "Shadow"],
-    Druid: ["Restoration", "shared"],
-    Evoker: ["Preservation", "shared"],
-    DemonHunter: ["shared"],
-    Warrior: ["shared"],
-    Monk: ["Mistweaver", "shared"],
-    Shaman: ["Restoration", "shared"],
-    DeathKnight: ["shared"],
+    Druid: ["Restoration", "Druid"],
+    Evoker: ["Preservation", "Evoker"],
+    DemonHunter: ["DemonHunter"],
+    Warrior: ["Warrior"],
+    Monk: ["Mistweaver", "Monk"],
+    Shaman: ["Restoration", "Shaman"],
+    DeathKnight: ["DeathKnight"],
   };
 
   if (props === undefined || props === "" || props === 0) {
@@ -59,7 +59,7 @@ export default function ClassCooldownMenuItems(props) {
     const header = <ListSubheader key={spec}>{t(spec)}</ListSubheader>;
     const menulist = cooldownDB
       .filter((obj) => {
-        return obj.spec === spec && obj.cdPlannerMenuActive === true; // return everything for that class
+        return obj.spec === spec && obj.class === props && obj.cdPlannerMenuActive === true; // return everything for that class
       })
       .map((map, i, arr) => {
         let lastItem = i + 1 === arr.length ? false : true;
