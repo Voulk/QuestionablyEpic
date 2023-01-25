@@ -34,6 +34,7 @@ class CooldownPlannerModule extends Component {
       "Step 2: Add plans using the Add button, import a log to use as a template for your cooldowns, or select a boss and difficulty to do it manually.",
       "Use the 'Import/Export' Buttons to share plans with your team, or export it to your ERT note with the ERT Note Button.",
       "Jump into Fight Analysis to overlay your assigned cooldowns on a log for the fight.",
+      "Latest Updates 26/1/23: Class rework, Choose class, then spec/shared abilities are in the cooldown selector. Updates to Kurog/Rasz Mythic. Innervate added for druids (selection only), Ascendancy for Shamans added. Custom strings can be entered in the cooldown columns now. ",
     ];
     const helpBlurb = "Welcome to the Cooldown Planner Alpha. All bug reports and feedback welcome.";
 
