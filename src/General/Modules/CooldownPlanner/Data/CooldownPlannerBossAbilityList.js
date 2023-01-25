@@ -7,7 +7,7 @@ export const bossAbilities = {
       guid: 334522,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ConsumeIcon.jpg").default,
       importActive: true,
-      name: { cn: "吞噬", de: "Verschlingen", en: "Consume", fr: "Consommer", ru: "Поглощение" },
+      name: { ch: "吞噬", de: "Verschlingen", en: "Consume", fr: "Consommer", ru: "Поглощение" },
     },
     {
       cooldownPlannerActive: true,
@@ -15,7 +15,7 @@ export const bossAbilities = {
       guid: 329742,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ExpungeIcon.jpg").default,
       importActive: false,
-      name: { cn: "根除", de: "Ausmerzen", en: "Expunge", fr: "Éliminer", ru: "Истребление" },
+      name: { ch: "根除", de: "Ausmerzen", en: "Expunge", fr: "Éliminer", ru: "Истребление" },
     },
     {
       cooldownPlannerActive: true,
@@ -23,7 +23,7 @@ export const bossAbilities = {
       guid: 329455,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/DesolateIcon.jpg").default,
       importActive: true,
-      name: { cn: "风蚀", de: "Verwüsten", en: "Desolate", fr: "Désolation", ru: "Опустошение" },
+      name: { ch: "风蚀", de: "Verwüsten", en: "Desolate", fr: "Désolation", ru: "Опустошение" },
     },
     {
       cooldownPlannerActive: false,
@@ -31,7 +31,7 @@ export const bossAbilities = {
       guid: 329298,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/GluttonousMiasmaIcon.jpg").default,
       importActive: false,
-      name: { cn: "暴食瘴气", de: "Gefräßiges Miasma", en: "Gluttonous Miasma", fr: "Miasme glouton", ru: "" },
+      name: { ch: "暴食瘴气", de: "Gefräßiges Miasma", en: "Gluttonous Miasma", fr: "Miasme glouton", ru: "" },
     },
     {
       cooldownPlannerActive: false,
@@ -39,7 +39,7 @@ export const bossAbilities = {
       guid: 330537,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/GluttonousMiasmaIcon.jpg").default,
       importActive: false,
-      name: { cn: "暴食瘴气", de: "Gefräßiges Miasma", en: "Gluttonous Miasma", fr: "Miasme glouton", ru: "Ненасытные миазмы" },
+      name: { ch: "暴食瘴气", de: "Gefräßiges Miasma", en: "Gluttonous Miasma", fr: "Miasme glouton", ru: "Ненасытные миазмы" },
     },
     {
       cooldownPlannerActive: false,
@@ -47,7 +47,7 @@ export const bossAbilities = {
       guid: 330590,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/GluttonousMiasmaIcon.jpg").default,
       importActive: false,
-      name: { cn: "暴食瘴气", de: "Gefräßiges Miasma", en: "Gluttonous Miasma", fr: "Miasme glouton", ru: "Ненасытные миазмы" },
+      name: { ch: "暴食瘴气", de: "Gefräßiges Miasma", en: "Gluttonous Miasma", fr: "Miasme glouton", ru: "Ненасытные миазмы" },
     },
     {
       cooldownPlannerActive: false,
@@ -55,7 +55,7 @@ export const bossAbilities = {
       guid: 329835,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/ObliteratingRiftIcon.jpg").default,
       importActive: false,
-      name: { cn: "湮灭裂隙", de: "Vernichtender Riss", en: "Obliterating Rift", fr: "Faille anéantissante", ru: "Истребляющий разлом" },
+      name: { ch: "湮灭裂隙", de: "Vernichtender Riss", en: "Obliterating Rift", fr: "Faille anéantissante", ru: "Истребляющий разлом" },
     },
     {
       cooldownPlannerActive: false,
@@ -63,7 +63,7 @@ export const bossAbilities = {
       guid: 334064,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/VolatileEjectionIcon.jpg").default,
       importActive: false,
-      name: { cn: "不稳定的喷发", de: "Instabiler Ausstoß", en: "Volatile Ejection", fr: "Expulsion instable", ru: "Нестабильный выброс" },
+      name: { ch: "不稳定的喷发", de: "Instabiler Ausstoß", en: "Volatile Ejection", fr: "Expulsion instable", ru: "Нестабильный выброс" },
     },
     {
       cooldownPlannerActive: false,
@@ -71,7 +71,7 @@ export const bossAbilities = {
       guid: 334228,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/VolatileEjectionIcon.jpg").default,
       importActive: false,
-      name: { cn: "不稳定的喷发", de: "Instabiler Ausstoß", en: "Volatile Ejection", fr: "Expulsion instable", ru: "Нестабильный выброс" },
+      name: { ch: "不稳定的喷发", de: "Instabiler Ausstoß", en: "Volatile Ejection", fr: "Expulsion instable", ru: "Нестабильный выброс" },
     },
     {
       cooldownPlannerActive: false,
@@ -79,7 +79,7 @@ export const bossAbilities = {
       guid: 332294,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/HungeringStrikesIcon.jpg").default,
       importActive: false,
-      name: { cn: "饥饿啃袭", de: "Hungernde Schläge", en: "Hungering Strikes", fr: "Frappes affamées", ru: "Алчущие удары" },
+      name: { ch: "饥饿啃袭", de: "Hungernde Schläge", en: "Hungering Strikes", fr: "Frappes affamées", ru: "Алчущие удары" },
     },
     {
       cooldownPlannerActive: false,
@@ -87,7 +87,7 @@ export const bossAbilities = {
       guid: 332296,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/HungeringStrikesIcon.jpg").default,
       importActive: false,
-      name: { cn: "饥饿啃袭", de: "Hungernde Schläge", en: "Hungering Strikes", fr: "Frappes affamées", ru: "Алчущие удары" },
+      name: { ch: "饥饿啃袭", de: "Hungernde Schläge", en: "Hungering Strikes", fr: "Frappes affamées", ru: "Алчущие удары" },
     },
     {
       cooldownPlannerActive: false,
@@ -95,7 +95,7 @@ export const bossAbilities = {
       guid: 329774,
       icon: require("Images/Bosses/CastleNathria/HungeringDestroyer/Icons/OverwhelmIcon.jpg").default,
       importActive: false,
-      name: { cn: "压制", de: "Überwältigen", en: "Overwhelm", fr: "Accabler", ru: "Переполнение мощью" },
+      name: { ch: "压制", de: "Überwältigen", en: "Overwhelm", fr: "Accabler", ru: "Переполнение мощью" },
     },
   ],
   /* ------------------------------------------- Shriekwing ------------------------------------------- */
@@ -106,7 +106,7 @@ export const bossAbilities = {
       guid: 343384,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/BloodlightIcon.jpg").default,
       importActive: false,
-      name: { cn: "血光", de: "Blutlicht", en: "Bloodlight", fr: "Lumière sanglante", ru: "Кровавый свет" },
+      name: { ch: "血光", de: "Blutlicht", en: "Bloodlight", fr: "Lumière sanglante", ru: "Кровавый свет" },
     },
     {
       cooldownPlannerActive: false,
@@ -114,7 +114,7 @@ export const bossAbilities = {
       guid: 330712,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg").default,
       importActive: false,
-      name: { cn: "裂耳尖啸", de: "Ohrenbetäubender Schrei", en: "Earsplitting Shriek", fr: "Cri assourdissant", ru: "Пронзительный визг" },
+      name: { ch: "裂耳尖啸", de: "Ohrenbetäubender Schrei", en: "Earsplitting Shriek", fr: "Cri assourdissant", ru: "Пронзительный визг" },
     },
     {
       cooldownPlannerActive: false,
@@ -122,7 +122,7 @@ export const bossAbilities = {
       guid: 330711,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg").default,
       importActive: false,
-      name: { cn: "裂耳尖啸", de: "Ohrenbetäubender Schrei", en: "Earsplitting Shriek", fr: "Cri assourdissant", ru: "Пронзительный визг" },
+      name: { ch: "裂耳尖啸", de: "Ohrenbetäubender Schrei", en: "Earsplitting Shriek", fr: "Cri assourdissant", ru: "Пронзительный визг" },
     },
     {
       cooldownPlannerActive: false,
@@ -130,7 +130,7 @@ export const bossAbilities = {
       guid: 336005,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/EarsplittingShriekIcon.jpg").default,
       importActive: false,
-      name: { cn: "裂耳尖啸", de: "Ohrenbetäubender Schrei", en: "Earsplitting Shriek", fr: "Cri assourdissant", ru: "Пронзительный визг" },
+      name: { ch: "裂耳尖啸", de: "Ohrenbetäubender Schrei", en: "Earsplitting Shriek", fr: "Cri assourdissant", ru: "Пронзительный визг" },
     },
     {
       cooldownPlannerActive: true,
@@ -138,7 +138,7 @@ export const bossAbilities = {
       guid: 345397,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/WaveOfBlood.jpg").default,
       importActive: true,
-      name: { cn: "赤红声浪", de: "Blutige Welle", en: "Wave of Blood", fr: "Vague sanglante", ru: "Волна крови" },
+      name: { ch: "赤红声浪", de: "Blutige Welle", en: "Wave of Blood", fr: "Vague sanglante", ru: "Волна крови" },
     },
     {
       cooldownPlannerActive: false,
@@ -146,7 +146,7 @@ export const bossAbilities = {
       guid: 343022,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingSonarIcon.jpg").default,
       importActive: false,
-      name: { cn: "回响声波", de: "Echosonar", en: "Echoing Sonar", fr: "Sonar résonnant", ru: "Отдающийся эхом сонар" },
+      name: { ch: "回响声波", de: "Echosonar", en: "Echoing Sonar", fr: "Sonar résonnant", ru: "Отдающийся эхом сонар" },
     },
     {
       cooldownPlannerActive: false,
@@ -154,7 +154,7 @@ export const bossAbilities = {
       guid: 343005,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/BlindSwipeIcon.jpg").default,
       importActive: false,
-      name: { cn: "盲眼横扫", de: "Blinder Hieb", en: "Blind Swipe", fr: "Balayage aveugle", ru: "Удар вслепую" },
+      name: { ch: "盲眼横扫", de: "Blinder Hieb", en: "Blind Swipe", fr: "Balayage aveugle", ru: "Удар вслепую" },
     },
     {
       cooldownPlannerActive: false,
@@ -162,7 +162,7 @@ export const bossAbilities = {
       guid: 340324,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/SanguineIchorIcon.jpg").default,
       importActive: false,
-      name: { cn: "鲜血脓液", de: "Blutiges Sekret", en: "Sanguine Ichor", fr: "Ichor sanguin", ru: "Кровавый гной" },
+      name: { ch: "鲜血脓液", de: "Blutiges Sekret", en: "Sanguine Ichor", fr: "Ichor sanguin", ru: "Кровавый гной" },
     },
     {
       cooldownPlannerActive: false,
@@ -170,7 +170,7 @@ export const bossAbilities = {
       guid: 342923,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/DescentIcon.jpg").default,
       importActive: false,
-      name: { cn: "降临", de: "Sturzflug", en: "Descent", fr: "Descente", ru: "Пикирование" },
+      name: { ch: "降临", de: "Sturzflug", en: "Descent", fr: "Descente", ru: "Пикирование" },
     },
     {
       cooldownPlannerActive: false,
@@ -178,7 +178,7 @@ export const bossAbilities = {
       guid: 328887,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatingBiteIcon.jpg").default,
       importActive: false,
-      name: { cn: "汲血之咬", de: "Schröpfender Biss", en: "Exsanguinating Bite", fr: "Morsure d’exsanguination", ru: "Обескровливающий укус" },
+      name: { ch: "汲血之咬", de: "Schröpfender Biss", en: "Exsanguinating Bite", fr: "Morsure d’exsanguination", ru: "Обескровливающий укус" },
     },
     {
       cooldownPlannerActive: false,
@@ -186,7 +186,7 @@ export const bossAbilities = {
       guid: 342866,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/EchoingScreechIcon.jpg").default,
       importActive: false,
-      name: { cn: "刺耳回声", de: "Echokreischen", en: "Echoing Screech", fr: "Hurlement résonnant", ru: "Отдающийся эхом визг" },
+      name: { ch: "刺耳回声", de: "Echokreischen", en: "Echoing Screech", fr: "Hurlement résonnant", ru: "Отдающийся эхом визг" },
     },
     {
       cooldownPlannerActive: false,
@@ -194,7 +194,7 @@ export const bossAbilities = {
       guid: 328897,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/ExsanguinatedIcon.jpg").default,
       importActive: false,
-      name: { cn: "抽干", de: "Geschröpft", en: "Exsanguinated", fr: "Exsanguiné", ru: "Обескровливание" },
+      name: { ch: "抽干", de: "Geschröpft", en: "Exsanguinated", fr: "Exsanguiné", ru: "Обескровливание" },
     },
     {
       cooldownPlannerActive: false,
@@ -202,7 +202,7 @@ export const bossAbilities = {
       guid: 328921,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/ability_deathwing_bloodcorruption_earth.jpg").default,
       importActive: false,
-      name: { cn: "赤红之幕", de: "Blutverhüllung", en: "Blood Shroud", fr: "Voile de sang", ru: "Кровавая завеса" },
+      name: { ch: "赤红之幕", de: "Blutverhüllung", en: "Blood Shroud", fr: "Voile de sang", ru: "Кровавая завеса" },
     },
     {
       cooldownPlannerActive: false,
@@ -210,10 +210,10 @@ export const bossAbilities = {
       guid: 343995,
       icon: require("Images/Bosses/CastleNathria/Shriekwing/Icons/ability_deathwing_bloodcorruption_earth.jpg").default,
       importActive: false,
-      name: { cn: "赤红之幕", de: "Blutverhüllung", en: "Blood Shroud", fr: "Voile de sang", ru: "Кровавая завеса" },
+      name: { ch: "赤红之幕", de: "Blutverhüllung", en: "Blood Shroud", fr: "Voile de sang", ru: "Кровавая завеса" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* ------------------------------------------- Sludgefist ------------------------------------------- */
   2399: [
@@ -223,7 +223,7 @@ export const bossAbilities = {
       guid: 332687,
       icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/ColossalRoarIcon.jpg").default,
       importActive: true,
-      name: { cn: "震天怒吼", de: "Kolossales Brüllen", en: "Colossal Roar", fr: "Rugissement colossal", ru: "Громогласный рев" },
+      name: { ch: "震天怒吼", de: "Kolossales Brüllen", en: "Colossal Roar", fr: "Rugissement colossal", ru: "Громогласный рев" },
     },
     {
       cooldownPlannerActive: true,
@@ -231,7 +231,7 @@ export const bossAbilities = {
       guid: 332969,
       icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveImpactIcon.jpg").default,
       importActive: false,
-      name: { cn: "毁灭冲击", de: "Zerstörerischer Einschlag", en: "Destructive Impact", fr: "Impact destructeur", ru: "Разрушительный удар" },
+      name: { ch: "毁灭冲击", de: "Zerstörerischer Einschlag", en: "Destructive Impact", fr: "Impact destructeur", ru: "Разрушительный удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -239,7 +239,7 @@ export const bossAbilities = {
       guid: 341087,
       icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/SeismicShiftIcon.jpg").default,
       importActive: false,
-      name: { cn: "地壳位移", de: "Seismische Verschiebung", en: "Seismic Shift", fr: "Transfert sismique", ru: "Сейсмический сдвиг" },
+      name: { ch: "地壳位移", de: "Seismische Verschiebung", en: "Seismic Shift", fr: "Transfert sismique", ru: "Сейсмический сдвиг" },
     },
     {
       cooldownPlannerActive: false,
@@ -247,7 +247,7 @@ export const bossAbilities = {
       guid: 332444,
       icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/CrumblingFoundationIcon.jpg").default,
       importActive: false,
-      name: { cn: "震动的地基", de: "Bröckelndes Fundament", en: "Crumbling Foundation", fr: "Fondation ébranlée", ru: "Рушащийся фундамент" },
+      name: { ch: "震动的地基", de: "Bröckelndes Fundament", en: "Crumbling Foundation", fr: "Fondation ébranlée", ru: "Рушащийся фундамент" },
     },
     {
       cooldownPlannerActive: false,
@@ -255,7 +255,7 @@ export const bossAbilities = {
       guid: 332241,
       icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/CollapsingFoundationIcon.jpg").default,
       importActive: false,
-      name: { cn: "地基坍塌", de: "Einstürzendes Fundament", en: "Collapsing Foundation", fr: "Effondrement des fondations", ru: "Обрушение стен" },
+      name: { ch: "地基坍塌", de: "Einstürzendes Fundament", en: "Collapsing Foundation", fr: "Effondrement des fondations", ru: "Обрушение стен" },
     },
     {
       cooldownPlannerActive: false,
@@ -263,7 +263,7 @@ export const bossAbilities = {
       guid: 332318,
       icon: require("Images/Bosses/CastleNathria/Sludgefist/Icons/DestructiveStompIcon.jpg").default,
       importActive: false,
-      name: { cn: "毁灭踩踏", de: "Zerstörerisches Stampfen", en: "Destructive Stomp", fr: "Piétinement destructeur", ru: "Разрушительный топот" },
+      name: { ch: "毁灭踩踏", de: "Zerstörerisches Stampfen", en: "Destructive Stomp", fr: "Piétinement destructeur", ru: "Разрушительный топот" },
     },
   ],
   /* -------------------------------------- Sun King's Salvation -------------------------------------- */
@@ -274,7 +274,7 @@ export const bossAbilities = {
       guid: 328579,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SmolderingRemnantsIcon.jpg").default,
       importActive: false,
-      name: { cn: "阴燃余烬", de: "Schwelende Überreste", en: "Smoldering Remnants", fr: "Vestiges fumants", ru: "Тлеющий след" },
+      name: { ch: "阴燃余烬", de: "Schwelende Überreste", en: "Smoldering Remnants", fr: "Vestiges fumants", ru: "Тлеющий след" },
     },
     {
       cooldownPlannerActive: false,
@@ -282,7 +282,7 @@ export const bossAbilities = {
       guid: 341254,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SmolderingPlumageIcon.jpg").default,
       importActive: false,
-      name: { cn: "阴燃飞羽", de: "Schwelendes Gefieder", en: "Smoldering Plumage", fr: "Plumage fumant", ru: "Огненное оперение" },
+      name: { ch: "阴燃飞羽", de: "Schwelendes Gefieder", en: "Smoldering Plumage", fr: "Plumage fumant", ru: "Огненное оперение" },
     },
     {
       cooldownPlannerActive: false,
@@ -290,7 +290,7 @@ export const bossAbilities = {
       guid: 326455,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/FieryStrikeIcon.jpg").default,
       importActive: false,
-      name: { cn: "火焰打击", de: "Flammender Stoß", en: "Fiery Strike", fr: "Frappe flamboyante", ru: "Пылающий удар" },
+      name: { ch: "火焰打击", de: "Flammender Stoß", en: "Fiery Strike", fr: "Frappe flamboyante", ru: "Пылающий удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -298,7 +298,7 @@ export const bossAbilities = {
       guid: 326456,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/BurningRemnantsIcon.jpg").default,
       importActive: false,
-      name: { cn: "炽燃残骸", de: "Brennende Überreste", en: "Burning Remnants", fr: "Vestiges incandescents", ru: "Горящие останки" },
+      name: { ch: "炽燃残骸", de: "Brennende Überreste", en: "Burning Remnants", fr: "Vestiges incandescents", ru: "Горящие останки" },
     },
     {
       cooldownPlannerActive: true,
@@ -306,7 +306,7 @@ export const bossAbilities = {
       guid: 325877,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/EmberBlastIcon.jpg").default,
       importActive: true,
-      name: { cn: "燃烬风暴", de: "Glutexplosion", en: "Ember Blast", fr: "Éclair de braise", ru: "Взрывоопасные угли" },
+      name: { ch: "燃烬风暴", de: "Glutexplosion", en: "Ember Blast", fr: "Éclair de braise", ru: "Взрывоопасные угли" },
     },
     {
       cooldownPlannerActive: false,
@@ -314,7 +314,7 @@ export const bossAbilities = {
       guid: 326430,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/LingeringEmbersIcon.jpg").default,
       importActive: false,
-      name: { cn: "残留余烬", de: "Beständige Glut", en: "Lingering Embers", fr: "Braises persistantes", ru: "Оставшиеся угли" },
+      name: { ch: "残留余烬", de: "Beständige Glut", en: "Lingering Embers", fr: "Braises persistantes", ru: "Оставшиеся угли" },
     },
     {
       cooldownPlannerActive: false,
@@ -322,7 +322,7 @@ export const bossAbilities = {
       guid: 329518,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/BlazingSurgeIcon.jpg").default,
       importActive: false,
-      name: { cn: "烈焰涌动", de: "Lodernde Woge", en: "Blazing Surge", fr: "Geyser incendiaire", ru: "Пылающий поток" },
+      name: { ch: "烈焰涌动", de: "Lodernde Woge", en: "Blazing Surge", fr: "Geyser incendiaire", ru: "Пылающий поток" },
     },
     {
       cooldownPlannerActive: false,
@@ -330,7 +330,7 @@ export const bossAbilities = {
       guid: 325440,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VanquishingStrikeIcon.jpg").default,
       importActive: false,
-      name: { cn: "征服打击", de: "Bezwingender Stoß", en: "Vanquishing Strike", fr: "Frappe de victoire", ru: "Уничтожающий удар" },
+      name: { ch: "征服打击", de: "Bezwingender Stoß", en: "Vanquishing Strike", fr: "Frappe de victoire", ru: "Уничтожающий удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -338,7 +338,7 @@ export const bossAbilities = {
       guid: 325442,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/VanquishedIcon.jpg").default,
       importActive: false,
-      name: { cn: "征服", de: "Bezwungen", en: "Vanquished", fr: "Vaincu", ru: "Уничтожение" },
+      name: { ch: "征服", de: "Bezwungen", en: "Vanquished", fr: "Vaincu", ru: "Уничтожение" },
     },
     {
       cooldownPlannerActive: false,
@@ -346,7 +346,7 @@ export const bossAbilities = {
       guid: 325506,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ConcussiveSmashIcon.jpg").default,
       importActive: false,
-      name: { cn: "震荡跃击", de: "Erschütterndes Schmettern", en: "Concussive Smash", fr: "Choc commotionnant", ru: "Контузящий удар" },
+      name: { ch: "震荡跃击", de: "Erschütterndes Schmettern", en: "Concussive Smash", fr: "Choc commotionnant", ru: "Контузящий удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -354,7 +354,7 @@ export const bossAbilities = {
       guid: 341475,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/CrimsonFlurryIcon.jpg").default,
       importActive: false,
-      name: { cn: "猩红乱舞", de: "Blutroter Schlaghagel", en: "Crimson Flurry", fr: "Rafale cramoisie", ru: "Алый шквал" },
+      name: { ch: "猩红乱舞", de: "Blutroter Schlaghagel", en: "Crimson Flurry", fr: "Rafale cramoisie", ru: "Алый шквал" },
     },
     {
       cooldownPlannerActive: false,
@@ -362,7 +362,7 @@ export const bossAbilities = {
       guid: 325590,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ScornfulBlastIcon.jpg").default,
       importActive: false,
-      name: { cn: "蔑视冲击", de: "Verächtlicher Blitz", en: "Scornful Blast", fr: "Déflagration teigneuse", ru: "Взрыв презрения" },
+      name: { ch: "蔑视冲击", de: "Verächtlicher Blitz", en: "Scornful Blast", fr: "Déflagration teigneuse", ru: "Взрыв презрения" },
     },
     {
       cooldownPlannerActive: false,
@@ -370,7 +370,7 @@ export const bossAbilities = {
       guid: 335540,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/ShatteringRubyIcon.jpg").default,
       importActive: false,
-      name: { cn: "碎裂红石", de: "Zersplitternder Rubin", en: "Shattering Ruby", fr: "Rubis explosif", ru: "Раскалывающий рубин" },
+      name: { ch: "碎裂红石", de: "Zersplitternder Rubin", en: "Shattering Ruby", fr: "Rubis explosif", ru: "Раскалывающий рубин" },
     },
     {
       cooldownPlannerActive: false,
@@ -378,7 +378,7 @@ export const bossAbilities = {
       guid: 336398,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/FragmentationIcon.jpg").default,
       importActive: false,
-      name: { cn: "裂片", de: "Fragmentierung", en: "Fragmentation", fr: "Fragmentation", ru: "Дробление" },
+      name: { ch: "裂片", de: "Fragmentierung", en: "Fragmentation", fr: "Fragmentation", ru: "Дробление" },
     },
     {
       cooldownPlannerActive: false,
@@ -386,7 +386,7 @@ export const bossAbilities = {
       guid: 328890,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/GreaterCastigationIcon.jpg").default,
       importActive: false,
-      name: { cn: "至高惩戒", de: "Große Züchtigung", en: "Greater Castigation", fr: "Fustigation supérieure", ru: "Великая очищающая кара" },
+      name: { ch: "至高惩戒", de: "Große Züchtigung", en: "Greater Castigation", fr: "Fustigation supérieure", ru: "Великая очищающая кара" },
     },
     {
       cooldownPlannerActive: false,
@@ -394,10 +394,10 @@ export const bossAbilities = {
       guid: 339244,
       icon: require("Images/Bosses/CastleNathria/SunKingsSalvation/Icons/SoulInfusionIcon.jpg").default,
       importActive: false,
-      name: { cn: "灵魂灌注", de: "Seeleninfusion", en: "Soul Infusion", fr: "Infusion d’âme", ru: "Насыщение души" },
+      name: { ch: "灵魂灌注", de: "Seeleninfusion", en: "Soul Infusion", fr: "Infusion d’âme", ru: "Насыщение души" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* ----------------------------------------- Artificer Xymox ----------------------------------------- */
   2405: [
@@ -407,7 +407,7 @@ export const bossAbilities = {
       guid: 325361,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/GlyphOfDestructionIcon.jpg").default,
       importActive: false,
-      name: { cn: "毁灭符文", de: "Glyphe der Zerstörung", en: "Glyph of Destruction", fr: "Glyphe de destruction", ru: "Символ разрушения" },
+      name: { ch: "毁灭符文", de: "Glyphe der Zerstörung", en: "Glyph of Destruction", fr: "Glyphe de destruction", ru: "Символ разрушения" },
     },
     {
       cooldownPlannerActive: false,
@@ -415,7 +415,7 @@ export const bossAbilities = {
       guid: 325324,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/GlyphOfDestructionIcon.jpg").default,
       importActive: false,
-      name: { cn: "毁灭符文", de: "Glyphe der Zerstörung", en: "Glyph of Destruction", fr: "Glyphe de destruction", ru: "Символ разрушения" },
+      name: { ch: "毁灭符文", de: "Glyphe der Zerstörung", en: "Glyph of Destruction", fr: "Glyphe de destruction", ru: "Символ разрушения" },
     },
     {
       cooldownPlannerActive: false,
@@ -423,7 +423,7 @@ export const bossAbilities = {
       guid: 325331,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/GlyphOfDestructionIcon.jpg").default,
       importActive: false,
-      name: { cn: "毁灭符文", de: "Glyphe der Zerstörung", en: "Glyph of Destruction", fr: "Glyphe de destruction", ru: "Символ разрушения" },
+      name: { ch: "毁灭符文", de: "Glyphe der Zerstörung", en: "Glyph of Destruction", fr: "Glyphe de destruction", ru: "Символ разрушения" },
     },
     {
       cooldownPlannerActive: true,
@@ -431,7 +431,7 @@ export const bossAbilities = {
       guid: 325399,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/HyperlightSparkIcon.jpg").default,
       importActive: true,
-      name: { cn: "凌光火花", de: "Hyperlichtfunken", en: "Hyperlight Spark", fr: "Étincelle hyperluminique", ru: "Вспышка гиперсвета" },
+      name: { ch: "凌光火花", de: "Hyperlichtfunken", en: "Hyperlight Spark", fr: "Étincelle hyperluminique", ru: "Вспышка гиперсвета" },
     },
     {
       cooldownPlannerActive: false,
@@ -439,7 +439,7 @@ export const bossAbilities = {
       guid: 340870,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/AuraOfDreadIcon.jpg").default,
       importActive: false,
-      name: { cn: "恐怖光环", de: "Aura des Schreckens", en: "Aura of Dread", fr: "Aura d’effroi", ru: "Аура ужаса" },
+      name: { ch: "恐怖光环", de: "Aura des Schreckens", en: "Aura of Dread", fr: "Aura d’effroi", ru: "Аура ужаса" },
     },
     {
       cooldownPlannerActive: false,
@@ -447,7 +447,7 @@ export const bossAbilities = {
       guid: 340842,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/SoulSingeIcon.jpg").default,
       importActive: false,
-      name: { cn: "灵魂焚烧", de: "Seelensengen", en: "Soul Singe", fr: "Âme calcinée", ru: "Сожжение души" },
+      name: { ch: "灵魂焚烧", de: "Seelensengen", en: "Soul Singe", fr: "Âme calcinée", ru: "Сожжение души" },
     },
     {
       cooldownPlannerActive: false,
@@ -455,7 +455,7 @@ export const bossAbilities = {
       guid: 328545,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/DimensionalTearIcon.jpg").default,
       importActive: false,
-      name: { cn: "空间撕裂", de: "Dimensionenriss", en: "Dimensional Tear", fr: "Déchirure dimensionnelle", ru: "Пространственный разрыв" },
+      name: { ch: "空间撕裂", de: "Dimensionenriss", en: "Dimensional Tear", fr: "Déchirure dimensionnelle", ru: "Пространственный разрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -463,7 +463,7 @@ export const bossAbilities = {
       guid: 328437,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/DimensionalTearIcon2.jpg").default,
       importActive: false,
-      name: { cn: "空间撕裂", de: "Dimensionenriss", en: "Dimensional Tear", fr: "Déchirure dimensionnelle", ru: "Пространственный разрыв" },
+      name: { ch: "空间撕裂", de: "Dimensionenriss", en: "Dimensional Tear", fr: "Déchirure dimensionnelle", ru: "Пространственный разрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -471,7 +471,7 @@ export const bossAbilities = {
       guid: 326302,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/StasisTrapIcon.jpg").default,
       importActive: false,
-      name: { cn: "静滞陷阱", de: "Stasisfalle", en: "Stasis Trap", fr: "Piège de stase", ru: "Стазисная ловушка" },
+      name: { ch: "静滞陷阱", de: "Stasisfalle", en: "Stasis Trap", fr: "Piège de stase", ru: "Стазисная ловушка" },
     },
     {
       cooldownPlannerActive: false,
@@ -479,7 +479,7 @@ export const bossAbilities = {
       guid: 329256,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/RiftBlastIcon.jpg").default,
       importActive: false,
-      name: { cn: "裂隙冲击", de: "Rissschlag", en: "Rift Blast", fr: "Faille explosive", ru: "Взрывающийся разлом" },
+      name: { ch: "裂隙冲击", de: "Rissschlag", en: "Rift Blast", fr: "Faille explosive", ru: "Взрывающийся разлом" },
     },
     {
       cooldownPlannerActive: false,
@@ -487,7 +487,7 @@ export const bossAbilities = {
       guid: 340860,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/WitheringTouchIcon.jpg").default,
       importActive: false,
-      name: { cn: "枯萎之触", de: "Verwelkende Berührung", en: "Withering Touch", fr: "Toucher flétrissant", ru: "Иссушающее прикосновение" },
+      name: { ch: "枯萎之触", de: "Verwelkende Berührung", en: "Withering Touch", fr: "Toucher flétrissant", ru: "Иссушающее прикосновение" },
     },
     {
       cooldownPlannerActive: true,
@@ -495,7 +495,7 @@ export const bossAbilities = {
       guid: 328789,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/EdgeOfAnnihilationIcon.jpg").default,
       importActive: true,
-      name: { cn: "生灵俱灭", de: "Vernichten", en: "Annihilate", fr: "Annihilation", ru: "Аннигиляция" },
+      name: { ch: "生灵俱灭", de: "Vernichten", en: "Annihilate", fr: "Annihilation", ru: "Аннигиляция" },
     },
     {
       cooldownPlannerActive: false,
@@ -503,7 +503,7 @@ export const bossAbilities = {
       guid: 329770,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/inv_wand_1h_ardenweald_d_01.jpg").default,
       importActive: false,
-      name: { cn: "灭绝根须", de: "Wurzel der Ausrottung", en: "Root of Extinction", fr: "Racine d’extinction", ru: "Корень истребления" },
+      name: { ch: "灭绝根须", de: "Wurzel der Ausrottung", en: "Root of Extinction", fr: "Racine d’extinction", ru: "Корень истребления" },
     },
     {
       cooldownPlannerActive: false,
@@ -511,7 +511,7 @@ export const bossAbilities = {
       guid: 328880,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/EdgeOfAnnihilationIcon.jpg").default,
       importActive: false,
-      name: { cn: "毁灭之锋", de: "Schneide der Vernichtung", en: "Edge of Annihilation", fr: "Tranchant d’annihilation", ru: "Грань Аннигиляции" },
+      name: { ch: "毁灭之锋", de: "Schneide der Vernichtung", en: "Edge of Annihilation", fr: "Tranchant d’annihilation", ru: "Грань Аннигиляции" },
     },
     {
       cooldownPlannerActive: false,
@@ -519,11 +519,11 @@ export const bossAbilities = {
       guid: 327887,
       icon: require("Images/Bosses/CastleNathria/ArtificerXymox/Icons/inv_cape_special_maldraxxus_d_03.jpg").default,
       importActive: false,
-      name: { cn: "幻影水晶", de: "Kristall der Phantome", en: "Crystal of Phantasms", fr: "Cristal des fantasmes", ru: "Кристалл фантазмов" },
+      name: { ch: "幻影水晶", de: "Kristall der Phantome", en: "Crystal of Phantasms", fr: "Cristal des fantasmes", ru: "Кристалл фантазмов" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* -------------------------------------- Lady Inerva Darkvein -------------------------------------- */
   2406: [
@@ -533,7 +533,7 @@ export const bossAbilities = {
       guid: 325384,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ChangeOfHeartIcon.jpg").default,
       importActive: false,
-      name: { cn: "变心", de: "Gesinnungswandel", en: "Change of Heart", fr: "Volte-face", ru: "Изменение намерений" },
+      name: { ch: "变心", de: "Gesinnungswandel", en: "Change of Heart", fr: "Volte-face", ru: "Изменение намерений" },
     },
     {
       cooldownPlannerActive: false,
@@ -541,7 +541,7 @@ export const bossAbilities = {
       guid: 334017,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/CondemnIcon.jpg").default,
       importActive: false,
-      name: { cn: "判罪", de: "Verurteilen", en: "Condemn", fr: "Blâme", ru: "Порицание" },
+      name: { ch: "判罪", de: "Verurteilen", en: "Condemn", fr: "Blâme", ru: "Порицание" },
     },
     {
       cooldownPlannerActive: false,
@@ -549,7 +549,7 @@ export const bossAbilities = {
       guid: 331573,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnconscionableGuiltIcon.jpg").default,
       importActive: false,
-      name: { cn: "无边悔罪", de: "Unerhörte Schuld", en: "Unconscionable Guilt", fr: "Culpabilité inconcevable", ru: "Непомерная вина" },
+      name: { ch: "无边悔罪", de: "Unerhörte Schuld", en: "Unconscionable Guilt", fr: "Culpabilité inconcevable", ru: "Непомерная вина" },
     },
     {
       cooldownPlannerActive: false,
@@ -557,7 +557,7 @@ export const bossAbilities = {
       guid: 342288,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SinsAndSufferingIcon.jpg").default,
       importActive: false,
-      name: { cn: "罪孽与折磨", de: "Sünden und Leid", en: "Sins and Suffering", fr: "Vices et souffrance", ru: "Грехи и страдание" },
+      name: { ch: "罪孽与折磨", de: "Sünden und Leid", en: "Sins and Suffering", fr: "Vices et souffrance", ru: "Грехи и страдание" },
     },
     {
       cooldownPlannerActive: false,
@@ -565,7 +565,7 @@ export const bossAbilities = {
       guid: 331527,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/IndemnificationIcon.jpg").default,
       importActive: false,
-      name: { cn: "偿罪", de: "Freistellung", en: "Indemnification", fr: "Indemnisation", ru: "Компенсация" },
+      name: { ch: "偿罪", de: "Freistellung", en: "Indemnification", fr: "Indemnisation", ru: "Компенсация" },
     },
     {
       cooldownPlannerActive: false,
@@ -573,7 +573,7 @@ export const bossAbilities = {
       guid: 325908,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SharedCognitionIcon.jpg").default,
       importActive: false,
-      name: { cn: "共享认知", de: "Geteilte Kognition", en: "Shared Cognition", fr: "Cognition partagée", ru: "Коллективное восприятие" },
+      name: { ch: "共享认知", de: "Geteilte Kognition", en: "Shared Cognition", fr: "Cognition partagée", ru: "Коллективное восприятие" },
     },
     {
       cooldownPlannerActive: false,
@@ -581,7 +581,7 @@ export const bossAbilities = {
       guid: 325769,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/BottledAnimaIcon.jpg").default,
       importActive: false,
-      name: { cn: "瓶装心能", de: "Abgefüllte Anima", en: "Bottled Anima", fr: "Anima en bouteille", ru: "Анима в бутылке" },
+      name: { ch: "瓶装心能", de: "Abgefüllte Anima", en: "Bottled Anima", fr: "Anima en bouteille", ru: "Анима в бутылке" },
     },
     {
       cooldownPlannerActive: false,
@@ -589,7 +589,7 @@ export const bossAbilities = {
       guid: 329618,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnleashedVolatilityIcon.jpg").default,
       importActive: false,
-      name: { cn: "散溢挥发", de: "Entfesselte Flüchtigkeit", en: "Unleashed Volatility", fr: "Volatilité déchaînée", ru: "Высвобожденная нестабильность" },
+      name: { ch: "散溢挥发", de: "Entfesselte Flüchtigkeit", en: "Unleashed Volatility", fr: "Volatilité déchaînée", ru: "Высвобожденная нестабильность" },
     },
     {
       cooldownPlannerActive: false,
@@ -597,7 +597,7 @@ export const bossAbilities = {
       guid: 325225,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ContainerBreachIcon.jpg").default,
       importActive: false,
-      name: { cn: "容器破缺", de: "Behälterbruch", en: "Container Breach", fr: "Brèche du conteneur", ru: "Пробоина в контейнере" },
+      name: { ch: "容器破缺", de: "Behälterbruch", en: "Container Breach", fr: "Brèche du conteneur", ru: "Пробоина в контейнере" },
     },
     {
       cooldownPlannerActive: false,
@@ -605,7 +605,7 @@ export const bossAbilities = {
       guid: 325184,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LooseAnimaIcon.jpg").default,
       importActive: false,
-      name: { cn: "自由心能", de: "Freie Anima", en: "Loose Anima", fr: "Anima résiduel", ru: "Высвобожденная анима" },
+      name: { ch: "自由心能", de: "Freie Anima", en: "Loose Anima", fr: "Anima résiduel", ru: "Высвобожденная анима" },
     },
     {
       cooldownPlannerActive: false,
@@ -613,7 +613,7 @@ export const bossAbilities = {
       guid: 325379,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeDesiresIcon.jpg").default,
       importActive: false,
-      name: { cn: "显露欲望", de: "Entblößte Begierden", en: "Expose Desires", fr: "Dévoiler les désirs", ru: "Обнажение желаний" },
+      name: { ch: "显露欲望", de: "Entblößte Begierden", en: "Expose Desires", fr: "Dévoiler les désirs", ru: "Обнажение желаний" },
     },
     {
       cooldownPlannerActive: false,
@@ -621,7 +621,7 @@ export const bossAbilities = {
       guid: 325382,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/WarpedDesiresIcon.jpg").default,
       importActive: false,
-      name: { cn: "扭曲欲望", de: "Verzerrte Begierden", en: "Warped Desires", fr: "Désirs déformés", ru: "Извращенные желания" },
+      name: { ch: "扭曲欲望", de: "Verzerrte Begierden", en: "Warped Desires", fr: "Désirs déformés", ru: "Извращенные желания" },
     },
     {
       cooldownPlannerActive: false,
@@ -629,7 +629,7 @@ export const bossAbilities = {
       guid: 335396,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/HiddenDesireIcon.jpg").default,
       importActive: false,
-      name: { cn: "隐秘欲望", de: "Versteckte Begierde", en: "Hidden Desire", fr: "Désir caché", ru: "Тайное желание" },
+      name: { ch: "隐秘欲望", de: "Versteckte Begierde", en: "Hidden Desire", fr: "Désir caché", ru: "Тайное желание" },
     },
     {
       cooldownPlannerActive: false,
@@ -637,7 +637,7 @@ export const bossAbilities = {
       guid: 341623,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ExposeCognitionIcon.jpg").default,
       importActive: false,
-      name: { cn: "显露认知", de: "Entblößte Kognition", en: "Expose Cognition", fr: "Dévoiler l’esprit", ru: "Обнажение восприятия" },
+      name: { ch: "显露认知", de: "Entblößte Kognition", en: "Expose Cognition", fr: "Dévoiler l’esprit", ru: "Обнажение восприятия" },
     },
     {
       cooldownPlannerActive: false,
@@ -645,7 +645,7 @@ export const bossAbilities = {
       guid: 325713,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LingeringAnimaIcon.jpg").default,
       importActive: false,
-      name: { cn: "残留心能", de: "Verbleibende Anima", en: "Lingering Anima", fr: "Anima rémanent", ru: "Остаточная анима" },
+      name: { ch: "残留心能", de: "Verbleibende Anima", en: "Lingering Anima", fr: "Anima rémanent", ru: "Остаточная анима" },
     },
     {
       cooldownPlannerActive: false,
@@ -653,7 +653,7 @@ export const bossAbilities = {
       guid: 324983,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/SharedSufferingIcon.jpg").default,
       importActive: false,
-      name: { cn: "共受苦难", de: "Geteiltes Leid", en: "Shared Suffering", fr: "Souffrance partagée", ru: "Разделенные муки" },
+      name: { ch: "共受苦难", de: "Geteiltes Leid", en: "Shared Suffering", fr: "Souffrance partagée", ru: "Разделенные муки" },
     },
     {
       cooldownPlannerActive: false,
@@ -661,7 +661,7 @@ export const bossAbilities = {
       guid: 326538,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/AnimaWebIcon.jpg").default,
       importActive: false,
-      name: { cn: "心能之网", de: "Animanetz", en: "Anima Web", fr: "Toile d’anima", ru: "Сеть анимы" },
+      name: { ch: "心能之网", de: "Animanetz", en: "Anima Web", fr: "Toile d’anima", ru: "Сеть анимы" },
     },
     {
       cooldownPlannerActive: false,
@@ -669,7 +669,7 @@ export const bossAbilities = {
       guid: 342290,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/GreaterSinsAndSufferingIcon.jpg").default,
       importActive: false,
-      name: { cn: "高级罪孽与折磨", de: "Große Sünden und Leid", en: "Greater Sins and Suffering", fr: "Vices et souffrance supérieurs", ru: "Великие грехи и страдание" },
+      name: { ch: "高级罪孽与折磨", de: "Große Sünden und Leid", en: "Greater Sins and Suffering", fr: "Vices et souffrance supérieurs", ru: "Великие грехи и страдание" },
     },
     {
       cooldownPlannerActive: false,
@@ -677,7 +677,7 @@ export const bossAbilities = {
       guid: 342287,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/GreaterSinsAndSufferingIcon.jpg").default,
       importActive: false,
-      name: { cn: "次级罪孽与折磨", de: "Geringe Sünden und Leid", en: "Lesser Sins and Suffering", fr: "Vices et souffrance inférieurs", ru: "Малые грехи и страдание" },
+      name: { ch: "次级罪孽与折磨", de: "Geringe Sünden und Leid", en: "Lesser Sins and Suffering", fr: "Vices et souffrance inférieurs", ru: "Малые грехи и страдание" },
     },
     {
       cooldownPlannerActive: false,
@@ -685,7 +685,7 @@ export const bossAbilities = {
       guid: 332668,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/UnleashedShadowIcon.jpg").default,
       importActive: false,
-      name: { cn: "暗影释放", de: "Entfesselter Schatten", en: "Unleashed Shadow", fr: "Ombre déchaînée", ru: "Освобожденная тень" },
+      name: { ch: "暗影释放", de: "Entfesselter Schatten", en: "Unleashed Shadow", fr: "Ombre déchaînée", ru: "Освобожденная тень" },
     },
     {
       cooldownPlannerActive: true,
@@ -693,7 +693,7 @@ export const bossAbilities = {
       guid: 342320,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/LightlyConcentratedAnimaIcon.jpg").default,
       importActive: true,
-      name: { cn: "轻度浓缩心能", de: "Leicht konzentrierte Anima", en: "Lightly Concentrated Anima", fr: "Anima légèrement concentré", ru: "Слегка концентрированная анима" },
+      name: { ch: "轻度浓缩心能", de: "Leicht konzentrierte Anima", en: "Lightly Concentrated Anima", fr: "Anima légèrement concentré", ru: "Слегка концентрированная анима" },
     },
     {
       cooldownPlannerActive: true,
@@ -701,7 +701,7 @@ export const bossAbilities = {
       guid: 342321,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ConcentratedAnimaIcon.jpg").default,
       importActive: true,
-      name: { cn: "浓缩心能", de: "Konzentrierte Anima", en: "Concentrated Anima", fr: "Anima concentré", ru: "Концентрированная анима" },
+      name: { ch: "浓缩心能", de: "Konzentrierte Anima", en: "Concentrated Anima", fr: "Anima concentré", ru: "Концентрированная анима" },
     },
     {
       cooldownPlannerActive: true,
@@ -709,7 +709,7 @@ export const bossAbilities = {
       guid: 342322,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/HighlyConcentratedAnimaIcon.jpg").default,
       importActive: true,
-      name: { cn: "高度浓缩心能", de: "Hochkonzentrierte Anima", en: "Highly Concentrated Anima", fr: "Anima hautement concentré", ru: "Высококонцентрированная анима" },
+      name: { ch: "高度浓缩心能", de: "Hochkonzentrierte Anima", en: "Highly Concentrated Anima", fr: "Anima hautement concentré", ru: "Высококонцентрированная анима" },
     },
     {
       cooldownPlannerActive: true,
@@ -717,7 +717,7 @@ export const bossAbilities = {
       guid: 331844,
       icon: require("Images/Bosses/CastleNathria/LadyInervaDarkvein/Icons/ability_revendreth_paladin.jpg").default,
       importActive: false,
-      name: { cn: "聚焦心能", de: "Anima fokussieren", en: "Focus Anima", fr: "Focalisation d’anima", ru: "Концентрация анимы" },
+      name: { ch: "聚焦心能", de: "Anima fokussieren", en: "Focus Anima", fr: "Focalisation d’anima", ru: "Концентрация анимы" },
     },
   ],
   /* ----------------------------------------- Sire Denathrius ----------------------------------------- */
@@ -728,7 +728,7 @@ export const bossAbilities = {
       guid: 330627,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_shadow_unholystrength.jpg").default,
       importActive: true,
-      name: { cn: "毁灭之手", de: "Hand der Zerstörung", en: "Hand of Destruction", fr: "Main de la destruction", ru: "Длань разрушения" },
+      name: { ch: "毁灭之手", de: "Hand der Zerstörung", en: "Hand of Destruction", fr: "Main de la destruction", ru: "Длань разрушения" },
     },
     {
       cooldownPlannerActive: false,
@@ -736,7 +736,7 @@ export const bossAbilities = {
       guid: 336162,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_missile.jpg").default,
       importActive: false,
-      name: { cn: "奥能波动", de: "Crescendo", en: "Crescendo", fr: "Crescendo", ru: "Крещендо" },
+      name: { ch: "奥能波动", de: "Crescendo", en: "Crescendo", fr: "Crescendo", ru: "Крещендо" },
     },
     {
       cooldownPlannerActive: true,
@@ -744,7 +744,7 @@ export const bossAbilities = {
       guid: 326707,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_wave.jpg").default,
       importActive: true,
-      name: { cn: "净化痛苦", de: "Läuternder Schmerz", en: "Cleansing Pain", fr: "Souffrance purificatrice", ru: "Очищающая боль" },
+      name: { ch: "净化痛苦", de: "Läuternder Schmerz", en: "Cleansing Pain", fr: "Souffrance purificatrice", ru: "Очищающая боль" },
     },
     {
       cooldownPlannerActive: true,
@@ -752,7 +752,7 @@ export const bossAbilities = {
       guid: 326994,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/ability_ironmaidens_whirlofblood.jpg").default,
       importActive: true,
-      name: { cn: "血债", de: "Blutpreis", en: "Blood Price", fr: "Prix du sang", ru: "Кровавая цена" },
+      name: { ch: "血债", de: "Blutpreis", en: "Blood Price", fr: "Prix du sang", ru: "Кровавая цена" },
     },
     {
       cooldownPlannerActive: true,
@@ -760,7 +760,7 @@ export const bossAbilities = {
       guid: 327810,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/sha_ability_rogue_bloodyeye_nightmare.jpg").default,
       importActive: false,
-      name: { cn: "午夜猎手", de: "Nachtjäger", en: "Night Hunter", fr: "Chasseur nocturne", ru: "Ночной охотник" },
+      name: { ch: "午夜猎手", de: "Nachtjäger", en: "Night Hunter", fr: "Chasseur nocturne", ru: "Ночной охотник" },
     },
     {
       cooldownPlannerActive: false,
@@ -768,7 +768,7 @@ export const bossAbilities = {
       guid: 326833,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_misc_emotionsad.jpg").default,
       importActive: false,
-      name: { cn: "痛苦的回忆", de: "Schmerzhafte Erinnerungen", en: "Painful Memories", fr: "Souvenirs douloureux", ru: "Болезненные воспоминания" },
+      name: { ch: "痛苦的回忆", de: "Schmerzhafte Erinnerungen", en: "Painful Memories", fr: "Souvenirs douloureux", ru: "Болезненные воспоминания" },
     },
     {
       cooldownPlannerActive: true,
@@ -776,7 +776,7 @@ export const bossAbilities = {
       guid: 332619,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/sha_spell_fire_blueflamestrike_nightmare.jpg").default,
       importActive: true,
-      name: { cn: "粉碎痛苦", de: "Zersplitternder Schmerz", en: "Shattering Pain", fr: "Souffrance destructrice", ru: "Сокрушительная боль" },
+      name: { ch: "粉碎痛苦", de: "Zersplitternder Schmerz", en: "Shattering Pain", fr: "Souffrance destructrice", ru: "Сокрушительная боль" },
     },
     {
       cooldownPlannerActive: true,
@@ -784,7 +784,7 @@ export const bossAbilities = {
       guid: 338686,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/70_inscription_vantus_rune_odyn.jpg").default,
       importActive: false,
-      name: { cn: "纳斯利亚赞歌：暮虚", de: "Hymne von Nathria: Dämmerhöhle", en: "Nathrian Hymn: Duskhollow", fr: "Hymne nathrian : Brunevide", ru: "Гимн Нафрии: Даскхоллоу" },
+      name: { ch: "纳斯利亚赞歌：暮虚", de: "Hymne von Nathria: Dämmerhöhle", en: "Nathrian Hymn: Duskhollow", fr: "Hymne nathrian : Brunevide", ru: "Гимн Нафрии: Даскхоллоу" },
     },
     {
       cooldownPlannerActive: true,
@@ -792,7 +792,7 @@ export const bossAbilities = {
       guid: 338684,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/70_inscription_vantus_rune_suramar.jpg").default,
       importActive: false,
-      name: { cn: "纳斯利亚赞歌：恒影", de: "Hymne von Nathria: Immerschatten", en: "Nathrian Hymn: Evershade", fr: "Hymne nathrian : Éternombre", ru: "Гимн Нафрии: Эвершейд" },
+      name: { ch: "纳斯利亚赞歌：恒影", de: "Hymne von Nathria: Immerschatten", en: "Nathrian Hymn: Evershade", fr: "Hymne nathrian : Éternombre", ru: "Гимн Нафрии: Эвершейд" },
     },
     {
       cooldownPlannerActive: true,
@@ -800,7 +800,7 @@ export const bossAbilities = {
       guid: 338688,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/70_inscription_vantus_rune_azure.jpg").default,
       importActive: false,
-      name: { cn: "纳斯利亚赞歌：晦纱", de: "Hymne von Nathria: Düsterschleier", en: "Nathrian Hymn: Gloomveil", fr: "Hymne nathrian : Voilenoir", ru: "Гимн Нафрии: Глумвейл" },
+      name: { ch: "纳斯利亚赞歌：晦纱", de: "Hymne von Nathria: Düsterschleier", en: "Nathrian Hymn: Gloomveil", fr: "Hymne nathrian : Voilenoir", ru: "Гимн Нафрии: Глумвейл" },
     },
     {
       cooldownPlannerActive: true,
@@ -808,7 +808,7 @@ export const bossAbilities = {
       guid: 338677,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/70_inscription_vantus_rune_nightmare.jpg").default,
       importActive: false,
-      name: { cn: "纳斯利亚赞歌：罪灼", de: "Hymne von Nathria: Sündseng", en: "Nathrian Hymn: Sinsear", fr: "Hymne nathrian : Viciendiaire", ru: "Гимн Нафрии: Синсир" },
+      name: { ch: "纳斯利亚赞歌：罪灼", de: "Hymne von Nathria: Sündseng", en: "Nathrian Hymn: Sinsear", fr: "Hymne nathrian : Viciendiaire", ru: "Гимн Нафрии: Синсир" },
     },
     {
       cooldownPlannerActive: false,
@@ -816,7 +816,7 @@ export const bossAbilities = {
       guid: 329711,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/spell_animarevendreth_buff.jpg").default,
       importActive: false,
-      name: { cn: "猩红合唱", de: "Blutroter Chor", en: "Crimson Chorus", fr: "Chœur cramoisi", ru: "Алый хор" },
+      name: { ch: "猩红合唱", de: "Blutroter Chor", en: "Crimson Chorus", fr: "Chœur cramoisi", ru: "Алый хор" },
     },
     {
       cooldownPlannerActive: true,
@@ -824,11 +824,11 @@ export const bossAbilities = {
       guid: 329943,
       icon: require("Images/Bosses/CastleNathria/SireDenathrius/Icons/ability_backstab.jpg").default,
       importActive: true,
-      name: { cn: "穿刺", de: "Durchbohren", en: "Impale", fr: "Empaler", ru: "Пригвождение" },
+      name: { ch: "穿刺", de: "Durchbohren", en: "Impale", fr: "Empaler", ru: "Пригвождение" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* -------------------------------------- The Council of Blood -------------------------------------- */
   2412: [
@@ -838,7 +838,7 @@ export const bossAbilities = {
       guid: 347350,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/DancingFeverIcon.jpg").default,
       importActive: false,
-      name: { cn: "舞力全开", de: "Tanzfieber", en: "Dancing Fever", fr: "Fièvre dansante", ru: "Танцевальная чума" },
+      name: { ch: "舞力全开", de: "Tanzfieber", en: "Dancing Fever", fr: "Fièvre dansante", ru: "Танцевальная чума" },
     },
     {
       cooldownPlannerActive: true,
@@ -846,7 +846,7 @@ export const bossAbilities = {
       guid: 334909,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/OppressiveAtmosphereIcon.jpg").default,
       importActive: false,
-      name: { cn: "压制气场", de: "Unterdrückende Atmosphäre", en: "Oppressive Atmosphere", fr: "Atmosphère oppressante", ru: "Гнетущая атмосфера" },
+      name: { ch: "压制气场", de: "Unterdrückende Atmosphäre", en: "Oppressive Atmosphere", fr: "Atmosphère oppressante", ru: "Гнетущая атмосфера" },
     },
     {
       cooldownPlannerActive: false,
@@ -854,7 +854,7 @@ export const bossAbilities = {
       guid: 330968,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ThrowFoodIcon.jpg").default,
       importActive: false,
-      name: { cn: "丢掷食物", de: "Essen werfen", en: "Throw Food", fr: "Lancer de la nourriture", ru: "Бросок едой" },
+      name: { ch: "丢掷食物", de: "Essen werfen", en: "Throw Food", fr: "Lancer de la nourriture", ru: "Бросок едой" },
     },
     {
       cooldownPlannerActive: false,
@@ -862,7 +862,7 @@ export const bossAbilities = {
       guid: 327503,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/EvasiveLungeIcon.jpg").default,
       importActive: false,
-      name: { cn: "回闪步", de: "Ausweichender Sprung", en: "Evasive Lunge", fr: "Fente d’évitement", ru: "Уклончивый выпад" },
+      name: { ch: "回闪步", de: "Ausweichender Sprung", en: "Evasive Lunge", fr: "Fente d’évitement", ru: "Уклончивый выпад" },
     },
     {
       cooldownPlannerActive: false,
@@ -870,7 +870,7 @@ export const bossAbilities = {
       guid: 327497,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/EvasiveLungeIcon.jpg").default,
       importActive: false,
-      name: { cn: "回闪步", de: "Ausweichender Sprung", en: "Evasive Lunge", fr: "Fente d’évitement", ru: "Уклончивый выпад" },
+      name: { ch: "回闪步", de: "Ausweichender Sprung", en: "Evasive Lunge", fr: "Fente d’évitement", ru: "Уклончивый выпад" },
     },
     {
       cooldownPlannerActive: false,
@@ -878,7 +878,7 @@ export const bossAbilities = {
       guid: 346800,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/WaltzOfBloodIcon.jpg").default,
       importActive: false,
-      name: { cn: "鲜血华尔兹", de: "Blutwalzer", en: "Waltz of Blood", fr: "Valse de sang", ru: "Кровавый вальс" },
+      name: { ch: "鲜血华尔兹", de: "Blutwalzer", en: "Waltz of Blood", fr: "Valse de sang", ru: "Кровавый вальс" },
     },
     {
       cooldownPlannerActive: false,
@@ -886,7 +886,7 @@ export const bossAbilities = {
       guid: 331634,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/DarkRecitalIcon.jpg").default,
       importActive: false,
-      name: { cn: "黑暗伴舞", de: "Dunkler Vortrag", en: "Dark Recital", fr: "Sombre récital", ru: "Темный бал" },
+      name: { ch: "黑暗伴舞", de: "Dunkler Vortrag", en: "Dark Recital", fr: "Sombre récital", ru: "Темный бал" },
     },
     {
       cooldownPlannerActive: false,
@@ -894,18 +894,18 @@ export const bossAbilities = {
       guid: 330959,
       icon: require("Images/Bosses/CastleNathria/TheCouncilOfBlood/Icons/ability_rogue_shadowdance.jpg").default,
       importActive: false,
-      name: { cn: "断魂之舞", de: "Totentanz", en: "Danse Macabre", fr: "Danse macabre", ru: "Пляска смерти" },
+      name: { ch: "断魂之舞", de: "Totentanz", en: "Danse Macabre", fr: "Danse macabre", ru: "Пляска смерти" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
   ],
   /* -------------------------------------- Stone Legion Generals -------------------------------------- */
@@ -916,7 +916,7 @@ export const bossAbilities = {
       guid: 339728,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/PulverizingMeteorIcon.jpg").default,
       importActive: false,
-      name: { cn: "粉碎流星", de: "Pulverisierender Meteor", en: "Pulverizing Meteor", fr: "Météore destructeur", ru: "Измельчающий метеорит" },
+      name: { ch: "粉碎流星", de: "Pulverisierender Meteor", en: "Pulverizing Meteor", fr: "Météore destructeur", ru: "Измельчающий метеорит" },
     },
     {
       cooldownPlannerActive: false,
@@ -924,7 +924,7 @@ export const bossAbilities = {
       guid: 329808,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/trade_archaeology_druidprieststatueset.jpg").default,
       importActive: false,
-      name: { cn: "坚岩形态", de: "Gehärtete Steingestalt", en: "Hardened Stone Form", fr: "Forme de pierre durcie", ru: "Закаленный каменный облик" },
+      name: { ch: "坚岩形态", de: "Gehärtete Steingestalt", en: "Hardened Stone Form", fr: "Forme de pierre durcie", ru: "Закаленный каменный облик" },
     },
     {
       cooldownPlannerActive: false,
@@ -932,7 +932,7 @@ export const bossAbilities = {
       guid: 329636,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/trade_archaeology_druidprieststatueset.jpg").default,
       importActive: false,
-      name: { cn: "坚岩形态", de: "Gehärtete Steingestalt", en: "Hardened Stone Form", fr: "Forme de pierre durcie", ru: "Закаленный каменный облик" },
+      name: { ch: "坚岩形态", de: "Gehärtete Steingestalt", en: "Hardened Stone Form", fr: "Forme de pierre durcie", ru: "Закаленный каменный облик" },
     },
     {
       cooldownPlannerActive: false,
@@ -940,7 +940,7 @@ export const bossAbilities = {
       guid: 344500,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/inv_elementalearth2.jpg").default,
       importActive: false,
-      name: { cn: "震荡爆发", de: "Hallende Eruption", en: "Reverberating Eruption", fr: "Éruption réverbérante", ru: "Раскатистый взрыв" },
+      name: { ch: "震荡爆发", de: "Hallende Eruption", en: "Reverberating Eruption", fr: "Éruption réverbérante", ru: "Раскатистый взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -948,7 +948,7 @@ export const bossAbilities = {
       guid: 344721,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/spell_nature_earthquake.jpg").default,
       importActive: false,
-      name: { cn: "回荡湮灭", de: "Widerhallende Vernichtung", en: "Echoing Annihilation", fr: "Annihilation résonnante", ru: "Отдающаяся эхом аннигиляция" },
+      name: { ch: "回荡湮灭", de: "Widerhallende Vernichtung", en: "Echoing Annihilation", fr: "Annihilation résonnante", ru: "Отдающаяся эхом аннигиляция" },
     },
     {
       cooldownPlannerActive: false,
@@ -956,7 +956,7 @@ export const bossAbilities = {
       guid: 333913,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedLacerationIcon.jpg").default,
       importActive: false,
-      name: { cn: "邪恶撕裂", de: "Tückische Fleischwunde", en: "Wicked Laceration", fr: "Lacération pernicieuse", ru: "Зловещая рана" },
+      name: { ch: "邪恶撕裂", de: "Tückische Fleischwunde", en: "Wicked Laceration", fr: "Lacération pernicieuse", ru: "Зловещая рана" },
     },
     {
       cooldownPlannerActive: false,
@@ -964,7 +964,7 @@ export const bossAbilities = {
       guid: 334771,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/HeartHemorrhageIcon.jpg").default,
       importActive: false,
-      name: { cn: "溢血之心", de: "Herzblutung", en: "Heart Hemorrhage", fr: "Hémorragie du cœur", ru: "Рана в сердце" },
+      name: { ch: "溢血之心", de: "Herzblutung", en: "Heart Hemorrhage", fr: "Hémorragie du cœur", ru: "Рана в сердце" },
     },
     {
       cooldownPlannerActive: false,
@@ -972,7 +972,7 @@ export const bossAbilities = {
       guid: 333716,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedBlastIcon.jpg").default,
       importActive: false,
-      name: { cn: "邪恶爆发", de: "Tückische Explosion", en: "Wicked Blast", fr: "Explosion pernicieuse", ru: "Зловещий взрыв" },
+      name: { ch: "邪恶爆发", de: "Tückische Explosion", en: "Wicked Blast", fr: "Explosion pernicieuse", ru: "Зловещий взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -980,7 +980,7 @@ export const bossAbilities = {
       guid: 334765,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/HeartRendIcon.jpg").default,
       importActive: false,
-      name: { cn: "裂心击", de: "Herzreißer", en: "Heart Rend", fr: "Lacération du cœur", ru: "Разрыватель сердец" },
+      name: { ch: "裂心击", de: "Herzreißer", en: "Heart Rend", fr: "Lacération du cœur", ru: "Разрыватель сердец" },
     },
     {
       cooldownPlannerActive: false,
@@ -988,7 +988,7 @@ export const bossAbilities = {
       guid: 343063,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/StoneSpikeIcon.jpg").default,
       importActive: false,
-      name: { cn: "大地之刺", de: "Steinstachel", en: "Stone Spike", fr: "Pointe de pierre", ru: "Каменный шип" },
+      name: { ch: "大地之刺", de: "Steinstachel", en: "Stone Spike", fr: "Pointe de pierre", ru: "Каменный шип" },
     },
     {
       cooldownPlannerActive: false,
@@ -996,7 +996,7 @@ export const bossAbilities = {
       guid: 342733,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousFeastIcon.jpg").default,
       importActive: false,
-      name: { cn: "贪婪盛宴", de: "Unersättliches Schmausen", en: "Ravenous Feast", fr: "Festin féroce", ru: "Яростное пожирание" },
+      name: { ch: "贪婪盛宴", de: "Unersättliches Schmausen", en: "Ravenous Feast", fr: "Festin féroce", ru: "Яростное пожирание" },
     },
     {
       cooldownPlannerActive: false,
@@ -1004,7 +1004,7 @@ export const bossAbilities = {
       guid: 342253,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/WickedSlaughterIcon.jpg").default,
       importActive: false,
-      name: { cn: "邪恶屠戮", de: "Tückisches Abschlachten", en: "Wicked Slaughter", fr: "Abattage pernicieux", ru: "Коварная резня" },
+      name: { ch: "邪恶屠戮", de: "Tückisches Abschlachten", en: "Wicked Slaughter", fr: "Abattage pernicieux", ru: "Коварная резня" },
     },
     {
       cooldownPlannerActive: false,
@@ -1012,7 +1012,7 @@ export const bossAbilities = {
       guid: 334929,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/SerratedSwipeIcon.jpg").default,
       importActive: false,
-      name: { cn: "锯齿横扫", de: "Zackenhieb", en: "Serrated Swipe", fr: "Balayage dentelé", ru: "Секущий взмах" },
+      name: { ch: "锯齿横扫", de: "Zackenhieb", en: "Serrated Swipe", fr: "Balayage dentelé", ru: "Секущий взмах" },
     },
     {
       cooldownPlannerActive: false,
@@ -1020,7 +1020,7 @@ export const bossAbilities = {
       guid: 339693,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/CrystallineBurstIcon.jpg").default,
       importActive: false,
-      name: { cn: "晶体爆炸", de: "Kristalline Explosion", en: "Crystalline Burst", fr: "Déflagration cristalline", ru: "Подрыв кристалла" },
+      name: { ch: "晶体爆炸", de: "Kristalline Explosion", en: "Crystalline Burst", fr: "Déflagration cristalline", ru: "Подрыв кристалла" },
     },
     {
       cooldownPlannerActive: false,
@@ -1028,7 +1028,7 @@ export const bossAbilities = {
       guid: 339690,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/CrystalizeIcon.jpg").default,
       importActive: false,
-      name: { cn: "晶化", de: "Kristallisieren", en: "Crystalize", fr: "Cristallisation", ru: "Кристаллизация" },
+      name: { ch: "晶化", de: "Kristallisieren", en: "Crystalize", fr: "Cristallisation", ru: "Кристаллизация" },
     },
     {
       cooldownPlannerActive: false,
@@ -1036,7 +1036,7 @@ export const bossAbilities = {
       guid: 342740,
       icon: require("Images/Bosses/CastleNathria/StoneLegionGenerals/Icons/RavenousSwipeIcon.jpg").default,
       importActive: false,
-      name: { cn: "贪婪横扫", de: "Unersättlicher Hieb", en: "Ravenous Swipe", fr: "Balayage dévorant", ru: "Прожорливый замах" },
+      name: { ch: "贪婪横扫", de: "Unersättlicher Hieb", en: "Ravenous Swipe", fr: "Balayage dévorant", ru: "Прожорливый замах" },
     },
     {
       cooldownPlannerActive: true,
@@ -1044,11 +1044,11 @@ export const bossAbilities = {
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* ----------------------------------------- HuntsmanAltimor ----------------------------------------- */
   2418: [
@@ -1058,7 +1058,7 @@ export const bossAbilities = {
       guid: 334860,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/CrushingStoneIcon.jpg").default,
       importActive: false,
-      name: { cn: "碾石", de: "Zerschmetternder Stein", en: "Crushing Stone", fr: "Pierre écrasante", ru: "Размалывающий камень" },
+      name: { ch: "碾石", de: "Zerschmetternder Stein", en: "Crushing Stone", fr: "Pierre écrasante", ru: "Размалывающий камень" },
     },
     {
       cooldownPlannerActive: false,
@@ -1066,7 +1066,7 @@ export const bossAbilities = {
       guid: 334504,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/achievement_raid_revendrethraid_huntsmangargon.jpg").default,
       importActive: false,
-      name: { cn: "猎手羁绊", de: "Band des Jägersmanns", en: "Huntsman's Bond", fr: "Lien du veneur", ru: "Связь охотника" },
+      name: { ch: "猎手羁绊", de: "Band des Jägersmanns", en: "Huntsman's Bond", fr: "Lien du veneur", ru: "Связь охотника" },
     },
     {
       cooldownPlannerActive: true,
@@ -1074,7 +1074,7 @@ export const bossAbilities = {
       guid: 334797,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/RipSoulIcon.jpg").default,
       importActive: true,
-      name: { cn: "灵魂剥离", de: "Seele ausreißen", en: "Rip Soul", fr: "Lacérer l’âme", ru: "Вырывание души" },
+      name: { ch: "灵魂剥离", de: "Seele ausreißen", en: "Rip Soul", fr: "Lacérer l’âme", ru: "Вырывание души" },
     },
     {
       cooldownPlannerActive: true,
@@ -1082,7 +1082,7 @@ export const bossAbilities = {
       guid: 335114,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
       importActive: false,
-      name: { cn: "寻罪箭", de: "Sündensucher", en: "Sinseeker", fr: "Cherche-vice", ru: "Искатель греха" },
+      name: { ch: "寻罪箭", de: "Sündensucher", en: "Sinseeker", fr: "Cherche-vice", ru: "Искатель греха" },
     },
     {
       cooldownPlannerActive: false,
@@ -1090,7 +1090,7 @@ export const bossAbilities = {
       guid: 335116,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
       importActive: false,
-      name: { cn: "寻罪箭", de: "Sündensucher", en: "Sinseeker", fr: "Cherche-vice", ru: "Искатель греха" },
+      name: { ch: "寻罪箭", de: "Sündensucher", en: "Sinseeker", fr: "Cherche-vice", ru: "Искатель греха" },
     },
     {
       cooldownPlannerActive: false,
@@ -1098,7 +1098,7 @@ export const bossAbilities = {
       guid: 335304,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SinseekerIcon.jpg").default,
       importActive: false,
-      name: { cn: "寻罪箭", de: "Sündensucher", en: "Sinseeker", fr: "Cherche-vice", ru: "Искатель греха" },
+      name: { ch: "寻罪箭", de: "Sündensucher", en: "Sinseeker", fr: "Cherche-vice", ru: "Искатель греха" },
     },
     {
       cooldownPlannerActive: false,
@@ -1106,7 +1106,7 @@ export const bossAbilities = {
       guid: 334939,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousLungeIcon.jpg").default,
       importActive: false,
-      name: { cn: "凶恶猛扑", de: "Grausamer Sprung", en: "Vicious Lunge", fr: "Fente vicieuse", ru: "Жестокий рывок" },
+      name: { ch: "凶恶猛扑", de: "Grausamer Sprung", en: "Vicious Lunge", fr: "Fente vicieuse", ru: "Жестокий рывок" },
     },
     {
       cooldownPlannerActive: false,
@@ -1114,7 +1114,7 @@ export const bossAbilities = {
       guid: 338593,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShatterShotIcon.jpg").default,
       importActive: false,
-      name: { cn: "分裂箭", de: "Splitterschuss", en: "Shatter Shot", fr: "Tir fracassant", ru: "Дробящий выстрел" },
+      name: { ch: "分裂箭", de: "Splitterschuss", en: "Shatter Shot", fr: "Tir fracassant", ru: "Дробящий выстрел" },
     },
     {
       cooldownPlannerActive: false,
@@ -1122,7 +1122,7 @@ export const bossAbilities = {
       guid: 334404,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/SpreadshotIcon.jpg").default,
       importActive: false,
-      name: { cn: "扩散射击", de: "Streuschuss", en: "Spreadshot", fr: "Tir à dispersion", ru: "Залп" },
+      name: { ch: "扩散射击", de: "Streuschuss", en: "Spreadshot", fr: "Tir à dispersion", ru: "Залп" },
     },
     {
       cooldownPlannerActive: false,
@@ -1130,7 +1130,7 @@ export const bossAbilities = {
       guid: 334960,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ViciousWoundIcon.jpg").default,
       importActive: false,
-      name: { cn: "恶毒之伤", de: "Üble Wunde", en: "Vicious Wound", fr: "Blessure vicieuse", ru: "Страшная рана" },
+      name: { ch: "恶毒之伤", de: "Üble Wunde", en: "Vicious Wound", fr: "Blessure vicieuse", ru: "Страшная рана" },
     },
     {
       cooldownPlannerActive: false,
@@ -1138,7 +1138,7 @@ export const bossAbilities = {
       guid: 334971,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/JaggedClawsIcon.jpg").default,
       importActive: false,
-      name: { cn: "锯齿利爪", de: "Gezackte Klauen", en: "Jagged Claws", fr: "Griffes dentelées", ru: "Зазубренные когти" },
+      name: { ch: "锯齿利爪", de: "Gezackte Klauen", en: "Jagged Claws", fr: "Griffes dentelées", ru: "Зазубренные когти" },
     },
     {
       cooldownPlannerActive: false,
@@ -1146,7 +1146,7 @@ export const bossAbilities = {
       guid: 339639,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/UnstableSoulIcon.jpg").default,
       importActive: false,
-      name: { cn: "动荡的灵魂", de: "Instabile Seele", en: "Unstable Soul", fr: "Âme instable", ru: "Нестабильная душа" },
+      name: { ch: "动荡的灵魂", de: "Instabile Seele", en: "Unstable Soul", fr: "Âme instable", ru: "Нестабильная душа" },
     },
     {
       cooldownPlannerActive: false,
@@ -1154,7 +1154,7 @@ export const bossAbilities = {
       guid: 334852,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PetrifyingHowlIcon.jpg").default,
       importActive: false,
-      name: { cn: "石化嚎叫", de: "Versteinerndes Heulen", en: "Petrifying Howl", fr: "Hurlement pétrifiant", ru: "Обращающий в камень вой" },
+      name: { ch: "石化嚎叫", de: "Versteinerndes Heulen", en: "Petrifying Howl", fr: "Hurlement pétrifiant", ru: "Обращающий в камень вой" },
     },
     {
       cooldownPlannerActive: false,
@@ -1162,7 +1162,7 @@ export const bossAbilities = {
       guid: 334889,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PetrifyingHowlIcon.jpg").default,
       importActive: false,
-      name: { cn: "石化嚎叫", de: "Versteinerndes Heulen", en: "Petrifying Howl", fr: "Hurlement pétrifiant", ru: "Обращающий в камень вой" },
+      name: { ch: "石化嚎叫", de: "Versteinerndes Heulen", en: "Petrifying Howl", fr: "Hurlement pétrifiant", ru: "Обращающий в камень вой" },
     },
     {
       cooldownPlannerActive: false,
@@ -1170,7 +1170,7 @@ export const bossAbilities = {
       guid: 334919,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/PetrifyingHowlIcon.jpg").default,
       importActive: false,
-      name: { cn: "石化嚎叫", de: "Versteinerndes Heulen", en: "Petrifying Howl", fr: "Hurlement pétrifiant", ru: "Обращающий в камень вой" },
+      name: { ch: "石化嚎叫", de: "Versteinerndes Heulen", en: "Petrifying Howl", fr: "Hurlement pétrifiant", ru: "Обращающий в камень вой" },
     },
     {
       cooldownPlannerActive: false,
@@ -1178,7 +1178,7 @@ export const bossAbilities = {
       guid: 334893,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/StoneShardsIcon.jpg").default,
       importActive: false,
-      name: { cn: "尖石裂片", de: "Steinsplitter", en: "Stone Shards", fr: "Éclats de pierre", ru: "Каменные осколки" },
+      name: { ch: "尖石裂片", de: "Steinsplitter", en: "Stone Shards", fr: "Éclats de pierre", ru: "Каменные осколки" },
     },
     {
       cooldownPlannerActive: false,
@@ -1186,11 +1186,11 @@ export const bossAbilities = {
       guid: 335016,
       icon: require("Images/Bosses/CastleNathria/HuntsmanAltimor/Icons/ShootIcon.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Shoot", fr: "", ru: "" },
+      name: { ch: "", de: "", en: "Shoot", fr: "", ru: "" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* -------------------------------------------- KelThuzad -------------------------------------------- */
   2422: [
@@ -1200,7 +1200,7 @@ export const bossAbilities = {
       guid: 346459,
       icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/ability_deathknight_pillaroffrost.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Glacial Wrath", fr: "", ru: "" },
+      name: { ch: "", de: "", en: "Glacial Wrath", fr: "", ru: "" },
     },
     {
       cooldownPlannerActive: true,
@@ -1208,7 +1208,7 @@ export const bossAbilities = {
       guid: 346530,
       icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/ability_mage_coldasice.jpg").default,
       importActive: false,
-      name: { cn: "冰封毁灭", de: "Gefrorene Zerstörung", en: "Frozen Destruction", fr: "Destruction gelée", ru: "Уничтожение льдом" },
+      name: { ch: "冰封毁灭", de: "Gefrorene Zerstörung", en: "Frozen Destruction", fr: "Destruction gelée", ru: "Уничтожение льдом" },
     },
     {
       cooldownPlannerActive: true,
@@ -1216,7 +1216,7 @@ export const bossAbilities = {
       guid: 348759,
       icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/spell_frost_glacier.jpg").default,
       importActive: false,
-      name: { cn: "冰霜冲击", de: "Frostschlag", en: "Frost Blast", fr: "Trait de givre", ru: "Ледяной взрыв" },
+      name: { ch: "冰霜冲击", de: "Frostschlag", en: "Frost Blast", fr: "Trait de givre", ru: "Ледяной взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -1224,7 +1224,7 @@ export const bossAbilities = {
       guid: 357928,
       icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/spell_frost_glacier.jpg").default,
       importActive: false,
-      name: { cn: "冰霜冲击", de: "Frostschlag", en: "Frost Blast", fr: "Trait de givre", ru: "Ледяной взрыв" },
+      name: { ch: "冰霜冲击", de: "Frostschlag", en: "Frost Blast", fr: "Trait de givre", ru: "Ледяной взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -1232,7 +1232,7 @@ export const bossAbilities = {
       guid: 354848,
       icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/spell_shadow_requiem.jpg").default,
       importActive: false,
-      name: { cn: "亡灵之怒", de: "Unvergänglicher Zorn", en: "Undying Wrath", fr: "Courroux éternel", ru: "Неумирающий гнев" },
+      name: { ch: "亡灵之怒", de: "Unvergänglicher Zorn", en: "Undying Wrath", fr: "Courroux éternel", ru: "Неумирающий гнев" },
     },
     {
       cooldownPlannerActive: false,
@@ -1240,11 +1240,11 @@ export const bossAbilities = {
       guid: 352293,
       icon: require("Images/Bosses/SanctumOfDomination/Kelthuzad/Icons/spell_warlock_darkregeneration.jpg").default,
       importActive: false,
-      name: { cn: "复仇毁灭", de: "Rachsüchtige Zerstörung", en: "Vengeful Destruction", fr: "Destruction vengeresse", ru: "Мстительное разрушение" },
+      name: { ch: "复仇毁灭", de: "Rachsüchtige Zerstörung", en: "Vengeful Destruction", fr: "Destruction vengeresse", ru: "Мстительное разрушение" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* ------------------------------------------ The Tarragrue ------------------------------------------ */
   2423: [
@@ -1254,7 +1254,7 @@ export const bossAbilities = {
       guid: 357431,
       icon: require("Images/Bosses/SanctumOfDomination/TheTarragrue/Icons/spell_animamaw_buff.jpg").default,
       importActive: false,
-      name: { cn: "死亡攫握", de: "Todesgriff", en: "Grasp of Death", fr: "Emprise de la mort", ru: "Хватка смерти" },
+      name: { ch: "死亡攫握", de: "Todesgriff", en: "Grasp of Death", fr: "Emprise de la mort", ru: "Хватка смерти" },
     },
   ],
   /* -------------------------------------------- The Nine -------------------------------------------- */
@@ -1265,7 +1265,7 @@ export const bossAbilities = {
       guid: 351399,
       icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_animamaw_buff.jpg").default,
       importActive: false,
-      name: { cn: "积怨", de: "Abneigung", en: "Resentment", fr: "Ressentiment", ru: "Неприязнь" },
+      name: { ch: "积怨", de: "Abneigung", en: "Resentment", fr: "Ressentiment", ru: "Неприязнь" },
     },
     {
       cooldownPlannerActive: false,
@@ -1273,7 +1273,7 @@ export const bossAbilities = {
       guid: 350287,
       icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_animamaw_debuff.jpg").default,
       importActive: false,
-      name: { cn: "终约之歌", de: "Lied der Auflösung", en: "Song of Dissolution", fr: "Chant de dissolution", ru: "Песня разложения" },
+      name: { ch: "终约之歌", de: "Lied der Auflösung", en: "Song of Dissolution", fr: "Chant de dissolution", ru: "Песня разложения" },
     },
     {
       cooldownPlannerActive: true,
@@ -1281,7 +1281,7 @@ export const bossAbilities = {
       guid: 350040,
       icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_ice_lament.jpg").default,
       importActive: false,
-      name: { cn: "阿尔苏拉的粉碎凝视", de: "Arthuras zerschmetternder Blick", en: "Arthura's Crushing Gaze", fr: "Regard écrasant d’Arthura", ru: "Сокрушающий взор Артуры" },
+      name: { ch: "阿尔苏拉的粉碎凝视", de: "Arthuras zerschmetternder Blick", en: "Arthura's Crushing Gaze", fr: "Regard écrasant d’Arthura", ru: "Сокрушающий взор Артуры" },
     },
     {
       cooldownPlannerActive: true,
@@ -1289,7 +1289,7 @@ export const bossAbilities = {
       guid: 350542,
       icon: require("Images/Bosses/SanctumOfDomination/TheNine/Icons/spell_frost_ice-shards.jpg").default,
       importActive: false,
-      name: { cn: "命运残片", de: "Fragmente des Schicksals", en: "Fragments of Destiny", fr: "Fragments du destin", ru: "Фрагменты судьбы" },
+      name: { ch: "命运残片", de: "Fragmente des Schicksals", en: "Fragments of Destiny", fr: "Fragments du destin", ru: "Фрагменты судьбы" },
     },
   ],
   /* ---------------------------------------- Painsmith Raznal ---------------------------------------- */
@@ -1300,7 +1300,7 @@ export const bossAbilities = {
       guid: 356870,
       icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/ability_warlock_inferno.jpg").default,
       importActive: false,
-      name: { cn: "烈焰套索爆炸", de: "Flammengriffausbruch", en: "Flameclasp Eruption", fr: "Éruption serre-flamme", ru: "Взрыв огненного капкана" },
+      name: { ch: "烈焰套索爆炸", de: "Flammengriffausbruch", en: "Flameclasp Eruption", fr: "Éruption serre-flamme", ru: "Взрыв огненного капкана" },
     },
     {
       cooldownPlannerActive: true,
@@ -1308,7 +1308,7 @@ export const bossAbilities = {
       guid: 355778,
       icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/inv_polearm_2h_mawnecromancerboss_d_01_grey.jpg").default,
       importActive: true,
-      name: { cn: "双刃镰刀", de: "Doppelklingensichel", en: "Dualblade Scythe", fr: "Faux à double lame", ru: "Двойная коса" },
+      name: { ch: "双刃镰刀", de: "Doppelklingensichel", en: "Dualblade Scythe", fr: "Faux à double lame", ru: "Двойная коса" },
     },
     {
       cooldownPlannerActive: true,
@@ -1316,7 +1316,7 @@ export const bossAbilities = {
       guid: 348508,
       icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/inv_mace_2h_maw_c_01.jpg").default,
       importActive: true,
-      name: { cn: "震颤铁锤", de: "Schallender Hammer", en: "Reverberating Hammer", fr: "Marteau réverbérant", ru: "Вибромолот" },
+      name: { ch: "震颤铁锤", de: "Schallender Hammer", en: "Reverberating Hammer", fr: "Marteau réverbérant", ru: "Вибромолот" },
     },
     {
       cooldownPlannerActive: true,
@@ -1324,7 +1324,7 @@ export const bossAbilities = {
       guid: 355568,
       icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/inv_axe_2h_mawraid_diff.jpg").default,
       importActive: true,
-      name: { cn: "十字刃斧", de: "Kreuzaxt", en: "Cruciform Axe", fr: "Hache crucifix", ru: "Крестовой топор" },
+      name: { ch: "十字刃斧", de: "Kreuzaxt", en: "Cruciform Axe", fr: "Hache crucifix", ru: "Крестовой топор" },
     },
     {
       cooldownPlannerActive: false,
@@ -1332,16 +1332,16 @@ export const bossAbilities = {
       guid: 359033,
       icon: require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/Icons/ability_mage_moltenarmor.jpg").default,
       importActive: false,
-      name: { cn: "熔炉烈焰", de: "Schmiedeflammen", en: "Forge's Flames", fr: "Flammes de forge", ru: "Пламя кузни" },
+      name: { ch: "熔炉烈焰", de: "Schmiedeflammen", en: "Forge's Flames", fr: "Flammes de forge", ru: "Пламя кузни" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
   ],
   /* --------------------------------------- Fatescribe Roh Kalo --------------------------------------- */
@@ -1352,7 +1352,7 @@ export const bossAbilities = {
       guid: 354265,
       icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_animamaw_debuff.jpg").default,
       importActive: true,
-      name: { cn: "扭曲命运", de: "Schicksalszerrung", en: "Twist Fate", fr: "Destin déformé", ru: "Искажение судьбы" },
+      name: { ch: "扭曲命运", de: "Schicksalszerrung", en: "Twist Fate", fr: "Destin déformé", ru: "Искажение судьбы" },
     },
     {
       cooldownPlannerActive: true,
@@ -1360,7 +1360,7 @@ export const bossAbilities = {
       guid: 351685,
       icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/spell_animamaw_buff.jpg").default,
       importActive: false,
-      name: { cn: "祈求宿命", de: "Schicksal herbeirufen", en: "Invoke Destiny", fr: "Invocation du destin", ru: "Призыв судьбы" },
+      name: { ch: "祈求宿命", de: "Schicksal herbeirufen", en: "Invoke Destiny", fr: "Invocation du destin", ru: "Призыв судьбы" },
     },
     {
       cooldownPlannerActive: false,
@@ -1368,10 +1368,10 @@ export const bossAbilities = {
       guid: 357739,
       icon: require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/Icons/ability_vehicle_sonicshockwave.jpg").default,
       importActive: false,
-      name: { cn: "命运重构", de: "Schicksal neu ausrichten", en: "Realign Fate", fr: "Réalignement du destin", ru: "Перестройка судьбы" },
+      name: { ch: "命运重构", de: "Schicksal neu ausrichten", en: "Realign Fate", fr: "Réalignement du destin", ru: "Перестройка судьбы" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* --------------------------------------- Remnant of Nerzhul --------------------------------------- */
   2432: [
@@ -1381,7 +1381,7 @@ export const bossAbilities = {
       guid: 350073,
       icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/ability_argus_blightorb.jpg").default,
       importActive: false,
-      name: { cn: "折磨", de: "Qual", en: "Torment", fr: "Tourment", ru: "Мучение" },
+      name: { ch: "折磨", de: "Qual", en: "Torment", fr: "Tourment", ru: "Мучение" },
     },
     {
       cooldownPlannerActive: true,
@@ -1389,7 +1389,7 @@ export const bossAbilities = {
       guid: 350427,
       icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/ability_warlock_eradication.jpg").default,
       importActive: false,
-      name: { cn: "怨毒", de: "Böswilligkeit", en: "Malevolence", fr: "Malveillance", ru: "Зловредность" },
+      name: { ch: "怨毒", de: "Böswilligkeit", en: "Malevolence", fr: "Malveillance", ru: "Зловредность" },
     },
     {
       cooldownPlannerActive: true,
@@ -1397,7 +1397,7 @@ export const bossAbilities = {
       guid: 351073,
       icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/inv_misc_desecrated_platechest.jpg").default,
       importActive: true,
-      name: { cn: "碎裂", de: "Zerschmettern", en: "Shatter", fr: "Démanteler", ru: "Раскалывание" },
+      name: { ch: "碎裂", de: "Zerschmettern", en: "Shatter", fr: "Démanteler", ru: "Раскалывание" },
     },
     {
       cooldownPlannerActive: true,
@@ -1405,7 +1405,7 @@ export const bossAbilities = {
       guid: 351067,
       icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/inv_misc_desecrated_plategloves.jpg").default,
       importActive: true,
-      name: { cn: "碎裂", de: "Zerschmettern", en: "Shatter", fr: "Démanteler", ru: "Раскалывание" },
+      name: { ch: "碎裂", de: "Zerschmettern", en: "Shatter", fr: "Démanteler", ru: "Раскалывание" },
     },
     {
       cooldownPlannerActive: true,
@@ -1413,7 +1413,7 @@ export const bossAbilities = {
       guid: 351066,
       icon: require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/Icons/achievement_boss_lichking.jpg").default,
       importActive: true,
-      name: { cn: "碎裂", de: "Zerschmettern", en: "Shatter", fr: "Démanteler", ru: "Раскалывание" },
+      name: { ch: "碎裂", de: "Zerschmettern", en: "Shatter", fr: "Démanteler", ru: "Раскалывание" },
     },
   ],
   /* -------------------------------------- The Eye of the Jailer -------------------------------------- */
@@ -1424,7 +1424,7 @@ export const bossAbilities = {
       guid: 349030,
       icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_argus_deathfog.jpg").default,
       importActive: true,
-      name: { cn: "死亡泰坦凝视", de: "Titanischer Todesblick", en: "Titanic Death Gaze", fr: "Regard de mort titanesque", ru: "Титанический взгляд смерти" },
+      name: { ch: "死亡泰坦凝视", de: "Titanischer Todesblick", en: "Titanic Death Gaze", fr: "Regard de mort titanesque", ru: "Титанический взгляд смерти" },
     },
     {
       cooldownPlannerActive: true,
@@ -1432,7 +1432,7 @@ export const bossAbilities = {
       guid: 350828,
       icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_felarakkoa_eyeofterrok.jpg").default,
       importActive: true,
-      name: { cn: "死亡锁链", de: "Todesverbindung", en: "Deathlink", fr: "Lien mortel", ru: "Смертельная связь" },
+      name: { ch: "死亡锁链", de: "Todesverbindung", en: "Deathlink", fr: "Lien mortel", ru: "Смертельная связь" },
     },
     {
       cooldownPlannerActive: false,
@@ -1440,7 +1440,7 @@ export const bossAbilities = {
       guid: 348974,
       icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/ability_blackhand_marked4death.jpg").default,
       importActive: false,
-      name: { cn: "即刻屠灭", de: "Sofortige Auslöschung", en: "Immediate Extermination", fr: "Extermination immédiate", ru: "Быстрая смерть" },
+      name: { ch: "即刻屠灭", de: "Sofortige Auslöschung", en: "Immediate Extermination", fr: "Extermination immédiate", ru: "Быстрая смерть" },
     },
     {
       cooldownPlannerActive: false,
@@ -1448,7 +1448,7 @@ export const bossAbilities = {
       guid: 350847,
       icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/achievement_boss_cthun.jpg").default,
       importActive: false,
-      name: { cn: "凄凉光波", de: "Verwüstungsstrahl", en: "Desolation Beam", fr: "Rayon de désolation", ru: "Луч опустошения" },
+      name: { ch: "凄凉光波", de: "Verwüstungsstrahl", en: "Desolation Beam", fr: "Rayon de désolation", ru: "Луч опустошения" },
     },
     {
       cooldownPlannerActive: false,
@@ -1456,10 +1456,10 @@ export const bossAbilities = {
       guid: 348805,
       icon: require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/Icons/spell_animamaw_nova.jpg").default,
       importActive: false,
-      name: { cn: "冥暗护盾", de: "Stygischer Dunkelschild", en: "Stygian Darkshield", fr: "Bouclier sombre stygien", ru: "Стигийский щит тьмы" },
+      name: { ch: "冥暗护盾", de: "Stygischer Dunkelschild", en: "Stygian Darkshield", fr: "Bouclier sombre stygien", ru: "Стигийский щит тьмы" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* -------------------------------------- Soulrender Dormazain -------------------------------------- */
   2434: [
@@ -1469,7 +1469,7 @@ export const bossAbilities = {
       guid: 353429,
       icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/spell_shadow_painandsuffering.jpg").default,
       importActive: false,
-      name: { cn: "饱受磨难", de: "Gequält", en: "Tormented", fr: "Tourmenté", ru: "Мучение" },
+      name: { ch: "饱受磨难", de: "Gequält", en: "Tormented", fr: "Tourmenté", ru: "Мучение" },
     },
     {
       cooldownPlannerActive: true,
@@ -1477,7 +1477,7 @@ export const bossAbilities = {
       guid: 350927,
       icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/ability_deathknight_deathchain.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Warmonger Shackle", fr: "", ru: "" },
+      name: { ch: "", de: "", en: "Warmonger Shackle", fr: "", ru: "" },
     },
     {
       cooldownPlannerActive: true,
@@ -1485,7 +1485,7 @@ export const bossAbilities = {
       guid: 350801,
       icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/sha_spell_fire_ragnaros_supernova_nightmare.jpg").default,
       importActive: false,
-      name: { cn: "残暴迸发", de: "Entfesselte Tyrannei", en: "Unleashed Tyranny", fr: "Tyrannie déchaînée", ru: "Тирания" },
+      name: { ch: "残暴迸发", de: "Entfesselte Tyrannei", en: "Unleashed Tyranny", fr: "Tyrannie déchaînée", ru: "Тирания" },
     },
     {
       cooldownPlannerActive: false,
@@ -1493,7 +1493,7 @@ export const bossAbilities = {
       guid: 358612,
       icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/spell_shadow_deathscream.jpg").default,
       importActive: false,
-      name: { cn: "尖啸回响", de: "Hallende Schreie", en: "Echoing Screams", fr: "Hurlements résonnants", ru: "Эхо криков" },
+      name: { ch: "尖啸回响", de: "Hallende Schreie", en: "Echoing Screams", fr: "Hurlements résonnants", ru: "Эхо криков" },
     },
     {
       cooldownPlannerActive: true,
@@ -1501,7 +1501,7 @@ export const bossAbilities = {
       guid: 349985,
       icon: require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/Icons/spell_animarevendreth_wave.jpg").default,
       importActive: true,
-      name: { cn: "折磨喷发", de: "Gequälte Eruptionen", en: "Tormented Eruptions", fr: "Éruptions tourmentées", ru: "Мучительные извержения" },
+      name: { ch: "折磨喷发", de: "Gequälte Eruptionen", en: "Tormented Eruptions", fr: "Éruptions tourmentées", ru: "Мучительные извержения" },
     },
   ],
   /* --------------------------------------- Sylvanus Windrunner --------------------------------------- */
@@ -1512,7 +1512,7 @@ export const bossAbilities = {
       guid: 347670,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_throw.jpg").default,
       importActive: false,
-      name: { cn: "暗影匕首", de: "Schattendolch", en: "Shadow Dagger", fr: "Dague de l’ombre", ru: "Кинжал тени" },
+      name: { ch: "暗影匕首", de: "Schattendolch", en: "Shadow Dagger", fr: "Dague de l’ombre", ru: "Кинжал тени" },
     },
     {
       cooldownPlannerActive: true,
@@ -1520,7 +1520,7 @@ export const bossAbilities = {
       guid: 352650,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_priest_mindspike.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Ranger's Heartseeker", fr: "", ru: "" },
+      name: { ch: "", de: "", en: "Ranger's Heartseeker", fr: "", ru: "" },
     },
     {
       cooldownPlannerActive: true,
@@ -1528,7 +1528,7 @@ export const bossAbilities = {
       guid: 357527,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_shadow_shadowfury.jpg").default,
       importActive: true,
-      name: { cn: "女妖之怒", de: "Zorn der Banshee", en: "Banshee's Fury", fr: "Furie de la banshee", ru: "Ярость банши" },
+      name: { ch: "女妖之怒", de: "Zorn der Banshee", en: "Banshee's Fury", fr: "Furie de la banshee", ru: "Ярость банши" },
     },
     {
       cooldownPlannerActive: true,
@@ -1536,7 +1536,7 @@ export const bossAbilities = {
       guid: 357618,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_theblackarrow.jpg").default,
       importActive: false,
-      name: { cn: "哀恸箭", de: "Klagender Pfeil", en: "Wailing Arrow", fr: "Flèche gémissante", ru: "Стенающая стрела" },
+      name: { ch: "哀恸箭", de: "Klagender Pfeil", en: "Wailing Arrow", fr: "Flèche gémissante", ru: "Стенающая стрела" },
     },
     {
       cooldownPlannerActive: true,
@@ -1544,7 +1544,7 @@ export const bossAbilities = {
       guid: 353952,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_warlock_improvedsoulleech.jpg").default,
       importActive: true,
-      name: { cn: "女妖尖啸", de: "Bansheekreischen", en: "Banshee Scream", fr: "Cri de la banshee", ru: "Крик банши" },
+      name: { ch: "女妖尖啸", de: "Bansheekreischen", en: "Banshee Scream", fr: "Cri de la banshee", ru: "Крик банши" },
     },
     {
       cooldownPlannerActive: true,
@@ -1552,7 +1552,7 @@ export const bossAbilities = {
       guid: 349419,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/inv_belt_44.jpg").default,
       importActive: true,
-      name: { cn: "统御锁链", de: "Herrschaftsketten", en: "Domination Chains", fr: "Chaînes de domination", ru: "Цепи Господства" },
+      name: { ch: "统御锁链", de: "Herrschaftsketten", en: "Domination Chains", fr: "Chaînes de domination", ru: "Цепи Господства" },
     },
     {
       cooldownPlannerActive: true,
@@ -1560,7 +1560,7 @@ export const bossAbilities = {
       guid: 358709,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_theblackarrow.jpg").default,
       importActive: false,
-      name: { cn: "黑蚀箭", de: "Schwarzer Pfeil", en: "Black Arrow", fr: "Flèche noire", ru: "Черная стрела" },
+      name: { ch: "黑蚀箭", de: "Schwarzer Pfeil", en: "Black Arrow", fr: "Flèche noire", ru: "Черная стрела" },
     },
     {
       cooldownPlannerActive: true,
@@ -1568,7 +1568,7 @@ export const bossAbilities = {
       guid: 354068,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_shadow_shadowfury.jpg").default,
       importActive: true,
-      name: { cn: "女妖之怒", de: "Zorn der Banshee", en: "Banshee's Fury", fr: "Furie de la banshee", ru: "Ярость банши" },
+      name: { ch: "女妖之怒", de: "Zorn der Banshee", en: "Banshee's Fury", fr: "Furie de la banshee", ru: "Ярость банши" },
     },
     {
       cooldownPlannerActive: false,
@@ -1576,7 +1576,7 @@ export const bossAbilities = {
       guid: 350857,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/ability_racial_shadowmeld.jpg").default,
       importActive: false,
-      name: { cn: "女妖斗篷", de: "Bansheeschleier", en: "Banshee Shroud", fr: "Voile de la banshee", ru: "Покров банши" },
+      name: { ch: "女妖斗篷", de: "Bansheeschleier", en: "Banshee Shroud", fr: "Voile de la banshee", ru: "Покров банши" },
     },
     {
       cooldownPlannerActive: false,
@@ -1584,7 +1584,7 @@ export const bossAbilities = {
       guid: 348094,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_shadow_soulleech_3.jpg").default,
       importActive: false,
-      name: { cn: "女妖哀嚎", de: "Bansheeheulen", en: "Banshee Wail", fr: "Complainte de la banshee", ru: "Вой банши" },
+      name: { ch: "女妖哀嚎", de: "Bansheeheulen", en: "Banshee Wail", fr: "Complainte de la banshee", ru: "Вой банши" },
     },
     {
       cooldownPlannerActive: true,
@@ -1592,11 +1592,11 @@ export const bossAbilities = {
       guid: 351562,
       icon: require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/Icons/spell_animamaw_nova.jpg").default,
       importActive: true,
-      name: { cn: "驱逐", de: "Ausstoß", en: "Expulsion", fr: "Expulsion", ru: "Выброс" },
+      name: { ch: "驱逐", de: "Ausstoß", en: "Expulsion", fr: "Expulsion", ru: "Выброс" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* ----------------------------------- Guardian of the First Ones ----------------------------------- */
   2436: [
@@ -1606,7 +1606,7 @@ export const bossAbilities = {
       guid: 352538,
       icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
       importActive: true,
-      name: { cn: "净化协议", de: "Läuterungsprotokoll", en: "Purging Protocol", fr: "Protocole de purge", ru: "Протокол очистки" },
+      name: { ch: "净化协议", de: "Läuterungsprotokoll", en: "Purging Protocol", fr: "Protocole de purge", ru: "Протокол очистки" },
     },
     {
       cooldownPlannerActive: true,
@@ -1614,7 +1614,7 @@ export const bossAbilities = {
       guid: 355352,
       icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
       importActive: false,
-      name: { cn: "湮灭", de: "Auslöschen", en: "Obliterate", fr: "Oblitération", ru: "Уничтожение" },
+      name: { ch: "湮灭", de: "Auslöschen", en: "Obliterate", fr: "Oblitération", ru: "Уничтожение" },
     },
     {
       cooldownPlannerActive: false,
@@ -1622,7 +1622,7 @@ export const bossAbilities = {
       guid: 350732,
       icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
       importActive: false,
-      name: { cn: "破甲", de: "Zerreißen", en: "Sunder", fr: "Fracassement", ru: "Раскол" },
+      name: { ch: "破甲", de: "Zerreißen", en: "Sunder", fr: "Fracassement", ru: "Раскол" },
     },
     {
       cooldownPlannerActive: true,
@@ -1630,7 +1630,7 @@ export const bossAbilities = {
       guid: 350455,
       icon: require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/Icons/spell_broker_nova.jpg").default,
       importActive: false,
-      name: { cn: "不稳定的能量", de: "Instabile Energie", en: "Unstable Energy", fr: "Énergie instable", ru: "Нестабильная энергия" },
+      name: { ch: "不稳定的能量", de: "Instabile Energie", en: "Unstable Energy", fr: "Énergie instable", ru: "Нестабильная энергия" },
     },
   ],
   /* ----------------------------------- Guardian of the first ones ----------------------------------- */
@@ -1641,7 +1641,7 @@ export const bossAbilities = {
       guid: 360202,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_empower.jpg").default,
       importActive: true,
-      name: { cn: "造物尖刺", de: "Spitze der Schöpfung", en: "Spike of Creation", fr: "Pic de création", ru: "Шип творения" },
+      name: { ch: "造物尖刺", de: "Spitze der Schöpfung", en: "Spike of Creation", fr: "Pic de création", ru: "Шип творения" },
     },
     {
       cooldownPlannerActive: true,
@@ -1649,7 +1649,7 @@ export const bossAbilities = {
       guid: 360409,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_radientazeritecore.jpg").default,
       importActive: true,
-      name: { cn: "暴露的核心", de: "Freigelegter Kern", en: "Exposed Core", fr: "Noyau exposé", ru: "Обнаженный сердечник" },
+      name: { ch: "暴露的核心", de: "Freigelegter Kern", en: "Exposed Core", fr: "Noyau exposé", ru: "Обнаженный сердечник" },
     },
     {
       cooldownPlannerActive: true,
@@ -1657,7 +1657,7 @@ export const bossAbilities = {
       guid: 364843,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
       importActive: true,
-      name: { cn: "碎裂核心", de: "Gebrochener Kern", en: "Fractured Core", fr: "Noyau fracturé", ru: "Раздробленный сердечник" },
+      name: { ch: "碎裂核心", de: "Gebrochener Kern", en: "Fractured Core", fr: "Noyau fracturé", ru: "Раздробленный сердечник" },
     },
     {
       cooldownPlannerActive: false,
@@ -1665,7 +1665,7 @@ export const bossAbilities = {
       guid: 364845,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
       importActive: true,
-      name: { cn: "碎裂核心", de: "Gebrochener Kern", en: "Fractured Core", fr: "Noyau fracturé", ru: "Раздробленный сердечник" },
+      name: { ch: "碎裂核心", de: "Gebrochener Kern", en: "Fractured Core", fr: "Noyau fracturé", ru: "Раздробленный сердечник" },
     },
     {
       cooldownPlannerActive: true,
@@ -1673,7 +1673,7 @@ export const bossAbilities = {
       guid: 364962,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_selfdestruct.jpg").default,
       importActive: true,
-      name: { cn: "核心过载", de: "Kernüberladung", en: "Core Overload", fr: "Surcharge de noyau", ru: "Перегрузка источника питания" },
+      name: { ch: "核心过载", de: "Kernüberladung", en: "Core Overload", fr: "Surcharge de noyau", ru: "Перегрузка источника питания" },
     },
     {
       cooldownPlannerActive: false,
@@ -1681,7 +1681,7 @@ export const bossAbilities = {
       guid: 364963,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_fire_selfdestruct.jpg").default,
       importActive: true,
-      name: { cn: "核心过载", de: "Kernüberladung", en: "Core Overload", fr: "Surcharge de noyau", ru: "Перегрузка источника питания" },
+      name: { ch: "核心过载", de: "Kernüberladung", en: "Core Overload", fr: "Surcharge de noyau", ru: "Перегрузка источника питания" },
     },
     {
       cooldownPlannerActive: true,
@@ -1689,11 +1689,11 @@ export const bossAbilities = {
       guid: 366822,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenitor_defensewall_boss.jpg").default,
       importActive: true,
-      name: { cn: "放射性核心", de: "Radioaktiver Kern", en: "Radioactive Core", fr: "Noyau radioactif", ru: "Радиоактивное ядро" },
+      name: { ch: "放射性核心", de: "Radioaktiver Kern", en: "Radioactive Core", fr: "Noyau radioactif", ru: "Радиоактивное ядро" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
   /* -------------------------------------------- Halondrus -------------------------------------------- */
   2529: [
@@ -1703,7 +1703,7 @@ export const bossAbilities = {
       guid: 361676,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_missilesmallcluster_yellow.jpg").default,
       importActive: true,
-      name: { cn: "碎地者飞弹", de: "Erdbrechergeschosse", en: "Earthbreaker Missiles", fr: "Projectiles brise-terre", ru: "Снаряды землелома" },
+      name: { ch: "碎地者飞弹", de: "Erdbrechergeschosse", en: "Earthbreaker Missiles", fr: "Projectiles brise-terre", ru: "Снаряды землелома" },
     },
     {
       cooldownPlannerActive: true,
@@ -1711,7 +1711,7 @@ export const bossAbilities = {
       guid: 360115,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_skyreach_wind.jpg").default,
       importActive: true,
-      name: { cn: "回收", de: "Zurückgewinnen", en: "Reclaim", fr: "Réappropriation", ru: "Сбор" },
+      name: { ch: "回收", de: "Zurückgewinnen", en: "Reclaim", fr: "Réappropriation", ru: "Сбор" },
     },
     {
       cooldownPlannerActive: true,
@@ -1719,7 +1719,7 @@ export const bossAbilities = {
       guid: 362056,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_nova.jpg").default,
       importActive: true,
-      name: { cn: "粉碎", de: "Zerschmettern", en: "Shatter", fr: "Désintégration", ru: "Раскалывание" },
+      name: { ch: "粉碎", de: "Zerschmettern", en: "Shatter", fr: "Désintégration", ru: "Раскалывание" },
     },
     {
       cooldownPlannerActive: true,
@@ -1727,7 +1727,7 @@ export const bossAbilities = {
       guid: 359235,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_achievement_raid_progenitorraid_progenium_keeper.jpg").default,
       importActive: true,
-      name: { cn: "回收形态", de: "Rückgewinnungsform", en: "Reclamation Form", fr: "Forme de récupération", ru: "Облик сбора" },
+      name: { ch: "回收形态", de: "Rückgewinnungsform", en: "Reclamation Form", fr: "Forme de récupération", ru: "Облик сбора" },
     },
     {
       cooldownPlannerActive: true,
@@ -1735,7 +1735,7 @@ export const bossAbilities = {
       guid: 359236,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitorbotminemount.jpg").default,
       importActive: true,
-      name: { cn: "迁移形态", de: "Verlagerungsform", en: "Relocation Form", fr: "Forme de transfert", ru: "Походный облик" },
+      name: { ch: "迁移形态", de: "Verlagerungsform", en: "Relocation Form", fr: "Forme de transfert", ru: "Походный облик" },
     },
     {
       cooldownPlannerActive: true,
@@ -1743,18 +1743,18 @@ export const bossAbilities = {
       guid: 368529,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_trinket_progenitorraid_01_orange.jpg").default,
       importActive: true,
-      name: { cn: "永恒超速", de: "Ewigkeitsturbogang", en: "Eternity Overdrive", fr: "Surmultiplicateur de l’éternité", ru: "Перегрузка машины вечности" },
+      name: { ch: "永恒超速", de: "Ewigkeitsturbogang", en: "Eternity Overdrive", fr: "Surmultiplicateur de l’éternité", ru: "Перегрузка машины вечности" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
   ],
   /* ------------------------------------------- The Jailer ------------------------------------------- */
@@ -1765,7 +1765,7 @@ export const bossAbilities = {
       guid: 360562,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_bone_skull_02.jpg").default,
       importActive: true,
-      name: { cn: "屠戮者", de: "Dezimierer", en: "Decimator", fr: "Décimateur", ru: "Дециматор" },
+      name: { ch: "屠戮者", de: "Dezimierer", en: "Decimator", fr: "Décimateur", ru: "Дециматор" },
     },
     {
       cooldownPlannerActive: true,
@@ -1773,7 +1773,7 @@ export const bossAbilities = {
       guid: 365436,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_soulcleave2.jpg").default,
       importActive: true,
-      name: { cn: "折磨", de: "Qual", en: "Torment", fr: "Tourment", ru: "Мучение" },
+      name: { ch: "折磨", de: "Qual", en: "Torment", fr: "Tourment", ru: "Мучение" },
     },
     {
       cooldownPlannerActive: true,
@@ -1781,7 +1781,7 @@ export const bossAbilities = {
       guid: 365033,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_missile.jpg").default,
       importActive: true,
-      name: { cn: "荒芜", de: "Verwüstung", en: "Desolation", fr: "Désolation", ru: "Запустение" },
+      name: { ch: "荒芜", de: "Verwüstung", en: "Desolation", fr: "Désolation", ru: "Запустение" },
     },
     {
       cooldownPlannerActive: true,
@@ -1789,7 +1789,7 @@ export const bossAbilities = {
       guid: 362617,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_wave.jpg").default,
       importActive: true,
-      name: { cn: "压迫", de: "Unterdrückung", en: "Oppression", fr: "Oppression", ru: "Угнетение" },
+      name: { ch: "压迫", de: "Unterdrückung", en: "Oppression", fr: "Oppression", ru: "Угнетение" },
     },
     {
       cooldownPlannerActive: true,
@@ -1797,7 +1797,7 @@ export const bossAbilities = {
       guid: 362631,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_steelweaponchain.jpg").default,
       importActive: true,
-      name: { cn: "压迫之链", de: "Ketten der Unterdrückung", en: "Chains of Oppression", fr: "Chaînes d’oppression", ru: "Цепи гнета" },
+      name: { ch: "压迫之链", de: "Ketten der Unterdrückung", en: "Chains of Oppression", fr: "Chaînes d’oppression", ru: "Цепи гнета" },
     },
     {
       cooldownPlannerActive: true,
@@ -1805,7 +1805,7 @@ export const bossAbilities = {
       guid: 363893,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/mace_2h_blacksmithing_d_04_icon.jpg").default,
       importActive: true,
-      name: { cn: "殉难", de: "Martyrium", en: "Martyrdom", fr: "Martyre", ru: "Мученичество" },
+      name: { ch: "殉难", de: "Martyrium", en: "Martyrdom", fr: "Martyre", ru: "Мученичество" },
     },
     {
       cooldownPlannerActive: true,
@@ -1813,7 +1813,7 @@ export const bossAbilities = {
       guid: 360373,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
       importActive: true,
-      name: { cn: "邪恶调整", de: "Unheilige Abstimmung", en: "Unholy Attunement", fr: "Harmonisation impie", ru: "Нечестивая настройка" },
+      name: { ch: "邪恶调整", de: "Unheilige Abstimmung", en: "Unholy Attunement", fr: "Harmonisation impie", ru: "Нечестивая настройка" },
     },
     {
       cooldownPlannerActive: true,
@@ -1821,7 +1821,7 @@ export const bossAbilities = {
       guid: 365212,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_infernalchains.jpg").default,
       importActive: true,
-      name: { cn: "痛苦之链", de: "Ketten der Pein", en: "Chains of Anguish", fr: "Chaînes d’angoisse", ru: "Цепи страдания" },
+      name: { ch: "痛苦之链", de: "Ketten der Pein", en: "Chains of Anguish", fr: "Chaînes d’angoisse", ru: "Цепи страдания" },
     },
     {
       cooldownPlannerActive: true,
@@ -1829,7 +1829,7 @@ export const bossAbilities = {
       guid: 365153,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_brainwash.jpg").default,
       importActive: true,
-      name: { cn: "统御意志", de: "Beherrschender Wille", en: "Dominating Will", fr: "Volonté dominante", ru: "Довлеющая воля" },
+      name: { ch: "统御意志", de: "Beherrschender Wille", en: "Dominating Will", fr: "Volonté dominante", ru: "Довлеющая воля" },
     },
     {
       cooldownPlannerActive: true,
@@ -1837,7 +1837,7 @@ export const bossAbilities = {
       guid: 360378,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/warrior_talent_icon_mastercleaver.jpg").default,
       importActive: true,
-      name: { cn: "流星横扫", de: "Meteorspalten", en: "Meteor Cleave", fr: "Enchaînement de météores", ru: "Метеоритный удар" },
+      name: { ch: "流星横扫", de: "Meteorspalten", en: "Meteor Cleave", fr: "Enchaînement de météores", ru: "Метеоритный удар" },
     },
     {
       cooldownPlannerActive: true,
@@ -1845,7 +1845,7 @@ export const bossAbilities = {
       guid: 366377,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_earthquake.jpg").default,
       importActive: true,
-      name: { cn: "世界碎击者", de: "Weltenzermalmer", en: "World Crusher", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
+      name: { ch: "世界碎击者", de: "Weltenzermalmer", en: "World Crusher", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
     },
     {
       cooldownPlannerActive: false,
@@ -1853,7 +1853,7 @@ export const bossAbilities = {
       guid: 366776,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_earthquake.jpg").default,
       importActive: true,
-      name: { cn: "世界碎击者", de: "Weltenzermalmer", en: "World Cracker", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
+      name: { ch: "世界碎击者", de: "Weltenzermalmer", en: "World Cracker", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
     },
     {
       cooldownPlannerActive: true,
@@ -1861,7 +1861,7 @@ export const bossAbilities = {
       guid: 367051,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_stormearthfire.jpg").default,
       importActive: true,
-      name: { cn: "世界击碎者", de: "Weltenknacker", en: "World Shatterer", fr: "Fendeur de mondes", ru: "Раскалыватель миров" },
+      name: { ch: "世界击碎者", de: "Weltenknacker", en: "World Shatterer", fr: "Fendeur de mondes", ru: "Раскалыватель миров" },
     },
     {
       cooldownPlannerActive: false,
@@ -1869,7 +1869,7 @@ export const bossAbilities = {
       guid: 368383,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_azeriteempoweredstate.jpg").default,
       importActive: false,
-      name: { cn: "转移生命护盾", de: "Umgeleiteter Lebensschild", en: "Diverted Life Shield", fr: "Bouclier de vie déviée", ru: "Щит перенаправления жизни" },
+      name: { ch: "转移生命护盾", de: "Umgeleiteter Lebensschild", en: "Diverted Life Shield", fr: "Bouclier de vie déviée", ru: "Щит перенаправления жизни" },
     },
     {
       cooldownPlannerActive: false,
@@ -1877,7 +1877,7 @@ export const bossAbilities = {
       guid: 363332,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_illidansgrasp.jpg").default,
       importActive: false,
-      name: { cn: "不破之握", de: "Eiserner Griff", en: "Unbreaking Grasp", fr: "Poigne inébranlable", ru: "Неодолимая хватка" },
+      name: { ch: "不破之握", de: "Eiserner Griff", en: "Unbreaking Grasp", fr: "Poigne inébranlable", ru: "Неодолимая хватка" },
     },
     {
       cooldownPlannerActive: true,
@@ -1885,7 +1885,7 @@ export const bossAbilities = {
       guid: 363772,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_deathchain.jpg").default,
       importActive: true,
-      name: { cn: "死亡裁决", de: "Todesurteil", en: "Death Sentence", fr: "Peine capitale", ru: "Смертный приговор" },
+      name: { ch: "死亡裁决", de: "Todesurteil", en: "Death Sentence", fr: "Peine capitale", ru: "Смертный приговор" },
     },
     {
       cooldownPlannerActive: false,
@@ -1893,7 +1893,7 @@ export const bossAbilities = {
       guid: 370071,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_soulcleave2.jpg").default,
       importActive: true,
-      name: { cn: "折磨", de: "Qual", en: "Torment", fr: "Tourment", ru: "Мучение" },
+      name: { ch: "折磨", de: "Qual", en: "Torment", fr: "Tourment", ru: "Мучение" },
     },
     {
       cooldownPlannerActive: false,
@@ -1901,7 +1901,7 @@ export const bossAbilities = {
       guid: 367290,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
       importActive: true,
-      name: { cn: "邪恶调整", de: "Unheilige Abstimmung", en: "Unholy Attunement", fr: "Harmonisation impie", ru: "Нечестивая настройка" },
+      name: { ch: "邪恶调整", de: "Unheilige Abstimmung", en: "Unholy Attunement", fr: "Harmonisation impie", ru: "Нечестивая настройка" },
     },
     {
       cooldownPlannerActive: false,
@@ -1909,7 +1909,7 @@ export const bossAbilities = {
       guid: 367851,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_cape_special_domination_c_01.jpg").default,
       importActive: false,
-      name: { cn: "无情统御", de: "Unerbittliche Herrschaft", en: "Relentless Domination", fr: "Domination implacable", ru: "Непреклонное подчинение" },
+      name: { ch: "无情统御", de: "Unerbittliche Herrschaft", en: "Relentless Domination", fr: "Domination implacable", ru: "Непреклонное подчинение" },
     },
     {
       cooldownPlannerActive: false,
@@ -1917,7 +1917,7 @@ export const bossAbilities = {
       guid: 367851,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_cape_special_domination_c_01.jpg").default,
       importActive: false,
-      name: { cn: "无情统御", de: "Unerbittliche Herrschaft", en: "Relentless Domination", fr: "Domination implacable", ru: "Непреклонное подчинение" },
+      name: { ch: "无情统御", de: "Unerbittliche Herrschaft", en: "Relentless Domination", fr: "Domination implacable", ru: "Непреклонное подчинение" },
     },
     {
       cooldownPlannerActive: false,
@@ -1925,7 +1925,7 @@ export const bossAbilities = {
       guid: 366374,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shaman_earthquake.jpg").default,
       importActive: true,
-      name: { cn: "世界碎击者", de: "Weltenzermalmer", en: "World Crusher", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
+      name: { ch: "世界碎击者", de: "Weltenzermalmer", en: "World Crusher", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
     },
     {
       cooldownPlannerActive: false,
@@ -1933,7 +1933,7 @@ export const bossAbilities = {
       guid: 362028,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_cape_special_domination_c_01.jpg").default,
       importActive: false,
-      name: { cn: "无情统御", de: "Unerbittliche Herrschaft", en: "Relentless Domination", fr: "Domination implacable", ru: "Непреклонное подчинение" },
+      name: { ch: "无情统御", de: "Unerbittliche Herrschaft", en: "Relentless Domination", fr: "Domination implacable", ru: "Непреклонное подчинение" },
     },
     {
       cooldownPlannerActive: false,
@@ -1941,7 +1941,7 @@ export const bossAbilities = {
       guid: 359809,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_steelweaponchain.jpg").default,
       importActive: false,
-      name: { cn: "压迫之链", de: "Ketten der Unterdrückung", en: "Chains of Oppression", fr: "Chaînes d’oppression", ru: "Цепи гнета" },
+      name: { ch: "压迫之链", de: "Ketten der Unterdrückung", en: "Chains of Oppression", fr: "Chaînes d’oppression", ru: "Цепи гнета" },
     },
     {
       cooldownPlannerActive: false,
@@ -1949,7 +1949,7 @@ export const bossAbilities = {
       guid: 365147,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune10.jpg").default,
       importActive: false,
-      name: { cn: "统御符文", de: "Rune der Herrschaft", en: "Rune of Domination", fr: "Rune de domination", ru: "Руна Господства" },
+      name: { ch: "统御符文", de: "Rune der Herrschaft", en: "Rune of Domination", fr: "Rune de domination", ru: "Руна Господства" },
     },
     {
       cooldownPlannerActive: false,
@@ -1957,7 +1957,7 @@ export const bossAbilities = {
       guid: 364942,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_misc_bone_skull_02.jpg").default,
       importActive: true,
-      name: { cn: "屠戮者", de: "Dezimierer", en: "Decimator", fr: "Décimateur", ru: "Дециматор" },
+      name: { ch: "屠戮者", de: "Dezimierer", en: "Decimator", fr: "Décimateur", ru: "Дециматор" },
     },
     {
       cooldownPlannerActive: false,
@@ -1965,7 +1965,7 @@ export const bossAbilities = {
       guid: 366284,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune08.jpg").default,
       importActive: false,
-      name: { cn: "强迫符文", de: "Rune des Zwangs", en: "Rune of Compulsion", fr: "Rune de contrainte", ru: "Руна порабощения" },
+      name: { ch: "强迫符文", de: "Rune des Zwangs", en: "Rune of Compulsion", fr: "Rune de contrainte", ru: "Руна порабощения" },
     },
     {
       cooldownPlannerActive: false,
@@ -1973,7 +1973,7 @@ export const bossAbilities = {
       guid: 365169,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_deathknight_defile.jpg").default,
       importActive: false,
-      name: { cn: "亵渎", de: "Entweihen", en: "Defile", fr: "Profanation", ru: "Осквернение" },
+      name: { ch: "亵渎", de: "Entweihen", en: "Defile", fr: "Profanation", ru: "Осквернение" },
     },
     {
       cooldownPlannerActive: true,
@@ -1981,7 +1981,7 @@ export const bossAbilities = {
       guid: 366678,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_azeriteempoweredstate.jpg").default,
       importActive: true,
-      name: { cn: "世界碎击者", de: "Weltenzermalmer", en: "World Cracker", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
+      name: { ch: "世界碎击者", de: "Weltenzermalmer", en: "World Cracker", fr: "Broyeur de mondes", ru: "Сокрушитель миров" },
     },
     {
       cooldownPlannerActive: false,
@@ -1989,7 +1989,7 @@ export const bossAbilities = {
       guid: 365150,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune10.jpg").default,
       importActive: false,
-      name: { cn: "统御符文", de: "Rune der Herrschaft", en: "Rune of Domination", fr: "Rune de domination", ru: "Руна Господства" },
+      name: { ch: "统御符文", de: "Rune der Herrschaft", en: "Rune of Domination", fr: "Rune de domination", ru: "Руна Господства" },
     },
     {
       cooldownPlannerActive: false,
@@ -1997,7 +1997,7 @@ export const bossAbilities = {
       guid: 359856,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_shatteredsouls.jpg").default,
       importActive: false,
-      name: { cn: "粉碎冲击", de: "Zerschmetternde Eruption", en: "Shattering Blast", fr: "Explosion destructrice", ru: "Сокрушительный взрыв" },
+      name: { ch: "粉碎冲击", de: "Zerschmetternde Eruption", en: "Shattering Blast", fr: "Explosion destructrice", ru: "Сокрушительный взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -2005,7 +2005,7 @@ export const bossAbilities = {
       guid: 364138,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_shatteredsouls.jpg").default,
       importActive: false,
-      name: { cn: "粉碎冲击", de: "Zerschmetternde Eruption", en: "Shattering Blast", fr: "Explosion destructrice", ru: "Сокрушительный взрыв" },
+      name: { ch: "粉碎冲击", de: "Zerschmetternde Eruption", en: "Shattering Blast", fr: "Explosion destructrice", ru: "Сокрушительный взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -2013,7 +2013,7 @@ export const bossAbilities = {
       guid: 360279,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_domination_rune09.jpg").default,
       importActive: false,
-      name: { cn: "咒罚符文", de: "Rune der Verdammnis", en: "Rune of Damnation", fr: "Rune de damnation", ru: "Руна проклятия" },
+      name: { ch: "咒罚符文", de: "Rune der Verdammnis", en: "Rune of Damnation", fr: "Rune de damnation", ru: "Руна проклятия" },
     },
     {
       cooldownPlannerActive: false,
@@ -2021,12 +2021,12 @@ export const bossAbilities = {
       guid: 366408,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_azerite_essence06.jpg").default,
       importActive: false,
-      name: { cn: "激涌的艾泽里特", de: "Wogendes Azerit", en: "Surging Azerite", fr: "Déferlement d’azérite", ru: "Пульсирующий азерит" },
+      name: { ch: "激涌的艾泽里特", de: "Wogendes Azerit", en: "Surging Azerite", fr: "Déferlement d’azérite", ru: "Пульсирующий азерит" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 4", icon: "", importActive: false, name: { cn: "Phase 4", de: "Phase 4", en: "Phase 4", fr: "Phase 4", ru: "Phase 4" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 4", icon: "", importActive: false, name: { ch: "Phase 4", de: "Phase 4", en: "Phase 4", fr: "Phase 4", ru: "Phase 4" } },
   ],
   /* --------------------------------------------- Lihuvim --------------------------------------------- */
   2539: [
@@ -2036,7 +2036,7 @@ export const bossAbilities = {
       guid: 363088,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
       importActive: true,
-      name: { cn: "宇宙错位", de: "Kosmische Verschiebung", en: "Cosmic Shift", fr: "Transfert cosmique", ru: "Космический сдвиг" },
+      name: { ch: "宇宙错位", de: "Kosmische Verschiebung", en: "Cosmic Shift", fr: "Transfert cosmique", ru: "Космический сдвиг" },
     },
     {
       cooldownPlannerActive: false,
@@ -2044,7 +2044,7 @@ export const bossAbilities = {
       guid: 360159,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
       importActive: false,
-      name: { cn: "不稳定的微粒", de: "Instabiles Partikel", en: "Unstable Mote", fr: "Granule instable", ru: "Нестабильная частица" },
+      name: { ch: "不稳定的微粒", de: "Instabiles Partikel", en: "Unstable Mote", fr: "Granule instable", ru: "Нестабильная частица" },
     },
     {
       cooldownPlannerActive: true,
@@ -2052,7 +2052,7 @@ export const bossAbilities = {
       guid: 362601,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
       importActive: false,
-      name: { cn: "不稳定的微粒", de: "Instabiles Partikel", en: "Unstable Mote", fr: "Granule instable", ru: "Нестабильная частица" },
+      name: { ch: "不稳定的微粒", de: "Instabiles Partikel", en: "Unstable Mote", fr: "Granule instable", ru: "Нестабильная частица" },
     },
     {
       cooldownPlannerActive: true,
@@ -2060,7 +2060,7 @@ export const bossAbilities = {
       guid: 363130,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
       importActive: true,
-      name: { cn: "合成", de: "Synthetisieren", en: "Synthesize", fr: "Synthétiser", ru: "Синтез" },
+      name: { ch: "合成", de: "Synthetisieren", en: "Synthesize", fr: "Synthétiser", ru: "Синтез" },
     },
     {
       cooldownPlannerActive: true,
@@ -2068,7 +2068,7 @@ export const bossAbilities = {
       guid: 361200,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_buff.jpg").default,
       importActive: true,
-      name: { cn: "重新排列", de: "Neuausrichtung", en: "Realignment", fr: "Réalignement", ru: "Реструктуризация" },
+      name: { ch: "重新排列", de: "Neuausrichtung", en: "Realignment", fr: "Réalignement", ru: "Реструктуризация" },
     },
   ],
   /* -------------------------------------------- Dausegne -------------------------------------------- */
@@ -2079,7 +2079,7 @@ export const bossAbilities = {
       guid: 361722,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_groundstate.jpg").default,
       importActive: true,
-      name: { cn: "统御宿命", de: "Unausweichliche Herrschaft", en: "Inevitable Dominion", fr: "Domination inéluctable", ru: "Неизбежное подчинение" },
+      name: { ch: "统御宿命", de: "Unausweichliche Herrschaft", en: "Inevitable Dominion", fr: "Domination inéluctable", ru: "Неизбежное подчинение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2087,7 +2087,7 @@ export const bossAbilities = {
       guid: 361750,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
       importActive: false,
-      name: { cn: "衰变光环", de: "Desintegrationskranz", en: "Disintegration Halo", fr: "Halo de désintégration", ru: "Ореол дезинтеграции" },
+      name: { ch: "衰变光环", de: "Desintegrationskranz", en: "Disintegration Halo", fr: "Halo de désintégration", ru: "Ореол дезинтеграции" },
     },
     {
       cooldownPlannerActive: false,
@@ -2095,7 +2095,7 @@ export const bossAbilities = {
       guid: 365373,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
       importActive: false,
-      name: { cn: "衰变光环", de: "Desintegrationskranz", en: "Disintegration Halo", fr: "Halo de désintégration", ru: "Ореол дезинтеграции" },
+      name: { ch: "衰变光环", de: "Desintegrationskranz", en: "Disintegration Halo", fr: "Halo de désintégration", ru: "Ореол дезинтеграции" },
     },
     {
       cooldownPlannerActive: true,
@@ -2103,7 +2103,7 @@ export const bossAbilities = {
       guid: 362805,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_areadenial.jpg").default,
       importActive: false,
-      name: { cn: "衰变光环", de: "Desintegrationskranz", en: "Disintegration Halo", fr: "Halo de désintégration", ru: "Ореол дезинтеграции" },
+      name: { ch: "衰变光环", de: "Desintegrationskranz", en: "Disintegration Halo", fr: "Halo de désintégration", ru: "Ореол дезинтеграции" },
     },
     {
       cooldownPlannerActive: false,
@@ -2111,7 +2111,7 @@ export const bossAbilities = {
       guid: 360964,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
       importActive: true,
-      name: { cn: "震颤弹幕", de: "Erschütterndes Bombardement", en: "Staggering Barrage", fr: "Barrage ahurissant", ru: "Ошеломляющий обстрел" },
+      name: { ch: "震颤弹幕", de: "Erschütterndes Bombardement", en: "Staggering Barrage", fr: "Barrage ahurissant", ru: "Ошеломляющий обстрел" },
     },
     {
       cooldownPlannerActive: true,
@@ -2119,7 +2119,7 @@ export const bossAbilities = {
       guid: 360960,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_beam.jpg").default,
       importActive: true,
-      name: { cn: "震颤弹幕", de: "Erschütterndes Bombardement", en: "Staggering Barrage", fr: "Barrage ahurissant", ru: "Ошеломляющий обстрел" },
+      name: { ch: "震颤弹幕", de: "Erschütterndes Bombardement", en: "Staggering Barrage", fr: "Barrage ahurissant", ru: "Ошеломляющий обстрел" },
     },
     {
       cooldownPlannerActive: false,
@@ -2127,7 +2127,7 @@ export const bossAbilities = {
       guid: 359483,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_orb2.jpg").default,
       importActive: false,
-      name: { cn: "统御核心", de: "Herrschaftskern", en: "Domination Core", fr: "Noyau de domination", ru: "Сердечник Господства" },
+      name: { ch: "统御核心", de: "Herrschaftskern", en: "Domination Core", fr: "Noyau de domination", ru: "Сердечник Господства" },
     },
     {
       cooldownPlannerActive: true,
@@ -2135,7 +2135,7 @@ export const bossAbilities = {
       guid: 361630,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_plate_raiddeathknightprogenitor_d_01_shoulder.jpg").default,
       importActive: true,
-      name: { cn: "传送", de: "Teleport", en: "Teleport", fr: "Téléportation", ru: "Телепортация" },
+      name: { ch: "传送", de: "Teleport", en: "Teleport", fr: "Téléportation", ru: "Телепортация" },
     },
     {
       cooldownPlannerActive: true,
@@ -2143,7 +2143,7 @@ export const bossAbilities = {
       guid: 361513,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_progenitor_missile.jpg").default,
       importActive: false,
-      name: { cn: "湮灭连奏", de: "Auslöschungsbogen", en: "Obliteration Arc", fr: "Arc d’oblitération", ru: "Дуга истребления" },
+      name: { ch: "湮灭连奏", de: "Auslöschungsbogen", en: "Obliteration Arc", fr: "Arc d’oblitération", ru: "Дуга истребления" },
     },
   ],
   /* --------------------------------------------- Skolex --------------------------------------------- */
@@ -2154,7 +2154,7 @@ export const bossAbilities = {
       guid: 360448,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_acid_01.jpg").default,
       importActive: true,
-      name: { cn: "呕吐", de: "Würgen", en: "Retch", fr: "Vomissure", ru: "Срыгивание" },
+      name: { ch: "呕吐", de: "Würgen", en: "Retch", fr: "Vomissure", ru: "Срыгивание" },
     },
     {
       cooldownPlannerActive: true,
@@ -2162,7 +2162,7 @@ export const bossAbilities = {
       guid: 359829,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_butcher_whirl.jpg").default,
       importActive: true,
-      name: { cn: "尘土抽击", de: "Staubflegel", en: "Dust Flail", fr: "Fléau de poussière", ru: "Пыльное молотилово" },
+      name: { ch: "尘土抽击", de: "Staubflegel", en: "Dust Flail", fr: "Fléau de poussière", ru: "Пыльное молотилово" },
     },
     {
       cooldownPlannerActive: true,
@@ -2170,7 +2170,7 @@ export const bossAbilities = {
       guid: 364893,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulburst.jpg").default,
       importActive: true,
-      name: { cn: "暴食潜地", de: "Gefräßiges Eingraben", en: "Ravening Burrow", fr: "Fouissage vorace", ru: "Голодное погружение" },
+      name: { ch: "暴食潜地", de: "Gefräßiges Eingraben", en: "Ravening Burrow", fr: "Fouissage vorace", ru: "Голодное погружение" },
     },
   ],
   /* ----------------------------------------- Lords of Dread ----------------------------------------- */
@@ -2181,7 +2181,7 @@ export const bossAbilities = {
       guid: 360300,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_nature_naturetouchdecay.jpg").default,
       importActive: true,
-      name: { cn: "凋零虫群", de: "Schwarm des Verfalls", en: "Swarm of Decay", fr: "Essaim de décomposition", ru: "Рой разложения" },
+      name: { ch: "凋零虫群", de: "Schwarm des Verfalls", en: "Swarm of Decay", fr: "Essaim de décomposition", ru: "Рой разложения" },
     },
     {
       cooldownPlannerActive: true,
@@ -2189,7 +2189,7 @@ export const bossAbilities = {
       guid: 360717,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_rogue_dirtydeeds.jpg").default,
       importActive: true,
-      name: { cn: "恐惧潜入", de: "Infiltration des Schreckens", en: "Infiltration of Dread", fr: "Infiltration d’effroi", ru: "Лазутчики ужаса" },
+      name: { ch: "恐惧潜入", de: "Infiltration des Schreckens", en: "Infiltration of Dread", fr: "Infiltration d’effroi", ru: "Лазутчики ужаса" },
     },
     {
       cooldownPlannerActive: true,
@@ -2197,7 +2197,7 @@ export const bossAbilities = {
       guid: 361913,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_warlock_everlastingaffliction.jpg").default,
       importActive: true,
-      name: { cn: "暗影具现", de: "Schatten manifestieren", en: "Manifest Shadows", fr: "Manifestation d’ombres", ru: "Появление теней" },
+      name: { ch: "暗影具现", de: "Schatten manifestieren", en: "Manifest Shadows", fr: "Manifestation d’ombres", ru: "Появление теней" },
     },
   ],
   /* --------------------------------------- Prototype Pantheon --------------------------------------- */
@@ -2208,7 +2208,7 @@ export const bossAbilities = {
       guid: 361568,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_ardenweald_mage.jpg").default,
       importActive: true,
-      name: { cn: "枯萎之种", de: "Welkende Samenkörner", en: "Withering Seeds", fr: "Graines desséchées", ru: "Усыхающие семена" },
+      name: { ch: "枯萎之种", de: "Welkende Samenkörner", en: "Withering Seeds", fr: "Graines desséchées", ru: "Усыхающие семена" },
     },
     {
       cooldownPlannerActive: true,
@@ -2216,7 +2216,7 @@ export const bossAbilities = {
       guid: 364941,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_icon_wing06b.jpg").default,
       importActive: true,
-      name: { cn: "啸风双翼", de: "Windgepeitschte Schwingen", en: "Windswept Wings", fr: "Rafale d’ailes", ru: "Крылья попутного ветра" },
+      name: { ch: "啸风双翼", de: "Windgepeitschte Schwingen", en: "Windswept Wings", fr: "Rafale d’ailes", ru: "Крылья попутного ветра" },
     },
     {
       cooldownPlannerActive: false,
@@ -2224,7 +2224,7 @@ export const bossAbilities = {
       guid: 365041,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_icon_wing06b.jpg").default,
       importActive: false,
-      name: { cn: "啸风双翼", de: "Windgepeitschte Schwingen", en: "Windswept Wings", fr: "Rafale d’ailes", ru: "Крылья попутного ветра" },
+      name: { ch: "啸风双翼", de: "Windgepeitschte Schwingen", en: "Windswept Wings", fr: "Rafale d’ailes", ru: "Крылья попутного ветра" },
     },
     {
       cooldownPlannerActive: false,
@@ -2232,7 +2232,7 @@ export const bossAbilities = {
       guid: 361788,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_unholystrength.jpg").default,
       importActive: true,
-      name: { cn: "毁灭之手", de: "Hand der Zerstörung", en: "Hand of Destruction", fr: "Main de la destruction", ru: "Длань разрушения" },
+      name: { ch: "毁灭之手", de: "Hand der Zerstörung", en: "Hand of Destruction", fr: "Main de la destruction", ru: "Длань разрушения" },
     },
     {
       cooldownPlannerActive: true,
@@ -2240,7 +2240,7 @@ export const bossAbilities = {
       guid: 361789,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_unholystrength.jpg").default,
       importActive: true,
-      name: { cn: "毁灭之手", de: "Hand der Zerstörung", en: "Hand of Destruction", fr: "Main de la destruction", ru: "Длань разрушения" },
+      name: { ch: "毁灭之手", de: "Hand der Zerstörung", en: "Hand of Destruction", fr: "Main de la destruction", ru: "Длань разрушения" },
     },
     {
       cooldownPlannerActive: true,
@@ -2248,11 +2248,11 @@ export const bossAbilities = {
       guid: 360636,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_necro_deathsdoor.jpg").default,
       importActive: true,
-      name: { cn: "刻符者的死亡之触", de: "Todesberührung des Runenmetzes", en: "Runecarver's Deathtouch", fr: "Toucher de la mort du runomancien", ru: "Касание Резчика Рун" },
+      name: { ch: "刻符者的死亡之触", de: "Todesberührung des Runenmetzes", en: "Runecarver's Deathtouch", fr: "Toucher de la mort du runomancien", ru: "Касание Резчика Рун" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "", de: "", en: "Phase 1", fr: "", ru: "" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "", de: "", en: "Phase 2", fr: "", ru: "" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "", de: "", en: "Phase 3", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "", de: "", en: "Phase 1", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "", de: "", en: "Phase 2", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "", de: "", en: "Phase 3", fr: "", ru: "" } },
   ],
   /* --------------------------------------------- Anduin --------------------------------------------- */
   2546: [
@@ -2262,7 +2262,7 @@ export const bossAbilities = {
       guid: 361816,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
       importActive: true,
-      name: { cn: "灭愿者", de: "Hoffnungsbrecher", en: "Hopebreaker", fr: "Brisespoir", ru: "Сокрушитель надежды" },
+      name: { ch: "灭愿者", de: "Hoffnungsbrecher", en: "Hopebreaker", fr: "Brisespoir", ru: "Сокрушитель надежды" },
     },
     {
       cooldownPlannerActive: true,
@@ -2270,7 +2270,7 @@ export const bossAbilities = {
       guid: 361815,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
       importActive: true,
-      name: { cn: "灭愿者", de: "Hoffnungsbrecher", en: "Hopebreaker", fr: "Brisespoir", ru: "Сокрушитель надежды" },
+      name: { ch: "灭愿者", de: "Hoffnungsbrecher", en: "Hopebreaker", fr: "Brisespoir", ru: "Сокрушитель надежды" },
     },
     {
       cooldownPlannerActive: true,
@@ -2278,7 +2278,7 @@ export const bossAbilities = {
       guid: 365805,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_sword_1h_artifactruneblade_d_01.jpg").default,
       importActive: true,
-      name: { cn: "强化灭愿者", de: "Ermächtigter Hoffnungsbrecher", en: "Empowered Hopebreaker", fr: "Brisespoir renforcé", ru: "Усиленный сокрушитель надежды" },
+      name: { ch: "强化灭愿者", de: "Ermächtigter Hoffnungsbrecher", en: "Empowered Hopebreaker", fr: "Brisespoir renforcé", ru: "Усиленный сокрушитель надежды" },
     },
     {
       cooldownPlannerActive: true,
@@ -2286,7 +2286,7 @@ export const bossAbilities = {
       guid: 365295,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_soulbarrier.jpg").default,
       importActive: true,
-      name: { cn: "亵渎屏障", de: "Besudelte Barriere", en: "Befouled Barrier", fr: "Barrière souillée", ru: "Оскверненная преграда" },
+      name: { ch: "亵渎屏障", de: "Besudelte Barriere", en: "Befouled Barrier", fr: "Barrière souillée", ru: "Оскверненная преграда" },
     },
     {
       cooldownPlannerActive: true,
@@ -2294,7 +2294,7 @@ export const bossAbilities = {
       guid: 362407,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_hungeringruneblade.jpg").default,
       importActive: true,
-      name: { cn: "王之哀伤饿了", de: "Königsgram hungert", en: "Kingsmourne Hungers", fr: "Faim de Deuilleroi", ru: "Королевская Скорбь жаждет крови" },
+      name: { ch: "王之哀伤饿了", de: "Königsgram hungert", en: "Kingsmourne Hungers", fr: "Faim de Deuilleroi", ru: "Королевская Скорбь жаждет крови" },
     },
     {
       cooldownPlannerActive: true,
@@ -2302,7 +2302,7 @@ export const bossAbilities = {
       guid: 365120,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_skull.jpg").default,
       importActive: true,
-      name: { cn: "严酷映像", de: "Düstere Reflexionen", en: "Grim Reflections", fr: "Sombres reflets", ru: "Кошмарные тени" },
+      name: { ch: "严酷映像", de: "Düstere Reflexionen", en: "Grim Reflections", fr: "Sombres reflets", ru: "Кошмарные тени" },
     },
     {
       cooldownPlannerActive: true,
@@ -2310,7 +2310,7 @@ export const bossAbilities = {
       guid: 362545,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_deathknight_shroudofwinter.jpg").default,
       importActive: true,
-      name: { cn: "冷酷严冬", de: "Unbarmherziger Winter", en: "Remorseless Winter", fr: "Hiver impitoyable", ru: "Беспощадность зимы" },
+      name: { ch: "冷酷严冬", de: "Unbarmherziger Winter", en: "Remorseless Winter", fr: "Hiver impitoyable", ru: "Беспощадность зимы" },
     },
     {
       cooldownPlannerActive: true,
@@ -2318,7 +2318,7 @@ export const bossAbilities = {
       guid: 368428,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_paladin_toweroflight.jpg").default,
       importActive: true,
-      name: { cn: "净化之光", de: "Läuterndes Licht", en: "Purging Light", fr: "Lumière purificatrice", ru: "Выжигающий Свет" },
+      name: { ch: "净化之光", de: "Läuterndes Licht", en: "Purging Light", fr: "Lumière purificatrice", ru: "Выжигающий Свет" },
     },
     {
       cooldownPlannerActive: true,
@@ -2326,7 +2326,7 @@ export const bossAbilities = {
       guid: 365958,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_priest_halo_shadow.jpg").default,
       importActive: true,
-      name: { cn: "无望", de: "Hoffnungslosigkeit", en: "Hopelessness", fr: "Abattement", ru: "Безысходность" },
+      name: { ch: "无望", de: "Hoffnungslosigkeit", en: "Hopelessness", fr: "Abattement", ru: "Безысходность" },
     },
     {
       cooldownPlannerActive: true,
@@ -2334,18 +2334,18 @@ export const bossAbilities = {
       guid: 363021,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/achievement_dungeon_icecrown_frostmourne.jpg").default,
       importActive: false,
-      name: { cn: "回归王之哀伤", de: "Zu Königsgram zurückkehren", en: "Return to Kingsmourne", fr: "Retour à Deuilleroi", ru: "Возвращение к 'Королевской Скорби'" },
+      name: { ch: "回归王之哀伤", de: "Zu Königsgram zurückkehren", en: "Return to Kingsmourne", fr: "Retour à Deuilleroi", ru: "Возвращение к 'Королевской Скорби'" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
   ],
   /* --------------------------------------------- Rygelon --------------------------------------------- */
@@ -2356,7 +2356,7 @@ export const bossAbilities = {
       guid: 364381,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
       importActive: true,
-      name: { cn: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
+      name: { ch: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2364,7 +2364,7 @@ export const bossAbilities = {
       guid: 368525,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
       importActive: false,
-      name: { cn: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
+      name: { ch: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2372,7 +2372,7 @@ export const bossAbilities = {
       guid: 368524,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
       importActive: true,
-      name: { cn: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
+      name: { ch: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2380,7 +2380,7 @@ export const bossAbilities = {
       guid: 364267,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
       importActive: false,
-      name: { cn: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
+      name: { ch: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2388,7 +2388,7 @@ export const bossAbilities = {
       guid: 364382,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_soulbombdebufflarge.jpg").default,
       importActive: false,
-      name: { cn: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
+      name: { ch: "星辰凋零", de: "Stellarer Verfall", en: "Stellar Decay", fr: "Décomposition stellaire", ru: "Звездное разложение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2396,7 +2396,7 @@ export const bossAbilities = {
       guid: 362275,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/creatureportrait_sc_eyeofacherus_02.jpg").default,
       importActive: false,
-      name: { cn: "天界坍缩", de: "Himmlischer Kollaps", en: "Celestial Collapse", fr: "Effondrement céleste", ru: "Небесный коллапс" },
+      name: { ch: "天界坍缩", de: "Himmlischer Kollaps", en: "Celestial Collapse", fr: "Effondrement céleste", ru: "Небесный коллапс" },
     },
     {
       cooldownPlannerActive: true,
@@ -2404,7 +2404,7 @@ export const bossAbilities = {
       guid: 366379,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_frost_wisp.jpg").default,
       importActive: true,
-      name: { cn: "星辰遮蔽", de: "Stellarschleier", en: "Stellar Shroud", fr: "Suaire stellaire", ru: "Звездный покров" },
+      name: { ch: "星辰遮蔽", de: "Stellarschleier", en: "Stellar Shroud", fr: "Suaire stellaire", ru: "Звездный покров" },
     },
     {
       cooldownPlannerActive: false,
@@ -2412,7 +2412,7 @@ export const bossAbilities = {
       guid: 362390,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_elemental_primal_mana.jpg").default,
       importActive: false,
-      name: { cn: "宇宙具现", de: "Kosmos manifestieren", en: "Manifest Cosmos", fr: "Cosmos manifeste", ru: "Появление космоса" },
+      name: { ch: "宇宙具现", de: "Kosmos manifestieren", en: "Manifest Cosmos", fr: "Cosmos manifeste", ru: "Появление космоса" },
     },
     {
       cooldownPlannerActive: false,
@@ -2420,7 +2420,7 @@ export const bossAbilities = {
       guid: 362806,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_animamaw_debuff.jpg").default,
       importActive: false,
-      name: { cn: "黑暗之蚀", de: "Verdunkelung", en: "Dark Eclipse", fr: "Sombre éclipse", ru: "Полное затмение" },
+      name: { ch: "黑暗之蚀", de: "Verdunkelung", en: "Dark Eclipse", fr: "Sombre éclipse", ru: "Полное затмение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2428,7 +2428,7 @@ export const bossAbilities = {
       guid: 363533,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_engineering_90_blackhole.jpg").default,
       importActive: false,
-      name: { cn: "大质量爆炸", de: "Gewaltiger Knall", en: "Massive Bang", fr: "Fracas retentissant", ru: "Мощный взрыв" },
+      name: { ch: "大质量爆炸", de: "Gewaltiger Knall", en: "Massive Bang", fr: "Fracas retentissant", ru: "Мощный взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -2436,7 +2436,7 @@ export const bossAbilities = {
       guid: 364114,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_shadow_focusedpower.jpg").default,
       importActive: false,
-      name: { cn: "碎裂球体", de: "Sphäre zerschmettern", en: "Shatter Sphere", fr: "Fracasse-sphère", ru: "Раскол сферы" },
+      name: { ch: "碎裂球体", de: "Sphäre zerschmettern", en: "Shatter Sphere", fr: "Fracasse-sphère", ru: "Раскол сферы" },
     },
     {
       cooldownPlannerActive: false,
@@ -2444,7 +2444,7 @@ export const bossAbilities = {
       guid: 362184,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_demonhunter_chaoticimprint_arcane.jpg").default,
       importActive: false,
-      name: { cn: "腐蚀重击", de: "Verderbte Stöße", en: "Corrupted Strikes", fr: "Frappes corrompues", ru: "Оскверненные удары" },
+      name: { ch: "腐蚀重击", de: "Verderbte Stöße", en: "Corrupted Strikes", fr: "Frappes corrompues", ru: "Оскверненные удары" },
     },
     {
       cooldownPlannerActive: false,
@@ -2452,7 +2452,7 @@ export const bossAbilities = {
       guid: 362271,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_warlock_burningembersblue.jpg").default,
       importActive: false,
-      name: { cn: "类星体辐射", de: "Quasarstrahlung", en: "Quasar Radiation", fr: "Radiation de quasar", ru: "Излучение квазара" },
+      name: { ch: "类星体辐射", de: "Quasarstrahlung", en: "Quasar Radiation", fr: "Radiation de quasar", ru: "Излучение квазара" },
     },
     {
       cooldownPlannerActive: false,
@@ -2460,7 +2460,7 @@ export const bossAbilities = {
       guid: 362271,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_enchant_voidsphere.jpg").default,
       importActive: false,
-      name: { cn: "烧毁", de: "Ausgebrannt", en: "Burned Out", fr: "Consumée", ru: "Выгорание" },
+      name: { ch: "烧毁", de: "Ausgebrannt", en: "Burned Out", fr: "Consumée", ru: "Выгорание" },
     },
     {
       cooldownPlannerActive: false,
@@ -2468,7 +2468,7 @@ export const bossAbilities = {
       guid: 364386,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/sha_spell_warlock_demonsoul.jpg").default,
       importActive: false,
-      name: { cn: "引力坍缩", de: "Gravitationszusammenbruch", en: "Gravitational Collapse", fr: "Effondrement gravitationnel", ru: "Гравитационный коллапс" },
+      name: { ch: "引力坍缩", de: "Gravitationszusammenbruch", en: "Gravitational Collapse", fr: "Effondrement gravitationnel", ru: "Гравитационный коллапс" },
     },
     {
       cooldownPlannerActive: false,
@@ -2476,10 +2476,10 @@ export const bossAbilities = {
       guid: 362207,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/ability_argus_blightorb.jpg").default,
       importActive: false,
-      name: { cn: "奇点", de: "Die Singularität", en: "The Singularity", fr: "Singularité", ru: "Сингулярность" },
+      name: { ch: "奇点", de: "Die Singularität", en: "The Singularity", fr: "Singularité", ru: "Сингулярность" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* ---------------------------------------- Artificer Xy'mox ---------------------------------------- */
   2553: [
@@ -2489,7 +2489,7 @@ export const bossAbilities = {
       guid: 362850,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_nova.jpg").default,
       importActive: true,
-      name: { cn: "凌光火花新星", de: "Hyperlichtfunkennova", en: "Hyperlight Sparknova", fr: "Nova éclair hyperluminique", ru: "Слепящее кольцо гиперсвета" },
+      name: { ch: "凌光火花新星", de: "Hyperlichtfunkennova", en: "Hyperlight Sparknova", fr: "Nova éclair hyperluminique", ru: "Слепящее кольцо гиперсвета" },
     },
     {
       cooldownPlannerActive: true,
@@ -2497,7 +2497,7 @@ export const bossAbilities = {
       guid: 362849,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/spell_broker_nova.jpg").default,
       importActive: true,
-      name: { cn: "凌光火花新星", de: "Hyperlichtfunkennova", en: "Hyperlight Sparknova", fr: "Nova éclair hyperluminique", ru: "Слепящее кольцо гиперсвета" },
+      name: { ch: "凌光火花新星", de: "Hyperlichtfunkennova", en: "Hyperlight Sparknova", fr: "Nova éclair hyperluminique", ru: "Слепящее кольцо гиперсвета" },
     },
     {
       cooldownPlannerActive: false,
@@ -2505,7 +2505,7 @@ export const bossAbilities = {
       guid: 362835,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_axe_2h_broker_c_01.jpg").default,
       importActive: true,
-      name: { cn: "位移雕文", de: "Glyphe der Verlagerung", en: "Glyph of Relocation", fr: "Glyphe de transfert", ru: "Символ перемещения" },
+      name: { ch: "位移雕文", de: "Glyphe der Verlagerung", en: "Glyph of Relocation", fr: "Glyphe de transfert", ru: "Символ перемещения" },
     },
     {
       cooldownPlannerActive: true,
@@ -2513,7 +2513,7 @@ export const bossAbilities = {
       guid: 362801,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_axe_2h_broker_c_01.jpg").default,
       importActive: true,
-      name: { cn: "位移雕文", de: "Glyphe der Verlagerung", en: "Glyph of Relocation", fr: "Glyphe de transfert", ru: "Символ перемещения" },
+      name: { ch: "位移雕文", de: "Glyphe der Verlagerung", en: "Glyph of Relocation", fr: "Glyphe de transfert", ru: "Символ перемещения" },
     },
     {
       cooldownPlannerActive: false,
@@ -2521,7 +2521,7 @@ export const bossAbilities = {
       guid: 362803,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_axe_2h_broker_c_01.jpg").default,
       importActive: true,
-      name: { cn: "位移雕文", de: "Glyphe der Verlagerung", en: "Glyph of Relocation", fr: "Glyphe de transfert", ru: "Символ перемещения" },
+      name: { ch: "位移雕文", de: "Glyphe der Verlagerung", en: "Glyph of Relocation", fr: "Glyphe de transfert", ru: "Символ перемещения" },
     },
     {
       cooldownPlannerActive: true,
@@ -2529,7 +2529,7 @@ export const bossAbilities = {
       guid: 363139,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_relics_warpring.jpg").default,
       importActive: true,
-      name: { cn: "破解圣物", de: "Relikt dechiffrieren", en: "Decipher Relic", fr: "Déchiffrage de relique", ru: "Расшифровка реликвии" },
+      name: { ch: "破解圣物", de: "Relikt dechiffrieren", en: "Decipher Relic", fr: "Déchiffrage de relique", ru: "Расшифровка реликвии" },
     },
     {
       cooldownPlannerActive: false,
@@ -2537,12 +2537,12 @@ export const bossAbilities = {
       guid: 367573,
       icon: require("Images/Bosses/SepulcherOfTheFirstOnes/Icons/inv_progenitor_runevessel.jpg").default,
       importActive: false,
-      name: { cn: "源生壁垒", de: "Genesisbollwerk", en: "Genesis Bulwark", fr: "Rempart de la genèse", ru: "Бастион генезиса" },
+      name: { ch: "源生壁垒", de: "Genesisbollwerk", en: "Genesis Bulwark", fr: "Rempart de la genèse", ru: "Бастион генезиса" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Intermission", icon: "", importActive: false, name: { cn: "", de: "", en: "Intermission", fr: "", ru: "" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "", de: "", en: "Phase 1", fr: "", ru: "" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "", de: "", en: "Phase 2", fr: "", ru: "" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "", de: "", en: "Phase 3", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Intermission", icon: "", importActive: false, name: { ch: "", de: "", en: "Intermission", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "", de: "", en: "Phase 1", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "", de: "", en: "Phase 2", fr: "", ru: "" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "", de: "", en: "Phase 3", fr: "", ru: "" } },
   ],
   /* --------------------------------------------- Eranog --------------------------------------------- */
   2587: [
@@ -2552,7 +2552,7 @@ export const bossAbilities = {
       guid: 370648,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_volcano.jpg").default,
       importActive: false,
-      name: { cn: "原始涌流", de: "Urzeitlicher Fluss", en: "Primal Flow", fr: "Flux primordial", ru: "Первичный поток" },
+      name: { ch: "熔岩涌流", de: "Lavafluss", en: "Lava Flow", fr: "Flux de lave", ru: "Поток лавы" },
     },
     {
       cooldownPlannerActive: false,
@@ -2560,7 +2560,7 @@ export const bossAbilities = {
       guid: 370342,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
       importActive: false,
-      name: { cn: "喷发", de: "Eruption", en: "Eruption", fr: "Éruption", ru: "Извержение" },
+      name: { ch: "烧尽", de: "Verbrennen", en: "Incinerate", fr: "Incinérer", ru: "Испепеление" },
     },
     {
       cooldownPlannerActive: false,
@@ -2568,7 +2568,7 @@ export const bossAbilities = {
       guid: 373327,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_gizmo_supersappercharge.jpg").default,
       importActive: false,
-      name: { cn: "毁灭", de: "Zerstörung", en: "Destruction", fr: "Destruction", ru: "Разрушение" },
+      name: { ch: "烧尽", de: "Verbrennen", en: "Incinerate", fr: "Incinérer", ru: "Испепеление" },
     },
     {
       cooldownPlannerActive: false,
@@ -2576,7 +2576,7 @@ export const bossAbilities = {
       guid: 396028,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/trade_engineering.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Molten Spike", fr: "", ru: "" },
+      name: { ch: "熔火尖刺", de: "Geschmolzener Stachel", en: "Molten Spike", fr: "Pointe en fusion", ru: "Раскаленный шип" },
     },
     {
       cooldownPlannerActive: false,
@@ -2584,7 +2584,7 @@ export const bossAbilities = {
       guid: 396022,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_fomor_boss_pillar02.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Molten Spikes", fr: "", ru: "" },
+      name: { ch: "熔火尖刺", de: "Geschmolzene Stacheln", en: "Molten Spikes", fr: "Pointes en fusion", ru: "Раскаленные шипы" },
     },
     {
       cooldownPlannerActive: true,
@@ -2592,7 +2592,7 @@ export const bossAbilities = {
       guid: 396023,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_dragonroar.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Incinerating Roar", fr: "", ru: "" },
+      name: { ch: "焚火咆哮", de: "Einäscherndes Brüllen", en: "Incinerating Roar", fr: "Hurlement incinérant", ru: "Испепеляющий рык" },
     },
     {
       cooldownPlannerActive: true,
@@ -2600,7 +2600,7 @@ export const bossAbilities = {
       guid: 394917,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_ember.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Leaping Flames", fr: "", ru: "" },
+      name: { ch: "飞扑烈焰", de: "Springende Flammen", en: "Leaping Flames", fr: "Flammes bondissantes", ru: "Прыгучее пламя" },
     },
     {
       cooldownPlannerActive: false,
@@ -2608,7 +2608,7 @@ export const bossAbilities = {
       guid: 370615,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvelavalash.jpg").default,
       importActive: false,
-      name: { cn: "熔火横扫", de: "Geschmolzener Schwung", en: "Molten Swing", fr: "Frappe de la fournaise", ru: "Раскаленный удар" },
+      name: { ch: "熔火顺劈", de: "Geschmolzenes Spalten", en: "Molten Cleave", fr: "Frappe en fusion", ru: "Раскаленный удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -2616,7 +2616,7 @@ export const bossAbilities = {
       guid: 396040,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_greaterpyroblast.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Pyroblast", fr: "", ru: "" },
+      name: { ch: "炎爆术", de: "Pyroschlag", en: "Pyroblast", fr: "Explosion pyrotechnique", ru: "Огненная глыба" },
     },
     {
       cooldownPlannerActive: true,
@@ -2624,7 +2624,7 @@ export const bossAbilities = {
       guid: 370307,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
       importActive: false,
-      name: { cn: "坍缩军团", de: "Kollabierende Armee", en: "Collapsing Army", fr: "Armée en déclin", ru: "Хрупкая армия" },
+      name: { ch: "烈焰军团", de: "Flammenarmee", en: "Army of Flame", fr: "Armée de flammes", ru: "Армия пламени" },
     },
     {
       cooldownPlannerActive: true,
@@ -2632,7 +2632,7 @@ export const bossAbilities = {
       guid: 370410,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
       importActive: false,
-      name: { cn: "脉动烈焰", de: "Pulsierende Flammen", en: "Pulsing Flames", fr: "Flammes vibrantes", ru: "Пульсирующее пламя" },
+      name: { ch: "脉动烈焰", de: "Pulsierende Flammen", en: "Pulsing Flames", fr: "Flammes vibrantes", ru: "Пульсирующее пламя" },
     },
     {
       cooldownPlannerActive: false,
@@ -2640,10 +2640,10 @@ export const bossAbilities = {
       guid: 390715,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_head_dragon_01.jpg").default,
       importActive: false,
-      name: { cn: "火焰裂隙", de: "Flammenriss", en: "Flamerift", fr: "Faille enflammée", ru: "Пламенный портал" },
+      name: { ch: "火焰裂隙", de: "Flammenriss", en: "Flamerift", fr: "Faille enflammée", ru: "Пламенный портал" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   /* ----------------------------------------- Primal Council ----------------------------------------- */
   2590: [
@@ -2653,7 +2653,7 @@ export const bossAbilities = {
       guid: 372275,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
       importActive: false,
-      name: { cn: "闪电链", de: "Kettenblitzschlag", en: "Chain Lightning", fr: "Chaîne d’éclairs", ru: "Цепная молния" },
+      name: { ch: "闪电链", de: "Kettenblitzschlag", en: "Chain Lightning", fr: "Chaîne d’éclairs", ru: "Цепная молния" },
     },
     {
       cooldownPlannerActive: false,
@@ -2661,7 +2661,7 @@ export const bossAbilities = {
       guid: 372315,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_staff_15.jpg").default,
       importActive: false,
-      name: { cn: "冰霜尖刺", de: "Froststachel", en: "Frost Spike", fr: "Pique de givre", ru: "Ледяной шип" },
+      name: { ch: "冰霜尖刺", de: "Froststachel", en: "Frost Spike", fr: "Pique de givre", ru: "Ледяной шип" },
     },
     {
       cooldownPlannerActive: false,
@@ -2669,7 +2669,7 @@ export const bossAbilities = {
       guid: 372394,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_lightning.jpg").default,
       importActive: false,
-      name: { cn: "闪电箭", de: "Blitzschlag", en: "Lightning Bolt", fr: "Éclair", ru: "Молния" },
+      name: { ch: "闪电箭", de: "Blitzschlag", en: "Lightning Bolt", fr: "Éclair", ru: "Молния" },
     },
     {
       cooldownPlannerActive: false,
@@ -2677,7 +2677,7 @@ export const bossAbilities = {
       guid: 372279,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
       importActive: false,
-      name: { cn: "闪电链", de: "Kettenblitzschlag", en: "Chain Lightning", fr: "Chaîne d’éclairs", ru: "Цепная молния" },
+      name: { ch: "闪电链", de: "Kettenblitzschlag", en: "Chain Lightning", fr: "Chaîne d’éclairs", ru: "Цепная молния" },
     },
     {
       cooldownPlannerActive: false,
@@ -2685,7 +2685,7 @@ export const bossAbilities = {
       guid: 372056,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_shieldbreak.jpg").default,
       importActive: false,
-      name: { cn: "碾压", de: "Zermalmen", en: "Crush", fr: "Écraser", ru: "Сокрушение" },
+      name: { ch: "碾压", de: "Zermalmen", en: "Crush", fr: "Écraser", ru: "Сокрушение" },
     },
     {
       cooldownPlannerActive: false,
@@ -2693,7 +2693,7 @@ export const bossAbilities = {
       guid: 397134,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
-      name: { cn: "大地之柱", de: "Irdene Säule", en: "Earthen Pillar", fr: "Pilier terrestre", ru: "Земляной столп" },
+      name: { ch: "大地之柱", de: "Irdene Säule", en: "Earthen Pillar", fr: "Pilier terrestre", ru: "Земляной столп" },
     },
     {
       cooldownPlannerActive: false,
@@ -2701,7 +2701,7 @@ export const bossAbilities = {
       guid: 372322,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
-      name: { cn: "大地之柱", de: "Irdene Säule", en: "Earthen Pillar", fr: "Pilier terrestre", ru: "Земляной столп" },
+      name: { ch: "大地之柱", de: "Irdene Säule", en: "Earthen Pillar", fr: "Pilier terrestre", ru: "Земляной столп" },
     },
     {
       cooldownPlannerActive: false,
@@ -2709,7 +2709,7 @@ export const bossAbilities = {
       guid: 372027,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_lavaburst.jpg").default,
       importActive: false,
-      name: { cn: "劈砍烈焰", de: "Schlitzende Lohe", en: "Slashing Blaze", fr: "Entaille de lave", ru: "Режущее пламя" },
+      name: { ch: "劈砍烈焰", de: "Schlitzende Lohe", en: "Slashing Blaze", fr: "Entaille de lave", ru: "Режущее пламя" },
     },
     {
       cooldownPlannerActive: false,
@@ -2717,7 +2717,7 @@ export const bossAbilities = {
       guid: 375331,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
       importActive: false,
-      name: { cn: "传导印记", de: "Leitfähiges Zeichen", en: "Conductive Mark", fr: "Marque conductrice", ru: "Знак проводимости" },
+      name: { ch: "传导印记", de: "Leitfähiges Zeichen", en: "Conductive Mark", fr: "Marque conductrice", ru: "Знак проводимости" },
     },
     {
       cooldownPlannerActive: true,
@@ -2725,7 +2725,7 @@ export const bossAbilities = {
       guid: 374038,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
       importActive: true,
-      name: { cn: "流星之斧", de: "Meteoräxte", en: "Meteor Axes", fr: "Haches météoriques", ru: "Метеоритные топоры" },
+      name: { ch: "流星之斧", de: "Meteoräxte", en: "Meteor Axes", fr: "Haches météoriques", ru: "Метеоритные топоры" },
     },
     {
       cooldownPlannerActive: true,
@@ -2733,7 +2733,7 @@ export const bossAbilities = {
       guid: 373059,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
       importActive: true,
-      name: { cn: "原始暴风雪", de: "Urzeitlicher Blizzard", en: "Primal Blizzard", fr: "Blizzard primordial", ru: "Изначальная снежная буря" },
+      name: { ch: "原始暴风雪", de: "Urzeitlicher Blizzard", en: "Primal Blizzard", fr: "Blizzard primordial", ru: "Изначальная снежная буря" },
     },
     {
       cooldownPlannerActive: false,
@@ -2741,7 +2741,7 @@ export const bossAbilities = {
       guid: 386440,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_hunter_glacialtrap.jpg").default,
       importActive: false,
-      name: { cn: "冰川之召", de: "Gletscheranrufung", en: "Glacial Convocation", fr: "Convocation glaciale", ru: "Воззвание ко льду" },
+      name: { ch: "冰川之召", de: "Gletscheranrufung", en: "Glacial Convocation", fr: "Convocation glaciale", ru: "Воззвание ко льду" },
     },
     {
       cooldownPlannerActive: false,
@@ -2749,7 +2749,7 @@ export const bossAbilities = {
       guid: 396328,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
-      name: { cn: "震地脉冲", de: "Bebender Impuls", en: "Quaking Pulse", fr: "Impulsion sismique", ru: "Сотрясающий импульс" },
+      name: { ch: "震地脉冲", de: "Bebender Impuls", en: "Quaking Pulse", fr: "Impulsion sismique", ru: "Сотрясающий импульс" },
     },
     {
       cooldownPlannerActive: true,
@@ -2757,7 +2757,7 @@ export const bossAbilities = {
       guid: 371624,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
       importActive: false,
-      name: { cn: "传导印记", de: "Leitfähiges Zeichen", en: "Conductive Mark", fr: "Marque conductrice", ru: "Знак проводимости" },
+      name: { ch: "传导印记", de: "Leitfähiges Zeichen", en: "Conductive Mark", fr: "Marque conductrice", ru: "Знак проводимости" },
     },
     {
       cooldownPlannerActive: false,
@@ -2765,7 +2765,7 @@ export const bossAbilities = {
       guid: 375091,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
       importActive: false,
-      name: { cn: "流星之斧", de: "Meteoraxt", en: "Meteor Axe", fr: "Hache météorique", ru: "Метеоритный топор" },
+      name: { ch: "流星之斧", de: "Meteoraxt", en: "Meteor Axe", fr: "Hache météorique", ru: "Метеоритный топор" },
     },
     {
       cooldownPlannerActive: false,
@@ -2773,7 +2773,7 @@ export const bossAbilities = {
       guid: 374043,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_offhand_1h_artifactdoomhammer_d_01.jpg").default,
       importActive: false,
-      name: { cn: "流星之斧", de: "Meteoraxt", en: "Meteor Axe", fr: "Hache météorique", ru: "Метеоритный топор" },
+      name: { ch: "流星之斧", de: "Meteoraxt", en: "Meteor Axe", fr: "Hache météorique", ru: "Метеоритный топор" },
     },
     {
       cooldownPlannerActive: false,
@@ -2781,7 +2781,7 @@ export const bossAbilities = {
       guid: 386661,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_hunter_glacialtrap.jpg").default,
       importActive: false,
-      name: { cn: "冰川之召", de: "Gletscheranrufung", en: "Glacial Convocation", fr: "Convocation glaciale", ru: "Воззвание ко льду" },
+      name: { ch: "冰川之召", de: "Gletscheranrufung", en: "Glacial Convocation", fr: "Convocation glaciale", ru: "Воззвание ко льду" },
     },
     {
       cooldownPlannerActive: false,
@@ -2789,7 +2789,7 @@ export const bossAbilities = {
       guid: 371836,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
       importActive: false,
-      name: { cn: "原始暴风雪", de: "Urzeitlicher Blizzard", en: "Primal Blizzard", fr: "Blizzard primordial", ru: "Изначальная снежная буря" },
+      name: { ch: "原始暴风雪", de: "Urzeitlicher Blizzard", en: "Primal Blizzard", fr: "Blizzard primordial", ru: "Изначальная снежная буря" },
     },
     {
       cooldownPlannerActive: false,
@@ -2797,7 +2797,7 @@ export const bossAbilities = {
       guid: 371514,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_lavapool.jpg").default,
       importActive: false,
-      name: { cn: "灼烧之地", de: "Verbrannter Boden", en: "Scorched Ground", fr: "Sol brûlé", ru: "Оплавленная земля" },
+      name: { ch: "灼烧之地", de: "Verbrannter Boden", en: "Scorched Ground", fr: "Sol brûlé", ru: "Оплавленная земля" },
     },
     {
       cooldownPlannerActive: false,
@@ -2805,7 +2805,7 @@ export const bossAbilities = {
       guid: 371591,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_chilledtothebone.jpg").default,
       importActive: false,
-      name: { cn: "冰霜之墓", de: "Frostgrab", en: "Frost Tomb", fr: "Tombeau de givre", ru: "Ледяная могила" },
+      name: { ch: "冰霜之墓", de: "Frostgrab", en: "Frost Tomb", fr: "Tombeau de givre", ru: "Ледяная могила" },
     },
     {
       cooldownPlannerActive: false,
@@ -2813,7 +2813,7 @@ export const bossAbilities = {
       guid: 370991,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
-      name: { cn: "大地之柱", de: "Irdene Säule", en: "Earthen Pillar", fr: "Pilier terrestre", ru: "Земляной столп" },
+      name: { ch: "大地之柱", de: "Irdene Säule", en: "Earthen Pillar", fr: "Pilier terrestre", ru: "Земляной столп" },
     },
   ],
   /* -------------------------------------------- Sennarth -------------------------------------------- */
@@ -2824,7 +2824,7 @@ export const bossAbilities = {
       guid: 372129,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/sha_spell_fire_bluepyroblast.jpg").default,
       importActive: false,
-      name: { cn: "蛛网冲击", de: "Netzschuss", en: "Web Blast", fr: "Jet de toile", ru: "Выстрел паутиной" },
+      name: { ch: "蛛网冲击", de: "Netzschuss", en: "Web Blast", fr: "Jet de toile", ru: "Выстрел паутиной" },
     },
     {
       cooldownPlannerActive: false,
@@ -2832,7 +2832,7 @@ export const bossAbilities = {
       guid: 372045,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_corrosivebreath.jpg").default,
       importActive: false,
-      name: { cn: "酸蚀喷发", de: "Ätzende Eruption", en: "Caustic Eruption", fr: "Éruption caustique", ru: "Едкий взрыв" },
+      name: { ch: "酸蚀喷发", de: "Ätzende Eruption", en: "Caustic Eruption", fr: "Éruption caustique", ru: "Едкий взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -2840,7 +2840,7 @@ export const bossAbilities = {
       guid: 181113,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_questionmark.jpg").default,
       importActive: false,
-      name: { cn: "Encounter Spawn", de: "Encounter Spawn", en: "Encounter Spawn", fr: "Encounter Spawn", ru: "Encounter Spawn" },
+      name: { ch: "Encounter Spawn", de: "Encounter Spawn", en: "Encounter Spawn", fr: "Encounter Spawn", ru: "Encounter Spawn" },
     },
     {
       cooldownPlannerActive: false,
@@ -2848,7 +2848,7 @@ export const bossAbilities = {
       guid: 374327,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_corrosivebreath.jpg").default,
       importActive: false,
-      name: { cn: "酸蚀血液", de: "Ätzendes Blut", en: "Caustic Blood", fr: "Sang caustique", ru: "Едкая кровь" },
+      name: { ch: "酸蚀血液", de: "Ätzendes Blut", en: "Caustic Blood", fr: "Sang caustique", ru: "Едкая кровь" },
     },
     {
       cooldownPlannerActive: false,
@@ -2856,7 +2856,7 @@ export const bossAbilities = {
       guid: 372051,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_frostblast.jpg").default,
       importActive: false,
-      name: { cn: "寒冰之息", de: "Eisatem", en: "Breath of Ice", fr: "Souffle de glace", ru: "Ледяное дыхание" },
+      name: { ch: "寒冰之息", de: "Eisatem", en: "Breath of Ice", fr: "Souffle de glace", ru: "Ледяное дыхание" },
     },
     {
       cooldownPlannerActive: false,
@@ -2864,7 +2864,7 @@ export const bossAbilities = {
       guid: 372648,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mage_chilledtothebone.jpg").default,
       importActive: false,
-      name: { cn: "渗流之寒", de: "Durchdringende Kälte", en: "Pervasive Cold", fr: "Froid pénétrant", ru: "Неотступный холод" },
+      name: { ch: "渗流之寒", de: "Durchdringende Kälte", en: "Pervasive Cold", fr: "Froid pénétrant", ru: "Неотступный холод" },
     },
     {
       cooldownPlannerActive: false,
@@ -2872,7 +2872,7 @@ export const bossAbilities = {
       guid: 372765,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_frostblast.jpg").default,
       importActive: false,
-      name: { cn: "寒冰之息", de: "Eisatem", en: "Breath of Ice", fr: "Souffle de glace", ru: "Ледяное дыхание" },
+      name: { ch: "寒冰之息", de: "Eisatem", en: "Breath of Ice", fr: "Souffle de glace", ru: "Ледяное дыхание" },
     },
     {
       cooldownPlannerActive: false,
@@ -2880,7 +2880,7 @@ export const bossAbilities = {
       guid: 372238,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_monsterspidercarapace_01.jpg").default,
       importActive: false,
-      name: { cn: "呼唤小蜘蛛", de: "Spinnlinge rufen", en: "Call Spiderlings", fr: "Appel de jeunes araignées", ru: "Призыв паучков" },
+      name: { ch: "呼唤小蜘蛛", de: "Spinnlinge rufen", en: "Call Spiderlings", fr: "Appel de jeunes araignées", ru: "Призыв паучков" },
     },
     {
       cooldownPlannerActive: true,
@@ -2888,7 +2888,7 @@ export const bossAbilities = {
       guid: 373817,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_coldhearted.jpg").default,
       importActive: false,
-      name: { cn: "寒冷光环", de: "Unterkühlende Aura", en: "Chilling Aura", fr: "Aura glaciale", ru: "Остужающая аура" },
+      name: { ch: "寒冷光环", de: "Unterkühlende Aura", en: "Chilling Aura", fr: "Aura glaciale", ru: "Остужающая аура" },
     },
     {
       cooldownPlannerActive: true,
@@ -2896,7 +2896,7 @@ export const bossAbilities = {
       guid: 371976,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_blueflamering.jpg").default,
       importActive: true,
-      name: { cn: "冰冷冲击", de: "Unterkühlende Welle", en: "Chilling Blast", fr: "Explosion glaciale", ru: "Леденящий взрыв" },
+      name: { ch: "冰冷冲击", de: "Unterkühlende Welle", en: "Chilling Blast", fr: "Explosion glaciale", ru: "Леденящий взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -2904,7 +2904,7 @@ export const bossAbilities = {
       guid: 372082,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_web_01.jpg").default,
       importActive: false,
-      name: { cn: "包围之网", de: "Einhüllende Gespinste", en: "Enveloping Webs", fr: "Toiles collantes", ru: "Опутывающие сети" },
+      name: { ch: "包围之网", de: "Einhüllende Gespinste", en: "Enveloping Webs", fr: "Toiles collantes", ru: "Опутывающие сети" },
     },
     {
       cooldownPlannerActive: true,
@@ -2912,7 +2912,7 @@ export const bossAbilities = {
       guid: 373405,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/priest_icon_chakra.jpg").default,
       importActive: true,
-      name: { cn: "薄纱爆裂", de: "Gespinstausbruch", en: "Gossamer Burst", fr: "Explosion de toiles d’araignée", ru: "Взрыв паутины" },
+      name: { ch: "薄纱爆裂", de: "Gespinstausbruch", en: "Gossamer Burst", fr: "Explosion de toiles d’araignée", ru: "Взрыв паутины" },
     },
     {
       cooldownPlannerActive: false,
@@ -2920,7 +2920,7 @@ export const bossAbilities = {
       guid: 374112,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_focusedpower.jpg").default,
       importActive: false,
-      name: { cn: "冰冻吐息", de: "Gefrierender Atem", en: "Freezing Breath", fr: "Souffle givrant", ru: "Мерзлое дыхание" },
+      name: { ch: "冰冻吐息", de: "Gefrierender Atem", en: "Freezing Breath", fr: "Souffle givrant", ru: "Мерзлое дыхание" },
     },
     {
       cooldownPlannerActive: false,
@@ -2928,7 +2928,7 @@ export const bossAbilities = {
       guid: 373027,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_web_02.jpg").default,
       importActive: false,
-      name: { cn: "窒息之网", de: "Erstickende Netze", en: "Suffocating Webs", fr: "Toiles suffocantes", ru: "Удушающие тенета" },
+      name: { ch: "窒息之网", de: "Erstickende Netze", en: "Suffocating Webs", fr: "Toiles suffocantes", ru: "Удушающие тенета" },
     },
     {
       cooldownPlannerActive: false,
@@ -2936,7 +2936,7 @@ export const bossAbilities = {
       guid: 371983,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_sonicshockwave.jpg").default,
       importActive: false,
-      name: { cn: "退散爆裂", de: "Abwehrender Ausbruch", en: "Repelling Burst", fr: "Explosion repoussante", ru: "Отталкивающий взрыв" },
+      name: { ch: "退散爆裂", de: "Abwehrender Ausbruch", en: "Repelling Burst", fr: "Explosion repoussante", ru: "Отталкивающий взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -2944,7 +2944,7 @@ export const bossAbilities = {
       guid: 372736,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
       importActive: false,
-      name: { cn: "永冻", de: "Permafrost", en: "Permafrost", fr: "Gel prolongé", ru: "Вечная мерзлота" },
+      name: { ch: "永冻", de: "Permafrost", en: "Permafrost", fr: "Gel prolongé", ru: "Вечная мерзлота" },
     },
     {
       cooldownPlannerActive: false,
@@ -2952,7 +2952,7 @@ export const bossAbilities = {
       guid: 373048,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_web_02.jpg").default,
       importActive: false,
-      name: { cn: "窒息之网", de: "Erstickende Netze", en: "Suffocating Webs", fr: "Toiles suffocantes", ru: "Удушающие тенета" },
+      name: { ch: "窒息之网", de: "Erstickende Netze", en: "Suffocating Webs", fr: "Toiles suffocantes", ru: "Удушающие тенета" },
     },
     {
       cooldownPlannerActive: false,
@@ -2960,7 +2960,7 @@ export const bossAbilities = {
       guid: 371979,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_frostnova.jpg").default,
       importActive: false,
-      name: { cn: "冰霜驱逐", de: "Frostausstoß", en: "Frost Expulsion", fr: "Expulsion de givre", ru: "Исторжение льда" },
+      name: { ch: "冰霜驱逐", de: "Frostausstoß", en: "Frost Expulsion", fr: "Expulsion de givre", ru: "Исторжение льда" },
     },
     {
       cooldownPlannerActive: false,
@@ -2968,7 +2968,7 @@ export const bossAbilities = {
       guid: 373559,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_blueflamestrike.jpg").default,
       importActive: false,
-      name: { cn: "冰川之羽", de: "Gletschereruption", en: "Glacial Plume", fr: "Volute glaciale", ru: "Ледовое перо" },
+      name: { ch: "冰川之羽", de: "Gletschereruption", en: "Glacial Plume", fr: "Volute glaciale", ru: "Ледовое перо" },
     },
     {
       cooldownPlannerActive: false,
@@ -2976,7 +2976,7 @@ export const bossAbilities = {
       guid: 372055,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_hunter_icetrap.jpg").default,
       importActive: false,
-      name: { cn: "冰封地面", de: "Vereister Boden", en: "Icy Ground", fr: "Sol glacial", ru: "Мерзлая земля" },
+      name: { ch: "冰封地面", de: "Vereister Boden", en: "Icy Ground", fr: "Sol glacial", ru: "Мерзлая земля" },
     },
     {
       cooldownPlannerActive: false,
@@ -2984,7 +2984,7 @@ export const bossAbilities = {
       guid: 374466,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_hunter_icetrap.jpg").default,
       importActive: false,
-      name: { cn: "冰封地面", de: "Vereister Boden", en: "Icy Ground", fr: "Sol glacial", ru: "Мерзлая земля" },
+      name: { ch: "冰封地面", de: "Vereister Boden", en: "Icy Ground", fr: "Sol glacial", ru: "Мерзлая земля" },
     },
   ],
   /* ----------------------------------------- Kurog Grimtotem ----------------------------------------- */
@@ -2995,7 +2995,7 @@ export const bossAbilities = {
       guid: 372456,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_glacier.jpg").default,
       importActive: true,
-      name: { cn: "绝对零度", de: "Absoluter Nullpunkt", en: "Absolute Zero", fr: "Zéro absolu", ru: "Абсолютный нуль" },
+      name: { ch: "绝对零度", de: "Absoluter Nullpunkt", en: "Absolute Zero", fr: "Zéro absolu", ru: "Абсолютный нуль" },
     },
     {
       cooldownPlannerActive: true,
@@ -3003,7 +3003,7 @@ export const bossAbilities = {
       guid: 373329,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_lavasurge.jpg").default,
       importActive: true,
-      name: { cn: "熔火破裂", de: "Geschmolzene Eruption", en: "Molten Rupture", fr: "Rupture en fusion", ru: "Раскаленный разлом" },
+      name: { ch: "熔火破裂", de: "Geschmolzene Eruption", en: "Molten Rupture", fr: "Rupture en fusion", ru: "Раскаленный разлом" },
     },
     {
       cooldownPlannerActive: true,
@@ -3011,7 +3011,7 @@ export const bossAbilities = {
       guid: 373678,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
       importActive: true,
-      name: { cn: "酷寒", de: "Beißende Kälte", en: "Biting Chill", fr: "Frisson mordant", ru: "Жгучий холод" },
+      name: { ch: "酷寒", de: "Beißende Kälte", en: "Biting Chill", fr: "Frisson mordant", ru: "Жгучий холод" },
     },
     {
       cooldownPlannerActive: true,
@@ -3019,7 +3019,7 @@ export const bossAbilities = {
       guid: 374022,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_moltenblood.jpg").default,
       importActive: true,
-      name: { cn: "灼热屠戮", de: "Sengendes Gemetzel", en: "Searing Carnage", fr: "Carnage incendiaire", ru: "Огненная бойня" },
+      name: { ch: "灼热屠戮", de: "Sengendes Gemetzel", en: "Searing Carnage", fr: "Carnage incendiaire", ru: "Огненная бойня" },
     },
     {
       cooldownPlannerActive: true,
@@ -3027,7 +3027,7 @@ export const bossAbilities = {
       guid: 374691,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_earthquake.jpg").default,
       importActive: true,
-      name: { cn: "地层裂口", de: "Seismischer Riss", en: "Seismic Rupture", fr: "Rupture sismique", ru: "Сейсмический разлом" },
+      name: { ch: "地层裂口", de: "Seismischer Riss", en: "Seismic Rupture", fr: "Rupture sismique", ru: "Сейсмический разлом" },
     },
     {
       cooldownPlannerActive: true,
@@ -3035,7 +3035,7 @@ export const bossAbilities = {
       guid: 374779,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalcombinedfoozles_primordial.jpg").default,
       importActive: false,
-      name: { cn: "原始屏障", de: "Urzeitliche Barriere", en: "Primal Barrier", fr: "Barrière primordiale", ru: "Изначальный барьер" },
+      name: { ch: "原始屏障", de: "Urzeitliche Barriere", en: "Primal Barrier", fr: "Barrière primordiale", ru: "Изначальный барьер" },
     },
     {
       cooldownPlannerActive: true,
@@ -3043,7 +3043,7 @@ export const bossAbilities = {
       guid: 374861,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elementaldevastation.jpg").default,
       importActive: false,
-      name: { cn: "原始转换", de: "Urverschiebung", en: "Primal Shift", fr: "Variation élémentaire", ru: "Изначальный сдвиг" },
+      name: { ch: "原始转换", de: "Urverschiebung", en: "Primal Shift", fr: "Variation élémentaire", ru: "Изначальный сдвиг" },
     },
     {
       cooldownPlannerActive: true,
@@ -3051,7 +3051,7 @@ export const bossAbilities = {
       guid: 382563,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
       importActive: true,
-      name: { cn: "岩浆爆裂", de: "Magmaexplosion", en: "Magma Burst", fr: "Explosion de magma", ru: "Взрыв магмы" },
+      name: { ch: "岩浆爆裂", de: "Magmaexplosion", en: "Magma Burst", fr: "Explosion de magma", ru: "Взрыв магмы" },
     },
     {
       cooldownPlannerActive: true,
@@ -3059,7 +3059,7 @@ export const bossAbilities = {
       guid: 391019,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_ring-of-frost.jpg").default,
       importActive: true,
-      name: { cn: "冷冽洪流", de: "Eisiger Strom", en: "Frigid Torrent", fr: "Torrent glacé", ru: "Ледяные звезды" },
+      name: { ch: "冷冽洪流", de: "Eisiger Strom", en: "Frigid Torrent", fr: "Torrent glacé", ru: "Ледяные звезды" },
     },
     {
       cooldownPlannerActive: true,
@@ -3067,7 +3067,7 @@ export const bossAbilities = {
       guid: 391055,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_elementalearth2.jpg").default,
       importActive: true,
-      name: { cn: "大地笼罩", de: "Einhüllende Erde", en: "Enveloping Earth", fr: "Enveloppe terreuse", ru: "Охватывающая земля" },
+      name: { ch: "大地笼罩", de: "Einhüllende Erde", en: "Enveloping Earth", fr: "Enveloppe terreuse", ru: "Охватывающая земля" },
     },
     {
       cooldownPlannerActive: true,
@@ -3075,7 +3075,7 @@ export const bossAbilities = {
       guid: 395893,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_earthquake.jpg").default,
       importActive: true,
-      name: { cn: "基岩喷发", de: "Ausbrechender Felsboden", en: "Erupting Bedrock", fr: "Roche mère en éruption", ru: "Каменный разлом" },
+      name: { ch: "基岩喷发", de: "Ausbrechender Felsboden", en: "Erupting Bedrock", fr: "Roche mère en éruption", ru: "Каменный разлом" },
     },
     {
       cooldownPlannerActive: true,
@@ -3083,7 +3083,7 @@ export const bossAbilities = {
       guid: 396085,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_earthbindtotem.jpg").default,
       importActive: false,
-      name: { cn: "大地统御", de: "Erdvorherrschaft", en: "Earth Dominance", fr: "Domination terrestre", ru: "Земляное превосходство" },
+      name: { ch: "大地统御", de: "Erdvorherrschaft", en: "Earth Dominance", fr: "Domination terrestre", ru: "Земляное превосходство" },
     },
     {
       cooldownPlannerActive: true,
@@ -3091,7 +3091,7 @@ export const bossAbilities = {
       guid: 396106,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_immolation.jpg").default,
       importActive: false,
-      name: { cn: "炽燃统御", de: "Flammenvorherrschaft", en: "Flame Dominance", fr: "Domination brûlante", ru: "Пылающее превосходство" },
+      name: { ch: "炽燃统御", de: "Flammenvorherrschaft", en: "Flame Dominance", fr: "Domination brûlante", ru: "Пылающее превосходство" },
     },
     {
       cooldownPlannerActive: true,
@@ -3099,7 +3099,7 @@ export const bossAbilities = {
       guid: 396109,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_deathknight_icygrip.jpg").default,
       importActive: false,
-      name: { cn: "冰霜统御", de: "Frostvorherrschaft", en: "Frost Dominance", fr: "Domination givrante", ru: "Леденящее превосходство" },
+      name: { ch: "冰霜统御", de: "Frostvorherrschaft", en: "Frost Dominance", fr: "Domination givrante", ru: "Леденящее превосходство" },
     },
     {
       cooldownPlannerActive: true,
@@ -3107,7 +3107,7 @@ export const bossAbilities = {
       guid: 396113,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_deathknight_icygrip.jpg").default,
       importActive: false,
-      name: { cn: "风暴统御", de: "Sturmvorherrschaft", en: "Storm Dominance", fr: "Domination orageuse", ru: "Громовое превосходство" },
+      name: { ch: "风暴统御", de: "Sturmvorherrschaft", en: "Storm Dominance", fr: "Domination orageuse", ru: "Громовое превосходство" },
     },
     {
       cooldownPlannerActive: true,
@@ -3115,7 +3115,7 @@ export const bossAbilities = {
       guid: 396201,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_elemental_totem.jpg").default,
       importActive: false,
-      name: { cn: "迅猛气息", de: "Brandheiße Präsenz", en: "Blistering Presence", fr: "Présence torride", ru: "Обжигающее присутствие" },
+      name: { ch: "迅猛气息", de: "Brandheiße Präsenz", en: "Blistering Presence", fr: "Présence torride", ru: "Обжигающее присутствие" },
     },
     {
       cooldownPlannerActive: true,
@@ -3123,7 +3123,7 @@ export const bossAbilities = {
       guid: 396241,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_shaman_ascendance.jpg").default,
       importActive: false,
-      name: { cn: "原始调和", de: "Urzeitliche Abstimmung", en: "Primal Attunement", fr: "Communion primordiale", ru: "Изначальное единение" },
+      name: { ch: "原始调和", de: "Urzeitliche Abstimmung", en: "Primal Attunement", fr: "Communion primordiale", ru: "Изначальное единение" },
     },
     {
       cooldownPlannerActive: true,
@@ -3131,7 +3131,31 @@ export const bossAbilities = {
       guid: 374621,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vanish.jpg").default,
       importActive: true,
-      name: { cn: "风暴破击", de: "Sturmbruch", en: "Storm Break", fr: "Tempête voyageuse", ru: "Просвет бури" },
+      name: { ch: "风暴破击", de: "Sturmbruch", en: "Storm Break", fr: "Tempête voyageuse", ru: "Просвет бури" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 374215,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
+      importActive: true,
+      name: { ch: "雷霆打击", de: "Donnerschlag", en: "Thunder Strike", fr: "Frappe de la foudre", ru: "Громовой удар" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 374624,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
+      importActive: true,
+      name: { ch: "冻结风暴", de: "Eisiger Sturm", en: "Freezing Tempest", fr: "Tempête givrante", ru: "Леденящая буря" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 376063,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_fireball02.jpg").default,
+      importActive: false,
+      name: { ch: "火焰箭", de: "Flammenblitz", en: "Flame Bolt", fr: "Trait de flamme", ru: "Стрела огня" },
     },
     {
       cooldownPlannerActive: true,
@@ -3139,13 +3163,13 @@ export const bossAbilities = {
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
   ],
-  /* ---------------------------------------- Dathea, Ascended ---------------------------------------- */
+  /* ------------------------------------ Raszageth the Storm-Eater ------------------------------------ */
   2607: [
     {
       cooldownPlannerActive: true,
@@ -3153,15 +3177,15 @@ export const bossAbilities = {
       guid: 381615,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_lightningwhip.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Static Charge", fr: "", ru: "" },
+      name: { ch: "静电充能", de: "Statische Aufladung", en: "Static Charge", fr: "Charge statique", ru: "Статический разряд" },
     },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: 385574,
-      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_socererking_forcenova.jpg").default,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_evoker_hoverblue.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Tempest Wing", fr: "", ru: "" },
+      name: { ch: "风暴之翼", de: "Orkanschwinge", en: "Tempest Wing", fr: "Aile-tempête", ru: "Крыло бури" },
     },
     {
       cooldownPlannerActive: true,
@@ -3169,7 +3193,7 @@ export const bossAbilities = {
       guid: 387261,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_evoker_unravel.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Stormsurge", fr: "", ru: "" },
+      name: { ch: "风暴喷涌", de: "Sturmwoge", en: "Stormsurge", fr: "Éruption de tempête", ru: "Энергия бури" },
     },
     {
       cooldownPlannerActive: true,
@@ -3177,7 +3201,7 @@ export const bossAbilities = {
       guid: 377612,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_vigor01.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Hurricane Wing", fr: "", ru: "" },
+      name: { ch: "飓风龙翼", de: "Hurrikanschwinge", en: "Hurricane Wing", fr: "Aile ouragan", ru: "Ураганное крыло" },
     },
     {
       cooldownPlannerActive: true,
@@ -3185,7 +3209,7 @@ export const bossAbilities = {
       guid: 388643,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Volatile Current", fr: "", ru: "" },
+      name: { ch: "爆裂电流", de: "Instabiler Strom", en: "Volatile Current", fr: "Courant instable", ru: "Нестабильный поток" },
     },
     {
       cooldownPlannerActive: true,
@@ -3193,7 +3217,7 @@ export const bossAbilities = {
       guid: 385065,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_diving01.jpg").default,
       importActive: true,
-      name: { cn: "", de: "", en: "Lightning Devastation", fr: "", ru: "" },
+      name: { ch: "闪电毁灭", de: "Blitzverheerung", en: "Lightning Devastation", fr: "Dévastation de foudre", ru: "Опустошающая молния" },
     },
     {
       cooldownPlannerActive: false,
@@ -3201,7 +3225,7 @@ export const bossAbilities = {
       guid: 385569,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Raging Storm", fr: "", ru: "" },
+      name: { ch: "肆虐风暴", de: "Tobender Sturm", en: "Raging Storm", fr: "Orage déchaîné", ru: "Бушующий шторм" },
     },
     {
       cooldownPlannerActive: true,
@@ -3209,7 +3233,71 @@ export const bossAbilities = {
       guid: 399713,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_siege_engineer_magnetic_lasso.jpg").default,
       importActive: false,
-      name: { cn: "", de: "", en: "Magnetic Charge", fr: "", ru: "" },
+      name: { ch: "磁力充能", de: "Magnetische Ladung", en: "Magnetic Charge", fr: "Charge magnétique", ru: "Магнитный заряд" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 378829,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_overcharge.jpg").default,
+      importActive: true,
+      name: { ch: "积雷充能", de: "Fulminante Ladung", en: "Fulminating Charge", fr: "Charge fulminante", ru: "Сверкающий заряд" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 377467,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_overcharge.jpg").default,
+      importActive: true,
+      name: { ch: "积雷充能", de: "Fulminante Ladung", en: "Fulminating Charge", fr: "Charge fulminante", ru: "Сверкающий заряд" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 386410,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/achievement_raidprimalist_raszageth.jpg").default,
+      importActive: true,
+      name: { ch: "雷霆冲击", de: "Donnernder Einschlag", en: "Thunderous Blast", fr: "Explosion tonitruante", ru: "Громовой заряд" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 377322,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
+      importActive: false,
+      name: { ch: "肆虐风暴", de: "Tobender Sturm", en: "Raging Storm", fr: "Orage déchaîné", ru: "Бушующий шторм" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 382434,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_thunderking_thunderstruck.jpg").default,
+      importActive: false,
+      name: { ch: "风暴新星", de: "Sturmnova", en: "Storm Nova", fr: "Nova de tempête", ru: "Взрыв бури" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 391281,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_blacksmithing_craftedbar_electricalloy.jpg").default,
+      importActive: false,
+      name: { ch: "爆裂能量", de: "Knisternde Energie", en: "Crackling Energy", fr: "Énergie crépitante", ru: "Энергетическое напряжение" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 389870,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_lightning.jpg").default,
+      importActive: true,
+      name: { ch: "风暴破击", de: "Sturmbruch", en: "Storm Break", fr: "Tempête voyageuse", ru: "Просвет бури" },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 388431,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_dragonriding_evasivemaneuvers01.jpg").default,
+      importActive: false,
+      name: { ch: "毁灭帷幕", de: "Ruinöse Hülle", en: "Ruinous Shroud", fr: "Voile de ruine", ru: "Разрушительный покров" },
     },
     {
       cooldownPlannerActive: true,
@@ -3217,15 +3305,7 @@ export const bossAbilities = {
       guid: 390817,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_focusedpower.jpg").default,
       importActive: false,
-      name: { cn: "雷鸣能量", de: "Donnernde Energie", en: "Thunderous Energy", fr: "Énergie tonitruante", ru: "Дуга молнии" },
-    },
-    {
-      cooldownPlannerActive: true,
-      createEvent: false,
-      guid: 389870,
-      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_lightning.jpg").default,
-      importActive: false,
-      name: { cn: "风暴破击", de: "Sturmbruch", en: "Storm Break", fr: "Tempête voyageuse", ru: "Просвет бури" },
+      name: { ch: "雷鸣能量", de: "Donnernde Energie", en: "Thunderous Energy", fr: "Énergie tonitruante", ru: "Дуга молнии" },
     },
     {
       cooldownPlannerActive: false,
@@ -3233,7 +3313,7 @@ export const bossAbilities = {
       guid: 181089,
       icon: "",
       importActive: false,
-      name: { cn: "Encounter Event", de: "Encounter Event", en: "Encounter Event", fr: "Encounter Event", ru: "Encounter Event" },
+      name: { ch: "Encounter Event", de: "Encounter Event", en: "Encounter Event", fr: "Encounter Event", ru: "Encounter Event" },
     },
   ],
   /* --------------------------------------- Broodkeeper Diurna --------------------------------------- */
@@ -3244,7 +3324,7 @@ export const bossAbilities = {
       guid: 375871,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shadow_rainoffire.jpg").default,
       importActive: true,
-      name: { cn: "野火", de: "Lauffeuer", en: "Wildfire", fr: "Flambée", ru: "Дикий огонь" },
+      name: { ch: "野火", de: "Lauffeuer", en: "Wildfire", fr: "Flambée", ru: "Дикий огонь" },
     },
     {
       cooldownPlannerActive: true,
@@ -3252,7 +3332,7 @@ export const bossAbilities = {
       guid: 380175,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_staff_2h_broodkeeper_d_01.jpg").default,
       importActive: true,
-      name: { cn: "巢穴守护者的巨杖", de: "Großstab der Bruthüterin", en: "Greatstaff of the Broodkeeper", fr: "Grand bâton de la garde-couvée", ru: "Великий посох хранительницы стаи" },
+      name: { ch: "巢穴守护者的巨杖", de: "Großstab der Bruthüterin", en: "Greatstaff of the Broodkeeper", fr: "Grand bâton de la garde-couvée", ru: "Великий посох хранительницы стаи" },
     },
     {
       cooldownPlannerActive: true,
@@ -3260,7 +3340,7 @@ export const bossAbilities = {
       guid: 375457,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_mount_dkmountfrost.jpg").default,
       importActive: false,
-      name: { cn: "寒冰怒气", de: "Frostiger Tobsuchtsanfall", en: "Chilling Tantrum", fr: "Colère glaçante", ru: "Леденящий гнев" },
+      name: { ch: "寒冰怒气", de: "Frostiger Tobsuchtsanfall", en: "Chilling Tantrum", fr: "Colère glaçante", ru: "Леденящий гнев" },
     },
     {
       cooldownPlannerActive: true,
@@ -3268,7 +3348,7 @@ export const bossAbilities = {
       guid: 396264,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: true,
-      name: { cn: "爆震石斫", de: "Detonierendes Steinschmettern", en: "Detonating Stoneslam", fr: "Coup rocailleux explosif", ru: "Детонирующий камень" },
+      name: { ch: "爆震石斫", de: "Detonierendes Steinschmettern", en: "Detonating Stoneslam", fr: "Coup rocailleux explosif", ru: "Детонирующий камень" },
     },
     {
       cooldownPlannerActive: true,
@@ -3276,7 +3356,7 @@ export const bossAbilities = {
       guid: 388918,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_mage_flameorb_blue.jpg").default,
       importActive: true,
-      name: { cn: "冷凝笼罩", de: "Eishülle", en: "Frozen Shroud", fr: "Voile gelé", ru: "Морозный покров" },
+      name: { ch: "冷凝笼罩", de: "Eishülle", en: "Frozen Shroud", fr: "Voile gelé", ru: "Морозный покров" },
     },
     {
       cooldownPlannerActive: true,
@@ -3285,7 +3365,7 @@ export const bossAbilities = {
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_staff_2h_broodkeeper_d_01.jpg").default,
       importActive: true,
       name: {
-        cn: "强化的巢穴守护者的巨杖",
+        ch: "强化的巢穴守护者的巨杖",
         de: "Ermächtigter Großstab der Bruthüterin",
         en: "Empowered Greatstaff of the Broodkeeper",
         fr: "Grand bâton de la garde-couvée renforcé",
@@ -3298,7 +3378,7 @@ export const bossAbilities = {
       guid: 375829,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_shamanrage.jpg").default,
       importActive: false,
-      name: { cn: "龙巢看护者之怒", de: "Wut der Gelegehüterin", en: "Clutchwatcher's Rage", fr: "Fureur de la Mère-de-la-Nichée", ru: "Ярость хранительницы кладки" },
+      name: { ch: "龙巢看护者之怒", de: "Wut der Gelegehüterin", en: "Clutchwatcher's Rage", fr: "Fureur de la Mère-de-la-Nichée", ru: "Ярость хранительницы кладки" },
     },
     {
       cooldownPlannerActive: true,
@@ -3306,7 +3386,7 @@ export const bossAbilities = {
       guid: 375809,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_item_protodragonegg_standard01.jpg").default,
       importActive: false,
-      name: { cn: "巢穴守护者的羁绊", de: "Bindung der Bruthüterin", en: "Broodkeeper's Bond", fr: "Lien de la garde-couvée", ru: "Связь с хранительницей стаи" },
+      name: { ch: "巢穴守护者的羁绊", de: "Bindung der Bruthüterin", en: "Broodkeeper's Bond", fr: "Lien de la garde-couvée", ru: "Связь с хранительницей стаи" },
     },
     {
       cooldownPlannerActive: true,
@@ -3314,12 +3394,12 @@ export const bossAbilities = {
       guid: 375879,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_focusedrage.jpg").default,
       importActive: false,
-      name: { cn: "巢穴守护者的愤怒", de: "Wut der Bruthüterin", en: "Broodkeeper's Fury", fr: "Fureur de la garde-couvée", ru: "Неистовство хранительницы стаи" },
+      name: { ch: "巢穴守护者的愤怒", de: "Wut der Bruthüterin", en: "Broodkeeper's Fury", fr: "Fureur de la garde-couvée", ru: "Неистовство хранительницы стаи" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
-  /* ------------------------------------ Raszageth the Storm-Eater ------------------------------------ */
+  /* ---------------------------------------- Dathea, Ascended ---------------------------------------- */
   2635: [
     {
       cooldownPlannerActive: false,
@@ -3327,7 +3407,7 @@ export const bossAbilities = {
       guid: 384273,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
       importActive: false,
-      name: { cn: "暴风箭", de: "Sturmblitz", en: "Storm Bolt", fr: "Éclair de tempête", ru: "Удар громовержца" },
+      name: { ch: "暴风箭", de: "Sturmblitz", en: "Storm Bolt", fr: "Éclair de tempête", ru: "Удар громовержца" },
     },
     {
       cooldownPlannerActive: false,
@@ -3335,7 +3415,7 @@ export const bossAbilities = {
       guid: 388290,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/creatureportrait_cyclone_nodebris.jpg").default,
       importActive: false,
-      name: { cn: "旋风", de: "Wirbelsturm", en: "Cyclone", fr: "Cyclone", ru: "Смерч" },
+      name: { ch: "旋风", de: "Wirbelsturm", en: "Cyclone", fr: "Cyclone", ru: "Смерч" },
     },
     {
       cooldownPlannerActive: false,
@@ -3343,7 +3423,7 @@ export const bossAbilities = {
       guid: 388407,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_jewelcrafting_bg_air.jpg").default,
       importActive: false,
-      name: { cn: "纷乱之风", de: "Scherwinde", en: "Crosswinds", fr: "Vents de travers", ru: "Встречный ветер" },
+      name: { ch: "纷乱之风", de: "Scherwinde", en: "Crosswinds", fr: "Vents de travers", ru: "Встречный ветер" },
     },
     {
       cooldownPlannerActive: false,
@@ -3351,7 +3431,7 @@ export const bossAbilities = {
       guid: 376851,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalshardfoozles_air.jpg").default,
       importActive: false,
-      name: { cn: "飞空打击", de: "Luftstoß", en: "Aerial Buffet", fr: "Frappe aérienne", ru: "Воздушный удар" },
+      name: { ch: "飞空打击", de: "Luftstoß", en: "Aerial Buffet", fr: "Frappe aérienne", ru: "Воздушный удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -3359,7 +3439,7 @@ export const bossAbilities = {
       guid: 375580,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind_wall.jpg").default,
       importActive: false,
-      name: { cn: "西风猛击", de: "Zephyrschmettern", en: "Zephyr Slam", fr: "Heurt de zéphyr", ru: "Удар южного ветра" },
+      name: { ch: "西风猛击", de: "Zephyrschmettern", en: "Zephyr Slam", fr: "Heurt de zéphyr", ru: "Удар южного ветра" },
     },
     {
       cooldownPlannerActive: false,
@@ -3367,7 +3447,7 @@ export const bossAbilities = {
       guid: 385812,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_specialreagentfoozles_primalistrune_white.jpg").default,
       importActive: false,
-      name: { cn: "气流斩击", de: "Luftschlitzen", en: "Aerial Slash", fr: "Entaille aérienne", ru: "Резкий удар ветра" },
+      name: { ch: "气流斩击", de: "Luftschlitzen", en: "Aerial Slash", fr: "Entaille aérienne", ru: "Резкий удар ветра" },
     },
     {
       cooldownPlannerActive: false,
@@ -3375,7 +3455,7 @@ export const bossAbilities = {
       guid: 389221,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
       importActive: false,
-      name: { cn: "驱逐狂风", de: "Windausstoß", en: "Gale Expulsion", fr: "Expulsion venteuse", ru: "Пульсирующая буря" },
+      name: { ch: "驱逐狂风", de: "Windausstoß", en: "Gale Expulsion", fr: "Expulsion venteuse", ru: "Пульсирующая буря" },
     },
     {
       cooldownPlannerActive: false,
@@ -3383,7 +3463,7 @@ export const bossAbilities = {
       guid: 388410,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_jewelcrafting_bg_air.jpg").default,
       importActive: false,
-      name: { cn: "纷乱之风", de: "Scherwinde", en: "Crosswinds", fr: "Vents de travers", ru: "Встречный ветер" },
+      name: { ch: "纷乱之风", de: "Scherwinde", en: "Crosswinds", fr: "Vents de travers", ru: "Встречный ветер" },
     },
     {
       cooldownPlannerActive: false,
@@ -3391,7 +3471,7 @@ export const bossAbilities = {
       guid: 381688,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind.jpg").default,
       importActive: false,
-      name: { cn: "无常阵风", de: "Instabile Windstöße", en: "Unstable Gusts", fr: "Vents instables", ru: "Нестабильные порывы" },
+      name: { ch: "无常阵风", de: "Instabile Windstöße", en: "Unstable Gusts", fr: "Vents instables", ru: "Нестабильные порывы" },
     },
     {
       cooldownPlannerActive: false,
@@ -3399,7 +3479,7 @@ export const bossAbilities = {
       guid: 387943,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_vehicle_electrocharge.jpg").default,
       importActive: false,
-      name: { cn: "转移精华", de: "Umgeleitete Essenz", en: "Diverted Essence", fr: "Essence détournée", ru: "Перемещенная сущность" },
+      name: { ch: "转移精华", de: "Umgeleitete Essenz", en: "Diverted Essence", fr: "Essence détournée", ru: "Перемещенная сущность" },
     },
     {
       cooldownPlannerActive: false,
@@ -3407,7 +3487,7 @@ export const bossAbilities = {
       guid: 388302,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_broker_missile.jpg").default,
       importActive: false,
-      name: { cn: "狂怒爆发", de: "Wütender Ausbruch", en: "Raging Burst", fr: "Bourrasque déchaînée", ru: "Яростный импульс" },
+      name: { ch: "狂怒爆发", de: "Wütender Ausbruch", en: "Raging Burst", fr: "Bourrasque déchaînée", ru: "Яростный импульс" },
     },
     {
       cooldownPlannerActive: true,
@@ -3415,7 +3495,7 @@ export const bossAbilities = {
       guid: 376943,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/creatureportrait_cyclone_nodebris.jpg").default,
       importActive: true,
-      name: { cn: "旋风", de: "Wirbelsturm", en: "Cyclone", fr: "Cyclone", ru: "Смерч" },
+      name: { ch: "旋风", de: "Wirbelsturm", en: "Cyclone", fr: "Cyclone", ru: "Смерч" },
     },
     {
       cooldownPlannerActive: false,
@@ -3423,7 +3503,7 @@ export const bossAbilities = {
       guid: 387849,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalspiritfoozles_air.jpg").default,
       importActive: false,
-      name: { cn: "凝结风暴", de: "Sturm verdichten", en: "Coalescing Storm", fr: "Tempête coalescente", ru: "Поднимающаяся буря" },
+      name: { ch: "凝结风暴", de: "Sturm verdichten", en: "Coalescing Storm", fr: "Tempête coalescente", ru: "Поднимающаяся буря" },
     },
     {
       cooldownPlannerActive: true,
@@ -3431,7 +3511,7 @@ export const bossAbilities = {
       guid: 395501,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
       importActive: true,
-      name: { cn: "反冲", de: "Gegenwind", en: "Blowback", fr: "Renvoi", ru: "Встречный ветер" },
+      name: { ch: "反冲", de: "Gegenwind", en: "Blowback", fr: "Renvoi", ru: "Встречный ветер" },
     },
     {
       cooldownPlannerActive: false,
@@ -3439,7 +3519,7 @@ export const bossAbilities = {
       guid: 391382,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
       importActive: true,
-      name: { cn: "反冲", de: "Gegenwind", en: "Blowback", fr: "Renvoi", ru: "Встречный ветер" },
+      name: { ch: "反冲", de: "Gegenwind", en: "Blowback", fr: "Renvoi", ru: "Встречный ветер" },
     },
     {
       cooldownPlannerActive: true,
@@ -3447,7 +3527,7 @@ export const bossAbilities = {
       guid: 391717,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_crashlightning.jpg").default,
       importActive: false,
-      name: { cn: "静电释放", de: "Statische Entladung", en: "Static Discharge", fr: "Décharge statique", ru: "Статический разряд" },
+      name: { ch: "静电释放", de: "Statische Entladung", en: "Static Discharge", fr: "Décharge statique", ru: "Статический разряд" },
     },
     {
       cooldownPlannerActive: false,
@@ -3455,7 +3535,7 @@ export const bossAbilities = {
       guid: 384637,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_eyeofthestorm.jpg").default,
       importActive: false,
-      name: { cn: "暴怒之风", de: "Tobende Winde", en: "Raging Winds", fr: "Vents déchaînés", ru: "Бушующие ветра" },
+      name: { ch: "暴怒之风", de: "Tobende Winde", en: "Raging Winds", fr: "Vents déchaînés", ru: "Бушующие ветра" },
     },
     {
       cooldownPlannerActive: true,
@@ -3463,7 +3543,7 @@ export const bossAbilities = {
       guid: 391686,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_staticshock.jpg").default,
       importActive: false,
-      name: { cn: "传导印记", de: "Leitfähiges Zeichen", en: "Conductive Mark", fr: "Marque conductrice", ru: "Знак проводимости" },
+      name: { ch: "传导印记", de: "Leitfähiges Zeichen", en: "Conductive Mark", fr: "Marque conductrice", ru: "Знак проводимости" },
     },
     {
       cooldownPlannerActive: false,
@@ -3471,7 +3551,7 @@ export const bossAbilities = {
       guid: 387627,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileair.jpg").default,
       importActive: false,
-      name: { cn: "反冲", de: "Gegenwind", en: "Blowback", fr: "Renvoi", ru: "Встречный ветер" },
+      name: { ch: "反冲", de: "Gegenwind", en: "Blowback", fr: "Renvoi", ru: "Встречный ветер" },
     },
     {
       cooldownPlannerActive: false,
@@ -3479,7 +3559,7 @@ export const bossAbilities = {
       guid: 375424,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_four_wind.jpg").default,
       importActive: false,
-      name: { cn: "狂怒风暴", de: "Wütender Gewittersturm", en: "Raging Tempest", fr: "Tempête déchaînée", ru: "Яростная буря" },
+      name: { ch: "狂怒风暴", de: "Wütender Gewittersturm", en: "Raging Tempest", fr: "Tempête déchaînée", ru: "Яростная буря" },
     },
     {
       cooldownPlannerActive: false,
@@ -3487,7 +3567,7 @@ export const bossAbilities = {
       guid: 384292,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_stormreach.jpg").default,
       importActive: false,
-      name: { cn: "暴风箭", de: "Sturmblitz", en: "Storm Bolt", fr: "Éclair de tempête", ru: "Удар громовержца" },
+      name: { ch: "暴风箭", de: "Sturmblitz", en: "Storm Bolt", fr: "Éclair de tempête", ru: "Удар громовержца" },
     },
     {
       cooldownPlannerActive: false,
@@ -3495,7 +3575,7 @@ export const bossAbilities = {
       guid: 390449,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_nature_unrelentingstorm.jpg").default,
       importActive: false,
-      name: { cn: "雷霆之箭", de: "Donnerblitz", en: "Thunderbolt", fr: "Trait de tonnerre", ru: "Громовая стрела" },
+      name: { ch: "雷霆之箭", de: "Donnerblitz", en: "Thunderbolt", fr: "Trait de tonnerre", ru: "Громовая стрела" },
     },
     {
       cooldownPlannerActive: false,
@@ -3503,18 +3583,18 @@ export const bossAbilities = {
       guid: 388562,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_skyreach_wind.jpg").default,
       importActive: false,
-      name: { cn: "无常阵风", de: "Instabile Windstöße", en: "Unstable Gusts", fr: "Vents instables", ru: "Нестабильные порывы" },
+      name: { ch: "无常阵风", de: "Instabile Windstöße", en: "Unstable Gusts", fr: "Vents instables", ru: "Нестабильные порывы" },
     },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { cn: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { cn: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
-    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { cn: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: false,
       guid: "Intermission",
       icon: "",
       importActive: false,
-      name: { cn: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
     },
     {
       cooldownPlannerActive: false,
@@ -3522,7 +3602,7 @@ export const bossAbilities = {
       guid: 181089,
       icon: "",
       importActive: false,
-      name: { cn: "Encounter Event", de: "Encounter Event", en: "Encounter Event", fr: "Encounter Event", ru: "Encounter Event" },
+      name: { ch: "Encounter Event", de: "Encounter Event", en: "Encounter Event", fr: "Encounter Event", ru: "Encounter Event" },
     },
   ],
   /* --------------------------------------------- Terros --------------------------------------------- */
@@ -3533,7 +3613,7 @@ export const bossAbilities = {
       guid: 395686,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
-      name: { cn: "觉醒之土", de: "Erweckte Erde", en: "Awakened Earth", fr: "Terre éveillée", ru: "Пробужденная земля" },
+      name: { ch: "觉醒之土", de: "Erweckte Erde", en: "Awakened Earth", fr: "Terre éveillée", ru: "Пробужденная земля" },
     },
     {
       cooldownPlannerActive: true,
@@ -3541,7 +3621,7 @@ export const bossAbilities = {
       guid: 376279,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_titansgrip.jpg").default,
       importActive: true,
-      name: { cn: "震荡猛击", de: "Erschütterndes Schmettern", en: "Concussive Slam", fr: "Commotion violente", ru: "Оглушающий удар" },
+      name: { ch: "震荡猛击", de: "Erschütterndes Schmettern", en: "Concussive Slam", fr: "Commotion violente", ru: "Оглушающий удар" },
     },
     {
       cooldownPlannerActive: true,
@@ -3549,7 +3629,7 @@ export const bossAbilities = {
       guid: 380487,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/6bf_blackrock_nova.jpg").default,
       importActive: true,
-      name: { cn: "岩石冲击", de: "Steineinschlag", en: "Rock Blast", fr: "Éjection rocailleuse", ru: "Каменный выброс" },
+      name: { ch: "岩石冲击", de: "Steineinschlag", en: "Rock Blast", fr: "Éjection rocailleuse", ru: "Каменный выброс" },
     },
     {
       cooldownPlannerActive: true,
@@ -3557,7 +3637,7 @@ export const bossAbilities = {
       guid: 383073,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_earthquake.jpg").default,
       importActive: true,
-      name: { cn: "粉碎冲击", de: "Zerschmetternder Einschlag", en: "Shattering Impact", fr: "Impact fracturant", ru: "Дробящий удар" },
+      name: { ch: "粉碎冲击", de: "Zerschmetternder Einschlag", en: "Shattering Impact", fr: "Impact fracturant", ru: "Дробящий удар" },
     },
     {
       cooldownPlannerActive: true,
@@ -3565,7 +3645,7 @@ export const bossAbilities = {
       guid: 377166,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
       importActive: true,
-      name: { cn: "共鸣湮灭", de: "Resonierende Vernichtung", en: "Resonating Annihilation", fr: "Résonance annihilatrice", ru: "Резонирующая аннигиляция" },
+      name: { ch: "共鸣湮灭", de: "Resonierende Vernichtung", en: "Resonating Annihilation", fr: "Résonance annihilatrice", ru: "Резонирующая аннигиляция" },
     },
     {
       cooldownPlannerActive: true,
@@ -3573,7 +3653,7 @@ export const bossAbilities = {
       guid: 391592,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_quicksand.jpg").default,
       importActive: false,
-      name: { cn: "注能爆尘", de: "Erfüllter Niederschlag", en: "Infused Fallout", fr: "Retombée imprégnée", ru: "Заряженное облако пыли" },
+      name: { ch: "注能爆尘", de: "Erfüllter Niederschlag", en: "Infused Fallout", fr: "Retombée imprégnée", ru: "Заряженное облако пыли" },
     },
     {
       cooldownPlannerActive: false,
@@ -3581,7 +3661,7 @@ export const bossAbilities = {
       guid: 391322,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_bloodnova.jpg").default,
       importActive: false,
-      name: { cn: "爆炸反应", de: "Explosive Reaktion", en: "Explosive Reaction", fr: "Réaction explosive", ru: "Взрывная реакция" },
+      name: { ch: "爆炸反应", de: "Explosive Reaktion", en: "Explosive Reaction", fr: "Réaction explosive", ru: "Взрывная реакция" },
     },
     {
       cooldownPlannerActive: false,
@@ -3589,7 +3669,7 @@ export const bossAbilities = {
       guid: 382458,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_misc_volatileearth.jpg").default,
       importActive: false,
-      name: { cn: "共鸣余震", de: "Resonierende Nachwirkung", en: "Resonant Aftermath", fr: "Répercussions résonnantes", ru: "Повторный резонанс" },
+      name: { ch: "共鸣余震", de: "Resonierende Nachwirkung", en: "Resonant Aftermath", fr: "Répercussions résonnantes", ru: "Повторный резонанс" },
     },
     {
       cooldownPlannerActive: false,
@@ -3597,7 +3677,7 @@ export const bossAbilities = {
       guid: 394347,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/item_earthenmight.jpg").default,
       importActive: false,
-      name: { cn: "感应基岩", de: "Reaktiver Felsboden", en: "Reactive Bedrock", fr: "Roche mère réactive", ru: "Реактивная порода" },
+      name: { ch: "感应基岩", de: "Reaktiver Felsboden", en: "Reactive Bedrock", fr: "Roche mère réactive", ru: "Реактивная порода" },
     },
     {
       cooldownPlannerActive: false,
@@ -3605,7 +3685,7 @@ export const bossAbilities = {
       guid: 381781,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_warrior_titansgrip.jpg").default,
       importActive: false,
-      name: { cn: "震荡猛击", de: "Erschütterndes Schmettern", en: "Concussive Slam", fr: "Commotion violente", ru: "Оглушающий удар" },
+      name: { ch: "震荡猛击", de: "Erschütterndes Schmettern", en: "Concussive Slam", fr: "Commotion violente", ru: "Оглушающий удар" },
     },
     {
       cooldownPlannerActive: false,
@@ -3613,7 +3693,7 @@ export const bossAbilities = {
       guid: 381315,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_earthen_pillar.jpg").default,
       importActive: false,
-      name: { cn: "觉醒之土", de: "Erweckte Erde", en: "Awakened Earth", fr: "Terre éveillée", ru: "Пробужденная земля" },
+      name: { ch: "觉醒之土", de: "Erweckte Erde", en: "Awakened Earth", fr: "Terre éveillée", ru: "Пробужденная земля" },
     },
     {
       cooldownPlannerActive: false,
@@ -3621,7 +3701,7 @@ export const bossAbilities = {
       guid: 386277,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
       importActive: false,
-      name: { cn: "共鸣湮灭", de: "Resonierende Vernichtung", en: "Resonating Annihilation", fr: "Résonance annihilatrice", ru: "Резонирующая аннигиляция" },
+      name: { ch: "共鸣湮灭", de: "Resonierende Vernichtung", en: "Resonating Annihilation", fr: "Résonance annihilatrice", ru: "Резонирующая аннигиляция" },
     },
     {
       cooldownPlannerActive: false,
@@ -3629,7 +3709,7 @@ export const bossAbilities = {
       guid: 378861,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/inv_10_elementalcombinedfoozles_earth.jpg").default,
       importActive: false,
-      name: { cn: "开裂碎石", de: "Gesprungener Schutt", en: "Fractured Rubble", fr: "Décombres fracturés", ru: "Потрескавшиеся обломки" },
+      name: { ch: "开裂碎石", de: "Gesprungener Schutt", en: "Fractured Rubble", fr: "Décombres fracturés", ru: "Потрескавшиеся обломки" },
     },
     {
       cooldownPlannerActive: true,
@@ -3637,7 +3717,7 @@ export const bossAbilities = {
       guid: 386400,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_gift_of_earth.jpg").default,
       importActive: true,
-      name: { cn: "余震", de: "Nachwirkungen", en: "Aftershock", fr: "Répliques", ru: "Повторный толчок" },
+      name: { ch: "余震", de: "Nachwirkungen", en: "Aftershock", fr: "Répliques", ru: "Повторный толчок" },
     },
     {
       cooldownPlannerActive: false,
@@ -3645,7 +3725,7 @@ export const bossAbilities = {
       guid: 381775,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_shaman_improvedfirenova.jpg").default,
       importActive: false,
-      name: { cn: "共鸣湮灭", de: "Resonierende Vernichtung", en: "Resonating Annihilation", fr: "Résonance annihilatrice", ru: "Резонирующая аннигиляция" },
+      name: { ch: "共鸣湮灭", de: "Resonierende Vernichtung", en: "Resonating Annihilation", fr: "Résonance annihilatrice", ru: "Резонирующая аннигиляция" },
     },
     {
       cooldownPlannerActive: true,
@@ -3653,7 +3733,7 @@ export const bossAbilities = {
       guid: 381595,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
       importActive: false,
-      name: { cn: "撼地突袭", de: "Seismischer Angriff", en: "Seismic Assault", fr: "Assaut sismique", ru: "Сейсмический взрыв" },
+      name: { ch: "撼地突袭", de: "Seismischer Angriff", en: "Seismic Assault", fr: "Assaut sismique", ru: "Сейсмический взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -3661,7 +3741,7 @@ export const bossAbilities = {
       guid: 381576,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/ability_rhyolith_magmaflow_wave.jpg").default,
       importActive: false,
-      name: { cn: "撼地突袭", de: "Seismischer Angriff", en: "Seismic Assault", fr: "Assaut sismique", ru: "Сейсмический взрыв" },
+      name: { ch: "撼地突袭", de: "Seismischer Angriff", en: "Seismic Assault", fr: "Assaut sismique", ru: "Сейсмический взрыв" },
     },
     {
       cooldownPlannerActive: false,
@@ -3669,7 +3749,7 @@ export const bossAbilities = {
       guid: 381298,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/6bf_blackrock_nova.jpg").default,
       importActive: false,
-      name: { cn: "岩石冲击", de: "Steineinschlag", en: "Rock Blast", fr: "Éjection rocailleuse", ru: "Каменный выброс" },
+      name: { ch: "岩石冲击", de: "Steineinschlag", en: "Rock Blast", fr: "Éjection rocailleuse", ru: "Каменный выброс" },
     },
   ],
 };
