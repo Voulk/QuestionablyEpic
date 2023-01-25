@@ -3144,6 +3144,14 @@ export const bossAbilities = {
     {
       cooldownPlannerActive: true,
       createEvent: false,
+      guid: 374624,
+      icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_frost_arcticwinds.jpg").default,
+      importActive: true,
+      name: { ch: "冻结风暴", de: "Eisiger Sturm", en: "Freezing Tempest", fr: "Tempête givrante", ru: "Леденящая буря" },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
       guid: 376063,
       icon: require("Images/Bosses/VaultOfTheIncarnates/Icons/spell_fire_fireball02.jpg").default,
       importActive: false,
