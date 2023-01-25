@@ -1,6 +1,7 @@
 // import React from "react";
+import { cooldownDB } from "../Data/CooldownDB";
 
-export function classColoursERT(props) {
+export function classColoursERT(props, cooldown) {
   if (props === "Paladin") {
     return "|cfff38bb9";
   }
@@ -8,6 +9,30 @@ export function classColoursERT(props) {
     return "|cfffe7b09";
   }
   if (props === "Priest") {
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Holy")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cffffff00";
+    }
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Shadow")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cfffefefe";
+    }
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Discipline")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cff808080";
+    }
     return "|cffffff00";
   }
   if (props === "Shaman") {

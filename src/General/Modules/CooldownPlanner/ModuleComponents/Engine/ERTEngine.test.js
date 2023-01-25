@@ -84,16 +84,17 @@ import ertEngine from "./ERTEngine";
 // ];
 
 // Priest colours need to be reworked.
-// describe("Test ERT Functions", () => {
-//   test("Test Function returns correct data after conversion to MRT", () => {
-//     // simulate useState
-//     let ertData = [];
-//     const setERTData = (props) => {
-//       ertData = props;
-//     };
-//     // run the function
-//     ertEngine(tableData, boss, lang, setERTData, hideNoCooldownsChecked);
+describe("Test ERT Functions", () => {
+  test("Test Function returns correct data after conversion to MRT", () => {
 
-//     expect(ertData).toEqual(expected);
-//   });
-// });
+    // // simulate useState
+    // let ertData = [];
+    // const setERTData = (props) => {
+    //   ertData = props;
+    // };
+    // // run the function
+    // ertEngine(tableData, boss, lang, setERTData, hideNoCooldownsChecked);
+
+    // expect(ertData).toEqual(expected);
+  });
+});
