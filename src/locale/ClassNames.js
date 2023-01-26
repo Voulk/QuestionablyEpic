@@ -223,3 +223,160 @@ export const getClassIcon = (className) => {
 
   return icon;
 };
+
+export const cdPlannerclassDB = [
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Paladin                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Paladin",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "Paladin",
+    color: "#F58CBA",
+    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg").default,
+  },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Priest                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Priest",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "Priest",
+    cooldownPlannerMenu: true,
+    color: "#FFFFFF",
+    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg").default,
+  },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Druid                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    name: {
+      en: "Druid",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "Druid",
+    cooldownPlannerMenu: true,
+    color: "#FF7D0A",
+    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
+  },
+  {
+    name: {
+      en: "Evoker",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "Evoker",
+    cooldownPlannerMenu: true,
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+  },
+  {
+    name: {
+      en: "Demon Hunter",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "DemonHunter",
+    cooldownPlannerMenu: true,
+    color: "#A330C9",
+    icon: require("Images/Classes/DemonHunter/DemonHunterIcon.jpg").default,
+  },
+  {
+    name: {
+      en: "Warrior",
+      fr: "Warrior",
+      de: "Krieger",
+      ru: "Воин",
+      ch: "Warrior",
+    },
+    id: ["Warrior"],
+    cooldownPlannerMenu: true,
+    color: "#C79C6E",
+    icon: require("Images/Classes/Warrior/WarriorIcon.jpg").default,
+  },
+  {
+    name: {
+      en: "Monk",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "Monk",
+    cooldownPlannerMenu: true,
+    color: "#00FF96",
+    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg").default,
+  },
+  {
+    name: {
+      en: "Shaman",
+      fr: "Chaman",
+      de: "Schamane",
+      ru: "Шаман",
+      ch: "萨满",
+    },
+    id: "Shaman",
+    cooldownPlannerMenu: true,
+    color: "#0070DE",
+    icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg").default,
+  },
+
+  {
+    name: {
+      en: "Death Knight",
+      fr: "Death Knight",
+      de: "Todesritter",
+      ru: "Рыцарь смерти",
+      ch: "Death Knight",
+    },
+    id: "DeathKnight",
+    cooldownPlannerMenu: true,
+    color: "#C41E3A",
+    icon: require("Images/Classes/DeathKnight/DeathKnightIcon.jpg").default,
+  },
+];
+
+export const getTranslatedClassNameCD = (className, currentLanguage) => {
+  let name = cdPlannerclassDB
+    .filter((obj) => {
+      return obj.id.includes(className);
+    })
+    .map((obj) => obj.name[currentLanguage]);
+  return name;
+};
+export const getClassColourCD = (className) => {
+  let name = cdPlannerclassDB
+    .filter((obj) => {
+      return obj.id.includes(className);
+    })
+    .map((obj) => obj.color);
+
+  return name;
+};
+export const getClassIconCD = (className) => {
+  let icon = cdPlannerclassDB
+    .filter((obj) => {
+      return obj.id.includes(className);
+    })
+    .map((obj) => obj.icon);
+
+  return icon;
+};

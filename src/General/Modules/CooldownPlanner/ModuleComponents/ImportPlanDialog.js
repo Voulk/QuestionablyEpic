@@ -75,6 +75,28 @@ export default function ImportPlanDialog(props) {
     setImportedPlanString(importedString);
   };
 
+  const findAndReplace = (data, findVal, replaceVal) => {
+    if (Array.isArray(data)) {
+      for (let i = 0; i < data.length; i++) {
+        if (typeof data[i] === "object") {
+          data[i] = findAndReplace(data[i], findVal, replaceVal);
+        } else if (data[i] === findVal) {
+          data[i] = replaceVal;
+        }
+      }
+    } else if (typeof data === "object") {
+      const keys = Object.keys(data);
+      for (let i = 0; i < keys.length; i++) {
+        if (data[keys[i]] === findVal) {
+          data[keys[i]] = replaceVal;
+        } else if (typeof data[keys[i]] === "object") {
+          data[keys[i]] = findAndReplace(data[keys[i]], findVal, replaceVal);
+        }
+      }
+    }
+    return data;
+  };
+
   /* -------------------------- process the imported string into the app -------------------------- */
   const processplan = (importedString, cooldownObject) => {
     let importedPlan = "";
@@ -84,6 +106,21 @@ export default function ImportPlanDialog(props) {
     let importedRoster = "";
     let currentRoster = ls.get("healerInfo");
     let lines = importedString.split("\n");
+
+    // Replace old classes with new classes
+    let classes = {
+      HolyPriest: "Priest",
+      DisciplinePriest: "Priest",
+      RestorationDruid: "Druid",
+      HolyPaladin: "Paladin",
+      MistweaverMonk: "Monk",
+      RestorationShaman: "Shaman",
+      ShamanDPS: "Shaman",
+      ShadowPriest: "Priest",
+      HavocDemonHunter: "DemonHunter",
+      PreservationEvoker: "Evoker",
+      DevastationEvoker: "Evoker",
+    };
 
     for (var i = 0; i < lines.length; i++) {
       let line = lines[i];
@@ -106,12 +143,18 @@ export default function ImportPlanDialog(props) {
     const planStringPosition = importedString.split("Plan=")[1].search("# Roster");
     importedPlan = JSON.parse(importedString.split("Plan=")[1].slice(0, planStringPosition));
 
+    Object.entries(classes).forEach(([originalClass, newClass]) => {
+      importedPlan = findAndReplace(importedPlan, originalClass, newClass);
+    });
+
     if (checked === true) {
       importedRoster = JSON.parse(importedString.split("Roster=")[1]);
 
       let names = new Set(currentRoster.map((d) => d.name));
       let merged = [...currentRoster, ...importedRoster.filter((d) => !names.has(d.name))];
-
+      Object.entries(classes).forEach(([originalClass, newClass]) => {
+        merged = findAndReplace(merged, originalClass, newClass);
+      });
       ls.set("healerInfo", merged);
     }
 
