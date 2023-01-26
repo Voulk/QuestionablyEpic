@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { getTableLocale } from "locale/GetTableLocale";
 import ls from "local-storage";
 import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
-import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedClassNameCD, getClassIconCD } from "locale/ClassNames";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -73,8 +73,10 @@ export default function HealTeam() {
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
-          {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-          {getTranslatedClassName(rowData.class, currentLanguage)}
+          <div>
+            <img style={{ height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 }} src={getClassIconCD(rowData.class)} alt={rowData.class} />
+          </div>
+          {getTranslatedClassNameCD(rowData.class, currentLanguage)}
         </div>
       ),
       editComponent: (props) => (

@@ -5,6 +5,7 @@ import { defaultPlans } from "./DefaultPlans";
 class Cooldowns {
   constructor(plan) {
     this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || {};
+    this.roster = ls.get("healerInfo") || [];
     raidDB.map((key) => {
       bossList
         .filter((filter) => filter.zoneID === key.ID)
@@ -30,6 +31,31 @@ class Cooldowns {
           .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Mythic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Mythic"]["default"]));
       });
       this.updateCooldownsAll(this.cooldowns);
+
+      // Replace old classes with new classes
+      let classes = {
+        HolyPriest: "Priest",
+        DisciplinePriest: "Priest",
+        RestorationDruid: "Druid",
+        HolyPaladin: "Paladin",
+        MistweaverMonk: "Monk",
+        RestorationShaman: "Shaman",
+        ShamanDPS: "Shaman",
+        ShadowPriest: "Priest",
+        HavocDemonHunter: "DemonHunter",
+        PreservationEvoker: "Evoker",
+        DevastationEvoker: "Evoker",
+      };
+
+      Object.entries(classes).forEach(([originalClass, newClass]) => {
+        this.cooldowns = this.findAndReplace(this.cooldowns, originalClass, newClass);
+      });
+      this.updateCooldownsAll(this.cooldowns);
+
+      Object.entries(classes).forEach(([originalClass, newClass]) => {
+        this.roster = this.findAndReplace(this.roster, originalClass, newClass);
+      });
+      this.updateRoster(this.roster);
     }
   }
 
@@ -86,10 +112,36 @@ class Cooldowns {
   updateCooldownsAll = (object) => {
     ls.set("cooldownPlans", JSON.stringify(object));
   };
+  updateRoster = (array) => {
+    ls.set("healerInfo", array);
+  };
 
   defaultTimeGenerator = (bossID) => {
     let defaultTimers = defaultPlans[bossID];
     return defaultTimers;
   };
+
+  findAndReplace(data, findVal, replaceVal) {
+    if (Array.isArray(data)) {
+      for (let i = 0; i < data.length; i++) {
+        if (typeof data[i] === "object") {
+          data[i] = this.findAndReplace(data[i], findVal, replaceVal);
+        } else if (data[i] === findVal) {
+          data[i] = replaceVal;
+        }
+      }
+    } else if (typeof data === "object") {
+      const keys = Object.keys(data);
+      for (let i = 0; i < keys.length; i++) {
+        if (data[keys[i]] === findVal) {
+          data[keys[i]] = replaceVal;
+        } else if (typeof data[keys[i]] === "object") {
+          data[keys[i]] = this.findAndReplace(data[keys[i]], findVal, replaceVal);
+        }
+      }
+    }
+    return data;
+  }
 }
+
 export default Cooldowns;

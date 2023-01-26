@@ -759,13 +759,13 @@ export function wclClassConverter(wclClass) {
   let newClass = "";
   switch (wclClass) {
     case "Priest-Holy":
-      newClass = "HolyPriest";
+      newClass = "Priest";
       break;
     case "Priest-Discipline":
-      newClass = "DisciplinePriest";
+      newClass = "Priest";
       break;
     case "Druid-Restoration":
-      newClass = "RestorationDruid";
+      newClass = "Druid";
       break;
     case "Druid-Feral":
       newClass = "Druid";
@@ -777,19 +777,19 @@ export function wclClassConverter(wclClass) {
       newClass = "Druid";
       break;
     case "Paladin-Holy":
-      newClass = "HolyPaladin";
+      newClass = "Paladin";
       break;
     case "Monk-Mistweaver":
-      newClass = "MistweaverMonk";
+      newClass = "Monk";
       break;
     case "Shaman-Restoration":
-      newClass = "RestorationShaman";
+      newClass = "Shaman";
       break;
     case "Shaman-Elemental":
-      newClass = "ShamanDPS";
+      newClass = "Shaman";
       break;
     case "Shaman-Enhancement":
-      newClass = "ShamanDPS";
+      newClass = "Shaman";
       break;
     case "Warrior-Fury":
       newClass = "Warrior";
@@ -813,13 +813,13 @@ export function wclClassConverter(wclClass) {
       newClass = "ShadowPriest";
       break;
     case "DemonHunter-Havoc":
-      newClass = "HavocDemonHunter";
+      newClass = "DemonHunter";
       break;
     case "Evoker-Preservation":
-      newClass = "PreservationEvoker";
+      newClass = "Evoker";
       break;
     case "Evoker-Devastation":
-      newClass = "DevastationEvoker";
+      newClass = "Evoker";
       break;
     default:
       newClass = "No Class";

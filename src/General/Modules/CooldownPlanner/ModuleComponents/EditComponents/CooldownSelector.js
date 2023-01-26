@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, MenuItem, InputAdornment, IconButton } from "@mui/material";
+import { TextField, MenuItem, InputAdornment, IconButton, ListSubheader } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider, createTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
@@ -9,6 +9,14 @@ import BuildIcon from "@mui/icons-material/Build";
 
 const selectMenu = createTheme({
   components: {
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#484848",
+          lineHeight: "36px",
+        },
+      },
+    },
     MuiTextField: {
       defaultProps: {
         SelectProps: {
@@ -100,6 +108,7 @@ export default function CooldownSelector(props, rowData, cooldown, nameClass) {
           }}
         >
           [{ClassCooldownMenuItems(data[nameClass]) || []}
+          <ListSubheader key={"Options"}>Options</ListSubheader>,
           <MenuItem divider={true} key={"Custom"} value={"custom"} onClick={(e) => customChange()}>
             <BuildIcon sx={{ margin: "0px 4px 0px 0px" }} fontSize="small" />
             {t("Custom")}

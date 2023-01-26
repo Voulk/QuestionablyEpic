@@ -1,25 +1,44 @@
 // import React from "react";
+import { cooldownDB } from "../Data/CooldownDB";
 
-export function classColoursERT(props) {
-  if (props === "HolyPaladin") {
+export function classColoursERT(props, cooldown) {
+  if (props === "Paladin") {
     return "|cfff38bb9";
   }
-  if (props === "RestorationDruid" || props === "Druid") {
+  if (props === "Druid") {
     return "|cfffe7b09";
   }
-  if (props === "HolyPriest") {
+  if (props === "Priest") {
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Holy")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cffffff00";
+    }
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Shadow")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cfffefefe";
+    }
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Discipline")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cff808080";
+    }
     return "|cffffff00";
   }
-  if (props === "ShadowPriest") {
-    return "|cfffefefe";
-  }
-  if (props === "DisciplinePriest") {
-    return "|cff808080";
-  }
-  if (props === "RestorationShaman" || props === "Shaman-Elemental" || props === "Shaman-Elemental") {
+  if (props === "Shaman") {
     return "|cff006fdc";
   }
-  if (props === "MistweaverMonk") {
+  if (props === "Monk") {
     return "|cff00fe95";
   }
   if (props === "Warrior") {
@@ -37,13 +56,13 @@ export function classColoursERT(props) {
   if (props === "Rogue") {
     return "|cfffef367";
   }
-  if (props === "HavocDemonHunter") {
+  if (props === "DemonHunter") {
     return "|cffa22fc8";
   }
   if (props === "DeathKnight") {
     return "|cffc31d39";
   }
-  if (props === "PreservationEvoker" || props === "DevastationEvoker") {
+  if (props === "Evoker") {
     return "|cff33937f";
   }
 }
