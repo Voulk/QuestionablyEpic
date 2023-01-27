@@ -33,13 +33,14 @@ export const addBuff = (state, spell, spellName) => {
 
     }
     else if (spell.buffType === "special") {
-        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds.");
+        
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+        addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
         if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
-            
+
             if (buff.canStack) buff.stacks += 1;
         }
     }

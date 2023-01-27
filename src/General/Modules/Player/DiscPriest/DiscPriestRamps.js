@@ -25,8 +25,10 @@ export const DISCCONSTANTS = {
     atonementMults: {"shadow": 1, "holy": 1},
     shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
     enemyTargets: 1, 
-    sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
-            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01}, // TODO: Change when Sins buff goes live.
+    sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 
+            6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
+            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 
+            16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
     shieldDisciplineEfficiency: 0.8,
 }   
 
@@ -88,8 +90,8 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
     if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
 
-    if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Smite") {
-        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.08);
+    if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
+        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.12);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
     }
     if (checkBuffActive(buffs, "Light Weaving")) {
@@ -171,7 +173,8 @@ const getAtoneTrans = (mastery) => {
 }
 
 const getSqrt = (targets, sqrtMin) => {
-    return Math.min(Math.sqrt(sqrtMin / targets), 1) * targets;
+    const effectiveSqrtTargets = targets - sqrtMin;
+    return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
 }
 
 // This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
@@ -192,7 +195,7 @@ const getSpellSchool = (state, spellName, spell) => {
     let spellSchool = "";
     if (DISCCONSTANTS.shadowCovenantSpells.includes(spellName) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) spellSchool = "shadow";
     else spellSchool = spell.school || "";
-    console.log(spellName + " " + spellSchool);
+    //console.log(spellName + " " + spellSchool)
     return spellSchool;
 
 }
@@ -434,10 +437,10 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
                     //const spellSchool = spell.school;
-                    const spellSchool = getSpellSchool(state, spellName, spell);
 
-                    if ('school' in spell && spellSchool === "holy") {
+                    if (getSpellSchool(state, spellName, spell) === "holy") {
                         // Check if buff already exists, if it does add a stack.
+                        addReport(state, `Adding Twilight Equilibrium - Shadow Buff (next Shadow spell buffed)`)
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Shadow"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Shadow", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
                         else {
@@ -445,8 +448,9 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                             buff.expiration = state.t + spell.castTime + 6;
                         }
                     }
-                    else if ('school' in spell && spellSchool === "shadow") {
+                    else if (getSpellSchool(state, spellName, spell) === "shadow") {
                         // Check if buff already exists, if it does add a stack.
+                        addReport(state, `Adding Twilight Equilibrium - Holy Buff (next Holy spell buffed)`)
                         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Holy"}).length;
                         if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Holy", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
                         else {
