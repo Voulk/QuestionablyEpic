@@ -238,7 +238,7 @@ export const cdPlannerclassDB = [
     },
     id: "Paladin",
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg").default,
+    icon: require("Images/Classes/Paladin/classicon_paladin.jpg").default,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
@@ -254,7 +254,7 @@ export const cdPlannerclassDB = [
     id: "Priest",
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg").default,
+    icon: require("Images/Classes/Priest/classicon_priest.jpg").default,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -271,7 +271,7 @@ export const cdPlannerclassDB = [
     id: "Druid",
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
+    icon: require("Images/Classes/Druid/classicon_druid.jpg").default,
   },
   {
     name: {
@@ -284,7 +284,7 @@ export const cdPlannerclassDB = [
     id: "Evoker",
     cooldownPlannerMenu: true,
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker.jpg").default,
   },
   {
     name: {
@@ -323,7 +323,7 @@ export const cdPlannerclassDB = [
     id: "Monk",
     cooldownPlannerMenu: true,
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg").default,
+    icon: require("Images/Classes/Monk/classicon_monk.jpg").default,
   },
   {
     name: {
