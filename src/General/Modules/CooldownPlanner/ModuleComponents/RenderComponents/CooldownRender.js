@@ -7,15 +7,18 @@ export default function CastTextField(rowData, cooldown) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const getTranslatedSpellName = (spellID) => {
-    let spellName = cooldownDB
-      .filter((obj) => {
-        return obj.guid === spellID;
-      })
-      .map((obj) => obj.name[currentLanguage])[0]
-      .toString();
+  const spell = cooldownDB.find((obj) => obj.guid === rowData[cooldown]);
+  let spellExists = "";
+  spell ? (spellExists = true) : (spellExists = false);
 
-    return spellName;
+  const getTranslatedSpellName = (spellID) => {
+    let spell = cooldownDB.find((obj) => obj.guid === spellID);
+    if (spell) {
+      let spellName = spell.name[currentLanguage].toString();
+      return spellName;
+    } else {
+      return spellID;
+    }
   };
 
   const getSpellIcon = (spellID) => {
@@ -35,13 +38,18 @@ export default function CastTextField(rowData, cooldown) {
 
   return (
     <div style={{ display: "inline-flex", alignItems: "center", width: "100%", textAlign: "center" }}>
-      <a data-wowhead={"spell=" + rowData[cooldown]}>
-        <img
-          style={{ height: 22, width: 22, verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
-          src={getSpellIcon(rowData[cooldown])}
-          alt={getTranslatedSpellName(rowData[cooldown])}
-        />
-      </a>
+      {spellExists ? (
+        <a data-wowhead={"spell=" + rowData[cooldown]}>
+          <img
+            style={{ height: 22, width: 22, verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
+            src={getSpellIcon(rowData[cooldown])}
+            alt={getTranslatedSpellName(rowData[cooldown])}
+          />
+        </a>
+      ) : (
+        ""
+      )}
+
       <Typography
         align="left"
         style={{

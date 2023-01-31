@@ -153,7 +153,7 @@ class ItemSet {
     else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
       return false;
     }
-    else if (this.uniques["catalyst"] && 'catalystLimit' in settings && this.uniques["catalyst"] > settings.catalystLimit) {
+    else if (this.uniques["catalyst"] && 'catalystLimit' in settings && this.uniques["catalyst"] > settings.catalystLimit.value) {
       return false;
     } 
      else {

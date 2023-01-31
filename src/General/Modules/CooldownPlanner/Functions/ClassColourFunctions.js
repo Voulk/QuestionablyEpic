@@ -1,25 +1,44 @@
 // import React from "react";
+import { cooldownDB } from "../Data/CooldownDB";
 
-export function classColoursERT(props) {
-  if (props === "HolyPaladin") {
+export function classColoursERT(props, cooldown) {
+  if (props === "Paladin") {
     return "|cfff38bb9";
   }
-  if (props === "RestorationDruid" || props === "Druid") {
+  if (props === "Druid") {
     return "|cfffe7b09";
   }
-  if (props === "HolyPriest") {
+  if (props === "Priest") {
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Holy")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cffffff00";
+    }
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Shadow")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cfffefefe";
+    }
+    if (
+      cooldownDB
+        .filter((filter) => filter.class === "Priest" && filter.spec === "Discipline")
+        .map((map) => map.guid)
+        .includes(cooldown)
+    ) {
+      return "|cff808080";
+    }
     return "|cffffff00";
   }
-  if (props === "ShadowPriest") {
-    return "|cfffefefe";
-  }
-  if (props === "DisciplinePriest") {
-    return "|cff808080";
-  }
-  if (props === "RestorationShaman" || props === "Shaman-Elemental" || props === "Shaman-Elemental") {
+  if (props === "Shaman") {
     return "|cff006fdc";
   }
-  if (props === "MistweaverMonk") {
+  if (props === "Monk") {
     return "|cff00fe95";
   }
   if (props === "Warrior") {
@@ -37,13 +56,13 @@ export function classColoursERT(props) {
   if (props === "Rogue") {
     return "|cfffef367";
   }
-  if (props === "HavocDemonHunter") {
+  if (props === "DemonHunter") {
     return "|cffa22fc8";
   }
   if (props === "DeathKnight") {
     return "|cffc31d39";
   }
-  if (props === "PreservationEvoker" || props === "DevastationEvoker") {
+  if (props === "Evoker") {
     return "|cff33937f";
   }
 }
@@ -90,5 +109,50 @@ export function classColoursJS(props) {
   }
   if (props === "DeathKnight" || props === "Death Knight") {
     return "#C41E3A	 ";
+  }
+}
+
+export function classColoursFonts(props) {
+  if (props === undefined) {
+    return "#000000";
+  }
+  if (props.includes("Paladin")) {
+    return "#000000";
+  }
+  if (props.includes("Druid")) {
+    return "#000000";
+  }
+  if (props.includes("Priest")) {
+    return "#000000";
+  }
+  if (props.includes("Shaman")) {
+    return "#000000";
+  }
+  if (props.includes("Mage")) {
+    return "#000000";
+  }
+  if (props === "Hunter") {
+    return "#000000";
+  }
+  if (props.includes("Evoker")) {
+    return "#000000";
+  }
+  if (props.includes("Rogue")) {
+    return "#000000";
+  }
+  if (props.includes("Warlock")) {
+    return "#000000";
+  }
+  if (props.includes("Monk")) {
+    return "#000000";
+  }
+  if (props === "Warrior") {
+    return "#000000";
+  }
+  if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter" || props === "DemonHunter" || props === "Demon Hunter") {
+    return "#ffffff";
+  }
+  if (props === "DeathKnight" || props === "Death Knight") {
+    return "#ffffff";
   }
 }

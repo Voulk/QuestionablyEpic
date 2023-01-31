@@ -18,6 +18,7 @@ import userSettings from "General/Modules/Settings/SettingsObject";
 import { CONSTANTS } from "./CONSTANTS";
 import { itemLevels } from "Databases/itemLevelsDB";
 import { gemDB } from "Databases/GemDB";
+import { nameDB } from "Databases/ItemNameDB";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -321,11 +322,7 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
   if (effect && effect.type === "spec legendary") {
     return effect.name;
   } else {
-    let temp = getItemDB(gameType).filter(function (item) {
-      return item.id === id;
-    });
-
-    if (temp.length > 0) return temp[0].names[lang];
+    if (nameDB[id]) return nameDB[id][lang];
     else return "Unknown Item";
   }
 }

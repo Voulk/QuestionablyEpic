@@ -233,12 +233,11 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     sequence.push(getPenance(talents));
-    sequence.push('Smite');
+    sequence.push('Mind Blast');
     //sequence.push('Mind Blast');
     //if (talents.divineStar) sequence.push("Divine Star");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
-    sequence.push("Smite");
     sequence.push("Smite");
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push("Penance");
@@ -251,7 +250,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     }
     sequence.push(getPenance(talents));
 
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < 4; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics.
         sequence.push('Smite');
     }

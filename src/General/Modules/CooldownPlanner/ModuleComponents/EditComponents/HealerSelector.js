@@ -6,6 +6,7 @@ import { classColoursJS } from "../../Functions/ClassColourFunctions";
 import classIcons from "../../Functions/IconFunctions/ClassIcons";
 import { useTranslation } from "react-i18next";
 import ClearIcon from "@mui/icons-material/Clear";
+import { getClassIconCD } from "locale/ClassNames";
 
 const selectMenu = createTheme({
   components: {
@@ -96,7 +97,13 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
           {nameValidation.includes(props.rowData[name]) ? null : (
             <MenuItem disabled divider style={{ color: classColoursJS(props.rowData[nameClass]) }} key={props.rowData[name] + i} value={props.rowData[name]}>
               <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                {classIcons(props.rowData[nameClass], { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
+                <div>
+                  <img
+                    style={{ height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
+                    src={getClassIconCD(props.rowData[nameClass])}
+                    alt={props.rowData[nameClass]}
+                  />
+                </div>
                 {props.rowData[name]}
               </div>
             </MenuItem>
@@ -106,7 +113,13 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
             ls.get("healerInfo").map((key, i) => (
               <MenuItem divider style={{ color: classColoursJS(key.class) }} key={i} value={i}>
                 <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
-                  {classIcons(key.class, { height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 })}
+                  <div>
+                    <img
+                      style={{ height: 20, width: 20, margin: "0px 5px 0px 0px", verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
+                      src={getClassIconCD(key.class)}
+                      alt={key.class}
+                    />
+                  </div>
                   {key.name}
                 </div>
               </MenuItem>
