@@ -8,7 +8,7 @@ import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
-import { checkDefaultSocket, getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
+import { checkDefaultSocket, getTranslatedItemName, getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
@@ -69,7 +69,7 @@ export default function ItemBar(props) {
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
           (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
-    ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
+    ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}) }));
 
     newItemList = newItemList.reduce((unique, o) => {
       if (!unique.some((obj) => obj.label === o.label)) {

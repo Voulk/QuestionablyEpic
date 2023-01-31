@@ -25,9 +25,9 @@ export const DISCCONSTANTS = {
     atonementMults: {"shadow": 1, "holy": 1},
     shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
     enemyTargets: 1, 
-    sins: {0: 1.3, 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.3, 5: 1.3, 
-            6: 1.26, 7: 1.22, 8: 1.18, 9: 1.15, 10: 1.12,
-            11: 1.09, 12: 1.07, 13: 1.05, 14: 1.04, 15: 1.03, 
+    sins: {0: 1.4, 1: 1.4, 2: 1.4, 3: 1.4, 4: 1.4, 5: 1.4, 
+            6: 1.35, 7: 1.3, 8: 1.25, 9: 1.2, 10: 1.15,
+            11: 1.11, 12: 1.08, 13: 1.05, 14: 1.04, 15: 1.03, 
             16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
     shieldDisciplineEfficiency: 0.8,
 }   
