@@ -231,14 +231,14 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Paladin",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Paladin",
+      de: "Paladin",
+      ru: "Паладин",
       ch: "",
     },
     id: "Paladin",
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg").default,
+    icon: require("Images/Classes/Paladin/classicon_paladin.jpg").default,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
@@ -246,15 +246,15 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Priest",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Prêtre",
+      de: "Priester",
+      ru: "Жрец",
       ch: "",
     },
     id: "Priest",
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg").default,
+    icon: require("Images/Classes/Priest/classicon_priest.jpg").default,
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -263,36 +263,36 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Druid",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Druide",
+      de: "Druide",
+      ru: "Друид",
+      ch: "德鲁伊",
     },
     id: "Druid",
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
+    icon: require("Images/Classes/Druid/classicon_druid.jpg").default,
   },
   {
     name: {
       en: "Evoker",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Évocateur",
+      de: "Rufer",
+      ru: "Пробудитель",
+      ch: "唤魔师",
     },
     id: "Evoker",
     cooldownPlannerMenu: true,
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker.jpg").default,
   },
   {
     name: {
       en: "Demon Hunter",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Chasseur de démons",
+      de: "Dämonenjäger",
+      ru: "Охотник на демонов",
+      ch: "恶魔猎手",
     },
     id: "DemonHunter",
     cooldownPlannerMenu: true,
@@ -302,10 +302,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Warrior",
-      fr: "Warrior",
+      fr: "Guerrier",
       de: "Krieger",
       ru: "Воин",
-      ch: "Warrior",
+      ch: "战士",
     },
     id: ["Warrior"],
     cooldownPlannerMenu: true,
@@ -315,15 +315,15 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Monk",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Moine",
+      de: "Mönch",
+      ru: "Монах",
+      ch: "武僧",
     },
     id: "Monk",
     cooldownPlannerMenu: true,
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg").default,
+    icon: require("Images/Classes/Monk/classicon_monk.jpg").default,
   },
   {
     name: {
@@ -342,10 +342,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Death Knight",
-      fr: "Death Knight",
+      fr: "Chevalier de la mort",
       de: "Todesritter",
       ru: "Рыцарь смерти",
-      ch: "Death Knight",
+      ch: "死亡骑士",
     },
     id: "DeathKnight",
     cooldownPlannerMenu: true,

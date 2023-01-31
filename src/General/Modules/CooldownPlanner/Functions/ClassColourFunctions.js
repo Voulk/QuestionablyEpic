@@ -111,3 +111,48 @@ export function classColoursJS(props) {
     return "#C41E3A	 ";
   }
 }
+
+export function classColoursFonts(props) {
+  if (props === undefined) {
+    return "#000000";
+  }
+  if (props.includes("Paladin")) {
+    return "#000000";
+  }
+  if (props.includes("Druid")) {
+    return "#000000";
+  }
+  if (props.includes("Priest")) {
+    return "#000000";
+  }
+  if (props.includes("Shaman")) {
+    return "#000000";
+  }
+  if (props.includes("Mage")) {
+    return "#000000";
+  }
+  if (props === "Hunter") {
+    return "#000000";
+  }
+  if (props.includes("Evoker")) {
+    return "#000000";
+  }
+  if (props.includes("Rogue")) {
+    return "#000000";
+  }
+  if (props.includes("Warlock")) {
+    return "#000000";
+  }
+  if (props.includes("Monk")) {
+    return "#000000";
+  }
+  if (props === "Warrior") {
+    return "#000000";
+  }
+  if (props === "HavocDemonHunter" || props === "Havoc Demon Hunter" || props === "DemonHunter" || props === "Demon Hunter") {
+    return "#ffffff";
+  }
+  if (props === "DeathKnight" || props === "Death Knight") {
+    return "#ffffff";
+  }
+}

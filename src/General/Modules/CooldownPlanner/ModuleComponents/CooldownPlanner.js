@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from "react";
-import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
+import MaterialTable, { MTableToolbar, MTableBody, MTableHeader, MTableBodyRow, MTableEditRow } from "@material-table/core";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
@@ -237,6 +237,12 @@ export default function CooldownPlanner(props) {
           components={{
             Container: (props) => <Paper {...props} elevation={0} />,
             Body: (props) => (currentBoss === "" ? null : <MTableBody {...props} />),
+            Row: (props) => <MTableBodyRow {...props} 
+            // className={classes.tableRow}
+             />,
+            EditRow: (props) => <MTableEditRow {...props} 
+            // className={classes.tableRow}
+             />,
             Header: (props) => (currentBoss === "" ? null : <MTableHeader {...props} />),
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
