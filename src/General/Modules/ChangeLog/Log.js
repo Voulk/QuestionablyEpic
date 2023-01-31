@@ -9,6 +9,15 @@
 
 export const changeLog = [
   {
+    version: "10.0.5",
+    update: 9,
+    date: "31 January",
+    changes: [ 
+      "Added a setting to limit the number of Catalyst items that can be added to a Top Gear set.",
+      "Updated specs to 10.0.5 where necessary.",
+      "Added some missing 10.0.5 and timewalking items.",
+  ]},
+  {
     version: "10.0.2",
     update: 8,
     date: "18 January",
