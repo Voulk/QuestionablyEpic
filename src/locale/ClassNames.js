@@ -231,9 +231,9 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Paladin",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Paladin",
+      de: "Paladin",
+      ru: "Паладин",
       ch: "",
     },
     id: "Paladin",
@@ -246,9 +246,9 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Priest",
-      fr: "",
-      de: "",
-      ru: "",
+      fr: "Prêtre",
+      de: "Priester",
+      ru: "Жрец",
       ch: "",
     },
     id: "Priest",
@@ -263,10 +263,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Druid",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Druide",
+      de: "Druide",
+      ru: "Друид",
+      ch: "德鲁伊",
     },
     id: "Druid",
     cooldownPlannerMenu: true,
@@ -276,10 +276,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Evoker",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Évocateur",
+      de: "Rufer",
+      ru: "Пробудитель",
+      ch: "唤魔师",
     },
     id: "Evoker",
     cooldownPlannerMenu: true,
@@ -289,10 +289,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Demon Hunter",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Chasseur de démons",
+      de: "Dämonenjäger",
+      ru: "Охотник на демонов",
+      ch: "恶魔猎手",
     },
     id: "DemonHunter",
     cooldownPlannerMenu: true,
@@ -302,10 +302,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Warrior",
-      fr: "Warrior",
+      fr: "Guerrier",
       de: "Krieger",
       ru: "Воин",
-      ch: "Warrior",
+      ch: "战士",
     },
     id: ["Warrior"],
     cooldownPlannerMenu: true,
@@ -315,10 +315,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Monk",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
+      fr: "Moine",
+      de: "Mönch",
+      ru: "Монах",
+      ch: "武僧",
     },
     id: "Monk",
     cooldownPlannerMenu: true,
@@ -342,10 +342,10 @@ export const cdPlannerclassDB = [
   {
     name: {
       en: "Death Knight",
-      fr: "Death Knight",
+      fr: "Chevalier de la mort",
       de: "Todesritter",
       ru: "Рыцарь смерти",
-      ch: "Death Knight",
+      ch: "死亡骑士",
     },
     id: "DeathKnight",
     cooldownPlannerMenu: true,
