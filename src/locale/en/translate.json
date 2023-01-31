@@ -322,12 +322,25 @@
         "rubyWhelpShell": {
           "title": "Ruby Whelp Specialization",
           "tooltip": "If you've trained your Ruby Whelp Shell, then you can pick its training target here."
+        },
+        "catalystLimit": {
+          "title": "Catalyst Limit",
+          "tooltip": "Pick the maximum number of Catalyst items Top Gear will put in a set."
         }
 
 
       },
       "SettingsTitle": "Optional Settings"
     },
+    "Show HPS": "Show HPS",
+    "0": "0",
+    "Solo": "Solo",
+    "DPS": "DPS",
+    "Tank": "Tank",
+    "AoE Heal": "AoE Heal",
+    "ST Heal": "ST Heal",
+    "Crit Buff": "Crit Buff",
+    "Haste Buff": "Haste Buff",
     "Shadowlands": "Shadowlands",
     "Dragonflight": "Dragonflight",
     "SimCInput": {
