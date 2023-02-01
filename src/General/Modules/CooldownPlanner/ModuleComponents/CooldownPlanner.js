@@ -237,12 +237,19 @@ export default function CooldownPlanner(props) {
           components={{
             Container: (props) => <Paper {...props} elevation={0} />,
             Body: (props) => (currentBoss === "" ? null : <MTableBody {...props} />),
-            Row: (props) => <MTableBodyRow {...props} 
-            // className={classes.tableRow}
-             />,
-            EditRow: (props) => <MTableEditRow {...props} 
-            // className={classes.tableRow}
-             />,
+            Row: (props) => (
+              <MTableBodyRow
+                {...props}
+                // className={classes.tableRow}
+              />
+            ),
+            EditRow: (props) => (
+              <MTableEditRow
+                {...props}
+                // className={classes.tableRow}
+                style={{ backgroundColor: "" }}
+              />
+            ),
             Header: (props) => (currentBoss === "" ? null : <MTableHeader {...props} />),
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */

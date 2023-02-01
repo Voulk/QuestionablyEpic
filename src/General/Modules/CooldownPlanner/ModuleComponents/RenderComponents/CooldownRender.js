@@ -2,8 +2,9 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
+import { classColoursFonts } from "../../Functions/ClassColourFunctions";
 
-export default function CastTextField(rowData, cooldown) {
+export default function CastTextField(rowData, cooldown, className) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -57,6 +58,7 @@ export default function CastTextField(rowData, cooldown) {
           lineHeight: "normal",
           width: "100%",
           marginLeft: 8,
+          color: classColoursFonts(rowData[className]),
         }}
       >
         {getTranslatedSpellName(rowData[cooldown])}

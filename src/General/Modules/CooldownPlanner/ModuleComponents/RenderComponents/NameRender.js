@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { classColoursJS } from "../../Functions/ClassColourFunctions";
+import { classColoursJS, classColoursFonts  } from "../../Functions/ClassColourFunctions";
 
 export default function NameRender(rowData, name, characterClass) {
   /* -------------------------------- Handles no name defined -------------------------------- */
@@ -17,7 +17,8 @@ export default function NameRender(rowData, name, characterClass) {
           fontSize: 12,
           lineHeight: "normal",
           textAlign: "center",
-          color: classColoursJS(rowData[characterClass]),
+          color: classColoursFonts(rowData[characterClass]),
+          // color: classColoursJS(rowData[characterClass]),
         }}
       >
         {rowData[name]}

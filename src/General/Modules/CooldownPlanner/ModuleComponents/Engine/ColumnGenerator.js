@@ -22,8 +22,8 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
       title: t("CooldownPlanner.TableLabels.CastTimeLabel"),
       field: "time",
       width: "4%",
-      cellStyle: TableStyles.cellStyle.thinRightBorder,
-      headerStyle: TableStyles.headerStyle,
+      cellStyle: TableStyles().cellStyle.thinRightBorder,
+      headerStyle: TableStyles().headerStyle,
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how is handled currently.
@@ -34,8 +34,8 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
       title: t("CooldownPlanner.TableLabels.BossAbilityLabel"),
       field: "bossAbility",
       width: "6%",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
+      cellStyle: TableStyles().cellStyle.thickRightBorder,
+      headerStyle: TableStyles().headerStyle,
       // Search function for abilities as they are stores as numbers. Works for all languages
       customFilterAndSearch: (term, rowData) => {
         let searchedTerm = bossAbilities[currentBoss]
@@ -60,8 +60,8 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           field: "cooldownTime" + num,
           width: "1%",
           hidden: true,
-          cellStyle: TableStyles.cellStyle.thinRightBorder,
-          headerStyle: TableStyles.headerStyle,
+          cellStyle: TableStyles().cellStyle.thinRightBorder,
+          headerStyle: TableStyles().headerStyle,
           // Times must be entered in the 00:00 format.
           editComponent: (props) => CastTextField(props),
         },
@@ -70,16 +70,18 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           title: t("CooldownPlanner.TableLabels.OffCooldownLabel"),
           width: "1%",
           hidden: true,
-          cellStyle: TableStyles.cellStyle.thickRightBorder,
-          headerStyle: TableStyles.headerStyle,
+          cellStyle: TableStyles().cellStyle.thickRightBorder,
+          headerStyle: TableStyles().headerStyle,
           render: (rowData) => CooldownTimeRender(rowData, "cooldown" + num, "cooldownTime" + num),
         },
         {
           title: t("Name") + " " + (i + 1),
           field: "name" + num,
           width: "5%",
-          cellStyle: TableStyles.cellStyle.thinRightBorder,
-          headerStyle: TableStyles.headerStyle,
+          cellStyle: (value, rowData) => {
+            return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
+          },
+          headerStyle: TableStyles().headerStyle,
           /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
           render: (rowData) => NameRender(rowData, "name" + num, "class" + num),
           /* ---------- Component for name selection when the table is in edit mode. ---------- */
@@ -90,8 +92,8 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           title: t("Class"),
           field: "class" + num,
           hidden: true,
-          cellStyle: TableStyles.cellStyle.thinRightBorder,
-          headerStyle: TableStyles.headerStyle,
+          cellStyle: TableStyles().cellStyle.thinRightBorder,
+          headerStyle: TableStyles().headerStyle,
           /* -------------- Renders the Name for the healer in the relevant row in the data. -------------- */
           render: (rowData) => ClassRender(rowData, "class" + num),
           /* ----------------------- Shows the selected healers class in edit mode. ----------------------- */
@@ -102,8 +104,11 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           title: t("Cooldown") + " " + (i + 1),
           field: "cooldown" + num,
           width: "9%",
-          cellStyle: TableStyles.cellStyle.thickRightBorder,
-          headerStyle: TableStyles.headerStyle,
+          cellStyle: (value, rowData) => {
+            console.log(rowData);
+            return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
+          },
+          headerStyle: TableStyles().headerStyle,
           // Search function for abilities as they are stores as numbers. Works for all languages
           customFilterAndSearch: (term, rowData) => {
             let searchedTerm = cooldownDB
@@ -113,7 +118,7 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
             return searchedTerm.findIndex((item) => item.includes(term.toLocaleLowerCase())) != -1;
           },
           /* --------------------- Renders the Ability name that was set for this row. -------------------- */
-          render: (rowData) => CooldownRender(rowData, "cooldown" + num),
+          render: (rowData) => CooldownRender(rowData, "cooldown" + num, "class" + num),
           /* --------------- The Edit Mode Component. Generated based off the healers class. -------------- */
           editComponent: (props, rowData) => CooldownSelector(props, rowData, "cooldown" + num, "class" + num),
         },
@@ -127,8 +132,8 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
       /* -------------- Input Notes for the cooldown. I.e "Use just before this ability" -------------- */
       title: t("CooldownPlanner.TableLabels.NotesLabel"),
       field: "notes",
-      cellStyle: TableStyles.cellStyle.thickRightBorder,
-      headerStyle: TableStyles.headerStyle,
+      cellStyle: TableStyles().cellStyle.thickRightBorder,
+      headerStyle: TableStyles().headerStyle,
       editComponent: (props) => NoteEdit(props),
     },
   ];
