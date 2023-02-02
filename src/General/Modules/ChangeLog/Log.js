@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.0.5",
+    update: 10,
+    date: "2 February",
+    changes: [ 
+      "Bugfix: Gems will now work correctly in Quick Compare once again.",
+      "Fixed a bug from update 9 that broke Idol trinkets.",
+      "Bugfix: Evoker logs should no longer fail to import.",
+  ]},
+  {
+    version: "10.0.5",
     update: 9,
     date: "31 January",
     changes: [ 
