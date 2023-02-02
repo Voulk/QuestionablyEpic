@@ -180,6 +180,7 @@ export async function apiGetPlayerImage2(region, charName, realm) {
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiSendError(player, errorType, errorMessage, result) {
   const name = "10";
+  const url = window.location.pathname + window.location.search;
 
   let fetchUrl =
     "https://questionablyepic.com/api/addError.php?btag=" +
@@ -189,9 +190,9 @@ export async function apiSendError(player, errorType, errorMessage, result) {
     "&emessage=" +
     encodeURIComponent(errorMessage) +
     "&eresult=" +
-    encodeURIComponent(result) +
+    encodeURIComponent(url) +
     "&eversion=" +
-    encodeURIComponent(16);
+    encodeURIComponent(17);
 
   fetch(fetchUrl)
     .then((res) => res.text())

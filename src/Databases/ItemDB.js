@@ -90746,8 +90746,6 @@ export const itemDB = [
             "name": "Irideus Fragment"
         },
         "levelRange": [
-            359,
-            372
         ]
     },
     {
@@ -109459,9 +109457,6 @@ export const itemDB = [
             "name": "Wind-Sealed Mana Capsule"
         },
         "levelRange": [
-            359,
-            372,
-            385
         ]
     },
     {

@@ -368,7 +368,7 @@ export const otherTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
-    name: "Idol of the Lifebinder",
+    name: "Idol of the Life-Binder",
     effects: [
       { // Small Proc
         coefficient: 0.049358,
@@ -392,7 +392,7 @@ export const otherTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
-    name: "Idol of the Spellweaver",
+    name: "Idol of the Spell-Weaver",
     effects: [
       { // Small Proc
         coefficient: 0.049358,
@@ -416,7 +416,7 @@ export const otherTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
-    name: "Idol of the Earth Warder",
+    name: "Idol of the Earth-Warder",
     effects: [
       { // Small Proc
         coefficient: 0.049358,
