@@ -135,13 +135,12 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect += 75;
       bonus_stats.mastery += 66;
+      gemCount -= 1;
       gemArray.push(192988)
     }
-    if (gemCount > 1) {
-      bonus_stats.mastery += 70 * (gemCount - 1);
-      bonus_stats.crit += 33 * (gemCount - 1);
-      gemArray.push(192958)
-    }
+    bonus_stats.mastery += 70 * (gemCount - 1);
+    bonus_stats.crit += 33 * (gemCount - 1);
+    gemArray.push(192958)
     return gemArray;
   }
   else if (spec === "Restoration Druid" || spec === "Holy Paladin") {
@@ -149,16 +148,17 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect += 75;
       bonus_stats.haste += 66;
+      gemCount -= 1;
       gemArray.push(192985)
     }
-    if (gemCount > 1 && contentType === "Raid") {
-      bonus_stats.haste += 70 * (gemCount - 1);
-      bonus_stats.mastery += 33 * (gemCount - 1);
+    if (contentType === "Raid") {
+      bonus_stats.haste += 70 * (gemCount);
+      bonus_stats.mastery += 33 * (gemCount);
       gemArray.push(192948)
     }
-    else if (gemCount > 1 && contentType === "Dungeon") {
-      bonus_stats.haste += 70 * (gemCount - 1);
-      bonus_stats.versatility += 33 * (gemCount - 1);
+    else if (contentType === "Dungeon") {
+      bonus_stats.haste += 70 * (gemCount);
+      bonus_stats.versatility += 33 * (gemCount);
       gemArray.push(192952)
     }
     return gemArray;
@@ -168,13 +168,12 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect += 75;
       bonus_stats.haste += 66;
+      gemCount -= 1;
       gemArray.push(192985)
     }
-    if (gemCount > 1) {
-      bonus_stats.haste += 70 * (gemCount - 1);
-      bonus_stats.crit += 33 * (gemCount - 1);
-      gemArray.push(192945);
-    }
+    bonus_stats.haste += 70 * (gemCount);
+    bonus_stats.crit += 33 * (gemCount);
+    gemArray.push(192945);
     return gemArray;
   }
   else if (spec === "Restoration Shaman") {
@@ -182,14 +181,13 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect += 75;
       bonus_stats.crit += 66;
+      gemCount -= 1;
       gemArray.push(192982)
     }
-    if (gemCount > 1) {
-      bonus_stats.crit += 70 * (gemCount - 1);
-      bonus_stats.versatility += 33 * (gemCount - 1)* gemCount;
-      gemArray.push(192923)
-    }
 
+    bonus_stats.crit += 70 * (gemCount);
+    bonus_stats.versatility += 33 * (gemCount);
+    gemArray.push(192923)
     return gemArray;
   }
   else {
@@ -322,7 +320,7 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
   if (effect && effect.type === "spec legendary") {
     return effect.name;
   } else {
-    if (nameDB[id]) return nameDB[id][lang];
+    if (id in nameDB && lang in nameDB[id]) return nameDB[id][lang];
     else return "Unknown Item";
   }
 }
