@@ -72,7 +72,7 @@ export default function QEMainMenu(props) {
           "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
           "MainMenu.CooldownPlanner": ["/cooldownplanner", true, "CooldownPlanner"],
           "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
-          
+
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
       : {
@@ -158,22 +158,33 @@ export default function QEMainMenu(props) {
                 style={{
                   width: "100%",
                   height: "60px",
-                  whiteSpace: "nowrap",
-                  justifyContent: "left",
-                  paddingLeft: "32px",
+                  // whiteSpace: "nowrap",
+                  // justifyContent: "left",
+                  // paddingLeft: "32px",
                   textTransform: "none",
                   color: mainMenuOptions[key][1] && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
                 }}
                 component={Link}
                 to={mainMenuOptions[key][0]}
               >
-                <ArrowForward style={{ paddingRight: 32 }} />
-                <div style={{ display: "block" }}>
-                  <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
-                  <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
-                    {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
-                  </Typography>
-                </div>
+                <Grid container spacing={1.5} alignItems="center">
+                  <Grid item xs="auto">
+                    <ArrowForward
+                      style={{
+                        verticalAlign: "middle",
+                        // paddingRight: 32
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={10}>
+                    <div style={{ display: "block" }}>
+                      <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
+                      <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
+                        {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
+                      </Typography>
+                    </div>
+                  </Grid>
+                </Grid>
               </Button>
             </Grid>
           ))}
