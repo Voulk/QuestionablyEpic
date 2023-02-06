@@ -6,15 +6,15 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Strongly consider tier pieces in your early vaults.",
-      "-> Consult Guides for best Spark crafts early on.",
+      "-> Strongly consider tier pieces in your vaults.",
+      "-> Creation Catalyst support is in!",
   ],
   "Classic": [""]
   }
 ;
 
   return (
-    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "red" }}>
+    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
       <Grid container spacing={1}>
         {messageOfTheDay[gameType].map((key, i) => (
           <Grid item xs={12} key={i}>
