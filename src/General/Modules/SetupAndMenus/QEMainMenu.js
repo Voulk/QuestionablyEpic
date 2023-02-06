@@ -91,7 +91,7 @@ export default function QEMainMenu(props) {
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
 
   let articles = [];
-  if (props.allChars.allChar.length > 0) {
+  if (props.allChars.allChar.length > 0 && props.articleList.length > 0) {
     articles = props.articleList.filter((article) => article.specs.includes(props.player.getSpec()) || article.specs === "All");
     articles.sort((a, b) => (a.date < b.date ? 1 : -1));
     articles = articles.slice(0, 3);
