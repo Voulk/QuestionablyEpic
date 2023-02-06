@@ -160,7 +160,7 @@ export default function QEMainMenu(props) {
                   height: "60px",
                   // whiteSpace: "nowrap",
                   // justifyContent: "left",
-                  // paddingLeft: "32px",
+                  paddingLeft: "20px",
                   textTransform: "none",
                   color: mainMenuOptions[key][1] && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
                 }}
@@ -172,7 +172,7 @@ export default function QEMainMenu(props) {
                     <ArrowForward
                       style={{
                         verticalAlign: "middle",
-                        // paddingRight: 32
+                        paddingRight: 10
                       }}
                     />
                   </Grid>
