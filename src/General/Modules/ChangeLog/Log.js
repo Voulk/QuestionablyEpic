@@ -9,6 +9,24 @@
 
 export const changeLog = [
   {
+    version: "10.0.5",
+    update: 10,
+    date: "2 February",
+    changes: [ 
+      "Bugfix: Gems will now work correctly in Quick Compare once again.",
+      "Fixed a bug from update 9 that broke Idol trinkets.",
+      "Bugfix: Evoker logs should no longer fail to import.",
+  ]},
+  {
+    version: "10.0.5",
+    update: 9,
+    date: "31 January",
+    changes: [ 
+      "Added a setting to limit the number of Catalyst items that can be added to a Top Gear set.",
+      "Updated specs to 10.0.5 where necessary.",
+      "Added some missing 10.0.5 and timewalking items.",
+  ]},
+  {
     version: "10.0.2",
     update: 8,
     date: "18 January",
