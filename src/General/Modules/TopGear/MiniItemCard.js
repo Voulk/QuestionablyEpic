@@ -48,6 +48,7 @@ export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
   const item = props.item;
   const itemLevel = item.level;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);

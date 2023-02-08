@@ -180,7 +180,7 @@ class App extends Component {
 
   /* ----------------------- Article List Handler ----------------------------- */
   setArticleList = (list) => {
-    this.setState({ articleList: list });
+    if (list)  this.setState({ articleList: list });
   };
 
   /* ------------------ Checks Patron Status from Users Email ----------------- */
@@ -270,6 +270,7 @@ class App extends Component {
     });
     this.checkPatron(ls.get("email"));
     this.getArticleList();
+    this.state.characters.setupChars(); // Do any post-mount processing like Disc ramps, player pictures etc. 
 
     //i18n.changeLanguage(ls.get("lang") || "en");
   }

@@ -64,8 +64,8 @@ describe("Evang Cast Sequence", () => {
 
     const autoGenRotation = (talents, settings) => {
         // We can also auto-gen our application portion but we won't just yet.
-        const applicationPortion = ["Purge the Wicked", "Power Word: Shield", "Renew", "Renew", "Renew", "Power Word: Shield", "Renew", "Renew", "Renew", "Renew", "Power Word: Shield", "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Shadowfiend"];
-        const dpsCooldownList = ["Mind Blast", "Penance", "Schism", "Mindgames", "Shadow Word: Death", ["Smite", "Smite"], "Smite", "Smite"] // Shadow Covenant
+        const applicationPortion = ["Purge the Wicked", "Power Word: Shield", "Renew", "Renew", "Renew", "Power Word: Shield", "Renew", "Renew", "Renew", "Renew", "Power Word: Shield", "Shadowfiend", "Power Word: Radiance", "Power Word: Radiance", "Evangelism"];
+        const dpsCooldownList = ["Mind Blast", "Penance", "Schism", "Mind Blast", "Shadow Covenant", "Halo", "Power Word: Solace", "Light's Wrath"] // Shadow Covenant
         //const dpsCooldownList = ["Mind Blast", "Penance", "Schism"]
         const dpsSpamList = ["Smite"]
         let results = [];
@@ -92,7 +92,7 @@ describe("Evang Cast Sequence", () => {
             }
 
         } 
-        console.log(sortItems(results).splice(0, 3));
+        console.log(sortItems(results).splice(0, 5));
         console.log("Time: " + (Date.now() - t1) / 1000 + "s")
         
     }

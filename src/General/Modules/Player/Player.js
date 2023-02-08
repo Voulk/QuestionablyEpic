@@ -22,9 +22,9 @@ class Player {
     this.charID = charID;
 
     this.activeItems = [];
-    this.region = region;
-    this.realm = realm;
-    this.race = race;
+    this.region = region || "";
+    this.realm = realm || "";
+    this.race = race || "";
     this.uniqueHash = getUnique();
     this.charImageURL = "";
     this.charAvatarURL = "";

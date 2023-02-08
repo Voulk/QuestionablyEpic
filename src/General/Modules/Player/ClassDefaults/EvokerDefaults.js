@@ -20,7 +20,7 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.352,
+      haste: 0.362,
       crit: 0.401,
       mastery: 0.42,
       versatility: 0.348,
@@ -29,11 +29,11 @@ export const evokerDefaultSpellData = (contentType) => {
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.396,
-      crit: 0.40,
+      haste: 0.406,
+      crit: 0.415,
       mastery: 0.374,
-      versatility: 0.38,
-      leech: 0.46,
+      versatility: 0.382,
+      leech: 0.42,
       defaults: true,
     };
   

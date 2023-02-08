@@ -33,8 +33,8 @@ class PlayerChars {
         else {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
-          if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
-          newChar.setPlayerAvatars();
+          //if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
+          //newChar.setPlayerAvatars();
           charArray.push(newChar);
         }
         
@@ -83,6 +83,16 @@ class PlayerChars {
     this.activeChar = index;
     this.saveAllChar();
   };
+
+  // We'll set up characters when we create them, but some might have some extra processing we'd like to do. We'll do this after the component mounts
+  // so that users aren't stuck waiting for them to run before the Main Menu pops up.
+  setupChars = () => {
+    this.allChar.forEach(char => {
+      if (char.spec === "Discipline Priest") char.getActiveModel("Raid").setRampInfo(char.activeStats, [])
+      char.setPlayerAvatars();
+    
+    });
+  }
 
   // Return an array of all of the players characters.
   getAllChar = (gameType = "All") => {
