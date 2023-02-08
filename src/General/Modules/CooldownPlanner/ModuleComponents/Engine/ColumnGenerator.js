@@ -105,7 +105,6 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           field: "cooldown" + num,
           width: "9%",
           cellStyle: (value, rowData) => {
-            console.log(rowData);
             return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
           },
           headerStyle: TableStyles().headerStyle,

@@ -17,7 +17,7 @@ export const TableStyles = (className, rowData) => {
         textAlign: "center",
         fontSize: 12,
         lineHeight: "normal",
-        backgroundColor: backgroundColor,
+        // backgroundColor: backgroundColor,
       },
       thickRightBorder: {
         whiteSpace: "wrap",
@@ -25,7 +25,7 @@ export const TableStyles = (className, rowData) => {
         textAlign: "center",
         fontSize: 12,
         lineHeight: "normal",
-        backgroundColor: backgroundColor,
+        // backgroundColor: backgroundColor,
       },
     },
     headerStyle: {

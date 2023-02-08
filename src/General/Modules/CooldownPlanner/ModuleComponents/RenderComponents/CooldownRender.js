@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
-import { classColoursFonts } from "../../Functions/ClassColourFunctions";
+import { classColoursFonts, classColoursJS } from "../../Functions/ClassColourFunctions";
 
 export default function CastTextField(rowData, cooldown, className) {
   const { t, i18n } = useTranslation();
@@ -52,13 +52,20 @@ export default function CastTextField(rowData, cooldown, className) {
       )}
 
       <Typography
-        align="left"
+        align="center"
         style={{
           fontSize: 12,
           lineHeight: "normal",
           width: "100%",
-          marginLeft: 8,
+          marginLeft: 2,
+          backgroundColor: rowData[className] ? classColoursJS(rowData[className]) : "",
           color: classColoursFonts(rowData[className]),
+          // justifyContent: "center",
+          borderRadius: "4px",
+          border: "1px #595959 solid",
+          display: "inline-flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {getTranslatedSpellName(rowData[cooldown])}
