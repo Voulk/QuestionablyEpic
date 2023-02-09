@@ -21,7 +21,7 @@ function TopGearReport(props) {
   const gameType = useSelector((state) => state.gameType);
   const boxWidth = gameType === "Classic" ? "60%" : "60%";
   let contentType = "";
-
+  
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
 
@@ -60,6 +60,42 @@ function TopGearReport(props) {
     return result !== "undefined" && result && result.itemSet.hardScore && result.itemSet.hardScore > 1 && result.itemSet.setStats && result.itemSet.itemList;
   };
 
+  const sendReport = (shortReport) => {
+    const requestOptions = {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(shortReport)
+    };
+
+    fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
+    //.then(response => response.text())
+    .then(response => console.log(response));
+    //.then(data => this.setState({ postId: data.id }));
+  }
+
+  const shortenReport = (report) => {
+    const shortReport = {itemList: [], effectList: []};
+    const shortItemSet = report.itemSet;
+
+    shortReport.effectList = report.itemSet.effectList;
+    shortReport.differentials = report.differentials;
+    shortReport.contentType = report.contentType;
+
+    for (var i = 0; i < report.itemSet.itemList.length; i++) {
+      const item = report.itemSet.itemList[i];
+      let newItem = {id: item.id, ilvl: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
+      if (item.stats.leech > 0) newItem.leech = item.stats.leech;
+      if (item.socket) newItem.socket = item.socket;
+      if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+      
+      shortReport.itemList.push(newItem)
+    }
+    console.log(JSON.stringify(shortReport));
+    sendReport(shortReport);
+    return shortReport;
+  }
+
   let resultValid = true;
   let result = props.result;
   let topSet = "";
@@ -70,7 +106,8 @@ function TopGearReport(props) {
   let statList = {};
   let history = useHistory();
   let intSlot = false;
-
+  console.log(JSON.stringify(result));
+  shortenReport(result);
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     history.push("/")
