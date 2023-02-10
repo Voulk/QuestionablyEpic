@@ -74,8 +74,21 @@ function TopGearReport(props) {
     //.then(data => this.setState({ postId: data.id }));
   }
 
+  const generateReportCode = () => {
+    let result = "";
+    const stringLength = 8;
+    const possChars ='abcdefghijklmnopqrstuvwxyz';
+
+    const charLength = possChars.length;
+    for ( let i = 0; i < stringLength; i++ ) {
+        result += possChars.charAt(Math.floor(Math.random() * charLength));
+    }
+
+    return result;
+  }
+
   const shortenReport = (report) => {
-    const shortReport = {itemList: [], effectList: []};
+    const shortReport = {id: generateReportCode(), itemList: [], effectList: []};
     const shortItemSet = report.itemSet;
 
     shortReport.effectList = report.itemSet.effectList;
