@@ -172,7 +172,7 @@ export default function QEMainMenu(props) {
                     <ArrowForward
                       style={{
                         verticalAlign: "middle",
-                        paddingRight: 10
+                        paddingRight: 10,
                       }}
                     />
                   </Grid>

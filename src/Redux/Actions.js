@@ -1,4 +1,4 @@
-import { TOGGLE_CONTENT, TOGGLE_PLAYERSETTINGS, TOGGLE_PATRONSTATUS, TOGGLE_GAMETYPE } from "./ActionTypes";
+import { TOGGLE_CONTENT, TOGGLE_PLAYERSETTINGS, TOGGLE_PATRONSTATUS, TOGGLE_GAMETYPE, TOGGLE_COOLDOWNPLANNERTHEME } from "./ActionTypes";
 
 export const toggleContent = (content) => ({
   type: TOGGLE_CONTENT,
@@ -20,3 +20,7 @@ export const togglePatronStatus = (patronStatus) => ({
   payload: { patronStatus },
 });
 
+export const toggleCooldownPlannerThemeStatus = (status) => ({
+  type: TOGGLE_COOLDOWNPLANNERTHEME,
+  payload: { status },
+});

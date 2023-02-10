@@ -20,6 +20,7 @@ import ls from "local-storage";
 import { styled } from "@mui/material/styles";
 import { green } from "@mui/material/colors";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import CooldownPlannerThemeCheckbox from "./ThemeToggle";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -455,6 +456,10 @@ export default function CooldownPlanner(props) {
                       update={props.update}
                       tableData={data}
                     />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
+                    <CooldownPlannerThemeCheckbox />
                   </Grid>
                 </Grid>
 
