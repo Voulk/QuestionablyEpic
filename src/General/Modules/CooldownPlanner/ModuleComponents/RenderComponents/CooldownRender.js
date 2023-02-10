@@ -2,8 +2,10 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
+import { classColoursFonts, classColoursJS } from "../../Functions/ClassColourFunctions";
+import { useSelector } from "react-redux";
 
-export default function CastTextField(rowData, cooldown) {
+export default function CastTextField(rowData, cooldown, className) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -36,8 +38,45 @@ export default function CastTextField(rowData, cooldown) {
     return null;
   }
 
+  const themed = useSelector((state) => state.cooldownPlannerTheme);
+
+  const divTheme = (themed) => {
+    if (themed === true) {
+      return { display: "inline-flex", alignItems: "center", width: "100%", height: "100%", textAlign: "center" };
+    } else {
+      return { display: "inline-flex", alignItems: "center", width: "100%", textAlign: "center" };
+    }
+  };
+
+  const typographyTheme = (themed) => {
+    if (themed === true) {
+      return {
+        fontSize: 12,
+        lineHeight: "normal",
+        width: "100%",
+        marginLeft: 2,
+        minHeight: "22px",
+        backgroundColor: classColoursJS(rowData[className]) ,
+        color: classColoursFonts(rowData[className]),
+        // justifyContent: "center",
+        borderRadius: "4px",
+        border: "1px #595959 solid",
+        display: "inline-flex",
+        justifyContent: "center",
+        alignItems: "center",
+      };
+    } else {
+      return {
+        fontSize: 12,
+        lineHeight: "normal",
+        width: "100%",
+        marginLeft: 2,
+      };
+    }
+  };
+
   return (
-    <div style={{ display: "inline-flex", alignItems: "center", width: "100%", textAlign: "center" }}>
+    <div style={divTheme(themed)}>
       {spellExists ? (
         <a data-wowhead={"spell=" + rowData[cooldown]}>
           <img
@@ -50,15 +89,7 @@ export default function CastTextField(rowData, cooldown) {
         ""
       )}
 
-      <Typography
-        align="left"
-        style={{
-          fontSize: 12,
-          lineHeight: "normal",
-          width: "100%",
-          marginLeft: 8,
-        }}
-      >
+      <Typography align="center" style={typographyTheme(themed)}>
         {getTranslatedSpellName(rowData[cooldown])}
       </Typography>
     </div>
