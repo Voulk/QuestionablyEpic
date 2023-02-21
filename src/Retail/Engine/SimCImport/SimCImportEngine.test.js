@@ -168,6 +168,14 @@ describe("Test Crafted Items", () => {
         expect(item.uniqueEquip).toEqual("embellishment");
     });
 
+    test("Ring with Embellishment", () => {
+        const line = "finger1=,id=192999,enchant_id=6556,gem_id=192948,bonus_id=8836/8840/8902/8780/8802/8793/8846/8960/8175,crafted_stats=36/49";
+        const item = processItem(line, player, contentType, type)
+        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 418});
+        expect(item.socket).toEqual(1);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
     test("Warlords of Draenor Timewalking - Blackwater Belt", () => {
         const line = "waist=,id=109842,bonus_id=6652/8812/8171/7756,drop_level=70";
         const item = processItem(line, player, contentType, type)
