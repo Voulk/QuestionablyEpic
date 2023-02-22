@@ -122,6 +122,8 @@ describe("Test Regular Items", () => {
 
 });
 
+
+
 describe("Test Crafted Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";

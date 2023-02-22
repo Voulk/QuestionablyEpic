@@ -12,12 +12,70 @@ import {
   checkItemExists,
   getItemSlot,
   socketItem,
-  getLegendaryID
+  getLegendaryID,
+  getItem
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";
 import each from "jest-each";
 import ClassicItem from "General/Modules/Player/ClassicItem";
 import ClassicPlayer from "General/Modules/Player/ClassicPlayer";
+
+
+describe("Make sure Items Exist", () => {
+  test("Hall of Valor", () => {
+      expect(getItem(133633)).toBeTruthy();
+      expect(getItem(136777)).toBeTruthy();
+  })
+
+  test("Shadowmoon Burial Ground", () => {
+    expect(getItem(110039)).toBeTruthy();
+    expect(getItem(109784)).toBeTruthy();
+  })
+
+  test("Burning Crusade Timewalking", () => {
+    expect(getItem(123999)).toBeTruthy();
+    expect(getItem(133470)).toBeTruthy();
+  })
+
+  test("Wrath of the Lich King Timewalking", () => {
+    expect(getItem(188423)).toBeTruthy();
+    expect(getItem(188425)).toBeTruthy();
+
+    expect(getItem(127525)).toBeTruthy();
+    expect(getItem(127512)).toBeTruthy();
+  })
+
+  test("Cataclysm Timewalking", () => {
+    expect(getItem(133233)).toBeTruthy();
+    expect(getItem(133216)).toBeTruthy();
+    expect(getItem(188496)).toBeTruthy();
+
+
+  })
+
+  test("Mists of Pandaria Timewalking", () => {
+    expect(getItem(144020)).toBeTruthy();
+    expect(getItem(143972)).toBeTruthy();
+    expect(getItem(143989)).toBeTruthy();
+
+  })
+
+  test("Warlords of Draenor Timewalking", () => {
+    expect(getItem(109982)).toBeTruthy();
+    expect(getItem(119176)).toBeTruthy();
+    expect(getItem(110033)).toBeTruthy();
+
+  })
+
+  test("Legion Timewalking", () => {
+    expect(getItem(136714)).toBeTruthy();
+    expect(getItem(134542)).toBeTruthy();
+    expect(getItem(137355)).toBeTruthy();
+
+  })
+
+
+});
 
 describe("Test Item Level", () => {
   test("Sylvan Whiteshield ilvl", () => {

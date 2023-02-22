@@ -342,7 +342,7 @@ export function getItem(id, gameType = "Retail") {
     return item.id === id;
   });
   if (temp.length > 0) return temp[0];
-  else return "";
+  else return '';
 }
 
 export function applyDiminishingReturns(stats) {
