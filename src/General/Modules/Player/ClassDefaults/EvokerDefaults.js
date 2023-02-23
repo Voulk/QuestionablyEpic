@@ -20,19 +20,19 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.362,
-      crit: 0.401,
-      mastery: 0.42,
-      versatility: 0.348,
-      leech: 0.49,
+      haste: 0.384, 
+      crit: 0.435, 
+      mastery: 0.502, 
+      versatility: 0.367, 
+      leech: 0.51,
       defaults: true,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.406,
-      crit: 0.415,
+      haste: 0.426,
+      crit: 0.437,
       mastery: 0.374,
-      versatility: 0.382,
+      versatility: 0.386,
       leech: 0.42,
       defaults: true,
     };
@@ -44,7 +44,7 @@ export const evokerDefaultSpellData = (contentType) => {
     let specialQueries = {};
     if (contentType === "Raid") {
       specialQueries = {
-        OneManaHealing: 9.5,
+        OneManaHealing: 9.9,
         chilledClarityExtension: 32000,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
