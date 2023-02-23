@@ -123,6 +123,7 @@ export default function SequenceGenerator(props) {
 
   const classes = useStyles();
   const [seq, setSeq] = useState([]);
+  const [sequences, setSequences] = useState([]);
   
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
