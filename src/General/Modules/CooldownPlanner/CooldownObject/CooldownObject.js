@@ -124,7 +124,10 @@ class Cooldowns {
   findAndReplace(data, findVal, replaceVal) {
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
-        if (typeof data[i] === "object") {
+        if (data[i] === null) {
+          data.splice(i, 1);
+          i--;
+        } else if (typeof data[i] === "object") {
           data[i] = this.findAndReplace(data[i], findVal, replaceVal);
         } else if (data[i] === findVal) {
           data[i] = replaceVal;
