@@ -286,7 +286,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
               name: idPayload["effect"]["spell"]["name"],
               level: (itemBaseLevel + itemLevelGain),
             };
-            uniqueTag = "Embellishment";
+            uniqueTag = "embellishment";
 
           }
 

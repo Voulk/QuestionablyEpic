@@ -122,6 +122,8 @@ describe("Test Regular Items", () => {
 
 });
 
+
+
 describe("Test Crafted Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
@@ -165,6 +167,14 @@ describe("Test Crafted Items", () => {
         expect(item.stats.crit).toEqual(176);
         expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
         expect(item.socket).toEqual(0);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
+    test("Ring with Embellishment", () => {
+        const line = "finger1=,id=192999,enchant_id=6556,gem_id=192948,bonus_id=8836/8840/8902/8780/8802/8793/8846/8960/8175,crafted_stats=36/49";
+        const item = processItem(line, player, contentType, type)
+        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 418});
+        expect(item.socket).toEqual(1);
         expect(item.uniqueEquip).toEqual("embellishment");
     });
 

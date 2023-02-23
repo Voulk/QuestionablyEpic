@@ -46,7 +46,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
- * @sins A 3-12% damage buff depending on number of active atonements.
+ * @sins A 1-40% damage buff depending on number of active atonements. (See the sins array in DISCCONSTANTS for specific values).
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
@@ -58,7 +58,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
     }
     
-    let mult = schism //* sins[activeAtones];
+    let mult = schism * sins[activeAtones];
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {

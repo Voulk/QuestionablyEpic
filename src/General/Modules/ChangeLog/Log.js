@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "10.0.5",
+    update: 11,
+    date: "22 February",
+    changes: [ 
+      "All Neck items will now be added with 3 sockets.",
+      "Crackling Codex of the Isles is now considered a crafted item.",
+      "Added a few missing timewalking items.",
+      "Bugfix: The potion embellishment will now count toward the limit of two."
+  ]},
+  {
+    version: "10.0.5",
     update: 10,
     date: "2 February",
     changes: [ 

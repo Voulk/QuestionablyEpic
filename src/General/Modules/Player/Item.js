@@ -21,6 +21,7 @@ class Item {
     this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
+    if (slot === "Neck") this.socket = 3;
 
   }
 

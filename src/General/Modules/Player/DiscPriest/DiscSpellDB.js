@@ -105,7 +105,7 @@ export const DISCSPELLS = {
         coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura)
         cooldown: 15,
         school: "shadow",
-        atoneOverheal: 0.2,
+        atoneOverheal: 0.15,
         charges: 1,
         secondaries: ['crit', 'vers']
     }],
