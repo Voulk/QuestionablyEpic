@@ -133,7 +133,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.20209,
             table: -7,
-            uptime: 0.7,
+            uptime: 0.4,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
