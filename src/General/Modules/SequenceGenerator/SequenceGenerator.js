@@ -3,6 +3,7 @@ import ReactGA from "react-ga";
 import { useTranslation } from "react-i18next";
 import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
+import { sequence, SequenceObject } from "./Sequence";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
@@ -114,6 +115,19 @@ const getSequence = (spec) => {
   if (spec === "Holy Priest") return holyPriestSequence;
 };
 
+const setupSequences = (len = 2) => {
+  const seqArray = [];
+
+  for (let i = 0; i < len; i++) {
+    seqArray.push(JSON.parse(JSON.stringify(sequence)));
+
+  }
+
+  return seqArray;
+}
+
+
+
 
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
@@ -123,7 +137,8 @@ export default function SequenceGenerator(props) {
 
   const classes = useStyles();
   const [seq, setSeq] = useState([]);
-  const [sequences, setSequences] = useState([]);
+  const [sequences, setSequences] = useState(setupSequences());
+  const [selectedSeq, setSelectedSeq] = useState(0);
   
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
@@ -136,6 +151,13 @@ export default function SequenceGenerator(props) {
     setSeqSettings(temp);
     updateSequence(seq);
 
+  }
+
+  const updateSequences = (id, newSeq) => {
+    let temp = [...sequences];
+    temp[id].spells = newSeq;
+    console.log("Settings sequences to " + JSON.stringify(temp));
+    setSequences(temp);
   }
 
   const spellList = {
@@ -164,6 +186,7 @@ export default function SequenceGenerator(props) {
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
+    updateSequences(selectedSeq, sequence)
     setResult(sim);
     setCombatLog(sim.report);
   }
@@ -346,29 +369,18 @@ export default function SequenceGenerator(props) {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
-                    <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion}>
-                      {/*<Grid item xs="auto">
-                            <LooksOneIcon fontSize="large" />
-                            </Grid> */}
+                  {sequences.map((s, i) => (
+                    <div style={{paddingBottom: "30px"}}>
+                      <SequenceObject 
+                        seq={s}
+                        db={spellDB}
+                        spec={selectedSpec}
+                        />
+                    </div>
+                  
+                  
 
-                      {seq.map((spell, index) => (
-                        <Grid item xs="auto" key={index} onDragOver={onDragOver} onDragEnd={dropMove} onDrop={dropInsertion} onDragEnter={(e) => { dragEnter(e, index) }}>
-                          <SpellIcon
-                            spell={spellDB[spell][0].spellData}
-                            spec={selectedSpec}
-                            iconType={"Spell"}
-                            draggable
-                            onDragStart={(e) => { dragStart(e, index) }}
-                            onContextMenu={(e) => {
-                              e.preventDefault()
-                              removeSpellAtIndex(index, e)}}
-                            style={{ display: "flex" }}
-                          />
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Paper>
+                  ))}
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
