@@ -280,7 +280,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
         if ("effect" in idPayload) {
-          if ("spell" in idPayload["effect"]) {
+          if ("spell" in idPayload["effect"] && bonus_id !== "8174") { // Ignore Flavor Packet.
             itemEffect = {
               type: "embellishment",
               name: idPayload["effect"]["spell"]["name"],
