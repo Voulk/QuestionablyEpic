@@ -10,6 +10,13 @@
 export const changeLog = [
   {
     version: "10.0.5",
+    update: 12,
+    date: "25 February",
+    changes: [ 
+      "Bugfix: Non-embellishment special item effects should no longer count toward the limit.",
+  ]},
+  {
+    version: "10.0.5",
     update: 11,
     date: "22 February",
     changes: [ 
