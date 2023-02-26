@@ -281,12 +281,17 @@ export function processItem(line, player, contentType, type, playerSettings = {}
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
         if ("effect" in idPayload) {
           if ("spell" in idPayload["effect"] && bonus_id !== "8174") { // Ignore Flavor Packet.
+            const specialEffectName = idPayload["effect"]["spell"]["name"]
             itemEffect = {
               type: "embellishment",
-              name: idPayload["effect"]["spell"]["name"],
+              name: specialEffectName,
               level: (itemBaseLevel + itemLevelGain),
             };
-            uniqueTag = "embellishment";
+
+            // Embellishments that require a tag.
+            if (['Potion Absorption Inhibitor', 'Blue Silken Lining', 'Magazine of Healing Darts'].includes(specialEffectName)) {
+              uniqueTag = "embellishment";
+            }
 
           }
 
