@@ -19,28 +19,28 @@ const useStyles = makeStyles((theme) => ({
       width: "85%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: "120px",
+      marginTop: 24,
     },
     [theme.breakpoints.up("lg")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 32,
+      // marginTop: 32,
     },
   },
 }));
@@ -213,6 +213,7 @@ export default function LegendaryCompare(props) {
 
   return (
     <div className={classes.header}>
+      <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid item container spacing={2} direction="row">
         {/* ---------------------------------------- Module Title ---------------------------------------- */}

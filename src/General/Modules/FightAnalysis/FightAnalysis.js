@@ -173,10 +173,11 @@ class FightAnalysis extends Component {
     return (
       <div
         style={{
-          marginTop: 32,
+          // marginTop: 32,
         }}
       >
-        <div style={{ margin: "20px 5% 20px 5%" }}>
+        <div style={{ height: 96 }} />
+        <div style={{ margin: "0px 5% 20px 5%" }}>
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                  Main Grid for the Component                                   */
           /* ---------------------------------------------------------------------------------------------- */}

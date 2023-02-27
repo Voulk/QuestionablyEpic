@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
       width: "85%",
       justifyContent: "center",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
@@ -113,8 +113,9 @@ export default function QEMainMenu(props) {
   // };
 
   return (
-    <div style={{ backgroundColor: "#313131" }}>
+    <div style={{ backgroundColor: "#313131", height: "100%" }}>
       <div className={classes.root}>
+        <div style={{ height: 96 }} />
         <Grid container spacing={2}>
           {
             <Grid item xs={12} style={{ textAlign: "center" }}>
@@ -172,7 +173,7 @@ export default function QEMainMenu(props) {
                     <ArrowForward
                       style={{
                         verticalAlign: "middle",
-                        paddingRight: 10
+                        paddingRight: 10,
                       }}
                     />
                   </Grid>
