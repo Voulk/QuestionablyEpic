@@ -173,12 +173,11 @@ export default function QEMainMenu(props) {
                     <ArrowForward
                       style={{
                         verticalAlign: "middle",
-                        paddingRight: 10,
                       }}
                     />
                   </Grid>
                   <Grid item xs={10}>
-                    <div style={{ display: "block" }}>
+                    <div style={{ display: "block", left: "10px", position: "relative" }}>
                       <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
                       <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
                         {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
