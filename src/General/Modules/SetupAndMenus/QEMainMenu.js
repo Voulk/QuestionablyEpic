@@ -72,6 +72,7 @@ export default function QEMainMenu(props) {
           "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
           "MainMenu.CooldownPlanner": ["/cooldownplanner", true, "CooldownPlanner"],
           "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
+          "MainMenu.OneShot": ["/oneshot", false, "One Shot"],
 
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }

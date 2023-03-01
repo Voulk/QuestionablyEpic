@@ -340,6 +340,7 @@ class App extends Component {
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
+                  <Route path="/oneshot" render={() => <OneShot/>} />
 
                   <CustomRoute 
                     player={activePlayer} 
