@@ -48,6 +48,18 @@ export default function OneShot(props) {
   const [selectedClass, setSelectedClass] = React.useState("Evoker");
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
 
+  const updateDungeonSpellList = (dungeon) => {
+    const dungeonName = encounterDB["-1"][dungeon]['name']['en'] // We're using this as an object reference so we don't want to translate it.
+    const spellList = enemySpellDB[dungeonName];
+    console.log(dungeonName);
+  }
+
+
+  const updateSelectedDungeon = (dungeon) => {
+    updateDungeonSpellList(dungeon);
+    setSelectedDungeon(dungeon);
+  }
+
   return (
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
@@ -81,7 +93,7 @@ export default function OneShot(props) {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                   <Grid container spacing={1}>
-                    <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={setSelectedDungeon} dungeonList={dungeonList} />
+                    <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
                   </Grid>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>

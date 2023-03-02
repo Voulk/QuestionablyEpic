@@ -11,13 +11,21 @@ function createData(ability, tyranical, fortified) {
   return { ability, tyranical, fortified };
 }
 
+const data = [{name: "Deafening Screech(1)", tyranical: 70000, fortified: 45000},
+              {name: "Deafening Screech(2)", tyranical: 70000, fortified: 45000}]
+
+const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
+
+/*
 const rows = [
+
+
   createData("Deafening Screech(1)", 70000, 45000),
   createData("Deafening Screech(2)", 70000, 45000),
   createData("Deafening Screech(3)", 70000, 45000),
   createData("Deafening Screech(4)", 70000, 45000),
   createData("Deafening Screech(5)", 70000, 45000),
-];
+]; */
 
 export default function OneShotDataTable() {
   return (
