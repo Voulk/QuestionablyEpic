@@ -11,6 +11,8 @@ import OneShotDataTable from "./OneShotDataTable";
 import OneShotDungeonToggle from "./OneShotDungeonToggle";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
 
+import "./OneShot.css";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("md")]: {
@@ -45,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const getTalentDB = (dungeon) => {};
 
 
+
 const updateSpec = (specName) => {
   // TODO: Pull defensive list from spec / class data.
   const defensiveList = ["Barkskin"];
@@ -56,7 +59,7 @@ const updateSpec = (specName) => {
 
       const data = temp[0];
 
-      defensiveData.push({name: data.name.en, icon: data.icon, reduction: data.reduction || 0, active: false});
+      defensiveData.push({name: data.name.en, icon: data.icon, reduction: data.reduction || 0, active: false });
       
     }
     else {
@@ -77,6 +80,22 @@ export const getKeyMult = (keyLevel) => {
   return 1.08 ** 8 * 1.1 ** (keyLevel - 10);
 }
 
+// Sources of damage reduction are multiplicative with each other.
+// That means if we have Barkskin (20%) and Ironbark (20%) active at the same time then
+// we get (1 - 0.2) * (1 - 0.2) = 0.64 or 64% damage reduction rather than an additive 40%.
+// This function returns the percentage damage that the target will still take, NOT the amount reduced.
+export const calcDR = (defensives) => {
+  let sumDR = 1;
+
+  defensives.forEach((defensive) => {
+    if (defensive.active) {
+      sumDR *= (1 - defensive.reduction);
+    }
+  })
+  console.log(sumDR);
+  return Math.max(sumDR, 0);
+}
+
 export default function OneShot(props) {
   const classes = useStyles();
   const dungeonList = encounterDB["-1"]["bossOrderMythicPlus"];
@@ -88,11 +107,17 @@ export default function OneShot(props) {
   const [keyLevel, setKeyLevel] = React.useState(20);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass));
 
+  const activateSpell = (e, spell) => {
+    spell.active = !spell.active;
+    setDefensives([...defensives]);
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon));
+  
+  }
 
   const calcDamage = (spell) => {
     
-    const sumDamageReduction = 0;
-    const baseMultiplier = getKeyMult(keyLevel); // The key multiplier. We'll add Tyrannical / Fort afterwards.
+    const sumDamageReduction = calcDR(defensives);
+    const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
     let spellData = {name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier};
     spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
@@ -102,6 +127,8 @@ export default function OneShot(props) {
 
     return spellData;
   }
+
+
 
   const updateDungeonSpellList = (dungeon) => {
     const dungeonName = encounterDB["-1"][dungeon]['name']['en'] // We're using this as an object reference so we don't want to translate it.
@@ -187,7 +214,7 @@ export default function OneShot(props) {
                               spell={spell}
                               iconType={"Spell"}
                               draggable
-                              onClick={(e) => { dragStart(e, index) }}
+                              onClick={(e) => { activateSpell(e, spell) }}
                               //style={{ display: "flex" }}
                             />
                           </Grid>

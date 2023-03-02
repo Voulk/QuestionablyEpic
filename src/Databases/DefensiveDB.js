@@ -194,6 +194,7 @@ export const defensiveDB = [
     icon: require("Images/Classes/Druid/Icons/spell_nature_stoneclawtotem.jpg").default,
     duration: 8,
     cooldown: 60,
+    reduction: 0.2,
     class: "Druid",
   },
   {
