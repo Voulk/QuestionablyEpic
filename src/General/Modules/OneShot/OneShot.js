@@ -5,6 +5,7 @@ import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@m
 import makeStyles from "@mui/styles/makeStyles";
 import OneShotClassToggle from "./OneShotClassToggle";
 import { encounterDB } from "Databases/InstanceDB";
+import { enemySpellDB} from "./EnemySpellDB";
 import OneShotDataTable from "./OneShotDataTable";
 import OneShotDungeonToggle from "./OneShotDungeonToggle";
 
@@ -47,17 +48,35 @@ export default function OneShot(props) {
 
   const [selectedClass, setSelectedClass] = React.useState("Evoker");
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
+  const [enemySpellList, setEnemySpellList] = React.useState([{name: "Deafening Screech(1)", tyranical: 70000, fortified: 45000},
+                                                              {name: "Deafening Screech(2)", tyranical: 70000, fortified: 45000}]);
+
+  const calcDamage = (spell) => {
+    let spellData = {name: spell.name, tyrannical: 0, fortified: 0};
+
+
+    return spellData;
+  }
 
   const updateDungeonSpellList = (dungeon) => {
     const dungeonName = encounterDB["-1"][dungeon]['name']['en'] // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
+    let damageList = [];
+
+    spellList.forEach((spell) => {
+      damageList.push(calcDamage(spell));
+    })
+    
     console.log(dungeonName);
+
+    return damageList;
   }
 
 
   const updateSelectedDungeon = (dungeon) => {
-    updateDungeonSpellList(dungeon);
+    //updateDungeonSpellList(dungeon);
     setSelectedDungeon(dungeon);
+    setEnemySpellList(updateDungeonSpellList(dungeon));
   }
 
   return (
@@ -127,7 +146,7 @@ export default function OneShot(props) {
                     </Grid>
                     
                     <Grid item xs={7} sm={7} md={7} lg={7} xl={7}>
-                      <OneShotDataTable />
+                      <OneShotDataTable data={enemySpellList} />
                     </Grid>
                   </Grid>
                 </Grid>

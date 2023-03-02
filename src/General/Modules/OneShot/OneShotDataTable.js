@@ -7,14 +7,14 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function createData(ability, tyranical, fortified) {
-  return { ability, tyranical, fortified };
+function createData(ability, tyrannical, fortified) {
+  return { ability, tyrannical, fortified };
 }
 
-const data = [{name: "Deafening Screech(1)", tyranical: 70000, fortified: 45000},
-              {name: "Deafening Screech(2)", tyranical: 70000, fortified: 45000}]
+const data = [{name: "Deafening Screech(1)", tyrannical: 70000, fortified: 45000},
+              {name: "Deafening Screech(2)", tyrannical: 70000, fortified: 45000}]
 
-const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
+//const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
 
 /*
 const rows = [
@@ -27,14 +27,17 @@ const rows = [
   createData("Deafening Screech(5)", 70000, 45000),
 ]; */
 
-export default function OneShotDataTable() {
+export default function OneShotDataTable(props) {
+  const data = props.data;
+  const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
+
   return (
     <TableContainer component={Paper} elevation={0}>
       <Table sx={{}} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell>Ability</TableCell>
-            <TableCell align="right">Tyranical</TableCell>
+            <TableCell align="right">Tyrannical</TableCell>
             <TableCell align="right">Fortified</TableCell>
           </TableRow>
         </TableHead>
@@ -44,7 +47,7 @@ export default function OneShotDataTable() {
               <TableCell component="th" scope="row">
                 {row.ability}
               </TableCell>
-              <TableCell align="right">{row.tyranical}</TableCell>
+              <TableCell align="right">{row.tyrannical}</TableCell>
               <TableCell align="right">{row.fortified}</TableCell>
             </TableRow>
           ))}

@@ -2,7 +2,7 @@
 
 export const enemySpellDB = 
 {
-    "Algethar' Academy": [{
+    "Algeth'ar Academy": [{
         "name": "Defeaning Screech",
         "icon": "ability_vehicle_sonicshockwave",
         "baseDamage": 26451,
