@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
-      width: "80%",
+      width: "90%",
       justifyContent: "center",
       display: "block",
       marginTop: 120,
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("lg")]: {
       margin: "auto",
-      width: "44%",
+      width: "55%",
       justifyContent: "center",
       display: "block",
     },
@@ -41,6 +41,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getTalentDB = (dungeon) => {};
+
+
+// Returns the key damage multiplier for a given key level. Note that there is no support for keys lower than +10 and while it's easy to add to the function,
+// the app itself should not support such cases given the tool would be an inappropriate choice for it.
+export const getKeyMult = (keyLevel) => {
+  return 1.08 ** 8 * 1.1 ** (keyLevel - 10);
+}
 
 export default function OneShot(props) {
   const classes = useStyles();
@@ -50,10 +57,18 @@ export default function OneShot(props) {
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
   const [enemySpellList, setEnemySpellList] = React.useState([{name: "Deafening Screech(1)", tyranical: 70000, fortified: 45000},
                                                               {name: "Deafening Screech(2)", tyranical: 70000, fortified: 45000}]);
+  const [keyLevel, setKeyLevel] = React.useState(20);
 
   const calcDamage = (spell) => {
-    let spellData = {name: spell.name, tyrannical: 0, fortified: 0};
+    
+    const sumDamageReduction = 0;
+    const baseMultiplier = getKeyMult(keyLevel); // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
+    let spellData = {name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier};
+    spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
+    spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
+
+    console.log(spellData);
 
     return spellData;
   }

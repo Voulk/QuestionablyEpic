@@ -29,7 +29,7 @@ const rows = [
 
 export default function OneShotDataTable(props) {
   const data = props.data;
-  const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
+  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified))
 
   return (
     <TableContainer component={Paper} elevation={0}>
