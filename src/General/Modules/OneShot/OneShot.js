@@ -188,7 +188,7 @@ export default function OneShot(props) {
                               iconType={"Spell"}
                               draggable
                               onClick={(e) => { dragStart(e, index) }}
-                              style={{ display: "flex" }}
+                              //style={{ display: "flex" }}
                             />
                           </Grid>
                         ))}

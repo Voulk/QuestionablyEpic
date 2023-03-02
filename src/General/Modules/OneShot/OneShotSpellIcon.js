@@ -36,7 +36,8 @@ export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = '', .
       <img
         src={icon}//{fullURL}
         alt={alt}
-        className={`icon ${className || ''}`}
+        style={{ filter: "grayscale(100%)", WebkitFilter: "grayscale(100%)" }}
+        //className={`icon ${className || ''}`}
         {...others}
       />
        {iconType === "Talent" ? <div {...others} style={{ position: "absolute", top: "25%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "20px", textShadow: "1px 1px 4px black" }}> {spell.points} </div> : ""}
