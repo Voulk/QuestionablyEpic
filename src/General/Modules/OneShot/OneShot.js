@@ -5,9 +5,11 @@ import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@m
 import makeStyles from "@mui/styles/makeStyles";
 import OneShotClassToggle from "./OneShotClassToggle";
 import { encounterDB } from "Databases/InstanceDB";
+import { defensiveDB } from "Databases/DefensiveDB";
 import { enemySpellDB} from "./EnemySpellDB";
 import OneShotDataTable from "./OneShotDataTable";
 import OneShotDungeonToggle from "./OneShotDungeonToggle";
+import { OneShotSpellIcon } from "./OneShotSpellIcon";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,6 +45,32 @@ const useStyles = makeStyles((theme) => ({
 const getTalentDB = (dungeon) => {};
 
 
+const updateSpec = (specName) => {
+  // TODO: Pull defensive list from spec / class data.
+  const defensiveList = ["Barkskin"];
+  const defensiveData = [];
+
+  defensiveList.forEach(defensiveName => {
+    const temp = defensiveDB.filter((defensive) => defensive.name.en === defensiveName);
+    if (temp.length > 0) {
+
+      const data = temp[0];
+
+      defensiveData.push({name: data.name.en, icon: data.icon, reduction: data.reduction || 0, active: false});
+      
+    }
+    else {
+      console.error("Can't find defensive: ", defensiveName);
+    }
+  });
+
+
+  return defensiveData;
+  
+}
+
+
+
 // Returns the key damage multiplier for a given key level. Note that there is no support for keys lower than +10 and while it's easy to add to the function,
 // the app itself should not support such cases given the tool would be an inappropriate choice for it.
 export const getKeyMult = (keyLevel) => {
@@ -58,6 +86,8 @@ export default function OneShot(props) {
   const [enemySpellList, setEnemySpellList] = React.useState([{name: "Deafening Screech(1)", tyranical: 70000, fortified: 45000},
                                                               {name: "Deafening Screech(2)", tyranical: 70000, fortified: 45000}]);
   const [keyLevel, setKeyLevel] = React.useState(20);
+  const [defensives, setDefensives] = React.useState(updateSpec(selectedClass));
+
 
   const calcDamage = (spell) => {
     
@@ -77,6 +107,7 @@ export default function OneShot(props) {
     const dungeonName = encounterDB["-1"][dungeon]['name']['en'] // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
+
 
     spellList.forEach((spell) => {
       damageList.push(calcDamage(spell));
@@ -142,6 +173,28 @@ export default function OneShot(props) {
                             {"Defensives"}
                           </Typography>
                         </Grid>
+
+                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
+                    <Grid container spacing={1} alignItems="center">
+                      {/*<Grid item xs="auto">
+                            <LooksOneIcon fontSize="large" />
+                            </Grid> */}
+
+                        {defensives.map((spell, index) => (
+                          <Grid item xs="auto" key={index} >
+                            <OneShotSpellIcon
+                              spell={spell}
+                              iconType={"Spell"}
+                              draggable
+                              onClick={(e) => { dragStart(e, index) }}
+                              style={{ display: "flex" }}
+                            />
+                          </Grid>
+                        ))}
+                      </Grid>
+                    </Paper>
+                  </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                           <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                             {"Externals"}

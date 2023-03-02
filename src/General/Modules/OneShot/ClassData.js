@@ -1,7 +1,8 @@
 
 export const specData = {
     "Druid": {
-        "icon": ""
+        "icon": "",
+        "data": druidData,
     }
 
 
@@ -10,7 +11,7 @@ export const specData = {
 const druidData = {
     "icon": "",
     "specs": ["Restoration", "Feral", "Balance", "Guardian"],
-    "defensives": ["Bark Skin", "Matted Fur"],
+    "defensives": ["Barkskin", "Matted Fur"],
     "resto": {
         "talents": ["Thick Hide", ""],
         "defensives": [],
