@@ -145,8 +145,8 @@ export default function classIcons(props, style) {
     return null;
   }
   return (
-    <div>
+    // <div>
       <img style={{ ...style }} src={src} alt={alt} />
-    </div>
+    // </div>
   );
 }
