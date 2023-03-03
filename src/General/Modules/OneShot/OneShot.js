@@ -132,14 +132,14 @@ export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell
 
 
 
+
 export default function OneShot(props) {
   const classes = useStyles();
   const dungeonList = encounterDB["-1"]["bossOrderMythicPlus"];
 
   const [selectedClass, setSelectedClass] = React.useState("Evoker");
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
-  const [enemySpellList, setEnemySpellList] = React.useState([{name: "Deafening Screech(1)", tyranical: 70000, fortified: 45000},
-                                                              {name: "Deafening Screech(2)", tyranical: 70000, fortified: 45000}]);
+  const [enemySpellList, setEnemySpellList] = React.useState([]);
   const [keyLevel, setKeyLevel] = React.useState(20);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass));
 
@@ -151,39 +151,37 @@ export default function OneShot(props) {
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
     setDefensives([...defensives]);
-    setEnemySpellList(updateDungeonSpellList(selectedDungeon));
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives));
   
   }
-
-  const calcDamage = (spell) => {
-    
-    const sumDamageReduction = calcDR(defensives, versatility, avoidance, stamina, armor, spell);
-    const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
-
-    let spellData = {name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier};
-    spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
-    spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
-
-    console.log(spellData);
-
-    return spellData;
-  }
-
-
 
   const updateDungeonSpellList = (dungeon) => {
     const dungeonName = encounterDB["-1"][dungeon]['name']['en'] // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
-
-
+  
+  
     spellList.forEach((spell) => {
-      damageList.push(calcDamage(spell));
+      damageList.push(calcDamage(spell, defensives));
     })
     
     console.log(dungeonName);
-
+  
     return damageList;
+  }
+  
+  const calcDamage = (spell) => {
+      
+    const sumDamageReduction = calcDR(defensives, versatility, avoidance, stamina, armor, spell);
+    const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
+  
+    let spellData = {name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier};
+    spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
+    spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
+  
+    console.log(spellData);
+  
+    return spellData;
   }
 
 
@@ -192,6 +190,10 @@ export default function OneShot(props) {
     setSelectedDungeon(dungeon);
     setEnemySpellList(updateDungeonSpellList(dungeon));
   }
+
+  useEffect(() => {
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon));
+  }, []);
 
   return (
     <div style={{ backgroundColor: "#313131" }}>
