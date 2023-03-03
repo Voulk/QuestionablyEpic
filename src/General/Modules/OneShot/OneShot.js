@@ -80,11 +80,16 @@ export const getKeyMult = (keyLevel) => {
   return 1.08 ** 8 * 1.1 ** (keyLevel - 10);
 }
 
+export const convertArmorToDR = (armor) => {
+  let damageReduction = 1;
+
+}
+
 // Sources of damage reduction are multiplicative with each other.
 // That means if we have Barkskin (20%) and Ironbark (20%) active at the same time then
 // we get (1 - 0.2) * (1 - 0.2) = 0.64 or 64% damage reduction rather than an additive 40%.
 // This function returns the percentage damage that the target will still take, NOT the amount reduced.
-export const calcDR = (defensives) => {
+export const calcDefensives = (defensives) => {
   let sumDR = 1;
 
   defensives.forEach((defensive) => {
@@ -95,6 +100,37 @@ export const calcDR = (defensives) => {
   console.log(sumDR);
   return Math.max(sumDR, 0);
 }
+
+// The formula for Armor -> Damage reduction is Armor / (Armor + K). The K value changes depending on what you're fighting and from patch to patch.
+// We're only really interested in Mythic+ right now so the K value below is for that. Trash and bosses are identical.
+// If we expand to include boss mechanics (possible) then we'll need to add a K value for Mythic difficulty. 
+// 
+// To get a K value when a new patch hits we can run the macro below in-game while targeting the given mob. 
+// We need to update this each major patch.
+// /run local _, A = UnitArmor('player'); local r = PaperDollFrame_GetArmorReductionAgainstTarget(A) / 100; print('K ~ ', (A-r*A)/r);
+export const calcArmor = (armor) => {
+  const kValue = 12824.94;
+
+  return 1 - (armor / (armor + kValue));
+
+}
+
+export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell) => {
+
+  // All of these are in percentage damage *taken* form. If you have 3% DR from vers then the variable should be 0.97 not 0.03.
+  const defensiveDR = calcDefensives(defensives);
+  const versDR = 1 - (versatility / 410 / 100);
+  const armorDR = (spell.damageType === "Physical" && !('tags' in spell && spell.tags.includes("ignoreArmor"))) ? calcArmor(armor) : 1;
+  const avoidanceDR = (spell.avoidance ? (1 - avoidance /  72 / 100) : 1); // TODO: Add DR to Avoidance.
+  
+  // Special cases
+
+
+  return defensiveDR * versDR * armorDR * avoidanceDR;
+
+}
+
+
 
 export default function OneShot(props) {
   const classes = useStyles();
@@ -107,6 +143,11 @@ export default function OneShot(props) {
   const [keyLevel, setKeyLevel] = React.useState(20);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass));
 
+  const [versatility, setVersatility] = React.useState(2000); // 241585
+  const [avoidance, setAvoidance] = React.useState(0);
+  const [stamina, setStamina] = React.useState(16500);
+  const [armor, setArmor] = React.useState(8000);
+
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
     setDefensives([...defensives]);
@@ -116,7 +157,7 @@ export default function OneShot(props) {
 
   const calcDamage = (spell) => {
     
-    const sumDamageReduction = calcDR(defensives);
+    const sumDamageReduction = calcDR(defensives, versatility, avoidance, stamina, armor, spell);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
     let spellData = {name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier};
