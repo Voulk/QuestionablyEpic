@@ -164,6 +164,7 @@ export const defensiveDB = [
     duration: 10,
     cooldown: 120,
     class: "Rogue",
+    type: "dodgeable",
   },
   {
     name: {
@@ -195,6 +196,7 @@ export const defensiveDB = [
     duration: 8,
     cooldown: 60,
     reduction: 0.2,
+    type: "All", // The type of damage the DR applies to.
     class: "Druid",
   },
   {
@@ -456,5 +458,23 @@ export const defensiveDB = [
     duration: 12,
     cooldown: 150,
     class: "Evoker",
+    reduction: 0.3,
+    type: "All", // The type of damage the DR applies to.
   },
+];
+
+export const defensiveTalentsDB = [
+  {
+    name: {
+      en: "Inherent Resistance",
+    },
+    guid: 375544,
+    icon: require("Images/Classes/Evoker/inv_misc_rubysanctum1.jpg").default,
+    class: "Evoker",
+    reduction: 0.04,
+    type: "Magic", // The type of damage the DR applies to.
+    talent: true,
+  },
+
+
 ];

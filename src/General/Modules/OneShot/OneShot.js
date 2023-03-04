@@ -5,8 +5,8 @@ import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@m
 import makeStyles from "@mui/styles/makeStyles";
 import OneShotClassToggle from "./OneShotClassToggle";
 import { encounterDB } from "Databases/InstanceDB";
-import { defensiveDB } from "Databases/DefensiveDB";
-import { enemySpellDB} from "./EnemySpellDB";
+import { defensiveDB, defensiveTalentsDB } from "Databases/DefensiveDB";
+import { enemySpellDB } from "./EnemySpellDB";
 import OneShotDataTable from "./OneShotDataTable";
 import OneShotDungeonToggle from "./OneShotDungeonToggle";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
@@ -44,23 +44,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getTalentDB = (dungeon) => {};
+const getTalentDB = (dungeon) => { };
 
 
 
 const updateSpec = (specName) => {
   // TODO: Pull defensive list from spec / class data.
-  const defensiveList = ["Barkskin"];
+  const defensiveList = ["Obsidian Scales", "Inherent Resistance"];
   const defensiveData = [];
+  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB);
 
   defensiveList.forEach(defensiveName => {
-    const temp = defensiveDB.filter((defensive) => defensive.name.en === defensiveName);
+    const temp = combinedDefensiveDB.filter((defensive) => defensive.name.en === defensiveName);
     if (temp.length > 0) {
 
       const data = temp[0];
+      const defensiveType = data.talent ? "talent" : data.external ? "external" : "defensive";
 
-      defensiveData.push({name: data.name.en, icon: data.icon, reduction: data.reduction || 0, active: false });
-      
+      defensiveData.push({ name: data.name.en, icon: data.icon, reduction: data.reduction || 0, active: false, defensiveType: defensiveType });
+
     }
     else {
       console.error("Can't find defensive: ", defensiveName);
@@ -69,7 +71,7 @@ const updateSpec = (specName) => {
 
 
   return defensiveData;
-  
+
 }
 
 
@@ -89,11 +91,11 @@ export const convertArmorToDR = (armor) => {
 // That means if we have Barkskin (20%) and Ironbark (20%) active at the same time then
 // we get (1 - 0.2) * (1 - 0.2) = 0.64 or 64% damage reduction rather than an additive 40%.
 // This function returns the percentage damage that the target will still take, NOT the amount reduced.
-export const calcDefensives = (defensives) => {
+export const calcDefensives = (defensives, spell) => {
   let sumDR = 1;
 
   defensives.forEach((defensive) => {
-    if (defensive.active) {
+    if (defensive.active && (defensive.type === "all" || defensive.type === spell.type)) {
       sumDR *= (1 - defensive.reduction);
     }
   })
@@ -118,13 +120,15 @@ export const calcArmor = (armor) => {
 export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell) => {
 
   // All of these are in percentage damage *taken* form. If you have 3% DR from vers then the variable should be 0.97 not 0.03.
-  const defensiveDR = calcDefensives(defensives);
+  const defensiveDR = calcDefensives(defensives, spell);
   const versDR = 1 - (versatility / 410 / 100);
   const armorDR = (spell.damageType === "Physical" && !('tags' in spell && spell.tags.includes("ignoreArmor"))) ? calcArmor(armor) : 1;
-  const avoidanceDR = (spell.avoidance ? (1 - avoidance /  72 / 100) : 1); // TODO: Add DR to Avoidance.
-  
-  // Special cases
+  const avoidanceDR = (spell.avoidance ? (1 - avoidance / 72 / 100) : 1); // TODO: Add DR to Avoidance.
 
+  // Special cases
+  if ('tag' in spell && spell.tag.includes("pure")) {
+    return 1;
+  }
 
   return defensiveDR * versDR * armorDR * avoidanceDR;
 
@@ -152,35 +156,35 @@ export default function OneShot(props) {
     spell.active = !spell.active;
     setDefensives([...defensives]);
     setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives));
-  
+
   }
 
   const updateDungeonSpellList = (dungeon) => {
     const dungeonName = encounterDB["-1"][dungeon]['name']['en'] // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
-  
-  
+
+
     spellList.forEach((spell) => {
       damageList.push(calcDamage(spell, defensives));
     })
-    
+
     console.log(dungeonName);
-  
+
     return damageList;
   }
-  
+
   const calcDamage = (spell) => {
-      
+
     const sumDamageReduction = calcDR(defensives, versatility, avoidance, stamina, armor, spell);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
-  
-    let spellData = {name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier};
+
+    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier };
     spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
     spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
-  
+
     console.log(spellData);
-  
+
     return spellData;
   }
 
@@ -245,36 +249,82 @@ export default function OneShot(props) {
                         </Grid>
 
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
-                    <Grid container spacing={1} alignItems="center">
-                      {/*<Grid item xs="auto">
+                          <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
+                            <Grid container spacing={1} alignItems="center">
+                              {/*<Grid item xs="auto">
                             <LooksOneIcon fontSize="large" />
                             </Grid> */}
 
-                        {defensives.map((spell, index) => (
-                          <Grid item xs="auto" key={index} >
-                            <OneShotSpellIcon
-                              spell={spell}
-                              iconType={"Spell"}
-                              draggable
-                              onClick={(e) => { activateSpell(e, spell) }}
-                              //style={{ display: "flex" }}
-                            />
-                          </Grid>
-                        ))}
-                      </Grid>
-                    </Paper>
-                  </Grid>
+                              {defensives.filter(d => d.defensiveType === "defensive").map((spell, index) => (
+                                <Grid item xs="auto" key={index} >
+                                  <OneShotSpellIcon
+                                    spell={spell}
+                                    iconType={"Spell"}
+                                    draggable
+                                    onClick={(e) => { activateSpell(e, spell) }}
+                                  //style={{ display: "flex" }}
+                                  />
+                                </Grid>
+                              ))}
+                            </Grid>
+                          </Paper>
+                        </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                           <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                             {"Externals"}
                           </Typography>
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                          <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
+                            <Grid container spacing={1} alignItems="center">
+                              {/*<Grid item xs="auto">
+                            <LooksOneIcon fontSize="large" />
+                            </Grid> */}
+
+                              {defensives.filter(d => d.defensiveType === "external").map((spell, index) => (
+                                <Grid item xs="auto" key={index} >
+                                  <OneShotSpellIcon
+                                    spell={spell}
+                                    iconType={"Spell"}
+                                    draggable
+                                    onClick={(e) => { activateSpell(e, spell) }}
+                                  //style={{ display: "flex" }}
+                                  />
+                                </Grid>
+                              ))}
+                            </Grid>
+                          </Paper>
+                        </Grid>
+
+
+                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                           <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                             {"Talents"}
                           </Typography>
                         </Grid>
+
+                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                          <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
+                            <Grid container spacing={1} alignItems="center">
+                              {/*<Grid item xs="auto">
+                            <LooksOneIcon fontSize="large" />
+                            </Grid> */}
+
+                              {defensives.filter(d => d.defensiveType === "talent").map((spell, index) => (
+                                <Grid item xs="auto" key={index} >
+                                  <OneShotSpellIcon
+                                    spell={spell}
+                                    iconType={"Spell"}
+                                    draggable
+                                    onClick={(e) => { activateSpell(e, spell) }}
+                                  //style={{ display: "flex" }}
+                                  />
+                                </Grid>
+                              ))}
+                            </Grid>
+                          </Paper>
+                        </Grid>
+
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                           <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                             {"Stats"}
@@ -282,7 +332,7 @@ export default function OneShot(props) {
                         </Grid>
                       </Grid>
                     </Grid>
-                    
+
                     <Grid item xs={7} sm={7} md={7} lg={7} xl={7}>
                       <OneShotDataTable data={enemySpellList} />
                     </Grid>
