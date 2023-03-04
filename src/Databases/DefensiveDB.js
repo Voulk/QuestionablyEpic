@@ -476,5 +476,4 @@ export const defensiveTalentsDB = [
     talent: true,
   },
 
-
 ];

@@ -161,20 +161,17 @@ export const externalsDB = [
     icon: require("Images/Classes/Evoker/ability_evoker_timedilation.jpg").default,
     cooldown: 60,
   },
-
   {
-    // name: {
-    //   en: "Fae Guardians",
-    //   fr: "Gardiens faë",
-    //   de: "Faewächter",
-    //   ru: "Волшебные стражи",
-    //   cn: "法夜守护者",
-    // },
-    // guid: 327661,
-    // icon: "ability_ardenweald_priest",
-    // duraton: 1,
-    // cooldown: 90,
-    // class: "Priest",
-    // cdPlannerMenuActive: false,
+    guid: 374227,
+    name: {
+      en: "Zephyr",
+    },
+    wowhead: "https://www.wowhead.com/spell=357170/time-dilation",
+    icon: require("Images/Classes/Evoker/ability_evoker_hoverblack.jpg").default,
+    reduction: 0.2,
+    type: "aoe",
+    external: true,
+    cooldown: 60,
   },
+
 ];

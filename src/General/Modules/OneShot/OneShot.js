@@ -6,6 +6,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import OneShotClassToggle from "./OneShotClassToggle";
 import { encounterDB } from "Databases/InstanceDB";
 import { defensiveDB, defensiveTalentsDB } from "Databases/DefensiveDB";
+import { externalsDB } from "Databases/ExternalsDB";
 import { enemySpellDB } from "./EnemySpellDB";
 import OneShotDataTable from "./OneShotDataTable";
 import OneShotDungeonToggle from "./OneShotDungeonToggle";
@@ -50,9 +51,9 @@ const getTalentDB = (dungeon) => { };
 
 const updateSpec = (specName) => {
   // TODO: Pull defensive list from spec / class data.
-  const defensiveList = ["Obsidian Scales", "Inherent Resistance"];
+  const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr"];
   const defensiveData = [];
-  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB);
+  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externalsDB);
 
   defensiveList.forEach(defensiveName => {
     const temp = combinedDefensiveDB.filter((defensive) => defensive.name.en === defensiveName);
@@ -61,7 +62,7 @@ const updateSpec = (specName) => {
       const data = temp[0];
       const defensiveType = data.talent ? "talent" : data.external ? "external" : "defensive";
 
-      defensiveData.push({ name: data.name.en, icon: data.icon, reduction: data.reduction || 0, active: false, defensiveType: defensiveType });
+      defensiveData.push({ name: data.name.en, icon: data.icon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType });
 
     }
     else {
@@ -82,10 +83,6 @@ export const getKeyMult = (keyLevel) => {
   return 1.08 ** 8 * 1.1 ** (keyLevel - 10);
 }
 
-export const convertArmorToDR = (armor) => {
-  let damageReduction = 1;
-
-}
 
 // Sources of damage reduction are multiplicative with each other.
 // That means if we have Barkskin (20%) and Ironbark (20%) active at the same time then
@@ -95,11 +92,17 @@ export const calcDefensives = (defensives, spell) => {
   let sumDR = 1;
 
   defensives.forEach((defensive) => {
-    if (defensive.active && (defensive.type === "all" || defensive.type === spell.type)) {
+    // Defensives can either work on all mechanics or a specific spell type.
+    // Magic-only defensive talents in particular are quite common.
+    // We also handle "AoE reduction" effects like Zephyr and Feint by checking if the spell is reduced by avoidance.
+    // Note that there are some rare mechanics that ignore defensives altogether (see 'pure' tag in EnemySpellDB).
+    const defensiveApplies = (defensive.type === "aoe" && spell.avoidance) || defensive.type === "All" || defensive.type === spell.damageType;
+
+    if (defensive.active && defensiveApplies) {
       sumDR *= (1 - defensive.reduction);
     }
   })
-  console.log(sumDR);
+
   return Math.max(sumDR, 0);
 }
 
@@ -169,8 +172,6 @@ export default function OneShot(props) {
       damageList.push(calcDamage(spell, defensives));
     })
 
-    console.log(dungeonName);
-
     return damageList;
   }
 
@@ -182,8 +183,6 @@ export default function OneShot(props) {
     let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier };
     spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
     spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
-
-    console.log(spellData);
 
     return spellData;
   }
@@ -299,7 +298,7 @@ export default function OneShot(props) {
 
                         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                           <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                            {"Talents"}
+                            {"Passive Talents"}
                           </Typography>
                         </Grid>
 
