@@ -6,12 +6,12 @@ import { Grid, ToggleButtonGroup, ToggleButton } from "@mui/material";
 export default function OneShotClassToggle(props) {
   const { setSelectedClass, selectedClass } = props;
   const classList = ["Evoker", "Druid", "Priest", "Shaman", "Monk", "Warrior", "DemonHunter", "DeathKnight", "Rogue", "Warlock", "Hunter", "Mage"];
-  const handleAlignment = (event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    setSelectedClass(newAlignment);
-  };
 
-  {
-  }
+  const handleAlignment = (event, newAlignment) => {
+    if (newAlignment !== null) {
+      setSelectedClass(newAlignment);
+    }
+  };
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>

@@ -1,14 +1,15 @@
 import * as React from "react";
 
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { Grid, ToggleButtonGroup, ToggleButton } from "@mui/material";
 import DungeonHeaderIcons from "../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
 
 export default function OneShotDungeonToggle(props) {
   const { selectedDungeon, setSelectedDungeon, dungeonList } = props;
 
-  const handleAlignment = (event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    setSelectedDungeon(newAlignment);
+  const handleAlignment = (event, newAlignment) => {
+    if (newAlignment !== null) {
+      setSelectedDungeon(newAlignment);
+    }
   };
 
   return (
