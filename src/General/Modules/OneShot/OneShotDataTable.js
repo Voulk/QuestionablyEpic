@@ -11,8 +11,10 @@ function createData(ability, tyrannical, fortified) {
   return { ability, tyrannical, fortified };
 }
 
-const data = [{name: "Deafening Screech(1)", tyrannical: 70000, fortified: 45000},
-              {name: "Deafening Screech(2)", tyrannical: 70000, fortified: 45000}]
+const data = [
+  { name: "Deafening Screech(1)", tyrannical: 70000, fortified: 45000 },
+  { name: "Deafening Screech(2)", tyrannical: 70000, fortified: 45000 },
+];
 
 //const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
 
@@ -29,10 +31,10 @@ const rows = [
 
 export default function OneShotDataTable(props) {
   const data = props.data;
-  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified))
+  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified));
 
   return (
-    <TableContainer component={Paper} elevation={0}>
+    <TableContainer component={Paper} elevation={0} sx={{ border: "1px solid rgba(255, 255, 255, 0.24)" }}>
       <Table sx={{}} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
