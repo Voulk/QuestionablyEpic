@@ -4,6 +4,24 @@ import { useTranslation } from "react-i18next";
 import { getTranslatedStats } from "locale/statsLocale.js";
 import { alpha, styled } from "@mui/material/styles";
 
+const QETextField = styled((props) => <TextField {...props} />)(({ theme }) => ({
+  "& .MuiFilledInput-root": {
+    border: "1px solid #e2e2e1",
+    overflow: "hidden",
+    borderRadius: 4,
+    backgroundColor: "#424242",
+    transition: theme.transitions.create(["border-color", "background-color", "box-shadow"]),
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+    "&.Mui-focused": {
+      backgroundColor: "transparent",
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
+      borderColor: theme.palette.primary.main,
+    },
+  },
+}));
+
 export default function OneShotStats(props) {
   const { setVersatility, setAvoidance, setStamina, setArmor, setAbsorb, versatility, avoidance, stamina, armor, absorb } = props;
   const { t, i18n } = useTranslation();
@@ -21,24 +39,6 @@ export default function OneShotStats(props) {
     pattern: "[0-9]*",
     disableUnderline: true,
   };
-
-  const QETextField = styled((props) => <TextField {...props} />)(({ theme }) => ({
-    "& .MuiFilledInput-root": {
-      border: "1px solid #e2e2e1",
-      overflow: "hidden",
-      borderRadius: 4,
-      backgroundColor: "#424242",
-      transition: theme.transitions.create(["border-color", "background-color", "box-shadow"]),
-      "&:hover": {
-        backgroundColor: "transparent",
-      },
-      "&.Mui-focused": {
-        backgroundColor: "transparent",
-        boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
-        borderColor: theme.palette.primary.main,
-      },
-    },
-  }));
 
   /* -------------------------------------------------------------------------- */
   /*              Stat Handlers (Sets the relevant stat on change)              */
@@ -65,7 +65,7 @@ export default function OneShotStats(props) {
       <Paper
         style={{
           border: "1px solid rgba(255, 255, 255, 0.24)",
-        //   backgroundColor: "#2c2c2c",
+          //   backgroundColor: "#2c2c2c",
 
           padding: "0px 8px 8px 8px",
         }}
