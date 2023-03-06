@@ -81,7 +81,7 @@ export default function OneShotStats(props) {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Grid container spacing={1}>
               {/* -------------------------------- Stamina -------------------------------  */}
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <QETextField
                   id="StaminaInput"
                   type="number"
@@ -99,7 +99,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* ----------------------------- Avoidance ----------------------------  */}
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <QETextField
                   id="AvoidanceInput"
                   label={getTranslatedStats("Avoidance", currentLanguage)}
@@ -116,7 +116,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* ---------------------------------- Armor ---------------------------------  */}
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <QETextField
                   id="HasteInput"
                   label={getTranslatedStats("Armor", currentLanguage)}
@@ -133,7 +133,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* --------------------------------- Absorb --------------------------------  */}
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <QETextField
                   id="AbsorbInput"
                   label={getTranslatedStats("Absorb", currentLanguage)}
@@ -150,7 +150,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* ------------------------------- Versatility ------------------------------  */}
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <QETextField
                   id="VersatilityInput"
                   label={getTranslatedStats("Versatility", currentLanguage)}

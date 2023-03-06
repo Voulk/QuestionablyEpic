@@ -12,6 +12,7 @@ import OneShotDataTable from "./OneShotDataTable";
 import OneShotDungeonToggle from "./OneShotDungeonToggle";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
 import OneShotStats from "./OneShotStats";
+import OneShotSlider from "./OneShotSlider";
 
 import "./OneShot.css";
 
@@ -143,6 +144,8 @@ export default function OneShot(props) {
   const [armor, setArmor] = React.useState(8000);
   const [absorb, setAbsorb] = React.useState(0);
 
+  const [sliderValue, setSliderValue] = React.useState(0);
+
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
     setDefensives([...defensives]);
@@ -201,203 +204,204 @@ export default function OneShot(props) {
                 //backgroundColor: "transparent"
               }}
             > */}
-              <Grid container spacing={1}>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper
-                    style={{
-                      border: "1px solid rgba(255, 255, 255, 0.24)",
-                      // backgroundColor: "#2c2c2c",
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Paper
+                  style={{
+                    border: "1px solid rgba(255, 255, 255, 0.24)",
+                    // backgroundColor: "#2c2c2c",
 
-                      padding: "0px 8px 8px 8px",
-                    }}
-                    elevation={0}
-                  >
-                    <Grid container spacing={0}>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                          {"Classes"}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Grid container spacing={1}>
-                          <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} />
-                        </Grid>
-                      </Grid>
+                    padding: "0px 8px 8px 8px",
+                  }}
+                  elevation={0}
+                >
+                  <Grid container spacing={0}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                        {"Classes"}
+                      </Typography>
                     </Grid>
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Paper
-                    style={{
-                      border: "1px solid rgba(255, 255, 255, 0.24)",
-                      // backgroundColor: "#2c2c2c",
-
-                      padding: "0px 8px 8px 8px",
-                    }}
-                    elevation={0}
-                  >
-                    <Grid container spacing={0}>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                          {"Dungeons"}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Grid container spacing={1}>
-                          <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Divider />
-                </Grid>
-
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Grid container spacing={1}>
-                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                          <Paper
-                            style={{
-                              border: "1px solid rgba(255, 255, 255, 0.24)",
-                              // backgroundColor: "#2c2c2c",
-
-                              padding: "0px 0px 0px 4px",
-                            }}
-                            elevation={0}
-                          >
-                            <Grid container spacing={0}>
-                              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                  {"Defensives"}
-                                </Typography>
-                              </Grid>
-
-                              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                <Grid container spacing={1} alignItems="center">
-                                  {defensives
-                                    .filter((d) => d.defensiveType === "defensive")
-                                    .map((spell, index) => (
-                                      <Grid item xs="auto" key={index}>
-                                        <OneShotSpellIcon
-                                          spell={spell}
-                                          iconType={"Spell"}
-                                          draggable
-                                          onClick={(e) => {
-                                            activateSpell(e, spell);
-                                          }}
-                                        />
-                                      </Grid>
-                                    ))}
-                                </Grid>
-                              </Grid>
-                            </Grid>
-                          </Paper>
-                        </Grid>
-
-                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                          <Paper
-                            style={{
-                              border: "1px solid rgba(255, 255, 255, 0.24)",
-                              // backgroundColor: "#2c2c2c",
-
-                              padding: "0px 0px 0px 4px",
-                            }}
-                            elevation={0}
-                          >
-                            <Grid container spacing={0}>
-                              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                  {"Externals"}
-                                </Typography>
-                              </Grid>
-
-                              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                <Grid container spacing={1} alignItems="center">
-                                  {defensives
-                                    .filter((d) => d.defensiveType === "external")
-                                    .map((spell, index) => (
-                                      <Grid item xs="auto" key={index}>
-                                        <OneShotSpellIcon
-                                          spell={spell}
-                                          iconType={"Spell"}
-                                          draggable
-                                          onClick={(e) => {
-                                            activateSpell(e, spell);
-                                          }}
-                                        />
-                                      </Grid>
-                                    ))}
-                                </Grid>
-                              </Grid>
-                            </Grid>
-                          </Paper>
-                        </Grid>
-
-                        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                          <Paper
-                            style={{
-                              border: "1px solid rgba(255, 255, 255, 0.24)",
-                              // backgroundColor: "#2c2c2c",
-
-                              padding: "0px 0px 0px 4px",
-                            }}
-                            elevation={0}
-                          >
-                            <Grid container spacing={0}>
-                              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                  {"Passive Talents"}
-                                </Typography>
-                              </Grid>
-
-                              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                                <Grid container spacing={1} alignItems="center">
-                                  {defensives
-                                    .filter((d) => d.defensiveType === "talent")
-                                    .map((spell, index) => (
-                                      <Grid item xs="auto" key={index}>
-                                        <OneShotSpellIcon
-                                          spell={spell}
-                                          iconType={"Spell"}
-                                          draggable
-                                          onClick={(e) => {
-                                            activateSpell(e, spell);
-                                          }}
-                                        />
-                                      </Grid>
-                                    ))}
-                                </Grid>
-                              </Grid>
-                            </Grid>
-                          </Paper>
-                        </Grid>
-
-                        <OneShotStats
-                          absorb={absorb}
-                          setAbsorb={setAbsorb}
-                          armor={armor}
-                          setArmor={setArmor}
-                          avoidance={avoidance}
-                          setAvoidance={setAvoidance}
-                          stamina={stamina}
-                          setStamina={setStamina}
-                          versatility={versatility}
-                          setVersatility={setVersatility}
-                        />
+                        <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} />
                       </Grid>
                     </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
 
-                    <Grid item xs={7} sm={7} md={7} lg={7} xl={7}>
-                      <OneShotDataTable data={enemySpellList} />
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Paper
+                  style={{
+                    border: "1px solid rgba(255, 255, 255, 0.24)",
+                    // backgroundColor: "#2c2c2c",
+
+                    padding: "0px 8px 8px 8px",
+                  }}
+                  elevation={0}
+                >
+                  <Grid container spacing={0}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                        {"Dungeons"}
+                      </Typography>
                     </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      <Grid container spacing={1}>
+                        <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              <OneShotStats
+                absorb={absorb}
+                setAbsorb={setAbsorb}
+                armor={armor}
+                setArmor={setArmor}
+                avoidance={avoidance}
+                setAvoidance={setAvoidance}
+                stamina={stamina}
+                setStamina={setStamina}
+                versatility={versatility}
+                setVersatility={setVersatility}
+              />
+
+              <OneShotSlider sliderValue={sliderValue} setSliderValue={setSliderValue} />
+
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Divider />
+              </Grid>
+
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Grid container spacing={1}>
+                  <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Paper
+                          style={{
+                            border: "1px solid rgba(255, 255, 255, 0.24)",
+                            // backgroundColor: "#2c2c2c",
+
+                            padding: "0px 0px 0px 4px",
+                          }}
+                          elevation={0}
+                        >
+                          <Grid container spacing={0}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                                {"Defensives"}
+                              </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Grid container spacing={1} alignItems="center">
+                                {defensives
+                                  .filter((d) => d.defensiveType === "defensive")
+                                  .map((spell, index) => (
+                                    <Grid item xs="auto" key={index}>
+                                      <OneShotSpellIcon
+                                        spell={spell}
+                                        iconType={"Spell"}
+                                        draggable
+                                        onClick={(e) => {
+                                          activateSpell(e, spell);
+                                        }}
+                                      />
+                                    </Grid>
+                                  ))}
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Paper>
+                      </Grid>
+
+                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Paper
+                          style={{
+                            border: "1px solid rgba(255, 255, 255, 0.24)",
+                            // backgroundColor: "#2c2c2c",
+
+                            padding: "0px 0px 0px 4px",
+                          }}
+                          elevation={0}
+                        >
+                          <Grid container spacing={0}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                                {"Externals"}
+                              </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Grid container spacing={1} alignItems="center">
+                                {defensives
+                                  .filter((d) => d.defensiveType === "external")
+                                  .map((spell, index) => (
+                                    <Grid item xs="auto" key={index}>
+                                      <OneShotSpellIcon
+                                        spell={spell}
+                                        iconType={"Spell"}
+                                        draggable
+                                        onClick={(e) => {
+                                          activateSpell(e, spell);
+                                        }}
+                                      />
+                                    </Grid>
+                                  ))}
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Paper>
+                      </Grid>
+
+                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Paper
+                          style={{
+                            border: "1px solid rgba(255, 255, 255, 0.24)",
+                            // backgroundColor: "#2c2c2c",
+
+                            padding: "0px 0px 0px 4px",
+                          }}
+                          elevation={0}
+                        >
+                          <Grid container spacing={0}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                                {"Passive Talents"}
+                              </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Grid container spacing={1} alignItems="center">
+                                {defensives
+                                  .filter((d) => d.defensiveType === "talent")
+                                  .map((spell, index) => (
+                                    <Grid item xs="auto" key={index}>
+                                      <OneShotSpellIcon
+                                        spell={spell}
+                                        iconType={"Spell"}
+                                        draggable
+                                        onClick={(e) => {
+                                          activateSpell(e, spell);
+                                        }}
+                                      />
+                                    </Grid>
+                                  ))}
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Paper>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item xs={7} sm={7} md={7} lg={7} xl={7}>
+                    <OneShotDataTable data={enemySpellList} />
                   </Grid>
                 </Grid>
               </Grid>
+            </Grid>
             {/* </Paper> */}
           </Grid>
         </Grid>
