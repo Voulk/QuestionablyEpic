@@ -33,7 +33,15 @@ export const enemySpellDB =
     }],
     "Ruby Life Pools": [],
     "The Azure Vault": [],
-    "The Nokhud Offensive": [],
+    "The Nokhud Offensive": [    {
+        "name": "Disruptive Shout",
+        "icon": "ability_warrior_battleshout",
+        "baseDamage": 44084,
+        "damageType": "Physical",
+        "school": "Physical",
+        "source": "Trash",
+        "avoidance": true, // Mention if explicitly tested.
+    }],
     "Court of Stars": [],
     "Halls of Valor": [],
     "Temple of the Jade Serpent": [

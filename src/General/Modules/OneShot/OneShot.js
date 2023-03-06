@@ -121,14 +121,15 @@ export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell
   // All of these are in percentage damage *taken* form. If you have 3% DR from vers then the variable should be 0.97 not 0.03.
   const defensiveDR = calcDefensives(defensives, spell);
   const versDR = 1 - versatility / 410 / 100;
-  const armorDR = spell.damageType === "Physical" && !("tags" in spell && spell.tags.includes("ignoreArmor")) ? calcArmor(armor) : 1;
+
+  const armorDR = (spell.damageType === "Physical" && !("tags" in spell && spell.tags.includes("ignoreArmor"))) ? calcArmor(armor) : 1;
   const avoidanceDR = spell.avoidance ? 1 - avoidance / 72 / 100 : 1; // TODO: Add DR to Avoidance.
 
   // Special cases
   if ("tag" in spell && spell.tag.includes("pure")) {
     return 1;
   }
-
+  //console.log("Vers DR: " + versDR + " Armor DR: " + armorDR + " AvoidanceDR " + avoidanceDR + " Defensive DR: " + defensiveDR)
   return defensiveDR * versDR * armorDR * avoidanceDR;
 };
 
@@ -148,38 +149,42 @@ export default function OneShot(props) {
   const [stamina, setStamina] = React.useState(16500);
   const [armor, setArmor] = React.useState(8000);
   const [absorb, setAbsorb] = React.useState(0);
-  const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16775)})
+  const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500)})
 
   const [sliderValue, setSliderValue] = React.useState(0);
 
   const updateStats = (statName, statValue) => {
     // TODO: We could add some extras here like checking if a stat is in a valid range.
-    console.log("Updating stat: ", statName, statValue)
-    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives));
-    setStats({...stats, [statName]: statValue})
+
+    const newStats = {...stats, [statName]: statValue};
+    newStats.health = calcHealth(newStats.stamina);
+    setStats(newStats)
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, newStats));
+    
     
   }
 
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
     setDefensives([...defensives]);
-    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives));
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats));
   };
 
-  const updateDungeonSpellList = (dungeon) => {
+  const updateDungeonSpellList = (dungeon, defensives, stats) => {
     const dungeonName = encounterDB["-1"][dungeon]["name"]["en"]; // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
 
     spellList.forEach((spell) => {
-      damageList.push(calcDamage(spell, defensives));
+      damageList.push(calcDamage(spell, defensives, stats));
     });
 
     return damageList;
   };
 
-  const calcDamage = (spell) => {
+  const calcDamage = (spell, defensives, stats) => {
     const sumDamageReduction = calcDR(defensives, stats.versatility, stats.avoidance, stats.stamina, armor, spell);
+    console.log("Sum DR: ", sumDamageReduction);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
     let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier };
@@ -192,11 +197,11 @@ export default function OneShot(props) {
   const updateSelectedDungeon = (dungeon) => {
     //updateDungeonSpellList(dungeon);
     setSelectedDungeon(dungeon);
-    setEnemySpellList(updateDungeonSpellList(dungeon));
+    setEnemySpellList(updateDungeonSpellList(dungeon, defensives, stats));
   };
 
   useEffect(() => {
-    setEnemySpellList(updateDungeonSpellList(selectedDungeon));
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats));
   }, []);
 
   return (
