@@ -14,6 +14,9 @@ const QETextField = styled((props) => <TextField {...props} />)(({ theme }) => (
     "&:hover": {
       backgroundColor: "transparent",
     },
+    "&.Mui-disabled": {
+      //borderColor: "grey",
+    },
     "&.Mui-focused": {
       backgroundColor: "transparent",
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
@@ -23,7 +26,7 @@ const QETextField = styled((props) => <TextField {...props} />)(({ theme }) => (
 }));
 
 export default function OneShotStats(props) {
-  const { setVersatility, setAvoidance, setStamina, setArmor, setAbsorb, versatility, avoidance, stamina, armor, absorb } = props;
+  const { stats, updateStats } = props;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -45,19 +48,24 @@ export default function OneShotStats(props) {
   /* -------------------------------------------------------------------------- */
 
   const handleVers = (event) => {
-    setVersatility(parseInt(parseFloat(event.target.value).toFixed(1)));
+    updateStats("versatility", parseInt(parseFloat(event.target.value).toFixed(1)));
+    //setVersatility(parseInt(parseFloat(event.target.value).toFixed(1)));
   };
   const handleStamina = (event) => {
-    setStamina(parseInt(parseFloat(event.target.value).toFixed(1)));
+    updateStats("stamina", parseInt(parseFloat(event.target.value).toFixed(1)));
+    //setStamina(parseInt(parseFloat(event.target.value).toFixed(1)));
   };
   const handleArmor = (event) => {
-    setArmor(parseInt(parseFloat(event.target.value).toFixed(1)));
+    updateStats("armor", parseInt(parseFloat(event.target.value).toFixed(1)));
+    //setArmor(parseInt(parseFloat(event.target.value).toFixed(1)));
   };
   const handleAvoidance = (event) => {
-    setAvoidance(parseInt(parseFloat(event.target.value).toFixed(1)));
+    updateStats("avoidance", parseInt(parseFloat(event.target.value).toFixed(1)));
+    //setAvoidance(parseInt(parseFloat(event.target.value).toFixed(1)));
   };
   const handleAbsorb = (event) => {
-    setAbsorb(parseInt(parseFloat(event.target.value).toFixed(1)));
+    updateStats("absorb", parseInt(parseFloat(event.target.value).toFixed(1)));
+    //setAbsorb(parseInt(parseFloat(event.target.value).toFixed(1)));
   };
 
   return (
@@ -81,7 +89,7 @@ export default function OneShotStats(props) {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Grid container spacing={1}>
               {/* -------------------------------- Stamina -------------------------------  */}
-              <Grid item xs={2}>
+              <Grid item xs={6}>
                 <QETextField
                   id="StaminaInput"
                   type="number"
@@ -90,7 +98,7 @@ export default function OneShotStats(props) {
                   style={{ textAlignLast: "center" }}
                   inputProps={inputProps}
                   InputProps={InputProps}
-                  value={stamina}
+                  value={stats.stamina}
                   onChange={handleStamina}
                   variant="filled"
                   size="small"
@@ -99,7 +107,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* ----------------------------- Avoidance ----------------------------  */}
-              <Grid item xs={2}>
+              <Grid item xs={6}>
                 <QETextField
                   id="AvoidanceInput"
                   label={getTranslatedStats("Avoidance", currentLanguage)}
@@ -108,7 +116,7 @@ export default function OneShotStats(props) {
                   InputProps={InputProps}
                   type="number"
                   fullWidth
-                  value={avoidance}
+                  value={stats.avoidance}
                   onChange={handleAvoidance}
                   variant="filled"
                   size="small"
@@ -116,7 +124,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* ---------------------------------- Armor ---------------------------------  */}
-              <Grid item xs={2}>
+              <Grid item xs={6}>
                 <QETextField
                   id="HasteInput"
                   label={getTranslatedStats("Armor", currentLanguage)}
@@ -124,7 +132,7 @@ export default function OneShotStats(props) {
                   inputProps={inputProps}
                   InputProps={InputProps}
                   type="number"
-                  value={armor}
+                  value={stats.armor}
                   onChange={handleArmor}
                   variant="filled"
                   size="small"
@@ -133,7 +141,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* --------------------------------- Absorb --------------------------------  */}
-              <Grid item xs={2}>
+              <Grid item xs={6}>
                 <QETextField
                   id="AbsorbInput"
                   label={getTranslatedStats("Absorb", currentLanguage)}
@@ -141,7 +149,7 @@ export default function OneShotStats(props) {
                   inputProps={inputProps}
                   InputProps={InputProps}
                   type="number"
-                  value={absorb}
+                  value={stats.absorb}
                   onChange={handleAbsorb}
                   variant="filled"
                   size="small"
@@ -150,7 +158,7 @@ export default function OneShotStats(props) {
               </Grid>
 
               {/* ------------------------------- Versatility ------------------------------  */}
-              <Grid item xs={2}>
+              <Grid item xs={6}>
                 <QETextField
                   id="VersatilityInput"
                   label={getTranslatedStats("Versatility", currentLanguage)}
@@ -158,11 +166,28 @@ export default function OneShotStats(props) {
                   inputProps={inputProps}
                   InputProps={InputProps}
                   type="number"
-                  value={versatility}
+                  value={stats.versatility}
                   onChange={handleVers}
                   variant="filled"
                   size="small"
                   fullWidth
+                />
+              </Grid>
+              {/* ------------------------------- Health ------------------------------  */}
+              <Grid item xs={6}>
+                <QETextField
+                  id="HealthInput"
+                  label={"Effective Health"}
+                  style={{ textAlignLast: "center"}}
+                  inputProps={inputProps}
+                  InputProps={InputProps}
+                  type="number"
+                  value={0}
+                  //onChange={handleVers}
+                  variant="filled"
+                  size="small"
+                  fullWidth
+                  disabled
                 />
               </Grid>
             </Grid>

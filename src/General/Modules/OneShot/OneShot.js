@@ -99,6 +99,11 @@ export const calcDefensives = (defensives, spell) => {
   return Math.max(sumDR, 0);
 };
 
+export const calcHealth = (stamina) => {
+  return stamina * 20;
+
+}
+
 // The formula for Armor -> Damage reduction is Armor / (Armor + K). The K value changes depending on what you're fighting and from patch to patch.
 // We're only really interested in Mythic+ right now so the K value below is for that. Trash and bosses are identical.
 // If we expand to include boss mechanics (possible) then we'll need to add a K value for Mythic difficulty.
@@ -143,8 +148,17 @@ export default function OneShot(props) {
   const [stamina, setStamina] = React.useState(16500);
   const [armor, setArmor] = React.useState(8000);
   const [absorb, setAbsorb] = React.useState(0);
+  const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0})
 
   const [sliderValue, setSliderValue] = React.useState(0);
+
+  const updateStats = (statName, statValue) => {
+    // TODO: We could add some extras here like checking if a stat is in a valid range.
+    console.log("Updating stat: ", statName, statValue)
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives));
+    setStats({...stats, [statName]: statValue})
+    
+  }
 
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
@@ -165,7 +179,7 @@ export default function OneShot(props) {
   };
 
   const calcDamage = (spell) => {
-    const sumDamageReduction = calcDR(defensives, versatility, avoidance, stamina, armor, spell);
+    const sumDamageReduction = calcDR(defensives, stats.versatility, stats.avoidance, stats.stamina, armor, spell);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
     let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier };
@@ -254,18 +268,7 @@ export default function OneShot(props) {
                   </Grid>
                 </Paper>
               </Grid>
-              <OneShotStats
-                absorb={absorb}
-                setAbsorb={setAbsorb}
-                armor={armor}
-                setArmor={setArmor}
-                avoidance={avoidance}
-                setAvoidance={setAvoidance}
-                stamina={stamina}
-                setStamina={setStamina}
-                versatility={versatility}
-                setVersatility={setVersatility}
-              />
+
 
               <OneShotSlider sliderValue={sliderValue} setSliderValue={setSliderValue} />
 
@@ -277,6 +280,10 @@ export default function OneShot(props) {
                 <Grid container spacing={1}>
                   <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
                     <Grid container spacing={1}>
+                    <OneShotStats
+                      stats={stats}
+                      updateStats={updateStats}
+                    />
                       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Paper
                           style={{
