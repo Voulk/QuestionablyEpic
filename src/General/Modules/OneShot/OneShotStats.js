@@ -182,7 +182,7 @@ export default function OneShotStats(props) {
                   inputProps={inputProps}
                   InputProps={InputProps}
                   type="number"
-                  value={0}
+                  value={stats.health}
                   //onChange={handleVers}
                   variant="filled"
                   size="small"

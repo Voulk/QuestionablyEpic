@@ -148,7 +148,7 @@ export default function OneShot(props) {
   const [stamina, setStamina] = React.useState(16500);
   const [armor, setArmor] = React.useState(8000);
   const [absorb, setAbsorb] = React.useState(0);
-  const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0})
+  const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16775)})
 
   const [sliderValue, setSliderValue] = React.useState(0);
 
@@ -203,11 +203,6 @@ export default function OneShot(props) {
     <div style={{ backgroundColor: "#313131" }}>
       <div className={classes.root}>
         <Grid container spacing={1}>
-          <Grid item xs={12}>
-            <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-              {t("OneShot.Title")}
-            </Typography>
-          </Grid>
           <Grid item xs={12}>
             {/* <Paper
               padding={0}

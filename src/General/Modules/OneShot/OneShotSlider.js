@@ -14,7 +14,7 @@ export default function OneShotSlider(props) {
   const marks = [];
 
   // loop 30 times and push a new object into the array each time
-  for (let i = 1; i < 31; i++) {
+  for (let i = 10; i < 31; i++) {
     marks.push({
       value: i,
       label: i,
@@ -44,12 +44,12 @@ export default function OneShotSlider(props) {
                 value={sliderValue}
                 onChange={handleChange}
                 aria-label="dungeonLevel"
-                defaultValue={0}
+                defaultValue={20}
                 getAriaValueText={valuetext}
                 valueLabelDisplay="off"
                 step={1}
                 marks={marks}
-                min={1}
+                min={10}
                 max={30}
               />
             </Box>
