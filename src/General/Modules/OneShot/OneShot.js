@@ -5,7 +5,7 @@ import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@m
 import makeStyles from "@mui/styles/makeStyles";
 import OneShotClassToggle from "./OneShotClassToggle";
 import { encounterDB } from "Databases/InstanceDB";
-import { defensiveDB, defensiveTalentsDB } from "Databases/DefensiveDB";
+import { defensiveDB, defensiveTalentsDB, raidBuffsDB } from "Databases/DefensiveDB";
 import { externalsDB } from "Databases/ExternalsDB";
 import { enemySpellDB } from "./EnemySpellDB";
 import OneShotDataTable from "./OneShotDataTable";
@@ -52,15 +52,15 @@ const getTalentDB = (dungeon) => {};
 
 const updateSpec = (specName) => {
   // TODO: Pull defensive list from spec / class data.
-  const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr"];
+  const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura"];
   const defensiveData = [];
-  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externalsDB);
+  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externalsDB).concat(raidBuffsDB);
 
   defensiveList.forEach((defensiveName) => {
     const temp = combinedDefensiveDB.filter((defensive) => defensive.name.en === defensiveName);
     if (temp.length > 0) {
       const data = temp[0];
-      const defensiveType = data.talent ? "talent" : data.external ? "external" : "defensive";
+      const defensiveType = data.talent ? "talent" : data.external ? "external" : data.raidBuff ? "raidBuff" : "defensive";
 
       defensiveData.push({ name: data.name.en, icon: data.icon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType });
     } else {
@@ -141,14 +141,9 @@ export default function OneShot(props) {
   const [selectedClass, setSelectedClass] = React.useState("Evoker");
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
   const [enemySpellList, setEnemySpellList] = React.useState([]);
-  const [keyLevel, setKeyLevel] = React.useState(20);
+  const [keyLevel, setKeyLevel] = React.useState(24);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass));
 
-  const [versatility, setVersatility] = React.useState(2000); // 241585
-  const [avoidance, setAvoidance] = React.useState(0);
-  const [stamina, setStamina] = React.useState(16500);
-  const [armor, setArmor] = React.useState(8000);
-  const [absorb, setAbsorb] = React.useState(0);
   const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500)})
 
   const [sliderValue, setSliderValue] = React.useState(0);
@@ -183,7 +178,7 @@ export default function OneShot(props) {
   };
 
   const calcDamage = (spell, defensives, stats) => {
-    const sumDamageReduction = calcDR(defensives, stats.versatility, stats.avoidance, stats.stamina, armor, spell);
+    const sumDamageReduction = calcDR(defensives, stats.versatility, stats.avoidance, stats.stamina, stats.armor, spell);
     console.log("Sum DR: ", sumDamageReduction);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
@@ -383,6 +378,44 @@ export default function OneShot(props) {
                               <Grid container spacing={1} alignItems="center">
                                 {defensives
                                   .filter((d) => d.defensiveType === "talent")
+                                  .map((spell, index) => (
+                                    <Grid item xs="auto" key={index}>
+                                      <OneShotSpellIcon
+                                        spell={spell}
+                                        iconType={"Spell"}
+                                        draggable
+                                        onClick={(e) => {
+                                          activateSpell(e, spell);
+                                        }}
+                                      />
+                                    </Grid>
+                                  ))}
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Paper>
+                      </Grid>
+                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Paper
+                          style={{
+                            border: "1px solid rgba(255, 255, 255, 0.24)",
+                            // backgroundColor: "#2c2c2c",
+
+                            padding: "0px 0px 0px 4px",
+                          }}
+                          elevation={0}
+                        >
+                          <Grid container spacing={0}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                                {"Group Buffs"}
+                              </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                              <Grid container spacing={1} alignItems="center">
+                                {defensives
+                                  .filter((d) => d.defensiveType === "raidBuff")
                                   .map((spell, index) => (
                                     <Grid item xs="auto" key={index}>
                                       <OneShotSpellIcon

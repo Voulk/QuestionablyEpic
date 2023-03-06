@@ -477,3 +477,19 @@ export const defensiveTalentsDB = [
   },
 
 ];
+
+// Devotion Aura, Mark of the Wild, Power Word: Fortitude, Generous Pour, 
+export const raidBuffsDB = [
+  {
+    name: {
+      en: "Devotion Aura",
+    },
+    guid: 465,
+    icon: require("Images/Classes/Paladin/spell_holy_devotionaura.jpg").default,
+    class: "Paladin",
+    reduction: 0.03,
+    type: "All", // The type of damage the DR applies to.
+    raidBuff: true,
+  },
+
+];
