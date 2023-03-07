@@ -159,8 +159,6 @@ export default function OneShot(props) {
 
   const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500) });
 
-  const [sliderValue, setSliderValue] = React.useState(0);
-
   const spellArray = [
     { label: "Defensives", type: "defensive" },
     { label: "Externals", type: "external" },
@@ -176,6 +174,11 @@ export default function OneShot(props) {
     setStats(newStats);
     setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, newStats));
   };
+
+  const updateKeyLevel = (newKeyLevel) => {
+    setKeyLevel(newKeyLevel);
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats));
+  }
 
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
@@ -227,7 +230,7 @@ export default function OneShot(props) {
 
               <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
 
-              <OneShotSlider sliderValue={sliderValue} setSliderValue={setSliderValue} />
+              <OneShotSlider sliderValue={keyLevel} setSliderValue={updateKeyLevel} />
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Divider />
