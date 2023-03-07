@@ -8,18 +8,18 @@ export default function OneShotClassToggle(props) {
   // const classList = ["Evoker", "Druid", "Priest", "Shaman", "Monk", "Warrior", "DemonHunter", "DeathKnight", "Rogue", "Warlock", "Hunter", "Mage"];
 
   const newClassList = [
-    { Class: "Evoker", specs: ["preservation evoker", "devastation evoker"] },
-    { Class: "Druid", specs: ["restoration druid", "balance druid", "feral druid", "guardian druid"] },
-    { Class: "Priest", specs: ["discipline priest", "holy priest", "shadow priest"] },
-    { Class: "Shaman", specs: ["restoration shaman", "enhancement shaman", "elemental shaman"] },
-    { Class: "Monk", specs: ["mistweaver monk", "windwalker monk", "brewmaster monk"] },
-    { Class: "Warrior", specs: ["protection warrior", "arms warrior", "fury warrior"] },
-    { Class: "DemonHunter", specs: ["havoc demonHunter", "vengeance demonHunter"] },
-    { Class: "DeathKnight", specs: ["unholy deathknight", "frost deathknight", "blood deathknight"] },
-    { Class: "Rogue", specs: ["assassination rogue", "outlaw rogue", "subtlety rogue"] },
-    { Class: "Warlock", specs: ["affliction warlock", "demonology warlock", "destruction warlock"] },
-    { Class: "Hunter", specs: ["beastmastery hunter", "marksmanship hunter", "survival hunter"] },
-    { Class: "Mage", specs: ["arcane mage", "fire mage", "frost mage"] },
+    { Class: "evoker", specs: ["preservation", "devastation"] },
+    { Class: "druid", specs: ["restoration", "balance", "feral", "guardian"] },
+    { Class: "priest", specs: ["discipline", "holy", "shadow"] },
+    { Class: "shaman", specs: ["restoration", "enhancement", "elemental"] },
+    { Class: "monk", specs: ["mistweaver", "windwalker", "brewmaster"] },
+    { Class: "warrior", specs: ["protection", "arms", "fury"] },
+    { Class: "demonhunter", specs: ["havoc", "vengeance"] },
+    { Class: "deathknight", specs: ["unholy", "frost", "blood"] },
+    { Class: "rogue", specs: ["assassination", "outlaw", "subtlety"] },
+    { Class: "warlock", specs: ["affliction", "demonology", "destruction"] },
+    { Class: "hunter", specs: ["beastmastery", "marksmanship", "survival"] },
+    { Class: "mage", specs: ["arcane", "fire", "frost"] },
   ];
 
   const handleAlignment = (event, newAlignment) => {
@@ -72,7 +72,7 @@ export default function OneShotClassToggle(props) {
                 <ToggleButtonGroup value={selectedSpec} exclusive onChange={handleSpecAlignment} aria-label="text alignment" fullWidth>
                   {specs.map((key) => (
                     <ToggleButton value={key} aria-label={key} style={{ padding: 8 }}>
-                      {classIcons(key, { maxHeight: 36 })}
+                      {classIcons((key + "" + selectedClass), { maxHeight: 36 })}
                     </ToggleButton>
                   ))}
                 </ToggleButtonGroup>
