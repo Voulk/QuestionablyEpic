@@ -55,8 +55,8 @@ const getDefensiveList = (className, specName) => {
   if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]["defensives"]);
   let passives = specData[className]["passives"]//.concat(specData[specName + " " + className]["passives"]);
   if (specData[specName + " " + className]['passives']) passives = passives.concat(specData[specName + " " + className]["passives"]);
-  const externals = externalsDB.map(a => a.name.en)//["Zephyr"];
-  const groupBuffs = ["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
+  const externals = externalsDB.filter(a => a.include).map(a => a.name.en)//["Zephyr"];
+  const groupBuffs = raidBuffsDB.map(a => a.name.en)//["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
   
   return onUseDefensives.concat(externals).concat(groupBuffs).concat(passives);
 };

@@ -545,5 +545,16 @@ export const raidBuffsDB = [
     reduction: 0,
     raidBuff: true,
   },
+  {
+    name: {
+      en: "Generous Pour",
+    },
+    guid: 389575,
+    //icon: require("Images/Classes/Druid/spell_nature_regeneration.jpg").default,
+    autoIcon: "inv_misc_food_legion_goocaramel_bottle",
+    class: "Monk",
+    reduction: 0,
+    raidBuff: true,
+  },
 
 ];

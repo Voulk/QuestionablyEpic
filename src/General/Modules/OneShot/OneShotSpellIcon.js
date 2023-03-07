@@ -16,7 +16,6 @@ export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = "", .
   icon = icon.replace('.jpg', '').replace(/-/g, '');
   const baseURL = `https://render-us.worldofwarcraft.com/icons/56`;
   let fullURL = `${baseURL}/${icon}.jpg`
-  console.log(fullURL);
 
   if (newIconList.includes(spellId)) {
     // This is a temporary icon override since Evoker spells aren't in the WoW render DB yet.
