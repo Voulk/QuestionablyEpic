@@ -14,6 +14,7 @@ import { OneShotSpellIcon } from "./OneShotSpellIcon";
 import OneShotStats from "./OneShotStats";
 import OneShotSlider from "./OneShotSlider";
 import { specData } from "./ClassData";
+import OneShotSpellSelection from "./OneShotSpellSelection";
 
 import "./OneShot.css";
 
@@ -50,18 +51,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getDefensiveList = (className, specName) => {
-  const onUseDefensives = specData[className]['defensives'].concat(specData[specName + " " + className]['defensives']);
+  const onUseDefensives = specData[className]["defensives"].concat(specData[specName + " " + className]["defensives"]);
   //if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]['defensives']);
-  const passives = specData[className]['passives'].concat(specData[specName + " " + className]['passives']);
+  const passives = specData[className]["passives"].concat(specData[specName + " " + className]["passives"]);
   const externals = ["Zephyr"];
   const groupBuffs = ["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
 
   return onUseDefensives.concat(externals).concat(groupBuffs).concat(passives);
-
 };
 
 const updateSpec = (className, specName) => {
-
   //const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
   const defensiveList = getDefensiveList(className, specName);
   const defensiveData = [];
@@ -73,7 +72,7 @@ const updateSpec = (className, specName) => {
       const data = temp[0];
       const defensiveType = data.talent ? "talent" : data.external ? "external" : data.raidBuff ? "raidBuff" : "defensive";
 
-      defensiveData.push({ name: data.name.en, icon: data.icon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType });
+      defensiveData.push({ name: data.name.en, icon: data.icon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType, guid: data.guid });
     } else {
       console.error("Can't find defensive: ", defensiveName);
     }
@@ -112,8 +111,7 @@ export const calcDefensives = (defensives, spell) => {
 
 export const calcHealth = (stamina) => {
   return stamina * 20;
-
-}
+};
 
 // The formula for Armor -> Damage reduction is Armor / (Armor + K). The K value changes depending on what you're fighting and from patch to patch.
 // We're only really interested in Mythic+ right now so the K value below is for that. Trash and bosses are identical.
@@ -133,7 +131,7 @@ export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell
   const defensiveDR = calcDefensives(defensives, spell);
   const versDR = 1 - versatility / 410 / 100;
 
-  const armorDR = (spell.damageType === "Physical" && !("tags" in spell && spell.tags.includes("ignoreArmor"))) ? calcArmor(armor) : 1;
+  const armorDR = spell.damageType === "Physical" && !("tags" in spell && spell.tags.includes("ignoreArmor")) ? calcArmor(armor) : 1;
   const avoidanceDR = spell.avoidance ? 1 - avoidance / 72 / 100 : 1; // TODO: Add DR to Avoidance.
 
   // Special cases
@@ -156,20 +154,25 @@ export default function OneShot(props) {
   const [keyLevel, setKeyLevel] = React.useState(24);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
 
-  const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500)})
+  const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500) });
 
   const [sliderValue, setSliderValue] = React.useState(0);
+
+  const spellArray = [
+    { label: "Defensives", type: "defensive" },
+    { label: "Externals", type: "external" },
+    { label: "Passive Talents", type: "talent" },
+    { label: "Group Buffs", type: "raidBuff" },
+  ];
 
   const updateStats = (statName, statValue) => {
     // TODO: We could add some extras here like checking if a stat is in a valid range.
 
-    const newStats = {...stats, [statName]: statValue};
+    const newStats = { ...stats, [statName]: statValue };
     newStats.health = calcHealth(newStats.stamina);
-    setStats(newStats)
+    setStats(newStats);
     setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, newStats));
-    
-    
-  }
+  };
 
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
@@ -194,7 +197,7 @@ export default function OneShot(props) {
     console.log("Sum DR: ", sumDamageReduction);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
-    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier };
+    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID };
     spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
     spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
 
@@ -216,66 +219,10 @@ export default function OneShot(props) {
       <div className={classes.root}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
-            {/* <Paper
-              padding={0}
-              elevation={0}
-              style={{
-                padding: "10px 5px 10px 10px",
-                opacity: 100,
-                //backgroundColor: "transparent"
-              }}
-            > */}
             <Grid container spacing={1}>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Paper
-                  style={{
-                    border: "1px solid rgba(255, 255, 255, 0.24)",
-                    // backgroundColor: "#2c2c2c",
+              <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} selectedSpec={selectedSpec} setSelectedSpec={setSelectedSpec} />
 
-                    padding: "0px 8px 8px 8px",
-                  }}
-                  elevation={0}
-                >
-                  <Grid container spacing={0}>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Classes"}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Grid container spacing={1}>
-                        <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} />
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Paper
-                  style={{
-                    border: "1px solid rgba(255, 255, 255, 0.24)",
-                    // backgroundColor: "#2c2c2c",
-
-                    padding: "0px 8px 8px 8px",
-                  }}
-                  elevation={0}
-                >
-                  <Grid container spacing={0}>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Dungeons"}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Grid container spacing={1}>
-                        <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
-
+              <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
 
               <OneShotSlider sliderValue={sliderValue} setSliderValue={setSliderValue} />
 
@@ -287,164 +234,13 @@ export default function OneShot(props) {
                 <Grid container spacing={1}>
                   <Grid item xs={5} sm={5} md={5} lg={5} xl={5}>
                     <Grid container spacing={1}>
-                    <OneShotStats
-                      stats={stats}
-                      updateStats={updateStats}
-                    />
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Paper
-                          style={{
-                            border: "1px solid rgba(255, 255, 255, 0.24)",
-                            // backgroundColor: "#2c2c2c",
+                      {/* Stats Textfields Box */}
+                      <OneShotStats stats={stats} updateStats={updateStats} />
 
-                            padding: "0px 0px 0px 4px",
-                          }}
-                          elevation={0}
-                        >
-                          <Grid container spacing={0}>
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                {"Defensives"}
-                              </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Grid container spacing={1} alignItems="center">
-                                {defensives
-                                  .filter((d) => d.defensiveType === "defensive")
-                                  .map((spell, index) => (
-                                    <Grid item xs="auto" key={index}>
-                                      <OneShotSpellIcon
-                                        spell={spell}
-                                        iconType={"Spell"}
-                                        draggable
-                                        onClick={(e) => {
-                                          activateSpell(e, spell);
-                                        }}
-                                      />
-                                    </Grid>
-                                  ))}
-                              </Grid>
-                            </Grid>
-                          </Grid>
-                        </Paper>
-                      </Grid>
-
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Paper
-                          style={{
-                            border: "1px solid rgba(255, 255, 255, 0.24)",
-                            // backgroundColor: "#2c2c2c",
-
-                            padding: "0px 0px 0px 4px",
-                          }}
-                          elevation={0}
-                        >
-                          <Grid container spacing={0}>
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                {"Externals"}
-                              </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Grid container spacing={1} alignItems="center">
-                                {defensives
-                                  .filter((d) => d.defensiveType === "external")
-                                  .map((spell, index) => (
-                                    <Grid item xs="auto" key={index}>
-                                      <OneShotSpellIcon
-                                        spell={spell}
-                                        iconType={"Spell"}
-                                        draggable
-                                        onClick={(e) => {
-                                          activateSpell(e, spell);
-                                        }}
-                                      />
-                                    </Grid>
-                                  ))}
-                              </Grid>
-                            </Grid>
-                          </Grid>
-                        </Paper>
-                      </Grid>
-
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Paper
-                          style={{
-                            border: "1px solid rgba(255, 255, 255, 0.24)",
-                            // backgroundColor: "#2c2c2c",
-
-                            padding: "0px 0px 0px 4px",
-                          }}
-                          elevation={0}
-                        >
-                          <Grid container spacing={0}>
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                {"Passive Talents"}
-                              </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Grid container spacing={1} alignItems="center">
-                                {defensives
-                                  .filter((d) => d.defensiveType === "talent")
-                                  .map((spell, index) => (
-                                    <Grid item xs="auto" key={index}>
-                                      <OneShotSpellIcon
-                                        spell={spell}
-                                        iconType={"Spell"}
-                                        draggable
-                                        onClick={(e) => {
-                                          activateSpell(e, spell);
-                                        }}
-                                      />
-                                    </Grid>
-                                  ))}
-                              </Grid>
-                            </Grid>
-                          </Grid>
-                        </Paper>
-                      </Grid>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <Paper
-                          style={{
-                            border: "1px solid rgba(255, 255, 255, 0.24)",
-                            // backgroundColor: "#2c2c2c",
-
-                            padding: "0px 0px 0px 4px",
-                          }}
-                          elevation={0}
-                        >
-                          <Grid container spacing={0}>
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                                {"Group Buffs"}
-                              </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                              <Grid container spacing={1} alignItems="center">
-                                {defensives
-                                  .filter((d) => d.defensiveType === "raidBuff")
-                                  .map((spell, index) => (
-                                    <Grid item xs="auto" key={index}>
-                                      <OneShotSpellIcon
-                                        spell={spell}
-                                        iconType={"Spell"}
-                                        draggable
-                                        onClick={(e) => {
-                                          activateSpell(e, spell);
-                                        }}
-                                      />
-                                    </Grid>
-                                  ))}
-                              </Grid>
-                            </Grid>
-                          </Grid>
-                        </Paper>
-                      </Grid>
+                      {/* Map Spell Selection Boxes */}
+                      {spellArray.map((key) => (
+                        <OneShotSpellSelection defensives={defensives} activateSpell={activateSpell} label={key.label} defensiveType={key.type} />
+                      ))}
                     </Grid>
                   </Grid>
 
@@ -454,7 +250,6 @@ export default function OneShot(props) {
                 </Grid>
               </Grid>
             </Grid>
-            {/* </Paper> */}
           </Grid>
         </Grid>
       </div>

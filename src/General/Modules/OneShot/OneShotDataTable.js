@@ -6,32 +6,18 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useTranslation } from "react-i18next";
 
-function createData(ability, tyrannical, fortified) {
-  return { ability, tyrannical, fortified };
+function createData(ability, tyrannical, fortified, spellID) {
+  return { ability, tyrannical, fortified, spellID };
 }
 
-const data = [
-  { name: "Deafening Screech(1)", tyrannical: 70000, fortified: 45000 },
-  { name: "Deafening Screech(2)", tyrannical: 70000, fortified: 45000 },
-];
-
-//const rows = data.map((row) => createData(row.name, row.tyranical, row.fortified))
-
-/*
-const rows = [
-
-
-  createData("Deafening Screech(1)", 70000, 45000),
-  createData("Deafening Screech(2)", 70000, 45000),
-  createData("Deafening Screech(3)", 70000, 45000),
-  createData("Deafening Screech(4)", 70000, 45000),
-  createData("Deafening Screech(5)", 70000, 45000),
-]; */
-
 export default function OneShotDataTable(props) {
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
   const data = props.data;
-  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified));
+  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID));
 
   return (
     <TableContainer component={Paper} elevation={0} sx={{ border: "1px solid rgba(255, 255, 255, 0.24)" }}>
@@ -47,7 +33,7 @@ export default function OneShotDataTable(props) {
           {rows.map((row) => (
             <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
               <TableCell component="th" scope="row">
-                {row.ability}
+                <a data-wowhead={"spell=" + row.spellID + "&domain=" + currentLanguage}>{row.ability}</a>
               </TableCell>
               <TableCell align="right">{row.tyrannical}</TableCell>
               <TableCell align="right">{row.fortified}</TableCell>

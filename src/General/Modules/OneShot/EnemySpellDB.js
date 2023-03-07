@@ -12,6 +12,7 @@ export const enemySpellDB =
         "school": "Nature",
         "source": "Boss",
         "avoidance": true, // Mention if explicitly tested.
+        "spellID": 377004
     },
     {
         "name": "Defeaning Screech (4)",
@@ -21,6 +22,7 @@ export const enemySpellDB =
         "school": "Nature",
         "source": "Boss",
         "avoidance": true, // Mention if explicitly tested.
+        "spellID": 377004
     },
     {
         "name": "Defeaning Screech (5)",
@@ -30,6 +32,7 @@ export const enemySpellDB =
         "school": "Nature",
         "source": "Boss",
         "avoidance": true, // Mention if explicitly tested.
+        "spellID": 377004
     }],
     "Ruby Life Pools": [],
     "The Azure Vault": [],
@@ -41,6 +44,7 @@ export const enemySpellDB =
         "school": "Physical",
         "source": "Trash",
         "avoidance": true, // Mention if explicitly tested.
+        "spellID": 384365 
     }],
     "Court of Stars": [
         {
@@ -53,6 +57,7 @@ export const enemySpellDB =
             "sourceName": "Advisor Melandrus",
             "avoidance": true,
             "tags": "ignoreArmor",
+            "spellID": 209676  
         },
         {
             "name": "Slicing Maelstrom (Tick, 4 Clones)",
@@ -64,6 +69,7 @@ export const enemySpellDB =
             "sourceName": "Advisor Melandrus",
             "avoidance": true,
             "tags": "ignoreArmor",
+            "spellID": 209676  
         },
         {
             "name": "Slicing Maelstrom (Tick, 5 Clones)",
@@ -75,6 +81,7 @@ export const enemySpellDB =
             "sourceName": "Advisor Melandrus",
             "avoidance": true,
             "tags": "ignoreArmor",
+            "spellID": 209676  
         },
         {
             "name": "Fel Detonation (Direct Damage)",
@@ -85,6 +92,7 @@ export const enemySpellDB =
             "source": "Trash",
             "sourceName": "Felbound Enforcer",
             "avoidance": true,
+            "spellID": 211464
         },
         {
             "name": "Fel Detonation (DoT, Tick)",
@@ -95,6 +103,7 @@ export const enemySpellDB =
             "source": "Trash",
             "sourceName": "Felbound Enforcer",
             "avoidance": true,
+            "spellID": 211464
         },
     ],
     "Halls of Valor": [
@@ -107,7 +116,8 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Hymdall",
             "avoidance": true,
-            "tags": "ignoreArmor"
+            "tags": "ignoreArmor",
+            "spellID": 191284
         },
         {
             "name": "Arcing Bolt",
@@ -118,6 +128,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Hyrja",
             "avoidance": false,
+            "spellID": 191976
         },
         {
             "name": "Eye of the Storm (Tick)",
@@ -128,6 +139,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Hyrja",
             "avoidance": true,
+            "spellID": 200901
         },
         {
             "name": "Eye of the Storm (Total)",
@@ -138,6 +150,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Hyrja",
             "avoidance": true,
+            "spellID": 200901
         },
         {
             "name": "Claw Frenzy (Correctly Split)",
@@ -149,6 +162,7 @@ export const enemySpellDB =
             "sourceName": "Fenryr",
             "tags": "ignoreArmor",
             "avoidance": true,
+            "spellID": 196512
         },
         {
             "name": "Claw Frenzy (4 Soakers)",
@@ -160,6 +174,7 @@ export const enemySpellDB =
             "sourceName": "Fenryr",
             "tags": "ignoreArmor",
             "avoidance": true,
+            "spellID": 196512
         },
         {
             "name": "Thunderous Bolt",
@@ -170,6 +185,7 @@ export const enemySpellDB =
             "source": "Trash",
             "sourceName": "Trash",
             "avoidance": false,
+            "spellID": 198595
         },
         {
             "name": "Valkyra's Advance",
@@ -181,6 +197,7 @@ export const enemySpellDB =
             "sourceName": "Trash",
             "avoidance": false,
             "tags": "ignoreArmor",
+            "spellID": 199033
         },
     ],
     "Temple of the Jade Serpent": [
@@ -193,6 +210,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Wise Mari",
             "avoidance": false,
+            "spellID": 397801
         },
         {
             "name": "Jade Serpent Strike (Absorb)",
@@ -204,6 +222,7 @@ export const enemySpellDB =
             "sourceName": "Liu Flameheart",
             "avoidance": false,
             "tag": "pure",
+            "spellID": 106841
         },
         {
             "name": "Touch of Nothingness (Tick)",
@@ -214,6 +233,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Sha of Doubt",
             "avoidance": false,
+            "spellID": 106113
         },
         {
             "name": "Touch of Ruin (Absorb)",
@@ -225,6 +245,7 @@ export const enemySpellDB =
             "sourceName": "Trash",
             "avoidance": false,
             "tag": "pure",
+            "spellID": 397911
         },
     ],
     "Shadowmoon Burial Grounds": [
@@ -237,6 +258,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Sadana Bloodfury",
             "avoidance": false,
+            "spellID": 153093
         },
         {
             "name": "Whispers of the Dark Star (Total)",
@@ -247,6 +269,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Sadana Bloodfury",
             "avoidance": false,
+            "spellID": 153093
         },
         {
             "name": "Dark Eclipse",
@@ -257,6 +280,7 @@ export const enemySpellDB =
             "source": "Boss",
             "sourceName": "Sadana Bloodfury",
             "avoidance": true,
+            "spellID": 164974
         },
     ],
     

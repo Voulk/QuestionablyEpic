@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = '', ...others }) => {
+export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = "", ...others }) => {
   if (!spell) {
     return null;
   }
@@ -8,7 +8,6 @@ export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = '', .
   const newIconList = []; // Spell IDs that don't return an icon from the live WoW API.
   let spellId = spell.guid;
   let icon = spell.icon;
-
 
   /*
   if (!icon) {
@@ -27,21 +26,22 @@ export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = '', .
 
   // TODO: Refine the centered text here.
   return (
-    <div style={{position: "relative"}}>
-    <a
-      data-wowhead={"spell=" + spellId}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <div style={{ position: "relative" }}>
       <img
-        src={icon}//{fullURL}
+        src={icon} //{fullURL}
         alt={alt}
-        style={{ filter: spell.active ? "" : "grayscale(100%)"}}
-        className={`icon ${className || ''}`}
+        style={{ filter: spell.active ? "" : "grayscale(100%)" }}
+        className={`icon ${className || ""}`}
         {...others}
       />
-       {iconType === "Talent" ? <div {...others} style={{ position: "absolute", top: "25%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "20px", textShadow: "1px 1px 4px black" }}> {spell.points} </div> : ""}
-    </a>
+      {iconType === "Talent" ? (
+        <div {...others} style={{ position: "absolute", top: "25%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "20px", textShadow: "1px 1px 4px black" }}>
+          {" "}
+          {spell.points}{" "}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
