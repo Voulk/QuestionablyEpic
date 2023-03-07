@@ -5,6 +5,7 @@
 export const enemySpellDB = 
 {
     "Algeth'ar Academy": [{
+        // Note that Defeaning Screech can be evaded.
         "name": "Defeaning Screech (3)",
         "icon": "ability_vehicle_sonicshockwave",
         "baseDamage": 26451 * (1 + 0.5 * 2),
@@ -122,7 +123,7 @@ export const enemySpellDB =
         {
             "name": "Arcing Bolt",
             "icon": "",
-            "baseDamage": 22042,
+            "baseDamage": 22043,
             "damageType": "Magic",
             "school": "Nature",
             "source": "Boss",

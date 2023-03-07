@@ -106,6 +106,23 @@ export default function OneShotStats(props) {
                 />
               </Grid>
 
+              {/* ------------------------------- Versatility ------------------------------  */}
+              <Grid item xs={6}>
+                <QETextField
+                  id="VersatilityInput"
+                  label={getTranslatedStats("Versatility", currentLanguage)}
+                  style={{ textAlignLast: "center" }}
+                  inputProps={inputProps}
+                  InputProps={InputProps}
+                  type="number"
+                  value={stats.versatility}
+                  onChange={handleVers}
+                  variant="filled"
+                  size="small"
+                  fullWidth
+                />
+              </Grid>
+
               {/* ----------------------------- Avoidance ----------------------------  */}
               <Grid item xs={6}>
                 <QETextField
@@ -157,27 +174,12 @@ export default function OneShotStats(props) {
                 />
               </Grid>
 
-              {/* ------------------------------- Versatility ------------------------------  */}
-              <Grid item xs={6}>
-                <QETextField
-                  id="VersatilityInput"
-                  label={getTranslatedStats("Versatility", currentLanguage)}
-                  style={{ textAlignLast: "center" }}
-                  inputProps={inputProps}
-                  InputProps={InputProps}
-                  type="number"
-                  value={stats.versatility}
-                  onChange={handleVers}
-                  variant="filled"
-                  size="small"
-                  fullWidth
-                />
-              </Grid>
+
               {/* ------------------------------- Health ------------------------------  */}
               <Grid item xs={6}>
                 <QETextField
                   id="HealthInput"
-                  label={"Effective Health"}
+                  label={"Total Health Pool"}
                   style={{ textAlignLast: "center"}}
                   inputProps={inputProps}
                   InputProps={InputProps}

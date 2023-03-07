@@ -87,7 +87,7 @@ const updateSpec = (className, specName) => {
 // Returns the key damage multiplier for a given key level. Note that there is no support for keys lower than +10 and while it's easy to add to the function,
 // the app itself should not support such cases given the tool would be an inappropriate choice for it.
 export const getKeyMult = (keyLevel) => {
-  return 1.08 ** 8 * 1.1 ** (keyLevel - 10);
+  return Math.round((100*1.08 ** 8 * 1.1 ** (keyLevel - 10)))/100;
 };
 
 // Sources of damage reduction are multiplicative with each other.
@@ -112,8 +112,8 @@ export const calcDefensives = (defensives, spell) => {
   return Math.max(sumDR, 0);
 };
 
-export const calcHealth = (stamina) => {
-  return stamina * 20;
+export const calcHealth = (stamina, absorb = 0) => {
+  return stamina * 20 + absorb;
 };
 
 // The formula for Armor -> Damage reduction is Armor / (Armor + K). The K value changes depending on what you're fighting and from patch to patch.
@@ -128,6 +128,10 @@ export const calcArmor = (armor) => {
 
   return 1 - armor / (armor + kValue);
 };
+
+export const getRawDamage = (spell, keyLevel) => {
+  return getKeyMult(keyLevel) * spell.baseDamage;
+}
 
 export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell) => {
   // All of these are in percentage damage *taken* form. If you have 3% DR from vers then the variable should be 0.97 not 0.03.
@@ -170,7 +174,7 @@ export default function OneShot(props) {
     // TODO: We could add some extras here like checking if a stat is in a valid range.
 
     const newStats = { ...stats, [statName]: statValue };
-    newStats.health = calcHealth(newStats.stamina);
+    newStats.health = calcHealth(newStats.stamina, newStats.absorb);
     setStats(newStats);
     setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, newStats));
   };
