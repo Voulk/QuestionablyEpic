@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getDefensiveList = (className, specName) => {
+export const getDefensiveList = (className, specName) => {
   let onUseDefensives = specData[className]["defensives"]//.concat(specData[specName + " " + className]["defensives"]);
   if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]["defensives"]);
   let passives = specData[className]["passives"]//.concat(specData[specName + " " + className]["passives"]);

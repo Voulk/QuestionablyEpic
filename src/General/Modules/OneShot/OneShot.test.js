@@ -1,6 +1,6 @@
 
 import { enemySpellDB } from "./EnemySpellDB";
-import { getKeyMult, getRawDamage } from "./OneShot";
+import { getKeyMult, getRawDamage, calcHealth, calcArmor } from "./OneShot";
 
 describe("Key Level base multipliers", () => {
     test("Mythic +25", () => {
@@ -16,6 +16,22 @@ describe("Key Level base multipliers", () => {
     })
 
 });
+
+describe("Health Calculation", () => {
+    test("In-game test case", () => {
+        expect(calcHealth(16935)).toEqual(338700);
+    })
+    test("In-game test case with Absorb", () => {
+        expect(calcHealth(9527, 1000)).toEqual(191540);
+    });
+});
+
+describe("Armor Calculation", () => {
+    test("In-game test case - Resto Druid - Overgrown Ancient M0", () => {
+        expect(Math.round(calcArmor(2331)*1000)/1000).toEqual(Math.round(1000*(1-0.1538))/1000);
+    })
+})
+
 
 // These must all be sourced from logs.
 // Ideally we'd like a Tyrannical and Fort version of each ability at different key levels. This gives us excellent coverage.
