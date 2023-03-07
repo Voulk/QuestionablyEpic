@@ -2,8 +2,8 @@ import * as React from "react";
 import { Grid, Typography, Paper } from "@mui/material";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
 
-export default function OneShotDefensives(props) {
-  const { defensives, activateSpell } = props;
+export default function OneShotSpellSelection(props) {
+  const { defensives, activateSpell, defensiveType, label } = props;
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -17,24 +17,26 @@ export default function OneShotDefensives(props) {
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-              {"Defensives"}
+              {label}
             </Typography>
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Grid container spacing={1} alignItems="center">
               {defensives
-                .filter((d) => d.defensiveType === "defensive")
+                .filter((d) => d.defensiveType === defensiveType)
                 .map((spell, index) => (
                   <Grid item xs="auto" key={index}>
-                    <OneShotSpellIcon
-                      spell={spell}
-                      iconType={"Spell"}
-                      draggable
-                      onClick={(e) => {
-                        activateSpell(e, spell);
-                      }}
-                    />
+                    <a data-wowhead={"spell=" + spell.guid}>
+                      <OneShotSpellIcon
+                        spell={spell}
+                        iconType={"Spell"}
+                        draggable
+                        onClick={(e) => {
+                          activateSpell(e, spell);
+                        }}
+                      />
+                    </a>
                   </Grid>
                 ))}
             </Grid>
