@@ -1,21 +1,28 @@
 
+
 export const specData = {
-    "Druid": {
-        "icon": "",
-        "data": druidData,
-    }
+    "druid": {
 
+    },
+    "restoration druid": {
+    },
+    "balance druid": {
+    },
+    "feral druid": {
+    },
+    "guardian druid": {
+    },
+    "evoker": {
+        "passives": ["Inherent Resistance"],
+        "defensives": ["Obsidian Scales"]
+    },
+    "preservation evoker": {
+    },
+    "devastation evoker": {
+    }
 
 }
 
-const druidData = {
-    "icon": "",
-    "specs": ["Restoration", "Feral", "Balance", "Guardian"],
-    "defensives": ["Barkskin", "Matted Fur"],
-    "resto": {
-        "talents": ["Thick Hide", ""],
-        "defensives": [],
-    }
-}
+
 
 

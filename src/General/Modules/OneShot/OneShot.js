@@ -13,6 +13,7 @@ import OneShotDungeonToggle from "./OneShotDungeonToggle";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
 import OneShotStats from "./OneShotStats";
 import OneShotSlider from "./OneShotSlider";
+import { specData } from "./ClassData";
 
 import "./OneShot.css";
 
@@ -48,11 +49,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getTalentDB = (dungeon) => {};
+const getDefensiveList = (className, specName) => {
+  const onUseDefensives = specData[className]['defensives'].concat(specData[specName + " " + className]['defensives']);
+  //if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]['defensives']);
+  const passives = specData[className]['passives'].concat(specData[specName + " " + className]['passives']);
+  const externals = ["Zephyr"];
+  const groupBuffs = ["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
 
-const updateSpec = (specName) => {
-  // TODO: Pull defensive list from spec / class data.
-  const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura"];
+  return onUseDefensives.concat(externals).concat(groupBuffs).concat(passives);
+
+};
+
+const updateSpec = (className, specName) => {
+
+  //const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
+  const defensiveList = getDefensiveList(className, specName);
   const defensiveData = [];
   const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externalsDB).concat(raidBuffsDB);
 
@@ -138,11 +149,12 @@ export default function OneShot(props) {
   const { t, i18n } = useTranslation();
   const dungeonList = encounterDB["-1"]["bossOrderMythicPlus"];
 
-  const [selectedClass, setSelectedClass] = React.useState("Evoker");
+  const [selectedClass, setSelectedClass] = React.useState("evoker");
+  const [selectedSpec, setSelectedSpec] = React.useState("preservation");
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
   const [enemySpellList, setEnemySpellList] = React.useState([]);
   const [keyLevel, setKeyLevel] = React.useState(24);
-  const [defensives, setDefensives] = React.useState(updateSpec(selectedClass));
+  const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
 
   const [stats, setStats] = React.useState({versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500)})
 

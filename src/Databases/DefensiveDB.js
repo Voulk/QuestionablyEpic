@@ -491,5 +491,25 @@ export const raidBuffsDB = [
     type: "All", // The type of damage the DR applies to.
     raidBuff: true,
   },
+  {
+    name: {
+      en: "Power Word: Fortitude",
+    },
+    guid: 21562,
+    icon: require("Images/Classes/Priest/spell_holy_wordfortitude.jpg").default,
+    class: "Priest",
+    reduction: 0,
+    raidBuff: true,
+  },
+  {
+    name: {
+      en: "Mark of the Wild",
+    },
+    guid: 1126,
+    icon: require("Images/Classes/Druid/spell_nature_regeneration.jpg").default,
+    class: "Druid",
+    reduction: 0,
+    raidBuff: true,
+  },
 
 ];
