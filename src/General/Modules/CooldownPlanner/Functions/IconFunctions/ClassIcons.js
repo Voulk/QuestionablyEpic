@@ -24,130 +24,130 @@ export default function classIcons(props, style) {
   const iconName = props.toLowerCase() || "";
 
   // Preservation Evoker
-  if (props === "preservationevoker" || props === "preservation evoker" || props === "evoker-preservation" || props === "evoker") {
+  if (iconName === "preservationevoker" || iconName === "preservation evoker" || iconName === "evoker-preservation" || iconName === "evoker") {
     src = EvokerIcon;
     alt = "Preservation Evoker";
   }
   // Devastation Evoker
-  if (props === "devastationevoker" || props === "devastation evoker" || props === "evoker-devastation" || props === "devastationevoker") {
+  if (iconName === "devastationevoker" || iconName === "devastation evoker" || iconName === "evoker-devastation" || iconName === "devastationevoker") {
     src = DevastationEvokerIcon;
     alt = "Devastation Evoker";
   }
 
   // Paladin Cooldowns
-  if (props === "holypaladin" || props === "holy paladin" || props === "paladin-holy" || props === "paladin" || props === "holy paladin classic") {
+  if (iconName === "holypaladin" || iconName === "holy paladin" || iconName === "paladin-holy" || iconName === "paladin" || iconName === "holy paladin classic") {
     src = HolyPaladinIcon;
     alt = "Holy Paladin";
   }
 
   // Restoration Druid
-  if (props === "restorationDruid" || props === "restoration druid" || props === "druid-restoration" || props === "restoration druid classic") {
+  if (iconName === "restorationDruid" || iconName === "restoration druid" || iconName === "druid-restoration" || iconName === "restoration druid classic") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
   }
 
   // Preservation Evoker
-  if (props === "preservationEvoker" || props === "preservation evoker" || props === "evoker-preservation" || props === "evoker") {
+  if (iconName === "preservationEvoker" || iconName === "preservation evoker" || iconName === "evoker-preservation" || iconName === "evoker") {
     src = EvokerIcon;
     alt = "Preservation Evoker";
   }
 
   // Devastation Evoker
-  if (props === "devastationEvoker" || props === "devastation evoker" || props === "evoker-devastation") {
+  if (iconName === "devastationEvoker" || iconName === "devastation evoker" || iconName === "evoker-devastation") {
     src = DevastationEvokerIcon;
     alt = "Devastation Evoker";
   }
 
   // Restoration Druid
-  if (props === "druid") {
+  if (iconName === "druid") {
     src = DruidIcon;
     alt = "Druid";
   }
 
   // Holy Priest
   if (
-    props === "holypriest" ||
-    props === "holy priest" ||
-    props === "priest-holy" ||
-    props === "priest" ||
-    // props === "ShadowPriest" ||
-    // props === "Shadow Priest" ||
-    // props === "Priest-Shadow"
-    props === "holy priest classic"
+    iconName === "holypriest" ||
+    iconName === "holy priest" ||
+    iconName === "priest-holy" ||
+    iconName === "priest" ||
+    // iconName === "ShadowPriest" ||
+    // iconName === "Shadow Priest" ||
+    // iconName === "Priest-Shadow"
+    iconName === "holy priest classic"
   ) {
     src = HolyPriestIcon;
     alt = "Holy Priest";
   }
 
   // ShadowPriest
-  if (props === "dhadowPriest" || props === "dhadow Priest" || props === "priest-dhadow") {
+  if (iconName === "dhadowPriest" || iconName === "dhadow Priest" || iconName === "priest-dhadow") {
     src = ShadowPriestIcon;
     alt = "Shadow Priest";
   }
 
   // Discipline Priest
-  if (props === "disciplinepriest" || props === "discipline priest" || props === "priest-discipline") {
+  if (iconName === "disciplinepriest" || iconName === "discipline priest" || iconName === "priest-discipline") {
     src = DiscPriestIcon;
     alt = "Discipline Priest";
   }
 
   // Restoration Shaman
-  if (props === "restorationShaman" || props === "restoration Shaman" || props === "shaman-restoration" || props === "shaman" || props === "Restoration Shaman Classic") {
+  if (iconName === "restorationShaman" || iconName === "restoration Shaman" || iconName === "shaman-restoration" || iconName === "shaman" || iconName === "Restoration Shaman Classic") {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";
   }
   //  Shaman
-  if (props === "shamandps" ) {
+  if (iconName === "shamandps" ) {
     src = ShamanIcon;
     alt = "Shaman";
   }
 
   // Mistweaver Monk
-  if (props === "mistweaverMonk" || props === "mistweaver monk" || props === "monk-mistweaver" || props === "monk") {
+  if (iconName === "mistweaverMonk" || iconName === "mistweaver monk" || iconName === "monk-mistweaver" || iconName === "monk") {
     src = MistweaverIcon;
     alt = "Mistweaver Monk";
   }
 
   // Warrior
-  if (props === "warrior") {
+  if (iconName === "warrior") {
     src = WarriorIcon;
     alt = "Warrior";
   }
 
   // Demon Hunter
-  if (props === "havocDemonHunter" || props === "havoc Demon Hunter" || props === "demonhunter-havoc" || props === "demon hunter" || props === "demonhunter") {
+  if (iconName === "havocDemonHunter" || iconName === "havoc Demon Hunter" || iconName === "demonhunter-havoc" || iconName === "demon hunter" || iconName === "demonhunter") {
     src = DemonHunterIcon;
     alt = "Havoc Demon Hunter";
   }
 
   // Death KNight
-  if (props === "death knight" || props === "deathknight" || props === "deathknight-Frost" || props === "deathknight-unholy" || props === "deathknight-blood") {
+  if (iconName === "death knight" || iconName === "deathknight" || iconName === "deathknight-Frost" || iconName === "deathknight-unholy" || iconName === "deathknight-blood") {
     src = DeathKnightIcon;
     alt = "Death Knight";
   }
 
   // Rogue
-  if (props === "rogue") {
+  if (iconName === "rogue") {
     src = RogueIcon;
     alt = "Rogue";
   }
   // Warlock
-  if (props === "warlock") {
+  if (iconName === "warlock") {
     src = WarlockIcon;
     alt = "Warlock";
   }
   // Hunter
-  if (props === "hunter") {
+  if (iconName === "hunter") {
     src = HunterIcon;
     alt = "Hunter";
   }
   // Mage
-  if (props === "mage") {
+  if (iconName === "mage") {
     src = MageIcon;
     alt = "Mage";
   }
 
-  if (props === "" || props === undefined) {
+  if (iconName === "" || iconName === undefined) {
     return null;
   }
   return (

@@ -55,7 +55,7 @@ const getDefensiveList = (className, specName) => {
   if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]["defensives"]);
   let passives = specData[className]["passives"]//.concat(specData[specName + " " + className]["passives"]);
   if (specData[specName + " " + className]['passives']) passives = passives.concat(specData[specName + " " + className]["passives"]);
-  const externals = ["Zephyr"];
+  const externals = externalsDB.map(a => a.name.en)//["Zephyr"];
   const groupBuffs = ["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
   
   return onUseDefensives.concat(externals).concat(groupBuffs).concat(passives);
@@ -65,7 +65,9 @@ const updateSpec = (className, specName) => {
   //const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
   const defensiveList = getDefensiveList(className, specName);
   const defensiveData = [];
-  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externalsDB).concat(raidBuffsDB);
+  const externals = externalsDB.filter(a => a.include);
+  const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externals).concat(raidBuffsDB);
+
 
   defensiveList.forEach((defensiveName) => {
     const temp = combinedDefensiveDB.filter((defensive) => defensive.name.en === defensiveName);
