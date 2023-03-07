@@ -4,7 +4,7 @@ import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { Grid, ToggleButtonGroup, ToggleButton, Typography, Paper } from "@mui/material";
 
 export default function OneShotClassToggle(props) {
-  const { setSelectedClass, selectedClass, selectedSpec, setSelectedSpec } = props;
+  const { setSelectedClass, selectedClass, selectedSpec, setSelectedSpec, updateSpec, setDefensives } = props;
   // const classList = ["Evoker", "Druid", "Priest", "Shaman", "Monk", "Warrior", "DemonHunter", "DeathKnight", "Rogue", "Warlock", "Hunter", "Mage"];
 
   const newClassList = [
@@ -24,7 +24,10 @@ export default function OneShotClassToggle(props) {
 
   const handleAlignment = (event, newAlignment) => {
     if (newAlignment !== null) {
+      const defaultSpec = newClassList.filter((obj) => obj.Class === newAlignment)[0].specs[0];
+      setSelectedSpec(defaultSpec);
       setSelectedClass(newAlignment);
+      setDefensives(updateSpec(newAlignment, defaultSpec));
     }
   };
 

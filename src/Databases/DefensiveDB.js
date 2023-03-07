@@ -15,6 +15,7 @@ export const defensiveDB = [
     autoIcon: "spell_magic_lesserinvisibilty",
     duration: 40,
     cooldown: 120,
+    reduction: 0.2,
     class: "Mage",
   },
   {
@@ -32,6 +33,18 @@ export const defensiveDB = [
     cooldown: 25,
     class: "Mage",
   },
+  /*{
+    name: {
+      en: "Tempest Barrier",
+    },
+    guid: 382289,
+    icon: require("Images/Classes/Mage/Icons/ability_mage_moltenarmor.jpg").default,
+    autoIcon: "inv_shield_1h_artifactstormfist_d_04",
+    duration: 60,
+    cooldown: 25,
+    absorb: 0, // 6% max health.
+    class: "Mage",
+  }, */
   {
     name: {
       en: "Ice Barrier",
@@ -75,6 +88,7 @@ export const defensiveDB = [
     autoIcon: "spell_frost_frost",
     duration: 10,
     cooldown: 240,
+    reduction: 1,
     class: "Mage",
   },
   /* ---------------------------------------------------------------------------------------------- */
@@ -225,6 +239,7 @@ export const defensiveDB = [
     autoIcon: "ability_druid_tigersroar",
     duration: 6,
     cooldown: 180,
+    reduction: 0.5,
     class: "Druid",
   },
   /* ---------------------------------------------------------------------------------------------- */
@@ -506,6 +521,18 @@ export const defensiveTalentsDB = [
     type: "Magic", // The type of damage the DR applies to.
     talent: true,
   },
+  {
+    name: {
+      en: "Thick Hide",
+    },
+    guid: 16931,
+    icon: require("Images/Classes/Evoker/inv_misc_rubysanctum1.jpg").default,
+    autoIcon: "inv_misc_pelt_bear_03",
+    class: "Druid",
+    reduction: 0.06,
+    type: "All", // The type of damage the DR applies to.
+    talent: true,
+  },
 
 ];
 
@@ -542,7 +569,7 @@ export const raidBuffsDB = [
     icon: require("Images/Classes/Druid/spell_nature_regeneration.jpg").default,
     autoIcon: "spell_nature_regeneration",
     class: "Druid",
-    reduction: 0,
+    reduction: 0.015,
     raidBuff: true,
   },
   {
@@ -554,6 +581,18 @@ export const raidBuffsDB = [
     autoIcon: "inv_misc_food_legion_goocaramel_bottle",
     class: "Monk",
     reduction: 0,
+    raidBuff: true,
+  },
+  {
+    name: {
+      en: "Atrophic Poison",
+    },
+    guid: 381637,
+    //icon: require("Images/Classes/Druid/spell_nature_regeneration.jpg").default,
+    autoIcon: "ability_rogue_nervesofsteel",
+    class: "Rogue",
+    reduction: 0.03,
+    type: "All",
     raidBuff: true,
   },
 

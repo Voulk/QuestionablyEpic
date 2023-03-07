@@ -62,6 +62,7 @@ export const getDefensiveList = (className, specName) => {
 };
 
 const updateSpec = (className, specName) => {
+  console.log("updateSpec", className, specName)
   //const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
   const defensiveList = getDefensiveList(className, specName);
   const defensiveData = [];
@@ -230,7 +231,7 @@ export default function OneShot(props) {
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <Grid container spacing={1}>
-              <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} selectedSpec={selectedSpec} setSelectedSpec={setSelectedSpec} />
+              <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} selectedSpec={selectedSpec} setSelectedSpec={setSelectedSpec} updateSpec={updateSpec} setDefensives={setDefensives} />
 
               <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
 
