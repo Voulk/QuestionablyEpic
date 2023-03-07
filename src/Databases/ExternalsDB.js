@@ -10,6 +10,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=47788/guardian-spirit",
     icon: require("Images/Classes/Priest/Specialisation/Holy/Icons/GuardianSpiritIcon.jpg").default,
+    autoIcon: "spell_holy_guardianspirit",
     cooldown: 180,
   },
 
@@ -24,6 +25,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=6940/blessing-of-sacrifice",
     icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/BlessingOfSacrifice.jpg").default,
+    autoIcon: "spell_holy_sealofsacrifice",
     cooldown: 120,
   },
   {
@@ -37,6 +39,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=1022/blessing-of-protection",
     icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofprotection.jpg").default,
+    autoIcon: "spell_holy_sealofprotection",
     cooldown: 300,
   },
   {
@@ -50,6 +53,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=1044/blessing-of-freedom",
     icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_sealofvalor.jpg").default,
+    autoIcon: "spell_holy_sealofvalor",
     cooldown: 25,
   },
   {
@@ -63,6 +67,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=633/lay-on-hands",
     icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/spell_holy_layonhands.jpg").default,
+    autoIcon: "spell_holy_layonhands",
     cooldown: 600,
   },
   {
@@ -76,6 +81,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=102342/ironbark",
     icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/Ironbark.jpg").default,
+    autoIcon: "spell_druid_ironbark",
     cooldown: 90,
   },
   {
@@ -89,6 +95,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=29166/innervate",
     icon: require("Images/Classes/Druid/Icons/spell_nature_lightning.jpg").default,
+    autoIcon: "spell_nature_lightning",
     cooldown: 180,
   },
 
@@ -103,6 +110,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=10060/power-infusion",
     icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/PowerInfusion.jpg").default,
+    autoIcon: "spell_holy_powerinfusion",
     cooldown: 120,
   },
 
@@ -117,6 +125,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=116849/life-cocoon",
     icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/LifeCocoon.jpg").default,
+    autoIcon: "spell_monk_diffusemagic",
     cooldown: 120,
   },
 
@@ -131,6 +140,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=116841/tigers-lust",
     icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/ability_monk_tigerslust.jpg").default,
+    autoIcon: "ability_monk_tigerslust",
     cooldown: 30,
   },
 
@@ -145,6 +155,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=33206/pain-suppression",
     icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/PainSupression.jpg").default,
+    autoIcon: "spell_holy_painsupression",
     cooldown: 180,
   },
 
@@ -159,6 +170,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=357170/time-dilation",
     icon: require("Images/Classes/Evoker/ability_evoker_timedilation.jpg").default,
+    autoIcon: "ability_evoker_timedilation",
     cooldown: 60,
   },
   {
@@ -168,6 +180,7 @@ export const externalsDB = [
     },
     wowhead: "https://www.wowhead.com/spell=357170/time-dilation",
     icon: require("Images/Classes/Evoker/ability_evoker_hoverblack.jpg").default,
+    autoIcon: "ability_evoker_hoverblack",
     reduction: 0.2,
     type: "aoe",
     external: true,

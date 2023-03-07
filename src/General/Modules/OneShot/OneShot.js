@@ -51,12 +51,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getDefensiveList = (className, specName) => {
-  const onUseDefensives = specData[className]["defensives"].concat(specData[specName + " " + className]["defensives"]);
-  //if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]['defensives']);
-  const passives = specData[className]["passives"].concat(specData[specName + " " + className]["passives"]);
+  let onUseDefensives = specData[className]["defensives"]//.concat(specData[specName + " " + className]["defensives"]);
+  if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]["defensives"]);
+  let passives = specData[className]["passives"]//.concat(specData[specName + " " + className]["passives"]);
+  if (specData[specName + " " + className]['passives']) passives = passives.concat(specData[specName + " " + className]["passives"]);
   const externals = ["Zephyr"];
   const groupBuffs = ["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
-
+  
   return onUseDefensives.concat(externals).concat(groupBuffs).concat(passives);
 };
 
@@ -72,7 +73,7 @@ const updateSpec = (className, specName) => {
       const data = temp[0];
       const defensiveType = data.talent ? "talent" : data.external ? "external" : data.raidBuff ? "raidBuff" : "defensive";
 
-      defensiveData.push({ name: data.name.en, icon: data.icon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType, guid: data.guid });
+      defensiveData.push({ name: data.name.en, icon: data.autoIcon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType, guid: data.guid });
     } else {
       console.error("Can't find defensive: ", defensiveName);
     }

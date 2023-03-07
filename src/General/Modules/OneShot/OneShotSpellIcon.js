@@ -9,26 +9,27 @@ export const OneShotSpellIcon = ({ spell, iconType, size, className, alt = "", .
   let spellId = spell.guid;
   let icon = spell.icon;
 
-  /*
+  
   if (!icon) {
     return null;
   }
   icon = icon.replace('.jpg', '').replace(/-/g, '');
-  const baseURL = `//render-us.worldofwarcraft.com/icons/56`;
+  const baseURL = `https://render-us.worldofwarcraft.com/icons/56`;
   let fullURL = `${baseURL}/${icon}.jpg`
+  console.log(fullURL);
 
-  if (spec === "Preservation Evoker" || newIconList.includes(spellId)) {
+  if (newIconList.includes(spellId)) {
     // This is a temporary icon override since Evoker spells aren't in the WoW render DB yet.
     // We can also add spell IDs to the icon list above if they are use Dragonflight specific icons.
     // When the expansion goes live these will all just be pulled via Blizzard API.
     fullURL = require("Images/Spells/" + icon + ".jpg").default || "";
-  } */
+  } 
 
   // TODO: Refine the centered text here.
   return (
     <div style={{ position: "relative" }}>
       <img
-        src={icon} //{fullURL}
+        src={fullURL} //{fullURL}
         alt={alt}
         style={{ filter: spell.active ? "" : "grayscale(100%)" }}
         className={`icon ${className || ""}`}
