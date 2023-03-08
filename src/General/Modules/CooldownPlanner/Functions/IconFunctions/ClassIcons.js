@@ -22,6 +22,7 @@ export default function classIcons(props, style) {
   let src = "";
   let alt = "";
   const iconName = props.toLowerCase() || "";
+  console.log("trying to find icon for: " + iconName + "")
 
   // Preservation Evoker
   if (iconName === "preservationevoker" || iconName === "preservation evoker" || iconName === "evoker-preservation" || iconName === "evoker") {
@@ -41,7 +42,7 @@ export default function classIcons(props, style) {
   }
 
   // Restoration Druid
-  if (iconName === "restorationDruid" || iconName === "restoration druid" || iconName === "druid-restoration" || iconName === "restoration druid classic") {
+  if (iconName === "restorationdruid" || iconName === "restoration druid" || iconName === "druid-restoration" || iconName === "restoration druid classic") {
     src = RestorationDruidIcon;
     alt = "Restoration Druid";
   }
