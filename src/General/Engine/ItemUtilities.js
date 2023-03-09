@@ -138,8 +138,8 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       gemCount -= 1;
       gemArray.push(192988)
     }
-    bonus_stats.mastery += 70 * (gemCount - 1);
-    bonus_stats.crit += 33 * (gemCount - 1);
+    bonus_stats.mastery += 70 * (gemCount);
+    bonus_stats.crit += 33 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
