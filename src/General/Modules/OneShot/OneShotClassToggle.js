@@ -1,14 +1,20 @@
 import * as React from "react";
 
 import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { Grid, ToggleButtonGroup, ToggleButton, Typography, Paper } from "@mui/material";
+import { Grid, ToggleButtonGroup, ToggleButton, Typography, Paper, Tooltip } from "@mui/material";
+import { getClassIconCD, getTranslatedClassNameCD, getSpecIconCD, getTranslatedSpecNameCD } from "locale/ClassNames";
+import { useTranslation } from "react-i18next";
 
 export default function OneShotClassToggle(props) {
   const { setSelectedClass, selectedClass, selectedSpec, setSelectedSpec, updateSpec, setDefensives } = props;
+
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   // const classList = ["Evoker", "Druid", "Priest", "Shaman", "Monk", "Warrior", "DemonHunter", "DeathKnight", "Rogue", "Warlock", "Hunter", "Mage"];
 
   const newClassList = [
     { Class: "evoker", specs: ["preservation", "devastation"] },
+    { Class: "paladin", specs: ["holy", "protection", "retribution"] },
     { Class: "druid", specs: ["restoration", "balance", "feral", "guardian"] },
     { Class: "priest", specs: ["discipline", "holy", "shadow"] },
     { Class: "shaman", specs: ["restoration", "enhancement", "elemental"] },
@@ -66,19 +72,43 @@ export default function OneShotClassToggle(props) {
                 <ToggleButtonGroup value={selectedClass} exclusive onChange={handleAlignment} aria-label="text alignment" fullWidth>
                   {newClassList.map((key) => (
                     <ToggleButton value={key.Class} aria-label={key.Class} style={{ padding: 8 }}>
-                      {classIcons(key.Class, { maxHeight: 36 })}
+                      <Tooltip title={getTranslatedClassNameCD(key.Class, currentLanguage)} arrow placement="top">
+                        <img
+                          src={getClassIconCD(key.Class)}
+                          style={{
+                            maxHeight: 36,
+                            borderRadius: 4,
+                            border: "1px solid rgb(89, 89, 89)",
+                            //  filter: key.Class === selectedClass ? "" : "grayscale(100%)"
+                          }}
+                        />
+                      </Tooltip>
                     </ToggleButton>
                   ))}
                 </ToggleButtonGroup>
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <ToggleButtonGroup value={selectedSpec} exclusive onChange={handleSpecAlignment} aria-label="text alignment" fullWidth>
-                  {specs.map((key) => (
-                    <ToggleButton value={key} aria-label={key} style={{ padding: 8 }}>
-                      {classIcons((key + "" + selectedClass), { maxHeight: 36 })}
-                    </ToggleButton>
-                  ))}
-                </ToggleButtonGroup>
+                <Grid container spacing={1} justifyContent="center">
+                  <Grid item xs="auto">
+                    <ToggleButtonGroup value={selectedSpec} exclusive onChange={handleSpecAlignment} aria-label="text alignment">
+                      {specs.map((key) => (
+                        <ToggleButton value={key} aria-label={key} style={{ padding: 8 }}>
+                          <Tooltip title={getTranslatedSpecNameCD(key + " " + selectedClass, currentLanguage)} arrow placement="top">
+                            <img
+                              src={getSpecIconCD(key + " " + selectedClass)}
+                              style={{
+                                maxHeight: 36,
+                                borderRadius: 4,
+                                border: "1px solid rgb(89, 89, 89)",
+                                //  filter: key === selectedSpec ? "" : "grayscale(100%)"
+                              }}
+                            />
+                          </Tooltip>
+                        </ToggleButton>
+                      ))}
+                    </ToggleButtonGroup>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
