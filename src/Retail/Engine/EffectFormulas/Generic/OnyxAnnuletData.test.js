@@ -4,7 +4,7 @@ import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";
 
-import { getOnyxAnnuletEffect } from "./OnyxAnnuletData";
+import { getOnyxAnnuletEffect, getBestCombo } from "./OnyxAnnuletData";
 
 describe("TODO", () => {
     test("TODOs", () => {
@@ -14,7 +14,8 @@ describe("TODO", () => {
         const setStats = {};
         const settings = {};
 
-        getOnyxAnnuletEffect(gems, player, contentType, 424, setStats, settings);
+        //getOnyxAnnuletEffect(gems, player, contentType, 424, setStats, settings);
+        getBestCombo(player, contentType, 424, setStats, settings);
         expect(true).toEqual(true)
 
     })

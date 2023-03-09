@@ -7,11 +7,36 @@ import { getEstimatedHPS } from "General/Engine/ItemUtilities"
 // One works out the best combination of gems.
 // The other does one calculation run where it computes the bonus stats of that combo.
 
-export const getBestCombo = () => {
+export const getBestCombo = (player, contentType, itemLevel, setStats, settings) => {
 // Find the best possible set. There are only 2000 combinations so this isn't too bad. 
 // This could be optimized by separating out combinations that don't require other gems.
 // The sample set is so small though that we might find that rather unnecessary.
 // We can also just pre-prune combinations with no chance of being best. All of this is left as a TODO for now.
+    const data = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
+    "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
+    "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone"]
+
+    const combinations = []
+
+    for(let i = 0; i < data.length -2; i++){
+        for(let j = i + 1; j < data.length -1; j++){
+            for(let k = j + 1; k < data.length; k++){
+                if (i !== j && i !== k && j !== k) combinations.push({dps: 0, hps: 0, gems: [data[i],data[j],data[k]]})
+                
+            }
+        }
+    }
+
+    combinations.forEach(set => {
+        const bonus_stats = getOnyxAnnuletEffect(set.gems, player, contentType, itemLevel, setStats, settings);
+        set.dps = bonus_stats.dps;
+        set.hps = bonus_stats.hps;
+    })
+    combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
+
+    console.log(combinations);
+
+
 
 
 // For each combination:
@@ -30,12 +55,14 @@ export const getBestCombo = () => {
  * @param {*} settings 
  * @returns the bonus_effects data from one specific set of gems.
  */
-export const getOnyxAnnuletEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
+export const getOnyxAnnuletEffect = (effectList, player, contentType, itemLevel, setStats, settings) => {
     //const gems = effectName.split(",");
-    const gemNames = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
+   /* const gemNames = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
                         "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
-                        "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone", ]
-    let bonus_effects = {};
+                        "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone"] */
+    const gemNames = effectList;
+    //const gemNames = ["Wild Spirit Stone", "Deluging Water Stone", "Exuding Steam Stone" ];
+    let bonus_stats = {hps: 0, dps: 0};
     let temp = [];
 
     const gems = gemNames.map(gemName => {
@@ -43,16 +70,18 @@ export const getOnyxAnnuletEffect = (effectName, player, contentType, itemLevel,
     })
 
     
-    console.log(gems);
 
 
     gems.forEach((gem => {
         const gemStats = gem.runFunc(gem.effects, gems, player, itemLevel, settings);
         temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
-        console.log(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType));
+        //console.log(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType));
+        bonus_stats.hps += getEstimatedHPS(gemStats, player, contentType);
+        bonus_stats.dps += gemStats.dps || 0;
     }))
 
-    console.log(temp);
+
+    return bonus_stats;
 
     /*
     let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
@@ -108,12 +137,13 @@ export const annuletGemData = [
             table: -9,
             ppm: 2.5,
             efficiency: 0.65,
+            ticks: 6,
             secondaries: ['crit', 'versatility'],
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
             let bonus_stats = {};
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
       
             return bonus_stats;
         }
@@ -248,7 +278,7 @@ export const annuletGemData = [
             let bonus_stats = {};
 
             const mult = gemData.map(g => g.name).includes("Entropic Fel Stone") ? 1.6 : 1;
-            console.log("FIRE: " + processedValue(data[0], itemLevel, 1))
+
             bonus_stats.dps = processedValue(data[0], itemLevel, 1) * mult * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
 
             return bonus_stats;
@@ -369,6 +399,7 @@ export const annuletGemData = [
             table: -9,
             targets: 5,
             efficiency: 0.7,
+            ticks: 7,
             secondaries: ['crit', 'versatility'],
           },
         ],
@@ -381,8 +412,8 @@ export const annuletGemData = [
                 const procCandidate = gem.name !== "Wild Spirit Stone" && (gem.school === "Nature" || gem.type === "Heal");
                 if (procCandidate) ppm += gem.effects[0].ppm || 0;
             })
-            console.log("PPM: " + ppm);
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * player.getStatMults(data[0].secondaries) * ppm / 60;
+
+            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * ppm / 60;
 
             return bonus_stats;
         }
