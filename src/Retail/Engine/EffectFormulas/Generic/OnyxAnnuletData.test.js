@@ -14,7 +14,7 @@ describe("TODO", () => {
         const setStats = {};
         const settings = {};
 
-        getOnyxAnnuletEffect(gems, player, contentType, 400, setStats, settings);
+        getOnyxAnnuletEffect(gems, player, contentType, 424, setStats, settings);
         expect(true).toEqual(true)
 
     })

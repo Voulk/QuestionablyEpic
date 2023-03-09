@@ -124,6 +124,31 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+/* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
+export function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } 
+    else if (key === "mana") {
+      estHPS += value * player.getSpecialQuery("OneManaHealing", contentType)
+    }
+    else if (key === "hps") {
+      estHPS += value;
+    }
+    else if (key === "allyStats") {
+      // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
+      // it's a fair approximation. 
+      // These embellishments are good, but it's very spread out.
+      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+    }
+  }
+  return Math.round(100 * estHPS) / 100;
+}
+
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
 export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true) {
