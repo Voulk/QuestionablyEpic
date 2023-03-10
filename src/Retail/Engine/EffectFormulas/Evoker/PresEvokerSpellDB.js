@@ -210,20 +210,24 @@ export const EVOKERSPELLDB = {
     { // I should turn these hasteDuration flags into a proper "flags" subobject.
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
         name: "Temporal Anomaly",
-        type: "buff",
+        type: "heal",
         buffType: "function",
         school: "bronze",
-        tickRate: 2,
         castTime: 1.5,
         coeff: 1.75,
         cost: 7.5,
-        targets: 2,
-        hastedDuration: true,
-        buffDuration: 6,
-        function: function (state, buff) {
-            const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
+        targets: 15,
+        expectedOverheal: 0.05,
+        tags: ['sqrt'],
+        sqrtMin: 5,
+        secondaries: ['vers', 'mastery']
+    },
+    { 
+        type: "function",
+        runFunc: function (state, spell) {
+            //const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
             
-            runHeal(state, absorb, buff.name)
+            //runHeal(state, absorb, "buff.name")
 
             if (state.talents.resonatingSphere) {
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
@@ -233,8 +237,8 @@ export const EVOKERSPELLDB = {
                 state.activeBuffs.push(buff);
                 addReport(state, `Adding Buff: Echo (Temporal Anomaly x2)`)
             }
-
         }
+    
     }],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
