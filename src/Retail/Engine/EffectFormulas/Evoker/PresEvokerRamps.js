@@ -23,7 +23,8 @@ const EVOKERCONSTANTS = {
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    lifebindSpells: ['Spiritbloom', 'Dream Breath', 'Emerald Communion'],
     essenceBuff: {
         name: "EssenceGen",
         expiration: 5,
@@ -179,7 +180,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             buffDuration: evokerSpells['Fire Breath'][1].buffDuration[EVOKERCONSTANTS.defaultEmpower],
             tickRate: evokerSpells['Fire Breath'][1].tickRate,
             coeff: (evokerSpells['Fire Breath'][1].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
-            expectedOverheal: 0.2,
+            expectedOverheal: 0.4,
             targets: 1,
             secondaries: ['crit', 'vers']
         });
@@ -250,8 +251,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
         name: "Fluttering Seedlings",
         type: "heal",
         school: "green",
-        coeff: (0.3 * talents.flutteringSeedlings),
-        targets: 2, // 
+        coeff: 0.648,
+        targets: 1 * talents.flutteringSeedlings, // 
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
     });
@@ -270,7 +271,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
         type: "buff",
         stacks: false,
         buffDuration: 999,
-        buffType: 'special',
+        buffType: 'spellAmp',
+        value: 1.4,
     })
     if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
 
@@ -354,6 +356,13 @@ const triggerCycleOfLife = (state, rawHealing) => {
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
     }
+
+    // Setup Emerald Communion
+    const ecBonus = (0.2 * getHealth(stats, talents)) //* (1 + talents.rushOfVitality * 0.2))
+
+    evokerSpells['Emerald Communion'][0].flatHeal = ecBonus;
+    evokerSpells['Emerald Communion'][1].flatHeal = ecBonus;
+    console.log("Adding Flat Heal" + ecBonus);
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
@@ -400,7 +409,7 @@ const getHealingMult = (state, t, spellName, talents) => {
         if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
 
-        state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+        //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
     else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
@@ -425,8 +434,12 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     //if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * EVOKERCONSTANTS.CBT.transferRate * (1 - EVOKERCONSTANTS.CBT.expectedOverhealing);
     //console.log(spellName + ": " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
     
+    // Special cases
     if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
+    if ('specialMult' in spell) healingVal *= spell.specialMult;
 
+
+    // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
@@ -844,6 +857,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
+            else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
             else nextSpell = state.t + castTime;
 
 

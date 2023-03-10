@@ -166,7 +166,7 @@ export default function SequenceGenerator(props) {
     crit: 3300,
     mastery: 3500,
     versatility: 1200,
-    stamina: 8200,
+    stamina: 16000,
 
     critMult: 1,
   };
@@ -183,7 +183,7 @@ export default function SequenceGenerator(props) {
   };
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 100;
+    const iter = 500;
     const results = { totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0 };
     let finalReport = [];
 

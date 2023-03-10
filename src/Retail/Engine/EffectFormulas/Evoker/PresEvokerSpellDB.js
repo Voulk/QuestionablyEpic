@@ -214,7 +214,7 @@ export const EVOKERSPELLDB = {
         buffType: "function",
         school: "bronze",
         castTime: 1.5,
-        coeff: 1.75,
+        coeff: 1.4,
         cost: 7.5,
         targets: 15,
         expectedOverheal: 0.05,
@@ -228,14 +228,16 @@ export const EVOKERSPELLDB = {
             //const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
             
             //runHeal(state, absorb, "buff.name")
-
+            
             if (state.talents.resonatingSphere) {
+                const echoBuffs = 4;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
                     value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
                 
-                state.activeBuffs.push(buff); 
-                state.activeBuffs.push(buff);
-                addReport(state, `Adding Buff: Echo (Temporal Anomaly x2)`)
+
+                for (let i = 0; i < echoBuffs; i++) { state.activeBuffs.push(buff); }
+                
+                addReport(state, `Adding Buff: Echo (Temporal Anomaly x${echoBuffs})`)
             }
         }
     
@@ -334,6 +336,30 @@ export const EVOKERSPELLDB = {
         coeff: 0.76,
         secondaries: ['crit', 'haste', 'vers'],
     }],
+    // Disintegrate (Essence damage ability)
+    "Emerald Communion": [{
+        spellData: {id: 370984, icon: "ability_evoker_green_01", cat: "cooldown"},
+        type: "heal",
+        school: "blue",
+        castTime: 5,
+        channel: true,
+        coeff: 0,
+        flatHeal: 0,
+        targets: 1,
+        expectedOverheal: 0.4,
+        secondaries: [],
+    },
+    {
+        name: "Emerald Communion",
+        type: "buff",
+        buffType: "heal",
+        tickRate: 1,
+        buffDuration: 5,
+        coeff: 0,
+        flatHeal: 0,
+        expectedOverheal: 0.4,
+        secondaries: [],
+    }],
 }
 
 export const baseTalents = {
@@ -371,7 +397,7 @@ export const evokerTalents = {
     lifeforceMender: {points: 0, maxPoints: 3, icon: "ability_evoker_dragonrage2", id: 376179, select: true, tier: 2}, // Living Flame and Fire Breath deal extra damage & healing equal to 1% of your maximum health (3 points).
     timeLord: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 372527, select: true, tier: 2}, // Echo replicates an additional 25/50% healing (2 points).
     nozdormusTeachings: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Temporal Anomaly shields one additional target.
-    resonatingSphere: {points: 0, maxPoints: 1, icon: "ability_evoker_bronze_01", id: 376236, select: true, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
+    resonatingSphere: {points: 1, maxPoints: 1, icon: "ability_evoker_bronze_01", id: 376236, select: true, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
     lifebind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 0, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
 

@@ -15,6 +15,12 @@ const GLOBALCONST = {
 
 }
 
+
+// Cleanup is called after every hard spell cast. 
+export const spellCleanup = (spell, state) => {
+
+}
+
 export const addBuff = (state, spell, spellName) => {
     if (spell.buffType === "stats") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
@@ -31,6 +37,29 @@ export const addBuff = (state, spell, spellName) => {
         newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
         state.activeBuffs.push(newBuff)
 
+    }
+    // Spell amps are buffs that increase the amount of healing the next spell that meets the criteria. The criteria is defined in the buff itself by a function.
+    // Examples might include Call of Ysera or Soul of the Forest.
+    // Buffs that increase the healing of all spells could be handled here in future, but aren't currently. Those are generally much easier.
+
+    // Buffs here support stacking and maxStacks properties.
+    else if (spell.buffType === "spellAmp") {
+        
+        // Check if buff already exists, if it does add a stack.
+        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+
+        addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+        if (buffStacks === 0) {
+            state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
+                                        buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
+                                        buffedSpellName: spell.buffedSpellName
+                                        });
+        }
+        else {
+            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+
+            if (buff.canStack) buff.stacks += 1;
+        }
     }
     else if (spell.buffType === "special") {
         
