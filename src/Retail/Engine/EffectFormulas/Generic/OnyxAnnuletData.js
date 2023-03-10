@@ -8,10 +8,10 @@ import { getEstimatedHPS } from "General/Engine/ItemUtilities"
 // The other does one calculation run where it computes the bonus stats of that combo.
 
 export const getBestCombo = (player, contentType, itemLevel, setStats, settings) => {
-// Find the best possible set. There are only 2000 combinations so this isn't too bad. 
-// This could be optimized by separating out combinations that don't require other gems.
-// The sample set is so small though that we might find that rather unnecessary.
-// We can also just pre-prune combinations with no chance of being best. All of this is left as a TODO for now.
+    // Find the best possible set. There are only 2000 combinations so this isn't too bad. 
+    // This could be optimized by separating out combinations that don't require other gems.
+    // The sample set is so small though that we might find that rather unnecessary.
+    // We can also just pre-prune combinations with no chance of being best. All of this is left as a TODO for now and the function is fast regardless.
     const data = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
     "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
     "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone"]
@@ -37,12 +37,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     console.log(combinations);
 
 
-
-
-// For each combination:
-// We will run each gems function, sending the data from all three gems through. This will mean they can play off each other when required.
-
-// 
+    return combinations[0];
 }
   
 /**
@@ -55,13 +50,8 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
  * @param {*} settings 
  * @returns the bonus_effects data from one specific set of gems.
  */
-export const getOnyxAnnuletEffect = (effectList, player, contentType, itemLevel, setStats, settings) => {
-    //const gems = effectName.split(",");
-   /* const gemNames = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
-                        "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
-                        "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone"] */
-    const gemNames = effectList;
-    //const gemNames = ["Wild Spirit Stone", "Deluging Water Stone", "Exuding Steam Stone" ];
+export const getOnyxAnnuletEffect = (gemNames, player, contentType, itemLevel, setStats, settings) => {
+
     let bonus_stats = {hps: 0, dps: 0};
     let temp = [];
 
@@ -70,12 +60,9 @@ export const getOnyxAnnuletEffect = (effectList, player, contentType, itemLevel,
     })
 
     
-
-
     gems.forEach((gem => {
         const gemStats = gem.runFunc(gem.effects, gems, player, itemLevel, settings);
         temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
-        //console.log(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType));
         bonus_stats.hps += getEstimatedHPS(gemStats, player, contentType);
         bonus_stats.dps += gemStats.dps || 0;
     }))
@@ -83,15 +70,6 @@ export const getOnyxAnnuletEffect = (effectList, player, contentType, itemLevel,
 
     return bonus_stats;
 
-    /*
-    let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
-    let additionalData = {contentType: contentType, setStats: setStats, settings: settings};
-    if (activeEffect !== undefined) {
-    return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
-    }
-    else {
-    return {};
-    } */
 
 }
 

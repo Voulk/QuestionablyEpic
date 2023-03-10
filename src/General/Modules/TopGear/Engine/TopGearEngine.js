@@ -430,6 +430,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
+
+  // Special 10.0.7 Ring
+  //if Check if ring in set.
+
+  // Auto gen best gems.
+
+  // Add to effectList.
+
+  // ------------------
+
   let effectStats = [];
   let effectList = [...itemSet.effectList];
   // == Set Bonuses ==

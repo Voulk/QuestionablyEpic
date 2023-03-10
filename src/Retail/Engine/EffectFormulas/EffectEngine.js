@@ -55,7 +55,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // The Onyx Annuluet is a 10.0.7 special effect ring.
       // It can be socketed with three special gems at a time and they often work together
       // to give different effects. We thus need to evaluate them as a whole rather than three individual pieces.
-      bonus_stats = getOnyxAnnuletEffect(effectName, player, contentType, itemLevel, setStats, userSettings);
+      bonus_stats = getOnyxAnnuletEffect(effectName.split(","), player, contentType, itemLevel, setStats, userSettings);
     }
     // == Class specific effects ==
     // These can be single-slot effects like Legendaries, or entire set bonuses.
