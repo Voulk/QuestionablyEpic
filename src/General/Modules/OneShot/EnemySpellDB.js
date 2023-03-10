@@ -13,7 +13,7 @@ export const enemySpellDB =
         "school": "Nature",
         "source": "Boss",
         "avoidance": true, // Mention if explicitly tested.
-        "spellID": 377004
+        "spellID": 377004,
     },
     {
         "name": "Defeaning Screech (4)",
@@ -50,7 +50,7 @@ export const enemySpellDB =
     "Court of Stars": [
         {
             "name": "Slicing Maelstrom (Tick, 3 Clones)",
-            "icon": "",
+            "icon": "ability_skyreach_four_wind",
             "baseDamage": 3306 * 4, // Clone # + 1
             "damageType": "Physical",
             "school": "Physical",
@@ -62,7 +62,7 @@ export const enemySpellDB =
         },
         {
             "name": "Slicing Maelstrom (Tick, 4 Clones)",
-            "icon": "",
+            "icon": "ability_skyreach_four_wind",
             "baseDamage": 3306 * 5, // Clone # + 1
             "damageType": "Physical",
             "school": "Physical",
@@ -74,7 +74,7 @@ export const enemySpellDB =
         },
         {
             "name": "Slicing Maelstrom (Tick, 5 Clones)",
-            "icon": "",
+            "icon": "ability_skyreach_four_wind",
             "baseDamage": 3306 * 6, // Clone # + 1
             "damageType": "Physical",
             "school": "Physical",
@@ -86,7 +86,7 @@ export const enemySpellDB =
         },
         {
             "name": "Fel Detonation (Direct Damage)",
-            "icon": "",
+            "icon": "ability_felarakkoa_feldetonation_green",
             "baseDamage": 44084,
             "damageType": "Magic",
             "school": "Fire",
@@ -97,7 +97,7 @@ export const enemySpellDB =
         },
         {
             "name": "Fel Detonation (DoT, Tick)",
-            "icon": "",
+            "icon": "ability_felarakkoa_feldetonation_green",
             "baseDamage": 13225,
             "damageType": "Magic",
             "school": "Fire",
@@ -110,7 +110,7 @@ export const enemySpellDB =
     "Halls of Valor": [
         {
             "name": "Horn of Valor",
-            "icon": "",
+            "icon": "inv_misc_horn_03",
             "baseDamage": 44084,
             "damageType": "Physical",
             "school": "Physical",
@@ -122,7 +122,7 @@ export const enemySpellDB =
         },
         {
             "name": "Arcing Bolt",
-            "icon": "",
+            "icon": "spell_nature_chainlightning",
             "baseDamage": 22043,
             "damageType": "Magic",
             "school": "Nature",
@@ -133,7 +133,7 @@ export const enemySpellDB =
         },
         {
             "name": "Eye of the Storm (Tick)",
-            "icon": "",
+            "icon": "spell_nature_eyeofthestorm",
             "baseDamage": 70535 * 0.25, // 75% reduction from standing in shield
             "damageType": "Magic",
             "school": "Nature",
@@ -144,7 +144,7 @@ export const enemySpellDB =
         },
         {
             "name": "Eye of the Storm (Total)",
-            "icon": "",
+            "icon": "spell_nature_eyeofthestorm",
             "baseDamage": 70535 * 0.25 * 6, // 75% reduction from standing in shield. 6 total ticks.
             "damageType": "Magic",
             "school": "Nature",
@@ -155,7 +155,7 @@ export const enemySpellDB =
         },
         {
             "name": "Claw Frenzy (Correctly Split)",
-            "icon": "",
+            "icon": "inv_misc_monsterclaw_04",
             "baseDamage": 187359 / 5, 
             "damageType": "Physical",
             "school": "Physical",
@@ -167,7 +167,7 @@ export const enemySpellDB =
         },
         {
             "name": "Claw Frenzy (4 Soakers)",
-            "icon": "",
+            "icon": "inv_misc_monsterclaw_04",
             "baseDamage": 187359 / 4, 
             "damageType": "Physical",
             "school": "Physical",
@@ -179,7 +179,7 @@ export const enemySpellDB =
         },
         {
             "name": "Thunderous Bolt",
-            "icon": "",
+            "icon": "spell_lightning_lightningbolt01",
             "baseDamage": 37472,
             "damageType": "Magic",
             "school": "Nature",
@@ -190,7 +190,7 @@ export const enemySpellDB =
         },
         {
             "name": "Valkyra's Advance",
-            "icon": "",
+            "icon": "ability_heroicleap",
             "baseDamage": 39676,
             "damageType": "Physical",
             "school": "Physical",
@@ -204,7 +204,7 @@ export const enemySpellDB =
     "Temple of the Jade Serpent": [
         {
             "name": "Hydrolance",
-            "icon": "",
+            "icon": "ability_mage_rayoffrost",
             "baseDamage": 33063,
             "damageType": "Magic",
             "school": "Frost",
@@ -215,7 +215,7 @@ export const enemySpellDB =
         },
         {
             "name": "Jade Serpent Strike (Absorb)",
-            "icon": "",
+            "icon": "spell_fire_felimmolation",
             "baseDamage": 90560,
             "damageType": "Magic",
             "school": "Frost",
@@ -227,7 +227,7 @@ export const enemySpellDB =
         },
         {
             "name": "Touch of Nothingness (Tick)",
-            "icon": "",
+            "icon": "ability_rogue_envelopingshadows",
             "baseDamage": 18736,
             "damageType": "Magic",
             "school": "Shadow",
@@ -238,7 +238,7 @@ export const enemySpellDB =
         },
         {
             "name": "Touch of Ruin (Absorb)",
-            "icon": "",
+            "icon": "ability_monk_touchofkarma",
             "baseDamage": 54336,
             "damageType": "Magic",
             "school": "Shadow",
@@ -252,7 +252,7 @@ export const enemySpellDB =
     "Shadowmoon Burial Grounds": [
         {
             "name": "Whispers of the Dark Star (Tick)",
-            "icon": "",
+            "icon": "spell_shadow_shadowpower",
             "baseDamage": 11021,
             "damageType": "Magic",
             "school": "Shadow",
@@ -263,7 +263,7 @@ export const enemySpellDB =
         },
         {
             "name": "Whispers of the Dark Star (Total)",
-            "icon": "",
+            "icon": "spell_shadow_shadowpower",
             "baseDamage": 11021 * 6,
             "damageType": "Magic",
             "school": "Shadow",
@@ -274,7 +274,7 @@ export const enemySpellDB =
         },
         {
             "name": "Dark Eclipse",
-            "icon": "",
+            "icon": "ability_druid_eclipse",
             "baseDamage": 198380 * 0.2, // 80% reduction from standing in rune.
             "damageType": "Magic",
             "school": "Shadow",

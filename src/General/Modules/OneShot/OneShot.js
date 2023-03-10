@@ -51,24 +51,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const getDefensiveList = (className, specName) => {
-  let onUseDefensives = specData[className]["defensives"]//.concat(specData[specName + " " + className]["defensives"]);
-  if (specData[specName + " " + className]['defensives']) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]["defensives"]);
-  let passives = specData[className]["passives"]//.concat(specData[specName + " " + className]["passives"]);
-  if (specData[specName + " " + className]['passives']) passives = passives.concat(specData[specName + " " + className]["passives"]);
-  const externals = externalsDB.filter(a => a.include).map(a => a.name.en)//["Zephyr"];
-  const groupBuffs = raidBuffsDB.map(a => a.name.en)//["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
-  
+  let onUseDefensives = specData[className]["defensives"]; //.concat(specData[specName + " " + className]["defensives"]);
+  if (specData[specName + " " + className]["defensives"]) onUseDefensives = onUseDefensives.concat(specData[specName + " " + className]["defensives"]);
+  let passives = specData[className]["passives"]; //.concat(specData[specName + " " + className]["passives"]);
+  if (specData[specName + " " + className]["passives"]) passives = passives.concat(specData[specName + " " + className]["passives"]);
+  const externals = externalsDB.filter((a) => a.include).map((a) => a.name.en); //["Zephyr"];
+  const groupBuffs = raidBuffsDB.map((a) => a.name.en); //["Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
+
   return onUseDefensives.concat(externals).concat(groupBuffs).concat(passives);
 };
 
 const updateSpec = (className, specName) => {
-  console.log("updateSpec", className, specName)
+  console.log("updateSpec", className, specName);
   //const defensiveList = ["Obsidian Scales", "Inherent Resistance", "Zephyr", "Devotion Aura", "Mark of the Wild", "Power Word: Fortitude"];
   const defensiveList = getDefensiveList(className, specName);
   const defensiveData = [];
-  const externals = externalsDB.filter(a => a.include);
+  const externals = externalsDB.filter((a) => a.include);
   const combinedDefensiveDB = defensiveDB.concat(defensiveTalentsDB).concat(externals).concat(raidBuffsDB);
-
 
   defensiveList.forEach((defensiveName) => {
     const temp = combinedDefensiveDB.filter((defensive) => defensive.name.en === defensiveName);
@@ -88,7 +87,7 @@ const updateSpec = (className, specName) => {
 // Returns the key damage multiplier for a given key level. Note that there is no support for keys lower than +10 and while it's easy to add to the function,
 // the app itself should not support such cases given the tool would be an inappropriate choice for it.
 export const getKeyMult = (keyLevel) => {
-  return Math.round((100*1.08 ** 8 * 1.1 ** (keyLevel - 10)))/100;
+  return Math.round(100 * 1.08 ** 8 * 1.1 ** (keyLevel - 10)) / 100;
 };
 
 // Sources of damage reduction are multiplicative with each other.
@@ -132,7 +131,7 @@ export const calcArmor = (armor) => {
 
 export const getRawDamage = (spell, keyLevel) => {
   return getKeyMult(keyLevel) * spell.baseDamage;
-}
+};
 
 export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell) => {
   // All of these are in percentage damage *taken* form. If you have 3% DR from vers then the variable should be 0.97 not 0.03.
@@ -183,7 +182,7 @@ export default function OneShot(props) {
   const updateKeyLevel = (newKeyLevel) => {
     setKeyLevel(newKeyLevel);
     setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats));
-  }
+  };
 
   const activateSpell = (e, spell) => {
     spell.active = !spell.active;
@@ -208,7 +207,7 @@ export default function OneShot(props) {
     console.log("Sum DR: ", sumDamageReduction);
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
-    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID };
+    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID, icon: spell.icon };
     spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
     spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
 
@@ -231,7 +230,14 @@ export default function OneShot(props) {
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <Grid container spacing={1}>
-              <OneShotClassToggle setSelectedClass={setSelectedClass} selectedClass={selectedClass} selectedSpec={selectedSpec} setSelectedSpec={setSelectedSpec} updateSpec={updateSpec} setDefensives={setDefensives} />
+              <OneShotClassToggle
+                setSelectedClass={setSelectedClass}
+                selectedClass={selectedClass}
+                selectedSpec={selectedSpec}
+                setSelectedSpec={setSelectedSpec}
+                updateSpec={updateSpec}
+                setDefensives={setDefensives}
+              />
 
               <OneShotDungeonToggle selectedDungeon={selectedDungeon} setSelectedDungeon={updateSelectedDungeon} dungeonList={dungeonList} />
 

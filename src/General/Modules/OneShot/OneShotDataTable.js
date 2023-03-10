@@ -7,9 +7,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useTranslation } from "react-i18next";
+import { OneShotSpellIcon } from "./OneShotSpellIcon";
 
-function createData(ability, tyrannical, fortified, spellID) {
-  return { ability, tyrannical, fortified, spellID };
+function createData(ability, tyrannical, fortified, spellID, icon, guid, active) {
+  return { ability, tyrannical, fortified, spellID, icon, guid, active };
 }
 
 export default function OneShotDataTable(props) {
@@ -17,7 +18,7 @@ export default function OneShotDataTable(props) {
   const currentLanguage = i18n.language;
 
   const data = props.data;
-  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID));
+  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellIDw, true));
 
   return (
     <TableContainer component={Paper} elevation={0} sx={{ border: "1px solid rgba(255, 255, 255, 0.24)" }}>
@@ -33,7 +34,12 @@ export default function OneShotDataTable(props) {
           {rows.map((row) => (
             <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
               <TableCell component="th" scope="row">
-                <a data-wowhead={"spell=" + row.spellID + "&domain=" + currentLanguage}>{row.ability}</a>
+                <a data-wowhead={"spell=" + row.spellID + "&domain=" + currentLanguage}>
+                  <div style={{ display: "inline-flex", alignItems: "center" }}>
+                    <OneShotSpellIcon spell={row} iconType={"Spell"} className="table" />
+                    <div>{row.ability}</div>
+                  </div>
+                </a>
               </TableCell>
               <TableCell align="right">{row.tyrannical}</TableCell>
               <TableCell align="right">{row.fortified}</TableCell>
