@@ -18,7 +18,7 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.88, 
     baseMana: 250000,
 
-    defaultEmpower: 1,
+    defaultEmpower: {"Dream Breath": 1, "Spiritbloom": 3, "Fire Breath": 1},
     auraHealingBuff: 1,
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
@@ -177,7 +177,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             name: "Fire Breath",
             school: "red",
             buffType: "heal",
-            buffDuration: evokerSpells['Fire Breath'][1].buffDuration[EVOKERCONSTANTS.defaultEmpower],
+            buffDuration: evokerSpells['Fire Breath'][1].buffDuration[EVOKERCONSTANTS.defaultEmpower['Fire Breath']],
             tickRate: evokerSpells['Fire Breath'][1].tickRate,
             coeff: (evokerSpells['Fire Breath'][1].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
             expectedOverheal: 0.4,
@@ -218,7 +218,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // Evoker Spec Talents
     if (talents.renewingBreath) {
         evokerSpells['Dream Breath'][0].coeff *= (1 + 0.15 * talents.renewingBreath);
-        evokerSpells['Dream Breath'][1].coeff[EVOKERCONSTANTS.defaultEmpower] *= (1 + 0.15 * talents.renewingBreath);
+        evokerSpells['Dream Breath'][1].coeff[EVOKERCONSTANTS.defaultEmpower['Dream Breath']] *= (1 + 0.15 * talents.renewingBreath);
         evokerSpells['Dream Breath'][2].coeff *= (1 + 0.15 * talents.renewingBreath);
     }
     //if (settings.twoPc) evokerSpells['Reversion']
@@ -327,13 +327,13 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
 
         if (fullSpell[0].empowered) {
-            fullSpell[0].castTime = fullSpell[0].castTime[EVOKERCONSTANTS.defaultEmpower]
+            fullSpell[0].castTime = fullSpell[0].castTime[EVOKERCONSTANTS.defaultEmpower[key]]
             fullSpell.forEach(spell => {
-                
-                if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[EVOKERCONSTANTS.defaultEmpower];
-                if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[EVOKERCONSTANTS.defaultEmpower];
-                if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[EVOKERCONSTANTS.defaultEmpower];
-                if (spell.buffDuration && typeof spell.buffDuration === "object") spell.buffDuration = spell.buffDuration[EVOKERCONSTANTS.defaultEmpower];
+                const defaultEmpower = EVOKERCONSTANTS.defaultEmpower[key];
+                if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[defaultEmpower];
+                if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[defaultEmpower];
+                if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[defaultEmpower];
+                if (spell.buffDuration && typeof spell.buffDuration === "object") spell.buffDuration = spell.buffDuration[defaultEmpower];
                 //if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
                 //console.log(typeof spell.coeff)
                 

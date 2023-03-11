@@ -5,6 +5,28 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
+
+
+// We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
+// it also lets us test the underlying spells at the same time.
+// This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
+describe("Test Talent Interactions", () => {
+    const activeStats = {
+        intellect: 1974,
+        haste: 869,
+        crit: 1000,
+        mastery: 451,
+        versatility: 528,
+        stamina: 1900,
+    }
+    test("Call of Ysera", () => {
+        
+        const sequence = ["Verdant Embrace", "Dream Breath"];
+        const talents = {...evokerTalents, callOfYsera: 1, renewingBreath: 0};
+    });
+
+})
+
 /*
 describe("Test Base Spells", () => {
     const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
