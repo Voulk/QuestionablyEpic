@@ -19,9 +19,11 @@ const GLOBALCONST = {
 // Cleanup is called after every hard spell cast. 
 export const spellCleanup = (spell, state) => {
 
+    // Check for any buffs that buffed the spell and remove them.
 }
 
 export const addBuff = (state, spell, spellName) => {
+
     if (spell.buffType === "stats") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
@@ -47,11 +49,11 @@ export const addBuff = (state, spell, spellName) => {
         
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
-
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+
         if (buffStacks === 0) {
             state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
-                                        buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
+                                        buffType: "spellAmp", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
                                         buffedSpellName: spell.buffedSpellName
                                         });
         }
@@ -66,6 +68,7 @@ export const addBuff = (state, spell, spellName) => {
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+
         if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]

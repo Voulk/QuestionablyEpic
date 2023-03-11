@@ -266,7 +266,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Living Flame D'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
     }
 
-    if (talents.callOfYsera) evokerSpells['Verdant Embrace'].push({
+    if (talents.callOfYsera) {
+        evokerSpells['Verdant Embrace'].push({
         name: "Call of Ysera",
         type: "buff",
         stacks: false,
@@ -274,6 +275,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         buffType: 'spellAmp',
         value: 1.4,
     })
+    }
     if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
 
         // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
@@ -362,7 +364,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     evokerSpells['Emerald Communion'][0].flatHeal = ecBonus;
     evokerSpells['Emerald Communion'][1].flatHeal = ecBonus;
-    console.log("Adding Flat Heal" + ecBonus);
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
 
@@ -403,12 +404,13 @@ const getHealingMult = (state, t, spellName, talents) => {
             mult *= (1 + talents.gracePeriod * 0.05 * buffsActive / 20);
 
         }
-    }
+    }   
 
+    console.log(JSON.stringify(state.activeBuffs));
     if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
         if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
-
+        console.log("Buffing Dream Breath");
         //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
@@ -563,6 +565,8 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                 spell.runFunc(state, spell);
             }
 
+            // TODO: This needs to be converted to use the RampBase addBuff function. There are some unique ones here which could be converted to some kind of 
+            // function run on buff gain.
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
@@ -577,8 +581,9 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                 else if (spell.buffType === "damage" || spell.buffType === "heal") {     
                     const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
                         tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-
-                    newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(currentStats)) : state.t + spell.buffDuration    
+                    
+                    if (spellName.includes("Dream Breath") && checkBuffActive(state.activeBuffs, "Call of Ysera")) newBuff.attSpell.coeff *= 1.4;
+                    newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration    
                     state.activeBuffs.push(newBuff)
 
                 }
@@ -628,9 +633,30 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                         triggerEssenceBurst(state);
                     }
 
-                    
-
                 }     
+                // Spell amps are buffs that increase the amount of healing the next spell that meets the criteria. The criteria is defined in the buff itself by a function.
+                // Examples might include Call of Ysera or Soul of the Forest.
+                // Buffs that increase the healing of all spells could be handled here in future, but aren't currently. Those are generally much easier.
+
+                // Buffs here support stacking and maxStacks properties.
+                else if (spell.buffType === "spellAmp") {
+                    
+                    // Check if buff already exists, if it does add a stack.
+                    const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+                    addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+
+                    if (buffStacks === 0) {
+                        state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
+                                                    buffType: "spellAmp", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
+                                                    buffedSpellName: spell.buffedSpellName
+                                                    });
+                    }
+                    else {
+                        const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+
+                        if (buff.canStack) buff.stacks += 1;
+                    }
+                }
                 else {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
                 }
@@ -647,6 +673,9 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
  
         // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
     }); 
+
+    // Any post-spell code.
+    if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 }
 
 const spendSpellCost = (spell, state) => {
