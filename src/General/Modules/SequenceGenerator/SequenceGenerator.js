@@ -4,6 +4,14 @@ import { useTranslation } from "react-i18next";
 import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
+
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
@@ -22,11 +30,38 @@ import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engi
 import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
+import { sequenceTheme } from "./SequenceTheme";
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
 
 import SequenceSettings from "General/Modules/SequenceGenerator/SequenceSettings";
+
+const Accordion = styled((props) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  "&:not(:last-child)": {
+    borderBottom: 0,
+  },
+  "&:before": {
+    display: "none",
+  },
+}));
+
+const AccordionSummary = styled((props) => <MuiAccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />} {...props} />)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, .05)" : "rgba(0, 0, 0, .03)",
+  flexDirection: "row-reverse",
+  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+    transform: "rotate(90deg)",
+  },
+  "& .MuiAccordionSummary-content": {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: "1px solid rgba(0, 0, 0, .125)",
+}));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -489,13 +524,46 @@ export default function SequenceGenerator(props) {
                     </Grid>
 
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Grid container spacing={1}>
-                        {sequences.map((s, i) => (
-                          // <div style={{ paddingBottom: "30px" }}>
-                          <SequenceObject seq={s} db={spellDB} spec={selectedSpec} />
-                          // </div>
-                        ))}
-                      </Grid>
+                      {sequences.map((s, i) => (
+                        <StyledEngineProvider injectFirst>
+                          <ThemeProvider theme={sequenceTheme}>
+                            <Accordion index={i} fullWidth className="MuiButtonBase-root-MuiAccordionSummary-root">
+                              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                                <Grid container spacing={1}>
+                                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <Grid container spacing={1} alignItems="flex-end">
+                                      <Grid item>
+                                        <Typography color="primary" variant="h6">
+                                          Accordion {i}
+                                        </Typography>
+                                      </Grid>
+                                      <Grid item>
+                                        <Typography variant="subtitle1"> - {"Stat1: " + 1234}</Typography>
+                                      </Grid>
+                                      <Grid item>
+                                        <Typography variant="subtitle1"> - {"Stat2: " + 5454654}</Typography>
+                                      </Grid>
+                                      <Grid item>
+                                        <Typography variant="subtitle1"> - {"Stat3: " + 546521}</Typography>
+                                      </Grid>
+                                    </Grid>
+                                  </Grid>
+                                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <Divider />
+                                  </Grid>
+                                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <SequenceObject seq={s} db={spellDB} spec={selectedSpec} />
+                                  </Grid>
+                                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <div style={{ height: 4 }} />
+                                  </Grid>
+                                </Grid>
+                              </AccordionSummary>
+                              <AccordionDetails></AccordionDetails>
+                            </Accordion>
+                          </ThemeProvider>
+                        </StyledEngineProvider>
+                      ))}
                     </Grid>
                   </Grid>
                 </Paper>
