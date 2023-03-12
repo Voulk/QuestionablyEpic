@@ -89,8 +89,8 @@ export function SequenceObject(props) {
 
   return (
     // <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
-    <Grid item xs={12}>
-      <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion}>
+    // <Grid item xs={12}>
+      <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion} style={{ width: "100%" }}>
         {/*<Grid item xs="auto">
             <LooksOneIcon fontSize="large" />
             </Grid> */}
@@ -98,7 +98,7 @@ export function SequenceObject(props) {
         {seq.map((spell, index) => (
           <Grid
             item
-            xs="auto"
+            xs={"auto"}
             key={index}
             onDragOver={onDragOver}
             onDragEnd={dropMove}
@@ -124,7 +124,7 @@ export function SequenceObject(props) {
           </Grid>
         ))}
       </Grid>
-    </Grid>
+    // </Grid>
     // </Paper>
   );
 }
