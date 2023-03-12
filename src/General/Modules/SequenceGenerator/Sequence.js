@@ -1,5 +1,13 @@
 import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
+import { sequenceTheme } from "./SequenceTheme";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
@@ -22,6 +30,32 @@ import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerR
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
 
+const Accordion = styled((props) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  "&:not(:last-child)": {
+    borderBottom: 0,
+  },
+  "&:before": {
+    display: "none",
+  },
+}));
+
+const AccordionSummary = styled((props) => <MuiAccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />} {...props} />)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, .05)" : "rgba(0, 0, 0, .03)",
+  flexDirection: "row-reverse",
+  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+    transform: "rotate(90deg)",
+  },
+  "& .MuiAccordionSummary-content": {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: "1px solid rgba(0, 0, 0, .125)",
+}));
+
 export const sequence = {
   id: 0,
   seqName: "",
@@ -30,6 +64,7 @@ export const sequence = {
 
 export function SequenceObject(props) {
   //#region Drag and Drop Functions
+  const index = props.index;
   const dragSpell = useRef();
   const dragOverSpell = useRef();
 
@@ -88,43 +123,72 @@ export function SequenceObject(props) {
   };
 
   return (
-    // <Paper style={{ padding: "8px 8px 4px 8px", minHeight: 40 }} elevation={0}>
-    // <Grid item xs={12}>
-      <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion} style={{ width: "100%" }}>
-        {/*<Grid item xs="auto">
-            <LooksOneIcon fontSize="large" />
-            </Grid> */}
-
-        {seq.map((spell, index) => (
-          <Grid
-            item
-            xs={"auto"}
-            key={index}
-            onDragOver={onDragOver}
-            onDragEnd={dropMove}
-            onDrop={dropInsertion}
-            onDragEnter={(e) => {
-              dragEnter(e, index);
-            }}
-          >
-            <SpellIcon
-              spell={spellDB[spell][0].spellData}
-              spec={selectedSpec}
-              iconType={"Spell"}
-              draggable
-              onDragStart={(e) => {
-                dragStart(e, index);
-              }}
-              onContextMenu={(e) => {
-                e.preventDefault();
-                removeSpellAtIndex(index, e);
-              }}
-              style={{ display: "flex" }}
-            />
-          </Grid>
-        ))}
-      </Grid>
-    // </Grid>
-    // </Paper>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={sequenceTheme}>
+        <Accordion index={index} fullWidth className="MuiButtonBase-root-MuiAccordionSummary-root">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Grid container spacing={1} alignItems="flex-end">
+                  <Grid item>
+                    <Typography color="primary" variant="h6">
+                      Accordion {index}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="subtitle1"> - {"Stat1: " + 1234}</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="subtitle1"> - {"Stat2: " + 5454654}</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="subtitle1"> - {"Stat3: " + 546521}</Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Divider />
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Grid container spacing={1} alignItems="center" className="backgroundDropTarget" onDragOver={onDragOver} onDrop={dropInsertion} style={{ width: "100%" }}>
+                  {seq.map((spell, index) => (
+                    <Grid
+                      item
+                      xs={"auto"}
+                      key={index}
+                      onDragOver={onDragOver}
+                      onDragEnd={dropMove}
+                      onDrop={dropInsertion}
+                      onDragEnter={(e) => {
+                        dragEnter(e, index);
+                      }}
+                    >
+                      <SpellIcon
+                        spell={spellDB[spell][0].spellData}
+                        spec={selectedSpec}
+                        iconType={"Spell"}
+                        draggable
+                        onDragStart={(e) => {
+                          dragStart(e, index);
+                        }}
+                        onContextMenu={(e) => {
+                          e.preventDefault();
+                          removeSpellAtIndex(index, e);
+                        }}
+                        style={{ display: "flex" }}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <div style={{ height: 4 }} />
+              </Grid>
+            </Grid>
+          </AccordionSummary>
+          <AccordionDetails></AccordionDetails>
+        </Accordion>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
