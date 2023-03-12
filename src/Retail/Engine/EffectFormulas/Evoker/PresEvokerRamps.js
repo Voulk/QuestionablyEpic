@@ -15,7 +15,7 @@ const discSettings = {
 const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
-    masteryEfficiency: 0.88, 
+    masteryEfficiency: 0.80, 
     baseMana: 250000,
 
     defaultEmpower: {"Dream Breath": 1, "Spiritbloom": 3, "Fire Breath": 1},
@@ -744,6 +744,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Talents come with a lot of extra data we don't need like icons, max points and such.
     // This quick bit of code flattens it out by creating key / value pairs for name: points.
     // Can be removed to RampGeneral.
+
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
         talents[key] = value.points;
@@ -798,6 +799,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
         }
     }
 
+    // Extra Settings
+    if (settings.masteryEfficiency) EVOKERCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
 
     const seq = [...sequence];
 

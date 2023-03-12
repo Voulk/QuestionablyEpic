@@ -11,18 +11,24 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 // it also lets us test the underlying spells at the same time.
 // This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
 describe("Test Talent Interactions", () => {
+    const tolerance = 50;
     const activeStats = {
         intellect: 1974,
-        haste: 869,
-        crit: 1000,
-        mastery: 451,
-        versatility: 528,
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 0,
         stamina: 1900,
     }
     test("Call of Ysera", () => {
         
         const sequence = ["Verdant Embrace", "Dream Breath"];
         const talents = {...evokerTalents, callOfYsera: 1, renewingBreath: 0};
+
+        const healing = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1}, talents).totalHealing
+        const expectedAnswer = 100000;
+
+        expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
     });
 
 })
