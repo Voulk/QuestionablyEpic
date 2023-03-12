@@ -65,7 +65,7 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         onGCD: true,
         cost: 3.0,
-        coeff: 4.3,
+        coeff: 3.096,
         cooldown: 18,
         expectedOverheal: 0.15,
         secondaries: ['crit', 'vers', 'mastery']
@@ -362,11 +362,6 @@ export const EVOKERSPELLDB = {
     }],
 }
 
-export const baseTalents = {
-    reversion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1},
-    dreamBreath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1},
-    echo: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1},
-}
 
 export const evokerTalents = {
     // Class Tree

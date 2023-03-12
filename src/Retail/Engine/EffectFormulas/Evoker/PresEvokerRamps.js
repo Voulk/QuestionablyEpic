@@ -18,7 +18,7 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.80, 
     baseMana: 250000,
 
-    defaultEmpower: {"Dream Breath": 1, "Spiritbloom": 3, "Fire Breath": 1},
+    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0},
     auraHealingBuff: 1,
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
@@ -352,11 +352,24 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 buffType: 'special',
             })
         }
-        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) spellInfo.coeff *= (1 + 0.05 * talents.lushGrowth);
+        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) {
+            value.forEach(spellSlice => {
+                spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
+            });
+            
+        }
 
         if (!spellInfo.targets) spellInfo.targets = 1;
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
+
+        if (settings.includeOverheal === "No") {
+            value.forEach(spellSlice => {
+                if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
+
+            })
+ 
+        }
     }
 
     // Setup Emerald Communion
@@ -395,7 +408,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraHealingBuff;
 
-
+    
     // Grace Period
     if (talents.gracePeriod) {
         if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.05);
@@ -406,7 +419,6 @@ const getHealingMult = (state, t, spellName, talents) => {
         }
     }   
 
-    console.log(JSON.stringify(state.activeBuffs));
     if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
         if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
@@ -416,7 +428,6 @@ const getHealingMult = (state, t, spellName, talents) => {
     } 
     else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
     if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
-    
     
     return mult;
 }
@@ -744,11 +755,14 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Talents come with a lot of extra data we don't need like icons, max points and such.
     // This quick bit of code flattens it out by creating key / value pairs for name: points.
     // Can be removed to RampGeneral.
-
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
         talents[key] = value.points;
     }
+
+    // Add base Mastery bonus.
+    // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
+    stats.mastery += 180;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essence: 5};
 
