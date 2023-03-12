@@ -490,7 +490,7 @@ export default function SequenceGenerator(props) {
 
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       {sequences.map((s, i) => (
-                        <SequenceObject index={i} seq={s} db={spellDB} spec={selectedSpec} />
+                        <SequenceObject index={i} seq={s} db={spellDB} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
                       ))}
                     </Grid>
                   </Grid>

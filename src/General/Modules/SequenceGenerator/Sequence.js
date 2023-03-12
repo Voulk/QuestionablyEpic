@@ -71,6 +71,9 @@ export function SequenceObject(props) {
   const seq = props.seq.spells;
   const spellDB = props.db;
   const selectedSpec = props.spec;
+  const setSelectedSeq = props.setSelectedSeq;
+
+  const [expanded, setExpanded] = useState(false);
 
   /**
    * Drag and Drop inside of the Sequence.
@@ -125,8 +128,8 @@ export function SequenceObject(props) {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={sequenceTheme}>
-        <Accordion index={index} fullWidth className="MuiButtonBase-root-MuiAccordionSummary-root">
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+        <Accordion index={index} fullWidth expanded={expanded} onClick={(e) => setSelectedSeq(index)}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon onClick={(e) => setExpanded(expanded ? false : true)} />} aria-controls="panel1a-content" id="panel1a-header">
             <Grid container spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Grid container spacing={1} alignItems="flex-end">
