@@ -80,7 +80,7 @@ export const EVOKERSPELLDB = {
         empowered: true,
         cost: 3.8,
         cooldown: 30,
-        coeff: 5.65,
+        coeff: 5.085,
         targets: [1, 2, 3, 4], // 
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
@@ -132,7 +132,7 @@ export const EVOKERSPELLDB = {
         targets: 3,
         essence: 3,
         cost: 4.0,
-        coeff: 2.5,
+        coeff: 1.5,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -149,7 +149,7 @@ export const EVOKERSPELLDB = {
         targets: 1,
         essence: 2,
         cost: 1.7,
-        coeff: 2 * 0.67, // Aura
+        coeff: 1.2, // Aura
         expectedOverheal: 0.2,
         targets: 1, // 
         secondaries: ['crit', 'vers', 'mastery']

@@ -14,6 +14,8 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 // We don't have a crit flag right now, so we'll need to buff our in game values by 5% to compensate.
 describe("Test Talent Interactions", () => {
     const tolerance = 50;
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true};
+    const testBaseTalents = {};
     const activeStats = {
         intellect: 2091,
         haste: 0,
@@ -30,10 +32,44 @@ describe("Test Talent Interactions", () => {
                         attunedToTheDream: {...evokerTalents.attunedToTheDream, points: 0},
                         lushGrowth: {...evokerTalents.lushGrowth, points: 2}};
         //console.log(talents);
-        const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1, includeOverheal: "No", reporting: true}, talents)
+        const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1, includeOverheal: "No", reporting: false}, talents)
         const healing = result.totalHealing;
 
         const expectedAnswer = (8275 + (2874 + 1437 * 8) * 5) * 1.05; // 8 ticks, 5 targets, 5% crit multiplier.
+        expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
+    });
+
+    test("Panacea & Fluttering Seedlings", () => {
+        
+        const sequence = ["Emerald Blossom"];
+        const talents = {...evokerTalents, flutteringSeedlings: {...evokerTalents.flutteringSeedlings, points: 2}, 
+                        attunedToTheDream: {...evokerTalents.attunedToTheDream, points: 0},
+                        fieldOfDreams: {...evokerTalents.fieldOfDreams, points: 0},
+                        panacea: {...evokerTalents.panacea, points: 1},
+                        bountifulBloom: {...evokerTalents.bountifulBloom, points: 1},
+                        lushGrowth: {...evokerTalents.lushGrowth, points: 2}};
+        //console.log(talents);
+        const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1, includeOverheal: "No", reporting: false}, talents)
+        const healing = result.totalHealing;
+        console.log(result);
+        const expectedAnswer = (5227 + 4008 * 5 + 1573 * 2) * 1.05; // 2 Seedlings per Emerald Blossom.
+
+        expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
+    });
+
+    test("Echo Spiritbloom R3", () => {
+        
+        const sequence = ["Echo", "Spiritbloom"];
+        const talents = {...evokerTalents, timeLord: {...evokerTalents.timeLord, points: 2}, 
+                        attunedToTheDream: {...evokerTalents.attunedToTheDream, points: 0},
+                        fontOfMagic: {...evokerTalents.fontOfMagic, points: 0},
+                        lushGrowth: {...evokerTalents.lushGrowth, points: 2}};
+        //console.log(talents);
+        const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1, includeOverheal: "No", reporting: true}, talents)
+        const healing = result.totalHealing;
+        console.log(result);
+        const expectedAnswer = (2915 + 13591 * 4.05) * 1.05; // Expectation is 3 regular Spiritbloom bolts, 1 echo'd bolt, and 1x Echo direct heal.
+
         expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
     });
 

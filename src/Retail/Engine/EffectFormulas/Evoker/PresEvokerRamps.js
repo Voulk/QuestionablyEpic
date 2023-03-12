@@ -201,14 +201,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     // Evoker Class Talents
     if (talents.bountifulBloom) evokerSpells['Emerald Blossom'][0].targets += 2;
-    if (talents.panacea) evokerSpells['Emerald Blossom'].push({
-        type: "heal",
-        school: "green",
-        coeff: 2.5,
-        targets: 1,
-        expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers']
-    })
+
 
     if (talents.enkindled) {
         evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
@@ -256,6 +249,16 @@ const triggerCycleOfLife = (state, rawHealing) => {
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers', 'mastery']
     });
+    // Panacea doesn't scale with Lush Growth.
+    if (talents.panacea) evokerSpells['Emerald Blossom'].push({
+        name: "Panacea",
+        type: "heal",
+        school: "green",
+        coeff: 2.5,
+        targets: 1,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers']
+    })
     if (talents.fieldOfDreams) evokerSpells['Emerald Blossom'].push({
         type: "castSpell",
         storedSpell: "Emerald Blossom",
@@ -354,6 +357,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         }
         if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) {
             value.forEach(spellSlice => {
+                if ('name' in spellSlice && (spellSlice.name === "Panacea" || spellSlice.name === "Fluttering Seedlings")) return; // Exception case.
                 spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
             });
             
@@ -379,6 +383,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     evokerSpells['Emerald Communion'][1].flatHeal = ecBonus;
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
+
 
 
     // ==== Tier Sets ====
