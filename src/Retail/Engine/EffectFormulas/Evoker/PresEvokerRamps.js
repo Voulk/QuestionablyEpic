@@ -271,14 +271,27 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     if (talents.callOfYsera) {
         evokerSpells['Verdant Embrace'].push({
-        name: "Call of Ysera",
-        type: "buff",
-        stacks: false,
-        buffDuration: 999,
-        buffType: 'spellAmp',
-        value: 1.4,
+            name: "Call of Ysera",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'spellAmp',
+            value: 1.4,
     })
     }
+
+    //
+    if (talents.lifebind) {
+        evokerSpells['Verdant Embrace'].push({
+            name: "Lifebind",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'special',
+            value: 0.4,
+        });
+    }
+
     if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
 
         // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
@@ -360,9 +373,9 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 if ('name' in spellSlice && (spellSlice.name === "Panacea" || spellSlice.name === "Fluttering Seedlings")) return; // Exception case.
                 spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
             });
-            
         }
 
+        if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;

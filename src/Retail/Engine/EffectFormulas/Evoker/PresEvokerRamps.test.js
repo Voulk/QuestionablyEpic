@@ -13,9 +13,11 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 
 // We don't have a crit flag right now, so we'll need to buff our in game values by 5% to compensate.
 describe("Test Talent Interactions", () => {
-    const tolerance = 50;
+    const tolerance = 20;
     const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true};
-    const testBaseTalents = {};
+    const testBaseTalents = {...evokerTalents,
+                            attunedToTheDream: {...evokerTalents.attunedToTheDream, points: 0},
+                            lushGrowth: {...evokerTalents.lushGrowth, points: 2}};
     const activeStats = {
         intellect: 2091,
         haste: 0,
@@ -37,6 +39,7 @@ describe("Test Talent Interactions", () => {
 
         const expectedAnswer = (8275 + (2874 + 1437 * 8) * 5) * 1.05; // 8 ticks, 5 targets, 5% crit multiplier.
         expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
+        expect(result.manaSpent).toEqual(7500+11250);
     });
 
     test("Panacea & Fluttering Seedlings", () => {
@@ -55,6 +58,7 @@ describe("Test Talent Interactions", () => {
         const expectedAnswer = (5227 + 4008 * 5 + 1573 * 2) * 1.05; // 2 Seedlings per Emerald Blossom.
 
         expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
+        expect(result.manaSpent).toEqual(12000);
     });
 
     test("Echo Spiritbloom R3", () => {
@@ -71,6 +75,25 @@ describe("Test Talent Interactions", () => {
         const expectedAnswer = (2915 + 13591 * 4.05) * 1.05; // Expectation is 3 regular Spiritbloom bolts, 1 echo'd bolt, and 1x Echo direct heal.
 
         expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
+        expect(result.manaSpent).toEqual(4250+9500);
+    });
+
+    // TODO
+    test("Resonating Sphere Lifebind Combo - 5 targets", () => {
+        
+        const sequence = ["Temporal Anomaly", "Verdant Embrace", "Spiritbloom"];
+        const talents = {...testBaseTalents, resonatingSphere: {...evokerTalents.callOfYsera, points: 0},
+                                            lifebind: {...evokerTalents.callOfYsera, points: 0}
+    };
+        //console.log(talents);
+        const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {maxAllyTargets: 5, masteryEfficiency: 1, includeOverheal: "No", reporting: true}, talents)
+        const healing = result.totalHealing;
+        console.log(result);
+        const expectedAnswer = (2915 + 13591 * 4.05) * 1.05; // Expectation is 3 regular Spiritbloom bolts, 1 echo'd bolt, and 1x Echo direct heal.
+
+        //expect(Math.abs(healing - expectedAnswer)).toBeLessThan(tolerance);
+        expect(true).toEqual(true);
+        expect(result.manaSpent).toEqual(7500+18750+9500);
     });
 
 })

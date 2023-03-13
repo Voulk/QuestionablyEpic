@@ -131,7 +131,7 @@ export const EVOKERSPELLDB = {
         delay: 2, // The number of seconds before the spell heals.
         targets: 3,
         essence: 3,
-        cost: 4.0,
+        cost: 4.8,
         coeff: 1.5,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers', 'mastery']
@@ -393,7 +393,7 @@ export const evokerTalents = {
     timeLord: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 372527, select: true, tier: 2}, // Echo replicates an additional 25/50% healing (2 points).
     nozdormusTeachings: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Temporal Anomaly shields one additional target.
     resonatingSphere: {points: 1, maxPoints: 1, icon: "ability_evoker_bronze_01", id: 376236, select: true, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
-    lifebind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
+    lifebind: {points: 0, maxPoints: 1, icon: "ability_evoker_hoverred", id: 373270, select: true, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 1, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
 
 
