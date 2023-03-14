@@ -78,7 +78,7 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Cold Frost Stone                                             */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Gain a frost shield every 20 seconds that absorbs damage.
+        /* Gain a frost shield every 20 seconds that absorbs damage. Does not proc Wild Spirit Stone.
         */
         name: "Cold Frost Stone",
         school: "Frost",
@@ -104,7 +104,7 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Deluging Water Stone                                         */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Abilities have a chance to heal a nearby ally. (Smart? Dumb?). Spell data appears to apply to the entire heal, but double check it's not one tick of the HoT.
+        /* Abilities have a chance to heal a nearby ally. (Smart? Dumb?). Spell data is for one tick of the HoT.
         */
         name: "Deluging Water Stone",
         school: "Frost",
@@ -156,7 +156,7 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Freezing Ice Stone                                           */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Check range
+        /* 
         */
         name: "Freezing Ice Stone",
         school: "Frost",
@@ -338,11 +338,11 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Desirous Blood Stone                                         */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Lifesteal damage effect.
+        /* Lifesteal damage effect. DOES count as healing for Wild Spirits.
         */
         name: "Desirous Blood Stone",
         school: "Necromantic",
-        type: "Damage", // TODO: Check if this procs Wild Spirit Stone.
+        type: "Heal", 
         effects: [
             { 
                 coefficient: 22.04094,
@@ -366,7 +366,9 @@ export const annuletGemData = [
         /*                                      Wild Spirit Stone                                         */
         /* ---------------------------------------------------------------------------------------------- */
         /* AoE heal when you have a heal or nature effect proc. 
-        /* TOCHECK: Wind Sculpted Stone, Absorbs, spreads from Plague.
+        /* Does proc from Desirous Blood Stone, 
+        /* Will double proc if you have Twilight + a corresponding stone. Double procs can overwrite each other.
+        /*
         */
         name: "Wild Spirit Stone",
         type: "Heal",
@@ -376,7 +378,7 @@ export const annuletGemData = [
             coefficient: 1.975117,
             table: -9,
             targets: 5,
-            efficiency: 0.7,
+            efficiency: 0.67,
             ticks: 7,
             secondaries: ['crit', 'versatility'],
           },
