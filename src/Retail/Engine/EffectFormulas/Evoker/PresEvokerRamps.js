@@ -276,7 +276,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             type: "buff",
             stacks: false,
             canStack: false,
-            buffDuration: 999,
+            buffDuration: 5,
             buffType: 'special',
             value: 0.4,
         });
@@ -476,11 +476,9 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
     if (checkBuffActive(state.activeBuffs, "Lifebind") && EVOKERCONSTANTS.lifebindSpells.includes(spellName)) {
-        addReport(state, `Lifebind triggered`)
         const lifebindBuffs = state.activeBuffs.filter(buff => buff.name === "Lifebind");
-        console.log(JSON.stringify(lifebindBuffs));
         const lifebindMult = lifebindBuffs.map(b => b.value).reduce((a, b) => a+b, 0);
-        console.log(lifebindMult);
+
 
         const lifebindSpell = {name: "Lifebind", flatHeal: healingVal * lifebindMult / targetMult, targets: 1, coeff: 0, secondaries: [], expectedOverheal: 0.2};
         runHeal(state, lifebindSpell, "Lifebind", true);

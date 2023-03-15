@@ -357,6 +357,8 @@ export const EVOKERSPELLDB = {
         buffDuration: 5,
         coeff: 0,
         flatHeal: 0,
+        hastedDuration: true,
+        canPartialTick: false,
         expectedOverheal: 0.4,
         secondaries: [],
     }],
