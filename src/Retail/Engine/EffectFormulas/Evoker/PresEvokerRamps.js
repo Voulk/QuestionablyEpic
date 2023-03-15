@@ -24,7 +24,7 @@ const EVOKERCONSTANTS = {
     goldenHourHealing: 18000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
-    lifebindSpells: ['Spiritbloom', 'Dream Breath', 'Emerald Communion'],
+    lifebindSpells: ['Spiritbloom', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
     essenceBuff: {
         name: "EssenceGen",
         expiration: 5,
@@ -269,6 +269,18 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Living Flame D'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
     }
 
+
+    if (talents.lifebind) {
+        evokerSpells['Verdant Embrace'].push({
+            name: "Lifebind",
+            type: "buff",
+            stacks: false,
+            canStack: false,
+            buffDuration: 999,
+            buffType: 'special',
+            value: 0.4,
+        });
+    }
     if (talents.callOfYsera) {
         evokerSpells['Verdant Embrace'].push({
             name: "Call of Ysera",
@@ -278,18 +290,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
             buffType: 'spellAmp',
             value: 1.4,
     })
-    }
-
-    //
-    if (talents.lifebind) {
-        evokerSpells['Verdant Embrace'].push({
-            name: "Lifebind",
-            type: "buff",
-            stacks: false,
-            buffDuration: 999,
-            buffType: 'special',
-            value: 0.4,
-        });
     }
 
     if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
@@ -475,6 +475,18 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
+    if (checkBuffActive(state.activeBuffs, "Lifebind") && EVOKERCONSTANTS.lifebindSpells.includes(spellName)) {
+        addReport(state, `Lifebind triggered`)
+        const lifebindBuffs = state.activeBuffs.filter(buff => buff.name === "Lifebind");
+        console.log(JSON.stringify(lifebindBuffs));
+        const lifebindMult = lifebindBuffs.map(b => b.value).reduce((a, b) => a+b, 0);
+        console.log(lifebindMult);
+
+        const lifebindSpell = {name: "Lifebind", flatHeal: healingVal * lifebindMult / targetMult, targets: 1, coeff: 0, secondaries: [], expectedOverheal: 0.2};
+        runHeal(state, lifebindSpell, "Lifebind", true);
+
+    }
+
     /* Defunct with the in-game Dream Breath rework.
     if (spellName === "Dream Breath" && state.talents.renewingBreath) {
         // Handle Renewing Breath.
@@ -643,6 +655,8 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                             buff.canPartialTick = true;
 
                         }
+
+
                         //if (spell.name === "Temporal Compression") console.log(buff);
                         state.activeBuffs.push(buff);
                     }
@@ -672,7 +686,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                     
                     // Check if buff already exists, if it does add a stack.
                     const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
-                    addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+                    //addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
 
                     if (buffStacks === 0) {
                         state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
@@ -705,6 +719,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
     // Any post-spell code.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+    //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
 }
 
 const spendSpellCost = (spell, state) => {
@@ -823,6 +838,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
                 echoSpell[0].function = spellData[0].function;
+            }
+            if (spellName === "Verdant Embrace") {
+                if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Call of Ysera") echoSpell.pop();
             }
             //echoSpell[0].coeff *= evokerSpells['Echo'][1].value;
             // Save the new spell.
@@ -963,6 +981,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
                     echoSpell.forEach(effect => {
                         if ('coeff' in effect) effect.coeff = effect.coeff * echoBuff.value;
+                        if ('value' in effect) effect.value = effect.value * echoBuff.value;
                     })
 
                     // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
