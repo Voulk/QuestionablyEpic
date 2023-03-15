@@ -116,7 +116,7 @@ export const annuletGemData = [
             ppm: 2.5,
             efficiency: 0.65,
             ticks: 6,
-            secondaries: ['crit', 'versatility'],
+            secondaries: ['versatility'], // Assumed no crit scaling. TODO: Confirm.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -130,19 +130,19 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Exuding Steam Stone                                          */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Check range
+        /* Check range. 
         */
         name: "Exuding Steam Stone",
         school: "Frost",
         type: "Heal",
         effects: [
           { 
-            coefficient: 7.878238,
+            coefficient: 21.88019,
             table: -9,
             ppm: 3,
             targets: 3,
             efficiency: 0.65,
-            secondaries: ['crit', 'versatility'],
+            secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -375,12 +375,12 @@ export const annuletGemData = [
         school: "Nature",
         effects: [
           { 
-            coefficient: 1.975117,
+            coefficient: 1.975117 * 0.97, // Off by 3% in-game regardless of spec.
             table: -9,
             targets: 5,
             efficiency: 0.67,
             ticks: 7,
-            secondaries: ['crit', 'versatility'],
+            secondaries: ['versatility'], // Does not currently scale with crit. Check on release.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {

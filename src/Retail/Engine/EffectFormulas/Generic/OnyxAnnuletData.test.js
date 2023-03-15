@@ -4,7 +4,28 @@ import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";
 
-import { getOnyxAnnuletEffect, getBestCombo } from "./OnyxAnnuletData";
+import { getOnyxAnnuletEffect, getBestCombo, annuletGemData } from "./OnyxAnnuletData";
+
+describe("Gem Data Tests", () => {
+    test("Wild Spirit Stone", () => {
+        // Test for one tick.
+        const activeEffect = annuletGemData.find((effect) => effect.name === "Wild Spirit Stone");
+        const effect = activeEffect.effects[0];
+        const expectedResult = 1054;
+
+        expect(processedValue(effect, 411)).toBe(expectedResult);
+
+    });
+    test("Exuding Steam Stone", () => {
+        // Test for one tick.
+        const activeEffect = annuletGemData.find((effect) => effect.name === "Exuding Steam Stone");
+        const effect = activeEffect.effects[0];
+        const expectedResult = 12039;
+
+        expect(processedValue(effect, 411)).toBe(expectedResult);
+
+    });
+});
 
 describe("TODO", () => {
     test("TODOs", () => {
