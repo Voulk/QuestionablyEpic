@@ -1,6 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
+import { getOnyxAnnuletEffect, getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -789,6 +790,14 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     bonus_stats = compileStats(bonus_stats, effectStats);
   }
 
+  // Handle Annulet
+  if (item.id === 203460) {
+    const combo = getBestCombo(player, contentType, 424, player.activeStats, playerSettings)
+
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 424, player.activeStats, playerSettings);
+    bonus_stats = compileStats(bonus_stats, annuletStats);
+  }
+
     // Add Retail Socket
   if (item.socket) {
     getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
@@ -833,6 +842,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];
   }
+
+
 
   return Math.round(100 * score) / 100;
 }

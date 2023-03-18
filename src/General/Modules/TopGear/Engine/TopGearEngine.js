@@ -431,12 +431,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
 
-  // Special 10.0.7 Ring
-  //if Check if ring in set.
 
-  // Auto gen best gems.
 
-  // Add to effectList.
+
 
   // ------------------
 
@@ -460,9 +457,21 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
+  // Special 10.0.7 Ring
+  // Check if ring in set.
+  if (item.id === 203460) {
+    // Auto gen best gems.
+   const combo = getBestCombo(player, contentType, 424, player.activeStats, playerSettings)
+
+    // Handle Annulet
+   const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 424, player.activeStats, playerSettings);
+
+   effectStats.push(annuletStats);
+ }
+
   const mergedEffectStats = mergeBonusStats(effectStats);
 
-  //bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+
 
 
   // == Disc Specific Ramps ==

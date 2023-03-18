@@ -37,7 +37,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     console.log(combinations);
 
 
-    return combinations[0];
+    return combinations[0].gems;
 }
   
 /**
@@ -375,7 +375,7 @@ export const annuletGemData = [
         school: "Nature",
         effects: [
           { 
-            coefficient: 1.975117 * 0.97, // Off by 3% in-game regardless of spec.
+            coefficient: 1.26373,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
             table: -9,
             targets: 5,
             efficiency: 0.67,

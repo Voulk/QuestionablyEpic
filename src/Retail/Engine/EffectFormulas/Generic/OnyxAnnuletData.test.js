@@ -11,7 +11,7 @@ describe("Gem Data Tests", () => {
         // Test for one tick.
         const activeEffect = annuletGemData.find((effect) => effect.name === "Wild Spirit Stone");
         const effect = activeEffect.effects[0];
-        const expectedResult = 1054;
+        const expectedResult = 707;
 
         expect(processedValue(effect, 411)).toBe(expectedResult);
 
