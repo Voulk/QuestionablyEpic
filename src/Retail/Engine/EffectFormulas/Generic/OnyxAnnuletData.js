@@ -32,7 +32,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
         set.dps = bonus_stats.dps;
         set.hps = bonus_stats.hps;
     })
-    combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
+    combinations.sort((a, b) => (a.dps < b.dps ? 1 : -1))
 
     console.log(combinations);
 
@@ -218,6 +218,7 @@ export const annuletGemData = [
           { 
             coefficient: 0.315707,
             table: -7,
+            ticks: 3,
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -229,7 +230,7 @@ export const annuletGemData = [
                 if (gem.school === "Frost") ppm += gem.effects[0].ppm || 0;
             })
 
-            bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * ppm / 60;
+            bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * ppm / 60;
 
             return bonus_stats;
         }
@@ -412,7 +413,7 @@ export const annuletGemData = [
                 coefficient: 22.04094,
                 table: -9,
                 ppm: 2.25, 
-                targets: 1, // TODO: Swap for content type.
+                targets: 2.2, // TODO: Swap for content type.
                 secondaries: ['haste', 'crit', 'versatility'],
               },
         ],
