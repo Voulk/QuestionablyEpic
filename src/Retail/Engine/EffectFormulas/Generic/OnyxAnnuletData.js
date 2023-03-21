@@ -32,7 +32,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
         set.dps = bonus_stats.dps;
         set.hps = bonus_stats.hps;
     })
-    combinations.sort((a, b) => (a.dps < b.dps ? 1 : -1))
+    combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
 
     console.log(combinations);
 
@@ -85,7 +85,7 @@ export const annuletGemData = [
         type: "Absorb",
         effects: [
           { 
-            coefficient: 39.38435,
+            coefficient: 49.23086,
             table: -9,
             ppm: 3,
             efficiency: 0.9,
@@ -111,7 +111,7 @@ export const annuletGemData = [
         type: "Heal",
         effects: [
           { 
-            coefficient: 7.878238,
+            coefficient: 9.061598,
             table: -9,
             ppm: 2.5,
             efficiency: 0.65,
@@ -163,7 +163,7 @@ export const annuletGemData = [
         type: "Damage",
         effects: [
           { 
-            coefficient: 29.38906,
+            coefficient: 36.73718,
             table: -9,
             ppm: 2.5,
             secondaries: ['crit', 'versatility'],
@@ -187,7 +187,7 @@ export const annuletGemData = [
         type: "Damage",
         effects: [
             { 
-                coefficient: 15.30673,
+                coefficient: 19.13384,
                 table: -9,
                 ppm: 2,
                 secondaries: ['crit', 'versatility'],
@@ -246,7 +246,7 @@ export const annuletGemData = [
         type: "Damage",
         effects: [
           { 
-            coefficient: 4.499163,
+            coefficient: 5.624381,
             table: -9,
             ppm: 2.5,
             secondaries: ['crit', 'versatility'],
@@ -294,7 +294,7 @@ export const annuletGemData = [
         type: "Absorb",
         effects: [
             { 
-                coefficient: 29.53954,
+                coefficient: 36.925285,
                 table: -9,
                 ppm: 1.8, // Max of 2.14.
                 efficiency: 0.95,
@@ -313,14 +313,14 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Indomitable Earth Stone                                      */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Gain a frost shield every 20 seconds that absorbs damage.
+        /* 
         */
         name: "Indomitable Earth Stone",
         school: "Earth",
         type: "Absorb",
         effects: [
           { 
-            coefficient: 59.07738,
+            coefficient: 73.84715,
             table: -9,
             ppm: 2,
             efficiency: 0.9,
@@ -346,7 +346,7 @@ export const annuletGemData = [
         type: "Heal", 
         effects: [
             { 
-                coefficient: 22.04094,
+                coefficient: 27.55246,
                 table: -9,
                 ppm: 2.5, 
                 efficiency: 0.6,
@@ -410,7 +410,7 @@ export const annuletGemData = [
         type: "Damage", 
         effects: [
             { 
-                coefficient: 22.04094,
+                coefficient: 21.12777,
                 table: -9,
                 ppm: 2.25, 
                 targets: 2.2, // TODO: Swap for content type.
