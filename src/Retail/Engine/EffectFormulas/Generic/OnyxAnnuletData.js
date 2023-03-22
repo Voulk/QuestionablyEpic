@@ -32,7 +32,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
         set.dps = bonus_stats.dps;
         set.hps = bonus_stats.hps;
     })
-    combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
+    combinations.sort((a, b) => (a.dps < b.dps ? 1 : -1))
 
     console.log(combinations);
 
@@ -122,7 +122,9 @@ export const annuletGemData = [
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
             let bonus_stats = {};
             bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      
+            console.log("Deluging Water Stone: " + bonus_stats.hps)
+            console.log("Hits: ")
+            console.log("Deluging Per Tick: " + processedValue(data[0], itemLevel, 1));
             return bonus_stats;
         }
       },
@@ -130,7 +132,7 @@ export const annuletGemData = [
         /* ---------------------------------------------------------------------------------------------- */
         /*                                   Exuding Steam Stone                                          */
         /* ---------------------------------------------------------------------------------------------- */
-        /* Check range. 
+        /* Check range. At least appears to be smart healing. 
         */
         name: "Exuding Steam Stone",
         school: "Frost",
@@ -141,14 +143,15 @@ export const annuletGemData = [
             table: -9,
             ppm: 3,
             targets: 3,
-            efficiency: 0.65,
+            efficiency: 0.8, 
             secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
             let bonus_stats = {};
             bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * data[0].ppm / 60;
-
+            console.log("Steam HPS: " + bonus_stats.hps);
+            console.log("Steam avg hit: " + processedValue(data[0], itemLevel, 1))
             return bonus_stats;
         }
       },
@@ -393,9 +396,11 @@ export const annuletGemData = [
                 const procCandidate = gem.name !== "Wild Spirit Stone" && (gem.school === "Nature" || gem.type === "Heal");
                 if (procCandidate) ppm += gem.effects[0].ppm || 0;
             })
-
+            console.log("Expected Events" + (ppm * data[0].targets * data[0].ticks))
+            console.log("Tick: " + processedValue(data[0], itemLevel, 1))
+            
             bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * ppm / 60;
-
+            
             return bonus_stats;
         }
       },
