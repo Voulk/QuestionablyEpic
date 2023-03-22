@@ -9,6 +9,14 @@
 
 export const changeLog = [
   {
+    version: "10.0.7",
+    update: 13,
+    date: "22 March",
+    changes: [ 
+      "Added Onyx Annulet.",
+      "Added some missing timewalking items."
+  ]},
+  {
     version: "10.0.5",
     update: 12,
     date: "25 February",

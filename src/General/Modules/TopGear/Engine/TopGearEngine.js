@@ -12,7 +12,7 @@ import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Module
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-
+import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
 
 /**
  * == Top Gear Engine ==
@@ -430,6 +430,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
+
+
+
+
+
+  // ------------------
+
   let effectStats = [];
   let effectList = [...itemSet.effectList];
   // == Set Bonuses ==
@@ -450,9 +457,21 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
+  // Special 10.0.7 Ring
+  // Check if ring in set.
+  if (builtSet.checkHasItem(203460)) {
+    // Auto gen best gems.
+   const combo = getBestCombo(player, contentType, 411, player.activeStats, userSettings)
+
+    // Handle Annulet
+   const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 411, player.activeStats, userSettings);
+  console.log(annuletStats);
+   effectStats.push(annuletStats);
+ }
+
   const mergedEffectStats = mergeBonusStats(effectStats);
 
-  //bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+ console.log(JSON.stringify(mergedEffectStats))
 
 
   // == Disc Specific Ramps ==

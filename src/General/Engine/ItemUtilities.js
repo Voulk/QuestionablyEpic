@@ -1,6 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
+import { getOnyxAnnuletEffect, getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -124,6 +125,31 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+/* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
+export function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } 
+    else if (key === "mana") {
+      estHPS += value * player.getSpecialQuery("OneManaHealing", contentType)
+    }
+    else if (key === "hps") {
+      estHPS += value;
+    }
+    else if (key === "allyStats") {
+      // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
+      // it's a fair approximation. 
+      // These embellishments are good, but it's very spread out.
+      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+    }
+  }
+  return Math.round(100 * estHPS) / 100;
+}
+
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
 export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true) {
@@ -138,8 +164,8 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       gemCount -= 1;
       gemArray.push(192988)
     }
-    bonus_stats.mastery += 70 * (gemCount - 1);
-    bonus_stats.crit += 33 * (gemCount - 1);
+    bonus_stats.mastery += 70 * (gemCount);
+    bonus_stats.crit += 33 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
@@ -764,6 +790,14 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     bonus_stats = compileStats(bonus_stats, effectStats);
   }
 
+  // Handle Annulet
+  if (item.id === 203460) {
+    const combo = getBestCombo(player, contentType, 411, player.activeStats, playerSettings)
+
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 411, player.activeStats, playerSettings);
+    bonus_stats = compileStats(bonus_stats, annuletStats);
+  }
+
     // Add Retail Socket
   if (item.socket) {
     getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
@@ -808,6 +842,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];
   }
+
+
 
   return Math.round(100 * score) / 100;
 }
