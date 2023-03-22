@@ -12,7 +12,7 @@ import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Module
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-
+import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
 
 /**
  * == Top Gear Engine ==
@@ -459,19 +459,19 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
   // Special 10.0.7 Ring
   // Check if ring in set.
-  if (item.id === 203460) {
+  if (builtSet.checkHasItem(203460)) {
     // Auto gen best gems.
-   const combo = getBestCombo(player, contentType, 424, player.activeStats, playerSettings)
+   const combo = getBestCombo(player, contentType, 411, player.activeStats, userSettings)
 
     // Handle Annulet
-   const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 424, player.activeStats, playerSettings);
-
+   const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 411, player.activeStats, userSettings);
+  console.log(annuletStats);
    effectStats.push(annuletStats);
  }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 
-
+ console.log(JSON.stringify(mergedEffectStats))
 
 
   // == Disc Specific Ramps ==

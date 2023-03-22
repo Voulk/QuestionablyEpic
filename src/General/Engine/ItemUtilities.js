@@ -792,9 +792,9 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
   // Handle Annulet
   if (item.id === 203460) {
-    const combo = getBestCombo(player, contentType, 424, player.activeStats, playerSettings)
+    const combo = getBestCombo(player, contentType, 411, player.activeStats, playerSettings)
 
-    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 424, player.activeStats, playerSettings);
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 411, player.activeStats, playerSettings);
     bonus_stats = compileStats(bonus_stats, annuletStats);
   }
 
