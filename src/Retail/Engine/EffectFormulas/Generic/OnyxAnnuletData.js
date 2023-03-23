@@ -1,5 +1,5 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
-    getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+    getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
   
 import { getEstimatedHPS } from "General/Engine/ItemUtilities"
 
@@ -119,8 +119,8 @@ export const annuletGemData = [
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
             let bonus_stats = {};
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
+            //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
             return bonus_stats;
         }
       },
@@ -143,11 +143,11 @@ export const annuletGemData = [
             secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ppmOverride) {
+        runFunc: function(data, gemData, player, itemLevel, settings) {
             let bonus_stats = {};
-            const ppm = ppmOverride || data[0].ppm;
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * ppm / 60;
 
+            //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * data[0].ppm / 60;
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
             return bonus_stats;
         }
       },
@@ -393,7 +393,7 @@ export const annuletGemData = [
                 if (procCandidate) ppm += gem.effects[0].ppm || 0;
             })
             
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * ppm / 60;
+            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * (1.13 * ppm) / 60;
             
             return bonus_stats;
         }

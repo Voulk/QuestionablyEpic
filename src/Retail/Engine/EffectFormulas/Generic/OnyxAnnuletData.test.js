@@ -53,12 +53,12 @@ describe("TODO", () => {
     test("TODOs", () => {
         const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
         const contentType = "Raid";
-        const gems = ["Humming Arcane Stone", "Desirous Blood Stone", "Prophetic Twilight Stone"];
+        const gems = ["Exuding Steam Stone", "Wild Spirit Stone", "Deluging Water Stone"];
         const setStats = {};
         const settings = {};
 
-        //getOnyxAnnuletEffect(gems, player, contentType, 411, setStats, settings);
-        getBestCombo(player, contentType, 424, setStats, settings);
+        console.log(getOnyxAnnuletEffect(gems, player, contentType, 424, setStats, settings));
+        //getBestCombo(player, contentType, 424, setStats, settings);
         expect(true).toEqual(true)
 
     })
