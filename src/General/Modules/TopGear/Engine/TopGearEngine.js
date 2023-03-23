@@ -461,12 +461,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // Check if ring in set.
   if (builtSet.checkHasItem(203460)) {
     // Auto gen best gems.
-   const combo = getBestCombo(player, contentType, 411, player.activeStats, userSettings)
+    const itemLevel = builtSet.filter(item => item.id === 203460)[0].itemLevel;
+    const combo = getBestCombo(player, contentType, itemLevel, player.activeStats, userSettings)
 
     // Handle Annulet
-   const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, 411, player.activeStats, userSettings);
-  console.log(annuletStats);
-   effectStats.push(annuletStats);
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
+    console.log(annuletStats);
+    effectStats.push(annuletStats);
  }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
