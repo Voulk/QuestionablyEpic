@@ -34,7 +34,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     })
     combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
 
-    console.log(combinations)
+    //console.log(combinations)
     return combinations[0].gems;
 }
   
