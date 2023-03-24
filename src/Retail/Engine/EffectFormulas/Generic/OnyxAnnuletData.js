@@ -32,7 +32,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
         set.dps = bonus_stats.dps;
         set.hps = bonus_stats.hps;
     })
-    combinations.sort((a, b) => (a.dps < b.dps ? 1 : -1))
+    combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
 
     console.log(combinations)
     return combinations[0].gems;
@@ -109,12 +109,12 @@ export const annuletGemData = [
         type: "Heal",
         effects: [
           { 
-            coefficient: 9.061598,
+            coefficient: 11.029875,
             table: -9,
             ppm: 2.5,
-            efficiency: 0.6,
+            efficiency: 0.45,
             ticks: 6,
-            secondaries: ['versatility'], // Assumed no crit scaling. TODO: Confirm.
+            secondaries: ['crit', 'versatility'], // Was fixed to scale with crit.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -135,11 +135,11 @@ export const annuletGemData = [
         type: "Heal",
         effects: [
           { 
-            coefficient: 21.88019,
+            coefficient: 27.350668, //36.759411,
             table: -9,
             ppm: 3,
             targets: 3,
-            efficiency: 0.6, 
+            efficiency: 0.75, 
             secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
@@ -347,7 +347,7 @@ export const annuletGemData = [
             { 
                 coefficient: 27.55246,
                 table: -9,
-                ppm: 2.5, 
+                ppm: 2.25, 
                 efficiency: 0.6,
                 secondaries: ['crit', 'versatility'],
               },
@@ -375,12 +375,12 @@ export const annuletGemData = [
         school: "Nature",
         effects: [
           { 
-            coefficient: 1.26373,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
+            coefficient: 1.954597,// 2.188874,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
             table: -9,
             targets: 5,
-            efficiency: 0.60,
+            efficiency: 0.7,
             ticks: 7,
-            secondaries: ['versatility'], // Does not currently scale with crit. Check on release.
+            secondaries: ['crit', 'versatility'], // Was fixed to scale with Crit.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -455,7 +455,7 @@ export const annuletGemData = [
               const otherGemID = (i === 0 ? 1 : 0);
               const gem = JSON.parse(JSON.stringify(newGemData[i]));
               gem.runFunc = newGemData[i].runFunc;
-              console.log(gemData)
+
               const gemPPM = newGemData[otherGemID].effects[0].ppm || 0//('effects' in newGemData[otherGemID] ? newGemData[otherGemID].effects[0].ppm : 0);
               gem.effects[0].ppm = gemPPM;
 

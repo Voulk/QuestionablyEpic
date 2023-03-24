@@ -57,8 +57,8 @@ describe("TODO", () => {
         const setStats = {};
         const settings = {};
 
-        console.log(getOnyxAnnuletEffect(gems, player, contentType, 424, setStats, settings));
-        //getBestCombo(player, contentType, 424, setStats, settings);
+        //console.log(getOnyxAnnuletEffect(gems, player, contentType, 424, setStats, settings));
+        getBestCombo(player, contentType, 424, setStats, settings);
         expect(true).toEqual(true)
 
     })
