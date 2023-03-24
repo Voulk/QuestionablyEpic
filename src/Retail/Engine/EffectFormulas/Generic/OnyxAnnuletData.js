@@ -1,5 +1,5 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
-    getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+    getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
   
 import { getEstimatedHPS } from "General/Engine/ItemUtilities"
 
@@ -14,7 +14,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     // We can also just pre-prune combinations with no chance of being best. All of this is left as a TODO for now and the function is fast regardless.
     const data = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
     "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
-    "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone"]
+    "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone", "Prophetic Twilight Stone"]
 
     const combinations = []
 
@@ -34,7 +34,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     })
     combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
 
-
+    //console.log(combinations)
     return combinations[0].gems;
 }
   
@@ -109,18 +109,18 @@ export const annuletGemData = [
         type: "Heal",
         effects: [
           { 
-            coefficient: 9.061598,
+            coefficient: 11.029875,
             table: -9,
             ppm: 2.5,
-            efficiency: 0.6,
+            efficiency: 0.45,
             ticks: 6,
-            secondaries: ['versatility'], // Assumed no crit scaling. TODO: Confirm.
+            secondaries: ['crit', 'versatility'], // Was fixed to scale with crit.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
             let bonus_stats = {};
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
+            //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
             return bonus_stats;
         }
       },
@@ -135,18 +135,19 @@ export const annuletGemData = [
         type: "Heal",
         effects: [
           { 
-            coefficient: 21.88019,
+            coefficient: 27.350668, //36.759411,
             table: -9,
             ppm: 3,
             targets: 3,
-            efficiency: 0.6, 
+            efficiency: 0.75, 
             secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        runFunc: function(data, gemData, player, itemLevel, settings) {
             let bonus_stats = {};
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * data[0].ppm / 60;
 
+            //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * data[0].ppm / 60;
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
             return bonus_stats;
         }
       },
@@ -270,7 +271,7 @@ export const annuletGemData = [
         */
         name: "Entropic Fel Stone",
         school: "Fire",
-        type: "Damage",
+        type: "N/A",
         effects: [
           { 
           },
@@ -346,16 +347,16 @@ export const annuletGemData = [
             { 
                 coefficient: 27.55246,
                 table: -9,
-                ppm: 2.5, 
+                ppm: 2.25, 
                 efficiency: 0.6,
                 secondaries: ['crit', 'versatility'],
               },
         ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        runFunc: function(data, gemData, player, itemLevel, settings, ppmOverride) {
             let bonus_stats = {};
-            
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-            bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+            const ppm = ppmOverride || data[0].ppm;
+            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * ppm / 60;
+            bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * ppm / 60;
 
             return bonus_stats;
         }
@@ -374,12 +375,12 @@ export const annuletGemData = [
         school: "Nature",
         effects: [
           { 
-            coefficient: 1.26373,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
+            coefficient: 1.954597,// 2.188874,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
             table: -9,
             targets: 5,
-            efficiency: 0.60,
+            efficiency: 0.7,
             ticks: 7,
-            secondaries: ['versatility'], // Does not currently scale with crit. Check on release.
+            secondaries: ['crit', 'versatility'], // Was fixed to scale with Crit.
           },
         ],
         runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -392,7 +393,7 @@ export const annuletGemData = [
                 if (procCandidate) ppm += gem.effects[0].ppm || 0;
             })
             
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * ppm / 60;
+            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * (1.13 * ppm) / 60;
             
             return bonus_stats;
         }
@@ -420,6 +421,51 @@ export const annuletGemData = [
             
             bonus_stats.dps = processedValue(data[0], itemLevel) * data[0].targets * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
 
+            return bonus_stats;
+        }
+      },
+      {
+        /* ---------------------------------------------------------------------------------------------- */
+        /*                                      Wild Spirit Stone                                         */
+        /* ---------------------------------------------------------------------------------------------- */
+        /* AoE heal when you have a heal or nature effect proc. 
+        /* Does proc from Desirous Blood Stone, 
+        /* Will double proc if you have Twilight + a corresponding stone. Double procs can overwrite each other.
+        /*
+        */
+        name: "Prophetic Twilight Stone",
+        type: "N/A",
+        school: "Shadow",
+        effects: [
+          { 
+          },
+        ],
+        runFunc: function(data, gemData, player, itemLevel, settings, ) {
+            let bonus_stats = {dps: 0, hps: 0};
+
+
+
+            const canProc = gemData.some(gem => {return gem.type === "Damage" || gem.name === "Desirous Blood Stone"}) && gemData.some(gem => {return gem.type === "Heal"}) && !gemData.some(gem => {return gem.type === "Absorb" || gem.type === "Mana" || gem.name === "Entropic Fel Stone"})
+
+            if (!canProc) return bonus_stats;
+
+            const newGemData = gemData.filter(gem => (gem.type === "Damage" || gem.type === "Heal"));
+
+            for (let i = 0; i < newGemData.length; i++) {
+              const otherGemID = (i === 0 ? 1 : 0);
+              const gem = JSON.parse(JSON.stringify(newGemData[i]));
+              gem.runFunc = newGemData[i].runFunc;
+
+              const gemPPM = newGemData[otherGemID].effects[0].ppm || 0//('effects' in newGemData[otherGemID] ? newGemData[otherGemID].effects[0].ppm : 0);
+              gem.effects[0].ppm = gemPPM;
+
+              const gemStats = gem.runFunc(gem.effects, gemData, player, itemLevel, settings);
+
+              bonus_stats.dps += gemStats.dps || 0;
+              bonus_stats.hps += gemStats.hps || 0;
+            }
+
+            
             return bonus_stats;
         }
       },
