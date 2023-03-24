@@ -10,6 +10,13 @@
 export const changeLog = [
   {
     version: "10.0.7",
+    update: 14,
+    date: "23 March",
+    changes: [ 
+      "Updated Onyx Annulet for in game tuning.",
+  ]},
+  {
+    version: "10.0.7",
     update: 13,
     date: "22 March",
     changes: [ 
