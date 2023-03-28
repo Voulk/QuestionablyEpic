@@ -177,6 +177,10 @@ class Player {
     }
   };
 
+  getBestPrimordialIDs = (settings) => {
+    return [204020, 204020, 204020]
+  }
+
   // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.
   getSelectedItems = () => {
     let temp = this.activeItems.filter(function (item) {

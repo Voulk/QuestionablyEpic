@@ -209,7 +209,7 @@ export default function QuickCompare(props) {
                   <Divider style={{ marginBottom: 10 }} />
                   <Grid container spacing={1}>
                     {[...props.player.getActiveItems(key.activeItem)].map((item, index) => (
-                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} />
+                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs()} />
                     ))}
                   </Grid>
                 </Grid>

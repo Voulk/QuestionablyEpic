@@ -1,13 +1,15 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
+
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Difference } from "@mui/icons-material";
+import { getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
 const useStyles = makeStyles({
   root: {
@@ -65,6 +67,25 @@ export default function ItemCard(props) {
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
   let socket = [];
+
+  if (item.id === 203460) {
+    //const gemCombo = props.player.getBestPrimordialIDs;
+    const gemCombo = props.primGems;
+    for (i = 0; i < 3; i++) {
+      //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
+      socket.push (
+        <div style={{ marginRight: 4, display: "inline"}} >
+          <a
+          data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
+          </a>
+        </div>
+      );
+    }
+  }
   if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
       socket.push (

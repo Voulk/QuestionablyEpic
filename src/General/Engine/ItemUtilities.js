@@ -20,6 +20,9 @@ import { CONSTANTS } from "./CONSTANTS";
 import { itemLevels } from "Databases/itemLevelsDB";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
+
+// Relevant Primordial Gems
+import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -661,7 +664,7 @@ export function buildStatString(stats, effect, lang = "en") {
   }
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
-  if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
+  //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
   if (effect !== "" && effect && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
   
 
@@ -671,6 +674,14 @@ export function buildStatString(stats, effect, lang = "en") {
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export function getPrimordialImage(id) {
+  const primImages = {
+    "s204020": s204020,
+  }
+
+  return primImages["s" + id];
 }
 
 function scoreGemColor(gemList, player) {
