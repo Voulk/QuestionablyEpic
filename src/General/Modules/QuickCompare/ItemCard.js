@@ -9,7 +9,6 @@ import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Difference } from "@mui/icons-material";
-import { getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
 const useStyles = makeStyles({
   root: {
