@@ -37,6 +37,12 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     //console.log(combinations)
     return combinations[0].gems;
 }
+
+export const getAnnuletGemTag = (settings, saved) => {
+  if (saved) return saved.toString()
+  else if (settings.automatic) return "Wild Spirits, Exuding Steam, Deluging Water";
+  else return settings.toString();
+}
   
 /**
  * 
