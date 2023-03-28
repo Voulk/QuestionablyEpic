@@ -14,6 +14,7 @@ import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
+import { getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -177,8 +178,16 @@ class Player {
     }
   };
 
-  getBestPrimordialIDs = (settings) => {
-    return [204020, 204020, 204020]
+  // Saved = preset gems from Top Gear.
+  getBestPrimordialIDs = (settings, contentType) => {
+    console.log(JSON.stringify(settings));
+    const automatic = settings.primordialGems.value === "Automatic";
+    const saved = false;
+
+    if (saved) return saved.toString()
+    else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
+    else return settings.toString();
+
   }
 
   // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.

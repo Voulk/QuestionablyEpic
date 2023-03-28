@@ -62,17 +62,18 @@ export default function ItemCard(props) {
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  const gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
+  let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
   let socket = [];
 
   if (item.id === 203460) {
-    //const gemCombo = props.player.getBestPrimordialIDs;
     const gemCombo = props.primGems;
+    gemString = "&gems=";
     for (i = 0; i < 3; i++) {
       //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
+      gemString += gemCombo[i] + ":";
       socket.push (
         <div style={{ marginRight: 4, display: "inline"}} >
           <a
@@ -86,7 +87,7 @@ export default function ItemCard(props) {
       );
     }
   }
-  if (item.socket) {
+  else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
       socket.push (
         <div style={{ marginRight: 4, display: "inline"}}>

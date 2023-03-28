@@ -23,6 +23,8 @@ import { nameDB } from "Databases/ItemNameDB";
 
 // Relevant Primordial Gems
 import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
+import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
+import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -679,6 +681,8 @@ export function correctCasing(string) {
 export function getPrimordialImage(id) {
   const primImages = {
     "s204020": s204020,
+    "s204013": s204013,
+    "s204010": s204010,
   }
 
   return primImages["s" + id];
