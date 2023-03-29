@@ -51,6 +51,19 @@ export const raidDB = [
     expansion: 9,
     icon: require("Images/achievement_raidprimalist_raid.jpg").default,
   },
+  {
+    ID: 2569,
+    raidID: 1208,
+    name: {
+      en: "Aberrus, the Shadowed Crucible",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    expansion: 9,
+    icon: require("Images/achievement_raidprimalist_raid.jpg").default,
+  },
 ];
 
 export const bossList = [
@@ -587,6 +600,140 @@ export const bossList = [
     },
     zoneID: 2522,
     icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                 Aberrus, the Shadowed Crucible                                 */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    DungeonEncounterID: 2680,
+    ID: 2525,
+    name: {
+      en: "Rashok, the Elder",
+      cn: "莱修克，长老",
+      de: "Ältester Rashok",
+      fr: "Rashok, l’Ancien",
+      ru: "Рашок Древний",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2682,
+    ID: 2524,
+    name: {
+      en: "Assault of the Zaqali",
+      cn: "扎卡利突袭",
+      de: "Angriff der Zaqali",
+      fr: "Assaut des Zaqalis",
+      ru: "Нападение закали",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2683,
+    ID: 2527,
+    name: {
+      en: "Magmorax",
+      cn: "玛格莫莱克斯",
+      de: "Magmorax",
+      fr: "Magmorax",
+      ru: "Магморакс",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2684,
+    ID: 2523,
+    name: {
+      en: "Echo of Neltharion",
+      cn: "奈萨里奥的回响",
+      de: "Echo von Neltharion",
+      fr: "Écho de Neltharion",
+      ru: "Эхо Нелтариона",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2685,
+    ID: 2520,
+    name: {
+      en: "Scalecommander Sarkareth",
+      cn: "鳞长萨卡雷斯",
+      de: "Schuppenkommandant Sarkareth",
+      fr: "Squammandant Sarkareth",
+      ru: "Дракомандир Саркарет",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2687,
+    ID: 2529,
+    name: {
+      en: "The Amalgamation Chamber",
+      cn: "融合体密室",
+      de: "Die Verschmelzungskammer",
+      fr: "Chambre de fusion",
+      ru: "Чертог слияния",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2688,
+    ID: 2522,
+    name: {
+      en: "Kazzara, the Hellforged",
+      cn: "狱铸者卡扎拉",
+      de: "Kazzara, die Höllengeschmiedete",
+      fr: "Kazzara, née des enfers",
+      ru: "Каззара из Преисподней",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2689,
+    ID: 2532,
+    name: {
+      en: "The Vigilant Steward, Zskarn",
+      cn: "警戒管事兹斯卡恩",
+      de: "Der aufmerksame Verwalter, Zskarn",
+      fr: "Zskarn, l’Intendant vigilant",
+      ru: "Бдительный распорядитель Шкарн",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2693,
+    ID: 2530,
+    name: {
+      en: "The Forgotten Experiments",
+      cn: "被遗忘的实验体",
+      de: "Die vergessenen Experimente",
+      fr: "Les expériences oubliées",
+      ru: "Забытые эксперименты",
+    },
+    zoneID: 2569,
+    icon: require("").default,
+  },
+  {
+    DungeonEncounterID: 2696,
+    ID: 2531,
+    name: {
+      en: "The Zaqali Elders",
+      cn: "扎卡利长老",
+      de: "Die Ältesten der Zaqali",
+      fr: "Les Anciens zaqalis",
+      ru: "Старейшины закали",
+    },
+    zoneID: 2569,
+    icon: require("").default,
   },
 ];
 
