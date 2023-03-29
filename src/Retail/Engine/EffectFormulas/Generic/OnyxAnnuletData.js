@@ -39,7 +39,8 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings,
     return combinations[0].gems;
 }
 
-const convertGemNameToID = (gemName) => {
+export const convertGemNameToID = (gemName) => {
+  console.log(gemName);
   const gem = annuletGemData.filter((gem) => gemName === gem.name)[0];
   return gem.id;
 }
@@ -259,7 +260,7 @@ export const annuletGemData = [
         /* 
         */
         name: "Flame Licked Stone",
-        id: 0,
+        id: 204002,
         school: "Fire",
         type: "Damage",
         effects: [
@@ -363,7 +364,7 @@ export const annuletGemData = [
         /* Lifesteal damage effect. DOES count as healing for Wild Spirits.
         */
         name: "Desirous Blood Stone",
-        id: 0,
+        id: 204027,
         school: "Necromantic",
         type: "Heal", 
         effects: [

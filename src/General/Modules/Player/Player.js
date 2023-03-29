@@ -14,7 +14,7 @@ import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
-import { getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -186,7 +186,14 @@ class Player {
 
     if (saved) return saved.toString()
     else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
-    else return settings.toString();
+    else {
+      const setGems = []
+      settings.primordialGems.value.split(",").forEach(gem => {
+        setGems.push(convertGemNameToID(gem.trim() + " Stone"))
+      })
+      console.log(setGems);
+      return setGems;
+    }
 
   }
 

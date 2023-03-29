@@ -25,6 +25,10 @@ import { nameDB } from "Databases/ItemNameDB";
 import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
 import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
 import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
+import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
+import s204002 from "Images/Resources/PrimordialGems/s204002.jpg";
+import s204029 from "Images/Resources/PrimordialGems/s204029.jpg";
+
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -683,6 +687,9 @@ export function getPrimordialImage(id) {
     "s204020": s204020,
     "s204013": s204013,
     "s204010": s204010,
+    "s204027": s204027,
+    "s204002": s204002,
+    "s204029": s204029,
   }
 
   return primImages["s" + id];
@@ -830,8 +837,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
   // Handle Annulet
   if (item.id === 203460) {
-    const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
-
+    //const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
+    const combo = player.getBestPrimordialIDs(playerSettings, contentType);
     const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
     bonus_stats = compileStats(bonus_stats, annuletStats);
   }

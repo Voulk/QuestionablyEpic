@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -81,7 +81,15 @@ export default function ItemCardReport(props) {
   let isVault = item.vaultItem;
   
   let socket = [];
-  if (item.socket) {
+  
+  if (item.id === 203460) {
+    const gemCombo = props.primGems;
+    const gemData = buildPrimGems(gemCombo);
+    socket = gemData.socket;
+    gemString = gemData.string;
+ 
+  }
+  else if (item.socket) {
     let socketCount = item.socket;
 
     if (props.firstSlot) {// This is our first gem and we can socket int here.
