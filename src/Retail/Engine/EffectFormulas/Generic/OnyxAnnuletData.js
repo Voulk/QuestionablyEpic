@@ -3,6 +3,15 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket,
   
 import { getEstimatedHPS } from "General/Engine/ItemUtilities"
 
+// Relevant Primordial Gems
+import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
+import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
+import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
+import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
+import s204002 from "Images/Resources/PrimordialGems/s204002.jpg";
+import s204029 from "Images/Resources/PrimordialGems/s204029.jpg";
+import s204012 from "Images/Resources/PrimordialGems/s204012.jpg";
+import s204000 from "Images/Resources/PrimordialGems/s204000.jpg";
 // Onyx Annulet is handled in two steps.
 // One works out the best combination of gems.
 // The other does one calculation run where it computes the bonus stats of that combo.
@@ -80,7 +89,11 @@ export const getOnyxAnnuletEffect = (gemNames, player, contentType, itemLevel, s
 
     return bonus_stats;
 
+}
 
+export const getPrimordialImage = (id) => {
+  const gem = annuletGemData.filter(gem => gem.id === id)[0];
+  return gem.image;
 }
 
 export const annuletGemData = [
@@ -91,7 +104,7 @@ export const annuletGemData = [
         /* Gain a frost shield every 20 seconds that absorbs damage. Does not proc Wild Spirit Stone.
         */
         name: "Cold Frost Stone",
-        id: 0,
+        id: 204012,
         school: "Frost",
         type: "Absorb",
         effects: [
@@ -119,6 +132,7 @@ export const annuletGemData = [
         */
         name: "Deluging Water Stone",
         id: 204010,
+        image: s204010,
         school: "Frost",
         type: "Heal",
         effects: [
@@ -146,6 +160,7 @@ export const annuletGemData = [
         */
         name: "Exuding Steam Stone",
         id: 204013,
+        image: s204013,
         school: "Frost",
         type: "Heal",
         effects: [
@@ -395,6 +410,7 @@ export const annuletGemData = [
         */
         name: "Wild Spirit Stone",
         id: 204020,
+        image: s204020,
         type: "Heal",
         school: "Nature",
         effects: [
@@ -429,7 +445,7 @@ export const annuletGemData = [
         /* Crits strike an enemy and two nearby enemies. 
         */
         name: "Storm Infused Stone",
-        id: 0,
+        id: 204000,
         school: "Nature",
         type: "Damage", 
         effects: [

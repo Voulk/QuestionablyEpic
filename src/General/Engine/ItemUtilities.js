@@ -1,7 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
-import { getOnyxAnnuletEffect, getBestCombo, getAnnuletGemTag } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getOnyxAnnuletEffect, getBestCombo, getPrimordialImage} from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -21,13 +21,7 @@ import { itemLevels } from "Databases/itemLevelsDB";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
 
-// Relevant Primordial Gems
-import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
-import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
-import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
-import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
-import s204002 from "Images/Resources/PrimordialGems/s204002.jpg";
-import s204029 from "Images/Resources/PrimordialGems/s204029.jpg";
+
 
 /*
 
@@ -682,7 +676,9 @@ export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+/*
 export function getPrimordialImage(id) {
+
   const primImages = {
     "s204020": s204020,
     "s204013": s204013,
@@ -690,10 +686,12 @@ export function getPrimordialImage(id) {
     "s204027": s204027,
     "s204002": s204002,
     "s204029": s204029,
+    "s204000": s204000,
+    "s204012": s204012,
   }
 
   return primImages["s" + id];
-}
+} */
 
 export function buildPrimGems(gemCombo) {
   const gemData = {socket: [], string: "&gems="}
