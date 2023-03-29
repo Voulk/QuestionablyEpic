@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
@@ -69,22 +69,10 @@ export default function ItemCard(props) {
 
   if (item.id === 203460) {
     const gemCombo = props.primGems;
-    gemString = "&gems=";
-    for (i = 0; i < 3; i++) {
-      //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
-      gemString += gemCombo[i] + ":";
-      socket.push (
-        <div style={{ marginRight: 4, display: "inline"}} >
-          <a
-          data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
-          </a>
-        </div>
-      );
-    }
+    const gemData = buildPrimGems(gemCombo);
+    socket = gemData.socket;
+    gemString = gemData.string;
+ 
   }
   else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {

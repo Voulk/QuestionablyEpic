@@ -688,6 +688,27 @@ export function getPrimordialImage(id) {
   return primImages["s" + id];
 }
 
+export function buildPrimGems(gemCombo) {
+  const gemData = {socket: [], string: "&gems="}
+  for (i = 0; i < 3; i++) {
+    //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
+    gemData.string += gemCombo[i] + ":";
+    gemData.socket.push (
+      <div style={{ marginRight: 4, display: "inline"}} >
+        <a
+        data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
+        </a>
+      </div>
+    );
+    }
+    return gemData;
+
+}
+
 function scoreGemColor(gemList, player) {
   for (var ind in gemList) {
     const gem = gemList[ind];
