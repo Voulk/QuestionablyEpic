@@ -53,7 +53,7 @@ export default function ItemCardReport(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  const gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
+  let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = getGemProp(enchants["Gems"], "icon");
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;

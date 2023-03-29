@@ -40,7 +40,6 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings,
 }
 
 export const convertGemNameToID = (gemName) => {
-  console.log(gemName);
   const gem = annuletGemData.filter((gem) => gemName === gem.name)[0];
   return gem.id;
 }

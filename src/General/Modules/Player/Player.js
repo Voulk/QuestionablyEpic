@@ -179,12 +179,11 @@ class Player {
   };
 
   // Saved = preset gems from Top Gear.
-  getBestPrimordialIDs = (settings, contentType) => {
+  getBestPrimordialIDs = (settings, contentType, itemLevel = 242, saved = []) => {
     console.log(JSON.stringify(settings));
     const automatic = settings.primordialGems.value === "Automatic";
-    const saved = false;
 
-    if (saved) return saved.toString()
+    if (saved.length > 0) return saved;
     else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
     else {
       const setGems = []
