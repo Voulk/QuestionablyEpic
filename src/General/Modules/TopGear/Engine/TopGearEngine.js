@@ -447,8 +447,16 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
-  //
+  // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
 
+  let fireMult = 0;
+
+  // Frostfire Belt, Flaring Cowl, Flame Licked
+  if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
+  else if (builtSet.checkHasItem(193494)) fireMult = 1;
+  else if ('primGems' in userSettings && userSettings.primGems.value.includes("Flame Licked")) fireMult = convertPPMToUptime(2.5, 7);
+
+  userSettings.fireMult = fireMult || 0;
   //effectStats.push(bonus_stats);
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
@@ -475,7 +483,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 
- console.log(JSON.stringify(mergedEffectStats))
 
 
   // == Disc Specific Ramps ==
