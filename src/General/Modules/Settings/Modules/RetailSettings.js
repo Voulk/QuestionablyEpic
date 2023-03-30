@@ -124,7 +124,7 @@ export default function RetailSettings(props) {
             <Grid container spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                  {category}
+                  {t("Settings.Retail." + category)}
                 </Typography>
               </Grid>
               {mappedKeys[category].map((key, i) => {

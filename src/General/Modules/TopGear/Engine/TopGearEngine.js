@@ -448,9 +448,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   }
 
   // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
-
   let fireMult = 0;
-
   // Frostfire Belt, Flaring Cowl, Flame Licked
   if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
   else if (builtSet.checkHasItem(193494)) fireMult = 1;
