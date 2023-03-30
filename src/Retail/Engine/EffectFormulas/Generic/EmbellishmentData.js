@@ -448,4 +448,50 @@ export const embellishmentData = [
           return bonus_stats;
         }
       },
+      {
+        /* -------------------- */
+        /* Allied Wristguard of Companionship                  
+        /* -------------------- */
+        /* Mastery while above 90% health.
+        */
+        name: "Allied Wristguard of Companionship",
+        effects: [
+          { 
+            coefficient: 0.052152,
+            table: -7,
+            stacks: 3.9,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].stacks;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Fang Adornments            
+        /* -------------------- */
+        /* 
+        */
+        name: "Fang Adornments",
+        effects: [
+          { // Damage Effect
+            coefficient: 6.820023,
+            table: -9,
+            secondaries: ['haste', 'crit', 'versatility'],
+            ppm: 2, // 4 / 2
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          
+          bonus_stats.dps = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+
+          return bonus_stats;
+        }
+      },
 ]

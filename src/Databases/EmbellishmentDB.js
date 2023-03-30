@@ -51,6 +51,23 @@ export const embellishmentDB = [
     },
   },
   {
+    id: 193468,
+    icon: "inv_misc_blacksaberonfang",
+    armorType: 0, // All
+    name: {
+      en: "Fang Adornments",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Fang Adornments",
+      rank: 0,
+    },
+  },
+  {
     id: 193532,
     icon: "inv_cloth_dragonquest_b_01_boot",
     armorType: 1, 
