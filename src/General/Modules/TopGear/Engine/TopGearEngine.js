@@ -57,8 +57,11 @@ function setupPlayer(player, contentType, castModel) {
 function autoSocketItems(itemList) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(item.slot) && !item.hasDomSocket) {
-      item.socket = true;
+    if (["Finger", "Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+      item.socket = 1;
+    }
+    else if (item.slot === "Neck") {
+      item.socket = 3;
     }
   }
 
@@ -90,8 +93,11 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
   let itemList = deepCopyFunction(rawItemList);
-  itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+  itemList = userSettings.topGearAutoGem ? autoSocketItems(itemList) : itemList;
   //itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList; // Deprecated
+
+  // Duplicate Settings
+  userSettings = JSON.parse(JSON.stringify(userSettings));
 
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
