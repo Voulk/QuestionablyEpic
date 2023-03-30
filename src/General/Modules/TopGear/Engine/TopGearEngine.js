@@ -361,8 +361,8 @@ function enchantItems(bonus_stats, setInt, castModel) {
   let expected_uptime = convertPPMToUptime(1, 15);
   bonus_stats.intellect += 932 * expected_uptime;
   enchants["CombinedWeapon"] = "Sophic Devotion";
-  //enchants["2H Weapon"] = "Sophic Devotion";
-  //enchants["1H Weapon"] = "Sophic Devotion";
+  enchants["2H Weapon"] = "Sophic Devotion";
+  enchants["1H Weapon"] = "Sophic Devotion";
   return enchants;
 }
 
