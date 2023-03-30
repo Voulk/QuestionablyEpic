@@ -489,7 +489,7 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           
-          bonus_stats.dps = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
 
           return bonus_stats;
         }
