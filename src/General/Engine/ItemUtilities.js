@@ -1,7 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
-import { getOnyxAnnuletEffect, getBestCombo } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getOnyxAnnuletEffect, getBestCombo, getPrimordialImage} from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -20,6 +20,9 @@ import { CONSTANTS } from "./CONSTANTS";
 import { itemLevels } from "Databases/itemLevelsDB";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
+
+
+
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -661,7 +664,9 @@ export function buildStatString(stats, effect, lang = "en") {
   }
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
   if (effect !== "" && effect && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
+  
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -669,6 +674,44 @@ export function buildStatString(stats, effect, lang = "en") {
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/*
+export function getPrimordialImage(id) {
+
+  const primImages = {
+    "s204020": s204020,
+    "s204013": s204013,
+    "s204010": s204010,
+    "s204027": s204027,
+    "s204002": s204002,
+    "s204029": s204029,
+    "s204000": s204000,
+    "s204012": s204012,
+  }
+
+  return primImages["s" + id];
+} */
+
+export function buildPrimGems(gemCombo) {
+  const gemData = {socket: [], string: "&gems="}
+  for (i = 0; i < 3; i++) {
+    //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
+    gemData.string += gemCombo[i] + ":";
+    gemData.socket.push (
+      <div style={{ marginRight: 4, display: "inline"}} >
+        <a
+        data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
+        </a>
+      </div>
+    );
+    }
+    return gemData;
+
 }
 
 function scoreGemColor(gemList, player) {
@@ -792,8 +835,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
   // Handle Annulet
   if (item.id === 203460) {
-    const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
-
+    //const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
+    const combo = player.getBestPrimordialIDs(playerSettings, contentType);
     const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
     bonus_stats = compileStats(bonus_stats, annuletStats);
   }

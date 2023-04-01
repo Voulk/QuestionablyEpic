@@ -77,21 +77,21 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       ...commonHeadertyles,
       width: "90%",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("sm")]: {
       ...commonHeadertyles,
       width: "85%",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("md")]: {
       ...commonHeadertyles,
-      marginTop: 32,
+      // marginTop: 32,
       width: "85%",
     },
     [theme.breakpoints.up("lg")]: {
       ...commonHeadertyles,
-      marginTop: 32,
+      // marginTop: 32,
       width: "70%",
     },
   },

@@ -395,7 +395,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     else if (uniqueTag !== "") item.uniqueEquip = uniqueTag;
 
     item.quality = itemQuality;
-    item.softScore = scoreItem(item, player, contentType, playerSettings);
+    item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
 
     return item;  
   } else {
