@@ -140,6 +140,7 @@ function TopGearReport(props) {
         display: "block",
       }}
     >
+      <div style={{ height: 96 }} />
       {resultValid ? (
         <Grid container spacing={1}>
           <Grid item xs={12}>

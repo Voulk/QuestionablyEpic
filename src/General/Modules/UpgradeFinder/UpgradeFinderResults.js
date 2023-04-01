@@ -44,6 +44,7 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
+        <div style={{ height: 96 }} />
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <div>
