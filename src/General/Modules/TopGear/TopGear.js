@@ -334,7 +334,7 @@ export default function TopGear(props) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} />
+                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
                   ))}
                 </Grid>
               </Grid>

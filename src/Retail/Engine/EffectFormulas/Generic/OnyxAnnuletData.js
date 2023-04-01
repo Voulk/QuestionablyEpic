@@ -3,11 +3,20 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket,
   
 import { getEstimatedHPS } from "General/Engine/ItemUtilities"
 
+// Relevant Primordial Gems
+import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
+import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
+import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
+import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
+import s204002 from "Images/Resources/PrimordialGems/s204002.jpg";
+import s204029 from "Images/Resources/PrimordialGems/s204029.jpg";
+import s204012 from "Images/Resources/PrimordialGems/s204012.jpg";
+import s204000 from "Images/Resources/PrimordialGems/s204000.jpg";
 // Onyx Annulet is handled in two steps.
 // One works out the best combination of gems.
 // The other does one calculation run where it computes the bonus stats of that combo.
 
-export const getBestCombo = (player, contentType, itemLevel, setStats, settings) => {
+export const getBestCombo = (player, contentType, itemLevel, setStats, settings, returnType="names") => {
     // Find the best possible set. There are only 2000 combinations so this isn't too bad. 
     // This could be optimized by separating out combinations that don't require other gems.
     // The sample set is so small though that we might find that rather unnecessary.
@@ -21,7 +30,8 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
     for(let i = 0; i < data.length -2; i++){
         for(let j = i + 1; j < data.length -1; j++){
             for(let k = j + 1; k < data.length; k++){
-                if (i !== j && i !== k && j !== k) combinations.push({dps: 0, hps: 0, gems: [data[i],data[j],data[k]]})
+                if (i !== j && i !== k && j !== k) combinations.push({dps: 0, hps: 0, gems: 
+                                                    [convertGemNameToID(data[i]), convertGemNameToID(data[j]), convertGemNameToID(data[k])]})
                 
             }
         }
@@ -36,6 +46,17 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings)
 
     //console.log(combinations)
     return combinations[0].gems;
+}
+
+export const convertGemNameToID = (gemName) => {
+  const gem = annuletGemData.filter((gem) => gemName === gem.name)[0];
+  return gem.id;
+}
+
+export const getAnnuletGemTag = (settings, saved) => {
+  if (saved) return saved.toString()
+  else if (settings.automatic) return "Wild Spirits, Exuding Steam, Deluging Water";
+  else return settings.toString();
 }
   
 /**
@@ -53,8 +74,8 @@ export const getOnyxAnnuletEffect = (gemNames, player, contentType, itemLevel, s
     let bonus_stats = {hps: 0, dps: 0};
     let temp = [];
 
-    const gems = gemNames.map(gemName => {
-        return annuletGemData.find((effect) => effect.name === gemName);
+    const gems = gemNames.map(gemID => {
+        return annuletGemData.find((effect) => effect.id === gemID);
     })
 
     
@@ -68,7 +89,11 @@ export const getOnyxAnnuletEffect = (gemNames, player, contentType, itemLevel, s
 
     return bonus_stats;
 
+}
 
+export const getPrimordialImage = (id) => {
+  const gem = annuletGemData.filter(gem => gem.id === id)[0];
+  return gem.image;
 }
 
 export const annuletGemData = [
@@ -79,6 +104,7 @@ export const annuletGemData = [
         /* Gain a frost shield every 20 seconds that absorbs damage. Does not proc Wild Spirit Stone.
         */
         name: "Cold Frost Stone",
+        id: 204012,
         school: "Frost",
         type: "Absorb",
         effects: [
@@ -105,6 +131,8 @@ export const annuletGemData = [
         /* Abilities have a chance to heal a nearby ally. (Smart? Dumb?). Spell data is for one tick of the HoT.
         */
         name: "Deluging Water Stone",
+        id: 204010,
+        image: s204010,
         school: "Frost",
         type: "Heal",
         effects: [
@@ -131,6 +159,8 @@ export const annuletGemData = [
         /* Check range. At least appears to be smart healing. 
         */
         name: "Exuding Steam Stone",
+        id: 204013,
+        image: s204013,
         school: "Frost",
         type: "Heal",
         effects: [
@@ -158,6 +188,7 @@ export const annuletGemData = [
         /* 
         */
         name: "Freezing Ice Stone",
+        id: 0,
         school: "Frost",
         type: "Damage",
         effects: [
@@ -182,6 +213,7 @@ export const annuletGemData = [
         /* Damage based on the number of stone families you have. It's assumed this also includes the Arcane family this stone is in, but TODO.
         */
         name: "Humming Arcane Stone",
+        id: 0,
         school: "Arcane",
         type: "Damage",
         effects: [
@@ -211,6 +243,7 @@ export const annuletGemData = [
         /* Mana stone based off PPM of Frost effects.
         */
         name: "Sparkling Mana Stone",
+        id: 0,
         school: "Arcane",
         type: "Mana",
         effects: [
@@ -241,6 +274,7 @@ export const annuletGemData = [
         /* 
         */
         name: "Flame Licked Stone",
+        id: 204002,
         school: "Fire",
         type: "Damage",
         effects: [
@@ -270,6 +304,7 @@ export const annuletGemData = [
         /* This stone thus has no value or function of its own. It still gets a stub so that it's counted in other formulas.
         */
         name: "Entropic Fel Stone",
+        id: 0,
         school: "Fire",
         type: "N/A",
         effects: [
@@ -289,6 +324,7 @@ export const annuletGemData = [
         /* Shield when you stand still for 3s. ICD of 25s + 3s charge time after ICD for maximum ppm of 2.14.
         */
         name: "Gleaming Iron Stone",
+        id: 0,
         school: "Earth",
         type: "Absorb",
         effects: [
@@ -315,6 +351,7 @@ export const annuletGemData = [
         /* 
         */
         name: "Indomitable Earth Stone",
+        id: 0,
         school: "Earth",
         type: "Absorb",
         effects: [
@@ -341,6 +378,8 @@ export const annuletGemData = [
         /* Lifesteal damage effect. DOES count as healing for Wild Spirits.
         */
         name: "Desirous Blood Stone",
+        id: 204027,
+        image: s204027,
         school: "Necromantic",
         type: "Heal", 
         effects: [
@@ -371,6 +410,8 @@ export const annuletGemData = [
         /*
         */
         name: "Wild Spirit Stone",
+        id: 204020,
+        image: s204020,
         type: "Heal",
         school: "Nature",
         effects: [
@@ -405,6 +446,7 @@ export const annuletGemData = [
         /* Crits strike an enemy and two nearby enemies. 
         */
         name: "Storm Infused Stone",
+        id: 204000,
         school: "Nature",
         type: "Damage", 
         effects: [
@@ -434,6 +476,7 @@ export const annuletGemData = [
         /*
         */
         name: "Prophetic Twilight Stone",
+        id: 204029,
         type: "N/A",
         school: "Shadow",
         effects: [

@@ -39,14 +39,15 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   let bonus_stats = {};
   let effectName = effect.name;
   let effectType = effect.type;
+
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
     if (effect.type === "special") {
-      // A special effect is one that appears on an item slot where an effect isn't usually expected.
+      // A special effect is one that appears on an item slot where an effect isn't u sually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
-      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, effect);
+      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, setStats, castModel, userSettings);
     } 
     else if (effect.type === "embellishment") {
       bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, setStats, userSettings);

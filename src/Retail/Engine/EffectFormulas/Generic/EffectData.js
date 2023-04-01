@@ -66,7 +66,10 @@ export const effectData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ppm * data[0].specValue[additionalData.player.spec] / 60;
+
+      const fireEfficiency = Math.max(additionalData.settings.fireMult || 0, data[0].specValue[additionalData.player.spec]) 
+
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ppm * fireEfficiency / 60;
 
       return bonus_stats;
     }
