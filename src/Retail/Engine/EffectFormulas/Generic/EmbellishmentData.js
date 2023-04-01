@@ -480,16 +480,16 @@ export const embellishmentData = [
         name: "Fang Adornments",
         effects: [
           { // Damage Effect
-            coefficient: 6.820023,
+            coefficient: 7.794756,
             table: -9,
             secondaries: ['haste', 'crit', 'versatility'],
-            ppm: 2, // 4 / 2
+            ppm: 1, // 4 / 2
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           
-          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.7;
 
           return bonus_stats;
         }

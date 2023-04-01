@@ -379,6 +379,7 @@ export const annuletGemData = [
         */
         name: "Desirous Blood Stone",
         id: 204027,
+        image: s204027,
         school: "Necromantic",
         type: "Heal", 
         effects: [
