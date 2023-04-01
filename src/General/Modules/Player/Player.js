@@ -190,7 +190,7 @@ class Player {
       settings.primordialGems.value.split(",").forEach(gem => {
         setGems.push(convertGemNameToID(gem.trim() + " Stone"))
       })
-      console.log(setGems);
+
       return setGems;
     }
 
