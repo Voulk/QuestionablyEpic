@@ -10,6 +10,13 @@
 export const changeLog = [
   {
     version: "10.0.7",
+    update: 16,
+    date: "2 April",
+    changes: [ 
+      "Auto-gem functionality is now disabled by default and can be correctly left off",
+  ]},
+  {
+    version: "10.0.7",
     update: 15,
     date: "30 March",
     changes: [ 
