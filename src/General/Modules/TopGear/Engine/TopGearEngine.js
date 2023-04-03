@@ -93,7 +93,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
   let itemList = deepCopyFunction(rawItemList);
-  itemList = userSettings.topGearAutoGem.value === true ? autoSocketItems(itemList) : itemList;
+  itemList = (userSettings.topGearAutoGem && userSettings.topGearAutoGem.value === true) ? autoSocketItems(itemList) : itemList;
   //itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList; // Deprecated
 
   // Duplicate Settings
