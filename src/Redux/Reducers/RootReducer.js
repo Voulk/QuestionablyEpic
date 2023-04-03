@@ -29,7 +29,7 @@ const initialState = {
                                     options: ["Automatic", "Wild Spirit, Exuding Steam, Deluging Water", "Wild Spirit, Exuding Steam, Desirous Blood",
                                               "Flame Licked, Wild Spirit, Exuding Steam"], 
                                     category: "topGear"},
-                    "topGearAutoGem": {value: true, options: [true, false], category: "topGear"},
+                    "topGearAutoGem": {value: false, options: [true, false], category: "topGear"},
                   },// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
 };
