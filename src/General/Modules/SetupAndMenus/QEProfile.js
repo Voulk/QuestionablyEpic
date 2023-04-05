@@ -51,6 +51,7 @@ export default function QEProfile(props) {
 
   return (
     <div className={classes.root}>
+      <div style={{ height: 96 }} />
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>

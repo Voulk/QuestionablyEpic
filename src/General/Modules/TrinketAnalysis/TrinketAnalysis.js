@@ -25,24 +25,24 @@ const useStyles = makeStyles((theme) => ({
       width: "85%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "65%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: 32,
+      // marginTop: 32,
       margin: "auto",
       width: "55%",
       display: "block",
@@ -184,7 +184,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 423, 426];
+  const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 424];
   
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -238,6 +238,7 @@ export default function TrinketAnalysis(props) {
 
   return (
     <div className={classes.root}>
+      <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid container spacing={1}>
         <Grid item xs={12}>

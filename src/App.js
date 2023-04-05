@@ -288,7 +288,9 @@ class App extends Component {
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <Router basename={process.env.REACT_APP_HOMEPAGE}>
-              <div className="App" style={{ marginTop: 96 }}>
+              <div className="App" 
+              // style={{ marginTop: 96 }}
+              >
                 <QEHeader
                   logFunc={this.userLogout}
                   patronStatus={this.state.patronStatus}

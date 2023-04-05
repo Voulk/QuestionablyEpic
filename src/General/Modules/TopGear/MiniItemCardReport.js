@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -53,7 +53,7 @@ export default function ItemCardReport(props) {
   const itemLevel = item.level;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  const gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
+  let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = getGemProp(enchants["Gems"], "icon");
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
@@ -81,7 +81,15 @@ export default function ItemCardReport(props) {
   let isVault = item.vaultItem;
   
   let socket = [];
-  if (item.socket) {
+  
+  if (item.id === 203460) {
+    const gemCombo = props.primGems;
+    const gemData = buildPrimGems(gemCombo);
+    socket = gemData.socket;
+    gemString = gemData.string;
+ 
+  }
+  else if (item.socket) {
     let socketCount = item.socket;
 
     if (props.firstSlot) {// This is our first gem and we can socket int here.

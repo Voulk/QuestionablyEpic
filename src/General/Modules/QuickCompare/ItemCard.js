@@ -1,10 +1,11 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
+
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Difference } from "@mui/icons-material";
@@ -60,12 +61,20 @@ export default function ItemCard(props) {
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  const gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
+  let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
   let socket = [];
-  if (item.socket) {
+
+  if (item.id === 203460) {
+    const gemCombo = props.primGems;
+    const gemData = buildPrimGems(gemCombo);
+    socket = gemData.socket;
+    gemString = gemData.string;
+ 
+  }
+  else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
       socket.push (
         <div style={{ marginRight: 4, display: "inline"}}>

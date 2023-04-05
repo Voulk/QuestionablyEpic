@@ -25,24 +25,24 @@ const useStyles = makeStyles((theme) => ({
       width: "90%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: 32,
+      // marginTop: 32,
       margin: "auto",
       width: "60%",
       display: "block",
@@ -151,6 +151,7 @@ export default function QuickCompare(props) {
 
   return (
     <div className={classes.header}>
+      <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid container spacing={1} justifyContent="center">
         {/* -------------------------------------------------------------------------- */
@@ -208,9 +209,9 @@ export default function QuickCompare(props) {
                   </Typography>
                   <Divider style={{ marginBottom: 10 }} />
                   <Grid container spacing={1}>
-                    {[...props.player.getActiveItems(key.activeItem)].map((item, index) => (
-                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} />
-                    ))}
+                    {[...props.player.getActiveItems(key.activeItem)].map((item, index) => 
+                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
+                    )}
                   </Grid>
                 </Grid>
               </Grid>

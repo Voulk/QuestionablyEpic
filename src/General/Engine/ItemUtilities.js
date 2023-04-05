@@ -1,6 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
+import { getOnyxAnnuletEffect, getBestCombo, getPrimordialImage} from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -19,6 +20,9 @@ import { CONSTANTS } from "./CONSTANTS";
 import { itemLevels } from "Databases/itemLevelsDB";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
+
+
+
 /*
 
 This file contains utility functions that center around the player or players items. 
@@ -124,6 +128,31 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+/* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
+export function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } 
+    else if (key === "mana") {
+      estHPS += value * player.getSpecialQuery("OneManaHealing", contentType)
+    }
+    else if (key === "hps") {
+      estHPS += value;
+    }
+    else if (key === "allyStats") {
+      // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
+      // it's a fair approximation. 
+      // These embellishments are good, but it's very spread out.
+      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+    }
+  }
+  return Math.round(100 * estHPS) / 100;
+}
+
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
 export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true) {
@@ -138,8 +167,8 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
       gemCount -= 1;
       gemArray.push(192988)
     }
-    bonus_stats.mastery += 70 * (gemCount - 1);
-    bonus_stats.crit += 33 * (gemCount - 1);
+    bonus_stats.mastery += 70 * (gemCount);
+    bonus_stats.crit += 33 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
@@ -635,7 +664,9 @@ export function buildStatString(stats, effect, lang = "en") {
   }
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
   if (effect !== "" && effect && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
+  
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -643,6 +674,44 @@ export function buildStatString(stats, effect, lang = "en") {
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/*
+export function getPrimordialImage(id) {
+
+  const primImages = {
+    "s204020": s204020,
+    "s204013": s204013,
+    "s204010": s204010,
+    "s204027": s204027,
+    "s204002": s204002,
+    "s204029": s204029,
+    "s204000": s204000,
+    "s204012": s204012,
+  }
+
+  return primImages["s" + id];
+} */
+
+export function buildPrimGems(gemCombo) {
+  const gemData = {socket: [], string: "&gems="}
+  for (i = 0; i < 3; i++) {
+    //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
+    gemData.string += gemCombo[i] + ":";
+    gemData.socket.push (
+      <div style={{ marginRight: 4, display: "inline"}} >
+        <a
+        data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
+        </a>
+      </div>
+    );
+    }
+    return gemData;
+
 }
 
 function scoreGemColor(gemList, player) {
@@ -764,6 +833,14 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     bonus_stats = compileStats(bonus_stats, effectStats);
   }
 
+  // Handle Annulet
+  if (item.id === 203460) {
+    //const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
+    const combo = player.getBestPrimordialIDs(playerSettings, contentType);
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
+    bonus_stats = compileStats(bonus_stats, annuletStats);
+  }
+
     // Add Retail Socket
   if (item.socket) {
     getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
@@ -808,6 +885,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];
   }
+
+
 
   return Math.round(100 * score) / 100;
 }
