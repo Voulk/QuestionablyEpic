@@ -35,14 +35,14 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       justifyContent: "center",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
       width: "66%",
       justifyContent: "center",
       display: "block",
+      marginTop: 80,
     },
   },
 }));
