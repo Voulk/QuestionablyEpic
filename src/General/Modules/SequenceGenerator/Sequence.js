@@ -175,7 +175,7 @@ export function SequenceObject(props) {
                           e.preventDefault();
                           removeSpellAtIndex(index, e);
                         }}
-                        style={{ display: "flex" }}
+                        style={{ display: "flex", width: '25px', height: '25px' }}
                       />
                     </Grid>
                   ))}

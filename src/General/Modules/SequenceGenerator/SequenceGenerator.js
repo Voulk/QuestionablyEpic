@@ -268,6 +268,15 @@ export default function SequenceGenerator(props) {
   const autoGen = () => {
     if (selectedSpec === "Discipline Priest") {
       updateSequence(buildRamp("Primary", 10, [], stats.haste, "", discTalents));
+      const temp = [];
+      for (let i = 0; i < 4; i++) {
+        temp.push(JSON.parse(JSON.stringify(sequence)));
+      }
+      temp[0].spells = buildRamp("Primary", 10, [], stats.haste, "", discTalents);
+      temp[1].spells = buildRamp("Secondary", 10, [], stats.haste, "", discTalents);
+      temp[2].spells = buildRamp("RaptureLW", 10, [], stats.haste, "", discTalents);
+      temp[2].spells = buildRamp("Mini", 10, [], stats.haste, "", discTalents);
+      setSequences(temp);
     } else if (selectedSpec === "Preservation Evoker") {
       updateSequence(buildEvokerRamp("Reversion", 0, [], stats.haste, "", evokerTalents));
     }
@@ -372,7 +381,7 @@ export default function SequenceGenerator(props) {
                                 dragStart(e, spell);
                               }}
                               onClick={(e) => addSpell(spell, e)}
-                              style={{ display: "flex" }}
+                              style={{ display: "flex", width: '36px', height: '36px' }}
                             />
                           </Grid>
                         ))}
@@ -401,7 +410,7 @@ export default function SequenceGenerator(props) {
                                   e.persist();
                                   addTalent(spell, talentDB, setTalents, e);
                                 }}
-                                style={{ display: "flex" }}
+                                style={{ display: "flex", width: '30px', height: '30px' }}
                               />
                             </Grid>
                           ) : (

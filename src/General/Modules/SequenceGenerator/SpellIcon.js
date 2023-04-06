@@ -38,7 +38,7 @@ export const SpellIcon = ({ spell, spec, iconType, size, className, alt = '', ..
         className={`icon ${className || ''}`}
         {...others}
       />
-       {iconType === "Talent" ? <div {...others} style={{ position: "absolute", top: "25%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "20px", textShadow: "1px 1px 4px black" }}> {spell.points} </div> : ""}
+       {iconType === "Talent" ? <div {...others} style={{ position: "absolute", top: "19%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "16px", textShadow: "1px 1px 4px black" }}> {spell.points} </div> : ""}
     </a>
     </div>
   );
