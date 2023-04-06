@@ -60,6 +60,7 @@ export const sequence = {
   id: 0,
   seqName: "",
   spells: [],
+  data: {hps: 6000, hpm: 15, dps: 4}
 };
 
 export function SequenceObject(props) {
@@ -74,6 +75,7 @@ export function SequenceObject(props) {
   const setSelectedSeq = props.setSelectedSeq;
 
   const [expanded, setExpanded] = useState(false);
+  const isSelected = props.isSelected;
 
   /**
    * Drag and Drop inside of the Sequence.
@@ -128,24 +130,19 @@ export function SequenceObject(props) {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={sequenceTheme}>
-        <Accordion index={index} fullWidth expanded={expanded} onClick={(e) => setSelectedSeq(index)}>
+        <Accordion style={{borderColor: isSelected ? "goldenrod" : ""}} index={index} fullWidth expanded={expanded} onClick={(e) => setSelectedSeq(index)}>
           <AccordionSummary expandIcon={<ExpandMoreIcon onClick={(e) => setExpanded(expanded ? false : true)} />} aria-controls="panel1a-content" id="panel1a-header">
             <Grid container spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Grid container spacing={1} alignItems="flex-end">
                   <Grid item>
-                    <Typography color="primary" variant="h6">
-                      Accordion {index}
-                    </Typography>
+                    <Typography variant="subtitle2"> {"HPS: " + props.data.hps}</Typography>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle1"> - {"Stat1: " + 1234}</Typography>
+                    <Typography variant="subtitle2">  {"HPM: " + props.data.hpm}</Typography>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle1"> - {"Stat2: " + 5454654}</Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="subtitle1"> - {"Stat3: " + 546521}</Typography>
+                    <Typography variant="subtitle2">  {"DPS: " + props.data.dps}</Typography>
                   </Grid>
                 </Grid>
               </Grid>

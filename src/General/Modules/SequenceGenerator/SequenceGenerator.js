@@ -123,6 +123,10 @@ const setupSequences = (len = 2) => {
   return seqArray;
 };
 
+const roundN = (num, places) => {
+  return Math.round(num * 10 ** places) / 10 ** places;
+}
+
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
@@ -146,10 +150,13 @@ export default function SequenceGenerator(props) {
     updateSequence(seq);
   };
 
-  const updateSequences = (id, newSeq) => {
+  const updateSequences = (id, newSeq, sim) => {
     let temp = [...sequences];
     temp[id].spells = newSeq;
     console.log("Settings sequences to " + JSON.stringify(temp));
+    temp[id].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
+    console.log(sim);
+
     setSequences(temp);
   };
 
@@ -178,7 +185,7 @@ export default function SequenceGenerator(props) {
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
-    updateSequences(selectedSeq, sequence);
+    updateSequences(selectedSeq, sequence, sim);
     setResult(sim);
     setCombatLog(sim.report);
   };
@@ -221,7 +228,7 @@ export default function SequenceGenerator(props) {
   };
 
   const addSpell = (spell) => {
-    updateSequence([...seq, spell]);
+    updateSequence([...sequences[selectedSeq].spells, spell]);
   };
 
   const removeSpellAtIndex = (index, e = null) => {
@@ -491,7 +498,7 @@ export default function SequenceGenerator(props) {
 
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       {sequences.map((s, i) => (
-                        <SequenceObject index={i} seq={s} db={spellDB} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
+                        <SequenceObject index={i} seq={s} data={s.data} db={spellDB} isSelected={selectedSeq===i} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
                       ))}
                     </Grid>
                   </Grid>
