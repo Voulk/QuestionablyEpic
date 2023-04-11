@@ -1031,7 +1031,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1205: {
-    bossOrder: [2515, 2506, 2517, 2518],
+    bossOrder: [2515, 2506, 2517, 2518, 2696],
     2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
@@ -1066,6 +1066,15 @@ export const encounterDB = {
         de: "Liskanoth, Schrecken der Zukunft",
         ru: "Лисканот Крах Мироздания",
         ch: "利斯卡诺兹，未来灾劫",
+      },
+    },
+    2696: {
+      name: {
+        en: "The Zaqali Elders",
+        cn: "扎卡利长老",
+        de: "Die Ältesten der Zaqali",
+        fr: "Les Anciens zaqalis",
+        ru: "Старейшины закали",
       },
     },
   },
@@ -1808,15 +1817,6 @@ export const encounterDB = {
           de: "Die vergessenen Experimente",
           fr: "Les expériences oubliées",
           ru: "Забытые эксперименты",
-        },
-      },
-      2696: {
-        name: {
-          en: "The Zaqali Elders",
-          cn: "扎卡利长老",
-          de: "Die Ältesten der Zaqali",
-          fr: "Les Anciens zaqalis",
-          ru: "Старейшины закали",
         },
       },
 
