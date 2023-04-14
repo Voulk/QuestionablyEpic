@@ -153,9 +153,10 @@ export default function SequenceGenerator(props) {
   const updateSequences = (id, newSeq, sim) => {
     let temp = [...sequences];
     temp[id].spells = newSeq;
-    console.log("Settings sequences to " + JSON.stringify(temp));
+
     temp[id].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
-    console.log(sim);
+
+    
 
     setSequences(temp);
   };
@@ -179,6 +180,29 @@ export default function SequenceGenerator(props) {
     critMult: 1,
   };
 
+  const updateAllSequences = (sequences) => {
+    const temp = [];
+    for (let i = 0; i < sequences.length; i++) {
+      temp.push(JSON.parse(JSON.stringify(sequence)));
+      const simFunc = getSequence(selectedSpec);
+      const sim = simFunc(sequences[i].spells, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
+      console.log("i" + i);
+      console.log(sim);
+      temp[i].spells = sequences[i].spells;
+      temp[i].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
+      // multiple state updates get bundled by react into one update
+
+    }
+
+    setSequences(temp);
+  }
+
+  // 
+  const updateActiveSequence = (sequence, id) => {
+
+  }
+
+  
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
     const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
@@ -188,7 +212,7 @@ export default function SequenceGenerator(props) {
     updateSequences(selectedSeq, sequence, sim);
     setResult(sim);
     setCombatLog(sim.report);
-  };
+  }; 
 
   const runIterations = (sequence, simFunc) => {
     const iter = 500;
@@ -225,6 +249,7 @@ export default function SequenceGenerator(props) {
 
     setTalents({ ...talentDB });
     updateSequence(seq);
+    updateAllSequences(sequences);
   };
 
   const addSpell = (spell) => {
