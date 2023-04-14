@@ -8,6 +8,7 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import { useTheme } from "@mui/material/styles";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
@@ -30,10 +31,12 @@ import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerR
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
 
+import Counter from "./SequenceCounter";
+
 const Accordion = styled((props) => <MuiAccordion disableGutters elevation={0} square {...props} />)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
   "&:not(:last-child)": {
-    borderBottom: 0,
+    // borderBottom: 0,
   },
   "&:before": {
     display: "none",
@@ -42,12 +45,11 @@ const Accordion = styled((props) => <MuiAccordion disableGutters elevation={0} s
 
 const AccordionSummary = styled((props) => <MuiAccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />} {...props} />)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, .05)" : "rgba(0, 0, 0, .03)",
-  flexDirection: "row-reverse",
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(90deg)",
   },
   "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1),
+    // Remove marginRight: theme.spacing(2),
   },
 }));
 
@@ -60,7 +62,7 @@ export const sequence = {
   id: 0,
   seqName: "",
   spells: [],
-  data: {hps: 6000, hpm: 15, dps: 4}
+  data: { hps: 6000, hpm: 15, dps: 4 },
 };
 
 export function SequenceObject(props) {
@@ -76,6 +78,8 @@ export function SequenceObject(props) {
 
   const [expanded, setExpanded] = useState(false);
   const isSelected = props.isSelected;
+
+  const theme = useTheme();
 
   /**
    * Drag and Drop inside of the Sequence.
@@ -130,22 +134,55 @@ export function SequenceObject(props) {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={sequenceTheme}>
-        <Accordion style={{borderColor: isSelected ? "goldenrod" : ""}} index={index} fullWidth expanded={expanded} onClick={(e) => setSelectedSeq(index)}>
+        <Accordion style={{ borderColor: isSelected ? "goldenrod" : "" }} index={index} fullWidth expanded={expanded} onClick={(e) => setSelectedSeq(index)}>
           <AccordionSummary expandIcon={<ExpandMoreIcon onClick={(e) => setExpanded(expanded ? false : true)} />} aria-controls="panel1a-content" id="panel1a-header">
-            <Grid container spacing={1}>
+            <Grid
+              container
+              spacing={1}
+              style={{
+                marginRight: expanded ? theme.spacing(2) : theme.spacing(2),
+              }}
+            >
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Grid container spacing={1} alignItems="flex-end">
+                <Grid container spacing={1} alignItems="center" justifyContent="space-between">
                   <Grid item>
-                    <Typography variant="subtitle2"> {"HPS: " + props.data.hps}</Typography>
+                    <Grid container spacing={1} alignItems="center">
+                      <Grid item>
+                        <Grid container spacing={1} alignItems="center">
+                          <Grid item>
+                            <Typography variant="subtitle1" fontWeight="bold" sx={{ ml: 1 }}>
+                              {index + 1}
+                            </Typography>
+                          </Grid>
+                          <Grid item>
+                            <Divider
+                              orientation="vertical"
+                              sx={{
+                                height: "24px",
+                                bgcolor: theme.palette.text.primary,
+                                mx: 1,
+                              }}
+                            />
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle2">{"HPS: " + props.data.hps}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle2">{"HPM: " + props.data.hpm}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle2">{"DPS: " + props.data.dps}</Typography>
+                      </Grid>
+                    </Grid>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle2">  {"HPM: " + props.data.hpm}</Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="subtitle2">  {"DPS: " + props.data.dps}</Typography>
+                    <Counter />
                   </Grid>
                 </Grid>
               </Grid>
+
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Divider />
               </Grid>
@@ -175,15 +212,15 @@ export function SequenceObject(props) {
                           e.preventDefault();
                           removeSpellAtIndex(index, e);
                         }}
-                        style={{ display: "flex", width: '25px', height: '25px' }}
+                        style={{ display: "flex", width: "25px", height: "25px" }}
                       />
                     </Grid>
                   ))}
                 </Grid>
               </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              {/* <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <div style={{ height: 4 }} />
-              </Grid>
+              </Grid> */}
             </Grid>
           </AccordionSummary>
           <AccordionDetails></AccordionDetails>
