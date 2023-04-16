@@ -3,6 +3,33 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } 
 export const raidTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Neltharion's Call to Suffering                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Neltharion's Call to Suffering",
+    effects: [
+      { // Int portion
+        coefficient: 2.901138,
+        table: -1,
+        stat: "intellect",
+        duration: 12,
+        ppm: 1,
+      },
+      { // Self-damage portion
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Rashok's Molten Heart                                       */
     /* ---------------------------------------------------------------------------------------------- */
     /* 

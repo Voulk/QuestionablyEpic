@@ -12,7 +12,9 @@ const getLevelDiff = (trinketName, db, ilvl, map2) => {
   });
 
   const item = temp[0];
-
+  if (!item) {
+    console.error("Invalid Trinket " + trinketName);
+  }
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
 
