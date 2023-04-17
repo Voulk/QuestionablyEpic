@@ -1,3 +1,4 @@
+import { addBuff } from "../Generic/RampBase";
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -34,8 +35,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
         castTime: 1.5,
-        cost: 0.16,
-        coeff: 1.55, // Not final
+        cost: 16,
+        coeff: 1.395, 
         cooldown: 7.5,
         expectedOverheal: 0.29,
         holyPower: 1,
@@ -46,8 +47,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
         castTime: 1.5,
-        cost: 0.16,
-        coeff: 1.55, // Not final
+        cost: 16,
+        coeff: 0.612, 
         cooldown: 7.5,
         expectedOverheal: 0.29,
         holyPower: 1,
@@ -58,7 +59,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
-        cost: 0.22,
+        cost: 22,
         coeff: 2.02, // Not final
         expectedOverheal: 0.14,
         secondaries: ['crit', 'vers', 'mastery']
@@ -67,7 +68,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
         type: "damage",
         castTime: 1.5,
-        cost: 0.11,
+        cost: 10,
         coeff: 0.765, 
         cooldown: 6,
         holyPower: 1,
@@ -112,10 +113,63 @@ export const PALADINSPELLDB = {
         cooldown: 120,
         buffType: 'statsMult',
         stat: 'crit',
-        value: (20 * 35), // 
+        value: (20 * 170), // 
         buffDuration: 20,
     }],
 
 }
 
-export const baseTalents = { }
+// These could be reworked to take state and to do the work here instead of in its own big function.
+export const baseTalents = { 
+    // == Paladin Class Tree ==
+    talentName: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+
+    }}, // Description
+
+
+    // == Holy Tree ==
+    // Seal of Alacrity (2% haste pp + 0.5s off Judgment CD)
+    sealOfAlacrity: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+        // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
+        const buff = {
+            name: "Seal of Alacrity",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'statsMult',
+            stat: 'haste',
+            value: (0.02 * points + 1)
+        };
+        addBuff(state, buff, "Seal of Alacrity")
+
+        spellDB['Judgment'][0].cooldown -= (0.5 * points);
+    }}, 
+
+    // Seal of Might (2% base mastery pp + 2% intellect)
+
+    // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
+
+    // Golden Path - Consecration heals 6 allies on tick.
+
+    // Judgment of Light - Judgment heals allies 5 times.
+
+    // Holy Aegis - Crit +2% per point.
+
+    // Crusader's Reprieve - Small self-heal on Crusader Strike
+
+    // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
+
+    // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
+
+    // Zealot's Paragon - Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of Avenging Crusader by 0.5s.
+
+    // Divine Resonance - Buff that casts a free Holy Shock every 5s for 15s.
+
+    // Quickened Invocation - 15s off DT cooldown.
+
+    // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
+
+    // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
+
+    // Fading Light - Dawn is 30% instead of 20%. Dusk causes HoPo generators to shield for 20%.
+}
