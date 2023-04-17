@@ -34,7 +34,7 @@ export const PALADINSPELLDB = {
     "Holy Shock": [{
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
-        castTime: 1.5,
+        castTime: 0,
         cost: 16,
         coeff: 1.395, 
         cooldown: 7.5,
@@ -46,7 +46,7 @@ export const PALADINSPELLDB = {
     "Holy Shock O": [{
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
-        castTime: 1.5,
+        castTime: 0,
         cost: 16,
         coeff: 0.612, 
         cooldown: 7.5,
@@ -58,7 +58,7 @@ export const PALADINSPELLDB = {
     "Flash of Light": [{
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
-        castTime: 1.5,
+        castTime: 0,
         cost: 22,
         coeff: 2.02, // Not final
         expectedOverheal: 0.14,
@@ -67,7 +67,7 @@ export const PALADINSPELLDB = {
     "Crusader Strike": [{
         spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
         type: "damage",
-        castTime: 1.5,
+        castTime: 0,
         cost: 10,
         coeff: 0.765, 
         cooldown: 6,
@@ -77,9 +77,9 @@ export const PALADINSPELLDB = {
     "Judgment": [{  
         spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
         type: "damage",
-        castTime: 1.5,
-        cost: 0.03,
-        coeff: 0.634 * 1.5,
+        castTime: 0,
+        cost: 3,
+        coeff: 0.610542 * 1.5,
         cooldown: 12,
         secondaries: ['crit', 'vers']
     }],
@@ -124,7 +124,7 @@ export const baseTalents = {
     // == Paladin Class Tree ==
     talentName: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
-    }}, // Description
+    }}, 
 
 
     // == Holy Tree ==
@@ -152,6 +152,17 @@ export const baseTalents = {
     // Golden Path - Consecration heals 6 allies on tick.
 
     // Judgment of Light - Judgment heals allies 5 times.
+    judgmentOfLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Judgment'].push({
+            name: "Judgment of Light",
+            type: "heal",
+            coeff: 0.175,
+            expectedOverheal: 0.2,
+            targets: 5,
+            secondaries: ['crit', 'vers', 'mastery']
+        });
+
+    }}, 
 
     // Holy Aegis - Crit +2% per point.
 
