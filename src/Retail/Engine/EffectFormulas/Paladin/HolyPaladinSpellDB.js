@@ -1,4 +1,5 @@
 import { addBuff } from "../Generic/RampBase";
+import { runHeal } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -28,7 +29,7 @@ export const PALADINSPELLDB = {
     //
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         type: "",
-        castTime: 1.5,
+        castTime: 0.75,
         cost: 0,
     }],
     "Holy Shock": [{
@@ -40,6 +41,7 @@ export const PALADINSPELLDB = {
         cooldown: 7.5,
         expectedOverheal: 0.29,
         holyPower: 1,
+        hastedCooldown: true,
         statMods: {'crit': 0.3},
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -52,6 +54,7 @@ export const PALADINSPELLDB = {
         cooldown: 7.5,
         expectedOverheal: 0.29,
         holyPower: 1,
+        hastedCooldown: true,
         statMods: {'crit': 0.3},
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -72,6 +75,7 @@ export const PALADINSPELLDB = {
         coeff: 0.765, 
         cooldown: 6,
         holyPower: 1,
+        hastedCooldown: true,
         secondaries: ['crit', 'vers']
     }],
     "Judgment": [{  
@@ -97,12 +101,22 @@ export const PALADINSPELLDB = {
     "Light of Dawn": [{
         spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
         type: "heal",
-        castTime: 1.5,
+        castTime: 0,
         cost: 0,
         coeff: 1.05, // Not final
         expectedOverheal: 0.4,
         holyPower: -3,
         targets: 5,
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Word of Glory": [{
+        spellData: {id: 0, icon: "", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0,
+        coeff: 3.15,
+        expectedOverheal: 0.3,
+        holyPower: -3,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Avenging Wrath": [{
@@ -115,6 +129,25 @@ export const PALADINSPELLDB = {
         stat: 'crit',
         value: (20 * 170), // 
         buffDuration: 20,
+    }],
+    "Divine Toll": [{
+        spellData: {id: 31884, icon: "", cat: "cooldown"},
+        type: "function",
+        cost: 15,
+        castTime: 0,
+        cooldown: 60,
+        count: 5,
+        runFunc: function (state, spell, spellDB) {
+            // Cast 5 Holy Shocks
+            const holyShock = spellDB["Holy Shock"];
+            
+
+            for (let i = 0; i < spell.count; i++) {
+                state.holyPower = Math.max(5, state.holyPower + 1);
+                runHeal(state, holyShock[0], "Holy Shock (Divine Toll)");
+            }
+
+        }
     }],
 
 }
@@ -146,6 +179,21 @@ export const baseTalents = {
     }}, 
 
     // Seal of Might (2% base mastery pp + 2% intellect)
+    sealOfMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+        // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
+        const buff = {
+            name: "Seal of Might",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'statsMult',
+            stat: 'mastery',
+            value: (0.03 * points + 1)
+        };
+        addBuff(state, buff, "Seal of Might")
+
+        stats.intellect *= (1 + 0.02 * points);
+    }}, 
 
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
 
@@ -165,22 +213,119 @@ export const baseTalents = {
     }}, 
 
     // Holy Aegis - Crit +2% per point.
+    holyAegis: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+        // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
+        const buff = {
+            name: "Holy Aegis",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'statsMult',
+            stat: 'crit',
+            value: (0.02 * points + 1)
+        };
+        addBuff(state, buff, "Holy Aegis")
+
+    }}, 
 
     // Crusader's Reprieve - Small self-heal on Crusader Strike
 
     // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
 
     // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
+    // While Divine Purpose could be done by chance, it's somewhat easier to just apply a healing modifier to LoD.
 
     // Zealot's Paragon - Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of Avenging Crusader by 0.5s.
+    // TODO: Add Hammer of Wrath
+    zealotsParagon: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Judgment'].push({
+            type: "extendBuff",
+            value: 0.5,
+            targetSpell: "Avenging Wrath",
+        });
+        spellDB['Hammer of Wrath'].push({
+            type: "extendBuff",
+            value: 0.5,
+            targetSpell: "Avenging Wrath",
+        });
+        spellDB['Judgment'][0].coeff *= 1.1;
+        spellDB['Hammer of Wrath'][0].coeff *= 1.1;
+    }}, 
 
     // Divine Resonance - Buff that casts a free Holy Shock every 5s for 15s.
 
     // Quickened Invocation - 15s off DT cooldown.
+    quickenedInvocation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Divine Toll'][0].cooldown -= 15;
+    }}, 
 
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
 
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
 
     // Fading Light - Dawn is 30% instead of 20%. Dusk causes HoPo generators to shield for 20%.
+
+
+    // === Spec Tree ===
+    // Crusader's Might
+    crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Crusader Strike'].push({
+            type: "cooldownReduction",
+            cooldownReduction: 1 * points,
+            targetSpell: "Holy Shock",
+        });
+
+    }}, 
+
+    // Shining Savior - WoG / LoD +5%.
+    shiningSavior: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Word of Glory'][0].coeff *= 1.05;
+        spellDB['Light of Dawn'][0].coeff *= 1.05;
+    }}, 
+
+    // Resplendent Light - Holy Light splashes to 5 targets for 8% each.
+
+    // Divine Insight - Holy Shock damage and healing increased by 5%.
+    divineInsight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Shock'][0].coeff *= 1.05;
+    }}, 
+
+    // Radiant Onslaught - Extra CS charge.
+
+    // Tower of Radiance - Casting FoL / HL on Beacon gives +1 HoPo. Casting FoL / HL on anyone else has a chance to give +1 HoPo.
+
+    // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 1s.
+
+    // Divine Rev - While empowered by IoL, Flash heals for +10% and Holy Light refunds 1% mana.
+
+    // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
+
+    // Divine Glimpse - Holy Shock has a +7/15% crit chance.
+    divineGlimpse: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Shock'][0].statMods.crit += (0.075 * points);
+    }}, 
+
+    // Sanctified Wrath - Holy Shock CD reduced by 40% during wings. +5s Wings duration.
+    // Note that the CD portion is handled in Ramps instead of here.
+    sanctifiedWrath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Avenging Wrath'][0].buffDuration += 5;
+    }}, 
+
+    // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
+
+    // Might - Gain 20% Crit during wings.
+
+    // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
+
+    // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
+
+    // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
+
+    // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
+
+    // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
+
+    // Boundless Salvation
+
+    // Inflorescence of the Sunwell
 }

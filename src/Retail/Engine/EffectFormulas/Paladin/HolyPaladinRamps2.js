@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
+import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
 
 
 
@@ -17,9 +17,9 @@ const PALADINCONSTANTS = {
     masteryMod: 1.5, 
     masteryEfficiency: 0.80, 
     baseMana: 50000,
+    beaconOverhealing: 0.4,
 
-    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0},
-    auraHealingBuff: 1,
+    auraHealingBuff: 1.06,
     auraDamageBuff: 0.92,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
@@ -29,7 +29,7 @@ const PALADINCONSTANTS = {
 
 }
 
-const apl = ["Avenging Wrath", "Light of Dawn", "Holy Shock", "Crusader Strike", "Judgment", "Rest"]
+const apl = ["Avenging Wrath", "Divine Toll", "Light of Dawn", "Holy Shock", "Crusader Strike", "Judgment", "Rest"]
 
 
 
@@ -190,15 +190,7 @@ const getHealingMult = (state, t, spellName, talents) => {
     let mult = PALADINCONSTANTS.auraHealingBuff;
 
     mult *= (state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); // Avenging Wrath
-    if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
-        if (spellName.includes("Dream Breath")) mult *= 1.4;
-        if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
-        console.log("Buffing Dream Breath");
-        //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
-    } 
-    else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
-    
     return mult;
 }
 
@@ -216,14 +208,17 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALACONSTANTS.beaconOverhealing);
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALACONSTANTS.beaconOverhealing);
+
+    // Beacon
+    let beaconHealing = 0;
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing);
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing);
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
-
+    if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
 
 
     return healingVal;
@@ -322,13 +317,25 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             }
             
             
-            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            // The spell has a damage component. Add it to our damage meter.
             else if (spell.type === 'damage') {
                 runDamage(state, spell, spellName)
             }
-            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            // 
             else if (spell.type === 'function') {
-                spell.runFunc(state, spell);
+                spell.runFunc(state, spell, paladinSpells);
+            }
+
+            // The spell reduces the cooldown of another spell. 
+            else if (spell.type === "cooldownReduction") {
+                const targetSpell = paladinSpells[spell.targetSpell];
+                targetSpell[0].activeCooldown -= spell.cooldownReduction;
+            }
+            // The spell extends the duration of a buff.
+            // Note that this will extend all instances of the buff which is generally the functionality you're looking for.
+            // Examples include Flourish, Evangelism, Zealot's Paragon etc.
+            else if (spell.type === "extendBuff") {
+                extendBuff(state.activeBuffs, 0, spell.targetSpell, spell.value)
             }
 
             // TODO: This needs to be converted to use the RampBase addBuff function. There are some unique ones here which could be converted to some kind of 
@@ -428,9 +435,13 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             // These are special exceptions where we need to write something special that can't be as easily generalized.
 
             if (spell.holyPower) state.holyPower += spell.holyPower;
-            if (spell.cooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
-        
+            if (spell.cooldown) {
+
+                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);
+                else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
+                else spell.activeCooldown = state.t + spell.cooldown;
             }
+        }
 
 
  
@@ -506,13 +517,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith"};
 
     let currentStats = JSON.parse(JSON.stringify(stats));
     
 
 
-    const sequenceLength = 90; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 100; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -638,6 +649,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             spendSpellCost(fullSpell, state);
 
             runSpell(fullSpell, state, spellName, paladinSpells);
+            state.casts[spellName] = (state.casts[spellName] || 0) + 1;
 
             // Check if Echo
             // If we have the Echo buff active, and our current cast is Echo compatible (this will probably change through Alpha) then:
