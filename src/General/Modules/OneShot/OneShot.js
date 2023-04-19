@@ -75,7 +75,7 @@ const updateSpec = (className, specName) => {
       const data = temp[0];
       const defensiveType = data.talent ? "talent" : data.external ? "external" : data.raidBuff ? "raidBuff" : "defensive";
 
-      defensiveData.push({ name: data.name.en, icon: data.autoIcon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType, guid: data.guid });
+      defensiveData.push({ name: data.name.en, icon: data.autoIcon, type: data.type, reduction: data.reduction || 0, active: false, defensiveType: defensiveType, guid: data.guid, hookTalent: data.hookTalent || null, hookedReduction: data.hookedReduction || null });
     } else {
       console.error("Can't find defensive: ", defensiveName);
     }
@@ -90,6 +90,13 @@ export const getKeyMult = (keyLevel) => {
   return Math.round(100 * 1.08 ** 8 * 1.1 ** (keyLevel - 10)) / 100;
 };
 
+export const getHookValue = (defensives, talentName) => {
+  const passive = defensives.filter((defensive) => defensive.name === talentName && defensive.active)
+
+  if (passive.length > 0) return passive[0].hookedReduction;
+  else return 0;
+}
+
 // Sources of damage reduction are multiplicative with each other.
 // That means if we have Barkskin (20%) and Ironbark (20%) active at the same time then
 // we get (1 - 0.2) * (1 - 0.2) = 0.64 or 64% damage reduction rather than an additive 40%.
@@ -103,9 +110,15 @@ export const calcDefensives = (defensives, spell) => {
     // We also handle "AoE reduction" effects like Zephyr and Feint by checking if the spell is reduced by avoidance.
     // Note that there are some rare mechanics that ignore defensives altogether (see 'pure' tag in EnemySpellDB).
     const defensiveApplies = (defensive.type === "aoe" && spell.avoidance) || defensive.type === "All" || defensive.type === spell.damageType;
+    let reduction = defensive.reduction || 0;
+    if (defensive.name === "Fade") console.log(defensive);
+    if ('hookTalent' in defensive && defensive.hookTalent !== null) {
+      reduction += getHookValue(defensives, defensive.hookTalent)
+    }
 
     if (defensive.active && defensiveApplies) {
-      sumDR *= 1 - defensive.reduction;
+      sumDR *= 1 - reduction;
+      
     }
   });
 

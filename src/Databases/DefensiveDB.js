@@ -155,6 +155,9 @@ export const defensiveDB = [
     autoIcon: "spell_magic_lesserinvisibilty",
     duration: 10,
     cooldown: 30,
+    reduction: 0, // We'll apply the DR via Translucent Image.
+    type: "All",
+    hookTalent: "Translucent Image",
     class: "Priest",
   },
   /* ---------------------------------------------------------------------------------------------- */
@@ -519,6 +522,17 @@ export const defensiveTalentsDB = [
     class: "Evoker",
     reduction: 0.04,
     type: "Magic", // The type of damage the DR applies to.
+    talent: true,
+  },
+  {
+    name: {
+      en: "Translucent Image",
+    },
+    guid: 375545,
+    icon: require("Images/Classes/Evoker/inv_misc_rubysanctum1.jpg").default,
+    autoIcon: "inv_misc_rubysanctum1",
+    class: "Priest",
+    hookedReduction: 0.04,
     talent: true,
   },
   {
