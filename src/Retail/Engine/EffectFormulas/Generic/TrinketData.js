@@ -37,7 +37,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 1.506561,
+        coefficient: 1.506561 * 0.7, // Update coefficient.
         table: -9,
         ppm: 2,
         ticks: 10,
@@ -60,7 +60,8 @@ export const raidTrinketData = [
 
 
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
-      
+      console.log(itemLevel + " Total Mana: " + processedValue(data[0], itemLevel, 1) * 10)
+      console.log(itemLevel + " Total Heal: " + processedValue(data[1], itemLevel, 1) * 10)
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
       console.log(itemLevel + " One tick: " + processedValue(data[1], itemLevel, 1))
@@ -98,7 +99,7 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
+      console.log("Crit: " + processedValue(data[0], itemLevel))
       bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
       bonus_stats.leech = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');;
 
