@@ -14,6 +14,7 @@ import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared
 import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
+import { getItemProp } from "General/Engine/ItemUtilities"
 
 const fetchReport = (reportCode, setResult) => {
   // Check that the reportCode is acceptable.
@@ -53,6 +54,8 @@ const shortenReport = (report) => {
   const shortItemSet = report.itemSet;
 
   shortReport.itemSet.setStats = report.itemSet.setStats;
+  shortReport.itemSet.primGems = report.itemSet.primGems;
+  shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
   shortReport.effectList = report.itemSet.effectList;
   shortReport.differentials = report.differentials;
   shortReport.contentType = report.contentType;
@@ -64,6 +67,7 @@ const shortenReport = (report) => {
     if (item.stats.leech > 0) newItem.leech = item.stats.leech;
     if (item.socket) newItem.socket = item.socket;
     if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+    if (item.quality) newItem.quality = item.quality;
     
     shortReport.itemSet.itemList.push(newItem)
   }
@@ -135,7 +139,7 @@ function TopGearReport(props) {
   }, []);
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, props.player, contentType, currentLanguage, gameType);
+    return displayReport(result, props.player, contentType, currentLanguage, gameType, t);
   }
   else {
     // No result queued. Check URL for report code and load that.
@@ -155,7 +159,7 @@ function TopGearReport(props) {
 
 }
 
-function displayReport(result, player, contentType, currentLanguage, gameType) {
+function displayReport(result, player, contentType, currentLanguage, gameType, t) {
   console.log("Set ok, displaying report");
 
   
@@ -196,6 +200,11 @@ function displayReport(result, player, contentType, currentLanguage, gameType) {
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
 
+    // Setup Slots
+    itemList.forEach(item => {
+      item.slot = getItemProp(item.id, "slot")
+    })
+
     //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
   const getGemIDs = (slot) => {
@@ -214,6 +223,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType) {
   };
 
   // scuffed breakdown of weapon combos to seperate them for the report
+  /*
   let newWeaponCombos = [];
   if (itemList.length > 0) {
     const weaponCombos = itemList.filter((key) => key.slot === "CombinedWeapon")[0];
@@ -230,7 +240,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType) {
     }
   }
   newWeaponCombos = newWeaponCombos.flat();
-
+  */
   return (
     <div
       style={{
@@ -247,7 +257,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType) {
               <div
                 style={{
                   justifyContent: "center",
-                  backgroundImage: `url("${backgroundImage}")`,
+                  //backgroundImage: `url("${backgroundImage}")`,
                   backgroundColor: "#0F0E04",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",
