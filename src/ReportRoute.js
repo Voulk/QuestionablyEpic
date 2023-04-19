@@ -4,7 +4,7 @@ export default function ReportRoute(props) {
     const report = props.report;
     const player = props.player;
     
-    if(player !== undefined && player !== null && report !== undefined && report !== null) {
+    if(player !== undefined && player !== null /*&& report !== undefined && report !== null */) {
        return <Route {...props} />
     }
     return <Redirect to='/' />

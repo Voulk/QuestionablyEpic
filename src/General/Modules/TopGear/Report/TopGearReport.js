@@ -5,7 +5,7 @@ import TopSetStatsPanel from "./TopSetStatsPanel";
 import { apiGetPlayerImage } from "../../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
 import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
@@ -13,22 +13,81 @@ import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons
 import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { sample } from "./SampleReportData.js";
 
-function TopGearReport(props) {
-  const [backgroundImage, setBackgroundImage] = useState("");
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
-  const gameType = useSelector((state) => state.gameType);
-  const boxWidth = gameType === "Classic" ? "60%" : "60%";
-  let contentType = "";
+const fetchReport = (reportCode, setResult) => {
+  // Check that the reportCode is acceptable.
+  /*const requestOptions = {
+    method: 'GET',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+  };*/
+
+  const url = "https://questionablyepic.com/api/getReport.php?reportID=" + reportCode;
+  console.log("Fetching + " + reportCode);
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(JSON.parse(data).id)
+      setResult(JSON.parse(data))
+    })
+    //.catch(err => { throw err });
+}
+
+const sendReport = (shortReport) => {
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
   
-  /* ----------------------------- On Component load get player image ----------------------------- */
-  useEffect(() => {
+  fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
+  //.then(response => response.text())
+  .then(response => console.log(response));
+  //.then(data => this.setState({ postId: data.id }));
+}
 
-  }, []);
+const shortenReport = (report) => {
+  const shortReport = {id: generateReportCode(), effectList: [], itemSet: {itemList: []}};
+  const shortItemSet = report.itemSet;
 
-  const classIcon = () => {
-    switch (props.player.spec) {
+  shortReport.itemSet.setStats = report.itemSet.setStats;
+  shortReport.effectList = report.itemSet.effectList;
+  shortReport.differentials = report.differentials;
+  shortReport.contentType = report.contentType;
+
+
+  for (var i = 0; i < report.itemSet.itemList.length; i++) {
+    const item = report.itemSet.itemList[i];
+    let newItem = {id: item.id, ilvl: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
+    if (item.stats.leech > 0) newItem.leech = item.stats.leech;
+    if (item.socket) newItem.socket = item.socket;
+    if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+    
+    shortReport.itemSet.itemList.push(newItem)
+  }
+  console.log(JSON.stringify(shortReport));
+  sendReport(shortReport);
+  return shortReport;
+}
+
+  // TODO: Add blocklist. It can be fairly basic.
+  const generateReportCode = () => {
+    let result = "";
+    const stringLength = 12;
+    const possChars ='abcdefhijklmnopqrstuvwxyz';
+
+    const charLength = possChars.length;
+    for ( let i = 0; i < stringLength; i++ ) {
+        result += possChars.charAt(Math.floor(Math.random() * charLength));
+    }
+
+    return result;
+  }
+
+  const classIcon = (spec) => {
+    switch (spec) {
       case "Holy Paladin":
         return require("Images/Classes/Paladin/icon-paladin.png").default;
       case "Holy Paladin Classic":
@@ -57,60 +116,53 @@ function TopGearReport(props) {
   };
 
   const checkResult = (result) => {
-    return result !== "undefined" && result && result.itemSet.hardScore && result.itemSet.hardScore > 1 && result.itemSet.setStats && result.itemSet.itemList;
+    const setOk = result !== null && result !== "undefined" && result && result.itemSet.setStats && result.itemSet.itemList;
+    return setOk;//&& result.itemSet.hardScore > 1;
   };
 
-  const sendReport = (shortReport) => {
-    const requestOptions = {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(shortReport)
-    };
+function TopGearReport(props) {
 
-    fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
-    //.then(response => response.text())
-    .then(response => console.log(response));
-    //.then(data => this.setState({ postId: data.id }));
+  let contentType = "";
+  const [result, setResult] = useState(props.result);
+  const [backgroundImage, setBackgroundImage] = useState("");
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  const gameType = useSelector((state) => state.gameType);
+  
+  /* ----------------------------- On Component load get player image ----------------------------- */
+  useEffect(() => {
+
+  }, []);
+
+  if (result !== null && checkResult(result)) {
+    return displayReport(result, props.player, contentType, currentLanguage, gameType);
+  }
+  else {
+    // No result queued. Check URL for report code and load that.
+    //fetchReport("adloxucelvql", setResult);
+    setResult(sample);
+    return   (  <div
+    style={{
+
+    }}
+    >
+    Loading...
+    </div>
+    )
+    //return fetchReport("pbnzfwyv");
   }
 
-  const generateReportCode = () => {
-    let result = "";
-    const stringLength = 8;
-    const possChars ='abcdefghijklmnopqrstuvwxyz';
 
-    const charLength = possChars.length;
-    for ( let i = 0; i < stringLength; i++ ) {
-        result += possChars.charAt(Math.floor(Math.random() * charLength));
-    }
+}
 
-    return result;
-  }
+function displayReport(result, player, contentType, currentLanguage, gameType) {
+  console.log("Set ok, displaying report");
 
-  const shortenReport = (report) => {
-    const shortReport = {id: generateReportCode(), itemList: [], effectList: []};
-    const shortItemSet = report.itemSet;
-
-    shortReport.effectList = report.itemSet.effectList;
-    shortReport.differentials = report.differentials;
-    shortReport.contentType = report.contentType;
-
-    for (var i = 0; i < report.itemSet.itemList.length; i++) {
-      const item = report.itemSet.itemList[i];
-      let newItem = {id: item.id, ilvl: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
-      if (item.stats.leech > 0) newItem.leech = item.stats.leech;
-      if (item.socket) newItem.socket = item.socket;
-      if (item.vaultItem) newItem.vaultItem = item.vaultItem;
-      
-      shortReport.itemList.push(newItem)
-    }
-    console.log(JSON.stringify(shortReport));
-    sendReport(shortReport);
-    return shortReport;
-  }
+  
+  const boxWidth = gameType === "Classic" ? "60%" : "60%";
 
   let resultValid = true;
-  let result = props.result;
+  //let result = props.result;
   let topSet = "";
   let enchants = {};
   let gemStats = [];
@@ -119,21 +171,22 @@ function TopGearReport(props) {
   let statList = {};
   let history = useHistory();
   let intSlot = false;
-  console.log(JSON.stringify(result));
-  shortenReport(result);
+  
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
-    history.push("/")
-    reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
+    //history.push("/")
+    const location = useLocation();
+    fetchReport(location.pathname.split("/")[3])
+    //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
+  }
+  shortenReport(result);
+  /*
+  async function setImg() {
+    const img = await apiGetPlayerImage(player);
+    setBackgroundImage(img);
   }
 
-  if (checkResult(result)) {
-    async function setImg() {
-      const img = await apiGetPlayerImage(props.player);
-      setBackgroundImage(img);
-    }
-
-    setImg();
+    setImg(); */
 
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
@@ -144,10 +197,6 @@ function TopGearReport(props) {
     statList = topSet.setStats;
 
     //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
-
-  } else {
-    resultValid = false;
-  }
 
   const getGemIDs = (slot) => {
     if (gameType === "Retail" || !gemStats) return "";
@@ -172,11 +221,11 @@ function TopGearReport(props) {
     let offHandItem = "";
 
     if (weaponCombos.offhandID > 0) {
-      mainHandItem = props.player.getItemByHash(weaponCombos.mainHandUniqueHash);
-      offHandItem = props.player.getItemByHash(weaponCombos.offHandUniqueHash);
+      mainHandItem = player.getItemByHash(weaponCombos.mainHandUniqueHash);
+      offHandItem = player.getItemByHash(weaponCombos.offHandUniqueHash);
       newWeaponCombos.push(mainHandItem, offHandItem);
     } else {
-      mainHandItem = props.player.getItemByHash(weaponCombos.uniqueHash);
+      mainHandItem = player.getItemByHash(weaponCombos.uniqueHash);
       newWeaponCombos.push(mainHandItem);
     }
   }
@@ -224,9 +273,9 @@ function TopGearReport(props) {
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />
                             ))}
-                          {newWeaponCombos.map((item, index) => (
+                          {/*newWeaponCombos.map((item, index) => (
                             <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  />
-                          ))}
+                          ))*/}
                         </Grid>
                       </Grid>
                       <Grid item xs={4}>
@@ -262,7 +311,7 @@ function TopGearReport(props) {
                     <Grid container spacing={1} direction="row" justifyContent="space-between">
                       <Grid item xs={4} style={{ paddingBottom: 8 }}>
                         <Grid container justifyContent="flex-start">
-                          <TopSetStatsPanel statList={statList} spec={props.player.spec} currentLanguage={currentLanguage} gameType={gameType} />
+                          <TopSetStatsPanel statList={statList} spec={player.spec} currentLanguage={currentLanguage} gameType={gameType} />
                         </Grid>
                       </Grid>
                       <Grid item xs={4} style={{ paddingBottom: 8, alignSelf: "flex-end" }}>
@@ -281,7 +330,7 @@ function TopGearReport(props) {
                             <Grid container direction="row">
                               <Grid item xs="auto">
                                 <Grid container direction="row">
-                                  <img src={classIcon()} height={80} width={80} style={{ padding: 4 }} />
+                                  <img src={classIcon(player.spec)} height={80} width={80} style={{ padding: 4 }} />
                                 </Grid>
                               </Grid>
                               <Grid item xs={8}>
@@ -294,20 +343,20 @@ function TopGearReport(props) {
                                         display="inline"
                                         align="left"
                                         style={{
-                                          color: classColoursJS(props.player.spec),
+                                          color: classColoursJS(player.spec),
                                         }}
                                       >
-                                        {props.player.charName}
+                                        {player.charName}
                                       </Typography>
 
-                                      <Tooltip title={getTranslatedClassName(props.player.spec)} style={{ color: classColoursJS(props.player.spec) }} placement="top" arrow>
-                                        {classIcons(props.player.spec, {
+                                      <Tooltip title={getTranslatedClassName(player.spec)} style={{ color: classColoursJS(player.spec) }} placement="top" arrow>
+                                        {classIcons(player.spec, {
                                           height: 22,
                                           width: 22,
                                           marginLeft: 4,
                                           verticalAlign: "middle",
                                           borderRadius: 4,
-                                          border: "1px solid " + classColoursJS(props.player.spec),
+                                          border: "1px solid " + classColoursJS(player.spec),
                                         })}
                                       </Tooltip>
                                     </div>
@@ -324,7 +373,7 @@ function TopGearReport(props) {
                                         </Grid>
                                         <Grid item xs={12}>
                                           <Typography variant="caption" align="left">
-                                            {"Playstyle: " + props.player.getActiveModel(contentType).modelName}
+                                            {"Playstyle: " + player.getActiveModel(contentType).modelName}
                                           </Typography>
                                         </Grid>
                                       </Grid>
@@ -332,7 +381,7 @@ function TopGearReport(props) {
                                   ) : (
                                     <Grid item xs={12}>
                                       <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                        {props.player.region}-{props.player.realm}
+                                        {player.region}-{player.realm}
                                       </Typography>
                                     </Grid>
                                   )}
@@ -352,7 +401,7 @@ function TopGearReport(props) {
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-          <CompetitiveAlternatives differentials={differentials} player={props.player} />
+          <CompetitiveAlternatives differentials={differentials} player={player} />
 
           <Grid item style={{ height: 40 }} xs={12} />
         </Grid>

@@ -22,7 +22,6 @@ export default function classIcons(props, style) {
   let src = "";
   let alt = "";
   const iconName = props.toLowerCase() || "";
-  console.log("trying to find icon for: " + iconName + "")
 
   // Preservation Evoker
   if (iconName === "preservationevoker" || iconName === "preservation evoker" || iconName === "evoker-preservation" || iconName === "evoker") {
