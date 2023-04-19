@@ -47,15 +47,15 @@ export const specData = {
   /*                                             Paladin                                            */
   /* ---------------------------------------------------------------------------------------------- */
   paladin: {
-    passives: [],
-    defensives: [],
+    passives: ["Sanctified Plates", "Blessing of Dusk", "Obduracy"],
+    defensives: ["Divine Protection"],
   },
   "holy paladin": {
-    passives: [],
+    passives: ["Echoing Blessings"],
     defensives: [],
   },
   "retribution paladin": {
-    passives: [],
+    passives: ["Aegis of Protection"],
     defensives: [],
   },
   "protection paladin": {
@@ -66,12 +66,12 @@ export const specData = {
   /*                                             Priest                                             */
   /* ---------------------------------------------------------------------------------------------- */
   priest: {
-    passives: [],
-    defensives: [],
+    passives: ["Spell Warding", "Translucent Image", "Light's Inspiration"],
+    defensives: ["Desperate Prayer", "Fade", "Protective Light"],
   },
   "shadow priest": {
     passives: [],
-    defensives: [],
+    defensives: ["Dispersion"],
   },
   "discipline priest": {
     passives: [],
@@ -85,8 +85,8 @@ export const specData = {
   /*                                             Shaman                                             */
   /* ---------------------------------------------------------------------------------------------- */
   shaman: {
-    passives: [],
-    defensives: [],
+    passives: ["Astral Bulwark", "Brimming with Life", "Ancestral Defense", "Elemental Warding", ""],
+    defensives: ["Astral Shift", "Earth Elemental"], // Externals: Stoneskin Totem, Earth Shield, Ancestral Vigor
   },
   "restoration shaman": {
     passives: [],
@@ -98,36 +98,36 @@ export const specData = {
   },
   "elemental shaman": {
     passives: [],
-    defensives: [],
+    defensives: ["Primordial Bond"],
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Warrior                                            */
   /* ---------------------------------------------------------------------------------------------- */
   warrior: {
     passives: [],
-    defensives: [],
+    defensives: ["Defensive Stance", "Spell Reflection"],
   },
   "protection warrior": {
     passives: [],
     defensives: [],
   },
   "fury warrior": {
-    passives: [],
-    defensives: [],
+    passives: ["Warpaint"],
+    defensives: ["Enraged Regeneration"],
   },
   "arms warrior": {
-    passives: [],
-    defensives: [],
+    passives: ["Valor in Victory"],
+    defensives: ["Die by the Sword"],
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                          Demon Hunter                                          */
   /* ---------------------------------------------------------------------------------------------- */
   demonhunter: {
-    passives: [],
-    defensives: [],
+    passives: ["Illidari Knowledge"],
+    defensives: ["Blur", "Demon Muzzle",],
   },
   "havoc demonhunter": {
-    passives: [],
+    passives: ["Desperate Instincts"],
     defensives: [],
   },
   "vengeance demonhunter": {
@@ -139,8 +139,8 @@ export const specData = {
   /*                                          Death Knight                                          */
   /* ---------------------------------------------------------------------------------------------- */
   deathknight: {
-    passives: [],
-    defensives: [],
+    passives: ["Suppression"],
+    defensives: ["Icebound Fortitude", "Lichborne"],
   },
   "blood deathknight": {
     passives: [],
@@ -159,14 +159,14 @@ export const specData = {
   /*                                              Rogue                                             */
   /* ---------------------------------------------------------------------------------------------- */
   rogue: {
-    passives: [],
-    defensives: [],
+    passives: ["Elusiveness", "Deadened Nerves", "Thief's Versatility"],
+    defensives: ["Cloak of Shadows", "Feint"],
   },
   "assassination rogue": {
     passives: [],
     defensives: [],
   },
-  "outlaw rogue": {
+  "outlaw rogue": { // Possibly none
     passives: [],
     defensives: [],
   },
@@ -179,8 +179,8 @@ export const specData = {
   /*                                             Warlock                                            */
   /* ---------------------------------------------------------------------------------------------- */
   warlock: {
-    passives: [],
-    defensives: [],
+    passives: ["Fel Armor", "Demonic Fortitude", "Strength of Will", "Soul Link"],
+    defensives: ["Unending Resolve"],
   },
   "affliction warlock": {
     passives: [],
@@ -199,8 +199,8 @@ export const specData = {
   /*                                             Hunter                                             */
   /* ---------------------------------------------------------------------------------------------- */
   hunter: {
-    passives: [],
-    defensives: [],
+    passives: ["Nature's Endurance", "Rejuvenating Wind", "Hunter's Avoidance"],
+    defensives: ["Survival of the Fittest"],
   },
   "beastmastery hunter": {
     passives: [],
@@ -219,12 +219,12 @@ export const specData = {
   /*                                              Mage                                              */
   /* ---------------------------------------------------------------------------------------------- */
   mage: {
-    passives: [],
-    defensives: [],
+    passives: ["Arcane Warding"],
+    defensives: ["Mirror Image", "Greater Invisibility"],
   },
   "arcane mage": {
-    passives: [],
-    defensives: [],
+    passives: ["Improved Prismatic Barrier"],
+    defensives: ["Prismatic Barrier"],
   },
   "fire mage": {
     passives: [],
