@@ -1,5 +1,5 @@
 export const sample = {
-	"id": "fzaynzrnfvsv",
+	"id": "wsnyphohwqtq",
 	"effectList": [{
 		"type": "embellishment",
 		"name": "Elemental Lariat",
@@ -238,39 +238,6 @@ export const sample = {
 			"GemCount": 5
 		}
 	},
-	"differentials": [{
-		"items": [{
-			"id": 200381,
-			"level": 411,
-			"name": "",
-			"slot": "Head",
-			"softScore": 909.87,
-			"socket": 0,
-			"tertiary": "Leech",
-			"effect": "",
-			"uniqueHash": "20038191594",
-			"uniqueEquip": "",
-			"offhandID": 0,
-			"active": true,
-			"overriddenName": false,
-			"vaultItem": false,
-			"isEquipped": false,
-			"source": {},
-			"onUse": false,
-			"setID": 1530,
-			"quality": 4,
-			"stats": {
-				"bonus_stats": {},
-				"intellect": 454,
-				"mastery": 526,
-				"versatility": 210,
-				"leech": 225
-			},
-			"bonusIDS": "7980:41:7936:8828:1485:8767",
-			"gemString": ""
-		}],
-		"scoreDifference": 0.25800309474712146,
-		"rawDifference": -257
-	}],
+	"differentials": [],
 	"contentType": "Raid"
 }

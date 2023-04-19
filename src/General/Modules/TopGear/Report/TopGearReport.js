@@ -35,60 +35,7 @@ const fetchReport = (reportCode, setResult) => {
     //.catch(err => { throw err });
 }
 
-const sendReport = (shortReport) => {
-  const requestOptions = {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(shortReport)
-  };
-  
-  fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
-  //.then(response => response.text())
-  .then(response => console.log(response));
-  //.then(data => this.setState({ postId: data.id }));
-}
 
-const shortenReport = (report) => {
-  const shortReport = {id: generateReportCode(), effectList: [], itemSet: {itemList: []}};
-  const shortItemSet = report.itemSet;
-
-  shortReport.itemSet.setStats = report.itemSet.setStats;
-  shortReport.itemSet.primGems = report.itemSet.primGems;
-  shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
-  shortReport.effectList = report.itemSet.effectList;
-  shortReport.differentials = report.differentials;
-  shortReport.contentType = report.contentType;
-
-
-  for (var i = 0; i < report.itemSet.itemList.length; i++) {
-    const item = report.itemSet.itemList[i];
-    let newItem = {id: item.id, ilvl: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
-    if (item.stats.leech > 0) newItem.leech = item.stats.leech;
-    if (item.socket) newItem.socket = item.socket;
-    if (item.vaultItem) newItem.vaultItem = item.vaultItem;
-    if (item.quality) newItem.quality = item.quality;
-    
-    shortReport.itemSet.itemList.push(newItem)
-  }
-  console.log(JSON.stringify(shortReport));
-  sendReport(shortReport);
-  return shortReport;
-}
-
-  // TODO: Add blocklist. It can be fairly basic.
-  const generateReportCode = () => {
-    let result = "";
-    const stringLength = 12;
-    const possChars ='abcdefhijklmnopqrstuvwxyz';
-
-    const charLength = possChars.length;
-    for ( let i = 0; i < stringLength; i++ ) {
-        result += possChars.charAt(Math.floor(Math.random() * charLength));
-    }
-
-    return result;
-  }
 
   const classIcon = (spec) => {
     switch (spec) {
@@ -143,8 +90,8 @@ function TopGearReport(props) {
   }
   else {
     // No result queued. Check URL for report code and load that.
-    //fetchReport("adloxucelvql", setResult);
-    setResult(sample);
+    fetchReport("kwqriitkccne", setResult);
+    //setResult(sample);
     return   (  <div
     style={{
 
@@ -183,7 +130,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     fetchReport(location.pathname.split("/")[3])
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-  shortenReport(result);
+  
   /*
   async function setImg() {
     const img = await apiGetPlayerImage(player);
