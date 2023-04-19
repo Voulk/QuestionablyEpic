@@ -134,6 +134,10 @@ class ItemSet {
     return this;
   }
 
+  checkHasItem(itemID) {
+    return this.itemList.filter(item => item.id === itemID).length > 0
+  }
+
   verifySet(settings = {}) {
     // Verifies that the set is possible.
 

@@ -3,6 +3,28 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, r
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                            Rainsong                                            */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Rainsong",
+    effects: [
+      { 
+        coefficient: 2.966,
+        table: -7,
+        stat: "haste",
+        duration: 15,
+        ppm: 1 / 80, // 10% proc chance, 75s ICD. TODO: Check if can proc off HoTs.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Emerald Coach's Whistle                                      */
     /* ---------------------------------------------------------------------------------------------- */
     /* 

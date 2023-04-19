@@ -15,7 +15,15 @@ const GLOBALCONST = {
 
 }
 
+
+// Cleanup is called after every hard spell cast. 
+export const spellCleanup = (spell, state) => {
+
+    // Check for any buffs that buffed the spell and remove them.
+}
+
 export const addBuff = (state, spell, spellName) => {
+
     if (spell.buffType === "stats") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
@@ -32,11 +40,35 @@ export const addBuff = (state, spell, spellName) => {
         state.activeBuffs.push(newBuff)
 
     }
+    // Spell amps are buffs that increase the amount of healing the next spell that meets the criteria. The criteria is defined in the buff itself by a function.
+    // Examples might include Call of Ysera or Soul of the Forest.
+    // Buffs that increase the healing of all spells could be handled here in future, but aren't currently. Those are generally much easier.
+
+    // Buffs here support stacking and maxStacks properties.
+    else if (spell.buffType === "spellAmp") {
+        
+        // Check if buff already exists, if it does add a stack.
+        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+        addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+
+        if (buffStacks === 0) {
+            state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
+                                        buffType: "spellAmp", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
+                                        buffedSpellName: spell.buffedSpellName
+                                        });
+        }
+        else {
+            const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+
+            if (buff.canStack) buff.stacks += 1;
+        }
+    }
     else if (spell.buffType === "special") {
         
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+
         if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
@@ -139,6 +171,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * (currentStats['critMult'] || 2));
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
+
     return mult;
 }
 
@@ -188,8 +221,17 @@ export const getHealth = (stats, talents) => {
     return stats.stamina * 20 * (1 + (talents.draconicLegacy ? talents.draconicLegacy : 0) * 0.02);
 }
 
-const getSqrt = (targets) => {
-    return Math.sqrt(targets);
+
+// The formula for sqrt abilties is a bit of a pain.
+// They often do full healing up to the first X targets hit, and then are reduced via a square root formula after that.
+// The formula after you reach your sqrt cap is 1/TargetNumber. So the first target hit after the minimum gets sqrt(1/1), the second gets sqrt(1/2) and so on.
+export const getSqrt = (targets, sqrtMin) => {
+    const effectiveSqrtTargets = targets - sqrtMin;
+    let totalMult = sqrtMin;
+    for (let i = 1; i <= effectiveSqrtTargets; i++) { totalMult += Math.sqrt(1 / i) }
+
+    return totalMult;
+    //return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
 }
 
 const getSpellFlat = (spell, flatBonus = 0) => {

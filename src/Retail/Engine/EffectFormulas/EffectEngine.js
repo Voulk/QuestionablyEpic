@@ -39,21 +39,25 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   let bonus_stats = {};
   let effectName = effect.name;
   let effectType = effect.type;
+
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
   if (gameType === "Retail") {
     if (effect.type === "special") {
-      // A special effect is one that appears on an item slot where an effect isn't usually expected.
+      // A special effect is one that appears on an item slot where an effect isn't u sually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
-      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, effect);
+      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, setStats, castModel, userSettings);
     } 
     else if (effect.type === "embellishment") {
-      // A special effect is one that appears on an item slot where an effect isn't usually expected.
-      // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
-      // Does NOT include trinkets, legendaries, set bonuses etc.
       bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, setStats, userSettings);
     } 
+    else if (effect.type === "Onyx Annulet") {
+      // The Onyx Annuluet is a 10.0.7 special effect ring.
+      // It can be socketed with three special gems at a time and they often work together
+      // to give different effects. We thus need to evaluate them as a whole rather than three individual pieces.
+      bonus_stats = getOnyxAnnuletEffect(effectName.split(","), player, contentType, itemLevel, setStats, userSettings);
+    }
     // == Class specific effects ==
     // These can be single-slot effects like Legendaries, or entire set bonuses.
     // For tier sets, 2pc and 4c should be calculated separately, but the 4pc can include the 2pc in it's valuation if 

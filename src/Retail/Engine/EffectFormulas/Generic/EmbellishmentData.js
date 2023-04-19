@@ -133,7 +133,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.20209,
             table: -7,
-            uptime: 0.7,
+            uptime: 0.4,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -444,6 +444,52 @@ export const embellishmentData = [
           const manaSaved = player.getSpecialQuery("chilledClarityExtension", additionalData.contentType);
           bonus_stats.mana = manaSaved * 2 / player.getFightLength(additionalData.contentType);
 
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Allied Wristguard of Companionship                  
+        /* -------------------- */
+        /* Mastery while above 90% health.
+        */
+        name: "Allied Wristguard of Companionship",
+        effects: [
+          { 
+            coefficient: 0.052152,
+            table: -7,
+            stacks: 3.9,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].stacks;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Fang Adornments            
+        /* -------------------- */
+        /* 
+        */
+        name: "Fang Adornments",
+        effects: [
+          { // Damage Effect
+            coefficient: 7.794756,
+            table: -9,
+            secondaries: ['haste', 'crit', 'versatility'],
+            ppm: 1, // 4 / 2
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.7;
 
           return bonus_stats;
         }

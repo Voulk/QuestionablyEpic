@@ -274,6 +274,10 @@
         "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
       },
       "Retail": {
+        "topGear": "Top Gear",
+        "trinkets": "Trinkets",
+        "upgradeFinder": "Upgrade Finder",
+
         "Setting0TextFieldLabel": "",
         "Setting0Title": "Enchant Items",
         "Setting0Tooltip": "Pick whether you'd like QE Live to enchant your items for you.",
@@ -310,7 +314,7 @@
         "idolGems": {
           "title": "JC Idol Trinkets",
           "tooltip": "Select how many associated gems you have in your gear."
-        },
+        },  
         "alchStonePotions": {
           "title": "Alch Stone",
           "tooltip": "Number of extra potions Alch Stone gives you over a fight."
@@ -326,6 +330,14 @@
         "catalystLimit": {
           "title": "Catalyst Limit",
           "tooltip": "Pick the maximum number of Catalyst items Top Gear will put in a set."
+        },
+        "primordialGems": {
+          "title": "Primordial Gems",
+          "tooltip": "Let QE Live set up your gems for you, or pick out a specific set."
+        },
+        "topGearAutoGem": {
+          "title": "Auto Socket Items",
+          "tooltip": "Automatically socket all compatible items, including vaults."
         }
 
 

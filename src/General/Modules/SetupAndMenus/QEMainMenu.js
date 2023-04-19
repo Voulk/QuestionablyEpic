@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
       width: "85%",
       justifyContent: "center",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
@@ -72,6 +72,7 @@ export default function QEMainMenu(props) {
           "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
           "MainMenu.CooldownPlanner": ["/cooldownplanner", true, "CooldownPlanner"],
           "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
+          "MainMenu.OneShot": ["/oneshot", false, "One Shot"],
 
           "MainMenu.Profile": ["/profile", true, "Profile"],
         }
@@ -113,8 +114,9 @@ export default function QEMainMenu(props) {
   // };
 
   return (
-    <div style={{ backgroundColor: "#313131" }}>
+    <div style={{ backgroundColor: "#313131", height: "100%" }}>
       <div className={classes.root}>
+        <div style={{ height: 96 }} />
         <Grid container spacing={2}>
           {
             <Grid item xs={12} style={{ textAlign: "center" }}>
@@ -172,12 +174,11 @@ export default function QEMainMenu(props) {
                     <ArrowForward
                       style={{
                         verticalAlign: "middle",
-                        paddingRight: 10
                       }}
                     />
                   </Grid>
                   <Grid item xs={10}>
-                    <div style={{ display: "block" }}>
+                    <div style={{ display: "block", left: "10px", position: "relative" }}>
                       <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
                       <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
                         {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}

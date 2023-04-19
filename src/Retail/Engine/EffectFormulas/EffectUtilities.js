@@ -35,6 +35,23 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
   return value;
 }
 
+// This function helps out with generic flat damage or healing procs. It makes implementing them much faster and more difficult
+// to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
+// You can expand this function with more fields if they're necessary.
+export function runGenericFlatProc(effect, itemLevel, player) {
+  const value = processedValue(effect, itemLevel, effect.efficiency || 1);
+  let mult = 1;
+
+  if ('targets' in effect) mult *= effect.targets;
+  if ('ticks' in effect) mult *= effect.ticks;
+  if ('secondaries' in effect) mult *= player.getStatMults(effect.secondaries);
+  if ('ppm' in effect) mult *= (effect.ppm * 1.13);
+
+  return value * mult / 60;
+
+
+}
+
 export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, castModel, player) {
     const trinket = {}
     trinket[trinketName] = trinketValue;
@@ -112,7 +129,7 @@ export function buildIdolTrinket(data, itemLevel, stat, settings) {
   bonus_stats.mastery = uptime * bigProc / 4;
   bonus_stats.versatility = uptime * bigProc / 4;
 
-  bonus_stats[stat] += (smallPerGem * 8.25 * (1 - uptime)); // 8.5 is slightly more accurate but it tends to be slightly lossy. 
+  bonus_stats[stat] += (smallPerGem * 8 * (1 - uptime)); // 8.5 is slightly more accurate but it tends to be slightly lossy. 
 
   return bonus_stats;
 

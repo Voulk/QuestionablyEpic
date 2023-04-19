@@ -32,11 +32,11 @@ export const druidDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.415,
-    crit: 0.352,
-    mastery: 0.367,
-    versatility: 0.348,
-    leech: 0.48,
+    haste: 0.467, 
+    crit: 0.386, 
+    mastery: 0.41, 
+    versatility: 0.369,
+    leech: 0.51,
     defaults: true,
   };
   statWeights.Dungeon = {

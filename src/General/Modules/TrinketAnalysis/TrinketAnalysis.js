@@ -16,7 +16,8 @@ import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
-import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds"
+import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
+import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,24 +26,24 @@ const useStyles = makeStyles((theme) => ({
       width: "85%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "65%",
       justifyContent: "space-between",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: 32,
+      // marginTop: 32,
       margin: "auto",
       width: "55%",
       display: "block",
@@ -62,7 +63,6 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 
 // Wrath of the Lich King
 const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
-
   /*
   let temp = getItemDB(gameType).filter(function (item) {
     return item.id === trinketID;
@@ -72,8 +72,7 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 
   console.log(itemDifficulties); */
 
-
-  return getBCTrinketScore(id, player, difficulty)
+  return getBCTrinketScore(id, player, difficulty);
 
   //return item.softScore;
 };
@@ -119,7 +118,6 @@ export default function TrinketAnalysis(props) {
       //1193, // Sanctum of Domination
       //1195, // Sepulcher
       1200, // Vault of the Incarnates
-
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -145,11 +143,8 @@ export default function TrinketAnalysis(props) {
       537, // Shadowmoon Burial Ground
       313, // Jade Serpent
       800, // Court of Stars
-
-
     ];
-    const legionTimewalking = [
-    ];
+    const legionTimewalking = [];
     const shadowlandsTheRest = [
       1192, // World Bosses
       1205, // DF World Bosses
@@ -184,8 +179,8 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 423, 426];
-  
+  const itemLevels = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 424];
+
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
@@ -238,6 +233,7 @@ export default function TrinketAnalysis(props) {
 
   return (
     <div className={classes.root}>
+      <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid container spacing={1}>
         <Grid item xs={12}>
@@ -301,7 +297,7 @@ export default function TrinketAnalysis(props) {
                     </Grid>
                   ) : (
                     <Grid item xs={12}>
-                      <BCChart data={activeTrinkets} db={trinketDB} theme={themeSelection("candidate2")}/>
+                      <BCChart data={activeTrinkets} db={trinketDB} theme={themeSelection("candidate2")} />
                     </Grid>
                   )}
                 </Grid>
@@ -329,6 +325,13 @@ export default function TrinketAnalysis(props) {
           ""
         )}
       </Grid>
+      
+      <Grid container spacing={1} direction="row">
+        <Grid item xs={6}>
+          <ItemDetailCard />
+        </Grid>
+      </Grid>
+
       <div id="qelivead2"></div>
       <div style={{ height: 300 }} />
     </div>
