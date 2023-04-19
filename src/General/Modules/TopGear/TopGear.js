@@ -223,7 +223,7 @@ export default function TopGear(props) {
   
     for (var i = 0; i < report.itemSet.itemList.length; i++) {
       const item = report.itemSet.itemList[i];
-      let newItem = {id: item.id, ilvl: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
+      let newItem = {id: item.id, level: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
       if (item.stats.leech > 0) newItem.leech = item.stats.leech;
       if (item.socket) newItem.socket = item.socket;
       if (item.vaultItem) newItem.vaultItem = item.vaultItem;

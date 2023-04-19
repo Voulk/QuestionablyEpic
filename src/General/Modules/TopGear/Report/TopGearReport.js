@@ -90,7 +90,9 @@ function TopGearReport(props) {
   }
   else {
     // No result queued. Check URL for report code and load that.
-    fetchReport("kwqriitkccne", setResult);
+    const location = useLocation();
+    fetchReport(location.pathname.split("/")[2], setResult);
+
     //setResult(sample);
     return   (  <div
     style={{
