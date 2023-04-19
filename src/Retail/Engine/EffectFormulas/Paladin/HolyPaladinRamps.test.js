@@ -97,6 +97,7 @@ describe("Evang Cast Sequence", () => {
 
 
         //console.log(seq);
+        const iterations = 1000;
 
         const settings = {reporting: true}
         const baseline = runCastSequence(seq, activeStats, settings, talents)

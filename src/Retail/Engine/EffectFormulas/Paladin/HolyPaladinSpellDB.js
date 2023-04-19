@@ -320,6 +320,21 @@ export const baseTalents = {
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
 
     // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
+    crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Light of Dawn'].push({
+            name: "Avenging Wrath",
+            chance: 1,//0.075 * points,
+            type: "buff",
+            castTime: 0,
+            cost: 0,
+            cooldown: 120,
+            buffType: 'statsMult',
+            stat: 'crit',
+            value: (20 * 170), // 
+            buffDuration: 8,
+        });
+
+    }}, 
 
     // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
 

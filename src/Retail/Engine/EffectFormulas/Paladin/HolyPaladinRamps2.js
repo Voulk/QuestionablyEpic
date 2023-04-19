@@ -349,7 +349,20 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
                 }
                 else if (spell.buffType === "statsMult") {
-                    state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+                    // If we already have the buff, set the duration to the max of what is remaining and the new duration.
+                    // TODO: Overwriting buffs can work in a ton of different ways. This one is kind of custom built for Avenging Wrath + Awakening.
+                    const buffExists = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
+                    if (buffExists) {
+                        const buff = state.activeBuffs.filter(function (buff) {return buff.name === spell.name})[0];
+
+                        //const buffDuration = buff[0].expiration - state.t;
+                        //buff.expiration = Math.max(buffDuration, spell.buffDuration) + state.t;
+                        buff.expiration = buff.expiration + spell.buffDuration;
+                    }
+                    else {
+                        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+                    }
+                    
                 }
                 else if (spell.buffType === "damage" || spell.buffType === "heal") {     
                     const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
