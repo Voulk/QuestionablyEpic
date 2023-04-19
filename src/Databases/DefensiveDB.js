@@ -140,6 +140,7 @@ export const defensiveDB = [
     autoIcon: "spell_holy_testoffaith",
     duration: 10,
     cooldown: 90,
+    health: 1.25,
     class: "Priest",
   },
   {
@@ -528,11 +529,23 @@ export const defensiveTalentsDB = [
     name: {
       en: "Translucent Image",
     },
-    guid: 375545,
+    guid: 373446,
     icon: require("Images/Classes/Evoker/inv_misc_rubysanctum1.jpg").default,
-    autoIcon: "inv_misc_rubysanctum1",
+    autoIcon: "spell_nature_invisibilty",
     class: "Priest",
     hookedReduction: 0.04,
+    talent: true,
+  },
+  {
+    name: {
+      en: "Spell Warding",
+    },
+    guid: 390667,
+    icon: require("Images/Classes/Evoker/inv_misc_rubysanctum1.jpg").default,
+    autoIcon: "spell_holy_spellwarding",
+    class: "Priest",
+    reduction: 0.03,
+    type: "Magic",
     talent: true,
   },
   {

@@ -111,7 +111,7 @@ export const calcDefensives = (defensives, spell) => {
     // Note that there are some rare mechanics that ignore defensives altogether (see 'pure' tag in EnemySpellDB).
     const defensiveApplies = (defensive.type === "aoe" && spell.avoidance) || defensive.type === "All" || defensive.type === spell.damageType;
     let reduction = defensive.reduction || 0;
-    if (defensive.name === "Fade") console.log(defensive);
+
     if ('hookTalent' in defensive && defensive.hookTalent !== null) {
       reduction += getHookValue(defensives, defensive.hookTalent)
     }
@@ -125,7 +125,7 @@ export const calcDefensives = (defensives, spell) => {
   return Math.max(sumDR, 0);
 };
 
-export const calcHealth = (stamina, absorb = 0) => {
+export const calcHealth = (stamina, absorb = 0, defensives) => {
   return stamina * 20 + absorb;
 };
 
@@ -174,7 +174,7 @@ export default function OneShot(props) {
   const [keyLevel, setKeyLevel] = React.useState(24);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
 
-  const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500) });
+  const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500, 0) });
 
   const spellArray = [
     { label: "Defensives", type: "defensive" },
