@@ -1,6 +1,6 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { PALASPELLDB } from "./HolyPaladinSpellDB";
+import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { buildRamp } from "./HolyPaladinRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 
