@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemCardReport from "../MiniItemCardReport";
 import TopSetStatsPanel from "./TopSetStatsPanel";
 // import { testList, differentialsTest } from "./TestData";
-import { apiGetPlayerImage } from "../../SetupAndMenus/ConnectionUtilities";
+import { apiGetPlayerImage3 } from "../../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
 import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material";
 import { Link, useHistory, useLocation } from "react-router-dom";
@@ -86,7 +86,7 @@ function TopGearReport(props) {
   }, []);
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, props.player, contentType, currentLanguage, gameType, t);
+    return displayReport(result, props.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
   }
   else {
     // No result queued. Check URL for report code and load that.
@@ -108,7 +108,7 @@ function TopGearReport(props) {
 
 }
 
-function displayReport(result, player, contentType, currentLanguage, gameType, t) {
+function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
   console.log("Set ok, displaying report");
 
   
@@ -133,13 +133,13 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
   
-  /*
+  
   async function setImg() {
-    const img = await apiGetPlayerImage(player);
+    const img = await apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region);
     setBackgroundImage(img);
   }
 
-    setImg(); */
+    setImg(); 
 
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
@@ -149,9 +149,10 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
 
-    // Setup Slots
+    // Setup Slots / Set IDs.
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot")
+      item.setID = getItemProp(item.id, "itemSetId")
     })
 
     //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
@@ -190,6 +191,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   }
   newWeaponCombos = newWeaponCombos.flat();
   */
+ console.log(backgroundImage);
   return (
     <div
       style={{
@@ -206,7 +208,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
               <div
                 style={{
                   justifyContent: "center",
-                  //backgroundImage: `url("${backgroundImage}")`,
+                  backgroundImage: `url("${backgroundImage}")`,
                   backgroundColor: "#0F0E04",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",

@@ -102,6 +102,31 @@ export async function apiGetPlayerImage(player) {
   }
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                      Get player armory image from Blizzard API via QE API                      */
+/* ---------------------------------------------------------------------------------------------- */
+export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion) {
+  console.log(playerName, playerRealm, playerRegion)
+  if (playerName && playerRealm && playerRegion) {
+    
+    let region = playerRegion.toLowerCase();
+    let name = playerName.toLowerCase();
+    let realm = playerRealm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+        console.log(response.toString())
+        urlReturned = response.toString();
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  } else {
+    return "";
+  }
+}
+
 export async function apiGetPlayerAvatar(player) {
   if (player !== undefined) {
     let region = player.region.toLowerCase();

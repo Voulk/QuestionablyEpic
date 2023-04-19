@@ -209,7 +209,7 @@ export default function TopGear(props) {
     // handleClickDelete();
   };
 
-  const shortenReport = (report) => {
+  const shortenReport = (report, player) => {
     const shortReport = {id: generateReportCode(), effectList: [], itemSet: {itemList: []}};
     const shortItemSet = report.itemSet;
   
@@ -219,6 +219,8 @@ export default function TopGear(props) {
     shortReport.effectList = report.itemSet.effectList;
     shortReport.differentials = report.differentials;
     shortReport.contentType = report.contentType;
+    shortReport.firstSocket = report.itemSet.firstSocket;
+    shortReport.player = {name: player.charName, realm: player.realm, region: player.region}
   
   
     for (var i = 0; i < report.itemSet.itemList.length; i++) {
@@ -256,7 +258,7 @@ export default function TopGear(props) {
           // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
-          shortenReport(result);
+          shortenReport(result, props.player);
           instance.terminate();
           history.push("/report/");
         })
