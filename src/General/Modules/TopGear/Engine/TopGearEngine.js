@@ -12,7 +12,7 @@ import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Module
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-
+import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
 
 /**
  * == Top Gear Engine ==
@@ -57,8 +57,11 @@ function setupPlayer(player, contentType, castModel) {
 function autoSocketItems(itemList) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(item.slot) && !item.hasDomSocket) {
-      item.socket = true;
+    if (["Finger", "Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+      item.socket = 1;
+    }
+    else if (item.slot === "Neck") {
+      item.socket = 3;
     }
   }
 
@@ -90,8 +93,11 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
   let itemList = deepCopyFunction(rawItemList);
-  itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+  itemList = (userSettings.topGearAutoGem && userSettings.topGearAutoGem.value === true) ? autoSocketItems(itemList) : itemList;
   //itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList; // Deprecated
+
+  // Duplicate Settings
+  userSettings = JSON.parse(JSON.stringify(userSettings));
 
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
@@ -355,8 +361,8 @@ function enchantItems(bonus_stats, setInt, castModel) {
   let expected_uptime = convertPPMToUptime(1, 15);
   bonus_stats.intellect += 932 * expected_uptime;
   enchants["CombinedWeapon"] = "Sophic Devotion";
-  //enchants["2H Weapon"] = "Sophic Devotion";
-  //enchants["1H Weapon"] = "Sophic Devotion";
+  enchants["2H Weapon"] = "Sophic Devotion";
+  enchants["1H Weapon"] = "Sophic Devotion";
   return enchants;
 }
 
@@ -430,6 +436,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
+
+
+
+
+
+  // ------------------
+
   let effectStats = [];
   let effectList = [...itemSet.effectList];
   // == Set Bonuses ==
@@ -440,8 +453,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
-  //
+  // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
+  let fireMult = 0;
+  // Frostfire Belt, Flaring Cowl, Flame Licked
+  if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
+  else if (builtSet.checkHasItem(193494)) fireMult = 1;
+  else if ('primGems' in userSettings && userSettings.primGems.value.includes("Flame Licked")) fireMult = convertPPMToUptime(2.5, 7);
 
+  userSettings.fireMult = fireMult || 0;
   //effectStats.push(bonus_stats);
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
@@ -450,9 +469,24 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
+  // Special 10.0.7 Ring
+  // Check if ring in set.
+  if (builtSet.checkHasItem(203460)) {
+    // Auto gen best gems.
+    const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 411;
+
+    const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
+    //const combo = getBestCombo(player, contentType, itemLevel, player.activeStats, userSettings)
+
+    // Handle Annulet
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
+    //console.log(annuletStats);
+    builtSet.primGems = combo; 
+    effectStats.push(annuletStats);
+ }
+
   const mergedEffectStats = mergeBonusStats(effectStats);
 
-  //bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
 
 
   // == Disc Specific Ramps ==

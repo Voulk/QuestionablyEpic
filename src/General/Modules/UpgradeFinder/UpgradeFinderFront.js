@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "95%",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "80%",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       justifyContent: "center",
@@ -332,6 +332,7 @@ export default function UpgradeFinderFront(props) {
 
   return (
     <div className={classes.header}>
+      <div style={{ height: 96 }} />
       <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
         {t("UpgradeFinderFront.Header")}
       </Typography>

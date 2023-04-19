@@ -9,6 +9,39 @@
 
 export const changeLog = [
   {
+    version: "10.0.7",
+    update: 16,
+    date: "2 April",
+    changes: [ 
+      "Auto-gem functionality is now disabled by default and can be correctly left off",
+  ]},
+  {
+    version: "10.0.7",
+    update: 15,
+    date: "30 March",
+    changes: [ 
+      "New Setting: Pick your Primordial gem set or leave on Automatic",
+      "New Setting: Auto socket items in your bags so that items are compared fairly.",
+      "UI: Revamped how the Onyx Annulet is displayed.",
+      "Fire Magic: Top Gear will now correctly handle external instances of Fire when evaluating effects that value it.",
+      "New Embellishment: Adorned Fangs"
+  ]},
+  {
+    version: "10.0.7",
+    update: 14,
+    date: "23 March",
+    changes: [ 
+      "Updated Onyx Annulet for in game tuning.",
+  ]},
+  {
+    version: "10.0.7",
+    update: 13,
+    date: "22 March",
+    changes: [ 
+      "Added Onyx Annulet.",
+      "Added some missing timewalking items."
+  ]},
+  {
     version: "10.0.5",
     update: 12,
     date: "25 February",

@@ -140,6 +140,7 @@ function TopGearReport(props) {
         display: "block",
       }}
     >
+      <div style={{ height: 96 }} />
       {resultValid ? (
         <Grid container spacing={1}>
           <Grid item xs={12}>
@@ -171,10 +172,10 @@ function TopGearReport(props) {
                           {itemList
                             .filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist")
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />
                             ))}
                           {newWeaponCombos.map((item, index) => (
-                            <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} />
+                            <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  />
                           ))}
                         </Grid>
                       </Grid>
@@ -198,7 +199,7 @@ function TopGearReport(props) {
                                 key.slot === "Relics & Wands",
                             )
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />
                             ))}
                         </Grid>
                       </Grid>
