@@ -90,7 +90,7 @@ function TopGearReport(props) {
 
   if (result && result.new) {
 
-    window.history.pushState('page2', 'Title', '/report/' + result.id);
+    window.history.pushState('QE Live Report', 'Title', '/report/' + result.id);
   }
   if (result !== null && checkResult(result)) {
     return displayReport(result, props.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);

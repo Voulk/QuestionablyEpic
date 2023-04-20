@@ -221,12 +221,10 @@ export default function TopGear(props) {
       
       shortReport.itemSet.itemList.push(newItem)
     }
-    console.log(JSON.stringify(shortReport));
+
     sendReport(shortReport);
     return shortReport;
   }
-
-
 
   const unleashWorker = () => {
     const currentLanguage = i18n.language;
