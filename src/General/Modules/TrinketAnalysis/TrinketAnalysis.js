@@ -293,7 +293,7 @@ export default function TrinketAnalysis(props) {
                   )}
                   {gameType === "Retail" ? (
                     <Grid item xs={12}>
-                      <VerticalChart data={activeTrinkets} db={finalDB} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
+                      <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
                     </Grid>
                   ) : (
                     <Grid item xs={12}>

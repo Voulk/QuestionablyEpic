@@ -58,12 +58,13 @@ export default class VerticalChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
+    const itemLevels = this.props.itemLevels;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
-    const iLvls = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 424];
+    //const iLvls = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 424];
 
     /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
     // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
-    let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
+    //let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
 
     const barColours = this.props.theme;
 
@@ -73,7 +74,7 @@ export default class VerticalChart extends PureComponent {
       .map((key) => key[1])
       .map((map2) => {
         /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
-        let x = Object.fromEntries(iLvls.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
+        let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
         /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push({
           name: map2.id,
@@ -150,8 +151,8 @@ export default class VerticalChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {iLvls.map((key, i) => (
-            <Bar key={"bar" + i} dataKey={iLvlsVisible[key] ? key : ""} fill={barColours[i]} stackId="a" />
+          {itemLevels.map((key, i) => (
+            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
         </BarChart>
       </ResponsiveContainer>
