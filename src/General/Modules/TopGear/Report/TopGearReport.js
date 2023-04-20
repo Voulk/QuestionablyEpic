@@ -237,7 +237,8 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
                           {itemList
-                            .filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist")
+                            //.filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist" || key.slot === "1H Weapon" || key.slot === "Offhands" || key.slot === "2H Weapon")
+                            .filter((key => ["Head", "Neck", "Back", "Shoulder", "Chest", "Wrist", "1H Weapon", "2H Weapon", "Offhands"].includes(key.slot)))
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />
                             ))}
@@ -256,14 +257,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
                         <Grid container spacing={1}>
                           {itemList
                             .filter(
-                              (key) =>
-                                key.slot === "Hands" ||
-                                key.slot === "Waist" ||
-                                key.slot === "Legs" ||
-                                key.slot === "Feet" ||
-                                key.slot === "Finger" ||
-                                key.slot === "Trinket" ||
-                                key.slot === "Relics & Wands",
+                              (key) => ["Hands", "Waist", "Legs", "Feet", "Finger", "Trinket", "Relics & Wands"].includes(key.slot)
                             )
                             .map((item, index) => (
                               <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />

@@ -209,17 +209,37 @@ export default function TopGear(props) {
     shortReport.contentType = report.contentType;
     shortReport.firstSocket = report.itemSet.firstSocket;
     shortReport.player = {name: player.charName, realm: player.realm, region: player.region}
-  
-  
-    for (var i = 0; i < report.itemSet.itemList.length; i++) {
-      const item = report.itemSet.itemList[i];
+    
+    const addItem = (item) => {
       let newItem = {id: item.id, level: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
       if (item.stats.leech > 0) newItem.leech = item.stats.leech;
       if (item.socket) newItem.socket = item.socket;
       if (item.vaultItem) newItem.vaultItem = item.vaultItem;
       if (item.quality) newItem.quality = item.quality;
-      
+
       shortReport.itemSet.itemList.push(newItem)
+      }
+      
+  
+    for (var i = 0; i < report.itemSet.itemList.length; i++) {
+      const item = report.itemSet.itemList[i];
+
+      if (item.slot === "Combined Weapon") {
+        // Unfold weapons so that we send both.
+        if (item.offhandID > 0) {
+          mainhandItem = player.getItemByHash(item.mainHandUniqueHash);
+          offhandItem = player.getItemByHash(item.offHandUniqueHash);
+          addItem(mainhandItem);
+          addItem(offhandItem)
+        } else {
+          mainHandItem = player.getItemByHash(item.uniqueHash);
+          addItem(mainhandItem);
+        }
+      }
+      else {
+        addItem(item);
+      }
+      
     }
 
     sendReport(shortReport);
