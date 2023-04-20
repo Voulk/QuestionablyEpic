@@ -106,7 +106,7 @@ export async function apiGetPlayerImage(player) {
 /*                      Get player armory image from Blizzard API via QE API                      */
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion) {
-  console.log(playerName, playerRealm, playerRegion)
+
   if (playerName && playerRealm && playerRegion) {
     
     let region = playerRegion.toLowerCase();
@@ -117,7 +117,7 @@ export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion) 
     await fetch(fetchUrl)
       .then((res) => res.text())
       .then((response) => {
-        console.log(response.toString())
+
         urlReturned = response.toString();
       })
       .catch((err) => console.log(err));
