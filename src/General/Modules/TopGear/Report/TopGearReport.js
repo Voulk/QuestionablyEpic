@@ -96,13 +96,22 @@ function TopGearReport(props) {
   }, []);
 
   if (result && result.new) {
+    if (process.env.PUBLIC_URL.includes("live")) {
+      window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
+    }
+    else if (process.env.PUBLIC_URL.includes("dev")) {
+      window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
+    }
+    else {
+      // Call Error
+    }
 
-    window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
   }
   if (result !== null && checkResult(result)) {
     return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
   }
   else {
+
     // No result queued. Check URL for report code and load that.
     const location = useLocation();
     fetchReport(location.pathname.split("/")[2], setResult);
