@@ -64,6 +64,7 @@ export default function ItemCard(props) {
   
   let socket = [];
 
+  // Onyx Annulet
   if (item.id === 203460) {
     const gemCombo = props.primGems;
     const gemData = buildPrimGems(gemCombo);

@@ -569,7 +569,8 @@ export function buildWepCombos(player, active = false, equipped = false) {
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   let combat_mult = 0;
-  let stats = {
+
+  /*let stats = {
     intellect: 0,
     stamina: 0,
     haste: 0,
@@ -580,7 +581,8 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     hps: 0,
     dps: 0,
     bonus_stats: {},
-  };
+  }; */
+  let stats = {bonus_stats: {}};
 
   
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
@@ -591,10 +593,14 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility", "leech"].includes(key)) {
+    if (["haste", "crit", "mastery", "versatility"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
-    } else if (key === "intellect") {
+    } 
+    else if (key === "leech") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+    }
+    else if (key === "intellect") {
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
     } else if (key === "stamina") {
       // todo
@@ -608,7 +614,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
       stats.leech = Math.ceil(194 + 1.2307 * (itemLevel - 376));
     } else {
       const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
-      stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
+      stats.leech = Math.floor(terMult * (stats.haste || 0 + stats.crit || 0 + stats.mastery || 0 + stats.versatility || 0));
     }
   }
   return stats;
