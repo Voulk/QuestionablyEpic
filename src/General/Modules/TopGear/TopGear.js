@@ -92,19 +92,7 @@ const sendReport = (shortReport) => {
 }
 
 
-  // TODO: Add blocklist. It can be fairly basic.
-  const generateReportCode = () => {
-    let result = "";
-    const stringLength = 12;
-    const possChars ='abcdefhijklmnopqrstuvwxyz';
 
-    const charLength = possChars.length;
-    for ( let i = 0; i < stringLength; i++ ) {
-        result += possChars.charAt(Math.floor(Math.random() * charLength));
-    }
-
-    return result;
-  }
 
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
@@ -210,7 +198,7 @@ export default function TopGear(props) {
   };
 
   const shortenReport = (report, player) => {
-    const shortReport = {id: generateReportCode(), effectList: [], itemSet: {itemList: []}};
+    const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
     const shortItemSet = report.itemSet;
   
     shortReport.itemSet.setStats = report.itemSet.setStats;

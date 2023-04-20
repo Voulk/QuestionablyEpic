@@ -25,12 +25,15 @@ const fetchReport = (reportCode, setResult) => {
   };*/
 
   const url = "https://questionablyepic.com/api/getReport.php?reportID=" + reportCode;
-  console.log("Fetching + " + reportCode);
+
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      console.log(JSON.parse(data).id)
-      setResult(JSON.parse(data))
+      //console.log(data);
+      if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT");
+      else { 
+        setResult(JSON.parse(data))
+      }
     })
     //.catch(err => { throw err });
 }
@@ -85,6 +88,10 @@ function TopGearReport(props) {
 
   }, []);
 
+  if (result && result.new) {
+
+    window.history.pushState('page2', 'Title', '/report/' + result.id);
+  }
   if (result !== null && checkResult(result)) {
     return displayReport(result, props.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
   }
@@ -109,7 +116,7 @@ function TopGearReport(props) {
 }
 
 function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
-  console.log("Set ok, displaying report");
+
 
   
   const boxWidth = gameType === "Classic" ? "60%" : "60%";
@@ -191,7 +198,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   }
   newWeaponCombos = newWeaponCombos.flat();
   */
- console.log(backgroundImage);
+
   return (
     <div
       style={{
