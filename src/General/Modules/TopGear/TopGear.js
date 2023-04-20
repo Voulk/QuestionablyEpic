@@ -208,7 +208,7 @@ export default function TopGear(props) {
     shortReport.differentials = report.differentials;
     shortReport.contentType = report.contentType;
     shortReport.firstSocket = report.itemSet.firstSocket;
-    shortReport.player = {name: player.charName, realm: player.realm, region: player.region}
+    shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
     
     const addItem = (item) => {
       let newItem = {id: item.id, level: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};

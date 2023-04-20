@@ -30,10 +30,17 @@ const fetchReport = (reportCode, setResult) => {
     .then(res => res.json())
     .then(data => {
       //console.log(data);
-      if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT");
-      else { 
+
+      if (typeof(data) === "string") {
         setResult(JSON.parse(data))
       }
+      else if (typeof(data) === "object"){
+        if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT");
+      }
+      else {
+        console.error("Invalid Report Data Type");
+      }
+
     })
     //.catch(err => { throw err });
 }
@@ -90,10 +97,10 @@ function TopGearReport(props) {
 
   if (result && result.new) {
 
-    window.history.pushState('QE Live Report', 'Title', '/report/' + result.id);
+    window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
   }
   if (result !== null && checkResult(result)) {
-    return displayReport(result, props.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+    return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
   }
   else {
     // No result queued. Check URL for report code and load that.
@@ -116,9 +123,6 @@ function TopGearReport(props) {
 }
 
 function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
-
-
-  
   const boxWidth = gameType === "Classic" ? "60%" : "60%";
 
   let resultValid = true;
@@ -129,9 +133,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let differentials = {};
   let itemList = {};
   let statList = {};
-  let history = useHistory();
-  let intSlot = false;
-  
+  console.log(player);
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")
@@ -179,25 +181,6 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     }
   };
 
-  // scuffed breakdown of weapon combos to seperate them for the report
-  /*
-  let newWeaponCombos = [];
-  if (itemList.length > 0) {
-    const weaponCombos = itemList.filter((key) => key.slot === "CombinedWeapon")[0];
-    let mainHandItem = "";
-    let offHandItem = "";
-
-    if (weaponCombos.offhandID > 0) {
-      mainHandItem = player.getItemByHash(weaponCombos.mainHandUniqueHash);
-      offHandItem = player.getItemByHash(weaponCombos.offHandUniqueHash);
-      newWeaponCombos.push(mainHandItem, offHandItem);
-    } else {
-      mainHandItem = player.getItemByHash(weaponCombos.uniqueHash);
-      newWeaponCombos.push(mainHandItem);
-    }
-  }
-  newWeaponCombos = newWeaponCombos.flat();
-  */
 
   return (
     <div
@@ -308,7 +291,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
                                           color: classColoursJS(player.spec),
                                         }}
                                       >
-                                        {player.charName}
+                                        {player.name}
                                       </Typography>
 
                                       <Tooltip title={getTranslatedClassName(player.spec)} style={{ color: classColoursJS(player.spec) }} placement="top" arrow>
@@ -335,7 +318,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
                                         </Grid>
                                         <Grid item xs={12}>
                                           <Typography variant="caption" align="left">
-                                            {"Playstyle: " + player.getActiveModel(contentType).modelName}
+                                            {"Playstyle: " + player.model}
                                           </Typography>
                                         </Grid>
                                       </Grid>
