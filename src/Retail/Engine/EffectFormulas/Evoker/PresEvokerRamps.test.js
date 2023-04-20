@@ -153,103 +153,101 @@ describe("Test Base Spells", () => {
     // TODO: test more spells.
 });
 */
-/*
-describe("Disintegrate", () => {
-    // In game dmg, fresh lvl 70 character
-    // Disintegrate tick = 1826
-    const activeStats = {
-        intellect: 2089,
-        haste: 0,
-        crit: 600,
-        mastery: 600,
-        versatility: 0,
-        stamina: 2800,
+// describe("Disintegrate", () => {
+//     // In game dmg, fresh lvl 70 character
+//     // Disintegrate tick = 1826
+//     const activeStats = {
+//         intellect: 2089,
+//         haste: 0,
+//         crit: 600,
+//         mastery: 600,
+//         versatility: 0,
+//         stamina: 2800,
 
-        critMult: 1,
-    };
+//         critMult: 1,
+//     };
 
 
-    const settings = {reporting: true};
+//     const settings = {reporting: true};
 
-    const print = (name, base, healing) => {
-        let percInc = Math.round(10000*(healing / base - 1))/100;
-        console.log(name + ": " + healing + " (+" + percInc + "%)")
-    };
+//     const print = (name, base, healing) => {
+//         let percInc = Math.round(10000*(healing / base - 1))/100;
+//         console.log(name + ": " + healing + " (+" + percInc + "%)")
+//     };
 
-    const talents = {...baseTalents};
+//     const talents = {...baseTalents};
 
-    
-    test("Disintegrate should do 1826 dmg as per 10.0.2 (max lvl 70)", () => {
-        const iter = 5;
-        const results = {dmgDone: 0};
+//     test("Disintegrate should do 1826 dmg as per 10.0.2 (max lvl 70)", () => {
+//         const iter = 5;
+//         const results = {dmgDone: 0};
 
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Disintegrate"];
+//         for (let i = 0; i < iter; i++) {
+//             const seq = ["Disintegrate"];
 
-            const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
+//             const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
 
-            results.dmgDone += sequenceResult.totalDamage;
-        }
+//             results.dmgDone += sequenceResult.totalDamage;
+//         }
 
-        console.log(`Damage done over ${iter} iterations: ${results.dmgDone}\n` +
-                    `Damage in a single iteration: ${results.dmgDone / iter}\n` +
-                    `Damage in a single cast: ${Math.ceil(results.dmgDone / iter / 4)}\n`);
+//         console.log(`Damage done over ${iter} iterations: ${results.dmgDone}\n` +
+//                     `Damage in a single iteration: ${results.dmgDone / iter}\n` +
+//                     `Damage in a single cast: ${Math.ceil(results.dmgDone / iter / 4)}\n`);
 
-        expect(Math.ceil((results.dmgDone / iter) / 4)).toBe(1826);
-    });
+//         expect(Math.ceil((results.dmgDone / iter) / 4)).toBe(1826);
+//     });
 
-    test("Disintegrate should tick faster if Natural Convergence is selected", () => {
-        const iter = 1;
-        const results = {numberOfCastsWithNC: 0, numberOfCastsWithoutNC: 0, timeElapsedNC: 0, timeElapsedWNC: 0};
+//     test("Disintegrate should tick faster if Natural Convergence is selected", () => {
+//         const iter = 1;
+//         const results = {numberOfCastsWithNC: 0, numberOfCastsWithoutNC: 0, timeElapsedNC: 0, timeElapsedWNC: 0};
 
-        const localTalents = {naturalConvergence: {points: 1}, ...talents};
+//         const localTalents = {naturalConvergence: {points: 1}, ...talents};
 
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate"];
+//         for (let i = 0; i < iter; i++) {
+//             const seq = ["Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate"];
 
-            const sequenceResult = runCastSequence(seq, activeStats, settings, localTalents);
+//             const sequenceResult = runCastSequence(seq, activeStats, settings, localTalents);
 
-            results.numberOfCastsWithNC += Math.floor((sequenceResult.totalDamage / 1826) / 4); // give the number of casts aprox.
-            results.timeElapsedNC += sequenceResult.t;
-        }
+//             results.numberOfCastsWithNC += Math.floor((sequenceResult.totalDamage / 1826) / 4); // give the number of casts aprox.
+//             results.timeElapsedNC += sequenceResult.t;
+//         }
 
-        for (let i = 0; i < iter; i++) {
-            const seq = ["Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate"];
+//         for (let i = 0; i < iter; i++) {
+//             const seq = ["Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate", "Disintegrate"];
 
-            const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
+//             const sequenceResult = runCastSequence(seq, activeStats, settings, talents);
 
-            results.numberOfCastsWithoutNC += Math.floor((sequenceResult.totalDamage / 1826) / 4);
-            results.timeElapsedWNC += sequenceResult.t;
-        }
+//             results.numberOfCastsWithoutNC += Math.floor((sequenceResult.totalDamage / 1826) / 4);
+//             results.timeElapsedWNC += sequenceResult.t;
+//         }
 
-        console.log(`Number of Casts with NC: ${results.numberOfCastsWithNC}\n` +
-                    `Number of Casts without NC: ${results.numberOfCastsWithoutNC}`);
+//         console.log(`Number of Casts with NC: ${results.numberOfCastsWithNC}\n` +
+//                     `Number of Casts without NC: ${results.numberOfCastsWithoutNC}`);
 
-        console.log(`Time Elapsed with NC: ${results.timeElapsedNC}\n` +
-                    `Time Elapsed without NC: ${results.timeElapsedWNC}`);
-    });
+//         console.log(`Time Elapsed with NC: ${results.timeElapsedNC}\n` +
+//                     `Time Elapsed without NC: ${results.timeElapsedWNC}`);
+//     });
 
-    test("Disintegrate should do 20% extra damage, and restore 7200 mana if talented into Energy Loop", () => {
-        const localTalents = {energyLoop: {points: 1}, ...talents};
+//     test("Disintegrate should do 20% extra damage, and restore 7200 mana if talented into Energy Loop", () => {
+//         const localTalents = {energyLoop: {points: 1}, ...talents};
 
-        const seq = ["Disintegrate"];
+//         const seq = ["Disintegrate"];
 
-        const baselineSequenceResult = runCastSequence(seq, activeStats, settings, talents);
+//         const baselineSequenceResult = runCastSequence(seq, activeStats, settings, talents);
 
-        const talentedSequenceResult = runCastSequence(seq, activeStats, settings, localTalents);
+//         const talentedSequenceResult = runCastSequence(seq, activeStats, settings, localTalents);
 
-        console.log(talentedSequenceResult);
+//         console.log(talentedSequenceResult);
 
-        // Each tick should do 1826 dmg for a total of 7304 dmg in 4 ticks.
-        // but the engine rounds up the total amount of dmg, so each tick actually do
-        // 1825.78 dmg (in the engine), so the result should go down to 7303
-        expect(baselineSequenceResult.totalDamage).toBe(7303);
+//         // Each tick should do 1826 dmg for a total of 7304 dmg in 4 ticks.
+//         // but the engine rounds up the total amount of dmg, so each tick actually do
+//         // 1825.78 dmg (in the engine), so the result should go down to 7303
+//         expect(baselineSequenceResult.totalDamage).toBe(7303);
 
-        const buffedDmg = baselineSequenceResult.totalDamage + (baselineSequenceResult.totalDamage * 0.20);
+//         const buffedDmg = baselineSequenceResult.totalDamage + (baselineSequenceResult.totalDamage * 0.20);
 
-        expect(talentedSequenceResult.totalDamage).toBe(buffedDmg);
-    }); 
-});*/
+//         expect(talentedSequenceResult.totalDamage).toBe(buffedDmg);
+//     });
+// });
 
 /*
 describe("Echo Ramp Sequence", () => {
