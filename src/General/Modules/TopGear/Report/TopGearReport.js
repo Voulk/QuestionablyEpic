@@ -134,6 +134,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let itemList = {};
   let statList = {};
   console.log(player);
+  console.log(result);
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")

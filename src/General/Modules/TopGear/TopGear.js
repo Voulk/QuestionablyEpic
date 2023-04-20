@@ -263,8 +263,11 @@ export default function TopGear(props) {
         .then((result) => {
           // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          props.setTopResult(result);
-          shortenReport(result, props.player);
+          //props.setTopResult(result);
+          const shortResult = shortenReport(result, props.player);
+          shortResult.new = true;
+          props.setTopResult(shortResult);
+
           instance.terminate();
           history.push("/report/");
         })
