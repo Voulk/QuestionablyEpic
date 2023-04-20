@@ -10566,7 +10566,6 @@ export const itemDB = [
             418,
             421,
             424,
-            428,
             431,
             434,
             441,
@@ -23292,7 +23291,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Forbidden Obsidian Claw"
+            "name": "Forbidden Claw"
         },
         "stats": {
             "intellect": 0,
@@ -76942,9 +76941,12 @@ export const itemDB = [
             "name": "Sustaining Alchemist Stone"
         },
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -76975,9 +76977,12 @@ export const itemDB = [
             "name": "Alacritous Alchemist Stone"
         },
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -82083,9 +82088,12 @@ export const itemDB = [
             "name": "Idol of the Life-Binder"
         },
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -82117,9 +82125,12 @@ export const itemDB = [
         },
         "crafted": true,
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -82151,9 +82162,12 @@ export const itemDB = [
         },
         "crafted": true,
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -82184,9 +82198,12 @@ export const itemDB = [
             "name": "Idol of the Earth-Warder"
         },
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -87873,7 +87890,6 @@ export const itemDB = [
             418,
             421,
             424,
-            428,
             431,
             434,
             441,
@@ -88608,7 +88624,6 @@ export const itemDB = [
             418,
             421,
             424,
-            428,
             431,
             434,
             441,
@@ -88699,7 +88714,6 @@ export const itemDB = [
             418,
             421,
             424,
-            428,
             431,
             434,
             441,
@@ -89108,7 +89122,6 @@ export const itemDB = [
             418,
             421,
             424,
-            428,
             431,
             434,
             441,
@@ -96053,9 +96066,12 @@ export const itemDB = [
             "name": "Darkmoon Deck: Dance"
         },
         "levelRange": [
-            405,
+            411,
             418,
-            444
+            424,
+            434,
+            444,
+            447
         ]
     },
     {
@@ -102016,12 +102032,6 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2491
-            }
         ]
     },
     {
@@ -102067,12 +102077,6 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2502
-            }
         ]
     },
     {
@@ -102096,12 +102100,6 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2499
-            }
         ]
     },
     {
@@ -102125,12 +102123,6 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2482
-            }
         ]
     },
     {
@@ -102154,12 +102146,6 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2493
-            }
         ]
     },
     {
@@ -102636,12 +102622,6 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Restoration Druid"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2491
-            }
         ]
     },
     {
@@ -102685,12 +102665,6 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Restoration Druid"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2502
-            }
         ]
     },
     {
@@ -102713,12 +102687,6 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Restoration Druid"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2499
-            }
         ]
     },
     {
@@ -102741,12 +102709,6 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Restoration Druid"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2482
-            }
         ]
     },
     {
@@ -102769,12 +102731,6 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Restoration Druid"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2493
-            }
         ]
     },
     {
@@ -102860,12 +102816,6 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Mistweaver Monk"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2491
-            }
         ]
     },
     {
@@ -102909,12 +102859,6 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Mistweaver Monk"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2502
-            }
         ]
     },
     {
@@ -102937,12 +102881,6 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Mistweaver Monk"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2499
-            }
         ]
     },
     {
@@ -102965,12 +102903,6 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Mistweaver Monk"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2482
-            }
         ]
     },
     {
@@ -102993,12 +102925,6 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Mistweaver Monk"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2493
-            }
         ]
     },
     {
@@ -103278,12 +103204,6 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Preservation Evoker"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2491
-            }
         ]
     },
     {
@@ -103327,12 +103247,6 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Preservation Evoker"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2502
-            }
         ]
     },
     {
@@ -103355,12 +103269,6 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Preservation Evoker"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2499
-            }
         ]
     },
     {
@@ -103383,12 +103291,6 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Preservation Evoker"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2482
-            }
         ]
     },
     {
@@ -103411,12 +103313,6 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Preservation Evoker"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2493
-            }
         ]
     },
     {
@@ -103696,12 +103592,6 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Restoration Shaman"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2491
-            }
         ]
     },
     {
@@ -103745,12 +103635,6 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Restoration Shaman"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2502
-            }
         ]
     },
     {
@@ -103773,12 +103657,6 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Restoration Shaman"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2499
-            }
         ]
     },
     {
@@ -103801,12 +103679,6 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Restoration Shaman"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2482
-            }
         ]
     },
     {
@@ -103829,12 +103701,6 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Restoration Shaman"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2493
-            }
         ]
     },
     {
@@ -104114,12 +103980,6 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Holy Paladin"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2491
-            }
         ]
     },
     {
@@ -104163,12 +104023,6 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Holy Paladin"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2502
-            }
         ]
     },
     {
@@ -104191,12 +104045,6 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Holy Paladin"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2499
-            }
         ]
     },
     {
@@ -104219,12 +104067,6 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Holy Paladin"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2482
-            }
         ]
     },
     {
@@ -104247,12 +104089,6 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Holy Paladin"
-        ],
-        "sources": [
-            {
-                "instanceId": 1200,
-                "encounterId": 2493
-            }
         ]
     },
     {
@@ -117667,8 +117503,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2523
             }
         ],
         "slot": "Shoulder",
@@ -117695,8 +117531,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2525
             }
         ],
         "slot": "Legs",
@@ -117723,8 +117559,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2527
             }
         ],
         "slot": "Head",
@@ -117751,8 +117587,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2530
             }
         ],
         "slot": "Hands",
@@ -117806,8 +117642,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2532
             }
         ],
         "slot": "Chest",
@@ -118163,8 +117999,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2523
             }
         ],
         "slot": "Shoulder",
@@ -118191,8 +118027,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2525
             }
         ],
         "slot": "Legs",
@@ -118219,8 +118055,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2527
             }
         ],
         "slot": "Head",
@@ -118247,8 +118083,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2530
             }
         ],
         "slot": "Hands",
@@ -118302,8 +118138,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2532
             }
         ],
         "slot": "Chest",
@@ -118659,8 +118495,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2523
             }
         ],
         "slot": "Shoulder",
@@ -118687,8 +118523,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2525
             }
         ],
         "slot": "Legs",
@@ -118715,8 +118551,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2527
             }
         ],
         "slot": "Head",
@@ -118743,8 +118579,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2530
             }
         ],
         "slot": "Hands",
@@ -118798,8 +118634,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2532
             }
         ],
         "slot": "Chest",
@@ -119155,8 +118991,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2523
             }
         ],
         "slot": "Shoulder",
@@ -119183,8 +119019,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2525
             }
         ],
         "slot": "Legs",
@@ -119211,8 +119047,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2527
             }
         ],
         "slot": "Head",
@@ -119239,8 +119075,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2530
             }
         ],
         "slot": "Hands",
@@ -119294,8 +119130,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2532
             }
         ],
         "slot": "Chest",
@@ -119403,8 +119239,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2523
             }
         ],
         "slot": "Shoulder",
@@ -119431,8 +119267,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2525
             }
         ],
         "slot": "Legs",
@@ -119459,8 +119295,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2527
             }
         ],
         "slot": "Head",
@@ -119487,8 +119323,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2530
             }
         ],
         "slot": "Hands",
@@ -119542,8 +119378,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2532
             }
         ],
         "slot": "Chest",
@@ -120150,8 +119986,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2523
             }
         ],
         "slot": "Shoulder",
@@ -120179,8 +120015,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2525
             }
         ],
         "slot": "Legs",
@@ -120208,8 +120044,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2527
             }
         ],
         "slot": "Head",
@@ -120237,8 +120073,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2530
             }
         ],
         "slot": "Hands",
@@ -120294,8 +120130,8 @@ export const itemDB = [
         },
         "sources": [
             {
-                "instanceId": -46,
-                "encounterId": -46
+                "instanceId": 1208,
+                "encounterId": 2532
             }
         ],
         "slot": "Chest",
@@ -123433,7 +123269,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Combatant's Medallion"
+            "name": "Combatant's Medallion"
         },
         "levelRange": []
     },
@@ -123457,7 +123293,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Combatant's Insignia of Alacrity"
+            "name": "Combatant's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -123481,7 +123317,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Combatant's Emblem"
+            "name": "Combatant's Emblem"
         },
         "levelRange": []
     },
@@ -123535,6 +123371,10 @@ export const itemDB = [
             "type": "trinket",
             "name": "Neltharion's Call to Chaos"
         },
+        "classRestriction": [
+            "Holy Paladin",
+            "Preservation Evoker"
+        ],
         "levelRange": [
             418,
             431,
@@ -123569,6 +123409,10 @@ export const itemDB = [
             "type": "trinket",
             "name": "Neltharion's Call to Dominance"
         },
+        "classRestriction": [
+            "Restoration Shaman",
+            "Mistweaver Monk"
+        ],
         "levelRange": [
             418,
             431,
@@ -123603,6 +123447,11 @@ export const itemDB = [
             "type": "trinket",
             "name": "Neltharion's Call to Suffering"
         },
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest",
+            "Restoration Druid"
+        ],
         "levelRange": [
             418,
             431,
@@ -124655,7 +124504,11 @@ export const itemDB = [
                 "encounterId": 2520
             }
         ],
-        "slot": "Back"
+        "slot": "Back",
+        "effect": {
+            "type": "special",
+            "name": "Voice of the Silent Star"
+        }
     },
     {
         "id": 204466,
@@ -134774,7 +134627,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -134798,7 +134651,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -134822,7 +134675,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Emblem"
+            "name": "Gladiator's Emblem"
         },
         "levelRange": []
     },
@@ -134846,7 +134699,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Medallion"
+            "name": "Gladiator's Medallion"
         },
         "levelRange": []
     },
@@ -134870,7 +134723,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Sigil of Adaptation"
+            "name": "Gladiator's Sigil of Adaptation"
         },
         "levelRange": []
     },
@@ -136046,7 +135899,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Badge of Ferocity"
+            "name": "Gladiator's Badge of Ferocity"
         },
         "levelRange": []
     },
@@ -136070,7 +135923,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Medallion"
+            "name": "Gladiator's Medallion"
         },
         "levelRange": []
     },
@@ -136094,7 +135947,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Insignia of Alacrity"
+            "name": "Gladiator's Insignia of Alacrity"
         },
         "levelRange": []
     },
@@ -136118,7 +135971,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Emblem"
+            "name": "Gladiator's Emblem"
         },
         "levelRange": []
     },
@@ -136142,7 +135995,7 @@ export const itemDB = [
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
-            "name": "Obsidian Gladiator's Sigil of Adaptation"
+            "name": "Gladiator's Sigil of Adaptation"
         },
         "levelRange": []
     },
@@ -136456,6 +136309,12 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Holy Paladin"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2523
+            }
         ]
     },
     {
@@ -136478,6 +136337,12 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Holy Paladin"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2525
+            }
         ]
     },
     {
@@ -136500,6 +136365,12 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Holy Paladin"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2527
+            }
         ]
     },
     {
@@ -136522,6 +136393,12 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Holy Paladin"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2530
+            }
         ]
     },
     {
@@ -136544,6 +136421,12 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Holy Paladin"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2532
+            }
         ]
     },
     {
@@ -136676,6 +136559,12 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Restoration Shaman"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2523
+            }
         ]
     },
     {
@@ -136698,6 +136587,12 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Restoration Shaman"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2525
+            }
         ]
     },
     {
@@ -136720,6 +136615,12 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Restoration Shaman"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2527
+            }
         ]
     },
     {
@@ -136742,6 +136643,12 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Restoration Shaman"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2530
+            }
         ]
     },
     {
@@ -136764,6 +136671,12 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Restoration Shaman"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2532
+            }
         ]
     },
     {
@@ -136896,6 +136809,12 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Preservation Evoker"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2523
+            }
         ]
     },
     {
@@ -136918,6 +136837,12 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Preservation Evoker"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2525
+            }
         ]
     },
     {
@@ -136940,6 +136865,12 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Preservation Evoker"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2527
+            }
         ]
     },
     {
@@ -136962,6 +136893,12 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Preservation Evoker"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2530
+            }
         ]
     },
     {
@@ -136984,6 +136921,12 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Preservation Evoker"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2532
+            }
         ]
     },
     {
@@ -137116,6 +137059,12 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Mistweaver Monk"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2523
+            }
         ]
     },
     {
@@ -137138,6 +137087,12 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Mistweaver Monk"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2525
+            }
         ]
     },
     {
@@ -137160,6 +137115,12 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Mistweaver Monk"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2527
+            }
         ]
     },
     {
@@ -137182,6 +137143,12 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Mistweaver Monk"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2530
+            }
         ]
     },
     {
@@ -137204,6 +137171,12 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Mistweaver Monk"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2532
+            }
         ]
     },
     {
@@ -137226,6 +137199,12 @@ export const itemDB = [
         "slot": "Shoulder",
         "classRestriction": [
             "Restoration Druid"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2523
+            }
         ]
     },
     {
@@ -137248,6 +137227,12 @@ export const itemDB = [
         "slot": "Legs",
         "classRestriction": [
             "Restoration Druid"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2525
+            }
         ]
     },
     {
@@ -137270,6 +137255,12 @@ export const itemDB = [
         "slot": "Head",
         "classRestriction": [
             "Restoration Druid"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2527
+            }
         ]
     },
     {
@@ -137292,6 +137283,12 @@ export const itemDB = [
         "slot": "Hands",
         "classRestriction": [
             "Restoration Druid"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2530
+            }
         ]
     },
     {
@@ -137314,6 +137311,12 @@ export const itemDB = [
         "slot": "Chest",
         "classRestriction": [
             "Restoration Druid"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2532
+            }
         ]
     },
     {
@@ -137557,6 +137560,12 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2523
+            }
         ]
     },
     {
@@ -137580,6 +137589,12 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2525
+            }
         ]
     },
     {
@@ -137603,6 +137618,12 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2527
+            }
         ]
     },
     {
@@ -137626,6 +137647,12 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2530
+            }
         ]
     },
     {
@@ -137649,6 +137676,12 @@ export const itemDB = [
         "classRestriction": [
             "Holy Priest",
             "Discipline Priest"
+        ],
+        "sources": [
+            {
+                "instanceId": 1208,
+                "encounterId": 2532
+            }
         ]
     },
     {
