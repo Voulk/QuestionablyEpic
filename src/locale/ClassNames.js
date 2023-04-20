@@ -236,7 +236,7 @@ export const cdPlannerclassDB = [
       ru: "Паладин",
       ch: "",
     },
-    id: "Paladin",
+    id: ["Paladin", "paladin"],
     color: "#F58CBA",
     icon: require("Images/Classes/Paladin/classicon_paladin.jpg").default,
   },
@@ -251,7 +251,7 @@ export const cdPlannerclassDB = [
       ru: "Жрец",
       ch: "",
     },
-    id: "Priest",
+    id: ["Priest", "priest"],
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
     icon: require("Images/Classes/Priest/classicon_priest.jpg").default,
@@ -268,7 +268,7 @@ export const cdPlannerclassDB = [
       ru: "Друид",
       ch: "德鲁伊",
     },
-    id: "Druid",
+    id: ["Druid", "druid"],
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
     icon: require("Images/Classes/Druid/classicon_druid.jpg").default,
@@ -281,7 +281,7 @@ export const cdPlannerclassDB = [
       ru: "Пробудитель",
       ch: "唤魔师",
     },
-    id: "Evoker",
+    id: ["Evoker", "evoker"],
     cooldownPlannerMenu: true,
     color: "#33937F",
     icon: require("Images/Classes/Evoker/classicon_evoker.jpg").default,
@@ -294,7 +294,7 @@ export const cdPlannerclassDB = [
       ru: "Охотник на демонов",
       ch: "恶魔猎手",
     },
-    id: "DemonHunter",
+    id: ["DemonHunter", "demonHunter", "demonhunter"],
     cooldownPlannerMenu: true,
     color: "#A330C9",
     icon: require("Images/Classes/DemonHunter/DemonHunterIcon.jpg").default,
@@ -307,7 +307,7 @@ export const cdPlannerclassDB = [
       ru: "Воин",
       ch: "战士",
     },
-    id: ["Warrior"],
+    id: ["Warrior", "warrior"],
     cooldownPlannerMenu: true,
     color: "#C79C6E",
     icon: require("Images/Classes/Warrior/WarriorIcon.jpg").default,
@@ -320,7 +320,7 @@ export const cdPlannerclassDB = [
       ru: "Монах",
       ch: "武僧",
     },
-    id: "Monk",
+    id: ["Monk", "monk"],
     cooldownPlannerMenu: true,
     color: "#00FF96",
     icon: require("Images/Classes/Monk/classicon_monk.jpg").default,
@@ -333,7 +333,7 @@ export const cdPlannerclassDB = [
       ru: "Шаман",
       ch: "萨满",
     },
-    id: "Shaman",
+    id: ["Shaman", "shaman"],
     cooldownPlannerMenu: true,
     color: "#0070DE",
     icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg").default,
@@ -347,10 +347,66 @@ export const cdPlannerclassDB = [
       ru: "Рыцарь смерти",
       ch: "死亡骑士",
     },
-    id: "DeathKnight",
+    id: ["DeathKnight", "deathknight"],
     cooldownPlannerMenu: true,
     color: "#C41E3A",
     icon: require("Images/Classes/DeathKnight/DeathKnightIcon.jpg").default,
+  },
+
+  {
+    name: {
+      en: "Rogue",
+      fr: "Voleur",
+      de: "Schurke",
+      ru: "Разбойник",
+      ch: "潜行者",
+    },
+    id: ["Rogue", "rogue"],
+    cooldownPlannerMenu: false,
+    color: "#FFF468",
+    icon: require("Images/Classes/Rogue/Icons/RogueIcon.jpg").default,
+  },
+
+  {
+    name: {
+      en: "Warlock",
+      fr: "Démoniste",
+      de: "Hexenmeister",
+      ru: "Чернокнижник",
+      ch: "术士",
+    },
+    id: ["Warlock", "warlock"],
+    cooldownPlannerMenu: false,
+    color: "#8788EE",
+    icon: require("Images/Classes/Warlock/Icons/WarlockIcon.jpg").default,
+  },
+
+  {
+    name: {
+      en: "Hunter",
+      fr: "Chasseur",
+      de: "Jäger",
+      ru: "Охотник",
+      ch: "猎人",
+    },
+    id: ["Hunter", "hunter"],
+    cooldownPlannerMenu: false,
+    color: "#AAD372",
+    icon: require("Images/Classes/Hunter/Icons/HunterIcon.jpg").default,
+  },
+
+  {
+    name: {
+      en: "Mage",
+      fr: "Mage",
+      de: "Magier",
+      ru: "Маг",
+      ch: "法师",
+    },
+    id: ["Mage", "mage"],
+    cooldownPlannerMenu: false,
+    color: "#3FC7EB",
+    icon: require("Images/Classes/Mage/Icons/MageIcon.jpg").default,
   },
 ];
 
@@ -375,6 +431,544 @@ export const getClassIconCD = (className) => {
   let icon = cdPlannerclassDB
     .filter((obj) => {
       return obj.id.includes(className);
+    })
+    .map((obj) => obj.icon);
+
+  return icon;
+};
+
+export const cdPlannerSpecDB = [
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Paladin                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Holy",
+      fr: "Sacré",
+      de: "Heilig",
+      ru: "Свет",
+      ch: "神圣",
+    },
+    id: ["holy paladin"],
+    color: "#F58CBA",
+    icon: require("Images/Classes/Paladin/Specialisation/spell_holy_holybolt.jpg").default,
+  },
+  {
+    name: {
+      en: "Protection",
+      fr: "Protection",
+      de: "Schutz",
+      ru: "Защита",
+      ch: "防护",
+    },
+    id: ["protection paladin"],
+    color: "#F58CBA",
+    icon: require("Images/Classes/Paladin/Specialisation/ability_paladin_shieldofthetemplar.jpg").default,
+  },
+  {
+    name: {
+      en: "Retribution",
+      fr: "Vindicte",
+      de: "Vergeltung",
+      ru: "Воздаяние",
+      ch: "惩戒",
+    },
+    id: ["retribution paladin"],
+    color: "#F58CBA",
+    icon: require("Images/Classes/Paladin/Specialisation/paladin_retribution.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Priest                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Holy",
+      fr: "Sacré",
+      de: "Heilig",
+      ru: "Свет",
+      ch: "神圣",
+    },
+    id: ["holy priest"],
+    color: "#FFFFFF",
+    icon: require("Images/Classes/Priest/Specialisation/spell_holy_guardianspirit.jpg").default,
+  },
+  {
+    name: {
+      en: "Shadow",
+      fr: "Ombre",
+      de: "Schatten",
+      ru: "Тьма",
+      ch: "暗影",
+    },
+    id: ["shadow priest"],
+    color: "#FFFFFF",
+    icon: require("Images/Classes/Priest/Specialisation/spell_shadow_demonicfortitude.jpg").default,
+  },
+  {
+    name: {
+      en: "Discipline",
+      fr: "Discipline",
+      de: "Disziplin",
+      ru: "Послушание",
+      ch: "戒律",
+    },
+    id: ["discipline priest"],
+    color: "#FFFFFF",
+    icon: require("Images/Classes/Priest/Specialisation/spell_holy_powerwordshield.jpg").default,
+  },
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Druid                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  {
+    name: {
+      en: "Balance",
+      fr: "Équilibre",
+      de: "Gleichgewicht",
+      ru: "Баланс",
+      ch: "平衡",
+    },
+    id: ["balance druid"],
+    color: "#FF7D0A",
+    icon: require("Images/Classes/Druid/Specialisation/spell_nature_starfall.jpg").default,
+  },
+  {
+    name: {
+      en: "Feral",
+      fr: "Farouche",
+      de: "Wildheit",
+      ru: "Сила зверя",
+      ch: "野性",
+    },
+    id: ["feral druid"],
+    color: "#FF7D0A",
+    icon: require("Images/Classes/Druid/Specialisation/ability_druid_catform.jpg").default,
+  },
+  {
+    name: {
+      en: "Guardian",
+      fr: "Gardien",
+      de: "Wächter",
+      ru: "Страж",
+      ch: "守护",
+    },
+    id: ["guardian druid"],
+    color: "#FF7D0A",
+    icon: require("Images/Classes/Druid/Specialisation/ability_racial_bearform.jpg").default,
+  },
+  {
+    name: {
+      en: "Restoration",
+      fr: "Restauration",
+      de: "Wiederherstellung",
+      ru: "Исцеление",
+      ch: "恢复",
+    },
+    id: ["restoration druid"],
+    color: "#FF7D0A",
+    icon: require("Images/Classes/Druid/Specialisation/spell_nature_healingtouch.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Evoker                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Devastation",
+      fr: "Dévastation",
+      de: "Verheerung",
+      ru: "Опустошитель",
+      ch: "湮灭",
+    },
+    id: ["Devastation", "devastation evoker"],
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_devastation.jpg").default,
+  },
+  {
+    name: {
+      en: "Preservation",
+      fr: "Préservation",
+      de: "Bewahrung",
+      ru: "Хранитель",
+      ch: "恩护",
+    },
+    id: ["Preservation", "preservation evoker"],
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Demon Hunter                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Havoc",
+      fr: "Dévastation",
+      de: "Verwüstung",
+      ru: "Истребление",
+      ch: "浩劫",
+    },
+    id: ["havoc demonhunter"],
+    color: "#A330C9",
+    icon: require("Images/Classes/DemonHunter/ability_demonhunter_specdps.jpg").default,
+  },
+  {
+    name: {
+      en: "Vengeance",
+      fr: "Vengeance",
+      de: "Rachsucht",
+      ru: "Месть",
+      ch: "复仇",
+    },
+    id: ["vengeance demonhunter"],
+    color: "#A330C9",
+    icon: require("Images/Classes/DemonHunter/ability_demonhunter_spectank.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Warrior                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Arms",
+      fr: "Armes",
+      de: "Waffen",
+      ru: "Оружие",
+      ch: "武器",
+    },
+    id: ["arms warrior"],
+    color: "#C79C6E",
+    icon: require("Images/Classes/Warrior/ability_warrior_savageblow.jpg").default,
+  },
+
+  {
+    name: {
+      en: "Fury",
+      fr: "Fureur",
+      de: "Furor",
+      ru: "Неистовство",
+      ch: "狂怒",
+    },
+    id: ["fury warrior"],
+    color: "#C79C6E",
+    icon: require("Images/Classes/Warrior/ability_warrior_innerrage.jpg").default,
+  },
+  {
+    name: {
+      en: "Protection",
+      fr: "Protection",
+      de: "Schutz",
+      ru: "Защита",
+      ch: "防护",
+    },
+    id: ["protection warrior"],
+    color: "#C79C6E",
+    icon: require("Images/Classes/Warrior/ability_warrior_defensivestance.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Monk                                              */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Mistweaver",
+      fr: "Tisse-brume",
+      de: "Nebelwirker",
+      ru: "Ткач туманов",
+      ch: "织雾",
+    },
+    id: ["mistweaver monk"],
+    color: "#00FF96",
+    icon: require("Images/Classes/Monk/Specialisation/spell_monk_mistweaver_spec.jpg").default,
+  },
+  {
+    name: {
+      en: "Brewmaster",
+      fr: "Maître brasseur",
+      de: "Braumeister",
+      ru: "Хмелевар",
+      ch: "酒仙",
+    },
+    id: ["brewmaster monk"],
+    color: "#00FF96",
+    icon: require("Images/Classes/Monk/Specialisation/spell_monk_brewmaster_spec.jpg").default,
+  },
+  {
+    name: {
+      en: "Windwalker",
+      fr: "Marche-vent",
+      de: "Windläufer",
+      ru: "Танцующий с ветром",
+      ch: "踏风",
+    },
+    id: ["windwalker monk"],
+    color: "#00FF96",
+    icon: require("Images/Classes/Monk/Specialisation/spell_monk_windwalker_spec.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Shaman                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Elemental",
+      fr: "Élémentaire",
+      de: "Elementar",
+      ru: "Стихии",
+      ch: "恢复",
+    },
+    id: ["elemental shaman"],
+    color: "#0070DE",
+    icon: require("Images/Classes/Shaman/Specialisation/spell_nature_lightning.jpg").default,
+  },
+  {
+    name: {
+      en: "Enhancement",
+      fr: "Amélioration",
+      de: "Verstärkung",
+      ru: "Совершенствование",
+      ch: "增强",
+    },
+    id: ["enhancement shaman"],
+    color: "#0070DE",
+    icon: require("Images/Classes/Shaman/Specialisation/spell_shaman_improvedstormstrike.jpg").default,
+  },
+  {
+    name: {
+      en: "Restoration",
+      fr: "Restauration",
+      de: "Wiederherstellung",
+      ru: "Исцеление",
+      ch: "恢复",
+    },
+    id: ["restoration shaman"],
+    color: "#0070DE",
+    icon: require("Images/Classes/Shaman/Specialisation/spell_nature_magicimmunity.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                          Death Knight                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Blood",
+      fr: "Sang",
+      de: "Blut",
+      ru: "Кровь",
+      ch: "鲜血",
+    },
+    id: ["blood deathknight"],
+    color: "#C41E3A deathknight",
+    icon: require("Images/Classes/DeathKnight/spell_deathknight_bloodpresence.jpg").default,
+  },
+  {
+    name: {
+      en: "Frost",
+      fr: "Givre",
+      de: "Frost",
+      ru: "Лед",
+      ch: "冰霜",
+    },
+    id: ["frost deathknight"],
+    color: "#C41E3A",
+    icon: require("Images/Classes/DeathKnight/spell_deathknight_frostpresence.jpg").default,
+  },
+  {
+    name: {
+      en: "Unholy",
+      fr: "Impie",
+      de: "Unheilig",
+      ru: "Нечестивость",
+      ch: "邪恶",
+    },
+    id: ["unholy deathknight"],
+    color: "#C41E3A",
+    icon: require("Images/Classes/DeathKnight/spell_deathknight_unholypresence.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Rogue                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Assassination",
+      fr: "Assassinat",
+      de: "Meucheln",
+      ru: "Ликвидация",
+      ch: "奇袭",
+    },
+    id: ["assassination rogue"],
+    color: "#FFF468",
+    icon: require("Images/Classes/Rogue/Icons/ability_rogue_deadlybrew.jpg").default,
+  },
+  {
+    name: {
+      en: "Outlaw",
+      fr: "Hors-la-loi",
+      de: "Gesetzlosigkeit",
+      ru: "Головорез",
+      ch: "狂徒",
+    },
+    id: ["outlaw rogue"],
+    color: "#FFF468",
+    icon: require("Images/Classes/Rogue/Icons/ability_rogue_waylay.jpg").default,
+  },
+  {
+    name: {
+      en: "Subtlety",
+      fr: "Finesse",
+      de: "Täuschung",
+      ru: "Скрытность",
+      ch: "敏锐",
+    },
+    id: ["subtlety rogue"],
+    color: "#FFF468",
+    icon: require("Images/Classes/Rogue/Icons/ability_stealth.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Warlock                                            */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Affliction",
+      fr: "Affliction",
+      de: "Gebrechen",
+      ru: "Колдовство",
+      ch: "痛苦",
+    },
+    id: ["affliction warlock"],
+    color: "#8788EE",
+    icon: require("Images/Classes/Warlock/Icons/spell_shadow_deathcoil.jpg").default,
+  },
+  {
+    name: {
+      en: "Demonology",
+      fr: "Démonologie",
+      de: "Dämonologie",
+      ru: "Демонология",
+      ch: "恶魔学识",
+    },
+    id: ["demonology warlock"],
+    color: "#8788EE",
+    icon: require("Images/Classes/Warlock/Icons/spell_shadow_metamorphosis.jpg").default,
+  },
+  {
+    name: {
+      en: "Destruction",
+      fr: "Destruction",
+      de: "Zerstörung",
+      ru: "Разрушение",
+      ch: "毁灭",
+    },
+    id: ["destruction warlock"],
+    color: "#8788EE",
+    icon: require("Images/Classes/Warlock/Icons/spell_shadow_rainoffire.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                             Hunter                                             */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Beast Mastery",
+      fr: "Maîtrise des bêtes",
+      de: "Tierherrschaft",
+      ru: "Повелитель зверей",
+      ch: "野兽控制",
+    },
+    id: ["beastmastery hunter"],
+    color: "#AAD372",
+    icon: require("Images/Classes/Hunter/Icons/ability_hunter_bestialdiscipline.jpg").default,
+  },
+  {
+    name: {
+      en: "Marksmanship",
+      fr: "Précision",
+      de: "Treffsicherheit",
+      ru: "Стрельба",
+      ch: "射击",
+    },
+    id: ["marksmanship hunter"],
+    color: "#AAD372",
+    icon: require("Images/Classes/Hunter/Icons/ability_hunter_focusedaim.jpg").default,
+  },
+  {
+    name: {
+      en: "Survival",
+      fr: "Survie",
+      de: "Überleben",
+      ru: "Выживание",
+      ch: "生存",
+    },
+    id: ["survival hunter"],
+    color: "#AAD372",
+    icon: require("Images/Classes/Hunter/Icons/ability_hunter_camouflage.jpg").default,
+  },
+
+  /* ---------------------------------------------------------------------------------------------- */
+  /*                                              Mage                                              */
+  /* ---------------------------------------------------------------------------------------------- */
+  {
+    name: {
+      en: "Arcane",
+      fr: "Arcanes",
+      de: "Arkan",
+      ru: "Тайная магия",
+      ch: "奥术",
+    },
+    id: ["arcane mage"],
+    color: "#3FC7EB",
+    icon: require("Images/Classes/Mage/Icons/spell_holy_magicalsentry.jpg").default,
+  },
+  {
+    name: {
+      en: "Fire",
+      fr: "Feu",
+      de: "Feuer",
+      ru: "Огонь",
+      ch: "火焰",
+    },
+    id: ["fire mage"],
+    color: "#3FC7EB",
+    icon: require("Images/Classes/Mage/Icons/spell_fire_firebolt02.jpg").default,
+  },
+  {
+    name: {
+      en: "Frost",
+      fr: "Givre",
+      de: "Frost",
+      ru: "Лед",
+      ch: "冰霜",
+    },
+    id: ["frost mage"],
+    color: "#3FC7EB",
+    icon: require("Images/Classes/Mage/Icons/spell_frost_frostbolt02.jpg").default,
+  },
+];
+
+export const getTranslatedSpecNameCD = (specName, currentLanguage) => {
+  let name = cdPlannerSpecDB
+    .filter((obj) => {
+      return obj.id.includes(specName);
+    })
+    .map((obj) => obj.name[currentLanguage]);
+  return name;
+};
+export const getSpecColourCD = (specName) => {
+  let name = cdPlannerSpecDB
+    .filter((obj) => {
+      return obj.id.includes(specName);
+    })
+    .map((obj) => obj.color);
+
+  return name;
+};
+export const getSpecIconCD = (specName) => {
+  let icon = cdPlannerSpecDB
+    .filter((obj) => {
+      return obj.id.includes(specName);
     })
     .map((obj) => obj.icon);
 

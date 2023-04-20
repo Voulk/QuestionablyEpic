@@ -14,6 +14,7 @@ import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
+import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -176,6 +177,24 @@ class Player {
       }
     }
   };
+
+  // Saved = preset gems from Top Gear.
+  getBestPrimordialIDs = (settings, contentType, itemLevel = 242, saved = []) => {
+
+    const automatic = settings.primordialGems.value === "Automatic";
+
+    if (saved.length > 0) return saved;
+    else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
+    else {
+      const setGems = []
+      settings.primordialGems.value.split(",").forEach(gem => {
+        setGems.push(convertGemNameToID(gem.trim() + " Stone"))
+      })
+
+      return setGems;
+    }
+
+  }
 
   // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.
   getSelectedItems = () => {
@@ -580,9 +599,9 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 7800,
-        haste: 4000,
-        crit: 2100,
+        intellect: 8500,
+        haste: 4400,
+        crit: 2500,
         mastery: 1150,
         versatility: 1400,
         stamina: 1900,

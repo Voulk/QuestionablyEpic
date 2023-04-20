@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
@@ -61,11 +61,27 @@ export default function ItemCard(props) {
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-  const socket = item.socket ? (
-    <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
-      <img src={socketImage} width={15} height={15} alt="Socket" />
-    </div>
-  ) : null;
+  
+  let socket = [];
+
+  // Onyx Annulet
+  if (item.id === 203460) {
+    const gemCombo = props.primGems;
+    const gemData = buildPrimGems(gemCombo);
+    socket = gemData.socket;
+    //gemString = gemData.string;
+ 
+  }
+  else if (item.socket) {
+    for (let i = 0; i < item.socket; i++) {
+      socket.push (
+        <div style={{ marginRight: 4, display: "inline"}}>
+          <img src={socketImage} width={15} height={15} alt="Socket" />
+        </div>
+      );
+    }
+    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+  }
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);

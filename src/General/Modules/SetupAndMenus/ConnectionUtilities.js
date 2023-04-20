@@ -2,6 +2,7 @@
 import { useDispatch } from "react-redux";
 import { togglePatronStatus } from "Redux/Actions";
 
+
 /* ---------------------------------------------------------------------------------------------- */
 /*               Check if email provided is a Patron and sets the response via Prop               */
 /* ---------------------------------------------------------------------------------------------- */
@@ -92,6 +93,31 @@ export async function apiGetPlayerImage(player) {
     await fetch(fetchUrl)
       .then((res) => res.text())
       .then((response) => {
+        urlReturned = response.toString();
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  } else {
+    return "";
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                      Get player armory image from Blizzard API via QE API                      */
+/* ---------------------------------------------------------------------------------------------- */
+export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion) {
+
+  if (playerName && playerRealm && playerRegion) {
+    
+    let region = playerRegion.toLowerCase();
+    let name = playerName.toLowerCase();
+    let realm = playerRealm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+
         urlReturned = response.toString();
       })
       .catch((err) => console.log(err));

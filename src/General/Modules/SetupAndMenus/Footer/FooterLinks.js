@@ -4,8 +4,7 @@ import { Link } from "@mui/material";
 const list = [
   { text: "Guides", link: "https://questionablyepic.com" },
   { text: "Support the site", link: "https://patreon.com/questionablyepic" },
-  { text: "Report a bug", link: "https://docs.google.com/forms/d/e/1FAIpQLSeUsAOadXLgrOfIDCGdHlWp0ydHRM8hXzgSGPHl06qV0fuBfg/viewform" },
-  { text: "Suggestion Box", link: "https://docs.google.com/forms/d/e/1FAIpQLSeUsAOadXLgrOfIDCGdHlWp0ydHRM8hXzgSGPHl06qV0fuBfg/viewform" },
+  { text: "Discord (bugs & suggestions)", link: "https://discord.gg/jBSGHDm5G8" },
   { text: "Developers", link: "https://github.com/Voulk/QuestionablyEpic" },
 ];
 

@@ -4219,6 +4219,386 @@ export const nameDB = {
         "fr": "Emblème de fureur",
         "de": "Emblem der Wut"
     },
+    "131735": {
+        "cn": "",
+        "en": "Imp Generator",
+        "ru": "Генератор бесов",
+        "es": "Generador de diablillos",
+        "br": "Gerador de Diabrete",
+        "kr": "",
+        "fr": "Générateur de diablotins",
+        "de": "Wichtelgenerator"
+    },
+    "133192": {
+        "cn": "",
+        "en": "Porcelain Crab",
+        "ru": "Фарфоровый краб",
+        "es": "Cangrejo de porcelana",
+        "br": "Caranguejo de Porcelana",
+        "kr": "",
+        "fr": "Crabe en porcelaine",
+        "de": "Porzellankrebs"
+    },
+    "133197": {
+        "cn": "",
+        "en": "Might of the Ocean",
+        "ru": "Мощь океана",
+        "es": "Poderío del océano",
+        "br": "Poder do Oceano",
+        "kr": "",
+        "fr": "Puissance de l'océan",
+        "de": "Macht des Ozeans"
+    },
+    "133201": {
+        "cn": "",
+        "en": "Sea Star",
+        "ru": "Морская звезда",
+        "es": "Estrella de mar",
+        "br": "Estrela do Mar",
+        "kr": "",
+        "fr": "Etoile de mer",
+        "de": "Seestern"
+    },
+    "133206": {
+        "cn": "",
+        "en": "Key to the Endless Chamber",
+        "ru": "Ключ от Бесконечного Чертога",
+        "es": "Llave a la Cámara sin Fin",
+        "br": "Chave da Câmara Infinda",
+        "kr": "",
+        "fr": "Clé de la chambre sans fin",
+        "de": "Schlüssel zur unendlichen Kammer"
+    },
+    "133216": {
+        "cn": "",
+        "en": "Tendrils of Burrowing Dark",
+        "ru": "Витки могильной тьмы",
+        "es": "Zarcillos de oscuridad penetrante",
+        "br": "Gavinhas da Escuridão Penetrante",
+        "kr": "",
+        "fr": "Vrilles de noirceur fouisseuse",
+        "de": "Ranken des vergrabenen Dunkels"
+    },
+    "133222": {
+        "cn": "",
+        "en": "Magnetite Mirror",
+        "ru": "Магнетитовое зерцало",
+        "es": "Espejo de calamita",
+        "br": "Espelho de Magnetita",
+        "kr": "",
+        "fr": "Miroir en magnétite",
+        "de": "Magnetitspiegel"
+    },
+    "133224": {
+        "cn": "",
+        "en": "Leaden Despair",
+        "ru": "Мрак отчаяния",
+        "es": "Desesperación plomiza",
+        "br": "Desespero Plúmbeo",
+        "kr": "",
+        "fr": "Désespoir plombé",
+        "de": "Bleierne Verzweiflung"
+    },
+    "133227": {
+        "cn": "",
+        "en": "Tear of Blood",
+        "ru": "Кровавая слеза",
+        "es": "Lágrima de sangre",
+        "br": "Lágrima de Sangue",
+        "kr": "",
+        "fr": "Larme de sang",
+        "de": "Blutträne"
+    },
+    "133232": {
+        "cn": "",
+        "en": "Stratosphere Belt",
+        "ru": "Пояс стратосферы",
+        "es": "Cinturón de estratosfera",
+        "br": "Cinto da Estratosfera",
+        "kr": "",
+        "fr": "Ceinture de la stratosphère",
+        "de": "Stratosphärengürtel"
+    },
+    "133233": {
+        "cn": "",
+        "en": "Biting Wind",
+        "ru": "Порыв ветра",
+        "es": "Viento aguzado",
+        "br": "Vento Penetrante",
+        "kr": "",
+        "fr": "Vent mordant",
+        "de": "Beißender Wind"
+    },
+    "133234": {
+        "cn": "",
+        "en": "Headcover of Fog",
+        "ru": "Дымчатый головной покров",
+        "es": "Cimera de niebla",
+        "br": "Capuz da Bruma",
+        "kr": "",
+        "fr": "Coiffure de brouillard",
+        "de": "Kopfbedeckung des Nebels"
+    },
+    "133235": {
+        "cn": "",
+        "en": "Fallen Snow Shoulderguards",
+        "ru": "Наплечные щитки снегопада",
+        "es": "Guardahombros de nieve caída",
+        "br": "Guarda-ombros da Neve Cadente",
+        "kr": "",
+        "fr": "Garde-épaules de la chute de neige",
+        "de": "Schulterschutz des gefallenen Schnees"
+    },
+    "133237": {
+        "cn": "",
+        "en": "Mantle of Bestilled Winds",
+        "ru": "Мантия обузданных ветров",
+        "es": "Manto de vientos detenidos",
+        "br": "Dragonas de Ventos Amainados",
+        "kr": "",
+        "fr": "Mantelet des vents immobiles",
+        "de": "Mantelung der besänftigten Winde"
+    },
+    "133238": {
+        "cn": "",
+        "en": "Amulet of Tender Breath",
+        "ru": "Амулет нежного дыхания",
+        "es": "Amuleto del aliento tierno",
+        "br": "Amuleto do Hálito Fresco",
+        "kr": "",
+        "fr": "Amulette du tendre souffle",
+        "de": "Amulett des weichen Atems"
+    },
+    "133239": {
+        "cn": "",
+        "en": "Hail-Strung Belt",
+        "ru": "Избитый градом пояс",
+        "es": "Cinturón con granizo",
+        "br": "Cinto Engranizado",
+        "kr": "",
+        "fr": "Ceinture perlée de grêle",
+        "de": "Hagelschnürengürtel"
+    },
+    "133243": {
+        "cn": "",
+        "en": "Legguards of Winnowing Wind",
+        "ru": "Набедренники продувного ветра",
+        "es": "Musleras del viento aventador",
+        "br": "Guarda-pernas do Vento Adejante",
+        "kr": "",
+        "fr": "Garde-jambes du vent soufflant",
+        "de": "Beinschützer des fegenden Winds"
+    },
+    "133244": {
+        "cn": "",
+        "en": "Gloves of Haze",
+        "ru": "Перчатки мглистой дымки",
+        "es": "Guantes de bruma",
+        "br": "Luvas de Neblina",
+        "kr": "",
+        "fr": "Gants de la brume",
+        "de": "Dunsthandschuhe"
+    },
+    "133245": {
+        "cn": "",
+        "en": "Billowing Cape",
+        "ru": "Плащ девятого вала",
+        "es": "Manteo vaporoso",
+        "br": "Capa Ondulante",
+        "kr": "",
+        "fr": "Cape flottant au vent",
+        "de": "Wogendes Cape"
+    },
+    "133246": {
+        "cn": "",
+        "en": "Heart of Thunder",
+        "ru": "Сердце Грома",
+        "es": "Corazón de trueno",
+        "br": "Coração do Trovão",
+        "kr": "",
+        "fr": "Cœur de tonnerre",
+        "de": "Herz des Sturms"
+    },
+    "133247": {
+        "cn": "",
+        "en": "Shadow of Perfect Bliss",
+        "ru": "Тень совершенного блаженства",
+        "es": "Sombra de la perfecta dicha",
+        "br": "Sombra da Perfeita Bênção",
+        "kr": "",
+        "fr": "Ombre de bonheur absolu",
+        "de": "Schatten des vollkommenen Glücks"
+    },
+    "133248": {
+        "cn": "",
+        "en": "Ring of Frozen Rain",
+        "ru": "Кольцо замерзшего дождя",
+        "es": "Anillo de lluvia helada",
+        "br": "Anel da Chuva Congelada",
+        "kr": "",
+        "fr": "Anneau de pluie gelée",
+        "de": "Ring des Eisregens"
+    },
+    "133249": {
+        "cn": "",
+        "en": "Lunar Halo",
+        "ru": "Лунное гало",
+        "es": "Halo lunar",
+        "br": "Halo Lunar",
+        "kr": "",
+        "fr": "Halo lunaire",
+        "de": "Lunarheiligenschein"
+    },
+    "133250": {
+        "cn": "",
+        "en": "Leggings of Iridescent Clouds",
+        "ru": "Поножи радужных облаков",
+        "es": "Leotardos de nubes iridiscentes",
+        "br": "Perneiras das Nuvens Iridescentes",
+        "kr": "",
+        "fr": "Jambières de nuages irisés",
+        "de": "Gamaschen der schillernden Wolken"
+    },
+    "133252": {
+        "cn": "",
+        "en": "Rainsong",
+        "ru": "Песнь дождя",
+        "es": "Cantolluvia",
+        "br": "Canção da Chuva",
+        "kr": "",
+        "fr": "Chantepluie",
+        "de": "Regengesang"
+    },
+    "133253": {
+        "cn": "",
+        "en": "Darksky Treads",
+        "ru": "Ботинки Темного Неба",
+        "es": "Botines Oscurcielo",
+        "br": "Botinas Grisabóbada",
+        "kr": "",
+        "fr": "Bottines sombre-ciel",
+        "de": "Düsterhimmeltreter"
+    },
+    "133268": {
+        "cn": "",
+        "en": "Heart of Solace",
+        "ru": "Сердце Утешения",
+        "es": "Corazón de consuelo",
+        "br": "Coração do Consolo",
+        "kr": "",
+        "fr": "Cœur de réconfort",
+        "de": "Herz des Trostes"
+    },
+    "133269": {
+        "cn": "",
+        "en": "Tia's Grace",
+        "ru": "Благоволение Тиа",
+        "es": "Gracia de Tia",
+        "br": "Graça de Tia",
+        "kr": "",
+        "fr": "Grâce de Tia",
+        "de": "Tias Gunst"
+    },
+    "133275": {
+        "cn": "",
+        "en": "Sorrowsong",
+        "ru": "Песнь печали",
+        "es": "Canción de penas",
+        "br": "Canção do Pesar",
+        "kr": "",
+        "fr": "Tristechant",
+        "de": "Klagelied"
+    },
+    "133281": {
+        "cn": "",
+        "en": "Impetuous Query",
+        "ru": "Допрос с пристрастием",
+        "es": "Petición impetuosa",
+        "br": "Dúvida Impetuosa",
+        "kr": "",
+        "fr": "Demande impétueuse",
+        "de": "Ungestümes Ersuchen"
+    },
+    "133282": {
+        "cn": "",
+        "en": "Skardyn's Grace",
+        "ru": "Милость Скардина",
+        "es": "Gracia de skardyn",
+        "br": "Graça dos Skardyn",
+        "kr": "",
+        "fr": "Grâce de Skardyn",
+        "de": "Gunst der Skardyn"
+    },
+    "133291": {
+        "cn": "",
+        "en": "Throngus's Finger",
+        "ru": "Палец Тронга",
+        "es": "Dedo de Throngus",
+        "br": "Dedo de Throngus",
+        "kr": "",
+        "fr": "Doigt de Throngus",
+        "de": "Finger von Throngus"
+    },
+    "133300": {
+        "cn": "",
+        "en": "Mark of Khardros",
+        "ru": "Знак Кардроса",
+        "es": "Marca de Khardros",
+        "br": "Marca de Khardros",
+        "kr": "",
+        "fr": "Marque de Khardros",
+        "de": "Mal von Khardros"
+    },
+    "133304": {
+        "cn": "",
+        "en": "Gale of Shadows",
+        "ru": "Буря теней",
+        "es": "Vendaval de sombras",
+        "br": "Vendaval de Sombras",
+        "kr": "",
+        "fr": "Bourrasque d'ombres",
+        "de": "Schattensturm"
+    },
+    "133305": {
+        "cn": "",
+        "en": "Corrupted Egg Shell",
+        "ru": "Оскверненная яичная скорлупа",
+        "es": "Cáscara de huevo corrupto",
+        "br": "Casca de Ovo Corrompido",
+        "kr": "",
+        "fr": "Coquille d'œuf corrompu",
+        "de": "Verderbte Eierschale"
+    },
+    "133362": {
+        "cn": "",
+        "en": "Billowing Skydrape",
+        "ru": "Волнистая небесная пелерина",
+        "es": "Mantón celestial vaporoso",
+        "br": "Capa Celeste Ondulante",
+        "kr": "",
+        "fr": "Cape céleste flottant au vent",
+        "de": "Wallendes Himmelstuch"
+    },
+    "133370": {
+        "cn": "",
+        "en": "Sandals of the West Wind",
+        "ru": "Сандалии западного ветра",
+        "es": "Sandalias del viento del Oeste",
+        "br": "Sandalhas do Vento Oeste",
+        "kr": "",
+        "fr": "Sandales du vent d'ouest",
+        "de": "Sandalen des Westwinds"
+    },
+    "133420": {
+        "cn": "",
+        "en": "Arrow of Time",
+        "ru": "Стрела времени",
+        "es": "Flecha de tiempo",
+        "br": "Flecha do Tempo",
+        "kr": "",
+        "fr": "Flèche du Temps",
+        "de": "Pfeil der Zeit"
+    },
     "133461": {
         "cn": "",
         "en": "Timbal's Focusing Crystal",
@@ -4258,6 +4638,56 @@ export const nameDB = {
         "kr": "",
         "fr": "Recommandation de Kael'thas",
         "de": "Belobigung von Kael'thas"
+    },
+    "133537": {
+        "cn": "",
+        "en": "Kiroptyric Sigil",
+        "ru": "Кироптировая печать",
+        "es": "Sigilo quiroptérico",
+        "br": "Signo Quiroptírico",
+        "kr": "",
+        "fr": "Cachet kiroptyrique",
+        "de": "Kiroptyrisches Siegel"
+    },
+    "133538": {
+        "cn": "",
+        "en": "Bottled Wishes",
+        "ru": "Желания в бутылке",
+        "es": "Deseos embotellados",
+        "br": "Desejos Engarrafados",
+        "kr": "",
+        "fr": "Souhait en bouteille",
+        "de": "Wünsche in der Flasche"
+    },
+    "133539": {
+        "cn": "",
+        "en": "Reflection of the Light",
+        "ru": "Отражение Света",
+        "es": "Reflejo de luz",
+        "br": "Reflexo da Luz",
+        "kr": "",
+        "fr": "Reflet de la Lumière",
+        "de": "Lichtreflexion"
+    },
+    "133540": {
+        "cn": "",
+        "en": "Rotting Skull",
+        "ru": "Гниющий череп",
+        "es": "Calavera putrefacta",
+        "br": "Caveira Apodrecida",
+        "kr": "",
+        "fr": "Crâne putréfié",
+        "de": "Verrottender Schädel"
+    },
+    "133541": {
+        "cn": "",
+        "en": "Fire of the Deep",
+        "ru": "Огонь глубин",
+        "es": "Fuego de las profundidades",
+        "br": "Fogo das Profundezas",
+        "kr": "",
+        "fr": "Feu des profondeurs",
+        "de": "Feuer aus den Tiefen"
     },
     "133609": {
         "cn": "",
@@ -4529,6 +4959,26 @@ export const nameDB = {
         "fr": "Chaîne de mande-tonnerre",
         "de": "Kette des Donnerrufers"
     },
+    "134135": {
+        "cn": "",
+        "en": "Rockbound Chestguard",
+        "ru": "Скальный нагрудный доспех",
+        "es": "Coselete ligarroca",
+        "br": "Couraça de Rochatado",
+        "kr": "",
+        "fr": "Corselet pierre-lié",
+        "de": "Steingebundener Brustschutz"
+    },
+    "134141": {
+        "cn": "",
+        "en": "Rockbound Sabatons",
+        "ru": "Скальные башмаки",
+        "es": "Escarpes ligarroca",
+        "br": "Escarpes de Rochatado",
+        "kr": "",
+        "fr": "Solerets pierre-liés",
+        "de": "Steingebundene Sabatons"
+    },
     "134146": {
         "cn": "",
         "en": "Brulstone Idol",
@@ -4538,6 +4988,26 @@ export const nameDB = {
         "kr": "",
         "fr": "Idole en broufpierre",
         "de": "Brulsteingötze"
+    },
+    "134152": {
+        "cn": "",
+        "en": "Steelgazer Hide Hood",
+        "ru": "Капюшон из шкуры сталегляда",
+        "es": "Caperuza de pellejo de observador de acero",
+        "br": "Capuz de Pelego de Contemplaço",
+        "kr": "",
+        "fr": "Chaperon de regard-d'acier en peau",
+        "de": "Stahlblickbalgkapuze"
+    },
+    "134154": {
+        "cn": "",
+        "en": "Steelgazer Hide Mantle",
+        "ru": "Оплечье из шкуры сталегляда",
+        "es": "Manto de pellejo de observador de acero",
+        "br": "Dragonas de Pelego de Contemplaço",
+        "kr": "",
+        "fr": "Mantelet de regard-d'acier en peau",
+        "de": "Stahlblickbalgmantel"
     },
     "134159": {
         "cn": "",
@@ -4558,6 +5028,46 @@ export const nameDB = {
         "kr": "",
         "fr": "Enorme pierre de rogg",
         "de": "Riesiger Roggstein"
+    },
+    "134164": {
+        "cn": "",
+        "en": "Bitestone Wristwrap",
+        "ru": "Напульсники камнегрызов",
+        "es": "Cubremuñecas Roepiedra",
+        "br": "Munhequeiras de Mordepedra",
+        "kr": "",
+        "fr": "Bandelettes mord-pierre",
+        "de": "Gelenkband der Beißsteine"
+    },
+    "134166": {
+        "cn": "",
+        "en": "Bitestone Boots",
+        "ru": "Сапоги камнегрызов",
+        "es": "Botas Roepiedra",
+        "br": "Botas de Mordepedra",
+        "kr": "",
+        "fr": "Bottes mord-pierre",
+        "de": "Stiefel der Beißsteine"
+    },
+    "134171": {
+        "cn": "",
+        "en": "Roggthread Cord",
+        "ru": "Шнурованный ремень из ткани роггов",
+        "es": "Cordón de hilo rogg",
+        "br": "Cordão de Fio de Rogg",
+        "kr": "",
+        "fr": "Corde tissée en fil de rogg",
+        "de": "Rogggarnkordel"
+    },
+    "134177": {
+        "cn": "",
+        "en": "Roggthread Mantle",
+        "ru": "Оплечье из ткани роггов",
+        "es": "Manto de hilo rogg",
+        "br": "Dragonas de Fio de Rogg",
+        "kr": "",
+        "fr": "Mantelet tissé en fil de rogg",
+        "de": "Rogggarnmantel"
     },
     "134179": {
         "cn": "",
@@ -4989,6 +5499,16 @@ export const nameDB = {
         "fr": "Chaperon de Murmure-Néant",
         "de": "Netherflüsterkapuze"
     },
+    "134408": {
+        "cn": "",
+        "en": "Putrid Carapace",
+        "ru": "Прогнивший панцирь",
+        "es": "Caparazón pútrido",
+        "br": "Carapaça Pútrida",
+        "kr": "",
+        "fr": "Carapace putride",
+        "de": "Eitriger Panzer"
+    },
     "134415": {
         "cn": "",
         "en": "Arcanist's Resonant Robes",
@@ -4998,6 +5518,36 @@ export const nameDB = {
         "kr": "",
         "fr": "Robe résonnante d'arcaniste",
         "de": "Resonante Roben des Arkanisten"
+    },
+    "134416": {
+        "cn": "",
+        "en": "Offal Galoshes",
+        "ru": "Негодные галоши",
+        "es": "Galochas de vísceras",
+        "br": "Galochas de Resíduos",
+        "kr": "",
+        "fr": "Galoches des abats",
+        "de": "Gedärmgaloschen"
+    },
+    "134420": {
+        "cn": "",
+        "en": "Gloves of the Mountain Conquest",
+        "ru": "Перчатки завоевателя гор",
+        "es": "Guantes de conquista de la montaña",
+        "br": "Luvas da Dominação da Montanha",
+        "kr": "",
+        "fr": "Gants de la conquête des montagnes",
+        "de": "Handschuhe des Bergbezwingers"
+    },
+    "134427": {
+        "cn": "",
+        "en": "Riverrider Legwraps",
+        "ru": "Бриджи путешественника по реке",
+        "es": "Ataduras de cabalgarríos",
+        "br": "Culotes de Arrais do Rio",
+        "kr": "",
+        "fr": "Jambards de court-rivière",
+        "de": "Beinwickel des Flussreiters"
     },
     "134432": {
         "cn": "",
@@ -5009,6 +5559,16 @@ export const nameDB = {
         "fr": "Amict de la tempête déchaînée",
         "de": "Amicia des ausufernden Sturmgewitters"
     },
+    "134443": {
+        "cn": "",
+        "en": "Gravelworn Handguards",
+        "ru": "Изношенные боевые рукавицы",
+        "es": "Manoplas gravilleras",
+        "br": "Protetores de Mão de Descascalho",
+        "kr": "",
+        "fr": "Garde-mains porte-gravier",
+        "de": "Kieselverschlissene Handschützer"
+    },
     "134447": {
         "cn": "",
         "en": "Veil of Unseen Strikes",
@@ -5018,6 +5578,26 @@ export const nameDB = {
         "kr": "",
         "fr": "Voile des frappes invisibles",
         "de": "Schleier der unsichtbaren Angriffe"
+    },
+    "134455": {
+        "cn": "",
+        "en": "Sinister Ashfall Cord",
+        "ru": "Шнурованный ремень грозного выброса пепла",
+        "es": "Cordón de lluviagrís siniestro",
+        "br": "Cordão do Quedagris Sinistro",
+        "kr": "",
+        "fr": "Corde de chutecendre sinistre",
+        "de": "Finstere Aschenfallkordel"
+    },
+    "134458": {
+        "cn": "",
+        "en": "Wristbands of Rousing Violence",
+        "ru": "Нарукавье буйствующего насилия",
+        "es": "Braciles de incitación a la violencia",
+        "br": "Munhequeiras da Violência Estimulante",
+        "kr": "",
+        "fr": "Protège-poignets d'incitation à la violence",
+        "de": "Gelenkbänder der mitreißenden Gewalt"
     },
     "134460": {
         "cn": "",
@@ -5029,6 +5609,16 @@ export const nameDB = {
         "fr": "Garde-jambes fontefièvre",
         "de": "Fiebergeschmolzene Beinschützer"
     },
+    "134470": {
+        "cn": "",
+        "en": "Mountain Throne Coif",
+        "ru": "Боевой капюшон горного трона",
+        "es": "Almófar de trono de montaña",
+        "br": "Coifa do Trono da Montanha",
+        "kr": "",
+        "fr": "Camail du trône des montagnes",
+        "de": "Kappe des Bergthrons"
+    },
     "134473": {
         "cn": "",
         "en": "Collar of Fiery Allegiance",
@@ -5038,6 +5628,16 @@ export const nameDB = {
         "kr": "",
         "fr": "Collier d'allégeance flamboyante",
         "de": "Kragen der hitzigen Treue"
+    },
+    "134474": {
+        "cn": "",
+        "en": "Faultline Leggings",
+        "ru": "Поножи разлома",
+        "es": "Leotardos de falla",
+        "br": "Perneiras da Fratura",
+        "kr": "",
+        "fr": "Jambières de ligne de faille",
+        "de": "Verwerfungsgamaschen"
     },
     "134480": {
         "cn": "",
@@ -5049,6 +5649,36 @@ export const nameDB = {
         "fr": "Épaulettes de l'intention trompeuse",
         "de": "Schulterklappen der zweifelhaften Absicht"
     },
+    "134481": {
+        "cn": "",
+        "en": "Boulderbuckle Strap",
+        "ru": "Ремешок с каменной пряжкой",
+        "es": "Correa con hebilla de roca",
+        "br": "Correia de Fiveledra",
+        "kr": "",
+        "fr": "Lanière boucleroche",
+        "de": "Felsschnallenriemen"
+    },
+    "134491": {
+        "cn": "",
+        "en": "Understone Gorget",
+        "ru": "Ожерелье Подкаменного разлома",
+        "es": "Gorjal Sotopiedra",
+        "br": "Gorjal do Subpetra",
+        "kr": "",
+        "fr": "Gorgerin pierre-basse",
+        "de": "Kehlstück des Tiefgesteins"
+    },
+    "134495": {
+        "cn": "",
+        "en": "Chain of the Underking",
+        "ru": "Цепь Короля подземелий",
+        "es": "Cadena del Infrarrey",
+        "br": "Corrente do Hipomonarca",
+        "kr": "",
+        "fr": "Chaîne du roi d'en bas",
+        "de": "Kette des Unterkönigs"
+    },
     "134503": {
         "cn": "",
         "en": "Inferno Breastplate",
@@ -5058,6 +5688,16 @@ export const nameDB = {
         "kr": "",
         "fr": "Cuirasse du feu d'enfer",
         "de": "Infernobrustplatte"
+    },
+    "134511": {
+        "cn": "",
+        "en": "Subterranean Horror Faceguard",
+        "ru": "Большой шлем подземного ужаса",
+        "es": "Visera de horror subterráneo",
+        "br": "Viseira do Terror Subterrâneo",
+        "kr": "",
+        "fr": "Ventaille d'horreur souterraine",
+        "de": "Gesichtsschutz des unterirdischen Schreckens"
     },
     "134513": {
         "cn": "",
@@ -5069,6 +5709,26 @@ export const nameDB = {
         "fr": "Heaume de loyauté révérencieuse",
         "de": "Helm der ehrfurchtsvollen Treue"
     },
+    "134517": {
+        "cn": "",
+        "en": "Tremorguard Pauldrons",
+        "ru": "Наплечье защиты от землетрясений",
+        "es": "Espaldares guardatemblores",
+        "br": "Brafoneiras de Estremeguarda",
+        "kr": "",
+        "fr": "Espauliers de tremblegarde",
+        "de": "Schulterstücke des Bebenschutzes"
+    },
+    "134524": {
+        "cn": "",
+        "en": "Band of the Wyrm Matron",
+        "ru": "Кольцо праматери червей",
+        "es": "Sortija de la matrona vermis",
+        "br": "Elo da Máter Serpe",
+        "kr": "",
+        "fr": "Bague de la matrone des wyrms",
+        "de": "Band der Wyrmmatrone"
+    },
     "134529": {
         "cn": "",
         "en": "Chain of Scorched Bones",
@@ -5078,6 +5738,16 @@ export const nameDB = {
         "kr": "",
         "fr": "Chaîne en os calcinés",
         "de": "Kette aus versengten Knochen"
+    },
+    "134530": {
+        "cn": "",
+        "en": "Loop of Vitriolic Intent",
+        "ru": "Кольцо злобных намерений",
+        "es": "Aro de propósito virulento",
+        "br": "Aro da Intenção Vitriólica",
+        "kr": "",
+        "fr": "Boucle d'intention virulente",
+        "de": "Schleife der gehässigen Motive"
     },
     "134542": {
         "cn": "",
@@ -6089,6 +6759,26 @@ export const nameDB = {
         "fr": "Figure de proue du Naglfar",
         "de": "Galionsfigur der Naglfar"
     },
+    "137336": {
+        "cn": "",
+        "en": "Vest of Rupturing Diamonds",
+        "ru": "Жилет разрывающих алмазов",
+        "es": "Jubón de diamantes desintegradores",
+        "br": "Colete de Diamantes Fendentes",
+        "kr": "",
+        "fr": "Gilet des diamants de rupture",
+        "de": "Weste der splitternden Diamanten"
+    },
+    "137337": {
+        "cn": "",
+        "en": "Deepfurrow Bracers",
+        "ru": "Наручи глубокой борозды",
+        "es": "Brazales Muescahonda",
+        "br": "Braçadeiras Fendafunda",
+        "kr": "",
+        "fr": "Brassards de sillon-profond",
+        "de": "Armschienen des tiefen Risses"
+    },
     "137338": {
         "cn": "",
         "en": "Shard of Rokmora",
@@ -6098,6 +6788,26 @@ export const nameDB = {
         "kr": "",
         "fr": "Éclat de Rokmora",
         "de": "Splitter von Rokmora"
+    },
+    "137341": {
+        "cn": "",
+        "en": "Cragshaper's Fitted Hood",
+        "ru": "Подогнанный капюшон Скаломола",
+        "es": "Caperuza ajustada del Formarriscos",
+        "br": "Capuz Ajustado do Fazpenhasco",
+        "kr": "",
+        "fr": "Chaperon ajusté de Sculpte-Roche",
+        "de": "Enganliegende Kapuze des Klippenformers"
+    },
+    "137342": {
+        "cn": "",
+        "en": "Rock Solid Legplates",
+        "ru": "Каменные ножные латы",
+        "es": "Quijotes sólidos como una roca",
+        "br": "Coxotes Pura-rocha",
+        "kr": "",
+        "fr": "Cuissards durs comme le roc",
+        "de": "Steinharte Beinplatten"
     },
     "137344": {
         "cn": "",
@@ -6109,6 +6819,16 @@ export const nameDB = {
         "fr": "Talisman de Sculpte-Roche",
         "de": "Talisman des Klippenformers"
     },
+    "137348": {
+        "cn": "",
+        "en": "Gauntlets of Innumerable Barbs",
+        "ru": "Рукавицы неисчислимых шипов",
+        "es": "Guanteletes de púas innumerables",
+        "br": "Manoplas de Incontáveis Farpas",
+        "kr": "",
+        "fr": "Gantelets de barbelés innombrables",
+        "de": "Stulpen der unzähligen Widerhaken"
+    },
     "137349": {
         "cn": "",
         "en": "Naraxas' Spiked Tongue",
@@ -6118,6 +6838,46 @@ export const nameDB = {
         "kr": "",
         "fr": "Langue à pointes de Naraxas",
         "de": "Naraxas' Hakenzunge"
+    },
+    "137352": {
+        "cn": "",
+        "en": "Tunic of Smoldering Ire",
+        "ru": "Мундир тлеющей ненависти",
+        "es": "Guerrera de ira humeante",
+        "br": "Túnica da Cólera Abrasante",
+        "kr": "",
+        "fr": "Tunique d'ire fumante",
+        "de": "Tunika des glimmenden Zorns"
+    },
+    "137353": {
+        "cn": "",
+        "en": "Charskin Legguards",
+        "ru": "Набедренники углешкура",
+        "es": "Musleras de antracito",
+        "br": "Guarda-pernas Carvouro",
+        "kr": "",
+        "fr": "Garde-jambes peau-de-charbon",
+        "de": "Kohlhautbeinschützer"
+    },
+    "137354": {
+        "cn": "",
+        "en": "Tunic of Screaming Earth",
+        "ru": "Мундир кричащей земли",
+        "es": "Guerrera de tierra estridente",
+        "br": "Túnica da Terra Gritante",
+        "kr": "",
+        "fr": "Tunique de la terre hurlante",
+        "de": "Tunika des irdenen Schreis"
+    },
+    "137355": {
+        "cn": "",
+        "en": "Rumblestone Gauntlets",
+        "ru": "Рукавицы грохочущих камней",
+        "es": "Guanteletes de fragorroca",
+        "br": "Manoplas de Pedra Troante",
+        "kr": "",
+        "fr": "Gantelets pierre-grondante",
+        "de": "Rumpelsteinstulpen"
     },
     "137357": {
         "cn": "",
@@ -6539,6 +7299,16 @@ export const nameDB = {
         "fr": "Floraison de jeune pousse",
         "de": "Blüte des neuen Wachstums"
     },
+    "139095": {
+        "cn": "",
+        "en": "Greystone Belt",
+        "ru": "Пояс племени Серого Камня",
+        "es": "Cinturón Petragrís",
+        "br": "Cinto Rochagris",
+        "kr": "",
+        "fr": "Ceinture pierre-grise",
+        "de": "Grausteingürtel"
+    },
     "139102": {
         "cn": "",
         "en": "An'she's Invigoring Charm",
@@ -6548,6 +7318,16 @@ export const nameDB = {
         "kr": "",
         "fr": "Charme revigorant d'An'she",
         "de": "An'shes belebender Talisman"
+    },
+    "139105": {
+        "cn": "",
+        "en": "Rivermane Sandals",
+        "ru": "Сандалии племени Речной Гривы",
+        "es": "Sandalias Crin de Río",
+        "br": "Sandálias dos Crina Corrente",
+        "kr": "",
+        "fr": "Sandales crins-de-rive",
+        "de": "Sandalen der Flussmähnen"
     },
     "139113": {
         "cn": "",
@@ -6568,6 +7348,26 @@ export const nameDB = {
         "kr": "",
         "fr": "Imprégnation de lumière d'An'she",
         "de": "An'shes Lichtinfusion"
+    },
+    "139121": {
+        "cn": "",
+        "en": "Skyhorn Mantle",
+        "ru": "Оплечье племени Небесного Рога",
+        "es": "Manto Cuerno del Cielo",
+        "br": "Dragonas dos Chifre Celeste",
+        "kr": "",
+        "fr": "Mantelet corne-céleste",
+        "de": "Mantelung der Himmelshörner"
+    },
+    "139130": {
+        "cn": "",
+        "en": "Sunfrost Wristwraps",
+        "ru": "Кулачные обмотки Морозного Солнца",
+        "es": "Cubremuñecas Solescarcha",
+        "br": "Munhequeiras Solfrio",
+        "kr": "",
+        "fr": "Bandelettes givresol",
+        "de": "Sonnenfrostgelenkbänder"
     },
     "139280": {
         "cn": "",
@@ -6758,1306 +7558,6 @@ export const nameDB = {
         "kr": "",
         "fr": "Rameau de corruption",
         "de": "Zweig der Verderbnis"
-    },
-    "140026": {
-        "cn": "",
-        "en": "The Devilsaur's Bite",
-        "ru": "Укус дьявозавра",
-        "es": "Mordedura de demosaurio",
-        "br": "A Mordida do Demossauro",
-        "kr": "",
-        "fr": "La morsure du diablosaure",
-        "de": "Der Teufelssaurierbiss"
-    },
-    "140027": {
-        "cn": "",
-        "en": "Ley Spark",
-        "ru": "Магическая вспышка",
-        "es": "Chispa Ley",
-        "br": "Centelha do Meridiano",
-        "kr": "",
-        "fr": "Etincelle tellurique",
-        "de": "Leyfunke"
-    },
-    "140030": {
-        "cn": "",
-        "en": "Devilsaur Shock-Baton",
-        "ru": "Электрошокер дьявозавра",
-        "es": "Bastón eléctrico de demosaurio",
-        "br": "Bastão de Choque de Demossauro",
-        "kr": "",
-        "fr": "Aiguillon électrique pour diablosaure",
-        "de": "Teufelssaurierschockstab"
-    },
-    "140031": {
-        "cn": "",
-        "en": "Mana Spark",
-        "ru": "Искорка маны",
-        "es": "Chispa de maná",
-        "br": "Centelha de Mana",
-        "kr": "",
-        "fr": "Etincelle de mana",
-        "de": "Manafunke"
-    },
-    "140034": {
-        "cn": "",
-        "en": "Impact Tremor",
-        "ru": "Ударное сотрясение",
-        "es": "Temblor de impacto",
-        "br": "Tremor de Impacto",
-        "kr": "",
-        "fr": "Secousse d'impact",
-        "de": "Einschlagsbeben"
-    },
-    "140035": {
-        "cn": "",
-        "en": "Fluctuating Arc Capacitor",
-        "ru": "Пульсирующий разрядный конденсатор",
-        "es": "Condensador de arco oscilante",
-        "br": "Arc-capacitor Flutuante",
-        "kr": "",
-        "fr": "Condensateur à arc variable",
-        "de": "Fluktuierender Bogenkondensator"
-    },
-    "140161": {
-        "cn": "",
-        "en": "Hargal's Favorite Trinket",
-        "ru": "Любимая безделушка Харгала",
-        "es": "Abalorio favorito de Hargal",
-        "br": "Berloque Favorito de Hargal",
-        "kr": "",
-        "fr": "Bijou préféré de Hargal",
-        "de": "Hargals Lieblingsschmuckstück"
-    },
-    "140400": {
-        "cn": "",
-        "en": "Perfect Dreamgrove Blossom",
-        "ru": "Идеальный побег Рощи Снов",
-        "es": "Flor de la Arboleda de los Sueños perfecta",
-        "br": "Flor do Bosque Onírico Perfeita",
-        "kr": "",
-        "fr": "Fleur parfaite de la Sylverêve",
-        "de": "Perfekte Traumhainblüte"
-    },
-    "140789": {
-        "cn": "",
-        "en": "Animated Exoskeleton",
-        "ru": "Оживленный экзоскелет",
-        "es": "Exoesqueleto animado",
-        "br": "Exoesqueleto Animado",
-        "kr": "",
-        "fr": "Exosquelette animé",
-        "de": "Animiertes Exoskelett"
-    },
-    "140790": {
-        "cn": "",
-        "en": "Claw of the Crystalline Scorpid",
-        "ru": "Коготь кристаллического скорпида",
-        "es": "Pinza del escórpido cristalino",
-        "br": "Garra do Escorpídeo Cristalino",
-        "kr": "",
-        "fr": "Pince du scorpide cristallin",
-        "de": "Klaue des kristallinen Skorpiden"
-    },
-    "140791": {
-        "cn": "",
-        "en": "Royal Dagger Haft",
-        "ru": "Рукоять королевского кинжала",
-        "es": "Empuñadura de daga real",
-        "br": "Empunhadura de Adaga Real",
-        "kr": "",
-        "fr": "Manche de dague royale",
-        "de": "Königliches Dolchheft"
-    },
-    "140792": {
-        "cn": "",
-        "en": "Erratic Metronome",
-        "ru": "Расстроенный метроном",
-        "es": "Metrónomo errático",
-        "br": "Metrônomo Caótico",
-        "kr": "",
-        "fr": "Métronome erratique",
-        "de": "Unstetes Metronom"
-    },
-    "140793": {
-        "cn": "",
-        "en": "Perfectly Preserved Cake",
-        "ru": "Идеально сохранившийся торт",
-        "es": "Pastel perfectamente preservado",
-        "br": "Bolo Perfeitamente Preservado",
-        "kr": "",
-        "fr": "Gâteau parfaitement conservé",
-        "de": "Perfekt erhaltener Kuchen"
-    },
-    "140794": {
-        "cn": "",
-        "en": "Arcanogolem Digit",
-        "ru": "Палец чародейского голема",
-        "es": "Dedo de Arcanogólem",
-        "br": "Dedo de Arcanogolem",
-        "kr": "",
-        "fr": "Doigt d'arcanogolem",
-        "de": "Finger des Arkanogolems"
-    },
-    "140795": {
-        "cn": "",
-        "en": "Aluriel's Mirror",
-        "ru": "Зеркало Алуриэль",
-        "es": "Espejo de Aluriel",
-        "br": "Espelho de Aluriel",
-        "kr": "",
-        "fr": "Miroir d'Aluriel",
-        "de": "Aluriels Spiegel"
-    },
-    "140796": {
-        "cn": "",
-        "en": "Entwined Elemental Foci",
-        "ru": "Переплетенные средоточия стихий",
-        "es": "Focos elementales entrelazados",
-        "br": "Foco Elemental Entrelaçado",
-        "kr": "",
-        "fr": "Focalisateurs élémentaires entremêlés",
-        "de": "Verschlungene Elementarfokusse"
-    },
-    "140797": {
-        "cn": "",
-        "en": "Fang of Tichondrius",
-        "ru": "Клык Тихондрия",
-        "es": "Colmillo de Tichondrius",
-        "br": "Presa de Taecondrius",
-        "kr": "",
-        "fr": "Croc de Tichondrius",
-        "de": "Eckzahn von Tichondrius"
-    },
-    "140798": {
-        "cn": "",
-        "en": "Icon of Rot",
-        "ru": "Знак гниения",
-        "es": "Icono de podredumbre",
-        "br": "Ícone da Putrefação",
-        "kr": "",
-        "fr": "Icône de pourriture",
-        "de": "Ikone des Verrottens"
-    },
-    "140799": {
-        "cn": "",
-        "en": "Might of Krosus",
-        "ru": "Мощь Кроса",
-        "es": "Poderío de Krosus",
-        "br": "Poder de Krosus",
-        "kr": "",
-        "fr": "Puissance de Krosus",
-        "de": "Macht von Krosus"
-    },
-    "140800": {
-        "cn": "",
-        "en": "Pharamere's Forbidden Grimoire",
-        "ru": "Запретный гримуар Фарамеры",
-        "es": "Grimorio prohibido de Pharamere",
-        "br": "Grimório Proibido de Faraméria",
-        "kr": "",
-        "fr": "Grimoire interdit de Pharamere",
-        "de": "Pharameres verbotenes Grimoire"
-    },
-    "140801": {
-        "cn": "",
-        "en": "Fury of the Burning Sky",
-        "ru": "Ярость пылающего неба",
-        "es": "Furia del cielo en llamas",
-        "br": "Fúria do Céu Ardente",
-        "kr": "",
-        "fr": "Fureur du ciel brûlant",
-        "de": "Zorn des brennenden Himmels"
-    },
-    "140802": {
-        "cn": "",
-        "en": "Nightblooming Frond",
-        "ru": "Побег ночноцвета",
-        "es": "Fronda de la noche floreciente",
-        "br": "Fronde do Florescer Noturno",
-        "kr": "",
-        "fr": "Fronde d'éclosion nocturne",
-        "de": "Nachtblühender Wedel"
-    },
-    "140803": {
-        "cn": "",
-        "en": "Etraeus' Celestial Map",
-        "ru": "Звездная карта Этрея",
-        "es": "Mapa celestial de Etraeus",
-        "br": "Mapa Celestial de Etraeus",
-        "kr": "",
-        "fr": "Carte céleste d'Etraeus",
-        "de": "Etraeus' Himmelskarte"
-    },
-    "140804": {
-        "cn": "",
-        "en": "Star Gate",
-        "ru": "Звездные врата",
-        "es": "Puerta estelar",
-        "br": "Portal Estelar",
-        "kr": "",
-        "fr": "Porte astrale",
-        "de": "Sternentor"
-    },
-    "140805": {
-        "cn": "",
-        "en": "Ephemeral Paradox",
-        "ru": "Эфемерный парадокс",
-        "es": "Paradoja efímera",
-        "br": "Paradoxo Efêmero",
-        "kr": "",
-        "fr": "Paradoxe éphémère",
-        "de": "Flüchtiges Paradoxon"
-    },
-    "140806": {
-        "cn": "",
-        "en": "Convergence of Fates",
-        "ru": "Соприкосновение судеб",
-        "es": "Convergencia de destinos",
-        "br": "Convergência de Destinos",
-        "kr": "",
-        "fr": "Convergence des destins",
-        "de": "Konvergenz der Schicksale"
-    },
-    "140807": {
-        "cn": "",
-        "en": "Infernal Contract",
-        "ru": "Инфернальный договор",
-        "es": "Contrato infernal",
-        "br": "Contrato Infernal",
-        "kr": "",
-        "fr": "Contrat infernal",
-        "de": "Höllischer Vertrag"
-    },
-    "140808": {
-        "cn": "",
-        "en": "Draught of Souls",
-        "ru": "Настой душ",
-        "es": "Jarabe de almas",
-        "br": "Tragada das Almas",
-        "kr": "",
-        "fr": "Breuvage des âmes",
-        "de": "Destillat der Seelen"
-    },
-    "140809": {
-        "cn": "",
-        "en": "Whispers in the Dark",
-        "ru": "Шепот во тьме",
-        "es": "Susurros en la oscuridad",
-        "br": "Sussurros no Escuro",
-        "kr": "",
-        "fr": "Murmures dans les ténèbres",
-        "de": "Flüstern im Dunkel"
-    },
-    "141482": {
-        "cn": "",
-        "en": "Unstable Arcanocrystal",
-        "ru": "Нестабильный чародейский кристалл",
-        "es": "Arcanocristal inestable",
-        "br": "Cristal Arcano Instável",
-        "kr": "",
-        "fr": "Arcanocristal instable",
-        "de": "Instabiler Arkanokristall"
-    },
-    "141535": {
-        "cn": "",
-        "en": "Ettin Fingernail",
-        "ru": "Ноготь эттина",
-        "es": "Uña de ettin",
-        "br": "Unha de Gorjala",
-        "kr": "",
-        "fr": "Ongle d'ettin",
-        "de": "Ettinfingernagel"
-    },
-    "141536": {
-        "cn": "",
-        "en": "Padawsen's Unlucky Charm",
-        "ru": "Несчастливый амулет Падосена",
-        "es": "Talismán desafortunado de Padawsen",
-        "br": "Patuá da Má Sorte de Padawsen",
-        "kr": "",
-        "fr": "Porte-malheur de Padawsen",
-        "de": "Padawsens Unglücksbringer"
-    },
-    "141537": {
-        "cn": "",
-        "en": "Thrice-Accursed Compass",
-        "ru": "Треклятый компас",
-        "es": "Brújula tres veces maldita",
-        "br": "Bússola Três Vezes Amaldiçoada",
-        "kr": "",
-        "fr": "Boussole trois fois maudite",
-        "de": "Dreimal verfluchter Kompass"
-    },
-    "141584": {
-        "cn": "",
-        "en": "Eyasu's Mulligan",
-        "ru": "Мешанина Эйасу",
-        "es": "Segunda oportunidad de Eyasu",
-        "br": "Segunda Chance de Eyasu",
-        "kr": "",
-        "fr": "Deuxième chance d'Eyasu",
-        "de": "Eyasus wilde Mischung"
-    },
-    "141585": {
-        "cn": "",
-        "en": "Six-Feather Fan",
-        "ru": "Шестиперый веер",
-        "es": "Abanico de seis plumas",
-        "br": "Leque de Seis Penas",
-        "kr": "",
-        "fr": "Éventail à six plumes",
-        "de": "Sechsfedriger Fächer"
-    },
-    "141586": {
-        "cn": "",
-        "en": "Marfisi's Giant Censer",
-        "ru": "Огромное кадило Марфиси",
-        "es": "Incensario gigante de Marfisi",
-        "br": "Incensário Gigante de Marfisi",
-        "kr": "",
-        "fr": "Encensoir géant de Marfisi",
-        "de": "Marfisis riesiges Räuchergefäß"
-    },
-    "142157": {
-        "cn": "",
-        "en": "Aran's Relaxing Ruby",
-        "ru": "Успокаивающий рубин Арана",
-        "es": "Rubí relajante de Aran",
-        "br": "Rubi Relaxante de Aran",
-        "kr": "",
-        "fr": "Rubis apaisant d'Aran",
-        "de": "Arans Entspannungsrubin"
-    },
-    "142158": {
-        "cn": "",
-        "en": "Faith's Crucible",
-        "ru": "Горнило веры",
-        "es": "Crisol de fe",
-        "br": "Crisol da Fé",
-        "kr": "",
-        "fr": "Creuset de la foi",
-        "de": "Prüfung des Glaubens"
-    },
-    "142159": {
-        "cn": "",
-        "en": "Bloodstained Handkerchief",
-        "ru": "Окровавленный носовой платок",
-        "es": "Pañuelo manchado de sangre",
-        "br": "Lenço Manchado de Sangue",
-        "kr": "",
-        "fr": "Mouchoir maculé de sang",
-        "de": "Blutbeflecktes Taschentuch"
-    },
-    "142160": {
-        "cn": "",
-        "en": "Mrrgria's Favor",
-        "ru": "Благосклонность Мрргрии",
-        "es": "Favor de Mrrgria",
-        "br": "Favor de Mrrgria",
-        "kr": "",
-        "fr": "Faveur de Mrrgria",
-        "de": "Mrrgrias Gunst"
-    },
-    "142161": {
-        "cn": "",
-        "en": "Inescapable Dread",
-        "ru": "Неотвязный страх",
-        "es": "Pavor inexorable",
-        "br": "Pavor Inescapável",
-        "kr": "",
-        "fr": "Irrésistible terreur",
-        "de": "Unentrinnbarer Schrecken"
-    },
-    "142162": {
-        "cn": "",
-        "en": "Fluctuating Energy",
-        "ru": "Колеблющаяся энергия",
-        "es": "Energía oscilante",
-        "br": "Energia Flutuante",
-        "kr": "",
-        "fr": "Énergie fluctuante",
-        "de": "Schwingende Energie"
-    },
-    "142164": {
-        "cn": "",
-        "en": "Toe Knee's Promise",
-        "ru": "Обещание Тонни",
-        "es": "Promesa de Tony",
-        "br": "Promessa do Tonhão",
-        "kr": "",
-        "fr": "Promesse de Tony Truand",
-        "de": "Jettonys Versprechen"
-    },
-    "142165": {
-        "cn": "",
-        "en": "Deteriorated Construct Core",
-        "ru": "Разряженное ядро голема",
-        "es": "Núcleo de ensamblaje deteriorado",
-        "br": "Núcleo Deteriorado de Constructo",
-        "kr": "",
-        "fr": "Noyau d'assemblage ébréché",
-        "de": "Zersetzter Konstruktkern"
-    },
-    "142166": {
-        "cn": "",
-        "en": "Ethereal Urn",
-        "ru": "Астральная урна",
-        "es": "Urna etérea",
-        "br": "Urna Etérea",
-        "kr": "",
-        "fr": "Urne éthérée",
-        "de": "Ätherische Urne"
-    },
-    "142167": {
-        "cn": "",
-        "en": "Eye of Command",
-        "ru": "Око властности",
-        "es": "Ojo de orden",
-        "br": "Olho do Comando",
-        "kr": "",
-        "fr": "Oeil de commandement",
-        "de": "Auge des Befehls"
-    },
-    "142168": {
-        "cn": "",
-        "en": "Majordomo's Dinner Bell",
-        "ru": "Обеденный колокольчик мажордома",
-        "es": "Campanilla para la cena de mayordomo",
-        "br": "Sineta da Janta do Senescal",
-        "kr": "",
-        "fr": "Cloche de dîner du chambellan",
-        "de": "Essensglöckchen des Majordomus"
-    },
-    "142169": {
-        "cn": "",
-        "en": "Raven Eidolon",
-        "ru": "Фигурка ворона",
-        "es": "Cuervo Eidolon",
-        "br": "Espectro Corvídeo",
-        "kr": "",
-        "fr": "Eidolon de corbeau",
-        "de": "Rabenphantom"
-    },
-    "142368": {
-        "cn": "",
-        "en": "Cracked Falcosaur Beak",
-        "ru": "Треснувший клюв грифозавра",
-        "es": "Pico de falcosaurio rajado",
-        "br": "Bico de Falcossauro Rachado",
-        "kr": "",
-        "fr": "Bec de falcosaure fendu",
-        "de": "Zersplitterter Falkosaurierschnabel"
-    },
-    "142506": {
-        "cn": "",
-        "en": "Eye of Guarm",
-        "ru": "Глаз Гарма",
-        "es": "Ojo de Guarm",
-        "br": "Olho de Guarm",
-        "kr": "",
-        "fr": "Oeil de Guarm",
-        "de": "Guarms Auge"
-    },
-    "142507": {
-        "cn": "",
-        "en": "Brinewater Slime in a Bottle",
-        "ru": "Соленая слизь в бутылке",
-        "es": "Babosa de agua salobre en botella",
-        "br": "Visgo de Água Suja na Garrafa",
-        "kr": "",
-        "fr": "Limon d'eau salée en bouteille",
-        "de": "Flasche mit Salzlakenschleim"
-    },
-    "142508": {
-        "cn": "",
-        "en": "Chains of the Valorous",
-        "ru": "Цепи доблести",
-        "es": "Cadenas del valeroso",
-        "br": "Correntes dos Valorosos",
-        "kr": "",
-        "fr": "Entraves des Valeureux",
-        "de": "Ketten der Tapferen"
-    },
-    "142660": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Conquest",
-        "ru": "Жетон завоевания бесстрашного гладиатора",
-        "es": "Distintivo de conquista de Gladiador intrépido",
-        "br": "Distintivo da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de conquête du gladiateur intrépide",
-        "de": "Eroberungsabzeichen des furchtlosen Gladiators"
-    },
-    "142661": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Conquest",
-        "ru": "Акколада завоевания бесстрашного гладиатора",
-        "es": "Galardón de conquista de Gladiador intrépido",
-        "br": "Galardão da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de conquête du gladiateur intrépide",
-        "de": "Eroberungsauszeichnung des furchtlosen Gladiators"
-    },
-    "142662": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Conquest",
-        "ru": "Знак завоевания бесстрашного гладиатора",
-        "es": "Insignia de conquista de Gladiador intrépido",
-        "br": "Insígnia da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de conquête du gladiateur intrépide",
-        "de": "Eroberungsinsigne des furchtlosen Gladiators"
-    },
-    "142663": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Cruelty",
-        "ru": "Эмблема жестокости бесстрашного гладиатора",
-        "es": "Emblema de crueldad de Gladiador intrépido",
-        "br": "Emblema da Crueldade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de cruauté du gladiateur intrépide",
-        "de": "Grausamkeitsemblem des furchtlosen Gladiators"
-    },
-    "142664": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Tenacity",
-        "ru": "Эмблема упорства бесстрашного гладиатора",
-        "es": "Emblema de tenacidad de Gladiador intrépido",
-        "br": "Emblema da Tenacidade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de ténacité du gladiateur intrépide",
-        "de": "Hartnäckigkeitsemblem des furchtlosen Gladiators"
-    },
-    "142665": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Meditation",
-        "ru": "Эмблема медитации бесстрашного гладиатора",
-        "es": "Emblema de meditación de Gladiador intrépido",
-        "br": "Emblema da Meditação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de méditation du gladiateur intrépide",
-        "de": "Meditationsemblem des furchtlosen Gladiators"
-    },
-    "142666": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Dominance",
-        "ru": "Жетон господства бесстрашного гладиатора",
-        "es": "Distintivo de dominancia de Gladiador intrépido",
-        "br": "Distintivo da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsabzeichen des furchtlosen Gladiators"
-    },
-    "142667": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Dominance",
-        "ru": "Акколада господства бесстрашного гладиатора",
-        "es": "Galardón de dominancia de Gladiador intrépido",
-        "br": "Galardão da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsauszeichnung des furchtlosen Gladiators"
-    },
-    "142668": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Dominance",
-        "ru": "Знак господства бесстрашного гладиатора",
-        "es": "Insignia de dominancia de Gladiador intrépido",
-        "br": "Insígnia da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsinsigne des furchtlosen Gladiators"
-    },
-    "142669": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Victory",
-        "ru": "Жетон победы бесстрашного гладиатора",
-        "es": "Distintivo de victoria de Gladiador intrépido",
-        "br": "Distintivo da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de victoire du gladiateur intrépide",
-        "de": "Siegesabzeichen des furchtlosen Gladiators"
-    },
-    "142670": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Victory",
-        "ru": "Акколада победы бесстрашного гладиатора",
-        "es": "Galardón de victoria de Gladiador intrépido",
-        "br": "Galardão da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de victoire du gladiateur intrépide",
-        "de": "Siegesauszeichnung des furchtlosen Gladiators"
-    },
-    "142671": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Victory",
-        "ru": "Знак победы бесстрашного гладиатора",
-        "es": "Insignia de victoria de Gladiador intrépido",
-        "br": "Insígnia da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de victoire du gladiateur intrépide",
-        "de": "Siegesinsigne des furchtlosen Gladiators"
-    },
-    "142672": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Adaptation",
-        "ru": "Жетон адаптации бесстрашного гладиатора",
-        "es": "Distintivo de adaptación de Gladiador intrépido",
-        "br": "Distintivo da Adaptação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson d'adaptation du gladiateur intrépide",
-        "de": "Anpassungsabzeichen des furchtlosen Gladiators"
-    },
-    "142773": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Conquest",
-        "ru": "Жетон завоевания бесстрашного гладиатора",
-        "es": "Distintivo de conquista de Gladiador intrépido",
-        "br": "Distintivo da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de conquête du gladiateur intrépide",
-        "de": "Eroberungsabzeichen des furchtlosen Gladiators"
-    },
-    "142774": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Conquest",
-        "ru": "Акколада завоевания бесстрашного гладиатора",
-        "es": "Galardón de conquista de Gladiador intrépido",
-        "br": "Galardão da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de conquête du gladiateur intrépide",
-        "de": "Eroberungsauszeichnung des furchtlosen Gladiators"
-    },
-    "142775": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Conquest",
-        "ru": "Знак завоевания бесстрашного гладиатора",
-        "es": "Insignia de conquista de Gladiador intrépido",
-        "br": "Insígnia da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de conquête du gladiateur intrépide",
-        "de": "Eroberungsinsigne des furchtlosen Gladiators"
-    },
-    "142776": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Cruelty",
-        "ru": "Эмблема жестокости бесстрашного гладиатора",
-        "es": "Emblema de crueldad de Gladiador intrépido",
-        "br": "Emblema da Crueldade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de cruauté du gladiateur intrépide",
-        "de": "Grausamkeitsemblem des furchtlosen Gladiators"
-    },
-    "142777": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Tenacity",
-        "ru": "Эмблема упорства бесстрашного гладиатора",
-        "es": "Emblema de tenacidad de Gladiador intrépido",
-        "br": "Emblema da Tenacidade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de ténacité du gladiateur intrépide",
-        "de": "Hartnäckigkeitsemblem des furchtlosen Gladiators"
-    },
-    "142778": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Meditation",
-        "ru": "Эмблема медитации бесстрашного гладиатора",
-        "es": "Emblema de meditación de Gladiador intrépido",
-        "br": "Emblema da Meditação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de méditation du gladiateur intrépide",
-        "de": "Meditationsemblem des furchtlosen Gladiators"
-    },
-    "142779": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Dominance",
-        "ru": "Жетон господства бесстрашного гладиатора",
-        "es": "Distintivo de dominancia de Gladiador intrépido",
-        "br": "Distintivo da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsabzeichen des furchtlosen Gladiators"
-    },
-    "142780": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Dominance",
-        "ru": "Акколада господства бесстрашного гладиатора",
-        "es": "Galardón de dominancia de Gladiador intrépido",
-        "br": "Galardão da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsauszeichnung des furchtlosen Gladiators"
-    },
-    "142781": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Dominance",
-        "ru": "Знак господства бесстрашного гладиатора",
-        "es": "Insignia de dominancia de Gladiador intrépido",
-        "br": "Insígnia da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsinsigne des furchtlosen Gladiators"
-    },
-    "142782": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Victory",
-        "ru": "Жетон победы бесстрашного гладиатора",
-        "es": "Distintivo de victoria de Gladiador intrépido",
-        "br": "Distintivo da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de victoire du gladiateur intrépide",
-        "de": "Siegesabzeichen des furchtlosen Gladiators"
-    },
-    "142783": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Victory",
-        "ru": "Акколада победы бесстрашного гладиатора",
-        "es": "Galardón de victoria de Gladiador intrépido",
-        "br": "Galardão da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de victoire du gladiateur intrépide",
-        "de": "Siegesauszeichnung des furchtlosen Gladiators"
-    },
-    "142784": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Victory",
-        "ru": "Знак победы бесстрашного гладиатора",
-        "es": "Insignia de victoria de Gladiador intrépido",
-        "br": "Insígnia da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de victoire du gladiateur intrépide",
-        "de": "Siegesinsigne des furchtlosen Gladiators"
-    },
-    "142785": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Adaptation",
-        "ru": "Жетон адаптации бесстрашного гладиатора",
-        "es": "Distintivo de adaptación de Gladiador intrépido",
-        "br": "Distintivo da Adaptação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson d'adaptation du gladiateur intrépide",
-        "de": "Anpassungsabzeichen des furchtlosen Gladiators"
-    },
-    "142886": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Conquest",
-        "ru": "Жетон завоевания бесстрашного бойца",
-        "es": "Distintivo de conquista de Combatiente impávido",
-        "br": "Distintivo da Conquista do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson de conquête du combattant intrépide",
-        "de": "Eroberungsabzeichen des furchtlosen Kämpfers"
-    },
-    "142887": {
-        "cn": "",
-        "en": "Fearless Combatant's Accolade of Conquest",
-        "ru": "Акколада завоевания бесстрашного бойца",
-        "es": "Galardón de conquista de Combatiente impávido",
-        "br": "Galardão da Conquista do Combatente Destemido",
-        "kr": "",
-        "fr": "Décoration de conquête du combattant intrépide",
-        "de": "Eroberungsauszeichnung des furchtlosen Kämpfers"
-    },
-    "142888": {
-        "cn": "",
-        "en": "Fearless Combatant's Insignia of Conquest",
-        "ru": "Знак завоевания бесстрашного бойца",
-        "es": "Insignia de conquista de Combatiente impávido",
-        "br": "Insígnia da Conquista do Combatente Destemido",
-        "kr": "",
-        "fr": "Insigne de conquête du combattant intrépide",
-        "de": "Eroberungsinsigne des furchtlosen Kämpfers"
-    },
-    "142889": {
-        "cn": "",
-        "en": "Fearless Combatant's Emblem of Cruelty",
-        "ru": "Эмблема жестокости бесстрашного бойца",
-        "es": "Emblema de crueldad de Combatiente impávido",
-        "br": "Emblema da Crueldade do Combatente Destemido",
-        "kr": "",
-        "fr": "Emblème de cruauté du combattant intrépide",
-        "de": "Grausamkeitsemblem des furchtlosen Kämpfers"
-    },
-    "142890": {
-        "cn": "",
-        "en": "Fearless Combatant's Emblem of Tenacity",
-        "ru": "Эмблема упорства бесстрашного бойца",
-        "es": "Emblema de tenacidad de Combatiente impávido",
-        "br": "Emblema da Tenacidade do Combatente Destemido",
-        "kr": "",
-        "fr": "Emblème de ténacité du combattant intrépide",
-        "de": "Hartnäckigkeitsemblem des furchtlosen Kämpfers"
-    },
-    "142891": {
-        "cn": "",
-        "en": "Fearless Combatant's Emblem of Meditation",
-        "ru": "Эмблема медитации бесстрашного бойца",
-        "es": "Emblema de meditación de Combatiente impávido",
-        "br": "Emblema da Meditação do Combatente Destemido",
-        "kr": "",
-        "fr": "Emblème de méditation du combattant intrépide",
-        "de": "Meditationsemblem des furchtlosen Kämpfers"
-    },
-    "142892": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Dominance",
-        "ru": "Жетон господства бесстрашного бойца",
-        "es": "Distintivo de dominancia de Combatiente impávido",
-        "br": "Distintivo da Dominância do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson de domination du combattant intrépide",
-        "de": "Vorherrschaftsabzeichen des furchtlosen Kämpfers"
-    },
-    "142893": {
-        "cn": "",
-        "en": "Fearless Combatant's Accolade of Dominance",
-        "ru": "Акколада господства бесстрашного бойца",
-        "es": "Galardón de dominancia de Combatiente impávido",
-        "br": "Galardão da Dominância do Combatente Destemido",
-        "kr": "",
-        "fr": "Décoration de domination du combattant intrépide",
-        "de": "Vorherrschaftsauszeichnung des furchtlosen Kämpfers"
-    },
-    "142894": {
-        "cn": "",
-        "en": "Fearless Combatant's Insignia of Dominance",
-        "ru": "Знак господства бесстрашного бойца",
-        "es": "Insignia de dominancia de Combatiente impávido",
-        "br": "Insígnia da Dominância do Combatente Destemido",
-        "kr": "",
-        "fr": "Insigne de domination du combattant intrépide",
-        "de": "Vorherrschaftsinsigne des furchtlosen Kämpfers"
-    },
-    "142895": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Victory",
-        "ru": "Жетон победы бесстрашного бойца",
-        "es": "Distintivo de victoria de Combatiente impávido",
-        "br": "Distintivo da Vitória do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson de victoire du combattant intrépide",
-        "de": "Siegesabzeichen des furchtlosen Kämpfers"
-    },
-    "142896": {
-        "cn": "",
-        "en": "Fearless Combatant's Accolade of Victory",
-        "ru": "Акколада победы бесстрашного бойца",
-        "es": "Galardón de victoria de Combatiente impávido",
-        "br": "Galardão da Vitória do Combatente Destemido",
-        "kr": "",
-        "fr": "Décoration de victoire du combattant intrépide",
-        "de": "Siegesauszeichnung des furchtlosen Kämpfers"
-    },
-    "142897": {
-        "cn": "",
-        "en": "Fearless Combatant's Insignia of Victory",
-        "ru": "Знак победы бесстрашного бойца",
-        "es": "Insignia de victoria de Combatiente impávido",
-        "br": "Insígnia da Vitória do Combatente Destemido",
-        "kr": "",
-        "fr": "Insigne de victoire du combattant intrépide",
-        "de": "Siegesinsigne des furchtlosen Kämpfers"
-    },
-    "142898": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Adaptation",
-        "ru": "Жетон адаптации бесстрашного бойца",
-        "es": "Distintivo de adaptación de Combatiente impávido",
-        "br": "Distintivo da Adaptação do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson d'adaptation du combattant intrépide",
-        "de": "Anpassungsabzeichen des furchtlosen Kämpfers"
-    },
-    "142999": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Conquest",
-        "ru": "Жетон завоевания бесстрашного бойца",
-        "es": "Distintivo de conquista de Combatiente impávido",
-        "br": "Distintivo da Conquista do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson de conquête du combattant intrépide",
-        "de": "Eroberungsabzeichen des furchtlosen Kämpfers"
-    },
-    "143000": {
-        "cn": "",
-        "en": "Fearless Combatant's Accolade of Conquest",
-        "ru": "Акколада завоевания бесстрашного бойца",
-        "es": "Galardón de conquista de Combatiente impávido",
-        "br": "Galardão da Conquista do Combatente Destemido",
-        "kr": "",
-        "fr": "Décoration de conquête du combattant intrépide",
-        "de": "Eroberungsauszeichnung des furchtlosen Kämpfers"
-    },
-    "143001": {
-        "cn": "",
-        "en": "Fearless Combatant's Insignia of Conquest",
-        "ru": "Знак завоевания бесстрашного бойца",
-        "es": "Insignia de conquista de Combatiente impávido",
-        "br": "Insígnia da Conquista do Combatente Destemido",
-        "kr": "",
-        "fr": "Insigne de conquête du combattant intrépide",
-        "de": "Eroberungsinsigne des furchtlosen Kämpfers"
-    },
-    "143002": {
-        "cn": "",
-        "en": "Fearless Combatant's Emblem of Cruelty",
-        "ru": "Эмблема жестокости бесстрашного бойца",
-        "es": "Emblema de crueldad de Combatiente impávido",
-        "br": "Emblema da Crueldade do Combatente Destemido",
-        "kr": "",
-        "fr": "Emblème de cruauté du combattant intrépide",
-        "de": "Grausamkeitsemblem des furchtlosen Kämpfers"
-    },
-    "143003": {
-        "cn": "",
-        "en": "Fearless Combatant's Emblem of Tenacity",
-        "ru": "Эмблема упорства бесстрашного бойца",
-        "es": "Emblema de tenacidad de Combatiente impávido",
-        "br": "Emblema da Tenacidade do Combatente Destemido",
-        "kr": "",
-        "fr": "Emblème de ténacité du combattant intrépide",
-        "de": "Hartnäckigkeitsemblem des furchtlosen Kämpfers"
-    },
-    "143004": {
-        "cn": "",
-        "en": "Fearless Combatant's Emblem of Meditation",
-        "ru": "Эмблема медитации бесстрашного бойца",
-        "es": "Emblema de meditación de Combatiente impávido",
-        "br": "Emblema da Meditação do Combatente Destemido",
-        "kr": "",
-        "fr": "Emblème de méditation du combattant intrépide",
-        "de": "Meditationsemblem des furchtlosen Kämpfers"
-    },
-    "143005": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Dominance",
-        "ru": "Жетон господства бесстрашного бойца",
-        "es": "Distintivo de dominancia de Combatiente impávido",
-        "br": "Distintivo da Dominância do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson de domination du combattant intrépide",
-        "de": "Vorherrschaftsabzeichen des furchtlosen Kämpfers"
-    },
-    "143006": {
-        "cn": "",
-        "en": "Fearless Combatant's Accolade of Dominance",
-        "ru": "Акколада господства бесстрашного бойца",
-        "es": "Galardón de dominancia de Combatiente impávido",
-        "br": "Galardão da Dominância do Combatente Destemido",
-        "kr": "",
-        "fr": "Décoration de domination du combattant intrépide",
-        "de": "Vorherrschaftsauszeichnung des furchtlosen Kämpfers"
-    },
-    "143007": {
-        "cn": "",
-        "en": "Fearless Combatant's Insignia of Dominance",
-        "ru": "Знак господства бесстрашного бойца",
-        "es": "Insignia de dominancia de Combatiente impávido",
-        "br": "Insígnia da Dominância do Combatente Destemido",
-        "kr": "",
-        "fr": "Insigne de domination du combattant intrépide",
-        "de": "Vorherrschaftsinsigne des furchtlosen Kämpfers"
-    },
-    "143008": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Victory",
-        "ru": "Жетон победы бесстрашного бойца",
-        "es": "Distintivo de victoria de Combatiente impávido",
-        "br": "Distintivo da Vitória do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson de victoire du combattant intrépide",
-        "de": "Siegesabzeichen des furchtlosen Kämpfers"
-    },
-    "143009": {
-        "cn": "",
-        "en": "Fearless Combatant's Accolade of Victory",
-        "ru": "Акколада победы бесстрашного бойца",
-        "es": "Galardón de victoria de Combatiente impávido",
-        "br": "Galardão da Vitória do Combatente Destemido",
-        "kr": "",
-        "fr": "Décoration de victoire du combattant intrépide",
-        "de": "Siegesauszeichnung des furchtlosen Kämpfers"
-    },
-    "143010": {
-        "cn": "",
-        "en": "Fearless Combatant's Insignia of Victory",
-        "ru": "Знак победы бесстрашного бойца",
-        "es": "Insignia de victoria de Combatiente impávido",
-        "br": "Insígnia da Vitória do Combatente Destemido",
-        "kr": "",
-        "fr": "Insigne de victoire du combattant intrépide",
-        "de": "Siegesinsigne des furchtlosen Kämpfers"
-    },
-    "143011": {
-        "cn": "",
-        "en": "Fearless Combatant's Badge of Adaptation",
-        "ru": "Жетон адаптации бесстрашного бойца",
-        "es": "Distintivo de adaptación de Combatiente impávido",
-        "br": "Distintivo da Adaptação do Combatente Destemido",
-        "kr": "",
-        "fr": "Ecusson d'adaptation du combattant intrépide",
-        "de": "Anpassungsabzeichen des furchtlosen Kämpfers"
-    },
-    "143112": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Conquest",
-        "ru": "Жетон завоевания бесстрашного гладиатора",
-        "es": "Distintivo de conquista de Gladiador intrépido",
-        "br": "Distintivo da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de conquête du gladiateur intrépide",
-        "de": "Eroberungsabzeichen des furchtlosen Gladiators"
-    },
-    "143113": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Conquest",
-        "ru": "Акколада завоевания бесстрашного гладиатора",
-        "es": "Galardón de conquista de Gladiador intrépido",
-        "br": "Galardão da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de conquête du gladiateur intrépide",
-        "de": "Eroberungsauszeichnung des furchtlosen Gladiators"
-    },
-    "143114": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Conquest",
-        "ru": "Знак завоевания бесстрашного гладиатора",
-        "es": "Insignia de conquista de Gladiador intrépido",
-        "br": "Insígnia da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de conquête du gladiateur intrépide",
-        "de": "Eroberungsinsigne des furchtlosen Gladiators"
-    },
-    "143115": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Cruelty",
-        "ru": "Эмблема жестокости бесстрашного гладиатора",
-        "es": "Emblema de crueldad de Gladiador intrépido",
-        "br": "Emblema da Crueldade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de cruauté du gladiateur intrépide",
-        "de": "Grausamkeitsemblem des furchtlosen Gladiators"
-    },
-    "143116": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Tenacity",
-        "ru": "Эмблема упорства бесстрашного гладиатора",
-        "es": "Emblema de tenacidad de Gladiador intrépido",
-        "br": "Emblema da Tenacidade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de ténacité du gladiateur intrépide",
-        "de": "Hartnäckigkeitsemblem des furchtlosen Gladiators"
-    },
-    "143117": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Meditation",
-        "ru": "Эмблема медитации бесстрашного гладиатора",
-        "es": "Emblema de meditación de Gladiador intrépido",
-        "br": "Emblema da Meditação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de méditation du gladiateur intrépide",
-        "de": "Meditationsemblem des furchtlosen Gladiators"
-    },
-    "143118": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Dominance",
-        "ru": "Жетон господства бесстрашного гладиатора",
-        "es": "Distintivo de dominancia de Gladiador intrépido",
-        "br": "Distintivo da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsabzeichen des furchtlosen Gladiators"
-    },
-    "143119": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Dominance",
-        "ru": "Акколада господства бесстрашного гладиатора",
-        "es": "Galardón de dominancia de Gladiador intrépido",
-        "br": "Galardão da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsauszeichnung des furchtlosen Gladiators"
-    },
-    "143120": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Dominance",
-        "ru": "Знак господства бесстрашного гладиатора",
-        "es": "Insignia de dominancia de Gladiador intrépido",
-        "br": "Insígnia da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsinsigne des furchtlosen Gladiators"
-    },
-    "143121": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Victory",
-        "ru": "Жетон победы бесстрашного гладиатора",
-        "es": "Distintivo de victoria de Gladiador intrépido",
-        "br": "Distintivo da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de victoire du gladiateur intrépide",
-        "de": "Siegesabzeichen des furchtlosen Gladiators"
-    },
-    "143122": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Victory",
-        "ru": "Акколада победы бесстрашного гладиатора",
-        "es": "Galardón de victoria de Gladiador intrépido",
-        "br": "Galardão da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de victoire du gladiateur intrépide",
-        "de": "Siegesauszeichnung des furchtlosen Gladiators"
-    },
-    "143123": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Victory",
-        "ru": "Знак победы бесстрашного гладиатора",
-        "es": "Insignia de victoria de Gladiador intrépido",
-        "br": "Insígnia da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de victoire du gladiateur intrépide",
-        "de": "Siegesinsigne des furchtlosen Gladiators"
-    },
-    "143124": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Adaptation",
-        "ru": "Жетон адаптации бесстрашного гладиатора",
-        "es": "Distintivo de adaptación de Gladiador intrépido",
-        "br": "Distintivo da Adaptação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson d'adaptation du gladiateur intrépide",
-        "de": "Anpassungsabzeichen des furchtlosen Gladiators"
-    },
-    "143225": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Conquest",
-        "ru": "Жетон завоевания бесстрашного гладиатора",
-        "es": "Distintivo de conquista de Gladiador intrépido",
-        "br": "Distintivo da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de conquête du gladiateur intrépide",
-        "de": "Eroberungsabzeichen des furchtlosen Gladiators"
-    },
-    "143226": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Conquest",
-        "ru": "Акколада завоевания бесстрашного гладиатора",
-        "es": "Galardón de conquista de Gladiador intrépido",
-        "br": "Galardão da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de conquête du gladiateur intrépide",
-        "de": "Eroberungsauszeichnung des furchtlosen Gladiators"
-    },
-    "143227": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Conquest",
-        "ru": "Знак завоевания бесстрашного гладиатора",
-        "es": "Insignia de conquista de Gladiador intrépido",
-        "br": "Insígnia da Conquista do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de conquête du gladiateur intrépide",
-        "de": "Eroberungsinsigne des furchtlosen Gladiators"
-    },
-    "143228": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Cruelty",
-        "ru": "Эмблема жестокости бесстрашного гладиатора",
-        "es": "Emblema de crueldad de Gladiador intrépido",
-        "br": "Emblema da Crueldade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de cruauté du gladiateur intrépide",
-        "de": "Grausamkeitsemblem des furchtlosen Gladiators"
-    },
-    "143229": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Tenacity",
-        "ru": "Эмблема упорства бесстрашного гладиатора",
-        "es": "Emblema de tenacidad de Gladiador intrépido",
-        "br": "Emblema da Tenacidade do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de ténacité du gladiateur intrépide",
-        "de": "Hartnäckigkeitsemblem des furchtlosen Gladiators"
-    },
-    "143230": {
-        "cn": "",
-        "en": "Fearless Gladiator's Emblem of Meditation",
-        "ru": "Эмблема медитации бесстрашного гладиатора",
-        "es": "Emblema de meditación de Gladiador intrépido",
-        "br": "Emblema da Meditação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Emblème de méditation du gladiateur intrépide",
-        "de": "Meditationsemblem des furchtlosen Gladiators"
-    },
-    "143231": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Dominance",
-        "ru": "Жетон господства бесстрашного гладиатора",
-        "es": "Distintivo de dominancia de Gladiador intrépido",
-        "br": "Distintivo da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsabzeichen des furchtlosen Gladiators"
-    },
-    "143232": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Dominance",
-        "ru": "Акколада господства бесстрашного гладиатора",
-        "es": "Galardón de dominancia de Gladiador intrépido",
-        "br": "Galardão da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsauszeichnung des furchtlosen Gladiators"
-    },
-    "143233": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Dominance",
-        "ru": "Знак господства бесстрашного гладиатора",
-        "es": "Insignia de dominancia de Gladiador intrépido",
-        "br": "Insígnia da Dominância do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de domination du gladiateur intrépide",
-        "de": "Vorherrschaftsinsigne des furchtlosen Gladiators"
-    },
-    "143234": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Victory",
-        "ru": "Жетон победы бесстрашного гладиатора",
-        "es": "Distintivo de victoria de Gladiador intrépido",
-        "br": "Distintivo da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson de victoire du gladiateur intrépide",
-        "de": "Siegesabzeichen des furchtlosen Gladiators"
-    },
-    "143235": {
-        "cn": "",
-        "en": "Fearless Gladiator's Accolade of Victory",
-        "ru": "Акколада победы бесстрашного гладиатора",
-        "es": "Galardón de victoria de Gladiador intrépido",
-        "br": "Galardão da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Décoration de victoire du gladiateur intrépide",
-        "de": "Siegesauszeichnung des furchtlosen Gladiators"
-    },
-    "143236": {
-        "cn": "",
-        "en": "Fearless Gladiator's Insignia of Victory",
-        "ru": "Знак победы бесстрашного гладиатора",
-        "es": "Insignia de victoria de Gladiador intrépido",
-        "br": "Insígnia da Vitória do Gladiador Destemido",
-        "kr": "",
-        "fr": "Insigne de victoire du gladiateur intrépide",
-        "de": "Siegesinsigne des furchtlosen Gladiators"
-    },
-    "143237": {
-        "cn": "",
-        "en": "Fearless Gladiator's Badge of Adaptation",
-        "ru": "Жетон адаптации бесстрашного гладиатора",
-        "es": "Distintivo de adaptación de Gladiador intrépido",
-        "br": "Distintivo da Adaptação do Gladiador Destemido",
-        "kr": "",
-        "fr": "Ecusson d'adaptation du gladiateur intrépide",
-        "de": "Anpassungsabzeichen des furchtlosen Gladiators"
     },
     "143959": {
         "cn": "",
@@ -8418,46 +7918,6 @@ export const nameDB = {
         "kr": "",
         "fr": "Je'lyu, esprit du Serpent",
         "de": "Je'lyu, Geist der Schlange"
-    },
-    "150522": {
-        "cn": "",
-        "en": "The Skull of Gul'dan",
-        "ru": "Череп Гул'дана",
-        "es": "La calavera de Gul'dan",
-        "br": "O Crânio de Gul'dan",
-        "kr": "",
-        "fr": "Le crâne de Gul'dan",
-        "de": "Der Schädel des Gul'dan"
-    },
-    "150523": {
-        "cn": "",
-        "en": "Memento of Tyrande",
-        "ru": "Память о Тиранде",
-        "es": "Recuerdo de Tyrande",
-        "br": "Recordação de Tyrande",
-        "kr": "",
-        "fr": "Souvenir de Tyrande",
-        "de": "Tyrandes Andenken"
-    },
-    "150526": {
-        "cn": "",
-        "en": "Shadowmoon Insignia",
-        "ru": "Знак клана Призрачной Луны",
-        "es": "Insignia de Sombraluna",
-        "br": "Insígnia da Lua Negra",
-        "kr": "",
-        "fr": "Insigne d'Ombrelune",
-        "de": "Insigne des Schattenmondklans"
-    },
-    "150527": {
-        "cn": "",
-        "en": "Madness of the Betrayer",
-        "ru": "Безумие Предателя",
-        "es": "Locura de El Traidor",
-        "br": "Insânia do Traidor",
-        "kr": "",
-        "fr": "Folie du traître",
-        "de": "Wahnsinn des Verräters"
     },
     "155947": {
         "cn": "",
@@ -34859,6 +34319,26 @@ export const nameDB = {
         "fr": "Scorpion incrusté d’aiguilles",
         "de": "Nadelüberzogener Skorpion"
     },
+    "188490": {
+        "cn": "",
+        "en": "Grace of the Herald",
+        "ru": "Милость глашатая",
+        "es": "Gracia del Heraldo",
+        "br": "Graça do Arauto",
+        "kr": "",
+        "fr": "Grâce du héraut",
+        "de": "Gunst des Herolds"
+    },
+    "188514": {
+        "cn": "",
+        "en": "Witching Hourglass",
+        "ru": "Ведьмовские песочные часы",
+        "es": "Reloj de arena de brujería",
+        "br": "Ampulheta da Bruxaria",
+        "kr": "",
+        "fr": "Sablier ensorcelant",
+        "de": "Geisterstundenglas"
+    },
     "188524": {
         "cn": "",
         "en": "Cosmic Gladiator's Fastidious Resolve",
@@ -42551,13 +42031,13 @@ export const nameDB = {
     },
     "193477": {
         "cn": "",
-        "en": "Battle Scarred Scale",
+        "en": "Battle-Scarred Scale",
         "ru": "Чешуйка со следами ран",
-        "es": "Escama curtida en batalla",
-        "br": "Escama com Marcas de Batalha",
+        "es": "Escama dañada en batalla",
+        "br": "Escama com Cicatrizes de Batalha",
         "kr": "",
         "fr": "Écaille marquée par le combat",
-        "de": "Kampfvernarbte Schuppe"
+        "de": "Kampferprobte Schuppe"
     },
     "193481": {
         "cn": "",
@@ -47331,10 +46811,10 @@ export const nameDB = {
     },
     "197989": {
         "cn": "",
-        "en": "Water Ordained Signet",
+        "en": "Water-Ordained Signet",
         "ru": "Освященная водой печатка",
         "es": "Sello ordenado de agua",
-        "br": "Sinete Ordenado de Água",
+        "br": "Sinete Ordenado pela Água",
         "kr": "",
         "fr": "Chevalière consacrée par l’eau",
         "de": "Wassergeweihtes Siegel"
@@ -56800,7 +56280,14 @@ export const nameDB = {
         "de": "Sande der temporalen Perfektion"
     },
     "202089": {
-        "en": "Crimson Gladiator's Prestigious Cloak"
+        "cn": "",
+        "en": "Crimson Gladiator's Prestigious Cloak",
+        "ru": "Престижный плащ багрового гладиатора",
+        "es": "Capa prestigiosa de Gladiador carmesí",
+        "br": "Manto Prestigioso do Gladiador Carmesim",
+        "kr": "",
+        "fr": "Cape de prestige du gladiateur écarlate",
+        "de": "Prestigeträchtiger Umhang des blutroten Gladiators"
     },
     "202116": {
         "cn": "",
@@ -56971,6 +56458,1876 @@ export const nameDB = {
         "kr": "",
         "fr": "Châle des esprits roharts",
         "de": "Geisterschal der Tuskarr"
+    },
+    "202264": {
+        "cn": "",
+        "en": "Defender of the Winterpelt",
+        "ru": "Защитник фурболгов Зимней Шкуры",
+        "es": "Defensor de los Pelaje Invernal",
+        "br": "Defensor dos Couro da Neve",
+        "kr": "",
+        "fr": "Ange gardien des Crins-d’Hiver",
+        "de": "Verteidiger der Winterpelze"
+    },
+    "202268": {
+        "cn": "",
+        "en": "Winterpelt Totem",
+        "ru": "Тотем Зимней Шкуры",
+        "es": "Tótem Pelaje Invernal",
+        "br": "Totem dos Couro da Neve",
+        "kr": "",
+        "fr": "Totem crin-d’hiver",
+        "de": "Winterpelztotem"
+    },
+    "202282": {
+        "cn": "",
+        "en": "Winterpelt Mending Totem",
+        "ru": "Исцеляющий тотем Зимней Шкуры",
+        "es": "Tótem de alivio de los Pelaje Invernal",
+        "br": "Totem de Recomposição dos Couro da Neve",
+        "kr": "",
+        "fr": "Totem de guérison crin-d’hiver",
+        "de": "Winterpelzheilungstotem"
+    },
+    "202438": {
+        "cn": "",
+        "en": "Manteau of the Onyx Crucible",
+        "ru": "Мантия из черного горнила",
+        "es": "Gonela del crisol de ónice",
+        "br": "Mantel do Crisol de Ônix",
+        "kr": "",
+        "fr": "Manteau du creuset d’onyx",
+        "de": "Mantelung des Onyxtiegels"
+    },
+    "202439": {
+        "cn": "",
+        "en": "Warbands of the Onyx Crucible",
+        "ru": "Боевые наручи из черного горнила",
+        "es": "Brazales de guerra del crisol de ónice",
+        "br": "Braceleiras Bélicas do Crisol de Ônix",
+        "kr": "",
+        "fr": "Poignets du creuset d’onyx",
+        "de": "Kriegsbänder des Onyxtiegels"
+    },
+    "202440": {
+        "cn": "",
+        "en": "Insignia of the Onyx Crucible",
+        "ru": "Знак черного горнила",
+        "es": "Insignia del crisol de ónice",
+        "br": "Insígnia do Crisol de Ônix",
+        "kr": "",
+        "fr": "Insigne du creuset d’onyx",
+        "de": "Insigne des Onyxtiegels"
+    },
+    "202441": {
+        "cn": "",
+        "en": "Pauldrons of the Onyx Crucible",
+        "ru": "Наплечье из черного горнила",
+        "es": "Espaldares del crisol de ónice",
+        "br": "Brafoneiras do Crisol de Ônix",
+        "kr": "",
+        "fr": "Espauliers du creuset d’onyx",
+        "de": "Schulterstücke des Onyxtiegels"
+    },
+    "202442": {
+        "cn": "",
+        "en": "Legplates of the Onyx Crucible",
+        "ru": "Ножные латы из черного горнила",
+        "es": "Quijotes del crisol de ónice",
+        "br": "Coxotes do Crisol de Ônix",
+        "kr": "",
+        "fr": "Cuissards du creuset d’onyx",
+        "de": "Beinplatten des Onyxtiegels"
+    },
+    "202443": {
+        "cn": "",
+        "en": "Thraexhelm of the Onyx Crucible",
+        "ru": "Острозубый шлем из черного горнила",
+        "es": "Yelmo tracio del crisol de ónice",
+        "br": "Elmo de Trácio do Crisol de Ônix",
+        "kr": "",
+        "fr": "Heaume du creuset d’onyx",
+        "de": "Thraexhelm des Onyxtiegels"
+    },
+    "202444": {
+        "cn": "",
+        "en": "Handguards of the Onyx Crucible",
+        "ru": "Боевые рукавицы из черного горнила",
+        "es": "Manoplas del crisol de ónice",
+        "br": "Protetores de Mão do Crisol de Ônix",
+        "kr": "",
+        "fr": "Garde-mains du creuset d’onyx",
+        "de": "Handschützer des Onyxtiegels"
+    },
+    "202445": {
+        "cn": "",
+        "en": "Ironstriders of the Onyx Crucible",
+        "ru": "Железноступы из черного горнила",
+        "es": "Zancos de hierro del crisol de ónice",
+        "br": "Botas de Ferro do Crisol de Ônix",
+        "kr": "",
+        "fr": "Croquenots de fer du creuset d’onyx",
+        "de": "Eisenschreiter des Onyxtiegels"
+    },
+    "202446": {
+        "cn": "",
+        "en": "Battlechest of the Onyx Crucible",
+        "ru": "Боевой нагрудник из черного горнила",
+        "es": "Pechera de batalla del crisol de ónice",
+        "br": "Baú de Guerra do Crisol de Ônix",
+        "kr": "",
+        "fr": "Plastron de bataille du creuset d’onyx",
+        "de": "Kriegstruhe des Onyxtiegels"
+    },
+    "202447": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Pelerine",
+        "ru": "Пелерина сердечного огня",
+        "es": "Pelerina del centinela corafuego",
+        "br": "Pelerine da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Camail de la sentinelle cœur de feu",
+        "de": "Pelerine des Herzensfeuerwächters"
+    },
+    "202448": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Blessed Bindings",
+        "ru": "Благословенные наручники сердечного огня",
+        "es": "Ataduras benditas del centinela corafuego",
+        "br": "Vínculos Abençoados da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Manchettes bénies de la sentinelle cœur de feu",
+        "de": "Gesegnete Bindungen des Herzensfeuerwächters"
+    },
+    "202449": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Waistguard",
+        "ru": "Воинский пояс сердечного огня",
+        "es": "Guardarrenes del centinela corafuego",
+        "br": "Cinta da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Sangle de la sentinelle cœur de feu",
+        "de": "Taillenschutz des Herzensfeuerwächters"
+    },
+    "202450": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Steelwings",
+        "ru": "Стальные крылья сердечного огня",
+        "es": "Alas de acero del centinela corafuego",
+        "br": "Asadaços da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Ailes d’acier de la sentinelle cœur de feu",
+        "de": "Stahlschwingen des Herzensfeuerwächters"
+    },
+    "202451": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Faulds",
+        "ru": "Heartfire Sentinel's Faulds",
+        "es": "Heartfire Sentinel's Faulds",
+        "br": "Heartfire Sentinel's Faulds",
+        "kr": "",
+        "fr": "Heartfire Sentinel's Faulds",
+        "de": "Heartfire Sentinel's Faulds"
+    },
+    "202452": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Forgehelm",
+        "ru": "Шлем кузни сердечного огня",
+        "es": "Yelmo forjado del centinela corafuego",
+        "br": "Elmo Forjado da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Heaume de la sentinelle cœur de feu",
+        "de": "Schmiedehelm des Herzensfeuerwächters"
+    },
+    "202453": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Protectors",
+        "ru": "Защитные перчатки сердечного огня",
+        "es": "Protectores del centinela corafuego",
+        "br": "Protetores da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Protecteurs de la sentinelle cœur de feu",
+        "de": "Schützer des Herzensfeuerwächters"
+    },
+    "202454": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Greatboots",
+        "ru": "Кованые сапоги сердечного огня",
+        "es": "Grandes botas del centinela corafuego",
+        "br": "Grandes Botas da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Grandes bottes de la sentinelle cœur de feu",
+        "de": "Großstiefel des Herzensfeuerwächters"
+    },
+    "202455": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Brigandine",
+        "ru": "Heartfire Sentinel's Brigandine",
+        "es": "Heartfire Sentinel's Brigandine",
+        "br": "Heartfire Sentinel's Brigandine",
+        "kr": "",
+        "fr": "Heartfire Sentinel's Brigandine",
+        "de": "Heartfire Sentinel's Brigandine"
+    },
+    "202456": {
+        "cn": "",
+        "en": "Lingering Phantom's Drape",
+        "ru": "Пелерина блуждающего призрака",
+        "es": "Mantón del fantasma persistente",
+        "br": "Clâmide do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Drapé du fantôme rémanent",
+        "de": "Tuch des verweilenden Phantoms"
+    },
+    "202457": {
+        "cn": "",
+        "en": "Lingering Phantom's Vambraces",
+        "ru": "Латные наручи блуждающего призрака",
+        "es": "Avambrazos del fantasma persistente",
+        "br": "Avambraços do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Protège-bras du fantôme rémanent",
+        "de": "Unterarmschienen des verweilenden Phantoms"
+    },
+    "202458": {
+        "cn": "",
+        "en": "Lingering Phantom's Deathlink",
+        "ru": "Гибельная цепь блуждающего призрака",
+        "es": "Vínculo mortal del fantasma persistente",
+        "br": "Vínculo Mortal do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Lien mortel du fantôme rémanent",
+        "de": "Todeskette des verweilenden Phantoms"
+    },
+    "202459": {
+        "cn": "",
+        "en": "Lingering Phantom's Shoulderplates",
+        "ru": "Наплечные пластины блуждающего призрака",
+        "es": "Hombreras del fantasma persistente",
+        "br": "Placa d'Ombros do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Plaques d’épaule du fantôme rémanent",
+        "de": "Schulterplatten des verweilenden Phantoms"
+    },
+    "202460": {
+        "cn": "",
+        "en": "Lingering Phantom's Schynbalds",
+        "ru": "Наголенники блуждающего призрака",
+        "es": "Grebas guadaña del fantasma persistente",
+        "br": "Tibieira do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Cnémides du fantôme rémanent",
+        "de": "Schynbalds des verweilenden Phantoms"
+    },
+    "202461": {
+        "cn": "",
+        "en": "Lingering Phantom's Dreadhorns",
+        "ru": "Рога блуждающего призрака",
+        "es": "Cuernos temibles del fantasma persistente",
+        "br": "Pavornos do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Cornes d’effroi du fantôme rémanent",
+        "de": "Schreckenshörner des verweilenden Phantoms"
+    },
+    "202462": {
+        "cn": "",
+        "en": "Lingering Phantom's Gauntlets",
+        "ru": "Рукавицы блуждающего призрака",
+        "es": "Guanteletes del fantasma persistente",
+        "br": "Manoplas do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Gantelets du fantôme rémanent",
+        "de": "Stulpen des verweilenden Phantoms"
+    },
+    "202463": {
+        "cn": "",
+        "en": "Lingering Phantom's Stompers",
+        "ru": "Высокие ботинки блуждающего призрака",
+        "es": "Apisonadoras del fantasma persistente",
+        "br": "Pisoteadores do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Croquenots du fantôme rémanent",
+        "de": "Stampfer des verweilenden Phantoms"
+    },
+    "202464": {
+        "cn": "",
+        "en": "Lingering Phantom's Plackart",
+        "ru": "Плакарт блуждающего призрака",
+        "es": "Coraza del fantasma persistente",
+        "br": "Placcard do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Plastron du fantôme rémanent",
+        "de": "Brustplatte des verweilenden Phantoms"
+    },
+    "202465": {
+        "cn": "",
+        "en": "Pelisse of the Cinderwolf",
+        "ru": "Накидка золоволка",
+        "es": "Pelliza del loboceniza",
+        "br": "Peliça do Lobo Cinzento",
+        "kr": "",
+        "fr": "Pelisse du loup de braise",
+        "de": "Pelisse des Glutwolfs"
+    },
+    "202466": {
+        "cn": "",
+        "en": "Runebraces of the Cinderwolf",
+        "ru": "Рунные наручи золоволка",
+        "es": "Brazales con runas del loboceniza",
+        "br": "Braçadeiras Rúnicas do Lobo Cinzento",
+        "kr": "",
+        "fr": "Bracelets runiques du loup de braise",
+        "de": "Runenarmschienen des Glutwolfs"
+    },
+    "202467": {
+        "cn": "",
+        "en": "Faulds of the Cinderwolf",
+        "ru": "Латный пояс золоволка",
+        "es": "Escarcela del loboceniza",
+        "br": "Escarcelas do Lobo Cinzento",
+        "kr": "",
+        "fr": "Flancart du loup de braise",
+        "de": "Taillenschutz des Glutwolfs"
+    },
+    "202468": {
+        "cn": "",
+        "en": "Thunderpads of the Cinderwolf",
+        "ru": "Молниевые пластины золоволка",
+        "es": "Truenombreras del loboceniza",
+        "br": "Ombreiras Trovejantes do Lobo Cinzento",
+        "kr": "",
+        "fr": "Spallières de tonnerre du loup de braise",
+        "de": "Donnerschulterpolster des Glutwolfs"
+    },
+    "202469": {
+        "cn": "",
+        "en": "Braies of the Cinderwolf",
+        "ru": "Брэ золоволка",
+        "es": "Calzón largo del loboceniza",
+        "br": "Bragas do Lobo Cinzento",
+        "kr": "",
+        "fr": "Braies du loup de braise",
+        "de": "Brouche des Glutwolfs"
+    },
+    "202470": {
+        "cn": "",
+        "en": "Spangenhelm of the Cinderwolf",
+        "ru": "Каркасный шлем золоволка",
+        "es": "Yelmo cónico del loboceniza",
+        "br": "Elmo Segmentado do Lobo Cinzento",
+        "kr": "",
+        "fr": "Spangenhelm du loup de braise",
+        "de": "Spangenhelm des Glutwolfs"
+    },
+    "202471": {
+        "cn": "",
+        "en": "Knuckles of the Cinderwolf",
+        "ru": "Кастет золоволка",
+        "es": "Nudillos del loboceniza",
+        "br": "Soqueira do Lobo Cinzento",
+        "kr": "",
+        "fr": "Coup de poing du loup de braise",
+        "de": "Knöchel des Glutwolfs"
+    },
+    "202472": {
+        "cn": "",
+        "en": "Sollerets of the Cinderwolf",
+        "ru": "Солереты золоволка",
+        "es": "Zapatos herrados del loboceniza",
+        "br": "Escarpes do Lobo Cinzento",
+        "kr": "",
+        "fr": "Solerets du loup de braise",
+        "de": "Fußharnisch des Glutwolfs"
+    },
+    "202473": {
+        "cn": "",
+        "en": "Adornments of the Cinderwolf",
+        "ru": "Наряд золоволка",
+        "es": "Adornos del loboceniza",
+        "br": "Adornos do Lobo Cinzento",
+        "kr": "",
+        "fr": "Ornements du loup de braise",
+        "de": "Verzierungen des Glutwolfs"
+    },
+    "202474": {
+        "cn": "",
+        "en": "Ashen Predator's Cloak",
+        "ru": "Плащ пепельного хищника",
+        "es": "Capa de depredador cinéreo",
+        "br": "Manto do Predador Cinzento",
+        "kr": "",
+        "fr": "Cape de prédation des cendres",
+        "de": "Umhang des aschenen Raubtiers"
+    },
+    "202475": {
+        "cn": "",
+        "en": "Ashen Predator's Skinwraps",
+        "ru": "Кожаные повязки пепельного хищника",
+        "es": "Vendas de depredador cinéreo",
+        "br": "Protetores de Punho do Predador Cinzento",
+        "kr": "",
+        "fr": "Garde-poignets de prédation des cendres",
+        "de": "Hautwickel des aschenen Raubtiers"
+    },
+    "202476": {
+        "cn": "",
+        "en": "Ashen Predator's Strap",
+        "ru": "Ремень пепельного хищника",
+        "es": "Correa de depredador cinéreo",
+        "br": "Correia do Predador Cinzento",
+        "kr": "",
+        "fr": "Sangle de prédation des cendres",
+        "de": "Riemen des aschenen Raubtiers"
+    },
+    "202477": {
+        "cn": "",
+        "en": "Ashen Predator's Trophy",
+        "ru": "Трофей пепельного хищника",
+        "es": "Trofeo de depredador cinéreo",
+        "br": "Troféu do Predador Cinzento",
+        "kr": "",
+        "fr": "Trophée de prédation des cendres",
+        "de": "Trophäe des aschenen Raubtiers"
+    },
+    "202478": {
+        "cn": "",
+        "en": "Ashen Predator's Poleyns",
+        "ru": "Наколенники пепельного хищника",
+        "es": "Polainas de depredador cinéreo",
+        "br": "Joelheira do Predador Cinzento",
+        "kr": "",
+        "fr": "Genouillères de prédation des cendres",
+        "de": "Kniebuckel des aschenen Raubtiers"
+    },
+    "202479": {
+        "cn": "",
+        "en": "Ashen Predator's Faceguard",
+        "ru": "Большой шлем пепельного хищника",
+        "es": "Visera de depredador cinéreo",
+        "br": "Viseira do Predador Cinzento",
+        "kr": "",
+        "fr": "Ventaille de prédation des cendres",
+        "de": "Gesichtsschutz des aschenen Raubtiers"
+    },
+    "202480": {
+        "cn": "",
+        "en": "Ashen Predator's Skinners",
+        "ru": "Свежеватели пепельного хищника",
+        "es": "Desolladores de depredador cinéreo",
+        "br": "Esfolador do Predador Cinzento",
+        "kr": "",
+        "fr": "Dépeceurs de prédation des cendres",
+        "de": "Häuter des aschenen Raubtiers"
+    },
+    "202481": {
+        "cn": "",
+        "en": "Ashen Predator's Chasers",
+        "ru": "Быстробеги пепельного хищника",
+        "es": "Perseguidoras de depredador cinéreo",
+        "br": "Perseguidores do Predador Cinzento",
+        "kr": "",
+        "fr": "Traqueurs de prédation des cendres",
+        "de": "Verfolger des aschenen Raubtiers"
+    },
+    "202482": {
+        "cn": "",
+        "en": "Ashen Predator's Sling Vest",
+        "ru": "Ремни пепельного хищника",
+        "es": "Jubón de tiras de depredador cinéreo",
+        "br": "Colete do Predador Cinzento",
+        "kr": "",
+        "fr": "Gilet sanglé de prédation des cendres",
+        "de": "Weste des aschenen Raubtiers"
+    },
+    "202483": {
+        "cn": "",
+        "en": "Crest of Obsidian Secrets",
+        "ru": "Гребень обсидианового наследия",
+        "es": "Blasón de secretos obsidiana",
+        "br": "Brasão dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Blason des secrets d’obsidienne",
+        "de": "Wappen der Obsidiangeheimnisse"
+    },
+    "202484": {
+        "cn": "",
+        "en": "Scalebands of Obsidian Secrets",
+        "ru": "Чешуйчатые повязки обсидианового наследия",
+        "es": "Brazaescamas de secretos obsidiana",
+        "br": "Embraces Escamosos dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Poignets à écailles des secrets d’obsidienne",
+        "de": "Geschuppte Bänder der Obsidiangeheimnisse"
+    },
+    "202485": {
+        "cn": "",
+        "en": "Lasso of Obsidian Secrets",
+        "ru": "Лассо обсидианового наследия",
+        "es": "Lazo de secretos obsidiana",
+        "br": "Laço dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Lasso des secrets d’obsidienne",
+        "de": "Lasso der Obsidiangeheimnisse"
+    },
+    "202486": {
+        "cn": "",
+        "en": "Wingspan of Obsidian Secrets",
+        "ru": "Крылья обсидианового наследия",
+        "es": "Alas de secretos obsidiana",
+        "br": "Envergadura dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Envergures des secrets d’obsidienne",
+        "de": "Flügelschlag der Obsidiangeheimnisse"
+    },
+    "202487": {
+        "cn": "",
+        "en": "Chausses of Obsidian Secrets",
+        "ru": "Шоссы обсидианового наследия",
+        "es": "Calzas de secretos obsidiana",
+        "br": "Chausses dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Hauts-de-chausse des secrets d’obsidienne",
+        "de": "Beinlinge der Obsidiangeheimnisse"
+    },
+    "202488": {
+        "cn": "",
+        "en": "Crown of Obsidian Secrets",
+        "ru": "Корона обсидианового наследия",
+        "es": "Corona de secretos obsidiana",
+        "br": "Coroa dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Couronne des secrets d’obsidienne",
+        "de": "Krone der Obsidiangeheimnisse"
+    },
+    "202489": {
+        "cn": "",
+        "en": "Claws of Obsidian Secrets",
+        "ru": "Когти обсидианового наследия",
+        "es": "Garras de secretos obsidiana",
+        "br": "Garras dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Griffes des secrets d’obsidienne",
+        "de": "Klauen der Obsidiangeheimnisse"
+    },
+    "202490": {
+        "cn": "",
+        "en": "Greatboots of Obsidian Secrets",
+        "ru": "Кованые сапоги обсидианового наследия",
+        "es": "Grandes botas de secretos obsidiana",
+        "br": "Grandes Botas dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Grandes bottes des secrets d’obsidienne",
+        "de": "Großstiefel der Obsidiangeheimnisse"
+    },
+    "202491": {
+        "cn": "",
+        "en": "Hauberk of Obsidian Secrets",
+        "ru": "Хауберк обсидианового наследия",
+        "es": "Camisote de secretos obsidiana",
+        "br": "Cota dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Haubert des secrets d’obsidienne",
+        "de": "Halsberge der Obsidiangeheimnisse"
+    },
+    "202492": {
+        "cn": "",
+        "en": "Lurking Specter's Capelet",
+        "ru": "Оплечье призрака теней",
+        "es": "Manto corto de espectro acechante",
+        "br": "Xale do Espectro Espreitador",
+        "kr": "",
+        "fr": "Capelet du spectre rôdeur",
+        "de": "Cape des lauernden Gespensts"
+    },
+    "202493": {
+        "cn": "",
+        "en": "Lurking Specter's Armwraps",
+        "ru": "Наручные обмотки призрака теней",
+        "es": "Brazaletes de espectro acechante",
+        "br": "Braceleiras do Espectro Espreitador",
+        "kr": "",
+        "fr": "Couvre-bras du spectre rôdeur",
+        "de": "Armwickel des lauernden Gespensts"
+    },
+    "202494": {
+        "cn": "",
+        "en": "Lurking Specter's Edgeband",
+        "ru": "Ремень с окантовкой призрака теней",
+        "es": "Correa de espectro acechante",
+        "br": "Faixa de Cintura do Espectro Espreitador",
+        "kr": "",
+        "fr": "Sangle du spectre rôdeur",
+        "de": "Leimband des lauernden Gespensts"
+    },
+    "202495": {
+        "cn": "",
+        "en": "Lurking Specter's Shoulderblades",
+        "ru": "Наплечные лезвия призрака теней",
+        "es": "Hombreras de espectro acechante",
+        "br": "Ombreiras do Espectro Espreitador",
+        "kr": "",
+        "fr": "Lames d’épaules du spectre rôdeur",
+        "de": "Schulterklingen des lauernden Gespensts"
+    },
+    "202496": {
+        "cn": "",
+        "en": "Lurking Specter's Tights",
+        "ru": "Трико призрака теней",
+        "es": "Mallas de espectro acechante",
+        "br": "Meia-calça do Espectro Espreitador",
+        "kr": "",
+        "fr": "Collants du spectre rôdeur",
+        "de": "Strumpfhose des lauernden Gespensts"
+    },
+    "202497": {
+        "cn": "",
+        "en": "Lurking Specter's Visage",
+        "ru": "Личина призрака теней",
+        "es": "Rostro de espectro acechante",
+        "br": "Semblante do Espectro Espreitador",
+        "kr": "",
+        "fr": "Visage du spectre rôdeur",
+        "de": "Visage des lauernden Gespensts"
+    },
+    "202498": {
+        "cn": "",
+        "en": "Lurking Specter's Handgrips",
+        "ru": "Боевые перчатки призрака теней",
+        "es": "Lúas de espectro acechante",
+        "br": "Guantes do Espectro Espreitados",
+        "kr": "",
+        "fr": "Manicles du spectre rôdeur",
+        "de": "Handschutz des lauernden Gespensts"
+    },
+    "202499": {
+        "cn": "",
+        "en": "Lurking Specter's Tabi",
+        "ru": "Таби призрака теней",
+        "es": "Tabi de espectro acechante",
+        "br": "Tabi do Espectro Espreitador",
+        "kr": "",
+        "fr": "Tabi du spectre rôdeur",
+        "de": "Tabi des lauernden Gespensts"
+    },
+    "202500": {
+        "cn": "",
+        "en": "Lurking Specter's Brigandine",
+        "ru": "Панцирь призрака теней",
+        "es": "Brigantina de espectro acechante",
+        "br": "Brigandina do Espectro Espreitador",
+        "kr": "",
+        "fr": "Brigandine du spectre rôdeur",
+        "de": "Brigantine des lauernden Gespensts"
+    },
+    "202501": {
+        "cn": "",
+        "en": "Drape of the Vermillion Forge",
+        "ru": "Пелерина гранатовой кузни",
+        "es": "Mantón de la Forja Bermellón",
+        "br": "Clâmide da Forja Rubra",
+        "kr": "",
+        "fr": "Drapé de la forge Vermillon",
+        "de": "Tuch der Zinnoberschmiede"
+    },
+    "202502": {
+        "cn": "",
+        "en": "Coils of the Vermillion Forge",
+        "ru": "Coils of the Vermillion Forge",
+        "es": "Coils of the Vermillion Forge",
+        "br": "Coils of the Vermillion Forge",
+        "kr": "",
+        "fr": "Coils of the Vermillion Forge",
+        "de": "Coils of the Vermillion Forge"
+    },
+    "202503": {
+        "cn": "",
+        "en": "Blackbelt of the Vermillion Forge",
+        "ru": "Blackbelt of the Vermillion Forge",
+        "es": "Blackbelt of the Vermillion Forge",
+        "br": "Blackbelt of the Vermillion Forge",
+        "kr": "",
+        "fr": "Blackbelt of the Vermillion Forge",
+        "de": "Blackbelt of the Vermillion Forge"
+    },
+    "202504": {
+        "cn": "",
+        "en": "Spines of the Vermillion Forge",
+        "ru": "Spines of the Vermillion Forge",
+        "es": "Spines of the Vermillion Forge",
+        "br": "Spines of the Vermillion Forge",
+        "kr": "",
+        "fr": "Spines of the Vermillion Forge",
+        "de": "Spines of the Vermillion Forge"
+    },
+    "202505": {
+        "cn": "",
+        "en": "Pantaloons of the Vermillion Forge",
+        "ru": "Pantaloons of the Vermillion Forge",
+        "es": "Pantaloons of the Vermillion Forge",
+        "br": "Pantaloons of the Vermillion Forge",
+        "kr": "",
+        "fr": "Pantaloons of the Vermillion Forge",
+        "de": "Pantaloons of the Vermillion Forge"
+    },
+    "202506": {
+        "cn": "",
+        "en": "Cover of the Vermillion Forge",
+        "ru": "Cover of the Vermillion Forge",
+        "es": "Cover of the Vermillion Forge",
+        "br": "Cover of the Vermillion Forge",
+        "kr": "",
+        "fr": "Cover of the Vermillion Forge",
+        "de": "Cover of the Vermillion Forge"
+    },
+    "202507": {
+        "cn": "",
+        "en": "Fists of the Vermillion Forge",
+        "ru": "Fists of the Vermillion Forge",
+        "es": "Fists of the Vermillion Forge",
+        "br": "Fists of the Vermillion Forge",
+        "kr": "",
+        "fr": "Fists of the Vermillion Forge",
+        "de": "Fists of the Vermillion Forge"
+    },
+    "202508": {
+        "cn": "",
+        "en": "Footpads of the Vermillion Forge",
+        "ru": "Footpads of the Vermillion Forge",
+        "es": "Footpads of the Vermillion Forge",
+        "br": "Footpads of the Vermillion Forge",
+        "kr": "",
+        "fr": "Footpads of the Vermillion Forge",
+        "de": "Footpads of the Vermillion Forge"
+    },
+    "202509": {
+        "cn": "",
+        "en": "Cuirass of the Vermillion Forge",
+        "ru": "Cuirass of the Vermillion Forge",
+        "es": "Cuirass of the Vermillion Forge",
+        "br": "Cuirass of the Vermillion Forge",
+        "kr": "",
+        "fr": "Cuirass of the Vermillion Forge",
+        "de": "Cuirass of the Vermillion Forge"
+    },
+    "202510": {
+        "cn": "",
+        "en": "Foliage of the Autumn Blaze",
+        "ru": "Листва осеннего пламени",
+        "es": "Follaje de la llamarada otoñal",
+        "br": "Folhagem da Labareda Outonal",
+        "kr": "",
+        "fr": "Feuillage du feu d’automne",
+        "de": "Laubwerk der Herbstlohen"
+    },
+    "202511": {
+        "cn": "",
+        "en": "Bands of the Autumn Blaze",
+        "ru": "Повязки осеннего пламени",
+        "es": "Braciles de la llamarada otoñal",
+        "br": "Embraces da Labareda Outonal",
+        "kr": "",
+        "fr": "Poignets du feu d’automne",
+        "de": "Bänder der Herbstlohen"
+    },
+    "202512": {
+        "cn": "",
+        "en": "Garland of the Autumn Blaze",
+        "ru": "Обвязка осеннего пламени",
+        "es": "Guirnalda de la llamarada otoñal",
+        "br": "Guirlanda da Labareda Outonal",
+        "kr": "",
+        "fr": "Tresse du feu d’automne",
+        "de": "Girlande der Herbstlohen"
+    },
+    "202513": {
+        "cn": "",
+        "en": "Mantle of the Autumn Blaze",
+        "ru": "Оплечье осеннего пламени",
+        "es": "Manto de la llamarada otoñal",
+        "br": "Dragonas da Labareda Outonal",
+        "kr": "",
+        "fr": "Mantelet du feu d’automne",
+        "de": "Mantel der Herbstlohen"
+    },
+    "202514": {
+        "cn": "",
+        "en": "Pants of the Autumn Blaze",
+        "ru": "Штаны осеннего пламени",
+        "es": "Pantalones de la llamarada otoñal",
+        "br": "Calças da Labareda Outonal",
+        "kr": "",
+        "fr": "Pantalon du feu d’automne",
+        "de": "Hose der Herbstlohen"
+    },
+    "202515": {
+        "cn": "",
+        "en": "Bough of the Autumn Blaze",
+        "ru": "Ветвь осеннего пламени",
+        "es": "Rama de la llamarada otoñal",
+        "br": "Ramo da Labareda Outonal",
+        "kr": "",
+        "fr": "Bois du feu d’automne",
+        "de": "Zweig der Herbstlohen"
+    },
+    "202516": {
+        "cn": "",
+        "en": "Handguards of the Autumn Blaze",
+        "ru": "Боевые рукавицы осеннего пламени",
+        "es": "Manoplas de la llamarada otoñal",
+        "br": "Protetores de Mão da Labareda Outonal",
+        "kr": "",
+        "fr": "Garde-mains du feu d’automne",
+        "de": "Handschützer der Herbstlohen"
+    },
+    "202517": {
+        "cn": "",
+        "en": "Hooves of the Autumn Blaze",
+        "ru": "Копыта осеннего пламени",
+        "es": "Pezuñas de la llamarada otoñal",
+        "br": "Cascos da Labareda Outonal",
+        "kr": "",
+        "fr": "Sabots du feu d’automne",
+        "de": "Hufe der Herbstlohen"
+    },
+    "202518": {
+        "cn": "",
+        "en": "Chestroots of the Autumn Blaze",
+        "ru": "Нагрудное плетение осеннего пламени",
+        "es": "Troncoraza de la llamarada otoñal",
+        "br": "Raditorso da Labareda Outonal",
+        "kr": "",
+        "fr": "Plastron-racines du feu d’automne",
+        "de": "Brustwurzeln der Herbstlohen"
+    },
+    "202519": {
+        "cn": "",
+        "en": "Kinslayer's Shawl",
+        "ru": "Шаль убийцы сородичей",
+        "es": "Chal del mataparientes",
+        "br": "Xale do Fratricida",
+        "kr": "",
+        "fr": "Châle du fratricide",
+        "de": "Schal des Geschwistermörders"
+    },
+    "202520": {
+        "cn": "",
+        "en": "Kinslayer's Bindings",
+        "ru": "Узы убийцы сородичей",
+        "es": "Ataduras del mataparientes",
+        "br": "Amarras do Fratricida",
+        "kr": "",
+        "fr": "Manchettes du fratricide",
+        "de": "Bindungen des Geschwistermörders"
+    },
+    "202521": {
+        "cn": "",
+        "en": "Kinslayer's Sash",
+        "ru": "Кушак убийцы сородичей",
+        "es": "Fajín del mataparientes",
+        "br": "Faixa do Fratricida",
+        "kr": "",
+        "fr": "Écharpe du fratricide",
+        "de": "Schärpe des Geschwistermörders"
+    },
+    "202522": {
+        "cn": "",
+        "en": "Kinslayer's Tainted Spaulders",
+        "ru": "Запятнанный наплеч убийцы сородичей",
+        "es": "Bufas corruptas del mataparientes",
+        "br": "Espaldares Maculados do Fratricida",
+        "kr": "",
+        "fr": "Spallières corrompues du fratricide",
+        "de": "Besudelte Schiftung des Geschwistermörders"
+    },
+    "202523": {
+        "cn": "",
+        "en": "Kinslayer's Legguards",
+        "ru": "Набедренники убийцы сородичей",
+        "es": "Musleras del mataparientes",
+        "br": "Guarda-pernas do Fratricida",
+        "kr": "",
+        "fr": "Garde-jambes du fratricide",
+        "de": "Beinschützer des Geschwistermörders"
+    },
+    "202524": {
+        "cn": "",
+        "en": "Kinslayer's Hood",
+        "ru": "Капюшон убийцы сородичей",
+        "es": "Caperuza del mataparientes",
+        "br": "Capuz do Fratricida",
+        "kr": "",
+        "fr": "Chaperon du fratricide",
+        "de": "Kapuze des Geschwistermörders"
+    },
+    "202525": {
+        "cn": "",
+        "en": "Kinslayer's Bloodstained Grips",
+        "ru": "Окровавленные захваты убийцы сородичей",
+        "es": "Mandiletes manchados de sangre del mataparientes",
+        "br": "Garras Manchadas de Sangue do Fratricida",
+        "kr": "",
+        "fr": "Poignes sanglantes du fratricide",
+        "de": "Blutbefleckter Handschutz des Geschwistermörders"
+    },
+    "202526": {
+        "cn": "",
+        "en": "Kinslayer's Gaiters",
+        "ru": "Краги убийцы сородичей",
+        "es": "Polainas del mataparientes",
+        "br": "Botinas do Fratricida",
+        "kr": "",
+        "fr": "Houseaux du fratricide",
+        "de": "Galoschen des Geschwistermörders"
+    },
+    "202527": {
+        "cn": "",
+        "en": "Kinslayer's Vest",
+        "ru": "Жилет убийцы сородичей",
+        "es": "Jubón del mataparientes",
+        "br": "Colete do Fratricida",
+        "kr": "",
+        "fr": "Gilet du fratricide",
+        "de": "Weste des Geschwistermörders"
+    },
+    "202528": {
+        "cn": "",
+        "en": "Shawl of the Sinister Savant",
+        "ru": "Шаль жестокого мудреца",
+        "es": "Chal del sabio siniestro",
+        "br": "Xale do Sábio Sinistro",
+        "kr": "",
+        "fr": "Châle du savant sinistre",
+        "de": "Schal des finsteren Gelehrten"
+    },
+    "202529": {
+        "cn": "",
+        "en": "Wristwraps of the Sinister Savant",
+        "ru": "Напульсники жестокого мудреца",
+        "es": "Cubremuñecas del sabio siniestro",
+        "br": "Munhecas do Sábio Sinistro",
+        "kr": "",
+        "fr": "Bandelettes du savant sinistre",
+        "de": "Gelenkbänder des finsteren Gelehrten"
+    },
+    "202530": {
+        "cn": "",
+        "en": "Skullstrap of the Sinister Savant",
+        "ru": "Украшенный черепами ремень жестокого мудреца",
+        "es": "Correa de calaveras del sabio siniestro",
+        "br": "Correia de Caveira do Sábio Sinistro",
+        "kr": "",
+        "fr": "Ceinture de crânes du savant sinistre",
+        "de": "Schädelband des finsteren Gelehrten"
+    },
+    "202531": {
+        "cn": "",
+        "en": "Amice of the Sinister Savant",
+        "ru": "Амикт жестокого мудреца",
+        "es": "Amito del sabio siniestro",
+        "br": "Sobreveste do Sábio Sinistro",
+        "kr": "",
+        "fr": "Amict du savant sinistre",
+        "de": "Amicia des finsteren Gelehrten"
+    },
+    "202532": {
+        "cn": "",
+        "en": "Leggings of the Sinister Savant",
+        "ru": "Поножи жестокого мудреца",
+        "es": "Leotardos del sabio siniestro",
+        "br": "Perneiras do Sábio Sinistro",
+        "kr": "",
+        "fr": "Jambières du savant sinistre",
+        "de": "Gamaschen des finsteren Gelehrten"
+    },
+    "202533": {
+        "cn": "",
+        "en": "Grimhorns of the Sinister Savant",
+        "ru": "Жуткие рога жестокого мудреца",
+        "es": "Cuernos sombríos del sabio siniestro",
+        "br": "Chifres Austeros do Sábio Sinistro",
+        "kr": "",
+        "fr": "Cornes du savant sinistre",
+        "de": "Grimmhörner des finsteren Gelehrten"
+    },
+    "202534": {
+        "cn": "",
+        "en": "Grips of the Sinister Savant",
+        "ru": "Захваты жестокого мудреца",
+        "es": "Mandiletes del sabio siniestro",
+        "br": "Guantes do Sábio Sinistro",
+        "kr": "",
+        "fr": "Poignes du savant sinistre",
+        "de": "Handschutz des finsteren Gelehrten"
+    },
+    "202535": {
+        "cn": "",
+        "en": "Sandals of the Sinister Savant",
+        "ru": "Сандалии жестокого мудреца",
+        "es": "Sandalias del sabio siniestro",
+        "br": "Sandálias do Sábio Sinistro",
+        "kr": "",
+        "fr": "Sandales du savant sinistre",
+        "de": "Sandalen des finsteren Gelehrten"
+    },
+    "202536": {
+        "cn": "",
+        "en": "Cursed Robes of the Sinister Savant",
+        "ru": "Проклятые одежды жестокого мудреца",
+        "es": "Toga maldita del sabio siniestro",
+        "br": "Vestes Malditas do Sábio Sinistro",
+        "kr": "",
+        "fr": "Robe maudite du savant sinistre",
+        "de": "Fluchroben des finsteren Gelehrten"
+    },
+    "202537": {
+        "cn": "",
+        "en": "Shroud of the Furnace Seraph",
+        "ru": "Покров пылающего серафима",
+        "es": "Sudario del serafín del horno",
+        "br": "Mortalha do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Voile du séraphin de la fournaise",
+        "de": "Schleier des Schmelzofenseraphs"
+    },
+    "202538": {
+        "cn": "",
+        "en": "Cuffs of the Furnace Seraph",
+        "ru": "Cuffs of the Furnace Seraph",
+        "es": "Cuffs of the Furnace Seraph",
+        "br": "Cuffs of the Furnace Seraph",
+        "kr": "",
+        "fr": "Cuffs of the Furnace Seraph",
+        "de": "Cuffs of the Furnace Seraph"
+    },
+    "202539": {
+        "cn": "",
+        "en": "Sash of the Furnace Seraph",
+        "ru": "Кушак пылающего серафима",
+        "es": "Fajín del serafín del horno",
+        "br": "Faixa do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Écharpe du séraphin de la fournaise",
+        "de": "Schärpe des Schmelzofenseraphs"
+    },
+    "202540": {
+        "cn": "",
+        "en": "Devotion of the Furnace Seraph",
+        "ru": "Devotion of the Furnace Seraph",
+        "es": "Devotion of the Furnace Seraph",
+        "br": "Devotion of the Furnace Seraph",
+        "kr": "",
+        "fr": "Devotion of the Furnace Seraph",
+        "de": "Devotion of the Furnace Seraph"
+    },
+    "202541": {
+        "cn": "",
+        "en": "Breeches of the Furnace Seraph",
+        "ru": "Брюки пылающего серафима",
+        "es": "Calzones del serafín del horno",
+        "br": "Calções do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Braies du séraphin de la fournaise",
+        "de": "Bundhosen des Schmelzofenseraphs"
+    },
+    "202542": {
+        "cn": "",
+        "en": "Mask of the Furnace Seraph",
+        "ru": "Маска пылающего серафима",
+        "es": "Máscara del serafín del horno",
+        "br": "Máscara do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Masque du séraphin de la fournaise",
+        "de": "Maske des Schmelzofenseraphs"
+    },
+    "202543": {
+        "cn": "",
+        "en": "Grasp of the Furnace Seraph",
+        "ru": "Grasp of the Furnace Seraph",
+        "es": "Grasp of the Furnace Seraph",
+        "br": "Grasp of the Furnace Seraph",
+        "kr": "",
+        "fr": "Grasp of the Furnace Seraph",
+        "de": "Grasp of the Furnace Seraph"
+    },
+    "202544": {
+        "cn": "",
+        "en": "Sabatons of the Furnace Seraph",
+        "ru": "Sabatons of the Furnace Seraph",
+        "es": "Sabatons of the Furnace Seraph",
+        "br": "Sabatons of the Furnace Seraph",
+        "kr": "",
+        "fr": "Sabatons of the Furnace Seraph",
+        "de": "Sabatons of the Furnace Seraph"
+    },
+    "202545": {
+        "cn": "",
+        "en": "Command of the Furnace Seraph",
+        "ru": "Command of the Furnace Seraph",
+        "es": "Command of the Furnace Seraph",
+        "br": "Command of the Furnace Seraph",
+        "kr": "",
+        "fr": "Command of the Furnace Seraph",
+        "de": "Command of the Furnace Seraph"
+    },
+    "202546": {
+        "cn": "",
+        "en": "Underlight Conjurer's Cape",
+        "ru": "Накидка беспросветного творца",
+        "es": "Capa del conjurador Sondaluz",
+        "br": "Capa do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Pèlerine de conjuration de Terradiance",
+        "de": "Cape des Tiefenlichtbeschwörers"
+    },
+    "202547": {
+        "cn": "",
+        "en": "Underlight Conjurer's Bracelets",
+        "ru": "Браслеты беспросветного творца",
+        "es": "Pulseras del conjurador Sondaluz",
+        "br": "Braceletes do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Bracelets de conjuration de Terradiance",
+        "de": "Armreife des Tiefenlichtbeschwörers"
+    },
+    "202548": {
+        "cn": "",
+        "en": "Underlight Conjurer's Charmbelt",
+        "ru": "Зачарованный ремень беспросветного творца",
+        "es": "Cinturón encantador del conjurador Sondaluz",
+        "br": "Cinto Charmoso do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Ceinture d’amulettes de conjuration de Terradiance",
+        "de": "Zaubergürtel des Tiefenlichtbeschwörers"
+    },
+    "202549": {
+        "cn": "",
+        "en": "Underlight Conjurer's Aurora",
+        "ru": "Сияние беспросветного творца",
+        "es": "Aurora del conjurador Sondaluz",
+        "br": "Aurora do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Aurore de conjuration de Terradiance",
+        "de": "Aurora des Tiefenlichtbeschwörers"
+    },
+    "202550": {
+        "cn": "",
+        "en": "Underlight Conjurer's Trousers",
+        "ru": "Брюки беспросветного творца",
+        "es": "Calzas del conjurador Sondaluz",
+        "br": "Calçotes do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Chausses de conjuration de Terradiance",
+        "de": "Beinkleider des Tiefenlichtbeschwörers"
+    },
+    "202551": {
+        "cn": "",
+        "en": "Underlight Conjurer's Arcanocowl",
+        "ru": "Чародейский клобук беспросветного творца",
+        "es": "Arcanopucha del conjurador Sondaluz",
+        "br": "Capucho Arcano do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Capuche arcanique de conjuration de Terradiance",
+        "de": "Arkanogugel des Tiefenlichtbeschwörers"
+    },
+    "202552": {
+        "cn": "",
+        "en": "Underlight Conjurer's Gloves",
+        "ru": "Перчатки беспросветного творца",
+        "es": "Guantes del conjurador Sondaluz",
+        "br": "Luvas do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Gants de conjuration de Terradiance",
+        "de": "Handschuhe des Tiefenlichtbeschwörers"
+    },
+    "202553": {
+        "cn": "",
+        "en": "Underlight Conjurer's Treads",
+        "ru": "Ботфорты беспросветного творца",
+        "es": "Botines del conjurador Sondaluz",
+        "br": "Botinas do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Bottines de conjuration de Terradiance",
+        "de": "Treter des Tiefenlichtbeschwörers"
+    },
+    "202554": {
+        "cn": "",
+        "en": "Underlight Conjurer's Vestment",
+        "ru": "Облачения беспросветного творца",
+        "es": "Vestimenta del conjurador Sondaluz",
+        "br": "Vestimenta do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Habits de conjuration de Terradiance",
+        "de": "Gewandung des Tiefenlichtbeschwörers"
+    },
+    "202555": {
+        "cn": "",
+        "en": "Zskarn's Autopsy Scalpel",
+        "ru": "Анатомический скальпель Зкарна",
+        "es": "Escalpelo para autopsias de Zskarn",
+        "br": "Bisturi de Autópsia de Zskarn",
+        "kr": "",
+        "fr": "Scalpel d’autopsie de Zskarn",
+        "de": "Zskarns Autopsieskalpel"
+    },
+    "202558": {
+        "cn": "",
+        "en": "Calamity's Herald",
+        "ru": "Предвестник катастроф",
+        "es": "Heraldo de la calamidad",
+        "br": "Arauto da Calamidade",
+        "kr": "",
+        "fr": "Héraut de la calamité",
+        "de": "Katastrophenherold"
+    },
+    "202565": {
+        "cn": "",
+        "en": "Erethos, the Empty Promise",
+        "ru": "Эретос, Обманутые Надежды",
+        "es": "Erethos, la Promesa Vacía",
+        "br": "Erethos, a Promessa Vazia",
+        "kr": "",
+        "fr": "Éréthos, la Vaine promesse",
+        "de": "Erethos, das leere Versprechen"
+    },
+    "202570": {
+        "cn": "",
+        "en": "Lavaflow Control Rod",
+        "ru": "Стержень управления потоком лавы",
+        "es": "Vara de control de flujo de lava",
+        "br": "Bastão de Controle do Fluxo de Lava",
+        "kr": "",
+        "fr": "Baguette de contrôle des flots de lave",
+        "de": "Lavaflusskontrollstab"
+    },
+    "202571": {
+        "cn": "",
+        "en": "Experiment 1, Kitewing",
+        "ru": "Эксперимент 1: Хищнокрыл",
+        "es": "Experimento 1, Alacometa",
+        "br": "Experimento 1, Asa de Pipa",
+        "kr": "",
+        "fr": "Expérience 1, voile",
+        "de": "Experiment 1, Drachenflügel"
+    },
+    "202572": {
+        "cn": "",
+        "en": "Entropic Convergence Loop",
+        "ru": "Кольцо энтропийной конвергенции",
+        "es": "Aro de convergencia entrópica",
+        "br": "Aro de Convergência Entrópica",
+        "kr": "",
+        "fr": "Anneau de convergence entropique",
+        "de": "Entropische Konvergenzschleife"
+    },
+    "202573": {
+        "cn": "",
+        "en": "Etchings of the Captive Revenant",
+        "ru": "Вытравка пойманного загробника",
+        "es": "Grabados del aparecido cautivo",
+        "br": "Inscrições da Assombração Cativa",
+        "kr": "",
+        "fr": "Gravures du revenant captif",
+        "de": "Ätzungen des gefangenen Wiedergängers"
+    },
+    "202574": {
+        "cn": "",
+        "en": "Flamebound Huntsman's Footpads",
+        "ru": "Башмаки скованного пламенем охотника",
+        "es": "Escarpines de montero vinculado a las llamas",
+        "br": "Pisantes do Guarda-caça Vinculado ao Fogo",
+        "kr": "",
+        "fr": "Souliers de veneur flammelié",
+        "de": "Fußpolster des flammengebundenen Jägers"
+    },
+    "202575": {
+        "cn": "",
+        "en": "Neldris's Sinewy Scapula",
+        "ru": "Жилистая кисть Нелдриса",
+        "es": "Omóplato fibroso de Neldris",
+        "br": "Escápula Robusta de Neldris",
+        "kr": "",
+        "fr": "Omoplate nervurée de Neldris",
+        "de": "Neldris' sehniges Schulterblatt"
+    },
+    "202576": {
+        "cn": "",
+        "en": "Dreadrift Stompers",
+        "ru": "Высокие ботинки жуткого разлома",
+        "es": "Apisonadoras aterrafallas",
+        "br": "Pisoteadores da Fenda Pavorosa",
+        "kr": "",
+        "fr": "Croquenots de déchirement effroyable",
+        "de": "Furchtrissstampfer"
+    },
+    "202577": {
+        "cn": "",
+        "en": "Seal of the Defiant Hordes",
+        "ru": "Печать непокорной орды",
+        "es": "Sello de las hordas desafiantes",
+        "br": "Selo das Hordas Desafiadoras",
+        "kr": "",
+        "fr": "Sceau des hordes défiantes",
+        "de": "Siegel der trotzenden Horden"
+    },
+    "202578": {
+        "cn": "",
+        "en": "Phoenix-Plume Gloves",
+        "ru": "Перчатки оперения феникса",
+        "es": "Guantes de pluma de fénix",
+        "br": "Luvas de Pluma de Fênix",
+        "kr": "",
+        "fr": "Gants à plumes de phénix",
+        "de": "Phönixfederhandschuhe"
+    },
+    "202579": {
+        "cn": "",
+        "en": "Attendant's Concocting Cover",
+        "ru": "Убор служителя-повара",
+        "es": "Casquete de brebaje de auxiliar",
+        "br": "Murça de Concocção do Atendente",
+        "kr": "",
+        "fr": "Couvre-chef de préparation d’auxiliaire",
+        "de": "Brauende Bedeckung des Bediensteten"
+    },
+    "202580": {
+        "cn": "",
+        "en": "Mystic's Scalding Frame",
+        "ru": "Пылающий каркас мистика",
+        "es": "Armazón escaldante del místico",
+        "br": "Estrutura Escaldante Mística",
+        "kr": "",
+        "fr": "Armature bouillante de mystique",
+        "de": "Kochendheiße Schulterpolster des Mystikers"
+    },
+    "202581": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 1",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 1",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 1",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 1",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 1",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 1"
+    },
+    "202582": {
+        "cn": "",
+        "en": "Manacles of Cruel Progress",
+        "ru": "Кандалы жестокого отбора",
+        "es": "Esposas de progreso cruel",
+        "br": "Algemas do Progresso Cruel",
+        "kr": "",
+        "fr": "Menottes du progrès cruel",
+        "de": "Handfesseln des grausamen Fortschritts"
+    },
+    "202583": {
+        "cn": "",
+        "en": "Grasps of Welded Anguish",
+        "ru": "Захваты спаянных страданий",
+        "es": "Garras de la angustia soldada",
+        "br": "Agarres da Angústia Soldada",
+        "kr": "",
+        "fr": "Poignes d’angoisse soudée",
+        "de": "Griffe der verschweißten Pein"
+    },
+    "202584": {
+        "cn": "",
+        "en": "Scalecommander's Ebon Schynbalds",
+        "ru": "Черные наголенники дракомандира",
+        "es": "Grebas guadaña de ébano del escamandante",
+        "br": "Cobre-canela do Comandante-de-escama de Ébano",
+        "kr": "",
+        "fr": "Cnémides d’ébène de squammandant",
+        "de": "Schwarzschynbalds des Schuppenkommandanten"
+    },
+    "202585": {
+        "cn": "",
+        "en": "Coattails of the Rightful Heir",
+        "ru": "Фалды истинного наследника",
+        "es": "Cubrecolas del legítimo heredero",
+        "br": "Fraque do Herdeiro Legítimo",
+        "kr": "",
+        "fr": "Basques de l’héritier légitime",
+        "de": "Frackschoß des rechtmäßigen Erben"
+    },
+    "202586": {
+        "cn": "",
+        "en": "Warlord's Volcanic Vest",
+        "ru": "Вулканический жилет вождя",
+        "es": "Jubón volcánico del señor de la guerra",
+        "br": "Colete Vulcânico do Senhor da Guerra",
+        "kr": "",
+        "fr": "Gilet volcanique de seigneur de guerre",
+        "de": "Vulkanweste des Kriegsfürsten"
+    },
+    "202587": {
+        "cn": "",
+        "en": "Oathbreaker's Obsessive Gauntlets",
+        "ru": "Рукавицы безумного клятвопреступника",
+        "es": "Guanteletes obsesivos de rompejuramentos",
+        "br": "Manoplas do Perjuro Obsessivo",
+        "kr": "",
+        "fr": "Gantelets de l’obsession du parjure",
+        "de": "Obsessive Stulpen des Eidbrechers"
+    },
+    "202588": {
+        "cn": "",
+        "en": "Exacting Augmenter's Sabatons",
+        "ru": "Башмаки требовательного экспериментатора",
+        "es": "Escarpes de investigador concienzudo",
+        "br": "Escarpes do Aumentador de Preparos",
+        "kr": "",
+        "fr": "Solerets de croissance rigoureuse",
+        "de": "Sabatons des akribischen Verstärkers"
+    },
+    "202589": {
+        "cn": "",
+        "en": "Sash of Abandoned Hope",
+        "ru": "Кушак оставленной надежды",
+        "es": "Fajín de la esperanza abandonada",
+        "br": "Faixa da Esperança Abandonada",
+        "kr": "",
+        "fr": "Écharpe de l’espoir abandonné",
+        "de": "Schärpe der verlorenen Hoffnung"
+    },
+    "202590": {
+        "cn": "",
+        "en": "Kazzara's Grafted Companion",
+        "ru": "Вживленный помощник Каззары",
+        "es": "Compañero injertado de Kazzara",
+        "br": "Companheiro Enxertado de Kazzara",
+        "kr": "",
+        "fr": "Compagnon greffé de Kazzara",
+        "de": "Kazzaras montierter Begleiter"
+    },
+    "202591": {
+        "cn": "",
+        "en": "Gatecrasher Giant's Coif",
+        "ru": "Капюшон крушителя врат",
+        "es": "Almófar gigante de rompepuertas",
+        "br": "Coifa do Gigante Quebra-portões",
+        "kr": "",
+        "fr": "Camail de géant enfonce-porte",
+        "de": "Kappe des Torbrecherriesen"
+    },
+    "202592": {
+        "cn": "",
+        "en": "Unyielding Goliath's Burgonet",
+        "ru": "Unyielding Goliath's Burgonet",
+        "es": "Unyielding Goliath's Burgonet",
+        "br": "Unyielding Goliath's Burgonet",
+        "kr": "",
+        "fr": "Unyielding Goliath's Burgonet",
+        "de": "Unyielding Goliath's Burgonet"
+    },
+    "202593": {
+        "cn": "",
+        "en": "Unstable Vial Handlers",
+        "ru": "Перчатки для нестабильных флаконов",
+        "es": "Manipuladores de viales inestables",
+        "br": "Manipuladores de Ampola Instável",
+        "kr": "",
+        "fr": "Porte-fioles instables",
+        "de": "Instabile Phiolengreifer"
+    },
+    "202594": {
+        "cn": "",
+        "en": "Bloodstench Skinguards",
+        "ru": "Пропахшие кровью нарукавники",
+        "es": "Guardamuñecas con hedor a sangre",
+        "br": "Guarda-pele Fedessangue",
+        "kr": "",
+        "fr": "Paumelles tachées de sang",
+        "de": "Blutverschmierter Hautschutz"
+    },
+    "202595": {
+        "cn": "",
+        "en": "Shoulderplates of Planar Isolation",
+        "ru": "Наплечные пластины планарного одиночества",
+        "es": "Hombreras de aislamiento planar",
+        "br": "Placa d'Ombros de Isolamento Planar",
+        "kr": "",
+        "fr": "Plaques d’épaule d’isolation planaire",
+        "de": "Schulterplatten der Planarisolation"
+    },
+    "202596": {
+        "cn": "",
+        "en": "Tassets of Blistering Twilight",
+        "ru": "Набедренные пластины обжигающего сумрака",
+        "es": "Escarcelas del crepúsculo virulento",
+        "br": "Escarcela do Crepúsculo Esturricante",
+        "kr": "",
+        "fr": "Tassettes du crépuscule incendiaire",
+        "de": "Tassetten des sengenden Zwielichts"
+    },
+    "202597": {
+        "cn": "",
+        "en": "Obsidian Guard's Chausses",
+        "ru": "Шоссы обсидиановой стражи",
+        "es": "Calzas de guardia obsidiana",
+        "br": "Chausses da Guarda Obsidiana",
+        "kr": "",
+        "fr": "Chausses de garde d’obsidienne",
+        "de": "Beinlinge der Obsidianwache"
+    },
+    "202598": {
+        "cn": "",
+        "en": "Cuirass of Meticulous Mixture",
+        "ru": "Кираса идеального смешения",
+        "es": "Loriga de mezcla meticulosa",
+        "br": "Corselete da Mistura Meticulosa",
+        "kr": "",
+        "fr": "Cuirasse de mixture méticuleuse",
+        "de": "Kürass der sorgfältigen Mixtur"
+    },
+    "202599": {
+        "cn": "",
+        "en": "Sarkareth's Abyssal Embrace",
+        "ru": "Темные объятия Саркарета",
+        "es": "Abrazo abisal de Sarkareth",
+        "br": "Abraço Abissal de Sarkareth",
+        "kr": "",
+        "fr": "Étreinte abyssale de Sarkareth",
+        "de": "Sarkareths abyssischer Klammergriff"
+    },
+    "202600": {
+        "cn": "",
+        "en": "Reanimator's Wicked Cassock",
+        "ru": "Порочная ряса оживителя",
+        "es": "Sotana maligna de reanimador",
+        "br": "Sotaina Perversa do Revivificador",
+        "kr": "",
+        "fr": "Soutane malfaisante de réanimation",
+        "de": "Soutane des verrückten Wiedererweckers"
+    },
+    "202601": {
+        "cn": "",
+        "en": "Twisted Vision's Demigaunts",
+        "ru": "Полуперчатки искаженного видения",
+        "es": "Guanteletes sin dedos de visión retorcida",
+        "br": "Hemimanoplas da Visão Deturpada",
+        "kr": "",
+        "fr": "Demi-gants de vision difforme",
+        "de": "Halbstulpen der verzerrten Vision"
+    },
+    "202602": {
+        "cn": "",
+        "en": "Violent Gravemask",
+        "ru": "Жуткая погребальная маска",
+        "es": "Máscara funeraria violenta",
+        "br": "Máscara Séria Violenta",
+        "kr": "",
+        "fr": "Masque tombal violent",
+        "de": "Gewaltsame Grabmaske"
+    },
+    "202603": {
+        "cn": "",
+        "en": "Sandals of Ancient Fury",
+        "ru": "Сандалии древней ярости",
+        "es": "Sandalias de furia antigua",
+        "br": "Sandálias da Fúria Antiga",
+        "kr": "",
+        "fr": "Sandales de la fureur ancienne",
+        "de": "Sandalen des uralten Zorns"
+    },
+    "202604": {
+        "cn": "",
+        "en": "Boulder-Tossing Bands",
+        "ru": "Повязки метателя камней",
+        "es": "Braciles para lanzar rocas",
+        "br": "Embraces de Arremessar Pedregulhos",
+        "kr": "",
+        "fr": "Poignets de jet de rochers",
+        "de": "Felsbrockenschleuderbänder"
+    },
+    "202605": {
+        "cn": "",
+        "en": "Gloomfused Chemistry Belt",
+        "ru": "Ремень мглистых зелий",
+        "es": "Cinturón de química fundido con la penumbra",
+        "br": "Cinto de Química Tristinfusa",
+        "kr": "",
+        "fr": "Ceinture de chimie obscure",
+        "de": "Düstergeschmolzener Chemikergürtel"
+    },
+    "202609": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - INT",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - INT",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - INT",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - INT",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - INT",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - INT"
+    },
+    "202610": {
+        "cn": "",
+        "en": "Dragonfire Bomb Dispenser",
+        "ru": "Бомбомет драконьего огня",
+        "es": "Dispensador de bombas de fuego de dragón",
+        "br": "Distribuidor de Bombas de Fogo de Dragão",
+        "kr": "",
+        "fr": "Distributeur de bombes de feu draconique",
+        "de": "Drachenfeuerbombenspender"
+    },
+    "202611": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - Physical DPS",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - Physical DPS",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - Physical DPS",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - Physical DPS",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - Physical DPS",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - Trinket - Physical DPS"
+    },
+    "202612": {
+        "cn": "",
+        "en": "Screaming Black Dragonscale",
+        "ru": "Кричащая чешуйка черного дракона",
+        "es": "Dragontina negra aullante",
+        "br": "Escama de Dragão Negro Berrante",
+        "kr": "",
+        "fr": "Écaille de Dragon noir hurlante",
+        "de": "Schreiende schwarze Drachenschuppe"
+    },
+    "202613": {
+        "cn": "",
+        "en": "Zaqali Chaos Grapnel",
+        "ru": "Хаотичный крюк закали",
+        "es": "Rezón de caos zaqali",
+        "br": "Gancho do Caos Zaqali",
+        "kr": "",
+        "fr": "Grappin zaqali du chaos",
+        "de": "Chaosgreifkette der Zaqali"
+    },
+    "202614": {
+        "cn": "",
+        "en": "Rashok's Molten Heart",
+        "ru": "Огненное сердце Рашока",
+        "es": "Corazón de magma de Rashok",
+        "br": "Coração Derretido de Rashok",
+        "kr": "",
+        "fr": "Cœur fondu de Rashok",
+        "de": "Rashoks geschmolzenes Herz"
+    },
+    "202615": {
+        "cn": "",
+        "en": "Vessel of Searing Shadow",
+        "ru": "Сосуд жгучей тени",
+        "es": "Recipiente de sombra abrasadora",
+        "br": "Recipiente da Sombra Calcinante",
+        "kr": "",
+        "fr": "Calice d’ombre incendiaire",
+        "de": "Gefäß des sengenden Schattens"
+    },
+    "202616": {
+        "cn": "",
+        "en": "Enduring Dreadplate",
+        "ru": "Стойкие латы ужаса",
+        "es": "Placas de tinieblas resistentes",
+        "br": "Medoplaca Durável",
+        "kr": "",
+        "fr": "Plaque d’effroi fortifiée",
+        "de": "Robuste Schreckensplatte"
+    },
+    "202617": {
+        "cn": "",
+        "en": "Elementium Pocket Anvil",
+        "ru": "Карманная элементиевая наковальня",
+        "es": "Yunque de bolsillo de elementium",
+        "br": "Bigorna de Bolso de Elemêntio",
+        "kr": "",
+        "fr": "Enclume de poche en élémentium",
+        "de": "Elementiumtaschenamboss"
+    },
+    "202618": {
+        "cn": "",
+        "en": "Kagni's Scorching Talisman",
+        "ru": "Обгоревший талисман Кагни",
+        "es": "Dije agostador de Kagni",
+        "br": "Talismã Chamuscante de Kagni",
+        "kr": "",
+        "fr": "Talisman brûlant de Kagni",
+        "de": "Kagnis versengender Talisman"
+    },
+    "202648": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 2"
+    },
+    "202649": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 2"
+    },
+    "202650": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 2"
+    },
+    "202651": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - FEET 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - FEET 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - FEET 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - FEET 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - FEET 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - FEET 2"
+    },
+    "202652": {
+        "cn": "",
+        "en": "Discarded Creation's Restraint",
+        "ru": "Оковы ненужного творения",
+        "es": "Correa de creación desechada",
+        "br": "Grilhões da Criação Descartada",
+        "kr": "",
+        "fr": "Entrave de création rejetée",
+        "de": "Fessel der entledigten Schöpfung"
+    },
+    "202653": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - WRIST 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - WRIST 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - WRIST 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - WRIST 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - WRIST 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Cloth - WRIST 2"
+    },
+    "202654": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - FEET 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - FEET 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - FEET 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - FEET 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - FEET 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - FEET 2"
+    },
+    "202655": {
+        "cn": "",
+        "en": "Elder's Volcanic Binding",
+        "ru": "Вулканические путы старейшины",
+        "es": "Atadura volcánica de anciano",
+        "br": "Vínculo Vulcânico do Ancião",
+        "kr": "",
+        "fr": "Lien volcanique ancien",
+        "de": "Vulkanbindung des Ältesten"
+    },
+    "202656": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Leather - WRIST 2"
+    },
+    "202657": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - FEET 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - FEET 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - FEET 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - FEET 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - FEET 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - FEET 2"
+    },
+    "202658": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - WAIST 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - WAIST 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - WAIST 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - WAIST 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - WAIST 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Mail - WAIST 2"
+    },
+    "202659": {
+        "cn": "",
+        "en": "Shackles of the Shadowed Bastille",
+        "ru": "Shackles of the Shadowed Bastille",
+        "es": "Shackles of the Shadowed Bastille",
+        "br": "Shackles of the Shadowed Bastille",
+        "kr": "",
+        "fr": "Shackles of the Shadowed Bastille",
+        "de": "Shackles of the Shadowed Bastille"
+    },
+    "202660": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - FEET 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - FEET 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - FEET 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - FEET 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - FEET 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - FEET 2"
+    },
+    "202661": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WAIST 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WAIST 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WAIST 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WAIST 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WAIST 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WAIST 2"
+    },
+    "202662": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WRIST 2",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WRIST 2",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WRIST 2",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WRIST 2",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WRIST 2",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Armor - Plate - WRIST 2"
+    },
+    "202664": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 3",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 3",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 3",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 3",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 3",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - NECK 3"
+    },
+    "202665": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 3",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 3",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 3",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 3",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 3",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - FINGER 3"
+    },
+    "202666": {
+        "cn": "",
+        "en": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3",
+        "ru": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3",
+        "es": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3",
+        "br": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3",
+        "kr": "",
+        "fr": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3",
+        "de": "10.1 Raid - Black Dragon Labs - Boss <#> - <Boss Name> - Accessory - CLOAK 3"
     },
     "203375": {
         "cn": "",
@@ -57201,5 +58558,8225 @@ export const nameDB = {
         "kr": "",
         "fr": "Anneau de cou de gardien",
         "de": "\"Halsring\" des Hüters"
+    },
+    "203680": {
+        "cn": "",
+        "en": "Totem Toss",
+        "ru": "Бросок тотема",
+        "es": "Lanzamiento de tótem",
+        "br": "Arremesso de Totem",
+        "kr": "",
+        "fr": "Lancer de totem",
+        "de": "Totemwurf"
+    },
+    "203714": {
+        "cn": "",
+        "en": "Ward of Faceless Ire",
+        "ru": "Оберег безликой ярости",
+        "es": "Resguardo de ira ignota",
+        "br": "Proteção da Ira Sem-rosto",
+        "kr": "",
+        "fr": "Sceau de colère sans-visage",
+        "de": "Schutz des gesichtslosen Zornes"
+    },
+    "203729": {
+        "cn": "",
+        "en": "Ominous Chromatic Essence",
+        "ru": "Зловещая разноцветная субстанция",
+        "es": "Esencia cromática ominosa",
+        "br": "Essência Cromática Agourenta",
+        "kr": "",
+        "fr": "Essence chromatique menaçante",
+        "de": "Ominöse chromatische Essenz"
+    },
+    "203963": {
+        "cn": "",
+        "en": "Beacon to the Beyond",
+        "ru": "Маяк иного мира",
+        "es": "Baliza al más allá",
+        "br": "Foco de Luz para o Além",
+        "kr": "",
+        "fr": "Fanal de l’Au-delà",
+        "de": "Leuchtfeuer ins Jenseits"
+    },
+    "203996": {
+        "cn": "",
+        "en": "Igneous Flowstone",
+        "ru": "Огненный камень потока",
+        "es": "Piedraflujo ígnea",
+        "br": "Rocha Fluida Ígnea",
+        "kr": "",
+        "fr": "Pierre-de-coulée ignée",
+        "de": "Feuriger Flussstein"
+    },
+    "204064": {
+        "cn": "",
+        "en": "PH 10.1 Raid - Black Dragon Labs - Boss 9 - Sarkareth - Accessory - Trinket - Omni",
+        "ru": "PH 10.1 Raid - Black Dragon Labs - Boss 9 - Sarkareth - Accessory - Trinket - Omni",
+        "es": "PH 10.1 Raid - Black Dragon Labs - Boss 9 - Sarkareth - Accessory - Trinket - Omni",
+        "br": "PH 10.1 Raid - Black Dragon Labs - Boss 9 - Sarkareth - Accessory - Trinket - Omni",
+        "kr": "",
+        "fr": "PH 10.1 Raid - Black Dragon Labs - Boss 9 - Sarkareth - Accessory - Trinket - Omni",
+        "de": "PH 10.1 Raid - Black Dragon Labs - Boss 9 - Sarkareth - Accessory - Trinket - Omni"
+    },
+    "204094": {
+        "cn": "",
+        "en": "Obsidian Combatant's Jeweled Signet",
+        "ru": "Драгоценная печатка обсидианового бойца",
+        "es": "Sello con joyas de combatiente obsidiana",
+        "br": "Sinete Adornado do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Chevalière du combattant d’obsidienne sertie de joyaux",
+        "de": "Juwelensignet des Obsidiankämpfers"
+    },
+    "204095": {
+        "cn": "",
+        "en": "Obsidian Combatant's Jeweled Amulet",
+        "ru": "Драгоценный амулет обсидианового бойца",
+        "es": "Amuleto con joyas de combatiente obsidiana",
+        "br": "Amuleto Adornado do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Amulette du combattant d’obsidienne sertie de joyaux",
+        "de": "Juwelenbesetztes Amulett des Obsidiankämpfers"
+    },
+    "204096": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Boots",
+        "ru": "Эластичные сапоги обсидианового бойца",
+        "es": "Botas resistentes de combatiente obsidiana",
+        "br": "Botas Resilientes do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Bottes résistantes du combattant d’obsidienne",
+        "de": "Widerstandsfähige Stiefel des Obsidiankämpfers"
+    },
+    "204097": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Chestpiece",
+        "ru": "Эластичный нагрудник обсидианового бойца",
+        "es": "Pechera resistente de combatiente obsidiana",
+        "br": "Peito d'Armas Resiliente do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Plastron résistant du combattant d’obsidienne",
+        "de": "Widerstandsfähiger Brustharnisch des Obsidiankämpfers"
+    },
+    "204098": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Mask",
+        "ru": "Эластичная маска обсидианового бойца",
+        "es": "Máscara resistente de combatiente obsidiana",
+        "br": "Máscara Resiliente do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Masque résistant du combattant d’obsidienne",
+        "de": "Widerstandsfähige Maske des Obsidiankämpfers"
+    },
+    "204099": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Shoulderpads",
+        "ru": "Эластичные наплечники обсидианового бойца",
+        "es": "Hombreras resistentes de combatiente obsidiana",
+        "br": "Ombreiras Resilientes do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Protège-épaules résistants du combattant d’obsidienne",
+        "de": "Widerstandsfähige Schulterpolster des Obsidiankämpfers"
+    },
+    "204100": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Belt",
+        "ru": "Эластичный пояс обсидианового бойца",
+        "es": "Cinturón resistente de combatiente obsidiana",
+        "br": "Cinto Resiliente do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Ceinture résistante du combattant d’obsidienne",
+        "de": "Widerstandsfähiger Gürtel des Obsidiankämpfers"
+    },
+    "204101": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Trousers",
+        "ru": "Эластичные штаны обсидианового бойца",
+        "es": "Calzas resistentes de combatiente obsidiana",
+        "br": "Calçotes Resilientes do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Chausses résistantes du combattant d’obsidienne",
+        "de": "Widerstandsfähige Beinkleider des Obsidiankämpfers"
+    },
+    "204102": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Gloves",
+        "ru": "Эластичные перчатки обсидианового бойца",
+        "es": "Guantes resistentes de combatiente obsidiana",
+        "br": "Luvas Resilientes do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Gants résistants du combattant d’obsidienne",
+        "de": "Widerstandsfähige Handschuhe des Obsidiankämpfers"
+    },
+    "204103": {
+        "cn": "",
+        "en": "Obsidian Combatant's Resilient Wristwraps",
+        "ru": "Эластичные напульсники обсидианового бойца",
+        "es": "Cubremuñecas resistentes de combatiente obsidiana",
+        "br": "Munhecas Resilientes do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes résistantes du combattant d’obsidienne",
+        "de": "Widerstandsfähige Gelenkbänder des Obsidiankämpfers"
+    },
+    "204104": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Treads",
+        "ru": "Крепкие ботфорты обсидианового бойца",
+        "es": "Botines de adamantita de combatiente obsidiana",
+        "br": "Botinas Adamantinas do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Bottines adamantines du combattant d’obsidienne",
+        "de": "Adamanttreter des Obsidiankämpfers"
+    },
+    "204105": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Chainmail",
+        "ru": "Крепкая кольчуга обсидианового бойца",
+        "es": "Malla de anillas de adamantita de combatiente obsidiana",
+        "br": "Malha de Anéis Adamantina do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Cotte de mailles adamantine du combattant d’obsidienne",
+        "de": "Adamantkettenpanzer des Obsidiankämpfers"
+    },
+    "204106": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Cowl",
+        "ru": "Крепкий клобук обсидианового бойца",
+        "es": "Capucha de adamantita de combatiente obsidiana",
+        "br": "Capucho Adamantino do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Capuche adamantine du combattant d’obsidienne",
+        "de": "Adamantgugel des Obsidiankämpfers"
+    },
+    "204107": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Epaulettes",
+        "ru": "Крепкие эполеты обсидианового бойца",
+        "es": "Charreteras de adamantita de combatiente obsidiana",
+        "br": "Paletas Adamantinas do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Épaulettes adamantines du combattant d’obsidienne",
+        "de": "Adamantschulterklappen des Obsidiankämpfers"
+    },
+    "204108": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Girdle",
+        "ru": "Крепкий ремень обсидианового бойца",
+        "es": "Faja de adamantita de combatiente obsidiana",
+        "br": "Cinturão Adamantino do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon adamantin du combattant d’obsidienne",
+        "de": "Adamantgürtung des Obsidiankämpfers"
+    },
+    "204109": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Leggings",
+        "ru": "Крепкие поножи обсидианового бойца",
+        "es": "Leotardos de adamantita de combatiente obsidiana",
+        "br": "Perneiras Adamantinas do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Jambières adamantines du combattant d’obsidienne",
+        "de": "Adamantgamaschen des Obsidiankämpfers"
+    },
+    "204110": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Gauntlets",
+        "ru": "Крепкие рукавицы обсидианового бойца",
+        "es": "Guanteletes de adamantita de combatiente obsidiana",
+        "br": "Manoplas Adamantinas do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Gantelets adamantins du combattant d’obsidienne",
+        "de": "Adamantstulpen des Obsidiankämpfers"
+    },
+    "204111": {
+        "cn": "",
+        "en": "Obsidian Combatant's Adamant Cuffs",
+        "ru": "Крепкие манжеты обсидианового бойца",
+        "es": "Puños de adamantita de combatiente obsidiana",
+        "br": "Manilhas Adamantinas do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Crispins adamantins du combattant d’obsidienne",
+        "de": "Adamantmanschetten des Obsidiankämpfers"
+    },
+    "204112": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Leggings",
+        "ru": "Поножи из ткани стихий обсидианового бойца",
+        "es": "Leotardos de tela salvaje de combatiente obsidiana",
+        "br": "Perneiras de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Jambières du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffgamaschen des Obsidiankämpfers"
+    },
+    "204113": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Shoulderpads",
+        "ru": "Наплечники из ткани стихий обсидианового бойца",
+        "es": "Hombreras de tela salvaje de combatiente obsidiana",
+        "br": "Ombreiras de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Protège-épaules du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffschulterpolster des Obsidiankämpfers"
+    },
+    "204114": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Treads",
+        "ru": "Ботфорты из ткани стихий обсидианового бойца",
+        "es": "Botines de tela salvaje de combatiente obsidiana",
+        "br": "Botinas de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Bottines du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstofftreter des Obsidiankämpfers"
+    },
+    "204115": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Bands",
+        "ru": "Повязки из ткани стихий обсидианового бойца",
+        "es": "Braciles de tela salvaje de combatiente obsidiana",
+        "br": "Embraces de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Poignets du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffbänder des Obsidiankämpfers"
+    },
+    "204116": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Hood",
+        "ru": "Капюшон из ткани стихий обсидианового бойца",
+        "es": "Caperuza de tela salvaje de combatiente obsidiana",
+        "br": "Capuz de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Chaperon du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffkapuze des Obsidiankämpfers"
+    },
+    "204117": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Gloves",
+        "ru": "Перчатки из ткани стихий обсидианового бойца",
+        "es": "Guantes de tela salvaje de combatiente obsidiana",
+        "br": "Luvas de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Gants du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffhandschuhe des Obsidiankämpfers"
+    },
+    "204118": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Tunic",
+        "ru": "Мундир из ткани стихий обсидианового бойца",
+        "es": "Guerrera de tela salvaje de combatiente obsidiana",
+        "br": "Túnica de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Tunique du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstofftunika des Obsidiankämpfers"
+    },
+    "204119": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Sash",
+        "ru": "Пояс из ткани стихий обсидианового бойца",
+        "es": "Fajín de tela salvaje de combatiente obsidiana",
+        "br": "Faixa de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Écharpe du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffschärpe des Obsidiankämpfers"
+    },
+    "204120": {
+        "cn": "",
+        "en": "Obsidian Combatant's Wildercloth Cloak",
+        "ru": "Плащ из ткани стихий обсидианового бойца",
+        "es": "Capa de tela salvaje de combatiente obsidiana",
+        "br": "Manto de Selvatrama do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Pelisse du combattant d’obsidienne en trame-sauvage",
+        "de": "Wildstoffumhang des Obsidiankämpfers"
+    },
+    "204121": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Breastplate",
+        "ru": "Драконитовый нагрудник обсидианового бойца",
+        "es": "Coraza de draconio de combatiente obsidiana",
+        "br": "Peitoral de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Cuirasse du combattant d’obsidienne en draconium",
+        "de": "Drakoniumbrustplatte des Obsidiankämpfers"
+    },
+    "204122": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Sabatons",
+        "ru": "Драконитовые башмаки обсидианового бойца",
+        "es": "Escarpes de draconio de combatiente obsidiana",
+        "br": "Escarpes de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Solerets du combattant d’obsidienne en draconium",
+        "de": "Drakoniumsabatons des Obsidiankämpfers"
+    },
+    "204123": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Gauntlets",
+        "ru": "Драконитовые рукавицы обсидианового бойца",
+        "es": "Guanteletes de draconio de combatiente obsidiana",
+        "br": "Manoplas de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du combattant d’obsidienne en draconium",
+        "de": "Drakoniumstulpen des Obsidiankämpfers"
+    },
+    "204124": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Helm",
+        "ru": "Драконитовый шлем обсидианового бойца",
+        "es": "Yelmo de draconio de combatiente obsidiana",
+        "br": "Elmo de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Heaume du combattant d’obsidienne en draconium",
+        "de": "Drakoniumhelm des Obsidiankämpfers"
+    },
+    "204125": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Greaves",
+        "ru": "Драконитовые наголенники обсидианового бойца",
+        "es": "Grebas de draconio de combatiente obsidiana",
+        "br": "Grevas de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Grèves du combattant d’obsidienne en draconium",
+        "de": "Drakoniumbeinschützer des Obsidiankämpfers"
+    },
+    "204126": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Pauldrons",
+        "ru": "Драконитовое наплечье обсидианового бойца",
+        "es": "Espaldares de draconio de combatiente obsidiana",
+        "br": "Brafoneiras de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Espauliers du combattant d’obsidienne en draconium",
+        "de": "Drakoniumschulterstücke des Obsidiankämpfers"
+    },
+    "204127": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Waistguard",
+        "ru": "Драконитовый воинский пояс обсидианового бойца",
+        "es": "Guardarrenes de draconio de combatiente obsidiana",
+        "br": "Cinta de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Sangle du combattant d’obsidienne en draconium",
+        "de": "Drakoniumtaillenschutz des Obsidiankämpfers"
+    },
+    "204128": {
+        "cn": "",
+        "en": "Obsidian Combatant's Draconium Armguards",
+        "ru": "Драконитовые наручи обсидианового бойца",
+        "es": "Guardabrazos de draconio de combatiente obsidiana",
+        "br": "Guarda-braços de Dracônio do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Garde-bras du combattant d’obsidienne en draconium",
+        "de": "Drakoniumarmschützer des Obsidiankämpfers"
+    },
+    "204164": {
+        "cn": "",
+        "en": "Obsidian Combatant's Medallion",
+        "ru": "Медальон обсидианового бойца",
+        "es": "Medallón de combatiente obsidiana",
+        "br": "Medalhão do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Médaillon du combattant d’obsidienne",
+        "de": "Medaillon des Obsidiankämpfers"
+    },
+    "204165": {
+        "cn": "",
+        "en": "Obsidian Combatant's Insignia of Alacrity",
+        "ru": "Знак расторопности обсидианового бойца",
+        "es": "Insignia de prontitud de combatiente obsidiana",
+        "br": "Insígnia de Diligência do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Insigne d’empressement du combattant d’obsidienne",
+        "de": "Inbrunstinsigne des Obsidiankämpfers"
+    },
+    "204166": {
+        "cn": "",
+        "en": "Obsidian Combatant's Emblem",
+        "ru": "Эмблема обсидианового бойца",
+        "es": "Emblema de combatiente obsidiana",
+        "br": "Emblema do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Emblème du combattant d’obsidienne",
+        "de": "Emblem des Obsidiankämpfers"
+    },
+    "204192": {
+        "cn": "",
+        "en": "Ascendancy",
+        "ru": "Действие по возрастанию",
+        "es": "Elevación",
+        "br": "Ascendência",
+        "kr": "",
+        "fr": "Ascendance",
+        "de": "Überlegenheit"
+    },
+    "204201": {
+        "cn": "",
+        "en": "Neltharion's Call to Chaos",
+        "ru": "Зов Хаоса Нелтариона",
+        "es": "Llamamiento al caos de Neltharion",
+        "br": "Chamado ao Caos de Neltharion",
+        "kr": "",
+        "fr": "Appel au chaos de Neltharion",
+        "de": "Neltharions Chaosruf"
+    },
+    "204202": {
+        "cn": "",
+        "en": "Neltharion's Call to Dominance",
+        "ru": "Властный зов Нелтариона",
+        "es": "Llamamiento a la dominancia de Neltharion",
+        "br": "Chamado à Dominância de Neltharion",
+        "kr": "",
+        "fr": "Appel à la domination de Neltharion",
+        "de": "Neltharions Vorherrschaftsruf"
+    },
+    "204211": {
+        "cn": "",
+        "en": "Neltharion's Call to Suffering",
+        "ru": "Зов страдания Нелтариона",
+        "es": "Llamamiento al sufrimiento de Neltharion",
+        "br": "Chamado ao Sofrimento de Neltharion",
+        "kr": "",
+        "fr": "Appel à la souffrance de Neltharion",
+        "de": "Neltharions Leidensruf"
+    },
+    "204318": {
+        "cn": "",
+        "en": "Thadrion's Erratic Arcanotrode",
+        "ru": "Изменчивый чаролектрод Тадриона",
+        "es": "Arcanotrodo errático de Thadrion",
+        "br": "Arcanotrodo Errático de Thadrion",
+        "kr": "",
+        "fr": "Arcanotrode erratique de Thadrion",
+        "de": "Thadrions unberechenbare Arkanotrode"
+    },
+    "204319": {
+        "cn": "",
+        "en": "Bloodfire Extraction Conduit",
+        "ru": "Извлекатель Кровавого Огня",
+        "es": "Conducto de extracción de sangre flamígera",
+        "br": "Conduíte de Extração Rubrofogo",
+        "kr": "",
+        "fr": "Intermédiaire d’extraction de sang igné",
+        "de": "Blutfeuerextraktionsleitung"
+    },
+    "204324": {
+        "cn": "",
+        "en": "Echo's Maddening Volume",
+        "ru": "Сводящий с ума фолиант Эха",
+        "es": "Volumen enloquecedor del eco",
+        "br": "Volume Enlouquecedor do Eco",
+        "kr": "",
+        "fr": "Tome insupportable de l’écho",
+        "de": "Wahnsinnserweckender Band des Echos"
+    },
+    "204386": {
+        "cn": "",
+        "en": "Pocket Darkened Elemental Core",
+        "ru": "Карманное потемневшее ядро элементаля",
+        "es": "Núcleo elemental oscurecido de bolsillo",
+        "br": "Núcleo de Elemental Escurecido de Bolso",
+        "kr": "",
+        "fr": "Noyau élémentaire assombri de poche",
+        "de": "Verdunkelter Elementarkern im Taschenformat"
+    },
+    "204387": {
+        "cn": "",
+        "en": "Buzzing Orb Core",
+        "ru": "Гудящее ядро сферы",
+        "es": "Núcleo de orbe zumbador",
+        "br": "Núcleo de Orbe Zumbidor",
+        "kr": "",
+        "fr": "Cœur d’orbe bourdonnant",
+        "de": "Summender Kugelkern"
+    },
+    "204388": {
+        "cn": "",
+        "en": "Draconic Cauterizing Magma",
+        "ru": "Драконья прижигающая магма",
+        "es": "Magma cauterizante dracónico",
+        "br": "Magma Cauterizante Dracônico",
+        "kr": "",
+        "fr": "Magma cautérisant draconique",
+        "de": "Drakonisches kauterisierendes Magma"
+    },
+    "204390": {
+        "cn": "",
+        "en": "Bonds of Desperate Ascension",
+        "ru": "Путы отчаянного развития",
+        "es": "Vínculos de ascensión desesperada",
+        "br": "Vínculos da Ascensão Desesperada",
+        "kr": "",
+        "fr": "Liens d’ascension désespérée",
+        "de": "Fesseln des verzweifelten Aufstiegs"
+    },
+    "204391": {
+        "cn": "",
+        "en": "Failed Applicant's Footpads",
+        "ru": "Башмаки неудачливого претендента",
+        "es": "Escarpines de candidato fracasado",
+        "br": "Pisantes do Candidato Fracassado",
+        "kr": "",
+        "fr": "Souliers de candidat rejeté",
+        "de": "Fußpolster des gescheiterten Bewerbers"
+    },
+    "204392": {
+        "cn": "",
+        "en": "Treads of Fractured Realities",
+        "ru": "Ботфорты расколотой реальности",
+        "es": "Botines de realidades fracturadas",
+        "br": "Botinas de Realidades Fraturadas",
+        "kr": "",
+        "fr": "Bottines des réalités fracturées",
+        "de": "Treter der zerbrochenen Realitäten"
+    },
+    "204393": {
+        "cn": "",
+        "en": "Clasps of the Diligent Steward",
+        "ru": "Пряжки прилежного распорядителя",
+        "es": "Cinto del administrador diligente",
+        "br": "Fechos do Comissário Diligente",
+        "kr": "",
+        "fr": "Étreinte d’intendant diligent",
+        "de": "Schnallengürtel des eifrigen Verwalters"
+    },
+    "204394": {
+        "cn": "",
+        "en": "Cuffs of the Savage Serpent",
+        "ru": "Манжеты дикого змея",
+        "es": "Puños de la serpiente salvaje",
+        "br": "Manilhas da Serpente Selvagem",
+        "kr": "",
+        "fr": "Crispins du serpent sauvage",
+        "de": "Manschetten der ungezähmten Schlange"
+    },
+    "204395": {
+        "cn": "",
+        "en": "Hydratooth Girdle",
+        "ru": "Ремень зуба гидры",
+        "es": "Faja de diente de hidra",
+        "br": "Cinturão de Dente de Hidra",
+        "kr": "",
+        "fr": "Ceinturon en dents d’hydre",
+        "de": "Hydrazahngurt"
+    },
+    "204396": {
+        "cn": "",
+        "en": "Spittle-Resistant Sollerets",
+        "ru": "Плевкоупорные солереты",
+        "es": "Zapatos herrados resistentes a las babas",
+        "br": "Escarpes Resistentes a Saliva",
+        "kr": "",
+        "fr": "Solerets résistants à la bave",
+        "de": "Speichelresistenter Fußharnisch"
+    },
+    "204397": {
+        "cn": "",
+        "en": "Magmorax's Fourth Collar",
+        "ru": "Четвертый ошейник Магморакса",
+        "es": "Cuarta collera de Magmorax",
+        "br": "Quarto Colar de Magmorax",
+        "kr": "",
+        "fr": "Quatrième collier de Magmorax",
+        "de": "Magmorax' vierter Kragen"
+    },
+    "204398": {
+        "cn": "",
+        "en": "Onyx Impostor's Birthright",
+        "ru": "Наследство ониксового самозванца",
+        "es": "Derecho de nacimiento del impostor de ónice",
+        "br": "Direito de Nascença do Impostor de Ônix",
+        "kr": "",
+        "fr": "Héritage de l’imposteur d’onyx",
+        "de": "Geburtsrecht des Onyxverräters"
+    },
+    "204399": {
+        "cn": "",
+        "en": "Oblivion's Immortal Coil",
+        "ru": "Бессмертная обмотка забвения",
+        "es": "Espiral inmortal del olvido",
+        "br": "Espiral Imortal do Oblívio",
+        "kr": "",
+        "fr": "Corde immortelle de l’oubli",
+        "de": "Ewiger Kreislauf des Vergessens"
+    },
+    "204400": {
+        "cn": "",
+        "en": "Recycled Golemskin Waistguard",
+        "ru": "Воинский пояс из переработанной шкуры голема",
+        "es": "Guardarrenes de piel de gólem reciclada",
+        "br": "Cinta de Pele de Golem Reciclada",
+        "kr": "",
+        "fr": "Sangle en peau de golem recyclée",
+        "de": "Wiederverwerteter Golemhauttaillenschutz"
+    },
+    "204401": {
+        "cn": "",
+        "en": "Spore Keeper's Baton",
+        "ru": "Жезл хранителя спор",
+        "es": "Bordón de guardián de las esporas",
+        "br": "Cacetete do Guarda de Esporos",
+        "kr": "",
+        "fr": "Bâton de garde-spore",
+        "de": "Baton des Sporenhüters"
+    },
+    "204408": {
+        "cn": "",
+        "en": "Gholna's Lavaborne Legwraps",
+        "ru": "Магматические бриджи Голны",
+        "es": "Ataduras de lava de Gholna",
+        "br": "Culotes Flamaventos de Gholna",
+        "kr": "",
+        "fr": "Jambards magmatiques de Gholna",
+        "de": "Gholnas lavabedeckte Beinwickel"
+    },
+    "204409": {
+        "cn": "",
+        "en": "Heatbinder's Burning Slippers",
+        "ru": "Пылающие туфли покорительницы жара",
+        "es": "Zapatillas ardientes de vinculacalor",
+        "br": "Sapatilhas Flamejantes do Ligalume",
+        "kr": "",
+        "fr": "Mules brûlantes de lieur de chaleur",
+        "de": "Brennende Pantoffeln des Hitzebinders"
+    },
+    "204410": {
+        "cn": "",
+        "en": "Bands of Purified Purpose",
+        "ru": "Повязки истинного предназначения",
+        "es": "Braciles de propósito purificado",
+        "br": "Embraces do Propósito Purificado",
+        "kr": "",
+        "fr": "Poignets du dessein purifié",
+        "de": "Bänder der geläuterten Bestimmung"
+    },
+    "204411": {
+        "cn": "",
+        "en": "Crucible Curator's Wingspan",
+        "ru": "Крылья смотрителя Горнила",
+        "es": "Alas de conservador del Crisol",
+        "br": "Envergadura do Curador do Crisol",
+        "kr": "",
+        "fr": "Envergure de conservateur du creuset",
+        "de": "Flügelschlag des Tiegelkurators"
+    },
+    "204412": {
+        "cn": "",
+        "en": "Crucible Curator's Wingspan",
+        "ru": "Крылья смотрителя Горнила",
+        "es": "Alas de conservador del Crisol",
+        "br": "Envergadura do Curador do Crisol",
+        "kr": "",
+        "fr": "Envergure de conservateur du creuset",
+        "de": "Flügelschlag des Tiegelkurators"
+    },
+    "204413": {
+        "cn": "",
+        "en": "Bands of Purified Purpose",
+        "ru": "Повязки истинного предназначения",
+        "es": "Braciles de propósito purificado",
+        "br": "Embraces do Propósito Purificado",
+        "kr": "",
+        "fr": "Poignets du dessein purifié",
+        "de": "Bänder der geläuterten Bestimmung"
+    },
+    "204414": {
+        "cn": "",
+        "en": "Laboratory Assistant's Abductors",
+        "ru": "Захваты лаборанта",
+        "es": "Abductores de asistente de laboratorio",
+        "br": "Abdutores do Assistente de Laboratório",
+        "kr": "",
+        "fr": "Ravisseurs de laborantin",
+        "de": "Entführer des Laborassistenten"
+    },
+    "204415": {
+        "cn": "",
+        "en": "Mantle of Sunless Kindling",
+        "ru": "Оплечье бессолнечного пламени",
+        "es": "Manto del sol ausente",
+        "br": "Dragonas do Avivamento Sem Sol",
+        "kr": "",
+        "fr": "Mantelet de feu sans-soleil",
+        "de": "Mantel des sonnenlosen Zunders"
+    },
+    "204416": {
+        "cn": "",
+        "en": "Laboratory Assistant's Abductors",
+        "ru": "Захваты лаборанта",
+        "es": "Abductores de asistente de laboratorio",
+        "br": "Abdutores do Assistente de Laboratório",
+        "kr": "",
+        "fr": "Ravisseurs de laborantin",
+        "de": "Entführer des Laborassistenten"
+    },
+    "204417": {
+        "cn": "",
+        "en": "Mantle of Sunless Kindling",
+        "ru": "Оплечье бессолнечного пламени",
+        "es": "Manto del sol ausente",
+        "br": "Dragonas do Avivamento Sem Sol",
+        "kr": "",
+        "fr": "Mantelet de feu sans-soleil",
+        "de": "Mantel des sonnenlosen Zunders"
+    },
+    "204418": {
+        "cn": "",
+        "en": "Ashen Zaralek Cuirass",
+        "ru": "Заралекская пепельная кираса",
+        "es": "Loriga cinérea de Zaralek",
+        "br": "Corselete Zaralek Cinzento",
+        "kr": "",
+        "fr": "Cuirasse cendrée de Zaralek",
+        "de": "Aschener Zaralekkürass"
+    },
+    "204419": {
+        "cn": "",
+        "en": "Cavernous Foliage Wristbands",
+        "ru": "Нарукавье пещерной листвы",
+        "es": "Braciles de follaje cavernoso",
+        "br": "Pulseiras de Folhagem Cavernosa",
+        "kr": "",
+        "fr": "Protège-poignets de végétation caverneuse",
+        "de": "Gelenkbänder des Höhlenlaubwerks"
+    },
+    "204420": {
+        "cn": "",
+        "en": "Sundered Edgelord's Breastplate",
+        "ru": "Кираса владыки клинка из Пламени",
+        "es": "Coraza de señora de filos hendida",
+        "br": "Peitoral da Senhora-da-borda Partida",
+        "kr": "",
+        "fr": "Cuirasse de seigneur des lames fracturé",
+        "de": "Brustplatte der Klippenherrin der Splitterflammen"
+    },
+    "204421": {
+        "cn": "",
+        "en": "Faulds of Failed Experiments",
+        "ru": "Латный пояс неудавшихся экспериментов",
+        "es": "Escarcela de experimentos fallidos",
+        "br": "Escarcelas dos Experimentos Fracassados",
+        "kr": "",
+        "fr": "Flancart des expériences ratées",
+        "de": "Taillenschutz der fehlgeschlagenen Experimente"
+    },
+    "204422": {
+        "cn": "",
+        "en": "Sundered Edgelord's Breastplate",
+        "ru": "Кираса владыки клинка из Пламени",
+        "es": "Coraza de señora de filos hendida",
+        "br": "Peitoral da Senhora-da-borda Partida",
+        "kr": "",
+        "fr": "Cuirasse de seigneur des lames fracturé",
+        "de": "Brustplatte der Klippenherrin der Splitterflammen"
+    },
+    "204423": {
+        "cn": "",
+        "en": "Faulds of Failed Experiments",
+        "ru": "Латный пояс неудавшихся экспериментов",
+        "es": "Escarcela de experimentos fallidos",
+        "br": "Escarcelas dos Experimentos Fracassados",
+        "kr": "",
+        "fr": "Flancart des expériences ratées",
+        "de": "Taillenschutz der fehlgeschlagenen Experimente"
+    },
+    "204424": {
+        "cn": "",
+        "en": "Crechebound Soldier's Boots",
+        "ru": "Солдатские сапоги Колыбели",
+        "es": "Botas de soldado vinculanido",
+        "br": "Botas do Soldado Preso ao Abrigo",
+        "kr": "",
+        "fr": "Bottes de soldat couvelié",
+        "de": "Stiefel des hortgebundenen Soldaten"
+    },
+    "204425": {
+        "cn": "",
+        "en": "Crown of the Twin Elders",
+        "ru": "Корона двух старейшин",
+        "es": "Corona de los ancianos gemelos",
+        "br": "Coroa dos Anciãos Gêmeos",
+        "kr": "",
+        "fr": "Couronne des Anciens jumeaux",
+        "de": "Krone der Zwillingsältesten"
+    },
+    "204426": {
+        "cn": "",
+        "en": "Blazestalker's Smelted Cleats",
+        "ru": "Шипованные ботинки огненного ловчего",
+        "es": "Tacos fundidos de acechallamas",
+        "br": "Cravos Fundidos do Caça-chamas",
+        "kr": "",
+        "fr": "Crampons incandescents de traque-brasier",
+        "de": "Geschmolzene Stachelschuhe des Flammengängers"
+    },
+    "204427": {
+        "cn": "",
+        "en": "Devoted Warden's Gaze",
+        "ru": "Взор верного стража",
+        "es": "Mirada de celador devoto",
+        "br": "Olhar do Guardião Devoto",
+        "kr": "",
+        "fr": "Regard de gardien dévoué",
+        "de": "Blick des ergebenen Wächters"
+    },
+    "204428": {
+        "cn": "",
+        "en": "Sanctum Guard's Forgewalkers",
+        "ru": "Кузнеступы стража святилища",
+        "es": "Caminantes de forja de la guardia del sagrario",
+        "br": "Andaforjas do Guarda do Santuário",
+        "kr": "",
+        "fr": "Marcheforges de garde du sanctum",
+        "de": "Schmiedeläufer der Sanktumwache"
+    },
+    "204429": {
+        "cn": "",
+        "en": "Devoted Warden's Gaze",
+        "ru": "Взор верного стража",
+        "es": "Mirada de celador devoto",
+        "br": "Olhar do Guardião Devoto",
+        "kr": "",
+        "fr": "Regard de gardien dévoué",
+        "de": "Blick des ergebenen Wächters"
+    },
+    "204430": {
+        "cn": "",
+        "en": "Sanctum Guard's Forgewalkers",
+        "ru": "Кузнеступы стража святилища",
+        "es": "Caminantes de forja de la guardia del sagrario",
+        "br": "Andaforjas do Guarda do Santuário",
+        "kr": "",
+        "fr": "Marcheforges de garde du sanctum",
+        "de": "Schmiedeläufer der Sanktumwache"
+    },
+    "204431": {
+        "cn": "",
+        "en": "Epaulettes of Draconic Conquest",
+        "ru": "Эполеты дрконьего завоевания",
+        "es": "Charreteras de conquista dracónica",
+        "br": "Paletas da Conquista Dracônica",
+        "kr": "",
+        "fr": "Épaulettes de conquête draconique",
+        "de": "Schulterklappen der drakonischen Eroberung"
+    },
+    "204432": {
+        "cn": "",
+        "en": "Vakan's Shale Greatbelt",
+        "ru": "Большой сланцевый пояс Вакана",
+        "es": "Gran cinturón de esquisto de Vakan",
+        "br": "Correão Xistoso de Vakan",
+        "kr": "",
+        "fr": "Grande ceinture argileuse de Vakan",
+        "de": "Vakans Schiefergroßgürtel"
+    },
+    "204452": {
+        "cn": "",
+        "en": "Earth Warding Spire",
+        "ru": "Посох Хранителя Земли",
+        "es": "Aguja de resguardo de tierra",
+        "br": "Pináculo Guardador da Terra",
+        "kr": "",
+        "fr": "Flèche gardeterre",
+        "de": "Erdschutzsäule"
+    },
+    "204457": {
+        "cn": "",
+        "en": "Almost Immovable Wall",
+        "ru": "Почти что недвижная стена",
+        "es": "Muro casi inamovible",
+        "br": "Parede Quase Inamovível",
+        "kr": "",
+        "fr": "Mur presque inébranlable",
+        "de": "Nahezu unbewegliche Wand"
+    },
+    "204458": {
+        "cn": "",
+        "en": "Centered Stone Focus",
+        "ru": "Отцентрированное каменное средоточие",
+        "es": "Enfoque de piedra centrada",
+        "br": "Foco de Pedra Centrado",
+        "kr": "",
+        "fr": "Focalisateur de pierre centré",
+        "de": "Zentrierter Steinfokus"
+    },
+    "204459": {
+        "cn": "",
+        "en": "Wand of Shifting Stone",
+        "ru": "Жезл изменчивого камня",
+        "es": "Varita de piedra movediza",
+        "br": "Varinha de Pedra Cambiante",
+        "kr": "",
+        "fr": "Baguette de pierre instable",
+        "de": "Zauberstab des unbeständigen Steins"
+    },
+    "204461": {
+        "cn": "",
+        "en": "Shalkeel's Remembrance",
+        "ru": "Память о Шалкиле",
+        "es": "Recuerdo de Shakeel",
+        "br": "Recordação de Shalkeel",
+        "kr": "",
+        "fr": "Souvenir de Shalkeel",
+        "de": "Shalkeels Andenken"
+    },
+    "204465": {
+        "cn": "",
+        "en": "Voice of the Silent Star",
+        "ru": "Голос тихой звезды",
+        "es": "Voz de la estrella silente",
+        "br": "Voz da Estrela Silenciosa",
+        "kr": "",
+        "fr": "Voix de l’étoile silencieuse",
+        "de": "Stimme des stillen Sterns"
+    },
+    "204466": {
+        "cn": "",
+        "en": "Tormentor's Siphoning Signet",
+        "ru": "Голодная печатка мучителя",
+        "es": "Sello succionador de torturador",
+        "br": "Sinete Drenante do Atormentador",
+        "kr": "",
+        "fr": "Chevalière de siphonnage de tourmenteur",
+        "de": "Schröpfsignet des Peinigers"
+    },
+    "204467": {
+        "cn": "",
+        "en": "Drape of the Dracthyr Trials",
+        "ru": "Пелерина испытаний для драктиров",
+        "es": "Mantón de las pruebas dracthyr",
+        "br": "Clâmide das Provações Dracthyr",
+        "kr": "",
+        "fr": "Drapé des épreuves dracthyrs",
+        "de": "Tuch der Dracthyrprüfungen"
+    },
+    "204581": {
+        "cn": "",
+        "en": "Endowed Robes",
+        "ru": "Наградные одеяния",
+        "es": "Toga dotada",
+        "br": "Vestes Providas",
+        "kr": "",
+        "fr": "Robe patrimoniale",
+        "de": "Gestiftete Robe"
+    },
+    "204582": {
+        "cn": "",
+        "en": "Endowed Slippers",
+        "ru": "Наградные туфли",
+        "es": "Zapatillas dotadas",
+        "br": "Sapatilhas Providas",
+        "kr": "",
+        "fr": "Mules patrimoniales",
+        "de": "Gestiftete Pantoffeln"
+    },
+    "204583": {
+        "cn": "",
+        "en": "Endowed Mitts",
+        "ru": "Наградные полуперчатки",
+        "es": "Mitones dotados",
+        "br": "Luvetes Providas",
+        "kr": "",
+        "fr": "Mitaines patrimoniales",
+        "de": "Gestiftete Fäustlinge"
+    },
+    "204584": {
+        "cn": "",
+        "en": "Endowed Hood",
+        "ru": "Наградной капюшон",
+        "es": "Caperuza dotada",
+        "br": "Capuz Provido",
+        "kr": "",
+        "fr": "Chaperon patrimonial",
+        "de": "Gestiftete Kapuze"
+    },
+    "204585": {
+        "cn": "",
+        "en": "Endowed Breeches",
+        "ru": "Наградные брюки",
+        "es": "Calzones dotados",
+        "br": "Calções Providos",
+        "kr": "",
+        "fr": "Braies patrimoniales",
+        "de": "Gestiftete Bundhosen"
+    },
+    "204586": {
+        "cn": "",
+        "en": "Endowed Mantle",
+        "ru": "Наградное оплечье",
+        "es": "Manto dotado",
+        "br": "Manto Provido",
+        "kr": "",
+        "fr": "Mantelet patrimonial",
+        "de": "Gestifteter Mantel"
+    },
+    "204587": {
+        "cn": "",
+        "en": "Endowed Sash",
+        "ru": "Наградной кушак",
+        "es": "Fajín dotado",
+        "br": "Faixa Provida",
+        "kr": "",
+        "fr": "Écharpe patrimoniale",
+        "de": "Gestiftete Schärpe"
+    },
+    "204588": {
+        "cn": "",
+        "en": "Endowed Bindings",
+        "ru": "Наградные повязки",
+        "es": "Ataduras dotadas",
+        "br": "Braceletes Providos",
+        "kr": "",
+        "fr": "Manchettes patrimoniales",
+        "de": "Gestiftete Bindungen"
+    },
+    "204589": {
+        "cn": "",
+        "en": "Inherited Raiment",
+        "ru": "Наследственное облачение",
+        "es": "Vestiduras heredadas",
+        "br": "Indumentária Herdada",
+        "kr": "",
+        "fr": "Grande tenue héritée",
+        "de": "Vererbte Gewandung"
+    },
+    "204590": {
+        "cn": "",
+        "en": "Inherited Treads",
+        "ru": "Наследственные ботфорты",
+        "es": "Botines heredados",
+        "br": "Botinas Herdadas",
+        "kr": "",
+        "fr": "Bottines héritées",
+        "de": "Vererbte Treter"
+    },
+    "204591": {
+        "cn": "",
+        "en": "Inherited Gloves",
+        "ru": "Наследственные перчатки",
+        "es": "Guantes heredados",
+        "br": "Luvas Herdadas",
+        "kr": "",
+        "fr": "Gants hérités",
+        "de": "Vererbte Handschuhe"
+    },
+    "204592": {
+        "cn": "",
+        "en": "Inherited Mask",
+        "ru": "Наследственная маска",
+        "es": "Máscara heredada",
+        "br": "Máscara Herdada",
+        "kr": "",
+        "fr": "Masque hérité",
+        "de": "Vererbte Maske"
+    },
+    "204593": {
+        "cn": "",
+        "en": "Inherited Leggings",
+        "ru": "Наследственные поножи",
+        "es": "Leotardos heredados",
+        "br": "Perneiras Herdadas",
+        "kr": "",
+        "fr": "Jambières héritées",
+        "de": "Vererbte Gamaschen"
+    },
+    "204594": {
+        "cn": "",
+        "en": "Inherited Epaulets",
+        "ru": "Наследственные эполеты",
+        "es": "Cubrehombros heredados",
+        "br": "Palas Herdadas",
+        "kr": "",
+        "fr": "Épaulettes héritées",
+        "de": "Vererbte Schulterklappen"
+    },
+    "204595": {
+        "cn": "",
+        "en": "Inherited Cincture",
+        "ru": "Наследственная опояска",
+        "es": "Ceñidor heredado",
+        "br": "Cíngulo Herdado",
+        "kr": "",
+        "fr": "Cordelette héritée",
+        "de": "Vererbte Umgürtelung"
+    },
+    "204596": {
+        "cn": "",
+        "en": "Inherited Wristbands",
+        "ru": "Наследственное нарукавье",
+        "es": "Braciles heredados",
+        "br": "Pulseiras Herdadas",
+        "kr": "",
+        "fr": "Protège-poignets hérités",
+        "de": "Vererbte Gelenkbänder"
+    },
+    "204597": {
+        "cn": "",
+        "en": "Bequeathed Chainmail",
+        "ru": "Завещанная кольчуга",
+        "es": "Malla de anillas legada",
+        "br": "Malha de Anéis Legada",
+        "kr": "",
+        "fr": "Cotte de mailles léguée",
+        "de": "Vermachter Kettenpanzer"
+    },
+    "204598": {
+        "cn": "",
+        "en": "Bequeathed Striders",
+        "ru": "Завещанные походные сапоги",
+        "es": "Zancos legados",
+        "br": "Chapins Legados",
+        "kr": "",
+        "fr": "Cuissardes léguées",
+        "de": "Vermachte Schreiter"
+    },
+    "204599": {
+        "cn": "",
+        "en": "Bequeathed Gauntlets",
+        "ru": "Завещанные рукавицы",
+        "es": "Guanteletes legados",
+        "br": "Manoplas Legadas",
+        "kr": "",
+        "fr": "Gantelets légués",
+        "de": "Vermachte Stulpen"
+    },
+    "204600": {
+        "cn": "",
+        "en": "Bequeathed Cowl",
+        "ru": "Завещанный клобук",
+        "es": "Capucha legada",
+        "br": "Capucho Legado",
+        "kr": "",
+        "fr": "Capuche léguée",
+        "de": "Vermachte Gugel"
+    },
+    "204601": {
+        "cn": "",
+        "en": "Bequeathed Tassets",
+        "ru": "Завещанные набедренные пластины",
+        "es": "Escarcelas legadas",
+        "br": "Escarcela Legada",
+        "kr": "",
+        "fr": "Tassettes léguées",
+        "de": "Vermachte Tassetten"
+    },
+    "204602": {
+        "cn": "",
+        "en": "Bequeathed Spaulders",
+        "ru": "Завещанный наплеч",
+        "es": "Bufas legadas",
+        "br": "Espaldares Legadas",
+        "kr": "",
+        "fr": "Spallières léguées",
+        "de": "Vermachte Schiftung"
+    },
+    "204603": {
+        "cn": "",
+        "en": "Bequeathed Cinch",
+        "ru": "Завещанный кушак",
+        "es": "Cincho legado",
+        "br": "Cilha Legada",
+        "kr": "",
+        "fr": "Cordelière léguée",
+        "de": "Vermachter Hüftgurt"
+    },
+    "204604": {
+        "cn": "",
+        "en": "Bequeathed Bracers",
+        "ru": "Завещанные наручи",
+        "es": "Brazales legados",
+        "br": "Braçadeiras Legadas",
+        "kr": "",
+        "fr": "Brassards légués",
+        "de": "Vermachte Armschienen"
+    },
+    "204605": {
+        "cn": "",
+        "en": "Bestowed Chestplate",
+        "ru": "Дарованная бригантина",
+        "es": "Peto de placas concedido",
+        "br": "Guarda-peito Concedido",
+        "kr": "",
+        "fr": "Pansière conférée",
+        "de": "Hinterlassene Brustplatte"
+    },
+    "204606": {
+        "cn": "",
+        "en": "Bestowed Stompers",
+        "ru": "Дарованные высокие ботинки",
+        "es": "Apisonadoras concedidas",
+        "br": "Pisoteadores Concedidos",
+        "kr": "",
+        "fr": "Croquenots conférés",
+        "de": "Hinterlassene Stampfer"
+    },
+    "204607": {
+        "cn": "",
+        "en": "Bestowed Crushers",
+        "ru": "Дарованные крушители",
+        "es": "Trituradores concedidos",
+        "br": "Esmagadores Concedidos",
+        "kr": "",
+        "fr": "Écraseurs conférés",
+        "de": "Hinterlassene Zermalmer"
+    },
+    "204608": {
+        "cn": "",
+        "en": "Bestowed Greathelm",
+        "ru": "Дарованный большой шлем",
+        "es": "Gran yelmo concedido",
+        "br": "Grande Elmo Concedido",
+        "kr": "",
+        "fr": "Grand heaume conféré",
+        "de": "Hinterlassener Großhelm"
+    },
+    "204609": {
+        "cn": "",
+        "en": "Bestowed Greaves",
+        "ru": "Дарованные наголенники",
+        "es": "Grebas concedidas",
+        "br": "Grevas Concedidas",
+        "kr": "",
+        "fr": "Grèves conférées",
+        "de": "Hinterlassene Beinschützer"
+    },
+    "204610": {
+        "cn": "",
+        "en": "Bestowed Pauldrons",
+        "ru": "Дарованное наплечье",
+        "es": "Espaldares concedidos",
+        "br": "Brafoneiras Concedidas",
+        "kr": "",
+        "fr": "Espauliers conférés",
+        "de": "Hinterlassene Schulterstücke"
+    },
+    "204611": {
+        "cn": "",
+        "en": "Bestowed Girdle",
+        "ru": "Дарованный ремень",
+        "es": "Faja concedida",
+        "br": "Cinturão Concedido",
+        "kr": "",
+        "fr": "Ceinturon conféré",
+        "de": "Hinterlassener Gurt"
+    },
+    "204612": {
+        "cn": "",
+        "en": "Bestowed Vambraces",
+        "ru": "Дарованные тяжелые наручи",
+        "es": "Avambrazos concedidos",
+        "br": "Avambraços Concedidos",
+        "kr": "",
+        "fr": "Protège-bras conférés",
+        "de": "Hinterlassene Unterarmschienen"
+    },
+    "204616": {
+        "cn": "",
+        "en": "Endowed Wrap",
+        "ru": "Наградные обмотки",
+        "es": "Envoltura dotada",
+        "br": "Mantelete Provido",
+        "kr": "",
+        "fr": "Foulard patrimonial",
+        "de": "Gestiftetes Wickeltuch"
+    },
+    "204617": {
+        "cn": "",
+        "en": "Bestowed Cape",
+        "ru": "Дарованная накидка",
+        "es": "Manteo concedido",
+        "br": "Capa Concedida",
+        "kr": "",
+        "fr": "Pèlerine conférée",
+        "de": "Hinterlassener Umhang"
+    },
+    "204618": {
+        "cn": "",
+        "en": "Bequeathed Drape",
+        "ru": "Завещанная пелерина",
+        "es": "Mantón legado",
+        "br": "Clâmide Legada",
+        "kr": "",
+        "fr": "Drapé légué",
+        "de": "Vermachtes Tuch"
+    },
+    "204619": {
+        "cn": "",
+        "en": "Inherited Cloak",
+        "ru": "Наследственный плащ",
+        "es": "Capa heredada",
+        "br": "Manto Herdado",
+        "kr": "",
+        "fr": "Cape héritée",
+        "de": "Vererbter Umhang"
+    },
+    "204629": {
+        "cn": "",
+        "en": "Grounded Stone Focus",
+        "ru": "Заземленное каменное средоточие",
+        "es": "Enfoque de piedra en tierra",
+        "br": "Foco de Pedra Aterrado",
+        "kr": "",
+        "fr": "Focalisateur de pierre ancré",
+        "de": "Geerdeter Steinfokus"
+    },
+    "204630": {
+        "cn": "",
+        "en": "Nearly Unbreakable Wall",
+        "ru": "Почти что несокрушимая стена",
+        "es": "Muro casi irrompible",
+        "br": "Parede Quase Inquebrável",
+        "kr": "",
+        "fr": "Mur presque incassable",
+        "de": "Nahezu unzerstörbare Wand"
+    },
+    "204677": {
+        "cn": "",
+        "en": "Ogre Mining Pick",
+        "ru": "Кирка огра",
+        "es": "Pico de minero ogro",
+        "br": "Picareta de Mineração Ôgrica",
+        "kr": "",
+        "fr": "Pioche de mineur ogre",
+        "de": "Spitzhacke des Ogers"
+    },
+    "204704": {
+        "cn": "",
+        "en": "Adaptive Dracothyst Armguards",
+        "ru": "Адаптивные дракотистовые боевые наручи",
+        "es": "Guardabrazos de dracotista adaptables",
+        "br": "Guarda-braços de Dracotista Adaptativo",
+        "kr": "",
+        "fr": "Garde-bras en dracothyste adaptatifs",
+        "de": "Adaptive Dracothystarmschützer"
+    },
+    "204706": {
+        "cn": "",
+        "en": "Spore Colony Shoulderguards",
+        "ru": "Наплечные щитки колонии спор",
+        "es": "Guardahombros de colonia de esporas",
+        "br": "Guarda-ombros de Colônia de Esporos",
+        "kr": "",
+        "fr": "Garde-épaules couverts de spores",
+        "de": "Schulterschützer der Sporenkolonie"
+    },
+    "204714": {
+        "cn": "",
+        "en": "Satchel of Healing Spores",
+        "ru": "Сумка с целебными спорами",
+        "es": "Saquito de esporas de sanación",
+        "br": "Algibeira de Esporos Curativos",
+        "kr": "",
+        "fr": "Sacoche de spores guérisseuses",
+        "de": "Säckchen mit Heilsporen"
+    },
+    "204728": {
+        "cn": "",
+        "en": "Friendship Censer",
+        "ru": "Курильница дружбы",
+        "es": "Incensario de amistad",
+        "br": "Incensário da Amizade",
+        "kr": "",
+        "fr": "Encensoir de l’amitié",
+        "de": "Räuchergefäß der Freundschaft"
+    },
+    "204732": {
+        "cn": "",
+        "en": "Suffused Choker",
+        "ru": "Насыщенное колье",
+        "es": "Gargantilla cargada",
+        "br": "Gargantilha Impregnada",
+        "kr": "",
+        "fr": "Sautoir saturé",
+        "de": "Durchströmter Halsreif"
+    },
+    "204733": {
+        "cn": "",
+        "en": "Suffused Shawl",
+        "ru": "Насыщенная шаль",
+        "es": "Chal cargado",
+        "br": "Xale Impregnado",
+        "kr": "",
+        "fr": "Châle saturé",
+        "de": "Durchströmter Schal"
+    },
+    "204735": {
+        "cn": "",
+        "en": "Suffused Band",
+        "ru": "Насыщенное кольцо",
+        "es": "Sortija cargada",
+        "br": "Elo Impregnado",
+        "kr": "",
+        "fr": "Bague saturée",
+        "de": "Durchströmtes Band"
+    },
+    "204736": {
+        "cn": "",
+        "en": "Heatbound Medallion",
+        "ru": "Аксессуар скованного жара",
+        "es": "Medallón vinculado al calor",
+        "br": "Medalhão Vinculado ao Calor",
+        "kr": "",
+        "fr": "Médaillon ardent",
+        "de": "Hitzegebundenes Medaillon"
+    },
+    "204738": {
+        "cn": "",
+        "en": "Suffused Staff",
+        "ru": "Насыщенный посох",
+        "es": "Bastón cargado",
+        "br": "Cajado Impregnado",
+        "kr": "",
+        "fr": "Bâton saturé",
+        "de": "Durchströmter Stab"
+    },
+    "204742": {
+        "cn": "",
+        "en": "Suffused Censer",
+        "ru": "Насыщенная курильница",
+        "es": "Incensario cargado",
+        "br": "Incensário Impregnado",
+        "kr": "",
+        "fr": "Encensoir saturé",
+        "de": "Durchströmtes Räuchergefäß"
+    },
+    "204745": {
+        "cn": "",
+        "en": "Suffused Signet",
+        "ru": "Насыщенная печатка",
+        "es": "Sello cargado",
+        "br": "Sinete Impregnado",
+        "kr": "",
+        "fr": "Chevalière saturée",
+        "de": "Durchströmtes Signet"
+    },
+    "204746": {
+        "cn": "",
+        "en": "Suffused Loop",
+        "ru": "Насыщенное кольцо",
+        "es": "Aro cargado",
+        "br": "Aro Impregnado",
+        "kr": "",
+        "fr": "Jonc saturé",
+        "de": "Durchströmte Schleife"
+    },
+    "204750": {
+        "cn": "",
+        "en": "Suffused Kris",
+        "ru": "Насыщенный крис",
+        "es": "Kris cargado",
+        "br": "Cris Impregnado",
+        "kr": "",
+        "fr": "Kriss saturé",
+        "de": "Durchströmtes Kris"
+    },
+    "204752": {
+        "cn": "",
+        "en": "Suffused Spellblade",
+        "ru": "Насыщенный чародейский клинок",
+        "es": "Hoja de hechizo cargada",
+        "br": "Magilâmina Impregnada",
+        "kr": "",
+        "fr": "Sorcelame saturée",
+        "de": "Durchströmte Zauberklinge"
+    },
+    "204755": {
+        "cn": "",
+        "en": "Suffused Wand",
+        "ru": "Насыщенный жезл",
+        "es": "Varita cargada",
+        "br": "Varinha Impregnada",
+        "kr": "",
+        "fr": "Baguette saturée",
+        "de": "Durchströmter Zauberstab"
+    },
+    "204756": {
+        "cn": "",
+        "en": "Suffused Scepter",
+        "ru": "Насыщенный скипетр",
+        "es": "Cetro cargado",
+        "br": "Cetro Impregnado",
+        "kr": "",
+        "fr": "Sceptre saturé",
+        "de": "Durchströmtes Szepter"
+    },
+    "204757": {
+        "cn": "",
+        "en": "Suffused Barrier",
+        "ru": "Насыщенный барьер",
+        "es": "Barrera cargada",
+        "br": "Barreira Impregnada",
+        "kr": "",
+        "fr": "Barrière saturée",
+        "de": "Durchströmte Barriere"
+    },
+    "204758": {
+        "cn": "",
+        "en": "Suffused Shoulderpads",
+        "ru": "Насыщенные наплечники",
+        "es": "Hombreras cargadas",
+        "br": "Ombreiras Impregnadas",
+        "kr": "",
+        "fr": "Protège-épaules saturés",
+        "de": "Durchströmte Schulterpolster"
+    },
+    "204759": {
+        "cn": "",
+        "en": "Suffused Epaulets",
+        "ru": "Насыщенные эполеты",
+        "es": "Cubrehombros cargados",
+        "br": "Palas Impregnadas",
+        "kr": "",
+        "fr": "Épaulettes saturées",
+        "de": "Durchströmte Schulterklappen"
+    },
+    "204760": {
+        "cn": "",
+        "en": "Suffused Vest",
+        "ru": "Насыщенный жилет",
+        "es": "Jubón cargado",
+        "br": "Colete Impregnado",
+        "kr": "",
+        "fr": "Veste saturée",
+        "de": "Durchströmte Weste"
+    },
+    "204761": {
+        "cn": "",
+        "en": "Suffused Armplates",
+        "ru": "Насыщенные тяжелые наручи",
+        "es": "Avambrazos cargados",
+        "br": "Braçais Impregnados",
+        "kr": "",
+        "fr": "Plaques de bras saturées",
+        "de": "Durchströmte Armplatten"
+    },
+    "204762": {
+        "cn": "",
+        "en": "Suffused Girdle",
+        "ru": "Насыщенный ремень",
+        "es": "Faja cargada",
+        "br": "Cinturão Impregnado",
+        "kr": "",
+        "fr": "Ceinturon saturé",
+        "de": "Durchströmter Gurt"
+    },
+    "204763": {
+        "cn": "",
+        "en": "Suffused Mantle",
+        "ru": "Насыщенное оплечье",
+        "es": "Manto cargado",
+        "br": "Dragonas Impregnadas",
+        "kr": "",
+        "fr": "Mantelet saturé",
+        "de": "Durchströmter Mantel"
+    },
+    "204764": {
+        "cn": "",
+        "en": "Suffused Legguards",
+        "ru": "Насыщенные набедренники",
+        "es": "Musleras cargadas",
+        "br": "Guarda-pernas Impregnados",
+        "kr": "",
+        "fr": "Garde-jambes saturés",
+        "de": "Durchströmte Beinschützer"
+    },
+    "204765": {
+        "cn": "",
+        "en": "Suffused Gauntlets",
+        "ru": "Насыщенные рукавицы",
+        "es": "Guanteletes cargados",
+        "br": "Manoplas Impregnadas",
+        "kr": "",
+        "fr": "Gantelets saturés",
+        "de": "Durchströmte Stulpen"
+    },
+    "204766": {
+        "cn": "",
+        "en": "Suffused Sabatons",
+        "ru": "Насыщенные башмаки",
+        "es": "Escarpes cargados",
+        "br": "Escarpes Impregnados",
+        "kr": "",
+        "fr": "Solerets saturés",
+        "de": "Durchströmte Sabatons"
+    },
+    "204767": {
+        "cn": "",
+        "en": "Suffused Breastplate",
+        "ru": "Насыщенная кираса",
+        "es": "Coraza cargada",
+        "br": "Peitoral Impregnado",
+        "kr": "",
+        "fr": "Cuirasse saturée",
+        "de": "Durchströmte Brustplatte"
+    },
+    "204768": {
+        "cn": "",
+        "en": "Suffused Helm",
+        "ru": "Насыщенный шлем",
+        "es": "Yelmo cargado",
+        "br": "Elmo Impregnado",
+        "kr": "",
+        "fr": "Heaume saturé",
+        "de": "Durchströmter Helm"
+    },
+    "204769": {
+        "cn": "",
+        "en": "Suffused Bracers",
+        "ru": "Насыщенные наручи",
+        "es": "Brazales cargados",
+        "br": "Braçadeiras Impregnadas",
+        "kr": "",
+        "fr": "Brassards saturés",
+        "de": "Durchströmte Armschienen"
+    },
+    "204770": {
+        "cn": "",
+        "en": "Suffused Cinch",
+        "ru": "Насыщенный кушак",
+        "es": "Cincho cargado",
+        "br": "Cilha Impregnada",
+        "kr": "",
+        "fr": "Cordelière saturée",
+        "de": "Durchströmter Hüftgurt"
+    },
+    "204771": {
+        "cn": "",
+        "en": "Suffused Shoulderguards",
+        "ru": "Насыщенные наплечные щитки",
+        "es": "Guardahombros cargados",
+        "br": "Guarda-ombros Impregnados",
+        "kr": "",
+        "fr": "Garde-épaules saturés",
+        "de": "Durchströmte Schulterschützer"
+    },
+    "204772": {
+        "cn": "",
+        "en": "Suffused Greaves",
+        "ru": "Насыщенные наголенники",
+        "es": "Grebas cargadas",
+        "br": "Grevas Impregnadas",
+        "kr": "",
+        "fr": "Grèves saturées",
+        "de": "Durchströmte Beinschützer"
+    },
+    "204773": {
+        "cn": "",
+        "en": "Suffused Coif",
+        "ru": "Насыщенный капюшон",
+        "es": "Almófar cargado",
+        "br": "Coifa Impregnada",
+        "kr": "",
+        "fr": "Camail saturé",
+        "de": "Durchströmte Kappe"
+    },
+    "204774": {
+        "cn": "",
+        "en": "Suffused Grips",
+        "ru": "Насыщенные захваты",
+        "es": "Mandiletes cargados",
+        "br": "Guantes Impregnados",
+        "kr": "",
+        "fr": "Poignes saturées",
+        "de": "Durchströmter Handschutz"
+    },
+    "204775": {
+        "cn": "",
+        "en": "Suffused Striders",
+        "ru": "Насыщенные походные сапоги",
+        "es": "Zancos cargados",
+        "br": "Chapins Impregnados",
+        "kr": "",
+        "fr": "Cuissardes saturées",
+        "de": "Durchströmte Schreiter"
+    },
+    "204776": {
+        "cn": "",
+        "en": "Suffused Chainmail",
+        "ru": "Насыщенная кольчуга",
+        "es": "Malla de anillas cargada",
+        "br": "Malha de Anéis Impregnada",
+        "kr": "",
+        "fr": "Cotte de mailles saturée",
+        "de": "Durchströmter Kettenpanzer"
+    },
+    "204777": {
+        "cn": "",
+        "en": "Suffused Bindings",
+        "ru": "Насыщенные наручники",
+        "es": "Ataduras cargadas",
+        "br": "Braceletes Impregnados",
+        "kr": "",
+        "fr": "Manchettes saturées",
+        "de": "Durchströmte Bindungen"
+    },
+    "204778": {
+        "cn": "",
+        "en": "Suffused Sash",
+        "ru": "Насыщенный тугой кушак",
+        "es": "Fajín cargado",
+        "br": "Faixa Impregnada",
+        "kr": "",
+        "fr": "Écharpe saturée",
+        "de": "Durchströmte Schärpe"
+    },
+    "204779": {
+        "cn": "",
+        "en": "Suffused Breeches",
+        "ru": "Насыщенные брюки",
+        "es": "Calzones cargados",
+        "br": "Calções Impregnados",
+        "kr": "",
+        "fr": "Braies saturées",
+        "de": "Durchströmte Bundhosen"
+    },
+    "204780": {
+        "cn": "",
+        "en": "Suffused Helm",
+        "ru": "Насыщенный шлем",
+        "es": "Yelmo cargado",
+        "br": "Elmo Impregnado",
+        "kr": "",
+        "fr": "Heaume saturé",
+        "de": "Durchströmter Helm"
+    },
+    "204781": {
+        "cn": "",
+        "en": "Suffused Grips",
+        "ru": "Насыщенные захваты",
+        "es": "Mandiletes cargados",
+        "br": "Guantes Impregnados",
+        "kr": "",
+        "fr": "Poignes saturées",
+        "de": "Durchströmter Handschutz"
+    },
+    "204782": {
+        "cn": "",
+        "en": "Suffused Waders",
+        "ru": "Насыщенные бродни",
+        "es": "Perniles cargados",
+        "br": "Galochas Impregnadas",
+        "kr": "",
+        "fr": "Godillots saturés",
+        "de": "Durchströmte Watstiefel"
+    },
+    "204783": {
+        "cn": "",
+        "en": "Suffused Cuffs",
+        "ru": "Насыщенные манжеты",
+        "es": "Puños cargados",
+        "br": "Manilhas Impregnadas",
+        "kr": "",
+        "fr": "Crispins saturés",
+        "de": "Durchströmte Manschetten"
+    },
+    "204784": {
+        "cn": "",
+        "en": "Suffused Cord",
+        "ru": "Насыщенный шнурованный ремень",
+        "es": "Cordón cargado",
+        "br": "Cordão Impregnado",
+        "kr": "",
+        "fr": "Corde saturée",
+        "de": "Durchströmte Kordel"
+    },
+    "204785": {
+        "cn": "",
+        "en": "Suffused Leggings",
+        "ru": "Насыщенные поножи",
+        "es": "Leotardos cargados",
+        "br": "Perneiras Impregnadas",
+        "kr": "",
+        "fr": "Jambières saturées",
+        "de": "Durchströmte Gamaschen"
+    },
+    "204786": {
+        "cn": "",
+        "en": "Suffused Cowl",
+        "ru": "Насыщенный клобук",
+        "es": "Capucha cargada",
+        "br": "Capucho Impregnado",
+        "kr": "",
+        "fr": "Capuche saturée",
+        "de": "Durchströmte Gugel"
+    },
+    "204787": {
+        "cn": "",
+        "en": "Suffused Handwraps",
+        "ru": "Насыщенные повязки",
+        "es": "Manijas cargadas",
+        "br": "Mitenes Impregnadas",
+        "kr": "",
+        "fr": "Protège-mains saturés",
+        "de": "Durchströmte Handlappen"
+    },
+    "204788": {
+        "cn": "",
+        "en": "Suffused Sandals",
+        "ru": "Насыщенные сандалии",
+        "es": "Sandalias cargadas",
+        "br": "Sandálias Impregnadas",
+        "kr": "",
+        "fr": "Sandales saturées",
+        "de": "Durchströmte Sandalen"
+    },
+    "204789": {
+        "cn": "",
+        "en": "Suffused Vestment",
+        "ru": "Насыщенное облачение",
+        "es": "Vestimenta cargada",
+        "br": "Vestimenta Impregnada",
+        "kr": "",
+        "fr": "Habits saturés",
+        "de": "Durchströmte Gewänder"
+    },
+    "204810": {
+        "cn": "",
+        "en": "Drogbar Rocks",
+        "ru": "Дрогбарские валуны",
+        "es": "Rocas drógbar",
+        "br": "Rochas Drogbares",
+        "kr": "",
+        "fr": "Roches drogbars",
+        "de": "Drogbarfelsen"
+    },
+    "204811": {
+        "cn": "",
+        "en": "Drogbar Stones",
+        "ru": "Дрогбарские камни",
+        "es": "Piedras drógbar",
+        "br": "Pedras Drogbares",
+        "kr": "",
+        "fr": "Pierres drogbars",
+        "de": "Drogbarsteine"
+    },
+    "204896": {
+        "cn": "",
+        "en": "Suffused Greatcloak",
+        "ru": "Насыщенный теплый плащ",
+        "es": "Gran capa cargada",
+        "br": "Grande Manto Impregnado",
+        "kr": "",
+        "fr": "Grande cape saturée",
+        "de": "Durchströmter Großumhang"
+    },
+    "204897": {
+        "cn": "",
+        "en": "Suffused Cloak",
+        "ru": "Насыщенный плащ",
+        "es": "Capa cargada",
+        "br": "Manto Impregnado",
+        "kr": "",
+        "fr": "Cape saturée",
+        "de": "Durchströmter Umhang"
+    },
+    "204898": {
+        "cn": "",
+        "en": "Suffused Drape",
+        "ru": "Насыщенная пелерина",
+        "es": "Mantón cargado",
+        "br": "Clâmide Impregnada",
+        "kr": "",
+        "fr": "Drapé saturé",
+        "de": "Durchströmtes Tuch"
+    },
+    "204901": {
+        "cn": "",
+        "en": "Firecaller's Focus",
+        "ru": "Средоточие призывателя огня",
+        "es": "Foco de clamafuegos",
+        "br": "Foco do Bradachamas",
+        "kr": "",
+        "fr": "Focalisateur de mandefeu",
+        "de": "Fokus des Feuerrufers"
+    },
+    "204914": {
+        "cn": "",
+        "en": "Deeprock Cloak",
+        "ru": "Глубокоскальный плащ",
+        "es": "Capa Rocahonda",
+        "br": "Manto Rochafunda",
+        "kr": "",
+        "fr": "Cape fonderoc",
+        "de": "Tiefsteinumhang"
+    },
+    "204915": {
+        "cn": "",
+        "en": "Deeprock Cape",
+        "ru": "Глубокоскальная накидка",
+        "es": "Manteo Rocahonda",
+        "br": "Capa Rochafunda",
+        "kr": "",
+        "fr": "Pèlerine fonderoc",
+        "de": "Tiefsteincape"
+    },
+    "204916": {
+        "cn": "",
+        "en": "Deeprock Loop",
+        "ru": "Глубокоскальный перстень",
+        "es": "Aro Rocahonda",
+        "br": "Aro Rochafunda",
+        "kr": "",
+        "fr": "Jonc fonderoc",
+        "de": "Tiefsteinschleife"
+    },
+    "204917": {
+        "cn": "",
+        "en": "Deeprock Ring",
+        "ru": "Глубокоскальное кольцо",
+        "es": "Anillo Rocahonda",
+        "br": "Anel Rochafunda",
+        "kr": "",
+        "fr": "Anneau fonderoc",
+        "de": "Tiefsteinring"
+    },
+    "204918": {
+        "cn": "",
+        "en": "Deeprock Signet",
+        "ru": "Глубокоскальная печатка",
+        "es": "Sello Rocahonda",
+        "br": "Sinete Rochafunda",
+        "kr": "",
+        "fr": "Chevalière fonderoc",
+        "de": "Tiefsteinsignet"
+    },
+    "204919": {
+        "cn": "",
+        "en": "Deeprock Pendant",
+        "ru": "Глубокоскальная подвеска",
+        "es": "Colgante Rocahonda",
+        "br": "Pingente Rochafunda",
+        "kr": "",
+        "fr": "Pendentif fonderoc",
+        "de": "Tiefsteinanhänger"
+    },
+    "204920": {
+        "cn": "",
+        "en": "Moonless Robe",
+        "ru": "Безлунное одеяние",
+        "es": "Toga de la luna ausente",
+        "br": "Veste Sem Luar",
+        "kr": "",
+        "fr": "Robe sans-lune",
+        "de": "Mondlose Robe"
+    },
+    "204921": {
+        "cn": "",
+        "en": "Moonless Slippers",
+        "ru": "Безлунные туфли",
+        "es": "Zapatillas de la luna ausente",
+        "br": "Sapatilhas Sem Luar",
+        "kr": "",
+        "fr": "Mules sans-lune",
+        "de": "Mondlose Pantoffeln"
+    },
+    "204922": {
+        "cn": "",
+        "en": "Moonless Gloves",
+        "ru": "Безлунные перчатки",
+        "es": "Guantes de la luna ausente",
+        "br": "Luvas Sem Luar",
+        "kr": "",
+        "fr": "Gants sans-lune",
+        "de": "Mondlose Handschuhe"
+    },
+    "204923": {
+        "cn": "",
+        "en": "Moonless Hood",
+        "ru": "Безлунный капюшон",
+        "es": "Caperuza de la luna ausente",
+        "br": "Capuz Sem Luar",
+        "kr": "",
+        "fr": "Chaperon sans-lune",
+        "de": "Mondlose Kapuze"
+    },
+    "204924": {
+        "cn": "",
+        "en": "Moonless Trousers",
+        "ru": "Безлунные брюки",
+        "es": "Calzas de la luna ausente",
+        "br": "Calçotes Sem Luar",
+        "kr": "",
+        "fr": "Chausses sans-lune",
+        "de": "Mondlose Beinkleider"
+    },
+    "204925": {
+        "cn": "",
+        "en": "Moonless Shoulderpads",
+        "ru": "Безлунные наплечники",
+        "es": "Hombreras de la luna ausente",
+        "br": "Ombreiras Sem Luar",
+        "kr": "",
+        "fr": "Protège-épaules sans-lune",
+        "de": "Mondlose Schulterpolster"
+    },
+    "204926": {
+        "cn": "",
+        "en": "Moonless Belt",
+        "ru": "Безлунный пояс",
+        "es": "Cinturón de la luna ausente",
+        "br": "Cinto Sem Luar",
+        "kr": "",
+        "fr": "Ceinture sans-lune",
+        "de": "Mondloser Gürtel"
+    },
+    "204927": {
+        "cn": "",
+        "en": "Moonless Wristband",
+        "ru": "Безлунные нарукавники",
+        "es": "Pretina de la luna ausente",
+        "br": "Punhos Sem Luar",
+        "kr": "",
+        "fr": "Protège-poignet sans-lune",
+        "de": "Mondlose Gelenkbänder"
+    },
+    "204928": {
+        "cn": "",
+        "en": "Sunless Tunic",
+        "ru": "Бессолнечный мундир",
+        "es": "Guerrera del sol ausente",
+        "br": "Túnica Sem Sol",
+        "kr": "",
+        "fr": "Tunique sans-soleil",
+        "de": "Sonnenlose Tunika"
+    },
+    "204929": {
+        "cn": "",
+        "en": "Sunless Boots",
+        "ru": "Бессолнечные сапоги",
+        "es": "Botas del sol ausente",
+        "br": "Botas Sem Sol",
+        "kr": "",
+        "fr": "Bottes sans-soleil",
+        "de": "Sonnenlose Stiefel"
+    },
+    "204930": {
+        "cn": "",
+        "en": "Sunless Grips",
+        "ru": "Бессолнечные захваты",
+        "es": "Mandiletes del sol ausente",
+        "br": "Guantes Sem Sol",
+        "kr": "",
+        "fr": "Poignes sans-soleil",
+        "de": "Sonnenloser Handschutz"
+    },
+    "204931": {
+        "cn": "",
+        "en": "Sunless Cowl",
+        "ru": "Бессолнечный клобук",
+        "es": "Capucha del sol ausente",
+        "br": "Capucho Sem Sol",
+        "kr": "",
+        "fr": "Capuche sans-soleil",
+        "de": "Sonnenlose Gugel"
+    },
+    "204932": {
+        "cn": "",
+        "en": "Sunless Pants",
+        "ru": "Бессолнечные штаны",
+        "es": "Pantalones del sol ausente",
+        "br": "Calças Sem Sol",
+        "kr": "",
+        "fr": "Pantalon sans-soleil",
+        "de": "Sonnenlose Hosen"
+    },
+    "204933": {
+        "cn": "",
+        "en": "Sunless Spaulders",
+        "ru": "Бессолнечный наплеч",
+        "es": "Bufas del sol ausente",
+        "br": "Espaldares Sem Sol",
+        "kr": "",
+        "fr": "Spallières sans-soleil",
+        "de": "Sonnenlose Schiftung"
+    },
+    "204934": {
+        "cn": "",
+        "en": "Sunless Wrap",
+        "ru": "Бессолнечная опояска",
+        "es": "Envoltura del sol ausente",
+        "br": "Mantelete Sem Sol",
+        "kr": "",
+        "fr": "Bandelettes sans-soleil",
+        "de": "Sonnenlose Wickel"
+    },
+    "204935": {
+        "cn": "",
+        "en": "Sunless Bracers",
+        "ru": "Бессолнечные наручи",
+        "es": "Brazales del sol ausente",
+        "br": "Braçadeiras Sem Sol",
+        "kr": "",
+        "fr": "Brassards sans-soleil",
+        "de": "Sonnenlose Armschienen"
+    },
+    "204936": {
+        "cn": "",
+        "en": "Skyless Blouse",
+        "ru": "Земнородная рубашка",
+        "es": "Blusa del cielo ausente",
+        "br": "Blusa Sem Céu",
+        "kr": "",
+        "fr": "Chemisette sans-ciel",
+        "de": "Himmellose Bluse"
+    },
+    "204937": {
+        "cn": "",
+        "en": "Skyless Striders",
+        "ru": "Земнородные походные сапоги",
+        "es": "Zancos del cielo ausente",
+        "br": "Chapins Sem Céu",
+        "kr": "",
+        "fr": "Cuissardes sans-ciel",
+        "de": "Himmellose Schreiter"
+    },
+    "204938": {
+        "cn": "",
+        "en": "Skyless Grips",
+        "ru": "Земнородные захваты",
+        "es": "Mandiletes del cielo ausente",
+        "br": "Guantes Sem Céu",
+        "kr": "",
+        "fr": "Poignes sans-ciel",
+        "de": "Himmelloser Handschutz"
+    },
+    "204940": {
+        "cn": "",
+        "en": "Skyless Coif",
+        "ru": "Земнородный капюшон",
+        "es": "Almófar del cielo ausente",
+        "br": "Coifa Sem Céu",
+        "kr": "",
+        "fr": "Camail sans-ciel",
+        "de": "Himmellose Kappe"
+    },
+    "204941": {
+        "cn": "",
+        "en": "Skyless Greaves",
+        "ru": "Земнородные наголенники",
+        "es": "Grebas del cielo ausente",
+        "br": "Grevas Sem Céu",
+        "kr": "",
+        "fr": "Grève sans-ciel",
+        "de": "Himmellose Beinschützer"
+    },
+    "204942": {
+        "cn": "",
+        "en": "Skyless Epaulets",
+        "ru": "Земнородные эполеты",
+        "es": "Cubrehombros del cielo ausente",
+        "br": "Palas Sem Céu",
+        "kr": "",
+        "fr": "Épaulettes sans-ciel",
+        "de": "Himmellose Schulterklappen"
+    },
+    "204943": {
+        "cn": "",
+        "en": "Skyless Chain",
+        "ru": "Земнородная цепь",
+        "es": "Cadena del cielo ausente",
+        "br": "Corrente Sem Céu",
+        "kr": "",
+        "fr": "Chaîne sans-ciel",
+        "de": "Himmellose Kette"
+    },
+    "204944": {
+        "cn": "",
+        "en": "Skyless Cuffs",
+        "ru": "Земнородные манжеты",
+        "es": "Puños del cielo ausente",
+        "br": "Manilhas Sem Céu",
+        "kr": "",
+        "fr": "Crispins sans-ciel",
+        "de": "Himmellose Manschetten"
+    },
+    "204945": {
+        "cn": "",
+        "en": "Starless Breastplate",
+        "ru": "Беззвездная кираса",
+        "es": "Coraza de las estrellas ausentes",
+        "br": "Peitoral Sem Estrelas",
+        "kr": "",
+        "fr": "Cuirasse sans-étoiles",
+        "de": "Sternenlose Brustplatte"
+    },
+    "204946": {
+        "cn": "",
+        "en": "Starless Warboots",
+        "ru": "Беззвездные боевые сапоги",
+        "es": "Botas de guerra de las estrellas ausentes",
+        "br": "Coturnos Sem Estrelas",
+        "kr": "",
+        "fr": "Bottes de guerre sans-étoiles",
+        "de": "Sternenlose Kriegsstiefel"
+    },
+    "204947": {
+        "cn": "",
+        "en": "Starless Gauntlets",
+        "ru": "Беззвездные рукавицы",
+        "es": "Guanteletes de las estrellas ausentes",
+        "br": "Manoplas Sem Estrelas",
+        "kr": "",
+        "fr": "Gantelets sans-étoiles",
+        "de": "Sternenlose Stulpen"
+    },
+    "204948": {
+        "cn": "",
+        "en": "Starless Fullhelm",
+        "ru": "Беззвездный закрытый шлем",
+        "es": "Yelmo completo de las estrellas ausentes",
+        "br": "Elmo Fechado Sem Estrelas",
+        "kr": "",
+        "fr": "Grand heaume sans-étoiles",
+        "de": "Sternenloser Helm"
+    },
+    "204949": {
+        "cn": "",
+        "en": "Starless Legguards",
+        "ru": "Беззвездные набедренники",
+        "es": "Musleras de las estrellas ausentes",
+        "br": "Guarda-pernas Sem Estrelas",
+        "kr": "",
+        "fr": "Garde-jambes sans-étoiles",
+        "de": "Sternenlose Beinschützer"
+    },
+    "204950": {
+        "cn": "",
+        "en": "Starless Mantle",
+        "ru": "Беззвездное оплечье",
+        "es": "Manto de las estrellas ausentes",
+        "br": "Dragonas Sem Estrelas",
+        "kr": "",
+        "fr": "Mantelet sans-étoiles",
+        "de": "Sternenloser Mantel"
+    },
+    "204951": {
+        "cn": "",
+        "en": "Starless Girdle",
+        "ru": "Беззвездный ремень",
+        "es": "Faja de las estrellas ausentes",
+        "br": "Cinturão Sem Estrelas",
+        "kr": "",
+        "fr": "Ceinturon sans-étoiles",
+        "de": "Sternenloser Gurt"
+    },
+    "204952": {
+        "cn": "",
+        "en": "Starless Armplates",
+        "ru": "Беззвездные латные наручи",
+        "es": "Avambrazos de las estrellas ausentes",
+        "br": "Braçais Sem Estrelas",
+        "kr": "",
+        "fr": "Plaques de bras sans-étoiles",
+        "de": "Sternenlose Armplatten"
+    },
+    "204954": {
+        "cn": "",
+        "en": "Neltharic Ritual Knife",
+        "ru": "Нелтарический ритуальный нож",
+        "es": "Cuchillo de ritual nelthárico",
+        "br": "Faca Ritual Nelthárica",
+        "kr": "",
+        "fr": "Couteau rituel neltharique",
+        "de": "Neltharisches Ritualmesser"
+    },
+    "204963": {
+        "cn": "",
+        "en": "Neltharic Staff",
+        "ru": "Нелтарический посох",
+        "es": "Bastón nelthárico",
+        "br": "Cajado Nelthárico",
+        "kr": "",
+        "fr": "Bâton neltharique",
+        "de": "Neltharischer Stab"
+    },
+    "204964": {
+        "cn": "",
+        "en": "Neltharic Torch",
+        "ru": "Нелтарический факел",
+        "es": "Antorcha nelthárica",
+        "br": "Tocha Nelthárica",
+        "kr": "",
+        "fr": "Torche neltharique",
+        "de": "Neltharische Fackel"
+    },
+    "204965": {
+        "cn": "",
+        "en": "Neltharic Shield",
+        "ru": "Нелтарический щит",
+        "es": "Escudo nelthárico",
+        "br": "Escudo Nelthárico",
+        "kr": "",
+        "fr": "Bouclier neltharique",
+        "de": "Neltharischer Schild"
+    },
+    "204981": {
+        "cn": "",
+        "en": "Neltharic Wand",
+        "ru": "Нелтарический жезл",
+        "es": "Varita nelthárica",
+        "br": "Varinha Nelthárica",
+        "kr": "",
+        "fr": "Baguette neltharique",
+        "de": "Neltharischer Zauberstab"
+    },
+    "205025": {
+        "cn": "",
+        "en": "Undulating Sporecloak",
+        "ru": "Пульсирующий плащ из спор",
+        "es": "Capaespora ondulante",
+        "br": "Manto de Esporos Ondulante",
+        "kr": "",
+        "fr": "Cape de spores ondulante",
+        "de": "Wallender Sporenmantel"
+    },
+    "205055": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Drape",
+        "ru": "Пелерина заралекского геодезиста",
+        "es": "Mantón de perito de Zaralek",
+        "br": "Clâmide do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Drapé de géomètre de Zaralek",
+        "de": "Tuch des Zaralekfeldmessers"
+    },
+    "205056": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Cloak",
+        "ru": "Плащ заралекского геодезиста",
+        "es": "Capa de perito de Zaralek",
+        "br": "Manto do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Cape de géomètre de Zaralek",
+        "de": "Umhang des Zaralekfeldmessers"
+    },
+    "205057": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Greatcloak",
+        "ru": "Теплый плащ заралекского геодезиста",
+        "es": "Gran capa de perito de Zaralek",
+        "br": "Grande Manto do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Grande cape de géomètre de Zaralek",
+        "de": "Großumhang des Zaralekfeldmessers"
+    },
+    "205058": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Vestment",
+        "ru": "Одеяние заралекского геодезиста",
+        "es": "Vestimenta de perito de Zaralek",
+        "br": "Vestimenta do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Habits de géomètre de Zaralek",
+        "de": "Gewand des Zaralekfeldmessers"
+    },
+    "205059": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Sandals",
+        "ru": "Сандалии заралекского геодезиста",
+        "es": "Sandalias de perito de Zaralek",
+        "br": "Sandálias do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Sandales de géomètre de Zaralek",
+        "de": "Sandalen des Zaralekfeldmessers"
+    },
+    "205060": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Handwraps",
+        "ru": "Повязки заралекского геодезиста",
+        "es": "Manijas de perito de Zaralek",
+        "br": "Mitenes do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Protège-mains de géomètre de Zaralek",
+        "de": "Handlappen des Zaralekfeldmessers"
+    },
+    "205061": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Cowl",
+        "ru": "Клобук заралекского геодезиста",
+        "es": "Capucha de perito de Zaralek",
+        "br": "Capucho do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Capuche de géomètre de Zaralek",
+        "de": "Gugel des Zaralekfeldmessers"
+    },
+    "205062": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Leggings",
+        "ru": "Поножи заралекского геодезиста",
+        "es": "Leotardos de perito de Zaralek",
+        "br": "Perneiras do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Jambières de géomètre de Zaralek",
+        "de": "Gamaschen des Zaralekfeldmessers"
+    },
+    "205063": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Cord",
+        "ru": "Шнурованный ремень заралекского геодезиста",
+        "es": "Cordón de perito de Zaralek",
+        "br": "Cordão do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Corde de géomètre de Zaralek",
+        "de": "Kordel des Zaralekfeldmessers"
+    },
+    "205064": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Cuffs",
+        "ru": "Манжеты заралекского геодезиста",
+        "es": "Puños de perito de Zaralek",
+        "br": "Manilhas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Crispins de géomètre de Zaralek",
+        "de": "Manschetten des Zaralekfeldmessers"
+    },
+    "205065": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Waders",
+        "ru": "Бродни заралекского геодезиста",
+        "es": "Perniles de perito de Zaralek",
+        "br": "Galochas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Godillots de géomètre de Zaralek",
+        "de": "Stiefel des Zaralekfeldmessers"
+    },
+    "205066": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Grips",
+        "ru": "Захваты заралекского геодезиста",
+        "es": "Mandiletes de perito de Zaralek",
+        "br": "Guantes do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Poignes de géomètre de Zaralek",
+        "de": "Handschutz des Zaralekfeldmessers"
+    },
+    "205067": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Helm",
+        "ru": "Шлем заралекского геодезиста",
+        "es": "Yelmo de perito de Zaralek",
+        "br": "Elmo do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Heaume de géomètre de Zaralek",
+        "de": "Helm des Zaralekfeldmessers"
+    },
+    "205068": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Breeches",
+        "ru": "Штаны заралекского геодезиста",
+        "es": "Calzones de perito de Zaralek",
+        "br": "Calções do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Braies de géomètre de Zaralek",
+        "de": "Bundhosen des Zaralekfeldmessers"
+    },
+    "205069": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Sash",
+        "ru": "Кушак заралекского геодезиста",
+        "es": "Fajín de perito de Zaralek",
+        "br": "Faixa do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Écharpe de géomètre de Zaralek",
+        "de": "Schärpe des Zaralekfeldmessers"
+    },
+    "205070": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Bindings",
+        "ru": "Наручники заралекского геодезиста",
+        "es": "Ataduras de perito de Zaralek",
+        "br": "Braceletes do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Manchettes de géomètre de Zaralek",
+        "de": "Bindungen des Zaralekfeldmessers"
+    },
+    "205071": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Chainmail",
+        "ru": "Кольчуга заралекского геодезиста",
+        "es": "Malla de anillas de perito de Zaralek",
+        "br": "Malha de Anéis do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Cotte de mailles de géomètre de Zaralek",
+        "de": "Kettenpanzer des Zaralekfeldmessers"
+    },
+    "205072": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Striders",
+        "ru": "Походные сапоги заралекского геодезиста",
+        "es": "Zancos de perito de Zaralek",
+        "br": "Chapins do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Cuissardes de géomètre de Zaralek",
+        "de": "Schreiter des Zaralekfeldmessers"
+    },
+    "205073": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Grips",
+        "ru": "Захваты заралекского геодезиста",
+        "es": "Mandiletes de perito de Zaralek",
+        "br": "Guantes do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Poignes de géomètre de Zaralek",
+        "de": "Handschutz des Zaralekfeldmessers"
+    },
+    "205074": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Coif",
+        "ru": "Боевой капюшон заралекского геодезиста",
+        "es": "Almófar de perito de Zaralek",
+        "br": "Coifa do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Camail de géomètre de Zaralek",
+        "de": "Kappe des Zaralekfeldmessers"
+    },
+    "205075": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Greaves",
+        "ru": "Наголенники заралекского геодезиста",
+        "es": "Grebas de perito de Zaralek",
+        "br": "Grevas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Grèves de géomètre de Zaralek",
+        "de": "Beinschützer des Zaralekfeldmessers"
+    },
+    "205076": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Shoulderguards",
+        "ru": "Наплечные щитки заралекского геодезиста",
+        "es": "Guardahombros de perito de Zaralek",
+        "br": "Guarda-ombros do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Garde-épaules de géomètre de Zaralek",
+        "de": "Schulterschützer des Zaralekfeldmessers"
+    },
+    "205077": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Cinch",
+        "ru": "Кушак заралекского геодезиста",
+        "es": "Cincho de perito de Zaralek",
+        "br": "Cilha do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Cordelière de géomètre de Zaralek",
+        "de": "Hüftgurt des Zaralekfeldmessers"
+    },
+    "205078": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Bracers",
+        "ru": "Наручи заралекского геодезиста",
+        "es": "Brazales de perito de Zaralek",
+        "br": "Braçadeiras do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Brassards de géomètre de Zaralek",
+        "de": "Armschienen des Zaralekfeldmessers"
+    },
+    "205079": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Helm",
+        "ru": "Шлем заралекского геодезиста",
+        "es": "Yelmo de perito de Zaralek",
+        "br": "Elmo do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Heaume de géomètre de Zaralek",
+        "de": "Helm des Zaralekfeldmessers"
+    },
+    "205080": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Breastplate",
+        "ru": "Кираса заралекского геодезиста",
+        "es": "Coraza de perito de Zaralek",
+        "br": "Peitoral do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Cuirasse de géomètre de Zaralek",
+        "de": "Brustplatte des Zaralekfeldmessers"
+    },
+    "205081": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Sabatons",
+        "ru": "Башмаки заралекского геодезиста",
+        "es": "Escarpes de perito de Zaralek",
+        "br": "Escarpes do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Solerets de géomètre de Zaralek",
+        "de": "Sabatons des Zaralekfeldmessers"
+    },
+    "205082": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Gauntlets",
+        "ru": "Рукавицы заралекского геодезиста",
+        "es": "Guanteletes de perito de Zaralek",
+        "br": "Manoplas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Gantelets de géomètre de Zaralek",
+        "de": "Stulpen des Zaralekfeldmessers"
+    },
+    "205083": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Legguards",
+        "ru": "Набедренники заралекского геодезиста",
+        "es": "Musleras de perito de Zaralek",
+        "br": "Guarda-pernas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Garde-jambes de géomètre de Zaralek",
+        "de": "Beinschützer des Zaralekfeldmessers"
+    },
+    "205084": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Mantle",
+        "ru": "Оплечье заралекского геодезиста",
+        "es": "Manto de perito de Zaralek",
+        "br": "Dragonas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Mantelet de géomètre de Zaralek",
+        "de": "Mantel des Zaralekfeldmessers"
+    },
+    "205085": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Girdle",
+        "ru": "Ремень заралекского геодезиста",
+        "es": "Faja de perito de Zaralek",
+        "br": "Cinturão do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Ceinturon de géomètre de Zaralek",
+        "de": "Gürtung des Zaralekfeldmessers"
+    },
+    "205086": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Armplates",
+        "ru": "Латные наручи заралекского геодезиста",
+        "es": "Avambrazos de Perito de Zaralek",
+        "br": "Braçais do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Plaques de bras de géomètre de Zaralek",
+        "de": "Armplatten des Zaralekfeldmessers"
+    },
+    "205087": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Vest",
+        "ru": "Жилет заралекского геодезиста",
+        "es": "Jubón de perito de Zaralek",
+        "br": "Colete do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Gilet de géomètre de Zaralek",
+        "de": "Weste des Zaralekfeldmessers"
+    },
+    "205088": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Epaulets",
+        "ru": "Эполеты заралекского геодезиста",
+        "es": "Cubrehombros de perito de Zaralek",
+        "br": "Palas do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Épaulettes de géomètre de Zaralek",
+        "de": "Schulterklappen des Zaralekfeldmessers"
+    },
+    "205089": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Shoulderpads",
+        "ru": "Наплечные пластины заралекского геодезиста",
+        "es": "Hombreras de perito de Zaralek",
+        "br": "Ombreiras do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Protège-épaules de géomètre de Zaralek",
+        "de": "Schulterpolster des Zaralekfeldmessers"
+    },
+    "205090": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Barrier",
+        "ru": "Заслон заралекского геодезиста",
+        "es": "Barrera de perito de Zaralek",
+        "br": "Barreira do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Barrière de géomètre de Zaralek",
+        "de": "Barriere des Zaralekfeldmessers"
+    },
+    "205091": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Scepter",
+        "ru": "Скипетр заралекского геодезиста",
+        "es": "Cetro de perito de Zaralek",
+        "br": "Cetro do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Sceptre de géomètre de Zaralek",
+        "de": "Szepter des Zaralekfeldmessers"
+    },
+    "205092": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Wand",
+        "ru": "Жезл заралекского геодезиста",
+        "es": "Varita de perito de Zaralek",
+        "br": "Varinha do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Baguette de géomètre de Zaralek",
+        "de": "Zauberstab des Zaralekfeldmessers"
+    },
+    "205095": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Spellblade",
+        "ru": "Чародейский клинок заралекского геодезиста",
+        "es": "Hoja de hechizo de perito de Zaralek",
+        "br": "Magilâmina do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Sorcelame de géomètre de Zaralek",
+        "de": "Zauberklinge des Zaralekfeldmessers"
+    },
+    "205097": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Kris",
+        "ru": "Крис заралекского геодезиста",
+        "es": "Kris de perito de Zaralek",
+        "br": "Cris do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Kriss de géomètre de Zaralek",
+        "de": "Kris des Zaralekfeldmessers"
+    },
+    "205101": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Loop",
+        "ru": "Перстень заралекского геодезиста",
+        "es": "Aro de perito de Zaralek",
+        "br": "Aro do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Jonc de géomètre de Zaralek",
+        "de": "Schleife des Zaralekfeldmessers"
+    },
+    "205102": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Signet",
+        "ru": "Печатка заралекского геодезиста",
+        "es": "Sello de perito de Zaralek",
+        "br": "Sinete do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Chevalière de géomètre de Zaralek",
+        "de": "Signet des Zaralekfeldmessers"
+    },
+    "205105": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Censer",
+        "ru": "Курильница заралекского геодезиста",
+        "es": "Incensario de perito de Zaralek",
+        "br": "Incensário do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Encensoir de géomètre de Zaralek",
+        "de": "Räuchergefäß des Zaralekfeldmessers"
+    },
+    "205109": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Staff",
+        "ru": "Посох заралекского геодезиста",
+        "es": "Bastón de perito de Zaralek",
+        "br": "Cajado do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Bâton de géomètre de Zaralek",
+        "de": "Stab des Zaralekfeldmessers"
+    },
+    "205111": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Band",
+        "ru": "Кольцо заралекского геодезиста",
+        "es": "Sortija de perito de Zaralek",
+        "br": "Elo do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Bague de géomètre de Zaralek",
+        "de": "Band des Zaralekfeldmessers"
+    },
+    "205112": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Shawl",
+        "ru": "Шаль заралекского геодезиста",
+        "es": "Chal de perito de Zaralek",
+        "br": "Xale do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Châle de géomètre de Zaralek",
+        "de": "Schal des Zaralekfeldmessers"
+    },
+    "205113": {
+        "cn": "",
+        "en": "Zaralek Surveyor's Choker",
+        "ru": "Колье заралекского геодезиста",
+        "es": "Gargantilla de perito de Zaralek",
+        "br": "Gargantilha do Topógrafo de Zaralek",
+        "kr": "",
+        "fr": "Sautoir de géomètre de Zaralek",
+        "de": "Halsreif des Zaralekfeldmessers"
+    },
+    "205168": {
+        "cn": "",
+        "en": "Shadowed Impact Buckler",
+        "ru": "Затененный ударный баклер",
+        "es": "Rodela de impacto ensombrecida",
+        "br": "Broquel de Impacto Sombrio",
+        "kr": "",
+        "fr": "Targe d’impact de l’ombre",
+        "de": "Überschatteter Einschlagsrundschild"
+    },
+    "205191": {
+        "cn": "",
+        "en": "Underlight Globe",
+        "ru": "Беспросветный шар",
+        "es": "Globo Sondaluz",
+        "br": "Globo Telúmino",
+        "kr": "",
+        "fr": "Globe terradiance",
+        "de": "Tiefenlichtglobus"
+    },
+    "205192": {
+        "cn": "",
+        "en": "Volatile Crystal Shard",
+        "ru": "Нестабильный осколок кристалла",
+        "es": "Fragmento de cristal volátil",
+        "br": "Estilhaço de Cristal Volátil",
+        "kr": "",
+        "fr": "Éclat de cristal instable",
+        "de": "Unbeständiger Kristallsplitter"
+    },
+    "205193": {
+        "cn": "",
+        "en": "Sturdy Deepflayer Scute",
+        "ru": "Прочный щиток глубинного живодера",
+        "es": "Caparazón de despellejador resistente",
+        "br": "Carapaça de Azorrague Resistente",
+        "kr": "",
+        "fr": "Scutelle de flagelleur des profondeurs robuste",
+        "de": "Robuste Tiefenschinderhornschuppe"
+    },
+    "205194": {
+        "cn": "",
+        "en": "Fractured Crystalspine Quill",
+        "ru": "Расколотое перо кристаллошипа",
+        "es": "Espina de espinacristal fracturada",
+        "br": "Cálamo de Cristalospinha Fraturado",
+        "kr": "",
+        "fr": "Épine de cristalépine fracturée",
+        "de": "Frakturierter Kristallrückenfederkiel"
+    },
+    "205195": {
+        "cn": "",
+        "en": "Drakeforged Magma Charm",
+        "ru": "Выкованный драконами талисман магмы",
+        "es": "Talismán de magma forjadraco",
+        "br": "Patuá de Magma da Forja Dracônica",
+        "kr": "",
+        "fr": "Amulette de magma drake-forgée",
+        "de": "Drachengeschmiedeter Magmaglücksbringer"
+    },
+    "205196": {
+        "cn": "",
+        "en": "Zaqali Hand Cauldron",
+        "ru": "Котелок закали",
+        "es": "Caldera de mano zaqali",
+        "br": "Caldeirão Portátil Zaqali",
+        "kr": "",
+        "fr": "Chaudron à main zaqali",
+        "de": "Handkessel der Zaqali"
+    },
+    "205200": {
+        "cn": "",
+        "en": "Stirring Twilight Ember",
+        "ru": "Колышущийся сумеречный уголь",
+        "es": "Ascua crepuscular agitada",
+        "br": "Brasa do Crepúsculo Agitada",
+        "kr": "",
+        "fr": "Braise du crépuscule attisée",
+        "de": "Keimende Zwielichtglut"
+    },
+    "205201": {
+        "cn": "",
+        "en": "Smoldering Howler Horn",
+        "ru": "Рог тлеющего ревуна",
+        "es": "Cuerno de aullador humeante",
+        "br": "Chifre de Uivador Fumegante",
+        "kr": "",
+        "fr": "Corne de hurleur fumant",
+        "de": "Schwelendes Heulerhorn"
+    },
+    "205229": {
+        "cn": "",
+        "en": "Magma Serpent Lure",
+        "ru": "Приманка для магмозмея",
+        "es": "Cebo de serpiente de magma",
+        "br": "Isca de Serpente de Magma",
+        "kr": "",
+        "fr": "Appât à serpent de magma",
+        "de": "Magmaschlangenköder"
+    },
+    "205262": {
+        "cn": "",
+        "en": "Magmaclaw Lure",
+        "ru": "Приманка для магмохвата",
+        "es": "Cebo de magmagarra",
+        "br": "Isca de Garra-de-magma",
+        "kr": "",
+        "fr": "Appât à pince-de-magma",
+        "de": "Magmaklauenköder"
+    },
+    "205264": {
+        "cn": "",
+        "en": "Speleothemic Footguards",
+        "ru": "Прочные спелеотемические ботинки",
+        "es": "Guardapiés espeleotémicos",
+        "br": "Guarda-pés Espeleotêmicos",
+        "kr": "",
+        "fr": "Protège-tibias spéléothermiques",
+        "de": "Speläotheme Fußschützer"
+    },
+    "205265": {
+        "cn": "",
+        "en": "Sulfuric Crystal Boots",
+        "ru": "Сернокристаллические сапоги",
+        "es": "Botas de cristal sulfúrico",
+        "br": "Botas de Cristal Sulfúrico",
+        "kr": "",
+        "fr": "Bottes de cristal sulfurique",
+        "de": "Schwefelkristallstiefel"
+    },
+    "205269": {
+        "cn": "",
+        "en": "Scent-Masking Moccasins",
+        "ru": "Маскирующие запахи мокасины",
+        "es": "Mocasines camuflaolores",
+        "br": "Mocassins Ocultadores de Odor",
+        "kr": "",
+        "fr": "Mocassins de dissimulation olfactive",
+        "de": "Geruchsverschleiernde Mokassins"
+    },
+    "205270": {
+        "cn": "",
+        "en": "Mycelial Fabric Sandals",
+        "ru": "Сандалии из гриботкани",
+        "es": "Sandalias de tela micelar",
+        "br": "Sandálias de Tecido Micélico",
+        "kr": "",
+        "fr": "Sandales en tissu mycélien",
+        "de": "Myzelstoffsandalen"
+    },
+    "205271": {
+        "cn": "",
+        "en": "Speleothemic Cataphract",
+        "ru": "Спелеотемическая кольчуга",
+        "es": "Catafracto espeleotémico",
+        "br": "Catafractário Espeleotêmico",
+        "kr": "",
+        "fr": "Cataphracte spéléothermique",
+        "de": "Speläothemer Kataphrakt"
+    },
+    "205272": {
+        "cn": "",
+        "en": "Scent-Masking Vest",
+        "ru": "Маскирующий запах жилет",
+        "es": "Jubón camuflaolores",
+        "br": "Colete Ocultador de Odor",
+        "kr": "",
+        "fr": "Veste de dissimulation olfactive",
+        "de": "Geruchsverschleiernde Weste"
+    },
+    "205273": {
+        "cn": "",
+        "en": "Sulfuric Crystal Breastmail",
+        "ru": "Сернокристаллический нагрудник",
+        "es": "Peto de malla de cristal sulfúrico",
+        "br": "Peitoral de Malha de Cristal Sulfúrico",
+        "kr": "",
+        "fr": "Cotte de cristal sulfurique",
+        "de": "Schwefelkristallkettenbrust"
+    },
+    "205275": {
+        "cn": "",
+        "en": "Mycelial Fabric Tunic",
+        "ru": "Туника из гриботкани",
+        "es": "Guerrera de tela micelar",
+        "br": "Túnica de Tecido Micélico",
+        "kr": "",
+        "fr": "Tunique en tissu mycélien",
+        "de": "Myzelstofftunika"
+    },
+    "205276": {
+        "cn": "",
+        "en": "Deepflayer Lure",
+        "ru": "Приманка для глубинного живодера",
+        "es": "Cebo de despellejador",
+        "br": "Isca de Azorrague",
+        "kr": "",
+        "fr": "Appât à flagelleur des profondeurs",
+        "de": "Tiefenschinderköder"
+    },
+    "205278": {
+        "cn": "",
+        "en": "Obsidian Combatant's Cloth Goggles",
+        "ru": "Тканевые очки обсидианового бойца",
+        "es": "Gafas de tela de combatiente obsidiana",
+        "br": "Óculos de Tecido do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Lunettes du combattant d’obsidienne en tissu",
+        "de": "Stoffbrille des Obsidiankämpfers"
+    },
+    "205279": {
+        "cn": "",
+        "en": "Obsidian Combatant's Leather Goggles",
+        "ru": "Кожаные очки обсидианового бойца",
+        "es": "Gafas de cuero de combatiente obsidiana",
+        "br": "Óculos de Couro do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Lunettes du combattant d’obsidienne en cuir",
+        "de": "Lederbrille des Obsidiankämpfers"
+    },
+    "205280": {
+        "cn": "",
+        "en": "Obsidian Combatant's Mail Goggles",
+        "ru": "Кольчужные очки обсидианового бойца",
+        "es": "Gafas de malla de combatiente obsidiana",
+        "br": "Óculos de Malha do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Lunettes du combattant d’obsidienne en mailles",
+        "de": "Kettenbrille des Obsidiankämpfers"
+    },
+    "205281": {
+        "cn": "",
+        "en": "Obsidian Combatant's Plate Goggles",
+        "ru": "Латные очки обсидианового бойца",
+        "es": "Gafas de placas de combatiente obsidiana",
+        "br": "Óculos de Placa do Combatente Obsidiano",
+        "kr": "",
+        "fr": "Lunettes du combattant d’obsidienne en plaques",
+        "de": "Plattenbrille des Obsidiankämpfers"
+    },
+    "205290": {
+        "cn": "",
+        "en": "Greatcloak of Spun Marrow",
+        "ru": "Теплый плащ из костнопряжи",
+        "es": "Gran capa de médula hilada",
+        "br": "Grande Manto de Medula Fiada",
+        "kr": "",
+        "fr": "Grande cape de moelle tissée",
+        "de": "Großumhang des gesponnen Marks"
+    },
+    "205291": {
+        "cn": "",
+        "en": "Garrison General's Cape",
+        "ru": "Накидка гарнизонного генерала",
+        "es": "Manteo del general de la ciudadela",
+        "br": "Capa do General da Guarnição",
+        "kr": "",
+        "fr": "Pèlerine de général de garnison",
+        "de": "Cape des Garnisonsgenerals"
+    },
+    "205292": {
+        "cn": "",
+        "en": "Kairoktra's Mane",
+        "ru": "Грива Кайроктры",
+        "es": "Crin de Kairoktra",
+        "br": "Juba de Kairoktra",
+        "kr": "",
+        "fr": "Crinière de Kairoktra",
+        "de": "Kairoktras Mähne"
+    },
+    "205293": {
+        "cn": "",
+        "en": "Emberdusk's Embrace",
+        "ru": "Облачение Углемрака",
+        "es": "Abrazo de Ascuaocaso",
+        "br": "Abraço da Penumbrasa",
+        "kr": "",
+        "fr": "Étreinte de Braisenuit",
+        "de": "Glutnachts Umarmung"
+    },
+    "205294": {
+        "cn": "",
+        "en": "Sandals of Molten Scorn",
+        "ru": "Сандалии пылающей неприязни",
+        "es": "Sandalias de desdén fundido",
+        "br": "Sandálias do Desdém Incandescente",
+        "kr": "",
+        "fr": "Sandales de mépris brûlant",
+        "de": "Sandalen der geschmolzenen Verachtung"
+    },
+    "205295": {
+        "cn": "",
+        "en": "Sediment Sifters",
+        "ru": "Просеиватели взвеси",
+        "es": "Cernedoras de sedimentos",
+        "br": "Crivos de Sedimentos",
+        "kr": "",
+        "fr": "Cribleurs de sédiments",
+        "de": "Sedimentwühler"
+    },
+    "205296": {
+        "cn": "",
+        "en": "Goopal's Visage",
+        "ru": "Лик Жижека",
+        "es": "Rostro de Pringolega",
+        "br": "Semblante de Goosmal",
+        "kr": "",
+        "fr": "Visage de Goupal",
+        "de": "Schleimos Antlitz"
+    },
+    "205297": {
+        "cn": "",
+        "en": "Flamewielder's Trousers",
+        "ru": "Брюки заклинателя пламени",
+        "es": "Calzas del portador de llamas",
+        "br": "Calçotes de Empunha-chamas",
+        "kr": "",
+        "fr": "Chausses de porte-flamme",
+        "de": "Beinkleider des Flammenwirkers"
+    },
+    "205298": {
+        "cn": "",
+        "en": "Belt of Floating Stone",
+        "ru": "Пояс парящей глыбы",
+        "es": "Cinturón de piedra flotante",
+        "br": "Cinto de Pedra Flutuante",
+        "kr": "",
+        "fr": "Ceinture de pierre flottante",
+        "de": "Gürtel des schwebenden Steins"
+    },
+    "205299": {
+        "cn": "",
+        "en": "Rudiment Cuffs",
+        "ru": "Простейшие манжеты",
+        "es": "Puños rudimentarios",
+        "br": "Manilhas Rudimentares",
+        "kr": "",
+        "fr": "Crispins rudimentaires",
+        "de": "Einfache Manschetten"
+    },
+    "205300": {
+        "cn": "",
+        "en": "Magma Waders",
+        "ru": "Магмовые бродни",
+        "es": "Perniles de magma",
+        "br": "Galochas de Magma",
+        "kr": "",
+        "fr": "Godillots de magma",
+        "de": "Magmawatstiefel"
+    },
+    "205301": {
+        "cn": "",
+        "en": "Hardened Lava Handwraps",
+        "ru": "Повязки застывшей лавы",
+        "es": "Manijas de lava endurecida",
+        "br": "Mitenes de Lava Endurecida",
+        "kr": "",
+        "fr": "Protège-mains en lave durcie",
+        "de": "Gehärtete Lavahandlappen"
+    },
+    "205302": {
+        "cn": "",
+        "en": "Underlight Headwrap",
+        "ru": "Беспросветный тюрбан",
+        "es": "Turbante Sondaluz",
+        "br": "Elmo Telúmino",
+        "kr": "",
+        "fr": "Turban de Terradiance",
+        "de": "Tiefenlichtkopfband"
+    },
+    "205303": {
+        "cn": "",
+        "en": "Leggings of Flowing Flame",
+        "ru": "Поножи текучего пламени",
+        "es": "Leotardos de llamas fluidas",
+        "br": "Perneiras de Chamas Farfalhantes",
+        "kr": "",
+        "fr": "Jambières de flamme ondulante",
+        "de": "Gamaschen der fließenden Flamme"
+    },
+    "205304": {
+        "cn": "",
+        "en": "Snareguard Sash",
+        "ru": "Щитохваткий кушак",
+        "es": "Fajín de guardifrenado",
+        "br": "Faixa Guarda-arapuca",
+        "kr": "",
+        "fr": "Écharpe garde-collet",
+        "de": "Fallenschutzschärpe"
+    },
+    "205305": {
+        "cn": "",
+        "en": "Zaralek Arachnid Armbands",
+        "ru": "Поручи заралекского арахнида",
+        "es": "Bandas de arácnido de Zaralek",
+        "br": "Embraces Aracnídeos de Zaralek",
+        "kr": "",
+        "fr": "Bracières d’arachnidé de Zaralek",
+        "de": "Zaralekarachnidenarmbänder"
+    },
+    "205306": {
+        "cn": "",
+        "en": "Aquiferous Raiment",
+        "ru": "Водоносное облачение",
+        "es": "Vestiduras acuíferas",
+        "br": "Indumentária Aquífera",
+        "kr": "",
+        "fr": "Grande tenue aquifère",
+        "de": "Wasserführende Gewandung"
+    },
+    "205307": {
+        "cn": "",
+        "en": "Kob'rok's Scale Sabatons",
+        "ru": "Башмаки из чешуи Коб'рока",
+        "es": "Escarpes de escamas de Kob'rok",
+        "br": "Escarpes de Escama de Kob'rok",
+        "kr": "",
+        "fr": "Solerets en écailles de Kob’rok",
+        "de": "Kob'roks Schuppensabatons"
+    },
+    "205308": {
+        "cn": "",
+        "en": "Clacking Clawguards",
+        "ru": "Щелкающие щитокогти",
+        "es": "Guardias de la garra chasqueadora",
+        "br": "Garraguardas Crepitantes",
+        "kr": "",
+        "fr": "Garde-pince claquant",
+        "de": "Klickende Scherenschützer"
+    },
+    "205309": {
+        "cn": "",
+        "en": "Loyal Attendant's Gaze",
+        "ru": "Лик верного служителя",
+        "es": "Mirada del auxiliar leal",
+        "br": "Olhar do Atendente Leal",
+        "kr": "",
+        "fr": "Regard d’auxiliaire fidèle",
+        "de": "Blick des loyalen Bediensteten"
+    },
+    "205310": {
+        "cn": "",
+        "en": "Legguards of Kaprachu",
+        "ru": "Набедренники Капрачу",
+        "es": "Musleras de Kaprachu",
+        "br": "Guarda-pernas de Kaprachu",
+        "kr": "",
+        "fr": "Garde-jambes de Kaprachu",
+        "de": "Beinschützer von Kaprachu"
+    },
+    "205311": {
+        "cn": "",
+        "en": "Magmascale Pauldrons",
+        "ru": "Наплечье из магмовой чешуи",
+        "es": "Espaldares de escamas de magma",
+        "br": "Brafoneiras de Escama de Magma",
+        "kr": "",
+        "fr": "Espauliers en magmécaille",
+        "de": "Magmaschuppenschulterstücke"
+    },
+    "205312": {
+        "cn": "",
+        "en": "Subterrax's Stout Waistguard",
+        "ru": "Плотный пояс Подземарка",
+        "es": "Guardarrenes recios de Subterrax",
+        "br": "Cinta Robusta de Subterrax",
+        "kr": "",
+        "fr": "Sangle robuste de Souterrax",
+        "de": "Subterrax' robuster Taillenschutz"
+    },
+    "205313": {
+        "cn": "",
+        "en": "Brullo's Wristbraces",
+        "ru": "Brullo's Wristbraces",
+        "es": "Brullo's Wristbraces",
+        "br": "Brullo's Wristbraces",
+        "kr": "",
+        "fr": "Brullo's Wristbraces",
+        "de": "Brullo's Wristbraces"
+    },
+    "205314": {
+        "cn": "",
+        "en": "Greathelm of the Emissary",
+        "ru": "Большой шлем посланника",
+        "es": "Gran yelmo del emisario",
+        "br": "Grande Elmo do Emissário",
+        "kr": "",
+        "fr": "Grand heaume de l’émissaire",
+        "de": "Großhelm des Botschafters"
+    },
+    "205315": {
+        "cn": "",
+        "en": "Colossian Cuirass",
+        "ru": "Кираса Колоссиана",
+        "es": "Loriga de Colossian",
+        "br": "Corselete de Colossian",
+        "kr": "",
+        "fr": "Cuirasse de colosse",
+        "de": "Kolossiankürass"
+    },
+    "205316": {
+        "cn": "",
+        "en": "Crystal Stompers",
+        "ru": "Высокие кристальные ботинки",
+        "es": "Apisonadoras de cristal",
+        "br": "Pisoteadores de Cristal",
+        "kr": "",
+        "fr": "Croquenots de cristal",
+        "de": "Kristallstampfer"
+    },
+    "205317": {
+        "cn": "",
+        "en": "Crystalpod Gauntlets",
+        "ru": "Рукавицы из кристального панциря",
+        "es": "Guanteletes de vaina de cristal",
+        "br": "Manoplas de Cápsula de Cristal",
+        "kr": "",
+        "fr": "Gantelets à gousse cristalline",
+        "de": "Kristallhüllenhandschuhe"
+    },
+    "205318": {
+        "cn": "",
+        "en": "Guardian Golem's Legplates",
+        "ru": "Ножные латы голема-стража",
+        "es": "Quijotes de gólem guardián",
+        "br": "Coxotes de Golem Guardião",
+        "kr": "",
+        "fr": "Cuissards de golem gardien",
+        "de": "Wächtergolembeinplatten"
+    },
+    "205319": {
+        "cn": "",
+        "en": "Deepflayer Shoulderguards",
+        "ru": "Наплечные щитки глубинного живодера",
+        "es": "Guardahombros de despellejador",
+        "br": "Guarda-ombros do Azorrague",
+        "kr": "",
+        "fr": "Garde-épaules de flagelleur des profondeurs",
+        "de": "Tiefenschinderschulterschutz"
+    },
+    "205320": {
+        "cn": "",
+        "en": "Greatbelt of the Stronk",
+        "ru": "Большой пояс Магучего",
+        "es": "Gran cinturón del Forte",
+        "br": "Correão do Maromba",
+        "kr": "",
+        "fr": "Grande ceinture du Kostau",
+        "de": "Großgürtel der Schtarken"
+    },
+    "205321": {
+        "cn": "",
+        "en": "Brimstone Bracers",
+        "ru": "Серные наручи",
+        "es": "Brazales de azufre",
+        "br": "Braçadeiras de Enxofre",
+        "kr": "",
+        "fr": "Brassards de soufre",
+        "de": "Schwefelarmschienen"
+    },
+    "205322": {
+        "cn": "",
+        "en": "Algeth'ar Exile's Frock",
+        "ru": "Одеяние изгнанника из Алгет'ара",
+        "es": "Ropaje de exiliado de Algeth'ar",
+        "br": "Hábito do Exilado de Algeth'ar",
+        "kr": "",
+        "fr": "Blouse d’exil d’Algeth’ar",
+        "de": "Kutte des Verbannten von Algeth'ar"
+    },
+    "205323": {
+        "cn": "",
+        "en": "Rock-Lined Pauldrons",
+        "ru": "Инкрустированное камнями наплечье",
+        "es": "Espaldares forrados de rocas",
+        "br": "Brafoneiras Forradas de Pedras",
+        "kr": "",
+        "fr": "Espauliers doublés de pierres",
+        "de": "Felsgefütterte Schulterstücke"
+    },
+    "205324": {
+        "cn": "",
+        "en": "Moth Queen Mantle",
+        "ru": "Оплечье королевы мотыльков",
+        "es": "Manto de la reina polilla",
+        "br": "Manto da Mariposa Rainha",
+        "kr": "",
+        "fr": "Mantelet de la reine des phalènes",
+        "de": "Mottenköniginnenmantel"
+    },
+    "205325": {
+        "cn": "",
+        "en": "Crystal Wing Shield",
+        "ru": "Щит кристального крыла",
+        "es": "Escudo alado de cristal",
+        "br": "Escudo Alado de Cristal",
+        "kr": "",
+        "fr": "Bouclier d’aile cristalline",
+        "de": "Kristallflügelschild"
+    },
+    "205327": {
+        "cn": "",
+        "en": "Shard of the Veridian King",
+        "ru": "Осколок изумрудного короля",
+        "es": "Fragmento del rey veridiano",
+        "br": "Estilhaço do Rei Viridiano",
+        "kr": "",
+        "fr": "Éclat du roi viridien",
+        "de": "Splitter des Viridiankönigs"
+    },
+    "205329": {
+        "cn": "",
+        "en": "Loop of Burning Invocation",
+        "ru": "Кольцо пылающего воззвания",
+        "es": "Aro de invocación ardiente",
+        "br": "Aro de Invocação Ardente",
+        "kr": "",
+        "fr": "Jonc d’invocation ardente",
+        "de": "Schleife der brennenden Anrufung"
+    },
+    "205330": {
+        "cn": "",
+        "en": "Signet of Colossal Mastery",
+        "ru": "Печатка колоссального мастерства",
+        "es": "Sello de maestría colosal",
+        "br": "Sinete da Maestria Colossal",
+        "kr": "",
+        "fr": "Chevalière de maîtrise colossale",
+        "de": "Siegel der kolossalen Meisterschaft"
+    },
+    "205333": {
+        "cn": "",
+        "en": "Obsidian Amulet of Transmutation",
+        "ru": "Обсидиановый амулет трансмутации",
+        "es": "Amuleto de transmutación obsidiana",
+        "br": "Amuleto Obsidiano de Transmutação",
+        "kr": "",
+        "fr": "Amulette en obsidienne de transmutation",
+        "de": "Obsidianamulett der Transmutation"
+    },
+    "205334": {
+        "cn": "",
+        "en": "Flowfy's Smoldering Chain",
+        "ru": "Обжигающая цепь Жарика",
+        "es": "Cadena humeante de Flujofy",
+        "br": "Corrente Fumegante de Fluifo",
+        "kr": "",
+        "fr": "Chaîne fumante de Magmouaf",
+        "de": "Fluffis qualmende Kette"
+    },
+    "205335": {
+        "cn": "",
+        "en": "Talisman of the Dusk",
+        "ru": "Талисман сумерек",
+        "es": "Dije del ocaso",
+        "br": "Talismã do Crepúsculo",
+        "kr": "",
+        "fr": "Talisman du crépuscule",
+        "de": "Talisman der Dämmerung"
+    },
+    "205336": {
+        "cn": "",
+        "en": "Glowing Veridian Necklace",
+        "ru": "Сияющее изумрудное ожерелье",
+        "es": "Collar veridiano resplandeciente",
+        "br": "Colar Viridiano Reluzente",
+        "kr": "",
+        "fr": "Collier viridien luminescent",
+        "de": "Leuchtende Viridianhalskette"
+    },
+    "205343": {
+        "cn": "",
+        "en": "Crude Seal of Mak'aru",
+        "ru": "Грубая печать Мак'ару",
+        "es": "Sello rudimentario de Mak'aru",
+        "br": "Selo Rústico de Mak'aru",
+        "kr": "",
+        "fr": "Sceau sommaire de Mak’aru",
+        "de": "Primitives Siegel von Mak'aru"
+    },
+    "205361": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Prestigious Cloak",
+        "ru": "Престижный плащ обсидианового гладиатора",
+        "es": "Capa prestigiosa de Gladiador obsidiana",
+        "br": "Manto Prestigioso do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape de prestige du gladiateur d’obsidienne",
+        "de": "Prestigeträchtiger Umhang des Obsidiangladiators"
+    },
+    "205375": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Tunic",
+        "ru": "Шелковый мундир обсидианового гладиатора",
+        "es": "Guerrera de seda de Gladiador obsidiana",
+        "br": "Túnica de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Tunique du gladiateur d’obsidienne en soie",
+        "de": "Seidentunika des Obsidiangladiators"
+    },
+    "205376": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Blouse",
+        "ru": "Шелковая рубашка обсидианового гладиатора",
+        "es": "Blusa de seda de Gladiador obsidiana",
+        "br": "Blusa de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chemisette du gladiateur d’obsidienne en soie",
+        "de": "Seidenbluse des Obsidiangladiators"
+    },
+    "205377": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Slippers",
+        "ru": "Шелковые туфли обсидианового гладиатора",
+        "es": "Zapatillas de seda de Gladiador obsidiana",
+        "br": "Sapatilhas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Mules du gladiateur d’obsidienne en soie",
+        "de": "Seidenpantoffeln des Obsidiangladiators"
+    },
+    "205378": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Treads",
+        "ru": "Шелковые ботфорты обсидианового гладиатора",
+        "es": "Botines de seda de Gladiador obsidiana",
+        "br": "Botinas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en soie",
+        "de": "Seidentreter des Obsidiangladiators"
+    },
+    "205379": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Gloves",
+        "ru": "Шелковые перчатки обсидианового гладиатора",
+        "es": "Guantes de seda de Gladiador obsidiana",
+        "br": "Luvas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en soie",
+        "de": "Seidenhandschuhe des Obsidiangladiators"
+    },
+    "205380": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Handwraps",
+        "ru": "Шелковые повязки обсидианового гладиатора",
+        "es": "Manijas de seda de Gladiador obsidiana",
+        "br": "Mitenes de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-mains du gladiateur d’obsidienne en soie",
+        "de": "Seidenhandlappen des Obsidiangladiators"
+    },
+    "205381": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Hood",
+        "ru": "Шелковый капюшон обсидианового гладиатора",
+        "es": "Caperuza de seda de Gladiador obsidiana",
+        "br": "Capuz de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chaperon du gladiateur d’obsidienne en soie",
+        "de": "Seidenkapuze des Obsidiangladiators"
+    },
+    "205382": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Guise",
+        "ru": "Шелковая полумаска обсидианового гладиатора",
+        "es": "Disfraz de seda de Gladiador obsidiana",
+        "br": "Socapa de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Semblance du gladiateur d’obsidienne en soie",
+        "de": "Seidenhaube des Obsidiangladiators"
+    },
+    "205383": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Leggings",
+        "ru": "Шелковые поножи обсидианового гладиатора",
+        "es": "Leotardos de seda de Gladiador obsidiana",
+        "br": "Perneiras de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambières du gladiateur d’obsidienne en soie",
+        "de": "Seidengamaschen des Obsidiangladiators"
+    },
+    "205384": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Trousers",
+        "ru": "Шелковые брюки обсидианового гладиатора",
+        "es": "Calzas de seda de Gladiador obsidiana",
+        "br": "Calças de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chausses du gladiateur d’obsidienne en soie",
+        "de": "Seidenbeinkleider des Obsidiangladiators"
+    },
+    "205385": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Mantle",
+        "ru": "Шелковое оплечье обсидианового гладиатора",
+        "es": "Manto de seda de Gladiador obsidiana",
+        "br": "Dragonas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Mantelet du gladiateur d’obsidienne en soie",
+        "de": "Seidenmantel des Obsidiangladiators"
+    },
+    "205386": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Amice",
+        "ru": "Шелковый нарамник обсидианового гладиатора",
+        "es": "Amito de seda de Gladiador obsidiana",
+        "br": "Sobreveste de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Amict du gladiateur d’obsidienne en soie",
+        "de": "Seidenamicia des Obsidiangladiators"
+    },
+    "205387": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Cord",
+        "ru": "Шелковый шнурованный ремень обсидианового гладиатора",
+        "es": "Cordón de seda de Gladiador obsidiana",
+        "br": "Cordão de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Corde du gladiateur d’obsidienne en soie",
+        "de": "Seidenkordel des Obsidiangladiators"
+    },
+    "205388": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Belt",
+        "ru": "Шелковый пояс обсидианового гладиатора",
+        "es": "Cinturón de seda de Gladiador obsidiana",
+        "br": "Cinto de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en soie",
+        "de": "Seidengürtel des Obsidiangladiators"
+    },
+    "205389": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Wristwraps",
+        "ru": "Шелковые напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de seda de Gladiador obsidiana",
+        "br": "Munhecas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en soie",
+        "de": "Seidengelenkbänder des Obsidiangladiators"
+    },
+    "205390": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Armbands",
+        "ru": "Шелковые поручи обсидианового гладиатора",
+        "es": "Bandas de seda de Gladiador obsidiana",
+        "br": "Embraces de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bracières du gladiateur d’obsidienne en soie",
+        "de": "Seidenarmbinden des Obsidiangladiators"
+    },
+    "205391": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Vest",
+        "ru": "Кольчужный жилет обсидианового гладиатора",
+        "es": "Jubón de anillas de Gladiador obsidiana",
+        "br": "Colete Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenweste des Obsidiangladiators"
+    },
+    "205392": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Tunic",
+        "ru": "Кольчужный мундир обсидианового гладиатора",
+        "es": "Guerrera de anillas de Gladiador obsidiana",
+        "br": "Túnica Encadeada do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Tunique du gladiateur d’obsidienne en anneaux",
+        "de": "Kettentunika des Obsidiangladiators"
+    },
+    "205393": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Sabatons",
+        "ru": "Кольчужные башмаки обсидианового гладиатора",
+        "es": "Escarpes de anillas de Gladiador obsidiana",
+        "br": "Escarpes Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Solerets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettensabatons des Obsidiangladiators"
+    },
+    "205394": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Boots",
+        "ru": "Кольчужные сапоги обсидианового гладиатора",
+        "es": "Botas de anillas de Gladiador obsidiana",
+        "br": "Botas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenstiefel des Obsidiangladiators"
+    },
+    "205395": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы обсидианового гладиатора",
+        "es": "Guanteletes de anillas de Gladiador obsidiana",
+        "br": "Manoplas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenstulpen des Obsidiangladiators"
+    },
+    "205396": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы обсидианового гладиатора",
+        "es": "Manoplas de anillas de Gladiador obsidiana",
+        "br": "Protetores de Mão Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhandschützer des Obsidiangladiators"
+    },
+    "205397": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Helm",
+        "ru": "Кольчужный шлем обсидианового гладиатора",
+        "es": "Yelmo de anillas de Gladiador obsidiana",
+        "br": "Elmo Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhelm des Obsidiangladiators"
+    },
+    "205398": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Faceguard",
+        "ru": "Кольчужный большой шлем обсидианового гладиатора",
+        "es": "Visera de anillas de Gladiador obsidiana",
+        "br": "Viseira Encadeada do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ventaille du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengesichtsschutz des Obsidiangladiators"
+    },
+    "205399": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Leggings",
+        "ru": "Кольчужные поножи обсидианового гладиатора",
+        "es": "Leotardos de anillas de Gladiador obsidiana",
+        "br": "Perneiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambière du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengamaschen des Obsidiangladiators"
+    },
+    "205400": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Breeches",
+        "ru": "Кольчужные штаны обсидианового гладиатора",
+        "es": "Calzones de anillas de Gladiador obsidiana",
+        "br": "Calções Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenbundhosen des Obsidiangladiators"
+    },
+    "205401": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Monnion",
+        "ru": "Кольчужные наплечники обсидианового гладиатора",
+        "es": "Sobrehombreras de anillas de Gladiador obsidiana",
+        "br": "Espáduas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Espalières du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenschiftung des Obsidiangladiators"
+    },
+    "205402": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Shoulderguard",
+        "ru": "Кольчужные наплечные щитки обсидианового гладиатора",
+        "es": "Guardahombros de anillas de Gladiador obsidiana",
+        "br": "Guarda-ombros Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-épaules du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenschulterschutz des Obsidiangladiators"
+    },
+    "205403": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Belt",
+        "ru": "Кольчужный пояс обсидианового гладиатора",
+        "es": "Cinturón de anillas de Gladiador obsidiana",
+        "br": "Cinto Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengürtel des Obsidiangladiators"
+    },
+    "205404": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Girdle",
+        "ru": "Кольчужный ремень обсидианового гладиатора",
+        "es": "Faja de anillas de Gladiador obsidiana",
+        "br": "Cinturão Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengurt des Obsidiangladiators"
+    },
+    "205405": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Wristguards",
+        "ru": "Кольчужные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de anillas de Gladiador obsidiana",
+        "br": "Munhequeiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhandgelenksschützer des Obsidiangladiators"
+    },
+    "205406": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Bracers",
+        "ru": "Кольчужные наручи обсидианового гладиатора",
+        "es": "Brazales de anillas de Gladiador obsidiana",
+        "br": "Braçadeiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Brassards du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenarmschienen des Obsidiangladiators"
+    },
+    "205407": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205408": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205409": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205446": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205447": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205448": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205473": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Chestguard",
+        "ru": "Латный нагрудный доспех обсидианового гладиатора",
+        "es": "Coselete de placas de Gladiador obsidiana",
+        "br": "Couraça de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Corselet du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbrustschutz des Obsidiangladiators"
+    },
+    "205474": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Chestplate",
+        "ru": "Латная бригантина обсидианового гладиатора",
+        "es": "Peto de placas de Gladiador obsidiana",
+        "br": "Guarda-peito de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pansière du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbrustpanzer des Obsidiangladiators"
+    },
+    "205475": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Warboots",
+        "ru": "Латные боевые сапоги обсидианового гладиатора",
+        "es": "Botas de guerra de placas de Gladiador obsidiana",
+        "br": "Coturnos de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes de guerre du gladiateur d’obsidienne en plaques",
+        "de": "Plattenkriegsstiefel des Obsidiangladiators"
+    },
+    "205476": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Stompers",
+        "ru": "Латные высокие ботинки обсидианового гладиатора",
+        "es": "Apisonadoras de placas de Gladiador obsidiana",
+        "br": "Pisoteadores de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Croquenots du gladiateur d’obsidienne en plaques",
+        "de": "Plattenstampfer des Obsidiangladiators"
+    },
+    "205477": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Gauntlets",
+        "ru": "Латные рукавицы обсидианового гладиатора",
+        "es": "Guanteletes de placas de Gladiador obsidiana",
+        "br": "Manoplas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du gladiateur d’obsidienne en plaques",
+        "de": "Plattenstulpen des Obsidiangladiators"
+    },
+    "205478": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Handguards",
+        "ru": "Латные боевые рукавицы обсидианового гладиатора",
+        "es": "Manoplas de placas de Gladiador obsidiana",
+        "br": "Protetores de Mão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhandschützer des Obsidiangladiators"
+    },
+    "205479": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Helm",
+        "ru": "Латный шлем обсидианового гладиатора",
+        "es": "Yelmo de placas de Gladiador obsidiana",
+        "br": "Elmo de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhelm des Obsidiangladiators"
+    },
+    "205480": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Helmet",
+        "ru": "Латный легкий шлем обсидианового гладиатора",
+        "es": "Casco de placas de Gladiador obsidiana",
+        "br": "Capacete de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Casque du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhelmkappe des Obsidiangladiators"
+    },
+    "205481": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Legguards",
+        "ru": "Латные набедренники обсидианового гладиатора",
+        "es": "Musleras de placas de Gladiador obsidiana",
+        "br": "Guarda-pernas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-jambes du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbeinschützer des Obsidiangladiators"
+    },
+    "205482": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Wargreaves",
+        "ru": "Латные наголенники обсидианового гладиатора",
+        "es": "Grebas de guerra de placas de Gladiador obsidiana",
+        "br": "Grevas de Guerra de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Grèves du gladiateur d’obsidienne en plaques",
+        "de": "Plattenkriegsbeinschützer des Obsidiangladiators"
+    },
+    "205483": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Shoulders",
+        "ru": "Латное наплечье обсидианового гладиатора",
+        "es": "Sobrehombros de placas de Gladiador obsidiana",
+        "br": "Omoplatas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Épaulières du gladiateur d’obsidienne en plaques",
+        "de": "Plattenschultern des Obsidiangladiators"
+    },
+    "205484": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Pauldrons",
+        "ru": "Латные наплечники обсидианового гладиатора",
+        "es": "Espaldares de placas de Gladiador obsidiana",
+        "br": "Brafoneiras de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Espauliers du gladiateur d’obsidienne en plaques",
+        "de": "Plattenschulterstücke des Obsidiangladiators"
+    },
+    "205485": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Girdle",
+        "ru": "Латный ремень обсидианового гладиатора",
+        "es": "Faja de placas de Gladiador obsidiana",
+        "br": "Cinturão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon du gladiateur d’obsidienne en plaques",
+        "de": "Plattengurt des Obsidiangladiators"
+    },
+    "205486": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Greatbelt",
+        "ru": "Латный большой пояс обсидианового гладиатора",
+        "es": "Gran cinturón de placas de Gladiador obsidiana",
+        "br": "Correão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Grande ceinture du gladiateur d’obsidienne en plaques",
+        "de": "Plattengroßgürtel des Obsidiangladiators"
+    },
+    "205487": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Wristguards",
+        "ru": "Латные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de placas de Gladiador obsidiana",
+        "br": "Munhequeiras de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhandgelenksschützer des Obsidiangladiators"
+    },
+    "205488": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Vambraces",
+        "ru": "Латные тяжелые наручи обсидианового гладиатора",
+        "es": "Avambrazos de placas de Gladiador obsidiana",
+        "br": "Avambraços de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-bras du gladiateur d’obsidienne en plaques",
+        "de": "Plattenunterarmschienen des Obsidiangladiators"
+    },
+    "205489": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Tunic",
+        "ru": "Шелковый мундир обсидианового гладиатора",
+        "es": "Guerrera de seda de Gladiador obsidiana",
+        "br": "Túnica de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Tunique du gladiateur d’obsidienne en soie",
+        "de": "Seidentunika des Obsidiangladiators"
+    },
+    "205490": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Blouse",
+        "ru": "Шелковая рубашка обсидианового гладиатора",
+        "es": "Blusa de seda de Gladiador obsidiana",
+        "br": "Blusa de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chemisette du gladiateur d’obsidienne en soie",
+        "de": "Seidenbluse des Obsidiangladiators"
+    },
+    "205491": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Slippers",
+        "ru": "Шелковые туфли обсидианового гладиатора",
+        "es": "Zapatillas de seda de Gladiador obsidiana",
+        "br": "Sapatilhas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Mules du gladiateur d’obsidienne en soie",
+        "de": "Seidenpantoffeln des Obsidiangladiators"
+    },
+    "205492": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Treads",
+        "ru": "Шелковые ботфорты обсидианового гладиатора",
+        "es": "Botines de seda de Gladiador obsidiana",
+        "br": "Botinas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en soie",
+        "de": "Seidentreter des Obsidiangladiators"
+    },
+    "205493": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Gloves",
+        "ru": "Шелковые перчатки обсидианового гладиатора",
+        "es": "Guantes de seda de Gladiador obsidiana",
+        "br": "Luvas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en soie",
+        "de": "Seidenhandschuhe des Obsidiangladiators"
+    },
+    "205494": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Handwraps",
+        "ru": "Шелковые повязки обсидианового гладиатора",
+        "es": "Manijas de seda de Gladiador obsidiana",
+        "br": "Mitenes de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-mains du gladiateur d’obsidienne en soie",
+        "de": "Seidenhandlappen des Obsidiangladiators"
+    },
+    "205495": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Hood",
+        "ru": "Шелковый капюшон обсидианового гладиатора",
+        "es": "Caperuza de seda de Gladiador obsidiana",
+        "br": "Capuz de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chaperon du gladiateur d’obsidienne en soie",
+        "de": "Seidenkapuze des Obsidiangladiators"
+    },
+    "205496": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Guise",
+        "ru": "Шелковая полумаска обсидианового гладиатора",
+        "es": "Disfraz de seda de Gladiador obsidiana",
+        "br": "Socapa de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Semblance du gladiateur d’obsidienne en soie",
+        "de": "Seidenhaube des Obsidiangladiators"
+    },
+    "205497": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Leggings",
+        "ru": "Шелковые поножи обсидианового гладиатора",
+        "es": "Leotardos de seda de Gladiador obsidiana",
+        "br": "Perneiras de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambières du gladiateur d’obsidienne en soie",
+        "de": "Seidengamaschen des Obsidiangladiators"
+    },
+    "205498": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Trousers",
+        "ru": "Шелковые брюки обсидианового гладиатора",
+        "es": "Calzas de seda de Gladiador obsidiana",
+        "br": "Calças de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chausses du gladiateur d’obsidienne en soie",
+        "de": "Seidenbeinkleider des Obsidiangladiators"
+    },
+    "205499": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Mantle",
+        "ru": "Шелковое оплечье обсидианового гладиатора",
+        "es": "Manto de seda de Gladiador obsidiana",
+        "br": "Dragonas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Mantelet du gladiateur d’obsidienne en soie",
+        "de": "Seidenmantel des Obsidiangladiators"
+    },
+    "205500": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Amice",
+        "ru": "Шелковый нарамник обсидианового гладиатора",
+        "es": "Amito de seda de Gladiador obsidiana",
+        "br": "Sobreveste de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Amict du gladiateur d’obsidienne en soie",
+        "de": "Seidenamicia des Obsidiangladiators"
+    },
+    "205501": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Cord",
+        "ru": "Шелковый шнурованный ремень обсидианового гладиатора",
+        "es": "Cordón de seda de Gladiador obsidiana",
+        "br": "Cordão de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Corde du gladiateur d’obsidienne en soie",
+        "de": "Seidenkordel des Obsidiangladiators"
+    },
+    "205502": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Belt",
+        "ru": "Шелковый пояс обсидианового гладиатора",
+        "es": "Cinturón de seda de Gladiador obsidiana",
+        "br": "Cinto de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en soie",
+        "de": "Seidengürtel des Obsidiangladiators"
+    },
+    "205503": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Wristwraps",
+        "ru": "Шелковые напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de seda de Gladiador obsidiana",
+        "br": "Munhecas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en soie",
+        "de": "Seidengelenkbänder des Obsidiangladiators"
+    },
+    "205504": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Armbands",
+        "ru": "Шелковые поручи обсидианового гладиатора",
+        "es": "Bandas de seda de Gladiador obsidiana",
+        "br": "Embraces de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bracières du gladiateur d’obsidienne en soie",
+        "de": "Seidenarmbinden des Obsidiangladiators"
+    },
+    "205505": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Robe",
+        "ru": "Шелковое одеяние обсидианового гладиатора",
+        "es": "Toga de seda de Gladiador obsidiana",
+        "br": "Veste de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Robe du gladiateur d’obsidienne en soie",
+        "de": "Seidenrobe des Obsidiangladiators"
+    },
+    "205506": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Vestments",
+        "ru": "Шелковое облачение обсидианового гладиатора",
+        "es": "Vestimentas de seda de Gladiador obsidiana",
+        "br": "Vestimenta de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Habits du gladiateur d’obsidienne en soie",
+        "de": "Seidentracht des Obsidiangladiators"
+    },
+    "205507": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Slippers",
+        "ru": "Шелковые туфли обсидианового гладиатора",
+        "es": "Zapatillas de seda de Gladiador obsidiana",
+        "br": "Sapatilhas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Mules du gladiateur d’obsidienne en soie",
+        "de": "Seidenpantoffeln des Obsidiangladiators"
+    },
+    "205508": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Treads",
+        "ru": "Шелковые ботфорты обсидианового гладиатора",
+        "es": "Botines de seda de Gladiador obsidiana",
+        "br": "Botinas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en soie",
+        "de": "Seidentreter des Obsidiangladiators"
+    },
+    "205509": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Gloves",
+        "ru": "Шелковые перчатки обсидианового гладиатора",
+        "es": "Guantes de seda de Gladiador obsidiana",
+        "br": "Luvas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en soie",
+        "de": "Seidenhandschuhe des Obsidiangladiators"
+    },
+    "205510": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Handwraps",
+        "ru": "Шелковые повязки обсидианового гладиатора",
+        "es": "Manijas de seda de Gladiador obsidiana",
+        "br": "Mitenes de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-mains du gladiateur d’obsidienne en soie",
+        "de": "Seidenhandlappen des Obsidiangladiators"
+    },
+    "205511": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Hood",
+        "ru": "Шелковый капюшон обсидианового гладиатора",
+        "es": "Caperuza de seda de Gladiador obsidiana",
+        "br": "Capuz de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chaperon du gladiateur d’obsidienne en soie",
+        "de": "Seidenkapuze des Obsidiangladiators"
+    },
+    "205512": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Guise",
+        "ru": "Шелковая полумаска обсидианового гладиатора",
+        "es": "Disfraz de seda de Gladiador obsidiana",
+        "br": "Socapa de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Semblance du gladiateur d’obsidienne en soie",
+        "de": "Seidenhaube des Obsidiangladiators"
+    },
+    "205513": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Leggings",
+        "ru": "Шелковые поножи обсидианового гладиатора",
+        "es": "Leotardos de seda de Gladiador obsidiana",
+        "br": "Perneiras de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambières du gladiateur d’obsidienne en soie",
+        "de": "Seidengamaschen des Obsidiangladiators"
+    },
+    "205514": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Trousers",
+        "ru": "Шелковые брюки обсидианового гладиатора",
+        "es": "Calzas de seda de Gladiador obsidiana",
+        "br": "Calças de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chausses du gladiateur d’obsidienne en soie",
+        "de": "Seidenbeinkleider des Obsidiangladiators"
+    },
+    "205515": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Mantle",
+        "ru": "Шелковое оплечье обсидианового гладиатора",
+        "es": "Manto de seda de Gladiador obsidiana",
+        "br": "Dragonas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Mantelet du gladiateur d’obsidienne en soie",
+        "de": "Seidenmantel des Obsidiangladiators"
+    },
+    "205516": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Amice",
+        "ru": "Шелковый нарамник обсидианового гладиатора",
+        "es": "Amito de seda de Gladiador obsidiana",
+        "br": "Sobreveste de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Amict du gladiateur d’obsidienne en soie",
+        "de": "Seidenamicia des Obsidiangladiators"
+    },
+    "205517": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Cord",
+        "ru": "Шелковый шнурованный ремень обсидианового гладиатора",
+        "es": "Cordón de seda de Gladiador obsidiana",
+        "br": "Cordão de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Corde du gladiateur d’obsidienne en soie",
+        "de": "Seidenkordel des Obsidiangladiators"
+    },
+    "205518": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Belt",
+        "ru": "Шелковый пояс обсидианового гладиатора",
+        "es": "Cinturón de seda de Gladiador obsidiana",
+        "br": "Cinto de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en soie",
+        "de": "Seidengürtel des Obsidiangladiators"
+    },
+    "205519": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Wristwraps",
+        "ru": "Шелковые напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de seda de Gladiador obsidiana",
+        "br": "Munhecas de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en soie",
+        "de": "Seidengelenkbänder des Obsidiangladiators"
+    },
+    "205520": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Silk Armbands",
+        "ru": "Шелковые поручи обсидианового гладиатора",
+        "es": "Bandas de seda de Gladiador obsidiana",
+        "br": "Embraces de Seda do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bracières du gladiateur d’obsidienne en soie",
+        "de": "Seidenarmbinden des Obsidiangladiators"
+    },
+    "205521": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Vest",
+        "ru": "Кожаный жилет обсидианового гладиатора",
+        "es": "Jubón de cuero de Gladiador obsidiana",
+        "br": "Colete de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en cuir",
+        "de": "Lederweste des Obsidiangladiators"
+    },
+    "205522": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет обсидианового гладиатора",
+        "es": "Chaleco de cuero de Gladiador obsidiana",
+        "br": "Gibão de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pourpoint du gladiateur d’obsidienne en cuir",
+        "de": "Lederwams des Obsidiangladiators"
+    },
+    "205523": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги обсидианового гладиатора",
+        "es": "Botas de cuero de Gladiador obsidiana",
+        "br": "Botas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en cuir",
+        "de": "Lederstiefel des Obsidiangladiators"
+    },
+    "205524": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты обсидианового гладиатора",
+        "es": "Botines de cuero de Gladiador obsidiana",
+        "br": "Botinas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en cuir",
+        "de": "Ledertreter des Obsidiangladiators"
+    },
+    "205525": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки обсидианового гладиатора",
+        "es": "Guantes de cuero de Gladiador obsidiana",
+        "br": "Luvas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschuhe des Obsidiangladiators"
+    },
+    "205526": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Grips",
+        "ru": "Кожаные захваты обсидианового гладиатора",
+        "es": "Mandiletes de cuero de Gladiador obsidiana",
+        "br": "Guantes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Poignes du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschutz des Obsidiangladiators"
+    },
+    "205527": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Helm",
+        "ru": "Кожаный шлем обсидианового гладиатора",
+        "es": "Yelmo de cuero de Gladiador obsidiana",
+        "br": "Elmo de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en cuir",
+        "de": "Lederhelm des Obsidiangladiators"
+    },
+    "205528": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Mask",
+        "ru": "Кожаная маска обсидианового гладиатора",
+        "es": "Máscara de cuero de Gladiador obsidiana",
+        "br": "Máscara de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Masque du gladiateur d’obsidienne en cuir",
+        "de": "Ledermaske des Obsidiangladiators"
+    },
+    "205529": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны обсидианового гладиатора",
+        "es": "Calzones de cuero de Gladiador obsidiana",
+        "br": "Calções de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en cuir",
+        "de": "Lederbundhosen des Obsidiangladiators"
+    },
+    "205530": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи обсидианового гладиатора",
+        "es": "Ataduras de cuero de Gladiador obsidiana",
+        "br": "Culotes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambards du gladiateur d’obsidienne en cuir",
+        "de": "Lederbeinwickel des Obsidiangladiators"
+    },
+    "205531": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч обсидианового гладиатора",
+        "es": "Bufas de cuero de Gladiador obsidiana",
+        "br": "Espaldares de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Spallières du gladiateur d’obsidienne en cuir",
+        "de": "Lederschiftung des Obsidiangladiators"
+    },
+    "205532": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники обсидианового гладиатора",
+        "es": "Hombreras de cuero de Gladiador obsidiana",
+        "br": "Ombreiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-épaules du gladiateur d’obsidienne en cuir",
+        "de": "Lederschulterpolster des Obsidiangladiators"
+    },
+    "205533": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Belt",
+        "ru": "Кожаный пояс обсидианового гладиатора",
+        "es": "Cinturón de cuero de Gladiador obsidiana",
+        "br": "Cinto de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en cuir",
+        "de": "Ledergürtel des Obsidiangladiators"
+    },
+    "205534": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Strap",
+        "ru": "Кожаный ремень обсидианового гладиатора",
+        "es": "Correa de cuero de Gladiador obsidiana",
+        "br": "Correia de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Sangle du gladiateur d’obsidienne en cuir",
+        "de": "Lederriemen des Obsidiangladiators"
+    },
+    "205535": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhecas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en cuir",
+        "de": "Ledergelenkbänder des Obsidiangladiators"
+    },
+    "205536": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhequeiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandgelenksschützer des Obsidiangladiators"
+    },
+    "205537": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Vest",
+        "ru": "Кожаный жилет обсидианового гладиатора",
+        "es": "Jubón de cuero de Gladiador obsidiana",
+        "br": "Colete de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en cuir",
+        "de": "Lederweste des Obsidiangladiators"
+    },
+    "205538": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет обсидианового гладиатора",
+        "es": "Chaleco de cuero de Gladiador obsidiana",
+        "br": "Gibão de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pourpoint du gladiateur d’obsidienne en cuir",
+        "de": "Lederwams des Obsidiangladiators"
+    },
+    "205539": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги обсидианового гладиатора",
+        "es": "Botas de cuero de Gladiador obsidiana",
+        "br": "Botas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en cuir",
+        "de": "Lederstiefel des Obsidiangladiators"
+    },
+    "205540": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты обсидианового гладиатора",
+        "es": "Botines de cuero de Gladiador obsidiana",
+        "br": "Botinas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en cuir",
+        "de": "Ledertreter des Obsidiangladiators"
+    },
+    "205541": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки обсидианового гладиатора",
+        "es": "Guantes de cuero de Gladiador obsidiana",
+        "br": "Luvas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschuhe des Obsidiangladiators"
+    },
+    "205542": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Grips",
+        "ru": "Кожаные захваты обсидианового гладиатора",
+        "es": "Mandiletes de cuero de Gladiador obsidiana",
+        "br": "Guantes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Poignes du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschutz des Obsidiangladiators"
+    },
+    "205543": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Helm",
+        "ru": "Кожаный шлем обсидианового гладиатора",
+        "es": "Yelmo de cuero de Gladiador obsidiana",
+        "br": "Elmo de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en cuir",
+        "de": "Lederhelm des Obsidiangladiators"
+    },
+    "205544": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Mask",
+        "ru": "Кожаная маска обсидианового гладиатора",
+        "es": "Máscara de cuero de Gladiador obsidiana",
+        "br": "Máscara de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Masque du gladiateur d’obsidienne en cuir",
+        "de": "Ledermaske des Obsidiangladiators"
+    },
+    "205545": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны обсидианового гладиатора",
+        "es": "Calzones de cuero de Gladiador obsidiana",
+        "br": "Calções de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en cuir",
+        "de": "Lederbundhosen des Obsidiangladiators"
+    },
+    "205546": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи обсидианового гладиатора",
+        "es": "Ataduras de cuero de Gladiador obsidiana",
+        "br": "Culotes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambards du gladiateur d’obsidienne en cuir",
+        "de": "Lederbeinwickel des Obsidiangladiators"
+    },
+    "205547": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч обсидианового гладиатора",
+        "es": "Bufas de cuero de Gladiador obsidiana",
+        "br": "Espaldares de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Spallières du gladiateur d’obsidienne en cuir",
+        "de": "Lederschiftung des Obsidiangladiators"
+    },
+    "205548": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники обсидианового гладиатора",
+        "es": "Hombreras de cuero de Gladiador obsidiana",
+        "br": "Ombreiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-épaules du gladiateur d’obsidienne en cuir",
+        "de": "Lederschulterpolster des Obsidiangladiators"
+    },
+    "205549": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Belt",
+        "ru": "Кожаный пояс обсидианового гладиатора",
+        "es": "Cinturón de cuero de Gladiador obsidiana",
+        "br": "Cinto de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en cuir",
+        "de": "Ledergürtel des Obsidiangladiators"
+    },
+    "205550": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Strap",
+        "ru": "Кожаный ремень обсидианового гладиатора",
+        "es": "Correa de cuero de Gladiador obsidiana",
+        "br": "Correia de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Sangle du gladiateur d’obsidienne en cuir",
+        "de": "Lederriemen des Obsidiangladiators"
+    },
+    "205551": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhecas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en cuir",
+        "de": "Ledergelenkbänder des Obsidiangladiators"
+    },
+    "205552": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhequeiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandgelenksschützer des Obsidiangladiators"
+    },
+    "205553": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Vest",
+        "ru": "Кожаный жилет обсидианового гладиатора",
+        "es": "Jubón de cuero de Gladiador obsidiana",
+        "br": "Colete de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en cuir",
+        "de": "Lederweste des Obsidiangladiators"
+    },
+    "205554": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет обсидианового гладиатора",
+        "es": "Chaleco de cuero de Gladiador obsidiana",
+        "br": "Gibão de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pourpoint du gladiateur d’obsidienne en cuir",
+        "de": "Lederwams des Obsidiangladiators"
+    },
+    "205555": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги обсидианового гладиатора",
+        "es": "Botas de cuero de Gladiador obsidiana",
+        "br": "Botas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en cuir",
+        "de": "Lederstiefel des Obsidiangladiators"
+    },
+    "205556": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты обсидианового гладиатора",
+        "es": "Botines de cuero de Gladiador obsidiana",
+        "br": "Botinas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en cuir",
+        "de": "Ledertreter des Obsidiangladiators"
+    },
+    "205557": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки обсидианового гладиатора",
+        "es": "Guantes de cuero de Gladiador obsidiana",
+        "br": "Luvas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschuhe des Obsidiangladiators"
+    },
+    "205558": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Grips",
+        "ru": "Кожаные захваты обсидианового гладиатора",
+        "es": "Mandiletes de cuero de Gladiador obsidiana",
+        "br": "Guantes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Poignes du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschutz des Obsidiangladiators"
+    },
+    "205559": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Helm",
+        "ru": "Кожаный шлем обсидианового гладиатора",
+        "es": "Yelmo de cuero de Gladiador obsidiana",
+        "br": "Elmo de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en cuir",
+        "de": "Lederhelm des Obsidiangladiators"
+    },
+    "205560": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Mask",
+        "ru": "Кожаная маска обсидианового гладиатора",
+        "es": "Máscara de cuero de Gladiador obsidiana",
+        "br": "Máscara de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Masque du gladiateur d’obsidienne en cuir",
+        "de": "Ledermaske des Obsidiangladiators"
+    },
+    "205561": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны обсидианового гладиатора",
+        "es": "Calzones de cuero de Gladiador obsidiana",
+        "br": "Calções de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en cuir",
+        "de": "Lederbundhosen des Obsidiangladiators"
+    },
+    "205562": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи обсидианового гладиатора",
+        "es": "Ataduras de cuero de Gladiador obsidiana",
+        "br": "Culotes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambards du gladiateur d’obsidienne en cuir",
+        "de": "Lederbeinwickel des Obsidiangladiators"
+    },
+    "205563": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч обсидианового гладиатора",
+        "es": "Bufas de cuero de Gladiador obsidiana",
+        "br": "Espaldares de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Spallières du gladiateur d’obsidienne en cuir",
+        "de": "Lederschiftung des Obsidiangladiators"
+    },
+    "205564": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники обсидианового гладиатора",
+        "es": "Hombreras de cuero de Gladiador obsidiana",
+        "br": "Ombreiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-épaules du gladiateur d’obsidienne en cuir",
+        "de": "Lederschulterpolster des Obsidiangladiators"
+    },
+    "205565": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Belt",
+        "ru": "Кожаный пояс обсидианового гладиатора",
+        "es": "Cinturón de cuero de Gladiador obsidiana",
+        "br": "Cinto de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en cuir",
+        "de": "Ledergürtel des Obsidiangladiators"
+    },
+    "205566": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Strap",
+        "ru": "Кожаный ремень обсидианового гладиатора",
+        "es": "Correa de cuero de Gladiador obsidiana",
+        "br": "Correia de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Sangle du gladiateur d’obsidienne en cuir",
+        "de": "Lederriemen des Obsidiangladiators"
+    },
+    "205567": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhecas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en cuir",
+        "de": "Ledergelenkbänder des Obsidiangladiators"
+    },
+    "205568": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhequeiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandgelenksschützer des Obsidiangladiators"
+    },
+    "205569": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Vest",
+        "ru": "Кожаный жилет обсидианового гладиатора",
+        "es": "Jubón de cuero de Gladiador obsidiana",
+        "br": "Colete de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en cuir",
+        "de": "Lederweste des Obsidiangladiators"
+    },
+    "205570": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет обсидианового гладиатора",
+        "es": "Chaleco de cuero de Gladiador obsidiana",
+        "br": "Gibão de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pourpoint du gladiateur d’obsidienne en cuir",
+        "de": "Lederwams des Obsidiangladiators"
+    },
+    "205571": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги обсидианового гладиатора",
+        "es": "Botas de cuero de Gladiador obsidiana",
+        "br": "Botas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en cuir",
+        "de": "Lederstiefel des Obsidiangladiators"
+    },
+    "205572": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты обсидианового гладиатора",
+        "es": "Botines de cuero de Gladiador obsidiana",
+        "br": "Botinas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottines du gladiateur d’obsidienne en cuir",
+        "de": "Ledertreter des Obsidiangladiators"
+    },
+    "205573": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки обсидианового гладиатора",
+        "es": "Guantes de cuero de Gladiador obsidiana",
+        "br": "Luvas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gants du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschuhe des Obsidiangladiators"
+    },
+    "205574": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Grips",
+        "ru": "Кожаные захваты обсидианового гладиатора",
+        "es": "Mandiletes de cuero de Gladiador obsidiana",
+        "br": "Guantes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Poignes du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandschutz des Obsidiangladiators"
+    },
+    "205575": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Helm",
+        "ru": "Кожаный шлем обсидианового гладиатора",
+        "es": "Yelmo de cuero de Gladiador obsidiana",
+        "br": "Elmo de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en cuir",
+        "de": "Lederhelm des Obsidiangladiators"
+    },
+    "205576": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Mask",
+        "ru": "Кожаная маска обсидианового гладиатора",
+        "es": "Máscara de cuero de Gladiador obsidiana",
+        "br": "Máscara de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Masque du gladiateur d’obsidienne en cuir",
+        "de": "Ledermaske des Obsidiangladiators"
+    },
+    "205577": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны обсидианового гладиатора",
+        "es": "Calzones de cuero de Gladiador obsidiana",
+        "br": "Calções de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en cuir",
+        "de": "Lederbundhosen des Obsidiangladiators"
+    },
+    "205578": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи обсидианового гладиатора",
+        "es": "Ataduras de cuero de Gladiador obsidiana",
+        "br": "Culotes de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambards du gladiateur d’obsidienne en cuir",
+        "de": "Lederbeinwickel des Obsidiangladiators"
+    },
+    "205579": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч обсидианового гладиатора",
+        "es": "Bufas de cuero de Gladiador obsidiana",
+        "br": "Espaldares de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Spallières du gladiateur d’obsidienne en cuir",
+        "de": "Lederschiftung des Obsidiangladiators"
+    },
+    "205580": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники обсидианового гладиатора",
+        "es": "Hombreras de cuero de Gladiador obsidiana",
+        "br": "Ombreiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-épaules du gladiateur d’obsidienne en cuir",
+        "de": "Lederschulterpolster des Obsidiangladiators"
+    },
+    "205581": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Belt",
+        "ru": "Кожаный пояс обсидианового гладиатора",
+        "es": "Cinturón de cuero de Gladiador obsidiana",
+        "br": "Cinto de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en cuir",
+        "de": "Ledergürtel des Obsidiangladiators"
+    },
+    "205582": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Strap",
+        "ru": "Кожаный ремень обсидианового гладиатора",
+        "es": "Correa de cuero de Gladiador obsidiana",
+        "br": "Correia de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Sangle du gladiateur d’obsidienne en cuir",
+        "de": "Lederriemen des Obsidiangladiators"
+    },
+    "205583": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники обсидианового гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhecas de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes du gladiateur d’obsidienne en cuir",
+        "de": "Ledergelenkbänder des Obsidiangladiators"
+    },
+    "205584": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de cuero de Gladiador obsidiana",
+        "br": "Munhequeiras de Couro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en cuir",
+        "de": "Lederhandgelenksschützer des Obsidiangladiators"
+    },
+    "205585": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Vest",
+        "ru": "Кольчужный жилет обсидианового гладиатора",
+        "es": "Jubón de anillas de Gladiador obsidiana",
+        "br": "Colete Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenweste des Obsidiangladiators"
+    },
+    "205586": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Tunic",
+        "ru": "Кольчужный мундир обсидианового гладиатора",
+        "es": "Guerrera de anillas de Gladiador obsidiana",
+        "br": "Túnica Encadeada do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Tunique du gladiateur d’obsidienne en anneaux",
+        "de": "Kettentunika des Obsidiangladiators"
+    },
+    "205587": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Sabatons",
+        "ru": "Кольчужные башмаки обсидианового гладиатора",
+        "es": "Escarpes de anillas de Gladiador obsidiana",
+        "br": "Escarpes Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Solerets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettensabatons des Obsidiangladiators"
+    },
+    "205588": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Boots",
+        "ru": "Кольчужные сапоги обсидианового гладиатора",
+        "es": "Botas de anillas de Gladiador obsidiana",
+        "br": "Botas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenstiefel des Obsidiangladiators"
+    },
+    "205589": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы обсидианового гладиатора",
+        "es": "Guanteletes de anillas de Gladiador obsidiana",
+        "br": "Manoplas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenstulpen des Obsidiangladiators"
+    },
+    "205590": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы обсидианового гладиатора",
+        "es": "Manoplas de anillas de Gladiador obsidiana",
+        "br": "Protetores de Mão Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhandschützer des Obsidiangladiators"
+    },
+    "205591": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Helm",
+        "ru": "Кольчужный шлем обсидианового гладиатора",
+        "es": "Yelmo de anillas de Gladiador obsidiana",
+        "br": "Elmo Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhelm des Obsidiangladiators"
+    },
+    "205592": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Faceguard",
+        "ru": "Кольчужный большой шлем обсидианового гладиатора",
+        "es": "Visera de anillas de Gladiador obsidiana",
+        "br": "Viseira Encadeada do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ventaille du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengesichtsschutz des Obsidiangladiators"
+    },
+    "205593": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Leggings",
+        "ru": "Кольчужные поножи обсидианового гладиатора",
+        "es": "Leotardos de anillas de Gladiador obsidiana",
+        "br": "Perneiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambière du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengamaschen des Obsidiangladiators"
+    },
+    "205594": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Breeches",
+        "ru": "Кольчужные штаны обсидианового гладиатора",
+        "es": "Calzones de anillas de Gladiador obsidiana",
+        "br": "Calções Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenbundhosen des Obsidiangladiators"
+    },
+    "205595": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Monnion",
+        "ru": "Кольчужные наплечники обсидианового гладиатора",
+        "es": "Sobrehombreras de anillas de Gladiador obsidiana",
+        "br": "Espáduas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Espalières du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenschiftung des Obsidiangladiators"
+    },
+    "205596": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Shoulderguard",
+        "ru": "Кольчужные наплечные щитки обсидианового гладиатора",
+        "es": "Guardahombros de anillas de Gladiador obsidiana",
+        "br": "Guarda-ombros Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-épaules du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenschulterschutz des Obsidiangladiators"
+    },
+    "205597": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Belt",
+        "ru": "Кольчужный пояс обсидианового гладиатора",
+        "es": "Cinturón de anillas de Gladiador obsidiana",
+        "br": "Cinto Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengürtel des Obsidiangladiators"
+    },
+    "205598": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Girdle",
+        "ru": "Кольчужный ремень обсидианового гладиатора",
+        "es": "Faja de anillas de Gladiador obsidiana",
+        "br": "Cinturão Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengurt des Obsidiangladiators"
+    },
+    "205599": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Wristguards",
+        "ru": "Кольчужные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de anillas de Gladiador obsidiana",
+        "br": "Munhequeiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhandgelenksschützer des Obsidiangladiators"
+    },
+    "205600": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Bracers",
+        "ru": "Кольчужные наручи обсидианового гладиатора",
+        "es": "Brazales de anillas de Gladiador obsidiana",
+        "br": "Braçadeiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Brassards du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenarmschienen des Obsidiangladiators"
+    },
+    "205601": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Vest",
+        "ru": "Кольчужный жилет обсидианового гладиатора",
+        "es": "Jubón de anillas de Gladiador obsidiana",
+        "br": "Colete Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gilet du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenweste des Obsidiangladiators"
+    },
+    "205602": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Tunic",
+        "ru": "Кольчужный мундир обсидианового гладиатора",
+        "es": "Guerrera de anillas de Gladiador obsidiana",
+        "br": "Túnica Encadeada do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Tunique du gladiateur d’obsidienne en anneaux",
+        "de": "Kettentunika des Obsidiangladiators"
+    },
+    "205603": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Sabatons",
+        "ru": "Кольчужные башмаки обсидианового гладиатора",
+        "es": "Escarpes de anillas de Gladiador obsidiana",
+        "br": "Escarpes Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Solerets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettensabatons des Obsidiangladiators"
+    },
+    "205604": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Boots",
+        "ru": "Кольчужные сапоги обсидианового гладиатора",
+        "es": "Botas de anillas de Gladiador obsidiana",
+        "br": "Botas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenstiefel des Obsidiangladiators"
+    },
+    "205605": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы обсидианового гладиатора",
+        "es": "Guanteletes de anillas de Gladiador obsidiana",
+        "br": "Manoplas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenstulpen des Obsidiangladiators"
+    },
+    "205606": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы обсидианового гладиатора",
+        "es": "Manoplas de anillas de Gladiador obsidiana",
+        "br": "Protetores de Mão Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhandschützer des Obsidiangladiators"
+    },
+    "205607": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Helm",
+        "ru": "Кольчужный шлем обсидианового гладиатора",
+        "es": "Yelmo de anillas de Gladiador obsidiana",
+        "br": "Elmo Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhelm des Obsidiangladiators"
+    },
+    "205608": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Faceguard",
+        "ru": "Кольчужный большой шлем обсидианового гладиатора",
+        "es": "Visera de anillas de Gladiador obsidiana",
+        "br": "Viseira Encadeada do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ventaille du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengesichtsschutz des Obsidiangladiators"
+    },
+    "205609": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Leggings",
+        "ru": "Кольчужные поножи обсидианового гладиатора",
+        "es": "Leotardos de anillas de Gladiador obsidiana",
+        "br": "Perneiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Jambière du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengamaschen des Obsidiangladiators"
+    },
+    "205610": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Breeches",
+        "ru": "Кольчужные штаны обсидианового гладиатора",
+        "es": "Calzones de anillas de Gladiador obsidiana",
+        "br": "Calções Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Braies du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenbundhosen des Obsidiangladiators"
+    },
+    "205611": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Monnion",
+        "ru": "Кольчужные наплечники обсидианового гладиатора",
+        "es": "Sobrehombreras de anillas de Gladiador obsidiana",
+        "br": "Espáduas Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Espalières du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenschiftung des Obsidiangladiators"
+    },
+    "205612": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Shoulderguard",
+        "ru": "Кольчужные наплечные щитки обсидианового гладиатора",
+        "es": "Guardahombros de anillas de Gladiador obsidiana",
+        "br": "Guarda-ombros Encadeados do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-épaules du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenschulterschutz des Obsidiangladiators"
+    },
+    "205613": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Belt",
+        "ru": "Кольчужный пояс обсидианового гладиатора",
+        "es": "Cinturón de anillas de Gladiador obsidiana",
+        "br": "Cinto Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinture du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengürtel des Obsidiangladiators"
+    },
+    "205614": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Girdle",
+        "ru": "Кольчужный ремень обсидианового гладиатора",
+        "es": "Faja de anillas de Gladiador obsidiana",
+        "br": "Cinturão Encadeado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon du gladiateur d’obsidienne en anneaux",
+        "de": "Kettengurt des Obsidiangladiators"
+    },
+    "205615": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Wristguards",
+        "ru": "Кольчужные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de anillas de Gladiador obsidiana",
+        "br": "Munhequeiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenhandgelenksschützer des Obsidiangladiators"
+    },
+    "205616": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Plastron",
+        "ru": "Obsidian Gladiator's Plate Plastron",
+        "es": "Obsidian Gladiator's Plate Plastron",
+        "br": "Obsidian Gladiator's Plate Plastron",
+        "kr": "",
+        "fr": "Obsidian Gladiator's Plate Plastron",
+        "de": "Obsidian Gladiator's Plate Plastron"
+    },
+    "205617": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Chestplate",
+        "ru": "Латная бригантина обсидианового гладиатора",
+        "es": "Peto de placas de Gladiador obsidiana",
+        "br": "Guarda-peito de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pansière du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbrustpanzer des Obsidiangladiators"
+    },
+    "205618": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Warboots",
+        "ru": "Латные боевые сапоги обсидианового гладиатора",
+        "es": "Botas de guerra de placas de Gladiador obsidiana",
+        "br": "Coturnos de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes de guerre du gladiateur d’obsidienne en plaques",
+        "de": "Plattenkriegsstiefel des Obsidiangladiators"
+    },
+    "205619": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Stompers",
+        "ru": "Латные высокие ботинки обсидианового гладиатора",
+        "es": "Apisonadoras de placas de Gladiador obsidiana",
+        "br": "Pisoteadores de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Croquenots du gladiateur d’obsidienne en plaques",
+        "de": "Plattenstampfer des Obsidiangladiators"
+    },
+    "205620": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Gauntlets",
+        "ru": "Латные рукавицы обсидианового гладиатора",
+        "es": "Guanteletes de placas de Gladiador obsidiana",
+        "br": "Manoplas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du gladiateur d’obsidienne en plaques",
+        "de": "Plattenstulpen des Obsidiangladiators"
+    },
+    "205621": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Handguards",
+        "ru": "Латные боевые рукавицы обсидианового гладиатора",
+        "es": "Manoplas de placas de Gladiador obsidiana",
+        "br": "Protetores de Mão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhandschützer des Obsidiangladiators"
+    },
+    "205622": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Helm",
+        "ru": "Латный шлем обсидианового гладиатора",
+        "es": "Yelmo de placas de Gladiador obsidiana",
+        "br": "Elmo de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhelm des Obsidiangladiators"
+    },
+    "205623": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Helmet",
+        "ru": "Латный легкий шлем обсидианового гладиатора",
+        "es": "Casco de placas de Gladiador obsidiana",
+        "br": "Capacete de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Casque du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhelmkappe des Obsidiangladiators"
+    },
+    "205624": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Legguards",
+        "ru": "Латные набедренники обсидианового гладиатора",
+        "es": "Musleras de placas de Gladiador obsidiana",
+        "br": "Guarda-pernas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-jambes du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbeinschützer des Obsidiangladiators"
+    },
+    "205625": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Tasses",
+        "ru": "Obsidian Gladiator's Plate Tasses",
+        "es": "Obsidian Gladiator's Plate Tasses",
+        "br": "Obsidian Gladiator's Plate Tasses",
+        "kr": "",
+        "fr": "Obsidian Gladiator's Plate Tasses",
+        "de": "Obsidian Gladiator's Plate Tasses"
+    },
+    "205626": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Shoulders",
+        "ru": "Латное наплечье обсидианового гладиатора",
+        "es": "Sobrehombros de placas de Gladiador obsidiana",
+        "br": "Omoplatas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Épaulières du gladiateur d’obsidienne en plaques",
+        "de": "Plattenschultern des Obsidiangladiators"
+    },
+    "205627": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Pauldrons",
+        "ru": "Латные наплечники обсидианового гладиатора",
+        "es": "Espaldares de placas de Gladiador obsidiana",
+        "br": "Brafoneiras de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Espauliers du gladiateur d’obsidienne en plaques",
+        "de": "Plattenschulterstücke des Obsidiangladiators"
+    },
+    "205628": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Girdle",
+        "ru": "Латный ремень обсидианового гладиатора",
+        "es": "Faja de placas de Gladiador obsidiana",
+        "br": "Cinturão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon du gladiateur d’obsidienne en plaques",
+        "de": "Plattengurt des Obsidiangladiators"
+    },
+    "205629": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Greatbelt",
+        "ru": "Латный большой пояс обсидианового гладиатора",
+        "es": "Gran cinturón de placas de Gladiador obsidiana",
+        "br": "Correão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Grande ceinture du gladiateur d’obsidienne en plaques",
+        "de": "Plattengroßgürtel des Obsidiangladiators"
+    },
+    "205630": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Wristguards",
+        "ru": "Латные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de placas de Gladiador obsidiana",
+        "br": "Munhequeiras de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhandgelenksschützer des Obsidiangladiators"
+    },
+    "205631": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Vambraces",
+        "ru": "Латные тяжелые наручи обсидианового гладиатора",
+        "es": "Avambrazos de placas de Gladiador obsidiana",
+        "br": "Avambraços de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-bras du gladiateur d’obsidienne en plaques",
+        "de": "Plattenunterarmschienen des Obsidiangladiators"
+    },
+    "205632": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Chestguard",
+        "ru": "Латный нагрудный доспех обсидианового гладиатора",
+        "es": "Coselete de placas de Gladiador obsidiana",
+        "br": "Couraça de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Corselet du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbrustschutz des Obsidiangladiators"
+    },
+    "205633": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Chestplate",
+        "ru": "Латная бригантина обсидианового гладиатора",
+        "es": "Peto de placas de Gladiador obsidiana",
+        "br": "Guarda-peito de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pansière du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbrustpanzer des Obsidiangladiators"
+    },
+    "205634": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Warboots",
+        "ru": "Латные боевые сапоги обсидианового гладиатора",
+        "es": "Botas de guerra de placas de Gladiador obsidiana",
+        "br": "Coturnos de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bottes de guerre du gladiateur d’obsidienne en plaques",
+        "de": "Plattenkriegsstiefel des Obsidiangladiators"
+    },
+    "205635": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Stompers",
+        "ru": "Латные высокие ботинки обсидианового гладиатора",
+        "es": "Apisonadoras de placas de Gladiador obsidiana",
+        "br": "Pisoteadores de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Croquenots du gladiateur d’obsidienne en plaques",
+        "de": "Plattenstampfer des Obsidiangladiators"
+    },
+    "205636": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Gauntlets",
+        "ru": "Латные рукавицы обсидианового гладиатора",
+        "es": "Guanteletes de placas de Gladiador obsidiana",
+        "br": "Manoplas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Gantelets du gladiateur d’obsidienne en plaques",
+        "de": "Plattenstulpen des Obsidiangladiators"
+    },
+    "205637": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Handguards",
+        "ru": "Латные боевые рукавицы обсидианового гладиатора",
+        "es": "Manoplas de placas de Gladiador obsidiana",
+        "br": "Protetores de Mão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhandschützer des Obsidiangladiators"
+    },
+    "205638": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Helm",
+        "ru": "Латный шлем обсидианового гладиатора",
+        "es": "Yelmo de placas de Gladiador obsidiana",
+        "br": "Elmo de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Heaume du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhelm des Obsidiangladiators"
+    },
+    "205639": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Helmet",
+        "ru": "Латный легкий шлем обсидианового гладиатора",
+        "es": "Casco de placas de Gladiador obsidiana",
+        "br": "Capacete de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Casque du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhelmkappe des Obsidiangladiators"
+    },
+    "205640": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Legguards",
+        "ru": "Латные набедренники обсидианового гладиатора",
+        "es": "Musleras de placas de Gladiador obsidiana",
+        "br": "Guarda-pernas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-jambes du gladiateur d’obsidienne en plaques",
+        "de": "Plattenbeinschützer des Obsidiangladiators"
+    },
+    "205641": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Wargreaves",
+        "ru": "Латные наголенники обсидианового гладиатора",
+        "es": "Grebas de guerra de placas de Gladiador obsidiana",
+        "br": "Grevas de Guerra de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Grèves du gladiateur d’obsidienne en plaques",
+        "de": "Plattenkriegsbeinschützer des Obsidiangladiators"
+    },
+    "205642": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Shoulders",
+        "ru": "Латное наплечье обсидианового гладиатора",
+        "es": "Sobrehombros de placas de Gladiador obsidiana",
+        "br": "Omoplatas de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Épaulières du gladiateur d’obsidienne en plaques",
+        "de": "Plattenschultern des Obsidiangladiators"
+    },
+    "205643": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Pauldrons",
+        "ru": "Латные наплечники обсидианового гладиатора",
+        "es": "Espaldares de placas de Gladiador obsidiana",
+        "br": "Brafoneiras de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Espauliers du gladiateur d’obsidienne en plaques",
+        "de": "Plattenschulterstücke des Obsidiangladiators"
+    },
+    "205644": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Girdle",
+        "ru": "Латный ремень обсидианового гладиатора",
+        "es": "Faja de placas de Gladiador obsidiana",
+        "br": "Cinturão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon du gladiateur d’obsidienne en plaques",
+        "de": "Plattengurt des Obsidiangladiators"
+    },
+    "205645": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Greatbelt",
+        "ru": "Латный большой пояс обсидианового гладиатора",
+        "es": "Gran cinturón de placas de Gladiador obsidiana",
+        "br": "Correão de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Grande ceinture du gladiateur d’obsidienne en plaques",
+        "de": "Plattengroßgürtel des Obsidiangladiators"
+    },
+    "205646": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Wristguards",
+        "ru": "Латные нарукавники обсидианового гладиатора",
+        "es": "Guardamuñecas de placas de Gladiador obsidiana",
+        "br": "Munhequeiras de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Garde-poignets du gladiateur d’obsidienne en plaques",
+        "de": "Plattenhandgelenksschützer des Obsidiangladiators"
+    },
+    "205647": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Plate Vambraces",
+        "ru": "Латные тяжелые наручи обсидианового гладиатора",
+        "es": "Avambrazos de placas de Gladiador obsidiana",
+        "br": "Avambraços de Placa do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Protège-bras du gladiateur d’obsidienne en plaques",
+        "de": "Plattenunterarmschienen des Obsidiangladiators"
+    },
+    "205648": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Chain Bracers",
+        "ru": "Кольчужные наручи обсидианового гладиатора",
+        "es": "Brazales de anillas de Gladiador obsidiana",
+        "br": "Braçadeiras Encadeadas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Brassards du gladiateur d’obsidienne en anneaux",
+        "de": "Kettenarmschienen des Obsidiangladiators"
+    },
+    "205649": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205650": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205651": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205652": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205653": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205654": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205655": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205656": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205657": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205658": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205659": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205660": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205661": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205662": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205663": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205664": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205665": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205666": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205667": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205668": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205669": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205670": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205671": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205672": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205673": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205674": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205675": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205676": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205677": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205678": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205679": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Cloak",
+        "ru": "Плащ обсидианового гладиатора",
+        "es": "Capa de Gladiador obsidiana",
+        "br": "Manto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cape du gladiateur d’obsidienne",
+        "de": "Umhang des Obsidiangladiators"
+    },
+    "205680": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Drape",
+        "ru": "Пелерина обсидианового гладиатора",
+        "es": "Mantón de Gladiador obsidiana",
+        "br": "Clâmide do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Drapé du gladiateur d’obsidienne",
+        "de": "Tuch des Obsidiangladiators"
+    },
+    "205681": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shawl",
+        "ru": "Шаль обсидианового гладиатора",
+        "es": "Chal de Gladiador obsidiana",
+        "br": "Xale do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Châle du gladiateur d’obsidienne",
+        "de": "Schal des Obsidiangladiators"
+    },
+    "205702": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Ring",
+        "ru": "Перстень обсидианового гладиатора",
+        "es": "Anillo de Gladiador obsidiana",
+        "br": "Anel do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Anneau du gladiateur d’obsidienne",
+        "de": "Ring des Obsidiangladiators"
+    },
+    "205703": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Band",
+        "ru": "Кольцо обсидианового гладиатора",
+        "es": "Sortija de Gladiador obsidiana",
+        "br": "Elo do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bague du gladiateur d’obsidienne",
+        "de": "Band des Obsidiangladiators"
+    },
+    "205704": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Signet",
+        "ru": "Печатка обсидианового гладиатора",
+        "es": "Sello de Gladiador obsidiana",
+        "br": "Sinete do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Chevalière du gladiateur d’obsidienne",
+        "de": "Signet des Obsidiangladiators"
+    },
+    "205705": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Necklace",
+        "ru": "Ожерелье обсидианового гладиатора",
+        "es": "Collar de Gladiador obsidiana",
+        "br": "Colar do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Collier du gladiateur d’obsidienne",
+        "de": "Halskette des Obsidiangladiators"
+    },
+    "205706": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Pendant",
+        "ru": "Подвеска обсидианового гладиатора",
+        "es": "Colgante de Gladiador obsidiana",
+        "br": "Pingente do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Pendentif du gladiateur d’obsidienne",
+        "de": "Anhänger des Obsidiangladiators"
+    },
+    "205707": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Amulet",
+        "ru": "Амулет обсидианового гладиатора",
+        "es": "Amuleto de Gladiador obsidiana",
+        "br": "Amuleto do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Amulette du gladiateur d’obsidienne",
+        "de": "Amulett des Obsidiangladiators"
+    },
+    "205708": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Badge of Ferocity",
+        "ru": "Жетон свирепости обсидианового гладиатора",
+        "es": "Distintivo de ferocidad de Gladiador obsidiana",
+        "br": "Distintivo de Ferocidade do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Écusson de férocité du gladiateur d’obsidienne",
+        "de": "Wildheitsabzeichen des Obsidiangladiators"
+    },
+    "205709": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Insignia of Alacrity",
+        "ru": "Знак расторопности обсидианового гладиатора",
+        "es": "Insignia de prontitud de Gladiador obsidiana",
+        "br": "Insígnia de Diligência do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Insigne d’empressement du gladiateur d’obsidienne",
+        "de": "Inbrunstinsigne des Obsidiangladiators"
+    },
+    "205710": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Emblem",
+        "ru": "Эмблема обсидианового гладиатора",
+        "es": "Emblema de Gladiador obsidiana",
+        "br": "Emblema do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Emblème du gladiateur d’obsidienne",
+        "de": "Emblem des Obsidiangladiators"
+    },
+    "205711": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Medallion",
+        "ru": "Медальон обсидианового гладиатора",
+        "es": "Medallón de Gladiador obsidiana",
+        "br": "Medalhão do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Médaillon du gladiateur d’obsidienne",
+        "de": "Medaillon des Obsidiangladiators"
+    },
+    "205712": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Sigil of Adaptation",
+        "ru": "Печать адаптации обсидианового гладиатора",
+        "es": "Sigilo de adaptación de Gladiador obsidiana",
+        "br": "Signo de Adaptação do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Cachet d’adaptation du gladiateur d’obsidienne",
+        "de": "Siegel der Anpassung des Obsidiangladiators"
+    },
+    "205714": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Helm",
+        "ru": "Латный шлем обсидианового претендента",
+        "es": "Yelmo de placas de aspirante obsidiana",
+        "br": "Elmo de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Heaume de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenhelm des Obsidianaspiranten"
+    },
+    "205715": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Robe",
+        "ru": "Шелковое одеяние обсидианового претендента",
+        "es": "Toga de seda de aspirante obsidiana",
+        "br": "Veste de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Robe de l’aspirant d’obsidienne en soie",
+        "de": "Seidenrobe des Obsidianaspiranten"
+    },
+    "205716": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Chestplate",
+        "ru": "Латная бригантина обсидианового претендента",
+        "es": "Peto de placas de aspirante obsidiana",
+        "br": "Guarda-peito de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Pansière de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenbrustpanzer des Obsidianaspiranten"
+    },
+    "205717": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Vest",
+        "ru": "Кольчужный жилет обсидианового претендента",
+        "es": "Jubón de anillas de aspirante obsidiana",
+        "br": "Colete Encadeado do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Veste de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenweste des Obsidianaspiranten"
+    },
+    "205718": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Vest",
+        "ru": "Кожаный жилет обсидианового претендента",
+        "es": "Jubón de cuero de aspirante obsidiana",
+        "br": "Colete de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Veste de l’aspirant d’obsidienne en cuir",
+        "de": "Lederweste des Obsidianaspiranten"
+    },
+    "205719": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Warboots",
+        "ru": "Латные боевые сапоги обсидианового претендента",
+        "es": "Botas de guerra de placas de aspirante obsidiana",
+        "br": "Coturnos de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bottes de guerre de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenkriegsstiefel des Obsidianaspiranten"
+    },
+    "205720": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Treads",
+        "ru": "Шелковые ботфорты обсидианового претендента",
+        "es": "Botines de seda de aspirante obsidiana",
+        "br": "Botinas de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bottines de l’aspirant d’obsidienne en soie",
+        "de": "Seidentreter des Obsidianaspiranten"
+    },
+    "205721": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Sabatons",
+        "ru": "Кольчужные башмаки обсидианового претендента",
+        "es": "Escarpes de anillas de aspirante obsidiana",
+        "br": "Escarpes Encadeados do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Solerets de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettensabatons des Obsidianaspiranten"
+    },
+    "205722": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Boots",
+        "ru": "Кожаные сапоги обсидианового претендента",
+        "es": "Botas de cuero de aspirante obsidiana",
+        "br": "Botas de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bottes de l’aspirant d’obsidienne en cuir",
+        "de": "Lederstiefel des Obsidianaspiranten"
+    },
+    "205723": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Gloves",
+        "ru": "Кожаные перчатки обсидианового претендента",
+        "es": "Guantes de cuero de aspirante obsidiana",
+        "br": "Luvas de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Gants de l’aspirant d’obsidienne en cuir",
+        "de": "Lederhandschuhe des Obsidianaspiranten"
+    },
+    "205724": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Gauntlets",
+        "ru": "Латные рукавицы обсидианового претендента",
+        "es": "Guanteletes de placas de aspirante obsidiana",
+        "br": "Manoplas de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Gantelets de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenstulpen des Obsidianaspiranten"
+    },
+    "205725": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Gloves",
+        "ru": "Шелковые перчатки обсидианового претендента",
+        "es": "Guantes de seda de aspirante obsidiana",
+        "br": "Luvas de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Gants de l’aspirant d’obsidienne en soie",
+        "de": "Seidenhandschuhe des Obsidianaspiranten"
+    },
+    "205726": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы обсидианового претендента",
+        "es": "Guanteletes de anillas de aspirante obsidiana",
+        "br": "Manoplas Encadeadas do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Gantelets de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenstulpen des Obsidianaspiranten"
+    },
+    "205727": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Hood",
+        "ru": "Шелковый капюшон обсидианового претендента",
+        "es": "Caperuza de seda de aspirante obsidiana",
+        "br": "Capuz de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Chaperon de l’aspirant d’obsidienne en soie",
+        "de": "Seidenkapuze des Obsidianaspiranten"
+    },
+    "205728": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Helm",
+        "ru": "Кольчужный шлем обсидианового претендента",
+        "es": "Yelmo de anillas de aspirante obsidiana",
+        "br": "Elmo Encadeado do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Heaume de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenhelm des Obsidianaspiranten"
+    },
+    "205729": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Helm",
+        "ru": "Кожаный шлем обсидианового претендента",
+        "es": "Yelmo de cuero de aspirante obsidiana",
+        "br": "Elmo de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Heaume de l’aspirant d’obsidienne en cuir",
+        "de": "Lederhelm des Obsidianaspiranten"
+    },
+    "205730": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Legguards",
+        "ru": "Латные набедренники обсидианового претендента",
+        "es": "Musleras de placas de aspirante obsidiana",
+        "br": "Guarda-pernas de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Garde-jambes de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenbeinschützer des Obsidianaspiranten"
+    },
+    "205731": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Leggings",
+        "ru": "Шелковые поножи обсидианового претендента",
+        "es": "Leotardos de seda de aspirante obsidiana",
+        "br": "Perneiras de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Jambières de l’aspirant d’obsidienne en soie",
+        "de": "Seidengamaschen des Obsidianaspiranten"
+    },
+    "205732": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Leggings",
+        "ru": "Кольчужные поножи обсидианового претендента",
+        "es": "Leotardos de anillas de aspirante obsidiana",
+        "br": "Perneiras Encadeadas do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Jambières de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettengamaschen des Obsidianaspiranten"
+    },
+    "205733": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Breeches",
+        "ru": "Кожаные штаны обсидианового претендента",
+        "es": "Calzones de cuero de aspirante obsidiana",
+        "br": "Calções de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Braies de l’aspirant d’obsidienne en cuir",
+        "de": "Lederbundhosen des Obsidianaspiranten"
+    },
+    "205734": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Spaulders",
+        "ru": "Кожаный наплеч обсидианового претендента",
+        "es": "Bufas de cuero de aspirante obsidiana",
+        "br": "Espaldares de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Spallières de l’aspirant d’obsidienne en cuir",
+        "de": "Lederschiftung des Obsidianaspiranten"
+    },
+    "205735": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Shoulders",
+        "ru": "Латное наплечье обсидианового претендента",
+        "es": "Sobrehombros de placas de aspirante obsidiana",
+        "br": "Omoplatas de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Épaulières de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenschultern des Obsidianaspiranten"
+    },
+    "205736": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Mantle",
+        "ru": "Шелковое оплечье обсидианового претендента",
+        "es": "Manto de seda de aspirante obsidiana",
+        "br": "Dragonas de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Mantelet de l’aspirant d’obsidienne en soie",
+        "de": "Seidenmantel des Obsidianaspiranten"
+    },
+    "205737": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Spaulders",
+        "ru": "Кольчужный наплеч обсидианового претендента",
+        "es": "Bufas de anillas de aspirante obsidiana",
+        "br": "Espaldares Encadeados do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Spallières de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenschiftung des Obsidianaspiranten"
+    },
+    "205738": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Girdle",
+        "ru": "Латный ремень обсидианового претендента",
+        "es": "Faja de placas de aspirante obsidiana",
+        "br": "Cinturão de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Ceinturon de l’aspirant d’obsidienne en plaques",
+        "de": "Plattengurt des Obsidianaspiranten"
+    },
+    "205739": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Cord",
+        "ru": "Шелковый шнурованный ремень обсидианового претендента",
+        "es": "Cordón de seda de aspirante obsidiana",
+        "br": "Cordão de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Corde de l’aspirant d’obsidienne en soie",
+        "de": "Seidenkordel des Obsidianaspiranten"
+    },
+    "205740": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Belt",
+        "ru": "Кольчужный пояс обсидианового претендента",
+        "es": "Cinturón de anillas de aspirante obsidiana",
+        "br": "Cinto Encadeado do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Ceinture de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettengürtel des Obsidianaspiranten"
+    },
+    "205741": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Belt",
+        "ru": "Кожаный пояс обсидианового претендента",
+        "es": "Cinturón de cuero de aspirante obsidiana",
+        "br": "Cinto de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Ceinture de l’aspirant d’obsidienne en cuir",
+        "de": "Ledergürtel des Obsidianaspiranten"
+    },
+    "205742": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Wristwraps",
+        "ru": "Шелковые напульсники обсидианового претендента",
+        "es": "Cubremuñecas de seda de aspirante obsidiana",
+        "br": "Munhequeiras de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes de l’aspirant d’obsidienne en soie",
+        "de": "Seidengelenkbänder des Obsidianaspiranten"
+    },
+    "205743": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Cuffs",
+        "ru": "Латные манжеты обсидианового претендента",
+        "es": "Puños de placas de aspirante obsidiana",
+        "br": "Manilhas de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Crispins de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenmanschetten des Obsidianaspiranten"
+    },
+    "205744": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Wristwraps",
+        "ru": "Кольчужные напульсники обсидианового претендента",
+        "es": "Cubremuñecas de anillas de aspirante obsidiana",
+        "br": "Munhecas Encadeadas do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettengelenkbänder des Obsidianaspiranten"
+    },
+    "205745": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Wristwraps",
+        "ru": "Кожаные напульсники обсидианового претендента",
+        "es": "Cubremuñecas de cuero de aspirante obsidiana",
+        "br": "Munhecas de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bandelettes de l’aspirant d’obsidienne en cuir",
+        "de": "Ledergelenkbänder des Obsidianaspiranten"
+    },
+    "205746": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Headguard",
+        "ru": "Латный наголовник обсидианового претендента",
+        "es": "Protegecabezas de placas de aspirante obsidiana",
+        "br": "Cimeira de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Protège-front de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenkopfschutz des Obsidianaspiranten"
+    },
+    "205747": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Vestments",
+        "ru": "Шелковое облачение обсидианового претендента",
+        "es": "Vestimentas de seda de aspirante obsidiana",
+        "br": "Vestimenta de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Habits de l’aspirant d’obsidienne en soie",
+        "de": "Seidentracht des Obsidianaspiranten"
+    },
+    "205748": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Armor",
+        "ru": "Латный доспех обсидианового претендента",
+        "es": "Armadura de placas de aspirante obsidiana",
+        "br": "Armadura de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Armure de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenrüstung des Obsidianaspiranten"
+    },
+    "205749": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Tunic",
+        "ru": "Кольчужный мундир обсидианового претендента",
+        "es": "Guerrera de anillas de aspirante obsidiana",
+        "br": "Túnica Encadeada do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Tunique de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettentunika des Obsidianaspiranten"
+    },
+    "205750": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Tunic",
+        "ru": "Кожаный мундир обсидианового претендента",
+        "es": "Guerrera de cuero de aspirante obsidiana",
+        "br": "Túnica de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Tunique de l’aspirant d’obsidienne en cuir",
+        "de": "Ledertunika des Obsidianaspiranten"
+    },
+    "205751": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Stompers",
+        "ru": "Латные высокие ботинки обсидианового претендента",
+        "es": "Apisonadoras de placas de aspirante obsidiana",
+        "br": "Pisoteadores de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Croquenots de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenstampfer des Obsidianaspiranten"
+    },
+    "205752": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Footwraps",
+        "ru": "Шелковые обмотки обсидианового претендента",
+        "es": "Borceguíes de seda de aspirante obsidiana",
+        "br": "Palmilhas de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bottillons de l’aspirant d’obsidienne en soie",
+        "de": "Seidenfußlappen des Obsidianaspiranten"
+    },
+    "205753": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Stompers",
+        "ru": "Кольчужные высокие ботинки обсидианового претендента",
+        "es": "Apisonadoras de anillas de aspirante obsidiana",
+        "br": "Pisoteadores Encadeados do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Croquenots de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenstampfer des Obsidianaspiranten"
+    },
+    "205754": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Footpads",
+        "ru": "Кожаные башмаки обсидианового претендента",
+        "es": "Escarpines de cuero de aspirante obsidiana",
+        "br": "Pisantes de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Souliers de l’aspirant d’obsidienne en cuir",
+        "de": "Lederfußpolster des Obsidianaspiranten"
+    },
+    "205755": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Grips",
+        "ru": "Кожаные захваты обсидианового претендента",
+        "es": "Mandiletes de cuero de aspirante obsidiana",
+        "br": "Guantes de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Poignes de l’aspirant d’obsidienne en cuir",
+        "de": "Lederhandschutz des Obsidianaspiranten"
+    },
+    "205756": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Handguards",
+        "ru": "Латные боевые рукавицы обсидианового претендента",
+        "es": "Manoplas de placas de aspirante obsidiana",
+        "br": "Protetores de Mão de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenhandschützer des Obsidianaspiranten"
+    },
+    "205757": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Handwraps",
+        "ru": "Шелковые повязки обсидианового претендента",
+        "es": "Manijas de seda de aspirante obsidiana",
+        "br": "Mitenes de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Protège-mains de l’aspirant d’obsidienne en soie",
+        "de": "Seidenhandlappen des Obsidianaspiranten"
+    },
+    "205758": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы обсидианового претендента",
+        "es": "Manoplas de anillas de aspirante obsidiana",
+        "br": "Protetores de Mão Encadeados do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Garde-mains de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenhandschützer des Obsidianaspiranten"
+    },
+    "205759": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Cover",
+        "ru": "Шелковый убор обсидианового претендента",
+        "es": "Casquete de seda de aspirante obsidiana",
+        "br": "Murça de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Couvre-chef de l’aspirant d’obsidienne en soie",
+        "de": "Seidenbedeckung des Obsidianaspiranten"
+    },
+    "205760": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Headguard",
+        "ru": "Кольчужный наголовник обсидианового претендента",
+        "es": "Protegecabezas de anillas de aspirante obsidiana",
+        "br": "Cimeira Encadeada do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Protège-front de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenkopfschutz des Obsidianaspiranten"
+    },
+    "205761": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Mask",
+        "ru": "Кожаная маска обсидианового претендента",
+        "es": "Máscara de cuero de aspirante obsidiana",
+        "br": "Máscara de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Masque de l’aspirant d’obsidienne en cuir",
+        "de": "Ledermaske des Obsidianaspiranten"
+    },
+    "205762": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Wargreaves",
+        "ru": "Латные наголенники обсидианового претендента",
+        "es": "Grebas de guerra de placas de aspirante obsidiana",
+        "br": "Grevas de Guerra de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Grèves de guerre de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenkriegsbeinschützer des Obsidianaspiranten"
+    },
+    "205763": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Legwraps",
+        "ru": "Шелковые бриджи обсидианового претендента",
+        "es": "Calentadores de seda de aspirante obsidiana",
+        "br": "Culotes de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Jambards de l’aspirant d’obsidienne en soie",
+        "de": "Seidenbeinwickel des Obsidianaspiranten"
+    },
+    "205764": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Wargreaves",
+        "ru": "Кольчужные наголенники обсидианового претендента",
+        "es": "Grebas de guerra de anillas de aspirante obsidiana",
+        "br": "Grevas de Guerra Encadeadas do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Grèves de guerre de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenkriegsbeinschützer des Obsidianaspiranten"
+    },
+    "205765": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Leggings",
+        "ru": "Кожаные поножи обсидианового претендента",
+        "es": "Leotardos de cuero de aspirante obsidiana",
+        "br": "Perneiras de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Jambières de l’aspirant d’obsidienne en cuir",
+        "de": "Ledergamaschen des Obsidianaspiranten"
+    },
+    "205766": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Mantle",
+        "ru": "Кожаное оплечье обсидианового претендента",
+        "es": "Manto de cuero de aspirante obsidiana",
+        "br": "Dragonas de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Mantelet de l’aspirant d’obsidienne en cuir",
+        "de": "Ledermantel des Obsidianaspiranten"
+    },
+    "205767": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Pauldrons",
+        "ru": "Латное наплечье обсидианового претендента",
+        "es": "Espaldares de placas de aspirante obsidiana",
+        "br": "Brafoneiras de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Espauliers de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenschulterstücke des Obsidianaspiranten"
+    },
+    "205768": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Shawl",
+        "ru": "Шелковая шаль обсидианового претендента",
+        "es": "Chal de seda de aspirante obsidiana",
+        "br": "Xale de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Châle de l’aspirant d’obsidienne en soie",
+        "de": "Seidenschal des Obsidianaspiranten"
+    },
+    "205769": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Shoulderguards",
+        "ru": "Кольчужные наплечные щитки обсидианового претендента",
+        "es": "Guardahombros de anillas de aspirante obsidiana",
+        "br": "Guarda-ombros Encadeado do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Garde-épaules de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenschulterschützer des Obsidianaspiranten"
+    },
+    "205770": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Greatbelt",
+        "ru": "Латный большой пояс обсидианового претендента",
+        "es": "Gran cinturón de placas de aspirante obsidiana",
+        "br": "Correão de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Grande ceinture de l’aspirant d’obsidienne en plaques",
+        "de": "Plattengroßgürtel des Obsidianaspiranten"
+    },
+    "205771": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Belt",
+        "ru": "Шелковый пояс обсидианового претендента",
+        "es": "Cinturón de seda de aspirante obsidiana",
+        "br": "Cinto de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Ceinture de l’aspirant d’obsidienne en soie",
+        "de": "Seidengürtel des Obsidianaspiranten"
+    },
+    "205772": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Clasp",
+        "ru": "Кольчужная застежка обсидианового претендента",
+        "es": "Cinto de anillas de aspirante obsidiana",
+        "br": "Fecho Encadeado do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Fermoir de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenschnallengürtel des Obsidianaspiranten"
+    },
+    "205773": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Cord",
+        "ru": "Кожаный ремень обсидианового претендента",
+        "es": "Cordón de cuero de aspirante obsidiana",
+        "br": "Cordão de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Corde de l’aspirant d’obsidienne en cuir",
+        "de": "Lederkordel des Obsidianaspiranten"
+    },
+    "205774": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Silk Bindings",
+        "ru": "Шелковые узы обсидианового претендента",
+        "es": "Ataduras de seda de aspirante obsidiana",
+        "br": "Braceletes de Seda do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Manchettes de l’aspirant d’obsidienne en soie",
+        "de": "Seidenbindungen des Obsidianaspiranten"
+    },
+    "205775": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Plate Armguards",
+        "ru": "Латные боевые наручи обсидианового претендента",
+        "es": "Guardabrazos de placas de aspirante obsidiana",
+        "br": "Guarda-braços de Placa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Garde-bras de l’aspirant d’obsidienne en plaques",
+        "de": "Plattenarmschützer des Obsidianaspiranten"
+    },
+    "205776": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Chain Bracer",
+        "ru": "Кольчужные наручи обсидианового претендента",
+        "es": "Brazal de anillas de aspirante obsidiana",
+        "br": "Braçadeiras Encadeadas do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Brassards de l’aspirant d’obsidienne en anneaux",
+        "de": "Kettenarmschienen des Obsidianaspiranten"
+    },
+    "205777": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Leather Armguards",
+        "ru": "Кожаные боевые наручи обсидианового претендента",
+        "es": "Guardabrazos de cuero de aspirante obsidiana",
+        "br": "Guarda-braços de Couro do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Garde-bras de l’aspirant d’obsidienne en cuir",
+        "de": "Lederarmschützer des Obsidianaspiranten"
+    },
+    "205778": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Badge of Ferocity",
+        "ru": "Жетон свирепости обсидианового претендента",
+        "es": "Distintivo de ferocidad de aspirante obsidiana",
+        "br": "Distintivo de Ferocidade do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Écusson de férocité de l’aspirant d’obsidienne",
+        "de": "Wildheitsabzeichen des Obsidianaspiranten"
+    },
+    "205779": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Medallion",
+        "ru": "Медальон обсидианового претендента",
+        "es": "Medallón de aspirante obsidiana",
+        "br": "Medalhão do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Médaillon de l’aspirant d’obsidienne",
+        "de": "Medaillon des Obsidianaspiranten"
+    },
+    "205780": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Insignia of Alacrity",
+        "ru": "Знак расторопности обсидианового претендента",
+        "es": "Insignia de prontitud de aspirante obsidiana",
+        "br": "Insígnia de Diligência do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Insigne d’empressement de l’aspirant d’obsidienne",
+        "de": "Inbrunstinsigne des Obsidianaspiranten"
+    },
+    "205781": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Emblem",
+        "ru": "Эмблема обсидианового претендента",
+        "es": "Emblema de aspirante obsidiana",
+        "br": "Emblema do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Emblème de l’aspirant d’obsidienne",
+        "de": "Emblem des Obsidianaspiranten"
+    },
+    "205782": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Sigil of Adaptation",
+        "ru": "Печать адаптации обсидианового претендента",
+        "es": "Sigilo de adaptación de aspirante obsidiana",
+        "br": "Signo de Adaptação do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Cachet d’adaptation de l’aspirant d’obsidienne",
+        "de": "Siegel der Anpassung des Obsidianaspiranten"
+    },
+    "205783": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Ring",
+        "ru": "Перстень обсидианового претендента",
+        "es": "Anillo de aspirante obsidiana",
+        "br": "Anel do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Anneau de l’aspirant d’obsidienne",
+        "de": "Ring des Obsidianaspiranten"
+    },
+    "205784": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Band",
+        "ru": "Кольцо обсидианового претендента",
+        "es": "Sortija de aspirante obsidiana",
+        "br": "Elo do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bague de l’aspirant d’obsidienne",
+        "de": "Band des Obsidianaspiranten"
+    },
+    "205785": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Signet",
+        "ru": "Печатка обсидианового претендента",
+        "es": "Sello de aspirante obsidiana",
+        "br": "Sinete do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Chevalière de l’aspirant d’obsidienne",
+        "de": "Signet des Obsidianaspiranten"
+    },
+    "205786": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Necklace",
+        "ru": "Ожерелье обсидианового претендента",
+        "es": "Collar de aspirante obsidiana",
+        "br": "Colar do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Collier de l’aspirant d’obsidienne",
+        "de": "Halskette des Obsidianaspiranten"
+    },
+    "205787": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Choker",
+        "ru": "Колье обсидианового претендента",
+        "es": "Gargantilla de aspirante obsidiana",
+        "br": "Gargantilha do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Sautoir de l’aspirant d’obsidienne",
+        "de": "Halsreif des Obsidianaspiranten"
+    },
+    "205788": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Pendant",
+        "ru": "Подвеска обсидианового претендента",
+        "es": "Colgante de aspirante obsidiana",
+        "br": "Pingente do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Pendentif de l’aspirant d’obsidienne",
+        "de": "Anhänger des Obsidianaspiranten"
+    },
+    "205789": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Cloak",
+        "ru": "Плащ обсидианового претендента",
+        "es": "Capa de aspirante obsidiana",
+        "br": "Manto do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Cape de l’aspirant d’obsidienne",
+        "de": "Umhang des Obsidianaspiranten"
+    },
+    "205790": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Drape",
+        "ru": "Пелерина обсидианового претендента",
+        "es": "Mantón de aspirante obsidiana",
+        "br": "Clâmide do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Drapé de l’aspirant d’obsidienne",
+        "de": "Tuch des Obsidianaspiranten"
+    },
+    "205791": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Cape",
+        "ru": "Накидка обсидианового претендента",
+        "es": "Manteo de aspirante obsidiana",
+        "br": "Capa do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Pèlerine de l’aspirant d’obsidienne",
+        "de": "Cape des Obsidianaspiranten"
+    },
+    "205792": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Greatcloak",
+        "ru": "Теплый плащ обсидианового претендента",
+        "es": "Gran capa de aspirante obsidiana",
+        "br": "Grande Manto do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Grande cape de l’aspirant d’obsidienne",
+        "de": "Großumhang des Obsidianaspiranten"
+    },
+    "205798": {
+        "cn": "",
+        "en": "Pauldrons of the Onyx Crucible",
+        "ru": "Наплечье из черного горнила",
+        "es": "Espaldares del crisol de ónice",
+        "br": "Brafoneiras do Crisol de Ônix",
+        "kr": "",
+        "fr": "Espauliers du creuset d’onyx",
+        "de": "Schulterstücke des Onyxtiegels"
+    },
+    "205799": {
+        "cn": "",
+        "en": "Legplates of the Onyx Crucible",
+        "ru": "Ножные латы из черного горнила",
+        "es": "Quijotes del crisol de ónice",
+        "br": "Coxotes do Crisol de Ônix",
+        "kr": "",
+        "fr": "Cuissards du creuset d’onyx",
+        "de": "Beinplatten des Onyxtiegels"
+    },
+    "205800": {
+        "cn": "",
+        "en": "Thraexhelm of the Onyx Crucible",
+        "ru": "Острозубый шлем из черного горнила",
+        "es": "Yelmo tracio del crisol de ónice",
+        "br": "Elmo de Trácio do Crisol de Ônix",
+        "kr": "",
+        "fr": "Heaume du creuset d’onyx",
+        "de": "Thraexhelm des Onyxtiegels"
+    },
+    "205801": {
+        "cn": "",
+        "en": "Handguards  of the Onyx Crucible",
+        "ru": "Боевые рукавицы из черного горнила",
+        "es": "Manoplas del crisol de ónice",
+        "br": "Protetores de Mão do Crisol de Ônix",
+        "kr": "",
+        "fr": "Garde-mains du creuset d’onyx",
+        "de": "Handschützer des Onyxtiegels"
+    },
+    "205802": {
+        "cn": "",
+        "en": "Battlechest of the Onyx Crucible",
+        "ru": "Боевой нагрудник из черного горнила",
+        "es": "Pechera de batalla del crisol de ónice",
+        "br": "Baú de Guerra do Crisol de Ônix",
+        "kr": "",
+        "fr": "Plastron de bataille du creuset d’onyx",
+        "de": "Kriegsbrustpanzer des Onyxtiegels"
+    },
+    "205803": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Steelwings",
+        "ru": "Стальные крылья сердечного огня",
+        "es": "Alas de acero del centinela corafuego",
+        "br": "Asadaços da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Ailes d’acier de la sentinelle cœur de feu",
+        "de": "Stahlschwingen des Herzensfeuerwächters"
+    },
+    "205804": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Faulds",
+        "ru": "Heartfire Sentinel's Faulds",
+        "es": "Heartfire Sentinel's Faulds",
+        "br": "Heartfire Sentinel's Faulds",
+        "kr": "",
+        "fr": "Heartfire Sentinel's Faulds",
+        "de": "Heartfire Sentinel's Faulds"
+    },
+    "205805": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Forgehelm",
+        "ru": "Шлем кузни сердечного огня",
+        "es": "Yelmo forjado del centinela corafuego",
+        "br": "Elmo Forjado da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Heaume de la sentinelle cœur de feu",
+        "de": "Schmiedehelm des Herzensfeuerwächters"
+    },
+    "205806": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Protectors",
+        "ru": "Защитные перчатки сердечного огня",
+        "es": "Protectores del centinela corafuego",
+        "br": "Protetores da Sentinela Fogo do Coração",
+        "kr": "",
+        "fr": "Protecteurs de la sentinelle cœur de feu",
+        "de": "Schützer des Herzensfeuerwächters"
+    },
+    "205807": {
+        "cn": "",
+        "en": "Heartfire Sentinel's Brigandine",
+        "ru": "Heartfire Sentinel's Brigandine",
+        "es": "Heartfire Sentinel's Brigandine",
+        "br": "Heartfire Sentinel's Brigandine",
+        "kr": "",
+        "fr": "Heartfire Sentinel's Brigandine",
+        "de": "Heartfire Sentinel's Brigandine"
+    },
+    "205808": {
+        "cn": "",
+        "en": "Lingering Phantom's Shoulderplates",
+        "ru": "Наплечные пластины блуждающего призрака",
+        "es": "Hombreras del fantasma persistente",
+        "br": "Placa d'Ombros do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Plaques d’épaule du fantôme rémanent",
+        "de": "Schulterplatten des verweilenden Phantoms"
+    },
+    "205809": {
+        "cn": "",
+        "en": "Lingering Phantom's Schynbalds",
+        "ru": "Наголенники блуждающего призрака",
+        "es": "Grebas guadaña del fantasma persistente",
+        "br": "Tibieira do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Cnémides du fantôme rémanent",
+        "de": "Schynbalds des verweilenden Phantoms"
+    },
+    "205810": {
+        "cn": "",
+        "en": "Lingering Phantom's Dreadhorns",
+        "ru": "Рога блуждающего призрака",
+        "es": "Cuernos temibles del fantasma persistente",
+        "br": "Pavornos do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Cornes d’effroi du fantôme rémanent",
+        "de": "Schreckenshörner des verweilenden Phantoms"
+    },
+    "205811": {
+        "cn": "",
+        "en": "Lingering Phantom's Gauntlets",
+        "ru": "Рукавицы блуждающего призрака",
+        "es": "Guanteletes del fantasma persistente",
+        "br": "Manoplas do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Gantelets du fantôme rémanent",
+        "de": "Stulpen des verweilenden Phantoms"
+    },
+    "205812": {
+        "cn": "",
+        "en": "Lingering Phantom's Plackart",
+        "ru": "Плакарт блуждающего призрака",
+        "es": "Coraza del fantasma persistente",
+        "br": "Placcard do Fantasma Perdurante",
+        "kr": "",
+        "fr": "Plastron du fantôme rémanent",
+        "de": "Brustplatte des verweilenden Phantoms"
+    },
+    "205813": {
+        "cn": "",
+        "en": "Thunderpads of the Cinderwolf",
+        "ru": "Молниевые пластины золоволка",
+        "es": "Truenombreras del loboceniza",
+        "br": "Ombreiras Trovejantes do Lobo Cinzento",
+        "kr": "",
+        "fr": "Spallières de tonnerre du loup de braise",
+        "de": "Donnerschulterpolster des Glutwolfs"
+    },
+    "205814": {
+        "cn": "",
+        "en": "Braies of the Cinderwolf",
+        "ru": "Брэ золоволка",
+        "es": "Calzón largo del loboceniza",
+        "br": "Bragas do Lobo Cinzento",
+        "kr": "",
+        "fr": "Braies du loup de braise",
+        "de": "Brouche des Glutwolfs"
+    },
+    "205815": {
+        "cn": "",
+        "en": "Spangenhelm of the Cinderwolf",
+        "ru": "Каркасный шлем золоволка",
+        "es": "Yelmo cónico del loboceniza",
+        "br": "Elmo Segmentado do Lobo Cinzento",
+        "kr": "",
+        "fr": "Spangenhelm du loup de braise",
+        "de": "Spangenhelm des Glutwolfs"
+    },
+    "205816": {
+        "cn": "",
+        "en": "Knuckles of the Cinderwolf",
+        "ru": "Кастет золоволка",
+        "es": "Nudillos del loboceniza",
+        "br": "Soqueira do Lobo Cinzento",
+        "kr": "",
+        "fr": "Coup de poing du loup de braise",
+        "de": "Knöchel des Glutwolfs"
+    },
+    "205817": {
+        "cn": "",
+        "en": "Adornments of the Cinderwolf",
+        "ru": "Наряд золоволка",
+        "es": "Adornos del loboceniza",
+        "br": "Adornos do Lobo Cinzento",
+        "kr": "",
+        "fr": "Ornements du loup de braise",
+        "de": "Verzierungen des Glutwolfs"
+    },
+    "205818": {
+        "cn": "",
+        "en": "Ashen Predator's Trophy",
+        "ru": "Трофей пепельного хищника",
+        "es": "Trofeo de depredador cinéreo",
+        "br": "Troféu do Predador Cinzento",
+        "kr": "",
+        "fr": "Trophée de prédation des cendres",
+        "de": "Trophäe des aschenen Raubtiers"
+    },
+    "205819": {
+        "cn": "",
+        "en": "Ashen Predator's Poleyn",
+        "ru": "Наколенники пепельного хищника",
+        "es": "Polainas de depredador cinéreo",
+        "br": "Joelheira do Predador Cinzento",
+        "kr": "",
+        "fr": "Genouillères de prédation des cendres",
+        "de": "Kniebuckel des aschenen Raubtiers"
+    },
+    "205820": {
+        "cn": "",
+        "en": "Ashen Predator's Faceguard",
+        "ru": "Большой шлем пепельного хищника",
+        "es": "Visera de depredador cinéreo",
+        "br": "Viseira do Predador Cinzento",
+        "kr": "",
+        "fr": "Ventaille de prédation des cendres",
+        "de": "Gesichtsschutz des aschenen Raubtiers"
+    },
+    "205821": {
+        "cn": "",
+        "en": "Ashen Predator's Skinners",
+        "ru": "Свежеватели пепельного хищника",
+        "es": "Desolladores de depredador cinéreo",
+        "br": "Esfolador do Predador Cinzento",
+        "kr": "",
+        "fr": "Dépeceurs de prédation des cendres",
+        "de": "Häuter des aschenen Raubtiers"
+    },
+    "205822": {
+        "cn": "",
+        "en": "Ashen Predator's Sling Vest",
+        "ru": "Ремни пепельного хищника",
+        "es": "Jubón de tiras de depredador cinéreo",
+        "br": "Colete do Predador Cinzento",
+        "kr": "",
+        "fr": "Gilet sanglé de prédation des cendres",
+        "de": "Weste des aschenen Raubtiers"
+    },
+    "205823": {
+        "cn": "",
+        "en": "Wingspan of Obsidian Secrets",
+        "ru": "Крылья обсидианового наследия",
+        "es": "Alas de secretos obsidiana",
+        "br": "Envergadura dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Envergures des secrets d’obsidienne",
+        "de": "Flügelschlag der Obsidiangeheimnisse"
+    },
+    "205824": {
+        "cn": "",
+        "en": "Chausses of Obsidian Secrets",
+        "ru": "Шоссы обсидианового наследия",
+        "es": "Calzas de secretos obsidiana",
+        "br": "Chausses dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Hauts-de-chausse des secrets d’obsidienne",
+        "de": "Beinlinge der Obsidiangeheimnisse"
+    },
+    "205825": {
+        "cn": "",
+        "en": "Crown of Obsidian Secrets",
+        "ru": "Корона обсидианового наследия",
+        "es": "Corona de secretos obsidiana",
+        "br": "Coroa dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Couronne des secrets d’obsidienne",
+        "de": "Krone der Obsidiangeheimnisse"
+    },
+    "205826": {
+        "cn": "",
+        "en": "Claws of Obsidian Secrets",
+        "ru": "Когти обсидианового наследия",
+        "es": "Garras de secretos obsidiana",
+        "br": "Garras dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Griffes des secrets d’obsidienne",
+        "de": "Klauen der Obsidiangeheimnisse"
+    },
+    "205827": {
+        "cn": "",
+        "en": "Hauberk of Obsidian Secrets",
+        "ru": "Хауберк обсидианового наследия",
+        "es": "Camisote de secretos obsidiana",
+        "br": "Cota dos Segredos Obsidianos",
+        "kr": "",
+        "fr": "Haubert des secrets d’obsidienne",
+        "de": "Halsberge der Obsidiangeheimnisse"
+    },
+    "205828": {
+        "cn": "",
+        "en": "Lurking Specter's Shoulderblades",
+        "ru": "Наплечные лезвия призрака теней",
+        "es": "Hombreras de espectro acechante",
+        "br": "Ombreiras do Espectro Espreitador",
+        "kr": "",
+        "fr": "Lames d’épaules du spectre rôdeur",
+        "de": "Schulterklingen des lauernden Gespensts"
+    },
+    "205829": {
+        "cn": "",
+        "en": "Lurking Specter's Tights",
+        "ru": "Трико призрака теней",
+        "es": "Mallas de espectro acechante",
+        "br": "Meia-calça do Espectro Espreitador",
+        "kr": "",
+        "fr": "Collants du spectre rôdeur",
+        "de": "Strumpfhose des lauernden Gespensts"
+    },
+    "205830": {
+        "cn": "",
+        "en": "Lurking Specter's Visage",
+        "ru": "Личина призрака теней",
+        "es": "Rostro de espectro acechante",
+        "br": "Semblante do Espectro Espreitador",
+        "kr": "",
+        "fr": "Visage du spectre rôdeur",
+        "de": "Visage des lauernden Gespensts"
+    },
+    "205831": {
+        "cn": "",
+        "en": "Lurking Specter's Handgrips",
+        "ru": "Боевые перчатки призрака теней",
+        "es": "Lúas de espectro acechante",
+        "br": "Guantes do Espectro Espreitados",
+        "kr": "",
+        "fr": "Manicles du spectre rôdeur",
+        "de": "Handschutz des lauernden Gespensts"
+    },
+    "205832": {
+        "cn": "",
+        "en": "Lurking Specter's Brigandine",
+        "ru": "Панцирь призрака теней",
+        "es": "Brigantina de espectro acechante",
+        "br": "Brigandina do Espectro Espreitador",
+        "kr": "",
+        "fr": "Brigandine du spectre rôdeur",
+        "de": "Brigantine des lauernden Gespensts"
+    },
+    "205833": {
+        "cn": "",
+        "en": "Spines of the Vermillion Forge",
+        "ru": "Шипы гранатовой кузни",
+        "es": "Espinas de la Forja Bermellón",
+        "br": "Espinhos da Forja Rubra",
+        "kr": "",
+        "fr": "Épines de la forge Vermillon",
+        "de": "Dornen der Zinnoberschmiede"
+    },
+    "205834": {
+        "cn": "",
+        "en": "Pantaloons of the Vermillion Forge",
+        "ru": "Кюлоты гранатовой кузни",
+        "es": "Bombachos de la Forja Bermellón",
+        "br": "Pantalonas da Forja Rubra",
+        "kr": "",
+        "fr": "Pantalon de la forge Vermillon",
+        "de": "Pantalons der Zinnoberschmiede"
+    },
+    "205835": {
+        "cn": "",
+        "en": "Cover of the Vermillion Forge",
+        "ru": "Убор гранатовой кузни",
+        "es": "Casquete de la Forja Bermellón",
+        "br": "Murça da Forja Rubra",
+        "kr": "",
+        "fr": "Couvre-chef de la forge Vermillon",
+        "de": "Bedeckung der Zinnoberschmiede"
+    },
+    "205836": {
+        "cn": "",
+        "en": "Fists of the Vermillion Forge",
+        "ru": "Кулаки гранатовой кузни",
+        "es": "Puños de la Forja Bermellón",
+        "br": "Punhos da Forja Rubra",
+        "kr": "",
+        "fr": "Poings de la forge Vermillon",
+        "de": "Fäuste der Zinnoberschmiede"
+    },
+    "205837": {
+        "cn": "",
+        "en": "Cuirass of the Vermillion Forge",
+        "ru": "Кираса гранатовой кузни",
+        "es": "Loriga de la Forja Bermellón",
+        "br": "Corselete da Forja Rubra",
+        "kr": "",
+        "fr": "Cuirasse de la forge Vermillon",
+        "de": "Kürass der Zinnoberschmiede"
+    },
+    "205838": {
+        "cn": "",
+        "en": "Mantle of the Autumn Blaze",
+        "ru": "Оплечье осеннего пламени",
+        "es": "Manto de la llamarada otoñal",
+        "br": "Dragonas da Labareda Outonal",
+        "kr": "",
+        "fr": "Mantelet du feu d’automne",
+        "de": "Mantel der Herbstlohen"
+    },
+    "205839": {
+        "cn": "",
+        "en": "Pants of the Autumn Blaze",
+        "ru": "Штаны осеннего пламени",
+        "es": "Pantalones de la llamarada otoñal",
+        "br": "Calças da Labareda Outonal",
+        "kr": "",
+        "fr": "Pantalon du feu d’automne",
+        "de": "Hose der Herbstlohen"
+    },
+    "205840": {
+        "cn": "",
+        "en": "Bough of the Autumn Blaze",
+        "ru": "Ветвь осеннего пламени",
+        "es": "Rama de la llamarada otoñal",
+        "br": "Ramo da Labareda Outonal",
+        "kr": "",
+        "fr": "Bois du feu d’automne",
+        "de": "Zweig der Herbstlohen"
+    },
+    "205841": {
+        "cn": "",
+        "en": "Handguards of the Autumn Blaze",
+        "ru": "Боевые рукавицы осеннего пламени",
+        "es": "Manoplas de la llamarada otoñal",
+        "br": "Protetores de Mão da Labareda Outonal",
+        "kr": "",
+        "fr": "Garde-mains du feu d’automne",
+        "de": "Handschützer der Herbstlohen"
+    },
+    "205842": {
+        "cn": "",
+        "en": "Chestroots of the Autumn Blaze",
+        "ru": "Нагрудное плетение осеннего пламени",
+        "es": "Troncoraza de la llamarada otoñal",
+        "br": "Raditorso da Labareda Outonal",
+        "kr": "",
+        "fr": "Plastron-racines du feu d’automne",
+        "de": "Brustwurzeln der Herbstlohen"
+    },
+    "205843": {
+        "cn": "",
+        "en": "Kinslayer's Tainted Spaulders",
+        "ru": "Запятнанный наплеч убийцы сородичей",
+        "es": "Bufas corruptas del mataparientes",
+        "br": "Espaldares Maculados do Fratricida",
+        "kr": "",
+        "fr": "Spallières corrompues du fratricide",
+        "de": "Besudelte Schiftung des Geschwistermörders"
+    },
+    "205844": {
+        "cn": "",
+        "en": "Kinslayer's Legguards",
+        "ru": "Набедренники убийцы сородичей",
+        "es": "Musleras del mataparientes",
+        "br": "Guarda-pernas do Fratricida",
+        "kr": "",
+        "fr": "Garde-jambes du fratricide",
+        "de": "Beinschützer des Geschwistermörders"
+    },
+    "205845": {
+        "cn": "",
+        "en": "Kinslayer's Hood",
+        "ru": "Капюшон убийцы сородичей",
+        "es": "Caperuza del mataparientes",
+        "br": "Capuz do Fratricida",
+        "kr": "",
+        "fr": "Chaperon du fratricide",
+        "de": "Kapuze des Geschwistermörders"
+    },
+    "205846": {
+        "cn": "",
+        "en": "Kinslayer's Bloodstained Grips",
+        "ru": "Окровавленные захваты убийцы сородичей",
+        "es": "Mandiletes manchados de sangre del mataparientes",
+        "br": "Garras Manchadas de Sangue do Fratricida",
+        "kr": "",
+        "fr": "Poignes sanglantes du fratricide",
+        "de": "Blutbefleckter Handschutz des Geschwistermörders"
+    },
+    "205847": {
+        "cn": "",
+        "en": "Kinslayer's Vest",
+        "ru": "Жилет убийцы сородичей",
+        "es": "Jubón del mataparientes",
+        "br": "Colete do Fratricida",
+        "kr": "",
+        "fr": "Gilet du fratricide",
+        "de": "Weste des Geschwistermörders"
+    },
+    "205848": {
+        "cn": "",
+        "en": "Amice of the Sinister Savant",
+        "ru": "Амикт жестокого мудреца",
+        "es": "Amito del sabio siniestro",
+        "br": "Sobreveste do Sábio Sinistro",
+        "kr": "",
+        "fr": "Amict du savant sinistre",
+        "de": "Amicia des finsteren Gelehrten"
+    },
+    "205849": {
+        "cn": "",
+        "en": "Leggings of the Sinister Savant",
+        "ru": "Поножи жестокого мудреца",
+        "es": "Leotardos del sabio siniestro",
+        "br": "Perneiras do Sábio Sinistro",
+        "kr": "",
+        "fr": "Jambières du savant sinistre",
+        "de": "Gamaschen des finsteren Gelehrten"
+    },
+    "205850": {
+        "cn": "",
+        "en": "Grimhorns of the Sinister Savant",
+        "ru": "Жуткие рога жестокого мудреца",
+        "es": "Cuernos sombríos del sabio siniestro",
+        "br": "Chifres Austeros do Sábio Sinistro",
+        "kr": "",
+        "fr": "Cornes du savant sinistre",
+        "de": "Grimmhörner des finsteren Gelehrten"
+    },
+    "205851": {
+        "cn": "",
+        "en": "Grips of the Sinister Savant",
+        "ru": "Захваты жестокого мудреца",
+        "es": "Mandiletes del sabio siniestro",
+        "br": "Guantes do Sábio Sinistro",
+        "kr": "",
+        "fr": "Poignes du savant sinistre",
+        "de": "Handschutz des finsteren Gelehrten"
+    },
+    "205852": {
+        "cn": "",
+        "en": "Cursed Robes of the Sinister Savant",
+        "ru": "Проклятые одежды жестокого мудреца",
+        "es": "Toga maldita del sabio siniestro",
+        "br": "Vestes Malditas do Sábio Sinistro",
+        "kr": "",
+        "fr": "Robe maudite du savant sinistre",
+        "de": "Fluchroben des finsteren Gelehrten"
+    },
+    "205853": {
+        "cn": "",
+        "en": "Devotion of the Furnace Seraph",
+        "ru": "Реликвия пылающего серафима",
+        "es": "Devoción del serafín del horno",
+        "br": "Devoção do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Dévotion du séraphin de la fournaise",
+        "de": "Hingabe des Schmelzofenseraphs"
+    },
+    "205854": {
+        "cn": "",
+        "en": "Breeches of the Furnace Seraph",
+        "ru": "Брюки пылающего серафима",
+        "es": "Calzones del serafín del horno",
+        "br": "Calções do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Braies du séraphin de la fournaise",
+        "de": "Bundhosen des Schmelzofenseraphs"
+    },
+    "205855": {
+        "cn": "",
+        "en": "Mask of the Furnace Seraph",
+        "ru": "Маска пылающего серафима",
+        "es": "Máscara del serafín del horno",
+        "br": "Máscara do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Masque du séraphin de la fournaise",
+        "de": "Maske des Schmelzofenseraphs"
+    },
+    "205856": {
+        "cn": "",
+        "en": "Grasp of the Furnace Seraph",
+        "ru": "Хватка пылающего серафима",
+        "es": "Garra del serafín del horno",
+        "br": "Garras do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Poignées du séraphin de la fournaise",
+        "de": "Griff des Schmelzofenseraphs"
+    },
+    "205857": {
+        "cn": "",
+        "en": "Command of the Furnace Seraph",
+        "ru": "Заповедь пылающего серафима",
+        "es": "Mandato del serafín del horno",
+        "br": "Comando do Serafim da Fornalha",
+        "kr": "",
+        "fr": "Maîtrise du séraphin de la fournaise",
+        "de": "Befehlsrobe des Schmelzofenseraphs"
+    },
+    "205858": {
+        "cn": "",
+        "en": "Underlight Conjurer's Aurora",
+        "ru": "Сияние беспросветного творца",
+        "es": "Aurora del conjurador Sondaluz",
+        "br": "Aurora do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Aurore de conjuration de Terradiance",
+        "de": "Aurora des Tiefenlichtbeschwörers"
+    },
+    "205859": {
+        "cn": "",
+        "en": "Underlight Conjurer's Trousers",
+        "ru": "Брюки беспросветного творца",
+        "es": "Calzas del conjurador Sondaluz",
+        "br": "Calçotes do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Chausses de conjuration de Terradiance",
+        "de": "Beinkleider des Tiefenlichtbeschwörers"
+    },
+    "205860": {
+        "cn": "",
+        "en": "Underlight Conjurer's Arcanocowl",
+        "ru": "Чародейский клобук беспросветного творца",
+        "es": "Arcanopucha del conjurador Sondaluz",
+        "br": "Capucho Arcano do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Capuche arcanique de conjuration de Terradiance",
+        "de": "Arkanogugel des Tiefenlichtbeschwörers"
+    },
+    "205861": {
+        "cn": "",
+        "en": "Underlight Conjurer's Gloves",
+        "ru": "Перчатки беспросветного творца",
+        "es": "Guantes del conjurador Sondaluz",
+        "br": "Luvas do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Gants de conjuration de Terradiance",
+        "de": "Handschuhe des Tiefenlichtbeschwörers"
+    },
+    "205862": {
+        "cn": "",
+        "en": "Underlight Conjurer's Vestment",
+        "ru": "Облачения беспросветного творца",
+        "es": "Vestimenta del conjurador Sondaluz",
+        "br": "Vestimenta do Conjurador Telúmino",
+        "kr": "",
+        "fr": "Habits de conjuration de Terradiance",
+        "de": "Gewandung des Tiefenlichtbeschwörers"
+    },
+    "205883": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Staff",
+        "ru": "Посох обсидианового претендента",
+        "es": "Bastón de aspirante obsidiana",
+        "br": "Cajado do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bâton de l’aspirant d’obsidienne",
+        "de": "Stab des Obsidianaspiranten"
+    },
+    "205885": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Torch",
+        "ru": "Факел обсидианового претендента",
+        "es": "Antorcha de aspirante obsidiana",
+        "br": "Tocha do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Torche de l’aspirant d’obsidienne",
+        "de": "Fackel des Obsidianaspiranten"
+    },
+    "205887": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Gavel",
+        "ru": "Молоток обсидианового претендента",
+        "es": "Mazo de aspirante obsidiana",
+        "br": "Martelete do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Martelet de l’aspirant d’obsidienne",
+        "de": "Hammer des Obsidianaspiranten"
+    },
+    "205888": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Shield",
+        "ru": "Щит обсидианового претендента",
+        "es": "Escudo de aspirante obsidiana",
+        "br": "Escudo do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Bouclier de l’aspirant d’obsidienne",
+        "de": "Schild des Obsidianaspiranten"
+    },
+    "205893": {
+        "cn": "",
+        "en": "Obsidian Aspirant's Knife",
+        "ru": "Нож обсидианового претендента",
+        "es": "Cuchillo de aspirante obsidiana",
+        "br": "Faca do Aspirante Obsidiano",
+        "kr": "",
+        "fr": "Couteau de l’aspirant d’obsidienne",
+        "de": "Messer des Obsidianaspiranten"
+    },
+    "205918": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Staff",
+        "ru": "Посох обсидианового гладиатора",
+        "es": "Bastón de Gladiador obsidiana",
+        "br": "Cajado do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bâton du gladiateur d’obsidienne",
+        "de": "Stab des Obsidiangladiators"
+    },
+    "205921": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Scepter",
+        "ru": "Скипетр обсидианового гладиатора",
+        "es": "Cetro de Gladiador obsidiana",
+        "br": "Cetro do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Sceptre du gladiateur d’obsidienne",
+        "de": "Szepter des Obsidiangladiators"
+    },
+    "205922": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Rod",
+        "ru": "Жезл обсидианового гладиатора",
+        "es": "Vara de Gladiador obsidiana",
+        "br": "Bastão do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bâtonnet du gladiateur d’obsidienne",
+        "de": "Rute des Obsidiangladiators"
+    },
+    "205923": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Shield",
+        "ru": "Щит обсидианового гладиатора",
+        "es": "Escudo de Gladiador obsidiana",
+        "br": "Escudo do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Bouclier du gladiateur d’obsidienne",
+        "de": "Schild des Obsidiangladiators"
+    },
+    "205925": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Knife",
+        "ru": "Нож обсидианового гладиатора",
+        "es": "Cuchillo de Gladiador obsidiana",
+        "br": "Faca do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Couteau du gladiateur d’obsidienne",
+        "de": "Messer des Obsidiangladiators"
+    },
+    "205930": {
+        "cn": "",
+        "en": "Obsidian Gladiator's Talons",
+        "ru": "Когти обсидианового гладиатора",
+        "es": "Garfas de Gladiador obsidiana",
+        "br": "Grifas do Gladiador Obsidiano",
+        "kr": "",
+        "fr": "Serres du gladiateur d’obsidienne",
+        "de": "Krallen des Obsidiangladiators"
+    },
+    "205973": {
+        "cn": "",
+        "en": "Rod of Crystalline Energies",
+        "ru": "Жезл кристаллизованной энергии",
+        "es": "Vara de energías cristalinas",
+        "br": "Bastão de Energias Cristalinas",
+        "kr": "",
+        "fr": "Bâtonnet d’énergies cristallines",
+        "de": "Rute der kristallinen Energien"
+    },
+    "205974": {
+        "cn": "",
+        "en": "Monstrous Gluttony",
+        "ru": "Чудовищное обжорство",
+        "es": "Gula monstruosa",
+        "br": "Glutonaria Monstruosa",
+        "kr": "",
+        "fr": "Gloutonnerie monstrueuse",
+        "de": "Monströse Unersättlichkeit"
+    },
+    "206180": {
+        "cn": "",
+        "en": "Choker of Stolen Thunder",
+        "ru": "Колье украденного грома",
+        "es": "Gargantilla del trueno robado",
+        "br": "Gargantilha do Trovão Roubado",
+        "kr": "",
+        "fr": "Sautoir de tonnerre volé",
+        "de": "Halsreif des gestohlenen Donners"
+    },
+    "206181": {
+        "cn": "",
+        "en": "Ionized Choker",
+        "ru": "Ионизированное колье",
+        "es": "Gargantilla ionizada",
+        "br": "Gargantilha Ionizada",
+        "kr": "",
+        "fr": "Sautoir ionisé",
+        "de": "Ionisierter Halsreif"
+    },
+    "206182": {
+        "cn": "",
+        "en": "Red Sky Pendant",
+        "ru": "Подвеска красных небес",
+        "es": "Colgante de cielo rojo",
+        "br": "Pingente do Céu Vermelho",
+        "kr": "",
+        "fr": "Pendentif de ciel rouge",
+        "de": "Anhänger des roten Himmels"
+    },
+    "206183": {
+        "cn": "",
+        "en": "Amulet of Tender Breath",
+        "ru": "Амулет нежного дыхания",
+        "es": "Amuleto del aliento tierno",
+        "br": "Amuleto do Hálito Fresco",
+        "kr": "",
+        "fr": "Amulette du tendre souffle",
+        "de": "Amulett des weichen Atems"
+    },
+    "206184": {
+        "cn": "",
+        "en": "Skyshard Ring",
+        "ru": "Кольцо осколка небес",
+        "es": "Anillo de fragmento de cielo",
+        "br": "Anel Estilhacéu",
+        "kr": "",
+        "fr": "Anneau éclat-du-ciel",
+        "de": "Himmelssplitterring"
+    },
+    "206185": {
+        "cn": "",
+        "en": "Ring of Frozen Rain",
+        "ru": "Кольцо замерзшего дождя",
+        "es": "Anillo de lluvia helada",
+        "br": "Anel da Chuva Congelada",
+        "kr": "",
+        "fr": "Anneau de pluie gelée",
+        "de": "Ring des Eisregens"
+    },
+    "206197": {
+        "cn": "",
+        "en": "Breastplate of Arterial Protection",
+        "ru": "Кираса артериальной защиты",
+        "es": "Coraza de protección arterial",
+        "br": "Peitoral da Proteção Arterial",
+        "kr": "",
+        "fr": "Cuirasse de protection artérielle",
+        "de": "Arterienschützende Brustplatte"
+    },
+    "206198": {
+        "cn": "",
+        "en": "Gore-Splattered Vest",
+        "ru": "Забрызганный кровью жилет",
+        "es": "Jubón salpicado de sangre",
+        "br": "Colete Coberto de Vísceras",
+        "kr": "",
+        "fr": "Gilet taché de sang",
+        "de": "Gedärmverschmierte Weste"
+    },
+    "206199": {
+        "cn": "",
+        "en": "Blood-Drenched Robes",
+        "ru": "Залитые кровью одеяния",
+        "es": "Toga empapada de sangre",
+        "br": "Vestes Ensopadas de Sangue",
+        "kr": "",
+        "fr": "Robe trempée de sang",
+        "de": "Blutgetränkte Roben"
+    },
+    "206205": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Garb",
+        "ru": "Scalewarden's Cloth Garb",
+        "es": "Scalewarden's Cloth Garb",
+        "br": "Scalewarden's Cloth Garb",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Garb",
+        "de": "Scalewarden's Cloth Garb"
+    },
+    "206206": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Slippers",
+        "ru": "Scalewarden's Cloth Slippers",
+        "es": "Scalewarden's Cloth Slippers",
+        "br": "Scalewarden's Cloth Slippers",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Slippers",
+        "de": "Scalewarden's Cloth Slippers"
+    },
+    "206207": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Gloves",
+        "ru": "Scalewarden's Cloth Gloves",
+        "es": "Scalewarden's Cloth Gloves",
+        "br": "Scalewarden's Cloth Gloves",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Gloves",
+        "de": "Scalewarden's Cloth Gloves"
+    },
+    "206208": {
+        "cn": "",
+        "en": "Scalewarden's Crown",
+        "ru": "Scalewarden's Crown",
+        "es": "Scalewarden's Crown",
+        "br": "Scalewarden's Crown",
+        "kr": "",
+        "fr": "Scalewarden's Crown",
+        "de": "Scalewarden's Crown"
+    },
+    "206209": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Pants",
+        "ru": "Scalewarden's Cloth Pants",
+        "es": "Scalewarden's Cloth Pants",
+        "br": "Scalewarden's Cloth Pants",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Pants",
+        "de": "Scalewarden's Cloth Pants"
+    },
+    "206210": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Cord",
+        "ru": "Scalewarden's Cloth Cord",
+        "es": "Scalewarden's Cloth Cord",
+        "br": "Scalewarden's Cloth Cord",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Cord",
+        "de": "Scalewarden's Cloth Cord"
+    },
+    "206212": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Bindings",
+        "ru": "Scalewarden's Cloth Bindings",
+        "es": "Scalewarden's Cloth Bindings",
+        "br": "Scalewarden's Cloth Bindings",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Bindings",
+        "de": "Scalewarden's Cloth Bindings"
+    },
+    "206213": {
+        "cn": "",
+        "en": "Scalewarden's Cloth Mantle",
+        "ru": "Scalewarden's Cloth Mantle",
+        "es": "Scalewarden's Cloth Mantle",
+        "br": "Scalewarden's Cloth Mantle",
+        "kr": "",
+        "fr": "Scalewarden's Cloth Mantle",
+        "de": "Scalewarden's Cloth Mantle"
+    },
+    "206214": {
+        "cn": "",
+        "en": "Scalewarden's Leather Boots",
+        "ru": "Scalewarden's Leather Boots",
+        "es": "Scalewarden's Leather Boots",
+        "br": "Scalewarden's Leather Boots",
+        "kr": "",
+        "fr": "Scalewarden's Leather Boots",
+        "de": "Scalewarden's Leather Boots"
+    },
+    "206215": {
+        "cn": "",
+        "en": "Scalewarden's Leather Handwraps",
+        "ru": "Scalewarden's Leather Handwraps",
+        "es": "Scalewarden's Leather Handwraps",
+        "br": "Scalewarden's Leather Handwraps",
+        "kr": "",
+        "fr": "Scalewarden's Leather Handwraps",
+        "de": "Scalewarden's Leather Handwraps"
+    },
+    "206216": {
+        "cn": "",
+        "en": "Scalewarden's Hood",
+        "ru": "Scalewarden's Hood",
+        "es": "Scalewarden's Hood",
+        "br": "Scalewarden's Hood",
+        "kr": "",
+        "fr": "Scalewarden's Hood",
+        "de": "Scalewarden's Hood"
+    },
+    "206217": {
+        "cn": "",
+        "en": "Scalewarden's Leather Breeches",
+        "ru": "Scalewarden's Leather Breeches",
+        "es": "Scalewarden's Leather Breeches",
+        "br": "Scalewarden's Leather Breeches",
+        "kr": "",
+        "fr": "Scalewarden's Leather Breeches",
+        "de": "Scalewarden's Leather Breeches"
+    },
+    "206218": {
+        "cn": "",
+        "en": "Scalewarden's Leather Belt",
+        "ru": "Scalewarden's Leather Belt",
+        "es": "Scalewarden's Leather Belt",
+        "br": "Scalewarden's Leather Belt",
+        "kr": "",
+        "fr": "Scalewarden's Leather Belt",
+        "de": "Scalewarden's Leather Belt"
+    },
+    "206219": {
+        "cn": "",
+        "en": "Scalewarden's Leather Wraps",
+        "ru": "Scalewarden's Leather Wraps",
+        "es": "Scalewarden's Leather Wraps",
+        "br": "Scalewarden's Leather Wraps",
+        "kr": "",
+        "fr": "Scalewarden's Leather Wraps",
+        "de": "Scalewarden's Leather Wraps"
+    },
+    "206220": {
+        "cn": "",
+        "en": "Scalewarden's Leather Jerkin",
+        "ru": "Scalewarden's Leather Jerkin",
+        "es": "Scalewarden's Leather Jerkin",
+        "br": "Scalewarden's Leather Jerkin",
+        "kr": "",
+        "fr": "Scalewarden's Leather Jerkin",
+        "de": "Scalewarden's Leather Jerkin"
+    },
+    "206221": {
+        "cn": "",
+        "en": "Scalewarden's Leather Shoulderguard",
+        "ru": "Scalewarden's Leather Shoulderguard",
+        "es": "Scalewarden's Leather Shoulderguard",
+        "br": "Scalewarden's Leather Shoulderguard",
+        "kr": "",
+        "fr": "Scalewarden's Leather Shoulderguard",
+        "de": "Scalewarden's Leather Shoulderguard"
+    },
+    "206222": {
+        "cn": "",
+        "en": "Scalewarden's Faceplate",
+        "ru": "Scalewarden's Faceplate",
+        "es": "Scalewarden's Faceplate",
+        "br": "Scalewarden's Faceplate",
+        "kr": "",
+        "fr": "Scalewarden's Faceplate",
+        "de": "Scalewarden's Faceplate"
+    },
+    "206223": {
+        "cn": "",
+        "en": "Scalewarden's Plate Cuirass",
+        "ru": "Scalewarden's Plate Cuirass",
+        "es": "Scalewarden's Plate Cuirass",
+        "br": "Scalewarden's Plate Cuirass",
+        "kr": "",
+        "fr": "Scalewarden's Plate Cuirass",
+        "de": "Scalewarden's Plate Cuirass"
+    },
+    "206224": {
+        "cn": "",
+        "en": "Scalewarden's Plate Sabatons",
+        "ru": "Scalewarden's Plate Sabatons",
+        "es": "Scalewarden's Plate Sabatons",
+        "br": "Scalewarden's Plate Sabatons",
+        "kr": "",
+        "fr": "Scalewarden's Plate Sabatons",
+        "de": "Scalewarden's Plate Sabatons"
+    },
+    "206225": {
+        "cn": "",
+        "en": "Scalewarden's Plate Gauntlets",
+        "ru": "Scalewarden's Plate Gauntlets",
+        "es": "Scalewarden's Plate Gauntlets",
+        "br": "Scalewarden's Plate Gauntlets",
+        "kr": "",
+        "fr": "Scalewarden's Plate Gauntlets",
+        "de": "Scalewarden's Plate Gauntlets"
+    },
+    "206226": {
+        "cn": "",
+        "en": "Scalewarden's Plate Legguards",
+        "ru": "Scalewarden's Plate Legguards",
+        "es": "Scalewarden's Plate Legguards",
+        "br": "Scalewarden's Plate Legguards",
+        "kr": "",
+        "fr": "Scalewarden's Plate Legguards",
+        "de": "Scalewarden's Plate Legguards"
+    },
+    "206227": {
+        "cn": "",
+        "en": "Scalewarden's Plate Spaulders",
+        "ru": "Scalewarden's Plate Spaulders",
+        "es": "Scalewarden's Plate Spaulders",
+        "br": "Scalewarden's Plate Spaulders",
+        "kr": "",
+        "fr": "Scalewarden's Plate Spaulders",
+        "de": "Scalewarden's Plate Spaulders"
+    },
+    "206228": {
+        "cn": "",
+        "en": "Scalewarden's Plate Clasp",
+        "ru": "Scalewarden's Plate Clasp",
+        "es": "Scalewarden's Plate Clasp",
+        "br": "Scalewarden's Plate Clasp",
+        "kr": "",
+        "fr": "Scalewarden's Plate Clasp",
+        "de": "Scalewarden's Plate Clasp"
+    },
+    "206229": {
+        "cn": "",
+        "en": "Scalewarden's Plate Bracers",
+        "ru": "Scalewarden's Plate Bracers",
+        "es": "Scalewarden's Plate Bracers",
+        "br": "Scalewarden's Plate Bracers",
+        "kr": "",
+        "fr": "Scalewarden's Plate Bracers",
+        "de": "Scalewarden's Plate Bracers"
+    },
+    "206230": {
+        "cn": "",
+        "en": "Scalewarden's Chain Armor",
+        "ru": "Scalewarden's Chain Armor",
+        "es": "Scalewarden's Chain Armor",
+        "br": "Scalewarden's Chain Armor",
+        "kr": "",
+        "fr": "Scalewarden's Chain Armor",
+        "de": "Scalewarden's Chain Armor"
+    },
+    "206231": {
+        "cn": "",
+        "en": "Scalewarden's Chain Greaves",
+        "ru": "Scalewarden's Chain Greaves",
+        "es": "Scalewarden's Chain Greaves",
+        "br": "Scalewarden's Chain Greaves",
+        "kr": "",
+        "fr": "Scalewarden's Chain Greaves",
+        "de": "Scalewarden's Chain Greaves"
+    },
+    "206232": {
+        "cn": "",
+        "en": "Scalewarden's Chain Grips",
+        "ru": "Scalewarden's Chain Grips",
+        "es": "Scalewarden's Chain Grips",
+        "br": "Scalewarden's Chain Grips",
+        "kr": "",
+        "fr": "Scalewarden's Chain Grips",
+        "de": "Scalewarden's Chain Grips"
+    },
+    "206233": {
+        "cn": "",
+        "en": "Scalewarden's Helm",
+        "ru": "Scalewarden's Helm",
+        "es": "Scalewarden's Helm",
+        "br": "Scalewarden's Helm",
+        "kr": "",
+        "fr": "Scalewarden's Helm",
+        "de": "Scalewarden's Helm"
+    },
+    "206234": {
+        "cn": "",
+        "en": "Scalewarden's Chain Leggings",
+        "ru": "Scalewarden's Chain Leggings",
+        "es": "Scalewarden's Chain Leggings",
+        "br": "Scalewarden's Chain Leggings",
+        "kr": "",
+        "fr": "Scalewarden's Chain Leggings",
+        "de": "Scalewarden's Chain Leggings"
+    },
+    "206235": {
+        "cn": "",
+        "en": "Scalewarden's Chain Epaulets",
+        "ru": "Scalewarden's Chain Epaulets",
+        "es": "Scalewarden's Chain Epaulets",
+        "br": "Scalewarden's Chain Epaulets",
+        "kr": "",
+        "fr": "Scalewarden's Chain Epaulets",
+        "de": "Scalewarden's Chain Epaulets"
+    },
+    "206236": {
+        "cn": "",
+        "en": "Scalewarden's Chain Cinch",
+        "ru": "Scalewarden's Chain Cinch",
+        "es": "Scalewarden's Chain Cinch",
+        "br": "Scalewarden's Chain Cinch",
+        "kr": "",
+        "fr": "Scalewarden's Chain Cinch",
+        "de": "Scalewarden's Chain Cinch"
+    },
+    "206237": {
+        "cn": "",
+        "en": "Scalewarden's Chain Armguards",
+        "ru": "Scalewarden's Chain Armguards",
+        "es": "Scalewarden's Chain Armguards",
+        "br": "Scalewarden's Chain Armguards",
+        "kr": "",
+        "fr": "Scalewarden's Chain Armguards",
+        "de": "Scalewarden's Chain Armguards"
+    },
+    "206238": {
+        "cn": "",
+        "en": "Scalewarden's Cape",
+        "ru": "Scalewarden's Cape",
+        "es": "Scalewarden's Cape",
+        "br": "Scalewarden's Cape",
+        "kr": "",
+        "fr": "Scalewarden's Cape",
+        "de": "Scalewarden's Cape"
+    },
+    "206239": {
+        "cn": "",
+        "en": "Scalewarden's Shawl",
+        "ru": "Scalewarden's Shawl",
+        "es": "Scalewarden's Shawl",
+        "br": "Scalewarden's Shawl",
+        "kr": "",
+        "fr": "Scalewarden's Shawl",
+        "de": "Scalewarden's Shawl"
+    },
+    "206240": {
+        "cn": "",
+        "en": "Scalewarden's Cloak",
+        "ru": "Плащ объездчика драконов",
+        "es": "Capa de rompedracos",
+        "br": "Manto do Quebra-draco",
+        "kr": "",
+        "fr": "Cape de brise-drake",
+        "de": "Umhang des Drachenverwüsters"
+    },
+    "206241": {
+        "cn": "",
+        "en": "Scalewarden's Drape",
+        "ru": "Scalewarden's Drape",
+        "es": "Scalewarden's Drape",
+        "br": "Scalewarden's Drape",
+        "kr": "",
+        "fr": "Scalewarden's Drape",
+        "de": "Scalewarden's Drape"
+    },
+    "206243": {
+        "cn": "",
+        "en": "Scalewarden's Hatchet",
+        "ru": "Секира объездчика драконов",
+        "es": "Hachuela de rompedracos",
+        "br": "Machadinha do Quebra-draco",
+        "kr": "",
+        "fr": "Hachette de brise-drake",
+        "de": "Kriegsbeil des Drachenverwüsters"
+    },
+    "206247": {
+        "cn": "",
+        "en": "Scalewarden's Spellblade",
+        "ru": "Scalewarden's Spellblade",
+        "es": "Scalewarden's Spellblade",
+        "br": "Scalewarden's Spellblade",
+        "kr": "",
+        "fr": "Scalewarden's Spellblade",
+        "de": "Scalewarden's Spellblade"
+    },
+    "206249": {
+        "cn": "",
+        "en": "Scalewarden's Flame",
+        "ru": "Scalewarden's Flame",
+        "es": "Scalewarden's Flame",
+        "br": "Scalewarden's Flame",
+        "kr": "",
+        "fr": "Scalewarden's Flame",
+        "de": "Scalewarden's Flame"
+    },
+    "206250": {
+        "cn": "",
+        "en": "Scalewarden's Spire",
+        "ru": "Scalewarden's Spire",
+        "es": "Scalewarden's Spire",
+        "br": "Scalewarden's Spire",
+        "kr": "",
+        "fr": "Scalewarden's Spire",
+        "de": "Scalewarden's Spire"
+    },
+    "206252": {
+        "cn": "",
+        "en": "Scalewarden's Greatsword",
+        "ru": "Scalewarden's Greatsword",
+        "es": "Scalewarden's Greatsword",
+        "br": "Scalewarden's Greatsword",
+        "kr": "",
+        "fr": "Scalewarden's Greatsword",
+        "de": "Scalewarden's Greatsword"
+    },
+    "206254": {
+        "cn": "",
+        "en": "Scalewarden's Club",
+        "ru": "Scalewarden's Club",
+        "es": "Scalewarden's Club",
+        "br": "Scalewarden's Club",
+        "kr": "",
+        "fr": "Scalewarden's Club",
+        "de": "Scalewarden's Club"
+    },
+    "206257": {
+        "cn": "",
+        "en": "Scalewarden's Aegis",
+        "ru": "Scalewarden's Aegis",
+        "es": "Scalewarden's Aegis",
+        "br": "Scalewarden's Aegis",
+        "kr": "",
+        "fr": "Scalewarden's Aegis",
+        "de": "Scalewarden's Aegis"
+    },
+    "206260": {
+        "cn": "",
+        "en": "Scalewarden's Wand",
+        "ru": "Scalewarden's Wand",
+        "es": "Scalewarden's Wand",
+        "br": "Scalewarden's Wand",
+        "kr": "",
+        "fr": "Scalewarden's Wand",
+        "de": "Scalewarden's Wand"
+    },
+    "206263": {
+        "cn": "",
+        "en": "Scalewarden's Scepter",
+        "ru": "Scalewarden's Scepter",
+        "es": "Scalewarden's Scepter",
+        "br": "Scalewarden's Scepter",
+        "kr": "",
+        "fr": "Scalewarden's Scepter",
+        "de": "Scalewarden's Scepter"
     }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import HallOfFame from "General/Modules/HallOfFame/HallOfFame";
@@ -14,9 +14,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     marginTop: 80,
     bottom: 0,
+    position: "relative",
+    left: 0,
   },
   subRoot: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       margin: "auto",
       width: "85%",
     },

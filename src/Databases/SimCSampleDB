@@ -1,0 +1,173 @@
+# Evoulker - Preservation - 2023-04-19 14:48 - US/Stonemaul
+# SimC Addon 10.0.7-03
+# WoW 10.0.7.48999, TOC 100007
+# Requires SimulationCraft 1000-01 or newer
+
+evoker="Evoulker"
+level=70
+race=dracthyr
+region=us
+server=stonemaul
+role=attack
+professions=leatherworking=100/alchemy=32
+spec=preservation
+
+talents=BwbBP6s2QqC9+fmxbctIlW1vfTTClQEiIlDkkESLaJJJIBAAAAAkkUSkAQikkkIQSC
+
+# Saved Loadout: Raid
+# talents=BwbBP6s2QqC9+fmxbctIlW1vfDJIkEgUkkESLplkkkkAAAAAAQSLRCQkIJJhQkkA
+# Saved Loadout: Dungeon
+# talents=BwbBP6s2QqC9+fmxbctIlW1vfDBlIgkIFJJJJOgWSSSIAAAAAgQSLRiEJBSSSIESC
+# Saved Loadout: Reversion
+# talents=BwbBP6s2QqC9+fmxbctIlW1vfTTClQEiIlDkkESLaJJJIBAAAAAkkUSkAQikkkIQSC
+# Saved Loadout: PVP
+# talents=BwbBP6s2QqC9+fmxbctIlW1vfTLQJIhICSSyBSLaJJJhAAAAAAQSTkABikkkkQkkA
+# Saved Loadout: dwq
+# talents=BwbBP6s2QqC9+fmxbctIlW1vfDJIkEgUkkESLplkkkkAAAAAAQSLRCQkIJJhQkkA
+
+head=,id=200381,gem_id=192958,bonus_id=7981/6652/7935/8828/1498/8767
+neck=,id=193001,gem_id=192987/192922/192958,bonus_id=8836/8840/8902/8960/8783/8782/8802/8791/8846,crafted_stats=40/32
+shoulder=,id=200383,bonus_id=7981/40/8826/1498/8767
+back=,id=133639,enchant_id=6598,bonus_id=9130/7977/6652/8822/8819/9144/3300/8767
+chest=,id=200378,enchant_id=6625,bonus_id=7981/6652/8830/1498/8767
+tabard=,id=194675
+wrist=,id=133626,enchant_id=6580,bonus_id=8974/7977/6652/7936/8822/8819/9144/3297/8767
+hands=,id=200380,bonus_id=6652/8829/9130/7977/1498/8767
+waist=,id=193425,bonus_id=8836/8840/8902/7937/8802/8846/8791,crafted_stats=49/32
+legs=,id=195522,enchant_id=6544,bonus_id=6652/7981/8823/8820/1498/8767
+feet=,id=193421,enchant_id=6607,bonus_id=8836/8840/8902/8802/8846/8175/8960/8793,crafted_stats=49/32
+finger1=,id=195526,enchant_id=6562,gem_id=192958,bonus_id=6652/7980/1485/8767/8780
+finger2=,id=203460,enchant_id=6562,gem_id=204020/204010/204013,gem_bonus_id=9369:1472/9369:1472/9369:1472,bonus_id=1491
+trinket1=,id=194307,bonus_id=7979/6652/1472/8767
+trinket2=,id=194300,bonus_id=41/7980/1485/8767
+main_hand=,id=193707,enchant_id=6643,bonus_id=9130/7977/6652/9147/1643/8767
+
+### Gear from Bags
+#
+# Crown of the Awakened (411)
+# head=,id=200381,bonus_id=7980/41/7936/8828/1485/8767
+#
+# Eranog's Adorned Sallet (402)
+# head=,id=195476,bonus_id=6652/7936/7980/8825/8820/1485/8767
+#
+# Pendant of the Stormforger (421)
+# neck=,id=133767,bonus_id=9130/7977/6652/7937/8783/9144/3300/8767
+#
+# Eye of the Vengeful Hurricane (421)
+# neck=,id=195496,bonus_id=6652/7937/8783/7981/1498/8767
+#
+# Talons of the Awakened (424)
+# shoulder=,id=200383,bonus_id=7981/41/8826/1498/8767
+#
+# Acid-Proof Webbing (402)
+# back=,id=195511,enchant_id=6598,bonus_id=6652/8825/8819/7980/1485/8767
+#
+# Cloak of Failing Will (405)
+# back=,id=144115,bonus_id=8970/7977/6652/8822/8819/9144/3295/8767
+#
+# Surging-Song Conductors (421)
+# wrist=,id=195516,bonus_id=6652/7936/7981/8823/8819/1498/8767
+#
+# Crimson Aspirant's Chain Handguards (340)
+# hands=,id=201138,bonus_id=8985/6652/8990/1472
+#
+# Gauntlets of the Awakened (408)
+# hands=,id=200380,bonus_id=7980/6652/8829/1485/8767
+#
+# Tideskorn Cinch (405)
+# waist=,id=134207,bonus_id=8970/7977/6652/7936/8822/8818/9144/3284/8767
+#
+# Egg Tender's Leggings (405)
+# legs=,id=193759,bonus_id=8970/7977/6652/8822/8820/9144/1627/8767
+#
+# Sharpeye Greaves (395)
+# feet=,id=109791,enchant_id=6606,bonus_id=8967/7977/6652/8822/8818/9144/3280/8767
+#
+# Lightning-Charged Striders (421)
+# feet=,id=193685,bonus_id=9130/7977/6652/8822/8818/9144/1643/8767
+#
+# Seal of Diurna's Chosen (421)
+# finger1=,id=195480,enchant_id=6556,bonus_id=6652/7936/7981/1498/8767
+#
+# Signet of Titanic Insight (418)
+# finger1=,id=192999,enchant_id=6562,gem_id=192958,bonus_id=8836/8840/8902/8780/8802/8791/8846/8174,crafted_stats=49/32
+#
+# Crimson Aspirant's Ring (340)
+# finger1=,id=201744,bonus_id=8985/6652/7936/8990/1472
+#
+# Thunderous Downburst Ring (389)
+# finger1=,id=193696,enchant_id=6559,bonus_id=8965/7977/6652/7937/9144/1611/8767
+#
+# Platinum Star Band (421)
+# finger1=,id=193708,bonus_id=9130/7977/6652/7936/9144/1643/8767
+#
+# Thunderous Downburst Ring (402)
+# finger1=,id=193696,bonus_id=8969/7977/6652/7936/9144/1624/8767
+#
+# Conjured Chillglobe (415)
+# trinket1=,id=194300,bonus_id=6652/7981/1498/8767
+#
+# Furious Ragefeather (411)
+# trinket1=,id=193677,bonus_id=7977/6652/9144/8972/1633/8767
+#
+# Emerald Coach's Whistle (402)
+# trinket1=,id=193718,bonus_id=8969/7977/6652/9144/1624/8767
+#
+# Primal Ritual Shell (372)
+# trinket1=,id=200563,bonus_id=6652/1475/5864/8767
+#
+# Crimson Aspirant's Medallion (340)
+# trinket1=,id=201450,bonus_id=8985/6652/8990/1472
+#
+# Voidmender's Shadowgem (415)
+# trinket1=,id=110007,bonus_id=7977/6652/9144/8973/3300/8767
+#
+# Sands of Temporal Perfection (389)
+# trinket1=,id=202015,bonus_id=9377/1489/8767
+#
+# Tome of Unstable Power (402)
+# trinket1=,id=193628,bonus_id=8969/7977/6652/9144/1624/8767
+#
+# Crimson Aspirant's Insignia of Alacrity (340)
+# trinket1=,id=201451,bonus_id=8985/6652/8990/1472
+#
+# Unstable Elemental Confluence (187)
+# trinket1=,id=199686
+#
+# Emerald Coach's Whistle (359)
+# trinket1=,id=193718,bonus_id=7976/6652/1581/8766
+#
+# Engraved Spearhead (372)
+# trinket1=,id=193568,bonus_id=6652/1475/5864/8767
+#
+# Kyrakka's Searing Embers (405)
+# trinket1=,id=193748,bonus_id=8970/7977/6652/9144/1627/8767
+#
+# Kharnalex, The First Light (411)
+# main_hand=,id=195519,enchant_id=6640,bonus_id=40/7980/1485/8767/9418
+#
+# Crimson Gladiator's Staff (382)
+# main_hand=,id=201976,bonus_id=8999/6652/9009/1472/8767
+#
+# Drakebreaker's Broadsword (366)
+# main_hand=,id=199084,bonus_id=8978/6652/1488/8766/9274
+#
+# Skullsplitting Axe of the Feverflare (302)
+# main_hand=,id=199043,bonus_id=7969/6652/1700,drop_level=70
+#
+# Portal-Ripper's Staff (405)
+# main_hand=,id=110039,bonus_id=8970/7977/6652/9147/3290/8767
+#
+# Qalashi Crustshaper's Greatmace (382)
+# main_hand=,id=192021,bonus_id=6652/1485/5864/8767
+#
+# Obsidian Seared Hexsword (418)
+# main_hand=,id=190511,enchant_id=6643,bonus_id=8836/8840/8902/8802/8846/8791/8175/8960,crafted_stats=40/36
+#
+# Hornstrider's Mace of the Peerless (302)
+# main_hand=,id=199025,bonus_id=7969/42/1688,drop_level=70
+#
+# Sadana's Grisly Visage (415)
+# off_hand=,id=110035,bonus_id=7977/6652/9144/8973/3300/8767
+
+# Checksum: c565cf7b

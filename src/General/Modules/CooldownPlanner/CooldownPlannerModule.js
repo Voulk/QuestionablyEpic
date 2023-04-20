@@ -41,10 +41,11 @@ class CooldownPlannerModule extends Component {
     return (
       <div
         style={{
-          marginTop: 32,
+          // marginTop: 32,
         }}
       >
-        <div style={{ margin: "20px 3% 20px 3%" }}>
+        <div style={{ height: 96 }} />
+        <div style={{ margin: "0px 3% 20px 3%" }}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">

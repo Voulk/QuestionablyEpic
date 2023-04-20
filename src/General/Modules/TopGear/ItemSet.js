@@ -134,6 +134,10 @@ class ItemSet {
     return this;
   }
 
+  checkHasItem(itemID) {
+    return this.itemList.filter(item => item.id === itemID).length > 0
+  }
+
   verifySet(settings = {}) {
     // Verifies that the set is possible.
 
@@ -148,6 +152,9 @@ class ItemSet {
       return false;
     } 
     else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
+      return false;
+    }
+    else if (this.uniques["alchstone"] && this.uniques["alchstone"] > 1) {
       return false;
     }
     else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {

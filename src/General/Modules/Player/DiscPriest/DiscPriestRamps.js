@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
@@ -46,7 +46,7 @@ const extendActiveAtonements = (atoneApp, timer, extension) => {
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
- * @sins A 3-12% damage buff depending on number of active atonements.
+ * @sins A 1-40% damage buff depending on number of active atonements. (See the sins array in DISCCONSTANTS for specific values).
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
@@ -58,7 +58,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
     }
     
-    let mult = schism //* sins[activeAtones];
+    let mult = schism * sins[activeAtones];
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
     if (spellName === "PenanceTick") {
@@ -172,10 +172,7 @@ const getAtoneTrans = (mastery) => {
     return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
-const getSqrt = (targets, sqrtMin) => {
-    const effectiveSqrtTargets = targets - sqrtMin;
-    return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
-}
+
 
 // This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
 const getTime = (t) => {
