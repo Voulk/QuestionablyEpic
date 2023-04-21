@@ -3,7 +3,7 @@ import makeStyles from "@mui/styles/makeStyles";
 const commonTabStyles = {
   textShadow: "3px 3px 4px black",
   backgroundRepeat: "no-repeat",
-  backgroundSize: "auto 100%",
+  backgroundSize: "100%",
   color: "#fff",
   backgroundPosition: "center 60%",
   fontSize: "1.1rem",
@@ -34,7 +34,7 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnates.png").default})`,
+    backgroundImage: `url(${require("Images/Bosses/Aberrus/AberrusRaid.png").default})`,
     ...commonTabStyles,
   },
   raidBCHeaderStyle: {

@@ -1071,7 +1071,7 @@ export const encounterDB = {
     2696: {
       name: {
         en: "The Zaqali Elders",
-        cn: "扎卡利长老",
+        ch: "扎卡利长老",
         de: "Die Ältesten der Zaqali",
         fr: "Les Anciens zaqalis",
         ru: "Старейшины закали",
@@ -1741,7 +1741,7 @@ export const encounterDB = {
       2680: {
         name: {
           en: "Rashok, the Elder",
-          cn: "莱修克，长老",
+          ch: "莱修克，长老",
           de: "Ältester Rashok",
           fr: "Rashok, l’Ancien",
           ru: "Рашок Древний",
@@ -1750,7 +1750,7 @@ export const encounterDB = {
       2682: {
         name: {
           en: "Assault of the Zaqali",
-          cn: "扎卡利突袭",
+          ch: "扎卡利突袭",
           de: "Angriff der Zaqali",
           fr: "Assaut des Zaqalis",
           ru: "Нападение закали",
@@ -1759,7 +1759,7 @@ export const encounterDB = {
       2683: {
         name: {
           en: "Magmorax",
-          cn: "玛格莫莱克斯",
+          ch: "玛格莫莱克斯",
           de: "Magmorax",
           fr: "Magmorax",
           ru: "Магморакс",
@@ -1768,7 +1768,7 @@ export const encounterDB = {
       2684: {
         name: {
           en: "Echo of Neltharion",
-          cn: "奈萨里奥的回响",
+          ch: "奈萨里奥的回响",
           de: "Echo von Neltharion",
           fr: "Écho de Neltharion",
           ru: "Эхо Нелтариона",
@@ -1777,7 +1777,7 @@ export const encounterDB = {
       2685: {
         name: {
           en: "Scalecommander Sarkareth",
-          cn: "鳞长萨卡雷斯",
+          ch: "鳞长萨卡雷斯",
           de: "Schuppenkommandant Sarkareth",
           fr: "Squammandant Sarkareth",
           ru: "Дракомандир Саркарет",
@@ -1786,7 +1786,7 @@ export const encounterDB = {
       2687: {
         name: {
           en: "The Amalgamation Chamber",
-          cn: "融合体密室",
+          ch: "融合体密室",
           de: "Die Verschmelzungskammer",
           fr: "Chambre de fusion",
           ru: "Чертог слияния",
@@ -1795,7 +1795,7 @@ export const encounterDB = {
       2688: {
         name: {
           en: "Kazzara, the Hellforged",
-          cn: "狱铸者卡扎拉",
+          ch: "狱铸者卡扎拉",
           de: "Kazzara, die Höllengeschmiedete",
           fr: "Kazzara, née des enfers",
           ru: "Каззара из Преисподней",
@@ -1804,7 +1804,7 @@ export const encounterDB = {
       2689: {
         name: {
           en: "The Vigilant Steward, Zskarn",
-          cn: "警戒管事兹斯卡恩",
+          ch: "警戒管事兹斯卡恩",
           de: "Der aufmerksame Verwalter, Zskarn",
           fr: "Zskarn, l’Intendant vigilant",
           ru: "Бдительный распорядитель Шкарн",
@@ -1813,7 +1813,7 @@ export const encounterDB = {
       2693: {
         name: {
           en: "The Forgotten Experiments",
-          cn: "被遗忘的实验体",
+          ch: "被遗忘的实验体",
           de: "Die vergessenen Experimente",
           fr: "Les expériences oubliées",
           ru: "Забытые эксперименты",
@@ -1848,18 +1848,23 @@ export const encounterDB = {
       1203, // The Azure Vault
     ],
     bossOrderMythicPlus: [
-      313, // Temple of the Jade Serpent
-      537, // Shadowmoon Burial Grounds
-      721, // Halls of Valor
-      800, // Court of Stars
-      // 1196, // Brackenhide Hollow
-      // 1197, // Uldaman: Legacy of Tyr
-      1198, // The Nokhud Offensive
-      // 1199, // Neltharus
-      1201, // Alge'thar Academy
-      1202, // Ruby Life Pools
-      1203, // The Azure Vault
-      // 1204, // Halls of Infusion
+      // 313, // Temple of the Jade Serpent
+      // 537, // Shadowmoon Burial Grounds
+      // 721, // Halls of Valor
+      // 800, // Court of Stars
+      1196, // Brackenhide Hollow
+      1197, // Uldaman: Legacy of Tyr
+      // 1198, // The Nokhud Offensive
+      1199, // Neltharus
+      // 1201, // Alge'thar Academy
+      // 1202, // Ruby Life Pools
+      // 1203, // The Azure Vault
+      1204, // Halls of Infusion
+
+      1001, // Freehold
+      1022, // The Underrot
+      68, // The Vortex Pinnacle
+      767, // Neltharion's Lair
     ],
 
     313: {
@@ -1968,6 +1973,42 @@ export const encounterDB = {
         de: "Brackenfellhöhle",
         ru: "Пещера Бурошкуров",
         ch: "蕨皮山谷",
+      },
+    },
+    68: {
+      name: {
+        en: "The Vortex Pinnacle",
+        fr: "La cime du Vortex",
+        ru: "Вершина Смерча",
+        de: "Der Vortexgipfel",
+        ch: "旋云之巅",
+      },
+    },
+    767: {
+      name: {
+        en: "Neltharion's Lair",
+        fr: "Repaire de Neltharion",
+        ru: "Логово Нелтариона",
+        de: "Neltharions Hort",
+        ch: "奈萨里奥的巢穴",
+      },
+    },
+    1001: {
+      name: {
+        en: "Freehold",
+        fr: "Port-Liberté",
+        ru: "Вольная Гавань",
+        de: "Freihafen",
+        ch: "自由镇",
+      },
+    },
+    1022: {
+      name: {
+        en: "The Underrot",
+        fr: "Les tréfonds Putrides",
+        ru: "Подгнилье",
+        de: "Der Tiefenpfuhl",
+        ch: "地渊孢林",
       },
     },
   },

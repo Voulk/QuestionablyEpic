@@ -43,7 +43,6 @@ export default function bossHeaders(props, style, QEmodule) {
     }
     //
 
-
     if (props === 2418) {
       source = require("Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png").default;
     }
@@ -523,6 +522,48 @@ export default function bossHeaders(props, style, QEmodule) {
   // Raszageth the Storm-Eater
   if (props === 2607) {
     source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
+  }
+
+  // Rashok, the Elder
+  if (props === 2680) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-RashoktheElder.png").default;
+  }
+  // Assault of the Zaqali
+  if (props === 2682) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-AssaultoftheZaqali.png").default;
+  }
+  // Magmorax
+  if (props === 2683) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-Magmorax.png").default;
+  }
+  // Echo of Neltharion
+  if (props === 2684) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-EchoofNeltharion.png").default;
+  }
+  // Scalecommander Sarkareth
+  if (props === 2685) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-ScalecommanderSarkareth.png").default;
+  }
+  // The Amalgamation Chamber
+  if (props === 2687) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheAmalgamationChamber.png").default;
+  }
+  // Kazzara, the Hellforged
+  if (props === 2688) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-KazzaratheHellforged.png").default;
+  }
+  // The Vigilant Steward, Zskarn
+  if (props === 2689) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheVigilantStewardZskarn.png").default;
+  }
+  // The Forgotten Experiments
+  if (props === 2693) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheForgottenExperiments.png").default;
+  }
+
+  // The Zaqali Elders
+  if (props === 2696) {
+    source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-TheZaqaliElders.png").default;
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;

@@ -158,7 +158,7 @@ export const bossList = [
       ru: "Рашок Древний",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_rashok.jpg").default,
   },
   {
     DungeonEncounterID: 2682,
@@ -171,7 +171,7 @@ export const bossList = [
       ru: "Нападение закали",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zaqaliassault.jpg").default,
   },
   {
     DungeonEncounterID: 2683,
@@ -184,7 +184,7 @@ export const bossList = [
       ru: "Магморакс",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_magmorax.jpg").default,
   },
   {
     DungeonEncounterID: 2684,
@@ -197,7 +197,7 @@ export const bossList = [
       ru: "Эхо Нелтариона",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_neltharion.jpg").default,
   },
   {
     DungeonEncounterID: 2685,
@@ -210,7 +210,7 @@ export const bossList = [
       ru: "Дракомандир Саркарет",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg").default,
   },
   {
     DungeonEncounterID: 2687,
@@ -223,7 +223,7 @@ export const bossList = [
       ru: "Чертог слияния",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_amalgamationchamber.jpg").default,
   },
   {
     DungeonEncounterID: 2688,
@@ -236,7 +236,7 @@ export const bossList = [
       ru: "Каззара из Преисподней",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_kazzara.jpg").default,
   },
   {
     DungeonEncounterID: 2689,
@@ -249,7 +249,7 @@ export const bossList = [
       ru: "Бдительный распорядитель Шкарн",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zskarn.jpg").default,
   },
   {
     DungeonEncounterID: 2693,
@@ -262,7 +262,7 @@ export const bossList = [
       ru: "Забытые эксперименты",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_forgottenexperiments.jpg").default,
   },
   {
     DungeonEncounterID: 2696,
