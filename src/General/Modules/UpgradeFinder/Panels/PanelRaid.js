@@ -48,13 +48,13 @@ const getDifficultyName = (difficulty) => {
 const getDifficultyBaseLevel = (difficulty) => {
   switch (difficulty) {
     case 0:
-      return 376;
-    case 1:
-      return 389;
-    case 2:
       return 402;
-    case 3:
+    case 1:
       return 415;
+    case 2:
+      return 428;
+    case 3:
+      return 441;
   }
 };
 

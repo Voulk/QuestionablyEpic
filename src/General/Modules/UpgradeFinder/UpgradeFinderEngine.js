@@ -1,7 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
+import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
@@ -100,13 +100,13 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
   const boostedItems = [195480, 195526, 194301]
-  if (instanceID === 1200) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID) + (boostedItems.includes(itemID) ? 6 : 0);
+  if (instanceID === 1208) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
 
-
-
-  // 1195 is Sepulcher gear.
   // World Bosses
-  else if (instanceID === 1205) itemLevel = 389;
+  else if (instanceID === 1205) {
+    if (bossID === 2531) itemLevel = 415;
+    else itemLevel = 389;
+  }
   
   else if (instanceID === -1) {
     if ([1204, 1199, 1197, 1196].includes(bossID)) itemLevel = 372; // M0 only dungeons.
@@ -148,7 +148,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
-      const isRaid = primarySource === 1200 || primarySource === -22;
+      const isRaid = primarySource === 1208 || primarySource === -22;
 
       if (isRaid) {
         // Sepulcher
@@ -156,6 +156,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
+
           itemPoss.push(item);
         }
       } else if (primarySource === -1) {

@@ -1736,9 +1736,10 @@ export const encounterDB = {
       ru: "",
       ch: "",
     },
-    bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
+    //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
+    bossOrder: [2522, 2529, 2530, 2524, 2525, 2532, 2527, 2523, 2520, 999],
     bosses: {
-      2680: {
+      2525: {
         name: {
           en: "Rashok, the Elder",
           ch: "莱修克，长老",
@@ -1747,7 +1748,7 @@ export const encounterDB = {
           ru: "Рашок Древний",
         },
       },
-      2682: {
+      2524: {
         name: {
           en: "Assault of the Zaqali",
           ch: "扎卡利突袭",
@@ -1756,7 +1757,7 @@ export const encounterDB = {
           ru: "Нападение закали",
         },
       },
-      2683: {
+      2527: {
         name: {
           en: "Magmorax",
           ch: "玛格莫莱克斯",
@@ -1765,7 +1766,7 @@ export const encounterDB = {
           ru: "Магморакс",
         },
       },
-      2684: {
+      2523: {
         name: {
           en: "Echo of Neltharion",
           ch: "奈萨里奥的回响",
@@ -1774,7 +1775,7 @@ export const encounterDB = {
           ru: "Эхо Нелтариона",
         },
       },
-      2685: {
+      2520: {
         name: {
           en: "Scalecommander Sarkareth",
           ch: "鳞长萨卡雷斯",
@@ -1783,7 +1784,7 @@ export const encounterDB = {
           ru: "Дракомандир Саркарет",
         },
       },
-      2687: {
+      2529: {
         name: {
           en: "The Amalgamation Chamber",
           ch: "融合体密室",
@@ -1792,7 +1793,7 @@ export const encounterDB = {
           ru: "Чертог слияния",
         },
       },
-      2688: {
+      2522: {
         name: {
           en: "Kazzara, the Hellforged",
           ch: "狱铸者卡扎拉",
@@ -1801,7 +1802,7 @@ export const encounterDB = {
           ru: "Каззара из Преисподней",
         },
       },
-      2689: {
+      2532: {
         name: {
           en: "The Vigilant Steward, Zskarn",
           ch: "警戒管事兹斯卡恩",
@@ -1810,7 +1811,7 @@ export const encounterDB = {
           ru: "Бдительный распорядитель Шкарн",
         },
       },
-      2693: {
+      2530: {
         name: {
           en: "The Forgotten Experiments",
           ch: "被遗忘的实验体",
