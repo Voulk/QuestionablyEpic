@@ -7,6 +7,7 @@ export const instanceDB = {
   "1205": "World Bosses",
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
+  "1208": "Aberrus, the Shadowed Crucible",
 };
 
 export const encounterDB = {
@@ -1030,7 +1031,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1205: {
-    bossOrder: [2515, 2506, 2517, 2518],
+    bossOrder: [2515, 2506, 2517, 2518, 2696],
     2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
@@ -1065,6 +1066,15 @@ export const encounterDB = {
         de: "Liskanoth, Schrecken der Zukunft",
         ru: "Лисканот Крах Мироздания",
         ch: "利斯卡诺兹，未来灾劫",
+      },
+    },
+    2696: {
+      name: {
+        en: "The Zaqali Elders",
+        cn: "扎卡利长老",
+        de: "Die Ältesten der Zaqali",
+        fr: "Les Anciens zaqalis",
+        ru: "Старейшины закали",
       },
     },
   },
@@ -1706,6 +1716,110 @@ export const encounterDB = {
           ch: "莱萨杰丝，噬雷之龙",
         },
       },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
+    },
+  },
+
+  1208: {
+    name: {
+      en: "Aberrus, the Shadowed Crucible",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
+    bosses: {
+      2680: {
+        name: {
+          en: "Rashok, the Elder",
+          cn: "莱修克，长老",
+          de: "Ältester Rashok",
+          fr: "Rashok, l’Ancien",
+          ru: "Рашок Древний",
+        },
+      },
+      2682: {
+        name: {
+          en: "Assault of the Zaqali",
+          cn: "扎卡利突袭",
+          de: "Angriff der Zaqali",
+          fr: "Assaut des Zaqalis",
+          ru: "Нападение закали",
+        },
+      },
+      2683: {
+        name: {
+          en: "Magmorax",
+          cn: "玛格莫莱克斯",
+          de: "Magmorax",
+          fr: "Magmorax",
+          ru: "Магморакс",
+        },
+      },
+      2684: {
+        name: {
+          en: "Echo of Neltharion",
+          cn: "奈萨里奥的回响",
+          de: "Echo von Neltharion",
+          fr: "Écho de Neltharion",
+          ru: "Эхо Нелтариона",
+        },
+      },
+      2685: {
+        name: {
+          en: "Scalecommander Sarkareth",
+          cn: "鳞长萨卡雷斯",
+          de: "Schuppenkommandant Sarkareth",
+          fr: "Squammandant Sarkareth",
+          ru: "Дракомандир Саркарет",
+        },
+      },
+      2687: {
+        name: {
+          en: "The Amalgamation Chamber",
+          cn: "融合体密室",
+          de: "Die Verschmelzungskammer",
+          fr: "Chambre de fusion",
+          ru: "Чертог слияния",
+        },
+      },
+      2688: {
+        name: {
+          en: "Kazzara, the Hellforged",
+          cn: "狱铸者卡扎拉",
+          de: "Kazzara, die Höllengeschmiedete",
+          fr: "Kazzara, née des enfers",
+          ru: "Каззара из Преисподней",
+        },
+      },
+      2689: {
+        name: {
+          en: "The Vigilant Steward, Zskarn",
+          cn: "警戒管事兹斯卡恩",
+          de: "Der aufmerksame Verwalter, Zskarn",
+          fr: "Zskarn, l’Intendant vigilant",
+          ru: "Бдительный распорядитель Шкарн",
+        },
+      },
+      2693: {
+        name: {
+          en: "The Forgotten Experiments",
+          cn: "被遗忘的实验体",
+          de: "Die vergessenen Experimente",
+          fr: "Les expériences oubliées",
+          ru: "Забытые эксперименты",
+        },
+      },
+
       999: {
         name: {
           en: "BoE Trash Drops",
