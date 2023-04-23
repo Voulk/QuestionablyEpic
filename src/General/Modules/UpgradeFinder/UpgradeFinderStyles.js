@@ -3,9 +3,9 @@ import makeStyles from "@mui/styles/makeStyles";
 const commonTabStyles = {
   textShadow: "3px 3px 4px black",
   backgroundRepeat: "no-repeat",
-  backgroundSize: "100%",
+  backgroundSize: "100% 100%",
   color: "#fff",
-  backgroundPosition: "center 60%",
+  backgroundPosition: "center",
   fontSize: "1.1rem",
 };
 
