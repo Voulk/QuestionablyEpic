@@ -92,12 +92,21 @@ export default function classIcons(props, style) {
   }
 
   // Restoration Shaman
-  if (iconName === "restorationShaman" || iconName === "restoration Shaman" || iconName === "shaman-restoration" || iconName === "shaman" || iconName === "Restoration Shaman Classic") {
+  if (
+    iconName === "restorationShaman" ||
+    iconName === "restoration Shaman" ||
+    iconName === "shaman-restoration" ||
+    iconName === "shaman" ||
+    iconName === "Restoration Shaman Classic" ||
+    iconName === "RestorationShaman" ||
+    iconName === "Restoration Shaman" ||
+    iconName === "restoration shaman"
+  ) {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";
   }
   //  Shaman
-  if (iconName === "shamandps" ) {
+  if (iconName === "shamandps") {
     src = ShamanIcon;
     alt = "Shaman";
   }
@@ -152,7 +161,7 @@ export default function classIcons(props, style) {
   }
   return (
     // <div>
-      <img style={{ ...style }} src={src} alt={alt} />
+    <img style={{ ...style }} src={src} alt={alt} />
     // </div>
   );
 }
