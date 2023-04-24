@@ -44,12 +44,12 @@ export const raidTrinketData = [
         secondaries: ["haste"]
       },
       { // Heal over time portion.
-        coefficient: 3.358104,
+        coefficient: 3.86182,
         table: -9, 
         targets: 8,
-        efficiency: 0.77,
+        efficiency: 0.6,
         ticks: 10,
-        secondaries: ["versatility", "crit", "haste"], // Test: Haste, Crit
+        secondaries: ["versatility", "haste"], // Note that the HoT itself doesn't scale with haste, but the proc rate does.
       },
       { // Gifted Versatility portion
       },
@@ -63,7 +63,7 @@ export const raidTrinketData = [
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
       bonus_stats.hps = oneHoT * data[1].targets * data[0].ppm / 60;
-
+      console.log("Expected HPS: " + bonus_stats.hps + " ilvl: " + itemLevel);
       // Mana Portion
       bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60;
 
