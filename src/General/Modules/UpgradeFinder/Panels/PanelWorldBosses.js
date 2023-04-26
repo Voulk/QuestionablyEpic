@@ -37,12 +37,12 @@ export default function WorldBossGearContainer(props) {
             {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
             <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
             {encounterDB[1205][key].name[currentLanguage]} -{" "}
-            {[...filterItemListBySource(itemList, 1205, key, 389)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
+            {[...filterItemListBySource(itemList, 1205, key, key === 2531 ? 415 : 389)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
-            {[...filterItemListBySource(itemList, 1205, key, 389)].map((item, index) => (
+            {[...filterItemListBySource(itemList, 1205, key, key === 2531 ? 415 : 389)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
             ))}
           </Grid>

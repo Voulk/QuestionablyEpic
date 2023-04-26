@@ -29,6 +29,7 @@ export default function UpgradeFinderResults(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const { t } = useTranslation();
   const result = props.itemSelection;
+  console.log(result);
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
   console.log("Total Item Count: " + itemDifferentials.length);

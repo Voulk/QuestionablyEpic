@@ -562,7 +562,7 @@ export default function bossHeaders(props, style, QEmodule) {
   }
 
   // The Zaqali Elders
-  if (props === 2696) {
+  if (props === 2696 || props === 2531) {
     source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-TheZaqaliElders.png").default;
   }
 
