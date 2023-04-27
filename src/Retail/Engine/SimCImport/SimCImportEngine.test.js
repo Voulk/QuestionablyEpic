@@ -192,7 +192,41 @@ describe("Test Crafted Items", () => {
         expect(item.stats.crit).toEqual(429);
 
     });
+
+    // 10.1 Crafted Items
+    test("Elemental Lariat 10.1 - 395 item level", () => {
+        const line = "neck=,id=193001,gem_id=192948/192948/192948,bonus_id=8836/8840/8902/8960/8784/8782/9405/8793/9365,crafted_stats=40/49,crafting_quality=5";
+        const item = processItem(line, player, contentType, type)
+        expect(item.level).toEqual(395);
+        expect(item.stats.haste).toEqual(494);
+        expect(item.stats.mastery).toEqual(494);
+        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
+        expect(item.socket).toEqual(3);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
+    test("Elemental Lariat 10.1 - 421 item level", () => {
+        const line = "neck=,id=193001,gem_id=192987/192922/192958,bonus_id=8836/8840/8902/8960/8783/8782/9405/8791/8846/9365,crafted_stats=40/32,crafting_quality=5";
+        const item = processItem(line, player, contentType, type)
+
+        expect(item.level).toEqual(421);
+        expect(item.stats.crit).toEqual(605);
+        expect(item.stats.mastery).toEqual(605);
+        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
+        expect(item.socket).toEqual(3);
+        expect(item.uniqueEquip).toEqual("embellishment");
+    });
+
+    // Regular blue item. 
+    test("Pioneer's Practiced Belt - 336 item level", () => { 
+        const line = "waist=,id=201945,bonus_id=8851/8852/9403/9415,crafted_stats=32/49,crafting_quality=3"
+        const item = processItem(line, player, contentType, type)
     
+        expect(item.level).toEqual(336);
+        expect(item.stats.crit).toEqual(150);
+    });
+
+
     
 });
 
