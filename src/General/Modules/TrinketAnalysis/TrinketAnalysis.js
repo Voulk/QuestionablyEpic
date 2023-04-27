@@ -236,11 +236,6 @@ export default function TrinketAnalysis(props) {
       <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
-            {t("TrinketAnalysis.Header")}
-          </Typography>
-        </Grid>
 
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
@@ -261,8 +256,15 @@ export default function TrinketAnalysis(props) {
         </Grid>
 
         <Grid item xs={12}>
+          
           <Grid container spacing={0} justifyContent="center">
+          <Grid item xs={12}>
+          <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
+            {"Trinkets at a Glance"}
+          </Typography>
+          </Grid>
             <Grid item xs={12}>
+
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                 <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
                   {gameType === "Retail" ? (
@@ -325,7 +327,11 @@ export default function TrinketAnalysis(props) {
           ""
         )}
       </Grid>
-      
+      <Grid item xs={12}>
+          <Typography variant="h4" align="center" style={{ padding: "10px 10px 20px 10px" }} color="primary">
+            {"Trinket Deep Dive"}
+          </Typography>
+          </Grid>
       <Grid container spacing={1} direction="row">
         <Grid item xs={6}>
           <ItemDetailCard />

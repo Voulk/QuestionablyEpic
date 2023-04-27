@@ -37,7 +37,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 1.506561 * 0.7, // Update coefficient.
+        coefficient: 0.813774, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,
@@ -63,7 +63,7 @@ export const raidTrinketData = [
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
       bonus_stats.hps = oneHoT * data[1].targets * data[0].ppm / 60;
-      console.log("Expected HPS: " + bonus_stats.hps + " ilvl: " + itemLevel);
+
       // Mana Portion
       bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60;
 
