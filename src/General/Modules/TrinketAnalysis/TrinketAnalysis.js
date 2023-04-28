@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
@@ -18,6 +18,15 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
+
+function TabPanel(props) {
+  const { children, value, index } = props;
+  return (
+    <div role="tabpanel" hidden={value !== index}>
+      {value === index && children}
+    </div>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,9 +114,13 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
+  const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
+  const handleTabChange = (event, newValue) => {
+    setTabIndex(newValue);
+  };
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
   /* ---------------------------------------------------------------------------------------------- */
@@ -236,7 +249,6 @@ export default function TrinketAnalysis(props) {
       <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid container spacing={1}>
-
         <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
@@ -254,87 +266,87 @@ export default function TrinketAnalysis(props) {
             autoSocket={true}
           />
         </Grid>
-
         <Grid item xs={12}>
-          
-          <Grid container spacing={0} justifyContent="center">
-          <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
-            {"Trinkets at a Glance"}
-          </Typography>
-          </Grid>
-            <Grid item xs={12}>
+          <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
+            <Tab label={"Trinkets at a Glance"} />
+            <Tab label={"Trinket Deep Dive"} />
+          </Tabs>
 
-              <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
-                  {gameType === "Retail" ? (
+          <TabPanel value={tabIndex} index={0}>
+            <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
+              <Grid item xs={12}>
+                <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+                  <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
+                    {gameType === "Retail" ? (
+                      <Grid item>
+                        <div style={{ padding: "8px 0px 8px 8px" }}>
+                          <Tooltip
+                            title={
+                              <Typography align="center" variant="body2">
+                                {t("SourceToggle.FilterTooltip")}
+                              </Typography>
+                            }
+                            style={{ marginTop: -5 }}
+                            placement="top-start"
+                          >
+                            <Typography variant="h6">{t("Filter")}:</Typography>
+                          </Tooltip>
+                        </div>
+                      </Grid>
+                    ) : (
+                      ""
+                    )}
+                    {gameType === "Retail" ? (
+                      <Grid item>
+                        <SourceToggle sources={sources} setSources={handleSource} />
+                      </Grid>
+                    ) : (
+                      ""
+                    )}
+                    {gameType === "Retail" ? (
+                      <Grid item xs={12}>
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
+                      </Grid>
+                    ) : (
+                      <Grid item xs={12}>
+                        <BCChart data={activeTrinkets} db={trinketDB} theme={themeSelection("candidate2")} />
+                      </Grid>
+                    )}
+                  </Grid>
+                </Paper>
+              </Grid>
+
+              {gameType === "Retail" ? (
+                <Grid item xs={12}>
+                  <Grid container spacing={0} direction="row" justifyContent="flex-end">
                     <Grid item>
-                      <div style={{ padding: "8px 0px 8px 8px" }}>
-                        <Tooltip
-                          title={
-                            <Typography align="center" variant="body2">
-                              {t("SourceToggle.FilterTooltip")}
-                            </Typography>
-                          }
-                          style={{ marginTop: -5 }}
-                          placement="top-start"
+                      <Tooltip title={"Alternate Theme"} arrow>
+                        <ToggleButton
+                          value="check"
+                          selected={theme}
+                          onChange={() => {
+                            setTheme(!theme);
+                          }}
                         >
-                          <Typography variant="h6">{t("Filter")}:</Typography>
-                        </Tooltip>
-                      </div>
+                          <VisibilityIcon />
+                        </ToggleButton>
+                      </Tooltip>
                     </Grid>
-                  ) : (
-                    ""
-                  )}
-                  {gameType === "Retail" ? (
-                    <Grid item>
-                      <SourceToggle sources={sources} setSources={handleSource} />
-                    </Grid>
-                  ) : (
-                    ""
-                  )}
-                  {gameType === "Retail" ? (
-                    <Grid item xs={12}>
-                      <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
-                    </Grid>
-                  ) : (
-                    <Grid item xs={12}>
-                      <BCChart data={activeTrinkets} db={trinketDB} theme={themeSelection("candidate2")} />
-                    </Grid>
-                  )}
+                  </Grid>
                 </Grid>
-              </Paper>
+              ) : (
+                ""
+              )}
             </Grid>
-          </Grid>
-        </Grid>
-        {gameType === "Retail" ? (
-          <Grid item xs={12} container spacing={0} direction="row" justifyContent="flex-end">
-            <Grid item>
-              <Tooltip title={"Alternate Theme"} arrow>
-                <ToggleButton
-                  value="check"
-                  selected={theme}
-                  onChange={() => {
-                    setTheme(!theme);
-                  }}
-                >
-                  <VisibilityIcon />
-                </ToggleButton>
-              </Tooltip>
+          </TabPanel>
+
+          <TabPanel value={tabIndex} index={1}>
+            <Grid container spacing={0} sx={{ marginTop: "16px" }}>
+              <Grid item xs={6}>
+                <ItemDetailCard />
+              </Grid>
             </Grid>
-          </Grid>
-        ) : (
-          ""
-        )}
-      </Grid>
-      <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 20px 10px" }} color="primary">
-            {"Trinket Deep Dive"}
-          </Typography>
-          </Grid>
-      <Grid container spacing={1} direction="row">
-        <Grid item xs={6}>
-          <ItemDetailCard />
+          </TabPanel>
         </Grid>
       </Grid>
 
