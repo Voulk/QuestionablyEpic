@@ -10,16 +10,31 @@ export const dungeonTrinketData = [
     name: "Rainsong",
     effects: [
       { 
-        coefficient: 2.966,
+        coefficient: 1.200433,
         table: -7,
         stat: "haste",
         duration: 15,
-        ppm: 1 / 80, // 10% proc chance, 75s ICD. TODO: Check if can proc off HoTs.
+        ppm: 1,
+      },
+      { // Ally buff
+        coefficient: 0.599751,
+        table: -7,
+        stat: "haste",
+        duration: 10,
+        ppm: 8,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+
+      // Ally buff portion
+      if (getSetting(additionalData.settings, 'includeGroupBenefits')) {
+        const allyHasteBuff = processedValue(data[1], itemLevel);
+        const allyPPM = data[1].ppm * data[0].duration / 60; // This has a high ppm, but we can only proc it for 15s out of every minute. We can expect 2 procs on average.
+        bonus_stats.allyStats = allyPPM * allyHasteBuff * data[1].duration / 60;
+      }
+
       return bonus_stats;
     }
   },

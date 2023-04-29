@@ -105,8 +105,8 @@ export async function apiGetPlayerImage(player) {
 /* ---------------------------------------------------------------------------------------------- */
 /*                      Get player armory image from Blizzard API via QE API                      */
 /* ---------------------------------------------------------------------------------------------- */
-export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion) {
-
+export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion, setBackgroundImage) {
+  console.log("Calling 3");
   if (playerName && playerRealm && playerRegion) {
     
     let region = playerRegion.toLowerCase();
@@ -119,6 +119,7 @@ export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion) 
       .then((response) => {
 
         urlReturned = response.toString();
+        setBackgroundImage(urlReturned);
       })
       .catch((err) => console.log(err));
     return urlReturned;

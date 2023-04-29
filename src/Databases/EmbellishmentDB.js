@@ -408,6 +408,57 @@ export const embellishmentDB = [
       rank: 0, 
     },
   },
+  {
+    id: 204704,
+    icon: "inv_bracer_mail_dragonpvp_d_01",
+    armorType: 3, // Mail
+    name: {
+      en: "Adaptive Dracothyst Armguards",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Adaptive Dracothyst Armguards",
+      rank: 0, 
+    },
+  },
+  {
+    id: 205025,
+    icon: "3752753", // ??
+    armorType: 0, // Mail
+    name: {
+      en: "Undulating Sporecloak",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Undulating Sporecloak",
+      rank: 0, 
+    },
+  },
+  {
+    id: 204401,
+    icon: "inv_wand_1h_enchanting_b_01", 
+    armorType: 1, // Cloth
+    name: {
+      en: "Spore Keeper's Baton",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Spore Keeper's Baton",
+      rank: 0, 
+    },
+  },
   /*
   {
     id: 194894,

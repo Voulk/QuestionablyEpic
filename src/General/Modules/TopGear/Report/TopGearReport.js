@@ -16,7 +16,7 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
 
-const fetchReport = (reportCode, setResult) => {
+async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
   /*const requestOptions = {
     method: 'GET',
@@ -32,7 +32,10 @@ const fetchReport = (reportCode, setResult) => {
       //console.log(data);
 
       if (typeof(data) === "string") {
+        const jsonData = JSON.parse(data);
+        const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
         setResult(JSON.parse(data))
+        
       }
       else if (typeof(data) === "object"){
         if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT");
@@ -42,6 +45,7 @@ const fetchReport = (reportCode, setResult) => {
       }
 
     })
+
     //.catch(err => { throw err });
 }
 
@@ -89,34 +93,39 @@ function TopGearReport(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
+  const location = useLocation();
   
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
+    if (result && result.new) {
+      if (process.env.PUBLIC_URL.includes("live")) {
+        window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
+      }
+      else if (process.env.PUBLIC_URL.includes("dev")) {
+        window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
+      }
+      else {
+        // Call Error
+      }
+  
+    }
+
+    if (result !== null && checkResult(result)) {
+      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+    }
+    else {
+      // No result queued. Check URL for report code and load that.
+      fetchReport(location.pathname.split("/")[2], setResult, setBackgroundImage);
+    }
+
 
   }, []);
 
-  if (result && result.new) {
-    if (process.env.PUBLIC_URL.includes("live")) {
-      window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
-    }
-    else if (process.env.PUBLIC_URL.includes("dev")) {
-      window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
-    }
-    else {
-      // Call Error
-    }
 
-  }
   if (result !== null && checkResult(result)) {
     return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
   }
   else {
-
-    // No result queued. Check URL for report code and load that.
-    const location = useLocation();
-    fetchReport(location.pathname.split("/")[2], setResult);
-
-    //setResult(sample);
     return   (  <div
     style={{
 
@@ -142,8 +151,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let differentials = {};
   let itemList = {};
   let statList = {};
-  console.log(player);
-  console.log(result);
+
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")
@@ -152,14 +160,6 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
   
-  
-  async function setImg() {
-    const img = await apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region);
-    setBackgroundImage(img);
-  }
-
-    setImg(); 
-
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
