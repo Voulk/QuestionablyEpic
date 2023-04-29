@@ -1,3 +1,4 @@
+import { itemLevels } from "Databases/itemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
@@ -25,13 +26,13 @@ export const embellishmentData = [
         name: "Venom-Steeped Stompers",
         effects: [
           { 
-            coefficient: 0.722681,
+            coefficient: 0.744362, // 0.722681,
             table: -7,
             duration: 10,
             ppm: 2,
           },
           { 
-            coefficient:-0.2887,
+            coefficient: -0.297361, //-0.2887,
             table: -7,
             duration: 10,
             ppm: 2,
@@ -58,9 +59,9 @@ export const embellishmentData = [
         name: "Elemental Lariat",
         effects: [
           { 
-            coefficient: 0.482408 * 0.95,
+            coefficient: 0.458195, // 0.482408 * 0.95,
             table: -7,
-            duration: 12,
+            duration: 9, // 5s + 1s per equipped gem. 
             ppm: 2,
           },
         ],
@@ -83,11 +84,11 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 44.02832,
+            coefficient: 117.1906, //44.02832,
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
-            efficiency: 0.69,
+            efficiency: 0.5,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -102,16 +103,23 @@ export const embellishmentData = [
         /* -------------------- */
         /* Bronzed Grip Wrappings                      
         /* -------------------- */
+        /* This has a 4ppm but it's split between the damage and healing effect.
         /* 
         */
         name: "Bronzed Grip Wrappings",
         effects: [
-          { 
-            coefficient: 3.268828,
+          { // Healing Effect
+            coefficient: 14.83545, // 3.268828,
             table: -7,
-            ppm: 4,
+            ppm: 4 / 2,
             secondaries: ['haste', 'crit', 'versatility'],
             efficiency: 0.84,
+          },
+          { // DPS Effect
+            coefficient: 8.901271,
+            table: -7,
+            ppm: 4 / 2,
+            secondaries: ['haste', 'crit', 'versatility'],
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -119,6 +127,8 @@ export const embellishmentData = [
           // TODO
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+
           return bonus_stats;
         }
       },
@@ -131,8 +141,8 @@ export const embellishmentData = [
         name: "Blue Silken Lining",
         effects: [
           { 
-            coefficient: 0.20209,
-            table: -7,
+            coefficient: 0.389637,
+            table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
             uptime: 0.4,
           },
         ],
@@ -170,7 +180,7 @@ export const embellishmentData = [
         /* -------------------- */
         /* Allied Wristguard of Companionship                  
         /* -------------------- */
-        /* Mastery while above 90% health.
+        /* 
         */
         name: "Allied Wristguard of Companionship",
         effects: [
@@ -198,14 +208,14 @@ export const embellishmentData = [
         name: "Toxic Thorn Footwraps",
         effects: [
           { // Healing Effect
-            coefficient: 15.34544,
+            coefficient: 34.05239, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit', 'versatility'],
             efficiency: 0.8,
             ppm: 2, // 4 / 2
           },
           { // Damage Effect
-            coefficient: 6.820023,
+            coefficient: 20.43177, //6.820023,
             table: -9,
             secondaries: ['haste', 'crit', 'versatility'],
             ppm: 2, // 4 / 2
@@ -253,15 +263,15 @@ export const embellishmentData = [
         name: "Playful Spirit's Fur",
         effects: [
           { 
-            coefficient: 24.55177,
-            table: -9, // No idea why this is -8
+            coefficient: 21.79298, //24.55177,
+            table: -9, // 
             ppm: 1, // 2 / 2
             secondaries: ['haste', 'crit', 'versatility'],
             efficiency: 0.8,
           },
           {  // Damage
-            coefficient: 10.91173,
-            table: -9, // No idea why this is -8
+            coefficient: 13.07579, //10.91173,
+            table: -9, // 
             ppm: 1, // 2 / 2
             secondaries: ['haste', 'crit', 'versatility'],
             efficiency: 1,
@@ -350,14 +360,14 @@ export const embellishmentData = [
       },
       {
         /* -------------------- */
-        /* Unstable Frostfire Belt    
+        /* Unstable Frostfire Belt (Unstable Frostfire)   
         /* -------------------- */
         /* 
         */
         name: "Unstable Frostfire Belt",
         effects: [
           {  // Damage
-            coefficient: 3.389522,
+            coefficient: 7.785769, //3.389522,
             table: -8,
             ppm: 3, 
             ticks: 5,
@@ -383,11 +393,11 @@ export const embellishmentData = [
         name: "Flaring Cowl",
         effects: [
           {  // Damage
-            coefficient: 3.313529,
+            coefficient: 5.105057, //3.313529,
             table: -8,
             ppm: 20, // It ticks every 3 seconds.
             targets: {Raid: 1, Dungeon: 1}, // Damage is split so target count doesn't matter.
-            secondaries: ['crit', 'versatility'], // TODO: Check if the tick rate scales with Haste.
+            secondaries: ['crit', 'versatility'], // Tick rate doesn't scale with haste.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -440,9 +450,9 @@ export const embellishmentData = [
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO: Check if the DoT is hasted. The proc rate is not.
-          const manaSaved = player.getSpecialQuery("chilledClarityExtension", additionalData.contentType);
-          bonus_stats.mana = manaSaved * 2 / player.getFightLength(additionalData.contentType);
+          // TODO: Convert to using int potions I guess?
+          //const manaSaved = player.getSpecialQuery("chilledClarityExtension", additionalData.contentType);
+          //bonus_stats.mana = manaSaved * 2 / player.getFightLength(additionalData.contentType);
 
 
           return bonus_stats;
@@ -480,7 +490,7 @@ export const embellishmentData = [
         name: "Fang Adornments",
         effects: [
           { // Damage Effect
-            coefficient: 7.794756,
+            coefficient: 15.56666, //7.794756,
             table: -9,
             secondaries: ['haste', 'crit', 'versatility'],
             ppm: 1, // 4 / 2
@@ -491,6 +501,109 @@ export const embellishmentData = [
           
           bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.7;
 
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Adaptive Dracothyst Armguards                
+        /* -------------------- */
+        /* 
+        */
+        name: "Adaptive Dracothyst Armguards",
+        effects: [
+          { 
+            coefficient: 0.248319,
+            table: -7,
+            duration: 12, 
+            ppm: 2,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+          const proc = runGenericPPMTrinket(data[0], itemLevel);
+          ['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
+            // A proc can either be haste / mast or crit / vers.
+            bonus_stats[stat] = proc / 2;
+          });
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Undulating Sporecloak                    
+        /* -------------------- */
+        /* Self-HoT every 5s. Big shield if you drop low.
+        */
+        name: "Undulating Sporecloak",
+        effects: [
+          { 
+            coefficient: 10.73745, //44.02832,
+            table: -9,
+            ppm: 60 / 5,
+            secondaries: ['crit', 'versatility'],
+            efficiency: 0.5,
+          },
+          { // Shield portion
+            coefficient: 257.6989, //44.02832,
+            table: -9,
+            ppm: 0.05, // 120s cooldown, but will proc rarely.
+            secondaries: ['versatility'],
+            efficiency: 0.6,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Spore Keeper's Baton (Sporeadic Adaptability)     
+        /* -------------------- */
+        /* 
+        */
+        name: "Spore Keeper's Baton",
+        effects: [
+          { // Ally buff effect.
+            coefficient: 0.875413,
+            table: -7, 
+            duration: 12,
+            ppm: 2 / 2, // Haste scaling. Also has an internal CD of 12s because why not.
+          },
+          { // DPS effect
+            coefficient: 2.855669,
+            table: -9, 
+            ticks: 12, // TODO: Confirm it's 12 ticks.
+            ppm: 2 / 2,
+            secondaries: ['crit', 'versatility'], // Check DoT haste scaling but shouldn't have it.
+          },
+          { // Shield effect. Procs with the damage.
+            coefficient: 23.53642,
+            table: -9, 
+            efficiency: 0.95,
+            secondaries: ['versatility'],
+            ppm: 2 / 2,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // 
+          const versEffect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versEffect;
+
+          // Damage effect
+          const ppm = data[0].ppm * player.getStatPerc('haste');
+          bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
+          bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
+
+          console.log(bonus_stats);
           return bonus_stats;
         }
       },

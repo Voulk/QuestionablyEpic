@@ -6,8 +6,7 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Strongly consider tier pieces in your vaults.",
-      "-> Creation Catalyst support is in!",
+      "Warning: This is the PTR version of QE Live. Results might change.",
   ],
   "Classic": [""]
   }

@@ -79,6 +79,36 @@ export const statsLocale = [
     },
     id: ["Versatility", "versatility"],
   },
+  {
+    name: {
+      en: "Stamina",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: ["Stamina", "stamina"],
+  },
+  {
+    name: {
+      en: "Armor",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: ["Armor", "armor"],
+  },
+  {
+    name: {
+      en: "Absorb",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: ["Absorb", "absorb"],
+  },
 ];
 
 export const getTranslatedStats = (stat, currentLanguage) => {

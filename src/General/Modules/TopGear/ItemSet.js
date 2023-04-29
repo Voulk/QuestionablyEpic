@@ -154,6 +154,9 @@ class ItemSet {
     else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
       return false;
     }
+    else if (this.uniques["alchstone"] && this.uniques["alchstone"] > 1) {
+      return false;
+    }
     else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
       return false;
     }

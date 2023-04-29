@@ -68,6 +68,20 @@ function autoSocketItems(itemList) {
   return itemList;
 }
 
+// TODO: Add blocklist. It can be fairly basic.
+const generateReportCode = () => {
+  let result = "";
+  const stringLength = 12;
+  const possChars ='abcdefhijklmnopqrstuvwxyz';
+
+  const charLength = possChars.length;
+  for ( let i = 0; i < stringLength; i++ ) {
+      result += possChars.charAt(Math.floor(Math.random() * charLength));
+  }
+
+  return result;
+}
+
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
  *
@@ -137,6 +151,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   } else {
     let result = new TopGearResult(itemSets[0], differentials, contentType);
     result.itemsCompared = itemSets.length;
+    result.new = true;
+    result.id = generateReportCode();
     return result;
   }
 }
