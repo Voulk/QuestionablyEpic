@@ -18,6 +18,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
+import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions"
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -71,9 +72,19 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 };
 
 // 
-const setupItemCardData = () => {
+const setupItemCardData = (trinketList) => {
+  
   const itemData = [];
 
+  trinketList.forEach(trinket => {
+    const data = getTrinketDescription(trinket.name);
+    //const data = null;
+    console.log(trinket);
+    console.log(data);
+    if (data) itemData.push(data);
+  });
+
+  /*
   const data = {
     metrics: ["HPS: 500", "DPS: 500"],
     name: "Glowing Shard of the Elements",
@@ -81,9 +92,7 @@ const setupItemCardData = () => {
     id: 191492,
     description:
       "This trinket is a small, glowing shard of crystal that seems to pulse with elemental energy. It emits a faint humming sound when held. The Glowing Shard of the Elements has the power to enhance the wearer's elemental abilities and grant additional resistance to elemental attacks. When activated, the trinket glows brightly, releasing a burst of energy that can damage nearby enemies and heal nearby allies. This effect can only be used once every few minutes, but the trinket also has a passive effect that increases the wearer's spell power and critical strike chance with elemental spells. The Glowing Shard of the Elements is highly sought after by spellcasters who specialize in elemental magic.",
-  };
-
-  itemData.push(data);
+  }; */
 
   return itemData;
 }
@@ -211,8 +220,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const itemLevels = [405, 408, 411, 415, 418, 421, 424, 431, 434, 441, 444, 447, 457];
-  const itemCardData = setupItemCardData();
-  console.log(itemCardData);
+
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
@@ -220,6 +228,9 @@ export default function TrinketAnalysis(props) {
       ((gameType === "Classic" && "phase" in key && key.phase === 1 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
   const filteredTrinketDB = sourceHandler(trinketDB, sources);
+
+  const itemCardData = setupItemCardData(trinketDB);
+  console.log(itemCardData);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
