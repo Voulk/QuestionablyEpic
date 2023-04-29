@@ -79,8 +79,6 @@ const setupItemCardData = (trinketList, contentType, spec) => {
   trinketList.forEach(trinket => {
     const data = getTrinketDescription(trinket.name);
     //const data = null;
-    console.log(trinket);
-    console.log(data);
     if (data) {
       data.name = trinket.name; data.id = trinket.id; data.slot = "Trinkets",
       itemData.push(data);
@@ -154,7 +152,7 @@ export default function TrinketAnalysis(props) {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
   /* ---------------------------------------------------------------------------------------------- */
-  const sourceHandler = (array, sources) => {
+  const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
     const shadowlandsRaids = [
       //1190, // Castle Nathria
@@ -212,6 +210,10 @@ export default function TrinketAnalysis(props) {
       });
     }
 
+    results = results.filter((item) => { 
+      return ('classRestriction' in item && item.classRestriction.includes(playerSpec)) || !('classRestriction' in item);
+    })
+
     return results;
   };
 
@@ -230,10 +232,10 @@ export default function TrinketAnalysis(props) {
       key.slot === "Trinket" &&
       ((gameType === "Classic" && "phase" in key && key.phase === 1 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
-  const filteredTrinketDB = sourceHandler(trinketDB, sources);
+  const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
 
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player.spec);
-  console.log(itemCardData);
+
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
