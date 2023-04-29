@@ -72,7 +72,7 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 };
 
 // 
-const setupItemCardData = (trinketList) => {
+const setupItemCardData = (trinketList, contentType, spec) => {
   
   const itemData = [];
 
@@ -81,7 +81,10 @@ const setupItemCardData = (trinketList) => {
     //const data = null;
     console.log(trinket);
     console.log(data);
-    if (data) itemData.push(data);
+    if (data) {
+      data.name = trinket.name; data.id = trinket.id; data.slot = "Trinkets",
+      itemData.push(data);
+    }
   });
 
   /*
@@ -229,7 +232,7 @@ export default function TrinketAnalysis(props) {
   );
   const filteredTrinketDB = sourceHandler(trinketDB, sources);
 
-  const itemCardData = setupItemCardData(trinketDB);
+  const itemCardData = setupItemCardData(trinketDB, contentType, props.player.spec);
   console.log(itemCardData);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
@@ -371,7 +374,7 @@ export default function TrinketAnalysis(props) {
           </TabPanel>
 
           <TabPanel value={tabIndex} index={1}>
-            <Grid container spacing={0} sx={{ marginTop: "16px" }}>
+            <Grid container spacing={1} sx={{ marginTop: "16px" }}>
               {itemCardData.map((item) => (
                 <Grid item xs={6}>
                   <ItemDetailCard item={item}/>

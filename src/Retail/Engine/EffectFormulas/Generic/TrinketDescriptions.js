@@ -1,13 +1,20 @@
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
 
-export const getTrinketDescription = (trinketName) => {
+
+export const getTrinketDescription = (trinketName, contentType, spec) => {
     const trinketData = getTrinketData(trinketName);
+    const itemLevel = 441;
     if (trinketData === null) return null;
     switch (trinketName) {
         case "Neltharion's Call to Suffering":
-            return neltharionsCallToSuffering(trinketData);
+            return neltharionsCallToSuffering(trinketData, itemLevel, contentType, spec);
+        case "Screaming Black Dragonscale":
+            return screamingBlackDragonscale(trinketData, itemLevel, contentType, spec);
+        case "Rashok's Molten Heart":
+            return rashoksMoltenHeart(trinketData, itemLevel, contentType, spec);
         default:
             return null;
     }
@@ -21,16 +28,49 @@ const getTrinketData = (trinketName) => {
     return activeTrinket;
 }
 
-const neltharionsCallToSuffering = (data) => {
+const convertExpectedUptime = (effect) => {
+    const realUptime = Math.round(convertPPMToUptime(effect.ppm, effect.duration) * 100);
+    return realUptime + "%"; //data.effects[0].duration * data.effects[0].ppm / 60;
+}
+
+const neltharionsCallToSuffering = (data, itemLevel, contentType, spec) => {
     console.log(data)
+    const effect = data.effects[0];
 
     return {
-        metrics: ["HPS: 500", "DPS: 500"],
-        name: "Glowing Shard of the Elements",
-        slot: "Trinkets",
-        id: 191492,
+        metrics: ["Expected Uptime: " + convertExpectedUptime(effect), 
+                "Average Int: " + 700],
         description:
-          "This trinket is a small, glowing shard of crystal that seems to pulse with elemental energy. It emits a faint humming sound when held. The Glowing Shard of the Elements has the power to enhance the wearer's elemental abilities and grant additional resistance to elemental attacks. When activated, the trinket glows brightly, releasing a burst of energy that can damage nearby enemies and heal nearby allies. This effect can only be used once every few minutes, but the trinket also has a passive effect that increases the wearer's spell power and critical strike chance with elemental spells. The Glowing Shard of the Elements is highly sought after by spellcasters who specialize in elemental magic.",
+          "Does not proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous. Trinket is unusuably poor for Resto Druid and Holy Priest until fixed.",
+      };
+
+}
+
+const screamingBlackDragonscale = (data, itemLevel, contentType, spec) => {
+    console.log(data)
+    const effect = data.effects[0];
+
+    return {
+        metrics: ["Expected Uptime: " + convertExpectedUptime(effect), 
+                "Average Crit: " + 700,
+                "Average Leech: " + 700],
+        description:
+          "A very high uptime stat stick that is good for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.",
+      };
+
+}
+
+const rashoksMoltenHeart = (data, itemLevel, contentType, spec) => {
+    console.log(data)
+    const effect = data.effects[0];
+
+    return {
+        metrics: ["Mana / Min: " + convertExpectedUptime(effect), 
+                "HPS: " + 700,
+                "Equiv Vers: " + 700],
+        description:
+          "A massive package of mana, healing and versatility given out to your party. Track the mana effect, and direct heal as many allies as possible while it's active \
+          to get as many HoTs and thus vers buffs out as possible. AoE direct heals as ideal. Won't proc off HoT ticks.",
       };
 
 }

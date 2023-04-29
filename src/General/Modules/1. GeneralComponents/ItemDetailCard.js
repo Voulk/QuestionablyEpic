@@ -9,9 +9,11 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 275,
     borderColor: theme.palette.secondary.main,
     padding: 8,
+    height: 175,
   },
   content: {
     minHeight: 150,
+    height: 175,
   },
   title: {
     fontSize: 14,
@@ -35,7 +37,7 @@ function ItemDetailCard(props) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
-  const metricString = item.metrics.join(" ");
+  const metricString = item.metrics.join(" - ");
 
   return (
     <Grid item xs={12}>
