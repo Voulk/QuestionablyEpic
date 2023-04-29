@@ -59,20 +59,22 @@ export const raidTrinketData = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      
+      const BLP = 1.13;
+      const effectivePPM = data[0].ppm * player.getStatPerc('haste') * BLP;
       let bonus_stats = {};
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
-      bonus_stats.hps = oneHoT * data[1].targets * data[0].ppm / 60;
+      bonus_stats.hps = oneHoT * data[1].targets * data[0].ppm / 60 * BLP;
 
       // Mana Portion
-      bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60;
+      bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60 * BLP;
 
       // Versatility Portion
       const versEfficiency = 1 - data[1].efficiency; // The strength of the vers portion is inverse to the strength of the HoT portion.
-      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[2], itemLevel, versEfficiency) * data[2].targets * data[2].duration / 60;
-
+      console.log(processedValue(data[2], itemLevel))
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[2], itemLevel) * versEfficiency * effectivePPM * data[2].targets * data[2].duration / 60;
+      console.log(itemLevel + " " + JSON.stringify(bonus_stats));
       return bonus_stats;
     }
   },
@@ -80,12 +82,12 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Screaming Black Dragonscale                                   */
     /* ---------------------------------------------------------------------------------------------- */
-    /* 
+    /* This shouldn't scale with haste, but does.
     */
     name: "Screaming Black Dragonscale",
     effects: [
       { // Crit Portion
-        coefficient: 0.906145,
+        coefficient: 0.815295, //0.906145,
         table: -7,
         stat: "crit",
         duration: 15,
@@ -102,7 +104,7 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
-      bonus_stats.leech = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');;
+      bonus_stats.leech = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
 
       return bonus_stats;
     }
