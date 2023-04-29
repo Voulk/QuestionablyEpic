@@ -159,6 +159,7 @@ export default function TrinketAnalysis(props) {
       //1193, // Sanctum of Domination
       //1195, // Sepulcher
       1200, // Vault of the Incarnates
+      1208, // Aberrus
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -184,6 +185,12 @@ export default function TrinketAnalysis(props) {
       537, // Shadowmoon Burial Ground
       313, // Jade Serpent
       800, // Court of Stars
+
+      767, // Neltharion's Lair
+      68, // Vortex Pinnacle
+      1001, // Freehold
+      1022, // Underrot
+
     ];
     const legionTimewalking = [];
     const shadowlandsTheRest = [
