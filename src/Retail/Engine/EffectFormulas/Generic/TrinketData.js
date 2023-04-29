@@ -47,18 +47,20 @@ export const raidTrinketData = [
         coefficient: 3.86182,
         table: -9, 
         targets: 8,
-        efficiency: 0.6,
+        efficiency: 0.5,
         ticks: 10,
         secondaries: ["versatility", "haste"], // Note that the HoT itself doesn't scale with haste, but the proc rate does.
       },
       { // Gifted Versatility portion
+        coefficient: 0.483271,
+        table: -7, 
+        targets: 8,
+        duration: 12,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      // Versatility Portion
+      
       let bonus_stats = {};
-
-
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
@@ -67,6 +69,9 @@ export const raidTrinketData = [
       // Mana Portion
       bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60;
 
+      // Versatility Portion
+      const versEfficiency = 1 - data[1].efficiency; // The strength of the vers portion is inverse to the strength of the HoT portion.
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[2], itemLevel, versEfficiency) * data[2].targets * data[2].duration / 60;
 
       return bonus_stats;
     }
