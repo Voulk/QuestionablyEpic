@@ -9,6 +9,17 @@
 
 export const changeLog = [
   {
+    version: "10.1.0",
+    update: 1,
+    date: "29 April",
+    changes: [ 
+      "Top Gear results can now be shared and returned to!",
+      "All modules updated for season 2 including items, graphs, upgrade finder and more.",
+      "All spec models updated for the patch.",
+      "New: The Trinkets module now includes a card for the strongest trinkets, providing more information than just numbers alone.",
+      "Main Menu rearranged to better support future modules that are coming soon."
+  ]},
+  {
     version: "10.0.7",
     update: 16,
     date: "2 April",
