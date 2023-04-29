@@ -70,6 +70,24 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
   return item.softScore;
 };
 
+// 
+const setupItemCardData = () => {
+  const itemData = [];
+
+  const data = {
+    metrics: ["HPS: 500", "DPS: 500"],
+    name: "Glowing Shard of the Elements",
+    slot: "Trinkets",
+    id: 191492,
+    description:
+      "This trinket is a small, glowing shard of crystal that seems to pulse with elemental energy. It emits a faint humming sound when held. The Glowing Shard of the Elements has the power to enhance the wearer's elemental abilities and grant additional resistance to elemental attacks. When activated, the trinket glows brightly, releasing a burst of energy that can damage nearby enemies and heal nearby allies. This effect can only be used once every few minutes, but the trinket also has a passive effect that increases the wearer's spell power and critical strike chance with elemental spells. The Glowing Shard of the Elements is highly sought after by spellcasters who specialize in elemental magic.",
+  };
+
+  itemData.push(data);
+
+  return itemData;
+}
+
 // Wrath of the Lich King
 const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
   /*
@@ -193,7 +211,8 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const itemLevels = [405, 408, 411, 415, 418, 421, 424, 431, 434, 441, 444, 447, 457];
-
+  const itemCardData = setupItemCardData();
+  console.log(itemCardData);
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
@@ -342,9 +361,12 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={1}>
             <Grid container spacing={0} sx={{ marginTop: "16px" }}>
-              <Grid item xs={6}>
-                <ItemDetailCard />
-              </Grid>
+              {itemCardData.map((item) => (
+                <Grid item xs={6}>
+                  <ItemDetailCard item={item}/>
+                </Grid>
+              ))}
+
             </Grid>
           </TabPanel>
         </Grid>
