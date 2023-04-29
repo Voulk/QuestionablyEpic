@@ -282,8 +282,25 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
 }
 
 export function getItemLevelBoost(bossID) {
+  // Vault
   if (bossID ===  2502 || bossID === 2491) return 6;    // Dathea and Kurog 
   else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
+
+  // Aberrus
+  else if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
+  else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
+  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkareth
+
+  else return 0;
+}
+
+export function getVeryRareItemLevelBoost(itemID, bossID) {
+  const boostedItems = [204465, 204201, 204202, 204211, 202612];
+
+  if (boostedItems.includes(itemID)) {
+    if (bossID === 2520 || bossID === 2523) return 7;
+    else return 6;
+  } 
   else return 0;
 }
 
@@ -291,10 +308,13 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    const boostedItems = [195480, 195526, 194301];
     
-    if ('source' in item && item.source.instanceId === 1200) expectedItemLevel += getItemLevelBoost(itemEncounter) + (boostedItems.includes(item.id) ? 6 : 0);
-    else if (item.source.instanceId === 1205) expectedItemLevel = 389;
+    // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
+    if ('source' in item && item.source.instanceId === 1208) expectedItemLevel += getItemLevelBoost(itemEncounter) + getVeryRareItemLevelBoost(item.id, itemEncounter);
+    else if (item.source.instanceId === 1205) { // World Bosses
+      if (itemEncounter === 2531) expectedItemLevel = 415
+      else expectedItemLevel = 389;
+    }
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));

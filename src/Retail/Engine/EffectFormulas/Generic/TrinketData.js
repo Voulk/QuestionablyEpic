@@ -37,39 +37,41 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 1.506561 * 0.7, // Update coefficient.
+        coefficient: 0.813774, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,
         secondaries: ["haste"]
       },
       { // Heal over time portion.
-        coefficient: 3.358104,
+        coefficient: 3.86182,
         table: -9, 
         targets: 8,
-        efficiency: 0.77,
+        efficiency: 0.5,
         ticks: 10,
-        secondaries: ["versatility", "crit", "haste"], // Test: Haste, Crit
+        secondaries: ["versatility", "haste"], // Note that the HoT itself doesn't scale with haste, but the proc rate does.
       },
       { // Gifted Versatility portion
+        coefficient: 0.483271,
+        table: -7, 
+        targets: 8,
+        duration: 12,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      // Versatility Portion
+      
       let bonus_stats = {};
-
-
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
-      console.log(itemLevel + " Total Mana: " + processedValue(data[0], itemLevel, 1) * 10)
-      console.log(itemLevel + " Total Heal: " + processedValue(data[1], itemLevel, 1) * 10)
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
-      console.log(itemLevel + " One tick: " + processedValue(data[1], itemLevel, 1))
       bonus_stats.hps = oneHoT * data[1].targets * data[0].ppm / 60;
 
       // Mana Portion
       bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60;
 
+      // Versatility Portion
+      const versEfficiency = 1 - data[1].efficiency; // The strength of the vers portion is inverse to the strength of the HoT portion.
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[2], itemLevel, versEfficiency) * data[2].targets * data[2].duration / 60;
 
       return bonus_stats;
     }
@@ -99,7 +101,6 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      console.log("Crit: " + processedValue(data[0], itemLevel))
       bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
       bonus_stats.leech = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');;
 

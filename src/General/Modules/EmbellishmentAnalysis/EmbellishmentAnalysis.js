@@ -74,7 +74,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+      estHPS += ((value * 0.4) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -84,7 +84,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
   let estDPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "crit", "versatility"].includes(key)) {
-      estDPS += (value * 0.35 / player.activeStats.intellect) * player.getDPS(contentType);
+      estDPS += (value * 0.4 / player.activeStats.intellect) * player.getDPS(contentType);
     } else if (key === "intellect") {
       estDPS += (value / player.activeStats.intellect) * player.getDPS(contentType);
     } 
@@ -98,7 +98,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += ((value * 0.32) / player.activeStats.intellect) * 35000 / 2;
+      estDPS += ((value * 0.4) / player.activeStats.intellect) * 60000 * 0.75;
     }
   }
   return Math.max(0, Math.round(100 * estDPS) / 100);
@@ -128,7 +128,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric)
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r408 //gem.r5;
+  return gem.r447 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -158,7 +158,7 @@ export default function EmbellishmentAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const [metric, setMetric] = React.useState("hps");
   let history = useHistory();
-  const itemLevels = [356, 369, 382, 395, 408];
+  const itemLevels = [411, 421, 427, 437, 443, 447];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
