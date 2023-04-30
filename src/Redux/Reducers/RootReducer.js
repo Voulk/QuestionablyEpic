@@ -28,6 +28,7 @@ const initialState = {
                                               "Flame Licked, Wild Spirit, Exuding Steam"], 
                                     category: "topGear"},
                     "topGearAutoGem": {value: false, options: [true, false], category: "topGear"},
+                    "healingDartsOverheal": {value: false, options: [25, 40, 50, 60, 75], category: "embellishments"},
                   },// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
 };
