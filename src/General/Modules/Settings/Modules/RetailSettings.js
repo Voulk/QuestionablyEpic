@@ -139,6 +139,7 @@ export default function RetailSettings(props) {
                       }
                       placement="top-start"
                     >
+
                       {playerSettings[key].type === "selector" ? (
                         <TextField
                           className={classes.select}
@@ -173,6 +174,7 @@ export default function RetailSettings(props) {
                           style={{ textAlign: "center", minWidth: 120, maxWidth: 160 }}
                         />
                       )}
+
                     </Tooltip>
                   </Grid>
                 );
