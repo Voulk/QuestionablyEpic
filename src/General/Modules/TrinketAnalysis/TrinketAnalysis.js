@@ -18,7 +18,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
-import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions"
+import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -71,17 +71,17 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
   return item.softScore;
 };
 
-// 
+//
 const setupItemCardData = (trinketList, contentType, spec) => {
-  
   const itemData = [];
 
-  trinketList.forEach(trinket => {
+  trinketList.forEach((trinket) => {
     const data = getTrinketDescription(trinket.name);
     //const data = null;
     if (data) {
-      data.name = trinket.name; data.id = trinket.id; data.slot = "Trinkets",
-      itemData.push(data);
+      data.name = trinket.name;
+      data.id = trinket.id;
+      (data.slot = "Trinkets"), itemData.push(data);
     }
   });
 
@@ -96,7 +96,7 @@ const setupItemCardData = (trinketList, contentType, spec) => {
   }; */
 
   return itemData;
-}
+};
 
 // Wrath of the Lich King
 const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
@@ -190,7 +190,6 @@ export default function TrinketAnalysis(props) {
       68, // Vortex Pinnacle
       1001, // Freehold
       1022, // Underrot
-
     ];
     const legionTimewalking = [];
     const shadowlandsTheRest = [
@@ -217,9 +216,9 @@ export default function TrinketAnalysis(props) {
       });
     }
 
-    results = results.filter((item) => { 
-      return ('classRestriction' in item && item.classRestriction.includes(playerSpec)) || !('classRestriction' in item);
-    })
+    results = results.filter((item) => {
+      return ("classRestriction" in item && item.classRestriction.includes(playerSpec)) || !("classRestriction" in item);
+    });
 
     return results;
   };
@@ -242,7 +241,6 @@ export default function TrinketAnalysis(props) {
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
 
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player.spec);
-
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
@@ -386,10 +384,9 @@ export default function TrinketAnalysis(props) {
             <Grid container spacing={1} sx={{ marginTop: "16px" }}>
               {itemCardData.map((item) => (
                 <Grid item xs={6}>
-                  <ItemDetailCard item={item}/>
+                  <ItemDetailCard item={item} />
                 </Grid>
               ))}
-
             </Grid>
           </TabPanel>
         </Grid>

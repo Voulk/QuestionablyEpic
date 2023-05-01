@@ -149,6 +149,31 @@ export const PALADINSPELLDB = {
 
         }
     }],
+    "Light's Hammer": [{
+        // Ticks on cast. Probably need to create a generic case for this.
+        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
+        castTime: 0,
+        type: "heal",
+        cost: 18,
+        coeff: 0.25 * 1.6,
+        targets: 6,
+        secondaries: ['crit', 'vers', 'mastery'],
+        cooldown: 60,
+        expectedOverheal: 0.5,
+    },
+    {
+        // To check: See if Renew still has an initial heal, and confirm whether it gets a mastery buff (unlikely).
+        type: "buff",
+        name: "Light's Hammer",
+        buffType: "heal",
+        coeff: 0.25 * 1.6,
+        targets: 6,
+        secondaries: ['crit', 'vers', 'mastery'],
+        canPartialTick: false,
+        buffDuration: 14,
+        tickRate: 2,
+        expectedOverheal: 0.5,
+    }],
 
 }
 
@@ -323,7 +348,7 @@ export const baseTalents = {
     crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'].push({
             name: "Avenging Wrath",
-            chance: 1,//0.075 * points,
+            chance: 0.075 * points,
             type: "buff",
             castTime: 0,
             cost: 0,
