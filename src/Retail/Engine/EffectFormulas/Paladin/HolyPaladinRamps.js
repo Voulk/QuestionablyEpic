@@ -239,7 +239,7 @@ const canCastSpell = (state, spellDB, spellName) => {
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
-    //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
+    if (spellName === "Light's Hammer") console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
     return cooldownReq && holyPowReq && miscReq;
 }
 
@@ -256,7 +256,7 @@ const getSpellHPM = (state, spellDB, spellName) => {
 
 export const genSpell = (state, spells) => {
     let spellName = ""
-
+    console.log(apl);
     const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell));
 
     /*
@@ -300,7 +300,10 @@ const runSpell = (state, spell) => {
 
 }
 
-const apl = ["Avenging Wrath", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
+// -----------------
+// Warning: Old File
+// -----------------
+const apl = ["Avenging Wrath", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 
 /**

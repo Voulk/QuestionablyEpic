@@ -99,19 +99,18 @@ describe("Evang Cast Sequence", () => {
         //console.log(seq);
         const iterations = 1000;
 
-        const settings = {reporting: true}
+        const settings = {reporting: true, 'DefaultLoadout': true}
         const baseline = runCastSequence(seq, activeStats, settings, talents)
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
         console.log(baseline);
-
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
         
 
     });
 
-    /*
-    test("Stat Weights", () => {
+    
+    /*test("Stat Weights", () => {
 
 
         const activeStats = {
@@ -123,7 +122,8 @@ describe("Evang Cast Sequence", () => {
             stamina: 0,
         }
         const settings = {reporting: true}
-        const talents = {};
+        const talents = baseTalents;
+        const iterations = 10000;
         // Weights
 
         const stats = ['intellect','versatility', 'crit', 'mastery', 'haste'];
@@ -131,13 +131,18 @@ describe("Evang Cast Sequence", () => {
         const results = {};
         stats.forEach(stat => {
 
-            let adjustedStats = JSON.parse(JSON.stringify(activeStats));
-            adjustedStats[stat] = adjustedStats[stat] + 600;
+            for (var i = 0; i < iterations; i++) {
+                let adjustedStats = JSON.parse(JSON.stringify(activeStats));
+                adjustedStats[stat] = adjustedStats[stat] + 600;
+    
+                const result = runCastSequence(seq, adjustedStats, settings, talents)
+    
+               
+                results[stat] = (results[stat] || 0) + result.totalHealing;
+            }
 
-            const result = runCastSequence(seq, adjustedStats, settings, talents)
+            results[stat] = results[stat] / iterations;
 
-           
-            results[stat] = result.totalHealing;
         });
         const weights = {}
         console.log(results);

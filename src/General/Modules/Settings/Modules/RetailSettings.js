@@ -31,7 +31,7 @@ export default function RetailSettings(props) {
 
   const dispatch = useDispatch();
 
-  const categories = ["trinkets", "topGear", "upgradeFinder"];
+  const categories = ["trinkets", "embellishments", "topGear", "upgradeFinder"];
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
 
@@ -153,7 +153,7 @@ export default function RetailSettings(props) {
                         {playerSettings[key]["options"].map((option, i) => {
                           return (
                             <MenuItem divider value={option} style={{ justifyContent: "center" }}>
-                              {t(option.toString())}
+                              {option.toString()}
                             </MenuItem>
                           );
                         })}
