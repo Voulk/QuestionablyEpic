@@ -123,6 +123,7 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
+        const iterations = 10000;
         // Weights
 
         const stats = ['intellect','versatility', 'crit', 'mastery', 'haste'];
@@ -130,13 +131,18 @@ describe("Evang Cast Sequence", () => {
         const results = {};
         stats.forEach(stat => {
 
-            let adjustedStats = JSON.parse(JSON.stringify(activeStats));
-            adjustedStats[stat] = adjustedStats[stat] + 600;
+            for (var i = 0; i < iterations; i++) {
+                let adjustedStats = JSON.parse(JSON.stringify(activeStats));
+                adjustedStats[stat] = adjustedStats[stat] + 600;
+    
+                const result = runCastSequence(seq, adjustedStats, settings, talents)
+    
+               
+                results[stat] = (results[stat] || 0) + result.totalHealing;
+            }
 
-            const result = runCastSequence(seq, adjustedStats, settings, talents)
+            results[stat] = results[stat] / iterations;
 
-           
-            results[stat] = result.totalHealing;
         });
         const weights = {}
         console.log(results);

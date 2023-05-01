@@ -157,7 +157,7 @@ export const PALADINSPELLDB = {
         cost: 18,
         coeff: 0.25 * 1.6,
         targets: 6,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit', 'vers', 'mastery'],
         cooldown: 60,
         expectedOverheal: 0.5,
     },
@@ -168,7 +168,7 @@ export const PALADINSPELLDB = {
         buffType: "heal",
         coeff: 0.25 * 1.6,
         targets: 6,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit', 'vers', 'mastery'],
         canPartialTick: false,
         buffDuration: 14,
         tickRate: 2,
@@ -348,7 +348,7 @@ export const baseTalents = {
     crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'].push({
             name: "Avenging Wrath",
-            chance: 1,//0.075 * points,
+            chance: 0.075 * points,
             type: "buff",
             castTime: 0,
             cost: 0,

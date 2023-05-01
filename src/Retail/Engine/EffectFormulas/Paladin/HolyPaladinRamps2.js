@@ -56,14 +56,15 @@ const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn",
     }
 
     if (settings['T30_2']) {
+        paladinSpells["Holy Shock"][0].statMods.critEffect = 0.6;
+        console.log(paladinSpells["Holy Shock"])
         paladinSpells["Holy Shock"].push({
             type: "function",
             runFunc: function (state, buff, paladinSpells) {
                 // Roll Dice equal to crit chance.
-                const roll = 0;
+                const roll = Math.random();
                 const holyShockCritChance = getCrit(state.currentStats) - 1 + paladinSpells["Holy Shock"][0].statMods.crit;
                 // If successful, reduce CD on Light's Hammer by 2s.
-                console.log(holyShockCritChance)
                 if (roll < getCrit(state.currentStats) - 1) {
                     const targetSpell = paladinSpells["Light's Hammer"];
                     targetSpell[0].activeCooldown -= 2;
