@@ -153,7 +153,7 @@ export default function RetailSettings(props) {
                         {playerSettings[key]["options"].map((option, i) => {
                           return (
                             <MenuItem divider value={option} style={{ justifyContent: "center" }}>
-                              {t(option.toString())}
+                              {option.toString()}
                             </MenuItem>
                           );
                         })}
