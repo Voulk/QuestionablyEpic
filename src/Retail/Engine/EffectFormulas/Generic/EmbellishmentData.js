@@ -61,16 +61,19 @@ export const embellishmentData = [
           { 
             coefficient: 0.458195, // 0.482408 * 0.95,
             table: -7,
-            duration: 9, // 5s + 1s per equipped gem. 
+            duration: 8, // 5s + 1s per equipped gem. 
             ppm: 2,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO
-          
+          // TODO Add top gear support for auto-generating gems.
+          const gems = getSetting(additionalData.settings, "lariatGems") || 3;
+          const duration = 5 + parseInt(gems);
+
+          const newData = {...data[0], duration: duration};
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
-          bonus_stats[playerBestSecondary] = runGenericPPMTrinket(data[0], itemLevel); // Testing
+          bonus_stats[playerBestSecondary] = runGenericPPMTrinket(newData, itemLevel);
 
           return bonus_stats;
         }

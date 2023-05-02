@@ -45,9 +45,6 @@ export const raidTrinketData = [
         classMod: {"Preservation Evoker": 0.3, "Holy Paladin": 0.6},
         ppm: 1,
       },
-      { // Self-damage portion
-
-      },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};

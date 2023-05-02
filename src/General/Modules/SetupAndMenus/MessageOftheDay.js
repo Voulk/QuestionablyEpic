@@ -6,7 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "Warning: This is the PTR version of QE Live. Results might change.",
+      "-> QE Live is up to date for patch 10.1.",
+      "-> Warning: Expect frequent changes during patch week.",
+      "-> There's likely to be hotfixes and models might still be fine tuned.",
   ],
   "Classic": [""]
   }

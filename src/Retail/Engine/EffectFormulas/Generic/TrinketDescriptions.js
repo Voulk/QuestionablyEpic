@@ -38,7 +38,6 @@ const convertExpectedUptime = (effect, player, hasted) => {
 }
 
 const neltharionsCallToSuffering = (data, itemLevel, player) => {
-    console.log(data)
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
@@ -67,7 +66,6 @@ const screamingBlackDragonscale = (data, itemLevel, player) => {
 
 const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
-    console.log(additionalData)
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
