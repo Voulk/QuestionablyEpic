@@ -33,14 +33,14 @@ function ItemDetailCard(props) {
   const titleFontSize = isXs ? "0.8rem" : item.slot === "Trinket" ? "0.9rem" : "1rem";
   const metricPadding = isXs ? "2px" : "8px";
 
-  const coloredDescription = item.description.replace(/Trinket/g, '<span style="color: red;">Trinket</span>');
+  const coloredDescription = item.description //item.description.replace(/Trinket/g, '<span style="color: red;">Trinket</span>');
 
   return (
     <Paper className={classes.root} variant="outlined">
       <div className={classes.container}>
         <div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <a data-wowhead={`spell=${item.id}&domain=${currentLanguage}`}>
+            <a data-wowhead={`item=${item.id}&domain=${currentLanguage}`}>
               <img height={40} width={40} src={getItemIcon(item.id)} alt="" style={{ borderRadius: 4, borderWidth: "1px", borderStyle: "solid", borderColor: "#ff8000" }} />
             </a>
             <div style={{ marginLeft: 8 }}>

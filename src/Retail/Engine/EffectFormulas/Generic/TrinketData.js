@@ -103,8 +103,8 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
-      bonus_stats.leech = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm * player.getStatPerc('haste') / 60;
+      bonus_stats.leech = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm * player.getStatPerc('haste') / 60;
 
       return bonus_stats;
     }
