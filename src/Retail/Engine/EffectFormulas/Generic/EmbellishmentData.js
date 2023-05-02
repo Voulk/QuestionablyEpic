@@ -525,10 +525,15 @@ export const embellishmentData = [
           let bonus_stats = {};
           // TODO
           const proc = runGenericPPMTrinket(data[0], itemLevel);
-          ['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
+          bonus_stats['haste'] = proc;
+          bonus_stats['mastery'] = proc;
+          bonus_stats['versatility'] = proc * 0.2;
+          bonus_stats['crit'] = proc * 0.2;
+
+          /*['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
             // A proc can either be haste / mast or crit / vers.
             bonus_stats[stat] = proc / 2;
-          });
+          }); */
 
           return bonus_stats;
         }
@@ -546,12 +551,12 @@ export const embellishmentData = [
             table: -9,
             ppm: 60 / 5,
             secondaries: ['crit', 'versatility'],
-            efficiency: 0.5,
+            efficiency: 0.4,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
             table: -9,
-            ppm: 0.05, // 120s cooldown, but will proc rarely.
+            ppm: 0.06, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.6,
           },
