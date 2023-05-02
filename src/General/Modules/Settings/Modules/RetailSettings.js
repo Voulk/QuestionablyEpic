@@ -156,7 +156,7 @@ export default function RetailSettings(props) {
                           {playerSettings[key]["options"].map((option, i) => {
                             return (
                               <MenuItem divider value={option} style={{ justifyContent: "center" }}>
-                                {t(option.toString())}
+                                {option.toString()}
                               </MenuItem>
                             );
                           })}
@@ -168,6 +168,7 @@ export default function RetailSettings(props) {
                           variant="outlined"
                           size="small"
                           fullWidth
+                          type="number"
                           value={playerSettings[key]["value"]}
                           onChange={(e) => updateValue(key, e.target.value)}
                           label={t("Settings.Retail." + key + ".title")}

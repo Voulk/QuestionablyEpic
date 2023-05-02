@@ -11,7 +11,7 @@ export const changeLog = [
   {
     version: "10.1.0",
     update: 1,
-    date: "29 April",
+    date: "2 May",
     changes: [ 
       "Top Gear results can now be shared and returned to!",
       "All modules updated for season 2 including items, graphs, upgrade finder and more.",

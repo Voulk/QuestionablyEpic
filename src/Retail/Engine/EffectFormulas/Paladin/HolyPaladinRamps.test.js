@@ -97,12 +97,22 @@ describe("Evang Cast Sequence", () => {
 
 
         //console.log(seq);
-        const iterations = 1000;
-
+        const iterations = 1;
         const settings = {reporting: true, 'DefaultLoadout': true}
-        const baseline = runCastSequence(seq, activeStats, settings, talents)
+        let sumHealing = 0;
+
+        for (let i = 0; i < iterations; i++) {
+            const stats = JSON.parse(JSON.stringify(activeStats));
+            const baseline = runCastSequence(seq, stats, settings, talents)
+            //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
+            sumHealing = sumHealing + baseline.hps;
+            if (iterations === 1 || i === iterations - 1) console.log(baseline);
+        }
+
+        
+        //const baseline = runCastSequence(seq, activeStats, settings, talents)
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
-        console.log(baseline);
+        console.log("Avg Healing: " + (sumHealing / iterations));
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
         
@@ -123,7 +133,7 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 10000;
+        const iterations = 15000;
         // Weights
 
         const stats = ['intellect','versatility', 'crit', 'mastery', 'haste'];
@@ -152,5 +162,5 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    }); */
+    });*/
 }); 

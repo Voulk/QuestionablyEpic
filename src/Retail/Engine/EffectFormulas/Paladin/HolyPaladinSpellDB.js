@@ -39,7 +39,7 @@ export const PALADINSPELLDB = {
         cost: 16,
         coeff: 1.395, 
         cooldown: 7.5,
-        expectedOverheal: 0.29,
+        expectedOverheal: 0.25,
         holyPower: 1,
         hastedCooldown: true,
         statMods: {'crit': 0.3},
@@ -104,7 +104,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 0,
         coeff: 1.05, // Not final
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.3,
         holyPower: -3,
         targets: 5,
         secondaries: ['crit', 'vers', 'mastery']
@@ -122,6 +122,7 @@ export const PALADINSPELLDB = {
     "Avenging Wrath": [{
         spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
+        name: "Avenging Wrath",
         castTime: 0,
         cost: 0,
         cooldown: 120,
@@ -258,10 +259,23 @@ export const baseTalents = {
     // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
 
     // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
-    // While Divine Purpose could be done by chance, it's somewhat easier to just apply a healing modifier to LoD.
+    divinePurpose: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const buffSpell = {
+            name: "Divine Purpose",
+            chance: 0.15, //0.075 * points,
+            type: 'buff',
+            buffType: 'special',
+            value: 1.15,
+            buffDuration: 25, // Irrelevant. 
+        }
+
+        spellDB['Light of Dawn'].push(buffSpell);
+        spellDB['Word of Glory'].push(buffSpell);
+    }}, 
+
+
 
     // Zealot's Paragon - Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of Avenging Crusader by 0.5s.
-    // TODO: Add Hammer of Wrath
     zealotsParagon: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'].push({
             type: "extendBuff",
@@ -288,7 +302,13 @@ export const baseTalents = {
 
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
 
-    // Fading Light - Dawn is 30% instead of 20%. Dusk causes HoPo generators to shield for 20%.
+    // Fading Light - 
+    fadingLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const expectedShieldEfficiency= 0.9; // Dusk uptime is basically 100%.
+        spellDB['Holy Shock'][0].coeff *= (1 + 0.2 * expectedShieldEfficiency);
+
+        // Fading Light also increases the power of Dawn by 10%.
+    }}, 
 
 
     // === Spec Tree ===
@@ -336,16 +356,23 @@ export const baseTalents = {
         spellDB['Avenging Wrath'][0].buffDuration += 5;
     }}, 
 
+    // Second Sunrise - Light of Dawn heals a second time for 20% of the amount.
+    // TODO: Check if Empyrean Legacy affects both.
+    // We'll probably end up converting this to an actual second cast in otrder to adjust its overhealing up.
+    secondSunrise: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Light of Dawn'][0].coeff *= 1.2;
+    }}, 
+
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
 
-    // Might - Gain 20% Crit during wings.
+    // Might - Gain 20% Crit during wings. Currently just built in.
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
 
     // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
-    crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    awakening: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'].push({
             name: "Avenging Wrath",
             chance: 0.075 * points,

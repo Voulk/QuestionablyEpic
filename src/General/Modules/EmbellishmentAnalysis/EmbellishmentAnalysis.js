@@ -89,7 +89,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       estDPS += (value / player.activeStats.intellect) * player.getDPS(contentType);
     } 
     else if (key === "dps") {
-      estDPS += value;
+      estDPS += Math.round(value);
     }
     else if (key === "mastery") {
       estDPS += 0;
@@ -101,11 +101,11 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       estDPS += ((value * 0.4) / player.activeStats.intellect) * 60000 * 0.75;
     }
   }
-  return Math.max(0, Math.round(100 * estDPS) / 100);
+  return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
 }
 
-const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, userSettings, "Retail", player.activeStats);
+const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric, playerSettings) => {
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats);
   const embel = embellishmentDB.filter(function (emb) {
     return emb.effect.name === effectName;
   });
@@ -156,7 +156,9 @@ export default function EmbellishmentAnalysis(props) {
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
+  const playerSettings = useSelector((state) => state.playerSettings);
   const [metric, setMetric] = React.useState("hps");
+
   let history = useHistory();
   const itemLevels = [411, 421, 427, 437, 443, 447];
 
@@ -187,7 +189,7 @@ export default function EmbellishmentAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric);
+      if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
     activeGems.push(gemAtLevels);
@@ -219,12 +221,24 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
+          <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
+          <Grid container spacing={1}>
+              <Grid item xs={12} key={i}>
+                <Typography align="left" variant="body1" key={i}>
+                  {"Note that despite not being a clear #1 on HPS, Undulating Sporecloak is a fantastic progression choice. Be sure to consult your favourite guide before crafting anything."}
+                </Typography>
+              </Grid>
+          </Grid>
+      </Paper>
+        </Grid>
+        <Grid item xs={12}>
           <MetricToggle metric={metric} setMetric={setMetric} />
         </Grid>
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
         <Grid item xs={12}>
+
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

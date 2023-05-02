@@ -67,7 +67,7 @@ function CompetitiveAlternatives(props) {
                         {key.items.map((item, i) => {
                           let itemArray = [];
                           // scuffed breakdown of weapon combos to seperate them for the report
-                          if (item.slot === "CombinedWeapon") {
+                          if (false) {// item.slot === "CombinedWeapon") {
                             let newWeaponCombos = [];
                             let mainHandItem = "";
                             let offHandItem = "";

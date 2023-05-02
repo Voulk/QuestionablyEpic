@@ -1,6 +1,6 @@
 import { itemLevels } from "Databases/itemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
-  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
@@ -61,16 +61,19 @@ export const embellishmentData = [
           { 
             coefficient: 0.458195, // 0.482408 * 0.95,
             table: -7,
-            duration: 9, // 5s + 1s per equipped gem. 
+            duration: 8, // 5s + 1s per equipped gem. 
             ppm: 2,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO
-          
+          // TODO Add top gear support for auto-generating gems.
+          const gems = getSetting(additionalData.settings, "lariatGems") || 3;
+          const duration = 5 + parseInt(gems);
+
+          const newData = {...data[0], duration: duration};
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
-          bonus_stats[playerBestSecondary] = runGenericPPMTrinket(data[0], itemLevel); // Testing
+          bonus_stats[playerBestSecondary] = runGenericPPMTrinket(newData, itemLevel);
 
           return bonus_stats;
         }
@@ -94,8 +97,8 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-
-          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          const expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
+          bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           return bonus_stats;
         }
       },
@@ -211,7 +214,7 @@ export const embellishmentData = [
             coefficient: 34.05239, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit', 'versatility'],
-            efficiency: 0.8,
+            efficiency: 0.65,
             ppm: 2, // 4 / 2
           },
           { // Damage Effect
@@ -523,10 +526,15 @@ export const embellishmentData = [
           let bonus_stats = {};
           // TODO
           const proc = runGenericPPMTrinket(data[0], itemLevel);
-          ['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
+          bonus_stats['haste'] = proc;
+          bonus_stats['mastery'] = proc;
+          bonus_stats['versatility'] = proc * 0.2;
+          bonus_stats['crit'] = proc * 0.2;
+
+          /*['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
             // A proc can either be haste / mast or crit / vers.
             bonus_stats[stat] = proc / 2;
-          });
+          }); */
 
           return bonus_stats;
         }
@@ -544,12 +552,12 @@ export const embellishmentData = [
             table: -9,
             ppm: 60 / 5,
             secondaries: ['crit', 'versatility'],
-            efficiency: 0.5,
+            efficiency: 0.4,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
             table: -9,
-            ppm: 0.05, // 120s cooldown, but will proc rarely.
+            ppm: 0.06, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.6,
           },
@@ -603,7 +611,7 @@ export const embellishmentData = [
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
 
-          console.log(bonus_stats);
+
           return bonus_stats;
         }
       },

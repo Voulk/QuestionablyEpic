@@ -72,11 +72,11 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 };
 
 //
-const setupItemCardData = (trinketList, contentType, spec) => {
+const setupItemCardData = (trinketList, contentType, player, playerSettings) => {
   const itemData = [];
-
+  const additionalData = {contentType: contentType, settings: playerSettings}
   trinketList.forEach((trinket) => {
-    const data = getTrinketDescription(trinket.name);
+    const data = getTrinketDescription(trinket.name, player, additionalData);
     //const data = null;
     if (data) {
       data.name = trinket.name;
@@ -240,7 +240,7 @@ export default function TrinketAnalysis(props) {
   );
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
 
-  const itemCardData = setupItemCardData(trinketDB, contentType, props.player.spec);
+  const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [

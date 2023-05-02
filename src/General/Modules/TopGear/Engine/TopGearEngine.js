@@ -368,6 +368,9 @@ function enchantItems(bonus_stats, setInt, castModel) {
   bonus_stats.leech += 200;
   enchants["Wrist"] = "Devotion of Leech";
 
+  // Belt
+  enchants["Waist"] = "Shadowed Belt Clasp";
+
   // Legs - Also gives 3/4/5% mana.
   bonus_stats.intellect += 177;
   enchants["Legs"] = "Temporal Spellthread";

@@ -43,7 +43,6 @@ export default class EmbelChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
-    console.log(data);
     let arr = [];
     let cleanedArray = [];
 
@@ -64,7 +63,6 @@ export default class EmbelChart extends PureComponent {
   
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
-    console.log(arr);
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;

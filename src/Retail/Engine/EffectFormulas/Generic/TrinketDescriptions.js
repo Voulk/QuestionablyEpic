@@ -4,17 +4,19 @@ import { otherTrinketData } from "./OtherTrinketData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
 
 
-export const getTrinketDescription = (trinketName, contentType, spec) => {
+export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
     const itemLevel = 441;
     if (trinketData === null) return null;
     switch (trinketName) {
         case "Neltharion's Call to Suffering":
-            return neltharionsCallToSuffering(trinketData, itemLevel, contentType, spec);
+            return neltharionsCallToSuffering(trinketData, itemLevel, player, additionalData);
         case "Screaming Black Dragonscale":
-            return screamingBlackDragonscale(trinketData, itemLevel, contentType, spec);
+            return screamingBlackDragonscale(trinketData, itemLevel, player, additionalData);
         case "Rashok's Molten Heart":
-            return rashoksMoltenHeart(trinketData, itemLevel, contentType, spec);
+            return rashoksMoltenHeart(trinketData, itemLevel, player, additionalData);
+        case "Rainsong":
+            return rainsong(trinketData, itemLevel, player, additionalData);
         default:
             return null;
     }
@@ -28,49 +30,65 @@ const getTrinketData = (trinketName) => {
     return activeTrinket;
 }
 
-const convertExpectedUptime = (effect) => {
-    const realUptime = Math.round(convertPPMToUptime(effect.ppm, effect.duration) * 100);
+const convertExpectedUptime = (effect, player, hasted) => {
+    let ppm = effect.ppm;
+    if (hasted) ppm = ppm * player.getStatPerc('haste');
+    const realUptime = Math.round(convertPPMToUptime(ppm, effect.duration) * 100);
     return realUptime + "%"; //data.effects[0].duration * data.effects[0].ppm / 60;
 }
 
-const neltharionsCallToSuffering = (data, itemLevel, contentType, spec) => {
-    console.log(data)
+const neltharionsCallToSuffering = (data, itemLevel, player) => {
     const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        metrics: ["Expected Uptime: " + convertExpectedUptime(effect), 
-                "Average Int: " + 700],
+        metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, true), 
+                "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
           "Does not proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous. Trinket is unusuably poor for Resto Druid and Holy Priest until fixed.",
       };
 
 }
 
-const screamingBlackDragonscale = (data, itemLevel, contentType, spec) => {
-    console.log(data)
+const screamingBlackDragonscale = (data, itemLevel, player) => {
     const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        metrics: ["Expected Uptime: " + convertExpectedUptime(effect), 
-                "Average Crit: " + 700,
-                "Average Leech: " + 700],
+        metrics: ["Uptime: " + convertExpectedUptime(effect, player, true), 
+                "Average Crit: " + Math.round(bonus_stats.crit),
+                "Average Leech: " + Math.round(bonus_stats.leech)],
         description:
           "A very high uptime stat stick that is good for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.",
       };
 
 }
 
-const rashoksMoltenHeart = (data, itemLevel, contentType, spec) => {
-    console.log(data)
+const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        metrics: ["Mana / Min: " + convertExpectedUptime(effect), 
-                "HPS: " + 700,
-                "Equiv Vers: " + 700],
+        metrics: ["Mana / Min: " + Math.round(bonus_stats.mana * 60), 
+                "HPS: " + Math.round(bonus_stats.hps),
+                "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
         description:
           "A massive package of mana, healing and versatility given out to your party. Track the mana effect, and direct heal as many allies as possible while it's active \
           to get as many HoTs and thus vers buffs out as possible. AoE direct heals as ideal. Won't proc off HoT ticks.",
+      };
+
+}
+
+const rainsong = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
+                    "Self Haste: " + Math.round(bonus_stats.haste), 
+                    "Gifted Haste: " + Math.round(bonus_stats.allyStats)],
+        description:
+          "A solid haste trinket, though it leans support heavy so you'll only find it to be a competitive choice if you value giving buffs to allies.",
       };
 
 }

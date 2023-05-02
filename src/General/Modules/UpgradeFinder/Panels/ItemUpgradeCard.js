@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     minWidth: 250,
   },
   dom: {
-    borderColor: "#CEB600",
+    borderColor: "#1286E5",
     //backgroundColor: "#515751",
     borderStyle: "dashed",
     minWidth: 250,
@@ -92,6 +92,9 @@ export default function ItemCard(props) {
     /* ----------------------------- Raid Boss Name ----------------------------- */
     if (item.source.instanceId === 1200 && item.source.encounterId > 0) {
       return encounterDB[1200].bosses[item.source.encounterId].name[currentLanguage];
+    }
+    if (item.source.instanceId === 1208 && item.source.encounterId > 0) {
+      return encounterDB[1208].bosses[item.source.encounterId].name[currentLanguage];
     }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
