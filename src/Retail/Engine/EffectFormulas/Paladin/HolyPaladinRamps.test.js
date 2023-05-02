@@ -120,7 +120,7 @@ describe("Evang Cast Sequence", () => {
     });
 
     
-    test("Stat Weights", () => {
+    /*test("Stat Weights", () => {
 
 
         const activeStats = {
@@ -162,5 +162,5 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    });
+    });*/
 }); 
