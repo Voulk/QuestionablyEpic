@@ -87,8 +87,8 @@ const rainsong = (data, itemLevel, player, additionalData) => {
 
     return {
         metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
-                "Self Haste: " + Math.round(bonus_stats.haste), 
-                "Gifted Haste: " + Math.round(bonus_stats.allyStats)],
+                    "Self Haste: " + Math.round(bonus_stats.haste), 
+                    "Gifted Haste: " + Math.round(bonus_stats.allyStats)],
         description:
           "A solid haste trinket, though it leans support heavy so you'll only find it to be a competitive choice if you value giving buffs to allies.",
       };
