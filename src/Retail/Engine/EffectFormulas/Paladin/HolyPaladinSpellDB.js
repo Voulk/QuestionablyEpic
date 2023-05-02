@@ -336,9 +336,16 @@ export const baseTalents = {
         spellDB['Avenging Wrath'][0].buffDuration += 5;
     }}, 
 
+    // Second Sunrise - Light of Dawn heals a second time for 20% of the amount.
+    // TODO: Check if Empyrean Legacy affects both.
+    // We'll probably end up converting this to an actual second cast in otrder to adjust its overhealing up.
+    secondSunrise: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Avenging Wrath'][0].coeff *= 1.2;
+    }}, 
+
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
 
-    // Might - Gain 20% Crit during wings.
+    // Might - Gain 20% Crit during wings. Currently just built in.
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
@@ -348,7 +355,7 @@ export const baseTalents = {
     crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'].push({
             name: "Avenging Wrath",
-            chance: 0.075 * points,
+            chance: 1, //0.075 * points,
             type: "buff",
             castTime: 0,
             cost: 0,

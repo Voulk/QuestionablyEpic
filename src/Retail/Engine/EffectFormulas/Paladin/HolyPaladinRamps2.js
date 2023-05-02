@@ -30,7 +30,7 @@ const PALADINCONSTANTS = {
 
 }
 
-const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Crusader Strike", "Judgment", "Rest"]
+const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 
 
