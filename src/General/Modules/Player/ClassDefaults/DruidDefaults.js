@@ -63,7 +63,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1.2,
         c90: 1.29,
-        c120: 1.1,
+        c120: 1.17,
         c180: 1.05,
 
         oneMinute: 1.4, // 1.7 once 4pc,

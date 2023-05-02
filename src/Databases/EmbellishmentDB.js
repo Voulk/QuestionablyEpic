@@ -114,7 +114,7 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Rallied to Victory",
+      name: "Allied Wristguard of Companionship",
       rank: 0,
     },
   },

@@ -45,7 +45,7 @@ export const otherTrinketData = [
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
-      bonus_stats.mana = 48300 * extraPotions / 420; // This is worse than using an Innervate potion, but that will be added later. 
+      bonus_stats.mana = 48300 * extraPotions / 420 * 0.7; // Rest in peace Chilled Clarity potion. It is very difficult to use this potion on cooldown.
 
 
       return bonus_stats;

@@ -24,6 +24,35 @@ export const raidTrinketData = [
       let bonus_stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+      if (player.spec === "Restoration Druid" || player.spec === "Holy Priest") bonus_stats.intellect *= 0.25;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Neltharion's Call to Chaos                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Neltharion's Call to Chaos",
+    effects: [
+      { // Int portion
+        coefficient: 1.844795,
+        table: -1,
+        stat: "intellect",
+        duration: 18,
+        classMod: {"Preservation Evoker": 0.3, "Holy Paladin": 0.6},
+        ppm: 1,
+      },
+      { // Self-damage portion
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste') * (data[0].classMod[player.spec] || 0.5);
 
       return bonus_stats;
     }
@@ -46,7 +75,7 @@ export const raidTrinketData = [
       { // Heal over time portion.
         coefficient: 3.86182,
         table: -9, 
-        targets: 8,
+        targets: {"Raid": 8, "Dungeon": 5},
         efficiency: 0.5,
         ticks: 10,
         secondaries: ["versatility", "haste"], // Note that the HoT itself doesn't scale with haste, but the proc rate does.
@@ -54,7 +83,7 @@ export const raidTrinketData = [
       { // Gifted Versatility portion
         coefficient: 0.483271,
         table: -7, 
-        targets: 8,
+        targets: {"Raid": 8, "Dungeon": 5},
         duration: 12,
       },
     ],
@@ -62,19 +91,20 @@ export const raidTrinketData = [
       const BLP = 1.13;
       const effectivePPM = data[0].ppm * player.getStatPerc('haste') * BLP;
       let bonus_stats = {};
+      const contentType = additionalData.contentType || "Raid";
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
       // Healing Portion
       let oneHoT = processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ticks;
-      bonus_stats.hps = oneHoT * data[1].targets * data[0].ppm / 60 * BLP;
+      bonus_stats.hps = oneHoT * data[1].targets[contentType] * data[0].ppm / 60 * BLP;
 
       // Mana Portion
       bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60 * BLP;
 
       // Versatility Portion
       const versEfficiency = 1 - data[1].efficiency; // The strength of the vers portion is inverse to the strength of the HoT portion.
-      console.log(processedValue(data[2], itemLevel))
-      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[2], itemLevel) * versEfficiency * effectivePPM * data[2].targets * data[2].duration / 60;
-      console.log(itemLevel + " " + JSON.stringify(bonus_stats));
+
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[2], itemLevel) * versEfficiency * effectivePPM * data[2].targets[contentType] * data[2].duration / 60;
+
       return bonus_stats;
     }
   },
@@ -134,7 +164,7 @@ export const raidTrinketData = [
       // Buffs from allies
       ["haste", "versatility", "crit", "haste"].forEach(stat => {
         const secondaryValue = processedValue(data[1], itemLevel);
-        if (stat !== bestSecondary) bonus_stats[stat] = secondaryValue;
+        if (stat !== bestSecondary) bonus_stats[stat] = secondaryValue * 1.25; // The Obsidian buff splits its buff into four.
       });
 
       return bonus_stats;

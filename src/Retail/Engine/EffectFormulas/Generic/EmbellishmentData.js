@@ -94,8 +94,6 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          console.log(additionalData.settings);
-          console.log(getSetting(additionalData.settings, "healingDartsOverheal"))
           const expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
           bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           return bonus_stats;
@@ -213,7 +211,7 @@ export const embellishmentData = [
             coefficient: 34.05239, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit', 'versatility'],
-            efficiency: 0.8,
+            efficiency: 0.65,
             ppm: 2, // 4 / 2
           },
           { // Damage Effect
@@ -610,7 +608,7 @@ export const embellishmentData = [
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
 
-          console.log(bonus_stats);
+
           return bonus_stats;
         }
       },
