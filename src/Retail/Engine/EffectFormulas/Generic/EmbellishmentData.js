@@ -1,6 +1,6 @@
 import { itemLevels } from "Databases/itemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
-  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
@@ -94,8 +94,10 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-
-          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          console.log(additionalData.settings);
+          console.log(getSetting(additionalData.settings, "healingDartsOverheal"))
+          const expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
+          bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           return bonus_stats;
         }
       },
