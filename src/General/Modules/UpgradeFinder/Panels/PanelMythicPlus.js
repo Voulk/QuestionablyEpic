@@ -121,7 +121,7 @@ export default function MythicPlusGearContainer(props) {
                 </div>
               </UFTabPanel>
 
-              <UFTabPanel key={"panel1"} value={tabvalue} index={1}>
+              {/*<UFTabPanel key={"panel1"} value={tabvalue} index={1}>
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
@@ -174,7 +174,7 @@ export default function MythicPlusGearContainer(props) {
                     </Grid>
                   </Grid>
                 </div>
-              </UFTabPanel>
+              </UFTabPanel> */}
             </Grid>
           </Grid>
         </div>

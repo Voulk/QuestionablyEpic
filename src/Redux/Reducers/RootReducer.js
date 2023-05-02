@@ -32,6 +32,7 @@ const initialState = {
     },
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
     healingDartsOverheal: { value: 50, options: [], category: "embellishments", type: "Entry" },
+    lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
 };
