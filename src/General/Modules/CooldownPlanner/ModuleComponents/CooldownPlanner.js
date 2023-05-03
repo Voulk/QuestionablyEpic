@@ -20,6 +20,7 @@ import ls from "local-storage";
 import { styled } from "@mui/material/styles";
 import { green } from "@mui/material/colors";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import CooldownPlannerThemeCheckbox from "./ThemeToggle";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -59,9 +60,9 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
-  const expansion = 9; // shadowlands
-  const [currentRaid, setCurrentRaid] = useState(2522);
-  const [currentBoss, setCurrentBoss] = useState(2587);
+  const expansion = 9; // Dragonflight
+  const [currentRaid, setCurrentRaid] = useState(2569);
+  const [currentBoss, setCurrentBoss] = useState(2680);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   const [currentPlan, setCurrentPlan] = useState("");
 
@@ -237,12 +238,19 @@ export default function CooldownPlanner(props) {
           components={{
             Container: (props) => <Paper {...props} elevation={0} />,
             Body: (props) => (currentBoss === "" ? null : <MTableBody {...props} />),
-            Row: (props) => <MTableBodyRow {...props} 
-            // className={classes.tableRow}
-             />,
-            EditRow: (props) => <MTableEditRow {...props} 
-            // className={classes.tableRow}
-             />,
+            Row: (props) => (
+              <MTableBodyRow
+                {...props}
+                // className={classes.tableRow}
+              />
+            ),
+            EditRow: (props) => (
+              <MTableEditRow
+                {...props}
+                // className={classes.tableRow}
+                style={{ backgroundColor: "" }}
+              />
+            ),
             Header: (props) => (currentBoss === "" ? null : <MTableHeader {...props} />),
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
@@ -448,6 +456,10 @@ export default function CooldownPlanner(props) {
                       update={props.update}
                       tableData={data}
                     />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
+                    <CooldownPlannerThemeCheckbox />
                   </Grid>
                 </Grid>
 

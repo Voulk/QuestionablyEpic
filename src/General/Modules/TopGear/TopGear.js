@@ -77,6 +77,23 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
+const sendReport = (shortReport) => {
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
+  
+  fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
+  //.then(response => response.text())
+  .then(response => console.log(response));
+  //.then(data => this.setState({ postId: data.id }));
+}
+
+
+
+
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -180,6 +197,56 @@ export default function TopGear(props) {
     // handleClickDelete();
   };
 
+  const shortenReport = (report, player) => {
+    const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
+    const shortItemSet = report.itemSet;
+  
+    shortReport.itemSet.setStats = report.itemSet.setStats;
+    shortReport.itemSet.primGems = report.itemSet.primGems;
+    shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
+    shortReport.effectList = report.itemSet.effectList;
+    shortReport.differentials = report.differentials;
+    shortReport.contentType = report.contentType;
+    shortReport.firstSocket = report.itemSet.firstSocket;
+    shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
+    
+    const addItem = (item) => {
+      let newItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
+      if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
+      if (item.socket) newItem.socket = item.socket;
+      if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+      if (item.quality) newItem.quality = item.quality;
+      if (item.effect) newItem.effect = item.effect;
+
+      shortReport.itemSet.itemList.push(newItem)
+      }
+      
+  
+    for (var i = 0; i < report.itemSet.itemList.length; i++) {
+      const item = report.itemSet.itemList[i];
+      if (item.slot === "CombinedWeapon") {
+        // Unfold weapons so that we send both.
+        if (item.offhandID > 0) {
+          const mainhandItem = player.getItemByHash(item.mainHandUniqueHash)[0];
+          const offhandItem = player.getItemByHash(item.offHandUniqueHash)[0];
+          addItem(mainhandItem);
+          addItem(offhandItem)
+
+        } else {
+          const mainhandItem = player.getItemByHash(item.uniqueHash)[0];
+          addItem(mainhandItem);
+        }
+      }
+      else {
+        addItem(item);
+      }
+      
+    }
+
+    sendReport(shortReport);
+    return shortReport;
+  }
+
   const unleashWorker = () => {
     const currentLanguage = i18n.language;
     const itemList = props.player.getSelectedItems();
@@ -197,7 +264,11 @@ export default function TopGear(props) {
         .then((result) => {
           // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          props.setTopResult(result);
+          //props.setTopResult(result);
+          const shortResult = shortenReport(result, props.player);
+          shortResult.new = true;
+          props.setTopResult(shortResult);
+
           instance.terminate();
           history.push("/report/");
         })

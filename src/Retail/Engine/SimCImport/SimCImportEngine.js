@@ -204,6 +204,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   let specialAllocations = {};
   let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
   let itemLevelGain = 0;
+  let itemBaseLevelPriority = 999; // Blizzard like to include more than 1 baseLevel ID on items with a weird priority system. So we'll keep track of that.
   
 
   // Build out our item information.
@@ -243,7 +244,12 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       } else if ("socket" in idPayload) {
         itemSockets = idPayload["socket"];
       } else if ("base_level" in idPayload) {
-        itemBaseLevel = idPayload["base_level"];
+        // If the base_level has a priority level, then make sure it's lower than our existing priority level.
+        if (("base_level_priority" in idPayload && idPayload["base_level_priority"] < itemBaseLevelPriority) ||
+            "base_level_priority" in idPayload === false) {
+              itemBaseLevel = idPayload["base_level"];
+              itemBaseLevelPriority = idPayload["base_level_priority"];
+            }
       }
       else if (bonus_id === "41") {
         itemTertiary = "Leech";
@@ -274,6 +280,9 @@ export function processItem(line, player, contentType, type, playerSettings = {}
         if ("quality" in idPayload) {
           itemQuality = idPayload["quality"];
         } 
+        if ("craftedStats" in idPayload) {
+          craftedStats = idPayload['craftedStats'];
+        }
         else {
         }
 
@@ -314,6 +323,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       missiveStats.push("versatility");
       craftedStats = "";
     }
+    /* They've thankfully converted these to a nice array so we don't need messy overrides anymore.
     else if (bonus_id === "8790") {
       // Haste / Crit Crafted Override
       craftedStats = ["32", "36"]
@@ -337,7 +347,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     else if (bonus_id === "8795") {
       // Vers / Crit Crafted Override
       craftedStats = ["40", "32"]
-    }
+    } 
 
     // Solo stat overrides. Currently used on Engineering items that have only one secondary.
     else if (bonus_id === "8948") {
@@ -355,7 +365,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     else if (bonus_id === "8951") {
       // Versatility Crafted Override
       craftedStats = ["40"]
-    }
+    }*/
     if (bonus_id === "7881") uniqueTag = "crafted";
     else if (bonus_id === "8960") uniqueTag = "embellishment";
   }

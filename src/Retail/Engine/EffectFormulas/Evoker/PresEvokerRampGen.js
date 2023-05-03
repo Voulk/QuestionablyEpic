@@ -20,7 +20,6 @@
     //const talents = ['Power Word: Solace', 'Divine Star']
     const trinketList = []
     const talents = {};
-    console.log(incTalents);
     for (const [key, value] of Object.entries(incTalents)) {
         talents[key] = value.points;
     }

@@ -10,7 +10,7 @@ import DoS from "../../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg"
 import TtVM from "../../../../../Images/MythicPlus/TazaveshTheVeiledMarket/TazaveshTheVeiledMarket.jpg";
 /* ------------------------------------- Legion Timewalking ------------------------------------- */
 import BRH from "../../../../../Images/MythicPlus/LegionTimewalking/BlackrookHold.jpg";
-import NL from "../../../../../Images/MythicPlus/LegionTimewalking/NeltharionsLair.jpg";
+
 import DHT from "../../../../../Images/MythicPlus/LegionTimewalking/DarkheartThicket.jpg";
 import VotW from "../../../../../Images/MythicPlus/LegionTimewalking/VaultOfTheWardens.jpg";
 import EoA from "../../../../../Images/MythicPlus/LegionTimewalking/EyeOfAzshara.jpg";
@@ -50,6 +50,11 @@ import HallsofValor from "../../../../../Images/MythicPlus/HallsOfValor.png";
 import CourtofStars from "../../../../../Images/MythicPlus/CourtofStars.png";
 import ShadowmoonBurialGrounds from "../../../../../Images/MythicPlus/ShadowmoonBurialGrounds.png";
 import TempleoftheJadeSerpent from "../../../../../Images/MythicPlus/TempleoftheJadeSerpent.png";
+
+import Freehold from "../../../../../Images/MythicPlus/Freehold.png";
+import TheUnderrot from "../../../../../Images/MythicPlus/TheUnderrot.png";
+import TheVortexPinnacle from "../../../../../Images/MythicPlus/TheVortexPinnacle.png";
+import NL from "../../../../../Images/MythicPlus/NeltharionsLair.png";
 
 export default function DungeonHeaderIcons(props) {
   let source = "";
@@ -127,6 +132,20 @@ export default function DungeonHeaderIcons(props) {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                          DragonFlight                                          */
   /* ---------------------------------------------------------------------------------------------- */
+
+  if (props === 1001) {
+    // Freehold
+    source = Freehold;
+  }
+  if (props === 1022) {
+    // TheUnderrot
+    source = TheUnderrot;
+  }
+  if (props === 68) {
+    // TheVortexPinnacle
+    source = TheVortexPinnacle;
+  }
+
   if (props === 1197) {
     // Uldaman: Legacy of Tyr
     source = UldamanLegacyofTyr;

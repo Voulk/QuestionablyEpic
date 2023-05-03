@@ -32,20 +32,20 @@ export const druidDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.467, 
-    crit: 0.386, 
-    mastery: 0.41, 
-    versatility: 0.369,
-    leech: 0.51,
+    haste: 0.64, 
+    crit: 0.524, 
+    mastery: 0.56, 
+    versatility: 0.53,
+    leech: 0.48,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.39,
-    crit: 0.32,
-    mastery: 0.3,
-    versatility: 0.367,
-    leech: 0.3,
+    haste: 0.6,
+    crit: 0.51,
+    mastery: 0.38,
+    versatility: 0.534,
+    leech: 0.34,
     defaults: true,
   };
 
@@ -63,7 +63,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1.2,
         c90: 1.29,
-        c120: 1.1,
+        c120: 1.17,
         c180: 1.05,
 
         oneMinute: 1.4, // 1.7 once 4pc,

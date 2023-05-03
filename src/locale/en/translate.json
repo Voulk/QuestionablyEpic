@@ -277,6 +277,7 @@
         "topGear": "Top Gear",
         "trinkets": "Trinkets",
         "upgradeFinder": "Upgrade Finder",
+        "embellishments": "Embellishments",
 
         "Setting0TextFieldLabel": "",
         "Setting0Title": "Enchant Items",
@@ -335,10 +336,20 @@
           "title": "Primordial Gems",
           "tooltip": "Let QE Live set up your gems for you, or pick out a specific set."
         },
+        "lariatGems": {
+          "title": "Lariat Gems",
+          "tooltip": "Select the number of gems that you have socketed in your gear."
+        },
+        "healingDartsOverheal": {
+          "title": "Healing Darts Overheal",
+          "tooltip": "Expected % overheal on Healing Darts."
+        },
         "topGearAutoGem": {
-          "title": "Auto Socket Items",
-          "tooltip": "Automatically socket all compatible items, including vaults."
+          "title": "Auto-add Sockets",
+          "tooltip": "Automatically add sockets to eligible items."
         }
+
+        
 
 
       },

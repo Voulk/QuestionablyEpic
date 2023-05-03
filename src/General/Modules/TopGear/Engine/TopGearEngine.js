@@ -68,6 +68,20 @@ function autoSocketItems(itemList) {
   return itemList;
 }
 
+// TODO: Add blocklist. It can be fairly basic.
+const generateReportCode = () => {
+  let result = "";
+  const stringLength = 12;
+  const possChars ='abcdefhijklmnopqrstuvwxyz';
+
+  const charLength = possChars.length;
+  for ( let i = 0; i < stringLength; i++ ) {
+      result += possChars.charAt(Math.floor(Math.random() * charLength));
+  }
+
+  return result;
+}
+
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
  *
@@ -137,6 +151,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   } else {
     let result = new TopGearResult(itemSets[0], differentials, contentType);
     result.itemsCompared = itemSets.length;
+    result.new = true;
+    result.id = generateReportCode();
     return result;
   }
 }
@@ -352,6 +368,9 @@ function enchantItems(bonus_stats, setInt, castModel) {
   bonus_stats.leech += 200;
   enchants["Wrist"] = "Devotion of Leech";
 
+  // Belt
+  enchants["Waist"] = "Shadowed Belt Clasp";
+
   // Legs - Also gives 3/4/5% mana.
   bonus_stats.intellect += 177;
   enchants["Legs"] = "Temporal Spellthread";
@@ -359,10 +378,10 @@ function enchantItems(bonus_stats, setInt, castModel) {
   // Weapon - Sophic Devotion
   // Eternal Grace is so poor that it isn't even compared.
   let expected_uptime = convertPPMToUptime(1, 15);
-  bonus_stats.intellect += 932 * expected_uptime;
-  enchants["CombinedWeapon"] = "Sophic Devotion";
-  enchants["2H Weapon"] = "Sophic Devotion";
-  enchants["1H Weapon"] = "Sophic Devotion";
+  //bonus_stats.intellect += 932 * expected_uptime;
+  enchants["CombinedWeapon"] = "Spore Tender"; //"Sophic Devotion";
+  enchants["2H Weapon"] = "Spore Tender"; //"Sophic Devotion";
+  enchants["1H Weapon"] = "Spore Tender"; //"Sophic Devotion";
   return enchants;
 }
 

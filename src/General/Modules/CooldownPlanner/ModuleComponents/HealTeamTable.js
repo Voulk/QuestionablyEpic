@@ -80,18 +80,24 @@ export default function HealTeam() {
         </div>
       ),
       editComponent: (props) => (
-        <TextField
-          select
-          value={props.value}
-          disabled={props.rowData.name === undefined || props.rowData.name === ""}
-          onChange={(e) => {
-            props.onChange(e.target.value);
-          }}
-          size="small"
-          sx={{ whiteSpace: "nowrap", width: "100%" }}
-        >
-          {classMenus()}
-        </TextField>
+        <div style={{ color: classColoursJS(props.rowData.class), display: "inline-flex" }}>
+          <div>
+            <img style={{ height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 }} src={getClassIconCD(props.rowData.class)} alt={props.rowData.class} />
+          </div>
+          {getTranslatedClassNameCD(props.rowData.class, currentLanguage)}
+        </div>
+        // <TextField
+        //   select
+        //   value={props.value}
+        //   disabled={props.rowData.name === undefined || props.rowData.name === ""}
+        //   onChange={(e) => {
+        //     props.onChange(e.target.value);
+        //   }}
+        //   size="small"
+        //   sx={{ whiteSpace: "nowrap", width: "100%" }}
+        // >
+        //   {classMenus()}
+        // </TextField>
       ),
     },
 

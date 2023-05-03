@@ -6,6 +6,7 @@ import { cooldownDB } from "../../Data/CooldownDB";
 import ClassCooldownMenuItems from "../../Menus/ClassCooldownMenuItems";
 import ClearIcon from "@mui/icons-material/Clear";
 import BuildIcon from "@mui/icons-material/Build";
+import { classColoursJS } from "../../Functions/ClassColourFunctions";
 
 const selectMenu = createTheme({
   components: {
@@ -97,7 +98,12 @@ export default function CooldownSelector(props, rowData, cooldown, nameClass) {
                 }
           }
           value={rowData[cooldown] || props.value || ""}
-          sx={{ lineHeight: "normal", width: "100%", textAlign: "left" }}
+          sx={{
+            lineHeight: "normal",
+            width: "100%",
+            textAlign: "left",
+            backgroundColor: nameClass ? classColoursJS(nameClass) : "",
+          }}
           size="small"
           onChange={(e) => {
             if (e.target.value === "custom") {
