@@ -221,7 +221,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   const rawDiff = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
   const percDiff = (newScore - baseScore) / baseScore
 
-  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") rawDiff;
+  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
 
   return { item: item.id, level: item.level, score: differential, rawDiff: rawDiff, percDiff: percDiff };

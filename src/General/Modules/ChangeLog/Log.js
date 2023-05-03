@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 2,
+    date: "3 May",
+    changes: [ 
+      "Healing Darts no longer scale with crit or versatility in game.",
+      "Bugfix: Upgrade Finder HPS-mode will once again report correctly.",
+      "Disc Priest: Updated the base model slightly.",
+  ]},
+  {
+    version: "10.1.0",
     update: 1,
     date: "2 May",
     changes: [ 

@@ -87,10 +87,10 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 117.1906, //44.02832,
+            coefficient: 117.1906 * 1.15, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
             table: -8,
             ppm: 2,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste'],
             efficiency: 0.5,
           },
         ],
@@ -99,6 +99,7 @@ export const embellishmentData = [
           // TODO
           const expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
           bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+
           return bonus_stats;
         }
       },
@@ -495,14 +496,14 @@ export const embellishmentData = [
           { // Damage Effect
             coefficient: 15.56666, //7.794756,
             table: -9,
-            secondaries: ['haste', 'crit', 'versatility'],
-            ppm: 1, // 4 / 2
+            secondaries: ['haste'],
+            ppm: 1, //
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           
-          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.7;
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.6;
 
           return bonus_stats;
         }

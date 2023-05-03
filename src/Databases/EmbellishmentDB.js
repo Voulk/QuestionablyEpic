@@ -50,7 +50,7 @@ export const embellishmentDB = [
       rank: 0,
     },
   },
-  /*{
+  {
     id: 193468,
     icon: "inv_misc_blacksaberonfang",
     armorType: 0, // All
@@ -66,7 +66,7 @@ export const embellishmentDB = [
       name: "Fang Adornments",
       rank: 0,
     },
-  }, */
+  },
   {
     id: 193532,
     icon: "inv_cloth_dragonquest_b_01_boot",
