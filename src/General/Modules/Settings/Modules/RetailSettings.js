@@ -28,7 +28,6 @@ export default function RetailSettings(props) {
   const classes = useStyles();
 
   const playerSettings = useSelector((state) => state.playerSettings);
-  console.log(playerSettings);
 
   const dispatch = useDispatch();
 
@@ -164,7 +163,9 @@ export default function RetailSettings(props) {
                       ) : (
                         <TextField
                           className={classes.select}
-                          InputProps={{ variant: "outlined" }}
+                          InputProps={{ variant: "outlined", inputProps: {
+                            style: { textAlign: "center" },
+                          } }}
                           variant="outlined"
                           size="small"
                           fullWidth
