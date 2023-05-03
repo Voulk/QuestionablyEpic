@@ -86,7 +86,7 @@ export const raidStyles = makeStyles((theme) => {
       ...commonStyles,
     },
     nathriaHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnatesLong.png").default})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/Aberrus/AberrusRaidLong.png").default})`,
       ...commonStyles,
     },
     sepulcherHeader: {

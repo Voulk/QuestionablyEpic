@@ -68,8 +68,8 @@ export function classColoursERT(props, cooldown) {
 }
 
 export function classColoursJS(props) {
-  if (props === undefined) {
-    return "#FFFFFF";
+  if (props === undefined || props === "") {
+    return "#ff6964";
   }
   if (props.includes("Paladin")) {
     return "#F58CBA";

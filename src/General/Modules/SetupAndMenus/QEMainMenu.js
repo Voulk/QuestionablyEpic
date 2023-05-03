@@ -7,7 +7,7 @@ import AddNewChar from "./CharacterModules/CharacterCreator";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import ArrowForward from "@mui/icons-material/ArrowForward";
-import { Grid, Button, Typography, Tooltip } from "@mui/material";
+import { Grid, Button, Typography, Tooltip, Divider, Box } from "@mui/material";
 import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -63,26 +63,78 @@ export default function QEMainMenu(props) {
   // [route, show button?, tooltip]
   const mainMenuOptions =
     gameType === "Retail"
-      ? {
-          "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
-          "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
-          "MainMenu.SequenceSandbox": ["/sequenceGen", false, "SequenceSandbox"],
-          "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-          "MainMenu.EmbellishmentAnalysis": ["/embellishments", true, "EmbellishmentAnalysis"],
-          "MainMenu.CooldownPlanner": ["/cooldownplanner", true, "CooldownPlanner"],
-          "MainMenu.FightAnalysis": ["/fightAnalysis", false, "FightAnalysis"],
+      ? [
+          // Gearing
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear" },
+          { route: "/UpgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder" },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis" },
+          { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis" },
+          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare" },
+          // Tools
+          { route: "/cooldownplanner", disabled: false, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner" },
+          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 1, localization: "MainMenu.FightAnalysis" },
+          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 2, localization: "MainMenu.SequenceSandbox" },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 3, localization: "MainMenu.Profile" },
+        ]
+      : [
+          // Gearing
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear" },
+          { route: "/UpgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder" },
+          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare" },
+          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 3, localization: "MainMenu.TierSets" },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 4, localization: "MainMenu.TrinketAnalysis" },
+          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare" },
+          // Tools
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile" },
+        ];
 
-          "MainMenu.Profile": ["/profile", true, "Profile"],
-        }
-      : {
-          "MainMenu.TopGear": ["/topgear", true, "TopGear"],
-          "MainMenu.UpgradeFinder": ["/UpgradeFinder", true, "UpgradeFinder"],
-          "MainMenu.QuickCompare": ["/quickcompare", true, "QuickCompare"],
-          "MainMenu.TierSets": ["/TierSets", true, "TierSets"],
-          "MainMenu.TrinketAnalysis": ["/trinkets", true, "TrinketAnalysis"],
-          "MainMenu.Profile": ["/profile", true, "Profile"],
-        };
+  const filterByType = (type) => mainMenuOptions.filter((item) => item.type === type);
+
+  const gearItems = filterByType("Gearing");
+  const toolItems = filterByType("Tools");
+
+  const generateButtons = (items) =>
+    items
+      .sort((a, b) => a.order - b.order)
+      .map((key, index) => (
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
+          <Button
+            key={index}
+            variant="contained"
+            disabled={key.disabled || characterCount === 0}
+            color="secondary"
+            style={{
+              width: "100%",
+              height: "60px",
+              // whiteSpace: "nowrap",
+              // justifyContent: "left",
+              paddingLeft: "20px",
+              textTransform: "none",
+              color: !key.disabled && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
+            }}
+            component={Link}
+            to={key.route}
+          >
+            <Grid container spacing={1.5} alignItems="center">
+              <Grid item xs="auto">
+                <ArrowForward
+                  style={{
+                    verticalAlign: "middle",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <div style={{ display: "block", left: "10px", position: "relative" }}>
+                  <div style={{ lineHeight: 1.4 }}>{t(key.localization).toUpperCase()}</div>
+                  <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
+                    {t("MainMenu.Tooltips." + key.tooltip)}
+                  </Typography>
+                </div>
+              </Grid>
+            </Grid>
+          </Button>
+        </Grid>
+      ));
 
   const { t } = useTranslation();
   const classes = useStyles();
@@ -117,11 +169,9 @@ export default function QEMainMenu(props) {
       <div className={classes.root}>
         <div style={{ height: 96 }} />
         <Grid container spacing={2}>
-          {
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
-            </Grid>
-          }
+          {/*<Grid item xs={12} style={{ textAlign: "center" }}>
+            <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
+            </Grid> */}
           <Grid item xs={12}>
             <Button
               key={321}
@@ -142,52 +192,34 @@ export default function QEMainMenu(props) {
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}
             </Button>
           </Grid>
-          {
-            <Grid item xs={12}>
-              <MessageOfTheDay gameType={gameType} />
-            </Grid>
-          }
+          <Grid item xs={12}>
+            <MessageOfTheDay gameType={gameType} />
+          </Grid>
 
-          {Object.keys(mainMenuOptions).map((key, index) => (
-            // Buttons are translated and printed from a dictionary.
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
-              <Button
-                key={index}
-                variant="contained"
-                disabled={!mainMenuOptions[key][1] || characterCount === 0}
-                color="secondary"
-                style={{
-                  width: "100%",
-                  height: "60px",
-                  // whiteSpace: "nowrap",
-                  // justifyContent: "left",
-                  paddingLeft: "20px",
-                  textTransform: "none",
-                  color: mainMenuOptions[key][1] && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
-                }}
-                component={Link}
-                to={mainMenuOptions[key][0]}
-              >
-                <Grid container spacing={1.5} alignItems="center">
-                  <Grid item xs="auto">
-                    <ArrowForward
-                      style={{
-                        verticalAlign: "middle",
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={10}>
-                    <div style={{ display: "block", left: "10px", position: "relative" }}>
-                      <div style={{ lineHeight: 1.4 }}>{t(key).toUpperCase()}</div>
-                      <Typography color="white.main" sx={{ fontSize: 10.5, lineHeight: 1.1 }}>
-                        {t("MainMenu.Tooltips." + mainMenuOptions[key][2])}
-                      </Typography>
-                    </div>
-                  </Grid>
+          <Grid item xs={12}>
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={12}>
+                <Box borderBottom={1} borderColor="divider" pb={0} mb={1}>
+                  <Typography variant="h5" color="primary">
+                    Gearing
+                  </Typography>
+                </Box>
+                <Grid container spacing={1}>
+                  {generateButtons(gearItems)}
                 </Grid>
-              </Button>
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <Box borderBottom={1} borderColor="divider" pb={0} mb={1}>
+                  <Typography variant="h5" color="primary">
+                    Tools
+                  </Typography>
+                </Box>
+                <Grid container spacing={1}>
+                  {generateButtons(toolItems)}
+                </Grid>
+              </Grid>
             </Grid>
-          ))}
+          </Grid>
         </Grid>
 
         <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">

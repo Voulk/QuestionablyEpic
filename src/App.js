@@ -14,6 +14,7 @@ import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
+import OneShot from "General/Modules/OneShot/OneShot";
 import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
@@ -342,6 +343,7 @@ class App extends Component {
                   <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
+                  <Route path="/oneshot" render={() => <OneShot/>} />
 
                   <CustomRoute 
                     player={activePlayer} 

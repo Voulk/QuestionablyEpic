@@ -7764,12 +7764,12 @@ export const bonus_IDs = {
   },
   "582": {
     "id": 582,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "14 @plvl 1 - 329 @plvl 329",
     "curveId": 956
   },
   "583": {
     "id": 583,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "14 @plvl 1 - 329 @plvl 329",
     "curveId": 956
   },
   "584": {
@@ -7915,7 +7915,7 @@ export const bonus_IDs = {
   },
   "609": {
     "id": 609,
-    "level": 8
+    "level": 0
   },
   "615": {
     "id": 615,
@@ -8051,6 +8051,18 @@ export const bonus_IDs = {
     "level": 5,
     "tag": "Empowered",
     "quality": 4
+  },
+  "649": {
+    "id": 649,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 5
+  },
+  "650": {
+    "id": 650,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 5
   },
   "651": {
     "id": 651,
@@ -14355,12 +14367,17 @@ export const bonus_IDs = {
   },
   "3455": {
     "id": 3455,
-    "level": 30
+    "level": 2
   },
   "3457": {
     "id": 3457,
     "previewlevel": 810,
     "quality": 3
+  },
+  "3458": {
+    "id": 3458,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60968
   },
   "3460": {
     "id": 3460,
@@ -14391,10 +14408,6 @@ export const bonus_IDs = {
     "id": 3465,
     "previewlevel": 885,
     "quality": 4
-  },
-  "3466": {
-    "id": 3466,
-    "previewlevel": 860
   },
   "3467": {
     "id": 3467,
@@ -14721,7 +14734,8 @@ export const bonus_IDs = {
   },
   "3530": {
     "id": 3530,
-    "level": 3
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972
   },
   "3531": {
     "id": 3531,
@@ -14802,7 +14816,8 @@ export const bonus_IDs = {
   },
   "3570": {
     "id": 3570,
-    "level": 6
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976
   },
   "3571": {
     "id": 3571,
@@ -14910,7 +14925,7 @@ export const bonus_IDs = {
   },
   "3592": {
     "id": 3592,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "14 @plvl 1 - 329 @plvl 329",
     "curveId": 956
   },
   "3593": {
@@ -15014,17 +15029,17 @@ export const bonus_IDs = {
   },
   "3615": {
     "id": 3615,
-    "ilevel": "15 @plvl 1 - 188 @plvl 188",
+    "ilevel": "15 @plvl 1 - 330 @plvl 330",
     "curveId": 959
   },
   "3616": {
     "id": 3616,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
+    "ilevel": "17 @plvl 1 - 332 @plvl 332",
     "curveId": 961
   },
   "3617": {
     "id": 3617,
-    "ilevel": "16 @plvl 1 - 189 @plvl 189",
+    "ilevel": "16 @plvl 1 - 331 @plvl 331",
     "curveId": 960
   },
   "3618": {
@@ -15117,7 +15132,8 @@ export const bonus_IDs = {
   },
   "3630": {
     "id": 3630,
-    "level": 9
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 60980
   },
   "3631": {
     "id": 3631,
@@ -17962,7 +17978,9 @@ export const bonus_IDs = {
   },
   "4213": {
     "id": 4213,
-    "level": 0
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 60980,
+    "quality": 5
   },
   "4214": {
     "id": 4214,
@@ -22838,22 +22856,22 @@ export const bonus_IDs = {
   },
   "5805": {
     "id": 5805,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "14 @plvl 1 - 329 @plvl 329",
     "curveId": 956
   },
   "5806": {
     "id": 5806,
-    "ilevel": "16 @plvl 1 - 189 @plvl 189",
+    "ilevel": "16 @plvl 1 - 331 @plvl 331",
     "curveId": 960
   },
   "5807": {
     "id": 5807,
-    "ilevel": "15 @plvl 1 - 188 @plvl 188",
+    "ilevel": "15 @plvl 1 - 330 @plvl 330",
     "curveId": 959
   },
   "5808": {
     "id": 5808,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
+    "ilevel": "17 @plvl 1 - 332 @plvl 332",
     "curveId": 961
   },
   "5814": {
@@ -27964,6 +27982,30 @@ export const bonus_IDs = {
     "id": 6646,
     "quality": 4
   },
+  "6647": {
+    "id": 6647,
+    "craftedStats": [
+      32
+    ]
+  },
+  "6648": {
+    "id": 6648,
+    "craftedStats": [
+      49
+    ]
+  },
+  "6649": {
+    "id": 6649,
+    "craftedStats": [
+      36
+    ]
+  },
+  "6650": {
+    "id": 6650,
+    "craftedStats": [
+      40
+    ]
+  },
   "6653": {
     "id": 6653,
     "effect": {
@@ -28066,6 +28108,24 @@ export const bonus_IDs = {
   "6672": {
     "id": 6672,
     "socket": 1
+  },
+  "6673": {
+    "id": 6673,
+    "craftedStats": [
+      62
+    ]
+  },
+  "6674": {
+    "id": 6674,
+    "craftedStats": [
+      61
+    ]
+  },
+  "6675": {
+    "id": 6675,
+    "craftedStats": [
+      63
+    ]
   },
   "6676": {
     "id": 6676,
@@ -31627,10 +31687,7 @@ export const bonus_IDs = {
   },
   "7083": {
     "id": 7083,
-    "effect": {
-      "id": 0,
-      "index": 0
-    },
+    "effect": null,
     "quality": 5
   },
   "7084": {
@@ -32586,27 +32643,27 @@ export const bonus_IDs = {
   },
   "7175": {
     "id": 7175,
-    "ilevel": "19 @plvl 0 - 19 @plvl 19",
+    "ilevel": "29 @plvl 0 - 29 @plvl 29",
     "curveId": 19958
   },
   "7176": {
     "id": 7176,
-    "ilevel": "28 @plvl 0 - 28 @plvl 28",
+    "ilevel": "65 @plvl 0 - 65 @plvl 65",
     "curveId": 19968
   },
   "7177": {
     "id": 7177,
-    "ilevel": "39 @plvl 0 - 39 @plvl 39",
+    "ilevel": "94 @plvl 0 - 94 @plvl 94",
     "curveId": 19978
   },
   "7178": {
     "id": 7178,
-    "ilevel": "48 @plvl 0 - 48 @plvl 48",
+    "ilevel": "127 @plvl 0 - 127 @plvl 127",
     "curveId": 19988
   },
   "7179": {
     "id": 7179,
-    "ilevel": "54 @plvl 0 - 54 @plvl 54",
+    "ilevel": "163 @plvl 0 - 163 @plvl 163",
     "curveId": 19993
   },
   "7180": {
@@ -32696,13 +32753,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 163,
       "bonusId": 7196,
+      "itemLevel": 164,
       "currency": {
         "amount": 25,
         "name": "Reservoir Anima",
         "id": 1813,
         "icon": "spell_animabastion_orb"
-      },
-      "itemLevel": 164
+      }
     }
   },
   "7197": {
@@ -32712,13 +32769,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 163,
       "bonusId": 7197,
+      "itemLevel": 171,
       "currency": {
         "amount": 50,
         "name": "Reservoir Anima",
         "id": 1813,
         "icon": "spell_animabastion_orb"
-      },
-      "itemLevel": 171
+      }
     }
   },
   "7198": {
@@ -32728,13 +32785,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 163,
       "bonusId": 7198,
+      "itemLevel": 177,
       "currency": {
         "amount": 75,
         "name": "Reservoir Anima",
         "id": 1813,
         "icon": "spell_animabastion_orb"
-      },
-      "itemLevel": 177
+      }
     }
   },
   "7199": {
@@ -32744,13 +32801,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 163,
       "bonusId": 7199,
+      "itemLevel": 184,
       "currency": {
         "amount": 100,
         "name": "Reservoir Anima",
         "id": 1813,
         "icon": "spell_animabastion_orb"
-      },
-      "itemLevel": 184
+      }
     }
   },
   "7200": {
@@ -32760,13 +32817,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 163,
       "bonusId": 7200,
+      "itemLevel": 190,
       "currency": {
         "amount": 125,
         "name": "Reservoir Anima",
         "id": 1813,
         "icon": "spell_animabastion_orb"
-      },
-      "itemLevel": 190
+      }
     }
   },
   "7201": {
@@ -32776,13 +32833,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 163,
       "bonusId": 7201,
+      "itemLevel": 197,
       "currency": {
         "amount": 150,
         "name": "Reservoir Anima",
         "id": 1813,
         "icon": "spell_animabastion_orb"
-      },
-      "itemLevel": 197
+      }
     }
   },
   "7202": {
@@ -33499,13 +33556,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 198,
       "bonusId": 7480,
+      "itemLevel": 210,
       "currency": {
         "amount": 200,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7481": {
@@ -33515,13 +33572,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 198,
       "bonusId": 7481,
+      "itemLevel": 216,
       "currency": {
         "amount": 225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7482": {
@@ -33531,13 +33588,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 198,
       "bonusId": 7482,
+      "itemLevel": 223,
       "currency": {
         "amount": 275,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7483": {
@@ -33547,13 +33604,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 198,
       "bonusId": 7483,
+      "itemLevel": 229,
       "currency": {
         "amount": 300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7484": {
@@ -33563,13 +33620,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 198,
       "bonusId": 7484,
+      "itemLevel": 236,
       "currency": {
         "amount": 350,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7485": {
@@ -33579,13 +33636,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 198,
       "bonusId": 7485,
+      "itemLevel": 242,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7486": {
@@ -33605,13 +33662,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 199,
       "bonusId": 7487,
+      "itemLevel": 210,
       "currency": {
         "amount": 250,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7488": {
@@ -33621,13 +33678,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 199,
       "bonusId": 7488,
+      "itemLevel": 216,
       "currency": {
         "amount": 300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7489": {
@@ -33637,13 +33694,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 199,
       "bonusId": 7489,
+      "itemLevel": 223,
       "currency": {
         "amount": 350,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7490": {
@@ -33653,13 +33710,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 199,
       "bonusId": 7490,
+      "itemLevel": 229,
       "currency": {
         "amount": 400,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7491": {
@@ -33669,13 +33726,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 199,
       "bonusId": 7491,
+      "itemLevel": 236,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7492": {
@@ -33685,13 +33742,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 199,
       "bonusId": 7492,
+      "itemLevel": 242,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7493": {
@@ -33711,13 +33768,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 200,
       "bonusId": 7494,
+      "itemLevel": 210,
       "currency": {
         "amount": 325,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7495": {
@@ -33727,13 +33784,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 200,
       "bonusId": 7495,
+      "itemLevel": 216,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7496": {
@@ -33743,13 +33800,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 200,
       "bonusId": 7496,
+      "itemLevel": 223,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7497": {
@@ -33759,13 +33816,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 200,
       "bonusId": 7497,
+      "itemLevel": 229,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7498": {
@@ -33775,13 +33832,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 200,
       "bonusId": 7498,
+      "itemLevel": 236,
       "currency": {
         "amount": 575,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7499": {
@@ -33791,13 +33848,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 200,
       "bonusId": 7499,
+      "itemLevel": 242,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7500": {
@@ -33817,13 +33874,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 201,
       "bonusId": 7501,
+      "itemLevel": 210,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7502": {
@@ -33833,13 +33890,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 201,
       "bonusId": 7502,
+      "itemLevel": 216,
       "currency": {
         "amount": 750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7503": {
@@ -33849,13 +33906,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 201,
       "bonusId": 7503,
+      "itemLevel": 223,
       "currency": {
         "amount": 900,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7504": {
@@ -33865,13 +33922,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 201,
       "bonusId": 7504,
+      "itemLevel": 229,
       "currency": {
         "amount": 1000,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7505": {
@@ -33881,13 +33938,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 201,
       "bonusId": 7505,
+      "itemLevel": 236,
       "currency": {
         "amount": 1150,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7506": {
@@ -33897,13 +33954,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 201,
       "bonusId": 7506,
+      "itemLevel": 242,
       "currency": {
         "amount": 1300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7507": {
@@ -33923,13 +33980,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 203,
       "bonusId": 7508,
+      "itemLevel": 210,
       "currency": {
         "amount": 175,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7509": {
@@ -33939,13 +33996,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 203,
       "bonusId": 7509,
+      "itemLevel": 216,
       "currency": {
         "amount": 200,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7510": {
@@ -33955,13 +34012,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 203,
       "bonusId": 7510,
+      "itemLevel": 223,
       "currency": {
         "amount": 225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7511": {
@@ -33971,13 +34028,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 203,
       "bonusId": 7511,
+      "itemLevel": 229,
       "currency": {
         "amount": 250,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7512": {
@@ -33987,13 +34044,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 203,
       "bonusId": 7512,
+      "itemLevel": 236,
       "currency": {
         "amount": 300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7513": {
@@ -34003,13 +34060,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 203,
       "bonusId": 7513,
+      "itemLevel": 242,
       "currency": {
         "amount": 350,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7514": {
@@ -34029,13 +34086,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 204,
       "bonusId": 7515,
+      "itemLevel": 210,
       "currency": {
         "amount": 475,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7516": {
@@ -34045,13 +34102,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 204,
       "bonusId": 7516,
+      "itemLevel": 216,
       "currency": {
         "amount": 550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7517": {
@@ -34061,13 +34118,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 204,
       "bonusId": 7517,
+      "itemLevel": 223,
       "currency": {
         "amount": 675,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7518": {
@@ -34077,13 +34134,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 204,
       "bonusId": 7518,
+      "itemLevel": 229,
       "currency": {
         "amount": 750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7519": {
@@ -34093,13 +34150,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 204,
       "bonusId": 7519,
+      "itemLevel": 236,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7520": {
@@ -34109,13 +34166,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 204,
       "bonusId": 7520,
+      "itemLevel": 242,
       "currency": {
         "amount": 950,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7521": {
@@ -34135,13 +34192,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 202,
       "bonusId": 7522,
+      "itemLevel": 210,
       "currency": {
         "amount": 325,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 210
+      }
     }
   },
   "7523": {
@@ -34151,13 +34208,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 202,
       "bonusId": 7523,
+      "itemLevel": 216,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 216
+      }
     }
   },
   "7524": {
@@ -34167,13 +34224,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 202,
       "bonusId": 7524,
+      "itemLevel": 223,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 223
+      }
     }
   },
   "7525": {
@@ -34183,13 +34240,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 202,
       "bonusId": 7525,
+      "itemLevel": 229,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 229
+      }
     }
   },
   "7526": {
@@ -34199,13 +34256,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 202,
       "bonusId": 7526,
+      "itemLevel": 236,
       "currency": {
         "amount": 575,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7527": {
@@ -34215,13 +34272,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 202,
       "bonusId": 7527,
+      "itemLevel": 242,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7528": {
@@ -34243,13 +34300,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7529,
+      "itemLevel": 255,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7530": {
@@ -34260,13 +34317,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7530,
+      "itemLevel": 262,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7531": {
@@ -34277,13 +34334,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7531,
+      "itemLevel": 268,
       "currency": {
         "amount": 825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7532": {
@@ -34294,13 +34351,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7532,
+      "itemLevel": 275,
       "currency": {
         "amount": 1100,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7533": {
@@ -34311,13 +34368,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7533,
+      "itemLevel": 272,
       "currency": {
         "amount": 925,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7534": {
@@ -34339,13 +34396,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7535,
+      "itemLevel": 255,
       "currency": {
         "amount": 675,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7536": {
@@ -34356,13 +34413,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7536,
+      "itemLevel": 262,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7537": {
@@ -34373,13 +34430,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7537,
+      "itemLevel": 268,
       "currency": {
         "amount": 1100,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7538": {
@@ -34390,13 +34447,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7538,
+      "itemLevel": 275,
       "currency": {
         "amount": 1475,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7539": {
@@ -34407,13 +34464,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7539,
+      "itemLevel": 272,
       "currency": {
         "amount": 1225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7540": {
@@ -34435,13 +34492,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7541,
+      "itemLevel": 255,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7542": {
@@ -34452,13 +34509,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7542,
+      "itemLevel": 262,
       "currency": {
         "amount": 1075,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7543": {
@@ -34469,13 +34526,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7543,
+      "itemLevel": 268,
       "currency": {
         "amount": 1375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7544": {
@@ -34486,13 +34543,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7544,
+      "itemLevel": 275,
       "currency": {
         "amount": 1825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7545": {
@@ -34503,13 +34560,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7545,
+      "itemLevel": 272,
       "currency": {
         "amount": 1525,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7546": {
@@ -34531,13 +34588,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7547,
+      "itemLevel": 255,
       "currency": {
         "amount": 1700,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7548": {
@@ -34548,13 +34605,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7548,
+      "itemLevel": 262,
       "currency": {
         "amount": 2150,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7549": {
@@ -34565,13 +34622,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7549,
+      "itemLevel": 268,
       "currency": {
         "amount": 2750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7550": {
@@ -34582,13 +34639,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7550,
+      "itemLevel": 275,
       "currency": {
         "amount": 3650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7551": {
@@ -34599,13 +34656,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7551,
+      "itemLevel": 272,
       "currency": {
         "amount": 3050,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7552": {
@@ -34627,13 +34684,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7553,
+      "itemLevel": 255,
       "currency": {
         "amount": 425,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7554": {
@@ -34644,13 +34701,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7554,
+      "itemLevel": 262,
       "currency": {
         "amount": 550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7555": {
@@ -34661,13 +34718,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7555,
+      "itemLevel": 268,
       "currency": {
         "amount": 700,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7556": {
@@ -34678,13 +34735,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7556,
+      "itemLevel": 275,
       "currency": {
         "amount": 900,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7557": {
@@ -34695,13 +34752,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7557,
+      "itemLevel": 272,
       "currency": {
         "amount": 775,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7558": {
@@ -34723,13 +34780,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7559,
+      "itemLevel": 255,
       "currency": {
         "amount": 1275,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7560": {
@@ -34740,13 +34797,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7560,
+      "itemLevel": 262,
       "currency": {
         "amount": 1600,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7561": {
@@ -34757,13 +34814,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7561,
+      "itemLevel": 268,
       "currency": {
         "amount": 2050,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7562": {
@@ -34774,13 +34831,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7562,
+      "itemLevel": 275,
       "currency": {
         "amount": 2750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7563": {
@@ -34791,13 +34848,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7563,
+      "itemLevel": 272,
       "currency": {
         "amount": 2275,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7564": {
@@ -34819,13 +34876,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7565,
+      "itemLevel": 255,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7566": {
@@ -34836,13 +34893,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7566,
+      "itemLevel": 262,
       "currency": {
         "amount": 1075,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7567": {
@@ -34853,13 +34910,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7567,
+      "itemLevel": 268,
       "currency": {
         "amount": 1375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7568": {
@@ -34870,13 +34927,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7568,
+      "itemLevel": 275,
       "currency": {
         "amount": 1825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "7569": {
@@ -34887,13 +34944,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7569,
+      "itemLevel": 272,
       "currency": {
         "amount": 1525,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "7570": {
@@ -35053,86 +35110,6 @@ export const bonus_IDs = {
       "base": "Agony Gaze"
     }
   },
-  "7682": {
-    "id": 7682,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7683": {
-    "id": 7683,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7684": {
-    "id": 7684,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7685": {
-    "id": 7685,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7686": {
-    "id": 7686,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7687": {
-    "id": 7687,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7688": {
-    "id": 7688,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7689": {
-    "id": 7689,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7690": {
-    "id": 7690,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
-  "7691": {
-    "id": 7691,
-    "upgrade": {
-      "level": 0,
-      "max": 6,
-      "group": 219
-    }
-  },
   "7692": {
     "id": 7692,
     "upgrade": {
@@ -35150,13 +35127,13 @@ export const bonus_IDs = {
       "max": 6,
       "group": 219,
       "bonusId": 7693,
+      "itemLevel": 207,
       "currency": {
         "amount": 250,
         "name": "Cataloged Research",
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
-      },
-      "itemLevel": 207
+      }
     }
   },
   "7694": {
@@ -35166,13 +35143,13 @@ export const bonus_IDs = {
       "max": 6,
       "group": 219,
       "bonusId": 7694,
+      "itemLevel": 213,
       "currency": {
         "amount": 750,
         "name": "Cataloged Research",
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
-      },
-      "itemLevel": 213
+      }
     }
   },
   "7695": {
@@ -35182,13 +35159,13 @@ export const bonus_IDs = {
       "max": 6,
       "group": 219,
       "bonusId": 7695,
+      "itemLevel": 220,
       "currency": {
         "amount": 1250,
         "name": "Cataloged Research",
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
-      },
-      "itemLevel": 220
+      }
     }
   },
   "7696": {
@@ -35198,13 +35175,13 @@ export const bonus_IDs = {
       "max": 6,
       "group": 219,
       "bonusId": 7696,
+      "itemLevel": 226,
       "currency": {
         "amount": 2000,
         "name": "Cataloged Research",
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
-      },
-      "itemLevel": 226
+      }
     }
   },
   "7697": {
@@ -35214,13 +35191,13 @@ export const bonus_IDs = {
       "max": 6,
       "group": 219,
       "bonusId": 7697,
+      "itemLevel": 233,
       "currency": {
         "amount": 3000,
         "name": "Cataloged Research",
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
-      },
-      "itemLevel": 233
+      }
     }
   },
   "7698": {
@@ -36012,13 +35989,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7759,
+      "itemLevel": 236,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7760": {
@@ -36028,13 +36005,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7760,
+      "itemLevel": 239,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7761": {
@@ -36044,13 +36021,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7761,
+      "itemLevel": 242,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7762": {
@@ -36060,13 +36037,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7762,
+      "itemLevel": 246,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7763": {
@@ -36076,13 +36053,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7763,
+      "itemLevel": 249,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7764": {
@@ -36092,13 +36069,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7764,
+      "itemLevel": 252,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7765": {
@@ -36108,13 +36085,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7765,
+      "itemLevel": 255,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7766": {
@@ -36124,13 +36101,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7766,
+      "itemLevel": 259,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7767": {
@@ -36140,13 +36117,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7767,
+      "itemLevel": 262,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7768": {
@@ -36156,13 +36133,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7768,
+      "itemLevel": 265,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7769": {
@@ -36172,13 +36149,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7769,
+      "itemLevel": 268,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7770": {
@@ -36188,29 +36165,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 227,
       "bonusId": 7770,
+      "itemLevel": 272,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7771": {
-    "id": 7771,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 227
-    }
-  },
-  "7772": {
-    "id": 7772,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 227
+      }
     }
   },
   "7773": {
@@ -36220,13 +36181,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7773,
+      "itemLevel": 236,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7774": {
@@ -36236,13 +36197,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7774,
+      "itemLevel": 239,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7775": {
@@ -36252,13 +36213,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7775,
+      "itemLevel": 242,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7776": {
@@ -36268,13 +36229,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7776,
+      "itemLevel": 246,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7777": {
@@ -36284,13 +36245,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7777,
+      "itemLevel": 249,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7778": {
@@ -36300,13 +36261,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7778,
+      "itemLevel": 252,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7779": {
@@ -36316,13 +36277,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7779,
+      "itemLevel": 255,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7780": {
@@ -36332,13 +36293,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7780,
+      "itemLevel": 259,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7781": {
@@ -36348,13 +36309,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7781,
+      "itemLevel": 262,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7782": {
@@ -36364,13 +36325,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7782,
+      "itemLevel": 265,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7783": {
@@ -36380,13 +36341,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7783,
+      "itemLevel": 268,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7784": {
@@ -36396,29 +36357,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 228,
       "bonusId": 7784,
+      "itemLevel": 272,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7785": {
-    "id": 7785,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 228
-    }
-  },
-  "7786": {
-    "id": 7786,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 228
+      }
     }
   },
   "7787": {
@@ -36428,13 +36373,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7787,
+      "itemLevel": 236,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7788": {
@@ -36444,13 +36389,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7788,
+      "itemLevel": 239,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7789": {
@@ -36460,13 +36405,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7789,
+      "itemLevel": 242,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7790": {
@@ -36476,13 +36421,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7790,
+      "itemLevel": 246,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7791": {
@@ -36492,13 +36437,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7791,
+      "itemLevel": 249,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7792": {
@@ -36508,13 +36453,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7792,
+      "itemLevel": 252,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7793": {
@@ -36524,13 +36469,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7793,
+      "itemLevel": 255,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7794": {
@@ -36540,13 +36485,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7794,
+      "itemLevel": 259,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7795": {
@@ -36556,13 +36501,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7795,
+      "itemLevel": 262,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7796": {
@@ -36572,13 +36517,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7796,
+      "itemLevel": 265,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7797": {
@@ -36588,13 +36533,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7797,
+      "itemLevel": 268,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7798": {
@@ -36604,29 +36549,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 229,
       "bonusId": 7798,
+      "itemLevel": 272,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7799": {
-    "id": 7799,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 229
-    }
-  },
-  "7800": {
-    "id": 7800,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 229
+      }
     }
   },
   "7801": {
@@ -36636,13 +36565,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7801,
+      "itemLevel": 236,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7802": {
@@ -36652,13 +36581,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7802,
+      "itemLevel": 239,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7803": {
@@ -36668,13 +36597,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7803,
+      "itemLevel": 242,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7804": {
@@ -36684,13 +36613,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7804,
+      "itemLevel": 246,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7805": {
@@ -36700,13 +36629,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7805,
+      "itemLevel": 249,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7806": {
@@ -36716,13 +36645,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7806,
+      "itemLevel": 252,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7807": {
@@ -36732,13 +36661,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7807,
+      "itemLevel": 255,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7808": {
@@ -36748,13 +36677,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7808,
+      "itemLevel": 259,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7809": {
@@ -36764,13 +36693,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7809,
+      "itemLevel": 262,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7810": {
@@ -36780,13 +36709,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7810,
+      "itemLevel": 265,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7811": {
@@ -36796,13 +36725,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7811,
+      "itemLevel": 268,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7812": {
@@ -36812,29 +36741,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 224,
       "bonusId": 7812,
+      "itemLevel": 272,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7813": {
-    "id": 7813,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 224
-    }
-  },
-  "7814": {
-    "id": 7814,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 224
+      }
     }
   },
   "7815": {
@@ -36844,13 +36757,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7815,
+      "itemLevel": 236,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7816": {
@@ -36860,13 +36773,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7816,
+      "itemLevel": 239,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7817": {
@@ -36876,13 +36789,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7817,
+      "itemLevel": 242,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7818": {
@@ -36892,13 +36805,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7818,
+      "itemLevel": 246,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7819": {
@@ -36908,13 +36821,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7819,
+      "itemLevel": 249,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7820": {
@@ -36924,13 +36837,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7820,
+      "itemLevel": 252,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7821": {
@@ -36940,13 +36853,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7821,
+      "itemLevel": 255,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7822": {
@@ -36956,13 +36869,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7822,
+      "itemLevel": 259,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7823": {
@@ -36972,13 +36885,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7823,
+      "itemLevel": 262,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7824": {
@@ -36988,13 +36901,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7824,
+      "itemLevel": 265,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7825": {
@@ -37004,13 +36917,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7825,
+      "itemLevel": 268,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7826": {
@@ -37020,29 +36933,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 223,
       "bonusId": 7826,
+      "itemLevel": 272,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7827": {
-    "id": 7827,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 223
-    }
-  },
-  "7828": {
-    "id": 7828,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 223
+      }
     }
   },
   "7829": {
@@ -37052,13 +36949,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7829,
+      "itemLevel": 236,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7830": {
@@ -37068,13 +36965,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7830,
+      "itemLevel": 239,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7831": {
@@ -37084,13 +36981,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7831,
+      "itemLevel": 242,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7832": {
@@ -37100,13 +36997,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7832,
+      "itemLevel": 246,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7833": {
@@ -37116,13 +37013,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7833,
+      "itemLevel": 249,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7834": {
@@ -37132,13 +37029,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7834,
+      "itemLevel": 252,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7835": {
@@ -37148,13 +37045,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7835,
+      "itemLevel": 255,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7836": {
@@ -37164,13 +37061,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7836,
+      "itemLevel": 259,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7837": {
@@ -37180,13 +37077,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7837,
+      "itemLevel": 262,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7838": {
@@ -37196,13 +37093,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7838,
+      "itemLevel": 265,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7839": {
@@ -37212,13 +37109,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7839,
+      "itemLevel": 268,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7840": {
@@ -37228,29 +37125,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 226,
       "bonusId": 7840,
+      "itemLevel": 272,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7841": {
-    "id": 7841,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 226
-    }
-  },
-  "7842": {
-    "id": 7842,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 226
+      }
     }
   },
   "7843": {
@@ -37260,13 +37141,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7843,
+      "itemLevel": 236,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "7844": {
@@ -37276,13 +37157,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7844,
+      "itemLevel": 239,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 239
+      }
     }
   },
   "7845": {
@@ -37292,13 +37173,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7845,
+      "itemLevel": 242,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "7846": {
@@ -37308,13 +37189,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7846,
+      "itemLevel": 246,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 246
+      }
     }
   },
   "7847": {
@@ -37324,13 +37205,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7847,
+      "itemLevel": 249,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "7848": {
@@ -37340,13 +37221,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7848,
+      "itemLevel": 252,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7849": {
@@ -37356,13 +37237,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7849,
+      "itemLevel": 255,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "7850": {
@@ -37372,13 +37253,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7850,
+      "itemLevel": 259,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7851": {
@@ -37388,13 +37269,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7851,
+      "itemLevel": 262,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "7852": {
@@ -37404,13 +37285,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7852,
+      "itemLevel": 265,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7853": {
@@ -37420,13 +37301,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7853,
+      "itemLevel": 268,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "7854": {
@@ -37436,29 +37317,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 225,
       "bonusId": 7854,
+      "itemLevel": 272,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
-    }
-  },
-  "7855": {
-    "id": 7855,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 225
-    }
-  },
-  "7856": {
-    "id": 7856,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 225
+      }
     }
   },
   "7859": {
@@ -37649,13 +37514,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7893,
+      "itemLevel": 252,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7894": {
@@ -37666,13 +37531,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7894,
+      "itemLevel": 259,
       "currency": {
         "amount": 550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7895": {
@@ -37683,13 +37548,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 205,
       "bonusId": 7895,
+      "itemLevel": 265,
       "currency": {
         "amount": 725,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7896": {
@@ -37700,13 +37565,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7896,
+      "itemLevel": 252,
       "currency": {
         "amount": 600,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7897": {
@@ -37717,13 +37582,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7897,
+      "itemLevel": 259,
       "currency": {
         "amount": 725,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7898": {
@@ -37734,13 +37599,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 206,
       "bonusId": 7898,
+      "itemLevel": 265,
       "currency": {
         "amount": 975,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7899": {
@@ -37751,13 +37616,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7899,
+      "itemLevel": 252,
       "currency": {
         "amount": 775,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7900": {
@@ -37768,13 +37633,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7900,
+      "itemLevel": 259,
       "currency": {
         "amount": 925,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7901": {
@@ -37785,13 +37650,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 207,
       "bonusId": 7901,
+      "itemLevel": 265,
       "currency": {
         "amount": 1225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7902": {
@@ -37802,13 +37667,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7902,
+      "itemLevel": 252,
       "currency": {
         "amount": 1550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7903": {
@@ -37819,13 +37684,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7903,
+      "itemLevel": 259,
       "currency": {
         "amount": 1850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7904": {
@@ -37836,13 +37701,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 208,
       "bonusId": 7904,
+      "itemLevel": 265,
       "currency": {
         "amount": 2450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7905": {
@@ -37853,13 +37718,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7905,
+      "itemLevel": 252,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7906": {
@@ -37870,13 +37735,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7906,
+      "itemLevel": 259,
       "currency": {
         "amount": 475,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7907": {
@@ -37887,13 +37752,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 210,
       "bonusId": 7907,
+      "itemLevel": 265,
       "currency": {
         "amount": 625,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7908": {
@@ -37904,13 +37769,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7908,
+      "itemLevel": 252,
       "currency": {
         "amount": 1175,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7909": {
@@ -37921,13 +37786,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7909,
+      "itemLevel": 259,
       "currency": {
         "amount": 1375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7910": {
@@ -37938,13 +37803,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 211,
       "bonusId": 7910,
+      "itemLevel": 265,
       "currency": {
         "amount": 1825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7911": {
@@ -37955,13 +37820,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7911,
+      "itemLevel": 252,
       "currency": {
         "amount": 775,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 252
+      }
     }
   },
   "7912": {
@@ -37972,13 +37837,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7912,
+      "itemLevel": 259,
       "currency": {
         "amount": 925,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 259
+      }
     }
   },
   "7913": {
@@ -37989,13 +37854,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 209,
       "bonusId": 7913,
+      "itemLevel": 265,
       "currency": {
         "amount": 1225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "7914": {
@@ -38041,22 +37906,22 @@ export const bonus_IDs = {
   },
   "7920": {
     "id": 7920,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "14 @plvl 1 - 329 @plvl 329",
     "curveId": 956
   },
   "7921": {
     "id": 7921,
-    "ilevel": "15 @plvl 1 - 188 @plvl 188",
+    "ilevel": "15 @plvl 1 - 330 @plvl 330",
     "curveId": 959
   },
   "7922": {
     "id": 7922,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
+    "ilevel": "17 @plvl 1 - 332 @plvl 332",
     "curveId": 961
   },
   "7923": {
     "id": 7923,
-    "ilevel": "16 @plvl 1 - 189 @plvl 189",
+    "ilevel": "16 @plvl 1 - 331 @plvl 331",
     "curveId": 960
   },
   "7924": {
@@ -38076,10 +37941,7 @@ export const bonus_IDs = {
   },
   "7930": {
     "id": 7930,
-    "effect": {
-      "id": 0,
-      "index": 0
-    }
+    "effect": null
   },
   "7931": {
     "id": 7931,
@@ -38255,46 +38117,6 @@ export const bonus_IDs = {
     },
     "item_limit_category": 493
   },
-  "7948": {
-    "id": 7948,
-    "upgrade": {
-      "level": 0,
-      "max": 5,
-      "group": 232
-    }
-  },
-  "7949": {
-    "id": 7949,
-    "upgrade": {
-      "level": 0,
-      "max": 5,
-      "group": 232
-    }
-  },
-  "7950": {
-    "id": 7950,
-    "upgrade": {
-      "level": 0,
-      "max": 5,
-      "group": 232
-    }
-  },
-  "7951": {
-    "id": 7951,
-    "upgrade": {
-      "level": 0,
-      "max": 5,
-      "group": 232
-    }
-  },
-  "7952": {
-    "id": 7952,
-    "upgrade": {
-      "level": 0,
-      "max": 5,
-      "group": 232
-    }
-  },
   "7953": {
     "id": 7953,
     "quality": 3
@@ -38407,13 +38229,15 @@ export const bonus_IDs = {
   },
   "7970": {
     "id": 7970,
-    "ilevel": "265 @plvl 1 - 265 @plvl 265",
-    "curveId": 30732
+    "ilevel": "215 @plvl 50 - 305 @plvl 305",
+    "curveId": 30732,
+    "quality": 3
   },
   "7971": {
     "id": 7971,
-    "ilevel": "265 @plvl 1 - 265 @plvl 265",
-    "curveId": 30733
+    "ilevel": "225 @plvl 50 - 315 @plvl 315",
+    "curveId": 30733,
+    "quality": 3
   },
   "7972": {
     "id": 7972,
@@ -40294,6 +40118,14 @@ export const bonus_IDs = {
     "id": 8108,
     "quality": 3
   },
+  "8116": {
+    "id": 8116,
+    "item_conversion": 2
+  },
+  "8117": {
+    "id": 8117,
+    "item_conversion": 2
+  },
   "8119": {
     "id": 8119,
     "effect": {
@@ -40497,6 +40329,14 @@ export const bonus_IDs = {
       "base": "Unity"
     },
     "item_limit_category": 496
+  },
+  "8137": {
+    "id": 8137,
+    "item_conversion": 2
+  },
+  "8138": {
+    "id": 8138,
+    "item_conversion": 2
   },
   "8142": {
     "id": 8142,
@@ -40797,13 +40637,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8189,
+      "itemLevel": 262,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8190": {
@@ -40813,13 +40653,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8190,
+      "itemLevel": 265,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8191": {
@@ -40829,13 +40669,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8191,
+      "itemLevel": 268,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8192": {
@@ -40845,13 +40685,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8192,
+      "itemLevel": 272,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8193": {
@@ -40861,13 +40701,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8193,
+      "itemLevel": 275,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8194": {
@@ -40877,13 +40717,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8194,
+      "itemLevel": 278,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8195": {
@@ -40893,13 +40733,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8195,
+      "itemLevel": 282,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8196": {
@@ -40909,13 +40749,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8196,
+      "itemLevel": 285,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8197": {
@@ -40925,13 +40765,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8197,
+      "itemLevel": 288,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8198": {
@@ -40941,13 +40781,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8198,
+      "itemLevel": 291,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8199": {
@@ -40957,13 +40797,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8199,
+      "itemLevel": 294,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8200": {
@@ -40973,29 +40813,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 241,
       "bonusId": 8200,
+      "itemLevel": 298,
       "currency": {
         "amount": 1000,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8201": {
-    "id": 8201,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 241
-    }
-  },
-  "8202": {
-    "id": 8202,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 241
+      }
     }
   },
   "8203": {
@@ -41005,13 +40829,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8203,
+      "itemLevel": 262,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8204": {
@@ -41021,13 +40845,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8204,
+      "itemLevel": 265,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8205": {
@@ -41037,13 +40861,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8205,
+      "itemLevel": 268,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8206": {
@@ -41053,13 +40877,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8206,
+      "itemLevel": 272,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8207": {
@@ -41069,13 +40893,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8207,
+      "itemLevel": 275,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8208": {
@@ -41085,13 +40909,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8208,
+      "itemLevel": 278,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8209": {
@@ -41101,13 +40925,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8209,
+      "itemLevel": 282,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8210": {
@@ -41117,13 +40941,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8210,
+      "itemLevel": 285,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8211": {
@@ -41133,13 +40957,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8211,
+      "itemLevel": 288,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8212": {
@@ -41149,13 +40973,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8212,
+      "itemLevel": 291,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8213": {
@@ -41165,13 +40989,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8213,
+      "itemLevel": 294,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8214": {
@@ -41181,29 +41005,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 240,
       "bonusId": 8214,
+      "itemLevel": 298,
       "currency": {
         "amount": 500,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8215": {
-    "id": 8215,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 240
-    }
-  },
-  "8216": {
-    "id": 8216,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 240
+      }
     }
   },
   "8217": {
@@ -41213,13 +41021,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8217,
+      "itemLevel": 262,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8218": {
@@ -41229,13 +41037,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8218,
+      "itemLevel": 265,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8219": {
@@ -41245,13 +41053,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8219,
+      "itemLevel": 268,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8220": {
@@ -41261,13 +41069,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8220,
+      "itemLevel": 272,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8221": {
@@ -41277,13 +41085,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8221,
+      "itemLevel": 275,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8222": {
@@ -41293,13 +41101,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8222,
+      "itemLevel": 278,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8223": {
@@ -41309,13 +41117,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8223,
+      "itemLevel": 282,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8224": {
@@ -41325,13 +41133,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8224,
+      "itemLevel": 285,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8225": {
@@ -41341,13 +41149,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8225,
+      "itemLevel": 288,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8226": {
@@ -41357,13 +41165,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8226,
+      "itemLevel": 291,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8227": {
@@ -41373,13 +41181,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8227,
+      "itemLevel": 294,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8228": {
@@ -41389,29 +41197,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 246,
       "bonusId": 8228,
+      "itemLevel": 298,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8229": {
-    "id": 8229,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 246
-    }
-  },
-  "8230": {
-    "id": 8230,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 246
+      }
     }
   },
   "8231": {
@@ -41421,13 +41213,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8231,
+      "itemLevel": 262,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8232": {
@@ -41437,13 +41229,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8232,
+      "itemLevel": 265,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8233": {
@@ -41453,13 +41245,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8233,
+      "itemLevel": 268,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8234": {
@@ -41469,13 +41261,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8234,
+      "itemLevel": 272,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8235": {
@@ -41485,13 +41277,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8235,
+      "itemLevel": 275,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8236": {
@@ -41501,13 +41293,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8236,
+      "itemLevel": 278,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8237": {
@@ -41517,13 +41309,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8237,
+      "itemLevel": 282,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8238": {
@@ -41533,13 +41325,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8238,
+      "itemLevel": 285,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8239": {
@@ -41549,13 +41341,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8239,
+      "itemLevel": 288,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8240": {
@@ -41565,13 +41357,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8240,
+      "itemLevel": 291,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8241": {
@@ -41581,13 +41373,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8241,
+      "itemLevel": 294,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8242": {
@@ -41597,29 +41389,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 242,
       "bonusId": 8242,
+      "itemLevel": 298,
       "currency": {
         "amount": 750,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8243": {
-    "id": 8243,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 242
-    }
-  },
-  "8244": {
-    "id": 8244,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 242
+      }
     }
   },
   "8245": {
@@ -41629,13 +41405,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8245,
+      "itemLevel": 262,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8246": {
@@ -41645,13 +41421,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8246,
+      "itemLevel": 265,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8247": {
@@ -41661,13 +41437,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8247,
+      "itemLevel": 268,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8248": {
@@ -41677,13 +41453,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8248,
+      "itemLevel": 272,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8249": {
@@ -41693,13 +41469,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8249,
+      "itemLevel": 275,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8250": {
@@ -41709,13 +41485,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8250,
+      "itemLevel": 278,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8251": {
@@ -41725,13 +41501,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8251,
+      "itemLevel": 282,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8252": {
@@ -41741,13 +41517,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8252,
+      "itemLevel": 285,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8253": {
@@ -41757,13 +41533,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8253,
+      "itemLevel": 288,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8254": {
@@ -41773,13 +41549,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8254,
+      "itemLevel": 291,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8255": {
@@ -41789,13 +41565,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8255,
+      "itemLevel": 294,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8256": {
@@ -41805,29 +41581,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 243,
       "bonusId": 8256,
+      "itemLevel": 298,
       "currency": {
         "amount": 475,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8257": {
-    "id": 8257,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 243
-    }
-  },
-  "8258": {
-    "id": 8258,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 243
+      }
     }
   },
   "8259": {
@@ -41837,13 +41597,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8259,
+      "itemLevel": 262,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8260": {
@@ -41853,13 +41613,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8260,
+      "itemLevel": 265,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8261": {
@@ -41869,13 +41629,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8261,
+      "itemLevel": 268,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8262": {
@@ -41885,13 +41645,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8262,
+      "itemLevel": 272,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8263": {
@@ -41901,13 +41661,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8263,
+      "itemLevel": 275,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8264": {
@@ -41917,13 +41677,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8264,
+      "itemLevel": 278,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8265": {
@@ -41933,13 +41693,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8265,
+      "itemLevel": 282,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8266": {
@@ -41949,13 +41709,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8266,
+      "itemLevel": 285,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8267": {
@@ -41965,13 +41725,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8267,
+      "itemLevel": 288,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8268": {
@@ -41981,13 +41741,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8268,
+      "itemLevel": 291,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8269": {
@@ -41997,13 +41757,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8269,
+      "itemLevel": 294,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8270": {
@@ -42013,29 +41773,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 245,
       "bonusId": 8270,
+      "itemLevel": 298,
       "currency": {
         "amount": 400,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8271": {
-    "id": 8271,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 245
-    }
-  },
-  "8272": {
-    "id": 8272,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 245
+      }
     }
   },
   "8273": {
@@ -42045,13 +41789,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8273,
+      "itemLevel": 262,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8274": {
@@ -42061,13 +41805,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8274,
+      "itemLevel": 265,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 265
+      }
     }
   },
   "8275": {
@@ -42077,13 +41821,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8275,
+      "itemLevel": 268,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8276": {
@@ -42093,13 +41837,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8276,
+      "itemLevel": 272,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 272
+      }
     }
   },
   "8277": {
@@ -42109,13 +41853,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8277,
+      "itemLevel": 275,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 275
+      }
     }
   },
   "8278": {
@@ -42125,13 +41869,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8278,
+      "itemLevel": 278,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8279": {
@@ -42141,13 +41885,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8279,
+      "itemLevel": 282,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8280": {
@@ -42157,13 +41901,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8280,
+      "itemLevel": 285,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8281": {
@@ -42173,13 +41917,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8281,
+      "itemLevel": 288,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8282": {
@@ -42189,13 +41933,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8282,
+      "itemLevel": 291,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8283": {
@@ -42205,13 +41949,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8283,
+      "itemLevel": 294,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8284": {
@@ -42221,29 +41965,13 @@ export const bonus_IDs = {
       "max": 12,
       "group": 244,
       "bonusId": 8284,
+      "itemLevel": 298,
       "currency": {
         "amount": 250,
         "name": "Valor",
         "id": 1191,
         "icon": "pvecurrency-valor"
-      },
-      "itemLevel": 298
-    }
-  },
-  "8285": {
-    "id": 8285,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 244
-    }
-  },
-  "8286": {
-    "id": 8286,
-    "upgrade": {
-      "level": 0,
-      "max": 12,
-      "group": 244
+      }
     }
   },
   "8289": {
@@ -42267,13 +41995,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 257,
       "bonusId": 8291,
+      "itemLevel": 236,
       "currency": {
         "amount": 200,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8292": {
@@ -42283,13 +42011,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 257,
       "bonusId": 8292,
+      "itemLevel": 242,
       "currency": {
         "amount": 225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8293": {
@@ -42299,13 +42027,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 257,
       "bonusId": 8293,
+      "itemLevel": 249,
       "currency": {
         "amount": 275,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8294": {
@@ -42315,13 +42043,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 257,
       "bonusId": 8294,
+      "itemLevel": 255,
       "currency": {
         "amount": 300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8295": {
@@ -42331,13 +42059,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 257,
       "bonusId": 8295,
+      "itemLevel": 262,
       "currency": {
         "amount": 350,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8296": {
@@ -42347,13 +42075,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 257,
       "bonusId": 8296,
+      "itemLevel": 268,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8297": {
@@ -42373,13 +42101,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 258,
       "bonusId": 8298,
+      "itemLevel": 236,
       "currency": {
         "amount": 250,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8299": {
@@ -42389,13 +42117,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 258,
       "bonusId": 8299,
+      "itemLevel": 242,
       "currency": {
         "amount": 300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8300": {
@@ -42405,13 +42133,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 258,
       "bonusId": 8300,
+      "itemLevel": 249,
       "currency": {
         "amount": 350,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8301": {
@@ -42421,13 +42149,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 258,
       "bonusId": 8301,
+      "itemLevel": 255,
       "currency": {
         "amount": 400,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8302": {
@@ -42437,13 +42165,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 258,
       "bonusId": 8302,
+      "itemLevel": 262,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8303": {
@@ -42453,13 +42181,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 258,
       "bonusId": 8303,
+      "itemLevel": 268,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8304": {
@@ -42479,13 +42207,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 256,
       "bonusId": 8305,
+      "itemLevel": 236,
       "currency": {
         "amount": 325,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8306": {
@@ -42495,13 +42223,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 256,
       "bonusId": 8306,
+      "itemLevel": 242,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8307": {
@@ -42511,13 +42239,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 256,
       "bonusId": 8307,
+      "itemLevel": 249,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8308": {
@@ -42527,13 +42255,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 256,
       "bonusId": 8308,
+      "itemLevel": 255,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8309": {
@@ -42543,13 +42271,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 256,
       "bonusId": 8309,
+      "itemLevel": 262,
       "currency": {
         "amount": 575,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8310": {
@@ -42559,13 +42287,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 256,
       "bonusId": 8310,
+      "itemLevel": 268,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8311": {
@@ -42585,13 +42313,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 255,
       "bonusId": 8312,
+      "itemLevel": 236,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8313": {
@@ -42601,13 +42329,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 255,
       "bonusId": 8313,
+      "itemLevel": 242,
       "currency": {
         "amount": 750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8314": {
@@ -42617,13 +42345,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 255,
       "bonusId": 8314,
+      "itemLevel": 249,
       "currency": {
         "amount": 900,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8315": {
@@ -42633,13 +42361,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 255,
       "bonusId": 8315,
+      "itemLevel": 255,
       "currency": {
         "amount": 1000,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8316": {
@@ -42649,13 +42377,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 255,
       "bonusId": 8316,
+      "itemLevel": 262,
       "currency": {
         "amount": 1150,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8317": {
@@ -42665,13 +42393,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 255,
       "bonusId": 8317,
+      "itemLevel": 268,
       "currency": {
         "amount": 1300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8318": {
@@ -42691,13 +42419,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 260,
       "bonusId": 8319,
+      "itemLevel": 236,
       "currency": {
         "amount": 175,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8320": {
@@ -42707,13 +42435,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 260,
       "bonusId": 8320,
+      "itemLevel": 242,
       "currency": {
         "amount": 200,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8321": {
@@ -42723,13 +42451,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 260,
       "bonusId": 8321,
+      "itemLevel": 249,
       "currency": {
         "amount": 225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8322": {
@@ -42739,13 +42467,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 260,
       "bonusId": 8322,
+      "itemLevel": 255,
       "currency": {
         "amount": 250,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8323": {
@@ -42755,13 +42483,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 260,
       "bonusId": 8323,
+      "itemLevel": 262,
       "currency": {
         "amount": 300,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8324": {
@@ -42771,13 +42499,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 260,
       "bonusId": 8324,
+      "itemLevel": 268,
       "currency": {
         "amount": 350,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8325": {
@@ -42797,13 +42525,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 259,
       "bonusId": 8326,
+      "itemLevel": 236,
       "currency": {
         "amount": 475,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8327": {
@@ -42813,13 +42541,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 259,
       "bonusId": 8327,
+      "itemLevel": 242,
       "currency": {
         "amount": 550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8328": {
@@ -42829,13 +42557,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 259,
       "bonusId": 8328,
+      "itemLevel": 249,
       "currency": {
         "amount": 675,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8329": {
@@ -42845,13 +42573,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 259,
       "bonusId": 8329,
+      "itemLevel": 255,
       "currency": {
         "amount": 750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8330": {
@@ -42861,13 +42589,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 259,
       "bonusId": 8330,
+      "itemLevel": 262,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8331": {
@@ -42877,13 +42605,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 259,
       "bonusId": 8331,
+      "itemLevel": 268,
       "currency": {
         "amount": 950,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8332": {
@@ -42903,13 +42631,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 254,
       "bonusId": 8333,
+      "itemLevel": 236,
       "currency": {
         "amount": 325,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 236
+      }
     }
   },
   "8334": {
@@ -42919,13 +42647,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 254,
       "bonusId": 8334,
+      "itemLevel": 242,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 242
+      }
     }
   },
   "8335": {
@@ -42935,13 +42663,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 254,
       "bonusId": 8335,
+      "itemLevel": 249,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 249
+      }
     }
   },
   "8336": {
@@ -42951,13 +42679,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 254,
       "bonusId": 8336,
+      "itemLevel": 255,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 255
+      }
     }
   },
   "8337": {
@@ -42967,13 +42695,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 254,
       "bonusId": 8337,
+      "itemLevel": 262,
       "currency": {
         "amount": 575,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 262
+      }
     }
   },
   "8338": {
@@ -42983,13 +42711,13 @@ export const bonus_IDs = {
       "max": 7,
       "group": 254,
       "bonusId": 8338,
+      "itemLevel": 268,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 268
+      }
     }
   },
   "8339": {
@@ -43011,13 +42739,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8340,
+      "itemLevel": 282,
       "currency": {
         "amount": 500,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8341": {
@@ -43028,13 +42756,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8341,
+      "itemLevel": 288,
       "currency": {
         "amount": 650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8342": {
@@ -43045,13 +42773,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8342,
+      "itemLevel": 294,
       "currency": {
         "amount": 825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8343": {
@@ -43062,13 +42790,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8343,
+      "itemLevel": 301,
       "currency": {
         "amount": 1100,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8344": {
@@ -43079,13 +42807,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8344,
+      "itemLevel": 298,
       "currency": {
         "amount": 925,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8345": {
@@ -43107,13 +42835,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8346,
+      "itemLevel": 282,
       "currency": {
         "amount": 675,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8347": {
@@ -43124,13 +42852,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8347,
+      "itemLevel": 288,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8348": {
@@ -43141,13 +42869,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8348,
+      "itemLevel": 294,
       "currency": {
         "amount": 1100,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8349": {
@@ -43158,13 +42886,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8349,
+      "itemLevel": 301,
       "currency": {
         "amount": 1475,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8350": {
@@ -43175,13 +42903,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8350,
+      "itemLevel": 298,
       "currency": {
         "amount": 1225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8351": {
@@ -43203,13 +42931,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8352,
+      "itemLevel": 282,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8353": {
@@ -43220,13 +42948,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8353,
+      "itemLevel": 288,
       "currency": {
         "amount": 1075,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8354": {
@@ -43237,13 +42965,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8354,
+      "itemLevel": 294,
       "currency": {
         "amount": 1375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8355": {
@@ -43254,13 +42982,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8355,
+      "itemLevel": 301,
       "currency": {
         "amount": 1825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8356": {
@@ -43271,13 +42999,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8356,
+      "itemLevel": 298,
       "currency": {
         "amount": 1525,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8357": {
@@ -43299,13 +43027,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8358,
+      "itemLevel": 282,
       "currency": {
         "amount": 1700,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8359": {
@@ -43316,13 +43044,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8359,
+      "itemLevel": 288,
       "currency": {
         "amount": 2150,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8360": {
@@ -43333,13 +43061,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8360,
+      "itemLevel": 294,
       "currency": {
         "amount": 2750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8361": {
@@ -43350,13 +43078,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8361,
+      "itemLevel": 301,
       "currency": {
         "amount": 3650,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8362": {
@@ -43367,13 +43095,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8362,
+      "itemLevel": 298,
       "currency": {
         "amount": 3050,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8363": {
@@ -43395,13 +43123,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8364,
+      "itemLevel": 282,
       "currency": {
         "amount": 425,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8365": {
@@ -43412,13 +43140,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8365,
+      "itemLevel": 288,
       "currency": {
         "amount": 550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8366": {
@@ -43429,13 +43157,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8366,
+      "itemLevel": 294,
       "currency": {
         "amount": 700,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8367": {
@@ -43446,13 +43174,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8367,
+      "itemLevel": 301,
       "currency": {
         "amount": 900,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8368": {
@@ -43463,13 +43191,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8368,
+      "itemLevel": 298,
       "currency": {
         "amount": 775,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8369": {
@@ -43491,13 +43219,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8370,
+      "itemLevel": 282,
       "currency": {
         "amount": 1275,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8371": {
@@ -43508,13 +43236,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8371,
+      "itemLevel": 288,
       "currency": {
         "amount": 1600,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8372": {
@@ -43525,13 +43253,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8372,
+      "itemLevel": 294,
       "currency": {
         "amount": 2050,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8373": {
@@ -43542,13 +43270,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8373,
+      "itemLevel": 301,
       "currency": {
         "amount": 2750,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8374": {
@@ -43559,13 +43287,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8374,
+      "itemLevel": 298,
       "currency": {
         "amount": 2275,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8375": {
@@ -43587,13 +43315,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8376,
+      "itemLevel": 282,
       "currency": {
         "amount": 850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 282
+      }
     }
   },
   "8377": {
@@ -43604,13 +43332,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8377,
+      "itemLevel": 288,
       "currency": {
         "amount": 1075,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 288
+      }
     }
   },
   "8378": {
@@ -43621,13 +43349,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8378,
+      "itemLevel": 294,
       "currency": {
         "amount": 1375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 294
+      }
     }
   },
   "8379": {
@@ -43638,13 +43366,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8379,
+      "itemLevel": 301,
       "currency": {
         "amount": 1825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 301
+      }
     }
   },
   "8380": {
@@ -43655,13 +43383,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8380,
+      "itemLevel": 298,
       "currency": {
         "amount": 1525,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 298
+      }
     }
   },
   "8381": {
@@ -43672,13 +43400,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8381,
+      "itemLevel": 278,
       "currency": {
         "amount": 450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8382": {
@@ -43689,13 +43417,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8382,
+      "itemLevel": 285,
       "currency": {
         "amount": 550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8383": {
@@ -43706,13 +43434,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 250,
       "bonusId": 8383,
+      "itemLevel": 291,
       "currency": {
         "amount": 725,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8384": {
@@ -43723,13 +43451,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8384,
+      "itemLevel": 278,
       "currency": {
         "amount": 600,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8385": {
@@ -43740,13 +43468,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8385,
+      "itemLevel": 285,
       "currency": {
         "amount": 725,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8386": {
@@ -43757,13 +43485,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 251,
       "bonusId": 8386,
+      "itemLevel": 291,
       "currency": {
         "amount": 975,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8387": {
@@ -43774,13 +43502,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8387,
+      "itemLevel": 278,
       "currency": {
         "amount": 775,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8388": {
@@ -43791,13 +43519,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8388,
+      "itemLevel": 285,
       "currency": {
         "amount": 925,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8389": {
@@ -43808,13 +43536,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 249,
       "bonusId": 8389,
+      "itemLevel": 291,
       "currency": {
         "amount": 1225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8390": {
@@ -43825,13 +43553,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8390,
+      "itemLevel": 278,
       "currency": {
         "amount": 1550,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8391": {
@@ -43842,13 +43570,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8391,
+      "itemLevel": 285,
       "currency": {
         "amount": 1850,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8392": {
@@ -43859,13 +43587,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 248,
       "bonusId": 8392,
+      "itemLevel": 291,
       "currency": {
         "amount": 2450,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8393": {
@@ -43876,13 +43604,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8393,
+      "itemLevel": 278,
       "currency": {
         "amount": 375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8394": {
@@ -43893,13 +43621,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8394,
+      "itemLevel": 285,
       "currency": {
         "amount": 475,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8395": {
@@ -43910,13 +43638,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 253,
       "bonusId": 8395,
+      "itemLevel": 291,
       "currency": {
         "amount": 625,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8396": {
@@ -43927,13 +43655,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8396,
+      "itemLevel": 278,
       "currency": {
         "amount": 1175,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8397": {
@@ -43944,13 +43672,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8397,
+      "itemLevel": 285,
       "currency": {
         "amount": 1375,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8398": {
@@ -43961,13 +43689,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 252,
       "bonusId": 8398,
+      "itemLevel": 291,
       "currency": {
         "amount": 1825,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8399": {
@@ -43978,13 +43706,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8399,
+      "itemLevel": 278,
       "currency": {
         "amount": 775,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 278
+      }
     }
   },
   "8400": {
@@ -43995,13 +43723,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8400,
+      "itemLevel": 285,
       "currency": {
         "amount": 925,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 285
+      }
     }
   },
   "8401": {
@@ -44012,13 +43740,13 @@ export const bonus_IDs = {
       "max": 9,
       "group": 247,
       "bonusId": 8401,
+      "itemLevel": 291,
       "currency": {
         "amount": 1225,
         "name": "Honor",
         "id": 1792,
         "icon": "achievement_legionpvptier4"
-      },
-      "itemLevel": 291
+      }
     }
   },
   "8402": {
@@ -44163,33 +43891,52 @@ export const bonus_IDs = {
     "id": 8782,
     "socket": 3
   },
-  "8786": {
-    "id": 8786,
-    "upgrade": {
-      "level": 0,
-      "group": 268
-    }
+  "8785": {
+    "id": 8785,
+    "base_level": 400,
+    "base_level_priority": 500
   },
-  "8787": {
-    "id": 8787,
-    "upgrade": {
-      "level": 0,
-      "group": 268
-    }
+  "8790": {
+    "id": 8790,
+    "craftedStats": [
+      32,
+      36
+    ]
   },
-  "8788": {
-    "id": 8788,
-    "upgrade": {
-      "level": 0,
-      "group": 268
-    }
+  "8791": {
+    "id": 8791,
+    "craftedStats": [
+      32,
+      49
+    ]
   },
-  "8789": {
-    "id": 8789,
-    "upgrade": {
-      "level": 0,
-      "group": 268
-    }
+  "8792": {
+    "id": 8792,
+    "craftedStats": [
+      40,
+      36
+    ]
+  },
+  "8793": {
+    "id": 8793,
+    "craftedStats": [
+      49,
+      36
+    ]
+  },
+  "8794": {
+    "id": 8794,
+    "craftedStats": [
+      49,
+      40
+    ]
+  },
+  "8795": {
+    "id": 8795,
+    "craftedStats": [
+      32,
+      40
+    ]
   },
   "8796": {
     "id": 8796,
@@ -44259,6 +44006,38 @@ export const bonus_IDs = {
     "id": 8810,
     "socket": 1
   },
+  "8813": {
+    "id": 8813,
+    "item_conversion": 3
+  },
+  "8814": {
+    "id": 8814,
+    "item_conversion": 3
+  },
+  "8815": {
+    "id": 8815,
+    "item_conversion": 3
+  },
+  "8816": {
+    "id": 8816,
+    "item_conversion": 3
+  },
+  "8817": {
+    "id": 8817,
+    "item_conversion": 3
+  },
+  "8818": {
+    "id": 8818,
+    "item_conversion": 3
+  },
+  "8819": {
+    "id": 8819,
+    "item_conversion": 3
+  },
+  "8820": {
+    "id": 8820,
+    "item_conversion": 3
+  },
   "8831": {
     "id": 8831,
     "previewlevel": 0
@@ -44302,9 +44081,71 @@ export const bonus_IDs = {
       }
     }
   },
+  "8836": {
+    "id": 8836,
+    "base_level": 382,
+    "base_level_priority": 100
+  },
+  "8837": {
+    "id": 8837,
+    "base_level": 306,
+    "base_level_priority": 100
+  },
+  "8839": {
+    "id": 8839,
+    "base_level": 333,
+    "base_level_priority": 100
+  },
+  "8841": {
+    "id": 8841,
+    "base_level": 320,
+    "base_level_priority": 100
+  },
+  "8843": {
+    "id": 8843,
+    "base_level": 346,
+    "base_level_priority": 100
+  },
+  "8844": {
+    "id": 8844,
+    "base_level": 372,
+    "base_level_priority": 100
+  },
+  "8845": {
+    "id": 8845,
+    "base_level": 395,
+    "base_level_priority": 85
+  },
+  "8846": {
+    "id": 8846,
+    "base_level": 408,
+    "base_level_priority": 85
+  },
+  "8847": {
+    "id": 8847,
+    "base_level": 330,
+    "base_level_priority": 1
+  },
+  "8848": {
+    "id": 8848,
+    "base_level": 356,
+    "base_level_priority": 1
+  },
+  "8849": {
+    "id": 8849,
+    "base_level": 343,
+    "base_level_priority": 1
+  },
   "8850": {
     "id": 8850,
+    "base_level": 369,
+    "base_level_priority": 1,
     "quality": 4
+  },
+  "8851": {
+    "id": 8851,
+    "base_level": 330,
+    "base_level_priority": 100
   },
   "8856": {
     "id": 8856,
@@ -44378,6 +44219,12 @@ export const bonus_IDs = {
       }
     }
   },
+  "8862": {
+    "id": 8862,
+    "craftedStats": [
+      75
+    ]
+  },
   "8863": {
     "id": 8863,
     "effect": {
@@ -44386,7 +44233,7 @@ export const bonus_IDs = {
       "spell": {
         "id": 384338,
         "name": "Tinker Safety Fuses",
-        "icon": "trade_engineering"
+        "icon": "inv_eng_metalblingronear"
       }
     }
   },
@@ -44413,6 +44260,11 @@ export const bonus_IDs = {
         "icon": "trade_engineering"
       }
     }
+  },
+  "8903": {
+    "id": 8903,
+    "base_level": 1,
+    "base_level_priority": 99
   },
   "8912": {
     "id": 8912,
@@ -44503,20 +44355,65 @@ export const bonus_IDs = {
     "id": 8940,
     "tag": "Fated Mythic"
   },
-  "8942": {
-    "id": 8942,
-    "upgrade": {
-      "level": 0,
-      "group": 268
-    }
+  "8948": {
+    "id": 8948,
+    "craftedStats": [
+      36
+    ]
   },
-  "8943": {
-    "id": 8943,
-    "tag": "Primal Infused"
+  "8949": {
+    "id": 8949,
+    "craftedStats": [
+      32
+    ]
   },
-  "8959": {
-    "id": 8959,
-    "tag": "Primal Infused"
+  "8950": {
+    "id": 8950,
+    "craftedStats": [
+      49
+    ]
+  },
+  "8951": {
+    "id": 8951,
+    "craftedStats": [
+      40
+    ]
+  },
+  "8952": {
+    "id": 8952,
+    "craftedStats": [
+      76
+    ]
+  },
+  "8953": {
+    "id": 8953,
+    "craftedStats": [
+      81
+    ]
+  },
+  "8954": {
+    "id": 8954,
+    "craftedStats": [
+      80
+    ]
+  },
+  "8955": {
+    "id": 8955,
+    "craftedStats": [
+      77
+    ]
+  },
+  "8956": {
+    "id": 8956,
+    "craftedStats": [
+      79
+    ]
+  },
+  "8957": {
+    "id": 8957,
+    "craftedStats": [
+      78
+    ]
   },
   "8960": {
     "id": 8960,
@@ -44528,6 +44425,104 @@ export const bonus_IDs = {
       "level": 1,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8961,
       "itemLevel": 376
     }
@@ -44538,6 +44533,104 @@ export const bonus_IDs = {
       "level": 2,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8962,
       "itemLevel": 379
     }
@@ -44548,6 +44641,104 @@ export const bonus_IDs = {
       "level": 3,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8963,
       "itemLevel": 382
     }
@@ -44558,6 +44749,104 @@ export const bonus_IDs = {
       "level": 4,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8964,
       "itemLevel": 385
     }
@@ -44568,6 +44857,104 @@ export const bonus_IDs = {
       "level": 5,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8965,
       "itemLevel": 389
     }
@@ -44578,6 +44965,104 @@ export const bonus_IDs = {
       "level": 6,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8966,
       "itemLevel": 392
     }
@@ -44588,6 +45073,104 @@ export const bonus_IDs = {
       "level": 7,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8967,
       "itemLevel": 395
     }
@@ -44598,6 +45181,104 @@ export const bonus_IDs = {
       "level": 8,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8968,
       "itemLevel": 398
     }
@@ -44608,6 +45289,104 @@ export const bonus_IDs = {
       "level": 9,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8969,
       "itemLevel": 402
     }
@@ -44618,6 +45397,104 @@ export const bonus_IDs = {
       "level": 10,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8970,
       "itemLevel": 405
     }
@@ -44628,6 +45505,104 @@ export const bonus_IDs = {
       "level": 11,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8971,
       "itemLevel": 408
     }
@@ -44638,6 +45613,104 @@ export const bonus_IDs = {
       "level": 12,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8972,
       "itemLevel": 411
     }
@@ -44648,16 +45721,106 @@ export const bonus_IDs = {
       "level": 13,
       "max": 13,
       "group": 276,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "bonusId": 8973,
       "itemLevel": 415
-    }
-  },
-  "8974": {
-    "id": 8974,
-    "upgrade": {
-      "level": 0,
-      "max": 13,
-      "group": 276
     }
   },
   "8975": {
@@ -44700,36 +45863,601 @@ export const bonus_IDs = {
   "8985": {
     "id": 8985,
     "upgrade": {
-      "level": 0,
-      "group": 278
+      "level": 1,
+      "max": 5,
+      "group": 278,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8985,
+      "itemLevel": 340
     }
   },
   "8986": {
     "id": 8986,
     "upgrade": {
-      "level": 0,
-      "group": 278
+      "level": 2,
+      "max": 5,
+      "group": 278,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8986,
+      "itemLevel": 346
     }
   },
   "8987": {
     "id": 8987,
     "upgrade": {
-      "level": 0,
-      "group": 278
+      "level": 3,
+      "max": 5,
+      "group": 278,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8987,
+      "itemLevel": 353
     }
   },
   "8988": {
     "id": 8988,
     "upgrade": {
-      "level": 0,
-      "group": 278
+      "level": 4,
+      "max": 5,
+      "group": 278,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8988,
+      "itemLevel": 359
     }
   },
   "8989": {
     "id": 8989,
     "upgrade": {
-      "level": 0,
-      "group": 278
+      "level": 5,
+      "max": 5,
+      "group": 278,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8989,
+      "itemLevel": 366
     }
   },
   "8991": {
@@ -44771,64 +46499,872 @@ export const bonus_IDs = {
   "8999": {
     "id": 8999,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 1,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8999,
+      "itemLevel": 382
     },
     "tag": "Unranked"
   },
   "9000": {
     "id": 9000,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 2,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9000,
+      "itemLevel": 385
     },
     "tag": "Combatant I"
   },
   "9001": {
     "id": 9001,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 3,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9001,
+      "itemLevel": 389
     },
     "tag": "Combatant II"
   },
   "9002": {
     "id": 9002,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 4,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9002,
+      "itemLevel": 392
     },
     "tag": "Challenger I"
   },
   "9003": {
     "id": 9003,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 5,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9003,
+      "itemLevel": 395
     },
     "tag": "Challenger II"
   },
   "9004": {
     "id": 9004,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 6,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9004,
+      "itemLevel": 398
     },
     "tag": "Rival I"
   },
   "9005": {
     "id": 9005,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 7,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9005,
+      "itemLevel": 402
     },
     "tag": "Rival II"
   },
   "9006": {
     "id": 9006,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 8,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9006,
+      "itemLevel": 405
     },
     "tag": "Duelist"
   },
@@ -44841,8 +47377,109 @@ export const bonus_IDs = {
   "9008": {
     "id": 9008,
     "upgrade": {
-      "level": 0,
-      "group": 277
+      "level": 9,
+      "max": 9,
+      "group": 277,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9008,
+      "itemLevel": 408
     },
     "tag": "Elite"
   },
@@ -44970,8 +47607,7 @@ export const bonus_IDs = {
   "9029": {
     "id": 9029,
     "ilevel": "29 @plvl 1 - 202 @plvl 202",
-    "curveId": 60965,
-    "quality": 4
+    "curveId": 60965
   },
   "9031": {
     "id": 9031,
@@ -44982,8 +47618,7 @@ export const bonus_IDs = {
   "9032": {
     "id": 9032,
     "ilevel": "37 @plvl 1 - 210 @plvl 210",
-    "curveId": 60973,
-    "quality": 4
+    "curveId": 60973
   },
   "9033": {
     "id": 9033,
@@ -45061,8 +47696,7 @@ export const bonus_IDs = {
     "id": 9045,
     "ilevel": "39 @plvl 1 - 212 @plvl 212",
     "curveId": 60974,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9046": {
     "id": 9046,
@@ -45074,8 +47708,7 @@ export const bonus_IDs = {
     "id": 9047,
     "ilevel": "43 @plvl 1 - 216 @plvl 216",
     "curveId": 60976,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9048": {
     "id": 9048,
@@ -45087,8 +47720,7 @@ export const bonus_IDs = {
     "id": 9049,
     "ilevel": "43 @plvl 1 - 216 @plvl 216",
     "curveId": 60978,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9050": {
     "id": 9050,
@@ -45100,8 +47732,7 @@ export const bonus_IDs = {
     "id": 9051,
     "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 60980,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9052": {
     "id": 9052,
@@ -45113,8 +47744,7 @@ export const bonus_IDs = {
     "id": 9053,
     "ilevel": "31 @plvl 1 - 204 @plvl 204",
     "curveId": 60966,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9054": {
     "id": 9054,
@@ -45126,15 +47756,13 @@ export const bonus_IDs = {
     "id": 9055,
     "ilevel": "35 @plvl 1 - 208 @plvl 208",
     "curveId": 60970,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9056": {
     "id": 9056,
     "ilevel": "37 @plvl 1 - 210 @plvl 210",
     "curveId": 60973,
-    "quality": 4,
-    "tag": "Raid Finder"
+    "quality": 4
   },
   "9057": {
     "id": 9057,
@@ -45146,15 +47774,13 @@ export const bonus_IDs = {
     "id": 9058,
     "ilevel": "41 @plvl 1 - 214 @plvl 214",
     "curveId": 60975,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9059": {
     "id": 9059,
     "ilevel": "29 @plvl 1 - 202 @plvl 202",
     "curveId": 60965,
-    "quality": 4,
-    "tag": "Raid Finder"
+    "quality": 4
   },
   "9060": {
     "id": 9060,
@@ -45166,29 +47792,25 @@ export const bonus_IDs = {
     "id": 9062,
     "ilevel": "33 @plvl 1 - 206 @plvl 206",
     "curveId": 60967,
-    "quality": 4,
-    "tag": "Elite"
+    "quality": 4
   },
   "9063": {
     "id": 9063,
     "ilevel": "33 @plvl 1 - 206 @plvl 206",
     "curveId": 60967,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9064": {
     "id": 9064,
     "ilevel": "35 @plvl 1 - 208 @plvl 208",
     "curveId": 60968,
-    "quality": 4,
-    "tag": "Heroic Elite"
+    "quality": 4
   },
   "9065": {
     "id": 9065,
     "ilevel": "33 @plvl 1 - 206 @plvl 206",
     "curveId": 60969,
-    "quality": 4,
-    "tag": "Raid Finder"
+    "quality": 4
   },
   "9066": {
     "id": 9066,
@@ -45200,29 +47822,25 @@ export const bonus_IDs = {
     "id": 9067,
     "ilevel": "37 @plvl 1 - 210 @plvl 210",
     "curveId": 60971,
-    "quality": 4,
-    "tag": "Thunderforged"
+    "quality": 4
   },
   "9068": {
     "id": 9068,
     "ilevel": "37 @plvl 1 - 210 @plvl 210",
     "curveId": 60971,
-    "quality": 4,
-    "tag": "Heroic"
+    "quality": 4
   },
   "9069": {
     "id": 9069,
     "ilevel": "39 @plvl 1 - 212 @plvl 212",
     "curveId": 60972,
-    "quality": 4,
-    "tag": "Heroic Thunderforged"
+    "quality": 4
   },
   "9070": {
     "id": 9070,
     "ilevel": "37 @plvl 1 - 210 @plvl 210",
     "curveId": 60973,
-    "quality": 4,
-    "tag": "Raid Finder"
+    "quality": 4
   },
   "9071": {
     "id": 9071,
@@ -45595,26 +48213,63 @@ export const bonus_IDs = {
     "quality": 4,
     "tag": "Mythic"
   },
+  "9128": {
+    "id": 9128,
+    "base_level": 333,
+    "base_level_priority": 100
+  },
   "9129": {
     "id": 9129,
     "quality": 3
-  },
-  "9130": {
-    "id": 9130,
-    "upgrade": {
-      "level": 0,
-      "max": 13,
-      "group": 276
-    }
   },
   "9136": {
     "id": 9136,
     "quality": 4
   },
+  "9148": {
+    "id": 9148,
+    "tag": "Impressive"
+  },
+  "9149": {
+    "id": 9149,
+    "tag": "Remarkable"
+  },
   "9156": {
     "id": 9156,
     "ilevel": "206 @plvl 45 - 327 @plvl 327",
     "curveId": 30724
+  },
+  "9214": {
+    "id": 9214,
+    "item_conversion": 6
+  },
+  "9215": {
+    "id": 9215,
+    "item_conversion": 6
+  },
+  "9216": {
+    "id": 9216,
+    "item_conversion": 6
+  },
+  "9217": {
+    "id": 9217,
+    "item_conversion": 6
+  },
+  "9218": {
+    "id": 9218,
+    "item_conversion": 6
+  },
+  "9219": {
+    "id": 9219,
+    "item_conversion": 6
+  },
+  "9220": {
+    "id": 9220,
+    "item_conversion": 6
+  },
+  "9221": {
+    "id": 9221,
+    "item_conversion": 6
   },
   "9232": {
     "id": 9232,
@@ -45627,61 +48282,10460 @@ export const bonus_IDs = {
     "curveId": 62415,
     "quality": 3
   },
-  "8836": {
-    "id": 8836,
-    "base_level": 382,
+  "9234": {
+    "id": 9234,
+    "base_level": 424,
+    "base_level_priority": 1
   },
-  "8837": {
-    "id": 8837,
-    "base_level": 306,
+  "9236": {
+    "id": 9236,
+    "ilevel": "252 @plvl 60 - 353 @plvl 353",
+    "curveId": 62511,
+    "quality": 3
   },
-  "8839": {
-    "id": 8839,
-    "base_level": 333,
+  "9237": {
+    "id": 9237,
+    "effect": {
+      "id": 173370,
+      "index": 0,
+      "spell": {
+        "id": 400698,
+        "name": "Griftah's All-Purpose Embellishing Powder",
+        "icon": "inv_misc_powder_mithril"
+      }
+    }
   },
-  "8841": {
-    "id": 8841,
-    "base_level": 320,
+  "9263": {
+    "id": 9263,
+    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "curveId": 60965,
+    "quality": 5
   },
-  "8843": {
-    "id": 8843,
-    "base_level": 346,
+  "9264": {
+    "id": 9264,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 5
   },
-  "8844": {
-    "id": 8844,
-    "base_level": 372,
+  "9265": {
+    "id": 9265,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 5
   },
-  "8845": {
-    "id": 8845,
-    "base_level": 395,
+  "9266": {
+    "id": 9266,
+    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "curveId": 60973,
+    "quality": 5
   },
-  "8846": {
-    "id": 8846,
+  "9267": {
+    "id": 9267,
+    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "curveId": 60972,
+    "quality": 5
+  },
+  "9268": {
+    "id": 9268,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 60980,
+    "quality": 5
+  },
+  "9269": {
+    "id": 9269,
+    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "curveId": 60970,
+    "quality": 5
+  },
+  "9270": {
+    "id": 9270,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60975,
+    "quality": 5
+  },
+  "9271": {
+    "id": 9271,
+    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "curveId": 60976,
+    "quality": 5
+  },
+  "9272": {
+    "id": 9272,
+    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "curveId": 60969,
+    "quality": 5
+  },
+  "9274": {
+    "id": 9274,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9274,
+      "itemLevel": 366
+    }
+  },
+  "9275": {
+    "id": 9275,
+    "upgrade": {
+      "level": 2,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9275,
+      "itemLevel": 385
+    },
+    "tag": "Primal Infused"
+  },
+  "9277": {
+    "id": 9277,
+    "upgrade": {
+      "level": 2,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9277,
+      "itemLevel": 385
+    },
+    "tag": "Primal Infused"
+  },
+  "9278": {
+    "id": 9278,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9278,
+      "itemLevel": 350
+    }
+  },
+  "9279": {
+    "id": 9279,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9279,
+      "itemLevel": 353
+    }
+  },
+  "9280": {
+    "id": 9280,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9280,
+      "itemLevel": 356
+    }
+  },
+  "9281": {
+    "id": 9281,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9281,
+      "itemLevel": 359
+    }
+  },
+  "9282": {
+    "id": 9282,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9282,
+      "itemLevel": 363
+    }
+  },
+  "9283": {
+    "id": 9283,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 282,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 202184,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9283,
+      "itemLevel": 206
+    }
+  },
+  "9294": {
+    "id": 9294,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9294,
+      "itemLevel": 376,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "9295": {
+    "id": 9295,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9295,
+      "itemLevel": 379,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "9296": {
+    "id": 9296,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9296,
+      "itemLevel": 382,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9297": {
+    "id": 9297,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9297,
+      "itemLevel": 385,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9298": {
+    "id": 9298,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9298,
+      "itemLevel": 389,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9299": {
+    "id": 9299,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9299,
+      "itemLevel": 392,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9300": {
+    "id": 9300,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9300,
+      "itemLevel": 395,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9301": {
+    "id": 9301,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 283,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9301,
+      "itemLevel": 398,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9302": {
+    "id": 9302,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9302,
+      "itemLevel": 389,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9303": {
+    "id": 9303,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9303,
+      "itemLevel": 392,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9304": {
+    "id": 9304,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9304,
+      "itemLevel": 395,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9305": {
+    "id": 9305,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9305,
+      "itemLevel": 398,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "9306": {
+    "id": 9306,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9306,
+      "itemLevel": 402,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9307": {
+    "id": 9307,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9307,
+      "itemLevel": 405,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9308": {
+    "id": 9308,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9308,
+      "itemLevel": 408,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9309": {
+    "id": 9309,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 284,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9309,
+      "itemLevel": 411,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9310": {
+    "id": 9310,
+    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "curveId": 60977,
+    "quality": 5
+  },
+  "9311": {
+    "id": 9311,
+    "base_level": 366,
+    "base_level_priority": 100
+  },
+  "9313": {
+    "id": 9313,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9313,
+      "itemLevel": 402,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9314": {
+    "id": 9314,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9314,
+      "itemLevel": 405,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9315": {
+    "id": 9315,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9315,
+      "itemLevel": 408,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9316": {
+    "id": 9316,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204193,
+              "amount": 1,
+              "name": "Whelpling's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9316,
+      "itemLevel": 411,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9317": {
+    "id": 9317,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9317,
+      "itemLevel": 415,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9318": {
+    "id": 9318,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9318,
+      "itemLevel": 418,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9319": {
+    "id": 9319,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9319,
+      "itemLevel": 421,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9320": {
+    "id": 9320,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 285,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9320,
+      "itemLevel": 424,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9321": {
+    "id": 9321,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9321,
+      "itemLevel": 415,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9322": {
+    "id": 9322,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9322,
+      "itemLevel": 418,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9323": {
+    "id": 9323,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9323,
+      "itemLevel": 421,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9324": {
+    "id": 9324,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204195,
+              "amount": 1,
+              "name": "Drake's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9324,
+      "itemLevel": 424,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9325": {
+    "id": 9325,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9325,
+      "itemLevel": 428,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9327": {
+    "id": 9327,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9327,
+      "itemLevel": 431,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9328": {
+    "id": 9328,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9328,
+      "itemLevel": 434,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9329": {
+    "id": 9329,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 286,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9329,
+      "itemLevel": 437,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9330": {
+    "id": 9330,
+    "upgrade": {
+      "level": 1,
+      "max": 5,
+      "group": 287,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9330,
+      "itemLevel": 428,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9331": {
+    "id": 9331,
+    "upgrade": {
+      "level": 2,
+      "max": 5,
+      "group": 287,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9331,
+      "itemLevel": 431,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9332": {
+    "id": 9332,
+    "upgrade": {
+      "level": 3,
+      "max": 5,
+      "group": 287,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9332,
+      "itemLevel": 434,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9333": {
+    "id": 9333,
+    "upgrade": {
+      "level": 4,
+      "max": 5,
+      "group": 287,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204196,
+              "amount": 1,
+              "name": "Wyrm's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9333,
+      "itemLevel": 437,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9334": {
+    "id": 9334,
+    "upgrade": {
+      "level": 5,
+      "max": 5,
+      "group": 287,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9334,
+      "itemLevel": 441,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "9335": {
+    "id": 9335,
+    "quality": 4
+  },
+  "9336": {
+    "id": 9336,
+    "quality": 4
+  },
+  "9337": {
+    "id": 9337,
+    "quality": 4
+  },
+  "9340": {
+    "id": 9340,
+    "upgrade": {
+      "level": 1,
+      "max": 3,
+      "group": 288,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 5,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 7,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 9,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 10,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9340,
+      "itemLevel": 359
+    }
+  },
+  "9341": {
+    "id": 9341,
+    "upgrade": {
+      "level": 1,
+      "max": 3,
+      "group": 288,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 5,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 7,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 9,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 10,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9341,
+      "itemLevel": 372
+    }
+  },
+  "9342": {
+    "id": 9342,
+    "upgrade": {
+      "level": 1,
+      "max": 3,
+      "group": 288,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 5,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 7,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 9,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 10,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9342,
+      "itemLevel": 376
+    }
+  },
+  "9343": {
+    "id": 9343,
+    "upgrade": {
+      "level": 2,
+      "max": 3,
+      "group": 288,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 5,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 7,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 9,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 10,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9343,
+      "itemLevel": 385
+    },
+    "tag": "Primal Infused"
+  },
+  "9344": {
+    "id": 9344,
+    "upgrade": {
+      "level": 3,
+      "max": 3,
+      "group": 288,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 5,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 7,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 9,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 10,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9344,
+      "itemLevel": 395
+    },
+    "tag": "Primal Empowered"
+  },
+  "9345": {
+    "id": 9345,
+    "upgrade": {
+      "level": 2,
+      "max": 3,
+      "group": 288,
+      "costs": [
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 5,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 7,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 9,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 10,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2122,
+              "amount": 14,
+              "name": "Storm Sigil",
+              "icon": "inv_cloudserpent_egg_yellow"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9345,
+      "itemLevel": 385
+    },
+    "tag": "Primal Infused"
+  },
+  "9351": {
+    "id": 9351,
     "base_level": 408,
+    "base_level_priority": 100
   },
-  "8847": {
-    "id": 8847,
-    "base_level": 333,
+  "9354": {
+    "id": 9354,
+    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "curveId": 956
   },
-  "8848": {
-    "id": 8848,
-    "base_level": 359,
+  "9355": {
+    "id": 9355,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 1749,
+    "quality": 4
   },
-  "8849": {
-    "id": 8849,
-    "base_level": 346,
+  "9356": {
+    "id": 9356,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 1749,
+    "quality": 4
   },
-  "8850": {
-    "id": 8850,
-    "base_level": 372,
-    "quality": 4,
+  "9357": {
+    "id": 9357,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 1749,
+    "quality": 4
   },
-  "8851": {
-    "id": 8851,
-    "base_level": 333,
+  "9358": {
+    "id": 9358,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 1749,
+    "quality": 4
   },
-  "8785": {
-    "id": 8785,
-    "base_level": 400,
+  "9359": {
+    "id": 9359,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 1749,
+    "quality": 4
   },
+  "9362": {
+    "id": 9362,
+    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "curveId": 1749,
+    "quality": 4
+  },
+  "9363": {
+    "id": 9363,
+    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "curveId": 1748,
+    "quality": 4
+  },
+  "9365": {
+    "id": 9365,
+    "base_level": 382,
+    "base_level_priority": 90,
+    "tag": "Ingenuity Crafted"
+  },
+  "9366": {
+    "id": 9366,
+    "base_level": 411,
+    "base_level_priority": 70,
+    "tag": "Shadowflame Crafted"
+  },
+  "9367": {
+    "id": 9367,
+    "base_level": 411,
+    "base_level_priority": 0
+  },
+  "9368": {
+    "id": 9368,
+    "level": 7
+  },
+  "9369": {
+    "id": 9369,
+    "level": 13
+  },
+  "9370": {
+    "id": 9370,
+    "ilevel": "1 @plvl 1 - 167 @plvl 167",
+    "curveId": 63292
+  },
+  "9371": {
+    "id": 9371,
+    "base_level": 382,
+    "base_level_priority": 1,
+    "quality": 3
+  },
+  "9372": {
+    "id": 9372,
+    "base_level": 395,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "9373": {
+    "id": 9373,
+    "base_level": 424,
+    "base_level_priority": 65
+  },
+  "9374": {
+    "id": 9374,
+    "base_level": 421,
+    "base_level_priority": 65
+  },
+  "9375": {
+    "id": 9375,
+    "base_level": 434,
+    "base_level_priority": 65
+  },
+  "9376": {
+    "id": 9376,
+    "base_level": 434,
+    "base_level_priority": 65
+  },
+  "9377": {
+    "id": 9377,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 294,
+      "bonusId": 9377,
+      "itemLevel": 389
+    }
+  },
+  "9378": {
+    "id": 9378,
+    "upgrade": {
+      "level": 2,
+      "max": 2,
+      "group": 294,
+      "bonusId": 9378,
+      "itemLevel": 398
+    },
+    "tag": "Primal Empowered"
+  },
+  "9379": {
+    "id": 9379,
+    "effect": {
+      "id": 174110,
+      "index": 0,
+      "spell": {
+        "id": 406254,
+        "name": "Roiling Shadowflame",
+        "icon": "inv_shadowflame_buff"
+      }
+    }
+  },
+  "9380": {
+    "id": 9380,
+    "quality": 4
+  },
+  "9381": {
+    "id": 9381,
+    "quality": 4
+  },
+  "9382": {
+    "id": 9382,
+    "quality": 4
+  },
+  "9383": {
+    "id": 9383,
+    "quality": 4
+  },
+  "9384": {
+    "id": 9384,
+    "quality": 4
+  },
+  "9385": {
+    "id": 9385,
+    "quality": 4
+  },
+  "9399": {
+    "id": 9399,
+    "effect": {
+      "id": 174198,
+      "index": 0,
+      "spell": {
+        "id": 377360,
+        "name": "Precognition",
+        "icon": "spell_nature_focusedmind"
+      }
+    }
+  },
+  "9400": {
+    "id": 9400,
+    "effect": {
+      "id": 178239,
+      "index": 0,
+      "spell": {
+        "id": 411126,
+        "name": "Determination",
+        "icon": "ability_paladin_swiftretribution"
+      }
+    }
+  },
+  "9401": {
+    "id": 9401,
+    "level": 0
+  },
+  "9402": {
+    "id": 9402,
+    "level": 3
+  },
+  "9403": {
+    "id": 9403,
+    "level": 6
+  },
+  "9404": {
+    "id": 9404,
+    "level": 9
+  },
+  "9405": {
+    "id": 9405,
+    "level": 13
+  },
+  "9406": {
+    "id": 9406,
+    "ilevel": "21 @plvl 1 - 372 @plvl 372",
+    "curveId": 64771,
+    "tag": "Timewarped"
+  },
+  "9407": {
+    "id": 9407,
+    "ilevel": "21 @plvl 1 - 385 @plvl 385",
+    "curveId": 64774,
+    "quality": 3
+  },
+  "9409": {
+    "id": 9409,
+    "tag": "Heroic"
+  },
+  "9410": {
+    "id": 9410,
+    "tag": "Mythic"
+  },
+  "9411": {
+    "id": 9411,
+    "tag": "Raid Finder"
+  },
+  "9412": {
+    "id": 9412,
+    "effect": {
+      "id": 174517,
+      "index": 0,
+      "spell": {
+        "id": 409838,
+        "name": "Reserve Parachute",
+        "icon": "inv_parachute_01"
+      }
+    }
+  },
+  "9413": {
+    "id": 9413,
+    "socket": 1
+  },
+  "9416": {
+    "id": 9416,
+    "effect": {
+      "id": 174553,
+      "index": 0,
+      "spell": {
+        "id": 409923,
+        "name": "Medical Wrap Kit",
+        "icon": "inv_misc_food_legion_goochocovanilla_bottle"
+      }
+    }
+  },
+  "9421": {
+    "id": 9421,
+    "upgrade": {
+      "level": 1,
+      "max": 5,
+      "group": 299,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9421,
+      "itemLevel": 366
+    }
+  },
+  "9422": {
+    "id": 9422,
+    "upgrade": {
+      "level": 2,
+      "max": 5,
+      "group": 299,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9422,
+      "itemLevel": 372
+    }
+  },
+  "9423": {
+    "id": 9423,
+    "upgrade": {
+      "level": 3,
+      "max": 5,
+      "group": 299,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9423,
+      "itemLevel": 379
+    }
+  },
+  "9424": {
+    "id": 9424,
+    "upgrade": {
+      "level": 4,
+      "max": 5,
+      "group": 299,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9424,
+      "itemLevel": 385
+    }
+  },
+  "9425": {
+    "id": 9425,
+    "upgrade": {
+      "level": 5,
+      "max": 5,
+      "group": 299,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9425,
+      "itemLevel": 392
+    }
+  },
+  "9426": {
+    "id": 9426,
+    "upgrade": {
+      "level": 1,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9426,
+      "itemLevel": 408
+    },
+    "tag": "Unranked"
+  },
+  "9427": {
+    "id": 9427,
+    "upgrade": {
+      "level": 2,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9427,
+      "itemLevel": 411
+    },
+    "tag": "Combatant I"
+  },
+  "9428": {
+    "id": 9428,
+    "upgrade": {
+      "level": 3,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9428,
+      "itemLevel": 415
+    },
+    "tag": "Combatant II"
+  },
+  "9429": {
+    "id": 9429,
+    "upgrade": {
+      "level": 4,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9429,
+      "itemLevel": 418
+    },
+    "tag": "Challenger I"
+  },
+  "9430": {
+    "id": 9430,
+    "upgrade": {
+      "level": 5,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9430,
+      "itemLevel": 421
+    },
+    "tag": "Challenger II"
+  },
+  "9431": {
+    "id": 9431,
+    "upgrade": {
+      "level": 6,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9431,
+      "itemLevel": 424
+    },
+    "tag": "Rival I"
+  },
+  "9432": {
+    "id": 9432,
+    "upgrade": {
+      "level": 7,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9432,
+      "itemLevel": 428
+    },
+    "tag": "Rival II"
+  },
+  "9433": {
+    "id": 9433,
+    "upgrade": {
+      "level": 8,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9433,
+      "itemLevel": 431
+    },
+    "tag": "Duelist"
+  },
+  "9434": {
+    "id": 9434,
+    "upgrade": {
+      "level": 9,
+      "max": 9,
+      "group": 298,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 8,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 72196,
+          "flags": 4,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9434,
+      "itemLevel": 434
+    },
+    "tag": "Elite"
+  },
+  "9435": {
+    "id": 9435,
+    "quality": 4
+  },
+  "9436": {
+    "id": 9436,
+    "socket": 1
+  },
+  "9438": {
+    "id": 9438,
+    "socket": 1
+  },
+  "9439": {
+    "id": 9439,
+    "quality": 4
+  },
+  "9440": {
+    "id": 9440,
+    "quality": 4
+  },
+  "9441": {
+    "id": 9441,
+    "quality": 4
+  },
+  "9442": {
+    "id": 9442,
+    "quality": 4
+  },
+  "9443": {
+    "id": 9443,
+    "ilevel": "15 @plvl 1 - 330 @plvl 330",
+    "curveId": 959
+  },
+  "9444": {
+    "id": 9444,
+    "ilevel": "17 @plvl 1 - 332 @plvl 332",
+    "curveId": 961
+  },
+  "9445": {
+    "id": 9445,
+    "ilevel": "16 @plvl 1 - 331 @plvl 331",
+    "curveId": 960
+  },
+  "9447": {
+    "id": 9447,
+    "quality": 4
+  },
+  "9448": {
+    "id": 9448,
+    "quality": 4
+  },
+  "9449": {
+    "id": 9449,
+    "quality": 4
+  },
+  "9450": {
+    "id": 9450,
+    "quality": 4
+  },
+  "9451": {
+    "id": 9451,
+    "quality": 4
+  },
+  "9455": {
+    "id": 9455,
+    "level": 401
+  },
+  "9456": {
+    "id": 9456,
+    "level": 402
+  },
+  "9457": {
+    "id": 9457,
+    "level": 403
+  },
+  "9458": {
+    "id": 9458,
+    "level": 404
+  },
+  "9459": {
+    "id": 9459,
+    "level": 405
+  },
+  "9460": {
+    "id": 9460,
+    "level": 406
+  },
+  "9461": {
+    "id": 9461,
+    "level": 407
+  },
+  "9464": {
+    "id": 9464,
+    "level": 408
+  },
+  "9465": {
+    "id": 9465,
+    "level": 409
+  },
+  "9466": {
+    "id": 9466,
+    "level": 410
+  },
+  "9467": {
+    "id": 9467,
+    "level": -401
+  },
+  "9468": {
+    "id": 9468,
+    "level": -402
+  },
+  "9469": {
+    "id": 9469,
+    "level": -403
+  },
+  "9470": {
+    "id": 9470,
+    "level": -404
+  },
+  "9471": {
+    "id": 9471,
+    "level": -405
+  },
+  "9472": {
+    "id": 9472,
+    "level": -406
+  },
+  "9473": {
+    "id": 9473,
+    "level": -407
+  },
+  "9474": {
+    "id": 9474,
+    "level": -408
+  },
+  "9475": {
+    "id": 9475,
+    "level": -409
+  },
+  "9476": {
+    "id": 9476,
+    "level": -410
+  },
+  "9480": {
+    "id": 9480,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9480,
+      "itemLevel": 392
+    }
+  },
+  "9481": {
+    "id": 9481,
+    "upgrade": {
+      "level": 2,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9481,
+      "itemLevel": 411
+    }
+  },
+  "9484": {
+    "id": 9484,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9484,
+      "itemLevel": 376
+    }
+  },
+  "9485": {
+    "id": 9485,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9485,
+      "itemLevel": 379
+    }
+  },
+  "9486": {
+    "id": 9486,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9486,
+      "itemLevel": 382
+    }
+  },
+  "9487": {
+    "id": 9487,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9487,
+      "itemLevel": 385
+    }
+  },
+  "9488": {
+    "id": 9488,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9488,
+      "itemLevel": 389
+    }
+  },
+  "9489": {
+    "id": 9489,
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 300,
+      "costs": [
+        {
+          "mask_inv_type": 9480,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 7,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 9,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 10,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 14,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8471104,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 206366,
+              "amount": 5,
+              "name": "Trophy of Strife",
+              "icon": "ability_bossfelorcs_necromancer_orange"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9489,
+      "itemLevel": 206
+    }
+  },
+  "9492": {
+    "id": 9492,
+    "ilevel": "21 @plvl 1 - 385 @plvl 385",
+    "curveId": 66349
+  }
 }

@@ -61,7 +61,7 @@ export default function MythicPlusGearContainer(props) {
                   {/* ------------------------------------------ Mythic + ------------------------------------------*/}
                   <Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} />
                   {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
-                  <Tab className={classes.mythicHeader} label={"Mythic"} {...a11yProps(1)} />
+                  {/*<Tab className={classes.mythicHeader} label={"Mythic"} {...a11yProps(1)} /> */}
                 </Tabs>
               </AppBar>
             </Grid>
@@ -121,7 +121,7 @@ export default function MythicPlusGearContainer(props) {
                 </div>
               </UFTabPanel>
 
-              <UFTabPanel key={"panel1"} value={tabvalue} index={1}>
+              {/*<UFTabPanel key={"panel1"} value={tabvalue} index={1}>
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
@@ -174,7 +174,7 @@ export default function MythicPlusGearContainer(props) {
                     </Grid>
                   </Grid>
                 </div>
-              </UFTabPanel>
+              </UFTabPanel> */}
             </Grid>
           </Grid>
         </div>
