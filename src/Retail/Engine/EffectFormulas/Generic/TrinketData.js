@@ -143,7 +143,7 @@ export const raidTrinketData = [
     name: "Ominous Chromatic Essence",
     effects: [
       { // 100% uptime.
-        coefficient: 0.4861,
+        coefficient: 0.456332, //0.4861,
         table: -7,
       },
       { // This is for the proc if you have Earth and Frost in party.

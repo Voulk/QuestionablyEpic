@@ -66,6 +66,7 @@ class ItemSet {
         hps: 0,
         dps: 0,
         mana: 0, // Evoker 2091
+        allyStats: 0,
       }
       if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 2091;
       else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 2087;

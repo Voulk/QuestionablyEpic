@@ -7,6 +7,7 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "-> QE Live is up to date for patch 10.1.",
+      "-> Healing Darts was nerfed in-game.",
       "-> Warning: Expect frequent changes during patch week.",
       "-> There's likely to be hotfixes and models might still be fine tuned.",
   ],
