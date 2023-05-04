@@ -1675,11 +1675,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 403101,
       icon: "ability_rhyolith_volcano",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1703,11 +1703,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 404732,
       icon: "spell_mage_meteor",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1787,11 +1787,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 405641,
       icon: "inv_shadowflame_groundstate",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1801,11 +1801,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 409385,
       icon: "ability_mage_flamecannon",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
