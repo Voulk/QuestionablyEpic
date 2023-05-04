@@ -100,7 +100,7 @@ export const embellishmentData = [
           let expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
           if (additionalData.contentType === "Dungeon") expectedEfficiency * 0.6;
           bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
+          if (player.spec === "Holy Priest") bonus_stats.hps *= player.getStatPerc('mastery');
           return bonus_stats;
         }
       },
@@ -148,7 +148,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.389637,
             table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
-            uptime: 0.4,
+            uptime: 0.3,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {

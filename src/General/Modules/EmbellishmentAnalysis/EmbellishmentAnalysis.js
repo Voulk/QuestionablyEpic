@@ -173,8 +173,8 @@ export default function EmbellishmentAnalysis(props) {
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
     "Embellishments were extremely difficult to test and numbers might change as more data comes in.",
-    "Potion Absorption Inhibitor value varies heavily per spec, mostly based on how good extending Chilled Clarity is for you.",
-    "Note that the value of the slot some embellishments must be placed on is not included in the graph.",
+    "Chilled Clarity potion was nerfed in 10.1, and so extending them is no longer of any value.",
+    "Note that the value of the slot some embellishments must be placed on is NOT included in the graph.",
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
