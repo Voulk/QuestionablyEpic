@@ -112,6 +112,7 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
 
   // Duplicate Settings
   userSettings = JSON.parse(JSON.stringify(userSettings));
+  console.log(userSettings);
 
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
@@ -422,6 +423,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     hps: 0,
     dps: 0,
     mana: 0,
+    allyStats: 0,
   };
 
   // Our adjusted_weights will be compiled later by dynamically altering our base weights.
@@ -557,6 +559,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     else if (stat === "mana") {
       hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
     }
+    else if (stat === "allyStats" && userSettings.includeGroupBenefits.value === true) {
+      hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
+    }
     else {
       hardScore += evalStats[stat] * adjusted_weights[stat];
     }
@@ -605,6 +610,7 @@ export function mergeBonusStats(stats) {
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
     mana: mergeStat(stats, "mana"),
+    allyStats: mergeStat(stats, "allyStats")
   };
 
   return val;
