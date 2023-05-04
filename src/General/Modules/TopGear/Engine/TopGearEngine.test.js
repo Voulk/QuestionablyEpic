@@ -91,6 +91,7 @@ describe("MergeBonusStats function", () => {
             leech: 0,
             mana: 0,
             dps: 0
+            allyStats: 0,
         }
 
         expect(mergeBonusStats(bonusStatArray)).toEqual(expectedResult);

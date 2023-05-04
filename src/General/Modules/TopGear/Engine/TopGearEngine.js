@@ -112,7 +112,6 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
 
   // Duplicate Settings
   userSettings = JSON.parse(JSON.stringify(userSettings));
-  console.log(userSettings);
 
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
@@ -547,7 +546,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
     evalStats = setStats;
   }
-
   // == Scoring ==
   for (var stat in evalStats) {
     if (stat === "hps") {
@@ -559,7 +557,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     else if (stat === "mana") {
       hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
     }
-    else if (stat === "allyStats" && userSettings.includeGroupBenefits.value === true) {
+    else if (stat === "allyStats" && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
       hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
     }
     else {
