@@ -102,7 +102,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 1.6,
-        coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura)
+        coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura) x 1.38 x 
         cooldown: 15,
         school: "shadow",
         atoneOverheal: 0.15,
@@ -500,7 +500,7 @@ export const baseTalents = {
     lenience: {points: 0, maxPoints: 1, icon: "ability_priest_atonement", id: 238063, select: true, tier: 3},
     evangelism: {points: 1, maxPoints: 1, icon: "spell_holy_divineillumination", id: 246287, select: false, tier: 3},
     mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: false, tier: 3},
-    divineAegis: {points: 0, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true, tier: 3},
+    divineAegis: {points: 2, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true, tier: 3},
     //sinsOfTheMany: {points: 0, maxPoints: 2, icon: "spell_holy_holyguidance", id: 280391, select: true, tier: 3},
     blazeOfLight: {points: 2, maxPoints: 2, icon: "spell_holy_searinglight", id: 215768, select: true, tier: 3},
     resplendentLight: {points: 0, maxPoints: 2, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true, tier: 3},

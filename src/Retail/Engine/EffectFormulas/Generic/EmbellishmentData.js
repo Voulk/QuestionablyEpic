@@ -1,5 +1,5 @@
 import { itemLevels } from "Databases/itemLevelsDB";
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
@@ -87,18 +87,20 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 117.1906, //44.02832,
+            coefficient: 117.1906 * 1.15, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
             table: -8,
             ppm: 2,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste'],
             efficiency: 0.5,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          const expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
+          let expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
+          if (additionalData.contentType === "Dungeon") expectedEfficiency * 0.6;
           bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          if (player.spec === "Holy Priest") bonus_stats.hps *= player.getStatPerc('mastery');
           return bonus_stats;
         }
       },
@@ -146,7 +148,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.389637,
             table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
-            uptime: 0.4,
+            uptime: 0.3,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -213,14 +215,14 @@ export const embellishmentData = [
           { // Healing Effect
             coefficient: 34.05239, //15.34544,
             table: -9,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             efficiency: 0.65,
             ppm: 2, // 4 / 2
           },
           { // Damage Effect
             coefficient: 20.43177, //6.820023,
             table: -9,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             ppm: 2, // 4 / 2
           },
         ],
@@ -276,7 +278,7 @@ export const embellishmentData = [
             coefficient: 13.07579, //10.91173,
             table: -9, // 
             ppm: 1, // 2 / 2
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             efficiency: 1,
           },
         ],
@@ -307,8 +309,9 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.5;
+          bonus_stats.versatility = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc('haste'));
+
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
 
           return bonus_stats;
         }
@@ -495,14 +498,14 @@ export const embellishmentData = [
           { // Damage Effect
             coefficient: 15.56666, //7.794756,
             table: -9,
-            secondaries: ['haste', 'crit', 'versatility'],
-            ppm: 1, // 4 / 2
+            secondaries: ['haste'],
+            ppm: 1, //
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           
-          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.7;
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60 * 0.6;
 
           return bonus_stats;
         }
@@ -610,7 +613,6 @@ export const embellishmentData = [
           const ppm = data[0].ppm * player.getStatPerc('haste');
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
-
 
           return bonus_stats;
         }
