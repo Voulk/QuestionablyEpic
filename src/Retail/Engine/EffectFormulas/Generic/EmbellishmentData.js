@@ -1,5 +1,5 @@
 import { itemLevels } from "Databases/itemLevelsDB";
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, 
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
@@ -97,7 +97,8 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          const expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
+          let expectedEfficiency = (1 - getSetting(additionalData.settings, "healingDartsOverheal") / 100);
+          if (additionalData.contentType === "Dungeon") expectedEfficiency * 0.6;
           bonus_stats.hps = processedValue(data[0], itemLevel, expectedEfficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
 
           return bonus_stats;
@@ -214,14 +215,14 @@ export const embellishmentData = [
           { // Healing Effect
             coefficient: 34.05239, //15.34544,
             table: -9,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             efficiency: 0.65,
             ppm: 2, // 4 / 2
           },
           { // Damage Effect
             coefficient: 20.43177, //6.820023,
             table: -9,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             ppm: 2, // 4 / 2
           },
         ],
@@ -277,7 +278,7 @@ export const embellishmentData = [
             coefficient: 13.07579, //10.91173,
             table: -9, // 
             ppm: 1, // 2 / 2
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             efficiency: 1,
           },
         ],
@@ -308,8 +309,9 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.5;
+          bonus_stats.versatility = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc('haste'));
+
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
 
           return bonus_stats;
         }
@@ -611,7 +613,6 @@ export const embellishmentData = [
           const ppm = data[0].ppm * player.getStatPerc('haste');
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
-
 
           return bonus_stats;
         }
