@@ -14,7 +14,8 @@ export const changeLog = [
     date: "3 May",
     changes: [ 
       "Healing Darts no longer scale with crit or versatility in game.",
-      "Bugfix: Upgrade Finder HPS-mode will once again report correctly.",
+      "Ally buff effects will now be evaluated in Top Gear / Upgrade Finder too.",
+      "Bugfix: Fixed the 'Show HPS' report style.",
       "Disc Priest: Updated the base model slightly.",
   ]},
   {
