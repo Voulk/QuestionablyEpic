@@ -5,7 +5,7 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Neltharion's Call to Suffering                                */
     /* ---------------------------------------------------------------------------------------------- */
-    /* 
+    /* Now fixed and procs off HoTs.
     */
     name: "Neltharion's Call to Suffering",
     effects: [
@@ -24,7 +24,7 @@ export const raidTrinketData = [
       let bonus_stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
-      if (player.spec === "Restoration Druid" || player.spec === "Holy Priest") bonus_stats.intellect *= 0.25;
+      //if (player.spec === "Restoration Druid" || player.spec === "Holy Priest") bonus_stats.intellect *= 0.25;
 
       return bonus_stats;
     }
