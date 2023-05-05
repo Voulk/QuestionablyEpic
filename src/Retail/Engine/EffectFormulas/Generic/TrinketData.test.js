@@ -44,7 +44,7 @@ describe("Screaming Black Dragonscale", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${447}  | ${[1017, 319]}
+    ${447}  | ${[1147, 319]}
     // add new test cases here
     `.test("Screaming Black Dragonscale Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -58,7 +58,7 @@ describe("Rashok's Molten Heart", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${444}  | ${[7289/10, 34593/10, 595]}
+    ${444}  | ${[7289/10, 39782/10, 595]}
     // add new test cases here
     `.test("Rashok's Molten Heart Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(Math.floor(processedValue(effect[0], level))).toBe(Math.floor(expectedResult[0]));

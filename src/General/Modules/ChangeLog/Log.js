@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 4,
+    date: "5 May",
+    changes: [ 
+      "In game changes: Many Aberrus trinkets tuned.",
+      "Bugfix: Flaring Cowl now correctly scales with item level again.",
+  ]},
+  {
+    version: "10.1.0",
     update: 3,
     date: "4 May",
     changes: [ 
