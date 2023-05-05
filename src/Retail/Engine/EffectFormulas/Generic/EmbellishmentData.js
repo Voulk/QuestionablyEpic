@@ -408,9 +408,7 @@ export const embellishmentData = [
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO: Check if the DoT is hasted. The proc rate is not.
-          // Doesn't currently scale with item level correctly.
-          bonus_stats.dps = processedValue(data[0], 350) * player.getStatMults(data[0].secondaries) * 
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * 
                                 data[0].ppm * data[0].targets[additionalData.contentType] / 60;
 
           return bonus_stats;
