@@ -2,7 +2,8 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
+import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, 
+            getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, removeBuff } from "../Generic/RampBase";
 
 
 
@@ -29,7 +30,7 @@ const PALADINCONSTANTS = {
 
 }
 
-const apl = ["Avenging Wrath", "Divine Toll", "Light of Dawn", "Holy Shock", "Crusader Strike", "Judgment", "Rest"]
+const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 
 
@@ -50,81 +51,42 @@ const apl = ["Avenging Wrath", "Divine Toll", "Light of Dawn", "Holy Shock", "Cr
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
     if (settings['DefaultLoadout']) {
-
+        settings['T30_4'] = true;
+        settings['T30_2'] = true;
     }
 
-    // ==== Talents ====
-    // Not all talents just make base modifications to spells, but those that do can be handled here.
+    if (settings['T30_2']) {
+        paladinSpells["Holy Shock"][0].statMods.critEffect = 0.6;
+        paladinSpells["Holy Shock"].push({
+            type: "function",
+            runFunc: function (state, buff, paladinSpells) {
+                // Roll Dice equal to crit chance.
+                const roll = Math.random();
+                const holyShockCritChance = getCrit(state.currentStats) - 1 + paladinSpells["Holy Shock"][0].statMods.crit;
+                // If successful, reduce CD on Light's Hammer by 2s.
+                if (roll < getCrit(state.currentStats) - 1) {
+                    const targetSpell = paladinSpells["Light's Hammer"];
+                    targetSpell[0].activeCooldown -= 2;
+                }
+            }
+        })
+    }
 
-    // Seal of Alacrity (2% haste pp + 0.5s off Judgment CD)
-
-    // Seal of Might (2% base mastery pp + 2% intellect)
-
-    // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
-
-    // Golden Path - Consecration heals 6 allies on tick.
-
-    // Judgment of Light - Judgment heals allies 5 times.
-
-    // Holy Aegis - Crit +2% per point.
-
-    // Crusader's Reprieve - Small self-heal on Crusader Strike
-
-    // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
-
-    // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
-
-    // Zealot's Paragon - Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of Avenging Crusader by 0.5s.
-
-    // Divine Resonance - Buff that casts a free Holy Shock every 5s for 15s.
-
-    // Quickened Invocation - 15s off DT cooldown.
-
-    // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
-
-    // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
-
-    // Fading Light - Dawn is 30% instead of 20%. Dusk causes HoPo generators to shield for 20%.
-
-
-    // === Spec Tree ===
-    // Shining Savior - WoG / LoD +5%.
-
-    // Resplendent Light - Holy Light splashes to 5 targets for 8% each.
-
-    // Radiant Onslaught - Extra CS charge.
-
-    // Tower of Radiance - Casting FoL / HL on Beacon gives +1 HoPo. Casting FoL / HL on anyone else has a chance to give +1 HoPo.
-
-    // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 1s.
-
-    // Divine Rev - While empowered by IoL, Flash heals for +10% and Holy Light refunds 1% mana.
-
-    // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
-
-    // Divine Glimpse - Holy Shock has a +7/15% crit chance.
-
-    // Sanctified Wrath - Holy Shock CD reduced by 40% during wings.
-
-    // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
-
-    // Might - Gain 20% Crit during wings.
-
-    // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
-
-    // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
-
-    // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
-
-    // Crusader's Might - Crusader Strike reduces the cooldown of Holy Shock by 1s.
-
-    // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
-
-    // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
-
-    // Boundless Salvation
-
-    // Inflorescence of the Sunwell
+    if (settings['T30_4']) {
+        paladinSpells["Light's Hammer"][1].tickRate /= 2;
+        paladinSpells["Light's Hammer"].push({
+            name: "LH HoPo Gen",
+            buffDuration: 12,
+            type: "buff",
+            buffType: 'function',
+            stacks: false,
+            tickRate: 4,
+            hastedDuration: false,
+            function: function (state, buff) {
+                state.holyPower = Math.min(state.holyPower + 1, 5);
+            }
+        })
+    }
 
 
     // Setup mana costs & cooldowns.
@@ -191,6 +153,11 @@ const getHealingMult = (state, t, spellName, talents) => {
 
     mult *= (state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); // Avenging Wrath
 
+    if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
+        mult *= 1.15;
+        state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
+    }
+
     return mult;
 }
 
@@ -211,8 +178,9 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Beacon
     let beaconHealing = 0;
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing);
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing);
+    const beaconMult = ["Light of Dawn", "Light's Hammer"].includes(spellName) ? 0.5 : 1;
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
@@ -240,7 +208,7 @@ const canCastSpell = (state, spellDB, spellName) => {
     
     const spell = spellDB[spellName][0];
     let miscReq = true;
-    const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower;
+    const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
     const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
@@ -447,7 +415,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
 
-            if (spell.holyPower) state.holyPower += spell.holyPower;
+            if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
             if (spell.cooldown) {
 
                 if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);

@@ -6,8 +6,10 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Strongly consider tier pieces in your vaults.",
-      "-> Creation Catalyst support is in!",
+      "-> Healing Darts, Spore Tender were nerfed in-game.",
+      "-> Warning: Expect frequent changes during patch week.",
+      "-> There's likely to be hotfixes and models might still be fine tuned.",
+      "-> Monk / Shaman class trinket NYI. Very soon."
   ],
   "Classic": [""]
   }
@@ -18,7 +20,7 @@ export default function MessageOfTheDay(props) {
       <Grid container spacing={1}>
         {messageOfTheDay[gameType].map((key, i) => (
           <Grid item xs={12} key={i}>
-            <Typography style={{ lineHeight: "10px" }} align="left" variant="body1" key={i}>
+            <Typography style={{ lineHeight: "11px" }} align="left" variant="body1" key={i}>
               {key}
             </Typography>
           </Grid>

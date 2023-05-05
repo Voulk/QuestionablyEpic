@@ -99,7 +99,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  const boostedItems = [195480, 195526, 194301]
+  const boostedItems = [204465, 204201, 204202, 204211, 202612]
   if (instanceID === 1208) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
 
   // World Bosses
@@ -109,7 +109,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   }
   
   else if (instanceID === -1) {
-    if ([1204, 1199, 1197, 1196].includes(bossID)) itemLevel = 372; // M0 only dungeons.
+    if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } else if (instanceID === -30) itemLevel = 359;
   else if (instanceID === -31) {
@@ -159,27 +159,22 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
 
           itemPoss.push(item);
         }
-      } else if (primarySource === -1) {
-        // M+ Dungeons
+      } else if (primarySource === -1 || primarySource === 1205) {
+        // M+ Dungeons & World Bosses
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
         itemPoss.push(item);
-      } else if (primarySource !== -18) {
+      } 
+      /*else if (primarySource !== -18) {
         /*
-      else if (primarySource === 1194) {
-        // Tazavesh
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[2]);
-        itemPoss.push(item);
-      } */
         // Exclude Nathria gear.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
 
         itemPoss.push(item);
-      }
+      } */
     }
   }
 
@@ -223,10 +218,13 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   let differential = 0;
 
-  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
-  else differential = (newScore - baseScore) / baseScore;
+  const rawDiff = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
+  const percDiff = (newScore - baseScore) / baseScore
 
-  return { item: item.id, level: item.level, score: differential };
+  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
+  else differential = percDiff;
+
+  return { item: item.id, level: item.level, score: differential, rawDiff: rawDiff, percDiff: percDiff };
 }
 
 function checkItemViable(rawItem, player) {

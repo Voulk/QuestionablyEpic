@@ -56,7 +56,10 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    })
    }
    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
-   if (talents.enduringLuminescence) discSpells['Power Word: Radiance'][0].atonement *= 1.1;
+   if (talents.enduringLuminescence) {
+        discSpells['Power Word: Radiance'][0].atonement *= 1.1;
+        discSpells['Power Word: Radiance'][0].castTime /= 1.3;
+   }
    if (talents.shieldDiscipline) discSpells['Power Word: Shield'][0].cost -= (0.5 * DISCCONSTANTS.shieldDisciplineEfficiency);
 
    // Tier 2 talents
@@ -114,7 +117,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    if (talents.divineAegis) {
        // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
        // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
-       stats.critMult *= (1 + 0.03 * talents.divineAegis);
+       stats.critMult *= (1 + 0.05 * talents.divineAegis);
 
    }
    if (talents.wrathUnleashed) {
@@ -198,7 +201,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        })
    }
    if (talents.aegisOfWrath) {
-       discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - discSettings.aegisOfWrathWastage);
+       discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - settings.aegisOfWrathWastage);
    }
    if (talents.makeAmends) {
        // We can kind of model this, but benefit isn't really going to be concentrated on ramps.

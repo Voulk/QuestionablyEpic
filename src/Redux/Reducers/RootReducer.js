@@ -15,21 +15,26 @@ import ls from "local-storage";
 const initialState = {
   gameType: "Retail",
   contentType: ls.get("contentType") || "Raid",
-  playerSettings: {"includeGroupBenefits": {value: true, options: [true, false], category: "trinkets"},
-                    "incarnateAllies": {value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets"},
-                    "idolGems": {value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets"},
-                    "rubyWhelpShell": {value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets"}, // "ST Damage", "AoE Damage", 
-                    "alchStonePotions": {value: 1, options: [0, 1, 2], category: "trinkets"},
-                    "enchantItems": {value: true, options: [true, false], category: "topGear"},
-                    "catalystLimit": {value: 1, options: [1, 2, 3], category: "topGear"},
-                    "upgradeFinderMetric": {value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder"},
-                    "primordialGems": {value: "Automatic", 
-                                    options: ["Automatic", "Wild Spirit, Exuding Steam, Deluging Water", "Wild Spirit, Exuding Steam, Desirous Blood",
-                                              "Flame Licked, Wild Spirit, Exuding Steam"], 
-                                    category: "topGear"},
-                    "topGearAutoGem": {value: false, options: [true, false], category: "topGear"},
-                  },// "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
-  patronStatus: "Standard" // Currently not used. Will be once we evolve app into a functional component.
+  playerSettings: {
+    includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
+    incarnateAllies: { value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
+    idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
+    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
+    alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
+    enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
+    catalystLimit: { value: 1, options: [1, 2, 3], category: "topGear", type: "selector" },
+    upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector" },
+    primordialGems: {
+      value: "Automatic",
+      options: ["Automatic", "Wild Spirit, Exuding Steam, Deluging Water", "Wild Spirit, Exuding Steam, Desirous Blood", "Flame Licked, Wild Spirit, Exuding Steam"],
+      category: "topGear",
+      type: "selector",
+    },
+    topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
+    healingDartsOverheal: { value: 55, options: [], category: "embellishments", type: "Entry" },
+    lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
+  }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
+  patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
 };
 if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";
 

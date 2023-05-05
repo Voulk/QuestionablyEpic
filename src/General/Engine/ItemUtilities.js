@@ -311,7 +311,10 @@ export function filterItemListBySource(itemList, sourceInstance, sourceBoss, lev
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
     if ('source' in item && item.source.instanceId === 1208) expectedItemLevel += getItemLevelBoost(itemEncounter) + getVeryRareItemLevelBoost(item.id, itemEncounter);
-    else if (item.source.instanceId === 1205) expectedItemLevel = 389;
+    else if (item.source.instanceId === 1205) { // World Bosses
+      if (itemEncounter === 2531) expectedItemLevel = 415
+      else expectedItemLevel = 389;
+    }
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
@@ -864,7 +867,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     bonus_stats = compileStats(bonus_stats, annuletStats);
   }
 
-    // Add Retail Socket
+  // Add Retail Socket
   if (item.socket) {
     getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
@@ -900,7 +903,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
   // Add any group benefit, if we're interested in it.
   if (userSettings.includeGroupBenefits && "bonus_stats" in item_stats && "allyStats" in bonus_stats) {
-    score += 0.35 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
+    score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 
   // Classic specific sockets

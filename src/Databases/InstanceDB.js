@@ -1031,7 +1031,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1205: {
-    bossOrder: [2515, 2506, 2517, 2518, 2696],
+    bossOrder: [2515, 2506, 2517, 2518, 2531],
     2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
@@ -1068,7 +1068,7 @@ export const encounterDB = {
         ch: "利斯卡诺兹，未来灾劫",
       },
     },
-    2696: {
+    2531: {
       name: {
         en: "The Zaqali Elders",
         ch: "扎卡利长老",

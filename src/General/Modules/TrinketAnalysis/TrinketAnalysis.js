@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
@@ -18,6 +18,16 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
+import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
+
+function TabPanel(props) {
+  const { children, value, index } = props;
+  return (
+    <div role="tabpanel" hidden={value !== index}>
+      {value === index && children}
+    </div>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,6 +69,33 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
   item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
 
   return item.softScore;
+};
+
+//
+const setupItemCardData = (trinketList, contentType, player, playerSettings) => {
+  const itemData = [];
+  const additionalData = {contentType: contentType, settings: playerSettings}
+  trinketList.forEach((trinket) => {
+    const data = getTrinketDescription(trinket.name, player, additionalData);
+    //const data = null;
+    if (data) {
+      data.name = trinket.name;
+      data.id = trinket.id;
+      (data.slot = "Trinkets"), itemData.push(data);
+    }
+  });
+
+  /*
+  const data = {
+    metrics: ["HPS: 500", "DPS: 500"],
+    name: "Glowing Shard of the Elements",
+    slot: "Trinkets",
+    id: 191492,
+    description:
+      "This trinket is a small, glowing shard of crystal that seems to pulse with elemental energy. It emits a faint humming sound when held. The Glowing Shard of the Elements has the power to enhance the wearer's elemental abilities and grant additional resistance to elemental attacks. When activated, the trinket glows brightly, releasing a burst of energy that can damage nearby enemies and heal nearby allies. This effect can only be used once every few minutes, but the trinket also has a passive effect that increases the wearer's spell power and critical strike chance with elemental spells. The Glowing Shard of the Elements is highly sought after by spellcasters who specialize in elemental magic.",
+  }; */
+
+  return itemData;
 };
 
 // Wrath of the Lich King
@@ -105,19 +142,24 @@ export default function TrinketAnalysis(props) {
   }, []);
 
   const { t } = useTranslation();
+  const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
 
+  const handleTabChange = (event, newValue) => {
+    setTabIndex(newValue);
+  };
   /* ---------------------------------------------------------------------------------------------- */
   /*                                    Trinket Source Filtering                                    */
   /* ---------------------------------------------------------------------------------------------- */
-  const sourceHandler = (array, sources) => {
+  const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
     const shadowlandsRaids = [
       //1190, // Castle Nathria
       //1193, // Sanctum of Domination
       //1195, // Sepulcher
       1200, // Vault of the Incarnates
+      1208, // Aberrus
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -143,6 +185,11 @@ export default function TrinketAnalysis(props) {
       537, // Shadowmoon Burial Ground
       313, // Jade Serpent
       800, // Court of Stars
+
+      767, // Neltharion's Lair
+      68, // Vortex Pinnacle
+      1001, // Freehold
+      1022, // Underrot
     ];
     const legionTimewalking = [];
     const shadowlandsTheRest = [
@@ -169,6 +216,10 @@ export default function TrinketAnalysis(props) {
       });
     }
 
+    results = results.filter((item) => {
+      return ("classRestriction" in item && item.classRestriction.includes(playerSpec)) || !("classRestriction" in item);
+    });
+
     return results;
   };
 
@@ -187,7 +238,9 @@ export default function TrinketAnalysis(props) {
       key.slot === "Trinket" &&
       ((gameType === "Classic" && "phase" in key && key.phase === 1 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
   );
-  const filteredTrinketDB = sourceHandler(trinketDB, sources);
+  const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
+
+  const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
@@ -237,12 +290,6 @@ export default function TrinketAnalysis(props) {
       <div id="banner2"></div>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 0px 10px" }} color="primary">
-            {t("TrinketAnalysis.Header")}
-          </Typography>
-        </Grid>
-
-        <Grid item xs={12}>
           <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
@@ -259,76 +306,89 @@ export default function TrinketAnalysis(props) {
             autoSocket={true}
           />
         </Grid>
-
         <Grid item xs={12}>
-          <Grid container spacing={0} justifyContent="center">
-            <Grid item xs={12}>
-              <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
-                  {gameType === "Retail" ? (
+          <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
+            <Tab label={"Trinkets at a Glance"} />
+            <Tab label={"Trinket Deep Dive"} />
+          </Tabs>
+
+          <TabPanel value={tabIndex} index={0}>
+            <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
+              <Grid item xs={12}>
+                <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
+                  <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
+                    {gameType === "Retail" ? (
+                      <Grid item>
+                        <div style={{ padding: "8px 0px 8px 8px" }}>
+                          <Tooltip
+                            title={
+                              <Typography align="center" variant="body2">
+                                {t("SourceToggle.FilterTooltip")}
+                              </Typography>
+                            }
+                            style={{ marginTop: -5 }}
+                            placement="top-start"
+                          >
+                            <Typography variant="h6">{t("Filter")}:</Typography>
+                          </Tooltip>
+                        </div>
+                      </Grid>
+                    ) : (
+                      ""
+                    )}
+                    {gameType === "Retail" ? (
+                      <Grid item>
+                        <SourceToggle sources={sources} setSources={handleSource} />
+                      </Grid>
+                    ) : (
+                      ""
+                    )}
+                    {gameType === "Retail" ? (
+                      <Grid item xs={12}>
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
+                      </Grid>
+                    ) : (
+                      <Grid item xs={12}>
+                        <BCChart data={activeTrinkets} db={trinketDB} theme={themeSelection("candidate2")} />
+                      </Grid>
+                    )}
+                  </Grid>
+                </Paper>
+              </Grid>
+
+              {gameType === "Retail" ? (
+                <Grid item xs={12}>
+                  <Grid container spacing={0} direction="row" justifyContent="flex-end">
                     <Grid item>
-                      <div style={{ padding: "8px 0px 8px 8px" }}>
-                        <Tooltip
-                          title={
-                            <Typography align="center" variant="body2">
-                              {t("SourceToggle.FilterTooltip")}
-                            </Typography>
-                          }
-                          style={{ marginTop: -5 }}
-                          placement="top-start"
+                      <Tooltip title={"Alternate Theme"} arrow>
+                        <ToggleButton
+                          value="check"
+                          selected={theme}
+                          onChange={() => {
+                            setTheme(!theme);
+                          }}
                         >
-                          <Typography variant="h6">{t("Filter")}:</Typography>
-                        </Tooltip>
-                      </div>
+                          <VisibilityIcon />
+                        </ToggleButton>
+                      </Tooltip>
                     </Grid>
-                  ) : (
-                    ""
-                  )}
-                  {gameType === "Retail" ? (
-                    <Grid item>
-                      <SourceToggle sources={sources} setSources={handleSource} />
-                    </Grid>
-                  ) : (
-                    ""
-                  )}
-                  {gameType === "Retail" ? (
-                    <Grid item xs={12}>
-                      <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
-                    </Grid>
-                  ) : (
-                    <Grid item xs={12}>
-                      <BCChart data={activeTrinkets} db={trinketDB} theme={themeSelection("candidate2")} />
-                    </Grid>
-                  )}
+                  </Grid>
                 </Grid>
-              </Paper>
+              ) : (
+                ""
+              )}
             </Grid>
-          </Grid>
-        </Grid>
-        {gameType === "Retail" ? (
-          <Grid item xs={12} container spacing={0} direction="row" justifyContent="flex-end">
-            <Grid item>
-              <Tooltip title={"Alternate Theme"} arrow>
-                <ToggleButton
-                  value="check"
-                  selected={theme}
-                  onChange={() => {
-                    setTheme(!theme);
-                  }}
-                >
-                  <VisibilityIcon />
-                </ToggleButton>
-              </Tooltip>
+          </TabPanel>
+
+          <TabPanel value={tabIndex} index={1}>
+            <Grid container spacing={1} sx={{ marginTop: "16px" }}>
+              {itemCardData.map((item) => (
+                <Grid item xs={6}>
+                  <ItemDetailCard item={item} />
+                </Grid>
+              ))}
             </Grid>
-          </Grid>
-        ) : (
-          ""
-        )}
-      </Grid>
-      
-      <Grid container spacing={1} direction="row">
-        <Grid item xs={6}>
-          <ItemDetailCard />
+          </TabPanel>
         </Grid>
       </Grid>
 

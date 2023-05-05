@@ -74,7 +74,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+      estHPS += ((value * 0.42) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -84,12 +84,12 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
   let estDPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "crit", "versatility"].includes(key)) {
-      estDPS += (value * 0.35 / player.activeStats.intellect) * player.getDPS(contentType);
+      estDPS += (value * 0.4 / player.activeStats.intellect) * player.getDPS(contentType);
     } else if (key === "intellect") {
       estDPS += (value / player.activeStats.intellect) * player.getDPS(contentType);
     } 
     else if (key === "dps") {
-      estDPS += value;
+      estDPS += Math.round(value);
     }
     else if (key === "mastery") {
       estDPS += 0;
@@ -98,14 +98,14 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += ((value * 0.32) / player.activeStats.intellect) * 35000 / 2;
+      estDPS += ((value * 0.42) / player.activeStats.intellect) * 75000 * 0.75;
     }
   }
-  return Math.max(0, Math.round(100 * estDPS) / 100);
+  return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
 }
 
-const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, userSettings, "Retail", player.activeStats);
+const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric, playerSettings) => {
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats);
   const embel = embellishmentDB.filter(function (emb) {
     return emb.effect.name === effectName;
   });
@@ -128,7 +128,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric)
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r408 //gem.r5;
+  return gem.r447 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -156,9 +156,11 @@ export default function EmbellishmentAnalysis(props) {
 
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
+  const playerSettings = useSelector((state) => state.playerSettings);
   const [metric, setMetric] = React.useState("hps");
+
   let history = useHistory();
-  const itemLevels = [356, 369, 382, 395, 408];
+  const itemLevels = [411, 421, 427, 437, 443, 447];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -171,8 +173,8 @@ export default function EmbellishmentAnalysis(props) {
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
     "Embellishments were extremely difficult to test and numbers might change as more data comes in.",
-    "Potion Absorption Inhibitor value varies heavily per spec, mostly based on how good extending Chilled Clarity is for you.",
-    "Note that the value of the slot some embellishments must be placed on is not included in the graph.",
+    "Chilled Clarity potion was nerfed in 10.1, and so extending them is no longer of any value.",
+    "Note that the value of the slot some embellishments must be placed on is NOT included in the graph.",
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
@@ -187,7 +189,7 @@ export default function EmbellishmentAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric);
+      if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
     activeGems.push(gemAtLevels);
@@ -219,12 +221,24 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
+          <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
+          <Grid container spacing={1}>
+              <Grid item xs={12} key={i}>
+                <Typography align="left" variant="body1" key={i}>
+                  {"Note that despite not being a clear #1 on HPS, Undulating Sporecloak is a fantastic progression choice. Be sure to consult your favourite guide before crafting anything."}
+                </Typography>
+              </Grid>
+          </Grid>
+      </Paper>
+        </Grid>
+        <Grid item xs={12}>
           <MetricToggle metric={metric} setMetric={setMetric} />
         </Grid>
         {/* <Grid item xs={12}>
           <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
         </Grid> */}
         <Grid item xs={12}>
+
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

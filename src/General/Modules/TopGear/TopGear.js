@@ -211,11 +211,12 @@ export default function TopGear(props) {
     shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
     
     const addItem = (item) => {
-      let newItem = {id: item.id, level: item.level, leech: item.stats.leech || 0, isEquipped: item.isEquipped, stats: item.stats};
-      if (item.stats.leech > 0) newItem.leech = item.stats.leech;
+      let newItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
+      if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
       if (item.socket) newItem.socket = item.socket;
       if (item.vaultItem) newItem.vaultItem = item.vaultItem;
       if (item.quality) newItem.quality = item.quality;
+      if (item.effect) newItem.effect = item.effect;
 
       shortReport.itemSet.itemList.push(newItem)
       }
@@ -223,16 +224,16 @@ export default function TopGear(props) {
   
     for (var i = 0; i < report.itemSet.itemList.length; i++) {
       const item = report.itemSet.itemList[i];
-
-      if (item.slot === "Combined Weapon") {
+      if (item.slot === "CombinedWeapon") {
         // Unfold weapons so that we send both.
         if (item.offhandID > 0) {
-          mainhandItem = player.getItemByHash(item.mainHandUniqueHash);
-          offhandItem = player.getItemByHash(item.offHandUniqueHash);
+          const mainhandItem = player.getItemByHash(item.mainHandUniqueHash)[0];
+          const offhandItem = player.getItemByHash(item.offHandUniqueHash)[0];
           addItem(mainhandItem);
           addItem(offhandItem)
+
         } else {
-          mainHandItem = player.getItemByHash(item.uniqueHash);
+          const mainhandItem = player.getItemByHash(item.uniqueHash)[0];
           addItem(mainhandItem);
         }
       }

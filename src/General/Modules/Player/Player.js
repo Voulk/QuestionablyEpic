@@ -552,10 +552,10 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 7500,
-        haste: 3500,
+        intellect: 10500,
+        haste: 4700,
         crit: 2350,
-        mastery: 2400,
+        mastery: 4250,
         versatility: 1050,
         stamina: 1900,
       };
@@ -570,9 +570,9 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Caster Default", 2));
 
       this.activeStats = {
-        intellect: 7800,
-        haste: 3200,
-        crit: 1500,
+        intellect: 10500,
+        haste: 4200,
+        crit: 2100,
         mastery: 3100,
         versatility: 1700,
         stamina: 1900,
@@ -582,11 +582,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 7500,
-        haste: 1415,
-        crit: 3600,
+        intellect: 10500,
+        haste: 1615,
+        crit: 4400,
         mastery: 1800,
-        versatility: 3000,
+        versatility: 4000,
         stamina: 1900,
       };
       /*
@@ -599,7 +599,7 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 8500,
+        intellect: 10500,
         haste: 4400,
         crit: 2500,
         mastery: 1150,
@@ -624,11 +624,11 @@ class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
         this.activeStats = {
-          intellect: 7500,
+          intellect: 10500,
           haste: 2000,
-          crit: 2750,
-          mastery: 3500,
-          versatility: 1700,
+          crit: 3000,
+          mastery: 5100,
+          versatility: 2800,
           stamina: 1900,
         }
       /*
@@ -643,11 +643,11 @@ class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 7500,
-        haste: 4000,
+        intellect: 10500,
+        haste: 4900,
         crit: 2450,
-        mastery: 2900,
-        versatility: 1820,
+        mastery: 1900,
+        versatility: 2120,
         stamina: 1900,
       };
       /*
