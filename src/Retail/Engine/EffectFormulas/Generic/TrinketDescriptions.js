@@ -74,7 +74,7 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
                 "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
         description:
           "A massive package of mana, healing and versatility given out to your party. Track the mana effect, and direct heal as many allies as possible while it's active \
-          to get as many HoTs and thus vers buffs out as possible. AoE direct heals as ideal. Won't proc off HoT ticks.",
+          to get as many HoTs and thus vers buffs out as possible. AoE direct heals are ideal. Won't proc off HoT ticks. Capped at 10.",
       };
 
 }

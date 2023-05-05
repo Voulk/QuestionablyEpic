@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 3,
+    date: "4 May",
+    changes: [ 
+      "In game nerf: Spore Tender cut down 72%. QE/L enchant recommendations updated.",
+      "In game buff: Neltharion's Call to Suffering now works on HoTs, raising value for Druid / HPriest.",
+  ]},
+  {
+    version: "10.1.0",
     update: 2,
     date: "3 May",
     changes: [ 

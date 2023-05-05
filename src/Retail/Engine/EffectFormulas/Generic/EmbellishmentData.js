@@ -117,14 +117,14 @@ export const embellishmentData = [
             coefficient: 14.83545, // 3.268828,
             table: -7,
             ppm: 4 / 2,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             efficiency: 0.84,
           },
           { // DPS Effect
             coefficient: 8.901271,
             table: -7,
             ppm: 4 / 2,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -271,7 +271,7 @@ export const embellishmentData = [
             coefficient: 21.79298, //24.55177,
             table: -9, // 
             ppm: 1, // 2 / 2
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
             efficiency: 0.8,
           },
           {  // Damage
@@ -377,7 +377,7 @@ export const embellishmentData = [
             table: -8,
             ppm: 3, 
             ticks: 5,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
 
           },
         ],
@@ -403,7 +403,7 @@ export const embellishmentData = [
             table: -8,
             ppm: 20, // It ticks every 3 seconds.
             targets: {Raid: 1, Dungeon: 1}, // Damage is split so target count doesn't matter.
-            secondaries: ['crit', 'versatility'], // Tick rate doesn't scale with haste.
+            secondaries: ['crit'], // Tick rate doesn't scale with haste.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -428,7 +428,7 @@ export const embellishmentData = [
             coefficient: 44.45392,
             table: -8,
             ppm: 2, 
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'crit'],
 
           },
         ],
@@ -593,7 +593,7 @@ export const embellishmentData = [
             table: -9, 
             ticks: 12, // TODO: Confirm it's 12 ticks.
             ppm: 2 / 2,
-            secondaries: ['crit', 'versatility'], // Check DoT haste scaling but shouldn't have it.
+            secondaries: ['crit'], // Check DoT haste scaling but shouldn't have it.
           },
           { // Shield effect. Procs with the damage.
             coefficient: 23.53642,
