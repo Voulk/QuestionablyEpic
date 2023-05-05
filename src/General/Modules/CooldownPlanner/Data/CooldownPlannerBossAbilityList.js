@@ -1746,8 +1746,22 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: false,
-      createEvent: false,
+      createEvent: true,
       guid: 406780,
+      icon: "inv_shadowflame_debuff",
+      importActive: false,
+      name: {
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+        en: "Shadowflame Contamination",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 405394,
       icon: "inv_shadowflame_debuff",
       importActive: false,
       name: {
@@ -1858,7 +1872,7 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: false,
-      createEvent: false,
+      createEvent: true,
       guid: 401809,
       icon: "spell_shadow_deathsembrace",
       importActive: false,
