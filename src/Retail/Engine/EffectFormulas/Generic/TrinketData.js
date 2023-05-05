@@ -10,7 +10,7 @@ export const raidTrinketData = [
     name: "Neltharion's Call to Suffering",
     effects: [
       { // Int portion
-        coefficient: 2.901138,
+        coefficient: 2.637718, //2.901138,
         table: -1,
         stat: "intellect",
         duration: 12,
@@ -23,7 +23,7 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
       //if (player.spec === "Restoration Druid" || player.spec === "Holy Priest") bonus_stats.intellect *= 0.25;
 
       return bonus_stats;
@@ -42,14 +42,14 @@ export const raidTrinketData = [
         table: -1,
         stat: "intellect",
         duration: 18,
-        classMod: {"Preservation Evoker": 0.3, "Holy Paladin": 0.6},
+        classMod: {"Preservation Evoker": 1, "Holy Paladin": 1},
         ppm: 1,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste') * (data[0].classMod[player.spec] || 0.5);
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * (data[0].classMod[player.spec] || 0.5);
 
       return bonus_stats;
     }
@@ -67,15 +67,15 @@ export const raidTrinketData = [
         table: -9,
         ppm: 2,
         ticks: 10,
-        secondaries: ["haste"]
+        secondaries: []
       },
       { // Heal over time portion.
-        coefficient: 3.86182,
+        coefficient: 4.441092, //3.86182,
         table: -9, 
         targets: {"Raid": 8, "Dungeon": 5},
         efficiency: 0.5,
         ticks: 10,
-        secondaries: ["versatility", "haste"], // Note that the HoT itself doesn't scale with haste, but the proc rate does.
+        secondaries: ["versatility"], 
       },
       { // Gifted Versatility portion
         coefficient: 0.483271,
@@ -85,8 +85,9 @@ export const raidTrinketData = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
+      // This can probably be rewritten in a much easier way now that it doesn't have weird haste scaling.
       const BLP = 1.13;
-      const effectivePPM = data[0].ppm * player.getStatPerc('haste') * BLP;
+      const effectivePPM = data[0].ppm * BLP;
       let bonus_stats = {};
       const contentType = additionalData.contentType || "Raid";
       //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
@@ -114,7 +115,7 @@ export const raidTrinketData = [
     name: "Screaming Black Dragonscale",
     effects: [
       { // Crit Portion
-        coefficient: 0.815295, //0.906145,
+        coefficient: 0.919472, //0.815295, //0.906145,
         table: -7,
         stat: "crit",
         duration: 15,
@@ -130,8 +131,8 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm * player.getStatPerc('haste') / 60;
-      bonus_stats.leech = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm * player.getStatPerc('haste') / 60;
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60;
+      bonus_stats.leech = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm / 60;
 
       return bonus_stats;
     }
