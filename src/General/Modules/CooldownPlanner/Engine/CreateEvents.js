@@ -34,6 +34,7 @@ import createKurogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/6. KurogG
 import createBroodkeeperEvents from "./BossEvents/VaultOfTheIncarnatesEvents/7. BroodKeeperDiurna";
 import createRaszagethEvents from "./BossEvents/VaultOfTheIncarnatesEvents/8. Raszageth";
 import createAmalgamationEvents from "./BossEvents/AbberusEvents/2. AmalgamationChamber";
+import createForgottenExperimentEvents from "./BossEvents/AbberusEvents/3. ForgottenExperiments";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
   let returnedEvents = [];
@@ -181,6 +182,11 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   /* ---------------------------------- The Amalgamation Chamber ---------------------------------- */
   if (bossID === 2687) {
     returnedEvents = createAmalgamationEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ---------------------------------- The Forgotten Experiments --------------------------------- */
+  if (bossID === 2693) {
+    returnedEvents = createForgottenExperimentEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
 
   return returnedEvents;
