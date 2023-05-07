@@ -102,13 +102,15 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
 
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
+    sequence.push('Shadow Covenant');
     sequence.push('Schism');
     sequence.push(getPenance(talents));
     if (talents.mindgames) sequence.push("Mindgames");
-    sequence.push('Shadow Word: Death');
+    sequence.push('Mind Blast');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
+    sequence.push('Shadow Word: Death');
     if (talents.divineStar) sequence.push("Divine Star");
     sequence.push("Power Word: Shield");
     for (var i = 0; i < 3; i++) {
@@ -178,10 +180,13 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
 
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
+    sequence.push('Shadow Covenant');
     sequence.push('Schism');
     sequence.push("Light's Wrath")
-    sequence.push('Shadow Word: Death');
+    sequence.push('Mind Blast');
     sequence.push(getPenance(talents));
+    sequence.push('Shadow Word: Death');
+    sequence.push('Halo');
     sequence.push('Mind Blast');
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
@@ -229,13 +234,14 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
 
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
-
+    sequence.push('Shadow Covenant');
     sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     sequence.push(getPenance(talents));
     sequence.push('Mind Blast');
-    //sequence.push('Mind Blast');
-    //if (talents.divineStar) sequence.push("Divine Star");
+    sequence.push('Halo');
+    sequence.push('Mind Blast');
+    sequence.push("Mindgames");
     if (talents.powerWordSolace) sequence.push('Power Word: Solace');
     else sequence.push("Smite");
     sequence.push("Smite");

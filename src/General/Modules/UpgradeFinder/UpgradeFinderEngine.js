@@ -109,7 +109,7 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   }
   
   else if (instanceID === -1) {
-    if ([1204, 1199, 1197, 1196].includes(bossID)) itemLevel = 372; // M0 only dungeons.
+    if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } else if (instanceID === -30) itemLevel = 359;
   else if (instanceID === -31) {
@@ -221,7 +221,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   const rawDiff = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
   const percDiff = (newScore - baseScore) / baseScore
 
-  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") rawDiff;
+  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
 
   return { item: item.id, level: item.level, score: differential, rawDiff: rawDiff, percDiff: percDiff };

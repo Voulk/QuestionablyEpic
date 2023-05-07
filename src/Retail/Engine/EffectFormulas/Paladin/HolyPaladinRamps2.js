@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, 
-            getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
+            getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, removeBuff } from "../Generic/RampBase";
 
 
 
@@ -30,7 +30,7 @@ const PALADINCONSTANTS = {
 
 }
 
-const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Crusader Strike", "Judgment", "Rest"]
+const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 
 
@@ -57,7 +57,6 @@ const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn",
 
     if (settings['T30_2']) {
         paladinSpells["Holy Shock"][0].statMods.critEffect = 0.6;
-        console.log(paladinSpells["Holy Shock"])
         paladinSpells["Holy Shock"].push({
             type: "function",
             runFunc: function (state, buff, paladinSpells) {
@@ -154,6 +153,11 @@ const getHealingMult = (state, t, spellName, talents) => {
 
     mult *= (state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); // Avenging Wrath
 
+    if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
+        mult *= 1.15;
+        state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
+    }
+
     return mult;
 }
 
@@ -174,8 +178,9 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Beacon
     let beaconHealing = 0;
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing);
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing);
+    const beaconMult = ["Light of Dawn", "Light's Hammer"].includes(spellName) ? 0.5 : 1;
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
@@ -203,7 +208,7 @@ const canCastSpell = (state, spellDB, spellName) => {
     
     const spell = spellDB[spellName][0];
     let miscReq = true;
-    const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower;
+    const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
     const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;

@@ -867,7 +867,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
     bonus_stats = compileStats(bonus_stats, annuletStats);
   }
 
-    // Add Retail Socket
+  // Add Retail Socket
   if (item.socket) {
     getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
@@ -903,7 +903,7 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
 
   // Add any group benefit, if we're interested in it.
   if (userSettings.includeGroupBenefits && "bonus_stats" in item_stats && "allyStats" in bonus_stats) {
-    score += 0.35 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
+    score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 
   // Classic specific sockets

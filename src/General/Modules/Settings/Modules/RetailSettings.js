@@ -138,26 +138,45 @@ export default function RetailSettings(props) {
                       }
                       placement="top-start"
                     >
-                      <TextField
-                        className={classes.select}
-                        InputProps={{ variant: "outlined" }}
-                        select
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                        value={playerSettings[key]["value"]}
-                        onChange={(e) => updateValue(key, e.target.value)}
-                        label={t("Settings.Retail." + key + ".title")}
-                        style={{ textAlign: "center", minWidth: 120 }}
-                      >
-                        {playerSettings[key]["options"].map((option, i) => {
-                          return (
-                            <MenuItem divider value={option} style={{ justifyContent: "center" }}>
-                              {option.toString()}
-                            </MenuItem>
-                          );
-                        })}
-                      </TextField>
+
+                      {playerSettings[key].type === "selector" ? (
+                        <TextField
+                          className={classes.select}
+                          InputProps={{ variant: "outlined" }}
+                          select
+                          variant="outlined"
+                          size="small"
+                          fullWidth
+                          value={playerSettings[key]["value"]}
+                          onChange={(e) => updateValue(key, e.target.value)}
+                          label={t("Settings.Retail." + key + ".title")}
+                          style={{ textAlign: "center", minWidth: 160 }}
+                        >
+                          {playerSettings[key]["options"].map((option, i) => {
+                            return (
+                              <MenuItem divider value={option} style={{ justifyContent: "center" }}>
+                                {option.toString()}
+                              </MenuItem>
+                            );
+                          })}
+                        </TextField>
+                      ) : (
+                        <TextField
+                          className={classes.select}
+                          InputProps={{ variant: "outlined", inputProps: {
+                            style: { textAlign: "center" },
+                          } }}
+                          variant="outlined"
+                          size="small"
+                          fullWidth
+                          type="number"
+                          value={playerSettings[key]["value"]}
+                          onChange={(e) => updateValue(key, e.target.value)}
+                          label={t("Settings.Retail." + key + ".title")}
+                          style={{ textAlign: "center", minWidth: 120, maxWidth: 160 }}
+                        />
+                      )}
+
                     </Tooltip>
                   </Grid>
                 );
