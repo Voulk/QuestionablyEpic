@@ -35,6 +35,8 @@ import createBroodkeeperEvents from "./BossEvents/VaultOfTheIncarnatesEvents/7. 
 import createRaszagethEvents from "./BossEvents/VaultOfTheIncarnatesEvents/8. Raszageth";
 import createAmalgamationEvents from "./BossEvents/AbberusEvents/2. AmalgamationChamber";
 import createForgottenExperimentEvents from "./BossEvents/AbberusEvents/3. ForgottenExperiments";
+import createMagmoraxEvents from "./BossEvents/AbberusEvents/7. Magmorax";
+import createZskarnEvents from "./BossEvents/AbberusEvents/6. Zskarn";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
   let returnedEvents = [];
@@ -187,6 +189,16 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   /* ---------------------------------- The Forgotten Experiments --------------------------------- */
   if (bossID === 2693) {
     returnedEvents = createForgottenExperimentEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------ Magmorax ------------------------------------------ */
+  if (bossID === 2683) {
+    returnedEvents = createMagmoraxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* -------------------------------- The Vigilant Steward, Zskarn -------------------------------- */
+  if (bossID === 2689) {
+    returnedEvents = createZskarnEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
 
   return returnedEvents;
