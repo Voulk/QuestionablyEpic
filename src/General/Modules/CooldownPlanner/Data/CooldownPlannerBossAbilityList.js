@@ -2800,8 +2800,612 @@ export const bossAbilities = {
       },
     },
   ],
+  /* -------------------------------------- Rashok, the Elder ------------------------------------- */
+  2680: [
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410075,
+      icon: "inv_shadowflame_nova",
+      importActive: false,
+      name: {
+        en: "Shadowflame Energy",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410821,
+      icon: "spell_shaman_lavasurge",
+      importActive: false,
+      name: {
+        en: "Lava Wave",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 406321,
+      icon: "ability_mage_scorchedearth",
+      importActive: false,
+      name: {
+        en: "Lava Vortex",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410077,
+      icon: "inv_shadowflame_nova",
+      importActive: false,
+      name: {
+        en: "Shadowflame Energy",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 403543,
+      icon: "spell_shaman_lavasurge",
+      importActive: false,
+      name: {
+        en: "Lava Wave",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 405091,
+      icon: "spell_winston_rage",
+      importActive: true,
+      name: {
+        en: "Smoldering Rage",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 410070,
+      icon: "inv_shadowflame_beam",
+      importActive: true,
+      name: {
+        en: "Unleash Shadowflame",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405821,
+      icon: "ability_shaman_lavalash",
+      importActive: false,
+      name: {
+        en: "Searing Slam",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 405819,
+      icon: "spell_shaman_lavaburst",
+      importActive: true,
+      name: {
+        en: "Searing Slam",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 400777,
+      icon: "inv_shadowflame_missile",
+      importActive: true,
+      name: {
+        en: "Charged Smash",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407641,
+      icon: "inv_polearm_2h_dragonraid_d_02",
+      importActive: false,
+      name: {
+        en: "Wrath of Djaruun",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407596,
+      icon: "ability_earthen_pillar",
+      importActive: false,
+      name: {
+        en: "Earthen Crush",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407544,
+      icon: "ability_rhyolith_magmaflow_wave",
+      importActive: false,
+      name: {
+        en: "Flaming Slash",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 406851,
+      icon: "inv_shadowflame_groundstate",
+      importActive: true,
+      name: {
+        en: "Doom Flames",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 406333,
+      icon: "inv_shadowflames_wave",
+      importActive: true,
+      name: {
+        en: "Shadowlava Blast",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 406165,
+      icon: "spell_winston_rage",
+      importActive: false,
+      name: {
+        en: "Smoldering Rage",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 405316,
+      icon: "warrior_talent_icon_furyintheblood",
+      importActive: true,
+      name: {
+        en: "Ancient Fury",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405822,
+      icon: "ability_shaman_lavalash",
+      importActive: false,
+      name: {
+        en: "Searing Slam",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405827,
+      icon: "inv_shadowflame_debuff",
+      importActive: false,
+      name: {
+        en: "Overcharged",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405828,
+      icon: "spell_fire_flare",
+      importActive: false,
+      name: {
+        en: "Conduit Flare",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407597,
+      icon: "ability_earthen_pillar",
+      importActive: false,
+      name: {
+        en: "Earthen Crush",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407547,
+      icon: "ability_rhyolith_magmaflow_wave",
+      importActive: false,
+      name: {
+        en: "Flaming Slash",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 408857,
+      icon: "inv_shadowflame_groundstate",
+      importActive: false,
+      name: {
+        en: "Doom Flames",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 408204,
+      icon: "ability_mage_livingbomb",
+      importActive: false,
+      name: {
+        en: "Scorched Flesh",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407706,
+      icon: "spell_fire_fire",
+      importActive: false,
+      name: {
+        en: "Molten Blood",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405825,
+      icon: "inv_shadowflame_missile",
+      importActive: false,
+      name: {
+        en: "Charged Smash",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 406152,
+      icon: "inv_shadowflame_missile",
+      importActive: false,
+      name: {
+        en: "Doom Flames",
+      },
+    },
+  ],
   // Echo of Neltharion
-  2684: [],
+  2684: [
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410953,
+      icon: "inv_ragnaros_heart",
+      importActive: false,
+      name: {
+        en: "Volcanic Heart",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 408131,
+      icon: "inv_cosmicvoid_orb",
+      importActive: false,
+      name: {
+        en: "Ruptured Veil",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401480,
+      icon: "inv_elementalearth2",
+      importActive: false,
+      name: {
+        en: "Twisted Earth",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 407207,
+      icon: "inv_cosmicvoid_missile",
+      importActive: true,
+      name: {
+        en: "Rushing Darkness",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410968,
+      icon: "inv_ragnaros_heart",
+      importActive: false,
+      name: {
+        en: "Volcanic Heart",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 409241,
+      icon: "inv_elementalearth2",
+      importActive: false,
+      name: {
+        en: "Twisted Earth",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 406222,
+      icon: "inv_sword_138",
+      importActive: false,
+      name: {
+        en: "Calamitous Strike",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401022,
+      icon: "inv_sword_138",
+      importActive: false,
+      name: {
+        en: "Calamitous Strike",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 403272,
+      icon: "spell_nature_earthquake",
+      importActive: true,
+      name: {
+        en: "Echoing Fissure",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 409313,
+      icon: "6bf_explosive_shard",
+      importActive: true,
+      name: {
+        en: "Raze the Earth",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 403057,
+      icon: "inv_cosmicvoid_debuff",
+      importActive: true,
+      name: {
+        en: "Surrender to Corruption",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 407917,
+      icon: "inv_misc_head_dragon_black_nightmare",
+      importActive: true,
+      name: {
+        en: "Ebon Destruction",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407790,
+      icon: "spell_deathknight_spelldeflection",
+      importActive: false,
+      name: {
+        en: "Sunder Shadow",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407796,
+      icon: "spell_deathknight_spelldeflection",
+      importActive: false,
+      name: {
+        en: "Shadow Strike",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 405433,
+      icon: "inv_cosmicvoid_groundsate",
+      importActive: true,
+      name: {
+        en: "Umbral Annihilation",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 404068,
+      icon: "inv_cosmicvoid_buff",
+      importActive: false,
+      name: {
+        en: "Umbral Annihilation",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407221,
+      icon: "inv_cosmicvoid_missile",
+      importActive: false,
+      name: {
+        en: "Rushing Darkness",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407329,
+      icon: "inv_elementalearth2",
+      importActive: false,
+      name: {
+        en: "Shatter",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 401825,
+      icon: "spell_shaman_lavaburst",
+      importActive: false,
+      name: {
+        en: "Shatter",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401883,
+      icon: "6bf_blackrock_nova",
+      importActive: false,
+      name: {
+        en: "Shattered Rock",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 402115,
+      icon: "spell_nature_earthquake",
+      importActive: false,
+      name: {
+        en: "Echoing Fissure",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 409058,
+      icon: "spell_shaman_lavaflow",
+      importActive: false,
+      name: {
+        en: "Seeping Lava",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 402120,
+      icon: "spell_nature_earthquake",
+      importActive: false,
+      name: {
+        en: "Collapsed Earth",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407220,
+      icon: "inv_cosmicvoid_missile",
+      importActive: false,
+      name: {
+        en: "Rushing Darkness",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407182,
+      icon: "inv_cosmicvoid_missile",
+      importActive: false,
+      name: {
+        en: "Rushing Darkness",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410966,
+      icon: "inv_wildfirebomb_blood",
+      importActive: false,
+      name: {
+        en: "Volcanic Heartbeat",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 411430,
+      icon: "ability_warrior_sunder",
+      importActive: false,
+      name: {
+        en: "Shatter",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 404565,
+      icon: "spell_shadow_psychicscream",
+      importActive: false,
+      name: {
+        en: "Desperate Scream",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 403528,
+      icon: "spell_priest_voidsear",
+      importActive: false,
+      name: {
+        en: "Sweeping Shadows",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405434,
+      icon: "inv_cosmicvoid_groundsate",
+      importActive: false,
+      name: {
+        en: "Umbral Annihilation",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401101,
+      icon: "spell_shadow_charm",
+      importActive: false,
+      name: {
+        en: "Corruption",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 403049,
+      icon: "inv_cosmicvoid_orb",
+      importActive: false,
+      name: {
+        en: "Shadow Barrier",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401998,
+      icon: "inv_sword_138",
+      importActive: false,
+      name: {
+        en: "Calamitous Strike",
+      },
+    },
+  ],
   // Scalecommander Sarkareth
   2685: [],
 };
