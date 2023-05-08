@@ -38,6 +38,7 @@ import createForgottenExperimentEvents from "./BossEvents/AbberusEvents/3. Forgo
 import createMagmoraxEvents from "./BossEvents/AbberusEvents/7. Magmorax";
 import createZskarnEvents from "./BossEvents/AbberusEvents/6. Zskarn";
 import createNeltharionEvents from "./BossEvents/AbberusEvents/8. Neltharion";
+import createRashokEvents from "./BossEvents/AbberusEvents/5. Rashok";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
   let returnedEvents = [];
@@ -202,7 +203,13 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
     returnedEvents = createZskarnEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
 
-  createNeltharionEvents
+  if (bossID === 2680) {
+    returnedEvents = createRashokEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  if (bossID === 2684) {
+    returnedEvents = createNeltharionEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
 
   return returnedEvents;
 }

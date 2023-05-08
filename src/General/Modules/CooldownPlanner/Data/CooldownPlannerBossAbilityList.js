@@ -1214,7 +1214,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 407046,
       icon: "inv_shadowflame_groundstate",
-      importActive: true,
+      importActive: false,
       name: {
         de: "",
         fr: "",
@@ -1354,7 +1354,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 407069,
       icon: "ability_mage_firestarter",
-      importActive: true,
+      importActive: false,
       name: {
         de: "",
         fr: "",
@@ -1829,11 +1829,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 408193,
       icon: "inv_chaos_orb",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1843,11 +1843,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 405437,
       icon: "inv_shadowflame_nova",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -2993,8 +2993,8 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 405828,
       icon: "spell_fire_flare",
       importActive: false,
