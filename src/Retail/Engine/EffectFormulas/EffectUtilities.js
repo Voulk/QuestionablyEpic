@@ -26,8 +26,7 @@ export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
     return diminishedValue * uptime;
 }
 
-// Most stat trinkets should not be hasted, however in Dragonflight the developers have moved more and more toward 
-// hasting just some of them anyway.
+// Most stat trinkets should not be hasted so this function is mostly a catch for if they mess it up.
 export function runGenericPPMTrinketHasted(effect, itemLevel, hastePerc, setStats = {}) {
   const rawValue = processedValue(effect, itemLevel);
   const diminishedValue = getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
