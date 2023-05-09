@@ -10,7 +10,7 @@ export const raidTrinketData = [
     name: "Neltharion's Call to Suffering",
     effects: [
       { // Int portion
-        coefficient: 2.637718, //2.901138,
+        coefficient: 2.637718 * 1.05, //2.901138,
         table: -1,
         stat: "intellect",
         duration: 12,
@@ -31,6 +31,32 @@ export const raidTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Neltharion's Call to Dominance                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Neltharion's Call to Dominance",
+    effects: [
+      { // Int portion
+        coefficient: 0.884775,
+        table: -1,
+        stat: "intellect",
+        duration: 10,
+        ppm: 3,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const averageIntellect = processedValue(data[0], itemLevel) * data[0].ppm;
+      const effect = data[0];
+      bonus_stats.intellect = averageIntellect * effect.duration / 60 * (additionalData.castModel.getSpecialQuery("c60", "cooldownMult") || 1);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                     Neltharion's Call to Chaos                                 */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
@@ -38,7 +64,7 @@ export const raidTrinketData = [
     name: "Neltharion's Call to Chaos",
     effects: [
       { // Int portion
-        coefficient: 1.844795,
+        coefficient: 1.844795 * 1.1,
         table: -1,
         stat: "intellect",
         duration: 18,

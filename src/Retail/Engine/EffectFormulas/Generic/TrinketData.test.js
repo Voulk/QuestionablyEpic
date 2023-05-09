@@ -15,8 +15,8 @@ describe("Neltharion's Call to Chaos", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${444}  | ${2164}
-    ${457}  | ${2443}
+    ${444}  | ${2381}
+    ${457}  | ${2687}
     // add new test cases here
     `.test("Neltharion's Call to Chaos Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult);

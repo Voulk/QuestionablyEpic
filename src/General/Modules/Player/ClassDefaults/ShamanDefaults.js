@@ -65,7 +65,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.2,
       CastsPerMinute: 24,
       cooldownMult: {
-        c60: 1,
+        c60: 1.2,
         c90: 1,
         c120: 1,
         c180: 1.1,
