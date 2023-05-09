@@ -14,7 +14,8 @@ export const changeLog = [
     date: "9 May",
     changes: [ 
       "In game: Two class trinkets buffed by 5/10%.",
-      "In game: Embellishments scale with secondaries once again."
+      "In game: Embellishments scale with secondaries once again.",
+      "Added MW / Shaman class trinket",
   ]},
   {
     version: "10.1.0",

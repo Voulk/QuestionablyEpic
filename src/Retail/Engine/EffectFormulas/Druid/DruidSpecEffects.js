@@ -9,13 +9,20 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
 
-  if (effectName === "Druid T29-2") {
+  if (effectName === "Druid T30-2") {
+    // +10% rejuv healing, +10% lifebloom healing, +50% regrowth HoT healing.
+    const percentEffected = 0.4; 
+    bonus_stats.hps = 8 * percentEffected * 170;
+
+  }
+
+  else if (effectName === "Druid T29-2") {
     // +8% crit to almost everything that matters.
     const percentEffected = 0.78; // TODO: Auto-calc this.
     bonus_stats.crit = 8 * percentEffected * 170;
 
   }
-  if (effectName === "Druid T29-4") {
+  else if (effectName === "Druid T29-4") {
     const effectiveCritChance = player.getStatPerc("crit") + (8 / 100) - 1;
     const chanceOneCrit = 1-(Math.pow(1-effectiveCritChance, 3));
 
