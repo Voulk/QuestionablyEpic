@@ -33,9 +33,6 @@ export default function createForgottenExperimentEvents(bossID, difficulty, dama
     }))
     .filter((entry) => entry.health !== 0);
 
-  console.log(neldrisHealth.slice(1));
-  console.log(thadrionHealth.slice(1));
-
   // Add Phase 1 and Phase 2 events to the events array
   events.push({ time: "00:00", bossAbility: "Phase 1" });
 
