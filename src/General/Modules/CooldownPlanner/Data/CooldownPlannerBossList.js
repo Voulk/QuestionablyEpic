@@ -264,20 +264,6 @@ export const bossList = [
     zoneID: 2569,
     icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg").default,
   },
-
-  {
-    DungeonEncounterID: 2696,
-    ID: 2531,
-    name: {
-      en: "The Zaqali Elders",
-      cn: "扎卡利长老",
-      de: "Die Ältesten der Zaqali",
-      fr: "Les Anciens zaqalis",
-      ru: "Старейшины закали",
-    },
-    zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
-  },
 ];
 
 export const getBossName = (encounterID, lang) => {
