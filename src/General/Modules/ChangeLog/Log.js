@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 6,
+    date: "10 May",
+    changes: [ 
+      "Re-enabled Cooldown Planner.",
+      "Added Shadowflame-Tempered Armor Patch."
+
+  ]},
+  {
+    version: "10.1.0",
     update: 5,
     date: "9 May",
     changes: [ 

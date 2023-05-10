@@ -264,7 +264,7 @@ export const bossList = [
     zoneID: 2569,
     icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg").default,
   },
-
+  /*
   {
     DungeonEncounterID: 2696,
     ID: 2531,
@@ -277,7 +277,7 @@ export const bossList = [
     },
     zoneID: 2569,
     icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
-  },
+  }, */
 ];
 
 export const getBossName = (encounterID, lang) => {
