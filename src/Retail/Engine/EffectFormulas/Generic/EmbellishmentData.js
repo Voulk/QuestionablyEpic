@@ -615,4 +615,29 @@ export const embellishmentData = [
           return bonus_stats;
         }
       },
+      {
+        /* -------------------- */
+        /* Shadowflame-Tempered Armor Patch           
+        /* -------------------- */
+        /* 
+        */
+        name: "Shadowflame-Tempered Armor Patch",
+        effects: [
+          { // Damage Effect
+            coefficient: 7.845473,
+            table: -9,
+            secondaries: ['haste', 'crit'],
+            ppm: 5, // 4 / 2
+            stackBonus: 0.2,
+            maxStacks: 5,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          const averageMult = 1 + (data[0].stackBonus * data[0].maxStacks / 2);
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * averageMult / 60;
+
+          return bonus_stats;
+        }
+      },
 ]

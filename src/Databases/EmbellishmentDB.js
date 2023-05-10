@@ -256,6 +256,23 @@ export const embellishmentDB = [
     },
   },
   {
+    id: 406254,
+    icon: "inv_10_skinning_craftedoptionalreagent_shadowflamearmorpatch",
+    armorType: 0, // Extra
+    name: {
+      en: "Shadowflame-Tempered Armor Patch",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Shadowflame-Tempered Armor Patch",
+      rank: 0, 
+    },
+  },
+  {
     id: 193944,
     icon: "inv_10_tailoring_silkrare_color1",
     armorType: 0, // Extra
