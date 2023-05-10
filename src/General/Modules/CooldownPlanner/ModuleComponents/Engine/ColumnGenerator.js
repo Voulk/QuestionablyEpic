@@ -79,8 +79,13 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           field: "name" + num,
           width: "5%",
           cellStyle: (value, rowData) => {
-            return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
+            if (rowData && rowData["class" + num]) {
+              return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
+            } else {
+              return TableStyles().cellStyle.thinRightBorder; // Return an empty object if rowData or rowData["class" + num] is undefined
+            }
           },
+
           headerStyle: TableStyles().headerStyle,
           /* ------------------------ Renders the healer name outside of Edit Mode. ----------------------- */
           render: (rowData) => NameRender(rowData, "name" + num, "class" + num),
@@ -105,8 +110,13 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
           field: "cooldown" + num,
           width: "9%",
           cellStyle: (value, rowData) => {
-            return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
+            if (rowData && rowData["class" + num]) {
+              return TableStyles(rowData["class" + num], rowData).cellStyle.thinRightBorder;
+            } else {
+              return TableStyles().cellStyle.thinRightBorder; // Return an empty object if rowData or rowData["class" + num] is undefined
+            }
           },
+
           headerStyle: TableStyles().headerStyle,
           // Search function for abilities as they are stores as numbers. Works for all languages
           customFilterAndSearch: (term, rowData) => {
