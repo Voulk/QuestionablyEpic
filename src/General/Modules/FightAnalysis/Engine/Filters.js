@@ -387,4 +387,32 @@ export const filterIDS = {
   2607: [
     0, // Environmentals
   ],
+
+  // Kazzara, the Hellforged
+  2688: [
+    203832,
+    201261,
+    0, // Environmentals
+  ],
+  // The Amalgamation Chamber
+  2687: [
+    201774,
+    201934,
+    201773,
+    0, // Environmentals
+  ],
+  // The Forgotten Experiments
+  2693: [],
+  // Assault of the Zaqali
+  2682: [],
+  // Rashok, the Elder
+  2680: [],
+  // The Vigilant Steward, Zskarn
+  2689: [],
+  // Magmorax
+  2683: [],
+  // Echo of Neltharion
+  2684: [],
+  // Scalecommander Sarkareth
+  2685: [],
 };

@@ -45,7 +45,7 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, true), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
-          "Does not proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous. Trinket is unusuably poor for Resto Druid and Holy Priest until fixed.",
+          "Fixed to proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous.",
       };
 
 }
