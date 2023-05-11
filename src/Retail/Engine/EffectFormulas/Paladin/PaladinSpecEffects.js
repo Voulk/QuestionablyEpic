@@ -12,7 +12,18 @@ const IDMARTYR = 183998;
 export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "Paladin T29-2") {
+  if (effectName === "Paladin T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 750;
+
+  }
+  else if (effectName === "Paladin T30-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 9750;
+
+  }
+
+  else if (effectName === "Paladin T29-2") {
     // +8% crit to almost everything that matters.
     const percentEffected = 1; // TODO: Auto-calc this.
     bonus_stats.crit = 4 * percentEffected * 170;

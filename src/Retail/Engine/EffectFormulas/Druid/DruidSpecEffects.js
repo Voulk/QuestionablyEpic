@@ -1,5 +1,6 @@
 import { processDruidRawHealing } from "./DruidMiscFormulas";
 
+
 export const getDruidSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
   const IDREJUV = 774;
@@ -9,10 +10,16 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
 
-  if (effectName === "Druid T30-2") {
+  if (effectName === "Druid T30-4") {
+    // TODO
+    bonus_stats.hps = 6750;
+
+  }
+
+  else if (effectName === "Druid T30-2") {
     // +10% rejuv healing, +10% lifebloom healing, +50% regrowth HoT healing.
-    const percentEffected = 0.4; 
-    bonus_stats.hps = 8 * percentEffected * 170;
+    const percentEffected = 0.45; 
+    bonus_stats.hps = 8 * percentEffected * 0.1;
 
   }
 
@@ -28,8 +35,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
     const effloCritsPerSec = chanceOneCrit / 2 * player.getStatPerc("haste");
     const avgStacks = Math.min(5, effloCritsPerSec * 15);
-    const sotfBonus = (0.5 * 0.66) + 1; // 66% of our WG casts will line up with SotF.
-    const oneWildGrowth = 0.98 * 6 * sotfBonus * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.9) * 1.05; // The extra healing from 2 additional WG targets a minute.
+    const sotfBonus = (0.5 * 0.4) + 1; // 40% of our WG casts will line up with SotF.
+    const oneWildGrowth = 0.98 * 6 * sotfBonus * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.3) * 1.05; // The extra healing from 2 additional WG targets a minute.
 
     bonus_stats.hps = oneWildGrowth * (0.05 * avgStacks) * 4 / 60;
   }

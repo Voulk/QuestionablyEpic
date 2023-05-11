@@ -12,8 +12,17 @@ const ID_ENVELOPING_BREATH_ID = 325209;
 export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
+  if (effectName === "Monk T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    const expectedPPM = 10 * 0.5;
+    bonus_stats.hps = 2800;
+  }
+  else if (effectName === "Monk T30-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 6750;
+  }
   // Tier Sets
-  if (effectName === "Mistweaver T29-2") {
+  else if (effectName === "Mistweaver T29-2") {
     // This is a very raw formula that will be replaced almost immediately.
     const uptime = 0.55; // TODO: Auto-calc this.
     const spellsHit = 0.35;
