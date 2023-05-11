@@ -1322,11 +1322,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
+      cooldownPlannerActive: true,
       createEvent: false,
       guid: 403326,
       icon: "inv_icon_wingbroken07d",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1336,11 +1336,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 403655,
       icon: "inv_icon_wingbroken07d",
-      importActive: true,
+      importActive: false,
       name: {
         de: "",
         fr: "",
@@ -1424,7 +1424,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 401318,
       icon: "achievment_boss_spineofdeathwing",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1466,7 +1466,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 401319,
       icon: "achievment_boss_spineofdeathwing",
-      importActive: false,
+      importActive: true,
       name: {
         de: "",
         fr: "",
@@ -1746,7 +1746,7 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: false,
-      createEvent: true,
+      createEvent: false,
       guid: 406780,
       icon: "inv_shadowflame_debuff",
       importActive: false,
@@ -1760,7 +1760,7 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: false,
-      createEvent: true,
+      createEvent: false,
       guid: 405394,
       icon: "inv_shadowflame_debuff",
       importActive: false,
@@ -1784,6 +1784,20 @@ export const bossAbilities = {
         ru: "",
         ch: "",
         en: "Withering Vulnerability",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 405640,
+      icon: "inv_shadowflame_nova",
+      importActive: false,
+      name: {
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+        en: "Gloom Combustion",
       },
     },
     {
@@ -1959,10 +1973,10 @@ export const bossAbilities = {
   2693: [
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 408476,
       icon: "spell_arcane_arcane01",
-      importActive: true,
+      importActive: false,
       name: {
         de: "",
         fr: "",
@@ -2803,6 +2817,16 @@ export const bossAbilities = {
   /* -------------------------------------- Rashok, the Elder ------------------------------------- */
   2680: [
     {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 404448,
+      icon: "inv_shadowflame_buff",
+      importActive: false,
+      name: {
+        en: "Scorching Heatwave",
+      },
+    },
+    {
       cooldownPlannerActive: false,
       createEvent: false,
       guid: 410075,
@@ -2933,11 +2957,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 406851,
       icon: "inv_shadowflame_groundstate",
-      importActive: true,
+      importActive: false,
       name: {
         en: "Doom Flames",
       },
@@ -3023,8 +3047,8 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 408857,
       icon: "inv_shadowflame_groundstate",
       importActive: false,
