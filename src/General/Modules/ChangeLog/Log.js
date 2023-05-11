@@ -10,12 +10,22 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 7,
+    date: "10 May",
+    changes: [ 
+      "Upgrade Finder: Removed old Azerite items & duplicate versions of tier sets.",
+      "Added some missing icons.",
+      "Updated the Revival Catalyst button to Season 2.",
+
+  ]},
+  {
+    version: "10.1.0",
     update: 6,
     date: "10 May",
     changes: [ 
       "Re-enabled Cooldown Planner.",
-      "Added Shadowflame-Tempered Armor Patch."
-
+      "Added Shadowflame-Tempered Armor Patch.",
+      "Fixed a bug with the Intellect gem in Top Gear Reports."
   ]},
   {
     version: "10.1.0",

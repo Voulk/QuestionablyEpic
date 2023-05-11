@@ -5,10 +5,19 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
 
+
+  if (effectName === "HPriest T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 6750;
+  }
+  else if (effectName === "HPriest T30-4") {
+    // Placeholder from sheet. Replace very soon.
+    bonus_stats.hps = 8750;
+  }
   /*
     Vastly improved Holy Priest formulas coming soon.
   */
-  if (effectName === "HPriest T29-2") {
+  else if (effectName === "HPriest T29-2") {
     const pomCPM = player.getSpellCPM(33076, contentType) || 1;
     const healCPM = player.getSpellCPM(2060, contentType) || 1;
 
