@@ -6,7 +6,24 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   // Tier Sets
-  if (effectName === "DPriest T28-2") {
+  if (effectName === "DPriest T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 2750;
+
+  }
+  else if (effectName === "DPriest T30-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 3750;
+
+    // The atonement portion is handled in the ramp section of the app so we only need to calculate the mana gain here.
+    const powerWordRadianceCost = 5000; // Do dynamically.
+    const ppm = 2;
+    const manaPerProc = powerWordRadianceCost * 0.5;
+
+    bonus_stats.mana = manaPerProc * ppm * player.getStatPerc('haste') / 60;
+
+  }
+  else if (effectName === "DPriest T28-2") {
     // Discipline Sepulcher tier set 2pc
     // This set has multiple issues. It stacks to two but both are consumed at the same time, it doesn't make Power Word: Shield free which means it's
     // bad during Rapture and the overall mana savings are rather dubious at best. 
