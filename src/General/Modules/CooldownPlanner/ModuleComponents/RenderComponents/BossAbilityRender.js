@@ -8,6 +8,7 @@ import LooksOneIcon from "@mui/icons-material/LooksOne";
 import LooksTwoIcon from "@mui/icons-material/LooksTwo";
 import Looks3Icon from "@mui/icons-material/Looks3";
 import Looks4Icon from "@mui/icons-material/Looks4";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const iconStyle = {
   height: 22,
@@ -80,7 +81,9 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
     <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
       {abilityArr.includes(rowData.bossAbility) ? (
         <div style={{ display: "contents", verticalAlign: "middle" }}>
-          <a data-wowhead={"spell=" + rowData.bossAbility + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{icon(rowData.bossAbility, bossID, iconStyle)}</a>
+          <WowheadTooltip type="spell" id={rowData.bossAbility} domain={currentLanguage} difficulty={raidDifficulty(difficulty)}>
+            {icon(rowData.bossAbility, bossID, iconStyle)}
+          </WowheadTooltip>
           <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
             {translatedName}
           </Typography>
