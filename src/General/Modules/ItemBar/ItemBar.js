@@ -8,11 +8,23 @@ import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
-import { checkDefaultSocket, getTranslatedItemName, getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
+import {
+  checkDefaultSocket,
+  getTranslatedItemName,
+  getItemDB,
+  getValidArmorTypes,
+  getValidWeaponTypesBySpec,
+  getItemProp,
+  scoreItem,
+  getItemAllocations,
+  calcStatsAtLevel,
+  getLegendaryID,
+} from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { getTranslatedStats } from "locale/statsLocale";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -144,7 +156,6 @@ export default function ItemBar(props) {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
         if (item.slot === "Neck" && itemSocket) item.socket = 3;
         item.guessQualityColor();
-
       }
     } else {
       // Burning Crusade
@@ -213,8 +224,18 @@ export default function ItemBar(props) {
     }
   };
   /* ---------------------------------------- Missive Array --------------------------------------- */
-  const legendaryStats = ["Haste / Versatility", "Haste / Mastery", "Haste / Crit", "Crit / Mastery", "Crit / Versatility", "Mastery / Versatility",
-                          "Haste (engineering)", "Crit (engineering)", "Mastery (engineering)", "Versatility (engineering)"];
+  const legendaryStats = [
+    "Haste / Versatility",
+    "Haste / Mastery",
+    "Haste / Crit",
+    "Crit / Mastery",
+    "Crit / Versatility",
+    "Mastery / Versatility",
+    "Haste (engineering)",
+    "Crit (engineering)",
+    "Mastery (engineering)",
+    "Versatility (engineering)",
+  ];
   const legendaryItemLevels = [190, 210, 225, 235, 249, 262, 291];
 
   const isItemShadowlandsLegendary = getItemDB("Retail")
@@ -379,7 +400,7 @@ export default function ItemBar(props) {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
                           <MenuItem divider={lastItem} key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
-                            <a data-wowhead={"item=" + key.gemID}>
+                            <WowheadTooltip type="item" id={key.gemID}>
                               <img
                                 style={{
                                   height: 20,
@@ -392,7 +413,7 @@ export default function ItemBar(props) {
                                 src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
                                 alt={key.name[currentLanguage]}
                               />
-                            </a>
+                            </WowheadTooltip>
                             {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
                           </MenuItem>
                         );

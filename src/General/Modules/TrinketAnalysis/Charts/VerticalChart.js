@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
@@ -52,7 +53,6 @@ export default class VerticalChart extends PureComponent {
     super();
     this.state = { focusBar: null, mouseLeave: true };
   }
-  
 
   render() {
     const currentLanguage = i18n.language;
@@ -93,9 +93,9 @@ export default class VerticalChart extends PureComponent {
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&ilvl=400" + "&domain=" + currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={400} domain={currentLanguage}>
               <img width={16} height={16} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
-            </a>
+            </WowheadTooltip>
           </foreignObject>
         </g>
       );

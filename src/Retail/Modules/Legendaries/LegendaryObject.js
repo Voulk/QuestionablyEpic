@@ -4,6 +4,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { legendaryImages } from "./LegendaryIcons";
 import { legendaryNameTranslator } from "./LegendaryTranslations";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
@@ -61,7 +62,7 @@ export default function LegendaryObject(props) {
             >
               <div style={{ display: "inline" }}>
                 {/* --------------------------------------- Legendary Icon --------------------------------------- */}
-                <a data-wowhead={"spell=" + item.id + "&domain=" + currentLanguage}>
+                <WowheadTooltip type="spell" id={item.id} domain={currentLanguage}>
                   <img
                     height={40}
                     width={40}
@@ -75,7 +76,7 @@ export default function LegendaryObject(props) {
                       marginRight: 8,
                     }}
                   />
-                </a>
+                </WowheadTooltip>
               </div>
 
               <div style={{ alignSelf: "center" }}>
