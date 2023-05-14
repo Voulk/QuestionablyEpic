@@ -42,7 +42,7 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, true), 
+        metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
           "Fixed to proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous.",
@@ -55,7 +55,7 @@ const screamingBlackDragonscale = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        metrics: ["Uptime: " + convertExpectedUptime(effect, player, true), 
+        metrics: ["Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Crit: " + Math.round(bonus_stats.crit),
                 "Average Leech: " + Math.round(bonus_stats.leech)],
         description:
