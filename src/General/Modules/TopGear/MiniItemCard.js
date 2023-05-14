@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
+import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 
 const useStyles = makeStyles({
   root: {
@@ -61,7 +62,7 @@ export default function ItemCard(props) {
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-  
+
   let socket = [];
 
   // Onyx Annulet
@@ -70,17 +71,17 @@ export default function ItemCard(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     //gemString = gemData.string;
- 
+
   }
   else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
-      socket.push (
-        <div style={{ marginRight: 4, display: "inline"}}>
+      socket.push(
+        <div style={{ marginRight: 4, display: "inline" }}>
           <img src={socketImage} width={15} height={15} alt="Socket" />
         </div>
       );
     }
-    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
   }
 
   const activateItemCard = () => {
@@ -118,6 +119,11 @@ export default function ItemCard(props) {
                   </IconButton>
                 </Tooltip>
               ) : null}
+            </Grid>
+            <Grid item>
+              <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
+                <ItemCardButtonWithMenu />
+              </Tooltip>
             </Grid>
             <Grid item>
               {deleteActive ? (

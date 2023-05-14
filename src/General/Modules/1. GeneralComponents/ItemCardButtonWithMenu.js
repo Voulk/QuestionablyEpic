@@ -30,7 +30,7 @@ export default function ItemCardButtonWithMenu() {
 
   return (
     <div>
-      <IconButton color="primary" onClick={handleClick}>
+      <IconButton sx={{ padding: 0 }} color="primary" onClick={handleClick} aria-label={label} size="small">
         <CompareArrowsIcon />
       </IconButton>
       <Menu
