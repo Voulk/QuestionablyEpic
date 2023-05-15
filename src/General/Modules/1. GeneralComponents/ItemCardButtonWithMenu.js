@@ -13,7 +13,7 @@ const getMenuItems = (item) => {
 
   if (item.upgradeTrack !== "") {
     fullItemLevels.forEach((level) => {
-      if (level > itemLevel && itemLevel < itemLevelCaps[item.upgradeTrack]) {
+      if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
         items.push({id: items.length+1, ilvlMinimum: level, label: "Upgrade to " + level})
       }
   
