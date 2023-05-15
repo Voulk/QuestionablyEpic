@@ -15,7 +15,8 @@ export const changeLog = [
     changes: [ 
       "Fixed wowhead tooltips across the app",
       "Improved how errors are handled.",
-      "Crafted items should now import with the correct quality color (visual only)."
+      "Crafted items should now import with the correct quality color (visual only).",
+      "Adaptive Dracothyst Armguards now count as an Embellishment effect in Top Gear"
   ]},
   {
     version: "10.1.0",
