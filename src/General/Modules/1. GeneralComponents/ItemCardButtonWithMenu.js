@@ -5,21 +5,36 @@ import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
 
+const getMenuItems = (item) => {
+  const itemLevel = item.level;
+  let items = []
+  const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441]
+  const itemLevelCaps = {"Champion": 437, "Hero": 441, "Explorer": 398, "Adventurer": 411, "Veteran": 424}
+
+  if (item.upgradeTrack !== "") {
+    fullItemLevels.forEach((level) => {
+      if (level > itemLevel && itemLevel < itemLevelCaps[item.upgradeTrack]) {
+        items.push({id: items.length+1, ilvlMinimum: level, label: "Upgrade to " + level})
+      }
+  
+    })
+  }
+
+
+  return items;
+}
+
 export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { t, i18n } = useTranslation();
 
-  const menuItems = [
-    { id: 1, ilvlMinimum: 428, label: "Upgrade to 428" },
-    { id: 2, ilvlMinimum: 431, label: "Upgrade to 431" },
-    { id: 3, ilvlMinimum: 434, label: "Upgrade to 434" },
-    { id: 4, ilvlMinimum: 437, label: "Upgrade to 437" },
-    { id: 5, ilvlMinimum: 441, label: "Upgrade to 441" },
-  ];
+  const menuItems = getMenuItems(item);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  console.log(item.upgradeTrack);
 
   const handleClose = () => {
     setAnchorEl(null);
