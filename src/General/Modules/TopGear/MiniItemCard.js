@@ -3,13 +3,10 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
-import { Difference } from "@mui/icons-material";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
 import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 
 const useStyles = makeStyles({
@@ -49,7 +46,7 @@ export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-
+  const itemKey = props.key;
   const item = props.item;
   const itemLevel = item.level;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
@@ -71,14 +68,12 @@ export default function ItemCard(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     //gemString = gemData.string;
-
-  }
-  else if (item.socket) {
+  } else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
       socket.push(
         <div style={{ marginRight: 4, display: "inline" }}>
           <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>
+        </div>,
       );
     }
     socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
@@ -112,27 +107,14 @@ export default function ItemCard(props) {
         <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
-              {item.canBeCatalyzed() ? (
-                <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
-                  <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
-                    <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
-                  </IconButton>
-                </Tooltip>
-              ) : null}
-            </Grid>
-            <Grid item>
-              <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
-                <ItemCardButtonWithMenu />
-              </Tooltip>
-            </Grid>
-            <Grid item>
-              {deleteActive ? (
-                <Tooltip arrow title="Delete: Delete this item.">
-                  <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-                    <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
-                  </IconButton>
-                </Tooltip>
-              ) : null}
+              <ItemCardButtonWithMenu
+                key={itemKey}
+                deleteActive={deleteActive}
+                deleteItem={deleteItemCard}
+                canBeCatalyzed={item.canBeCatalyzed()}
+                catalyseItemCard={catalyseItemCard}
+                itemLevel={itemLevel}
+              />
             </Grid>
           </Grid>
         </div>
