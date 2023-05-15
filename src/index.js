@@ -15,13 +15,11 @@ const store = createStore(rootReducer, /* preloadedState, */ window.__REDUX_DEVT
 
 
 ReactDOM.render(
-  <ErrorBoundary>
   <Provider store={store}>
     <I18nextProvider i18n={i18n}>
       <App />
     </I18nextProvider>
   </Provider>,
-  </ErrorBoundary>,
   document.getElementById("root"),
 );
 unregister();

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
@@ -61,7 +62,7 @@ export default function ItemCard(props) {
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-  
+
   let socket = [];
 
   // Onyx Annulet
@@ -70,17 +71,15 @@ export default function ItemCard(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     //gemString = gemData.string;
- 
-  }
-  else if (item.socket) {
+  } else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
-      socket.push (
-        <div style={{ marginRight: 4, display: "inline"}}>
+      socket.push(
+        <div style={{ marginRight: 4, display: "inline" }}>
           <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>
+        </div>,
       );
     }
-    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
   }
 
   const activateItemCard = () => {
@@ -145,7 +144,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + itemLevel + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                    <WowheadTooltip type={item.slot === "Trinket" ? "item" : "none"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={currentLanguage}>
                       <img
                         alt="img"
                         width={44}
@@ -158,7 +157,7 @@ export default function ItemCard(props) {
                           borderColor: itemQuality,
                         }}
                       />
-                    </a>
+                    </WowheadTooltip>
                     <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {itemLevel} </div>
                   </div>
                 </CardContent>

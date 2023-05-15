@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Grid, Typography, Paper } from "@mui/material";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 export default function OneShotSpellSelection(props) {
   const { defensives, activateSpell, defensiveType, label } = props;
@@ -27,7 +28,7 @@ export default function OneShotSpellSelection(props) {
                 .filter((d) => d.defensiveType === defensiveType)
                 .map((spell, index) => (
                   <Grid item xs="auto" key={index}>
-                    <a data-wowhead={"spell=" + spell.guid}>
+                    <WowheadTooltip type="spell" id={spell.guid}>
                       <OneShotSpellIcon
                         spell={spell}
                         iconType={"Spell"}
@@ -36,7 +37,7 @@ export default function OneShotSpellSelection(props) {
                           activateSpell(e, spell);
                         }}
                       />
-                    </a>
+                    </WowheadTooltip>
                   </Grid>
                 ))}
             </Grid>

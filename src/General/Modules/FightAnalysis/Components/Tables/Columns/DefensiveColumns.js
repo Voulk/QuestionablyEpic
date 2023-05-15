@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "General/Modules/CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { defensiveDB } from "Databases/DefensiveDB";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 export const defensiveColumns = () => {
   const { t, i18n } = useTranslation();
@@ -42,7 +43,7 @@ export const defensiveColumns = () => {
       },
       render: (rowData) => (
         <div style={{ display: "inline" }}>
-          <a data-wowhead={"spell=" + rowData.guid + "&domain=" + currentLanguage}>
+          <WowheadTooltip type="spell" id={rowData.guid} domain={currentLanguage}>
             <img
               style={{
                 height: 20,
@@ -61,7 +62,7 @@ export const defensiveColumns = () => {
                 })
                 .map((obj) => obj.icon)}
             />
-          </a>
+          </WowheadTooltip>
           {defensiveDB
             .filter((obj) => {
               return obj.guid === rowData.guid;

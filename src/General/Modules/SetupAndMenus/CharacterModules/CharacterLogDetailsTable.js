@@ -1,7 +1,8 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   table: { width: "100%" },
@@ -50,9 +51,9 @@ export default function LogDetailsTable(props) {
                     marginRight: -4,
                   }}
                 >
-                  <a data-wowhead={"spell=" + row}>
+                  <WowheadTooltip type="spell" id={row}>
                     <img height={16} width={16} style={{ marginRight: 4 }} />
-                  </a>
+                  </WowheadTooltip>
                   {/* {t("SpellNames." + row)} */}
                 </div>
               </TableCell>

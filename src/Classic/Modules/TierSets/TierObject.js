@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js"
 // import { legendaryImages } from "./LegendaryIcons";
 
 const useStyles = makeStyles({
@@ -73,7 +74,7 @@ export default function TierObject(props) {
                   .filter((filter) => set.slots[filter].id > 0)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <a data-wowhead={"item=" + set.slots[key].id + "&domain=wotlk-" + currentLanguage}>
+                      <WowheadTooltip type="item" id={set.slots[key].id} domain={"wotlk-" + currentLanguage}>
                         <img
                           height={40}
                           width={40}
@@ -86,7 +87,7 @@ export default function TierObject(props) {
                             borderColor: "#a73fee",
                           }}
                         />
-                      </a>
+                      </WowheadTooltip>
                     </Grid>
                   ))}
               </Grid>

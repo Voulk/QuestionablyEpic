@@ -10,6 +10,8 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Difference } from "@mui/icons-material";
 
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
@@ -72,17 +74,15 @@ export default function ItemCard(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     gemString = gemData.string;
- 
-  }
-  else if (item.socket) {
+  } else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
-      socket.push (
-        <div style={{ marginRight: 4, display: "inline"}}>
+      socket.push(
+        <div style={{ marginRight: 4, display: "inline" }}>
           <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>
+        </div>,
       );
     }
-    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
   }
   /*
   const socket = item.socket ? (
@@ -243,7 +243,7 @@ export default function ItemCard(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} gems={gemString} bonusIDS={item.bonusIDS} domain={wowheadDom}>
                     <img
                       alt="img"
                       width={46}
@@ -256,7 +256,7 @@ export default function ItemCard(props) {
                         borderColor: itemQuality,
                       }}
                     />
-                  </a>
+                  </WowheadTooltip>
                   <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>

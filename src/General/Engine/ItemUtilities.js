@@ -862,9 +862,16 @@ export function scoreItem(item, player, contentType, gameType = "Retail", player
   // Handle Annulet
   if (item.id === 203460) {
     //const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
-    const combo = player.getBestPrimordialIDs(playerSettings, contentType);
-    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
-    bonus_stats = compileStats(bonus_stats, annuletStats);
+    try {
+      const combo = player.getBestPrimordialIDs(playerSettings, contentType);
+      const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
+      bonus_stats = compileStats(bonus_stats, annuletStats);
+    }
+    catch (error) {
+      bonus_stats.hps = 6750; // This should never be returned, but is a fair estimate if the app does crash.
+      reportError(player, "ItemUtil Annulet Error", error, "");
+    }
+
   }
 
   // Add Retail Socket
