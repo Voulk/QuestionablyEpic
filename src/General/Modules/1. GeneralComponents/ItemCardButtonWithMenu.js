@@ -34,16 +34,13 @@ export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, 
     setAnchorEl(event.currentTarget);
   };
 
-  console.log(item.upgradeTrack);
-
   const handleClose = () => {
     setAnchorEl(null);
   };
 
   // Function to execute when menu item is clicked
   const handleMenuItemClick = (menuItem) => {
-    console.log(`Menu item ${menuItem.label} clicked`);
-    console.log(upgradeItem(item, menuItem.ilvlMinimum))
+    upgradeItem(item, menuItem.ilvlMinimum);
     handleClose();
   };
 
