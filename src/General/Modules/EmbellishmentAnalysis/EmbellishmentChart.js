@@ -4,12 +4,13 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import { getGemIcon, getEmbellishmentIcon, getTranslatedEmbellishment } from "General/Engine/ItemUtilities";
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const getRankDiff = (rank, map2, prevRank) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */
   if (rank > 0) {
     // added a or 0 to handle NANs
-    return (map2["r" + rank] - map2["r" + prevRank]) || 0;
+    return map2["r" + rank] - map2["r" + prevRank] || 0;
   } else if (rank == 411) {
     return map2["r" + rank];
   } else {
@@ -60,7 +61,7 @@ export default class EmbelChart extends PureComponent {
           447: getRankDiff(447, map2, 443),
         });
       });
-  
+
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
     /* ----------------------- Y-Axis Label Customization ----------------------- */
@@ -72,9 +73,9 @@ export default class EmbelChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&domain=" + currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
-            </a>
+            </WowheadTooltip>
           </foreignObject>
         </g>
       );
@@ -101,7 +102,7 @@ export default class EmbelChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
-            isAnimationActive={false} 
+            isAnimationActive={false}
             labelFormatter={(timeStr) => getTranslatedEmbellishment(timeStr, currentLanguage)}
             formatter={(value, name, props) => {
               {
@@ -128,7 +129,6 @@ export default class EmbelChart extends PureComponent {
           <Bar dataKey={437} fill={"#3ed6c4"} stackId="a" />
           <Bar dataKey={443} fill={"#49f0db"} stackId="a" />
           <Bar dataKey={447} fill={"#49f5df"} stackId="a" />
-
         </BarChart>
       </ResponsiveContainer>
     );

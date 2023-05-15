@@ -206,7 +206,7 @@ export async function apiGetPlayerImage2(region, charName, realm) {
 /*                          Sends Errors to QE API for Dev error checking                         */
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiSendError(player, errorType, errorMessage, result) {
-  const name = "10";
+  const name = "11";
   const url = window.location.pathname + window.location.search;
 
   let fetchUrl =
@@ -219,7 +219,7 @@ export async function apiSendError(player, errorType, errorMessage, result) {
     "&eresult=" +
     encodeURIComponent(url) +
     "&eversion=" +
-    encodeURIComponent(18);
+    encodeURIComponent(19);
 
   fetch(fetchUrl)
     .then((res) => res.text())

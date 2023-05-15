@@ -6,10 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> All in-game hotfixes up to 9th May are in.",
       "-> Warning: Expect frequent changes during patch week.",
       "-> There's likely to be hotfixes and models might still be fine tuned.",
-      "-> Tier Sets are not in yet but will be very soon."
+      "-> Tier Set formulas are preliminary."
   ],
   "Classic": [""]
   }
