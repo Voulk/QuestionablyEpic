@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@mui/material";
 import { getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
@@ -67,7 +68,8 @@ function CompetitiveAlternatives(props) {
                         {key.items.map((item, i) => {
                           let itemArray = [];
                           // scuffed breakdown of weapon combos to seperate them for the report
-                          if (false) {// item.slot === "CombinedWeapon") {
+                          if (false) {
+                            // item.slot === "CombinedWeapon") {
                             let newWeaponCombos = [];
                             let mainHandItem = "";
                             let offHandItem = "";
@@ -86,7 +88,7 @@ function CompetitiveAlternatives(props) {
                           }
                           return itemArray.map((item) => (
                             <Grid item key={i}>
-                              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom}>
+                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"
@@ -102,7 +104,7 @@ function CompetitiveAlternatives(props) {
                                   />
                                   <div className="bottom-right-ItemCards"> {item.level} </div>
                                 </div>
-                              </a>
+                              </WowheadTooltip>
                             </Grid>
                           ));
                         })}

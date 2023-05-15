@@ -3,6 +3,7 @@ import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassC
 import { externalsDB } from "Databases/ExternalsDB";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 export const externalColumns = () => {
   const { t, i18n } = useTranslation();
@@ -50,7 +51,7 @@ export const externalColumns = () => {
       },
       render: (rowData) => (
         <div style={{ display: "inline" }}>
-          <a data-wowhead={"spell=" + rowData.guid + "&domain=" + currentLanguage}>
+          <WowheadTooltip type="spell" id={rowData.guid} domain={currentLanguage}>
             <img
               style={{
                 height: 20,
@@ -69,7 +70,7 @@ export const externalColumns = () => {
                 })
                 .map((obj) => obj.icon)}
             />
-          </a>
+          </WowheadTooltip>
           {externalsDB
             .filter((obj) => {
               return obj.guid === rowData.guid;

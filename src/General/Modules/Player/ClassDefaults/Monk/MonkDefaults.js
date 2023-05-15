@@ -108,7 +108,7 @@ export const monkDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.61,
     crit: 0.524,
-    mastery: 0.36,
+    mastery: 0.32,
     versatility: 0.509,
     leech: 0.49,
   };

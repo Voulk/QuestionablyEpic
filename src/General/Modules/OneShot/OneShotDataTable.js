@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useTranslation } from "react-i18next";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 function createData(ability, tyrannical, fortified, spellID, icon, guid, active) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active };
@@ -34,12 +35,12 @@ export default function OneShotDataTable(props) {
           {rows.map((row) => (
             <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
               <TableCell component="th" scope="row">
-                <a data-wowhead={"spell=" + row.spellID + "&domain=" + currentLanguage}>
+                <WowheadTooltip type="spell" id={row.spellID} domain={currentLanguage}>
                   <div style={{ display: "inline-flex", alignItems: "center" }}>
                     <OneShotSpellIcon spell={row} iconType={"Spell"} className="table" />
                     <div>{row.ability}</div>
                   </div>
-                </a>
+                </WowheadTooltip>
               </TableCell>
               <TableCell align="right">{row.tyrannical}</TableCell>
               <TableCell align="right">{row.fortified}</TableCell>

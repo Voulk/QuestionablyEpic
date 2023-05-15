@@ -9,6 +9,7 @@ import masterySocket from "../../../Images/Resources/masterySocket.jpg";
 import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
@@ -79,41 +80,40 @@ export default function ItemCardReport(props) {
 
   let itemName = "";
   let isVault = item.vaultItem;
-  
+
   let socket = [];
-  
+
   if (item.id === 203460) {
     const gemCombo = props.primGems;
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     gemString = gemData.string;
- 
-  }
-  else if (item.socket) {
+  } else if (item.socket) {
     let socketCount = item.socket;
 
-    if (props.firstSlot) {// This is our first gem and we can socket int here.
-      socket.push (
-        <div style={{ display: "inline", marginRight: "5px"}}>
-        <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][0], "name"))} arrow>
-          <img src={getGemProp(enchants["Gems"][0], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
-        </Tooltip>
-      </div>
+    if (props.firstSlot) {
+      // This is our first gem and we can socket int here.
+      socket.push(
+        <div style={{ display: "inline", marginRight: "5px" }}>
+          <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][0], "name"))} arrow>
+            <img src={getGemProp(enchants["Gems"][0], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+          </Tooltip>
+        </div>,
       );
       socketCount -= 1;
     }
     for (let i = 0; i < socketCount; i++) {
-      socket.push (
-        <div style={{ display: "inline", marginRight: "5px"}}>
-        <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][1], "name"))} arrow>
-          <img src={getGemProp(enchants["Gems"][1], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
-        </Tooltip>
-      </div>
+      socket.push(
+        <div style={{ display: "inline", marginRight: "5px" }}>
+          <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][1], "name"))} arrow>
+            <img src={getGemProp(enchants["Gems"][1], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+          </Tooltip>
+        </div>,
       );
     }
-    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
   }
-/*
+  /*
   const socket = item.socket ? (
     <div style={{ display: "inline" }}>
       <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"], "name"))} arrow>
@@ -158,7 +158,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} gems={gemString}>
                     <img
                       alt="img"
                       width={44}
@@ -171,7 +171,7 @@ export default function ItemCardReport(props) {
                         borderColor: itemQuality(itemLevel, item.id),
                       }}
                     />
-                  </a>
+                  </WowheadTooltip>
                   <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>

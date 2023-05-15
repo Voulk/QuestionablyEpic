@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
 import { classColoursFonts, classColoursJS } from "../../Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 export default function CastTextField(rowData, cooldown, className) {
   const { t, i18n } = useTranslation();
@@ -56,7 +57,7 @@ export default function CastTextField(rowData, cooldown, className) {
         width: "100%",
         marginLeft: 2,
         minHeight: "22px",
-        backgroundColor: classColoursJS(rowData[className]) ,
+        backgroundColor: classColoursJS(rowData[className]),
         color: classColoursFonts(rowData[className]),
         // justifyContent: "center",
         borderRadius: "4px",
@@ -78,13 +79,13 @@ export default function CastTextField(rowData, cooldown, className) {
   return (
     <div style={divTheme(themed)}>
       {spellExists ? (
-        <a data-wowhead={"spell=" + rowData[cooldown]}>
+        <WowheadTooltip type="spell" id={rowData[cooldown]}>
           <img
             style={{ height: 22, width: 22, verticalAlign: "middle", border: "1px solid #595959", borderRadius: 4 }}
             src={getSpellIcon(rowData[cooldown])}
             alt={getTranslatedSpellName(rowData[cooldown])}
           />
-        </a>
+        </WowheadTooltip>
       ) : (
         ""
       )}

@@ -199,7 +199,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let uniqueTag = "";
-  let itemQuality = 3;
+  let itemQuality = 4;
 
   let specialAllocations = {};
   let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
@@ -280,6 +280,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
         if ("quality" in idPayload) {
           itemQuality = idPayload["quality"];
         } 
+        //if (bonusID === 9365 || bonusID == 9366) itemQuality = 4; // Ingenuity Crafted
         if ("craftedStats" in idPayload) {
           craftedStats = idPayload['craftedStats'];
         }

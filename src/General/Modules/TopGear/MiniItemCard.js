@@ -8,6 +8,10 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
 import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
+import { Difference } from "@mui/icons-material";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+
 
 const useStyles = makeStyles({
   root: {
@@ -133,7 +137,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + itemLevel + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                    <WowheadTooltip type={item.slot === "Trinket" ? "item" : "none"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={currentLanguage}>
                       <img
                         alt="img"
                         width={44}
@@ -146,7 +150,7 @@ export default function ItemCard(props) {
                           borderColor: itemQuality,
                         }}
                       />
-                    </a>
+                    </WowheadTooltip>
                     <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {itemLevel} </div>
                   </div>
                 </CardContent>

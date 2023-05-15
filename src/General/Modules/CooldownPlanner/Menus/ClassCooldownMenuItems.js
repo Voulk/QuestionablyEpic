@@ -1,6 +1,7 @@
 import React from "react";
 import { MenuItem, ListSubheader } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 import { cooldownDB } from "../Data/CooldownDB";
 
@@ -31,7 +32,7 @@ export default function ClassCooldownMenuItems(props) {
         let lastItem = i + 1 === arr.length ? false : true;
         return (
           <MenuItem divider={lastItem} value={map.guid} key={map.name[currentLanguage]}>
-            <a data-wowhead={"spell=" + map.guid}>
+            <WowheadTooltip type="spell" id={map.guid}>
               {map.guid === "" ? (
                 ""
               ) : (
@@ -48,7 +49,7 @@ export default function ClassCooldownMenuItems(props) {
                   alt={map.name[currentLanguage]}
                 />
               )}
-            </a>
+            </WowheadTooltip>
             {map.name[currentLanguage]}
           </MenuItem>
         );
@@ -65,7 +66,7 @@ export default function ClassCooldownMenuItems(props) {
         let lastItem = i + 1 === arr.length ? false : true;
         return (
           <MenuItem divider={lastItem} value={map.guid} key={map.name[currentLanguage]}>
-            <a data-wowhead={"spell=" + map.guid}>
+            <WowheadTooltip type="spell" id={map.guid} domain={currentLanguage}>
               {map.guid === "" ? (
                 ""
               ) : (
@@ -82,7 +83,7 @@ export default function ClassCooldownMenuItems(props) {
                   alt={map.name[currentLanguage]}
                 />
               )}
-            </a>
+            </WowheadTooltip>
             {map.name[currentLanguage]}
           </MenuItem>
         );
