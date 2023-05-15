@@ -217,6 +217,9 @@ export default function ItemCard(props) {
                 canBeCatalyzed={item.canBeCatalyzed()}
                 catalyseItemCard={catalyseItemCard}
                 itemLevel={item.level}
+                upgradeItem={props.upgradeItem}
+                item={item}
+
               />
             </Grid>
           </Grid>

@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel }) {
+export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { t, i18n } = useTranslation();
 
@@ -28,6 +28,7 @@ export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, 
   // Function to execute when menu item is clicked
   const handleMenuItemClick = (menuItem) => {
     console.log(`Menu item ${menuItem.label} clicked`);
+    console.log(upgradeItem(item, menuItem.ilvlMinimum))
     handleClose();
   };
 

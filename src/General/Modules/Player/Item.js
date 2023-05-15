@@ -44,6 +44,7 @@ class Item {
   onUse = false;
   setID = 0;
   quality = 3;
+  upgradeTrack = "";
   //canBeCatalyzed = false;
 
   // The stats on the item. These should already be adjusted for item level.
