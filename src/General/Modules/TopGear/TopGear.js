@@ -108,16 +108,15 @@ export default function TopGear(props) {
   const [activeSlot, setSlot] = useState("");
   /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-  const [btnActive, setBtnActive] = useState(true);
+  const [btnActive, setBtnActive] = useState(false);
+  
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus = props.patronStatus;
   const topGearCaps = { Standard: 30, Basic: 30, Gold: 34, Diamond: 36, "Rolls Royce": 38, Sapphire: 38 };
   const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+
 
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
@@ -168,9 +167,17 @@ export default function TopGear(props) {
         errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
       }
     }
-    setErrorMessage(errorMessage);
+    //setErrorMessage(errorMessage);
+    //setBtnActive(topgearOk);
+    console.log(slotLengths);
     return topgearOk;
   };
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    checkTopGearValid();
+  }, []);
+
 
   const handleClickDelete = () => {
     setOpenDelete(true);
@@ -198,53 +205,62 @@ export default function TopGear(props) {
   };
 
   const shortenReport = (report, player) => {
-    const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
-    const shortItemSet = report.itemSet;
-  
-    shortReport.itemSet.setStats = report.itemSet.setStats;
-    shortReport.itemSet.primGems = report.itemSet.primGems;
-    shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
-    shortReport.effectList = report.itemSet.effectList;
-    shortReport.differentials = report.differentials;
-    shortReport.contentType = report.contentType;
-    shortReport.itemSet.firstSocket = report.itemSet.firstSocket;
-    shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
+
+    if (report) {
+      const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
+      const shortItemSet = report.itemSet;
     
-    const addItem = (item) => {
-      let newItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
-      if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
-      if (item.socket) newItem.socket = item.socket;
-      if (item.vaultItem) newItem.vaultItem = item.vaultItem;
-      if (item.quality) newItem.quality = item.quality;
-      if (item.effect) newItem.effect = item.effect;
-
-      shortReport.itemSet.itemList.push(newItem)
-      }
+      shortReport.itemSet.setStats = report.itemSet.setStats;
+      shortReport.itemSet.primGems = report.itemSet.primGems;
+      shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
+      shortReport.effectList = report.itemSet.effectList;
+      shortReport.differentials = report.differentials;
+      shortReport.contentType = report.contentType;
+      shortReport.itemSet.firstSocket = report.itemSet.firstSocket;
+      shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
       
+      const addItem = (item) => {
+        let newItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
+        if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
+        if (item.socket) newItem.socket = item.socket;
+        if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+        if (item.quality) newItem.quality = item.quality;
+        if (item.effect) newItem.effect = item.effect;
   
-    for (var i = 0; i < report.itemSet.itemList.length; i++) {
-      const item = report.itemSet.itemList[i];
-      if (item.slot === "CombinedWeapon") {
-        // Unfold weapons so that we send both.
-        if (item.offhandID > 0) {
-          const mainhandItem = player.getItemByHash(item.mainHandUniqueHash)[0];
-          const offhandItem = player.getItemByHash(item.offHandUniqueHash)[0];
-          addItem(mainhandItem);
-          addItem(offhandItem)
-
-        } else {
-          const mainhandItem = player.getItemByHash(item.uniqueHash)[0];
-          addItem(mainhandItem);
+        shortReport.itemSet.itemList.push(newItem)
         }
+        
+        
+      for (var i = 0; i < report.itemSet.itemList.length; i++) {
+        const item = report.itemSet.itemList[i];
+        if (item.slot === "CombinedWeapon") {
+          // Unfold weapons so that we send both.
+          if (item.offhandID > 0) {
+            const mainhandItem = player.getItemByHash(item.mainHandUniqueHash)[0];
+            const offhandItem = player.getItemByHash(item.offHandUniqueHash)[0];
+            addItem(mainhandItem);
+            addItem(offhandItem)
+  
+          } else {
+            const mainhandItem = player.getItemByHash(item.uniqueHash)[0];
+            addItem(mainhandItem);
+          }
+        }
+        else {
+          addItem(item);
+        }
+        
       }
-      else {
-        addItem(item);
-      }
-      
+  
+      sendReport(shortReport);
+      return shortReport;
+
+    }
+    else {
+      reportError(null, "ShortenReport", "No report found", id);
+      return {};
     }
 
-    sendReport(shortReport);
-    return shortReport;
   }
 
   const unleashWorker = () => {
@@ -320,7 +336,8 @@ export default function TopGear(props) {
     }
   };
 
-  const selectedItemCount = props.player.getSelectedItems().length;
+  const selectedItemCount = props.player.getSelectedItems().length || 0;
+
   const helpBlurb = t("TopGear.HelpText" + gameType);
   const helpText =
     gameType === "Retail"
@@ -454,7 +471,7 @@ export default function TopGear(props) {
             <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {errorMessage}
             </Typography>
-            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!checkTopGearValid()} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

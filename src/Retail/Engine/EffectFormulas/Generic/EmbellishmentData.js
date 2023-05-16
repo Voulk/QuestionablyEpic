@@ -552,13 +552,13 @@ export const embellishmentData = [
             coefficient: 10.73745, //44.02832,
             table: -9,
             ppm: 60 / 5,
-            secondaries: ['crit', 'versatility'],
-            efficiency: 0.4,
+            secondaries: ['versatility'],
+            efficiency: 0.45,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
             table: -9,
-            ppm: 0.06, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
+            ppm: 0.04, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.6,
           },
