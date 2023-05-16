@@ -5,7 +5,14 @@ export const getIconURL = (icon) => {
 
   icon = icon.replace(".jpg", "").replace(/-/g, "");
   const baseURL = `//render-us.worldofwarcraft.com/icons/56`;
-  const fullURL = `${baseURL}/${icon}.jpg`;
+  const localPath = `src/Images/CooldownPlanner/BossAbilities`;
 
-  return fullURL;
+  try {
+    // Try to return local image
+    return require(`${localPath}/${icon}.jpg`).default;
+  } catch (e) {
+    // If local image load fails, return external URL
+    const fullURL = `${baseURL}/${icon}.jpg`;
+    return fullURL;
+  }
 };
