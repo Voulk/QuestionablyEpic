@@ -3431,5 +3431,356 @@ export const bossAbilities = {
     },
   ],
   // Scalecommander Sarkareth
-  2685: [],
+  2685: [
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 404705,
+      icon: "ability_evoker_rewind",
+      importActive: false,
+      name: {
+        en: "Rescind",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 404754,
+      icon: "ability_fomor_boss_shout",
+      importActive: false,
+      name: {
+        en: "Blasting Scream",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 402600,
+      icon: "spell_fire_blueimmolation",
+      importActive: false,
+      name: {
+        en: "Mass Disintegrate",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 403515,
+      icon: "inv_cosmicvoid_orb",
+      importActive: false,
+      name: {
+        en: "Astral Eruption",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 403497,
+      icon: "ability_priest_voidentropy",
+      importActive: false,
+      name: {
+        en: "Astral Formation",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 401500,
+      icon: "spell_fire_lavaspawn",
+      importActive: true,
+      name: {
+        en: "Scorching Bomb",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 401810,
+      icon: "ability_evoker_essenceburst2",
+      importActive: true,
+      name: {
+        en: "Glittering Surge",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 401383,
+      icon: "ability_evoker_oppressingroar",
+      importActive: true,
+      name: {
+        en: "Oppressing Howl",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401325,
+      icon: "inv_10_specialreagentfoozles_tuskclaw_fire",
+      importActive: false,
+      name: {
+        en: "Burning Claws",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 401642,
+      icon: "spell_fire_blueimmolation",
+      importActive: true,
+      name: {
+        en: "Mass Disintegrate",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 404300,
+      icon: "inv_cosmicvoid_groundsate",
+      importActive: false,
+      name: {
+        en: "Dread",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 403319,
+      icon: "ability_warlock_howlofterror",
+      importActive: false,
+      name: {
+        en: "Echoing Howl",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 402050,
+      icon: "spell_fire_moltenblood",
+      importActive: true,
+      name: {
+        en: "Searing Breath",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 403284,
+      icon: "inv_cosmicvoid_groundsate",
+      importActive: false,
+      name: {
+        en: "Void Empowerment",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410631,
+      icon: "inv_cosmicvoid_groundsate",
+      importActive: false,
+      name: {
+        en: "Void Empowerment",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 410625,
+      icon: "ability_warlock_voidzone",
+      importActive: false,
+      name: {
+        en: "End Existence",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 404456,
+      icon: "inv_cosmicvoid_missile",
+      importActive: true,
+      name: {
+        en: "Abyssal Breath",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 404403,
+      icon: "spell_shadow_shadowfury",
+      importActive: true,
+      name: {
+        en: "Desolate Blossom",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 404027,
+      icon: "inv_enchant_voidsphere",
+      importActive: true,
+      name: {
+        en: "Void Bomb",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 411236,
+      icon: "inv_cosmicvoid_wave",
+      importActive: false,
+      name: {
+        en: "Void Claws",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 407496,
+      icon: "inv_cosmicvoid_debuff",
+      importActive: false,
+      name: {
+        en: "Infinite Duress",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 410654,
+      icon: "inv_cosmicvoid_groundsate",
+      importActive: false,
+      name: {
+        en: "Void Empowerment",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 404269,
+      icon: "spell_sarkareth",
+      importActive: false,
+      name: {
+        en: "Ebon Might",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 403741,
+      icon: "spell_priest_divinestar_shadow",
+      importActive: true,
+      name: {
+        en: "Cosmic Ascension",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 403771,
+      icon: "spell_priest_divinestar_shadow",
+      importActive: false,
+      name: {
+        en: "Cosmic Ascension",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 405022,
+      icon: "inv_voiddragonmount",
+      importActive: false,
+      name: {
+        en: "Hurtling Barrage",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 408422,
+      icon: "inv_cosmicvoid_wave",
+      importActive: false,
+      name: {
+        en: "Void Slash",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 403517,
+      icon: "spell_priest_void-blast",
+      importActive: true,
+      name: {
+        en: "Embrace of Nothingness",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 403625,
+      icon: "inv_cosmicvoid_nova",
+      importActive: true,
+      name: {
+        en: "Scouring Eternity",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401819,
+      icon: "ability_evoker_essenceburst2",
+      importActive: false,
+      name: {
+        en: "Glittering Surge",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401621,
+      icon: "spell_fire_lavaspawn",
+      importActive: false,
+      name: {
+        en: "Scorching Bomb",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 401525,
+      icon: "inv_summerfest_firespirit",
+      importActive: false,
+      name: {
+        en: "Scorching Detonation",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 401330,
+      icon: "inv_10_specialreagentfoozles_tuskclaw_fire",
+      importActive: false,
+      name: {
+        en: "Burning Claws",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 402051,
+      icon: "spell_fire_moltenblood",
+      importActive: false,
+      name: {
+        en: "Searing Breath",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 406989,
+      icon: "inv_misc_volatilefire",
+      importActive: false,
+      name: {
+        en: "Burning Ground",
+      },
+    },
+  ],
 };
