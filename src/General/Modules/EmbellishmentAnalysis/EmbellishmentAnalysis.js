@@ -225,7 +225,7 @@ export default function EmbellishmentAnalysis(props) {
           <Grid container spacing={1}>
               <Grid item xs={12} key={i}>
                 <Typography align="left" variant="body1" key={i}>
-                  {"Undulating Sporecloak is currently bugged in-game and weaker than intended. Be sure to consult your favourite guide before crafting anything."}
+                  {"Sporecloak remains a great choice for progression post-fix. Be sure to consult your favourite guide before crafting anything."}
                 </Typography>
               </Grid>
           </Grid>

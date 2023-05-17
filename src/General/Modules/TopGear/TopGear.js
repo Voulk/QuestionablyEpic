@@ -108,7 +108,7 @@ export default function TopGear(props) {
   const [activeSlot, setSlot] = useState("");
   /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-  const [btnActive, setBtnActive] = useState(false);
+  const [btnActive, setBtnActive] = useState(true);
   
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus = props.patronStatus;
@@ -173,7 +173,65 @@ export default function TopGear(props) {
   };
 
   const checkSlots = () => {
-    
+       /* ------------------ Check that the player has selected an item in every slot. ----------------- */
+       let itemList = props.player.getSelectedItems();
+       let missingSlots = [];
+       let errorMessage = "";
+       let slotLengths = {
+         Head: 0,
+         Neck: 0,
+         Shoulder: 0,
+         Back: 0,
+         Chest: 0,
+         Wrist: 0,
+         Hands: 0,
+         Waist: 0,
+         Legs: 0,
+         Feet: 0,
+         Finger: 0,
+         Trinket: 0,
+         /*
+         "2H Weapon" : 0,
+         "1H Weapon" : 0,
+         "Offhand" : 0, */
+       };
+   
+       for (var i = 0; i < itemList.length; i++) {
+         let slot = itemList[i].slot;
+         if (slot in slotLengths) {
+           if (!itemList[i].vaultItem) slotLengths[slot] += 1;
+         }
+       }
+       for (const key in slotLengths) {
+         if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
+           missingSlots.push(key);
+           errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
+         } else if (slotLengths[key] === 0) {
+            missingSlots.push(key);
+           errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
+         }
+       }
+       //setErrorMessage(errorMessage);
+       //setBtnActive(topgearOk);
+       return missingSlots;
+  }
+
+  const getErrorMessage = () => {
+    const missingSlots = checkSlots();
+    let errorMessage = "Add ";
+    if (missingSlots.length > 10) {
+      return "Add SimC String"
+    }
+    else if (missingSlots.length > 0) {
+      missingSlots.forEach((slot) => {
+        errorMessage += slot + ", ";
+      })
+
+      return errorMessage.slice(0, -2);
+    }
+    else {
+      return "";
+    }
   }
 
   useEffect(() => {
@@ -472,9 +530,9 @@ export default function TopGear(props) {
           </Typography>
           <div>
             <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
-              {errorMessage}
+              {getErrorMessage()}
             </Typography>
-            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!checkTopGearValid()} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!checkTopGearValid() || !btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>
