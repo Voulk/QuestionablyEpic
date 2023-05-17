@@ -12,16 +12,14 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   if (effectName === "Druid T30-4") {
     // TODO
-    bonus_stats.hps = 6750;
+    bonus_stats.hps = 7270;
 
   }
 
   else if (effectName === "Druid T30-2") {
     // +10% rejuv healing, +10% lifebloom healing, +50% regrowth HoT healing.
-    const percentEffected = 0.45; 
+    const percentEffected = 0.48; 
     bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
-
-
 
   }
 
