@@ -3,12 +3,10 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./ItemCard.css";
-import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
-
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Difference } from "@mui/icons-material";
+import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
@@ -53,6 +51,7 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const item = props.item;
+  const itemKey = props.key;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const isCatalystItem = item.isCatalystItem;
@@ -211,22 +210,17 @@ export default function ItemCard(props) {
         <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
-              {item.canBeCatalyzed() ? (
-                <Tooltip arrow title="Catalyse: Create a catalysed version of this item">
-                  <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
-                    <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
-                  </IconButton>
-                </Tooltip>
-              ) : null}
-            </Grid>
-            <Grid item>
-              {deleteActive ? (
-                <Tooltip arrow title="Delete: Delete this item.">
-                  <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-                    <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
-                  </IconButton>
-                </Tooltip>
-              ) : null}
+              <ItemCardButtonWithMenu
+                key={itemKey}
+                deleteActive={deleteActive}
+                deleteItem={deleteItemCard}
+                canBeCatalyzed={item.canBeCatalyzed()}
+                catalyseItemCard={catalyseItemCard}
+                itemLevel={item.level}
+                upgradeItem={props.upgradeItem}
+                item={item}
+
+              />
             </Grid>
           </Grid>
         </div>
