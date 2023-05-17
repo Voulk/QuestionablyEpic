@@ -8,7 +8,7 @@ export default function bossAbilityIcons(guid, bossID, style) {
     .filter((obj) => {
       return obj.guid === guid;
     })
-    .map((obj) => getIconURL(obj.icon));
+    .map((obj) => obj.icon)[0]; // select the first element of the array
 
   alt = bossAbilities[bossID]
     .filter((obj) => {
