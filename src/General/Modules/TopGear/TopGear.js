@@ -169,9 +169,12 @@ export default function TopGear(props) {
     }
     //setErrorMessage(errorMessage);
     //setBtnActive(topgearOk);
-    console.log(slotLengths);
     return topgearOk;
   };
+
+  const checkSlots = () => {
+    
+  }
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);

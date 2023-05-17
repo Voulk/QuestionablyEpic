@@ -529,8 +529,8 @@ export const embellishmentData = [
           const proc = runGenericPPMTrinket(data[0], itemLevel);
           bonus_stats['haste'] = proc;
           bonus_stats['mastery'] = proc;
-          bonus_stats['versatility'] = proc * 0.2;
-          bonus_stats['crit'] = proc * 0.2;
+          bonus_stats['versatility'] = proc * 0.8;
+          bonus_stats['crit'] = proc * 0.8;
 
           /*['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
             // A proc can either be haste / mast or crit / vers.
