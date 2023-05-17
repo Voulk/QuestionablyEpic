@@ -15,7 +15,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   if (effectName === "Monk T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
     const expectedPPM = 10 * 0.5;
-    bonus_stats.hps = 2800;
+    bonus_stats.hps = expectedPPM * (250000 * 0.03) * player.getSpecialQuery("OneManaHealing", contentType) / 60;
   }
   else if (effectName === "Monk T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
