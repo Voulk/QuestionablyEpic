@@ -3187,6 +3187,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Searing Slam",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3197,6 +3201,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Charged Smash",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3207,6 +3215,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Wrath of Djaruun",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3217,6 +3229,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Earthen Crush",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3227,6 +3243,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Flaming Slash",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3237,6 +3257,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Doom Flames",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3247,6 +3271,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Shadowlava Blast",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3257,6 +3285,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Smoldering Rage",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3267,6 +3299,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Ancient Fury",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3277,6 +3313,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Searing Slam",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3287,6 +3327,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Overcharged",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3297,6 +3341,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Conduit Flare",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3307,6 +3355,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Earthen Crush",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3317,6 +3369,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Flaming Slash",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3327,6 +3383,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Doom Flames",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3337,6 +3397,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Scorched Flesh",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3347,6 +3411,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Molten Blood",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3357,6 +3425,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Charged Smash",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3367,6 +3439,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Doom Flames",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
   ],
@@ -3380,6 +3456,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Volcanic Heart",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3390,6 +3470,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Ruptured Veil",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3400,6 +3484,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Twisted Earth",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3410,6 +3498,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Rushing Darkness",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3420,6 +3512,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Volcanic Heart",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3430,6 +3526,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Twisted Earth",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3440,6 +3540,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Calamitous Strike",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3450,6 +3554,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Calamitous Strike",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3460,6 +3568,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Echoing Fissure",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3470,6 +3582,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Raze the Earth",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3480,6 +3596,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Surrender to Corruption",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3490,6 +3610,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Ebon Destruction",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3500,6 +3624,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Sunder Shadow",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3510,6 +3638,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Shadow Strike",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3520,6 +3652,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Umbral Annihilation",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3530,6 +3666,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Umbral Annihilation",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3540,6 +3680,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Rushing Darkness",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3550,6 +3694,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Shatter",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3560,6 +3708,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Shatter",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3570,6 +3722,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Shattered Rock",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3580,6 +3736,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Echoing Fissure",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3590,6 +3750,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Seeping Lava",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3600,6 +3764,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Collapsed Earth",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3610,6 +3778,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Rushing Darkness",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3620,6 +3792,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Rushing Darkness",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3630,6 +3806,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Volcanic Heartbeat",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3640,6 +3820,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Shatter",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3650,6 +3834,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Desperate Scream",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3660,6 +3848,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Sweeping Shadows",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3670,6 +3862,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Umbral Annihilation",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3680,6 +3876,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Corruption",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3690,6 +3890,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Shadow Barrier",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3700,6 +3904,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Calamitous Strike",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
   ],
@@ -3713,6 +3921,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Rescind",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3723,6 +3935,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Blasting Scream",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3733,6 +3949,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Mass Disintegrate",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3743,6 +3963,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Astral Eruption",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3753,6 +3977,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Astral Formation",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3763,6 +3991,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Scorching Bomb",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3773,6 +4005,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Glittering Surge",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3783,6 +4019,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Oppressing Howl",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3793,6 +4033,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Burning Claws",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3803,6 +4047,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Mass Disintegrate",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3813,6 +4061,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Dread",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3823,6 +4075,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Echoing Howl",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3833,6 +4089,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Searing Breath",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3843,6 +4103,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Void Empowerment",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3853,6 +4117,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Void Empowerment",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3863,6 +4131,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "End Existence",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3873,6 +4145,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Abyssal Breath",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3883,6 +4159,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Desolate Blossom",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3893,6 +4173,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Void Bomb",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3903,6 +4187,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Void Claws",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3913,6 +4201,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Infinite Duress",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3923,6 +4215,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Void Empowerment",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3933,6 +4229,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Ebon Might",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3943,6 +4243,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Cosmic Ascension",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3953,6 +4257,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Cosmic Ascension",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3963,6 +4271,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Hurtling Barrage",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3973,6 +4285,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Void Slash",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3983,6 +4299,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Embrace of Nothingness",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -3993,6 +4313,10 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Scouring Eternity",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -4003,6 +4327,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Glittering Surge",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -4013,6 +4341,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Scorching Bomb",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
@@ -4023,6 +4355,10 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Scorching Detonation",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
       },
     },
     {
