@@ -121,6 +121,7 @@ class ItemSet {
       if (item.onUse) this.onUseTrinkets.push({name: item.effect.name, level: item.level});
         
 
+      
       if (item.effect !== "") {
         let effect = item.effect;
         effect.level = item.level;

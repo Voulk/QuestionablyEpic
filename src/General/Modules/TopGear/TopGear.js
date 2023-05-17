@@ -116,7 +116,11 @@ export default function TopGear(props) {
   const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
-
+  const upgradeItem = (item, newItemLevel) => {
+    let player = props.player;
+    player.upgradeItem(item, newItemLevel);
+    setItemList([...player.getActiveItems(activeSlot)]);
+  }
 
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
@@ -484,7 +488,7 @@ export default function TopGear(props) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
+                    <MiniItemCard key={index} item={item} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
                   ))}
                 </Grid>
               </Grid>

@@ -51,6 +51,7 @@ export default function ItemCard(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const item = props.item;
+
   const itemKey = props.key;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
