@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider, Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
-import { buildWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos, buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";
@@ -331,7 +331,7 @@ export default function TopGear(props) {
   const unleashWorker = () => {
     const currentLanguage = i18n.language;
     const itemList = props.player.getSelectedItems();
-    let wepCombos = buildWepCombos(props.player, true);
+    let wepCombos = buildNewWepCombos(props.player, true);
     const baseHPS = props.player.getHPS(contentType);
     const strippedPlayer = JSON.parse(JSON.stringify(props.player));
     const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));

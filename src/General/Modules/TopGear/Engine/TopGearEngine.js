@@ -206,7 +206,7 @@ function createSets(itemList, rawWepCombos, spec) {
       splitItems[slot].push(itemList[i]);
     }
   }
-  slotLengths.Weapon = Object.keys(wepCombos).length;
+  slotLengths.Weapon = wepCombos.length;
 
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore };
@@ -275,8 +275,9 @@ function createSets(itemList, rawWepCombos, spec) {
                                       splitItems.Finger[finger2],
                                       splitItems.Trinket[trinket],
                                       splitItems.Trinket[trinket2],
-                                      wepCombos[weapon],
+                                      wepCombos[weapon][0]
                                     ];
+                                    if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
                                     let sumSoft = sumScore(softScore);
                                     itemSets.push(new ItemSet(setCount, includedItems, sumSoft, spec));
                                     setCount++;
@@ -315,6 +316,7 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
       differentials.items.push(diffList[x]);
       doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
 
+      // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
         differentials.items.push(diffList[x - 1]);
       }
