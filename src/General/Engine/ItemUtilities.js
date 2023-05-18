@@ -555,7 +555,7 @@ export function buildNewWepCombos(player, active = false, equipped = false) {
   }
 
   for (let j = 0; j < two_handers.length; j++) {
-    combos.push(two_handers[j]);
+    combos.push([two_handers[j]]);
   }
 
   return combos

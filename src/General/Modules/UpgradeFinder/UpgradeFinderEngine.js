@@ -91,7 +91,7 @@ export function buildNewWepCombosUF(player, itemList) {
   }
 
   for (let j = 0; j < two_handers.length; j++) {
-    combos.push(two_handers[j]);
+    combos.push([two_handers[j]]);
   }
 
   return combos
