@@ -4,6 +4,13 @@ import { curveDB } from "../ItemCurves";
 import { checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 
+
+/**
+ * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
+ * Make sure you add test cases for any items that are a bit strange or that use a new system.
+ * 
+ */
+
 const stat_ids = {
   36: "haste",
   32: "crit",
@@ -200,6 +207,8 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   let bonusIDS = "";
   let uniqueTag = "";
   let itemQuality = 4;
+  let upgradeTrack = "";
+  let upgradeRank = 0;
 
   let specialAllocations = {};
   let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
@@ -254,20 +263,29 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       else if (bonus_id === "41") {
         itemTertiary = "Leech";
       }
-       else if ("rawStats" in idPayload) {
-        idPayload["rawStats"].forEach((stat) => {
-          if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
-            let statName = stat["name"].toLowerCase();
-            if (statName === "vers") statName = "versatility"; // Pain
-            specialAllocations[statName] = stat["amount"];
-          }
-        });
+      else if ("rawStats" in idPayload) {
+      idPayload["rawStats"].forEach((stat) => {
+        if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
+          let statName = stat["name"].toLowerCase();
+          if (statName === "vers") statName = "versatility"; // Pain
+          specialAllocations[statName] = stat["amount"];
+        }
+      });
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
 
         levelOverride = processCurve(curve, dropLevel);
 
-      } else if ("name_override" in idPayload) {
+      } 
+      else if ("upgrade" in idPayload && "name" in idPayload.upgrade) {
+        const upgradeName = idPayload.upgrade.name;
+        if (["Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName)) {
+          upgradeTrack = upgradeName;
+          upgradeRank = idPayload.upgrade.level;
+        }
+      }
+      
+      else if ("name_override" in idPayload) {
           if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
             // Unity
             itemEffect = {
@@ -404,6 +422,11 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       item.uniqueEquip = "unity";
     } else if (item.vaultItem) item.uniqueEquip = "vault";
     else if (uniqueTag !== "") item.uniqueEquip = uniqueTag;
+
+    if (upgradeTrack !== "") {
+      item.upgradeTrack = upgradeTrack;
+      item.upgradeRank = upgradeRank || 0;
+    }
 
     item.quality = itemQuality;
     item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);

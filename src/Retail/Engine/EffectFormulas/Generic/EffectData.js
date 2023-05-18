@@ -136,5 +136,25 @@ export const effectData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                 Nasz'uro, the Unbound Legacy                                              */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Increase your highest secondary by X. Need to find out what X is.
+    */
+    name: "Nasz'uro, the Unbound Legacy",
+    effects: [
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO
+      const ppm = 6;
+      const duration = 10;
+      bonus_stats.allyStats = 500 / 0.4 * duration * ppm / 60;
+
+      return bonus_stats;
+    }
+  },
 
 ]

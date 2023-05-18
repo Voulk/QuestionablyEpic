@@ -13,6 +13,15 @@ export const changeLog = [
     update: 8,
     date: "14 May",
     changes: [ 
+      "In game changes to Healing Darts, Adaptive Dracothyst Armguards and Sporecloak.",
+      "Bugfix: Shaman tier 30 should now be correctly valued in all cases.",
+      "Top Gear can no longer be crashed by running it while missing item slots. Improved error messaging.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 8,
+    date: "14 May",
+    changes: [ 
       "Fixed wowhead tooltips across the app",
       "Improved how errors are handled.",
       "Crafted items should now import with the correct quality color (visual only).",

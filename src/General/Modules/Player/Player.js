@@ -265,6 +265,17 @@ class Player {
     }
   };
 
+  upgradeItem = (item, newLevel) => {
+    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, newLevel, "");
+    newItem.active = true;
+    if (item.uniqueEquip === "vault") {
+      newItem.uniqueEquip = "vault";
+      newItem.vaultItem = true;
+    }
+    newItem.quality = item.quality || 4;
+    this.activeItems = this.activeItems.concat(newItem);
+  };
+
   sortItems = (container) => {
     // Current default sorting is by HPS but we could get creative here in future.
     container.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));

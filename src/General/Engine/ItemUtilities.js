@@ -529,6 +529,37 @@ function getItemCat(slot) {
   }
 }
 
+export function buildNewWepCombos(player, active = false, equipped = false) {
+  let wep_list = [];
+  let main_hands = player.getActiveItems("1H Weapon", active, equipped);
+  let off_hands = player.getActiveItems("Offhands", active, equipped);
+  let two_handers = player.getActiveItems("2H Weapon", active, equipped);
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push(two_handers[j]);
+  }
+
+  //wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+  return combos
+}
+
 export function buildWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon", active, equipped);
