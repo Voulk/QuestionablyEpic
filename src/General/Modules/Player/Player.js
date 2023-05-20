@@ -236,13 +236,13 @@ class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "Draconic Hierophant's",
-      "Discipline Priest": "Draconic Hierophant's",
-      "Restoration Druid": "Lost Landcaller's",
-      "Restoration Shaman": "of Infused Earth",
-      "Mistweaver Monk": "of the Waking Fist",
-      "Holy Paladin": "Virtuous Silver",
-      "Preservation Evoker": "of the Awakened",
+      "Holy Priest": "of the Furnace Seraph",
+      "Discipline Priest": "of the Furnace Seraph",
+      "Restoration Druid": "of the Autumn Blaze",
+      "Restoration Shaman": "of the Cinderwolf",
+      "Mistweaver Monk": "of the Vermillion Forge",
+      "Holy Paladin": "Heartfire Sentinel's",
+      "Preservation Evoker": "of Obsidian Secrets",
     };
 
     const temp = itemDB.filter(function (item) {
@@ -263,6 +263,17 @@ class Player {
     } else {
       // We should probably write an error check here.
     }
+  };
+
+  upgradeItem = (item, newLevel) => {
+    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, newLevel, "");
+    newItem.active = true;
+    if (item.uniqueEquip === "vault") {
+      newItem.uniqueEquip = "vault";
+      newItem.vaultItem = true;
+    }
+    newItem.quality = item.quality || 4;
+    this.activeItems = this.activeItems.concat(newItem);
   };
 
   sortItems = (container) => {

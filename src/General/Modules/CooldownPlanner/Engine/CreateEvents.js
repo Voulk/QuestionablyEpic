@@ -39,6 +39,7 @@ import createMagmoraxEvents from "./BossEvents/AbberusEvents/7. Magmorax";
 import createZskarnEvents from "./BossEvents/AbberusEvents/6. Zskarn";
 import createNeltharionEvents from "./BossEvents/AbberusEvents/8. Neltharion";
 import createRashokEvents from "./BossEvents/AbberusEvents/5. Rashok";
+import createSarkarethEvents from "./BossEvents/AbberusEvents/9. Sarkareth";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
   let returnedEvents = [];
@@ -209,6 +210,10 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
 
   if (bossID === 2684) {
     returnedEvents = createNeltharionEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  if (bossID === 2685) {
+    returnedEvents = createSarkarethEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
   }
 
   return returnedEvents;

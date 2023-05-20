@@ -10,6 +10,53 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 8,
+    date: "14 May",
+    changes: [ 
+      "In game changes to Healing Darts, Adaptive Dracothyst Armguards and Sporecloak.",
+      "Bugfix: Shaman tier 30 should now be correctly valued in all cases.",
+      "Top Gear can no longer be crashed by running it while missing item slots. Improved error messaging.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 8,
+    date: "14 May",
+    changes: [ 
+      "Fixed wowhead tooltips across the app",
+      "Improved how errors are handled.",
+      "Crafted items should now import with the correct quality color (visual only).",
+      "Adaptive Dracothyst Armguards now count as an Embellishment effect in Top Gear"
+  ]},
+  {
+    version: "10.1.0",
+    update: 7,
+    date: "10 May",
+    changes: [ 
+      "Upgrade Finder: Removed old Azerite items & duplicate versions of tier sets.",
+      "Added some missing icons.",
+      "Updated the Revival Catalyst button to Season 2.",
+
+  ]},
+  {
+    version: "10.1.0",
+    update: 6,
+    date: "10 May",
+    changes: [ 
+      "Re-enabled Cooldown Planner.",
+      "Added Shadowflame-Tempered Armor Patch.",
+      "Fixed a bug with the Intellect gem in Top Gear Reports."
+  ]},
+  {
+    version: "10.1.0",
+    update: 5,
+    date: "9 May",
+    changes: [ 
+      "In game: Two class trinkets buffed by 5/10%.",
+      "In game: Embellishments scale with secondaries once again.",
+      "Added MW / Shaman class trinket",
+  ]},
+  {
+    version: "10.1.0",
     update: 4,
     date: "5 May",
     changes: [ 

@@ -90,7 +90,7 @@ export const embellishmentData = [
             coefficient: 117.1906 * 1.15, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
             table: -8,
             ppm: 2,
-            secondaries: ['haste'],
+            secondaries: ['haste', 'crit', 'versatility'],
             efficiency: 0.5,
           },
         ],
@@ -116,15 +116,15 @@ export const embellishmentData = [
           { // Healing Effect
             coefficient: 14.83545, // 3.268828,
             table: -7,
-            ppm: 4 / 2,
-            secondaries: ['haste', 'crit'],
-            efficiency: 0.84,
+            ppm: 4 * 0.75,
+            secondaries: ['haste', 'crit', 'versatility'],
+            efficiency: 0.6,
           },
           { // DPS Effect
             coefficient: 8.901271,
             table: -7,
-            ppm: 4 / 2,
-            secondaries: ['haste', 'crit'],
+            ppm: 4 * 0.25,
+            secondaries: ['haste', 'crit', 'versatility'],
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -529,8 +529,8 @@ export const embellishmentData = [
           const proc = runGenericPPMTrinket(data[0], itemLevel);
           bonus_stats['haste'] = proc;
           bonus_stats['mastery'] = proc;
-          bonus_stats['versatility'] = proc * 0.2;
-          bonus_stats['crit'] = proc * 0.2;
+          bonus_stats['versatility'] = proc * 0.75;
+          bonus_stats['crit'] = proc * 0.75;
 
           /*['versatility', 'haste', 'crit', 'mastery'].forEach((stat) => {
             // A proc can either be haste / mast or crit / vers.
@@ -552,13 +552,13 @@ export const embellishmentData = [
             coefficient: 10.73745, //44.02832,
             table: -9,
             ppm: 60 / 5,
-            secondaries: ['crit', 'versatility'],
-            efficiency: 0.4,
+            secondaries: ['versatility'],
+            efficiency: 0.45,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
             table: -9,
-            ppm: 0.06, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
+            ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.6,
           },
@@ -611,6 +611,31 @@ export const embellishmentData = [
           const ppm = data[0].ppm * player.getStatPerc('haste');
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Shadowflame-Tempered Armor Patch           
+        /* -------------------- */
+        /* 
+        */
+        name: "Shadowflame-Tempered Armor Patch",
+        effects: [
+          { // Damage Effect
+            coefficient: 7.845473,
+            table: -9,
+            secondaries: ['haste', 'crit'],
+            ppm: 5, // 4 / 2
+            stackBonus: 0.2,
+            maxStacks: 5,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          const averageMult = 1 + (data[0].stackBonus * data[0].maxStacks / 2);
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * averageMult / 60;
 
           return bonus_stats;
         }

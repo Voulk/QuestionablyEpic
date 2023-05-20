@@ -12,6 +12,7 @@ export default function createAmalgamationEvents(bossID, difficulty, damageTaken
   const phaseChangePercent = 50;
   const corruptingShadow = 401809;
   const shadowflameContamination = 405394;
+  const gloomCombustion = 405640;
 
   const logGuids = damageTakenData
     .map((key) => key.ability.guid)
@@ -83,6 +84,44 @@ export default function createAmalgamationEvents(bossID, difficulty, damageTaken
       // Increment currentTime by the interval (30 seconds)
       currentTime += interval;
     }
+  }
+
+  // gloomCombustion
+  if (logGuids.includes(gloomCombustion)) {
+    const clusterEvents = 3;
+    const clusterTimeframe = 4000;
+    const gloomCombustionEvents = damageTakenData.filter((filter) => filter.ability.guid === gloomCombustion);
+    const gloomCombustionEventsReduced = gloomCombustionEvents.filter((filter, i) => {
+      let entryOk = true;
+      for (var a = 1; a <= clusterEvents; a++) {
+        if (a + i < gloomCombustionEvents.length) {
+          const comparisonTimestamp = gloomCombustionEvents[a + i].timestamp;
+          if (comparisonTimestamp < filter.timestamp || comparisonTimestamp >= filter.timestamp + clusterTimeframe) {
+            entryOk = false;
+          }
+        }
+      }
+      return entryOk;
+    });
+
+    // time until we want to check for the next event. i.e 60 seconds after the 1st event.
+    const threshold = 20000;
+
+    // find the first event
+    const firstEvent = gloomCombustionEventsReduced[0];
+    // Original Event
+    events.push({ time: moment.utc(fightDuration(firstEvent.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: gloomCombustion });
+
+    // set
+    let lastChosen = firstEvent.timestamp;
+
+    gloomCombustionEventsReduced.map((key) => {
+      if (key.timestamp > lastChosen + threshold) {
+        lastChosen = key.timestamp;
+        // Original Event
+        events.push({ time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: gloomCombustion });
+      }
+    });
   }
 
   return events;

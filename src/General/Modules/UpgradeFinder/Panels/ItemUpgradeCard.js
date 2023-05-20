@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
@@ -139,7 +140,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "?bonus=" + item.bonusIDS + "&domain=" + wowheadDomain}>
+              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"
@@ -155,7 +156,7 @@ export default function ItemCard(props) {
                   />
                   <div className="bottom-right-ItemCards"> {item.level} </div>
                 </div>
-              </a>
+              </WowheadTooltip>
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />

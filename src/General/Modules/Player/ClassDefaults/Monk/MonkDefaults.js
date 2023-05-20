@@ -56,14 +56,14 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingDuringLC: 98,
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
-      OneManaHealing: 6.5,
+      OneManaHealing: 10.2,
       cooldownMult: {
-        c60: 1.2,
+        c60: 1.6,
         c90: 1,
         c120: 1.1,
         c180: 1,
 
-        oneMinute: 1.2,
+        oneMinute: 1.6,
         ninetySeconds: 1,
         twoMinutes: 1.1,
         twoMinutesOrb: 1.11,
@@ -108,7 +108,7 @@ export const monkDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.61,
     crit: 0.524,
-    mastery: 0.36,
+    mastery: 0.32,
     versatility: 0.509,
     leech: 0.49,
   };

@@ -1,10 +1,11 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Paper, Typography, Divider } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector } from "react-redux";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -22,18 +23,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-
-
 const checkCharacterValid = (player, gameType) => {
   const weaponSet = player.getActiveItems("AllMainhands", false, true);
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
   if (gameType === "Retail") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  }
-  else if (gameType === "Classic") {
+  } else if (gameType === "Classic") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
   }
-  
 };
 
 const getSimCStatus = (player, gameType) => {
@@ -91,7 +88,7 @@ export default function UpgradeFinderSimC(props) {
           <Grid item>
             <Divider orientation="vertical" flexItem style={{ height: "100%" }} />
           </Grid>
-          <Grid item container xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center"  justifyContent="center" spacing={1}>
+          <Grid item container xs={12} sm={12} md={12} lg={7} xl={7} alignItems="center" justifyContent="center" spacing={1}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={2}>
               <Typography color="primary" align="center" variant="h5">
                 {t("Equipped")}:
@@ -104,7 +101,7 @@ export default function UpgradeFinderSimC(props) {
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <a style={{ margin: "2px 2px" }} data-wowhead={"item=" + key.id + "&" + "ilvl=" + key.level + "&bonus=" + key.bonusIDS + "&domain=" + wowheadDom} key={i}>
+                      <WowheadTooltip type="item" level={key.level} bonusIDS={key.bonusIDS} domain={wowheadDom}>
                         <img
                           style={{
                             height: 22,
@@ -113,11 +110,12 @@ export default function UpgradeFinderSimC(props) {
                             borderRadius: "8px",
                             border: "1px solid",
                             borderColor: key.getQualityColor(),
+                            margin: "2px 2px",
                           }}
                           src={getItemIcon(key.id, gameType)}
                           alt=""
                         />
-                      </a>
+                      </WowheadTooltip>
                     </Grid>
                   ))}
               </Grid>

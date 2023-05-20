@@ -1,5 +1,6 @@
 import React from "react";
 import { talentDB } from "Databases/TalentDB";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 export default function talentIcons(props) {
   const getBossIcon = (props) => {
@@ -23,7 +24,7 @@ export default function talentIcons(props) {
   };
 
   return (
-    <a data-wowhead={"spell=" + props}>
+    <WowheadTooltip type="spell" id={props}>
       <img
         style={{
           height: 30,
@@ -36,6 +37,6 @@ export default function talentIcons(props) {
         src={getBossIcon(props)}
         alt={getName(props)}
       />
-    </a>
+    </WowheadTooltip>
   );
 }

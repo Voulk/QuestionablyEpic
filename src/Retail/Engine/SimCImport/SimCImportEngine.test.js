@@ -122,7 +122,38 @@ describe("Test Regular Items", () => {
 
 });
 
+describe("Test Upgrade Track", () => {
+    const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    const contentType = "Raid";
+    const type = "Regular";
 
+    test("Claws of Obsidian Secrets 5/8 Champion", () => {
+        const line = "hands=,id=202489,bonus_id=6652/9230/7979/9325/1479/8767";
+        const item = processItem(line, player, contentType, type)
+
+        expect(item.upgradeTrack).toEqual("Champion");
+        expect(item.upgradeRank).toEqual(5);
+        expect(item.level).toEqual(428);
+    });
+
+    test("Raoul's Barrelhook Bracers 1/5 Hero", () => {
+        const line = "hands=,id=202489,bonus_id=6652/9230/7979/9325/1479/87wrist=,id=159356,enchant_id=6580,bonus_id=9331/6652/9415/9223/9220/9144/3301/8767";
+        const item = processItem(line, player, contentType, type)
+
+        expect(item.upgradeTrack).toEqual("Hero");
+        expect(item.upgradeRank).toEqual(2);
+        expect(item.level).toEqual(431);
+    });
+
+    test("Bestowed Cape 3/8 Explorer", () => {
+        const line = "# back=,id=204617,bonus_id=9296/1472/8766";
+        const item = processItem(line, player, contentType, type)
+
+        expect(item.upgradeTrack).toEqual("Explorer");
+        expect(item.upgradeRank).toEqual(3);
+        expect(item.level).toEqual(382);
+    });
+});
 
 describe("Test Crafted Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");

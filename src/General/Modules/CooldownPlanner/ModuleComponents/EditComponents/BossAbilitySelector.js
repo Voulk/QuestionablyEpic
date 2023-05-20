@@ -11,6 +11,8 @@ import Looks3Icon from "@mui/icons-material/Looks3";
 import Looks4Icon from "@mui/icons-material/Looks4";
 import ClearIcon from "@mui/icons-material/Clear";
 import BuildIcon from "@mui/icons-material/Build";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import { getBossAbilityTranslation } from "General/Modules/CooldownPlanner/Data/CooldownPlannerBaillAbilityTranslations.js";
 
 const selectMenu = createTheme({
   components: {
@@ -162,13 +164,17 @@ export default function BossAbilitySelector(props, currentBoss, difficulty) {
                   })
                   .map((key, i, arr) => {
                     let lastItem = i + 1 === arr.length ? false : true;
+                    let translatedAbility = getBossAbilityTranslation(key.guid, currentLanguage);
+                    if (translatedAbility === undefined) {
+                      translatedAbility = getBossAbilityTranslation(key.guid, "en");
+                    }
+
                     return (
                       <MenuItem divider={true} key={i} value={key.guid}>
-                        <a data-wowhead={"spell=" + key.guid + "&domain=" + currentLanguage + "&dd=" + raidDifficulty(difficulty)}>{icon(key.guid, currentBoss, iconStyle)}</a>
-                        {
-                          // if no translation use english
-                          key.name[currentLanguage] === "" ? key.name["en"] : key.name[currentLanguage]
-                        }
+                        <WowheadTooltip type="spell" id={key.guid} domain={currentLanguage} difficulty={raidDifficulty(difficulty)}>
+                          {icon(key.guid, currentBoss, iconStyle)}
+                        </WowheadTooltip>
+                        {translatedAbility}
                       </MenuItem>
                     );
                   }),

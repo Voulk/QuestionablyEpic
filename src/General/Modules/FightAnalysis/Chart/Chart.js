@@ -5,6 +5,7 @@ import "./Chart.css";
 import moment from "moment";
 import i18n from "i18next";
 import { Paper } from "@mui/material";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 class Chart extends Component {
   constructor(props) {
@@ -105,18 +106,16 @@ class Chart extends Component {
   // The charts legend is generated here from the charts entries, and is matched with the provided ability list prop to return a matching guid for the wowhead tooltip
   renderColorfulLegendText = (value, entry) => {
     return (
-      <a
-        data-wowhead={
-          "spell=" +
-          this.props.abilityList
-            .filter((obj) => {
-              return obj.ability === value;
-            })
-            .map((obj) => obj.guid)
-        }
+      <WowheadTooltip
+        type="spell"
+        id={this.props.abilityList
+          .filter((obj) => {
+            return obj.ability === value;
+          })
+          .map((obj) => obj.guid)}
       >
         <span style={{ fontSize: "0.7rem" }}>{value}</span>
-      </a>
+      </WowheadTooltip>
     );
   };
 

@@ -2,6 +2,7 @@ import { cooldownDB } from "General/Modules/CooldownPlanner/Data/CooldownDB";
 import { useTranslation } from "react-i18next";
 import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "General/Modules/CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 export const cooldownTimelineColumns = () => {
   const { t, i18n } = useTranslation();
@@ -42,7 +43,7 @@ export const cooldownTimelineColumns = () => {
       },
       render: (rowData) => (
         <div style={{ display: "inline" }}>
-          <a data-wowhead={"spell=" + rowData.guid + "&domain=" + currentLanguage}>
+          <WowheadTooltip type="spell" id={rowData.guid} domain={currentLanguage}>
             <img
               style={{
                 height: 20,
@@ -50,23 +51,29 @@ export const cooldownTimelineColumns = () => {
                 padding: "0px 5px 0px 5px",
                 verticalAlign: "middle",
               }}
-              src={cooldownDB
-                .filter((obj) => {
-                  return obj.guid === rowData.guid;
-                })
-                .map((obj) => obj.icon)[0]}
-              alt={cooldownDB
-                .filter((obj) => {
-                  return obj.guid === rowData.guid;
-                })
-                .map((obj) => obj.icon)[0]}
+              src={
+                cooldownDB
+                  .filter((obj) => {
+                    return obj.guid === rowData.guid;
+                  })
+                  .map((obj) => obj.icon)[0]
+              }
+              alt={
+                cooldownDB
+                  .filter((obj) => {
+                    return obj.guid === rowData.guid;
+                  })
+                  .map((obj) => obj.icon)[0]
+              }
             />
-          </a>
-          {cooldownDB
-            .filter((obj) => {
-              return obj.guid === rowData.guid;
-            })
-            .map((obj) => obj.name[currentLanguage])[0]}
+          </WowheadTooltip>
+          {
+            cooldownDB
+              .filter((obj) => {
+                return obj.guid === rowData.guid;
+              })
+              .map((obj) => obj.name[currentLanguage])[0]
+          }
         </div>
       ),
     },

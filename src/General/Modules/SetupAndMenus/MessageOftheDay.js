@@ -6,10 +6,9 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> All S2 raid trinkets, Healing Darts and Spore Tender were nerfed in-game.",
       "-> Warning: Expect frequent changes during patch week.",
       "-> There's likely to be hotfixes and models might still be fine tuned.",
-      "-> Monk / Shaman class trinket NYI. Very soon."
+      "-> Tier Set formulas are preliminary."
   ],
   "Classic": [""]
   }

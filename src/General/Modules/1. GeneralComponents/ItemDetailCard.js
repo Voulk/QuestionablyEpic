@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Divider, Typography, Paper, useMediaQuery, useTheme, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { getItemIcon } from "General/Engine/ItemUtilities";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,16 +34,16 @@ function ItemDetailCard(props) {
   const titleFontSize = isXs ? "0.8rem" : item.slot === "Trinket" ? "0.9rem" : "1rem";
   const metricPadding = isXs ? "2px" : "8px";
 
-  const coloredDescription = item.description //item.description.replace(/Trinket/g, '<span style="color: red;">Trinket</span>');
+  const coloredDescription = item.description; //item.description.replace(/Trinket/g, '<span style="color: red;">Trinket</span>');
 
   return (
     <Paper className={classes.root} variant="outlined">
       <div className={classes.container}>
         <div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <a data-wowhead={`item=${item.id}&domain=${currentLanguage}`}>
+            <WowheadTooltip type="item" id={item.id} domain={currentLanguage}>
               <img height={40} width={40} src={getItemIcon(item.id)} alt="" style={{ borderRadius: 4, borderWidth: "1px", borderStyle: "solid", borderColor: "#ff8000" }} />
-            </a>
+            </WowheadTooltip>
             <div style={{ marginLeft: 8 }}>
               <Typography color="primary" variant="h6" component="h2" style={{ fontSize: titleFontSize, alignSelf: "center", lineHeight: 1 }}>
                 {item.name}

@@ -3,13 +3,15 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
-import DeleteIcon from "@mui/icons-material/Delete";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
+import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+
 
 const useStyles = makeStyles({
   root: {
@@ -48,7 +50,7 @@ export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-
+  const itemKey = props.key;
   const item = props.item;
   const itemLevel = item.level;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
@@ -61,7 +63,7 @@ export default function ItemCard(props) {
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-  
+
   let socket = [];
 
   // Onyx Annulet
@@ -70,17 +72,15 @@ export default function ItemCard(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     //gemString = gemData.string;
- 
-  }
-  else if (item.socket) {
+  } else if (item.socket) {
     for (let i = 0; i < item.socket; i++) {
-      socket.push (
-        <div style={{ marginRight: 4, display: "inline"}}>
+      socket.push(
+        <div style={{ marginRight: 4, display: "inline" }}>
           <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>
+        </div>,
       );
     }
-    socket = <div style={{ verticalAlign: "middle"}}>{socket}</div>;
+    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
   }
 
   const activateItemCard = () => {
@@ -111,22 +111,16 @@ export default function ItemCard(props) {
         <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
-              {item.canBeCatalyzed() ? (
-                <Tooltip arrow title="Catalyse: Create a catalysed version of this item.">
-                  <IconButton sx={{ padding: 0 }} onClick={catalyseItemCard} aria-label="catalyse" size="small">
-                    <Difference style={{ color: "plum", fontSize: "18px" }} fontSize="small" />
-                  </IconButton>
-                </Tooltip>
-              ) : null}
-            </Grid>
-            <Grid item>
-              {deleteActive ? (
-                <Tooltip arrow title="Delete: Delete this item.">
-                  <IconButton sx={{ padding: 0 }} onClick={deleteItemCard} aria-label="delete" size="small">
-                    <DeleteIcon style={{ color: "#ad2c34", fontSize: "18px" }} fontSize="small" />
-                  </IconButton>
-                </Tooltip>
-              ) : null}
+              <ItemCardButtonWithMenu
+                key={itemKey}
+                deleteActive={deleteActive}
+                deleteItem={deleteItemCard}
+                canBeCatalyzed={item.canBeCatalyzed()}
+                catalyseItemCard={catalyseItemCard}
+                itemLevel={itemLevel}
+                upgradeItem={props.upgradeItem}
+                item={item}
+              />
             </Grid>
           </Grid>
         </div>
@@ -145,7 +139,7 @@ export default function ItemCard(props) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <a data-wowhead={item.slot === "Trinket" ? "item=" + item.id + "&" + "ilvl=" + itemLevel + "&bonus=" + item.bonusIDS + "&domain=" + currentLanguage : ""}>
+                    <WowheadTooltip type={item.slot === "Trinket" ? "item" : "none"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={currentLanguage}>
                       <img
                         alt="img"
                         width={44}
@@ -158,7 +152,7 @@ export default function ItemCard(props) {
                           borderColor: itemQuality,
                         }}
                       />
-                    </a>
+                    </WowheadTooltip>
                     <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {itemLevel} </div>
                   </div>
                 </CardContent>

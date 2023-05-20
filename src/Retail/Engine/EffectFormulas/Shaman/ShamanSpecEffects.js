@@ -12,11 +12,29 @@ const IDHEALINGSURGE = 20473;
 
 export const getShamanSpecEffect = (effectName, player, contentType) => {
   const bonusStats = {};
-
+  const healingRainCPM = 3.4;
+  const riptidesActive = 4.9;
   // Tier Sets
+  if (effectName === "Shaman T30-2") {
+    // 
+    const oneTidewatersHeal = 2.3 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]);
+
+    bonusStats.hps = healingRainCPM * riptidesActive * oneTidewatersHeal * 0.42 / 60;
+
+  }
+  if (effectName === "Shaman T30-4") {
+    const healingBuffUptime = healingRainCPM * 6 / 60;
+    const healingBuffStrength = riptidesActive * 0.01;
+
+    const chainHealCast = 6.405 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]) * 1.08 * 1.02 * 1.18 * 1.15;
+    const chainHealBuff = riptidesActive * 0.02;
+
+    bonusStats.hps = healingBuffUptime * healingBuffStrength * player.getHPS(contentType) + chainHealCast * chainHealBuff * healingRainCPM / 60;
+
+  }
   if (effectName === "Shaman T29-2") {
     // +8% crit to almost everything that matters.
-    const uptime = 0.4; // TODO: Auto-calc this.
+    const uptime = 0.35; // TODO: Auto-calc this.
     bonusStats.crit = 10 * uptime * 170;
 
   }

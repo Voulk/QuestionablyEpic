@@ -44,6 +44,8 @@ class Item {
   onUse = false;
   setID = 0;
   quality = 3;
+  upgradeTrack = "";
+  upgradeRank = 0;
   //canBeCatalyzed = false;
 
   // The stats on the item. These should already be adjusted for item level.
@@ -89,13 +91,14 @@ class Item {
   } 
   */
   guessQualityColor() {
+
     if (this.level >= 372) this.quality = 4;
     else if (this.level >= 340) this.quality = 3;
     else this.quality = 2;
   }
 
   getQualityColor() {
-    const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity";
+    const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity" || this.id === 2068200;
     if (isLegendary) return "#ff8000";
     else if (this.quality === 4) return "#a73fee";
     else if (this.quality === 3) return "#328CE3";
