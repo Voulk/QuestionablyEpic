@@ -764,6 +764,9 @@ export function wclClassConverter(wclClass) {
     case "Priest-Discipline":
       newClass = "Priest";
       break;
+    case "Priest-Shadow":
+      newClass = "Priest";
+      break;
     case "Druid-Restoration":
       newClass = "Druid";
       break;

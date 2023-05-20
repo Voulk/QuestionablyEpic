@@ -1,5 +1,6 @@
 import { classColoursERT } from "../../Functions/ClassColourFunctions";
 import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
+import { getBossAbilityTranslation } from "General/Modules/CooldownPlanner/Data/CooldownPlannerBaillAbilityTranslations.js";
 
 /*=============================================
   This Function should be bound to the component the data should be set to.
@@ -44,14 +45,11 @@ export default function ertEngine(tableData, bossID, lang, setERTData, hideNoCoo
     })
     .map((key) => {
       let time = "{time:" + key.time + "}";
-      let translatedName = abilityArr.includes(key.bossAbility)
-        ? bossAbilities[bossID]
-            .filter((obj) => {
-              return obj.guid === key.bossAbility;
-            })
-            .map((obj) => obj.name[lang])
-            .toString()
-        : key.bossAbility;
+      let translatedAbility = getBossAbilityTranslation(key.bossAbility, lang);
+      if (translatedAbility === undefined) {
+        translatedAbility = getBossAbilityTranslation(key.bossAbility, "en");
+      }
+      let translatedName = abilityArr.includes(key.bossAbility) ? translatedAbility : key.bossAbility;
 
       const checkCooldown = (cooldown) => {
         if (typeof cooldown === "number") {
