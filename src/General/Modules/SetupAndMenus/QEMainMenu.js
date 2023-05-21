@@ -16,6 +16,7 @@ import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
 import ls from "local-storage";
 import QEFooter from "./Footer/QEFooter";
+import TalentTreeApp from "../FightAnalysis/Components/TalentTree";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -278,6 +279,9 @@ export default function QEMainMenu(props) {
       /*                                             Footer                                             */
       /* ----------------------------------------------------------------------------------------------  */}
       <QEFooter />
+      <div style={{ padding: 10 }}>
+        <TalentTreeApp />
+      </div>
     </div>
   );
 }
