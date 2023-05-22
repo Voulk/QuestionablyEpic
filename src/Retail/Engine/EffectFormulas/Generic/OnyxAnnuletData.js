@@ -24,7 +24,12 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings,
     const data = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
     "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
     "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone", "Prophetic Twilight Stone"]
-
+  
+    // While the following combination code is very useful, it's unnecessary in our case since we know
+    // which gems are best via running the code earlier and there is no secondary scenario where your choice would change.
+    // Annulet code is also a little buggy so we're going to return a specific set instead.
+    return ["Wild Spirit Stone", "Storm Infused Stone", "Deluging Water Stone"];
+    /*
     const combinations = []
 
     for(let i = 0; i < data.length -2; i++){
@@ -45,7 +50,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings,
     combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
 
     //console.log(combinations)
-    return combinations[0].gems;
+    return combinations[0].gems; */
 }
 
 export const convertGemNameToID = (gemName) => {
