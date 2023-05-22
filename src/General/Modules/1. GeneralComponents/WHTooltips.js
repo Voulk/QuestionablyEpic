@@ -3,7 +3,7 @@ import React from "react";
 // WowheadLink component definition.
 // This component creates a link to Wowhead with optional query parameters.
 // It handles two types: 'item' and 'spell', and returns the children for 'none'.
-const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, keyProp = "defaultKey" }) => {
+const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, keyProp = "defaultKey", rank }) => {
   // If type is 'none', return the children.
   if (type === "none") {
     return children;
@@ -22,7 +22,7 @@ const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficult
   const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}`;
 
   // If the type is 'spell', these strings include optional bossAbility and difficulty query parameters.
-  const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}`;
+  const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}${rank ? "&rank=" + rank : ""}`;
 
   return (
     <a href={baseWowheadLink} data-wowhead={type === "item" ? itemDataWowhead : spellDataWowhead} target="_blank" rel="noopener noreferrer" key={keyProp}>
