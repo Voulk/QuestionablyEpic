@@ -14,8 +14,12 @@ export const changeLog = [
     date: "23 May",
     changes: [ 
       "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking)",
+      "New Embellishment: Slimy Expulsion Boots",
       "Greatly improved error checking in top gear.",
       "Incarnate Icon now defaults to solo only.",
+      "Bugfix: Fixed a bug where three embellishments could be recommended if one was on a 1H Weapon or offhand.",
+      "Bugfix: Items using a new in-game CurveID should now import correctly.",
+      "Bugfix (Visual): The trinket chart will no longer occasionally show duplicates of icons"
   ]},
   {
     version: "10.1.0",

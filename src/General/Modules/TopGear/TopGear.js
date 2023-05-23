@@ -201,15 +201,18 @@ export default function TopGear(props) {
    
        for (var i = 0; i < itemList.length; i++) {
          let slot = itemList[i].slot;
-         if (slot in slotLengths) {
-           if (!itemList[i].vaultItem) slotLengths[slot] += 1;
+         if (slot in slotLengths || slot === "Shield") {
+           if (!itemList[i].vaultItem) {
+              if (slot === "Shield") slotLengths["Offhand"] += 1;
+              else slotLengths[slot] += 1;
+           }
          }
        }
        if (slotLengths["2H Weapon"] > 0) {
         // If we have a two handed weapon, then we don't need to complain about how many main hands and offhands we have.
         slotLengths["1H Weapon"] = slotLengths["Offhand"] = slotLengths["2H Weapon"];
        }
-       if (slotLengths["1H Weapon"] > 0 && slotLengths["Offhand"] > 0) {
+       if (slotLengths["1H Weapon"] > 0 && (slotLengths["Offhand"] > 0 || slotLengths["Shield"] > 0)) {
         // If we have a two handed weapon, then we don't need to complain about how many main hands and offhands we have.
         slotLengths["2H Weapon"] = slotLengths["1H Weapon"];
        }
@@ -229,19 +232,27 @@ export default function TopGear(props) {
 
        //setErrorMessage(errorMessage);
        //setBtnActive(topgearOk);
+
        return missingSlots;
   }
 
   const getErrorMessage = () => {
     const missingSlots = checkSlots();
+
     let errorMessage = "Add ";
     if (missingSlots.length > 10) {
       return "Add SimC String"
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        errorMessage += slot + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield"].includes(slot))) errorMessage += slot + ", ";
+        
       })
+
+      if ((missingSlots.includes("2H Weapon") && (missingSlots.includes("1H Weapon") || (missingSlots.includes("Offhand") || missingSlots.includes("Shield"))))) {
+
+        errorMessage += " Weapon, " 
+      }
 
       return errorMessage.slice(0, -2);
     }
@@ -548,7 +559,7 @@ export default function TopGear(props) {
             <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {getErrorMessage()}
             </Typography>
-            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={checkSlots.length > 0 || !btnActive} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={checkSlots().length > 0 || !btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

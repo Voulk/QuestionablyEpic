@@ -159,7 +159,7 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Screaming Black Dragonscale                                   */
     /* ---------------------------------------------------------------------------------------------- */
-    /* This shouldn't scale with haste, but does.
+    /* This has an awkward 15s internal cooldown which makes modelling expected uptime much more annoying.
     */
     name: "Screaming Black Dragonscale",
     effects: [
@@ -180,6 +180,10 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
+      //bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
+      //bonus_stats.leech = runGenericPPMTrinket(data[1], itemLevel);
+
       bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60;
       bonus_stats.leech = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm / 60;
 
