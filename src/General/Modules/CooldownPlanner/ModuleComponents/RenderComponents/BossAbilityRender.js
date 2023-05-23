@@ -9,6 +9,7 @@ import LooksTwoIcon from "@mui/icons-material/LooksTwo";
 import Looks3Icon from "@mui/icons-material/Looks3";
 import Looks4Icon from "@mui/icons-material/Looks4";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import { getBossAbilityTranslation } from "General/Modules/CooldownPlanner/Data/CooldownPlannerBaillAbilityTranslations.js";
 
 const iconStyle = {
   height: 22,
@@ -53,12 +54,10 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const translatedName = bossAbilities[bossID]
-    .filter((obj) => {
-      return obj.guid === rowData.bossAbility;
-    })
-    .map((obj) => obj.name[currentLanguage])
-    .toString();
+  let translatedAbility = getBossAbilityTranslation(rowData.bossAbility, currentLanguage);
+  if (translatedAbility === undefined) {
+    translatedAbility = getBossAbilityTranslation(rowData.bossAbility, "en");
+  }
 
   const icon = (bossAbility, bossID, iconStyle) => {
     switch (bossAbility) {
@@ -85,7 +84,7 @@ export default function BossAbilityRender(rowData, bossID, difficulty) {
             {icon(rowData.bossAbility, bossID, iconStyle)}
           </WowheadTooltip>
           <Typography align="left" style={{ fontSize: 12, lineHeight: "normal", width: "100%", marginLeft: 8 }} noWrap>
-            {translatedName}
+            {translatedAbility}
           </Typography>
         </div>
       ) : (

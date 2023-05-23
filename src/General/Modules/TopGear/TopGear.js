@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider, Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
-import { buildWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos, buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";
@@ -116,7 +116,11 @@ export default function TopGear(props) {
   const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
-
+  const upgradeItem = (item, newItemLevel) => {
+    let player = props.player;
+    player.upgradeItem(item, newItemLevel);
+    setItemList([...player.getActiveItems(activeSlot)]);
+  }
 
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
@@ -190,42 +194,65 @@ export default function TopGear(props) {
          Feet: 0,
          Finger: 0,
          Trinket: 0,
-         /*
          "2H Weapon" : 0,
          "1H Weapon" : 0,
-         "Offhand" : 0, */
+         "Offhand" : 0,
        };
    
        for (var i = 0; i < itemList.length; i++) {
          let slot = itemList[i].slot;
-         if (slot in slotLengths) {
-           if (!itemList[i].vaultItem) slotLengths[slot] += 1;
+         if (slot in slotLengths || slot === "Shield") {
+           if (!itemList[i].vaultItem) {
+              if (slot === "Shield") slotLengths["Offhand"] += 1;
+              else slotLengths[slot] += 1;
+           }
          }
        }
+       if (slotLengths["2H Weapon"] > 0) {
+        // If we have a two handed weapon, then we don't need to complain about how many main hands and offhands we have.
+        slotLengths["1H Weapon"] = slotLengths["Offhand"] = slotLengths["2H Weapon"];
+       }
+       if (slotLengths["1H Weapon"] > 0 && (slotLengths["Offhand"] > 0 || slotLengths["Shield"] > 0)) {
+        // If we have a two handed weapon, then we don't need to complain about how many main hands and offhands we have.
+        slotLengths["2H Weapon"] = slotLengths["1H Weapon"];
+       }
+
        for (const key in slotLengths) {
          if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
            missingSlots.push(key);
            errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
-         } else if (slotLengths[key] === 0) {
+         } 
+         else if (slotLengths[key] === 0) {
             missingSlots.push(key);
            errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
          }
        }
+
+
+
        //setErrorMessage(errorMessage);
        //setBtnActive(topgearOk);
+
        return missingSlots;
   }
 
   const getErrorMessage = () => {
     const missingSlots = checkSlots();
+
     let errorMessage = "Add ";
     if (missingSlots.length > 10) {
       return "Add SimC String"
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        errorMessage += slot + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield"].includes(slot))) errorMessage += slot + ", ";
+        
       })
+
+      if ((missingSlots.includes("2H Weapon") && (missingSlots.includes("1H Weapon") || (missingSlots.includes("Offhand") || missingSlots.includes("Shield"))))) {
+
+        errorMessage += " Weapon, " 
+      }
 
       return errorMessage.slice(0, -2);
     }
@@ -327,7 +354,7 @@ export default function TopGear(props) {
   const unleashWorker = () => {
     const currentLanguage = i18n.language;
     const itemList = props.player.getSelectedItems();
-    let wepCombos = buildWepCombos(props.player, true);
+    let wepCombos = buildNewWepCombos(props.player, true);
     const baseHPS = props.player.getHPS(contentType);
     const strippedPlayer = JSON.parse(JSON.stringify(props.player));
     const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
@@ -484,7 +511,7 @@ export default function TopGear(props) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
+                    <MiniItemCard key={index} item={item} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
                   ))}
                 </Grid>
               </Grid>
@@ -532,7 +559,7 @@ export default function TopGear(props) {
             <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {getErrorMessage()}
             </Typography>
-            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!checkTopGearValid() || !btnActive} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={checkSlots().length > 0 || !btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

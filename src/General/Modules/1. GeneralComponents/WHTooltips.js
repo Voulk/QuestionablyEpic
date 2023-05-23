@@ -9,6 +9,10 @@ const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficult
     return children;
   }
 
+  if (id === undefined || id === null || id === "" || id === 0 || id === "Phase 1" || id === "Phase 2" || id === "Phase 3" || id === "Phase 4" || id === "Intermission") {
+    return children;
+  }
+
   // Base Wowhead link and data-wowhead attribute construction.
   const baseWowheadLink = `https://www.wowhead.com/${type}=${id}`;
   const dataWowhead = `${type}=${id}&domain=${domain}`;

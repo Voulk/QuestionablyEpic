@@ -48377,7 +48377,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48389,7 +48389,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48401,7 +48401,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48413,7 +48413,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48425,7 +48425,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48437,7 +48437,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48461,7 +48461,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48473,7 +48473,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48485,7 +48485,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48497,7 +48497,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48509,7 +48509,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48521,7 +48521,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48546,7 +48546,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48558,7 +48558,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48570,7 +48570,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48582,7 +48582,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48594,7 +48594,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48606,7 +48606,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48631,7 +48631,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48643,7 +48643,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48655,7 +48655,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48667,7 +48667,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48679,7 +48679,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48691,7 +48691,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48715,7 +48715,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48727,7 +48727,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48739,7 +48739,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48751,7 +48751,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48763,7 +48763,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48775,7 +48775,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48799,7 +48799,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48811,7 +48811,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48823,7 +48823,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48835,7 +48835,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48847,7 +48847,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48859,7 +48859,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48883,7 +48883,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48895,7 +48895,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48907,7 +48907,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48919,7 +48919,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48931,7 +48931,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48943,7 +48943,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48967,7 +48967,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48979,7 +48979,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -48991,7 +48991,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49003,7 +49003,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49015,7 +49015,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49027,7 +49027,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49051,7 +49051,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 5,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49063,7 +49063,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 7,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49075,7 +49075,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 9,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49087,7 +49087,7 @@ export const bonus_IDs = {
           "flags": 0,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 10,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49099,7 +49099,7 @@ export const bonus_IDs = {
           "flags": 1,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49111,7 +49111,7 @@ export const bonus_IDs = {
           "flags": 2,
           "amounts": [
             {
-              "itemId": 202184,
+              "itemId": 206366,
               "amount": 14,
               "name": "Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
@@ -49129,6 +49129,7 @@ export const bonus_IDs = {
       "level": 1,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -49260,7 +49261,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 2
   },
@@ -49270,6 +49272,7 @@ export const bonus_IDs = {
       "level": 2,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -49401,7 +49404,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 2
   },
@@ -49411,6 +49415,7 @@ export const bonus_IDs = {
       "level": 3,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -49542,7 +49547,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -49552,6 +49558,7 @@ export const bonus_IDs = {
       "level": 4,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -49683,7 +49690,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -49693,6 +49701,7 @@ export const bonus_IDs = {
       "level": 5,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -49824,7 +49833,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -49834,6 +49844,7 @@ export const bonus_IDs = {
       "level": 6,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -49965,7 +49976,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -49975,6 +49987,7 @@ export const bonus_IDs = {
       "level": 7,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -50106,7 +50119,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -50116,6 +50130,7 @@ export const bonus_IDs = {
       "level": 8,
       "max": 8,
       "group": 283,
+      "name": "Explorer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -50247,7 +50262,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -50257,6 +50273,7 @@ export const bonus_IDs = {
       "level": 1,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -50388,7 +50405,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -50398,6 +50416,7 @@ export const bonus_IDs = {
       "level": 2,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -50529,7 +50548,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -50539,6 +50559,7 @@ export const bonus_IDs = {
       "level": 3,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -50670,7 +50691,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -50680,6 +50702,7 @@ export const bonus_IDs = {
       "level": 4,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -50811,7 +50834,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 3
   },
@@ -50821,6 +50845,7 @@ export const bonus_IDs = {
       "level": 5,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -51000,7 +51025,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -51010,6 +51036,7 @@ export const bonus_IDs = {
       "level": 6,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -51189,7 +51216,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -51199,6 +51227,7 @@ export const bonus_IDs = {
       "level": 7,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -51378,7 +51407,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -51388,6 +51418,7 @@ export const bonus_IDs = {
       "level": 8,
       "max": 8,
       "group": 284,
+      "name": "Adventurer",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -51567,7 +51598,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -51588,6 +51620,7 @@ export const bonus_IDs = {
       "level": 1,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -51767,7 +51800,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -51777,6 +51811,7 @@ export const bonus_IDs = {
       "level": 2,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -51956,7 +51991,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -51966,6 +52002,7 @@ export const bonus_IDs = {
       "level": 3,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52145,7 +52182,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -52155,6 +52193,7 @@ export const bonus_IDs = {
       "level": 4,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52334,7 +52373,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -52344,6 +52384,7 @@ export const bonus_IDs = {
       "level": 5,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52523,7 +52564,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -52533,6 +52575,7 @@ export const bonus_IDs = {
       "level": 6,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52712,7 +52755,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -52722,6 +52766,7 @@ export const bonus_IDs = {
       "level": 7,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52901,7 +52946,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -52911,6 +52957,7 @@ export const bonus_IDs = {
       "level": 8,
       "max": 8,
       "group": 285,
+      "name": "Veteran",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53090,7 +53137,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -53100,6 +53148,7 @@ export const bonus_IDs = {
       "level": 1,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53279,7 +53328,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -53289,6 +53339,7 @@ export const bonus_IDs = {
       "level": 2,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53468,7 +53519,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -53478,6 +53530,7 @@ export const bonus_IDs = {
       "level": 3,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53657,7 +53710,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -53667,6 +53721,7 @@ export const bonus_IDs = {
       "level": 4,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53846,7 +53901,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -53856,6 +53912,7 @@ export const bonus_IDs = {
       "level": 5,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54035,7 +54092,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -54045,6 +54103,7 @@ export const bonus_IDs = {
       "level": 6,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54224,7 +54283,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -54234,6 +54294,7 @@ export const bonus_IDs = {
       "level": 7,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54413,7 +54474,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -54423,6 +54485,7 @@ export const bonus_IDs = {
       "level": 8,
       "max": 8,
       "group": 286,
+      "name": "Champion",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54602,7 +54665,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -54612,6 +54676,7 @@ export const bonus_IDs = {
       "level": 1,
       "max": 5,
       "group": 287,
+      "name": "Hero",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54791,7 +54856,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -54801,6 +54867,7 @@ export const bonus_IDs = {
       "level": 2,
       "max": 5,
       "group": 287,
+      "name": "Hero",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54980,7 +55047,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -54990,6 +55058,7 @@ export const bonus_IDs = {
       "level": 3,
       "max": 5,
       "group": 287,
+      "name": "Hero",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -55169,7 +55238,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -55179,6 +55249,7 @@ export const bonus_IDs = {
       "level": 4,
       "max": 5,
       "group": 287,
+      "name": "Hero",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -55358,7 +55429,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },
@@ -55368,6 +55440,7 @@ export const bonus_IDs = {
       "level": 5,
       "max": 5,
       "group": 287,
+      "name": "Hero",
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -55547,7 +55620,8 @@ export const bonus_IDs = {
           "scaling": 0,
           "accountWide": false
         }
-      ]
+      ],
+      "seasonId": 21
     },
     "quality": 4
   },

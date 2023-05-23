@@ -553,7 +553,7 @@ export const embellishmentData = [
             table: -9,
             ppm: 60 / 5,
             secondaries: ['versatility'],
-            efficiency: 0.45,
+            efficiency: 0.5,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
@@ -626,7 +626,7 @@ export const embellishmentData = [
           { // Damage Effect
             coefficient: 7.845473,
             table: -9,
-            secondaries: ['haste', 'crit'],
+            secondaries: ['haste', 'crit', 'versatility'],
             ppm: 5, // 4 / 2
             stackBonus: 0.2,
             maxStacks: 5,
@@ -637,6 +637,32 @@ export const embellishmentData = [
           const averageMult = 1 + (data[0].stackBonus * data[0].maxStacks / 2);
           bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * averageMult / 60;
 
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Slimy Expulsion Boots         
+        /* -------------------- */
+        /* 
+        */
+        name: "Slimy Expulsion Boots",
+        effects: [
+          { // Damage Effect
+            coefficient: 20.43177,
+            table: -9,
+            secondaries: ['haste', 'crit', 'versatility'],
+            ppm: 4,
+          },
+          { // -Haste
+            coefficient: -0.095923,
+            table: -7,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+          bonus_stats.haste = processedValue(data[1], itemLevel);
           return bonus_stats;
         }
       },
