@@ -94,7 +94,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
             props.onRowDataChange(data); // Update the data
           }}
         >
-          {nameValidation.includes(props.rowData[name]) ? null : (
+          {nameValidation.includes(props.rowData[name]) || props.rowData[name] === undefined ? null : (
             <MenuItem disabled divider style={{ color: classColoursJS(props.rowData[nameClass]) }} key={props.rowData[name] + i} value={props.rowData[name]}>
               <div style={{ display: "inline-flex", alignItems: "center", width: "100%" }}>
                 <div>
@@ -108,6 +108,7 @@ export default function HealerSelector(props, name, nameClass, cooldown) {
               </div>
             </MenuItem>
           )}
+
           {
             /* ----- Map Healer Names from the healerInfo local storage (created from Heal Team Module) ----- */
             ls.get("healerInfo").map((key, i) => (

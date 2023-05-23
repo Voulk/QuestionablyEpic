@@ -126,6 +126,7 @@ describe("Test Upgrade Track", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
+
     test("Claws of Obsidian Secrets 5/8 Champion", () => {
         const line = "hands=,id=202489,bonus_id=6652/9230/7979/9325/1479/8767";
         const item = processItem(line, player, contentType, type)
