@@ -13,8 +13,10 @@ export const changeLog = [
     update: 9,
     date: "23 May",
     changes: [ 
-      "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking)",
-      "New Embellishment: Slimy Expulsion Boots",
+      "You can now click the cog on items to change its item level.",
+      "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking).",
+      "New Embellishment: Slimy Expulsion Boots.",
+      "Updated trinket chart with some missing items.",
       "Greatly improved error checking in top gear.",
       "Incarnate Icon now defaults to solo only.",
       "Bugfix: Fixed a bug where three embellishments could be recommended if one was on a 1H Weapon or offhand.",

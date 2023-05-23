@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc } from "../EffectUtilities";
 
 export const raidTrinketData = [
   {
@@ -89,16 +89,16 @@ export const raidTrinketData = [
     name: "Ward of Faceless Ire",
     effects: [
       {  // Heal effect
-        coefficient: 0,
+        coefficient: 371.7325,
         table: -9,
-        secondaries: ['crit'],
+        secondaries: ['versatility'],
         efficiency: 0.78,
-        ppm: 0.5, // ICD: 45
+        ppm: 0.5, 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.hps = runGenericFlatProc(effect, itemLevel, player)
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
 
       return bonus_stats;
     }
