@@ -206,7 +206,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let uniqueTag = "";
-  let itemQuality = 4;
+  let itemQuality = 0;
   let upgradeTrack = "";
   let upgradeRank = 0;
 
@@ -428,7 +428,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       item.upgradeRank = upgradeRank || 0;
     }
 
-    item.quality = itemQuality;
+    item.quality = itemQuality !== 0 ? itemQuality : (getItemProp(itemID, "quality") || 4);
     item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
 
     return item;  
