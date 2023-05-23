@@ -31,7 +31,7 @@ export const evokerDefaultSpellData = (contentType) => {
       intellect: 1,
       haste: 0.55,
       crit: 0.535,
-      mastery: 0.39,
+      mastery: 0.43,
       versatility: 0.48,
       leech: 0.4,
       defaults: true,
