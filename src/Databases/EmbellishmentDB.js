@@ -273,6 +273,23 @@ export const embellishmentDB = [
     },
   },
   {
+    id: 193451,
+    icon: "inv_leather_dragondungeon_c_01_boot",
+    armorType: 2, // Extra
+    name: {
+      en: "Slimy Expulsion Boots",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Slimy Expulsion Boots",
+      rank: 0, 
+    },
+  },
+  {
     id: 193944,
     icon: "inv_10_tailoring_silkrare_color1",
     armorType: 0, // Extra

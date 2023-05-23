@@ -272,6 +272,29 @@ export const dungeonTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Irideus Fragment                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // This is technically a party buff but because it comes with downside, that portion isn't currently included.
+    name: "Irideus Fragment",
+    effects: [
+      { // +Int Portion
+        coefficient: 0.214403, 
+        table: -1,
+        duration: 20,
+        cooldown: 180,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const averageStacks = 20 / 2;
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStacks * 20 / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c" + data[0].cooldown, "cooldownMult") || 1);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                     Miniature Singing Stone                                      */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
