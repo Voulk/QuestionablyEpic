@@ -82,6 +82,29 @@ export const raidTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Ward of Faceless Ire                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Ward of Faceless Ire",
+    effects: [
+      {  // Heal effect
+        coefficient: 0,
+        table: -9,
+        secondaries: ['crit'],
+        efficiency: 0.78,
+        ppm: 0.5, // ICD: 45
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = runGenericFlatProc(effect, itemLevel, player)
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Rashok's Molten Heart                                       */
     /* ---------------------------------------------------------------------------------------------- */
     /* 

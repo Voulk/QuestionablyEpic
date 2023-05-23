@@ -28,7 +28,7 @@ export const getBestCombo = (player, contentType, itemLevel, setStats, settings,
     // While the following combination code is very useful, it's unnecessary in our case since we know
     // which gems are best via running the code earlier and there is no secondary scenario where your choice would change.
     // Annulet code is also a little buggy so we're going to return a specific set instead.
-    return ["Wild Spirit Stone", "Storm Infused Stone", "Deluging Water Stone"];
+    return [204020, 204010, 204013];
     /*
     const combinations = []
 

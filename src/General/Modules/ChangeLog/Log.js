@@ -10,8 +10,17 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 9,
+    date: "23 May",
+    changes: [ 
+      "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking)",
+      "Greatly improved error checking in top gear.",
+      "Incarnate Icon now defaults to solo only.",
+  ]},
+  {
+    version: "10.1.0",
     update: 8,
-    date: "14 May",
+    date: "17 May",
     changes: [ 
       "In game changes to Healing Darts, Adaptive Dracothyst Armguards and Sporecloak.",
       "Bugfix: Shaman tier 30 should now be correctly valued in all cases.",
