@@ -529,6 +529,8 @@ function getItemCat(slot) {
   }
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
 export function buildNewWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon", active, equipped);
@@ -553,10 +555,9 @@ export function buildNewWepCombos(player, active = false, equipped = false) {
   }
 
   for (let j = 0; j < two_handers.length; j++) {
-    combos.push(two_handers[j]);
+    combos.push([two_handers[j]]);
   }
 
-  //wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
   return combos
 }
 
@@ -757,13 +758,13 @@ export function buildPrimGems(gemCombo) {
     gemData.string += gemCombo[i] + ":";
     gemData.socket.push (
       <div style={{ marginRight: 4, display: "inline"}} >
-        <a
+        {/* <a
         data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
         target="_blank"
         rel="noopener noreferrer"
-      >
+      > */}
         <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
-        </a>
+        {/* </a> */}
       </div>
     );
     }

@@ -2,7 +2,7 @@
 import Player from "General/Modules/Player/Player";
 import { processAllLines } from "Retail/Engine/SimCImport/SimCImportEngine.js"
 import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
-import { applyDiminishingReturns, buildWepCombos } from "General/Engine/ItemUtilities"
+import { applyDiminishingReturns, buildNewWepCombos } from "General/Engine/ItemUtilities"
 
 import { runTopGear } from "./TopGearEngine";
 
@@ -37,7 +37,7 @@ describe("Top Gear full test", () => {
 
         processAllLines(player, "Raid", lines, -1, -1)
         player.activateAll();
-        const wepCombos = buildWepCombos(player, true);
+        const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", settings, player.getActiveModel("Raid"))
         
         const itemList = result.itemSet.itemList;
@@ -60,7 +60,7 @@ describe("Top Gear full test", () => {
 
         processAllLines(player, "Raid", lines, -1, -1)
         player.activateAll();
-        const wepCombos = buildWepCombos(player, true);
+        const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", settings, player.getActiveModel("Raid"))
 
         expect(result.itemSet.effectList.filter(effect => effect.name === "Mistweaver T29-2").length).toEqual(1);

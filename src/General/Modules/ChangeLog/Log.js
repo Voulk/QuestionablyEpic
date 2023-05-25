@@ -10,8 +10,24 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 9,
+    date: "23 May",
+    changes: [ 
+      "You can now click the cog on items to change its item level.",
+      "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking).",
+      "New Embellishment: Slimy Expulsion Boots.",
+      "Updated trinket chart with some missing items.",
+      "Greatly improved error checking in top gear.",
+      "Incarnate Icon now defaults to solo only.",
+      "The legendary Evoker staff should now import and be scored correctly.",
+      "Bugfix: Fixed a bug where three embellishments could be recommended if one was on a 1H Weapon or offhand.",
+      "Bugfix: Items using a new in-game CurveID should now import correctly.",
+      "Bugfix (Visual): The trinket chart will no longer occasionally show duplicates of icons"
+  ]},
+  {
+    version: "10.1.0",
     update: 8,
-    date: "14 May",
+    date: "17 May",
     changes: [ 
       "In game changes to Healing Darts, Adaptive Dracothyst Armguards and Sporecloak.",
       "Bugfix: Shaman tier 30 should now be correctly valued in all cases.",

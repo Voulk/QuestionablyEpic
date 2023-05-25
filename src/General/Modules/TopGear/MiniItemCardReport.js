@@ -71,7 +71,7 @@ export default function ItemCardReport(props) {
       else if (quality === 2) return "#1eff00";
       else return "#ffffff";
     } else {
-      if (isLegendary) return "#ff8000";
+      if (isLegendary || itemID === 204177) return "#ff8000";
       else if (itemLevel >= 183) return "#a73fee";
       else if (itemLevel >= 120) return "#328CE3";
       else return "#1eff00";
