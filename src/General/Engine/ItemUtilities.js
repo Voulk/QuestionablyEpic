@@ -758,13 +758,13 @@ export function buildPrimGems(gemCombo) {
     gemData.string += gemCombo[i] + ":";
     gemData.socket.push (
       <div style={{ marginRight: 4, display: "inline"}} >
-        <a
+        {/* <a
         data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
         target="_blank"
         rel="noopener noreferrer"
-      >
+      > */}
         <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
-        </a>
+        {/* </a> */}
       </div>
     );
     }
