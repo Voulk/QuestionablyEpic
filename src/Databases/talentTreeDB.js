@@ -1,4 +1,4 @@
-const talentDB = [
+export const talentTreeDB = [
   {
     traitTreeId: 793,
     className: "Druid",

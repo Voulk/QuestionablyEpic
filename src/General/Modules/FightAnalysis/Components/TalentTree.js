@@ -1,6 +1,9 @@
 import { evokerBaseTalents } from "General/Modules/FightAnalysis/Components/Talents/EvokerBaseTalents";
 import { Box, Badge } from "@mui/material";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import { talentTreeDB } from "Databases/talentTreeDB";
+import { getIconURL } from "General/Modules/CooldownPlanner/Functions/IconFunctions/getIconURL";
+import { Grid } from "@mui/material";
 
 const activeAbilitys = [
   {
@@ -423,21 +426,21 @@ const activeAbilitys = [
 
 // Talent component
 const Talent = ({ talent }) => {
-  const talentSpellID = talent.guid;
+  const talentSpellID = talent.spellId;
   const abilityActive = activeAbilitys.some((ability) => ability.spellID === talentSpellID);
   const activeTalent = activeAbilitys.find((ability) => ability.spellID === talentSpellID);
 
   return (
     <div style={{ position: "relative" }}>
-      <WowheadTooltip id={talent.guid} type="spell" rank={talent.rank}>
+      <WowheadTooltip id={talent.spellId} type="spell" rank={talent.rank}>
         <img
-          src={talent.icon}
+          src={getIconURL(talent.icon)}
           alt={talent.name}
           width={20}
           height={20}
           style={{
-            borderRadius: talent.type === "Ability" ? 4 : 10,
-            border: talent.type === "Ability" ? "2px solid" : "1px solid",
+            borderRadius: talent.type === "active" ? 4 : 10,
+            border: talent.type === "active" ? "2px solid" : "1px solid",
             borderColor: abilityActive ? "yellow" : "grey",
             filter: abilityActive ? "" : "grayscale(100%)",
           }}
@@ -472,14 +475,114 @@ const Talent = ({ talent }) => {
 
 // TalentTree component
 const TalentTree = ({ talents }) => {
-  const rows = Array.from({ length: 10 }, () => Array(7).fill(null));
+  const getXPosition = (pos) => {
+    let x = 0;
+    switch (pos) {
+      case 2100:
+        x = 0;
+        break; // 1
+      case 2700:
+        x = 1;
+        break; // 2
+      case 3300:
+        x = 2;
+        break; // 3
+      case 3900:
+        x = 3;
+        break; // 4
+      case 4500:
+        x = 4;
+        break; // 5
+      case 5100:
+        x = 5;
+        break; // 6
+      case 5700:
+        x = 6;
+        break; // 7
 
-  talents.forEach((talent) => {
+      case 9900:
+        x = 0;
+        break; // 1
+      case 10500:
+        x = 1;
+        break; // 2
+      case 11100:
+        x = 2;
+        break; // 3
+      case 11700:
+        x = 3;
+        break; // 4
+      case 12300:
+        x = 4;
+        break; // 5
+      case 12900:
+        x = 5;
+        break; // 6
+      case 13500:
+        x = 6;
+        break; // 7
+
+      default:
+        x = 0;
+        break;
+    }
+    return x;
+  };
+  const getYPosition = (row) => {
+    let y = 0;
+    switch (row) {
+      case 1500:
+        y = 0;
+        break; // 1
+      case 2100:
+        y = 1;
+        break; // 2
+      case 2700:
+        y = 2;
+        break; // 3
+      case 3300:
+        y = 3;
+        break; // 4
+      case 3900:
+        y = 4;
+        break; // 5
+      case 4500:
+        y = 5;
+        break; // 6
+      case 5100:
+        y = 6;
+        break; // 7
+      case 5700:
+        y = 7;
+        break; // 8
+      case 6300:
+        y = 8;
+        break; // 9
+      case 6900:
+        y = 9;
+        break; // 10
+      default:
+        y = 0;
+        break;
+    }
+    return y;
+  };
+  const rows = Array.from({ length: 10 }, () => Array(7).fill(null));
+  let newTalentArray = [];
+  talents.map((talent) =>
+    talent.entries.forEach((entry) => {
+      const posX = getXPosition(talent.posX);
+      const posY = getYPosition(talent.posY);
+      newTalentArray.push({ ...entry, row: posY, pos: posX, next: talent.next, nodeID: talent.id });
+    }),
+  );
+
+  newTalentArray.forEach((talent) => {
     rows[talent.row][talent.pos] = talent;
   });
 
-  const talentMap = talents.reduce((map, talent) => {
-    map[talent.guid] = talent;
+  const talentMap = newTalentArray.reduce((map, talent) => {
+    map[talent.nodeID] = talent;
     return map;
   }, {});
   const Gap = 1;
@@ -501,19 +604,19 @@ const TalentTree = ({ talents }) => {
           zIndex: 1,
         }}
       >
-        {talents.map((talent, index) =>
-          talent.connections.map((connectionGuid) => {
-            const connection = talentMap[connectionGuid];
-            if (!connection) return null;
+        {newTalentArray.map((talent, index) =>
+          talent.next.map((nextGuid) => {
+            const next = talentMap[nextGuid];
+            if (!next) return null;
 
             return (
               <line
-                key={`${talent.guid}-${connection.guid}-${index}`}
+                key={`${talent.nodeID}-${next.nodeID}-${index}`}
                 x1={`${((talent.pos + positionCalc().addition) * 100) / 7}%`}
                 y1={`${((talent.row + positionCalc().addition) * 100) / 10}%`}
-                x2={`${((connection.pos + positionCalc().addition) * 100) / 7}%`}
-                y2={`${((connection.row + positionCalc().addition) * 100) / 10}%`}
-                stroke={activeAbilitys.some((ability) => ability.spellID === connection.guid) && activeAbilitys.some((ability) => ability.spellID === talent.guid) ? "yellow" : "black"}
+                x2={`${((next.pos + positionCalc().addition) * 100) / 7}%`}
+                y2={`${((next.row + positionCalc().addition) * 100) / 10}%`}
+                stroke={activeAbilitys.some((ability) => ability.nodeID === next.nodeID) && activeAbilitys.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
               />
             );
           }),
@@ -533,19 +636,39 @@ const TalentTree = ({ talents }) => {
 
 // TalentTree Export
 const TalentTreeApp = () => {
-  const talents = evokerBaseTalents;
-
+  const talents = talentTreeDB.find((talents) => talents.classId === 13 && talents.specId === 1468);
+  const classNodes = talents.classNodes;
+  const specNodes = talents.specNodes;
   return (
-    <div
-      style={{
-        padding: 10,
-        border: "1px solid d4d4d4",
-        width: 200,
-        backgroundColor: "#424242",
-      }}
-    >
-      {" "}
-      <TalentTree talents={talents} />{" "}
+    <div style={{width: 500}}>
+    <Grid container>
+      <Grid item xs={6}>
+        <div
+          style={{
+            padding: 10,
+            border: "1px solid d4d4d4",
+            width: 200,
+            backgroundColor: "#424242",
+          }}
+        >
+          {" "}
+          <TalentTree talents={classNodes} />
+        </div>
+      </Grid>
+      <Grid item xs={6}>
+        <div
+          style={{
+            padding: 10,
+            border: "1px solid d4d4d4",
+            width: 200,
+            backgroundColor: "#424242",
+          }}
+        >
+          {" "}
+          <TalentTree talents={specNodes} />
+        </div>
+      </Grid>
+    </Grid>
     </div>
   );
 };
