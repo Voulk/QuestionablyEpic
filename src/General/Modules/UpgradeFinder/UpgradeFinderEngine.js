@@ -257,7 +257,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
 
-  return { item: item.id, level: item.level, score: differential, rawDiff: rawDiff, percDiff: percDiff };
+  return { item: item.id, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
 }
 
 function checkItemViable(rawItem, player) {

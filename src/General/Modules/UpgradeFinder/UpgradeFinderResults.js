@@ -29,10 +29,11 @@ export default function UpgradeFinderResults(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const { t } = useTranslation();
   const result = props.itemSelection;
-  console.log(result);
+  
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
   console.log("Total Item Count: " + itemDifferentials.length);
+  console.log(JSON.stringify(itemDifferentials));
   const gameType = useSelector((state) => state.gameType);
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
   const handleTabChange = (event, newValue) => {

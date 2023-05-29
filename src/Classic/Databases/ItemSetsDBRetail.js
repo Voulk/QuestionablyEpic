@@ -48,8 +48,8 @@ export const itemSets = [
     id: [1548],
     class: "Discipline Priest",
     setBonuses: {
-      2: "HPriest T30-2", // 
-      4: "HPriest T30-4"  // 
+      2: "DPriest T30-2", // 
+      4: "DPriest T30-4"  // 
     },
   },
   {

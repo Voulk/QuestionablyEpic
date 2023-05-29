@@ -14,6 +14,7 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   else if (effectName === "DPriest T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
     bonus_stats.hps = 3750;
+    console.log("4pc");
 
     // The atonement portion is handled in the ramp section of the app so we only need to calculate the mana gain here.
     const powerWordRadianceCost = 5000; // Do dynamically.

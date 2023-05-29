@@ -466,7 +466,7 @@ export const otherTrinketData = [
     name: "Necromantic Focus",
     effects: [
       { // Small Proc
-        coefficient: 0.058876,
+        coefficient: 0.058876 * 0.8, // Nerfed
         table: -7,
       },
 
