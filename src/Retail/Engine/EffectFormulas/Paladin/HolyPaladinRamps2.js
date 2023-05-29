@@ -24,15 +24,17 @@ const PALADINCONSTANTS = {
     auraDamageBuff: 0.92,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
-
-    
 
 }
 
-const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
+//const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
+// Avenging Crusader
+const apl = [{s: "Avenging Crusader"}, 
+                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+                {s: "Divine Toll"}, {s: "Light's Hammer"}, {s: "Light of Dawn"}, {s: "Holy Shock"}, {s: "Rest"}]
 
+// Avenging Wrath / Might
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -204,15 +206,23 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     return damageVal;
 }
 
-const canCastSpell = (state, spellDB, spellName) => {
+const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     
     const spell = spellDB[spellName][0];
+
+    let aplReq = true;
     let miscReq = true;
     const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
     const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
+    else if (conditions !== {}) {
+        if (conditions.type === "buff") {
+            aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
+        }
+    }
+
     //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
     return cooldownReq && holyPowReq && miscReq;
 }
@@ -229,7 +239,7 @@ const getSpellHPM = (state, spellDB, spellName) => {
 export const genSpell = (state, spells) => {
     let spellName = ""
 
-    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell));
+    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.c || ""));
 
     /*
     if (state.holyPower >= 3) {
@@ -252,7 +262,8 @@ export const genSpell = (state, spells) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-    return usableSpells[0];
+    console.log(usableSpells);
+    return usableSpells[0].s;
 
 }
 
