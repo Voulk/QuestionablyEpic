@@ -31,7 +31,9 @@ const PALADINCONSTANTS = {
 
 // Avenging Crusader
 const apl = [{s: "Avenging Crusader"}, 
-                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
+                {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+                {s: "Crusader Strike", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
                 {s: "Divine Toll"}, {s: "Light's Hammer"}, {s: "Light of Dawn"}, {s: "Holy Shock"}, {s: "Rest"}]
 
 // Avenging Wrath / Might
@@ -142,6 +144,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = PALADINCONSTANTS.auraDamageBuff;
 
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
+    mult *= ((["Crusader Strike", "Judgment"].includes(spellName) && buffs.filter(function (buff) {return buff.name === "Avenging Crusader"}).length > 0) ? 1.3 : 1); 
 
     return mult;
 }
@@ -203,6 +206,14 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
+
+    // Avenging Crusader
+    if (checkBuffActive(state.activeBuffs, "Avenging Crusader") && ["Judgment", "Crusader Strike"].includes(spellName)) {
+        const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 5, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 5}
+        runHeal(state, acSpell, "Avenging Crusader")
+
+    }
+
     return damageVal;
 }
 
@@ -430,6 +441,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (spell.cooldown) {
 
                 if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
                 else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
                 else spell.activeCooldown = state.t + spell.cooldown;
             }
