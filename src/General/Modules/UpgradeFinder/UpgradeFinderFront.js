@@ -464,7 +464,7 @@ export default function UpgradeFinderFront(props) {
           </Grid>
         )}
         {/* ------------------------------- PvP Section ------------------------------ */}
-        <Grid item xs={12}>
+        {/*<Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
             <div style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
@@ -494,9 +494,9 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </div>
           </Paper>
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
-      </Grid>
+      </Grid> 
 
       <div
         style={{

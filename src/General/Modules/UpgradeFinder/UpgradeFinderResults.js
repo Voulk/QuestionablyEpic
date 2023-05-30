@@ -81,7 +81,7 @@ export default function UpgradeFinderResults(props) {
                 {/* Mythic Plus */}
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
                 {/* PVP */}
-                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
+                {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
                 {/* World Bosses */}
                 <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
                 {/* Slots */}
