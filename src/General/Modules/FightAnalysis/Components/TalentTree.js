@@ -425,11 +425,17 @@ const activeAbilitys = [
 ];
 
 // Talent component
+// This component represents a single talent in the talent tree.
+// It receives a talent object as a prop and displays an image for the talent.
+// If the talent is active and its rank is greater than 1, it displays a number indicating the rank of the talent.
 const Talent = ({ talent }) => {
+  // Extract the spell ID of the talent
   const talentSpellID = talent.spellId;
+  // Check if the talent is active
   const abilityActive = activeAbilitys.some((ability) => ability.spellID === talentSpellID);
+  // Find the active talent
   const activeTalent = activeAbilitys.find((ability) => ability.spellID === talentSpellID);
-
+  // Render the talent
   return (
     <div style={{ position: "relative" }}>
       <WowheadTooltip id={talent.spellId} type="spell" rank={talent.rank}>
@@ -473,129 +479,81 @@ const Talent = ({ talent }) => {
   );
 };
 
+// Function to find the index of a value in an array
+const findIndex = (value, replacementArray) => {
+  return replacementArray.indexOf(value);
+};
+
 // TalentTree component
-const TalentTree = ({ talents }) => {
-  const getXPosition = (pos) => {
-    let x = 0;
-    switch (pos) {
-      case 2100:
-        x = 0;
-        break; // 1
-      case 2700:
-        x = 1;
-        break; // 2
-      case 3300:
-        x = 2;
-        break; // 3
-      case 3900:
-        x = 3;
-        break; // 4
-      case 4500:
-        x = 4;
-        break; // 5
-      case 5100:
-        x = 5;
-        break; // 6
-      case 5700:
-        x = 6;
-        break; // 7
+// This component represents a talent tree.
+// It receives an array of talents and a tree structure as props, and displays the talents in a grid according to the tree structure.
+const TalentTree = ({ talents, treeStructure }) => {
+  // This line creates a 2D array called 'rows' with dimensions based on the tree structure.
+  // The number of rows is determined by the length of the posY array in the tree structure,
+  // and the number of columns is determined by the length of the posX array.
+  // Initially, all cells in the array are filled with null.
+  const rows = Array.from({ length: treeStructure.posY.length }, () => Array(treeStructure.posX.length).fill(null));
 
-      case 9900:
-        x = 0;
-        break; // 1
-      case 10500:
-        x = 1;
-        break; // 2
-      case 11100:
-        x = 2;
-        break; // 3
-      case 11700:
-        x = 3;
-        break; // 4
-      case 12300:
-        x = 4;
-        break; // 5
-      case 12900:
-        x = 5;
-        break; // 6
-      case 13500:
-        x = 6;
-        break; // 7
-
-      default:
-        x = 0;
-        break;
-    }
-    return x;
-  };
-  const getYPosition = (row) => {
-    let y = 0;
-    switch (row) {
-      case 1500:
-        y = 0;
-        break; // 1
-      case 2100:
-        y = 1;
-        break; // 2
-      case 2700:
-        y = 2;
-        break; // 3
-      case 3300:
-        y = 3;
-        break; // 4
-      case 3900:
-        y = 4;
-        break; // 5
-      case 4500:
-        y = 5;
-        break; // 6
-      case 5100:
-        y = 6;
-        break; // 7
-      case 5700:
-        y = 7;
-        break; // 8
-      case 6300:
-        y = 8;
-        break; // 9
-      case 6900:
-        y = 9;
-        break; // 10
-      default:
-        y = 0;
-        break;
-    }
-    return y;
-  };
-  const rows = Array.from({ length: 10 }, () => Array(7).fill(null));
+  // This line initializes an empty array called 'newTalentArray'.
+  // This array will be used to store the talents after processing them.
   let newTalentArray = [];
+
+  // This loop goes through each talent in the 'talents' array.
+  // For each talent, it goes through each entry in the talent's 'entries' array.
+  // It finds the indices of the talent's posX and posY values in the tree structure's posX and posY arrays, respectively.
+  // These indices are used as the row and column indices for the talent in the grid.
+  // It then creates a new object with the properties of the entry, the calculated row and column indices, and the talent's 'next' array and 'id'.
+  // This new object is then added to the 'newTalentArray'.
   talents.map((talent) =>
     talent.entries.forEach((entry) => {
-      const posX = getXPosition(talent.posX);
-      const posY = getYPosition(talent.posY);
+      const posX = findIndex(talent.posX, treeStructure.posX);
+      const posY = findIndex(talent.posY, treeStructure.posY);
       newTalentArray.push({ ...entry, row: posY, pos: posX, next: talent.next, nodeID: talent.id });
     }),
   );
 
+  // This loop goes through each talent in the newTalentArray.
+  // For each talent, it assigns the talent object to the corresponding cell in the rows array.
+  // The row and column indices for the cell are determined by the talent's row and pos properties, respectively.
+  // This effectively places each talent in its correct position in the grid represented by the rows array.
   newTalentArray.forEach((talent) => {
     rows[talent.row][talent.pos] = talent;
   });
 
+  // This line creates a new object called 'talentMap' from the 'newTalentArray'.
+  // It uses the 'reduce' method to transform the array into an object.
+  // For each talent in the array, it adds a new property to the object.
+  // The key for the property is the talent's 'nodeID', and the value is the talent object itself.
+  // This creates a mapping from node IDs to talent objects, which allows for quick lookup of talents by their node ID.
   const talentMap = newTalentArray.reduce((map, talent) => {
     map[talent.nodeID] = talent;
     return map;
   }, {});
+
   const Gap = 1;
 
   const positionCalc = () => {
-    const defaultWidth = 200 * Gap;
+    const defaultWidth = 300 * Gap;
     const defaultAddition = 0.5 * Gap;
-
     return { width: defaultWidth, addition: defaultAddition };
   };
 
+  // Render the talent tree
   return (
-    <Box position="relative" display="grid" gridTemplateColumns="repeat(7, 1fr)" gridTemplateRows="repeat(10, 1fr)" gap={Gap} style={{ width: positionCalc().width }}>
+    // This Box component represents the grid for the talent tree.
+    // It has a relative position, which allows its children to be positioned relative to it.
+    // It uses CSS grid layout to arrange its children in a grid.
+    // The number of columns and rows in the grid are determined by the length of the posX and posY arrays in the tree structure, respectively.
+    // The gap between grid items is determined by the Gap variable.
+    // The width of the Box is determined by the positionCalc function.
+    <Box
+      position="relative"
+      display="grid"
+      gridTemplateColumns={`repeat(${treeStructure.posX.length}, 1fr)`}
+      gridTemplateRows={`repeat(${treeStructure.posY.length}, 1fr)`}
+      gap={Gap}
+      style={{ width: positionCalc().width }}
+    >
       <svg
         style={{
           position: "absolute",
@@ -604,25 +562,30 @@ const TalentTree = ({ talents }) => {
           zIndex: 1,
         }}
       >
+        {/* This SVG element is used to draw lines between talents in the talent tree. */}
+        {/* It has an absolute position, which means it's positioned relative to the nearest positioned ancestor (in this case, the Box). */}
+        {/* It takes up the full width and height of its parent, and it's positioned behind its siblings (due to zIndex: 1). */}
         {newTalentArray.map((talent, index) =>
           talent.next.map((nextGuid) => {
             const next = talentMap[nextGuid];
             if (!next) return null;
-
             return (
               <line
                 key={`${talent.nodeID}-${next.nodeID}-${index}`}
-                x1={`${((talent.pos + positionCalc().addition) * 100) / 7}%`}
-                y1={`${((talent.row + positionCalc().addition) * 100) / 10}%`}
-                x2={`${((next.pos + positionCalc().addition) * 100) / 7}%`}
-                y2={`${((next.row + positionCalc().addition) * 100) / 10}%`}
+                x1={`${((talent.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
+                y1={`${((talent.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
+                x2={`${((next.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
+                y2={`${((next.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
                 stroke={activeAbilitys.some((ability) => ability.nodeID === next.nodeID) && activeAbilitys.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
               />
             );
           }),
         )}
       </svg>
-
+      {/* This loop goes through each row in the rows array. */}
+      {/* For each row, it goes through each cell in the row.  */}
+      {/* If the cell contains a talent, it renders a Box with the Talent component inside it.  */}
+      {/* The Box has a zIndex of 2, which means it's positioned in front of the SVG element.  */}
       {rows.map((row, rowIndex) =>
         row.map((talent, columnIndex) => (
           <Box key={`${rowIndex}-${columnIndex}`} style={{ zIndex: 2, width: 20, height: 20 }}>
@@ -634,41 +597,90 @@ const TalentTree = ({ talents }) => {
   );
 };
 
-// TalentTree Export
+// TalentTreeApp component
+// This component represents the entire app.
+// It fetches the talent tree data, processes it, and passes it to the TalentTree components.
 const TalentTreeApp = () => {
-  const talents = talentTreeDB.find((talents) => talents.classId === 13 && talents.specId === 1468);
+  // This line initializes an empty array called 'treeStructures'.
+  // This array will be used to store the tree structures for each class in the talent tree database.
+  let treeStructures = [];
+
+  // This loop goes through each class object in the talent tree database.
+  // For each class object, it creates two sets for the posX and posY values of the class nodes and spec nodes.
+  // It then goes through each node in the class's 'classNodes' & 'specNodes' array and adds the node's posX and posY values to the corresponding sets.
+  // This effectively collects all unique posX and posY values for the class nodes and spec nodes.
+  // It then creates a new object with the class's properties and the collected posX and posY values, and adds this object to the 'treeStructures' array.
+  talentTreeDB.forEach((classObj) => {
+    let classNodesPosXSet = new Set();
+    let classNodesPosYSet = new Set();
+
+    classObj.classNodes.forEach((node) => {
+      classNodesPosXSet.add(node.posX);
+      classNodesPosYSet.add(node.posY);
+    });
+
+    let specNodesPosXSet = new Set();
+    let specNodesPosYSet = new Set();
+
+    classObj.specNodes.forEach((node) => {
+      specNodesPosXSet.add(node.posX);
+      specNodesPosYSet.add(node.posY);
+    });
+
+    treeStructures.push({
+      TreeId: classObj.TreeId,
+      className: classObj.className,
+      classId: classObj.classId,
+      specName: classObj.specName,
+      specId: classObj.specId,
+      classNodes: {
+        posX: Array.from(classNodesPosXSet).sort((a, b) => a - b),
+        posY: Array.from(classNodesPosYSet).sort((a, b) => a - b),
+      },
+      specNodes: {
+        posX: Array.from(specNodesPosXSet).sort((a, b) => a - b),
+        posY: Array.from(specNodesPosYSet).sort((a, b) => a - b),
+      },
+    });
+  });
+
+  const talents = talentTreeDB.find((talents) => talents.classId === 11 && talents.specId === 105);
+  const treeStructure = treeStructures.find((classAndSpec) => classAndSpec.classId === 11 && classAndSpec.specId === 105);
   const classNodes = talents.classNodes;
   const specNodes = talents.specNodes;
+
+  // Render the app
   return (
-    <div style={{width: 500}}>
-    <Grid container>
-      <Grid item xs={6}>
-        <div
-          style={{
-            padding: 10,
-            border: "1px solid d4d4d4",
-            width: 200,
-            backgroundColor: "#424242",
-          }}
-        >
-          {" "}
-          <TalentTree talents={classNodes} />
-        </div>
+    <div
+    // style={{ width: 500 }}
+    >
+      <Grid container>
+        <Grid item xs={6}>
+          <div
+            style={{
+              padding: 10,
+              border: "1px solid d4d4d4",
+              // width: 250,
+              backgroundColor: "#424242",
+            }}
+          >
+            {" "}
+            <TalentTree talents={classNodes} treeStructure={treeStructure.classNodes} />
+          </div>
+        </Grid>
+        <Grid item xs={6}>
+          <div
+            style={{
+              padding: 10,
+              border: "1px solid d4d4d4",
+              // width: 200,
+              backgroundColor: "#424242",
+            }}
+          >
+            <TalentTree talents={specNodes} treeStructure={treeStructure.specNodes} />
+          </div>
+        </Grid>
       </Grid>
-      <Grid item xs={6}>
-        <div
-          style={{
-            padding: 10,
-            border: "1px solid d4d4d4",
-            width: 200,
-            backgroundColor: "#424242",
-          }}
-        >
-          {" "}
-          <TalentTree talents={specNodes} />
-        </div>
-      </Grid>
-    </Grid>
     </div>
   );
 };
