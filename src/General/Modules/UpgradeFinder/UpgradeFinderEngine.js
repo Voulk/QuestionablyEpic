@@ -133,7 +133,13 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
   const boostedItems = [204465, 204201, 204202, 204211, 202612]
-  if (instanceID === 1208) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+  if (instanceID === 1208) {
+    const difficulty = playerSettings.raid[raidIndex];
+    itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
+    if (difficulty === 2 || difficulty === 4) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    else itemLevel += getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+
+  }
 
   // World Bosses
   else if (instanceID === 1205) {
@@ -184,11 +190,14 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const isRaid = primarySource === 1208 || primarySource === -22;
 
       if (isRaid) {
-        // Sepulcher
+        // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
+          item.dropLoc = "Raid";
+          item.dropDifficulty = playerSettings.raid[x];
+          console.log(item.dropDifficulty);
 
           itemPoss.push(item);
         }

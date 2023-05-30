@@ -578,7 +578,7 @@ class Player {
     } else if (spec === SPEC.HOLYPALADIN) {
       this.castModels.push(new CastModel(spec, "Raid", "Melee Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Caster Default", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Avenging Crusader", 2));
 
       this.activeStats = {
         intellect: 10500,

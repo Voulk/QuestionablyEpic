@@ -88,8 +88,8 @@ class CastModel {
         this.baseStatWeights = paladinMeleeStatWeights("Raid");
         this.fightInfo.dps = 6000;
       }
-      else if (modelID === "Caster Default") {
-        this.modelName = "Caster Default";
+      else if (modelID === "Avenging Crusader") {
+        this.modelName = "Avenging Crusader";
         spellList = paladinCasterSpellData(contentType);
         specialQueries = paladinCasterSpecialQueries(contentType);
         this.baseStatWeights = paladinCasterStatWeights("Raid");
