@@ -197,7 +197,6 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           item.quality = 4;
           item.dropLoc = "Raid";
           item.dropDifficulty = playerSettings.raid[x];
-          console.log(item.dropDifficulty);
 
           itemPoss.push(item);
         }

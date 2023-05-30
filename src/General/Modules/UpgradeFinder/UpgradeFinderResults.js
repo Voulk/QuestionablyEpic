@@ -83,9 +83,9 @@ export default function UpgradeFinderResults(props) {
                 {/* PVP */}
                 {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
                 {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(2)} />
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(3)} />
               </Tabs>
             </AppBar>
           </Grid>
@@ -118,7 +118,7 @@ export default function UpgradeFinderResults(props) {
             </UFTabPanel>
           </Grid>
 
-          {/* PVP */}
+          {/* PVP 
           <Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
@@ -127,11 +127,11 @@ export default function UpgradeFinderResults(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid>*/}
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={3}>
+            <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
                   <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -142,7 +142,7 @@ export default function UpgradeFinderResults(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={4}>
+            <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
