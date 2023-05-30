@@ -27,14 +27,23 @@ const PALADINCONSTANTS = {
 
 }
 
+// Conditions
+
+
 //const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 // Avenging Crusader
-const apl = [{s: "Avenging Crusader"}, 
-                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
+const apl = [
+                {s: "Divine Toll"}, 
+                {s: "Avenging Crusader"}, 
                 {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
                 {s: "Crusader Strike", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
-                {s: "Divine Toll"}, {s: "Light's Hammer"}, {s: "Light of Dawn"}, {s: "Holy Shock"}, {s: "Rest"}]
+                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
+                {s: "Light's Hammer"}, 
+                {s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 5}}, // Don't cast LoD if AC is coming off cooldown.
+                {s: "Holy Shock"}, 
+                {s: "Crusader Strike", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 4}},
+                {s: "Rest"}]
 
 // Avenging Wrath / Might
 
@@ -273,7 +282,7 @@ export const genSpell = (state, spells) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-    console.log(usableSpells);
+
     return usableSpells[0].s;
 
 }
@@ -394,14 +403,23 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                         state.activeBuffs.push(buff);
                     }
                     else {
-    
-                        const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+                        const buff = state.activeBuffs.filter(function (buff) {return buff.name === spell.name})[0];
+                        if (spell.name === "Avenging Crusader") {
+                            
 
-                        
-                        if (buff.canStack) {
-                            buff.stacks += 1;
-                            if (buff.maxStacks) buff.stacks = Math.min(buff.stacks, buff.maxStacks);
+                            //const buffDuration = buff[0].expiration - state.t;
+                            //buff.expiration = Math.max(buffDuration, spell.buffDuration) + state.t;
+                            buff.expiration = buff.expiration + spell.buffDuration;
                         }
+                        else {
+
+                            if (buff.canStack) {
+                                buff.stacks += 1;
+                                if (buff.maxStacks) buff.stacks = Math.min(buff.stacks, buff.maxStacks);
+                            }
+                        }
+
+
                         addReport(state, `${spell.name} stacks: ${buff.stacks}`)
                     }
 
@@ -525,8 +543,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     let currentStats = JSON.parse(JSON.stringify(stats));
     
-
-
     const sequenceLength = 100; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 

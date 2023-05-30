@@ -98,7 +98,7 @@ describe("Evang Cast Sequence", () => {
 
         //console.log(seq);
         const iterations = 1;
-        const settings = {reporting: true, 'DefaultLoadout': true}
+        const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
 
         for (let i = 0; i < iterations; i++) {
@@ -120,11 +120,11 @@ describe("Evang Cast Sequence", () => {
     });
 
     
-    /*test("Stat Weights", () => {
+    test("Stat Weights", () => {
 
 
         const activeStats = {
-            intellect: 10000,
+            intellect: 10500,
             haste: 4500,
             crit: 1200,
             mastery: 2500,
@@ -133,34 +133,35 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 15000;
+        const iterations = 1;
+        const metric = 'totalHealing';
         // Weights
 
         const stats = ['intellect','versatility', 'crit', 'mastery', 'haste'];
-        const baseline = runCastSequence(seq, activeStats, settings, talents).totalHealing
+        const baseline = runCastSequence(seq, activeStats, settings, talents)[metric]
         const results = {};
         stats.forEach(stat => {
 
             for (var i = 0; i < iterations; i++) {
                 let adjustedStats = JSON.parse(JSON.stringify(activeStats));
-                adjustedStats[stat] = adjustedStats[stat] + 600;
-    
+                adjustedStats[stat] = adjustedStats[stat] + 800;
+
                 const result = runCastSequence(seq, adjustedStats, settings, talents)
-    
+
                
-                results[stat] = (results[stat] || 0) + result.totalHealing;
+                results[stat] = (results[stat] || 0) + result[metric];
             }
 
             results[stat] = results[stat] / iterations;
 
         });
         const weights = {}
-        console.log(results);
+
         stats.forEach(stat => {
             //console.log("Stat: " + stat + ". " + results[stat]);
             weights[stat] = (results[stat] - baseline) / (results['intellect'] - baseline);
         });
 
         console.log(weights); 
-    });*/
+    });
 }); 

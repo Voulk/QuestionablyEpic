@@ -229,7 +229,7 @@ export const baseTalents = {
         };
         addBuff(state, buff, "Seal of Might")
 
-        stats.intellect *= (1 + 0.02 * points);
+        //stats.intellect *= (1 + 0.02 * points);
     }}, 
 
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
@@ -270,7 +270,7 @@ export const baseTalents = {
     // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
 
     // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
-    divinePurpose: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    divinePurpose: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const buffSpell = {
             name: "Divine Purpose",
             chance: 0.15, //0.075 * points,
