@@ -533,7 +533,7 @@ const TalentTree = ({ talents, treeStructure }) => {
   const Gap = 1;
 
   const positionCalc = () => {
-    const defaultWidth = 300 * Gap;
+    const defaultWidth = 29 * treeStructure.posX.length * Gap;
     const defaultAddition = 0.5 * Gap;
     return { width: defaultWidth, addition: defaultAddition };
   };
@@ -644,8 +644,8 @@ const TalentTreeApp = () => {
     });
   });
 
-  const talents = talentTreeDB.find((talents) => talents.classId === 11 && talents.specId === 105);
-  const treeStructure = treeStructures.find((classAndSpec) => classAndSpec.classId === 11 && classAndSpec.specId === 105);
+  const talents = talentTreeDB.find((talents) => talents.classId === 7 && talents.specId === 264);
+  const treeStructure = treeStructures.find((classAndSpec) => classAndSpec.classId === 7 && classAndSpec.specId === 264);
   const classNodes = talents.classNodes;
   const specNodes = talents.specNodes;
 
