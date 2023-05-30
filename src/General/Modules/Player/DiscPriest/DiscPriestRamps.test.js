@@ -149,6 +149,40 @@ describe("Evang Cast Sequence", () => {
     });
 });
 
+test("Compendium", () => {
+    const spellList = []
+    Object.keys(DISCSPELLS).forEach(spellName => {
+        
+        const spell = DISCSPELLS[spellName][0];
+        const spellObj = {}
+        spellObj.name = spellName;
+        if ('castTime' in spell) {
+            if (spell.castTime == 0) spellObj.castTime = "Instant";
+            else spellObj.castTime = spell.castTime + " sec";
+        }
+        if ('cooldown' in spell) {
+            spellObj.cooldown = spell.cooldown + " sec";
+            if (spell.hastedCooldown) spellObj.hastedCd = "Yes"
+            else spellObj.hastedCd = "No"
+        }
+        else {
+            spellObj.cooldown = "N/A"
+            spellObj.hastedCd = "N/A"
+        }
+        if (spellName === "Penance") spellObj.castType === "Channel";
+        else spellObj.castType = "Cast";
+
+        // School
+
+        // Mana Cost
+        spellObj.manaCost = spell.manaCost || "Free";
+
+        spellList.push(spellObj);
+    })
+
+    console.log(spellList)
+});
+
    /*
     test("Stat Weights", () => {
 
