@@ -39,7 +39,7 @@ export const DISCSPELLS = {
         type: "special",
         castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 1.6,
-        coeff: 0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 0.4, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.16,
         school: "holy",
@@ -50,7 +50,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 0.376,
+        coeff: 0.4,
         school: "holy",
         atoneOverheal: 0.16,
         secondaries: ['crit', 'vers'],
@@ -81,7 +81,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0.5,
-        coeff: 1.41,
+        coeff: 1.5,
         buffDuration: 9,
         school: "shadow",
         atoneOverheal: 0.18,
@@ -101,7 +101,7 @@ export const DISCSPELLS = {
         spellData: {id: 8092, icon: "spell_shadow_unholyfrenzy", cat: "damage"},
         type: "damage",
         castTime: 1.5,
-        cost: 1.6,
+        cost: 0.96,
         coeff: 1.0929, // 0.9792 x 0.809 (Mind Blast aura) x 1.38 x 
         cooldown: 15,
         school: "shadow",
@@ -114,7 +114,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 0,
         cost: 0,
-        coeff: 0.752 * 0.85,
+        coeff: 0.68,
         cooldown: 15,
         hastedCooldown: true,
         atoneOverheal: 0.20,
@@ -170,7 +170,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 2,
-        coeff: 1.35, // 3 x 0.9 (Mindgames specific aura nerf) x 0.5 (nerf :( )
+        coeff: 1.3767, // 3 x 0.9 (Mindgames specific aura nerf) x 0.5 (nerf :( )
         cooldown: 45,
         school: "shadow",
         atoneOverheal: 0.23,
@@ -217,7 +217,7 @@ export const DISCSPELLS = {
         spellData: {id: 120517, icon: "ability_priest_halo", cat: "heal"},
         type: "damage",
         castTime: 1.5,
-        cost: 2,
+        cost: 2.7,
         coeff: 1.442,
         cooldown: 40,
         aura: 1,
@@ -240,9 +240,10 @@ export const DISCSPELLS = {
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
         name: "Power Word: Shield",
         type: "heal",
+        school: "holy",
         castTime: 0,
-        cost: 3.1,
-        coeff: 3.36,
+        cost: 2.4,
+        coeff: 4.2,
         aura: 1,
         cooldown: 7.5,
         hastedCooldown: true,
@@ -257,8 +258,9 @@ export const DISCSPELLS = {
         // To check: See if Renew still has an initial heal, and confirm whether it gets a mastery buff (unlikely).
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
         type: "heal",
+        school: "holy",
         castTime: 0,
-        cost: 2.7,
+        cost: 2.4,
         coeff: 0.32 * 1.25,
         atonement: 15,
         atonementPos: 'start',
@@ -280,10 +282,10 @@ export const DISCSPELLS = {
     "Flash Heal": [{
         spellData: {id: 2061, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
+        school: "holy",
         castTime: 1.5,
         cost: 3.6,
-        coeff: 2.03 * 1.25,
-        cooldown: 0,
+        coeff: 3.29875,
         atonement: 15,
         atonementPos: 'end',
         targets: 1,
@@ -297,7 +299,8 @@ export const DISCSPELLS = {
         type: "heal",
         castTime: 0,
         cost: 3.1,
-        coeff: 1.65 * 3,
+        school: "holy",
+        coeff: 4.2 * 1.4,
         cooldown: 90,
         atonement: 15,
         atonementPos: 'start',
@@ -316,8 +319,9 @@ export const DISCSPELLS = {
         spellData: {id: 194509, icon: "spell_priest_power-word", cat: "heal"},
         type: "heal",
         castTime: 2,
-        cost: 6.5,
-        coeff: 2. * 2, // 100% buff applied.
+        cost: 4.5,
+        school: "holy",
+        coeff: 4.095, // 100% buff applied.
         aura: 1,
         targets: 5,
         cooldown: 20,
@@ -332,7 +336,7 @@ export const DISCSPELLS = {
         castTime: 0,
         cost: 1.8,
         aura: 1,
-        coeff: 0.18,
+        coeff: 0.223, // 0.18,
         school: "holy", // This is Radiant damage so Fire / Holy.
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.14,
@@ -343,7 +347,7 @@ export const DISCSPELLS = {
         buffType: "damage",
         coeff: 0.12, // 
         tickRate: 2,
-        buffDuration: 26,
+        buffDuration: 20, //26,
         atoneOverheal: 0.14,
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
@@ -353,7 +357,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 0,
         cost: 0.3,
-        coeff: 0.1292,
+        coeff: 0.1384, //0.1453, //0.1292,
         aura: 1,
         atoneOverheal: 0.16,
         school: "shadow",
@@ -363,9 +367,9 @@ export const DISCSPELLS = {
         castTime: 0,
         type: "buff",
         buffType: "damage",
-        coeff: 0.09588, // 
+        coeff: 0.10268, // 
         tickRate: 2,
-        buffDuration: 20.8,
+        buffDuration: 16, //20.8,
         atoneOverheal: 0.15,
         secondaries: ['crit', 'vers'], // + Haste
         canPartialTick: true,
@@ -375,7 +379,7 @@ export const DISCSPELLS = {
         type: "",
         castTime: 0,
         cost: 0,
-        coeff: 0.46, // Unused. Change coefficient below instead.
+        coeff: 0, // Unused. Change coefficient below instead.
         aura: 1,
         cooldown: 180,
         secondaries: ['crit', 'vers'],
@@ -397,7 +401,7 @@ export const DISCSPELLS = {
         type: "",
         castTime: 0,
         cost: 0,
-        coeff: 0.34,
+        coeff: 0,
         cooldown: 60,
         aura: 1,
         secondaries: ['crit', 'vers'],
