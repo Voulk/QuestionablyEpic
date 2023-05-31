@@ -279,9 +279,6 @@ export default function QEMainMenu(props) {
       /*                                             Footer                                             */
       /* ----------------------------------------------------------------------------------------------  */}
       <QEFooter />
-      <div style={{ padding: 10 }}>
-        <TalentTreeApp />
-      </div>
     </div>
   );
 }

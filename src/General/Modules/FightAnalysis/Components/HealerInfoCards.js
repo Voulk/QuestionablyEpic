@@ -9,6 +9,7 @@ import "./HealerCardInfo.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { STATPERONEPERCENT } from "../../../Engine/STAT";
 import { getTranslatedStats } from "locale/statsLocale.js";
+import TalentTreeApp from "./TalentTree.js";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -79,13 +80,12 @@ export default function HealerInfoCards(props) {
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
-
   return (
     <Grid container spacing={1} style={{ display: "block" }}>
       {/* ----------- Here we map an Accordian for each healer in the log ----------  */}
       {props.heals.map((key, index) => (
         <Grid item key={index}>
-          <Accordion disabled style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
+          <Accordion style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" className={classes.content} style={{ minHeight: 0 }}>
               {/* ------------------------ Healer Name + Ilvl + Spec -----------------------  */}
               <Typography
@@ -101,7 +101,7 @@ export default function HealerInfoCards(props) {
               </Typography>
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
-            <AccordionDetails  style={{ padding: 8 }}>
+            <AccordionDetails style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
                 <Grid
                   item
@@ -197,7 +197,7 @@ export default function HealerInfoCards(props) {
                 </Grid>
 
                 {/* ---------- Container for the Talents / Conduits / Soulbind Info ----------  */}
-                <Grid item xs={8} style={{ display: "inline" }}>
+                <Grid item xs={12} style={{ display: "inline" }}>
                   <Paper
                     variant="outlined"
                     style={{
@@ -218,16 +218,8 @@ export default function HealerInfoCards(props) {
                           {t("CooldownPlanner.HealerCards.TalentHeader")}
                         </Typography>
                         <Divider />
-                        <div
-                          style={{
-                            textAlignLast: "center",
-                            display: "inline-flex",
-                          }}
-                        >
-                          {key.talents.map((talent, i) => (
-                            <div key={i}> {talentIcons(talent.guid)} </div>
-                          ))}
-                        </div>
+
+                        <TalentTreeApp classIcon={key.icon} combatantInfo={key.combatantInfo} />
                       </Grid>
                     </Grid>
                   </Paper>

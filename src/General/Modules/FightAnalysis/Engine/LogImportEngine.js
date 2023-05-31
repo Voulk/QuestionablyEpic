@@ -382,9 +382,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
     healernames: summary.map((key) => ({
       name: key.name,
       icon: key.icon,
-      talents: key.combatantInfo.talents,
-      soulbindAbilities: key.combatantInfo.artifact,
-      soulbindConduits: key.combatantInfo.heartOfAzeroth,
+      combatantInfo: key.combatantInfo,
       type: key.type,
       stats: [
         {

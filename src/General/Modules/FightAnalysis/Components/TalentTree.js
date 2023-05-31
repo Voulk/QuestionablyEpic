@@ -1,443 +1,24 @@
-import { evokerBaseTalents } from "General/Modules/FightAnalysis/Components/Talents/EvokerBaseTalents";
-import { Box, Badge } from "@mui/material";
+import { Box } from "@mui/material";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 import { talentTreeDB } from "Databases/talentTreeDB";
 import { getIconURL } from "General/Modules/CooldownPlanner/Functions/IconFunctions/getIconURL";
 import { Grid } from "@mui/material";
 
-const activeAbilitys = [
-  {
-    id: 87588,
-    rank: 1,
-    spellID: 370886,
-    icon: "ability_evoker_emeraldblossom.jpg",
-    nodeID: 68572,
-    spellType: 1,
-  },
-  {
-    id: 87593,
-    rank: 1,
-    spellID: 377082,
-    icon: "ability_hunter_onewithnature.jpg",
-    nodeID: 68576,
-    spellType: 1,
-  },
-  {
-    id: 87594,
-    rank: 1,
-    spellID: 370960,
-    icon: "ability_evoker_green_01.jpg",
-    nodeID: 68577,
-    spellType: 8,
-  },
-  {
-    id: 87595,
-    rank: 1,
-    spellID: 377100,
-    icon: "ability_evoker_essenceburst3.jpg",
-    nodeID: 68578,
-    spellType: 1,
-  },
-  {
-    id: 87597,
-    rank: 1,
-    spellID: 359816,
-    icon: "ability_evoker_dreamflight.jpg",
-    nodeID: 68580,
-    spellType: 8,
-  },
-  {
-    id: 87599,
-    rank: 2,
-    spellID: 371257,
-    icon: "ability_evoker_dreambreath.jpg",
-    nodeID: 68582,
-    spellType: 1,
-  },
-  {
-    id: 87603,
-    rank: 1,
-    spellID: 370537,
-    icon: "ability_evoker_stasis.jpg",
-    nodeID: 68585,
-    spellType: 64,
-  },
-  {
-    id: 87605,
-    rank: 2,
-    spellID: 376240,
-    icon: "inv_artifact_xp05.jpg",
-    nodeID: 68587,
-    spellType: 1,
-  },
-  {
-    id: 87606,
-    rank: 1,
-    spellID: 372233,
-    icon: "inv_elemental_mote_mana.jpg",
-    nodeID: 68588,
-    spellType: 1,
-  },
-  {
-    id: 87607,
-    rank: 1,
-    spellID: 371270,
-    icon: "inv_offhand_1h_ulduarraid_d_01.jpg",
-    nodeID: 68589,
-    spellType: 1,
-  },
-  {
-    id: 87609,
-    rank: 1,
-    spellID: 376236,
-    icon: "ability_evoker_bronze_01.jpg",
-    nodeID: 68590,
-    spellType: 1,
-  },
-  {
-    id: 87611,
-    rank: 1,
-    spellID: 373861,
-    icon: "ability_evoker_temporalanomaly.jpg",
-    nodeID: 68592,
-    spellType: 64,
-  },
-  {
-    id: 87612,
-    rank: 1,
-    spellID: 363534,
-    icon: "ability_evoker_rewind.jpg",
-    nodeID: 68593,
-    spellType: 64,
-  },
-  {
-    id: 87613,
-    rank: 1,
-    spellID: 357170,
-    icon: "ability_evoker_timedilation.jpg",
-    nodeID: 68594,
-    spellType: 64,
-  },
-  {
-    id: 87614,
-    rank: 1,
-    spellID: 378196,
-    icon: "inv_belt_armor_waistoftime_d_01.jpg",
-    nodeID: 68595,
-    spellType: 1,
-  },
-  {
-    id: 87615,
-    rank: 2,
-    spellID: 372527,
-    icon: "ability_evoker_innatemagic4.jpg",
-    nodeID: 68596,
-    spellType: 1,
-  },
-  {
-    id: 87618,
-    rank: 1,
-    spellID: 373834,
-    icon: "4096390.jpg",
-    nodeID: 68599,
-    spellType: 1,
-  },
-  {
-    id: 87619,
-    rank: 1,
-    spellID: 381922,
-    icon: "ability_evoker_rewind.jpg",
-    nodeID: 68600,
-    spellType: 1,
-  },
-  {
-    id: 87621,
-    rank: 1,
-    spellID: 376239,
-    icon: "ability_evoker_reversion_green.jpg",
-    nodeID: 68601,
-    spellType: 1,
-  },
-  {
-    id: 87625,
-    rank: 1,
-    spellID: 367226,
-    icon: "ability_evoker_spiritbloom2.jpg",
-    nodeID: 68604,
-    spellType: 8,
-  },
-  {
-    id: 87626,
-    rank: 1,
-    spellID: 362874,
-    icon: "ability_evoker_rewind2.jpg",
-    nodeID: 68605,
-    spellType: 1,
-  },
-  {
-    id: 87627,
-    rank: 1,
-    spellID: 355936,
-    icon: "ability_evoker_dreambreath.jpg",
-    nodeID: 68606,
-    spellType: 8,
-  },
-  {
-    id: 87628,
-    rank: 1,
-    spellID: 364343,
-    icon: "ability_evoker_echo.jpg",
-    nodeID: 68607,
-    spellType: 64,
-  },
-  {
-    id: 87629,
-    rank: 1,
-    spellID: 366155,
-    icon: "ability_evoker_reversion.jpg",
-    nodeID: 68608,
-    spellType: 64,
-  },
-  {
-    id: 87630,
-    rank: 1,
-    spellID: 369297,
-    icon: "ability_evoker_essenceburst.jpg",
-    nodeID: 68609,
-    spellType: 1,
-  },
-  {
-    id: 87631,
-    rank: 1,
-    spellID: 375722,
-    icon: "ability_evoker_essenceburststacks.jpg",
-    nodeID: 68610,
-    spellType: 1,
-  },
-  {
-    id: 87634,
-    rank: 1,
-    spellID: 373270,
-    icon: "ability_evoker_hoverred.jpg",
-    nodeID: 68613,
-    spellType: 1,
-  },
-  {
-    id: 87635,
-    rank: 1,
-    spellID: 377099,
-    icon: "ability_evoker_essenceburst5.jpg",
-    nodeID: 68614,
-    spellType: 1,
-  },
-  {
-    id: 87678,
-    rank: 2,
-    spellID: 375561,
-    icon: "inv_staff_2h_bloodelf_c_01.jpg",
-    nodeID: 68652,
-    spellType: 1,
-  },
-  {
-    id: 87679,
-    rank: 1,
-    spellID: 374348,
-    icon: "ability_evoker_masterylifebinder_red.jpg",
-    nodeID: 68653,
-    spellType: 4,
-  },
-  {
-    id: 87680,
-    rank: 1,
-    spellID: 375577,
-    icon: "item_sparkofragnoros.jpg",
-    nodeID: 68654,
-    spellType: 1,
-  },
-  {
-    id: 87682,
-    rank: 1,
-    spellID: 374227,
-    icon: "ability_evoker_hoverblack.jpg",
-    nodeID: 68655,
-    spellType: 1,
-  },
-  {
-    id: 87685,
-    rank: 1,
-    spellID: 370665,
-    icon: "ability_evoker_flywithme.jpg",
-    nodeID: 68658,
-    spellType: 1,
-  },
-  {
-    id: 87686,
-    rank: 1,
-    spellID: 365933,
-    icon: "ability_evoker_aerialmastery.jpg",
-    nodeID: 68659,
-    spellType: 1,
-  },
-  {
-    id: 87688,
-    rank: 1,
-    spellID: 369909,
-    icon: "ability_evoker_azurestrike.jpg",
-    nodeID: 68661,
-    spellType: 1,
-  },
-  {
-    id: 87689,
-    rank: 1,
-    spellID: 369939,
-    icon: "spell_fire_flare.jpg",
-    nodeID: 68662,
-    spellType: 1,
-  },
-  {
-    id: 87692,
-    rank: 1,
-    spellID: 351338,
-    icon: "ability_evoker_quell.jpg",
-    nodeID: 68665,
-    spellType: 1,
-  },
-  {
-    id: 87694,
-    rank: 2,
-    spellID: 375510,
-    icon: "ability_evoker_firebreath.jpg",
-    nodeID: 68667,
-    spellType: 1,
-  },
-  {
-    id: 87697,
-    rank: 2,
-    spellID: 375544,
-    icon: "inv_misc_rubysanctum1.jpg",
-    nodeID: 68670,
-    spellType: 1,
-  },
-  {
-    id: 87699,
-    rank: 2,
-    spellID: 376930,
-    icon: "ability_rogue_imrovedrecuperate.jpg",
-    nodeID: 68672,
-    spellType: 1,
-  },
-  {
-    id: 87700,
-    rank: 1,
-    spellID: 374251,
-    icon: "ability_evoker_fontofmagic_red.jpg",
-    nodeID: 68673,
-    spellType: 4,
-  },
-  {
-    id: 87701,
-    rank: 1,
-    spellID: 375406,
-    icon: "inv_shield_1h_revenantfire_d_01.jpg",
-    nodeID: 68674,
-    spellType: 1,
-  },
-  {
-    id: 87702,
-    rank: 1,
-    spellID: 363916,
-    icon: "inv_artifact_dragonscales.jpg",
-    nodeID: 68675,
-    spellType: 12,
-  },
-  {
-    id: 87703,
-    rank: 1,
-    spellID: 370897,
-    icon: "spell_frost_coldhearted.jpg",
-    nodeID: 68676,
-    spellType: 1,
-  },
-  {
-    id: 87704,
-    rank: 2,
-    spellID: 375554,
-    icon: "ability_evoker_livingflame.jpg",
-    nodeID: 68677,
-    spellType: 1,
-  },
-  {
-    id: 87707,
-    rank: 1,
-    spellID: 387761,
-    icon: "ability_druid_protectionofthegrove.jpg",
-    nodeID: 68680,
-    spellType: 1,
-  },
-  {
-    id: 87710,
-    rank: 2,
-    spellID: 375520,
-    icon: "ability_evoker_innatemagic4.jpg",
-    nodeID: 68683,
-    spellType: 1,
-  },
-  {
-    id: 87712,
-    rank: 2,
-    spellID: 376166,
-    icon: "inv_helm_mail_dracthyrquest_b_02.jpg",
-    nodeID: 68685,
-    spellType: 1,
-  },
-  {
-    id: 87713,
-    rank: 1,
-    spellID: 370553,
-    icon: "ability_evoker_tipthescales.jpg",
-    nodeID: 68686,
-    spellType: 64,
-  },
-  {
-    id: 87714,
-    rank: 1,
-    spellID: 372469,
-    icon: "inv_bijou_red.jpg",
-    nodeID: 68687,
-    spellType: 1,
-  },
-  {
-    id: 87715,
-    rank: 1,
-    spellID: 360995,
-    icon: "ability_evoker_rescue.jpg",
-    nodeID: 68688,
-    spellType: 8,
-  },
-  {
-    id: 87716,
-    rank: 1,
-    spellID: 365585,
-    icon: "ability_evoker_fontofmagic_green.jpg",
-    nodeID: 68689,
-    spellType: 8,
-  },
-];
-
 // Talent component
 // This component represents a single talent in the talent tree.
 // It receives a talent object as a prop and displays an image for the talent.
 // If the talent is active and its rank is greater than 1, it displays a number indicating the rank of the talent.
-const Talent = ({ talent }) => {
+const Talent = ({ talent, combatantInfo }) => {
   // Extract the spell ID of the talent
+  const activeTalents = combatantInfo.talentTree.map((ability) => ability);
   const talentSpellID = talent.spellId;
   // Check if the talent is active
-  const abilityActive = activeAbilitys.some((ability) => ability.spellID === talentSpellID);
+  const abilityActive = activeTalents.some((ability) => ability.spellID === talentSpellID);
   // Find the active talent
-  const activeTalent = activeAbilitys.find((ability) => ability.spellID === talentSpellID);
+  const activeTalent = activeTalents.find((ability) => ability.spellID === talentSpellID);
   // Render the talent
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", zIndex: abilityActive ? 200 : 100 }}>
       <WowheadTooltip id={talent.spellId} type="spell" rank={talent.rank}>
         <img
           src={getIconURL(talent.icon)}
@@ -487,7 +68,8 @@ const findIndex = (value, replacementArray) => {
 // TalentTree component
 // This component represents a talent tree.
 // It receives an array of talents and a tree structure as props, and displays the talents in a grid according to the tree structure.
-const TalentTree = ({ talents, treeStructure }) => {
+const TalentTree = ({ talents, treeStructure, combatantInfo }) => {
+  const activeTalents = combatantInfo.talentTree;
   // This line creates a 2D array called 'rows' with dimensions based on the tree structure.
   // The number of rows is determined by the length of the posY array in the tree structure,
   // and the number of columns is determined by the length of the posX array.
@@ -576,7 +158,7 @@ const TalentTree = ({ talents, treeStructure }) => {
                 y1={`${((talent.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
                 x2={`${((next.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
                 y2={`${((next.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
-                stroke={activeAbilitys.some((ability) => ability.nodeID === next.nodeID) && activeAbilitys.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
+                stroke={activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
               />
             );
           }),
@@ -589,7 +171,7 @@ const TalentTree = ({ talents, treeStructure }) => {
       {rows.map((row, rowIndex) =>
         row.map((talent, columnIndex) => (
           <Box key={`${rowIndex}-${columnIndex}`} style={{ zIndex: 2, width: 20, height: 20 }}>
-            {talent && <Talent talent={talent} />}
+            {talent && <Talent talent={talent} combatantInfo={combatantInfo} />}
           </Box>
         )),
       )}
@@ -597,10 +179,43 @@ const TalentTree = ({ talents, treeStructure }) => {
   );
 };
 
+const classIdentifier = (classId) => {
+  const id = classId.toLowerCase() || "";
+  let identity = "";
+  switch (id) {
+    case "shaman-restoration":
+      identity = { classId: 7, specId: 264 };
+      break;
+    case "evoker-preservation":
+      identity = { classId: 13, specId: 1468 };
+      break;
+    case "druid-restoration":
+      identity = { classId: 11, specId: 105 };
+      break;
+    case "paladin-holy":
+      identity = { classId: 2, specId: 65 };
+      break;
+    case "priest-holy":
+      identity = { classId: 5, specId: 257 };
+      break;
+    case "priest-discipline":
+      identity = { classId: 5, specId: 256 };
+      break;
+    case "monk-mistweaver":
+      identity = { classId: 10, specId: 270 };
+      break;
+    default:
+      identity = { classId: 7, specId: 264 };
+      break;
+  }
+  return identity;
+};
+
 // TalentTreeApp component
 // This component represents the entire app.
 // It fetches the talent tree data, processes it, and passes it to the TalentTree components.
-const TalentTreeApp = () => {
+const TalentTreeApp = ({ classIcon, combatantInfo }) => {
+  const classIdentity = classIdentifier(classIcon);
   // This line initializes an empty array called 'treeStructures'.
   // This array will be used to store the tree structures for each class in the talent tree database.
   let treeStructures = [];
@@ -644,18 +259,16 @@ const TalentTreeApp = () => {
     });
   });
 
-  const talents = talentTreeDB.find((talents) => talents.classId === 7 && talents.specId === 264);
-  const treeStructure = treeStructures.find((classAndSpec) => classAndSpec.classId === 7 && classAndSpec.specId === 264);
+  const talents = talentTreeDB.find((talents) => talents.classId === classIdentity.classId && talents.specId === classIdentity.specId);
+  const treeStructure = treeStructures.find((classAndSpec) => classAndSpec.classId === classIdentity.classId && classAndSpec.specId === classIdentity.specId);
   const classNodes = talents.classNodes;
   const specNodes = talents.specNodes;
 
   // Render the app
   return (
-    <div
-    // style={{ width: 500 }}
-    >
-      <Grid container>
-        <Grid item xs={6}>
+    <div style={{ width: "100%" }}>
+      <Grid container justifyContent="space-evenly" alignItems="center">
+        <Grid item>
           <div
             style={{
               padding: 10,
@@ -665,10 +278,10 @@ const TalentTreeApp = () => {
             }}
           >
             {" "}
-            <TalentTree talents={classNodes} treeStructure={treeStructure.classNodes} />
+            <TalentTree talents={classNodes} treeStructure={treeStructure.classNodes} combatantInfo={combatantInfo} />
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item>
           <div
             style={{
               padding: 10,
@@ -677,7 +290,7 @@ const TalentTreeApp = () => {
               backgroundColor: "#424242",
             }}
           >
-            <TalentTree talents={specNodes} treeStructure={treeStructure.specNodes} />
+            <TalentTree talents={specNodes} treeStructure={treeStructure.specNodes} combatantInfo={combatantInfo} />
           </div>
         </Grid>
       </Grid>
