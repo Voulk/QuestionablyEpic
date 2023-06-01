@@ -18,7 +18,7 @@ const Talent = ({ talent, combatantInfo }) => {
   const activeTalent = activeTalents.find((ability) => ability.spellID === talentSpellID);
   // Render the talent
   return (
-    <div style={{ position: "relative", zIndex: abilityActive ? 200 : 100 }}>
+    <div style={{ position: "relative" }}>
       <WowheadTooltip id={talent.spellId} type="spell" rank={talent.rank}>
         <img
           src={getIconURL(talent.icon)}
@@ -30,6 +30,7 @@ const Talent = ({ talent, combatantInfo }) => {
             border: talent.type === "active" ? "2px solid" : "1px solid",
             borderColor: abilityActive ? "yellow" : "grey",
             filter: abilityActive ? "" : "grayscale(100%)",
+            zIndex: abilityActive ? 200 : 1,
           }}
         />
 
@@ -73,8 +74,8 @@ const TalentTree = ({ talents, treeStructure, combatantInfo }) => {
   // This line creates a 2D array called 'rows' with dimensions based on the tree structure.
   // The number of rows is determined by the length of the posY array in the tree structure,
   // and the number of columns is determined by the length of the posX array.
-  // Initially, all cells in the array are filled with null.
-  const rows = Array.from({ length: treeStructure.posY.length }, () => Array(treeStructure.posX.length).fill(null));
+  // Initialize the rows array with empty arrays instead of null
+  const rows = Array.from({ length: treeStructure.posY.length }, () => Array(treeStructure.posX.length).fill([]));
 
   // This line initializes an empty array called 'newTalentArray'.
   // This array will be used to store the talents after processing them.
@@ -98,8 +99,9 @@ const TalentTree = ({ talents, treeStructure, combatantInfo }) => {
   // For each talent, it assigns the talent object to the corresponding cell in the rows array.
   // The row and column indices for the cell are determined by the talent's row and pos properties, respectively.
   // This effectively places each talent in its correct position in the grid represented by the rows array.
+  // When assigning talents to cells, push the talent to the array instead of overwriting it
   newTalentArray.forEach((talent) => {
-    rows[talent.row][talent.pos] = talent;
+    rows[talent.row][talent.pos] = [...rows[talent.row][talent.pos], talent];
   });
 
   // This line creates a new object called 'talentMap' from the 'newTalentArray'.
@@ -147,31 +149,59 @@ const TalentTree = ({ talents, treeStructure, combatantInfo }) => {
         {/* This SVG element is used to draw lines between talents in the talent tree. */}
         {/* It has an absolute position, which means it's positioned relative to the nearest positioned ancestor (in this case, the Box). */}
         {/* It takes up the full width and height of its parent, and it's positioned behind its siblings (due to zIndex: 1). */}
-        {newTalentArray.map((talent, index) =>
-          talent.next.map((nextGuid) => {
-            const next = talentMap[nextGuid];
-            if (!next) return null;
-            return (
-              <line
-                key={`${talent.nodeID}-${next.nodeID}-${index}`}
-                x1={`${((talent.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
-                y1={`${((talent.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
-                x2={`${((next.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
-                y2={`${((next.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
-                stroke={activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
-              />
-            );
-          }),
-        )}
+        {newTalentArray
+          .sort((a, b) => {
+            const aIsActive = activeTalents.some((ability) => ability.spellID === a.spellId);
+            const bIsActive = activeTalents.some((ability) => ability.spellID === b.spellId);
+
+            if (aIsActive && !bIsActive) {
+              return 1; // a is active and b is not, so a should come after b
+            }
+
+            if (!aIsActive && bIsActive) {
+              return -1; // a is not active and b is, so a should come before b
+            }
+
+            return 0; // both a and b are either active or not active, so their order doesn't matter
+          })
+          .map((talent, index) =>
+            talent.next.map((nextGuid) => {
+              const next = talentMap[nextGuid];
+              if (!next) return null;
+              return (
+                <line
+                  key={`${talent.nodeID}-${next.nodeID}-${index}`}
+                  x1={`${((talent.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
+                  y1={`${((talent.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
+                  x2={`${((next.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
+                  y2={`${((next.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
+                  stroke={activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
+                  style={{ zIndex: activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? 200 : 1 }}
+                />
+              );
+            }),
+          )}
       </svg>
       {/* This loop goes through each row in the rows array. */}
       {/* For each row, it goes through each cell in the row.  */}
       {/* If the cell contains a talent, it renders a Box with the Talent component inside it.  */}
       {/* The Box has a zIndex of 2, which means it's positioned in front of the SVG element.  */}
       {rows.map((row, rowIndex) =>
-        row.map((talent, columnIndex) => (
-          <Box key={`${rowIndex}-${columnIndex}`} style={{ zIndex: 2, width: 20, height: 20 }}>
-            {talent && <Talent talent={talent} combatantInfo={combatantInfo} />}
+        row.map((talents, columnIndex) => (
+          <Box key={`${rowIndex}-${columnIndex}`} style={{ zIndex: 2, width: 20, height: 20, position: "relative" }}>
+            {talents.map((talent, index) => (
+              <div
+                key={index}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: activeTalents.some((ability) => ability.nodeID === talent.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? 200 : 1,
+                }}
+              >
+                <Talent talent={talent} combatantInfo={combatantInfo} />
+              </div>
+            ))}
           </Box>
         )),
       )}
