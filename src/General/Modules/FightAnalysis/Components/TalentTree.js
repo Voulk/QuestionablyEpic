@@ -3,12 +3,67 @@ import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 import { talentTreeDB } from "Databases/talentTreeDB";
 import { getIconURL } from "General/Modules/CooldownPlanner/Functions/IconFunctions/getIconURL";
 import { Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  imgActive: {
+    borderRadius: 4,
+    border: "2px solid",
+    zIndex: 200,
+  },
+  imgPassive: {
+    borderRadius: 10,
+    border: "1px solid",
+    zIndex: 1,
+  },
+  imgChoiceOuter: {
+    position: "relative",
+    width: "24px",
+    height: "24px",
+    background: "grey",
+    clipPath: "polygon(35% 0%, 65% 0%, 100% 35%, 100% 65%, 65% 100%, 35% 100%, 0% 65%, 0% 35%)",
+    filter: "grayscale(100%)",
+    opacity: 0.5,
+  },
+  imgChoiceInner: {
+    top: "2px",
+    position: "relative",
+    width: "20",
+    height: "20px",
+    overflow: "hidden",
+    background: "#1a1a1a",
+    clipPath: "polygon(35% 0%, 65% 0%, 100% 35%, 100% 65%, 65% 100%, 35% 100%, 0% 65%, 0% 35%)",
+    margin: "2px",
+    filter: "grayscale(100%)",
+    opacity: 0.5,
+  },
+  imgChoiceOuterActive: {
+    position: "relative",
+    width: "24px",
+    height: "24px",
+    background: "gold",
+    clipPath: "polygon(35% 0%, 65% 0%, 100% 35%, 100% 65%, 65% 100%, 35% 100%, 0% 65%, 0% 35%)",
+    // filter: grayscale("100%"),
+  },
+  imgChoiceInnerActive: {
+    top: "2px",
+    position: "relative",
+    width: "20",
+    height: "20px",
+    overflow: "hidden",
+    background: "#1a1a1a",
+    clipPath: "polygon(35% 0%, 65% 0%, 100% 35%, 100% 65%, 65% 100%, 35% 100%, 0% 65%, 0% 35%)",
+    margin: "2px",
+    // filter: grayscale("100%"),
+  },
+});
 
 // Talent component
 // This component represents a single talent in the talent tree.
 // It receives a talent object as a prop and displays an image for the talent.
 // If the talent is active and its rank is greater than 1, it displays a number indicating the rank of the talent.
 const Talent = ({ talent, combatantInfo }) => {
+  const classes = useStyles();
   // Extract the spell ID of the talent
   const activeTalents = combatantInfo.talentTree.map((ability) => ability);
   const talentSpellID = talent.spellId;
@@ -20,19 +75,28 @@ const Talent = ({ talent, combatantInfo }) => {
   return (
     <div style={{ position: "relative" }}>
       <WowheadTooltip id={talent.spellId} type="spell" rank={talent.rank}>
-        <img
-          src={getIconURL(talent.icon)}
-          alt={talent.name}
-          width={20}
-          height={20}
-          style={{
-            borderRadius: talent.type === "active" ? 4 : 10,
-            border: talent.type === "active" ? "2px solid" : "1px solid",
-            borderColor: abilityActive ? "yellow" : "grey",
-            filter: abilityActive ? "" : "grayscale(100%)",
-            zIndex: abilityActive ? 200 : 1,
-          }}
-        />
+        {talent.nodeType === "choice" ? (
+          <div className={abilityActive ? classes.imgChoiceOuterActive : classes.imgChoiceOuter}>
+            <div className={abilityActive ? classes.imgChoiceInnerActive : classes.imgChoiceInner}>
+              <img src={getIconURL(talent.icon)} alt={talent.name} width={20} height={20} style={{ zIndex: abilityActive ? 302 : 1 }} />
+            </div>
+          </div>
+        ) : (
+          <img
+            src={getIconURL(talent.icon) || ""}
+            alt={talent.name}
+            width={20}
+            height={20}
+            style={{
+              borderRadius: talent.type === "active" ? 4 : 10,
+              border: talent.type === "active" ? "2px solid" : "1px solid",
+              borderColor: abilityActive ? "gold" : "grey",
+              opacity: abilityActive ? 1 : 0.5,
+              filter: abilityActive ? "" : "grayscale(100%)",
+              zIndex: abilityActive ? 200 : 1,
+            }}
+          />
+        )}
 
         {abilityActive
           ? activeTalent.rank > 1 && (
@@ -91,7 +155,7 @@ const TalentTree = ({ talents, treeStructure, combatantInfo }) => {
     talent.entries.forEach((entry) => {
       const posX = findIndex(talent.posX, treeStructure.posX);
       const posY = findIndex(talent.posY, treeStructure.posY);
-      newTalentArray.push({ ...entry, row: posY, pos: posX, next: talent.next, nodeID: talent.id });
+      newTalentArray.push({ ...entry, row: posY, pos: posX, next: talent.next, nodeID: talent.id, nodeType: talent.type });
     }),
   );
 
@@ -175,8 +239,11 @@ const TalentTree = ({ talents, treeStructure, combatantInfo }) => {
                   y1={`${((talent.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
                   x2={`${((next.pos + positionCalc().addition) * 100) / treeStructure.posX.length}%`}
                   y2={`${((next.row + positionCalc().addition) * 100) / treeStructure.posY.length}%`}
-                  stroke={activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? "yellow" : "black"}
-                  style={{ zIndex: activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? 200 : 1 }}
+                  stroke={activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? "gold" : "grey"}
+                  style={{
+                    zIndex: activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? 200 : 1,
+                    opacity: activeTalents.some((ability) => ability.nodeID === next.nodeID) && activeTalents.some((ability) => ability.spellID === talent.spellId) ? 1 : 0.5,
+                  }}
                 />
               );
             }),
