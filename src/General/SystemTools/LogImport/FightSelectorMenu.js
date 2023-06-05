@@ -173,9 +173,10 @@ const LogImport = ({ reportid, cooldownImportFilter, clicker, close, update }) =
                         return obj.id === fight.encounterID;
                       })
                       .map((obj) => obj.zoneID),
+                  fight.id,
                 ]);
                 close();
-                update(fight.startTime, fight.endTime, reportid, fight.encounterID, fight.difficulty);
+                update(fight.startTime, fight.endTime, reportid, fight.encounterID, fight.difficulty, fight.id);
               }}
             >
               {formatName(fight, fightsMapped)}
@@ -213,7 +214,7 @@ const LogImport = ({ reportid, cooldownImportFilter, clicker, close, update }) =
                             .map((obj) => obj.zoneID),
                       ]);
                       close();
-                      update(fight.startTime, fight.endTime, reportid, fight.encounterID, fight.difficulty);
+                      update(fight.startTime, fight.endTime, reportid, fight.encounterID, fight.difficulty, fight.id);
                     }}
                   >
                     {formatName(fight, fightsMapped)}
