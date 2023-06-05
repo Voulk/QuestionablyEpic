@@ -1,8 +1,11 @@
 //prettier-ignore
-import { addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
-  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth, importDefensiveLogData } from "../../CooldownPlanner/Functions/Functions";
+import {
+  addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
+  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth, importDefensiveLogData
+} from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
+import { convertHealerData } from "./Functions/ConvertHealerData";
 
 /* =============================================
    This Function Imports all the Data for the Chart/Log Details
@@ -48,11 +51,13 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   let sortedDataMitigatedDamageNoCooldowns = [];
   let damagingAbilities = [];
 
+  const WCLDATA = {}
+
   /* ---- Fight Length of the selected report is calculated and coverted to seconds as a string --- */
   const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
 
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
-  const healers = await importHealerLogData(starttime, endtime, this.state.reportid);
+  const healers = convertHealerData(WCLDATA) // await importHealerLogData(starttime, endtime, this.state.reportid);
 
   /* ------------------------------ Import Character IDS from the log ----------------------------- */
   const playerIDs = await importCharacterIds(starttime, endtime, this.state.reportid);
@@ -144,8 +149,8 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
           return obj.id === key.sourceID;
         })
         .map((obj) => obj.name) +
-      " - " +
-      key.ability.name]: 1,
+        " - " +
+        key.ability.name]: 1,
     }))
     .map((key) => healerDurations.push(durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment.utc(fightDuration(endtime, starttime)).startOf("second").valueOf())));
 
