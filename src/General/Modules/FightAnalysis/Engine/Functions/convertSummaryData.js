@@ -1,7 +1,7 @@
-async function convertSummaryData({ data }) {
-  let summaryData = Object.keys(data.playerDetails)
+async function convertSummaryData(data) {
+  let summaryData = Object.keys(data)
     .filter((key) => key === "healers")
-    .map((key) => result.data.playerDetails[key])
+    .map((key) => data[key])
     .flat();
 
   return summaryData;

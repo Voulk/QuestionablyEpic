@@ -1,4 +1,4 @@
-async function convertCharacterIDs({ data }) {
+async function convertCharacterIDs(data) {
   let newData = [...data.dps, ...data.healers, ...data.tanks];
   let ids = [];
   Object.entries(newData).map((key) =>

@@ -11,6 +11,9 @@ import convertCharacterIDs from "./Functions/convertCharacterIDs";
 import convertEnemyIDs from "./Functions/convertEnemyIDs";
 import convertSummaryData from "./Functions/convertSummaryData";
 import convertDamageLogData from "./Functions/convertDamageLogData";
+import convertHealerCasts from "./Functions/convertHealerCasts";
+import convertDefensives from "./Functions/convertDefensives";
+import convertExternals from "./Functions/convertExternals";
 
 export default async function updatechartdata(starttime, endtime, reportID, boss, difficulty, id) {
   /* -------- Note we are using alot of imported functions Here to save bloat in the Code. -------- */
@@ -25,7 +28,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   let sortedDataMitigatedDamageNoCooldowns = [];
   let damagingAbilities = [];
 
-  const WCLDATA = await getFightAnalysisData(reportID, id, boss);
+  const WCLDATA = await getFightAnalysisData(reportID, id, boss, starttime, endtime);
 
   /* ---- Fight Length of the selected report is calculated and coverted to seconds as a string --- */
   const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
@@ -37,7 +40,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   // const enemyIDs = await convertEnemyIDs(WCLDATA);
   /* ---------------------- Import summary Info from the Logs Summary table. ---------------------- */
   /* ------------ This contains our data for Gear, Stats, Conduits, Soulbinds etc etc. ------------ */
-  const summary = await convertSummaryData(WCLDATA.characterIDs.data.playerDetails);
+  const summary = await convertSummaryData(WCLDATA.summaryData.data.playerDetails);
 
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
   const damage = await convertDamageLogData(WCLDATA.friendlyDamageTaken.data);
@@ -52,25 +55,21 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   }));
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
-  const cooldowns = await importCastsLogData(
-    starttime,
-    endtime,
-    this.state.reportid,
+  const cooldowns = await convertHealerCasts(
+    WCLDATA.friendlyCasts.data,
     healers.map((key) => key.id),
   );
 
-  const defensives = await importDefensiveLogData(starttime, endtime, this.state.reportid);
+  const defensives = await convertDefensives(WCLDATA.defensiveData.data);
 
   /* ------------------------- Import Log data for external cooldown casts ------------------------ */
-  const externals = await importExternalCastsLogData(
-    starttime,
-    endtime,
-    this.state.reportid,
+  const externals = await convertExternals(
+    WCLDATA.externalData.data,
     healers.map((key) => key.id),
   );
 
   /* ------------------------------- Import Log data for enemy casts ------------------------------ */
-  const enemyCasts = await importEnemyCasts(starttime, endtime, this.state.reportid);
+  // const enemyCasts = await importEnemyCasts(starttime, endtime, this.state.reportid);
 
   /* ---------------- Map the damaging abilities and guids to an array of objects. ---------------- */
   damage.map((key) =>

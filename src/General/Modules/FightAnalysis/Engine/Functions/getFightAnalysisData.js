@@ -4,7 +4,7 @@ import { accessToken } from "General/SystemTools/LogImport/accessToken.js";
 import { externalsDB } from "Databases/ExternalsDB";
 import { filterIDS } from "../Filters";
 
-const getFightAnalysisData = async (reportID, fightID, boss) => {
+const getFightAnalysisData = async (reportID, fightID, boss, start, end) => {
   let defensiveFilter = "";
   defensiveDB.map((key, i) => {
     if (i !== defensiveDB.length - 1) {
@@ -34,40 +34,38 @@ const getFightAnalysisData = async (reportID, fightID, boss) => {
       damageTakenFilters = damageTakenFilters.concat("source.id=" + key);
     }
   });
-
   //   setIsLoading(true);
   //   setError(null);
   const REPORT_QUERY = `
-    query GetFightAnalysisData($reportCode: String!, $fightID: [Int], $defensiveFilter: String!, $externalFilter: String!, $damageTakenFilters: String!) {
+    query GetFightAnalysisData($reportCode: String!, $defensiveFilter: String!, $externalFilter: String!, $damageTakenFilters: String!, $startTime: Float!, $endTime: Float!) {
         reportData {
         report(code: $reportCode) {
-            monkData: table(dataType: Healing, sourceClass: "Monk", translate: true, fightIDs: $fightID)
-            paladinData: table(dataType: Healing, sourceClass: "Paladin", translate: true, fightIDs: $fightID)
-            druidData: table(dataType: Healing, sourceClass: "Druid", translate: true, fightIDs: $fightID)
-            priestData: table(dataType: Healing, sourceClass: "Priest", translate: true, fightIDs: $fightID)
-            shamanData: table(dataType: Healing, sourceClass: "Shaman", translate: true, fightIDs: $fightID)
-            warriorData: table(dataType: Healing, sourceClass: "Warrior", translate: true, fightIDs: $fightID)
-            demonHunterData: table(dataType: Healing, sourceClass: "DemonHunter", translate: true, fightIDs: $fightID)
-            deathKnightData: table(dataType: Healing, sourceClass: "DeathKnight", translate: true, fightIDs: $fightID)
-            evokerData: table(dataType: Healing, sourceClass: "Evoker", translate: true, fightIDs: $fightID)
-            defensiveData: events(dataType: Casts, hostilityType: Friendlies, translate: true, fightIDs: $fightID, filterExpression: $defensiveFilter) {
+            monkData: table(dataType: Healing, sourceClass: "Monk", translate: true, startTime: $startTime, endTime:$endTime)
+            paladinData: table(dataType: Healing, sourceClass: "Paladin", translate: true, startTime: $startTime, endTime:$endTime)
+            druidData: table(dataType: Healing, sourceClass: "Druid", translate: true, startTime: $startTime, endTime:$endTime)
+            priestData: table(dataType: Healing, sourceClass: "Priest", translate: true, startTime: $startTime, endTime:$endTime)
+            shamanData: table(dataType: Healing, sourceClass: "Shaman", translate: true, startTime: $startTime, endTime:$endTime)
+            warriorData: table(dataType: Healing, sourceClass: "Warrior", translate: true, startTime: $startTime, endTime:$endTime)
+            demonHunterData: table(dataType: Healing, sourceClass: "DemonHunter", translate: true, startTime: $startTime, endTime:$endTime)
+            deathKnightData: table(dataType: Healing, sourceClass: "DeathKnight", translate: true, startTime: $startTime, endTime:$endTime)
+            evokerData: table(dataType: Healing, sourceClass: "Evoker", translate: true, startTime: $startTime, endTime:$endTime)
+            defensiveData: events(dataType: Casts, hostilityType: Friendlies, translate: true, startTime: $startTime, endTime:$endTime, filterExpression: $defensiveFilter, useAbilityIDs: false) {
             data
             }
-            externalData: events(dataType: Casts, hostilityType: Friendlies, translate: true, fightIDs: $fightID, filterExpression: $externalFilter) {
+            externalData: events(dataType: Casts, hostilityType: Friendlies, translate: true, startTime: $startTime, endTime:$endTime, filterExpression: $externalFilter, useAbilityIDs: false) {
             data
             }
-            friendlyCasts: events(dataType: Casts, hostilityType: Friendlies, translate: true, fightIDs: $fightID) {
+            friendlyCasts: events(dataType: Casts, hostilityType: Friendlies, translate: true, startTime: $startTime, endTime:$endTime, useAbilityIDs: false) {
             data
             }
-            enemyCasts: events(dataType: Casts, hostilityType: Enemies, translate: true, fightIDs: $fightID) {
+            enemyCasts: events(dataType: Casts, hostilityType: Enemies, translate: true, startTime: $startTime, endTime:$endTime, useAbilityIDs: false) {
             data
             }
-            characterIDs: playerDetails(translate: true, fightIDs: $fightID)
-            friendlyDamageTaken: events(dataType: DamageTaken, hostilityType: Friendlies, translate: true, fightIDs: $fightID, filterExpression: $damageTakenFilters) {
+            characterIDs: playerDetails(translate: true, startTime: $startTime, endTime:$endTime)
+            friendlyDamageTaken: events(dataType: DamageTaken, hostilityType: Friendlies, translate: true, startTime: $startTime, endTime:$endTime, filterExpression: $damageTakenFilters, useAbilityIDs: false) {
             data
             }
-            raidHealthData: table(dataType: Resources, translate: true, hostilityType: Friendlies, fightIDs: $fightID, filterExpression: "ability.id=1000")
-            summaryData: table(dataType: Summary, translate: true, fightIDs: $fightID)
+            summaryData: table(dataType: Summary, translate: true, startTime: $startTime, endTime:$endTime)
         }
         }
     }
@@ -90,6 +88,8 @@ const getFightAnalysisData = async (reportID, fightID, boss) => {
           defensiveFilter: defensiveFilter,
           externalFilter: externalFilter,
           damageTakenFilters: damageTakenFilters,
+          startTime: start,
+          endTime: end,
         },
       },
     });
