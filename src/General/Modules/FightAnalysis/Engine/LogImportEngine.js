@@ -7,6 +7,7 @@ import moment from "moment";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
 import convertHealerData from "./Functions/convertHealerData";
 import getFightAnalysisData from "./Functions/getFightAnalysisData";
+import getDamageTakenData from "./Functions/getDamageTakenData";
 import convertCharacterIDs from "./Functions/convertCharacterIDs";
 import convertEnemyIDs from "./Functions/convertEnemyIDs";
 import convertSummaryData from "./Functions/convertSummaryData";
@@ -29,6 +30,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   let damagingAbilities = [];
 
   const WCLDATA = await getFightAnalysisData(reportID, id, boss, starttime, endtime);
+  const wclDamageTakenData = await getDamageTakenData(reportID, id, boss, starttime, endtime);
 
   /* ---- Fight Length of the selected report is calculated and coverted to seconds as a string --- */
   const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
@@ -43,7 +45,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   const summary = await convertSummaryData(WCLDATA.summaryData.data.playerDetails);
 
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
-  const damage = await convertDamageLogData(WCLDATA.friendlyDamageTaken.data);
+  const damage = await convertDamageLogData(wclDamageTakenData);
 
   const health = await importRaidHealth(starttime, endtime, this.state.reportid);
 
