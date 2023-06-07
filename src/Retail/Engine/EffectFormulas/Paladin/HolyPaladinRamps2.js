@@ -25,6 +25,10 @@ const PALADINCONSTANTS = {
     goldenHourHealing: 18000,
     enemyTargets: 1, 
 
+    beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
+    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment"],
+
+    infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2}
 }
 
 // Conditions
@@ -33,7 +37,7 @@ const PALADINCONSTANTS = {
 //const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 // Avenging Crusader
-const apl = [
+/*const apl = [
                 {s: "Divine Toll"}, 
                 {s: "Avenging Crusader"}, 
                 {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
@@ -43,9 +47,22 @@ const apl = [
                 {s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 5}}, // Don't cast LoD if AC is coming off cooldown.
                 {s: "Holy Shock"}, 
                 {s: "Crusader Strike", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 4}},
-                {s: "Rest"}]
+                {s: "Rest"}] */
+
 
 // Avenging Wrath / Might
+const apl = [
+    {s: "Avenging Wrath"}, 
+    {s: "Divine Toll"}, 
+    {s: "Light's Hammer"}, 
+    {s: "Light of Dawn"},
+    {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
+    {s: "Holy Shock"}, 
+    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
+    {s: "Crusader Strike"}, 
+    {s: "Judgment"}, 
+    {s: "Rest"}]
+
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -142,6 +159,41 @@ const applyTalents = (state, spellDB, stats) => {
 
 }
 
+const triggerGlimmerOfLight = (state) => {
+    // Glimmer of Light places a buff on each target you Holy Shock up to a 1/3/8 target cap.
+    // Whenever you Holy Shock everyone with Glimmer is healed.
+
+    // This function does NOT place the Glimmer of Light buff itself and that should still be performed in the Holy Shock spell.
+    // Note that if you Holy Shock target A, it will leave a Glimmer buff but won't glimmer heal until you cast a subsequent Holy Shock.
+
+    const glimmerTargets = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
+    if (glimmerTargets > 0) {
+        
+        const glimmerOfLight = {
+            name: "Glimmer of Light",
+            coeff: 2.052 * (1 + glimmerTargets * 0.06) / glimmerTargets, // This is split between all targets
+            targets: glimmerTargets,
+            expectedOverheal: 0.25,
+            secondaries: ["crit", "versatility", "mastery"],
+            type: "heal",
+        }
+
+        const glimmerOfLightAbsorb = {
+            name: "Glimmer of Light (Absorb)",
+            coeff: glimmerOfLight.coeff * glimmerOfLight.expectedOverheal * 0.5,
+            targets: glimmerTargets,
+            expectedOverheal: 0.05,
+            secondaries: ["crit", "versatility", "mastery"],
+            type: "heal",
+        }
+
+        runHeal(state, glimmerOfLight, "Glimmer of Light", true);
+        runHeal(state, glimmerOfLightAbsorb, "Overflowing Light (Glimmer)", true);
+    }
+
+    
+}
+
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
@@ -171,7 +223,8 @@ const getHealingMult = (state, t, spellName, talents) => {
         mult *= 1.15;
         state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
     }
-
+    if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light") && getTalentPoints(state, "divineRevelations") > 0) mult *= getTalentData(state, "divineRevelations", "flashBonus");
+    else if (spellName === "Judgment" && checkBuffActive(state.activeBuffs, "Infusion of Light")) mult *= PALADINCONSTANTS.infusion.judgmentBonus;
     return mult;
 }
 
@@ -192,7 +245,10 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Beacon
     let beaconHealing = 0;
-    const beaconMult = ["Light of Dawn", "Light's Hammer"].includes(spellName) ? 0.5 : 1;
+    let beaconMult = 1;
+    if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
+    else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
+
     if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
 
@@ -202,6 +258,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
     if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
 
+    // Trigger Glimmer of Light
+    if (spellName === "Holy Shock") triggerGlimmerOfLight(state);
 
     return healingVal;
 }
@@ -244,7 +302,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     }
 
     //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
-    return cooldownReq && holyPowReq && miscReq;
+    return cooldownReq && holyPowReq && miscReq && aplReq;
 }
 
 const getSpellHPM = (state, spellDB, spellName) => {
@@ -297,8 +355,15 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
         let canProceed = false
 
         if (spell.chance) {
+            // Spell has a chance to do something.
             const roll = Math.random();
             canProceed = roll <= spell.chance;
+        }
+        else if (spell.onCrit) {
+            // Spell does something unique on crit.
+            const roll = Math.random();
+            console.log("HS Crit chance: " + (getCrit(state.currentStats) - 1 + fullSpell[0].statMods.crit));
+            canProceed = roll <= (getCrit(state.currentStats) - 1 + fullSpell[0].statMods.crit);
         }
         else canProceed = true;
 
@@ -465,14 +530,36 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             }
         }
 
-
- 
-        // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
     }); 
 
     // Any post-spell code.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+    if (["Flash of Light", "Holy Light", "Judgment"].includes(spellName)) {
+        if (spellName === "Holy Light" && checkBuffActive("Infusion of Light")) {
+            if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "holyLightMana");
+            state.holyPower = Math.min(state.holyPower + PALADINCONSTANTS.infusion.holyLightHoPo, 5);
+        }
+
+        
+        state.activeBuffs = removeBuffStack(state.activeBuffs, "Infusion of Light");
+    }
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, PALADINCONSTANTS.callOfYsera, "Call of Ysera");
+}
+
+const getTalentPoints = (state, talentName) => {
+    if (state.talents[talentName]) return state.talents[talentName].points;
+    else {
+        console.error("Looking for missing talent: " + talentName);
+        return 0;
+    }
+}
+
+const getTalentData = (state, talentName, attribute) => {
+    if (state.talents[talentName].data[attribute]) return state.talents[talentName].data[attribute];
+    else {
+        console.error("Looking for missing talent data: " + talentName + " " + attribute);
+        return "";
+    }
 }
 
 const spendSpellCost = (spell, state) => {
@@ -543,7 +630,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     let currentStats = JSON.parse(JSON.stringify(stats));
     
-    const sequenceLength = 100; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 35; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -705,7 +792,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
             }
 
-            // Cleanup
+
+
             queuedSpell = "";
             spellFinish = 0;
         }

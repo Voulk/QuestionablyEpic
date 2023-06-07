@@ -42,9 +42,18 @@ export const PALADINSPELLDB = {
         expectedOverheal: 0.25,
         holyPower: 1,
         hastedCooldown: true,
-        statMods: {'crit': 0.3},
+        statMods: {'crit': 0},
         secondaries: ['crit', 'vers', 'mastery']
-    }],
+    },
+    { // Infusion of Light
+        type: "buff",
+        onCrit: true,
+        name: "Infusion of Light",
+        buffType: 'special',
+        canStack: false,
+        buffDuration: 30,
+    }
+],
     "Holy Shock O": [{
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
@@ -55,13 +64,13 @@ export const PALADINSPELLDB = {
         expectedOverheal: 0.29,
         holyPower: 1,
         hastedCooldown: true,
-        statMods: {'crit': 0.3},
+        statMods: {'crit': 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Flash of Light": [{
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
-        castTime: 0,
+        castTime: 1.5,
         cost: 22,
         coeff: 2.02, // Not final
         expectedOverheal: 0.14,
@@ -85,6 +94,7 @@ export const PALADINSPELLDB = {
         cost: 3,
         coeff: 0.610542 * 1.5,
         cooldown: 12,
+        statMods: {'crit': 0},
         secondaries: ['crit', 'vers']
     }],
     "Hammer of Wrath": [{
@@ -352,13 +362,16 @@ export const baseTalents = {
 
     // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 1s.
 
-    // Divine Rev - While empowered by IoL, Flash heals for +10% and Holy Light refunds 1% mana.
+    // Divine Rev - While empowered by IoL, Flash heals for +20% and Holy Light refunds 1% mana.
+    // Handled inside.
+    divineRevelations: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, data: {holyLightMana: 0.005 * 250000, flashBonus: 1.2}, runFunc: function (state, spellDB, points) {}},
 
     // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
 
     // Divine Glimpse - Holy Shock has a +7/15% crit chance.
     divineGlimpse: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Holy Shock'][0].statMods.crit += (0.075 * points);
+        spellDB['Judgment'][0].statMods.crit += (0.075 * points);
     }}, 
 
     // Sanctified Wrath - Holy Shock CD reduced by 40% during wings. +5s Wings duration.
@@ -377,14 +390,14 @@ export const baseTalents = {
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
 
     // Might - Gain 20% Crit during wings. Currently just built in.
-    avengingCrusader: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
+    avengingCrusader: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
 
     // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
-    awakening: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    awakening: {points: 0, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
         if (state.talents.avengingCrusader.points > 0) {
             spellDB['Light of Dawn'].push({
@@ -415,6 +428,16 @@ export const baseTalents = {
     }}, 
 
     // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
+    glimmerOfLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Shock'].push({
+            name: "Glimmer of Light",
+            type: "buff",
+            buffType: 'special',
+            canStack: false,
+            maxStacks: 8,
+            buffDuration: 30,
+        });
+    }},
 
     // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
 
