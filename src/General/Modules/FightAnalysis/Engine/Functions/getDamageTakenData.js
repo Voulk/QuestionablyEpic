@@ -53,7 +53,7 @@ const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
     console.error(error);
   }
 
-  if (nextpage !== undefined || nextpage !== null) {
+  if (nextpage !== undefined && nextpage !== null) {
     do {
       const REPORT_QUERY = `
         query GetDamageTakenData($reportCode: String!, $startTime: Float!, $endTime: Float!, $damageTakenFilters: String! ) {
@@ -91,7 +91,7 @@ const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
       } catch (error) {
         console.error(error);
       }
-    } while (nextpage !== undefined || nextpage !== null);
+    } while (nextpage !== undefined && nextpage !== null);
   }
 
   return damage;
