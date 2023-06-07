@@ -149,6 +149,103 @@ describe("Evang Cast Sequence", () => {
     });
 });
 
+/*
+test("Compendium", () => {
+    const spellList = []
+    const aura = 0.94;
+    const round = (num) => {
+        return (Math.round(num * 10000) / 10000).toFixed(2);
+    }
+
+    Object.keys(DISCSPELLS).forEach(spellName => {
+
+        if (["Voidmender's Shadowgem", "Time-Breaching Talon", "PenanceTick", "Instructor's Divine Bell (new)", "DefPenanceTick", 
+                    "DefPenance", "Rapture", "Halo", "Divine Star"].includes(spellName)) return;
+
+        const fullSpell = DISCSPELLS[spellName];
+        const spell = DISCSPELLS[spellName][0];
+        const spell2 = DISCSPELLS[spellName][1] || null;
+        const spellObj = {}
+        spellObj.name = spellName;
+        if ('castTime' in spell) {
+            if (spell.castTime == 0) spellObj.castTime = "Instant";
+            else spellObj.castTime = spell.castTime + " sec";
+        }
+        if ('cooldown' in spell) {
+            spellObj.cooldown = spell.cooldown + " sec";
+            if (spell.hastedCooldown) spellObj.hastedCd = "Yes"
+            else spellObj.hastedCd = "No"
+        }
+        else {
+            spellObj.cooldown = "N/A"
+            spellObj.hastedCd = "N/A"
+        }
+        if (spellName === "Penance") spellObj.castType = "Channel";
+        else spellObj.castType = "Cast";
+
+        // School
+        if (spellName === "Purge the Wicked") spellObj.school = "Radiant";
+        else spellObj.school = spell.school || "N/A";
+
+        // Mana Cost
+        spellObj.manaCost = spell.cost || "Free";
+
+
+        // Has Travel Time
+        if (spellName === "Penance") spellObj.hasTravelTime = "Yes";
+        else spellObj.hasTravelTime = "No";
+
+        // Duration
+        fullSpell.forEach(slice => {
+            if ('buffDuration' in slice) spellObj.duration = slice.buffDuration + " sec";
+        })
+        if (!('duration' in spellObj)) spellObj.duration = "N/A";
+
+        // Damage SP per event
+        if (spell.type === "damage" || ["Shadowfiend", "Mindbender", "Penance"].includes(spellName)) {
+            if (spell2 && 'buffDuration' in spell2 && !(spellName === "Schism")) spellObj.dmgSpPerEvent = round(aura * spell2.coeff * 100) + "%";
+            else if (spellName === "Divine Star") spellObj.dmgSpPerEvent = round(aura * spell.coeff / 2) + "%";
+            else spellObj.dmgSpPerEvent = round(aura * spell.coeff * 100) + "%";
+
+            if (spell2 && 'buffDuration' in spell2 && !(spellName === "Schism")) {
+                spellObj.dmgSpPerCast = round(aura * ((spell.coeff || 0) + spell2.coeff * spell2.buffDuration / spell2.tickRate) * 100) + "%";
+            }
+            else if (spellName === "Penance" || spellName === "DefPenance") spellObj.dmgSpPerCast = round(aura * (spell.coeff || 0) * 3 * 100) + "%";
+            else {
+                spellObj.dmgSpPerCast = round(aura * ((spell.coeff || 0) * (spell.targets || 1)) * 100)  + "%";
+            }
+        }
+        else {
+            spellObj.dmgSpPerEvent = "N/A";
+            spellObj.dmgSpPerCast = "N/A";
+        }
+
+        // Healing SP per event
+        if (spell.type === "heal" || ["Renew", "Rapture", "DefPenance"].includes(spellName)) {
+            if (spell2 && !(['Shadow Covenant'].includes(spellName))) spellObj.healingSpPerEvent = round(spell2.coeff * 100) + "%";
+            else if (spellName === "Divine Star") spellObj.healingSpPerEvent = round(spell.coeff / 2);
+            else spellObj.healingSpPerEvent = round(spell.coeff * 100) + "%";
+
+            if (spell2 && !(['Shadow Covenant'].includes(spellName))) {
+                spellObj.healingSpPerCast = round(((spell.coeff || 0) + spell2.coeff * spell2.buffDuration / spell2.tickRate) * 100) + "%";
+            }
+            else if (spellName === "Penance" || spellName === "DefPenance") spellObj.healingSpPerCast = round((spell.coeff || 0) * 3 * 100) + "%";
+            else {
+                spellObj.healingSpPerCast = round(((spell.coeff || 0) * (spell.targets || 1)) * 100) + "%";
+            }
+        }
+        else {
+            spellObj.healingSpPerEvent = "N/A";
+            spellObj.healingSpPerCast = "N/A";
+        }
+
+
+        spellList.push(spellObj);
+    })
+
+    console.log(spellList)
+}); */
+
    /*
     test("Stat Weights", () => {
 

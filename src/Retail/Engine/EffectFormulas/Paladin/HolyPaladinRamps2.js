@@ -24,15 +24,28 @@ const PALADINCONSTANTS = {
     auraDamageBuff: 0.92,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
-
-    
 
 }
 
-const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
+// Conditions
 
 
+//const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
+
+// Avenging Crusader
+const apl = [
+                {s: "Divine Toll"}, 
+                {s: "Avenging Crusader"}, 
+                {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+                {s: "Crusader Strike", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
+                {s: "Light's Hammer"}, 
+                {s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 5}}, // Don't cast LoD if AC is coming off cooldown.
+                {s: "Holy Shock"}, 
+                {s: "Crusader Strike", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 4}},
+                {s: "Rest"}]
+
+// Avenging Wrath / Might
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -140,6 +153,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = PALADINCONSTANTS.auraDamageBuff;
 
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
+    mult *= ((["Crusader Strike", "Judgment"].includes(spellName) && buffs.filter(function (buff) {return buff.name === "Avenging Crusader"}).length > 0) ? 1.3 : 1); 
 
     return mult;
 }
@@ -201,18 +215,34 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
+
+    // Avenging Crusader
+    if (checkBuffActive(state.activeBuffs, "Avenging Crusader") && ["Judgment", "Crusader Strike"].includes(spellName)) {
+        const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 5, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 5}
+        runHeal(state, acSpell, "Avenging Crusader")
+
+    }
+
     return damageVal;
 }
 
-const canCastSpell = (state, spellDB, spellName) => {
+const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     
     const spell = spellDB[spellName][0];
+
+    let aplReq = true;
     let miscReq = true;
     const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
     const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
+    else if (conditions !== {}) {
+        if (conditions.type === "buff") {
+            aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
+        }
+    }
+
     //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
     return cooldownReq && holyPowReq && miscReq;
 }
@@ -229,7 +259,7 @@ const getSpellHPM = (state, spellDB, spellName) => {
 export const genSpell = (state, spells) => {
     let spellName = ""
 
-    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell));
+    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.c || ""));
 
     /*
     if (state.holyPower >= 3) {
@@ -252,7 +282,8 @@ export const genSpell = (state, spells) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-    return usableSpells[0];
+
+    return usableSpells[0].s;
 
 }
 
@@ -372,14 +403,23 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                         state.activeBuffs.push(buff);
                     }
                     else {
-    
-                        const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
+                        const buff = state.activeBuffs.filter(function (buff) {return buff.name === spell.name})[0];
+                        if (spell.name === "Avenging Crusader") {
+                            
 
-                        
-                        if (buff.canStack) {
-                            buff.stacks += 1;
-                            if (buff.maxStacks) buff.stacks = Math.min(buff.stacks, buff.maxStacks);
+                            //const buffDuration = buff[0].expiration - state.t;
+                            //buff.expiration = Math.max(buffDuration, spell.buffDuration) + state.t;
+                            buff.expiration = buff.expiration + spell.buffDuration;
                         }
+                        else {
+
+                            if (buff.canStack) {
+                                buff.stacks += 1;
+                                if (buff.maxStacks) buff.stacks = Math.min(buff.stacks, buff.maxStacks);
+                            }
+                        }
+
+
                         addReport(state, `${spell.name} stacks: ${buff.stacks}`)
                     }
 
@@ -419,6 +459,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (spell.cooldown) {
 
                 if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
                 else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
                 else spell.activeCooldown = state.t + spell.cooldown;
             }
@@ -502,8 +543,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     let currentStats = JSON.parse(JSON.stringify(stats));
     
-
-
     const sequenceLength = 100; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 

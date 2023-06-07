@@ -192,7 +192,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.052152,
             table: -7,
-            stacks: 3.9,
+            stacks: 4,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -216,14 +216,14 @@ export const embellishmentData = [
             coefficient: 34.05239, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit'],
-            efficiency: 0.65,
-            ppm: 2, // 4 / 2
+            efficiency: 0.55,
+            ppm: 3, // 4 / 2
           },
           { // Damage Effect
             coefficient: 20.43177, //6.820023,
             table: -9,
             secondaries: ['haste', 'crit'],
-            ppm: 2, // 4 / 2
+            ppm: 1, // 4 / 2
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -553,14 +553,14 @@ export const embellishmentData = [
             table: -9,
             ppm: 60 / 5,
             secondaries: ['versatility'],
-            efficiency: 0.5,
+            efficiency: 0.55,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
             table: -9,
             ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
-            efficiency: 0.6,
+            efficiency: 0.5,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {

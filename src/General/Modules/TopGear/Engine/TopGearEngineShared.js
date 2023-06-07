@@ -12,6 +12,21 @@ export function compileStats(stats, bonus_stats) {
     
   }
 
+
+// TODO: Add blocklist. It can be fairly basic.
+export const generateReportCode = () => {
+    let result = "";
+    const stringLength = 12;
+    const possChars ='abcdefhijklmnopqrstuvwxyz';
+  
+    const charLength = possChars.length;
+    for ( let i = 0; i < stringLength; i++ ) {
+        result += possChars.charAt(Math.floor(Math.random() * charLength));
+    }
+  
+    return result;
+  }
+
 export function buildDifferential(itemSet, primeSet, player, contentType) {
     let doubleSlot = {};
     const primeList = primeSet.itemList;
