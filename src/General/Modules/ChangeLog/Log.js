@@ -10,6 +10,15 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 10,
+    date: "7 June",
+    changes: [ 
+      "Added Heroic and Normal Max versions to Upgrade Finder so that you can test fully upgraded versions of items.",
+      "Added an Avenging Crusader playstyle for Holy Paladin.",
+      "Toxic Thorn boots now assume you spend more of the procs on healing and fewer on damage.",
+  ]},
+  {
+    version: "10.1.0",
     update: 9,
     date: "23 May",
     changes: [ 

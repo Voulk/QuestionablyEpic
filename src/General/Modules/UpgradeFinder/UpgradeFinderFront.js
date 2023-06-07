@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
+const raidDifficulty = ["Raid Finder", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -256,7 +256,9 @@ export default function UpgradeFinderFront(props) {
 
   const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
   const [selectedNormal, setSelectedNormal] = React.useState(false);
+  const [selectedNormalMax, setSelectedNormalMax] = React.useState(false);
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
+  const [selectedHeroicMax, setSelectedHeroicMax] = React.useState(false);
   const [selectedMythic, setSelectedMythic] = React.useState(false);
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
@@ -270,8 +272,8 @@ export default function UpgradeFinderFront(props) {
 
   // let history = useHistory();
 
-  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
-  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
+  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic];
+  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic];
 
   const editSettings = (setting, newValue) => {
     userSettings[setting] = newValue;
@@ -374,7 +376,7 @@ export default function UpgradeFinderFront(props) {
                         }}
                         value="check"
                         selected={props.playerSettings.raid.includes(i)}
-                        style={{ width: 180, height: 45 }}
+                        style={{ width: 140, height: 40 }}
                         onChange={() => {
                           setsPvE[i](!selectsPvE[i]);
                           props.setRaidDifficulty(i);
@@ -462,7 +464,7 @@ export default function UpgradeFinderFront(props) {
           </Grid>
         )}
         {/* ------------------------------- PvP Section ------------------------------ */}
-        <Grid item xs={12}>
+        {/*<Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
             <div style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
@@ -492,9 +494,9 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </div>
           </Paper>
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
-      </Grid>
+      </Grid> 
 
       <div
         style={{

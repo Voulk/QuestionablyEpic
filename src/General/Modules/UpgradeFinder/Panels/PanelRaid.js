@@ -6,7 +6,7 @@ import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterItemListByDropLoc, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -22,41 +22,16 @@ const getDifficultyName = (difficulty) => {
     case 1:
       return "Normal";
     case 2:
-      return "Heroic";
+      return "Normal (Max)";
     case 3:
+      return "Heroic";
+    case 4:
+      return "Heroic (Max)";
+    case 5:
       return "Mythic";
   }
 };
 
-// const getDifficultyNameClassic = (difficulty) => {
-//   switch (difficulty) {
-//     case 0:
-//       return "10m Normal";
-//     case 1:
-//       return "10m Heroic";
-//     case 2:
-//       return "10m Hard Mode";
-//     case 3:
-//       return "25m Normal";
-//     case 4:
-//       return "25m Heroic";
-//     case 5:
-//       return "25m Hard Mode";
-//   }
-// };
-
-const getDifficultyBaseLevel = (difficulty) => {
-  switch (difficulty) {
-    case 0:
-      return 402;
-    case 1:
-      return 415;
-    case 2:
-      return 428;
-    case 3:
-      return 441;
-  }
-};
 
 export default function RaidGearContainer(props) {
   const classes = raidStyles();
@@ -86,6 +61,7 @@ export default function RaidGearContainer(props) {
     return raidName;
   };
 
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Shadowlands                                          */
   /* ---------------------------------------------------------------------------------------------- */
@@ -99,6 +75,7 @@ export default function RaidGearContainer(props) {
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
     const retailBossList = Array.from(Object.keys(encounterDB[1195].bosses));
+
 
     return (
       <Grid item xs={12}>
@@ -154,11 +131,11 @@ export default function RaidGearContainer(props) {
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                                   {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
-                                  {[...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(firstDifficulty))]
+                                  {[...filterItemListByDropLoc(itemList, 1208, key, "Raid", firstDifficulty)]
                                     .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
                                     .filter((item) => item !== 0).length +
                                     (secondDifficulty !== -1
-                                      ? [...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(secondDifficulty))]
+                                      ? [...filterItemListByDropLoc(itemList, 1208, key, "Raid", secondDifficulty)]
                                           .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
                                           .filter((item) => item !== 0).length
                                       : 0)}{" "}
@@ -181,7 +158,7 @@ export default function RaidGearContainer(props) {
                                         <div style={{ marginLeft: 8 }}>
                                           {getDifficultyName(firstDifficulty)} -{" "}
                                           {
-                                            [...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(firstDifficulty))]
+                                            [...filterItemListByDropLoc(itemList, 1208, key, "Raid", firstDifficulty)]
                                               .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
                                               .filter((item) => item !== 0).length
                                           }{" "}
@@ -190,7 +167,7 @@ export default function RaidGearContainer(props) {
                                       </Typography>
                                     </Grid>
 
-                                    {[...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(firstDifficulty))].map((item, index) => (
+                                    {[...filterItemListByDropLoc(itemList, 1208, key, "Raid", firstDifficulty)].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
@@ -210,7 +187,7 @@ export default function RaidGearContainer(props) {
                                           <div style={{ marginLeft: 8 }}>
                                             {getDifficultyName(secondDifficulty)} -{" "}
                                             {
-                                              [...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(secondDifficulty))]
+                                              [...filterItemListByDropLoc(itemList, 1208, key, "Raid", secondDifficulty)]
                                                 .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
                                                 .filter((item) => item !== 0).length
                                             }{" "}
@@ -219,7 +196,7 @@ export default function RaidGearContainer(props) {
                                         </Typography>
                                       </Grid>
 
-                                      {[...filterItemListBySource(itemList, raidID, key, getDifficultyBaseLevel(secondDifficulty))].map((item, index) => (
+                                      {[...filterItemListByDropLoc(itemList, 1208, key, "Raid", secondDifficulty)].map((item, index) => (
                                         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                       ))}
                                     </Grid>

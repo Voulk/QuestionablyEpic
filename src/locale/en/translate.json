@@ -251,9 +251,11 @@
     "Raid": "Raid",
     "RaidDifficulty": {
       "Heroic": "Heroic",
+      "Heroic (Max)": "Heroic (Max)",
       "Mythic": "Mythic",
       "Normal": "Normal",
-      "Raid Finder": "Looking for Raid"
+      "Normal (Max)": "Normal (Max)",
+      "Raid Finder": "LFR"
     },
     "Region": "Region",
     "Remove": "Remove",

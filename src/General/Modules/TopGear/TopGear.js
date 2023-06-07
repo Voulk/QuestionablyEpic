@@ -92,8 +92,6 @@ const sendReport = (shortReport) => {
 }
 
 
-
-
 export default function TopGear(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;

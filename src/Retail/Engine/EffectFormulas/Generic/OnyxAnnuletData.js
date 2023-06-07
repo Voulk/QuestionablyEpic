@@ -8,10 +8,14 @@ import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
 import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
 import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
 import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
+
+/*
 import s204002 from "Images/Resources/PrimordialGems/s204002.jpg";
 import s204029 from "Images/Resources/PrimordialGems/s204029.jpg";
 import s204012 from "Images/Resources/PrimordialGems/s204012.jpg";
 import s204000 from "Images/Resources/PrimordialGems/s204000.jpg";
+*/
+
 // Onyx Annulet is handled in two steps.
 // One works out the best combination of gems.
 // The other does one calculation run where it computes the bonus stats of that combo.
