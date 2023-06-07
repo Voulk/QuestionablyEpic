@@ -1,6 +1,7 @@
 import axios from "axios";
 import { accessToken } from "General/SystemTools/LogImport/accessToken.js";
 import { filterIDS } from "../Filters";
+import { spellExclusions } from "General/Modules/CooldownPlanner/Data/SpellExclusions";
 
 const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
   let damageTakenFilters = "";
@@ -94,7 +95,16 @@ const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
     } while (nextpage !== undefined && nextpage !== null);
   }
 
-  return damage;
+  let filteredDamage = Object.keys(damage)
+    .filter(
+      (key) =>
+        spellExclusions.includes(damage[key].ability.guid) === false &&
+        // Has to Have unmitigatedAmount
+        damage[key].unmitigatedAmount,
+    )
+    .map((key) => damage[key]);
+
+  return filteredDamage;
 };
 
 export default getDamageTakenData;

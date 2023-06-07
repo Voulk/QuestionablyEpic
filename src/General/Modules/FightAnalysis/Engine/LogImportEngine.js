@@ -8,13 +8,13 @@ import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
 import convertHealerData from "./Functions/convertHealerData";
 import getFightAnalysisData from "./Functions/getFightAnalysisData";
 import getDamageTakenData from "./Functions/getDamageTakenData";
+import getDefensiveCasts from "./Functions/getDefensiveCasts";
 import convertCharacterIDs from "./Functions/convertCharacterIDs";
-import convertEnemyIDs from "./Functions/convertEnemyIDs";
+// import convertEnemyIDs from "./Functions/convertEnemyIDs";
 import convertSummaryData from "./Functions/convertSummaryData";
-import convertDamageLogData from "./Functions/convertDamageLogData";
 import convertHealerCasts from "./Functions/convertHealerCasts";
-import convertDefensives from "./Functions/convertDefensives";
-import convertExternals from "./Functions/convertExternals";
+import getExternalCasts from "./Functions/getExternalCasts";
+import getCooldownCasts from "./Functions/getCooldownCasts";
 
 export default async function updatechartdata(starttime, endtime, reportID, boss, difficulty, id) {
   /* -------- Note we are using alot of imported functions Here to save bloat in the Code. -------- */
@@ -30,12 +30,12 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   let damagingAbilities = [];
 
   const WCLDATA = await getFightAnalysisData(reportID, id, boss, starttime, endtime);
-  const wclDamageTakenData = await getDamageTakenData(reportID, id, boss, starttime, endtime);
 
   /* ---- Fight Length of the selected report is calculated and coverted to seconds as a string --- */
   const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   const healers = await convertHealerData(WCLDATA); // await importHealerLogData(starttime, endtime, this.state.reportid);
+  const healerMap = healers.map((key) => key.id);
   /* ------------------------------ Import Character IDS from the log ----------------------------- */
   const playerIDs = await convertCharacterIDs(WCLDATA.characterIDs.data.playerDetails);
   /* -------------------------------- Import Enemy IDS from the log ------------------------------- */
@@ -45,7 +45,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   const summary = await convertSummaryData(WCLDATA.summaryData.data.playerDetails);
 
   /* --------------- Import all the damage-taken from the log for friendly targets. --------------- */
-  const damage = await convertDamageLogData(wclDamageTakenData);
+  const damage = await getDamageTakenData(reportID, id, boss, starttime, endtime);
 
   const health = await importRaidHealth(starttime, endtime, this.state.reportid);
 
@@ -57,18 +57,12 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   }));
 
   /* ------------------ Import the log data for Casts for each healer in the log. ----------------- */
-  const cooldowns = await convertHealerCasts(
-    WCLDATA.friendlyCasts.data,
-    healers.map((key) => key.id),
-  );
+  const cooldowns = await getCooldownCasts(reportID, id, boss, starttime, endtime, healerMap);
 
-  const defensives = await convertDefensives(WCLDATA.defensiveData.data);
+  const defensives = await getDefensiveCasts(reportID, id, boss, starttime, endtime);
 
   /* ------------------------- Import Log data for external cooldown casts ------------------------ */
-  const externals = await convertExternals(
-    WCLDATA.externalData.data,
-    healers.map((key) => key.id),
-  );
+  const externals = await getExternalCasts(reportID, id, boss, starttime, endtime, healerMap);
 
   /* ------------------------------- Import Log data for enemy casts ------------------------------ */
   // const enemyCasts = await importEnemyCasts(starttime, endtime, this.state.reportid);
