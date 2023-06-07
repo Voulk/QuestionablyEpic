@@ -58,6 +58,7 @@ const apl = [
     {s: "Light of Dawn"},
     {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Holy Shock"}, 
+    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
     {s: "Crusader Strike"}, 
     {s: "Judgment"}, 
@@ -116,6 +117,12 @@ const apl = [
                 state.holyPower = Math.min(state.holyPower + 1, 5);
             }
         })
+    }
+
+    if (getTalentPoints(state, "inflorescenceOfTheSunwell")) {
+        PALADINCONSTANTS.infusion.flashOfLightReduction += 0.3;
+        PALADINCONSTANTS.infusion.holyLightHoPo += 0.34;
+        PALADINCONSTANTS.infusion.judgmentBonus *= 1.5;
     }
 
 
@@ -278,7 +285,10 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     if (checkBuffActive(state.activeBuffs, "Avenging Crusader") && ["Judgment", "Crusader Strike"].includes(spellName)) {
         const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 5, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 5}
         runHeal(state, acSpell, "Avenging Crusader")
-
+    }
+    if (spell.convertToHealing) {
+        const healSpell = {type: "heal", coeff: 0, flatHeal: damageVal * spell.convertToHealing, secondaries: ['mastery'], expectedOverheal: 0.35, targets: 1}
+        runHeal(state, healSpell, spellName + " (heal)");
     }
 
     return damageVal;
@@ -362,8 +372,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
         else if (spell.onCrit) {
             // Spell does something unique on crit.
             const roll = Math.random();
-            console.log("HS Crit chance: " + (getCrit(state.currentStats) - 1 + fullSpell[0].statMods.crit));
-            canProceed = roll <= (getCrit(state.currentStats) - 1 + fullSpell[0].statMods.crit);
+            canProceed = roll <= (getCrit(state.currentStats) - 1 + ('statMods' in fullSpell[0] ? fullSpell[0].statMods.crit : 0));
         }
         else canProceed = true;
 
@@ -453,7 +462,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
 
                     if (spell.canStack === false || buffStacks === 0) {
                         const buff = {name: spell.name, expiration: (state.t  + spell.buffDuration) + (spell.castTime || 0), buffType: spell.buffType, 
-                            value: spell.value, stacks: 1, canStack: spell.canStack, maxStacks: spell.maxStacks};
+                            value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack, maxStacks: spell.maxStacks};
                     
                         if (spell.name === "Cycle of Life") {
 
@@ -539,11 +548,11 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "holyLightMana");
             state.holyPower = Math.min(state.holyPower + PALADINCONSTANTS.infusion.holyLightHoPo, 5);
         }
-
-        
+  
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Infusion of Light");
     }
-    //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, PALADINCONSTANTS.callOfYsera, "Call of Ysera");
+    if (spellName === "Hammer of Wrath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Veneration");
+
 }
 
 const getTalentPoints = (state, talentName) => {
@@ -562,7 +571,7 @@ const getTalentData = (state, talentName, attribute) => {
     }
 }
 
-const spendSpellCost = (spell, state) => {
+const spendSpellCost = (spell, state, spellName) => {
     if ('essence' in spell[0]) {
         if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
             removeBuffStack(state.activeBuffs, "Essence Burst");
@@ -582,7 +591,10 @@ const spendSpellCost = (spell, state) => {
         }
     } 
         
-    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else if ('cost' in spell[0]) {
+        if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light")) state.manaSpent += spell[0].cost * (1 - PALADINCONSTANTS.infusion.flashOfLightReduction);
+        else state.manaSpent += spell[0].cost;
+    }
     else {
         // No cost. Do nothing.
     };    
@@ -753,7 +765,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             const spellName = queuedSpell;
             const fullSpell = paladinSpells[queuedSpell];
 
-            spendSpellCost(fullSpell, state);
+            spendSpellCost(fullSpell, state, spellName);
 
             runSpell(fullSpell, state, spellName, paladinSpells);
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;

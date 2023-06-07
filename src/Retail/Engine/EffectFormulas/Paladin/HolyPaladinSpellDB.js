@@ -51,6 +51,7 @@ export const PALADINSPELLDB = {
         name: "Infusion of Light",
         buffType: 'special',
         canStack: false,
+        stacks: 1,
         buffDuration: 30,
     }
 ],
@@ -74,6 +75,17 @@ export const PALADINSPELLDB = {
         cost: 22,
         coeff: 2.02, // Not final
         expectedOverheal: 0.14,
+        statMods: {'crit': 0},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Holy Light": [{
+        spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
+        type: "heal",
+        castTime: 2.5,
+        cost: 0,
+        coeff: 0, // Not final
+        expectedOverheal: 0.16,
+        statMods: {'crit': 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Crusader Strike": [{
@@ -388,6 +400,22 @@ export const baseTalents = {
     }}, 
 
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
+    veneration: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Hammer of Wrath'][0].convertToHealing = 2.5;
+        const venerationBuff = { // Push a HoW reset
+            type: "buff",
+            onCrit: true,
+            name: "Veneration",
+            buffType: 'special',
+            canStack: false,
+            stacks: 1,
+            buffDuration: 30,
+        };
+        spellDB['Flash of Light'].push(venerationBuff);
+        spellDB['Holy Light'].push(venerationBuff);
+        spellDB['Judgment'].push(venerationBuff);
+
+    }},
 
     // Might - Gain 20% Crit during wings. Currently just built in.
     avengingCrusader: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
@@ -444,4 +472,8 @@ export const baseTalents = {
     // Boundless Salvation
 
     // Inflorescence of the Sunwell
+    inflorescenceOfTheSunwell: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        spellDB['Holy Shock'][1].stacks = 2;
+
+    }}
 }
