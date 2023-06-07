@@ -149,6 +149,7 @@ describe("Evang Cast Sequence", () => {
     });
 });
 
+/*
 test("Compendium", () => {
     const spellList = []
     const aura = 0.94;
@@ -243,7 +244,7 @@ test("Compendium", () => {
     })
 
     console.log(spellList)
-});
+}); */
 
    /*
     test("Stat Weights", () => {

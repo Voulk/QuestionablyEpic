@@ -10,7 +10,7 @@
 // coeff: the spells intellect scaling. This is a combination of base coefficient, any possible spell ranks, and any relevant auras that might impact the spell.
 // cooldown: a spells cooldown. 
 // atoneOverheal: The average atonement overhealing caused by this spells cast. This is an average based on log analysis, and won't be perfectly accurate for every scenario.
-// overheal: A healing spells typical overhealing percentage.
+// expectedOverheal: A healing spells typical overhealing percentage.
 // secondaries: The secondary stats a spell scales with. Note that if it's a damage spell, you don't need to include the resulting atonements mastery scaling. 
 // targets: The number of targets a spell hits. All effects will be applied to every target.
 // tags: optional tags for specific functionality. Also includes scaling modifiers like spells that have square root scaling with number of targets.
@@ -62,7 +62,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         coeff: 1.25, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
-        overheal: 0.6,
+        expectedOverheal: 0.6,
         school: "holy",
         secondaries: ['crit', 'vers', 'mastery'],
     }],
@@ -73,7 +73,7 @@ export const DISCSPELLS = {
         cost: 0,
         coeff: 1.25,
         school: "holy",
-        overheal: 0.6,
+        expectedOverheal: 0.6,
         secondaries: ['crit', 'vers', 'mastery'],
     }],
     "Schism": [{
@@ -89,8 +89,6 @@ export const DISCSPELLS = {
     },
     {
         type: "buff",
-        castTime: 0,
-        cost: 0,
         buffDuration: 9,
         buffType: "special",
         value: 1.15,
@@ -128,15 +126,13 @@ export const DISCSPELLS = {
         cost: 4.5,
         coeff: 1.65,
         cooldown: 30,
-        overheal: 0.40,
+        expectedOverheal: 0.40,
         targets: 5,
         school: "shadow",
         secondaries: ['crit', 'vers']
     },
     {
         type: "buff",
-        castTime: 0,
-        cost: 0,
         buffDuration: 7,
         buffType: "special",
         value: 1.25,
@@ -178,12 +174,10 @@ export const DISCSPELLS = {
     },
     { // This is the absorb / damage reverse portion.
         type: "heal",
-        castTime: 0,
         coeff: 9, // This is 4.5 x 2 since the damage is both negated and then the target healed.
-        aura: 1,
         targets: 1,
         secondaries: ['vers'],
-        overheal: 0.15, // 
+        expectedOverheal: 0.15, // 
     }],
     "Divine Star": 
     // Divine Star deals damage and heals both on the way out and on the way back. 
@@ -196,20 +190,17 @@ export const DISCSPELLS = {
         cost: 2,
         coeff: 0.56 * 2,
         cooldown: 15,
-        aura: 1,
         school: "holy",
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.24,
     },
     {
         type: "heal",
-        castTime: 0,
         coeff: 0.7 * 2,
-        aura: 1,
         targets: 6,
         secondaries: ['crit', 'vers'],
         //tags: ['sqrt'],
-        overheal: 0.4,
+        expectedOverheal: 0.4,
     }],
     "Halo": 
     // 
@@ -220,21 +211,18 @@ export const DISCSPELLS = {
         cost: 2.7,
         coeff: 1.442,
         cooldown: 40,
-        aura: 1,
         school: "holy",
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.24,
     },
     {
         type: "heal",
-        castTime: 0,
         coeff: 1.61,
-        aura: 1,
         targets: 15,
         secondaries: ['crit', 'vers', 'mastery'],
         tags: ['sqrt'],
         sqrtMin: 6,
-        overheal: 0.5,
+        expectedOverheal: 0.5,
     }],
     "Power Word: Shield": [{
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
@@ -244,7 +232,6 @@ export const DISCSPELLS = {
         castTime: 0,
         cost: 2.4,
         coeff: 4.2,
-        aura: 1,
         cooldown: 7.5,
         hastedCooldown: true,
         atonement: 15,
@@ -252,7 +239,7 @@ export const DISCSPELLS = {
         school: "holy",
         targets: 1,
         secondaries: ['crit', 'vers'],
-        overheal: 0,
+        expectedOverheal: 0,
     }],
     "Renew": [{
         // To check: See if Renew still has an initial heal, and confirm whether it gets a mastery buff (unlikely).
@@ -265,17 +252,16 @@ export const DISCSPELLS = {
         atonement: 15,
         atonementPos: 'start',
         secondaries: ['crit', 'vers'],
-        overheal: 0.5,
+        expectedOverheal: 0.5,
     },
     {
-        castTime: 0,
         type: "buff",
         buffType: "heal",
         coeff: 0.32 * 1.25, // 
         tickRate: 3,
         targets: 1,
         buffDuration: 15,
-        overheal: 0.4,
+        expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery'], // + Haste
         canPartialTick: true,
     }],
@@ -290,7 +276,7 @@ export const DISCSPELLS = {
         atonementPos: 'end',
         targets: 1,
         secondaries: ['crit', 'vers'],
-        overheal: 0.35,
+        expectedOverheal: 0.35,
     }],
     // Rapture both buffs Power Word: Shield and adds an absorb to the target that is functionally the same as a buffed Power Word: Shield.
     // We'll match that in-game behavior here too.
@@ -306,12 +292,10 @@ export const DISCSPELLS = {
         atonementPos: 'start',
         targets: 1,
         secondaries: ['crit', 'vers'],
-        overheal: 0,
+        expectedOverheal: 0,
     },
     {
         type: "buff",
-        castTime: 0,
-        cost: 0,
         cooldown: 90,
         buffDuration: 8,
     }],
@@ -328,21 +312,19 @@ export const DISCSPELLS = {
         atonement: 9, // Nerfed to 7.5, reverted to 9. 
         atonementPos: 'end',
         secondaries: ['crit', 'vers'],
-        overheal: 0.35,
+        expectedOverheal: 0.35,
     }],
     "Purge the Wicked": [{
         spellData: {id: 204197, icon: "ability_mage_firestarter", cat: "damage"},
         type: "damage",
         castTime: 0,
         cost: 1.8,
-        aura: 1,
         coeff: 0.223, // 0.18,
         school: "holy", // This is Radiant damage so Fire / Holy.
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.14,
     },
     {
-        castTime: 0,
         type: "buff",
         buffType: "damage",
         coeff: 0.12, // 
@@ -364,7 +346,6 @@ export const DISCSPELLS = {
         secondaries: ['crit', 'vers'],
     },
     {
-        castTime: 0,
         type: "buff",
         buffType: "damage",
         coeff: 0.10268, // 
@@ -386,7 +367,6 @@ export const DISCSPELLS = {
         atoneOverheal: 0.18,
     },
     {
-        castTime: 1.5,
         type: "buff",
         buffType: "damage",
         coeff: 0.46, // 
@@ -408,8 +388,6 @@ export const DISCSPELLS = {
         atoneOverheal: 0.22,
     },
     {
-        castTime: 0,
-        cost: 0,
         type: "buff",
         buffType: "damage",
         coeff: 0.34, // 
@@ -454,6 +432,7 @@ export const DISCSPELLS = {
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
         castTime: 0,
+        offGCD: true,
         cost: 0,
         cooldown: 90,
         buffDuration: 15,
