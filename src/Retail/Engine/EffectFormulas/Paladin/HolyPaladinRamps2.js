@@ -17,7 +17,7 @@ const PALADINCONSTANTS = {
     
     masteryMod: 1.5, 
     masteryEfficiency: 0.80, 
-    baseMana: 50000,
+    baseMana: 250000,
     beaconOverhealing: 0.4,
 
     auraHealingBuff: 1.06,
@@ -211,7 +211,7 @@ const triggerGlimmerOfLight = (state) => {
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = PALADINCONSTANTS.auraDamageBuff;
 
-    mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); 
+    mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.15 : 1); 
     mult *= ((["Crusader Strike", "Judgment"].includes(spellName) && buffs.filter(function (buff) {return buff.name === "Avenging Crusader"}).length > 0) ? 1.3 : 1); 
 
     return mult;
@@ -224,7 +224,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = PALADINCONSTANTS.auraHealingBuff;
 
-    mult *= (state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.2 : 1); // Avenging Wrath
+    mult *= (state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.15 : 1); // Avenging Wrath
 
     if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
         mult *= 1.15;
@@ -532,8 +532,8 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
             if (spell.cooldown) {
 
-                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);
-                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
+                //if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);
+                if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
                 else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
                 else spell.activeCooldown = state.t + spell.cooldown;
             }
@@ -542,13 +542,19 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
     }); 
 
     // Any post-spell code.
-    if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
-    if (["Flash of Light", "Holy Light", "Judgment"].includes(spellName)) {
-        if (spellName === "Holy Light" && checkBuffActive("Infusion of Light")) {
+    if (["Flash of Light", "Holy Light", "Judgment"].includes(spellName) && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
+        if (spellName === "Holy Light") {
             if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "holyLightMana");
             state.holyPower = Math.min(state.holyPower + PALADINCONSTANTS.infusion.holyLightHoPo, 5);
         }
-  
+
+        // Apply Imbued Infusions
+        if (getTalentPoints(state, "imbuedInfusions")) {
+            const targetSpell = paladinSpells["Holy Shock"];
+            targetSpell[0].activeCooldown -= 2;
+        }
+
+        // Remove a stack of IoL.
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Infusion of Light");
     }
     if (spellName === "Hammer of Wrath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Veneration");
@@ -652,6 +658,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
 
+    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const paladinSpells = applyLoadoutEffects(deepCopyFunction(PALADINSPELLDB), settings, talents, state, stats);
     applyTalents(state, paladinSpells, stats)
 

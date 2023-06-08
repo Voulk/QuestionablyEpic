@@ -1,4 +1,4 @@
-import { addBuff } from "../Generic/RampBase";
+import { addBuff, getHealth } from "../Generic/RampBase";
 import { runHeal } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
@@ -36,13 +36,13 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 16,
-        coeff: 1.395, 
-        cooldown: 7.5,
+        cost: 2.6,
+        coeff: 1.118575, // 1.395, 
+        cooldown: 8.5,
         expectedOverheal: 0.25,
         holyPower: 1,
         hastedCooldown: true,
-        statMods: {'crit': 0},
+        statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
     },
     { // Infusion of Light
@@ -59,9 +59,9 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
         castTime: 0,
-        cost: 16,
+        cost: 2.6,
         coeff: 0.612, 
-        cooldown: 7.5,
+        cooldown: 8.5,
         expectedOverheal: 0.29,
         holyPower: 1,
         hastedCooldown: true,
@@ -75,36 +75,52 @@ export const PALADINSPELLDB = {
         cost: 22,
         coeff: 2.02, // Not final
         expectedOverheal: 0.14,
-        statMods: {'crit': 0},
+        statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Holy Light": [{
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 2.5,
-        cost: 0,
-        coeff: 0, // Not final
-        expectedOverheal: 0.16,
-        statMods: {'crit': 0},
+        cost: 2.4,
+        coeff: 3,
+        expectedOverheal: 0.21,
+        statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Crusader Strike": [{
         spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
         type: "damage",
         castTime: 0,
-        cost: 10,
-        coeff: 0.765, 
+        cost: 1.6,
+        coeff: 1.071, 
         cooldown: 6,
         holyPower: 1,
         hastedCooldown: true,
         secondaries: ['crit', 'vers']
     }],
+    "Shield of the Righteous": [{
+        spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
+        type: "damage",
+        castTime: 0,
+        cost: 0,
+        coeff: 0.5525 * 1.04, // AP -> SP mult. 
+        holyPower: -3,
+        secondaries: ['crit', 'vers']
+    },
+    {
+        type: "cooldownReduction",
+        cooldownReduction: 2,
+        targetSpell: "Crusader Strike",
+    }
+
+    ],
     "Judgment": [{  
         spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
         type: "damage",
         castTime: 0,
-        cost: 3,
-        coeff: 0.610542 * 1.5,
+        cost: 2.4,
+        coeff: 1.125,
         cooldown: 12,
         statMods: {'crit': 0},
         secondaries: ['crit', 'vers']
@@ -114,7 +130,7 @@ export const PALADINSPELLDB = {
         type: "damage",
         castTime: 1.5,
         cost: 0,
-        coeff: 1.2, 
+        coeff: 1.302, 
         cooldown: 7.5,
         hastedCooldown: true,
         holyPower: 1,
@@ -124,8 +140,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 0,
-        coeff: 1.05, // Not final
+        cost: 1.2,
+        coeff: 0.91476,
         expectedOverheal: 0.3,
         holyPower: -3,
         targets: 5,
@@ -135,7 +151,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 0, icon: "", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 0,
+        cost: 1.2,
         coeff: 3.15,
         expectedOverheal: 0.3,
         holyPower: -3,
@@ -150,7 +166,7 @@ export const PALADINSPELLDB = {
         cooldown: 120,
         buffType: 'statsMult',
         stat: 'crit',
-        value: (20 * 170), // 
+        value: (15 * 170), // 
         buffDuration: 20,
     }],
     "Avenging Crusader": [{
@@ -158,9 +174,9 @@ export const PALADINSPELLDB = {
         type: "buff",
         name: "Avenging Crusader",
         castTime: 0,
-        cost: 0,
-        cooldown: 45,
-        holyPower: -5,
+        cost: 3.6,
+        cooldown: 60,
+        holyPower: -3,
         buffType: 'special',
         buffDuration: 12,
     }],
@@ -188,25 +204,25 @@ export const PALADINSPELLDB = {
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
         castTime: 0,
         type: "heal",
-        cost: 18,
-        coeff: 0.25 * 1.6,
+        cost: 3.6,
+        coeff: 0.4 * 1.6,
         targets: 6,
         secondaries: ['crit', 'vers', 'mastery'],
         cooldown: 60,
-        expectedOverheal: 0.5,
+        expectedOverheal: 0.4,
     },
     {
-        // To check: See if Renew still has an initial heal, and confirm whether it gets a mastery buff (unlikely).
+        // 
         type: "buff",
         name: "Light's Hammer",
         buffType: "heal",
-        coeff: 0.25 * 1.6,
+        coeff: 0.4 * 1.6,
         targets: 6,
         secondaries: ['crit', 'vers', 'mastery'],
         canPartialTick: false,
         buffDuration: 14,
         tickRate: 2,
-        expectedOverheal: 0.5,
+        expectedOverheal: 0.45,
     }],
 
 }
@@ -257,6 +273,7 @@ export const baseTalents = {
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
 
     // Golden Path - Consecration heals 6 allies on tick.
+    // Seal of Mercy - Golden Path heals the lowest health ally an additional time for 100% value.
 
     // Judgment of Light - Judgment heals allies 5 times.
     judgmentOfLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -264,7 +281,7 @@ export const baseTalents = {
             name: "Judgment of Light",
             type: "heal",
             coeff: 0.175,
-            expectedOverheal: 0.2,
+            expectedOverheal: 0.28,
             targets: 5,
             secondaries: ['crit', 'vers', 'mastery']
         });
@@ -287,9 +304,9 @@ export const baseTalents = {
 
     }}, 
 
-    // Crusader's Reprieve - Small self-heal on Crusader Strike
+    // Crusader's Reprieve - Small self-heal on Crusader Strike (2% max health).
 
-    // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
+    // Strength of Conviction - While in Consecration, SotR and Word of Glory deal 10/20% more damage and healing. 
 
     // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
     divinePurpose: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -306,9 +323,45 @@ export const baseTalents = {
         spellDB['Word of Glory'].push(buffSpell);
     }}, 
 
+    // Justification. +10% Judgment damage.
+    justification: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Light of Dawn'][0].coeff *= 1.1;
+    }},
+
+    // SotR heals 5 nearby allies for 1% max health. Doesn't scale with anything. 
+    lightforgedBlessing: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Shield of the Righteous'].push({
+            type: "heal",
+            coeff: 0,
+            flatHeal: getHealth(state.currentStats, {}) * 0.01,
+            expectedOverheal: 0.20,
+            targets: 5,
+            statMods: {'crit': 0},
+            secondaries: [] // TODO: Check secondary scaling on launch.
+        })
+    }},
+
+    sealOfTheCrusader: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        // Seal of the Crusader heals when we connect a weapon swing. We don't actually swing here, but a HoT is effectively the same.
+        const buff = {
+            type: "buff",
+            buffType: "heal",
+            coeff: 0.1 * points * 1.04, // 
+            tickRate: 2.6,
+            targets: 1,
+            buffDuration: 999,
+            expectedOverheal: 0.5,
+            secondaries: ['crit', 'vers'], // + Haste
+        };
+        addBuff(state, buff, "Seal of the Crusader")
+    }},
+
+
 
 
     // Zealot's Paragon - Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of Avenging Crusader by 0.5s.
+    // == REMOVED ==
+    /*
     zealotsParagon: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'].push({
             type: "extendBuff",
@@ -322,7 +375,10 @@ export const baseTalents = {
         });
         spellDB['Judgment'][0].coeff *= 1.1;
         spellDB['Hammer of Wrath'][0].coeff *= 1.1;
-    }}, 
+    }},  */
+
+    // Lightforged Blessing
+    // SotR heals you and 4 nearby allies for 1% max health. Not buffed by Strength of Conviction.
 
     // Divine Resonance - Buff that casts a free Holy Shock every 5s for 15s.
 
@@ -346,33 +402,39 @@ export const baseTalents = {
 
     // === Spec Tree ===
     // Crusader's Might
-    crusadersMight: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    crusadersMight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'].push({
             type: "cooldownReduction",
-            cooldownReduction: 1 * points,
+            cooldownReduction: 1.5 * points,
             targetSpell: "Holy Shock",
         });
 
     }}, 
 
     // Shining Savior - WoG / LoD +5%.
+    // == REMOVED ==
+    /*
     shiningSavior: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Word of Glory'][0].coeff *= 1.05;
         spellDB['Light of Dawn'][0].coeff *= 1.05;
-    }}, 
+    }},  */
 
     // Resplendent Light - Holy Light splashes to 5 targets for 8% each.
 
-    // Divine Insight - Holy Shock damage and healing increased by 5%.
+    // Divine Insight - +1 Holy shock charge
     divineInsight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Holy Shock'][0].coeff *= 1.05;
+        spellDB['Holy Shock'][0].charges += 1;
     }}, 
 
     // Radiant Onslaught - Extra CS charge.
 
     // Tower of Radiance - Casting FoL / HL on Beacon gives +1 HoPo. Casting FoL / HL on anyone else has a chance to give +1 HoPo.
 
-    // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 1s.
+    // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 2s.
+    // Implemented in function.
+    imbuedInfusions: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+
+    }},
 
     // Divine Rev - While empowered by IoL, Flash heals for +20% and Holy Light refunds 1% mana.
     // Handled inside.
@@ -380,7 +442,7 @@ export const baseTalents = {
 
     // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
 
-    // Divine Glimpse - Holy Shock has a +7/15% crit chance.
+    // Divine Glimpse - Holy Shock / Judgment have +7.5/15% crit chance.
     divineGlimpse: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Holy Shock'][0].statMods.crit += (0.075 * points);
         spellDB['Judgment'][0].statMods.crit += (0.075 * points);
@@ -388,16 +450,20 @@ export const baseTalents = {
 
     // Sanctified Wrath - Holy Shock CD reduced by 40% during wings. +5s Wings duration.
     // Note that the CD portion is handled in Ramps instead of here.
+    // == REMOVED ==
+    /*
     sanctifiedWrath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Avenging Wrath'][0].buffDuration += 5;
-    }}, 
+    }}, */
 
     // Second Sunrise - Light of Dawn heals a second time for 20% of the amount.
     // TODO: Check if Empyrean Legacy affects both.
     // We'll probably end up converting this to an actual second cast in otrder to adjust its overhealing up.
+    // == REMOVED ==
+    /*
     secondSunrise: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'][0].coeff *= 1.2;
-    }}, 
+    }}, */ 
 
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
     veneration: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -423,6 +489,21 @@ export const baseTalents = {
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
+
+    // Holy Infusion
+    // Crusader strike generates +1 HoPo and deals +25% damage.
+    holyInfusion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Crusader Strike'][0].coeff *= 1.25;
+        spellDB['Crusader Strike'][0].holyPower += 1;
+    }},
+
+    // Awestruck
+    // Holy Shock, Holy Light, Flash of Light critical healing increased by 15%.
+    aweStruck: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Flash of Light'][0].statMods.critEffect += 0.15;
+        spellDB['Holy Light'][0].statMods.critEffect += 0.15;
+        spellDB['Holy Shock'][0].statMods.critEffect += 0.15;
+    }},
 
     // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
     awakening: {points: 0, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
