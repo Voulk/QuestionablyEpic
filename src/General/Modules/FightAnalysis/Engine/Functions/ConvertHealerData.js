@@ -20,7 +20,7 @@ async function convertHealerData(data) {
   const deathKnightData = Object.keys(data.deathKnightData.data.entries).map((key) => data.deathKnightData.data.entries[key]);
   const evokerData = Object.keys(data.evokerData.data.entries).map((key) => data.evokerData.data.entries[key]);
 
-  healers.concat(monkData, paladinData, druidData, priestData, shamanData, warriorData, demonHunterData, deathKnightData, evokerData);
+  healers = healers.concat(monkData, paladinData, druidData, priestData, shamanData, warriorData, demonHunterData, deathKnightData, evokerData);
 
   return healers;
 }

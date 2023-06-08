@@ -94,6 +94,7 @@ export default function HealerInfoCards(props) {
                   color: classColoursJS(key.type),
                   textAlign: "center",
                   display: "inline-flex",
+                  alignItems: "center",
                 }}
               >
                 {classicons(key.icon, { width: 22, height: 22, verticalAlign: "middle", marginRight: 4, borderRadius: 4 })}
