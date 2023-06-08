@@ -770,42 +770,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             runSpell(fullSpell, state, spellName, paladinSpells);
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
 
-            // Check if Echo
-            // If we have the Echo buff active, and our current cast is Echo compatible (this will probably change through Alpha) then:
-            // - Recast the echo version of the spell (created at the start of runtime).
-            // - The echo versions of spells are a weird mix of exception cases.
-            if (checkBuffActive(state.activeBuffs, "Echo") &&  !(PALADINCONSTANTS.echoExceptionSpells.includes(spellName))) {
-                // We have at least one Echo.
-
-                // Check Echo number.
-                const echoBuffs = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"});
-
-                // Our Echo buffs can be of different strengths (say, one comes from TA and one from a hard casted Echo).
-                // Because of this we'll iterate through our buffs 1 by 1 so we can use the correct Echo value.
-                for (let j = 0; j < echoBuffs.length; j++) {
-                    
-                    const echoBuff = echoBuffs[j];
-                    
-                    const echoSpell = JSON.parse(JSON.stringify(paladinSpells[spellName + "(Echo)"]));
-
-                    echoSpell.forEach(effect => {
-                        if ('coeff' in effect) effect.coeff = effect.coeff * echoBuff.value;
-                        if ('value' in effect) effect.value = effect.value * echoBuff.value;
-                    })
-
-                    // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
-                    if (spellName === "Reversion") echoSpell[0].function = paladinSpells["Reversion"][0].function;
-                    runSpell(echoSpell, state, spellName + "(Echo)", paladinSpells)
-
-                }
-
-                // Remove all of our Echo buffs.
-                state.activeBuffs =  state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
-
-            }
-
-
-
             queuedSpell = "";
             spellFinish = 0;
         }

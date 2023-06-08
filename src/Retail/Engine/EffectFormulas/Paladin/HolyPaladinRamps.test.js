@@ -89,6 +89,23 @@ describe("Evang Cast Sequence", () => {
         console.log(name + ": " + healing + " (+" + percInc + "%)")
     }
 
+    const printReport = (report) => {
+        const healing = report.healingDone;
+        let healingOrd = []
+        const sorted = Object.entries(healing)
+            .sort((a, b) => a[1] - b[1])
+            .reverse()
+            .reduce((a, c) => (a[c[0]] = c[1], a), {})
+
+        Object.keys(sorted).forEach(key => {
+            healingOrd.push(key + ": " + Math.round(sorted[key]) + " (" + Math.round(sorted[key] / report.totalHealing * 10000) / 100 + "%)") ;
+        });
+        console.log("Healing");
+        console.log(healingOrd);
+        console.log("HPS: " + Math.round(report.hps) + ". HPM: " + Math.round(100 * report.hpm) / 100);
+
+    }
+
     const seq = ["Light of Dawn", "Holy Shock", "Rest"] 
 
     test("Test Stuff", () => {
@@ -106,13 +123,13 @@ describe("Evang Cast Sequence", () => {
             const baseline = runCastSequence(seq, stats, settings, talents)
             //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
             sumHealing = sumHealing + baseline.hps;
-            if (iterations === 1 || i === iterations - 1) console.log(baseline);
+            if (iterations === 1 || i === iterations - 1) printReport(baseline);
         }
 
         
         //const baseline = runCastSequence(seq, activeStats, settings, talents)
         //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
-        console.log("Avg Healing: " + (sumHealing / iterations));
+        console.log("Avg Healing: " + Math.round((sumHealing / iterations)));
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
         
