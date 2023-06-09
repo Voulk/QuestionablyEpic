@@ -1,21 +1,10 @@
+// Importing necessary modules and data
 import axios from "axios";
 import { accessToken } from "General/SystemTools/LogImport/accessToken.js";
 import { externalsDB } from "Databases/ExternalsDB";
 
-const getExternalCasts = async (reportID, fightID, boss, start, end, healerID) => {
-  let nextpage = 0;
-  let externals = [];
-
-  let externalFilter = "";
-  externalsDB.map((key, i) => {
-    if (i !== externalsDB.length - 1) {
-      externalFilter = externalFilter.concat("ability.id=" + key.guid + " OR ");
-    } else {
-      externalFilter = externalFilter.concat("ability.id=" + key.guid);
-    }
-  });
-
-  const REPORT_QUERY = `
+// GraphQL query to fetch external casts data
+const REPORT_QUERY = `
   query GetExternalCasts($reportCode: String!, $startTime: Float!, $endTime: Float!, $externalFilters: String! ) {
     reportData {
       report(code: $reportCode) {
@@ -23,12 +12,13 @@ const getExternalCasts = async (reportID, fightID, boss, start, end, healerID) =
           data
           nextPageTimestamp
         }
-        }
       }
     }
-  
-  
-    `;
+  }
+`;
+
+// Function to send a request to the Warcraft Logs API and fetch external casts data
+async function fetchExternalData(reportCode, externalFilters, startTime, endTime) {
   try {
     const response = await axios({
       url: "https://www.warcraftlogs.com/api/v2/client",
@@ -41,63 +31,39 @@ const getExternalCasts = async (reportID, fightID, boss, start, end, healerID) =
       data: {
         query: REPORT_QUERY,
         variables: {
-          reportCode: reportID,
-          externalFilters: externalFilter,
-          startTime: start,
-          endTime: end,
+          reportCode,
+          externalFilters,
+          startTime,
+          endTime,
         },
       },
     });
-    externals = externals.concat(response.data.data.reportData.report.events.data);
-    nextpage = response.data.data.reportData.report.events.nextPageTimestamp;
+    return response.data.data.reportData.report.events;
   } catch (error) {
     console.error(error);
+    // Handle error as appropriate for your use case
+  }
+}
+
+// Main function to get external casts data
+const getExternalCasts = async (reportID, fightID, boss, start, end, healerID) => {
+  // Create filter string
+  const externalFilter = externalsDB.map(key => `ability.id=${key.guid}`).join(' OR ');
+
+  let externals = [];
+  let nextpage = start;
+
+  // Fetch data from all pages
+  while (nextpage) {
+    const result = await fetchExternalData(reportID, externalFilter, nextpage, end);
+    externals = externals.concat(result.data);
+    nextpage = result.nextPageTimestamp;
   }
 
-  if (nextpage !== undefined && nextpage !== null) {
-    do {
-      const REPORT_QUERY = `
-      query GetExternalCasts($reportCode: String!, $startTime: Float!, $endTime: Float!, $externalFilters: String! ) {
-        reportData {
-          report(code: $reportCode) {
-            events(dataType: Casts, hostilityType: Friendlies, translate: true, startTime: $startTime, endTime:$endTime, filterExpression: $externalFilters, useAbilityIDs: false) {
-              data
-              nextPageTimestamp
-            }
-            }
-          }
-        }
-          `;
-      try {
-        const response = await axios({
-          url: "https://www.warcraftlogs.com/api/v2/client",
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-          data: {
-            query: REPORT_QUERY,
-            variables: {
-              reportCode: reportID,
-              externalFilters: externalFilter,
-              startTime: nextpage,
-              endTime: end,
-            },
-          },
-        });
-        externals = externals.concat(response.data.data.reportData.report.events.data);
-        nextpage = response.data.data.reportData.report.events.nextPageTimestamp;
-      } catch (error) {
-        console.error(error);
-      }
-    } while (nextpage !== undefined && nextpage !== null);
-  }
-
-  let filteredExternals = Object.keys(externals)
-    .filter((key) => externalsDB.map((obj) => obj.guid).includes(externals[key].ability.guid) && externals[key].type === "cast" && healerID.includes(externals[key].sourceID))
-    .map((key) => externals[key]);
+  // Filter out non-cast events and events not related to the specified healer
+  const filteredExternals = externals.filter(
+    item => externalsDB.map(obj => obj.guid).includes(item.ability.guid) && item.type === "cast" && healerID.includes(item.sourceID)
+  );
 
   return filteredExternals;
 };

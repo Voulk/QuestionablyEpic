@@ -1,23 +1,11 @@
+// Importing necessary modules and data
 import axios from "axios";
 import { accessToken } from "General/SystemTools/LogImport/accessToken.js";
 import { filterIDS } from "../Filters";
 import { spellExclusions } from "General/Modules/CooldownPlanner/Data/SpellExclusions";
 
-const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
-  let damageTakenFilters = "";
-  const bossIDS = filterIDS[boss];
-  let nextpage = 0;
-  let damage = [];
-
-  bossIDS.map((key, i) => {
-    if (i !== bossIDS.length - 1) {
-      damageTakenFilters = damageTakenFilters.concat("source.id=" + key + " OR ");
-    } else {
-      damageTakenFilters = damageTakenFilters.concat("source.id=" + key);
-    }
-  });
-
-  const REPORT_QUERY = `
+// GraphQL query to fetch damage taken data
+const REPORT_QUERY = `
   query GetDamageTakenData($reportCode: String!, $startTime: Float!, $endTime: Float!, $damageTakenFilters: String! ) {
     reportData {
       report(code: $reportCode) {
@@ -28,7 +16,10 @@ const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
       }
     }
   }
-    `;
+`;
+
+// Function to send a request to the Warcraft Logs API and fetch damage taken data
+async function fetchDamageData(reportCode, damageTakenFilters, startTime, endTime) {
   try {
     const response = await axios({
       url: "https://www.warcraftlogs.com/api/v2/client",
@@ -41,68 +32,40 @@ const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
       data: {
         query: REPORT_QUERY,
         variables: {
-          reportCode: reportID,
-          damageTakenFilters: damageTakenFilters,
-          startTime: start,
-          endTime: end,
+          reportCode,
+          damageTakenFilters,
+          startTime,
+          endTime,
         },
       },
     });
-    damage = damage.concat(response.data.data.reportData.report.events.data);
-    nextpage = response.data.data.reportData.report.events.nextPageTimestamp;
+    return response.data.data.reportData.report.events;
   } catch (error) {
     console.error(error);
+    // Handle error as appropriate for your use case
+  }
+}
+
+// Main function to get damage taken data
+const getDamageTakenData = async (reportID, fightID, boss, start, end) => {
+  // Get boss IDs and create filter string
+  const bossIDS = filterIDS[boss];
+  const damageTakenFilters = bossIDS.map(id => `source.id=${id}`).join(' OR ');
+  
+  let damage = [];
+  let nextpage = start;
+
+  // Fetch data from all pages
+  while (nextpage) {
+    const result = await fetchDamageData(reportID, damageTakenFilters, nextpage, end);
+    damage = damage.concat(result.data);
+    nextpage = result.nextPageTimestamp;
   }
 
-  if (nextpage !== undefined && nextpage !== null) {
-    do {
-      const REPORT_QUERY = `
-        query GetDamageTakenData($reportCode: String!, $startTime: Float!, $endTime: Float!, $damageTakenFilters: String! ) {
-          reportData {
-            report(code: $reportCode) {
-              events(dataType: DamageTaken, hostilityType: Friendlies, translate: true, startTime: $startTime, endTime:$endTime, useAbilityIDs: false, filterExpression: $damageTakenFilters) {
-                data
-                nextPageTimestamp
-              }
-            }
-          }
-        }
-          `;
-      try {
-        const response = await axios({
-          url: "https://www.warcraftlogs.com/api/v2/client",
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-          data: {
-            query: REPORT_QUERY,
-            variables: {
-              reportCode: reportID,
-              damageTakenFilters: damageTakenFilters,
-              startTime: nextpage,
-              endTime: end,
-            },
-          },
-        });
-        damage = damage.concat(response.data.data.reportData.report.events.data);
-        nextpage = response.data.data.reportData.report.events.nextPageTimestamp;
-      } catch (error) {
-        console.error(error);
-      }
-    } while (nextpage !== undefined && nextpage !== null);
-  }
-
-  let filteredDamage = Object.keys(damage)
-    .filter(
-      (key) =>
-        spellExclusions.includes(damage[key].ability.guid) === false &&
-        // Has to Have unmitigatedAmount
-        damage[key].unmitigatedAmount,
-    )
-    .map((key) => damage[key]);
+  // Filter out unwanted damage data
+  const filteredDamage = damage.filter(
+    item => !spellExclusions.includes(item.ability.guid) && item.unmitigatedAmount
+  );
 
   return filteredDamage;
 };

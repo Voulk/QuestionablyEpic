@@ -1,9 +1,7 @@
 import axios from "axios";
 import { accessToken } from "General/SystemTools/LogImport/accessToken.js";
-import { filterIDS } from "../Filters";
 
-const getFightAnalysisData = async (reportID, fightID, boss, start, end) => {
-  const REPORT_QUERY = `
+const REPORT_QUERY = `
   query GetFightAnalysisData($reportCode: String!, $startTime: Float!, $endTime: Float! ) {
     reportData {
       report(code: $reportCode) {
@@ -25,13 +23,13 @@ const getFightAnalysisData = async (reportID, fightID, boss, start, end) => {
           data
           nextPageTimestamp
         }
-  
         summaryData: table(dataType: Summary, translate: true, startTime: $startTime, endTime:$endTime)
       }
     }
   }
-    `;
+`;
 
+const getFightAnalysisData = async (reportID, fightID, start, end) => {
   try {
     const response = await axios({
       url: "https://www.warcraftlogs.com/api/v2/client",
@@ -45,19 +43,15 @@ const getFightAnalysisData = async (reportID, fightID, boss, start, end) => {
         query: REPORT_QUERY,
         variables: {
           reportCode: reportID,
-          fightID: [fightID],
           startTime: start,
           endTime: end,
         },
       },
     });
-    console.log(response);
     return response.data.data.reportData.report;
   } catch (error) {
     console.error(error);
-    // setError(error);
-  } finally {
-    // setIsLoading(false);
+    // Handle error as appropriate for your use case
   }
 };
 

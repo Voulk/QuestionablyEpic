@@ -1,7 +1,6 @@
 //prettier-ignore
 import {
-  addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, importHealerLogData, importDamageLogData, importCastsLogData,
-  durationmaker, sumDamage, importSummaryData, importExternalCastsLogData, importCharacterIds, importEnemyCasts, importEnemyIds, importRaidHealth, importDefensiveLogData
+  addMissingTimestamps, getUniqueObjectsFromArray, reduceTimestamps, fightDuration, durationmaker, sumDamage, importRaidHealth
 } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
@@ -12,7 +11,6 @@ import getDefensiveCasts from "./Functions/getDefensiveCasts";
 import convertCharacterIDs from "./Functions/convertCharacterIDs";
 // import convertEnemyIDs from "./Functions/convertEnemyIDs";
 import convertSummaryData from "./Functions/convertSummaryData";
-import convertHealerCasts from "./Functions/convertHealerCasts";
 import getExternalCasts from "./Functions/getExternalCasts";
 import getCooldownCasts from "./Functions/getCooldownCasts";
 
@@ -29,7 +27,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   let sortedDataMitigatedDamageNoCooldowns = [];
   let damagingAbilities = [];
 
-  const WCLDATA = await getFightAnalysisData(reportID, id, boss, starttime, endtime);
+  const WCLDATA = await getFightAnalysisData(reportID, id, starttime, endtime);
 
   /* ---- Fight Length of the selected report is calculated and coverted to seconds as a string --- */
   const fightLength = moment.duration(fightDuration(endtime, starttime)).asSeconds().toString();
@@ -45,13 +43,17 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
   ]);
 
   /* --------------------------- Map Healer Data for ID, Name and Class. -------------------------- */
-  const healerIDName = healers.map((key) => ({
-    id: key.id,
-    name: key.name,
-    class: key.type,
-  }));
+  const healerIDName = [];
+  const healerMap = [];
 
-  const healerMap = healerIDName.map((key) => key.id);
+  for (const key of healers) {
+    healerIDName.push({
+      id: key.id,
+      name: key.name,
+      class: key.type,
+    });
+    healerMap.push(key.id);
+  }
 
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   const [cooldowns, externals] = await Promise.all([getCooldownCasts(reportID, id, boss, starttime, endtime, healerMap), getExternalCasts(reportID, id, boss, starttime, endtime, healerMap)]);
