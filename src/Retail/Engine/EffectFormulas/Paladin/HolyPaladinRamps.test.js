@@ -136,7 +136,7 @@ describe("Evang Cast Sequence", () => {
 
     });
 
-    /*
+    
     test("Stat Weights", () => {
 
 
@@ -150,7 +150,7 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 1;
+        const iterations = 6000;
         const metric = 'totalHealing';
         // Weights
 
@@ -180,5 +180,5 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    }); */
+    }); 
 }); 

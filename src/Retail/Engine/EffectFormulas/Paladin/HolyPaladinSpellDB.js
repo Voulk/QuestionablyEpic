@@ -411,6 +411,18 @@ export const baseTalents = {
 
     }}, 
 
+    // Judgment also adds an absorb to the target.
+    greaterJudgment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Judgment'].push({
+            type: "heal",
+            coeff: 2.5,
+            expectedOverheal: 0.04,
+            targets: 1,
+            statMods: {'crit': 0},
+            secondaries: ['versatility']
+        })
+    }},
+
     // Shining Savior - WoG / LoD +5%.
     // == REMOVED ==
     /*
