@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 11,
+    date: "12 June",
+    changes: [ 
+      "Fixed a bug where Annulet could import at a higher item level depending on your version of the SimC addon.",
+      "Added Magmaclaw Lure.",
+  ]},
+  {
+    version: "10.1.0",
     update: 10,
     date: "7 June",
     changes: [ 
