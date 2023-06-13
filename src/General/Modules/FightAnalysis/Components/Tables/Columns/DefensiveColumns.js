@@ -20,7 +20,7 @@ export const defensiveColumns = () => {
         fontSize: 14,
       },
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
+        <div style={{ color: classColoursJS(rowData.class), display: "inline-flex", verticalAlign: "middle" }}>
           {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {rowData.name}
         </div>

@@ -56,22 +56,18 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
     healerMap.push(key.id);
   }
 
-  const talentStrings = await getTalents(reportID, id, starttime, endtime, healerMap)
-
+  const talentStrings = await getTalents(reportID, id, starttime, endtime, healerMap);
   // Iterate over each key-value pair in the talentStrings object
   for (const [key, value] of Object.entries(talentStrings)) {
     // Extract the ID from the key by removing the 'actor' prefix
-    const id = parseInt(key.replace('actor', ''), 10);
-
+    const id = parseInt(key.replace("actor", ""), 10);
     // Find the corresponding healer in the healerIDName array
-    const healer = healerIDName.find(healer => healer.id === id);
-
+    const healer = summary.find((healer) => healer.id === id);
     // If a healer was found, add the talent string to the healer object
     if (healer) {
       healer.talentString = value;
     }
   }
-
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   const [cooldowns, externals] = await Promise.all([getCooldownCasts(reportID, id, boss, starttime, endtime, healerMap), getExternalCasts(reportID, id, boss, starttime, endtime, healerMap)]);
 
@@ -126,8 +122,8 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
           return obj.id === key.sourceID;
         })
         .map((obj) => obj.name) +
-        " - " +
-        key.ability.name]: 1,
+      " - " +
+      key.ability.name]: 1,
     }))
     .map((key) => healerDurations.push(durationmaker(key.guid, key.timestamp, Object.getOwnPropertyNames(key).slice(3), moment.utc(fightDuration(endtime, starttime)).startOf("second").valueOf())));
 
@@ -377,6 +373,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
           ilvl: key.combatantInfo.stats["Item Level"] ? key.combatantInfo.stats["Item Level"]["min"] : 0,
         },
       ],
+      talentString: key.talentString,
     })),
     currentEndTime: endtime,
     currentStartTime: starttime,

@@ -10,6 +10,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { STATPERONEPERCENT } from "../../../Engine/STAT";
 import { getTranslatedStats } from "locale/statsLocale.js";
 import TalentTreeApp from "./TalentTree.js";
+import CopyButton from "./Talents/CopyButton.js";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -219,8 +220,10 @@ export default function HealerInfoCards(props) {
                           {t("CooldownPlanner.HealerCards.TalentHeader")}
                         </Typography>
                         <Divider />
-
                         <TalentTreeApp classIcon={key.icon} combatantInfo={key.combatantInfo} />
+                        <div style={{ float: "right", position: "relative", bottom: 4 }}>
+                          <CopyButton value={key.talentString} />
+                        </div>
                       </Grid>
                     </Grid>
                   </Paper>
