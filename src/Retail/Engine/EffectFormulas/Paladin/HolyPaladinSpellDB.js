@@ -37,7 +37,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 2.6,
-        coeff: 1.118575, // 1.395, 
+        coeff: 1.535, // 1.395, 
         cooldown: 8.5,
         expectedOverheal: 0.25,
         holyPower: 1,
@@ -110,7 +110,7 @@ export const PALADINSPELLDB = {
     },
     {
         type: "cooldownReduction",
-        cooldownReduction: 2,
+        cooldownReduction: 1.5,
         targetSpell: "Crusader Strike",
     }
 
@@ -479,7 +479,7 @@ export const baseTalents = {
 
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
     veneration: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Hammer of Wrath'][0].convertToHealing = 2.5;
+        spellDB['Hammer of Wrath'][0].convertToHealing = 1.8;
         const venerationBuff = { // Push a HoW reset
             type: "buff",
             onCrit: true,

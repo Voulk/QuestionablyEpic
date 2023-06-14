@@ -136,7 +136,7 @@ describe("Evang Cast Sequence", () => {
 
     });
 
-    
+    /*
     test("Stat Weights", () => {
 
 
@@ -180,5 +180,5 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    }); 
+    }); */
 }); 

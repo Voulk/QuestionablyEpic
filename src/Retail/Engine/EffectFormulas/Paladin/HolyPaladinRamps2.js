@@ -21,7 +21,7 @@ const PALADINCONSTANTS = {
     beaconOverhealing: 0.4,
 
     auraHealingBuff: 1.06,
-    auraDamageBuff: 0.92,
+    auraDamageBuff: 0.92 * 1.1,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
 
@@ -256,8 +256,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
     else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
 
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.35 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.4 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.27 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
@@ -283,7 +283,7 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
 
     // Avenging Crusader
     if (checkBuffActive(state.activeBuffs, "Avenging Crusader") && ["Judgment", "Crusader Strike"].includes(spellName)) {
-        const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 5, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 5}
+        const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 3.6, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 5}
         runHeal(state, acSpell, "Avenging Crusader")
     }
     if (spell.convertToHealing) {
