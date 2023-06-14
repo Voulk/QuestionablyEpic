@@ -73,6 +73,10 @@ export function convertPPMToUptime(PPM, duration) {
   return 1.13 * (1 - Math.E ** -((PPM * duration) / 60));
 }
 
+export function convertPPMToUptimeWithICD(PPM, duration) {
+  
+}
+
 export function getHighestStat(stats) {
   let max = "";
   let maxValue = -1;

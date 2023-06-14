@@ -12,12 +12,37 @@ import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
 import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
 import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
   };
+}
+
+function shortenReport(player, contentType, result) {
+  console.log(player.charName + " " + player.realm);
+  console.log(contentType);
+  console.log(result.differentials);
+
+  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
+  console.log(report);
+  return report;
+}
+
+const sendReport = (shortReport) => {
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
+  
+  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
+  //.then(response => response.text())
+  .then(response => console.log(response));
+  //.then(data => this.setState({ postId: data.id }));
 }
 
 export default function UpgradeFinderResults(props) {
@@ -32,8 +57,9 @@ export default function UpgradeFinderResults(props) {
   
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
-  console.log("Total Item Count: " + itemDifferentials.length);
-  console.log(JSON.stringify(itemDifferentials));
+  //console.log("Total Item Count: " + itemDifferentials.length);
+  //console.log(JSON.stringify(itemDifferentials));
+  sendReport(shortenReport(props.player, result.contentType, result));
   const gameType = useSelector((state) => state.gameType);
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
   const handleTabChange = (event, newValue) => {
