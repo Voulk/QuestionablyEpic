@@ -56,7 +56,8 @@ const apl = [
     {s: "Divine Toll"}, 
     {s: "Light's Hammer"}, 
     {s: "Light of Dawn"},
-    {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
+    //{s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
+    {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
     {s: "Holy Shock"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
@@ -232,6 +233,18 @@ const getHealingMult = (state, t, spellName, talents) => {
     }
     if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light") && getTalentPoints(state, "divineRevelations") > 0) mult *= getTalentData(state, "divineRevelations", "flashBonus");
     else if (spellName === "Judgment" && checkBuffActive(state.activeBuffs, "Infusion of Light")) mult *= PALADINCONSTANTS.infusion.judgmentBonus;
+
+    // There are two LotM mods. Untempered Dedication is not consumed but Maraads is. 
+    else if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Untempered Dedication")) {
+        mult *= (1 + getBuffStacks(state.activeBuffs, "Untempered Dedication") * 0.1);
+    }
+    else if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Maraads Dying Breath")) {
+        mult *= 1.5;
+        console.log("REMOVING MARAADS");
+        state.activeBuffs = removeBuff(state.activeBuffs, "Maraads Dying Breath");
+        console.log(state.activeBuffs);
+        
+    }
     return mult;
 }
 

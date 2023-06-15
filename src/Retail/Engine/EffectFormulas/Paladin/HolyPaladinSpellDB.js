@@ -78,6 +78,16 @@ export const PALADINSPELLDB = {
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
+    "Light of the Martyr": [{
+        spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 22,
+        coeff: 2.3, // Not final
+        expectedOverheal: 0.15,
+        statMods: {'crit': 0, critEffect: 0},
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
     "Holy Light": [{
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
@@ -493,6 +503,35 @@ export const baseTalents = {
         spellDB['Holy Light'].push(venerationBuff);
         spellDB['Judgment'].push(venerationBuff);
 
+    }},
+
+    // Untempered Dedication - LotM healing +10% per cast, stacks up to 15s.
+    untemperedDedication: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Light of the Martyr'].push({
+            type: "buff",
+            name: "Untempered Dedication",
+            buffType: 'special',
+            value: 1.1, 
+            buffDuration: 15,
+            canStack: true,
+            stacks: 1,
+            maxStacks: 5,
+        })
+
+    }},
+
+    // Maraads Dying Breath - LoD increases your LotM healing by 10% for each target healed. That LotM can heal through Beacon.
+    maraadsDyingBreath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Light of Dawn'].push({
+            type: "buff",
+            name: "Maraads Dying Breath",
+            buffType: 'special',
+            value: 1.5, 
+            buffDuration: 10,
+            canStack: false,
+            stacks: 1,
+            maxStacks: 1,
+        })
     }},
 
     // Might - Gain 20% Crit during wings. Currently just built in.

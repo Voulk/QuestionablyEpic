@@ -103,7 +103,7 @@ describe("Evang Cast Sequence", () => {
         console.log("Healing");
         console.log(healingOrd);
         console.log("HPS: " + Math.round(report.hps) + ". HPM: " + Math.round(100 * report.hpm) / 100);
-
+        console.log(report);
     }
 
     const seq = ["Light of Dawn", "Holy Shock", "Rest"] 
