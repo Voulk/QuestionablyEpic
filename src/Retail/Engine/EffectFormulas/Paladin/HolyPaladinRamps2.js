@@ -238,12 +238,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     else if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Untempered Dedication")) {
         mult *= (1 + getBuffStacks(state.activeBuffs, "Untempered Dedication") * 0.1);
     }
-    else if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Maraads Dying Breath")) {
+    if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Maraads Dying Breath")) {
         mult *= 1.5;
-        console.log("REMOVING MARAADS");
         state.activeBuffs = removeBuff(state.activeBuffs, "Maraads Dying Breath");
-        console.log(state.activeBuffs);
-        
+
     }
     return mult;
 }
