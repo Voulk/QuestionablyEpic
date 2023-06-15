@@ -440,7 +440,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
 
   // == Enchants and gems ==
-  const enchants = userSettings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
+  const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
   // Sockets
   //const highestWeight = getHighestWeight(castModel);

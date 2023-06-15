@@ -47,6 +47,7 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 // to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
 // You can expand this function with more fields if they're necessary.
 export function runGenericFlatProc(effect, itemLevel, player) {
+
   const value = processedValue(effect, itemLevel, effect.efficiency || 1);
   let mult = 1;
 

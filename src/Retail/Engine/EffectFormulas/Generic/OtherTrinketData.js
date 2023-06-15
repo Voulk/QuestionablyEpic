@@ -504,7 +504,7 @@ export const otherTrinketData = [
         table: -9,
         secondaries: ['versatility'],
         cooldown: 150,
-        efficiency: {Raid: 0.65, Dungeon: 0.76}, //
+        efficiency: {Raid: 0.62, Dungeon: 0.76}, //
         targets: 5,
       },
     ],

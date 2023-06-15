@@ -11,6 +11,8 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
     switch (trinketName) {
         case "Neltharion's Call to Suffering":
             return neltharionsCallToSuffering(trinketData, itemLevel, player, additionalData);
+        case "Neltharion's Call to Chaos":
+            return neltharionsCallToChaos(trinketData, itemLevel, player, additionalData);
         case "Screaming Black Dragonscale":
             return screamingBlackDragonscale(trinketData, itemLevel, player, additionalData);
         case "Rashok's Molten Heart":
@@ -45,7 +47,20 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
-          "Fixed to proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous.",
+          "Fixed to proc off healing spells including HoTs. Downside not included in formula but it isn't too dangerous. Priest / Druid only.",
+      };
+
+}
+
+const neltharionsCallToChaos = (data, itemLevel, player) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
+
+    return {
+        metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
+                "Average Int: " + Math.round(bonus_stats.intellect)],
+        description:
+          "Fixed to proc off healing spells. Very high variance. Evoker / Paladin only.",
       };
 
 }
@@ -55,11 +70,11 @@ const screamingBlackDragonscale = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        metrics: ["Uptime: " + convertExpectedUptime(effect, player, false), 
+        metrics: ["Uptime: " + effect.expectedUptime * 100 + "%", 
                 "Average Crit: " + Math.round(bonus_stats.crit),
                 "Average Leech: " + Math.round(bonus_stats.leech)],
         description:
-          "A very high uptime stat stick that is good for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.",
+          "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.",
       };
 
 }
