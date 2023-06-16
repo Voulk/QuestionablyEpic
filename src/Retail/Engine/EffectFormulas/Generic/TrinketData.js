@@ -69,14 +69,13 @@ export const raidTrinketData = [
         stat: "intellect",
         duration: 18,
         classMod: {"Preservation Evoker": 1, "Holy Paladin": 1},
-        ppm: 1 * 0.775,
+        ppm: 1 * 0.775, // Ultimately neither spec generates enough AoE events to get close to the advertised PPM.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * (data[0].classMod[player.spec] || 0.5);
-      console.log(convertPPMToUptime(data[0].ppm, data[0].duration))
       return bonus_stats;
     }
   },

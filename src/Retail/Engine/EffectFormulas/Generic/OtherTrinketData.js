@@ -500,7 +500,7 @@ export const otherTrinketData = [
     name: "Magmaclaw Lure",
     effects: [
       { 
-        coefficient: 448.172, 
+        coefficient: 448.172 * 0.331, // Nerf
         table: -9,
         secondaries: ['versatility'],
         cooldown: 150,
@@ -510,7 +510,6 @@ export const otherTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;

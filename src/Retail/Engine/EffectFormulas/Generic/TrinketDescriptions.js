@@ -19,6 +19,12 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
             return rashoksMoltenHeart(trinketData, itemLevel, player, additionalData);
         case "Rainsong":
             return rainsong(trinketData, itemLevel, player, additionalData);
+        case "Magmaclaw Lure":
+            return magmaclawLure(trinketData, itemLevel, player, additionalData);
+        case "Ominous Chromatic Essence":
+            return ominousChromaticEssence(trinketData, itemLevel, player, additionalData);
+        case "Ward of Faceless Ire":
+            return wardOfFacelessIre(trinketData, itemLevel, player, additionalData);
         default:
             return null;
     }
@@ -94,6 +100,46 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
 
 }
 
+const magmaclawLure = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    
+
+    return {
+        metrics: ["HPS: " + Math.round(bonus_stats.hps),
+                "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
+        description:
+          "A previously overtuned AoE shield effect. Note that post-nerf this is no longer worth wearing if you have access to higher item level alternatives.",
+      };
+}
+
+const wardOfFacelessIre = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        metrics: ["HPS: " + Math.round(bonus_stats.hps),
+                "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
+        description:
+          "A niche, but situationally powerful single target shield. The DPS portion is abysmal but having access to a big two minute defensive is quite powerful to have in your back pocket. Somewhat overshadowed by Magmaclaw Lure. Overall HPS is poor.",
+      };
+}
+
+const ominousChromaticEssence = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    const primary = processedValue(data.effects[0], itemLevel);
+    const secondary = processedValue(data.effects[1], itemLevel);
+    const playerBestStat = player.getHighestStatWeight(additionalData.contentType);
+
+    return {
+        metrics: ["Chosen Stat: " + Math.round(primary + secondary * 0.25),
+                    "Other Secondaries: " + Math.round(secondary * 1.25)],
+        description:
+          "Great passive stat trinket. If your raid needs a specific buff it's ok to use it even if it's slightly worse for you. If you get to choose, then " + playerBestStat + " is likely to be your best option.",
+      };
+}
+
 const rainsong = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
@@ -106,4 +152,6 @@ const rainsong = (data, itemLevel, player, additionalData) => {
           "A solid haste trinket, though it leans support heavy so you'll only find it to be a competitive choice if you value giving buffs to allies.",
       };
 
+
 }
+
