@@ -20,7 +20,7 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
         case "Rainsong":
             return rainsong(trinketData, itemLevel, player, additionalData);
         case "Magmaclaw Lure":
-            return magmaclawLure(trinketData, itemLevel, player, additionalData);
+            return magmaclawLure(trinketData, 411, player, additionalData);
         case "Ominous Chromatic Essence":
             return ominousChromaticEssence(trinketData, itemLevel, player, additionalData);
         case "Ward of Faceless Ire":
