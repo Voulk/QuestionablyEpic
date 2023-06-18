@@ -17,13 +17,17 @@ export const raidTrinketData = [
         ppm: 1,
       },
       { // Self-damage portion
-
+        coefficient: -16.71962,
+        table: -8,
+        ticks: 6,
+        ppm: 1,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player);
       //if (player.spec === "Restoration Druid" || player.spec === "Holy Priest") bonus_stats.intellect *= 0.25;
 
       return bonus_stats;

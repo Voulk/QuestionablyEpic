@@ -22,16 +22,14 @@ function a11yProps(index) {
 }
 
 function shortenReport(player, contentType, result) {
-  console.log(player.charName + " " + player.realm);
-  console.log(contentType);
-  console.log(result.differentials);
-
   const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
-  console.log(report);
+
   return report;
 }
 
 const sendReport = (shortReport) => {
+
+  /*
   const requestOptions = {
     method: 'POST',
     mode: 'no-cors',
@@ -40,9 +38,8 @@ const sendReport = (shortReport) => {
   };
   
   fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
-  //.then(response => response.text())
   .then(response => console.log(response));
-  //.then(data => this.setState({ postId: data.id }));
+  */
 }
 
 export default function UpgradeFinderResults(props) {
