@@ -6,8 +6,7 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Warning: Expect frequent changes during patch week.",
-      "-> There's likely to be hotfixes and models might still be fine tuned.",
+      "-> If you raid mythic, add a log to best analyze Onyx Annulet.",
       "-> Tier Set formulas are preliminary."
   ],
   "Classic": [""]
