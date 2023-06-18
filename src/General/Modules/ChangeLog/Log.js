@@ -10,6 +10,16 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 12,
+    date: "16 June",
+    changes: [ 
+      "New Setting: Chromatic Essence Stat / Resonance.",
+      "Added 5 new Trinket Deep Dive cards.",
+      "Bugfix: The expected uptime of Dragonscale and Call to Chaos decreased slightly to better match in-game values. Due to the way these trinkets proc they just don't live up to the uptime the spell data would suggest. Note that while this changes trinket order, both are still powerful options.",
+      "In game Hotfix: Magmawclaw Lure nerfed by ~67%."
+  ]},
+  {
+    version: "10.1.0",
     update: 11,
     date: "12 June",
     changes: [ 
