@@ -111,7 +111,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
-      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
     }
     else {
       // No result queued. Check URL for report code and load that.
