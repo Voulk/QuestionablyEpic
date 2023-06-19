@@ -106,7 +106,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
 
   /* ---------------- Filter the array to unique entries for Ability name and Guid. --------------- */
   const uniqueArray = damagingAbilities.filter((ele, ind) => ind === damagingAbilities.findIndex((elem) => elem.ability === ele.ability && elem.guid === ele.guid));
-
+  const uniqueAbilityNames = Array.from(new Set(damage.map((key) => key.ability.name)));
   /* -- Map the cd data imported into an array of cds in this format (HealerName - CooldownName) -- */
   /* ------ Unique list of Cds from the previously mapped array is made, then create an array ----- */
   /* -------- We do this for the chart data as these are needed for dataKeys for the chart. ------- */
@@ -295,7 +295,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
 
   /* ----------------- Create any missing timestamps in the fight (i.e no damage) ----------------- */
   /* --------- These are needed so the chart doesn't stretch the areas to the next point.) -------- */
-  let times = addMissingTimestamps(fightDuration(endtime, starttime));
+  let times = addMissingTimestamps(fightDuration(endtime, starttime), uniqueAbilityNames, uniqueArrayCD);
 
   /* ------- Concat the damage arrays with the cooldown durations with the missing durations ------ */
   let unmitigatedDamageFromLogWithTimesAddedAndCooldowns = unmitigatedDamageMap.concat(cooldownwithdurations, times);
@@ -388,13 +388,13 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
       type: key.type,
       stats: [
         {
-          intellect: key.combatantInfo.stats.Intellect.min,
-          crit: key.combatantInfo.stats.Crit.min,
-          haste: key.combatantInfo.stats.Haste.min,
-          mastery: key.combatantInfo.stats.Mastery.min,
-          versatility: key.combatantInfo.stats.Versatility.min,
-          leech: key.combatantInfo.stats.Leech.min,
-          ilvl: key.combatantInfo.stats["Item Level"].min,
+          intellect: key.combatantInfo.stats.Intellect ? key.combatantInfo.stats.Intellect["min"] : 0,
+          crit: key.combatantInfo.stats.Crit ? key.combatantInfo.stats.Crit["min"] : 0,
+          haste: key.combatantInfo.stats.Haste ? key.combatantInfo.stats.Haste["min"] : 0,
+          mastery: key.combatantInfo.stats.Mastery ? key.combatantInfo.stats.Mastery["min"] : 0,
+          versatility: key.combatantInfo.stats.Versatility ? key.combatantInfo.stats.Versatility["min"] : 0,
+          leech: key.combatantInfo.stats.Leech ? key.combatantInfo.stats.Leech["min"] : 0,
+          ilvl: key.combatantInfo.stats["Item Level"] ? key.combatantInfo.stats["Item Level"]["min"] : 0,
         },
       ],
     })),

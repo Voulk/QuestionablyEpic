@@ -5,7 +5,6 @@ import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
-import { covenantIcons } from "../../CooldownPlanner/Functions/CovenantFunctions";
 import Autocomplete from "@mui/material/Autocomplete";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { getTranslatedRaceName } from "Databases/RacesDB";
@@ -13,7 +12,7 @@ import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
 import { getTranslatedClassName } from "locale/ClassNames";
-import { getTranslatedCovenantName } from "locale/covenants.js";
+
 
 const addBtn = require("../../../../Images/AddBtn.jpg");
 
@@ -71,7 +70,6 @@ export default function AddNewChar(props) {
   const [charName, setCharName] = React.useState("");
   const [regions, setRegions] = React.useState("");
   const [selectedRace, setSelectedRace] = React.useState("");
-  const [selectedCovenant, setSelectedCovenant] = React.useState("");
   const [server, setServer] = React.useState("");
   const region = ["CN", "US", "TW", "EU", "KR"];
 
@@ -90,7 +88,6 @@ export default function AddNewChar(props) {
     props.charAddedSnack();
     setSelectedRace("");
     setHealClass("");
-    setSelectedCovenant("");
     setServer("");
     // setRegions(null);
     setCharName("");
@@ -100,9 +97,6 @@ export default function AddNewChar(props) {
   };
   const handleChangeRace = (event) => {
     setSelectedRace(event.target.value);
-  };
-  const handleChangeCovenant = (event) => {
-    setSelectedCovenant(event.target.value);
   };
   const handleChangeName = (event) => {
     setCharName(event.target.value);
@@ -219,37 +213,6 @@ export default function AddNewChar(props) {
                 </Select>
               </FormControl>
             </Grid>
-            {gameType == "Retail" ? (
-              <Grid item xs={12}>
-                <FormControl disabled={healClass === "" ? true : false} className={classes.formControl} variant="outlined" size="small" label={t("Covenant")}>
-                  <InputLabel id="NewCovSelector">{t("Covenant")}</InputLabel>
-                  <Select label={t("Covenant")} value={selectedCovenant} onChange={handleChangeCovenant}>
-                    {healClass === ""
-                      ? ""
-                      : ["kyrian", "necrolord", "night_fae", "venthyr"].map((key, i, arr) => {
-                          let lastItem = i + 1 === arr.length ? false : true;
-                          return (
-                            <MenuItem divider={lastItem} key={"covenant" + i} value={key}>
-                              <div style={{ display: "inline-flex" }}>
-                                {covenantIcons(key, {
-                                  height: 26,
-                                  width: 26,
-                                  margin: "0px 5px 0px 5px",
-                                  verticalAlign: "middle",
-                                  borderRadius: "4px",
-                                  border: "1px solid rgba(255, 255, 255, 0.12)",
-                                })}
-                                {getTranslatedCovenantName(key, currentLanguage)}
-                              </div>
-                            </MenuItem>
-                          );
-                        })}
-                  </Select>
-                </FormControl>
-              </Grid>
-            ) : (
-              ""
-            )}
           </Grid>
         </DialogContent>
         <DialogActions>
@@ -257,9 +220,9 @@ export default function AddNewChar(props) {
             {t("Cancel")}
           </Button>
           <Button
-            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, selectedCovenant)}
+            onClick={() => handleAdd(charName, healClass, props.allChars, props.charUpdate, regions, server, selectedRace, gameType, "")}
             color="primary"
-            disabled={selectedRace === "" || (selectedCovenant === "" && gameType == "Retail") ? true : false}
+            disabled={selectedRace === "" ? true : false}
             variant="outlined"
           >
             {t("Add")}

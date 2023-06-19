@@ -1,6 +1,6 @@
-import { getAvailableClassConduits } from "../../../Retail/Modules/Covenants/CovenantUtilities";
+
 import SPEC from "../../Engine/SPECS";
-import STAT from "../../Engine/STAT";
+import STAT, { STATCONVERSION } from "../../Engine/STAT";
 import { itemDB } from "Databases/ItemDB";
 import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
@@ -14,6 +14,7 @@ import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
+import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
 class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -22,57 +23,36 @@ class Player {
     this.charID = charID;
 
     this.activeItems = [];
-    this.activeConduits = [];
-    this.renown = 1;
-    this.region = region;
-    this.realm = realm;
-    this.race = race;
+    this.region = region || "";
+    this.realm = realm || "";
+    this.race = race || "";
     this.uniqueHash = getUnique();
     this.charImageURL = "";
     this.charAvatarURL = "";
 
     if (gameType === "Retail") {
       this.setupDefaults(specName);
-      this.setDefaultCovenant(specName);
-      this.activeConduits = getAvailableClassConduits(specName);
       this.gameType = "Retail";
     }
-    // console.log(this.charImageURL);
-    //if (statWeights !== "default" && statWeights.DefaultWeights === false) this.statWeights = statWeights;
 
-    //this.getStatPerc = getStatPerc;
   }
 
   uniqueHash = ""; // used for deletion purposes.
   spec = "";
   charID = 0;
   activeItems = [];
-  activeConduits = [];
-  renown = 1;
   castModel = {}; // Remove once CastModels is complete.
   castModels = [];
-  covenant = "";
   region = "";
   realm = "";
   race = "";
   talents = [];
-  dominationGemRanks = {
-    "Shard of Bek": 0,
-    "Shard of Jas": 0,
-    "Shard of Rev": 0,
-    "Shard of Cor": 0,
-    "Shard of Tel": 0,
-    "Shard of Kyr": 0,
-    "Shard of Dyz": 0,
-    "Shard of Zed": 0,
-    "Shard of Oth": 0,
-  };
-  gameType = ""; // Currently the options are Retail or Burning Crusade.
+  gameType = ""; // Currently the options are Retail or Classic
   activeModelID = { Raid: 0, Dungeon: 1 }; // Currently active Cast Model.
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
-  // These are used for items like trinkets or conduits, where a flat healing portion might scale with various secondary stats.
+  // These are used for items like trinkets or spell effects, where a flat healing portion might scale with various secondary stats.
   activeStats = {
     intellect: 1420,
     haste: 400,
@@ -82,15 +62,6 @@ class Player {
     stamina: 1900,
   };
 
-  // Stat weights are normalized around intellect.
-  // Players who don't insert their own stat weights can use the QE defaults.
-  // - Since these change quite often we use a tag. If default = true then their weights will automatically update whenever they open the app.
-  // - If they manually enter weights on the other hand, then this automatic-update won't occur.
-  statWeights = {
-    Raid: {},
-    Dungeon: {},
-    DefaultWeights: true,
-  };
 
   setPlayerAvatars = () => {
     apiGetPlayerImage2(this.region, this.charName, this.realm).then((res) => {
@@ -131,91 +102,11 @@ class Player {
   };
 
   setStatWeights = (newWeights, contentType) => {
-    //this.statWeights[contentType] = newWeights;
     this.getActiveModel(contentType).setStatWeights(newWeights);
   };
 
   getCovenant = () => {
     return this.covenant;
-  };
-
-  setCovenant = (cov) => {
-    let selectedCov = "";
-    if (!cov) selectedCov = "";
-    else selectedCov = cov;
-
-    selectedCov = selectedCov.toLowerCase().replace(/"/g, "");
-    if (["night_fae", "venthyr", "necrolord", "kyrian"].includes(selectedCov)) this.covenant = selectedCov;
-    else {
-      this.setDefaultCovenant(this.spec);
-      //reportError(this, "Player", "Invalid Covenant Supplied", selectedCov);
-    }
-  };
-
-  getDominationRanks = () => {
-    return this.dominationGemRanks;
-  };
-
-  getOwnedDominationShards = () => {
-    let shardsArray = [];
-    for (const [key, value] of Object.entries(this.dominationGemRanks)) {
-      if (value >= 0) shardsArray.push(key);
-    }
-    return shardsArray;
-  };
-
-  getDominationSingleRank = (gem) => {
-    return this.dominationGemRanks[gem];
-  };
-
-  getDominationSetRank = (color) => {
-    let setRank = 0;
-    if (color === "Unholy") setRank = Math.min(this.dominationGemRanks["Shard of Dyz"], this.dominationGemRanks["Shard of Oth"], this.dominationGemRanks["Shard of Zed"]);
-    else if (color === "Blood") setRank = Math.min(this.dominationGemRanks["Shard of Jas"], this.dominationGemRanks["Shard of Rev"], this.dominationGemRanks["Shard of Bek"]);
-    else if (color === "Frost") setRank = Math.min(this.dominationGemRanks["Shard of Tel"], this.dominationGemRanks["Shard of Cor"], this.dominationGemRanks["Shard of Kyr"]);
-
-    return Math.max(0, setRank);
-  };
-
-  setDominationRanks = (newRanks) => {
-    this.dominationGemRanks = newRanks;
-  };
-
-  setDefaultCovenant = (spec) => {
-    if (spec === "Holy Paladin") this.covenant = "venthyr";
-    else if (spec === "Restoration Druid") this.covenant = "night_fae";
-    else if (spec === "Preservation Evoker") this.covenant = "night_fae";
-    else if (spec === "Restoration Shaman") this.covenant = "necrolord";
-    else if (spec === "Mistweaver Monk") this.covenant = "venthyr";
-    else if (spec === "Discipline Priest") this.covenant = "kyrian";
-    else if (spec === "Holy Priest") this.covenant = "night_fae";
-    // This one is very flexible, but is also not used in any current formulas. It will be replaced when the models are updated.
-    else {
-      reportError(this, "Player", "Invalid Covenant Supplied", spec);
-      this.covenant = "night_fae";
-      //throw new Error("Invalid Spec Supplied to Cov Default");
-    }
-  };
-
-  calculateConduits = (contentType) => {
-    this.activeConduits.forEach((conduit) => {
-      conduit.setHPS(this, contentType);
-    });
-  };
-
-  getActiveConduits = (type) => {
-    return this.activeConduits.filter(function (conduits) {
-      return conduits.type == type;
-    });
-  };
-
-  getConduitLevel = (id) => {
-    let tempDict = this.activeConduits.filter(function (conduits) {
-      return conduits.id === id;
-    });
-
-    if (tempDict.length > 0) return tempDict[0].itemLevel;
-    else return 142;
   };
 
   // Used for the purpose of maximising stuff like ring enchants and gems.
@@ -273,10 +164,10 @@ class Player {
     return this.sortItems(temp);
   };
 
-  scoreActiveItems = (contentType) => {
+  scoreActiveItems = (contentType, playerSettings) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType, this.gameType);
+      item.softScore = scoreItem(item, this, contentType, this.gameType, playerSettings);
 
       // Error checking
       if (item.softScore < 0) {
@@ -286,6 +177,24 @@ class Player {
       }
     }
   };
+
+  // Saved = preset gems from Top Gear.
+  getBestPrimordialIDs = (settings, contentType, itemLevel = 242, saved = []) => {
+
+    const automatic = settings.primordialGems.value === "Automatic";
+
+    if (saved.length > 0) return saved;
+    else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
+    else {
+      const setGems = []
+      settings.primordialGems.value.split(",").forEach(gem => {
+        setGems.push(convertGemNameToID(gem.trim() + " Stone"))
+      })
+
+      return setGems;
+    }
+
+  }
 
   // TODO: Right now this just returns all items for testing. Remove the comment to return to it's intended functionality.
   getSelectedItems = () => {
@@ -308,6 +217,7 @@ class Player {
     });
     this.activeItems = tempArray;
   };
+
   activateItem = (unique) => {
     let tempArray = this.activeItems.filter(function (item) {
       if (item.uniqueHash === unique) item.active = !item.active;
@@ -316,20 +226,23 @@ class Player {
     this.activeItems = tempArray;
   };
 
+  activateAll = () => {
+    this.activeItems.forEach((item) => {
+      item.active = true;
+    })
+  }
+
   catalyzeItem = (item) => {
-    /*let tempArray = this.activeItems.filter(function (item) {
-      return item.uniqueHash === unique;
-    }); */
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "of the Empyrean",
-      "Discipline Priest": "of the Empyrean",
-      "Restoration Druid": "of the Fixed Stars",
-      "Restoration Shaman": "Theurgic Starspeaker's",
-      "Mistweaver Monk": "of the Grand Upwelling",
-      "Holy Paladin": "Luminous Chevalier's",
-      //"Preservation Evoker": "",
+      "Holy Priest": "of the Furnace Seraph",
+      "Discipline Priest": "of the Furnace Seraph",
+      "Restoration Druid": "of the Autumn Blaze",
+      "Restoration Shaman": "of the Cinderwolf",
+      "Mistweaver Monk": "of the Vermillion Forge",
+      "Holy Paladin": "Heartfire Sentinel's",
+      "Preservation Evoker": "of Obsidian Secrets",
     };
 
     const temp = itemDB.filter(function (item) {
@@ -345,10 +258,22 @@ class Player {
         newItem.uniqueEquip = "vault";
         newItem.vaultItem = true;
       }
+      newItem.quality = 4;
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.
     }
+  };
+
+  upgradeItem = (item, newLevel) => {
+    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, newLevel, "");
+    newItem.active = true;
+    if (item.uniqueEquip === "vault") {
+      newItem.uniqueEquip = "vault";
+      newItem.vaultItem = true;
+    }
+    newItem.quality = item.quality || 4;
+    this.activeItems = this.activeItems.concat(newItem);
   };
 
   sortItems = (container) => {
@@ -358,35 +283,24 @@ class Player {
     return container;
   };
 
+
   // Convert the players given stats into a percentage.
   // TODO: Implement Mastery
   getStatPerc = (stat) => {
-    var statPerc = 1.0;
+    stat = stat.toLowerCase();
+    let statPerc = 1.0;
     switch (stat) {
-      case "Haste":
-        statPerc = 1 + this.activeStats.haste / 33 / 100;
+      case "haste":
+        statPerc = 1 + this.activeStats.haste / STATCONVERSION.HASTE / 100;
         break;
-      case "Crit":
-        statPerc = 1.05 + this.activeStats.crit / 35 / 100;
+      case "crit":
+        statPerc = 1.05 + this.activeStats.crit / STATCONVERSION.CRIT / 100;
         break;
-      case "Mastery":
-        statPerc = 1; // TODO
-        if (this.spec === SPEC.HOLYPALADIN) {
-          statPerc = (0.12 + this.activeStats.mastery / 23.3 / 100) * 0.8 + 1; // 0.8 is our average mastery effectiveness.
-        } else if (this.spec === SPEC.RESTOSHAMAN) {
-          statPerc = 1 + (0.25 * 8 * 35 + this.activeStats.mastery) / (35 / 3) / 100; // .25 is placeholder for mastery effectiveness
-        } else if (this.spec === SPEC.RESTODRUID) {
-          statPerc = 1 + (0.04 + this.activeStats.mastery / 70 / 100) * 1.8; // 1.8 is the average HoT multiplier.
-        } else if (this.spec === SPEC.HOLYPRIEST) {
-          statPerc = 1 + (0.1 + this.activeStats.mastery / 27.95 / 100) * 0.9; // Assumes 10% echo of light overhealing. TODO: revisit.
-        } else if (this.spec === SPEC.DISCPRIEST) {
-          statPerc = 1 + (0.108 + this.activeStats.mastery / 25.9 / 100);
-        } else if (this.spec === SPEC.MISTWEAVERMONK) {
-          statPerc = 1; // TODO
-        }
+      case "mastery":
+        statPerc = 1 + (8 * STATCONVERSION.MASTERY + this.activeStats.mastery) / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[this.spec] / 100;
         break;
-      case "Versatility":
-        statPerc = 1 + this.activeStats.versatility / 40 / 100;
+      case "versatility":
+        statPerc = 1 + this.activeStats.versatility / STATCONVERSION.VERSATILITY / 100;
         break;
       default:
         break;
@@ -396,7 +310,11 @@ class Player {
     return Math.round(statPerc * 10000) / 10000;
   };
 
-  // Returns a stat multiplier. This function is really bad and needs to be rewritten.
+ 
+  /**
+   * @deprecated
+   * Use getStatMults now instead. It's much cleaner. This is an abomination.
+   */
   getStatMultiplier = (flag, statList = []) => {
     let mult = 1;
     if (flag === "ALL") {
@@ -424,23 +342,14 @@ class Player {
     return mult;
   };
 
-  updateConduitLevel = (id, newLevel) => {
-    for (let i = 0; i < this.activeConduits.length; i++) {
-      if (this.activeConduits[i].id === id) {
-        this.activeConduits[i].itemLevel = Math.max(145, Math.min(newLevel, 278));
-      }
-    }
-  };
-
-  /* ------------------------------------- Update renown level ------------------------------------ */
-  updateRenownLevel = (renownLevel) => {
-    this.renown = Math.max(0, Math.min(renownLevel, 80));
-  };
-
-  /* --------------------------------- Return current renown level -------------------------------- */
-  getRenownLevel = () => {
-    return this.renown;
-  };
+  getStatMults = (statList) => {
+    let mult = 1;
+    statList.forEach((stat) => {
+      if (stat === "intellect") mult *= this.activeStats.intellect;
+      else mult *= this.getStatPerc(stat);
+    });
+    return mult;
+  }
 
   getRealmString = () => {
     if (this.realm !== undefined && this.region !== undefined) {
@@ -467,7 +376,7 @@ class Player {
   getActiveModel = (contentType) => {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
     else {
-      reportError(this, "Player", "Invalid Cast Model", this.getSpec());
+      //reportError(this, "Player", "Invalid Cast Model", this.getSpec());
       return this.castModels[0];
     }
   };
@@ -483,7 +392,7 @@ class Player {
     this.activeStats.intellect = Math.round(stats.intellect * 1.05);
     this.activeStats.stamina = 2100; // Stamina is currently not compiled. This is a TODO, but is low impact and priority.
     if (this.spec === "Discipline Priest") {
-      this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
+      //this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
       this.getActiveModel("Raid").setRampInfo(stats);
     }
   };
@@ -493,17 +402,7 @@ class Player {
       // Check that it's a valid ID.
       this.activeModelID[contentType] = id;
 
-      // Paladin
-      if (this.spec === "Holy Paladin") {
-        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
-        else if (this.getActiveModel(contentType).modelName.includes("Necrolord")) this.setCovenant("necrolord");
-        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
-      } else if (this.spec === "Discipline Priest") {
-        if (this.getActiveModel(contentType).modelName.includes("Venthyr")) this.setCovenant("venthyr");
-        else if (this.getActiveModel(contentType).modelName.includes("Kyrian")) this.setCovenant("kyrian");
-
         this.getActiveModel("Raid").setRampInfo(this.activeStats);
-      }
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
@@ -664,11 +563,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 890,
-        crit: 460,
-        mastery: 600,
-        versatility: 320,
+        intellect: 10500,
+        haste: 4700,
+        crit: 2350,
+        mastery: 4250,
+        versatility: 1050,
         stamina: 1900,
       };
       /*
@@ -677,18 +576,16 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Melee Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Default", 2));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Maraads", 3));
-      this.castModels.push(new CastModel(spec, "Raid", "Necrolord Default", 4));
+      this.castModels.push(new CastModel(spec, "Raid", "Avenging Crusader", 2));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 850,
-        crit: 400,
-        mastery: 800,
-        versatility: 520,
+        intellect: 10500,
+        haste: 4200,
+        crit: 2100,
+        mastery: 3100,
+        versatility: 1700,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
@@ -696,11 +593,11 @@ class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2500,
-        haste: 125,
-        crit: 790,
-        mastery: 220,
-        versatility: 570,
+        intellect: 10500,
+        haste: 1615,
+        crit: 4400,
+        mastery: 1800,
+        versatility: 4000,
         stamina: 1900,
       };
       /*
@@ -709,30 +606,42 @@ class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Kyrian Evangelism", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Venthyr Evangelism", 2));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 940,
-        crit: 650,
-        mastery: 220,
-        versatility: 415,
+        intellect: 10500,
+        haste: 4400,
+        crit: 2500,
+        mastery: 1150,
+        versatility: 1400,
         stamina: 1900,
+        critMult: 2,
       };
       //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2500,
-        haste: 424,
-        crit: 770,
-        mastery: 700,
-        versatility: 400,
+        intellect: 7500,
+        haste: 1710,
+        crit: 3700,
+        mastery: 3400,
+        versatility: 2350,
         stamina: 1900,
-      };
+      }
+    }
+      else if (spec === SPEC.PRESEVOKER) {
+        this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+        this.activeStats = {
+          intellect: 10500,
+          haste: 2000,
+          crit: 3000,
+          mastery: 5100,
+          versatility: 2800,
+          stamina: 1900,
+        }
       /*
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
       this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
@@ -741,17 +650,15 @@ class Player {
       const models = [
         { identifier: "Raid Default", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
-        { identifier: "Sinister Teachings", content: "Raid" },
-        { identifier: "Sinister Teachings", content: "Dungeon" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 2500,
-        haste: 620,
-        crit: 860,
-        mastery: 120,
-        versatility: 510,
+        intellect: 10500,
+        haste: 4900,
+        crit: 2450,
+        mastery: 1900,
+        versatility: 2120,
         stamina: 1900,
       };
       /*
@@ -759,22 +666,6 @@ class Player {
       this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
       this.statWeights.DefaultWeights = true; */
     } 
-    else if (spec === SPEC.PRESEVOKER) {
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.activeStats = {
-        intellect: 2500,
-        haste: 424,
-        crit: 670,
-        mastery: 750,
-        versatility: 390,
-        stamina: 1900,
-      }
-    /*
-    this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
-    this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
-    this.statWeights.DefaultWeights = true; */
-  }
     else if (spec.includes("Classic")) {
     } else {
       // Invalid spec replied. Error.

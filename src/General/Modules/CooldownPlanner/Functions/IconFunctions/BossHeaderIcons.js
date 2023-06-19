@@ -24,6 +24,25 @@ export default function bossHeaders(props, style, QEmodule) {
       source = require("Images/Bosses/WorldBosses/nurgash.png").default;
     }
 
+    // Dragonflight World Bosses
+    if (props === 2506) {
+      // Basrikron, The Shale Wing
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BasrikronTheShaleWing.png").default;
+    }
+    if (props === 2515) {
+      // Strunraan, The Sky's Misery
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-StrunraanTheSkysMisery.png").default;
+    }
+    if (props === 2518) {
+      // Liskanoth, The Futurebane
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-LiskanothTheFuturebane.png").default;
+    }
+    if (props === 2517) {
+      // Bazual, The Dreaded Flame
+      source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BazualTheDradedFlame.png").default;
+    }
+    //
+
     if (props === 2418) {
       source = require("Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png").default;
     }
@@ -118,6 +137,39 @@ export default function bossHeaders(props, style, QEmodule) {
     }
     if (props === 2464) {
       source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-Jailer.png").default;
+    }
+
+    // Eranog
+    if (props === 2480) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Eranog.png").default;
+    }
+    // Terros
+    if (props === 2500) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Terros.png").default;
+    }
+    // The Primalist Council
+    if (props === 2486) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png").default;
+    }
+    // Sennarth, The Cold Breath
+    if (props === 2482) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-SennarthTheColdBreath.png").default;
+    }
+    // Dathea, Ascended
+    if (props === 2502) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-DatheaAscended.png").default;
+    }
+    // Kurog Grimtotem
+    if (props === 2491) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-KurogGrimtotem.png").default;
+    }
+    // Broodkeeper Diurna
+    if (props === 2493) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-BroodkeeperDiurna.png").default;
+    }
+    // Raszageth the Storm-Eater
+    if (props === 2499) {
+      source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
     }
   } else {
     // World Bosses
@@ -437,6 +489,81 @@ export default function bossHeaders(props, style, QEmodule) {
 
   if (props === 999 || props === 998) {
     source = require("Images/Classic/Raid/JournalImages/BOE.png").default;
+  }
+
+  // Eranog
+  if (props === 2587) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Eranog.png").default;
+  }
+  // Terros
+  if (props === 2639) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-Terros.png").default;
+  }
+  // The Primalist Council
+  if (props === 2590) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png").default;
+  }
+  // Sennarth, The Cold Breath
+  if (props === 2592) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-SennarthTheColdBreath.png").default;
+  }
+  // Dathea, Ascended
+  if (props === 2635) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-DatheaAscended.png").default;
+  }
+  // Kurog Grimtotem
+  if (props === 2605) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-KurogGrimtotem.png").default;
+  }
+  // Broodkeeper Diurna
+  if (props === 2614) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-BroodkeeperDiurna.png").default;
+  }
+  // Raszageth the Storm-Eater
+  if (props === 2607) {
+    source = require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-RaszagethTheStorm-Eater.png").default;
+  }
+
+  // Rashok, the Elder
+  if (props === 2680 || props === 2525) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-RashoktheElder.png").default;
+  }
+  // Assault of the Zaqali
+  if (props === 2682 || props === 2524) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-AssaultoftheZaqali.png").default;
+  }
+  // Magmorax
+  if (props === 2683 || props === 2527) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-Magmorax.png").default;
+  }
+  // Echo of Neltharion
+  if (props === 2684 || props === 2523) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-EchoofNeltharion.png").default;
+  }
+  // Scalecommander Sarkareth
+  if (props === 2685 || props === 2520) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-ScalecommanderSarkareth.png").default;
+  }
+  // The Amalgamation Chamber
+  if (props === 2687 || props === 2529) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheAmalgamationChamber.png").default;
+  }
+  // Kazzara, the Hellforged
+  if (props === 2688 || props === 2522) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-KazzaratheHellforged.png").default;
+  }
+  // The Vigilant Steward, Zskarn
+  if (props === 2689 || props === 2532) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheVigilantStewardZskarn.png").default;
+  }
+  // The Forgotten Experiments
+  if (props === 2693 || props === 2530) {
+    source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheForgottenExperiments.png").default;
+  }
+
+  // The Zaqali Elders
+  if (props === 2696 || props === 2531) {
+    source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-TheZaqaliElders.png").default;
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;

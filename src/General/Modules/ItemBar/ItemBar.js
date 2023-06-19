@@ -8,11 +8,23 @@ import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
-import { getItemDB, getValidArmorTypes, getValidWeaponTypesBySpec, getItemProp, scoreItem, getItemAllocations, calcStatsAtLevel, getLegendaryID } from "../../Engine/ItemUtilities";
+import {
+  checkDefaultSocket,
+  getTranslatedItemName,
+  getItemDB,
+  getValidArmorTypes,
+  getValidWeaponTypesBySpec,
+  getItemProp,
+  scoreItem,
+  getItemAllocations,
+  calcStatsAtLevel,
+  getLegendaryID,
+} from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { dominationGemDB } from "../../../Databases/DominationGemDB";
 import { getTranslatedStats } from "locale/statsLocale";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -47,6 +59,7 @@ export default function ItemBar(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [open, setOpen] = useState(false);
@@ -68,7 +81,7 @@ export default function ItemBar(props) {
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
           (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
-    ).map((key) => newItemList.push({ value: key.id, label: key.names[currentLanguage] }));
+    ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}) }));
 
     newItemList = newItemList.reduce((unique, o) => {
       if (!unique.some((obj) => obj.label === o.label)) {
@@ -119,39 +132,37 @@ export default function ItemBar(props) {
 
     if (gameType === "Retail") {
       const itemSlot = getItemProp(itemID, "slot", gameType);
+      const isCrafted = getItemProp(itemID, "crafted", gameType);
 
-      if (itemID >= 990001) {
+      if (isCrafted) {
         // Item is a legendary and gets special handling.
-        const missiveStats = missives.toLowerCase().replace(/ /g, "").split("/");
+        const missiveStats = missives.toLowerCase().replace(" (engineering)", "").replace(/ /g, "").split("/");
         let itemAllocations = getItemAllocations(itemID, missiveStats);
-
-        item = new Item(itemID, itemName, itemSlot, itemSocket, itemTertiary, 0, itemLevel, "");
+        let craftedSocket = checkDefaultSocket(itemID);
+        item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
         item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
-
-        if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
-        else item.uniqueEquip = "legendary";
-        let bonusString = getLegendaryID(item.effect.name);
+        if (item.slot === "Neck") item.socket = 3;
+        //if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
+        //item.uniqueEquip = "legendary";
+        let bonusString = "";
         if (missives.includes("Haste")) bonusString += ":6649";
         if (missives.includes("Mastery")) bonusString += ":6648";
         if (missives.includes("Crit")) bonusString += ":6647";
         if (missives.includes("Versatility")) bonusString += ":6650";
-        if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(itemSlot)) {
-          item.socket = true;
-          bonusString += ":6935";
-        }
 
         item.bonusIDS = bonusString;
-        item.id = getItemProp(itemID, "baseSlotID", "Retail");
+        item.guessQualityColor();
       } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
-        //item.setDominationGem(dominationSocket);
+        if (item.slot === "Neck" && itemSocket) item.socket = 3;
+        item.guessQualityColor();
       }
     } else {
       // Burning Crusade
       item = new ClassicItem(itemID, itemName, getItemProp(itemID, "slot", gameType), "");
     }
 
-    item.softScore = scoreItem(item, player, contentType, gameType);
+    item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
 
     player.addActiveItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
@@ -213,12 +224,23 @@ export default function ItemBar(props) {
     }
   };
   /* ---------------------------------------- Missive Array --------------------------------------- */
-  const legendaryStats = ["Haste / Versatility", "Haste / Mastery", "Haste / Crit", "Crit / Mastery", "Crit / Versatility", "Mastery / Versatility"];
+  const legendaryStats = [
+    "Haste / Versatility",
+    "Haste / Mastery",
+    "Haste / Crit",
+    "Crit / Mastery",
+    "Crit / Versatility",
+    "Mastery / Versatility",
+    "Haste (engineering)",
+    "Crit (engineering)",
+    "Mastery (engineering)",
+    "Versatility (engineering)",
+  ];
   const legendaryItemLevels = [190, 210, 225, 235, 249, 262, 291];
 
   const isItemShadowlandsLegendary = getItemDB("Retail")
     .filter((key) => key.id === itemID)
-    .map((key) => key.shadowlandsLegendary)[0];
+    .map((key) => key.crafted)[0]; // Change this to crafted.
 
   const isItemDomination =
     getItemDB("Retail")
@@ -299,7 +321,7 @@ export default function ItemBar(props) {
         /* -------------------------------------------------------------------------- */}
 
         <Grid item>
-          {isItemShadowlandsLegendary ? (
+          {false ? (
             <FormControl className={classes.formControl} variant="outlined" size="small" disabled={itemID === "" || gameType !== "Retail" ? true : false}>
               <InputLabel id="itemLevelSelectLabel">{t("QuickCompare.ItemLevel")}</InputLabel>
               <Select key={"itemLevelSelect"} labelId="itemLevelSelectLabel" value={itemLevel} onChange={(e) => itemLevelChanged(e.target.value)} label={t("QuickCompare.ItemLevel")}>
@@ -378,7 +400,7 @@ export default function ItemBar(props) {
                         let lastItem = i + 1 === arr.length ? false : true;
                         return (
                           <MenuItem divider={lastItem} key={key.gemID} label={key.name[currentLanguage]} value={key.gemID}>
-                            <a data-wowhead={"item=" + key.gemID}>
+                            <WowheadTooltip type="item" id={key.gemID}>
                               <img
                                 style={{
                                   height: 20,
@@ -391,7 +413,7 @@ export default function ItemBar(props) {
                                 src={process.env.PUBLIC_URL + "/Images/Icons/" + key.icon + ".jpg"}
                                 alt={key.name[currentLanguage]}
                               />
-                            </a>
+                            </WowheadTooltip>
                             {key.name[currentLanguage] + " " + "[" + (key.effect.rank + 1) + "]"}
                           </MenuItem>
                         );

@@ -12,8 +12,44 @@ const ID_ENVELOPING_BREATH_ID = 325209;
 export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
+  if (effectName === "Monk T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    const expectedPPM = 10 * 0.5;
+    bonus_stats.hps = expectedPPM * (250000 * 0.03) * player.getSpecialQuery("OneManaHealing", contentType) / 60;
+  }
+  else if (effectName === "Monk T30-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 6750;
+  }
   // Tier Sets
-  if (effectName === "Mistweaver T28-2") {
+  else if (effectName === "Mistweaver T29-2") {
+    // This is a very raw formula that will be replaced almost immediately.
+    const uptime = 0.55; // TODO: Auto-calc this.
+    const spellsHit = 0.35;
+    bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
+
+  }
+  else if (effectName === "Mistweaver T29-4") {
+    // This is a very raw formula that will be replaced almost immediately.
+
+    // TODO: Dancing Mist
+    // Upwelling, Misty Peaks included.
+    const percVivify = 0.09; // TODO: Auto-calc this.
+    const percEssenceFont = 0.21; // TODO: Auto-calc this.
+    const essenceFontCPM = 3;
+    const faelineStompCPM = 1.5;
+    const boltsPerMin = essenceFontCPM * (18 + 24 / 6) + faelineStompCPM * 5;
+    const renewingMistTick = 0.19665 * player.getStatMults(["intellect", "haste", "versatility", "crit"]);
+    const envMistTick = 0.43605 * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * 1.3;
+    const mistyPeaks = boltsPerMin * 0.1 * envMistTick; // Every tick has a 10% chance to proc 2s of Env Mists (1 tick);
+
+    const HPSHealingIncrease = percEssenceFont + percVivify * 0.1 * player.getHPS(contentType);
+    const HPSExtension = (renewingMistTick / 2 * boltsPerMin + mistyPeaks) / 60; // 18 seconds of extra HoT uptime per Essence Font cast.
+    
+    bonus_stats.hps = HPSHealingIncrease + HPSExtension;
+
+  }
+  else if (effectName === "Mistweaver T28-2") {
     // Mistweaver Monk Sepulcher tier set 2pc
     // -- This is a draft formula and it can be improved upon. --
 

@@ -4,6 +4,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { legendaryImages } from "./LegendaryIcons";
 import { legendaryNameTranslator } from "./LegendaryTranslations";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
@@ -32,13 +33,6 @@ export default function LegendaryObject(props) {
   const dpsString = item.effectiveDPS > 5 ? "DPS: " + paddedDPS : "";
 
   const legendaryDataObject = legendaryNameTranslator(item.name)[currentLanguage];
-  const covFileLoc = process.env.PUBLIC_URL + "/Images/Interface/CovenantExploration/CovenantSigils";
-  const covenantSigils = {
-    Kyrian: covFileLoc + "/Kyrian_Sigil.png",
-    "Night Fae": covFileLoc + "/Fae_Sigil.png",
-    Venthyr: covFileLoc + "/Venthyr_Sigil.png",
-    Necrolord: covFileLoc + "/Death_Lords_Sigil.png",
-  };
 
   return (
     // Breakpoints (12 units / row)
@@ -68,7 +62,7 @@ export default function LegendaryObject(props) {
             >
               <div style={{ display: "inline" }}>
                 {/* --------------------------------------- Legendary Icon --------------------------------------- */}
-                <a data-wowhead={"spell=" + item.id + "&domain=" + currentLanguage}>
+                <WowheadTooltip type="spell" id={item.id} domain={currentLanguage}>
                   <img
                     height={40}
                     width={40}
@@ -82,7 +76,7 @@ export default function LegendaryObject(props) {
                       marginRight: 8,
                     }}
                   />
-                </a>
+                </WowheadTooltip>
               </div>
 
               <div style={{ alignSelf: "center" }}>
@@ -103,11 +97,6 @@ export default function LegendaryObject(props) {
                 <Typography variant="caption">{legendaryDataObject.slot}</Typography>
               </div>
             </div>
-            {covenantSigils[legendaryDataObject.covenant] !== undefined ? (
-              <img height={40} style={{ marginTop: -7 }} src={covenantSigils[legendaryDataObject.covenant]} alt={t("Covenants." + legendaryDataObject.covenant)} />
-            ) : (
-              ""
-            )}
           </div>
           {/* ---------------------------- Divider to seperate header from body ---------------------------- */}
         </CardContent>

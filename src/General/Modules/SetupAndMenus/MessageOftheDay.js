@@ -6,20 +6,19 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> Warning: The prepatch is volatile and support for it is less thorough than it would be for a regular patch.",
-      "-> New features and modules will be released shortly before Dragonflight.",
-      "-> Evoker will be available in two weeks, matching it's in-game release date."
+      "-> If you raid mythic, add a log to best analyze Onyx Annulet.",
+      "-> Tier Set formulas are preliminary."
   ],
   "Classic": [""]
   }
 ;
 
   return (
-    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "red" }}>
+    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
       <Grid container spacing={1}>
         {messageOfTheDay[gameType].map((key, i) => (
           <Grid item xs={12} key={i}>
-            <Typography style={{ lineHeight: "10px" }} align="left" variant="body1" key={i}>
+            <Typography style={{ lineHeight: "11px" }} align="left" variant="body1" key={i}>
               {key}
             </Typography>
           </Grid>

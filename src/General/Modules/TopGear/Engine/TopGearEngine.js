@@ -6,14 +6,14 @@ import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/Eff
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
-import { allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
-import { buildBestDomSet } from "../Utilities/DominationGemUtilities";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
-import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 
 /**
  * == Top Gear Engine ==
@@ -25,7 +25,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 const softSlice = 3000;
 const DR_CONST = 0.00497669230769231;
-const DR_CONSTLEECH = 0.04522569230769231;
+const DR_CONSTLEECH = 0.04922569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time) {
@@ -44,7 +44,6 @@ function setupPlayer(player, contentType, castModel) {
   newPlayer.castModel[contentType] = Object.assign(newPlayer.castModel[contentType], castModel);
   //newPlayer.dominationGemRanks = player.dominationGemRanks;
   newPlayer.activeModelID = player.activeModelID;
-  newPlayer.covenant = player.covenant;
 
   return newPlayer;
 }
@@ -59,13 +58,18 @@ function setupPlayer(player, contentType, castModel) {
 function autoSocketItems(itemList) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Finger", "Head", "Neck", "Wrist", "Waist"].includes(item.slot) && !item.hasDomSocket) {
-      item.socket = true;
+    if (["Finger", "Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+      item.socket = 1;
+    }
+    else if (item.slot === "Neck") {
+      item.socket = 3;
     }
   }
 
   return itemList;
 }
+
+
 
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
@@ -92,8 +96,11 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
   let itemList = deepCopyFunction(rawItemList);
-  itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+  itemList = (userSettings.topGearAutoGem && userSettings.topGearAutoGem.value === true) ? autoSocketItems(itemList) : itemList;
   //itemList = userSettings.vaultDomGem !== "none" ? autoGemVault(itemList, userSettings) : itemList; // Deprecated
+
+  // Duplicate Settings
+  userSettings = JSON.parse(JSON.stringify(userSettings));
 
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
@@ -133,6 +140,8 @@ export function runTopGear(rawItemList, wepCombos, player, contentType, baseHPS,
   } else {
     let result = new TopGearResult(itemSets[0], differentials, contentType);
     result.itemsCompared = itemSets.length;
+    result.new = true;
+    result.id = generateReportCode();
     return result;
   }
 }
@@ -186,7 +195,7 @@ function createSets(itemList, rawWepCombos, spec) {
       splitItems[slot].push(itemList[i]);
     }
   }
-  slotLengths.Weapon = Object.keys(wepCombos).length;
+  slotLengths.Weapon = wepCombos.length;
 
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore };
@@ -255,8 +264,10 @@ function createSets(itemList, rawWepCombos, spec) {
                                       splitItems.Finger[finger2],
                                       splitItems.Trinket[trinket],
                                       splitItems.Trinket[trinket2],
-                                      wepCombos[weapon],
+                                      wepCombos[weapon][0]
                                     ];
+                                    if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
+                                    //console.log(JSON.stringify(wepCombos[weapon]));
                                     let sumSoft = sumScore(softScore);
                                     itemSets.push(new ItemSet(setCount, includedItems, sumSoft, spec));
                                     setCount++;
@@ -291,15 +302,25 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
   };
 
   for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
+    // Check if the other set has the corresponding slot.
+    if ((primeList[x].slot === "Offhand" && !diffList[x])) {
+      // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
+      continue;
+    }
+    if (diffList[x] && primeList[x].uniqueHash !== diffList[x].uniqueHash) {
       differentials.items.push(diffList[x]);
       doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
 
+      // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
         differentials.items.push(diffList[x - 1]);
       }
     }
   }
+  if (diffList.length > primeList.length) {
+    differentials.items.push(diffList[diffList.length - 1]);
+  }
+
   return differentials;
 }
 
@@ -332,34 +353,43 @@ function enchantItems(bonus_stats, setInt, castModel) {
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 32; // 16 x 2.
-  enchants["Finger"] = "+16 " + highestWeight;
-
-  // Bracers
-  bonus_stats.intellect += 15;
-  enchants["Wrist"] = "+15 int";
+  bonus_stats[highestWeight] += 128; // 64 x 2.
+  enchants["Finger"] = "+82 " + highestWeight;
 
   // Chest
-  // The mana enchant is actually close in value to +30 int, but for speeds sake it is not currently included.
-  bonus_stats.intellect += 30;
-  enchants["Chest"] = "+30 stats";
+  // There is a mana option too that we might include later.
+  bonus_stats.intellect += 150; 
+  enchants["Chest"] = "Waking Stats";
 
   // Cape
-  bonus_stats.leech += 30;
-  enchants["Back"] = "+30 leech";
+  bonus_stats.leech += 125;
+  enchants["Back"] = "Regenerative Leech";
 
-  // Weapon - Celestial Guidance
+  // Wrists
+  bonus_stats.leech += 200;
+  enchants["Wrist"] = "Devotion of Leech";
+
+  // Belt
+  enchants["Waist"] = "Shadowed Belt Clasp";
+
+  // Legs - Also gives 3/4/5% mana.
+  bonus_stats.intellect += 177;
+  enchants["Legs"] = "Temporal Spellthread";
+
+  // Weapon - Sophic Devotion
   // Eternal Grace is so poor that it isn't even compared.
-  let expected_uptime = convertPPMToUptime(3, 10);
-  bonus_stats.intellect += (setInt + bonus_stats.intellect) * 0.05 * expected_uptime;
-  enchants["CombinedWeapon"] = "Celestial Guidance";
-
+  let expected_uptime = convertPPMToUptime(1, 15);
+  bonus_stats.intellect += 932 * expected_uptime;
+  enchants["CombinedWeapon"] = "Sophic Devotion"; //"Spore Tender"; //"Sophic Devotion";
+  enchants["2H Weapon"] = "Sophic Devotion"; //"Spore Tender"; //"Sophic Devotion";
+  enchants["1H Weapon"] = "Sophic Devotion"; //"Spore Tender"; //"Sophic Devotion";
   return enchants;
 }
 
 function dupObject(set) {
   return JSON.parse(JSON.stringify(set));
 }
+
 
 /**
  * This is our evaluation function. It takes a complete set of gear and assigns it a score based on the sets stats, effects, legendaries and more.
@@ -378,6 +408,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
+
   let enchantStats = {};
   let evalStats = {};
   let hardScore = 0;
@@ -392,6 +423,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     hps: 0,
     dps: 0,
     mana: 0,
+    allyStats: 0,
   };
 
   // Our adjusted_weights will be compiled later by dynamically altering our base weights.
@@ -411,24 +443,27 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
   // Sockets
-  const highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight] += 16 * builtSet.setSockets;
-  enchants["Gems"] = highestWeight;
-
+  //const highestWeight = getHighestWeight(castModel);
+  //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
+  //enchants["Gems"] = highestWeight;
+  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
+  enchants["GemCount"] = builtSet.setSockets;
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
   compileStats(gearStats, bonus_stats);
   builtSet.baseStats = gearStats;
 
-  // == Domination Gems ==
-  // This function compares every set of possible domination gems, and sockets whichever is best. You can read more about it by navigating to the function itself.
-  // Domination Gems are defunct in 9.2. Thank goodness.
-  //if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
-
   // == Effects ==
-  // Effects include stuff like trinkets, legendaries, domination gems, tier sets and so on.
+  // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
+
+
+
+
+
+  // ------------------
+
   let effectStats = [];
   let effectList = [...itemSet.effectList];
   // == Set Bonuses ==
@@ -439,30 +474,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
-  // Mechagon Rings
-  const mechaEffect = {
-    type: "special",
-    name: "",
-    ppm: 0,
-    ilvl: 0
-  }
+  // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
+  let fireMult = 0;
+  // Frostfire Belt, Flaring Cowl, Flame Licked
+  if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
+  else if (builtSet.checkHasItem(193494)) fireMult = 1;
+  else if ('primGems' in userSettings && userSettings.primGems.value.includes("Flame Licked")) fireMult = convertPPMToUptime(2.5, 7);
 
-  itemSet.itemList.forEach(item => {
-    if (item.id === 169157) mechaEffect.ppm = 3.7; // Division
-    else if (item.id === 169158) mechaEffect.ppm = 3.8; // Recursion
-    else if (item.id === 169156) mechaEffect.ppm = 2.9; // Synergy
-    else if (item.id === 169076) mechaEffect.ppm = 1.6; // Maintenance
-
-    // Effects
-    if (item.id === 168977) {mechaEffect.name = "Rebooting Bit Band"; mechaEffect.ilvl = item.level; }
-    else if (item.id === 169159) { mechaEffect.name = "Overclocking Bit Band"; mechaEffect.ilvl = item.level; }
-    else if (item.id === 169161) { mechaEffect.name = "Protecting Bit Band"; mechaEffect.ilvl = item.level; }
-  })
-
-
-  if (mechaEffect.name !== "" && mechaEffect.ppm > 0) effectList.push(mechaEffect)
-  //
-
+  userSettings.fireMult = fireMult || 0;
   //effectStats.push(bonus_stats);
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
@@ -471,16 +490,30 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
   }
 
+  // Special 10.0.7 Ring
+  // Check if ring in set.
+  if (builtSet.checkHasItem(203460)) {
+    // Auto gen best gems.
+    const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 411;
+
+    const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
+    //const combo = getBestCombo(player, contentType, itemLevel, player.activeStats, userSettings)
+
+    // Handle Annulet
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
+    //console.log(annuletStats);
+    builtSet.primGems = combo; 
+    effectStats.push(annuletStats);
+ }
+
   const mergedEffectStats = mergeBonusStats(effectStats);
-  // == Apply same set int bonus ==
-  // 5% int boost for wearing the same items.
-  // The system doesn't actually allow you to add items of different armor types so this is always on.
-  bonus_stats.intellect += (builtSet.setStats.intellect + enchantStats.intellect) * 0.05;
+
+
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (player.spec === "Discipline Priest" && contentType === "Raid") {
-
+    setStats.intellect *= 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList, reporting)
     if (reporting) report.ramp = setRamp;
     setStats.hps += setRamp.totalHealing / 180;
@@ -501,14 +534,19 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste) / STATPERONEPERCENT.Retail.HASTE)) / 2;
     adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit) / STATPERONEPERCENT.Retail.CRIT)) / 2;
     adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility) / STATPERONEPERCENT.Retail.VERSATILITY)) / 2;
-    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / STATPERONEPERCENT.Retail.MASTERYA[player.spec])) / 2;
+    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery) / (STATPERONEPERCENT.Retail.MASTERY / STATPERONEPERCENT.Retail.MASTERYMULT[player.spec]))) / 2;
     adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech) / STATPERONEPERCENT.Retail.LEECH)) / 2;
 
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
+
+    // == Apply same set int bonus ==
+    // 5% int boost for wearing the same items.
+    // The system doesn't actually allow you to add items of different armor types so this is always on.
+    setStats.intellect *= 1.05;
+
     evalStats = setStats;
   }
-
   // == Scoring ==
   for (var stat in evalStats) {
     if (stat === "hps") {
@@ -519,6 +557,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     } 
     else if (stat === "mana") {
       hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
+    }
+    else if (stat === "allyStats") {
+      if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
+        hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
+      }
     }
     else {
       hardScore += evalStats[stat] * adjusted_weights[stat];
@@ -534,14 +577,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
   if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 56;
-  }
-  // Fallen Order has a bug whereby having more than ~33% haste causes clones to behave irresponsibly and the average casts per clone drops heavily.
-  // A more precise formula could be offered by deducting the healing loss from the set. Instead this is a rather rougher patch which should automatically exclude
-  // any sets over the breakpoint. 
-  if (player.spec === "Mistweaver Monk") {
-    if (setStats.haste > 1120) hardScore -= 200;
-    else if (setStats.haste < 495) hardScore -= 75;
+    hardScore -= 500;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
@@ -575,6 +611,7 @@ export function mergeBonusStats(stats) {
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
     mana: mergeStat(stats, "mana"),
+    allyStats: mergeStat(stats, "allyStats")
   };
 
   return val;
@@ -606,8 +643,8 @@ function compileStats(stats, bonus_stats) {
 }
 
 function addBaseStats(stats, spec) {
-  stats.crit += 175;
-  stats.mastery += STATPERONEPERCENT.Retail.MASTERYA[spec] * BASESTAT.MASTERY[spec] * 100;
+  stats.crit += STATPERONEPERCENT.Retail.CRIT * 5;
+  stats.mastery += STATPERONEPERCENT.Retail.MASTERY * 8;
 
   return stats;
 }
@@ -634,49 +671,37 @@ const deepCopyFunction = (inObject) => {
 
 export function evalDiscRamp(itemSet, setStats, castModel, effectList, reporting = false) {
       // Setup any ramp settings or special effects that need to be taken into account.
-      let rampSettings = { playstyle: castModel.modelName };
+      let rampSettings = { playstyle: castModel.modelName, trinkets: {} };
       let specialSpells = ["Rapture"];
       // Setup ramp cast sequences
       const onUseTrinkets = itemSet.onUseTrinkets.map((trinket) => trinket.name);
-      if (effectList.filter(effect => effect.name === "DPriest T28-4").length > 0) {
+
+      let trinketInfo = {};
+      if (effectList.filter(effect => effect.name === "DPriest T29-4").length > 0) {
         // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
-        rampSettings["4T28"] = true; 
-        specialSpells.push("4T28");
+        rampSettings["T29_4"] = true; 
+        specialSpells.push("T29_4");
       }
-      if (effectList.filter(effect => effect.name === "Drape of Shame").length > 0) {
-        // We are wearing Drape of Shame and should account for it.
-        rampSettings["Drape of Shame"] = true; 
+      if (effectList.filter(effect => effect.name === "DPriest T29-2").length > 0) {
+        // We are wearing 4pc and should add it to both Ramp Settings (to include the PotDS buff) and specialSpells (to alter our cast sequences).
+        rampSettings["T29_2"] = true; 
       }
+  
 
       if (onUseTrinkets !== null && onUseTrinkets.length > 0) {
         itemSet.onUseTrinkets.forEach((trinket) => {
           rampSettings[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+          trinketInfo[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+          rampSettings.trinkets[trinket.name] = getTrinketValue(trinket.name, trinket.level);
+
         });
       }
-      if (effectList.filter(effect => effect.name === "Neural Synapse Enhancer").length > 0) {
-        // We are wearing Drape of Shame and should account for it.
-        rampSettings["Neural Synapse Enhancer"] = 573; 
-        onUseTrinkets.push("Neural Synapse Enhancer");
-      }
-  
-      if (castModel.modelName === "Kyrian Evangelism") {
-        rampSettings['Pelagos'] = true;
-        if (itemSet.unity) rampSettings["Sphere's Harmony"] = true;
-      }
-      else if (castModel.modelName === "Venthyr Evangelism") {
-        rampSettings['Theotar'] = true;
-        if (itemSet.unity) rampSettings["Shadow Word: Manipulation"] = true;
-      }
-  
-      if (itemSet.setLegendary === "Clarity of Mind") rampSettings["Clarity of Mind"] = true;
-      if (itemSet.setLegendary === "Penitent One") rampSettings["Penitent One"] = true;
-  
 
-      const boonSeq = buildRamp("Boon", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
-      const fiendSeq = buildRamp("Fiend", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const boonSeq = buildRamp("Primary", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
+      const fiendSeq = buildRamp("Secondary", 10, onUseTrinkets, setStats.haste, castModel.modelName, specialSpells);
       // Perform our ramp, and then add it to our sets expected HPS. Our set's stats are included here which means we don't need to score them later in the function.
       // The ramp sequence also includes any diminishing returns.
-      const setRamp = allRamps(boonSeq, fiendSeq, setStats, rampSettings, { "Courageous Ascension": 239, "Rabid Shadows": 239 }, true);
+      const setRamp = allRamps([], setStats, rampSettings, getDefaultDiscTalents("Default"), trinketInfo, false);
 
       return setRamp;
   
@@ -738,9 +763,6 @@ function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castMod
 
   //compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
 
-  // == Domination Gems ==
-  // If the user would prefer to let the app decide their domination gems for them, we'll call a function to automatically put together the best set.
-  if (userSettings.replaceDomGems) buildBestDomSet(itemSet, player, castModel, contentType, itemSet.domSockets);
 
   // === Handle Effects ===
   // Each effect will return an object of stats. Ruby for example would return it's crit value.

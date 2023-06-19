@@ -8,6 +8,7 @@ import {
 } from "../../CooldownPlanner/Functions/Functions";
 
 import importEnemyHealth from "./Imports/importEnemyHealth";
+import importEnemyEnergy from "./Imports/importEnemyEnergy";
 import importDebuffDataFiltered from "./Imports/importDebuffDataFiltered";
 import importDamageLogDataFiltered from "./Imports/importDamageLogDataFiltered";
 import importCasts from "./Imports/importCasts";
@@ -17,6 +18,7 @@ import importFriendlyHealth from "./Imports/importFriendlyHealth";
 export default async function importLogData(starttime, endtime, reportID, boss, logDif, setLogData, setLoadingProgress) {
   setLoadingProgress(20);
 
+  const enemyEnergy = await importEnemyEnergy(starttime, endtime, reportID);
   const enemyHealth = await importEnemyHealth(starttime, endtime, reportID);
   const friendlyHealth = await importFriendlyHealth(starttime, endtime, reportID);
   const dif = logDifficulty(logDif);
@@ -64,5 +66,6 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
     enemyHealth: enemyHealth,
     buffData: buffData,
     friendlyHealth: friendlyHealth,
+    enemyEnergy: enemyEnergy,
   });
 }

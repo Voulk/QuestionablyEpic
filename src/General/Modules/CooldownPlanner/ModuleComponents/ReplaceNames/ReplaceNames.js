@@ -163,23 +163,23 @@ export default function ReplaceNames(props) {
   }, [name0, name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20]);
 
   return (
-    <Grid item xl={12}>
+    <Grid item xs={12}>
       <Accordion disabled={disabled}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
           <Typography align="center">Replace Healers?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Grid container xl={12} spacing={1}>
-            <Grid item container xl={6} direction="row" spacing={1}>
+          <Grid container xs={12} spacing={1}>
+            <Grid item container xs={6} direction="row" spacing={1}>
               {logData.healers.map((key, i) => (
-                <Grid item xl={12}>
+                <Grid item xs={12}>
                   <NameChanger name={key.name} className={wclClassConverter(key.icon)} type="original" />
                 </Grid>
               ))}
             </Grid>
-            <Grid item container xl={6} direction="row" spacing={1}>
+            <Grid item container xs={6} direction="row" spacing={1}>
               {logData.healers.map((key, i) => (
-                <Grid item xl={12}>
+                <Grid item xs={12}>
                   <NameChanger classLock={wclClassConverter(key.icon)} setNameState={setNameState} originalName={key.name} nameState={"name" + i} />
                 </Grid>
               ))}

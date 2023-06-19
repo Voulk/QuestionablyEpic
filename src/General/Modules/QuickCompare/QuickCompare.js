@@ -16,6 +16,7 @@ import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { getTranslatedSlotName } from "locale/slotsLocale";
+import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -24,24 +25,24 @@ const useStyles = makeStyles((theme) => ({
       width: "90%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: 32,
+      // marginTop: 32,
       margin: "auto",
       width: "60%",
       display: "block",
@@ -82,10 +83,13 @@ function getSlots() {
 
 export default function QuickCompare(props) {
   const contentType = useSelector((state) => state.contentType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }, props.player.scoreActiveItems(contentType));
+    loadBannerAd(props.patronStatus);
+    loadBottomBannerAd(props.patronStatus);
+  }, props.player.scoreActiveItems(contentType, playerSettings));
 
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -129,8 +133,13 @@ export default function QuickCompare(props) {
     let player = props.player;
     player.catalyzeItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
-    // handleClickDelete();
   };
+
+  const upgradeItem = (item, newItemLevel) => {
+    let player = props.player;
+    player.upgradeItem(item, newItemLevel);
+    setItemList([...player.getActiveItems(activeSlot)]);
+  }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Settings Functions                                       */
@@ -148,6 +157,8 @@ export default function QuickCompare(props) {
 
   return (
     <div className={classes.header}>
+      <div style={{ height: 96 }} />
+      <div id="banner2"></div>
       <Grid container spacing={1} justifyContent="center">
         {/* -------------------------------------------------------------------------- */
         /*                         Quick Compare Title Header                         */
@@ -204,9 +215,9 @@ export default function QuickCompare(props) {
                   </Typography>
                   <Divider style={{ marginBottom: 10 }} />
                   <Grid container spacing={1}>
-                    {[...props.player.getActiveItems(key.activeItem)].map((item, index) => (
-                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} />
-                    ))}
+                    {[...props.player.getActiveItems(key.activeItem)].map((item, index) => 
+                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} upgradeItem={upgradeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
+                    )}
                   </Grid>
                 </Grid>
               </Grid>
@@ -234,10 +245,13 @@ export default function QuickCompare(props) {
 
       {/*item deleted snackbar */}
       <Snackbar open={openDelete} autoHideDuration={3000} onClose={handleCloseDelete}>
-        <Alert onClose={handleCloseDelete} severity="error">
-          {t("QuickCompare.ItemDeleted")}
-        </Alert>
+        <div>
+          <Alert onClose={handleCloseDelete} severity="error">
+            {t("QuickCompare.ItemDeleted")}
+          </Alert>
+        </div>
       </Snackbar>
+      <div id="qelivead2"></div>
     </div>
   );
 }

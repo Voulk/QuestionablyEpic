@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { getTableLocale } from "locale/GetTableLocale";
 import ls from "local-storage";
 import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
-import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedClassNameCD, getClassIconCD } from "locale/ClassNames";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -35,7 +35,7 @@ const tableIcons = {
 
 export default function HealTeam() {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.currentLanguage;
+  const currentLanguage = i18n.language;
 
   let columns = [
     /* ------------------------------------- Healer Name Column ------------------------------------- */
@@ -73,11 +73,19 @@ export default function HealTeam() {
       },
       render: (rowData) => (
         <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
-          {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
-          {getTranslatedClassName(rowData.class, currentLanguage)}
+          <div>
+            <img style={{ height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 }} src={getClassIconCD(rowData.class)} alt={rowData.class} />
+          </div>
+          {getTranslatedClassNameCD(rowData.class, currentLanguage)}
         </div>
       ),
       editComponent: (props) => (
+        // <div style={{ color: classColoursJS(props.rowData.class), display: "inline-flex" }}>
+        //   <div>
+        //     <img style={{ height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 }} src={getClassIconCD(props.rowData.class)} alt={props.rowData.class} />
+        //   </div>
+        //   {getTranslatedClassNameCD(props.rowData.class, currentLanguage)}
+        // </div>
         <TextField
           select
           value={props.value}

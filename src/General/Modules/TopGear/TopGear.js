@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider, Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
-import { buildWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos, buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";
@@ -16,12 +16,11 @@ import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
-import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
-import { patronColor } from "General/Modules/SetupAndMenus/Header/PatronColors"
+import { patronColor } from "General/Modules/SetupAndMenus/Header/PatronColors";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -49,24 +48,24 @@ const useStyles = makeStyles((theme) => ({
       width: "90%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
       display: "block",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto",
       width: "70%",
       justifyContent: "center",
       display: "block",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: 32,
+      // marginTop: 32,
       margin: "auto",
       width: "60%",
       display: "block",
@@ -78,6 +77,19 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
+const sendReport = (shortReport) => {
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
+  
+  fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
+  //.then(response => response.text())
+  .then(response => console.log(response));
+  //.then(data => this.setState({ postId: data.id }));
+}
 
 
 export default function TopGear(props) {
@@ -86,6 +98,7 @@ export default function TopGear(props) {
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
   const gameType = useSelector((state) => state.gameType);
+  const playerSettings = useSelector((state) => state.playerSettings);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [openDelete, setOpenDelete] = useState(false);
@@ -94,15 +107,18 @@ export default function TopGear(props) {
   /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [btnActive, setBtnActive] = useState(true);
+  
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus = props.patronStatus;
-  const topGearCaps = {"Standard": 32, "Basic": 32, "Gold": 34, "Diamond": 36, "Rolls Royce": 38, "Sapphire": 38}
-  const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 32; // TODO
+  const topGearCaps = { Standard: 30, Basic: 30, Gold: 34, Diamond: 36, "Rolls Royce": 38, Sapphire: 38 };
+  const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  const upgradeItem = (item, newItemLevel) => {
+    let player = props.player;
+    player.upgradeItem(item, newItemLevel);
+    setItemList([...player.getActiveItems(activeSlot)]);
+  }
 
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
@@ -153,9 +169,101 @@ export default function TopGear(props) {
         errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
       }
     }
-    setErrorMessage(errorMessage);
+    //setErrorMessage(errorMessage);
+    //setBtnActive(topgearOk);
     return topgearOk;
   };
+
+  const checkSlots = () => {
+       /* ------------------ Check that the player has selected an item in every slot. ----------------- */
+       let itemList = props.player.getSelectedItems();
+       let missingSlots = [];
+       let errorMessage = "";
+       let slotLengths = {
+         Head: 0,
+         Neck: 0,
+         Shoulder: 0,
+         Back: 0,
+         Chest: 0,
+         Wrist: 0,
+         Hands: 0,
+         Waist: 0,
+         Legs: 0,
+         Feet: 0,
+         Finger: 0,
+         Trinket: 0,
+         "2H Weapon" : 0,
+         "1H Weapon" : 0,
+         "Offhand" : 0,
+       };
+   
+       for (var i = 0; i < itemList.length; i++) {
+         let slot = itemList[i].slot;
+         if (slot in slotLengths || slot === "Shield") {
+           if (!itemList[i].vaultItem) {
+              if (slot === "Shield") slotLengths["Offhand"] += 1;
+              else slotLengths[slot] += 1;
+           }
+         }
+       }
+       if (slotLengths["2H Weapon"] > 0) {
+        // If we have a two handed weapon, then we don't need to complain about how many main hands and offhands we have.
+        slotLengths["1H Weapon"] = slotLengths["Offhand"] = slotLengths["2H Weapon"];
+       }
+       if (slotLengths["1H Weapon"] > 0 && (slotLengths["Offhand"] > 0 || slotLengths["Shield"] > 0)) {
+        // If we have a two handed weapon, then we don't need to complain about how many main hands and offhands we have.
+        slotLengths["2H Weapon"] = slotLengths["1H Weapon"];
+       }
+
+       for (const key in slotLengths) {
+         if ((key === "Finger" || key === "Trinket") && slotLengths[key] < 2) {
+           missingSlots.push(key);
+           errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
+         } 
+         else if (slotLengths[key] === 0) {
+            missingSlots.push(key);
+           errorMessage = t("TopGear.itemMissingError") + getTranslatedSlotName(key.toLowerCase(), currentLanguage);
+         }
+       }
+
+
+
+       //setErrorMessage(errorMessage);
+       //setBtnActive(topgearOk);
+
+       return missingSlots;
+  }
+
+  const getErrorMessage = () => {
+    const missingSlots = checkSlots();
+
+    let errorMessage = "Add ";
+    if (missingSlots.length > 10) {
+      return "Add SimC String"
+    }
+    else if (missingSlots.length > 0) {
+      missingSlots.forEach((slot) => {
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield"].includes(slot))) errorMessage += slot + ", ";
+        
+      })
+
+      if ((missingSlots.includes("2H Weapon") && (missingSlots.includes("1H Weapon") || (missingSlots.includes("Offhand") || missingSlots.includes("Shield"))))) {
+
+        errorMessage += " Weapon, " 
+      }
+
+      return errorMessage.slice(0, -2);
+    }
+    else {
+      return "";
+    }
+  }
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    checkTopGearValid();
+  }, []);
+
 
   const handleClickDelete = () => {
     setOpenDelete(true);
@@ -182,65 +290,140 @@ export default function TopGear(props) {
     // handleClickDelete();
   };
 
+  const shortenReport = (report, player) => {
+
+    if (report) {
+      const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
+      const shortItemSet = report.itemSet;
+    
+      shortReport.itemSet.setStats = report.itemSet.setStats;
+      shortReport.itemSet.primGems = report.itemSet.primGems;
+      shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
+      shortReport.effectList = report.itemSet.effectList;
+      shortReport.differentials = report.differentials;
+      shortReport.contentType = report.contentType;
+      shortReport.itemSet.firstSocket = report.itemSet.firstSocket;
+      shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
+      
+      const addItem = (item) => {
+        let newItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
+        if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
+        if (item.socket) newItem.socket = item.socket;
+        if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+        if (item.quality) newItem.quality = item.quality;
+        if (item.effect) newItem.effect = item.effect;
+  
+        shortReport.itemSet.itemList.push(newItem)
+        }
+        
+        
+      for (var i = 0; i < report.itemSet.itemList.length; i++) {
+        const item = report.itemSet.itemList[i];
+        if (item.slot === "CombinedWeapon") {
+          // Unfold weapons so that we send both.
+          if (item.offhandID > 0) {
+            const mainhandItem = player.getItemByHash(item.mainHandUniqueHash)[0];
+            const offhandItem = player.getItemByHash(item.offHandUniqueHash)[0];
+            addItem(mainhandItem);
+            addItem(offhandItem)
+  
+          } else {
+            const mainhandItem = player.getItemByHash(item.uniqueHash)[0];
+            addItem(mainhandItem);
+          }
+        }
+        else {
+          addItem(item);
+        }
+        
+      }
+  
+      sendReport(shortReport);
+      return shortReport;
+
+    }
+    else {
+      reportError(null, "ShortenReport", "No report found", id);
+      return {};
+    }
+
+  }
+
+  const unleashWorker = () => {
+    const currentLanguage = i18n.language;
+    const itemList = props.player.getSelectedItems();
+    let wepCombos = buildNewWepCombos(props.player, true);
+    const baseHPS = props.player.getHPS(contentType);
+    const strippedPlayer = JSON.parse(JSON.stringify(props.player));
+    const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
+
+    if (gameType === "Retail") {
+      const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
+      let instance = new worker();
+
+      instance
+        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
+        .then((result) => {
+          // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
+          apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          //props.setTopResult(result);
+          const shortResult = shortenReport(result, props.player);
+          shortResult.new = true;
+          props.setTopResult(shortResult);
+
+          instance.terminate();
+          history.push("/report/");
+        })
+        .catch((err) => {
+          // If top gear crashes for any reason, log the error and then terminate the worker.
+          reportError("", "Top Gear Crash", err, strippedPlayer.spec);
+          setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+          console.log(err);
+          instance.terminate();
+          setBtnActive(true);
+        });
+    } else if (gameType === "Classic") {
+      const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+      let instance = new worker();
+      instance
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
+        .then((result) => {
+          //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+          props.setTopResult(result);
+          instance.terminate();
+          history.push("/report/");
+        })
+        .catch((err) => {
+          // If top gear crashes for any reason, log the error and then terminate the worker.
+          reportError("", "Classic Top Gear Crash", err, strippedPlayer.spec);
+          setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+          instance.terminate();
+          setBtnActive(true);
+        });
+    } else {
+      /* ---------------------------------------- Return error. --------------------------------------- */
+      reportError("", "Top Gear Invalid Game Type", "", gameType);
+    }
+  };
+
   const unleashTopGear = () => {
     /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
     if (checkTopGearValid) {
       setBtnActive(false);
-      const currentLanguage = i18n.language;
-      const itemList = props.player.getSelectedItems();
-      let wepCombos = buildWepCombos(props.player, true);
-      const baseHPS = props.player.getHPS(contentType);
-      const strippedPlayer = JSON.parse(JSON.stringify(props.player));
-      const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
-      if (gameType === "Retail") {
-        //const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
-        const worker = new Worker(new URL("./Engine/TopGearEngine.js", import.meta.url), {
-          type: "module",
-         });
-        console.log(worker);
-        let instance = new worker();
-
-        instance
-          .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel)
-          .then((result) => {
-            // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
-            apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-            props.setTopResult(result);
-            instance.terminate();
-            history.push("/report/");
-          })
-          .catch((err) => {
-            // If top gear crashes for any reason, log the error and then terminate the worker.
-            reportError("", "Top Gear Crash", err, strippedPlayer.spec);
-            setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
-            instance.terminate();
-            setBtnActive(true);
-          });
-      } else {
-        const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
-        let instance = new worker();
-        instance
-          .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, userSettings, strippedCastModel)
-          .then((result) => {
-            //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-            props.setTopResult(result);
-            instance.terminate();
-            history.push("/report/");
-          })
-          .catch((err) => {
-            // If top gear crashes for any reason, log the error and then terminate the worker.
-            reportError("", "Classic Top Gear Crash", err, strippedPlayer.spec);
-            setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
-            instance.terminate();
-            setBtnActive(true);
-          });
+      // Special Error Code
+      try {
+        unleashWorker();
+      } catch (err) {
+        setErrorMessage("Top Gear has crashed. Sorry! It's been automatically reported.");
+        reportError("", "Top Gear Full Crash", err, JSON.stringify(props.player) || "");
+        console.log(err);
+        setBtnActive(true);
       }
-    } else {
-      /* ---------------------------------------- Return error. --------------------------------------- */
     }
   };
 
-  const selectedItemCount = props.player.getSelectedItems().length;
+  const selectedItemCount = props.player.getSelectedItems().length || 0;
+
   const helpBlurb = t("TopGear.HelpText" + gameType);
   const helpText =
     gameType === "Retail"
@@ -256,7 +439,7 @@ export default function TopGear(props) {
         ];
 
   const activateItem = (unique, active) => {
-    if (selectedItemCount < CONSTRAINTS.Shared.topGearMaxItems || active) {
+    if (selectedItemCount < TOPGEARCAP || active) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
@@ -287,6 +470,7 @@ export default function TopGear(props) {
   if (gameType === "Classic") slotList.push({ label: getTranslatedSlotName("relics", currentLanguage), slotName: "Relics & Wands" });
   return (
     <div className={classes.root}>
+      <div style={{ height: 96 }} />
       <Grid container spacing={1} justifyContent="center">
         <Grid item xs={12}>
           <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
@@ -314,14 +498,6 @@ export default function TopGear(props) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Retail" ? (
-          <Grid item xs={12}>
-            {/* -------------------------------- Trinket / Buff / Etc Settings ------------------------------- */}
-            {/*<DominationGems player={props.player} singleUpdate={props.singleUpdate} userSettings={userSettings} /> */}
-          </Grid>
-        ) : (
-          ""
-        )}
 
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
@@ -333,7 +509,7 @@ export default function TopGear(props) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} />
+                    <MiniItemCard key={index} item={item} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
                   ))}
                 </Grid>
               </Grid>
@@ -379,9 +555,9 @@ export default function TopGear(props) {
           </Typography>
           <div>
             <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
-              {errorMessage}
+              {getErrorMessage()}
             </Typography>
-            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={!btnActive} onClick={unleashTopGear}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={checkSlots().length > 0 || !btnActive} onClick={unleashTopGear}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>
@@ -390,9 +566,11 @@ export default function TopGear(props) {
 
       {/*item deleted snackbar */}
       <Snackbar open={openDelete} autoHideDuration={3000} onClose={handleCloseDelete}>
-        <Alert onClose={handleCloseDelete} severity="error">
-          {t("QuickCompare.ItemDeleted")}
-        </Alert>
+        <div>
+          <Alert onClose={handleCloseDelete} severity="error">
+            {t("QuickCompare.ItemDeleted")}
+          </Alert>
+        </div>
       </Snackbar>
     </div>
   );

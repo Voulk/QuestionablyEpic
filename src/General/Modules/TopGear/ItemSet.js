@@ -42,8 +42,7 @@ class ItemSet {
   // Classic Socket List
   bcSockets = {};
 
-  domSockets = 0; // Number of domination sockets.
-
+  firstSocket = ""; // The slot of the first socket in the set. Used to work out where to put our int gem. No effect on scoring.
 
 
   // This is for testing purposes only. It will print every item in the collection to the console.
@@ -58,7 +57,7 @@ class ItemSet {
   getStartingStats(gameType) {
     if (gameType === "Retail") {
       const stats = {
-        intellect: 450,
+        intellect: 2091,
         haste: 0,
         crit: 0,
         mastery: 0,
@@ -66,11 +65,12 @@ class ItemSet {
         leech: 0,
         hps: 0,
         dps: 0,
-        mana: 0,
+        mana: 0, // Evoker 2091
+        allyStats: 0,
       }
-      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin") stats.intellect = 473;
-      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid" || this.spec === "Preservation Evoker") stats.intellect = 450;
-      else if (this.spec === "Mistweaver Monk") stats.intellect = 452;
+      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 2091;
+      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 2087;
+      else if (this.spec === "Mistweaver Monk") stats.intellect = 2086;
       return stats
     }
     else {
@@ -104,7 +104,10 @@ class ItemSet {
         }
       }
 
-      if (item.socket) setSockets++;
+      if (item.socket) {
+        if (this.firstSocket === "") {this.firstSocket = item.slot;}
+        setSockets += item.socket;
+      }
       //if (item.hasDomSocket) domSockets++;
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1
@@ -113,85 +116,53 @@ class ItemSet {
 
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
+
       }
       if (item.onUse) this.onUseTrinkets.push({name: item.effect.name, level: item.level});
         
 
+      
       if (item.effect !== "") {
         let effect = item.effect;
         effect.level = item.level;
         this.effectList.push(effect);
       }
-
-      /*
-      if (item.hasDomSocket && !settings.replaceDomGems) {
-        // Don't replace dom gems.
-        const effect = getDomGemEffect(item.domGemID)
-        this.effectList.push(effect);
-      } */
     }
 
-    /*
-    let lowestGemRanks = {
-      unholy: 4,
-      frost: 4,
-      blood: 4
-    }
-
-    // Domination Socket Code
-    // Defunct in 9.2.
-
-    // Poll Unholy gems
-    const unholyGems = this.effectList.filter(function (effect) {
-      if (effect.type === "domination gem" && effect.gemColor === "Unholy") {
-        lowestGemRanks.unholy = Math.min(effect.rank, lowestGemRanks.unholy);
-        return true;
-      }
-    });
-    // Poll Frost Gems
-    const frostGems = this.effectList.filter(function (effect) {
-      if (effect.type === "domination gem" && effect.gemColor === "Frost") {
-        lowestGemRanks.frost = Math.min(effect.rank, lowestGemRanks.frost);
-        return true;
-      };
-      return effect.type === "domination gem" && effect.gemColor === "Frost";
-    });
-    // Poll Blood Gems
-    const bloodGems = this.effectList.filter(function (effect) {
-      if (effect.type === "domination gem" && effect.gemColor === "Blood") {
-        lowestGemRanks.frost = Math.min(effect.rank, lowestGemRanks.blood);
-        return true;
-      }
-    });
-
-    if (unholyGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Chaos Bane", "rank": lowestGemRanks.unholy})
-    else if (frostGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Winds of Winter", "rank": lowestGemRanks.frost})
-    else if (bloodGems.length === 3) this.effectList.push({"type": "domination gem", "name": "Blood Link", "rank": lowestGemRanks.blood})
-    // -----------------
-    */
 
     this.setStats = setStats;
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
-    //this.domSockets = domSockets;
     return this;
+  }
+
+  checkHasItem(itemID) {
+    return this.itemList.filter(item => item.id === itemID).length > 0
   }
 
   verifySet(settings = {}) {
     // Verifies that the set is possible.
+
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       return false;
     } else if (this.uniques["unity"] && this.uniques["unity"] > 1) {
 
       return false;
     } 
+    else if (this.uniques["embellishment"] && this.uniques["embellishment"] > 2) {
+
+      return false;
+    } 
     else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
+      return false;
+    }
+    else if (this.uniques["alchstone"] && this.uniques["alchstone"] > 1) {
       return false;
     }
     else if (this.uniques["crafted"] && this.uniques["crafted"] > 1) {
       return false;
     }
-    else if (this.uniques["catalyst"] && 'catalystLimit' in settings && this.uniques["catalyst"] > settings.catalystLimit) {
+    else if (this.uniques["catalyst"] && 'catalystLimit' in settings && this.uniques["catalyst"] > settings.catalystLimit.value) {
       return false;
     } 
      else {

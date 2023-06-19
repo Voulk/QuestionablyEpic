@@ -7,13 +7,14 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
   },
   dom: {
-    borderColor: "#CEB600",
+    borderColor: "#1286E5",
     //backgroundColor: "#515751",
     borderStyle: "dashed",
     minWidth: 250,
@@ -90,8 +91,11 @@ export default function ItemCard(props) {
       return encounterDB[1194][item.source.encounterId].name[currentLanguage] + " (Tazavesh)";
     }
     /* ----------------------------- Raid Boss Name ----------------------------- */
-    if (item.source.instanceId === 1190 && item.source.encounterId > 0) {
-      return encounterDB[1190].bosses[item.source.encounterId].name[currentLanguage];
+    if (item.source.instanceId === 1200 && item.source.encounterId > 0) {
+      return encounterDB[1200].bosses[item.source.encounterId].name[currentLanguage];
+    }
+    if (item.source.instanceId === 1208 && item.source.encounterId > 0) {
+      return encounterDB[1208].bosses[item.source.encounterId].name[currentLanguage];
     }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
@@ -104,20 +108,20 @@ export default function ItemCard(props) {
       return encounterDB[item.source.instanceId].bosses[item.source.encounterId].name[currentLanguage];
     }
     /* ------------------------------ World Bosses ------------------------------ */
-    if (item.source.instanceId === 1192 && item.source.encounterId > 0) {
-      return encounterDB[1192][item.source.encounterId].name[currentLanguage];
+    if (item.source.instanceId === 1205 && item.source.encounterId > 0) {
+      return encounterDB[1205][item.source.encounterId].name[currentLanguage];
     }
     /* ---------------------------------- Honor --------------------------------- */
-    if (item.source.instanceId === -16 || item.source.encounterId === -16) {
-      return getTranslatedPvP("-16", currentLanguage);
+    if (item.source.instanceId === -30 || item.source.encounterId === -30) {
+      return getTranslatedPvP("-30", currentLanguage);
     }
     /* ----------------------- Creation Catalyst --------------------------------- */
     if (item.source.instanceId === -22) {
       return t("CreationCatalyst");
     }
     /* -------------------------------- Conquest -------------------------------- */
-    if (item.source.instanceId === -17 || item.source.encounterId === -17) {
-      return getTranslatedPvP("-17", currentLanguage);
+    if (item.source.instanceId === -31 || item.source.encounterId === -31) {
+      return getTranslatedPvP("-31", currentLanguage);
     }
     /* -------------------------------- TBC Badge Gear -------------------------------- */
     if (item.source.instanceId === -4) {
@@ -136,7 +140,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "?bonus=" + item.bonusIDS + "&domain=" + wowheadDomain}>
+              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"
@@ -152,7 +156,7 @@ export default function ItemCard(props) {
                   />
                   <div className="bottom-right-ItemCards"> {item.level} </div>
                 </div>
-              </a>
+              </WowheadTooltip>
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />

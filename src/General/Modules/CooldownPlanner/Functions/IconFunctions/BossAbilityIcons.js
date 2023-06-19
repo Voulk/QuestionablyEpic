@@ -1,5 +1,6 @@
 import React from "react";
 import { bossAbilities } from "../../Data/CooldownPlannerBossAbilityList";
+import { getIconURL } from "./getIconURL";
 
 export default function bossAbilityIcons(guid, bossID, style) {
   let alt = "";
@@ -7,7 +8,7 @@ export default function bossAbilityIcons(guid, bossID, style) {
     .filter((obj) => {
       return obj.guid === guid;
     })
-    .map((obj) => obj.icon);
+    .map((obj) => obj.icon)[0]; // select the first element of the array
 
   alt = bossAbilities[bossID]
     .filter((obj) => {

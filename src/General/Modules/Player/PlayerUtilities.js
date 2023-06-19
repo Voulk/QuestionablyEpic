@@ -57,13 +57,13 @@ export function convertLogStatOutput(player, logOutput, id) {
   if (output.length > 0) {
     let info = output[0].combatantInfo.stats;
 
-    data.intellect = info.Intellect.min;
+    data.intellect = info.Intellect && 'min' in info.Intellect ? info.Intellect.min : 8000;
     data.stamina = info.Stamina.min;
     data.crit = info.Crit.min;
     data.haste = info.Haste.min;
     data.mastery = info.Mastery.min;
     data.versatility = info.Versatility.min;
-    data.leech = info.Leech.min;
+    data.leech = info.Leech && 'min' in info.Leech ? info.Leech.min : 0;
   }
 
   //player.setActiveStats(data);

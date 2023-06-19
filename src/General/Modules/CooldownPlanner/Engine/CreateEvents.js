@@ -25,8 +25,23 @@ import createFatescribeEvents from "./BossEvents/SanctumEvents/Fatescribe";
 import createKelthuzadEvents from "./BossEvents/SanctumEvents/Kelthuzad";
 import createGuardianEvents from "./BossEvents/SanctumEvents/Guardian";
 import createSylvanusEvents from "./BossEvents/SanctumEvents/Sylvanus";
+import createEranogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/1. Eranog";
+import createTerrosEvents from "./BossEvents/VaultOfTheIncarnatesEvents/2. Terros";
+import createPrimalistCouncilEvents from "./BossEvents/VaultOfTheIncarnatesEvents/3. PrimalistCouncil";
+import createSennarthEvents from "./BossEvents/VaultOfTheIncarnatesEvents/4. Sennarth";
+import createDatheaEvents from "./BossEvents/VaultOfTheIncarnatesEvents/5. Dathea";
+import createKurogEvents from "./BossEvents/VaultOfTheIncarnatesEvents/6. KurogGrimtotem";
+import createBroodkeeperEvents from "./BossEvents/VaultOfTheIncarnatesEvents/7. BroodKeeperDiurna";
+import createRaszagethEvents from "./BossEvents/VaultOfTheIncarnatesEvents/8. Raszageth";
+import createAmalgamationEvents from "./BossEvents/AbberusEvents/2. AmalgamationChamber";
+import createForgottenExperimentEvents from "./BossEvents/AbberusEvents/3. ForgottenExperiments";
+import createMagmoraxEvents from "./BossEvents/AbberusEvents/7. Magmorax";
+import createZskarnEvents from "./BossEvents/AbberusEvents/6. Zskarn";
+import createNeltharionEvents from "./BossEvents/AbberusEvents/8. Neltharion";
+import createRashokEvents from "./BossEvents/AbberusEvents/5. Rashok";
+import createSarkarethEvents from "./BossEvents/AbberusEvents/9. Sarkareth";
 
-export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth) {
+export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
   let returnedEvents = [];
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -34,99 +49,171 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
   /* ---------------------------------------------------------------------------------------------- */
   /* ------------------------------------------ Shriekwing ------------------------------------------ */
   if (bossID === 2398) {
-    returnedEvents = createShriekwingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createShriekwingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* -------------------------------------- Huntsman Altimor -------------------------------------- */
   if (bossID === 2418) {
-    returnedEvents = createHuntsmanEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createHuntsmanEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* ------------------------------------- Hungering Destroyer ------------------------------------ */
   if (bossID === 2383) {
-    returnedEvents = createHungeringEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createHungeringEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* --------------------------------------- Artificer Xymox -------------------------------------- */
   if (bossID === 2405) {
-    returnedEvents = createNathriaXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createNathriaXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2406) {
-    returnedEvents = createDarkveinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createDarkveinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2402) {
-    returnedEvents = createSunKingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createSunKingEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2412) {
-    returnedEvents = createCouncilOfBloodEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createCouncilOfBloodEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2399) {
-    returnedEvents = createSludgefistEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createSludgefistEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2417) {
-    returnedEvents = createStoneLegionEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createStoneLegionEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2407) {
-    returnedEvents = createDenathriusEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createDenathriusEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                      Sanctum of Domination                                     */
   /* ---------------------------------------------------------------------------------------------- */
   if (bossID === 2433) {
-    returnedEvents = createEyeEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createEyeEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2429) {
-    returnedEvents = createNineEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createNineEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2432) {
-    returnedEvents = createRemnantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createRemnantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2434) {
-    returnedEvents = createSoulrenderEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createSoulrenderEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2430) {
-    returnedEvents = createPainsmithEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createPainsmithEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2431) {
-    returnedEvents = createFatescribeEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createFatescribeEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2422) {
-    returnedEvents = createKelthuzadEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createKelthuzadEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2436) {
-    returnedEvents = createGuardianEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createGuardianEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   if (bossID === 2435) {
-    returnedEvents = createSylvanusEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createSylvanusEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* ---------------------------------------------------------------------------------------------- */
   /*                                   Sepulcher of the First Ones                                  */
   /* ---------------------------------------------------------------------------------------------- */
   /* ------------------------------------------ Vigilant ------------------------------------------ */
   if (bossID === 2512) {
-    returnedEvents = createVigilantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createVigilantEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
 
   if (bossID === 2540) {
-    returnedEvents = createDesaugneEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createDesaugneEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* -------------------------------------------- Xymox ------------------------------------------- */
   if (bossID === 2553) {
-    returnedEvents = createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createXymoxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* ------------------------------------------ Pantheon ------------------------------------------ */
   if (bossID === 2544) {
-    returnedEvents = createPantheonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createPantheonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* ------------------------------------------- Anduin ------------------------------------------- */
   if (bossID === 2546) {
-    returnedEvents = createAnduinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createAnduinEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* ------------------------------------------- Rygelon ------------------------------------------- */
   if (bossID === 2549) {
-    returnedEvents = createRygelonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createRygelonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
   }
   /* ------------------------------------------- Jailer ------------------------------------------- */
   if (bossID === 2537) {
-    returnedEvents = createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+    returnedEvents = createjailerEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------- Eranog ------------------------------------------- */
+  if (bossID === 2587) {
+    returnedEvents = createEranogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------- Terros ------------------------------------------- */
+  if (bossID === 2639) {
+    returnedEvents = createTerrosEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* -------------------------------------- Primalist Council ------------------------------------- */
+  if (bossID === 2590) {
+    returnedEvents = createPrimalistCouncilEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------ Sennarth ------------------------------------------ */
+  if (bossID === 2592) {
+    returnedEvents = createSennarthEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------- Dathea ------------------------------------------- */
+  if (bossID === 2635) {
+    returnedEvents = createDatheaEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* -------------------------------------------- Kurog ------------------------------------------- */
+  if (bossID === 2605) {
+    returnedEvents = createKurogEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ----------------------------------------- Broodkeeper ---------------------------------------- */
+  if (bossID === 2614) {
+    returnedEvents = createBroodkeeperEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------ Raszageth ----------------------------------------- */
+  if (bossID === 2607) {
+    returnedEvents = createRaszagethEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ---------------------------------- The Amalgamation Chamber ---------------------------------- */
+  if (bossID === 2687) {
+    returnedEvents = createAmalgamationEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ---------------------------------- The Forgotten Experiments --------------------------------- */
+  if (bossID === 2693) {
+    returnedEvents = createForgottenExperimentEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* ------------------------------------------ Magmorax ------------------------------------------ */
+  if (bossID === 2683) {
+    returnedEvents = createMagmoraxEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  /* -------------------------------- The Vigilant Steward, Zskarn -------------------------------- */
+  if (bossID === 2689) {
+    returnedEvents = createZskarnEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  if (bossID === 2680) {
+    returnedEvents = createRashokEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  if (bossID === 2684) {
+    returnedEvents = createNeltharionEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  }
+
+  if (bossID === 2685) {
+    returnedEvents = createSarkarethEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
   }
 
   return returnedEvents;

@@ -9,9 +9,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
-import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
-import DominationGems from "Retail/Modules/DominationGemSelection/DominationGems";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 
 const useStyles = makeStyles((theme) => ({
@@ -43,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "95%",
-      marginTop: 120,
+      marginTop: 24,
     },
     [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
@@ -51,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "auto",
       marginRight: "auto",
       width: "80%",
-      marginTop: 140,
+      marginTop: 44,
     },
     [theme.breakpoints.up("md")]: {
       justifyContent: "center",
@@ -77,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
+const raidDifficulty = ["Raid Finder", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -105,6 +103,7 @@ export default function UpgradeFinderFront(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
+  const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
   const helpText =
@@ -127,8 +126,8 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>lvl 262</div>
-          <div>M 0</div>
+          <div>lvl 402</div>
+          <div>M 2</div>
         </div>
       ),
     },
@@ -136,8 +135,8 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 262</div>
-          <div>M 2</div>
+          <div>lvl 405</div>
+          <div>M 3/4</div>
         </div>
       ),
     },
@@ -145,8 +144,8 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 265</div>
-          <div>M 3</div>
+          <div>lvl 408</div>
+          <div>M 5/6</div>
         </div>
       ),
     },
@@ -154,8 +153,8 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 268</div>
-          <div>M 4</div>
+          <div>lvl 411</div>
+          <div>M 7/8</div>
         </div>
       ),
     },
@@ -163,8 +162,8 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 272</div>
-          <div>M 5</div>
+          <div>lvl 415</div>
+          <div>M 9/10</div>
         </div>
       ),
     },
@@ -172,8 +171,8 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 275</div>
-          <div>M 6-7</div>
+          <div>lvl 418</div>
+          <div>M 11/12</div>
         </div>
       ),
     },
@@ -181,8 +180,8 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 278</div>
-          <div>M 8-9</div>
+          <div>lvl 421</div>
+          <div>M 13/14</div>
         </div>
       ),
     },
@@ -190,8 +189,8 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 281</div>
-          <div>M 10-11</div>
+          <div>lvl 424</div>
+          <div>M 15/16</div>
         </div>
       ),
     },
@@ -199,8 +198,8 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 285</div>
-          <div>M 12-13</div>
+          <div>lvl 428</div>
+          <div>M 17/18</div>
         </div>
       ),
     },
@@ -208,8 +207,8 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 288</div>
-          <div>M 14-15</div>
+          <div>lvl 431</div>
+          <div>M 19/20</div>
         </div>
       ),
     },
@@ -217,7 +216,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 291</div>
+          <div>lvl 434</div>
         </div>
       ),
     },
@@ -225,7 +224,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 294</div>
+          <div>lvl 437</div>
         </div>
       ),
     },
@@ -233,7 +232,7 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 298</div>
+          <div>lvl 441</div>
         </div>
       ),
     },
@@ -241,7 +240,7 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 301</div>
+          <div>lvl 444</div>
         </div>
       ),
     },
@@ -249,7 +248,7 @@ export default function UpgradeFinderFront(props) {
       value: 14,
       label: (
         <div className={classes.labels}>
-          <div>lvl 304</div>
+          <div>lvl 447</div>
         </div>
       ),
     },
@@ -257,7 +256,9 @@ export default function UpgradeFinderFront(props) {
 
   const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
   const [selectedNormal, setSelectedNormal] = React.useState(false);
+  const [selectedNormalMax, setSelectedNormalMax] = React.useState(false);
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
+  const [selectedHeroicMax, setSelectedHeroicMax] = React.useState(false);
   const [selectedMythic, setSelectedMythic] = React.useState(false);
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
@@ -271,8 +272,8 @@ export default function UpgradeFinderFront(props) {
 
   // let history = useHistory();
 
-  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedHeroic, selectedMythic];
-  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedHeroic, setSelectedMythic];
+  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic];
+  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic];
 
   const editSettings = (setting, newValue) => {
     userSettings[setting] = newValue;
@@ -324,6 +325,7 @@ export default function UpgradeFinderFront(props) {
 
   return (
     <div className={classes.header}>
+      <div style={{ height: 96 }} />
       <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
         {t("UpgradeFinderFront.Header")}
       </Typography>
@@ -374,7 +376,7 @@ export default function UpgradeFinderFront(props) {
                         }}
                         value="check"
                         selected={props.playerSettings.raid.includes(i)}
-                        style={{ width: 180, height: 45 }}
+                        style={{ width: 140, height: 40 }}
                         onChange={() => {
                           setsPvE[i](!selectsPvE[i]);
                           props.setRaidDifficulty(i);
@@ -416,7 +418,7 @@ export default function UpgradeFinderFront(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={6}
+                  defaultValue={7}
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
@@ -462,7 +464,7 @@ export default function UpgradeFinderFront(props) {
           </Grid>
         )}
         {/* ------------------------------- PvP Section ------------------------------ */}
-        <Grid item xs={12}>
+        {/*<Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
             <div style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
@@ -492,9 +494,9 @@ export default function UpgradeFinderFront(props) {
               </Grid>
             </div>
           </Paper>
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
-      </Grid>
+      </Grid> 
 
       <div
         style={{

@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from "react";
-import MaterialTable, { MTableToolbar, MTableBody, MTableHeader } from "@material-table/core";
+import MaterialTable, { MTableToolbar, MTableBody, MTableHeader, MTableBodyRow, MTableEditRow } from "@material-table/core";
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
@@ -20,6 +20,7 @@ import ls from "local-storage";
 import { styled } from "@mui/material/styles";
 import { green } from "@mui/material/colors";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import CooldownPlannerThemeCheckbox from "./ThemeToggle";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -39,6 +40,10 @@ const debug = false;
 export default function CooldownPlanner(props) {
   debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
 
+  if (ls.get("healerInfo") === null || ls.get("healerInfo").length === 0) {
+    ls.set("healerInfo", []);
+  }
+
   const LightTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
     [`& .${tooltipClasses.arrow}`]: {
       color: green[600],
@@ -55,13 +60,46 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
-  const expansion = 8; // shadowlands
-  const [currentRaid, setCurrentRaid] = useState(2481);
-  const [currentBoss, setCurrentBoss] = useState(2512);
+  const expansion = 9; // Dragonflight
+  const [currentRaid, setCurrentRaid] = useState(2569);
+  const [currentBoss, setCurrentBoss] = useState(2688);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   const [currentPlan, setCurrentPlan] = useState("");
+
   const [data, setData] = useState([]);
   const columns = generateColumns(currentBoss, currentDifficulty);
+  // console.log(cooldownObject.getCooldownsArray())
+
+  // Console log plan data (used for importing default plans for a log)
+  // console.log(
+  //   data
+  //     // Map each element in the data array to a new object
+  //     // with the "bossAbility" and "time" properties
+  //     .map((key) => {
+  //       if (key.hasOwnProperty("bossAbility")) {
+  //         return { bossAbility: key.bossAbility, time: key.time };
+  //       }
+  //     })
+  //     // Remove any null elements from the array
+  //     .filter(Boolean)
+  //     // Sort the array by time in ascending order
+  //     .sort((a, b) => {
+  //       // Convert the time strings to Date objects for sorting
+  //       // Use the current date and set the hours and minutes from the time string
+  //       const date = new Date();
+  //       const timeA = new Date(date.setHours(...a.time.split(":")));
+  //       const timeB = new Date(date.setHours(...b.time.split(":")));
+
+  //       // Sort in ascending order by time
+  //       if (timeA < timeB) {
+  //         return -1;
+  //       } else if (timeA > timeB) {
+  //         return 1;
+  //       } else {
+  //         return 0;
+  //       }
+  //     }),
+  // );
 
   /* ------------------------------------------ Add Plan ------------------------------------------ */
   const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);
@@ -94,18 +132,25 @@ export default function CooldownPlanner(props) {
     return Object.keys(cooldownObject.getCooldowns(boss, currentDif));
   };
 
+  const changeRaid = (e) => {
+    setCurrentRaid(e.target.value);
+
+    let boss = bossList
+      .filter((obj) => {
+        return obj.zoneID === e.target.value;
+      })
+      .map((key, i) => key.DungeonEncounterID);
+    changeBoss(boss[0]);
+  };
+
   /* ------------------------------- Loads relevant plan into table ------------------------------- */
   const loadPlanData = (currentBoss, newPlan, currentDif) => {
-    let raid = "";
-    if ([2398, 2418, 2383, 2405, 2402, 2406, 2412, 2417, 2399, 2407].includes(currentBoss)) {
-      raid = 2296;
-    }
-    if ([2423, 2433, 2429, 2432, 2434, 2430, 2436, 2431, 2422, 2435].includes(currentBoss)) {
-      raid = 2450;
-    }
-    if ([2512, 2542, 2553, 2540, 2544, 2539, 2529, 2546, 2543, 2549, 2537].includes(currentBoss)) {
-      raid = 2481;
-    }
+    let raid = bossList
+      .filter((obj) => {
+        return obj.DungeonEncounterID === currentBoss;
+      })
+      .map((key, i) => key.zoneID)[0];
+
     setCurrentRaid(raid);
     setCurrentBoss(currentBoss);
     setCurrentPlan(newPlan);
@@ -193,6 +238,19 @@ export default function CooldownPlanner(props) {
           components={{
             Container: (props) => <Paper {...props} elevation={0} />,
             Body: (props) => (currentBoss === "" ? null : <MTableBody {...props} />),
+            Row: (props) => (
+              <MTableBodyRow
+                {...props}
+                // className={classes.tableRow}
+              />
+            ),
+            EditRow: (props) => (
+              <MTableEditRow
+                {...props}
+                // className={classes.tableRow}
+                style={{ backgroundColor: "" }}
+              />
+            ),
             Header: (props) => (currentBoss === "" ? null : <MTableHeader {...props} />),
             Toolbar: (props) => (
               /* ----------------------- Grid Container for the Toolbar for the Table ------------------------ */
@@ -223,7 +281,7 @@ export default function CooldownPlanner(props) {
                       id="RaidSelector"
                       select
                       value={currentRaid}
-                      onChange={(e) => setCurrentRaid(e.target.value)}
+                      onChange={(e) => changeRaid(e)}
                       label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
                       size="small"
                       sx={{ minWidth: 200, width: "100%" }}
@@ -256,7 +314,7 @@ export default function CooldownPlanner(props) {
                       value={currentBoss}
                       placeholder={"Boss"}
                       onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
-                      disabled={RosterCheck}
+                      // disabled={RosterCheck}
                       size="small"
                     >
                       {bossList
@@ -284,7 +342,7 @@ export default function CooldownPlanner(props) {
                       placeholder={t("Difficulty")}
                       value={currentDifficulty}
                       onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
-                      disabled={currentBoss === "" || RosterCheck ? true : false}
+                      disabled={currentBoss === "" ? true : false}
                       size="small"
                     >
                       {["Heroic", "Mythic"].map((key, i, arr) => {
@@ -333,7 +391,7 @@ export default function CooldownPlanner(props) {
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
                       handleAddPlanDialogClickOpen={handleAddPlanDialogClickOpen}
-                      disabledCheck={RosterCheck}
+                      // disabledCheck={RosterCheck}
                       changeDifficulty={changeDifficulty}
                       currentRaid={currentRaid}
                       changeBoss={changeBoss}
@@ -351,7 +409,7 @@ export default function CooldownPlanner(props) {
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
                       loadPlanData={loadPlanData}
-                      disabledCheck={RosterCheck}
+                      // disabledCheck={RosterCheck}
                     />
                   </Grid>
 
@@ -366,20 +424,42 @@ export default function CooldownPlanner(props) {
                       cooldownObject={cooldownObject}
                       currentBoss={currentBoss}
                       currentDifficulty={currentDifficulty}
-                      disabledCheck={RosterCheck}
+                      // disabledCheck={RosterCheck}
                     />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ImportPlanDialog cooldownObject={cooldownObject} loadPlanData={loadPlanData} disabledCheck={RosterCheck} />
+                    <ImportPlanDialog
+                      cooldownObject={cooldownObject}
+                      loadPlanData={loadPlanData}
+                      // disabledCheck={RosterCheck}
+                    />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ExportPlanDialog data={data} boss={currentBoss} planName={currentPlan} plan={data} currentDifficulty={currentDifficulty} disabledCheck={RosterCheck} currentPlan={currentPlan} />
+                    <ExportPlanDialog
+                      data={data}
+                      boss={currentBoss}
+                      planName={currentPlan}
+                      plan={data}
+                      currentDifficulty={currentDifficulty}
+                      //disabledCheck={RosterCheck}
+                      currentPlan={currentPlan}
+                    />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <ExportERTDialog boss={currentBoss} currentPlan={currentPlan} disabledCheck={RosterCheck} update={props.update} tableData={data} />
+                    <ExportERTDialog
+                      boss={currentBoss}
+                      currentPlan={currentPlan}
+                      // disabledCheck={RosterCheck}
+                      update={props.update}
+                      tableData={data}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
+                    <CooldownPlannerThemeCheckbox />
                   </Grid>
                 </Grid>
 

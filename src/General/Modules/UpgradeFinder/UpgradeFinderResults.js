@@ -1,7 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import makeStyles from "@mui/styles/makeStyles";
-import { Button, Tabs, Tab, Box, AppBar, Typography, Grid } from "@mui/material";
+import { Button, Tabs, Tab, AppBar, Typography, Grid } from "@mui/material";
 // import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getDifferentialByID } from "../../Engine/ItemUtilities";
@@ -10,180 +8,11 @@ import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import SlotsContainer from "./Panels/PanelSlots";
-import TazaveshGearContainer from "./Panels/TazaveshPanel";
-import LegionTimewalking from "./Panels/PanelLegionTimewalking";
 import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    justifyContent: "center",
-    display: "block",
-    marginLeft: "auto",
-    marginRight: "auto",
-    flexGrow: 1,
-    maxWidth: "70%",
-  },
-  panel: {
-    flexGrow: 1,
-    backgroundColor: "#323232",
-    display: "flex",
-    borderRadius: "0px 0px 4px 4px",
-  },
-  tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
-  },
-  raidHeaderStyle: {
-    backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png")})`,
-    borderRadius: "4px 0px 0px 4px",
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  raidBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Classic/RaidHeader.jpg").default})`,
-    borderRadius: "4px 0px 0px 4px",
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-  },
-  mythicPlusHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/MythicPlus.png")})`,
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  dungeonBCPlusHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Classic/DungeonHeader.jpg").default})`,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-  },
-  pvpHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/PVPHeader.png")})`,
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  pvpBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Classic/PVP/PVPHeader.jpg").default})`,
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-  },
-  worldBossHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/WorldBosses.png")})`,
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  slotsHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/AllSlots.png")})`,
-    borderRadius: "0px 4px 4px 0px",
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  slotsBCHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Classic/SlotsHeader.jpg").default})`,
-    borderRadius: "0px 4px 4px 0px",
-    whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-  },
-  tazaveshStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/TazaveshHeader.png")})`,
-    borderRadius: "0px 4px 4px 0px",
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  LegionTimewalkingStyle: {
-    backgroundImage: `url(${require("../../../Images/MythicPlus/LegionTimewalking/LegionTimeWalkingHeader.png")})`,
-    borderRadius: "0px 4px 4px 0px",
-    // whiteSpace: "nowrap",
-    textShadow: "3px 3px 4px black",
-    color: "#fff",
-    fontSize: "1.1rem",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center 60%",
-    backgroundSize: "auto 100%",
-  },
-  header: {
-    [theme.breakpoints.down("md")]: {
-      margin: "auto",
-      width: "90%",
-      justifyContent: "center",
-      display: "block",
-      marginTop: 140,
-    },
-    [theme.breakpoints.up("sm")]: {
-      margin: "auto",
-      width: "85%",
-      justifyContent: "center",
-      display: "block",
-      marginTop: 120,
-    },
-    [theme.breakpoints.up("md")]: {
-      marginTop: 32,
-      margin: "auto",
-      width: "85%",
-      justifyContent: "center",
-      display: "block",
-    },
-    [theme.breakpoints.up("lg")]: {
-      marginTop: 32,
-      margin: "auto",
-      width: "70%",
-      justifyContent: "center",
-      display: "block",
-    },
-  },
-}));
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
-      {value === index && <Box p={0}>{children}</Box>}
-    </div>
-  );
-}
+import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
+import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 function a11yProps(index) {
   return {
@@ -192,17 +21,42 @@ function a11yProps(index) {
   };
 }
 
+function shortenReport(player, contentType, result) {
+  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
+
+  return report;
+}
+
+const sendReport = (shortReport) => {
+
+  /*
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
+  
+  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
+  .then(response => console.log(response));
+  */
+}
+
 export default function UpgradeFinderResults(props) {
   //   useEffect(() => {
   //     ReactGA.pageview(window.location.pathname + window.location.search);
   //   }, []);
 
-  const classes = useStyles();
+  const classes = UpgradeFinderStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const { t } = useTranslation();
   const result = props.itemSelection;
+  
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
+  //console.log("Total Item Count: " + itemDifferentials.length);
+  //console.log(JSON.stringify(itemDifferentials));
+  sendReport(shortenReport(props.player, result.contentType, result));
   const gameType = useSelector((state) => state.gameType);
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
   const handleTabChange = (event, newValue) => {
@@ -216,6 +70,7 @@ export default function UpgradeFinderResults(props) {
   const upgradeFinderResultsRetail = () => {
     return (
       <div className={classes.header}>
+        <div style={{ height: 96 }} />
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <div>
@@ -245,42 +100,33 @@ export default function UpgradeFinderResults(props) {
                 TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
               >
                 {/* Raid */}
-                <Tab className={classes.raidHeaderStyle} label={t("Raids")} {...a11yProps(0)} />
+                <Tab className={classes.raidHeaderStyle} label={t("Raid")} {...a11yProps(0)} />
                 {/* Mythic Plus */}
-                <Tab className={classes.mythicPlusHeaderStyle} label={t("UpgradeFinder.MythicPlus")} {...a11yProps(1)} />
-                {/* Legion Timewalking */}
-                <Tab
-                  className={classes.LegionTimewalkingStyle}
-                  label={
-                    //t("UpgradeFinder.LegionTimewalking")
-                    "Legion"
-                  }
-                  {...a11yProps(2)}
-                />
+                <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
                 {/* PVP */}
-                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(3)} />
+                {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
                 {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(4)} />
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(2)} />
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(5)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(3)} />
               </Tabs>
             </AppBar>
           </Grid>
 
           {/* Raid */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={0}>
+            <UFTabPanel value={tabvalue} index={0}>
               <div className={classes.panel}>
                 <Grid container>
                   <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
 
           {/* Mythic Plus */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={1}>
+            <UFTabPanel value={tabvalue} index={1}>
               <div className={classes.panel}>
                 <Grid container>
                   <MythicPlusGearContainer
@@ -292,57 +138,40 @@ export default function UpgradeFinderResults(props) {
                   />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
 
-          {/* Legion Timewalking */}
+          {/* PVP 
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={2}>
-              <div className={classes.panel}>
-                <Grid container>
-                  <LegionTimewalking
-                    setDungeonDifficulty={props.setDungeonDifficulty}
-                    player={props.player}
-                    itemList={itemList}
-                    itemDifferentials={itemDifferentials}
-                    playerSettings={props.playerSettings}
-                  />
-                </Grid>
-              </div>
-            </TabPanel>
-          </Grid>
-
-          {/* PVP */}
-          <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={3}>
+            <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
                   <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
                 </Grid>
               </div>
-            </TabPanel>
-          </Grid>
+            </UFTabPanel>
+          </Grid>*/}
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={4}>
+            <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
                   <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
 
           {/* Slots */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={5}>
+            <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
         </Grid>
       </div>
@@ -393,18 +222,18 @@ export default function UpgradeFinderResults(props) {
           </Grid>
           {/* Raid */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={0}>
+            <UFTabPanel value={tabvalue} index={0}>
               <div className={classes.panel}>
                 <Grid container>
                   <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
 
           {/* Mythic Plus */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={1}>
+            <UFTabPanel value={tabvalue} index={1}>
               <div className={classes.panel}>
                 <Grid container>
                   <MythicPlusGearContainer
@@ -416,36 +245,36 @@ export default function UpgradeFinderResults(props) {
                   />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
 
           {/* PVP */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={2}>
+            <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
 
           {/* World Bosses */}
-          {/* <TabPanel value={tabvalue} index={3}>
+          {/* <UFTabPanel value={tabvalue} index={3}>
           <div className={classes.panel}>
             <Grid container>
               <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
             </Grid>
           </div>
-        </TabPanel> */}
+        </UFTabPanel> */}
 
           {/* Slots */}
           <Grid item xs={12}>
-            <TabPanel value={tabvalue} index={3}>
+            <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
                 </Grid>
               </div>
-            </TabPanel>
+            </UFTabPanel>
           </Grid>
         </Grid>
       </div>

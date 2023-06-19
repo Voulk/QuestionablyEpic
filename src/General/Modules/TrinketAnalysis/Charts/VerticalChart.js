@@ -4,14 +4,18 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const getLevelDiff = (trinketName, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
   let temp = db.filter(function (item) {
     return item.name === trinketName;
   });
-  
+
   const item = temp[0];
+  if (!item) {
+    console.error("Invalid Trinket " + trinketName);
+  }
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
 
@@ -49,19 +53,18 @@ export default class VerticalChart extends PureComponent {
     super();
     this.state = { focusBar: null, mouseLeave: true };
   }
-  
 
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
+    const itemLevels = this.props.itemLevels;
     /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
-    const iLvls = [239, 246, 252, 259, 262, 265, 272, 278, 285, 291, 298, 304, 311];
+    //const iLvls = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 424];
 
     /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
     // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
-    let iLvlsVisible = { 239: true, 246: true, 252: true, 259: true, 262: true, 265: true, 272: true, 278: true, 285: true, 
-                          291: true, 298: true, 304: true, 311: true };
+    //let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
 
     const barColours = this.props.theme;
 
@@ -71,7 +74,7 @@ export default class VerticalChart extends PureComponent {
       .map((key) => key[1])
       .map((map2) => {
         /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
-        let x = Object.fromEntries(iLvls.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
+        let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
         /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push({
           name: map2.id,
@@ -90,16 +93,16 @@ export default class VerticalChart extends PureComponent {
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage), 32)}
             </text>
-            <a data-wowhead={"item=" + payload.value + "&ilvl=252" + "&domain=" + currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={430} domain={currentLanguage}>
               <img width={16} height={16} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
-            </a>
+            </WowheadTooltip>
           </foreignObject>
         </g>
       );
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.6}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.4}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
@@ -148,8 +151,8 @@ export default class VerticalChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {iLvls.map((key, i) => (
-            <Bar key={"bar" + i} dataKey={iLvlsVisible[key] ? key : ""} fill={barColours[i]} stackId="a" />
+          {itemLevels.map((key, i) => (
+            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
         </BarChart>
       </ResponsiveContainer>

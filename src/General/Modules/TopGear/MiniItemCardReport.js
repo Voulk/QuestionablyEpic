@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, buildPrimGems } from "../../Engine/ItemUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";
@@ -9,6 +9,7 @@ import masterySocket from "../../../Images/Resources/masterySocket.jpg";
 import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
 
 const useStyles = makeStyles({
   root: {
@@ -50,17 +51,11 @@ export default function ItemCardReport(props) {
   const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
   const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
-  const itemLevel = item.level;
+  const itemLevel = item.level || item.ilvl;
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const socketImg = {
-    haste: hasteSocket,
-    crit: critSocket,
-    mastery: masterySocket,
-    versatility: versSocket,
-  };
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  const gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
-  const socketImage = socketImg[enchants["Gems"]];
+  let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
+  const socketImage = getGemProp(enchants["Gems"], "icon");
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
   const isCatalysable = item.isCatalystItem;
@@ -76,7 +71,7 @@ export default function ItemCardReport(props) {
       else if (quality === 2) return "#1eff00";
       else return "#ffffff";
     } else {
-      if (isLegendary) return "#ff8000";
+      if (isLegendary || itemID === 204177) return "#ff8000";
       else if (itemLevel >= 183) return "#a73fee";
       else if (itemLevel >= 120) return "#328CE3";
       else return "#1eff00";
@@ -86,13 +81,46 @@ export default function ItemCardReport(props) {
   let itemName = "";
   let isVault = item.vaultItem;
 
+  let socket = [];
+
+  if (item.id === 203460) {
+    const gemCombo = props.primGems;
+    const gemData = buildPrimGems(gemCombo);
+    socket = gemData.socket;
+    gemString = gemData.string;
+  } else if (item.socket) {
+    let socketCount = item.socket;
+
+    if (props.firstSlot) {
+      // This is our first gem and we can socket int here.
+      socket.push(
+        <div style={{ display: "inline", marginRight: "5px" }}>
+          <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][0], "name"))} arrow>
+            <img src={getGemProp(enchants["Gems"][0], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+          </Tooltip>
+        </div>,
+      );
+      socketCount -= 1;
+    }
+    for (let i = 0; i < socketCount; i++) {
+      socket.push(
+        <div style={{ display: "inline", marginRight: "5px" }}>
+          <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][1], "name"))} arrow>
+            <img src={getGemProp(enchants["Gems"][1], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+          </Tooltip>
+        </div>,
+      );
+    }
+    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
+  }
+  /*
   const socket = item.socket ? (
     <div style={{ display: "inline" }}>
-      <Tooltip title={t(capitalizeFirstLetter(enchants["Gems"]))} arrow>
+      <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"], "name"))} arrow>
         <img src={socketImage} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
       </Tooltip>
     </div>
-  ) : null;
+  ) : null; */
 
   const enchantCheck = (item) => {
     if (item.slot in enchants) {
@@ -130,7 +158,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <a data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom + gemString}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} gems={gemString}>
                     <img
                       alt="img"
                       width={44}
@@ -143,7 +171,7 @@ export default function ItemCardReport(props) {
                         borderColor: itemQuality(itemLevel, item.id),
                       }}
                     />
-                  </a>
+                  </WowheadTooltip>
                   <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
@@ -168,10 +196,10 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container direction="row" xs={12} justifyContent="space-between">
+                <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                   <Grid item>
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {socket} {statString}
+                      {statString} {socket}
                     </Typography>
                   </Grid>
                   <Grid item>{enchantCheck(item)}</Grid>

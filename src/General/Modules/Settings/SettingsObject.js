@@ -3,8 +3,8 @@
 const userSettings = {
 
     // Editable Settings
-    hymnalAllies: 0,
-    includeGroupBenefits: false,
+    enchantItems: false,
+    includeGroupBenefits: true,
     autoSocket: false, // Automatically sockets viable items.
     dominationSockets: "auto",
     vaultDomGem: "none",
@@ -12,6 +12,7 @@ const userSettings = {
     upFinderToggle: "percent",
     catalystLimit: 1,
     upFinderLeech: false,
+    whisperingIncarnateIcon: "Frost",
 
     manaProfile: "Standard",
     raidBuffs: false,

@@ -1,28 +1,20 @@
-import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
-import { trinket_data } from "./TrinketData";
-import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
+import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../EffectUtilities";
+import { trinket_data } from "./ShadowlandsTrinketData";
+import { raidTrinketData } from "./TrinketData";
+import { dungeonTrinketData } from "./DungeonTrinketData";
+import { otherTrinketData } from "./OtherTrinketData";
+import { useSelector } from "react-redux";
 import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../General/Engine/SPECS";
 
-export function getDiminishedValue(statID, procValue, baseStat) {
-  const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
-  
-  const totalStat = baseStat + procValue;
-  let currentStat = baseStat + procValue;
-  for (var j = 0; j < DRBreakpoints.length; j++) {
-    currentStat -= Math.max((totalStat - DRBreakpoints[j]) * 0.1, 0);
-  }
 
-  return Math.round(procValue - (totalStat - currentStat));
-}
-
-export function getTrinketValue(trinketName, itemLevel) {
+export function getTrinketValueSL(trinketName, itemLevel) {
   let activeTrinket = trinket_data.find((trinket) => trinket.name === trinketName);
   if (trinketName === "Soulletting Ruby") {
     const effect = activeTrinket.effects[0];
@@ -37,30 +29,44 @@ export function getTrinketValue(trinketName, itemLevel) {
   }
 }
 
-export function getHighestStat(stats) {
-  let max = "";
-  let maxValue = -1;
+export function getTrinketValue(trinketName, itemLevel) {
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 
-  for (var stat in stats) {
-    if (stats[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
-      max = stat;
-      maxValue = stats[stat];
-    }
+  if (trinketName === "Voidmender's Shadowgem") {
+    const effect = activeTrinket.effects;
+
+    const critPerStack = processedValue(effect[1], itemLevel)
+    const effectiveCrit = processedValue(effect[0], itemLevel) + critPerStack * (effect[1].ppm * (effect[0].duration / 60)/2)
+    return effectiveCrit;
   }
-
-  if (maxValue > 0) return max;
   else {
-    reportError(this, "TrinketEffectFormulas", "No highest stat found: " + JSON.stringify(stats));
-    return "haste"; // A default value is returned to stop the app crashing, however this is reported as an error if it were ever to occur.
+    const effect = activeTrinket.effects[0];
+    const trinketValue = processedValue(effect, itemLevel);
+    return trinketValue;
+
   }
 }
 
+
+
 // TODO: Write proper comments. See Lingering Sunmote for an example.
-export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings = {}, setStats = {}) {
+export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, playerSettings = {}, setStats = {}) {
   let bonus_stats = {};
+  
+  let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
-  let activeTrinket = trinket_data.find((trinket) => trinket.name === effectName);
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  let activeTrinket = trinketData.find((trinket) => trinket.name === effectName);
+
+
+  if (activeTrinket !== undefined) {
+    return activeTrinket.runFunc(activeTrinket.effects, player, itemLevel, additionalData);
+  }
+  else {
+    return {};
+  }
 
   if (activeTrinket === undefined) {
     /* ---------------------------------------------------------------------------------------------- */
@@ -861,8 +867,8 @@ else if (
   }
 
   // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
-  bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration) * effect.efficiency[player.spec];
-
+  //bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(effect.ppm, effect.duration) * effect.efficiency[player.spec];
+  bonus_stats.haste = 0;
 } 
 else if (
   /* ---------------------------------------------------------------------------------------------- */

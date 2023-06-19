@@ -1,12 +1,13 @@
 export const instanceDB = {
   "0": "Test Instance",
-  "-17": "PVP Season 1 (Conquest)",
-  "-16": "PVP Season 1 (Honor)",
+  "-31": "PVP Season 1 (Conquest)",
+  "-30": "PVP Season 1 (Honor)",
   "-1": "Dungeons",
   "1190": "Castle Nathria",
-  "1192": "World Bosses",
+  "1205": "World Bosses",
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
+  "1208": "Aberrus, the Shadowed Crucible",
 };
 
 export const encounterDB = {
@@ -1029,60 +1030,51 @@ export const encounterDB = {
   },
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
-  1192: {
-    bossOrder: [2468, 2456, 2430, 2431, 2432, 2433],
-    2468: {
+  1205: {
+    bossOrder: [2515, 2506, 2517, 2518, 2531],
+    2515: {
       name: {
-        en: "Antros",
-        fr: "Antros",
-        de: "Antros",
-        ru: "Антрос",
-        ch: "安特洛斯",
+        en: "Strunraan, The Sky's Misery",
+        fr: "Strunraan, le Malheur du ciel",
+        de: "Strunraan, Elend des Himmels",
+        ru: "Струнраан Бедствие Небес",
+        ch: "斯图恩兰，苍天苦难",
       },
     },
-    2456: {
+    2506: {
       name: {
-        en: "Mor'geth",
-        fr: "Mor'geth",
-        de: "Mor'geth",
-        ru: "Мор'гет",
-        ch: "Mor'geth",
+        en: "Basrikron, The Shale Wing",
+        fr: "Basrikron, l’Aile de schiste",
+        de: "Basrikron, der Schieferflügel",
+        ru: "Базрикрон Каменное Крыло",
+        ch: "巴斯律孔，页岩之翼",
       },
     },
-    2430: {
+    2517: {
       name: {
-        en: "Valinor",
-        fr: "Valinor",
-        de: "Valinor",
-        ru: "Валинор",
-        ch: "Valinor",
+        en: "Bazual, The Dreaded Flame",
+        fr: "Bazual, la Flamme redoutée",
+        de: "Bazual, die gefürchtete Flamme",
+        ru: "Базуал Чудовищное Пламя",
+        ch: "巴祖阿尔，惊恐烈焰",
       },
     },
-    2431: {
+    2518: {
       name: {
-        en: "Mortanis",
-        fr: "Mortanis",
-        de: "Mortanis",
-        ru: "Мортанис",
-        ch: "Mortanis",
+        en: "Liskanoth, The Futurebane",
+        fr: "Liskanoth, Fléau du futur",
+        de: "Liskanoth, Schrecken der Zukunft",
+        ru: "Лисканот Крах Мироздания",
+        ch: "利斯卡诺兹，未来灾劫",
       },
     },
-    2432: {
+    2531: {
       name: {
-        en: "Oranomonos",
-        fr: "Oranomonos",
-        de: "Oranomonos",
-        ru: "Ораномонос",
-        ch: "长青之枝",
-      },
-    },
-    2433: {
-      name: {
-        en: "Nurgash",
-        fr: "Nurgash",
-        de: "Nurgash",
-        ru: "Нургаш",
-        ch: "诺尔伽什",
+        en: "The Zaqali Elders",
+        ch: "扎卡利长老",
+        de: "Die Ältesten der Zaqali",
+        fr: "Les Anciens zaqalis",
+        ru: "Старейшины закали",
       },
     },
   },
@@ -1321,7 +1313,7 @@ export const encounterDB = {
     },
   },
   /* ------------------------------------------ Dungeons ------------------------------------------ */
-  "-1": {
+  "-10000": {
     bossOrder: [
       // 1182, // "Necrotic Wake"
       // 1183, // "Plaguefall"
@@ -1576,7 +1568,7 @@ export const encounterDB = {
   },
 
   /* --------------------------------------------- PVP -------------------------------------------- */
-  2: [-17, -16],
+  2: [-30, -31],
   /* ------------------------------------- Legion Timewalking ------------------------------------- */
   3: {
     bossOrder: [707, 716, 740, 762, 767, 800],
@@ -1628,7 +1620,7 @@ export const encounterDB = {
     800: {
       name: {
         en: "Court of Stars",
-        fr: "our des Étoiles",
+        fr: "Cour des Étoiles",
         de: "Der Hof der Sterne",
         ru: "Квартал Звезд",
         ch: "群星庭院",
@@ -1724,6 +1716,120 @@ export const encounterDB = {
           ch: "莱萨杰丝，噬雷之龙",
         },
       },
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
+    },
+  },
+
+  1208: {
+    name: {
+      en: "Aberrus, the Shadowed Crucible",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
+    bossOrder: [2522, 2529, 2530, 2524, 2525, 2532, 2527, 2523, 2520, 999],
+    bosses: {
+      2525: {
+        name: {
+          en: "Rashok, the Elder",
+          ch: "莱修克，长老",
+          de: "Ältester Rashok",
+          fr: "Rashok, l’Ancien",
+          ru: "Рашок Древний",
+        },
+      },
+      2524: {
+        name: {
+          en: "Assault of the Zaqali",
+          ch: "扎卡利突袭",
+          de: "Angriff der Zaqali",
+          fr: "Assaut des Zaqalis",
+          ru: "Нападение закали",
+        },
+      },
+      2527: {
+        name: {
+          en: "Magmorax",
+          ch: "玛格莫莱克斯",
+          de: "Magmorax",
+          fr: "Magmorax",
+          ru: "Магморакс",
+        },
+      },
+      2523: {
+        name: {
+          en: "Echo of Neltharion",
+          ch: "奈萨里奥的回响",
+          de: "Echo von Neltharion",
+          fr: "Écho de Neltharion",
+          ru: "Эхо Нелтариона",
+        },
+      },
+      2520: {
+        name: {
+          en: "Scalecommander Sarkareth",
+          ch: "鳞长萨卡雷斯",
+          de: "Schuppenkommandant Sarkareth",
+          fr: "Squammandant Sarkareth",
+          ru: "Дракомандир Саркарет",
+        },
+      },
+      2529: {
+        name: {
+          en: "The Amalgamation Chamber",
+          ch: "融合体密室",
+          de: "Die Verschmelzungskammer",
+          fr: "Chambre de fusion",
+          ru: "Чертог слияния",
+        },
+      },
+      2522: {
+        name: {
+          en: "Kazzara, the Hellforged",
+          ch: "狱铸者卡扎拉",
+          de: "Kazzara, die Höllengeschmiedete",
+          fr: "Kazzara, née des enfers",
+          ru: "Каззара из Преисподней",
+        },
+      },
+      2532: {
+        name: {
+          en: "The Vigilant Steward, Zskarn",
+          ch: "警戒管事兹斯卡恩",
+          de: "Der aufmerksame Verwalter, Zskarn",
+          fr: "Zskarn, l’Intendant vigilant",
+          ru: "Бдительный распорядитель Шкарн",
+        },
+      },
+      2530: {
+        name: {
+          en: "The Forgotten Experiments",
+          ch: "被遗忘的实验体",
+          de: "Die vergessenen Experimente",
+          fr: "Les expériences oubliées",
+          ru: "Забытые эксперименты",
+        },
+      },
+
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
     },
   },
 
@@ -1731,17 +1837,73 @@ export const encounterDB = {
   /*                                            Dungeons                                            */
   /* ---------------------------------------------------------------------------------------------- */
   // temp key until DF
-  "-1000": {
+  "-1": {
     bossOrder: [
+      1196, // Brackenhide Hollow
       1197, // Uldaman: Legacy of Tyr
-      1201, // Taz'algeth Academy
+      1198, // The Nokhud Offensive
+      1199, // Neltharus
+      1201, // Alge'thar Academy
       1202, // Ruby Life Pools
       1204, // Halls of Infusion
       1203, // The Azure Vault
-      1199, // Neltharus
-      1198, // The Nokhud Offensive
-      1196, // Brackenhide Hollow
     ],
+    bossOrderMythicPlus: [
+      // 313, // Temple of the Jade Serpent
+      // 537, // Shadowmoon Burial Grounds
+      // 721, // Halls of Valor
+      // 800, // Court of Stars
+      1196, // Brackenhide Hollow
+      1197, // Uldaman: Legacy of Tyr
+      // 1198, // The Nokhud Offensive
+      1199, // Neltharus
+      // 1201, // Alge'thar Academy
+      // 1202, // Ruby Life Pools
+      // 1203, // The Azure Vault
+      1204, // Halls of Infusion
+
+      1001, // Freehold
+      1022, // The Underrot
+      68, // The Vortex Pinnacle
+      767, // Neltharion's Lair
+    ],
+
+    313: {
+      name: {
+        en: "Temple of the Jade Serpent",
+        fr: "Temple du Serpent de jade",
+        de: "Tempel der Jadeschlange",
+        ru: "Храм Нефритовой Змеи",
+        ch: "青龙寺",
+      },
+    },
+    537: {
+      name: {
+        en: "Shadowmoon Burial Grounds",
+        fr: "Terres sacrées d’Ombrelune",
+        de: "Schattenmondgrabstätte",
+        ru: "Некрополь Призрачной Луны",
+        ch: "影月墓地",
+      },
+    },
+    800: {
+      name: {
+        en: "Court of Stars",
+        fr: "Cour des Étoiles",
+        de: "Der Hof der Sterne",
+        ru: "Квартал Звезд",
+        ch: "群星庭院",
+      },
+    },
+    721: {
+      name: {
+        en: "Halls of Valor",
+        fr: "Salles des Valeureux",
+        de: "Die Hallen der Tapferkeit",
+        ru: "Чертоги Доблести",
+        ch: "英灵殿",
+      },
+    },
     1197: {
       name: {
         en: "Uldaman: Legacy of Tyr",
@@ -1753,7 +1915,7 @@ export const encounterDB = {
     },
     1201: {
       name: {
-        en: "Taz'algeth Academy",
+        en: "Algeth'ar Academy",
         fr: "Académie de Taz’algeth",
         de: "Akademie von Taz'algeth",
         ru: "Академия Таз'алгет",
@@ -1812,6 +1974,42 @@ export const encounterDB = {
         de: "Brackenfellhöhle",
         ru: "Пещера Бурошкуров",
         ch: "蕨皮山谷",
+      },
+    },
+    68: {
+      name: {
+        en: "The Vortex Pinnacle",
+        fr: "La cime du Vortex",
+        ru: "Вершина Смерча",
+        de: "Der Vortexgipfel",
+        ch: "旋云之巅",
+      },
+    },
+    767: {
+      name: {
+        en: "Neltharion's Lair",
+        fr: "Repaire de Neltharion",
+        ru: "Логово Нелтариона",
+        de: "Neltharions Hort",
+        ch: "奈萨里奥的巢穴",
+      },
+    },
+    1001: {
+      name: {
+        en: "Freehold",
+        fr: "Port-Liberté",
+        ru: "Вольная Гавань",
+        de: "Freihafen",
+        ch: "自由镇",
+      },
+    },
+    1022: {
+      name: {
+        en: "The Underrot",
+        fr: "Les tréfonds Putrides",
+        ru: "Подгнилье",
+        de: "Der Tiefenpfuhl",
+        ch: "地渊孢林",
       },
     },
   },

@@ -85,7 +85,7 @@ export default function HealerInfoCards(props) {
       {/* ----------- Here we map an Accordian for each healer in the log ----------  */}
       {props.heals.map((key, index) => (
         <Grid item key={index}>
-          <Accordion style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
+          <Accordion disabled style={{ width: "100%" }} elevation={0} expanded={expanded === `panel_${index}`} onChange={handleChange(`panel_${index}`)}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" className={classes.content} style={{ minHeight: 0 }}>
               {/* ------------------------ Healer Name + Ilvl + Spec -----------------------  */}
               <Typography
@@ -101,7 +101,7 @@ export default function HealerInfoCards(props) {
               </Typography>
             </AccordionSummary>
             <Divider style={{ marginTop: 4 }} />
-            <AccordionDetails style={{ padding: 8 }}>
+            <AccordionDetails  style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
                 <Grid
                   item
@@ -226,96 +226,6 @@ export default function HealerInfoCards(props) {
                         >
                           {key.talents.map((talent, i) => (
                             <div key={i}> {talentIcons(talent.guid)} </div>
-                          ))}
-                        </div>
-                      </Grid>
-
-                      {/* --------------------------- Soulbind Abilities ---------------------------  */}
-                      <Grid item xs={12}>
-                        <Typography
-                          className={classes.heading}
-                          color="primary"
-                          style={{
-                            width: "100%",
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
-                        >
-                          {t("CooldownPlanner.HealerCards.SoulbindAbilities")}
-                        </Typography>
-                        <Divider />
-                        <div
-                          style={{
-                            textAlignLast: "center",
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          {key.soulbindAbilities
-                            .filter((filter) => filter.guid !== 0)
-                            .map((ability, i) => (
-                              <a data-wowhead={"spell=" + ability.guid + "&domain=" + currentLanguage} key={i}>
-                                <img
-                                  style={{
-                                    height: 30,
-                                    width: 30,
-                                    margin: 4,
-                                    verticalAlign: "middle",
-                                    borderRadius: "4px",
-                                    border: "1px solid rgb(89, 89, 89)",
-                                  }}
-                                  src={process.env.PUBLIC_URL + "/Images/Icons/" + ability.abilityIcon}
-                                  alt={"ability" + i}
-                                />
-                              </a>
-                            ))}
-                        </div>
-                      </Grid>
-
-                      {/* ---------------------------- Soulbind Conduits ---------------------------  */}
-                      <Grid item xs={12}>
-                        <Typography
-                          className={classes.heading}
-                          color="primary"
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
-                        >
-                          {t("CooldownPlanner.HealerCards.SoulbindConduits")}
-                        </Typography>
-                        <Divider />
-                        <div
-                          style={{
-                            textAlignLast: "center",
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
-                        >
-                          {key.soulbindConduits.map((conduit, i) => (
-                            <a data-wowhead={"spell=" + conduit.guid + "&domain=" + currentLanguage + "&ilvl=" + conduit.total} key={i}>
-                              <div className="container-healerCards">
-                                <img
-                                  style={{
-                                    height: 30,
-                                    width: 30,
-                                    margin: 4,
-                                    verticalAlign: "middle",
-                                    borderRadius: "4px",
-                                    border: "1px solid rgb(89, 89, 89)",
-                                  }}
-                                  src={process.env.PUBLIC_URL + "/Images/Icons/" + conduit.abilityIcon}
-                                  alt={"coinduit" + i}
-                                />
-                                <div
-                                  className="bottom-right-healerCards"
-                                  style={{
-                                    fontSize: 12,
-                                    textShadow: "0px 0px 4px #000000",
-                                  }}
-                                >
-                                  {conduit.total}
-                                </div>
-                              </div>
-                            </a>
                           ))}
                         </div>
                       </Grid>

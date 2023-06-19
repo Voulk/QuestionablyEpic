@@ -1,3 +1,8 @@
+
+import { useDispatch } from "react-redux";
+import { togglePatronStatus } from "Redux/Actions";
+
+
 /* ---------------------------------------------------------------------------------------------- */
 /*               Check if email provided is a Patron and sets the response via Prop               */
 /* ---------------------------------------------------------------------------------------------- */
@@ -11,6 +16,7 @@ export function dbCheckPatron(email, setPatron) {
     .then((response) => {
       // alert("Success |" + response + "|");
       setPatron(response);
+
     })
     .catch((err) => console.log(err));
 }
@@ -51,7 +57,7 @@ export async function apiSendTopGearSet(player, content, score, compared) {
   let hardScore = Math.round(score);
   let fetchUrl = "https://questionablyepic.com/api/addTopGear.php?btag=" + encodeURIComponent(name) + "&content=" + contentType + "&itemscompared=" + itemsCompared + 
                     "&hardscore=" + hardScore + "&pspec=" + encodeURIComponent(player.spec.replace(" ", ""));
-  console.log(fetchUrl)
+
   fetch(fetchUrl)
     .then((res) => res.text())
     .then((response) => {
@@ -88,6 +94,32 @@ export async function apiGetPlayerImage(player) {
       .then((res) => res.text())
       .then((response) => {
         urlReturned = response.toString();
+      })
+      .catch((err) => console.log(err));
+    return urlReturned;
+  } else {
+    return "";
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                      Get player armory image from Blizzard API via QE API                      */
+/* ---------------------------------------------------------------------------------------------- */
+export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion, setBackgroundImage) {
+  console.log("Calling 3");
+  if (playerName && playerRealm && playerRegion) {
+    
+    let region = playerRegion.toLowerCase();
+    let name = playerName.toLowerCase();
+    let realm = playerRealm.toLowerCase().replace(" ", "-");
+    let urlReturned = "";
+    let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
+    await fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((response) => {
+
+        urlReturned = response.toString();
+        setBackgroundImage(urlReturned);
       })
       .catch((err) => console.log(err));
     return urlReturned;
@@ -174,7 +206,8 @@ export async function apiGetPlayerImage2(region, charName, realm) {
 /*                          Sends Errors to QE API for Dev error checking                         */
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiSendError(player, errorType, errorMessage, result) {
-  const name = "";
+  const name = "11";
+  const url = window.location.pathname + window.location.search;
 
   let fetchUrl =
     "https://questionablyepic.com/api/addError.php?btag=" +
@@ -184,7 +217,9 @@ export async function apiSendError(player, errorType, errorMessage, result) {
     "&emessage=" +
     encodeURIComponent(errorMessage) +
     "&eresult=" +
-    encodeURIComponent(result);
+    encodeURIComponent(url) +
+    "&eversion=" +
+    encodeURIComponent(20);
 
   fetch(fetchUrl)
     .then((res) => res.text())

@@ -57,6 +57,8 @@ export default function QEHeader(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
+  //const hasAccount = props.pl && props.allChar;
+  //const patronStatus = useSelector((state) => state.patronStatus);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -106,6 +108,7 @@ export default function QEHeader(props) {
               </Grid>
             </Grid>
 
+            {true ? (
             <Grid item xs={12} sm={12} md={8} lg={6} xl={4} className={classes.headerButtons}>
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                     Menu Buttons Container                                      */
@@ -116,7 +119,7 @@ export default function QEHeader(props) {
                 justifyContent="center"
                 alignItems="center"
                 spacing={1}
-                wrap={matches && gameType === "Retail" ? "" : "nowrap"}
+                wrap={matches && gameType === "Retail" ? "wrap" : "nowrap"}
                 style={{ paddingLeft: 10, paddingRight: 10 }}
               >
                 {(props.allChars && props.allChars.allChar.length) > 0 ? (
@@ -157,8 +160,8 @@ export default function QEHeader(props) {
                   <LanguageSelector />
                 </Grid>
               </Grid>
-            </Grid>
-          </Grid>
+            </Grid> ) : ""}
+          </Grid> 
         </Toolbar>
       </AppBar>
     </div>

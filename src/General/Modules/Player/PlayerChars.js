@@ -1,6 +1,7 @@
 import Player from "./Player";
 import ls from "local-storage";
 import ClassicPlayer from "./ClassicPlayer";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 // On app start, load player data.
 // First, we will check if they are signed in and have character data.
 // If they do, load that, if they don't, we will try their localstorage instead.
@@ -15,7 +16,8 @@ import ClassicPlayer from "./ClassicPlayer";
 class PlayerChars {
   constructor() {
     // Check our local storage for our characters.
-    let playerChars = JSON.parse(ls.get("allChar")) || [];
+    let playerChars = JSON.parse(ls.get("allChar")) || []; // DF
+
     //
     let charArray = [];
     // If we have characters in storage, loop through them and create a new Player object for each.
@@ -30,13 +32,9 @@ class PlayerChars {
         }
         else {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
-          if (player.covenant) newChar.setCovenant(player.covenant);
-          else newChar.setDefaultCovenant(player.spec);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
-          if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
-          if (player.renown > 0) newChar.updateRenownLevel(player.renown);
-          if (player.dominationGemRanks) newChar.setDominationRanks(player.dominationGemRanks);
-          newChar.setPlayerAvatars();
+          //if (player.spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, [])
+          //newChar.setPlayerAvatars();
           charArray.push(newChar);
         }
         
@@ -51,7 +49,7 @@ class PlayerChars {
 
     this.allChar = charArray;
     /*this.allChar = JSON.parse(ls.get("allChar")) || [new Player("VoulkThree", "Restoration Druid", 0)]; // This is the previous code. To be eventually removed */
-    this.activeChar = ls.get("activeChar") || 0;
+    this.activeChar = ls.get("activeChar") || 0; //activeCharDF
   }
 
   allChar = []; // An array of all our characters.
@@ -59,10 +57,25 @@ class PlayerChars {
 
   // Return the players active character.
   getActiveChar = () => {
-    if (this.allChar[this.activeChar] !== undefined) return this.allChar[this.activeChar];
-    else {
+    
+    if (this.allChar.length === 0) {
+      return null;
+    }
+    else if (this.allChar[this.activeChar] !== undefined) {
+      // The active character is valid. This is the expected behavior.
+      return this.allChar[this.activeChar];
+    }
+    else if (this.allChar[0] !== undefined) {
+      // The active character wasn't valid. Try and recover by using the players first character
       this.setActiveChar(0);
+      reportError("", "PlayerChars", "Active Char not found", JSON.stringify(this.allChar));
       return this.allChar[0];
+    }
+    else {
+      // The active character wasn't valid and neither was the first. 
+      // This is a guaranteed bug or error.
+      console.error("No valid characters found")
+      reportError("", "PlayerChars", "No Valid characters found", JSON.stringify(this.allChar));
     }
   };
 
@@ -70,6 +83,16 @@ class PlayerChars {
     this.activeChar = index;
     this.saveAllChar();
   };
+
+  // We'll set up characters when we create them, but some might have some extra processing we'd like to do. We'll do this after the component mounts
+  // so that users aren't stuck waiting for them to run before the Main Menu pops up.
+  setupChars = () => {
+    this.allChar.forEach(char => {
+      if (char.spec === "Discipline Priest") char.getActiveModel("Raid").setRampInfo(char.activeStats, [])
+      char.setPlayerAvatars();
+    
+    });
+  }
 
   // Return an array of all of the players characters.
   getAllChar = (gameType = "All") => {
@@ -100,22 +123,23 @@ class PlayerChars {
   saveAllChar = () => {
     // Database TODO
 
-    // Local Storage
+    // Local Storage - Optional DF
     ls.set("allChar", JSON.stringify(this.allChar));
     ls.set("activeChar", this.activeChar);
   };
 
   // Add a new character to the array then save it.
-  addChar = (name, spec, region, realm, race, gameType, covenant = "") => {
+  addChar = (name, spec, region, realm, race, gameType) => {
     //alert("Adding new Character")
     if (gameType === "Classic" || gameType === "BurningCrusade") {
       this.allChar.push(new ClassicPlayer(name, spec, this.allChar.length, region, realm, race))
     }
     else {
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race)
-      if (covenant !== "") newChar.setCovenant(covenant);
       newChar.setPlayerAvatars();
+      if (spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, []);
       this.allChar.push(newChar);
+
     }
     
     this.saveAllChar();
@@ -128,6 +152,8 @@ class PlayerChars {
     this.allChar.splice(this.activeChar, 1);
   };
 
+
+  // Delete a character with a specific index.
   delSpecificChar = (unique) => {
     let delIndex = 0;
     let tempArray = this.allChar.filter(function (char) {

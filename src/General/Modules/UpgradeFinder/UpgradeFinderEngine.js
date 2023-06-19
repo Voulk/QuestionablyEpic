@@ -1,11 +1,11 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp } from "../../Engine/ItemUtilities";
+import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
-
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -65,16 +65,50 @@ export function buildWepCombosUF(player, itemList) {
   return wep_list.slice(0, 9);
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
+export function buildNewWepCombosUF(player, itemList) {
+  let wep_list = [];
+  let main_hands = filterItemListByType(itemList, "1H Weapon");
+  let off_hands = filterItemListByType(itemList, "Offhands");
+  let two_handers = filterItemListByType(itemList, "2H Weapon");
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push([two_handers[j]]);
+  }
+
+  return combos
+}
+
 export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
 
   const completedItemList = [];
 
+
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
-  const wepList = buildWepCombosUF(player, baseItemList);
+  //const wepList = buildWepCombosUF(player, baseItemList);
+  const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.getActiveModel(contentType);
-  //buildWepCombos(player, false, false); // TODO: DEL
+
 
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
@@ -94,37 +128,34 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0) {
+function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  if (instanceID === 1190 || instanceID === 1193 || instanceID === 1195 || instanceID === -22) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]];
-  // 1195 is Sepulcher gear.
+  const boostedItems = [204465, 204201, 204202, 204211, 202612]
+  if (instanceID === 1208) {
+    const difficulty = playerSettings.raid[raidIndex];
+    itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
+    if (difficulty === 2 || difficulty === 4) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    else itemLevel += getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+
+  }
+
   // World Bosses
-  else if (instanceID === 1192 && bossID === 2456) itemLevel = 233;
-  // The 9.1 world boss drops 233 gear.
-  else if (instanceID === 1192 && bossID === 2468) itemLevel = 259;
-  // The 9.2 world boss drops 259 gear.
-  else if (instanceID === 1192) itemLevel = 207;
-  // The 9.0 world bosses drop 207 gear.
+  else if (instanceID === 1205) {
+    if (bossID === 2531) itemLevel = 415;
+    else itemLevel = 389;
+  }
+  
   else if (instanceID === -1) {
-    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -16) itemLevel = 203;
-  else if (instanceID === -17) {
+    if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
+    else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+  } else if (instanceID === -30) itemLevel = 359;
+  else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
-  if (
-    bossID === 2425 || // Stone Legion Generals
-    bossID === 2424 || // Sire Denathrius
-    bossID === 2440 || // Kel'Thuzad
-    bossID === 2441 || // Sylvanas Windrunner
-    bossID === 2457 || // Lords of Dread
-    bossID === 2467 || // Rygelon
-    bossID === 2464 // 2464
-  )
-    itemLevel += 7; // The final three bosses.
 
   return itemLevel;
 }
@@ -135,18 +166,19 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
-
+  
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
+  if (item.slot === "Neck") item.socket = 3;
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;
-  item.softScore = scoreItem(item, player, contentType);
+  item.softScore = scoreItem(item, player, contentType, settings);
   item.source = itemSource;
 
   return item;
 }
 
-function buildItemPossibilities(player, contentType, playerSettings, userSettings) {
+function buildItemPossibilities(player, contentType, playerSettings, settings) {
   let itemPoss = [];
 
   // Grab items.
@@ -155,43 +187,35 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
-      const isRaid = primarySource === 1190 || primarySource === 1193 || primarySource === 1195 || primarySource === -22;
+      const isRaid = primarySource === 1208 || primarySource === -22;
 
       if (isRaid) {
-        // Sepulcher
+        // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          item.quality = 4;
+          item.dropLoc = "Raid";
+          item.dropDifficulty = playerSettings.raid[x];
+
           itemPoss.push(item);
         }
-      } else if (primarySource === -1) {
-        /*
-      else if (itemSource.instanceId === 1194) {
-        // Taz. This will be moved to the Mythic+ section in 9.2 but deserves a separate section for now.
-        const item226 = buildItem(player, contentType, rawItem, 226, rawItem.sources[0]);
-        itemPoss.push(item226);
-
-        const item233 = buildItem(player, contentType, rawItem, 233, rawItem.sources[0]);
-        itemPoss.push(item233);
-      }*/
-        // Dungeons including Tazavesh
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
+      } else if (primarySource === -1 || primarySource === 1205) {
+        // M+ Dungeons & World Bosses
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+        item.quality = 4;
         itemPoss.push(item);
-      } else if (primarySource !== -18) {
+      } 
+      /*else if (primarySource !== -18) {
         /*
-      else if (primarySource === 1194) {
-        // Tazavesh
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[2]);
+        // Exclude Nathria gear.
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+        item.quality = 4;
+
         itemPoss.push(item);
       } */
-        // Exclude Nathria gear.
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], userSettings);
-
-        itemPoss.push(item);
-      }
     }
   }
 
@@ -228,17 +252,20 @@ function buildItemPossibilities(player, contentType, playerSettings, userSetting
 function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
-  const wepList = buildWepCombosUF(player, newItemList);
+  const wepList = buildNewWepCombosUF(player, newItemList);
   const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   let differential = 0;
 
-  if (userSettings.upFinderToggle === "hps") differential = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
-  else differential = (newScore - baseScore) / baseScore;
+  const rawDiff = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
+  const percDiff = (newScore - baseScore) / baseScore
 
-  return { item: item.id, level: item.level, score: differential };
+  if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
+  else differential = percDiff;
+
+  return { item: item.id, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
 }
 
 function checkItemViable(rawItem, player) {

@@ -3,10 +3,10 @@
   <head>
     <base href="/" />
     <meta charset="utf-8" />
-    <meta name="description" content="Optimize your healers gear using cutting edge math and theorycrafting.">
+    <meta name="description" content="Optimize your healers gear using cutting edge math and theorycrafting." />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#000000" />
-    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />
     <!--
@@ -26,11 +26,23 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <script>
-      const whTooltips = { colorLinks: false, iconizeLinks: true, renameLinks: false, hide: {sellprice: true}};
+      const whTooltips = { colorLinks: false, iconizeLinks: false, renameLinks: false, hide: { sellprice: true } };
     </script>
-    <script src="https://wow.zamimg.com/widgets/power.js"></script>
-    
-    <script data-cfasync="false">window.nitroAds=window.nitroAds||{createAd:function(){return new Promise(e=>{window.nitroAds.queue.push(["createAd",arguments,e])})},addUserToken:function(){window.nitroAds.queue.push(["addUserToken",arguments])},queue:[]};</script>
+    <script src="https://wow.zamimg.com/js/tooltips.js"></script>
+
+    <script data-cfasync="false">
+      window.nitroAds = window.nitroAds || {
+        createAd: function () {
+          return new Promise((e) => {
+            window.nitroAds.queue.push(["createAd", arguments, e]);
+          });
+        },
+        addUserToken: function () {
+          window.nitroAds.queue.push(["addUserToken", arguments]);
+        },
+        queue: [],
+      };
+    </script>
     <script data-cfasync="false" async src="https://s.nitropay.com/ads-817.js"></script>
     <title>QE Live</title>
   </head>

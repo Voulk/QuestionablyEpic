@@ -1,5 +1,6 @@
 import { processDruidRawHealing } from "./DruidMiscFormulas";
 
+
 export const getDruidSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
   const IDREJUV = 774;
@@ -9,8 +10,39 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
 
+  if (effectName === "Druid T30-4") {
+    // TODO
+    bonus_stats.hps = 7270;
+
+  }
+
+  else if (effectName === "Druid T30-2") {
+    // +10% rejuv healing, +10% lifebloom healing, +50% regrowth HoT healing.
+    const percentEffected = 0.48; 
+    bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
+
+  }
+
+  else if (effectName === "Druid T29-2") {
+    // +8% crit to almost everything that matters.
+    const percentEffected = 0.78; // TODO: Auto-calc this.
+    bonus_stats.crit = 8 * percentEffected * 170;
+
+  }
+  else if (effectName === "Druid T29-4") {
+    const effectiveCritChance = player.getStatPerc("crit") + (8 / 100) - 1;
+    const chanceOneCrit = 1-(Math.pow(1-effectiveCritChance, 3));
+
+    const effloCritsPerSec = chanceOneCrit / 2 * player.getStatPerc("haste");
+    const avgStacks = Math.min(5, effloCritsPerSec * 15);
+    const sotfBonus = (0.5 * 0.4) + 1; // 40% of our WG casts will line up with SotF.
+    const oneWildGrowth = 0.98 * 6 * sotfBonus * player.getStatMults(["intellect", "haste", "versatility", "crit"]) * (1+(player.getStatPerc("mastery")-1) * 2.3) * 1.05; // The extra healing from 2 additional WG targets a minute.
+
+    bonus_stats.hps = oneWildGrowth * (0.05 * avgStacks) * 4 / 60;
+  }
+
   // Tier Sets
-  if (effectName === "Druid T28-2") {
+  else if (effectName === "Druid T28-2") {
     // 
     const masteryMult = 1 + (player.getStatPerc("Mastery") - 1) * 2.6 // Avg Hots (high rejuv uptime + the hot itself + various other)
     const bloomHPS = 0.208 * player.getStatMultiplier("NOMAST") * player.getInt() * masteryMult / 8 * 0.78; // The shown healing is over 8 seconds so we'll divide it by 8 to get a per second amount.
@@ -49,7 +81,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     let expectedHPS = Math.round(rejuvHealingInc * rejuvHealingHPS);
 
     // Return result.
-    bonus_stats.hps = expectedHPS;
+    bonus_stats.hps = 0;;
 
   } else if (effectName === "Memory of the Mother Tree") {
     let wildGrowthCPM = player.getSpellCPM(IDWILDGROWTH, contentType);
@@ -57,7 +89,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     let oneRejuv = 0.29 * 6 * player.getStatMultiplier("ALL") * 0.87 * processDruidRawHealing(player, 774);
 
     let freeRejuvsPerMinute = wildGrowthCPM * procChance * 3;
-    bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+    //bonus_stats.hps = Math.round((freeRejuvsPerMinute * oneRejuv) / 60);
+    bonus_stats.hps = 0;
 
   } else if (effectName === "Verdant Infusion") {
     /* 
@@ -81,8 +114,8 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     ];
 
     spellExtensions.forEach((spell) => (power += ((spell.sp * durationIncrease) / spell.duration) * (1 - expectedOverhealing) * spell.extensionsPerMin));
-    bonus_stats.hps = Math.round((power / 60) * player.getStatMultiplier("ALL"));
-
+    //bonus_stats.hps = Math.round((power / 60) * player.getStatMultiplier("ALL"));
+    bonus_stats.hps = 0;
   } else if (effectName === "The Dark Titans Lesson" || effectName === "The Dark Titan's Lesson") {
     // Do Math
     const percentClearcastsUsed = 0.8;

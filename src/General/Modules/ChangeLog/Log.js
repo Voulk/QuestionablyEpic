@@ -9,6 +9,366 @@
 
 export const changeLog = [
   {
+    version: "10.1.0",
+    update: 12,
+    date: "16 June",
+    changes: [ 
+      "New Setting: Chromatic Essence Stat / Resonance.",
+      "Added 5 new Trinket Deep Dive cards.",
+      "Bugfix: The expected uptime of Dragonscale and Call to Chaos decreased slightly to better match in-game values. Due to the way these trinkets proc they just don't live up to the uptime the spell data would suggest. Note that while this changes trinket order, both are still powerful options.",
+      "In game Hotfix: Magmawclaw Lure nerfed by ~67%."
+  ]},
+  {
+    version: "10.1.0",
+    update: 11,
+    date: "12 June",
+    changes: [ 
+      "Fixed a bug where Annulet could import at a higher item level depending on your version of the SimC addon.",
+      "Added Magmaclaw Lure.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 10,
+    date: "7 June",
+    changes: [ 
+      "Added Heroic and Normal Max versions to Upgrade Finder so that you can test fully upgraded versions of items.",
+      "Added an Avenging Crusader playstyle for Holy Paladin.",
+      "Toxic Thorn boots now assume you spend more of the procs on healing and fewer on damage.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 9,
+    date: "23 May",
+    changes: [ 
+      "You can now click the cog on items to change its item level.",
+      "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking).",
+      "New Embellishment: Slimy Expulsion Boots.",
+      "Updated trinket chart with some missing items.",
+      "Greatly improved error checking in top gear.",
+      "Incarnate Icon now defaults to solo only.",
+      "The legendary Evoker staff should now import and be scored correctly.",
+      "Bugfix: Fixed a bug where three embellishments could be recommended if one was on a 1H Weapon or offhand.",
+      "Bugfix: Items using a new in-game CurveID should now import correctly.",
+      "Bugfix (Visual): The trinket chart will no longer occasionally show duplicates of icons"
+  ]},
+  {
+    version: "10.1.0",
+    update: 8,
+    date: "17 May",
+    changes: [ 
+      "In game changes to Healing Darts, Adaptive Dracothyst Armguards and Sporecloak.",
+      "Bugfix: Shaman tier 30 should now be correctly valued in all cases.",
+      "Top Gear can no longer be crashed by running it while missing item slots. Improved error messaging.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 8,
+    date: "14 May",
+    changes: [ 
+      "Fixed wowhead tooltips across the app",
+      "Improved how errors are handled.",
+      "Crafted items should now import with the correct quality color (visual only).",
+      "Adaptive Dracothyst Armguards now count as an Embellishment effect in Top Gear"
+  ]},
+  {
+    version: "10.1.0",
+    update: 7,
+    date: "10 May",
+    changes: [ 
+      "Upgrade Finder: Removed old Azerite items & duplicate versions of tier sets.",
+      "Added some missing icons.",
+      "Updated the Revival Catalyst button to Season 2.",
+
+  ]},
+  {
+    version: "10.1.0",
+    update: 6,
+    date: "10 May",
+    changes: [ 
+      "Re-enabled Cooldown Planner.",
+      "Added Shadowflame-Tempered Armor Patch.",
+      "Fixed a bug with the Intellect gem in Top Gear Reports."
+  ]},
+  {
+    version: "10.1.0",
+    update: 5,
+    date: "9 May",
+    changes: [ 
+      "In game: Two class trinkets buffed by 5/10%.",
+      "In game: Embellishments scale with secondaries once again.",
+      "Added MW / Shaman class trinket",
+  ]},
+  {
+    version: "10.1.0",
+    update: 4,
+    date: "5 May",
+    changes: [ 
+      "In game changes: Many Aberrus trinkets tuned.",
+      "Bugfix: Flaring Cowl now correctly scales with item level again.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 3,
+    date: "4 May",
+    changes: [ 
+      "In game nerf: Spore Tender cut down 72%. QE/L enchant recommendations updated.",
+      "In game buff: Neltharion's Call to Suffering now works on HoTs, raising value for Druid / HPriest.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 2,
+    date: "3 May",
+    changes: [ 
+      "Healing Darts no longer scale with crit or versatility in game.",
+      "Ally buff effects will now be evaluated in Top Gear / Upgrade Finder too.",
+      "Bugfix: Fixed the 'Show HPS' report style.",
+      "Disc Priest: Updated the base model slightly.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 1,
+    date: "2 May",
+    changes: [ 
+      "Top Gear results can now be shared and returned to!",
+      "All modules updated for season 2 including items, graphs, upgrade finder and more.",
+      "All spec models updated for the patch.",
+      "New: The Trinkets module now includes a card for the strongest trinkets, providing more information than just numbers alone.",
+      "Main Menu rearranged to better support future modules that are coming soon."
+  ]},
+  {
+    version: "10.0.7",
+    update: 16,
+    date: "2 April",
+    changes: [ 
+      "Auto-gem functionality is now disabled by default and can be correctly left off",
+  ]},
+  {
+    version: "10.0.7",
+    update: 15,
+    date: "30 March",
+    changes: [ 
+      "New Setting: Pick your Primordial gem set or leave on Automatic",
+      "New Setting: Auto socket items in your bags so that items are compared fairly.",
+      "UI: Revamped how the Onyx Annulet is displayed.",
+      "Fire Magic: Top Gear will now correctly handle external instances of Fire when evaluating effects that value it.",
+      "New Embellishment: Adorned Fangs"
+  ]},
+  {
+    version: "10.0.7",
+    update: 14,
+    date: "23 March",
+    changes: [ 
+      "Updated Onyx Annulet for in game tuning.",
+  ]},
+  {
+    version: "10.0.7",
+    update: 13,
+    date: "22 March",
+    changes: [ 
+      "Added Onyx Annulet.",
+      "Added some missing timewalking items."
+  ]},
+  {
+    version: "10.0.5",
+    update: 12,
+    date: "25 February",
+    changes: [ 
+      "Bugfix: Non-embellishment special item effects should no longer count toward the limit.",
+  ]},
+  {
+    version: "10.0.5",
+    update: 11,
+    date: "22 February",
+    changes: [ 
+      "All Neck items will now be added with 3 sockets.",
+      "Crackling Codex of the Isles is now considered a crafted item.",
+      "Added a few missing timewalking items.",
+      "Bugfix: The potion embellishment will now count toward the limit of two."
+  ]},
+  {
+    version: "10.0.5",
+    update: 10,
+    date: "2 February",
+    changes: [ 
+      "Bugfix: Gems will now work correctly in Quick Compare once again.",
+      "Fixed a bug from update 9 that broke Idol trinkets.",
+      "Bugfix: Evoker logs should no longer fail to import.",
+  ]},
+  {
+    version: "10.0.5",
+    update: 9,
+    date: "31 January",
+    changes: [ 
+      "Added a setting to limit the number of Catalyst items that can be added to a Top Gear set.",
+      "Updated specs to 10.0.5 where necessary.",
+      "Added some missing 10.0.5 and timewalking items.",
+  ]},
+  {
+    version: "10.0.2",
+    update: 8,
+    date: "18 January",
+    changes: [ 
+      "Intellect gems will now appear in Top Gear.",
+      "Necks manually added with a socket, or in Upgrade Finder will now add 3 of them by default.",
+      "Ruby Whelp Shell now has a setting that lets you select its training mode.",
+      "Enabled the Creation Catalyst for Dragonflight (opens in-game next week).",
+      "Bugfix: Kurog Grimtotem will now show at the appropriate item level in Upgrade Finder.",
+      "Bugfix: Weapons with a UniqueEquip (like embellishments) will now be correctly limited.",
+      "Bugfix: Fixed a bug where leech was being underallocated on trinkets.",
+      "Added some missing Timewalking items.",
+  ]},
+  {
+    version: "10.0.2",
+    update: 7,
+    date: "11 January",
+    changes: [ 
+      "Added Holy Priest tier and the Raging Tempest set bonuses.",
+      "Engineering goggles should now import with the correct secondary stat.",
+      "Added single stat options when manually adding crafted items for Engineering.",
+      "The crafted rings will now have a default socket when added manually.",
+      "Holy Paladin tier gear will now show up in upgrade finder."
+  ]},
+  {
+    version: "10.0.2",
+    update: 16,
+    date: "4 January",
+    changes: [ 
+      "Gems have been revamped and dual stat gems are now default. Primary gem will be added very soon. All items with sockets have gone up correspondingly.",
+      "Upgrade Finder: Very Rare raid items will now show at their correct item level.",
+      "Bugfix: Profile should once again be accessible."
+  ]},
+  {
+    version: "10.0.2",
+    update: 15,
+    date: "2 January",
+    changes: [ 
+      "Entering the app for the first time through a module will now return you to the main menu.",
+      "Added Mistweaver 4pc set bonus. Refined Evoker 4pc value.",
+      "Added the Assembly Guardian's Ring, and Seal of Filial Duty effects",
+      "Updated enchants to use Rank 3s.",
+      "Crafted rings should now be created with a socket when added manually.",
+      "Top Gear will now cap sets at two embellishments.",
+      "Bugfix: Evokers can now enter staves manually.",
+      "Bugfix: You should be able to delete items again.",
+
+  ]},
+  {
+    version: "10.0.2",
+    update: 14,
+    date: "28 December",
+    changes: [ 
+      "Added Settings for Incarnate Icon, JC Idol Trinkets and Alacritous Alchemist Stone",
+      "Made a number of backend changes to try and fix grey screen errors.",
+      "Signet of Titanic Insight should now import with a socket.",
+  ]},
+  {
+    version: "10.0.2",
+    update: 13,
+    date: "22 December",
+    changes: [ 
+      "Added Disc Priest T29 set bonuses.",
+      "Bugfix: HoTs / DoTs should now scale their partial tick correctly with Haste.",
+      "Bugfix: Lariat should no longer sometimes import with incorrect secondaries.",
+      "Bugfix: Mistweaver set bonuses should now be correctly added to Top Gear." 
+  ]},
+  {
+    version: "10.0.2",
+    update: 12,
+    date: "19 December",
+    changes: [ 
+      "Upgrade Finder: M0 dungeons will now show 372 items only.",
+      "Upgrade Finder: Added tier pieces to their respective bosses, and enabled Staves for Evokers.",
+      "Upgrade Finder: Fixed a bug where selecting a high M+ level could crash the app.",
+      "Added Inferal Writ & the Jewelcrafting Idols to the trinket chart.",
+      "Multi-gem items will now display every socket in Quick Compare.",
+      "Primal Ritual Shell now shows which buff it's recommending.",
+      "Fixed an issue where on-use trinkets could be undervalued for Disc in Top Gear."
+  ]},
+  {
+    version: "10.0.2",
+    update: 11,
+    date: "16 December",
+    changes: [ 
+      "Launched the Dragonflight version of Upgrade Finder.",
+      "Minor changes to expected overheal on Healing Darts."
+  ]},
+  {
+    version: "10.0.2",
+    update: 10,
+    date: "13 December",
+    changes: [ 
+      "Pushed a possible fix for an issue where Top Gear could crash immediately for some people.",
+      "Added the in-game 5% nerf to Lariat."
+  ]},
+  {
+    version: "10.0.2",
+    update: 7,
+    date: "10 December",
+    changes: [ 
+      "New Module: Embellishment Analysis.",
+      "This offers an easy way to see all Embellishment effects at once. Consult a guide before crafting anything."
+  ]},
+  {
+    version: "10.0.2",
+    update: 6,
+    date: "7 December",
+    changes: [ 
+      "In game hotfixes: Kyrakka's Searing Embers, Irideus Fragment, Darkmoon Deck: Dance",
+      "Added the Blood of the Khansguard and Gladiator's Insignia of Alacrity trinkets."
+  ]},
+  {
+    version: "10.0.2",
+    update: 5,
+    date: "6 December",
+    changes: [ 
+      "In game hotfixes: Dreamscape Prism, Gnollhide Belt",
+      "Reduced the expected value of Miniature Singing stone in dungeon content."
+  ]},
+  {
+    version: "10.0.2",
+    update: 4,
+    date: "5 December",
+    changes: [ 
+      "Crafted items can now be added manually via the Item Bar.",
+      "Fixed a bug with Mistweaver & Evoker dungeon stat valuation.",
+      "Bugfix: Leveling items should once again import correctly.",
+  ]},
+  {
+    version: "10.0.2",
+    update: 3,
+    date: "3 December",
+    changes: [ 
+      "Added the Drakebreaker set bonuses",
+      "Imported items now match in-game quality instead of being estimates.",
+      "Bugfix: The 'Ally Benefits' setting should work.",
+      "Bugfix: The Trinket Chart toggle buttons should work again.",
+  ]},
+  {
+    version: "10.0.2",
+    update: 2,
+    date: "30 November",
+    changes: [ 
+      "Added Assembly Preserver's Band",
+      "Broodkeeper's Promise updated to match in-game nerfs.",
+      "Added a lot more world quest trinkets.",
+  ]},
+  {
+    version: "10.0.2",
+    update: 1,
+    date: "28 November",
+    changes: [ 
+      "Dragonflight Support",
+  ]},
+  {
+    version: "10.0.0",
+    update: 1,
+    date: "11 October",
+    changes: [ 
+      "Added a new Sequence Generator module. You can now select a talent build and sequence and it'll tell you how much damage / healing it'll do.",
+      "Added support for the Evoker class.",
+      "Added Dragonflight trinkets & item database."
+  ]},
+  {
     version: "10.0.2 / 3.4.0",
     update: 1,
     date: "15 November",

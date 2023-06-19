@@ -7,7 +7,7 @@ export const pvpLocale = [
       ru: "Честь",
       ch: "荣誉点数",
     },
-    id: ["-16", -16, "Honor"],
+    id: ["-30", -30, "Honor"],
   },
   {
     name: {
@@ -17,7 +17,7 @@ export const pvpLocale = [
       ru: "Очки завоевания",
       ch: "征服点数",
     },
-    id: ["-17", -17, "Conquest"],
+    id: ["-31", -31, "Conquest"],
   },
 ];
 

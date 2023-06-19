@@ -1,5 +1,7 @@
 import { itemDB } from "../../Databases/ItemDB";
 import { dominationGemDB } from "../../Databases/DominationGemDB";
+import { embellishmentDB } from "../../Databases/EmbellishmentDB";
+import { getOnyxAnnuletEffect, getBestCombo, getPrimordialImage} from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -15,6 +17,11 @@ import { useSelector } from "react-redux";
 import { GEMS } from "General/Engine/GEMS";
 import userSettings from "General/Modules/Settings/SettingsObject";
 import { CONSTANTS } from "./CONSTANTS";
+import { itemLevels } from "Databases/itemLevelsDB";
+import { gemDB } from "Databases/GemDB";
+import { nameDB } from "Databases/ItemNameDB";
+
+
 
 /*
 
@@ -98,7 +105,7 @@ export function getValidWeaponTypes(spec, slot) {
         case SPEC.HOLYPALADIN:
           return [0, 1, 4, 5, 6, 7, 8];
         case SPEC.PRESEVOKER:
-          return [0, 4, 5, 7, 13, 15];
+          return [0, 4, 5, 7, 10, 13, 15];
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10, 13, 15];
         case SPEC.HOLYPRIEST:
@@ -121,6 +128,122 @@ export function getValidWeaponTypes(spec, slot) {
   }
 }
 
+/* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
+export function getEstimatedHPS(bonus_stats, player, contentType) {
+  let estHPS = 0;
+  for (const [key, value] of Object.entries(bonus_stats)) {
+    if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
+      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+    } else if (key === "intellect") {
+      estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
+    } 
+    else if (key === "mana") {
+      estHPS += value * player.getSpecialQuery("OneManaHealing", contentType)
+    }
+    else if (key === "hps") {
+      estHPS += value;
+    }
+    else if (key === "allyStats") {
+      // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
+      // it's a fair approximation. 
+      // These embellishments are good, but it's very spread out.
+      estHPS += ((value * 0.32) / player.activeStats.intellect) * player.getHPS(contentType) / 2;
+    }
+  }
+  return Math.round(100 * estHPS) / 100;
+}
+
+// This is an extremely simple function that just returns default gems.
+// We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
+export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true) {
+  let gemArray = []
+  if (gemCount === 0) return [];
+  if (spec === "Preservation Evoker" || spec === "Holy Priest") {
+    // 
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.mastery += 66;
+      gemCount -= 1;
+      gemArray.push(192988)
+    }
+    bonus_stats.mastery += 70 * (gemCount);
+    bonus_stats.crit += 33 * (gemCount);
+    gemArray.push(192958)
+    return gemArray;
+  }
+  else if (spec === "Restoration Druid" || spec === "Holy Paladin") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.haste += 66;
+      gemCount -= 1;
+      gemArray.push(192985)
+    }
+    if (contentType === "Raid") {
+      bonus_stats.haste += 70 * (gemCount);
+      bonus_stats.mastery += 33 * (gemCount);
+      gemArray.push(192948)
+    }
+    else if (contentType === "Dungeon") {
+      bonus_stats.haste += 70 * (gemCount);
+      bonus_stats.versatility += 33 * (gemCount);
+      gemArray.push(192952)
+    }
+    return gemArray;
+  }
+  else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.haste += 66;
+      gemCount -= 1;
+      gemArray.push(192985)
+    }
+    bonus_stats.haste += 70 * (gemCount);
+    bonus_stats.crit += 33 * (gemCount);
+    gemArray.push(192945);
+    return gemArray;
+  }
+  else if (spec === "Restoration Shaman") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect += 75;
+      bonus_stats.crit += 66;
+      gemCount -= 1;
+      gemArray.push(192982)
+    }
+
+    bonus_stats.crit += 70 * (gemCount);
+    bonus_stats.versatility += 33 * (gemCount);
+    gemArray.push(192923)
+    return gemArray;
+  }
+  else {
+    // This should never be called.
+    bonus_stats.haste += 70 * gemCount;
+    bonus_stats.mastery += 33 * gemCount;
+    return 192948;
+  }
+}
+
+export function getGemProp(id, prop) {
+    let temp = gemDB.filter(function (gem) {
+      return gem.id === id;
+    });
+
+    if (temp.length > 0) {
+      const gem = temp[0];
+
+      if (prop === "name") return gem.name.en || "";
+      else if (gem !== "" && prop in gem) return gem[prop];
+      else return ""
+
+    }
+    else return "";
+
+}
+
 export function getValidWeaponTypesBySpec(spec) {
   switch (spec) {
     case SPEC.RESTODRUID:
@@ -130,7 +253,7 @@ export function getValidWeaponTypesBySpec(spec) {
     case SPEC.HOLYPALADIN:
       return [0, 1, 4, 5, 6, 7, 8];
     case SPEC.PRESEVOKER:
-      return [0, 4, 5, 7, 13, 15];
+      return [0, 4, 5, 7, 10, 13, 15];
     case SPEC.RESTOSHAMAN:
       return [0, 1, 4, 5, 10, 13, 15];
     case SPEC.HOLYPRIEST:
@@ -158,29 +281,68 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
   return temp;
 }
 
-export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
+export function getItemLevelBoost(bossID) {
+  // Vault
+  if (bossID ===  2502 || bossID === 2491) return 6;    // Dathea and Kurog 
+  else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
+
+  // Aberrus
+  else if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
+  else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
+  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkareth
+  
+  else return 0;
+}
+
+const isMaxxed = (difficulty) => {
+  return difficulty === 2 || difficulty === 4;
+}
+
+export function getVeryRareItemLevelBoost(itemID, bossID, difficulty) {
+  const boostedItems = [204465, 204201, 204202, 204211, 202612];
+
+  if (boostedItems.includes(itemID)) {
+    if (difficulty === 2) return 4;
+    else if (difficulty === 4) return 3;
+    else if (bossID === 2520 || bossID === 2523) return 7;
+    else return 6;
+  } 
+  else return 0;
+}
+
+export function filterItemListByDropLoc(itemList, sourceInstance, sourceBoss, loc, difficulty) {
+  let temp = itemList.filter(function (item) {
+    //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+    return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
+  });
+  return temp;
+
+}
+
+export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, difficulty = 0) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
-    if (
-      itemEncounter == 2425 || // Stone Legion Generals
-      itemEncounter == 2424 || // Sire Denathrius
-      itemEncounter == 2440 || // Kel'Thuzad
-      itemEncounter == 2441 || // Sylvanas Windrunner
-      itemEncounter == 2457 || // Lords of Dread
-      itemEncounter == 2467 || // Rygelon
-      itemEncounter == 2464 // The Jailer
-    )
-      expectedItemLevel += 7;
-    if (itemEncounter == 2456) expectedItemLevel = 233; // Mor'geth
-    if (itemEncounter == 2468) expectedItemLevel = 259; // Antros
-    //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+    
+    // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
+    if ('source' in item && item.source.instanceId === 1208) {
+      const max = isMaxxed(difficulty);
+      if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
+      else expectedItemLevel += getItemLevelBoost(itemEncounter) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
+      
+    }
+    else if (item.source.instanceId === 1205) { // World Bosses
+      if (itemEncounter === 2531) expectedItemLevel = 415
+      else expectedItemLevel = 389;
+    }
 
+    //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     return item.level == expectedItemLevel && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
 
   return temp;
 }
+
 
 export function filterItemListByType(itemList, slot) {
   let temp = itemList.filter(function (item) {
@@ -227,22 +389,20 @@ export function getTranslatedItemName(id, lang, effect, gameType = "Retail") {
   if (effect && effect.type === "spec legendary") {
     return effect.name;
   } else {
-    let temp = getItemDB(gameType).filter(function (item) {
-      return item.id === id;
-    });
-
-    if (temp.length > 0) return temp[0].names[lang];
+    if (id in nameDB && lang in nameDB[id]) return nameDB[id][lang];
     else return "Unknown Item";
   }
 }
 
 // Returns a translated item name based on an ID.
-export function getTranslatedDominationGem(id, lang) {
-  let temp = dominationGemDB.filter(function (gem) {
-    return gem.gemID === id;
+export function getTranslatedEmbellishment(id, lang) {
+
+  let temp = embellishmentDB.filter(function (embel) {
+
+    return embel.id === id;
   });
   if (temp.length > 0) return temp[0].name[lang];
-  else return "Unknown Gem";
+  else return "Unknown Effect";
 }
 
 // Grabs a specific item from whichever item database is currently selected.
@@ -251,7 +411,7 @@ export function getItem(id, gameType = "Retail") {
     return item.id === id;
   });
   if (temp.length > 0) return temp[0];
-  else return "";
+  else return '';
 }
 
 export function applyDiminishingReturns(stats) {
@@ -300,6 +460,16 @@ export function getItemIcon(id, gameType = "Retail") {
   }
 }
 
+export function getEmbellishmentIcon(id) {
+  const embel = embellishmentDB.filter((embel) => embel.id === id);
+
+  if (embel[0] === undefined) {
+    return "https://wow.zamimg.com/images/icons/socket-domination.gif";
+  } else {
+    return "https://wow.zamimg.com/images/wow/icons/large/" + embel[0].icon + ".jpg";
+  }
+}
+
 export function getGemIcon(id) {
   const gem = dominationGemDB.filter((gem) => gem.gemID === id);
   let gemIcon = "";
@@ -308,6 +478,19 @@ export function getGemIcon(id) {
   } else {
     return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg";
   }
+}
+
+
+export function checkDefaultSocket(id) {
+  let temp = itemDB.filter(function (item) {
+    return item.id === id;
+  });
+
+  if (temp.length > 0) {
+    const socketType = temp[0].socketType;
+    if (socketType == "Prismatic") return 1;
+    else return 0;
+  } else return 0;
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
@@ -366,6 +549,38 @@ function getItemCat(slot) {
   }
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
+export function buildNewWepCombos(player, active = false, equipped = false) {
+  let wep_list = [];
+  let main_hands = player.getActiveItems("1H Weapon", active, equipped);
+  let off_hands = player.getActiveItems("Offhands", active, equipped);
+  let two_handers = player.getActiveItems("2H Weapon", active, equipped);
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push([two_handers[j]]);
+  }
+
+  return combos
+}
+
 export function buildWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon", active, equipped);
@@ -395,7 +610,7 @@ export function buildWepCombos(player, active = false, equipped = false) {
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
         item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
-        item.uniqueEquip = item.vaultItem ? "vault" : "";
+        item.uniqueEquip = item.vaultItem ? "vault" : (main_hand.uniqueEquip || off_hand.uniqueEquip);
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
         item.mainHandLevel = main_hand.level;
@@ -426,7 +641,8 @@ export function buildWepCombos(player, active = false, equipped = false) {
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   let combat_mult = 0;
-  let stats = {
+
+  /*let stats = {
     intellect: 0,
     stamina: 0,
     haste: 0,
@@ -437,8 +653,10 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     hps: 0,
     dps: 0,
     bonus_stats: {},
-  };
+  }; */
+  let stats = {bonus_stats: {}};
 
+  
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
@@ -447,10 +665,14 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility", "leech"].includes(key)) {
+    if (["haste", "crit", "mastery", "versatility"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
-    } else if (key === "intellect") {
+    } 
+    else if (key === "leech") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+    }
+    else if (key === "intellect") {
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
     } else if (key === "stamina") {
       // todo
@@ -460,11 +682,11 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
   // This, on the other hand, is a close estimate that should be replaced ASAP.
   if (tertiary === "Leech") {
     if (slot === "Trinket") {
-      // This is an occasionally off-by-one formula for leech that should be rewritten.
-      stats.leech = Math.ceil(28 + 0.2413 * (itemLevel - 155));
+      // This is an occasionally off-by-one formula for leech that should eventually be replaced.
+      stats.leech = Math.ceil(194 + 1.2307 * (itemLevel - 376));
     } else {
-      const terMult = slot === "Finger" || slot === "Neck" ? 0.174027 : 0.442932;
-      stats.leech = Math.floor(terMult * (stats.haste + stats.crit + stats.mastery + stats.versatility));
+      const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
+      stats.leech = Math.floor(terMult * (stats.haste || 0 + stats.crit || 0 + stats.mastery || 0 + stats.versatility || 0));
     }
   }
   return stats;
@@ -520,7 +742,9 @@ export function buildStatString(stats, effect, lang = "en") {
   }
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
   if (effect !== "" && effect && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
+  
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -528,6 +752,44 @@ export function buildStatString(stats, effect, lang = "en") {
 // Returns the string with its first letter capitalized.
 export function correctCasing(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/*
+export function getPrimordialImage(id) {
+
+  const primImages = {
+    "s204020": s204020,
+    "s204013": s204013,
+    "s204010": s204010,
+    "s204027": s204027,
+    "s204002": s204002,
+    "s204029": s204029,
+    "s204000": s204000,
+    "s204012": s204012,
+  }
+
+  return primImages["s" + id];
+} */
+
+export function buildPrimGems(gemCombo) {
+  const gemData = {socket: [], string: "&gems="}
+  for (i = 0; i < 3; i++) {
+    //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
+    gemData.string += gemCombo[i] + ":";
+    gemData.socket.push (
+      <div style={{ marginRight: 4, display: "inline"}} >
+        <a
+        data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
+        </a>
+      </div>
+    );
+    }
+    return gemData;
+
 }
 
 function scoreGemColor(gemList, player) {
@@ -638,19 +900,36 @@ function applyClassicStatMods(spec, setStats) {
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
-export function scoreItem(item, player, contentType, gameType = "Retail") {
+export function scoreItem(item, player, contentType, gameType = "Retail", playerSettings = {}) {
   let score = 0;
-  let bonus_stats = {};
+  let bonus_stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0};
   let item_stats = { ...item.stats };
 
-  // Check if Dom Slot
-  if (item.hasDomSocket && "domGemID" in item && item.domGemID != 0) {
-    const effect = getDomGemEffect(item.domGemID);
-    bonus_stats = getEffectValue(effect, player, player.getActiveModel(contentType), contentType, item.level, {}, gameType, player.activeStats);
-  }
   // Calculate Effect.
   if (item.effect) {
-    bonus_stats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, userSettings, gameType, player.activeStats);
+    const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    bonus_stats = compileStats(bonus_stats, effectStats);
+  }
+
+  // Handle Annulet
+  if (item.id === 203460) {
+    //const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
+    try {
+      const combo = player.getBestPrimordialIDs(playerSettings, contentType);
+      const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
+      bonus_stats = compileStats(bonus_stats, annuletStats);
+    }
+    catch (error) {
+      bonus_stats.hps = 6750; // This should never be returned, but is a fair estimate if the app does crash.
+      reportError(player, "ItemUtil Annulet Error", error, "");
+    }
+
+  }
+
+  // Add Retail Socket
+  if (item.socket) {
+    getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
+    //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
   // Multiply the item's stats by our stat weights.
@@ -679,9 +958,11 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
     score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
-  // Add Retail Socket
-  if (item.socket) {
-    score += 16 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType));
+
+
+  // Add any group benefit, if we're interested in it.
+  if (userSettings.includeGroupBenefits && "bonus_stats" in item_stats && "allyStats" in bonus_stats) {
+    score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 
   // Classic specific sockets
@@ -689,6 +970,8 @@ export function scoreItem(item, player, contentType, gameType = "Retail") {
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];
   }
+
+
 
   return Math.round(100 * score) / 100;
 }

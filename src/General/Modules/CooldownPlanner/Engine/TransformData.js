@@ -4,7 +4,23 @@ import createEvents from "./CreateEvents";
 import moment from "moment";
 import smartTransformData from "General/Modules/CooldownPlanner/Engine/SmartTransformData";
 
-export default function transformData(starttime, boss, enemyCasts, healerCasts, healerIDs, difficulty, damageTaken, debuffs, enemyHealth, buffData, transformType, nameObject, friendlyHealth) {
+export default function transformData(
+  starttime,
+  boss,
+  enemyCasts,
+  healerCasts,
+  healerIDs,
+  difficulty,
+  damageTaken,
+  debuffs,
+  enemyHealth,
+  buffData,
+  transformType,
+  nameObject,
+  friendlyHealth,
+  enemyEnergy,
+  endTime
+) {
   let idsToRemove = [];
   // push healer ids to remove from the cast array
   nameObject
@@ -36,7 +52,7 @@ export default function transformData(starttime, boss, enemyCasts, healerCasts, 
     .map((cast) => cast.timestamp);
 
   // Create Events such as Phases, Any spells that don't have logged cast times such as gaining debuffs or damage taken at a certain event.
-  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth);
+  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
 
   // Map enemy ability casts into objects for the cooldown planner
   let enemyCastsTimeline = enemyCasts

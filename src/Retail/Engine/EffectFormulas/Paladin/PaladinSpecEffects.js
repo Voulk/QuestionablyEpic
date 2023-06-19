@@ -12,8 +12,38 @@ const IDMARTYR = 183998;
 export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
+  if (effectName === "Paladin T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 750;
+
+  }
+  else if (effectName === "Paladin T30-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 9750;
+
+  }
+
+  else if (effectName === "Paladin T29-2") {
+    // +8% crit to almost everything that matters.
+    const percentEffected = 1; // TODO: Auto-calc this.
+    bonus_stats.crit = 4 * percentEffected * 170;
+
+  }
+  else if (effectName === "Paladin T29-4") {
+    // Flat healing portion
+    const percentBuffed = 0.55;
+    bonus_stats.hps = (percentBuffed * 0.06 * player.getHPS(contentType))
+
+    // Holy Shock portion
+    const percHolyShockAffected = 0.74;
+    const tierBoost = 0.2;
+    const holyShockPerc = 0.18;
+
+    bonus_stats.hps += (percHolyShockAffected * tierBoost * holyShockPerc * player.getHPS(contentType))
+
+  }
   // Tier Sets
-  if (effectName === "Paladin T28-2") {
+  else if (effectName === "Paladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc
     // Casting Word of Glory causes your next Light of Dawn to heal for 50% more and cast twice. Cannot occur more often than once per 30 sec.
     // This is an INCREDIBLY strong 2pc bonus.

@@ -9,9 +9,8 @@ import SoA from "../../../../../Images/MythicPlus/SpiresOfAscension/SpiresOfAsce
 import DoS from "../../../../../Images/MythicPlus/DeOtherSide/DeOtherSideAG.jpg";
 import TtVM from "../../../../../Images/MythicPlus/TazaveshTheVeiledMarket/TazaveshTheVeiledMarket.jpg";
 /* ------------------------------------- Legion Timewalking ------------------------------------- */
-import CoS from "../../../../../Images/MythicPlus/LegionTimewalking/CourtOfStars.jpg";
 import BRH from "../../../../../Images/MythicPlus/LegionTimewalking/BlackrookHold.jpg";
-import NL from "../../../../../Images/MythicPlus/LegionTimewalking/NeltharionsLair.jpg";
+
 import DHT from "../../../../../Images/MythicPlus/LegionTimewalking/DarkheartThicket.jpg";
 import VotW from "../../../../../Images/MythicPlus/LegionTimewalking/VaultOfTheWardens.jpg";
 import EoA from "../../../../../Images/MythicPlus/LegionTimewalking/EyeOfAzshara.jpg";
@@ -37,6 +36,25 @@ import MechagonLower from "../../../../../Images/MythicPlus/MechagonLower.png";
 import MechagonUpper from "../../../../../Images/MythicPlus/MechagonUpper.png";
 import Grimrail from "../../../../../Images/MythicPlus/Grimrail.png";
 import IronDocks from "../../../../../Images/MythicPlus/IronDocks.png";
+
+import UldamanLegacyofTyr from "../../../../../Images/MythicPlus/UldamanLegacyofTyr.png";
+import TheNokhudOffensive from "../../../../../Images/MythicPlus/TheNokhudOffensive.png";
+import TheAzureVault from "../../../../../Images/MythicPlus/TheAzureVault.png";
+import TheAcademy from "../../../../../Images/MythicPlus/TheAcademy.png";
+import RubyLifePools from "../../../../../Images/MythicPlus/RubyLifePools.png";
+import Neltharus from "../../../../../Images/MythicPlus/Neltharus.png";
+import HallsofInfusion from "../../../../../Images/MythicPlus/HallsofInfusion.png";
+import BrackenhideHollow from "../../../../../Images/MythicPlus/BrackenhideHollow.png";
+
+import HallsofValor from "../../../../../Images/MythicPlus/HallsOfValor.png";
+import CourtofStars from "../../../../../Images/MythicPlus/CourtofStars.png";
+import ShadowmoonBurialGrounds from "../../../../../Images/MythicPlus/ShadowmoonBurialGrounds.png";
+import TempleoftheJadeSerpent from "../../../../../Images/MythicPlus/TempleoftheJadeSerpent.png";
+
+import Freehold from "../../../../../Images/MythicPlus/Freehold.png";
+import TheUnderrot from "../../../../../Images/MythicPlus/TheUnderrot.png";
+import TheVortexPinnacle from "../../../../../Images/MythicPlus/TheVortexPinnacle.png";
+import NL from "../../../../../Images/MythicPlus/NeltharionsLair.png";
 
 export default function DungeonHeaderIcons(props) {
   let source = "";
@@ -112,13 +130,76 @@ export default function DungeonHeaderIcons(props) {
   }
 
   /* ---------------------------------------------------------------------------------------------- */
+  /*                                          DragonFlight                                          */
+  /* ---------------------------------------------------------------------------------------------- */
+
+  if (props === 1001) {
+    // Freehold
+    source = Freehold;
+  }
+  if (props === 1022) {
+    // TheUnderrot
+    source = TheUnderrot;
+  }
+  if (props === 68) {
+    // TheVortexPinnacle
+    source = TheVortexPinnacle;
+  }
+
+  if (props === 1197) {
+    // Uldaman: Legacy of Tyr
+    source = UldamanLegacyofTyr;
+  }
+  if (props === 1201) {
+    // Taz'algeth Academy
+    source = TheAcademy;
+  }
+  if (props === 1202) {
+    // Ruby Life Pools
+    source = RubyLifePools;
+  }
+  if (props === 1204) {
+    // Halls of Infusion
+    source = HallsofInfusion;
+  }
+  if (props === 1203) {
+    // The Azure Vault
+    source = TheAzureVault;
+  }
+  if (props === 1199) {
+    // Neltharus
+    source = Neltharus;
+  }
+  if (props === 1198) {
+    // The Nokhud Offensive
+    source = TheNokhudOffensive;
+  }
+  if (props === 1196) {
+    // Brackenhide Hollow
+    source = BrackenhideHollow;
+  }
+
+  if (props === 313) {
+    // Temple of the Jade Serpent
+    source = TempleoftheJadeSerpent;
+  }
+  if (props === 537) {
+    // Shadowmoon Burial Grounds
+    source = ShadowmoonBurialGrounds;
+  }
+  if (props === 721) {
+    // Halls of Valor
+    source = HallsofValor;
+  }
+  if (props === 800) {
+    // Court of Stars
+    source = CourtofStars;
+  }
+
+  /* ---------------------------------------------------------------------------------------------- */
   /*                                       Legion Timewalking                                       */
   /* ---------------------------------------------------------------------------------------------- */
 
-  /* --------------------------------------- Court of Stars --------------------------------------- */
-  if (props === 800) {
-    source = CoS;
-  }
   /* -------------------------------------- Neltharion's Lair ------------------------------------- */
   if (props === 767) {
     source = NL;
