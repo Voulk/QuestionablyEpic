@@ -19,6 +19,7 @@ import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
 import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
+import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -381,14 +382,19 @@ export default function TrinketAnalysis(props) {
           </TabPanel>
 
           <TabPanel value={tabIndex} index={1}>
-            <Grid container spacing={1} sx={{ marginTop: "16px" }}>
+            <TrinketDeepDive 
+              itemCardData={itemCardData}
+              tabIndex={tabIndex}
+            />
+            {/*<Grid container spacing={1} sx={{ marginTop: "16px" }}>
               {itemCardData.map((item) => (
                 <Grid item xs={6}>
                   <ItemDetailCard item={item} />
                 </Grid>
               ))}
-            </Grid>
-          </TabPanel>
+            </Grid>*/}
+          </TabPanel> 
+
         </Grid>
       </Grid>
 
