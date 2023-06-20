@@ -7,7 +7,21 @@ import Changelog from "General/Modules/ChangeLog/Changelog";
 import FooterLinks from "./FooterLinks";
 import { changeLog } from "../../ChangeLog/Log";
 
-const useStyles = makeStyles((theme) => ({
+declare module '@mui/material/styles' {
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status?: {
+      danger?: string;
+    };
+  }
+}
+
+const useStyles = makeStyles((theme?: any) => ({
   root: {
     padding: 12,
     backgroundColor: "rgb(82, 82, 82,0.25)",
