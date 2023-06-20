@@ -411,8 +411,6 @@ export default function CharacterPanel(props) {
               <Settings
                 player={props.player}
                 contentType={props.contentType}
-                userSettings={props.userSettings}
-                editSettings={props.editSettings}
                 singleUpdate={props.singleUpdate}
                 hymnalShow={true}
                 groupBuffShow={true}

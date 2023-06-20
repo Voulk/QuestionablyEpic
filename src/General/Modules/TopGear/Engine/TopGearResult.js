@@ -1,4 +1,4 @@
-class TopGearResult {
+export class TopGearResult {
   constructor(itemSet, differentials, contentType) {
     this.itemSet = itemSet;
     this.differentials = differentials;

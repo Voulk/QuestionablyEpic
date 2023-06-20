@@ -4,7 +4,7 @@ import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
 // Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
-class Item {
+export class Item {
   constructor(id, name, slot, socket, tertiary, softScore = 0, level, bonusIDS) {
     this.id = id;
     this.name = name;

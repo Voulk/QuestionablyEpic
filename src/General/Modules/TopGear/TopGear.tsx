@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, SyntheticEvent } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import "../SetupAndMenus/QEMainMenu.css";
 import ReactGA from "react-ga";
@@ -6,7 +6,7 @@ import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 // import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import { Button, Grid, Typography, Divider, Snackbar } from "@mui/material";
+import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import { buildNewWepCombos, buildWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
@@ -20,7 +20,11 @@ import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
-import { patronColor } from "General/Modules/SetupAndMenus/Header/PatronColors";
+import { patronColor, patronCaps } from "General/Modules/SetupAndMenus/Header/PatronColors";
+import { RootState } from "Redux/Reducers/RootReducer";
+import { Item } from "General/Modules/Player/Item";
+import {Player } from "General/Modules/Player/Player";
+import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -87,7 +91,7 @@ const useStyles = makeStyles((theme?: any) => ({
   },
 }));
 
-function Alert(props) {
+function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
@@ -109,10 +113,11 @@ const sendReport = (shortReport) => {
 export default function TopGear(props: any) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
-  const gameType = useSelector((state) => state.gameType);
-  const playerSettings = useSelector((state) => state.playerSettings);
+
+  const contentType = useSelector((state: RootState) => state.contentType);
+  const gameType = useSelector((state: RootState) => state.gameType);
+  const playerSettings = useSelector((state: RootState) => state.playerSettings);
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [openDelete, setOpenDelete] = useState(false);
@@ -120,15 +125,15 @@ export default function TopGear(props: any) {
   const [activeSlot, setSlot] = useState("");
   /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-  const [btnActive, setBtnActive] = useState(true);
+  const [btnActive, setBtnActive] = useState<boolean>(true);
   
   const [errorMessage, setErrorMessage] = useState("");
-  const patronStatus = props.patronStatus;
-  const topGearCaps = { Standard: 30, Basic: 30, Gold: 34, Diamond: 36, "Rolls Royce": 38, Sapphire: 38 };
-  const TOPGEARCAP = topGearCaps[patronStatus] ? topGearCaps[patronStatus] : 30; // TODO
+  const patronStatus: string = props.patronStatus;
+
+  const topGearCap = patronCaps[patronStatus] ? patronCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
-  const upgradeItem = (item, newItemLevel) => {
+  const upgradeItem = (item: Item, newItemLevel: number) => {
     let player = props.player;
     player.upgradeItem(item, newItemLevel);
     setItemList([...player.getActiveItems(activeSlot)]);
@@ -149,7 +154,7 @@ export default function TopGear(props: any) {
     let topgearOk = true;
     let itemList = props.player.getSelectedItems();
     let errorMessage = "";
-    let slotLengths = {
+    let slotLengths: { [key: string]: number } = {
       Head: 0,
       Neck: 0,
       Shoulder: 0,
@@ -188,12 +193,12 @@ export default function TopGear(props: any) {
     return topgearOk;
   };
 
-  const checkSlots = () => {
+  const checkSlots = (): string[] => {
        /* ------------------ Check that the player has selected an item in every slot. ----------------- */
        let itemList = props.player.getSelectedItems();
        let missingSlots = [];
        let errorMessage = "";
-       let slotLengths = {
+       let slotLengths: { [key: string]: number } = {
          Head: 0,
          Neck: 0,
          Shoulder: 0,
@@ -283,28 +288,28 @@ export default function TopGear(props: any) {
     setOpenDelete(true);
   };
 
-  const handleCloseDelete = (event, reason) => {
+  const handleCloseDelete = (event: Event | React.SyntheticEvent<any>, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
     setOpenDelete(false);
   };
 
-  const deleteItem = (unique) => {
+  const deleteItem = (unique: string) => {
     let player = props.player;
     player.deleteActiveItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
     handleClickDelete();
   };
 
-  const catalyzeItem = (unique) => {
+  const catalyzeItem = (unique: string) => {
     let player = props.player;
     player.catalyzeItem(unique);
     setItemList([...player.getActiveItems(activeSlot)]);
     // handleClickDelete();
   };
 
-  const shortenReport = (report, player) => {
+  const shortenReport = (report: TopGearResult, player: Player) => {
 
     if (report) {
       const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
@@ -377,7 +382,7 @@ export default function TopGear(props: any) {
 
       instance
         .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-        .then((result) => {
+        .then((result: TopGearResult) => {
           // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           //props.setTopResult(result);
@@ -388,7 +393,7 @@ export default function TopGear(props: any) {
           instance.terminate();
           history.push("/report/");
         })
-        .catch((err) => {
+        .catch((err: Error) => {
           // If top gear crashes for any reason, log the error and then terminate the worker.
           reportError("", "Top Gear Crash", err, strippedPlayer.spec);
           setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
@@ -401,7 +406,7 @@ export default function TopGear(props: any) {
       let instance = new worker();
       instance
         .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-        .then((result) => {
+        .then((result: TopGearResult) => {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           props.setTopResult(result);
           instance.terminate();
@@ -422,7 +427,7 @@ export default function TopGear(props: any) {
 
   const unleashTopGear = () => {
     /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
-    if (checkTopGearValid) {
+    if (checkTopGearValid()) {
       setBtnActive(false);
       // Special Error Code
       try {
@@ -452,8 +457,8 @@ export default function TopGear(props: any) {
           "When you're all set, hit the big Go button at the bottom of the page to run the module.",
         ];
 
-  const activateItem = (unique, active) => {
-    if (selectedItemCount < TOPGEARCAP || active) {
+  const activateItem = (unique: string, active: boolean) => {
+    if (selectedItemCount < topGearCap || active) {
       let player = props.player;
       player.activateItem(unique);
       setItemList([...player.getActiveItems(activeSlot)]);
@@ -461,9 +466,10 @@ export default function TopGear(props: any) {
     }
   };
 
+  /*
   const editSettings = (setting, newValue) => {
     userSettings[setting] = newValue;
-  };
+  }; */
 
   const slotList = [
     { label: getTranslatedSlotName("head", currentLanguage), slotName: "Head" },
@@ -500,8 +506,6 @@ export default function TopGear(props: any) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}
@@ -565,13 +569,18 @@ export default function TopGear(props: any) {
           }}
         >
           <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
-            {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + TOPGEARCAP}
+            {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
           <div>
             <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {getErrorMessage()}
             </Typography>
-            <Button variant="contained" color="primary" align="center" style={{ height: "64%", width: "180px" }} disabled={checkSlots().length > 0 || !btnActive} onClick={unleashTopGear}>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              style={{ height: "64%", width: "180px" }} 
+              disabled={checkSlots().length > 0 || !btnActive}  //
+              onClick={unleashTopGear}> 
               {t("TopGear.GoMsg")}
             </Button>
           </div>
