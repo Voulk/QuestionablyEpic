@@ -17,7 +17,7 @@ export const otherTrinketData = [
         ppm: 2,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
       return bonus_stats;
@@ -39,7 +39,7 @@ export const otherTrinketData = [
         ppm: 2,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       const extraPotions = getSetting(additionalData.settings, "alchStonePotions")
 
@@ -67,7 +67,7 @@ export const otherTrinketData = [
         ppm: 2,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -89,12 +89,12 @@ export const otherTrinketData = [
         cooldown: 90
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       const averageHealTargets = 5; // ceil((5 + 12) / 2 / 2)
       const averageDamageTargets = 4; // floor((5 + 12) / 2 / 2)
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * averageHealTargets / data[0].cooldown;
-      bonus_stats.dps = processedValue(data[0], itemLevel, data[0].efficiency) * averageDamageTargets / data[0].cooldown;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * averageHealTargets / data[0].cooldown!;
+      bonus_stats.dps = processedValue(data[0], itemLevel, data[0].efficiency) * averageDamageTargets / data[0].cooldown!;
       return bonus_stats;
     }
   },
@@ -114,7 +114,7 @@ export const otherTrinketData = [
         ppm: 1,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -137,7 +137,7 @@ export const otherTrinketData = [
         ppm: 1,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -160,7 +160,7 @@ export const otherTrinketData = [
         ppm: 1,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -184,9 +184,9 @@ export const otherTrinketData = [
         ppm: 1,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
       return bonus_stats;
     }
   },
@@ -211,7 +211,7 @@ export const otherTrinketData = [
         ppm: 0.5,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       // The mana proc currently gives 1 MP5 while active.
       bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
@@ -238,11 +238,11 @@ export const otherTrinketData = [
         ppf: 1.5,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
 
-      bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].ppm / 60;
-      bonus_stats.mana += processedValue(data[1], itemLevel) * data[1].ppf / 340 //additionalData.castModel.fightLength;
+      bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].ppm! / 60;
+      bonus_stats.mana += processedValue(data[1], itemLevel) * data[1].ppm! / 340 //additionalData.castModel.fightLength;
 
       return bonus_stats;
     }
@@ -263,9 +263,9 @@ export const otherTrinketData = [
         ppm: 2,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
     }
@@ -286,9 +286,9 @@ export const otherTrinketData = [
         ppm: 2,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
       return bonus_stats;
     }
   },
@@ -308,7 +308,7 @@ export const otherTrinketData = [
         ppm: 1,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -331,7 +331,7 @@ export const otherTrinketData = [
         ppm: 1.5,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -358,7 +358,7 @@ export const otherTrinketData = [
 
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       return buildIdolTrinket(data, itemLevel, "haste", additionalData.settings);
     }
   },
@@ -382,7 +382,7 @@ export const otherTrinketData = [
 
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       return buildIdolTrinket(data, itemLevel, "crit", additionalData.settings);
     }
   },
@@ -406,7 +406,7 @@ export const otherTrinketData = [
 
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       return buildIdolTrinket(data, itemLevel, "versatility", additionalData.settings);
     }
   },
@@ -430,7 +430,7 @@ export const otherTrinketData = [
 
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings);
     }
   },
@@ -450,9 +450,9 @@ export const otherTrinketData = [
         ppm: 60 / 50, // ICD: 45
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
     }
@@ -471,7 +471,7 @@ export const otherTrinketData = [
       },
 
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: Array<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
       let averageStacks = 0;
       const spec = player.spec;
@@ -508,9 +508,16 @@ export const otherTrinketData = [
         targets: 5,
       },
     ],
-    runFunc: function(data: any, player: any, itemLevel: number, additionalData: any) {
+    runFunc: function(data: ReadonlyArray<effectData>, player: any, itemLevel: number, additionalData: any) {
       let bonus_stats: bonusStats = {};
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
+      const contentType : string = additionalData.contentType || "Raid";
+      const efficiency = // This needs to be cleaned up or moved to a function.
+        typeof data[0].efficiency === "object"
+          ? (data[0].efficiency as { Raid: number; Dungeon: number })[contentType as keyof { Raid: number; Dungeon: number }]
+          : data[0].efficiency;
+    
+    
+      bonus_stats.hps = processedValue(data[0], itemLevel, efficiency) * data[0].targets! / data[0].cooldown! * player.getStatMults(data[0].secondaries);
 
       return bonus_stats;
     }
