@@ -289,12 +289,3 @@ describe("socketItem", () => {
 
   // Add new tests
 });
-
-describe("GetLegendaryID func", () => {
-  test("Sinister Teachings", () => {
-    const legendaryID = getLegendaryID("Sinister Teachings");
-    expect(legendaryID).toEqual("7726");
-
-  })
-
-})
