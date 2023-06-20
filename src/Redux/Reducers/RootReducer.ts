@@ -9,12 +9,22 @@ import { patronStatus } from "./PatronStatus";
 import { cooldownPlannerTheme } from "./CooldownPlannerTheme";
 
 // Local Storage
-import ls from "local-storage";
+import * as ls from "local-storage";
+import { Reducer } from "redux";
+
+
+
+export interface RootState {
+  gameType: string;
+  contentType: string;
+  playerSettings: PlayerSettings;
+  patronStatus: string;
+}
 
 // Initial Store/State settings
-const initialState = {
+const initialState : RootState = {
   gameType: "Retail",
-  contentType: ls.get("contentType") || "Raid",
+  contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
     incarnateAllies: { value: "Solo", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
@@ -39,7 +49,7 @@ const initialState = {
 };
 if (initialState.gameType === "BurningCrusade") initialState.gameType = "Classic";
 
-export default function rootReducer(state = initialState, action) {
+const rootReducer: Reducer<RootState, any> = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_CONTENT:
       return contentType(state, action);
@@ -57,3 +67,5 @@ export default function rootReducer(state = initialState, action) {
       return state;
   }
 }
+
+export default rootReducer;

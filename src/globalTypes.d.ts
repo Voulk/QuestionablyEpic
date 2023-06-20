@@ -11,6 +11,22 @@ declare type bonusStats = {
     allyStats?: number;
 }
 
+declare type contentTypes = "Raid" | "Dungeon";
+declare type gameTypes = "Retail" | "Classic";
+
+interface PlayerSettings {
+    includeGroupBenefits: { value: boolean; options: boolean[]; category: string; type: string };
+    incarnateAllies: { value: string; options: string[]; category: string; type: string };
+    idolGems: { value: number; options: number[]; category: string; type: string };
+    alchStonePotions: { value: number; options: number[]; category: string; type: string };
+    catalystLimit: { value: number; options: number[]; category: string; type: string };
+    upgradeFinderMetric: { value: string; options: string[]; category: string; type: string };
+    primordialGems: { value: string; options: string[]; category: string; type: string };
+    topGearAutoGem: { value: boolean; options: boolean[]; category: string; type: string };
+    healingDartsOverheal: { value: number; options: any[]; category: string; type: string };
+    lariatGems: { value: number; options: any[]; category: string; type: string };
+    chromaticEssenceBuff: { value: string; options: string[]; category: string; type: string };
+  }
 
 declare interface effectData  {
     coefficient: number;
@@ -30,8 +46,6 @@ declare interface effectData  {
 // TODO: Split effectData into multiple interfaces
 declare interface statEffect extends effectData {
     stat?: string; // If this is a secondary stat trinket then this is the stat it procs.
-
-
 
 }
 
