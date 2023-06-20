@@ -26,6 +26,40 @@ import { Item } from "General/Modules/Player/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 
+type ShortReport = {
+  id: string;
+  new: boolean; 
+  effectList: any[]; // TODO: Replace with proper Effect array.
+  differentials: any[]; // TODO: Replace with Differentials.
+  contentType: string; // TODO: Replace with contentTypes
+  itemSet: {
+    itemList: any[]; // TODO: Replace with Item
+    setStats: any; // TODO: Replace with nice stat object.
+    primGems: string[];
+    enchantBreakdown: any; // TODO: Replace with some form of enchant object. 
+    firstSocket: string;
+  };
+  player: {
+    name: string;
+    realm: string;
+    region: string;
+    spec: string;
+    model: string;
+  }
+}
+
+interface ReportItem {
+  id: number;
+  level: number;
+  isEquipped: boolean;
+  stats: any;
+  leech?: number; // Could just be folded into stats.
+  socket?: number;
+  vaultItem?: boolean;
+  quality?: number;
+  effect?: any;
+}
+
 declare module '@mui/material/styles' {
   interface Theme {
     status: {
@@ -95,8 +129,8 @@ function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const sendReport = (shortReport) => {
-  const requestOptions = {
+const sendReport = (shortReport: ShortReport) => {
+  const requestOptions: RequestInit = {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
@@ -312,20 +346,24 @@ export default function TopGear(props: any) {
   const shortenReport = (report: TopGearResult, player: Player) => {
 
     if (report) {
-      const shortReport = {id: report.id, effectList: [], itemSet: {itemList: []}};
-      const shortItemSet = report.itemSet;
-    
-      shortReport.itemSet.setStats = report.itemSet.setStats;
-      shortReport.itemSet.primGems = report.itemSet.primGems;
-      shortReport.itemSet.enchantBreakdown = report.itemSet.enchantBreakdown;
-      shortReport.effectList = report.itemSet.effectList;
-      shortReport.differentials = report.differentials;
-      shortReport.contentType = report.contentType;
-      shortReport.itemSet.firstSocket = report.itemSet.firstSocket;
-      shortReport.player = {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(contentType).modelName}
+      const shortReport: ShortReport = {id: report.id, 
+        differentials: report.differentials, 
+        new: false,
+        contentType: report.contentType,
+        effectList: report.itemSet.effectList, 
+        itemSet: {itemList: [],
+                  setStats: report.itemSet.setStats,
+                  primGems: report.itemSet.primGems,
+                  enchantBreakdown: report.itemSet.enchantBreakdown,
+                  firstSocket: report.itemSet.firstSocket
+                },
+        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName}
       
-      const addItem = (item) => {
-        let newItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
+      };
+    
+      
+      const addItem = (item: any) => {
+        let newItem: ReportItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
         if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
         if (item.socket) newItem.socket = item.socket;
         if (item.vaultItem) newItem.vaultItem = item.vaultItem;
@@ -354,7 +392,6 @@ export default function TopGear(props: any) {
         else {
           addItem(item);
         }
-        
       }
   
       sendReport(shortReport);
@@ -362,8 +399,8 @@ export default function TopGear(props: any) {
 
     }
     else {
-      reportError(null, "ShortenReport", "No report found", id);
-      return {};
+      reportError(null, "ShortenReport", "No report found", "");
+      return null;
     }
 
   }
@@ -387,7 +424,7 @@ export default function TopGear(props: any) {
           apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
           //props.setTopResult(result);
           const shortResult = shortenReport(result, props.player);
-          shortResult.new = true;
+          if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
           props.setTopResult(shortResult);
 
           instance.terminate();
@@ -412,7 +449,7 @@ export default function TopGear(props: any) {
           instance.terminate();
           history.push("/report/");
         })
-        .catch((err) => {
+        .catch((err: Error) => {
           // If top gear crashes for any reason, log the error and then terminate the worker.
           reportError("", "Classic Top Gear Crash", err, strippedPlayer.spec);
           setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");

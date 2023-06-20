@@ -1,3 +1,5 @@
+import ItemSet from "General/Modules/TopGear/ItemSet";
+
 export class TopGearResult {
   constructor(itemSet, differentials, contentType) {
     this.itemSet = itemSet;
@@ -5,10 +7,11 @@ export class TopGearResult {
     this.contentType = contentType
   }
 
-  itemSet = [];
+  itemSet = new ItemSet();
   contentType = "";
   differentials = [];
   itemsCompared = 0;
+  id = "";
 }
 
 export default TopGearResult;
