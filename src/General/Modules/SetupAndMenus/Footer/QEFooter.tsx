@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme?: any) => ({
   },
 }));
 
-export default function QEFooter(props) {
+export default function QEFooter() {
   const classes = useStyles();
   const { t } = useTranslation();
 

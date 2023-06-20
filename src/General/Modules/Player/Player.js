@@ -16,7 +16,7 @@ import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
-class Player {
+export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName.replace("BC", "Classic");
     this.charName = playerName;

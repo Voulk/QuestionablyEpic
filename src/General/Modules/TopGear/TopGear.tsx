@@ -22,7 +22,21 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { patronColor } from "General/Modules/SetupAndMenus/Header/PatronColors";
 
-const useStyles = makeStyles((theme) => ({
+declare module '@mui/material/styles' {
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status?: {
+      danger?: string;
+    };
+  }
+}
+
+const useStyles = makeStyles((theme?: any) => ({
   formControl: {
     margin: theme.spacing(0.5),
     minWidth: 120,
@@ -92,7 +106,7 @@ const sendReport = (shortReport) => {
 }
 
 
-export default function TopGear(props) {
+export default function TopGear(props: any) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const contentType = useSelector((state) => state.contentType);
