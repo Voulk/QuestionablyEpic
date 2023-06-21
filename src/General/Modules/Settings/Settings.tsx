@@ -7,9 +7,10 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import RetailSettings from "./Modules/RetailSettings";
 import BurningCrusadeSettings from "./Modules/BurningCrusadeSettings";
 import { useSelector } from "react-redux";
+import { RootState } from "Redux/Reducers/RootReducer";
 // import userSettings from "./SettingsObject";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     width: "100%",
   },
@@ -29,29 +30,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Settings(props) {
+export default function Settings(props : any) {
   const classes = useStyles();
   const { t } = useTranslation();
   /* --------------------------------- Determine current GameType --------------------------------- */
-  const gameType = useSelector((state) => state.gameType);
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                         Settings Shown                                         */
-  /* ---------------------------------------------------------------------------------------------- */
-  /* ---------------- True or False determines what settings are shown to the user. --------------- */
-  /* ---- We can add checks for player specialisations here to only show for certain specs etc ---- */
-
-  /* ------------------------------------ Retail Settings Shown ----------------------------------- */
-  const retailSettingsShown = {
-    // Show Hymnal Settings
-    hymnalShow: true,
-    // Show the Group buffs treated as players Settings
-    groupBuffShow: true,
-    // Show the Auto Socket Settings
-    autoSocket: true,
-
-    catalystLimit: false,
-  };
+  const gameType = useSelector((state: RootState) => state.gameType);
 
   /* ------------------------------- Burning Crusade Settings Shown ------------------------------- */
   const burningCrusadeSettingsShown = {
@@ -76,7 +59,6 @@ export default function Settings(props) {
               userSettings={props.userSettings}
               editSettings={props.editSettings}
               singleUpdate={props.singleUpdate}
-              {...retailSettingsShown}
             />
           ) : (
             <BurningCrusadeSettings player={props.player} userSettings={props.userSettings} editSettings={props.editSettings} {...burningCrusadeSettingsShown} />

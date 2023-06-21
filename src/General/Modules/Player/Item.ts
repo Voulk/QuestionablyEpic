@@ -1,11 +1,38 @@
 import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
+import { FlowNodeBase } from "typescript";
 
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
 // Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
 export class Item {
-  constructor(id, name, slot, socket, tertiary, softScore = 0, level, bonusIDS) {
+  id: number; // The items ID
+  level: number; // The items ilvl
+  name: string; // Consider how to store this in a localised form.
+  slot: string;
+  softScore: number;
+  socket: number; // This is an int since items can have more than one socket (neck).
+  tertiary: "Leech" | "Avoidance" | "";
+  effect: {type: string, name: string, onUse?: boolean};
+  uniqueHash: string; // Technically not a hash.
+  uniqueEquip: string; // Unique Equip type if relevant.
+  active: boolean = false; // An active item is selected for inclusion in Top Gear.
+  
+  vaultItem: boolean = false; // If true, the item is in a vault and so gains a special Vault color and restriction.
+  isEquipped: boolean = false; // If true, the item is currently equipped to the character. This is just used to color differences 
+  source = {};
+  onUse: boolean = false; // True if the item is an on-use trinket. Can be converted to a tag.
+  setID: number = 0; // The set this item belongs to. Frequently used for tier but not exclusively.
+  quality: number = 4; // The quality number. 
+  upgradeTrack: string = ""; // These two upgrade track variables could be combined into one.
+  upgradeRank: number = 0;
+  bonusIDS: string = "";
+  isCatalystItem: boolean = false; // If true, the item has already been catalyzed and is not viable for a second conversion.
+
+  offhandID: number = 0; // Only used for correctly translating weapon combos.
+  overriddenName: boolean = false; // If true, the effect will be used as the items name instead of its ID. This was used for SL legendaries but nothing in DF.
+
+  constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
     this.id = id;
     this.name = name;
     this.level = setBounds(level, CONSTRAINTS.Retail.minItemLevel, CONSTRAINTS.Retail.maxItemLevel); //Math.max(1, Math.min(300, level));
@@ -24,29 +51,6 @@ export class Item {
     if (slot === "Neck") this.socket = 3;
 
   }
-
-  id = 0; // The items ID
-  level = 300; // The items ilvl
-  name = ""; // Consider how to store this in a localised form.
-  slot = "";
-  softScore = 0;
-  socket = 0; // Items can once again have more than one socket so we'll store this is an int.
-  tertiary = "";
-  effect = "";
-  uniqueHash = ""; // Technically not a hash.
-  uniqueEquip = ""; // Unique Equip type if relevant.
-  offhandID = 0; // Only used for correctly translating weapon combos.
-  active = false;
-  overriddenName = false; // If true, the effect will be used as the items name instead of its ID. So far this is just used for legendaries.
-  vaultItem = false;
-  isEquipped = false;
-  source = {};
-  onUse = false;
-  setID = 0;
-  quality = 3;
-  upgradeTrack = "";
-  upgradeRank = 0;
-  //canBeCatalyzed = false;
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
@@ -72,7 +76,7 @@ export class Item {
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and
   // it isn't life crushing if they do ever dup.
-  getUnique(id) {
+  getUnique(id: number) {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
   }
 
@@ -107,11 +111,11 @@ export class Item {
   } 
 
   isLegendary() {
-    return this.effect !== "" && (this.effect.type === "unity" || this.effect.type === "spec legendary");
+    return this.effect !== null && (this.effect.type === "unity" || this.effect.type === "spec legendary");
   }
 
   isTierPiece() {
-    return this.setID !== "" && this.slot !== "Trinket"
+    return this.setID !== 0 && this.slot !== "Trinket"
   }
 
   addStats(bonus_stats) {
