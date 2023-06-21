@@ -1,4 +1,4 @@
-declare type bonusStats = {
+declare type Stats = {
     intellect?: number;
     haste?: number;
     crit?: number;

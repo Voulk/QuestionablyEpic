@@ -1,6 +1,5 @@
 import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
-import { FlowNodeBase } from "typescript";
 
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
@@ -12,7 +11,10 @@ export class Item {
   slot: string;
   softScore: number;
   socket: number; // This is an int since items can have more than one socket (neck).
-  tertiary: "Leech" | "Avoidance" | "";
+  tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
+  stats: Stats = {}; // The stats on a given item.
+
+
   effect: {type: string, name: string, onUse?: boolean};
   uniqueHash: string; // Technically not a hash.
   uniqueEquip: string; // Unique Equip type if relevant.
@@ -41,19 +43,21 @@ export class Item {
     this.tertiary = tertiary === "Leech" || tertiary === "Avoidance" ? tertiary : "";
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
-    this.bonusIDS = bonusIDS || "";
     this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
     this.effect = getItemProp(id, "effect");
     this.setID = getItemProp(id, "itemSetId");
     this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
-    if (slot === "Neck") this.socket = 3;
+    if (slot === "Neck") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
+
+    this.bonusIDS = bonusIDS || "";
 
   }
 
   // The stats on the item. These should already be adjusted for item level.
   // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
+  /*
   stats = {
     intellect: 0,
     stamina: 0,
@@ -72,7 +76,7 @@ export class Item {
       leech: 0,
       hps: 0,
     },
-  };
+  }; */
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and
   // it isn't life crushing if they do ever dup.
@@ -84,48 +88,46 @@ export class Item {
     return !this.isCatalystItem && !this.isLegendary() && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
   }
 
-  /*
-  getQualityColor() {
-    const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity";
-    if (isLegendary) return "#ff8000";
-    else if (this.level >= 372) return "#a73fee";
-    else if (this.level >= 340) return "#328CE3";
-    else return "#1eff00";
 
-  } 
-  */
-  guessQualityColor() {
-
+  // Make an educated guess at what quality an item is based on its level.
+  // We'll use this when we don't have access to precise information via SimC string.
+  guessItemQuality() {
     if (this.level >= 372) this.quality = 4;
     else if (this.level >= 340) this.quality = 3;
     else this.quality = 2;
   }
 
+  // Get the color tag of an item based on its quality.
+  // Special override for legendaries though if we have their SimC string then they'll just naturally be at quality 5 anyway.
+  // This could arguably be moved to ItemUtilities.
   getQualityColor() {
     const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity" || this.id === 2068200;
     if (isLegendary || this.quality === 5) return "#ff8000";
     else if (this.quality === 4) return "#a73fee";
     else if (this.quality === 3) return "#328CE3";
     else return "#1eff00";
-
   } 
 
   isLegendary() {
     return this.effect !== null && (this.effect.type === "unity" || this.effect.type === "spec legendary");
   }
 
+  // This is only of moderate accuracy since there can be non-tier sets that use the same slots as tier.
+  // We only use this to color Tier pieces differently so it's ok if it colors non-tier set pieces.
   isTierPiece() {
-    return this.setID !== 0 && this.slot !== "Trinket"
+    return this.setID !== 0 && this.slot !== "Trinket" && this.slot !== "Finger";
   }
 
-  // This compiles an items bonus stats into its stats object.
-  addStats(bonus_stats) {
-    for (var stat in this.stats) {
+  // This compiles an additional stat array into an item.
+  // Useful if an items stats are coming from two different sources.
+  addStats(bonus_stats: Stats) {
+    for (const stat in this.stats) {
       if (stat in bonus_stats) {
-        this.stats[stat] = this.stats[stat] + bonus_stats[stat];
+        this.stats[stat as keyof Stats] = (this.stats[stat as keyof Stats] || 0) + (bonus_stats[stat as keyof Stats] || 0)
       }
     }
   }
+
 }
 
 export default Item;

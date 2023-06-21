@@ -654,7 +654,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     dps: 0,
     bonus_stats: {},
   }; */
-  let stats = {bonus_stats: {}};
+  let stats = {};
 
   
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
