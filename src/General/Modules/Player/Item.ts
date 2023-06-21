@@ -118,6 +118,7 @@ export class Item {
     return this.setID !== 0 && this.slot !== "Trinket"
   }
 
+  // This compiles an items bonus stats into its stats object.
   addStats(bonus_stats) {
     for (var stat in this.stats) {
       if (stat in bonus_stats) {
