@@ -11,6 +11,13 @@ declare type Stats = {
     allyStats?: number;
 }
 
+declare type ItemEffect = {
+    type: string;
+    name: string;
+    level?: number;
+    onUse?: boolean;
+}
+
 declare type contentTypes = "Raid" | "Dungeon";
 declare type gameTypes = "Retail" | "Classic";
 

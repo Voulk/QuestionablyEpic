@@ -15,7 +15,7 @@ export class Item {
   stats: Stats = {}; // The stats on a given item.
 
 
-  effect: {type: string, name: string, onUse?: boolean};
+  effect: ItemEffect;
   uniqueHash: string; // Technically not a hash.
   uniqueEquip: string; // Unique Equip type if relevant.
   active: boolean = false; // An active item is selected for inclusion in Top Gear.
