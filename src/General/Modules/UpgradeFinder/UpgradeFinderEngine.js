@@ -112,7 +112,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
-  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
+  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings, userSettings);
@@ -253,7 +253,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   let newItemList = [...baseItemList];
   newItemList.push(item);
   const wepList = buildNewWepCombosUF(player, newItemList);
-  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
+  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.

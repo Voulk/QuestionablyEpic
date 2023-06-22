@@ -17,6 +17,7 @@ export const STAT = {
   SPEED: "speed",
 };
 
+// Mostly unused now.
 export const BASESTAT = {
   CRIT: 0.05,
   MASTERY: {
@@ -27,7 +28,6 @@ export const BASESTAT = {
     "Holy Priest": 0.1,
     "Discipline Priest": 0.108,
     "Restoration Shaman": 0.25,
-    "Preservation Evoker": 0, // TODO
   },
 };
 
@@ -40,7 +40,7 @@ export const STATDIMINISHINGRETURNS = {
 
 }
 
-export const getMasteryPercentage = (statQuantity, spec) => {
+export const getMasteryPercentage = (statQuantity: number, spec: string) => {
   return statQuantity / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[spec];
 }
 
@@ -59,7 +59,7 @@ export const STATCONVERSION = {
       "Holy Priest": 1.125,
       "Discipline Priest": 1.35,
       "Restoration Shaman": 3,
-    },
+    } as Record<string, number>,
 
 }
 
@@ -203,9 +203,6 @@ export const translatedStat = {
   },
   blockrating: { // Classic
     en: "Block"
-  },
-  spelldamage: { // Classic
-    en: "Spell Damage"
   },
   spellcrit: { // Classic
     en: "Crit"

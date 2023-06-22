@@ -29,7 +29,7 @@ class ItemSet {
 
   // Enchant Breakdown consists of key: value combos where key is the slot, and the value is the *name* of the enchant.
   // We only use it for display purposes on the report end.
-  enchantBreakdown: { [key: string]: string } = {};
+  enchantBreakdown: { [key: string]: string | number | number[] } = {};
 
   // A list of all items in the set.
   itemList: Item[];
@@ -57,6 +57,7 @@ class ItemSet {
 
   firstSocket: string = ""; // The slot of the first socket in the set. Used to work out where to put our int gem. No effect on scoring.
 
+  report: any;
 
   constructor(id: number, itemList: Item[], sumSoft: number, spec: string) {
     this.id = id;
@@ -64,9 +65,6 @@ class ItemSet {
     this.sumSoftScore = Math.round(1000 * sumSoft) / 1000;
     this.spec = spec;
   }
-
-
-
 
   // This is for testing purposes only. It will print every item in the collection to the console.
   // printSet() {

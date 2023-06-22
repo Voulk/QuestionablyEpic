@@ -38,7 +38,7 @@ describe("Top Gear full test", () => {
         processAllLines(player, "Raid", lines, -1, -1)
         player.activateAll();
         const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", settings, player.getActiveModel("Raid"))
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))
         
         const itemList = result.itemSet.itemList;
         
@@ -61,7 +61,7 @@ describe("Top Gear full test", () => {
         processAllLines(player, "Raid", lines, -1, -1)
         player.activateAll();
         const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", settings, player.getActiveModel("Raid"))
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))
 
         expect(result.itemSet.effectList.filter(effect => effect.name === "Mistweaver T29-2").length).toEqual(1);
         //expect(result.itemSet.effectList.filter(effect => effect.name === "DPriest T29-4").length).toEqual(0);

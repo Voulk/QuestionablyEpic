@@ -1,4 +1,5 @@
 declare type Stats = {
+    [key: string]: number;
     intellect?: number;
     haste?: number;
     crit?: number;
@@ -20,6 +21,9 @@ declare type ItemEffect = {
 
 declare type contentTypes = "Raid" | "Dungeon";
 declare type gameTypes = "Retail" | "Classic";
+
+// Unimplemented for now.
+declare type playerSpecs = "Restoration Druid" | "Mistweaver Monk" | "Restoration Shaman" | "Holy Priest" | "Discipline Priest" | "Preservation Evoker" | "Holy Paladin";
 
 interface PlayerSettings {
     includeGroupBenefits: { value: boolean; options: boolean[]; category: string; type: string };

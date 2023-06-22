@@ -223,7 +223,7 @@ export function getGems(spec, gemCount, bonus_stats, contentType, topGear = true
     // This should never be called.
     bonus_stats.haste += 70 * gemCount;
     bonus_stats.mastery += 33 * gemCount;
-    return 192948;
+    return [192948];
   }
 }
 
