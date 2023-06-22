@@ -289,10 +289,12 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
   const boostedItems = [204465, 204201, 204202, 204211, 202612];
 
   if (boostedItems.includes(itemID)) {
-    if (difficulty === 2) return 4;
-    else if (difficulty === 4) return 3;
+    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
+    if (difficulty === 2 && itemID !== 202612) return 4;
+    else if (difficulty === 4 && itemID !== 202612) return 3;
     else if (bossID === 2520 || bossID === 2523) return 7;
-    else return 6;
+    else if (itemID !== 202612) return 6;
+    else return 0;
   } 
   else return 0;
 }

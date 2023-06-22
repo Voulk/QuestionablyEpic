@@ -10,6 +10,14 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 13,
+    date: "21 June",
+    changes: [ 
+      "New Setting: Chromatic Essence Ally Buffs.",
+      "Screaming Black Dragonscale will now show at the correct item level in MAX versions of the Upgrade Finder."
+  ]},
+  {
+    version: "10.1.0",
     update: 12,
     date: "16 June",
     changes: [ 
