@@ -25,7 +25,14 @@ const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficult
   const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}${rank ? "&rank=" + rank : ""}`;
 
   return (
-    <a href={baseWowheadLink} data-wowhead={type === "item" ? itemDataWowhead : spellDataWowhead} target="_blank" rel="noopener noreferrer" key={keyProp}>
+    <a
+      href={baseWowheadLink}
+      data-wowhead={type === "item" ? itemDataWowhead : spellDataWowhead}
+      target="_blank"
+      rel="noopener noreferrer"
+      key={keyProp}
+      style={{ color: "white", textDecoration: "none" }}
+    >
       {children}
     </a>
   );
