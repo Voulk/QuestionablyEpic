@@ -14,7 +14,6 @@ import MiniItemCard from "./MiniItemCard";
 import { useHistory } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
-import userSettings from "../Settings/SettingsObject";
 import { useSelector } from "react-redux";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
@@ -512,10 +511,6 @@ export default function TopGear(props: any) {
     }
   };
 
-  /*
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
-  }; */
 
   const slotList = [
     { label: getTranslatedSlotName("head", currentLanguage), slotName: "Head" },

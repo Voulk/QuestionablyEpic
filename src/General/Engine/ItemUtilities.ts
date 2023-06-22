@@ -409,7 +409,7 @@ export function getEmbellishmentIcon(id: number) {
 
 // Grabs a specific item from whichever item database is currently selected.
 export function getItem(id: number, gameType = "Retail") {
-  let temp = getItemDB(gameType).filter(function (item) {
+  let temp = getItemDB(gameType).filter(function (item: any) {
     return item.id === id;
   });
   if (temp.length > 0) return temp[0];
@@ -477,7 +477,7 @@ export function getGemIcon(id: number) {
 // Returns true if an item always has a socket attached like some crafted rings etc. 
 // Is not designed to check if an item has had a socket added via token or RNG.
 export function checkDefaultSocket(id: number) {
-  let temp = itemDB.filter(function (item) {
+  let temp = itemDB.filter(function (item: any) {
     return item.id === id;
   });
 
