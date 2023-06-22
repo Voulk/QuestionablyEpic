@@ -16,7 +16,7 @@ import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
-class Player {
+export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName.replace("BC", "Classic");
     this.charName = playerName;
@@ -167,7 +167,7 @@ class Player {
   scoreActiveItems = (contentType, playerSettings) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType, this.gameType, playerSettings);
+      item.softScore = scoreItem(item, this, contentType, "Retail", playerSettings);
 
       // Error checking
       if (item.softScore < 0) {

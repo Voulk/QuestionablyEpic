@@ -18,7 +18,6 @@ import {
   scoreItem,
   getItemAllocations,
   calcStatsAtLevel,
-  getLegendaryID,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -151,11 +150,11 @@ export default function ItemBar(props) {
         if (missives.includes("Versatility")) bonusString += ":6650";
 
         item.bonusIDS = bonusString;
-        item.guessQualityColor();
+        item.guessItemQuality();
       } else {
         item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "");
         if (item.slot === "Neck" && itemSocket) item.socket = 3;
-        item.guessQualityColor();
+        item.guessItemQuality();
       }
     } else {
       // Burning Crusade

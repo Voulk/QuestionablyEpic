@@ -61,20 +61,20 @@ export default function SlotsContainer(props) {
     switch (spec) {
       case "Restoration Druid":
       case "Restoration Druid Classic":
-        return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
+        return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
       case "Mistweaver Monk":
-        return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg").default;
+        return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
       case "Holy Paladin":
       case "Holy Paladin Classic":
-        return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg").default;
+        return require("Images/UpgradeFinderIcons/Plate/" + slot + ".jpg");
       case "Restoration Shaman":
       case "Preservation Evoker":
       case "Restoration Shaman Classic":
-        return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg").default;
+        return require("Images/UpgradeFinderIcons/Mail/" + slot + ".jpg");
       case "Holy Priest":
       case "Holy Priest Classic":
       case "Discipline Priest":
-        return require("Images/UpgradeFinderIcons/Cloth/" + slot + ".jpg").default;
+        return require("Images/UpgradeFinderIcons/Cloth/" + slot + ".jpg");
       default:
         return [-1];
     }

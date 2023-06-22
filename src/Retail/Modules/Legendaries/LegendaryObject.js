@@ -66,7 +66,7 @@ export default function LegendaryObject(props) {
                   <img
                     height={40}
                     width={40}
-                    src={legendaryImages[item.name].default}
+                    src={legendaryImages[item.name]}
                     alt=""
                     style={{
                       borderRadius: 4,

@@ -25,7 +25,7 @@ export const gemDB = [
       ru: "Цельный янтарь вечности",
       cn: "致密永恒琥珀",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_bronze.jpg"),
     stats: { stamina: 53 },
   },
   {
@@ -40,7 +40,7 @@ export const gemDB = [
       ru: "Цельный янтарь вечности",
       cn: "致密永恒琥珀",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_bronze.jpg"),
     stats: { stamina: 64 },
   },
   {
@@ -56,7 +56,7 @@ export const gemDB = [
       ru: "Цельный янтарь вечности",
       cn: "致密永恒琥珀",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_bronze.jpg"),
     stats: { stamina: 75 },
   },
 
@@ -76,7 +76,7 @@ export const gemDB = [
       ru: "Мистический дзен-сапфир",
       cn: "禅悟之秘术青玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_blue.jpg"),
     stats: { versatility: 18, mastery: 18 },
   },
   {
@@ -92,7 +92,7 @@ export const gemDB = [
       ru: "Мистический дзен-сапфир",
       cn: "禅悟之秘术青玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_blue.jpg"),
     stats: { versatility: 22, mastery: 22 },
   },
   {
@@ -108,7 +108,7 @@ export const gemDB = [
       ru: "Мистический дзен-сапфир",
       cn: "禅悟之秘术青玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_blue.jpg"),
     stats: { versatility: 26, mastery: 26 },
   },
 
@@ -128,7 +128,7 @@ export const gemDB = [
       ru: "Расколотый оникс сенсея",
       cn: "导师的裂痕玛瑙",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_black.jpg"),
     stats: { crit: 18, mastery: 18 },
   },
   {
@@ -144,7 +144,7 @@ export const gemDB = [
       ru: "Расколотый оникс сенсея",
       cn: "导师的裂痕玛瑙",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_black.jpg"),
     stats: { crit: 22, mastery: 22 },
   },
   {
@@ -160,7 +160,7 @@ export const gemDB = [
       ru: "Расколотый оникс сенсея",
       cn: "导师的裂痕玛瑙",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_black.jpg"),
     stats: { crit: 26, mastery: 26 },
   },
 
@@ -180,7 +180,7 @@ export const gemDB = [
       ru: "Коварный рубин королевы",
       cn: "诡诈女王红玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_red.jpg"),
     stats: { crit: 18, haste: 18 },
   },
   {
@@ -196,7 +196,7 @@ export const gemDB = [
       ru: "Коварный рубин королевы",
       cn: "诡诈女王红玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_red.jpg"),
     stats: { crit: 22, haste: 22 },
   },
   {
@@ -212,7 +212,7 @@ export const gemDB = [
       ru: "Коварный рубин королевы",
       cn: "诡诈女王红玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_red.jpg"),
     stats: { crit: 26, haste: 26 },
   },
 
@@ -232,7 +232,7 @@ export const gemDB = [
       ru: "Усиленный сияющий изумруд",
       cn: "活跃生机翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_green.jpg"),
     stats: { crit: 18, haste: 18 },
   },
 
@@ -249,7 +249,7 @@ export const gemDB = [
       ru: "Усиленный сияющий изумруд",
       cn: "活跃生机翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_green.jpg"),
     stats: { crit: 22, haste: 22 },
   },
 
@@ -266,7 +266,7 @@ export const gemDB = [
       ru: "Усиленный сияющий изумруд",
       cn: "活跃生机翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem1leveling_cut_green.jpg"),
     stats: { crit: 26, haste: 26 },
   },
 
@@ -286,7 +286,7 @@ export const gemDB = [
       ru: "Зазубренный ноздорит",
       cn: "裂纹诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_bronze.jpg"),
     stats: { stamina: 75, crit: 23 },
   },
 
@@ -303,7 +303,7 @@ export const gemDB = [
       ru: "Зазубренный ноздорит",
       cn: "裂纹诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_bronze.jpg"),
     stats: { stamina: 87, crit: 28 },
   },
 
@@ -320,7 +320,7 @@ export const gemDB = [
       ru: "Зазубренный ноздорит",
       cn: "裂纹诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_bronze.jpg"),
     stats: { stamina: 102, crit: 33 },
   },
 
@@ -340,7 +340,7 @@ export const gemDB = [
       ru: "Мощный ноздорит",
       cn: "坚强诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_bronze.jpg"),
     stats: { stamina: 71, haste: 23 },
   },
 
@@ -357,7 +357,7 @@ export const gemDB = [
       ru: "Мощный ноздорит",
       cn: "坚强诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_bronze.jpg"),
     stats: { stamina: 87, haste: 28 },
   },
 
@@ -374,7 +374,7 @@ export const gemDB = [
       ru: "Мощный ноздорит",
       cn: "坚强诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_bronze.jpg"),
     stats: { stamina: 102, haste: 33 },
   },
 
@@ -394,7 +394,7 @@ export const gemDB = [
       ru: "Всевластный ноздорит",
       cn: "强攻诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_bronze.jpg"),
     stats: { stamina: 71, mastery: 23 },
   },
 
@@ -411,7 +411,7 @@ export const gemDB = [
       ru: "Всевластный ноздорит",
       cn: "强攻诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_bronze.jpg"),
     stats: { stamina: 87, mastery: 28 },
   },
 
@@ -428,7 +428,7 @@ export const gemDB = [
       ru: "Всевластный ноздорит",
       cn: "强攻诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_bronze.jpg"),
     stats: { stamina: 102, mastery: 33 },
   },
 
@@ -448,7 +448,7 @@ export const gemDB = [
       ru: "Неизменный ноздорит",
       cn: "稳固诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_bronze.jpg"),
     stats: { stamina: 71, versatility: 23 },
   },
 
@@ -465,7 +465,7 @@ export const gemDB = [
       ru: "Неизменный ноздорит",
       cn: "稳固诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_bronze.jpg"),
     stats: { stamina: 87, versatility: 28 },
   },
 
@@ -482,7 +482,7 @@ export const gemDB = [
       ru: "Неизменный ноздорит",
       cn: "稳固诺兹多石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_bronze.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_bronze.jpg"),
     stats: { stamina: 102, versatility: 33 },
   },
 
@@ -502,7 +502,7 @@ export const gemDB = [
       ru: "Светозарный малигит",
       cn: "辐光玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_blue.jpg"),
     stats: { crit: 23, versatility: 49 },
   },
   {
@@ -518,7 +518,7 @@ export const gemDB = [
       ru: "Светозарный малигит",
       cn: "辐光玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_blue.jpg"),
     stats: { crit: 28, versatility: 60 },
   },
   {
@@ -534,7 +534,7 @@ export const gemDB = [
       ru: "Светозарный малигит",
       cn: "辐光玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_blue.jpg"),
     stats: { crit: 33, versatility: 70 },
   },
 
@@ -554,7 +554,7 @@ export const gemDB = [
       ru: "Усиленный малигит",
       cn: "活跃玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_blue.jpg"),
     stats: { haste: 23, versatility: 49 },
   },
   {
@@ -570,7 +570,7 @@ export const gemDB = [
       ru: "Усиленный малигит",
       cn: "活跃玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_blue.jpg"),
     stats: { haste: 28, versatility: 60 },
   },
   {
@@ -586,7 +586,7 @@ export const gemDB = [
       ru: "Усиленный малигит",
       cn: "活跃玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_blue.jpg"),
     stats: { haste: 33, versatility: 70 },
   },
 
@@ -606,7 +606,7 @@ export const gemDB = [
       ru: "Дзен-малигит",
       cn: "禅悟之玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_blue.jpg"),
     stats: { mastery: 23, versatility: 49 },
   },
   {
@@ -622,7 +622,7 @@ export const gemDB = [
       ru: "Дзен-малигит",
       cn: "禅悟之玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_blue.jpg"),
     stats: { mastery: 28, versatility: 60 },
   },
   {
@@ -638,7 +638,7 @@ export const gemDB = [
       ru: "Дзен-малигит",
       cn: "禅悟之玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_blue.jpg"),
     stats: { mastery: 33, versatility: 70 },
   },
 
@@ -658,7 +658,7 @@ export const gemDB = [
       ru: "Грозовой малигит",
       cn: "风暴玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_blue.jpg"),
     stats: { versatility: 62 },
   },
   {
@@ -674,7 +674,7 @@ export const gemDB = [
       ru: "Грозовой малигит",
       cn: "风暴玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_blue.jpg"),
     stats: { versatility: 75 },
   },
   {
@@ -690,7 +690,7 @@ export const gemDB = [
       ru: "Грозовой малигит",
       cn: "风暴玛里苟石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_blue.jpg"),
     stats: { versatility: 88 },
   },
 
@@ -710,7 +710,7 @@ export const gemDB = [
       ru: "Нелтарит сенсея",
       cn: "导师的奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_black.jpg"),
     stats: { mastery: 49, crit: 23 },
   },
   {
@@ -726,7 +726,7 @@ export const gemDB = [
       ru: "Нелтарит сенсея",
       cn: "导师的奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_black.jpg"),
     stats: { mastery: 60, crit: 28 },
   },
   {
@@ -742,7 +742,7 @@ export const gemDB = [
       ru: "Нелтарит сенсея",
       cn: "导师的奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_black.jpg"),
     stats: { mastery: 70, crit: 33 },
   },
 
@@ -762,7 +762,7 @@ export const gemDB = [
       ru: "Острый нелтарит",
       cn: "狂热奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_black.jpg"),
     stats: { mastery: 49, haste: 23 },
   },
   {
@@ -778,7 +778,7 @@ export const gemDB = [
       ru: "Острый нелтарит",
       cn: "狂热奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_black.jpg"),
     stats: { mastery: 60, haste: 28 },
   },
   {
@@ -794,7 +794,7 @@ export const gemDB = [
       ru: "Острый нелтарит",
       cn: "狂热奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_black.jpg"),
     stats: { mastery: 70, haste: 33 },
   },
 
@@ -814,7 +814,7 @@ export const gemDB = [
       ru: "Дзен-нелтарит",
       cn: "禅悟之奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_black.jpg"),
     stats: { mastery: 49, versatility: 23 },
   },
   {
@@ -830,7 +830,7 @@ export const gemDB = [
       ru: "Дзен-нелтарит",
       cn: "禅悟之奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_black.jpg"),
     stats: { mastery: 60, versatility: 28 },
   },
   {
@@ -846,7 +846,7 @@ export const gemDB = [
       ru: "Дзен-нелтарит",
       cn: "禅悟之奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_black.jpg"),
     stats: { mastery: 70, versatility: 33 },
   },
 
@@ -866,7 +866,7 @@ export const gemDB = [
       ru: "Растрескавшийся нелтарит",
       cn: "断裂奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_black.jpg"),
     stats: { mastery: 62 },
   },
   {
@@ -882,7 +882,7 @@ export const gemDB = [
       ru: "Растрескавшийся нелтарит",
       cn: "断裂奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_black.jpg"),
     stats: { mastery: 70 },
   },
   {
@@ -898,7 +898,7 @@ export const gemDB = [
       ru: "Растрескавшийся нелтарит",
       cn: "断裂奈萨晶",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_black.jpg"),
     stats: { mastery: 88 },
   },
 
@@ -918,7 +918,7 @@ export const gemDB = [
       ru: "Коварный изерилл",
       cn: "诡诈伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_green.jpg"),
     stats: { haste: 49, crit: 23 },
   },
   {
@@ -934,7 +934,7 @@ export const gemDB = [
       ru: "Коварный изерилл",
       cn: "诡诈伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_green.jpg"),
     stats: { haste: 60, crit: 28 },
   },
   {
@@ -950,7 +950,7 @@ export const gemDB = [
       ru: "Коварный изерилл",
       cn: "诡诈伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_green.jpg"),
     stats: { haste: 70, crit: 33 },
   },
 
@@ -970,7 +970,7 @@ export const gemDB = [
       ru: "Острый изерилл",
       cn: "狂热伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_green.jpg"),
     stats: { haste: 49, mastery: 23 },
   },
   {
@@ -986,7 +986,7 @@ export const gemDB = [
       ru: "Острый изерилл",
       cn: "狂热伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_green.jpg"),
     stats: { haste: 60, mastery: 28 },
   },
   {
@@ -1002,7 +1002,7 @@ export const gemDB = [
       ru: "Острый изерилл",
       cn: "狂热伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_green.jpg"),
     stats: { haste: 70, mastery: 33 },
   },
 
@@ -1022,7 +1022,7 @@ export const gemDB = [
       ru: "Усиленный изерилл",
       cn: "活跃伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_green.jpg"),
     stats: { haste: 49, versatility: 23 },
   },
   {
@@ -1038,7 +1038,7 @@ export const gemDB = [
       ru: "Усиленный изерилл",
       cn: "活跃伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_green.jpg"),
     stats: { haste: 60, versatility: 28 },
   },
   {
@@ -1054,7 +1054,7 @@ export const gemDB = [
       ru: "Усиленный изерилл",
       cn: "活跃伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_green.jpg"),
     stats: { haste: 70, versatility: 33 },
   },
 
@@ -1074,7 +1074,7 @@ export const gemDB = [
       ru: "Мягкий изерилл",
       cn: "迅捷伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_green.jpg"),
     stats: { haste: 62 },
   },
   {
@@ -1090,7 +1090,7 @@ export const gemDB = [
       ru: "Мягкий изерилл",
       cn: "迅捷伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_green.jpg"),
     stats: { haste: 75 },
   },
   {
@@ -1106,7 +1106,7 @@ export const gemDB = [
       ru: "Мягкий изерилл",
       cn: "迅捷伊瑟翡翠",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_green.jpg"),
     stats: { haste: 88 },
   },
 
@@ -1126,7 +1126,7 @@ export const gemDB = [
       ru: "Коварный алекстразит",
       cn: "诡诈阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_red.jpg"),
     stats: { crit: 49, haste: 23 },
   },
   {
@@ -1142,7 +1142,7 @@ export const gemDB = [
       ru: "Коварный алекстразит",
       cn: "诡诈阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_red.jpg"),
     stats: { crit: 60, haste: 28 },
   },
   {
@@ -1158,7 +1158,7 @@ export const gemDB = [
       ru: "Коварный алекстразит",
       cn: "诡诈阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_air_cut_red.jpg"),
     stats: { crit: 70, haste: 33 },
   },
 
@@ -1178,7 +1178,7 @@ export const gemDB = [
       ru: "Алекстразит сенсея",
       cn: "导师的阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_red.jpg"),
     stats: { crit: 49, mastery: 23 },
   },
   {
@@ -1194,7 +1194,7 @@ export const gemDB = [
       ru: "Алекстразит сенсея",
       cn: "导师的阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_red.jpg"),
     stats: { crit: 60, mastery: 28 },
   },
   {
@@ -1210,7 +1210,7 @@ export const gemDB = [
       ru: "Алекстразит сенсея",
       cn: "导师的阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_earth_cut_red.jpg"),
     stats: { crit: 70, mastery: 33 },
   },
 
@@ -1230,7 +1230,7 @@ export const gemDB = [
       ru: "Светозарный алекстразит",
       cn: "辐光阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_red.jpg"),
     stats: { crit: 49, versatility: 23 },
   },
   {
@@ -1246,7 +1246,7 @@ export const gemDB = [
       ru: "Светозарный алекстразит",
       cn: "辐光阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_red.jpg"),
     stats: { crit: 60, versatility: 28 },
   },
   {
@@ -1262,7 +1262,7 @@ export const gemDB = [
       ru: "Светозарный алекстразит",
       cn: "辐光阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_frost_cut_red.jpg"),
     stats: { crit: 70, versatility: 33 },
   },
 
@@ -1282,7 +1282,7 @@ export const gemDB = [
       ru: "Смертоносный алекстразит",
       cn: "致命的阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_red.jpg"),
     stats: { crit: 62 },
   },
   {
@@ -1298,7 +1298,7 @@ export const gemDB = [
       ru: "Смертоносный алекстразит",
       cn: "致命的阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_red.jpg"),
     stats: { crit: 75 },
   },
   {
@@ -1314,7 +1314,7 @@ export const gemDB = [
       ru: "Смертоносный алекстразит",
       cn: "致命的阿莱克丝塔萨之玉",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem2standard_fire_cut_red.jpg"),
     stats: { crit: 88 },
   },
 
@@ -1334,7 +1334,7 @@ export const gemDB = [
       ru: "Глянцевый бесконечный алмаз",
       cn: "灿烂无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_blue.jpg"),
     stats: { intellect: 53, versatility: 46 },
   },
   {
@@ -1350,7 +1350,7 @@ export const gemDB = [
       ru: "Глянцевый бесконечный алмаз",
       cn: "灿烂无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_blue.jpg"),
     stats: { intellect: 64, versatility: 56 },
   },
   {
@@ -1366,7 +1366,7 @@ export const gemDB = [
       ru: "Глянцевый бесконечный алмаз",
       cn: "灿烂无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_blue.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_blue.jpg"),
     stats: { intellect: 75, versatility: 66 },
   },
 
@@ -1386,7 +1386,7 @@ export const gemDB = [
       ru: "Мастерский бесконечный алмаз",
       cn: "娴熟之无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_black.jpg"),
     stats: { intellect: 53, mastery: 46 },
   },
   {
@@ -1402,7 +1402,7 @@ export const gemDB = [
       ru: "Мастерский бесконечный алмаз",
       cn: "娴熟之无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_black.jpg"),
     stats: { intellect: 64, mastery: 56 },
   },
   {
@@ -1418,7 +1418,7 @@ export const gemDB = [
       ru: "Мастерский бесконечный алмаз",
       cn: "娴熟之无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_black.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_black.jpg"),
     stats: { intellect: 75, mastery: 66 },
   },
 
@@ -1438,7 +1438,7 @@ export const gemDB = [
       ru: "Броский бесконечный алмаз",
       cn: "凶猛无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_green.jpg"),
     stats: { intellect: 53, haste: 46 },
   },
   {
@@ -1454,7 +1454,7 @@ export const gemDB = [
       ru: "Броский бесконечный алмаз",
       cn: "凶猛无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_green.jpg"),
     stats: { intellect: 64, haste: 56 },
   },
   {
@@ -1470,7 +1470,7 @@ export const gemDB = [
       ru: "Броский бесконечный алмаз",
       cn: "凶猛无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_green.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_green.jpg"),
     stats: { intellect: 75, haste: 66 },
   },
 
@@ -1490,7 +1490,7 @@ export const gemDB = [
       ru: "Покрытый письменами бесконечный алмаз",
       cn: "铭文无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_red.jpg"),
     stats: { intellect: 53, crit: 46 },
   },
   {
@@ -1506,7 +1506,7 @@ export const gemDB = [
       ru: "Покрытый письменами бесконечный алмаз",
       cn: "铭文无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_red.jpg"),
     stats: { intellect: 64, crit: 56 },
   },
   {
@@ -1522,7 +1522,7 @@ export const gemDB = [
       ru: "Покрытый письменами бесконечный алмаз",
       cn: "铭文无限钻石",
     },
-    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_red.jpg").default,
+    icon: require("Images/Gems/inv_10_jewelcrafting_gem3primal_cut_red.jpg"),
     stats: { intellect: 75, crit: 66 },
   },
 ];

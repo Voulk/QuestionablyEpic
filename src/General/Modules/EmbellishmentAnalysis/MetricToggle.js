@@ -23,7 +23,7 @@ export default function MetricToggle(props) {
           <div style={{ display: "inline-flex" }}>
             <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }}
-              src={require("Images/Resources/healerIcon.png").default}
+              src={require("Images/Resources/healerIcon.png")}
               alt={"HPS"}
             />
             <Typography variant="button">{"HPS"}</Typography>
@@ -36,7 +36,7 @@ export default function MetricToggle(props) {
           <div style={{ display: "inline-flex" }}>
             <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }}
-              src={require("Images/Resources/dpsIcon.png").default}
+              src={require("Images/Resources/dpsIcon.png")}
               alt={"DPS"}
             />
             <Typography variant="button">{"DPS"}</Typography>
@@ -48,7 +48,7 @@ export default function MetricToggle(props) {
           <div style={{ display: "inline-flex" }}>
             {/*<img
               style={{ height: 18, width: 18, margin: "2px 5px 2px 0px", verticalAlign: "middle", borderRadius: 4 }}
-              src={require("Images/Resources/dpsIcon.png").default}
+              src={require("Images/Resources/dpsIcon.png")}
               alt={"Both"}
             /> */}
             <Typography variant="button">{"Both"}</Typography>

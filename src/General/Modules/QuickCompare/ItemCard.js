@@ -1,7 +1,8 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage, buildPrimGems } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage } from "../../Engine/ItemUtilities";
+import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./ItemCard.css";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
@@ -53,6 +54,7 @@ export default function ItemCard(props) {
   const item = props.item;
 
   const itemKey = props.key;
+  console.log(item);
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const isCatalystItem = item.isCatalystItem;
