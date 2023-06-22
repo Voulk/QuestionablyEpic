@@ -86,7 +86,7 @@ function autoSocketItems(itemList: Item[]) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Player, contentType: contentTypes, 
-                            baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true): TopGearResult | null {
+                            baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true) {
   console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
@@ -596,7 +596,9 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
     }
     // This covers all other stats, which are invariably our secondaries + leech.
     else {
-      if (stat in evalStats) hardScore += evalStats[stat] * adjusted_weights[stat];
+      if (stat in evalStats) {
+        hardScore += (evalStats[stat] * adjusted_weights[stat]) || 0;
+      }
     }
   }
 

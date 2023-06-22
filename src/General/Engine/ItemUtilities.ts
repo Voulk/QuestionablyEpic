@@ -831,7 +831,8 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Add any group benefit, if we're interested in it.
-  if (playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+  // TODO: Clean up code.
+  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
     score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 

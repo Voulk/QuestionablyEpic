@@ -416,6 +416,7 @@ export default function TopGear(props: any) {
     if (gameType === "Retail") {
       const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
+      console.log(instance);
 
       instance
         .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, playerSettings, strippedCastModel)
