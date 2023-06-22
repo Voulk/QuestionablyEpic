@@ -54,6 +54,7 @@ export default function ItemCard(props) {
   const item = props.item;
 
   const itemKey = props.key;
+  console.log(item);
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const isCatalystItem = item.isCatalystItem;

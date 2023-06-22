@@ -773,9 +773,8 @@ function compileStats(stats: Stats, bonus_stats: Stats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
-  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0};
+  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
   let item_stats = { ...item.stats };
-
   // Calculate Effect.
   if (item.effect) {
     const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
@@ -815,22 +814,22 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Add any bonus HPS
-  if ("bonus_stats" in item_stats && bonus_stats.hps) {
+  if (bonus_stats.hps) {
     score += (bonus_stats.hps / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
-  if (contentType === "Dungeon" && "bonus_stats" in item_stats && bonus_stats.dps) {
+  if (contentType === "Dungeon" && bonus_stats.dps) {
     score += ((bonus_stats.dps * CONSTANTS.dpsValue) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any bonus Mana
-  if ("bonus_stats" in item_stats && bonus_stats.mana) {
+  if (bonus_stats.mana) {
     score += ((bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType)) / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
   // Add any group benefit, if we're interested in it.
-  if (playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && "bonus_stats" in item_stats && bonus_stats.allyStats) {
+  if (playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
     score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
   }
 

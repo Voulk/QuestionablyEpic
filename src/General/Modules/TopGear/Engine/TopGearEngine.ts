@@ -86,8 +86,8 @@ function autoSocketItems(itemList: Item[]) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Player, contentType: contentTypes, 
-                            baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true) {
-  //console.log("Running Top Gear")
+                            baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true): TopGearResult | null {
+  console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -138,7 +138,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   if (itemSets.length === 0) {
     return null;
   } else {
-    let result = new TopGearResult(itemSets[0], differentials, contentType);
+    let result: TopGearResult = new TopGearResult(itemSets[0], differentials, contentType);
     result.itemsCompared = itemSets.length;
     result.new = true;
     result.id = generateReportCode();
@@ -197,7 +197,6 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
     }
   }
   slotLengths.Weapon = wepCombos.length;
-
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore,
                       shoulder: 0,
@@ -303,6 +302,7 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
       }
     }
   }
+
   return itemSets;
 }
 
