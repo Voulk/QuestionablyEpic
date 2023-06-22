@@ -654,7 +654,7 @@ export function calcStatsAtLevel(itemLevel, slot, statAllocations, tertiary) {
     dps: 0,
     bonus_stats: {},
   }; */
-  let stats = {};
+  let stats = {leech: 0}; // TODO: Try and remove leech here.
 
   
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];

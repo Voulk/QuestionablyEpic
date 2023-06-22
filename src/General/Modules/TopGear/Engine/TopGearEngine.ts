@@ -39,6 +39,7 @@ export function expensive(time: number) {
 // Top Gear sets are run on their own thread. This can make passing full objects with functions tricky. This function recreates our player object since we'll need it
 // for effect formulas. Think of it as creating a clone of our player by creating a new one and giving it the attributes that the last one had.
 // We put false as the "getImages" prop for player so that the API call to get the players images do not run during Top Gear.
+// TODO: investigate how it handles imported logs compared to live branch.
 function setupPlayer(player: Player, contentType: contentTypes, castModel: any) {
   let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, "", "Retail");
   //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);

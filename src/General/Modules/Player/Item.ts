@@ -31,8 +31,11 @@ export class Item {
   bonusIDS: string = "";
   isCatalystItem: boolean = false; // If true, the item has already been catalyzed and is not viable for a second conversion.
 
-  offhandID: number = 0; // Only used for correctly translating weapon combos.
   overriddenName: boolean = false; // If true, the effect will be used as the items name instead of its ID. This was used for SL legendaries but nothing in DF.
+
+  offhandID: number = 0; // Only used for correctly translating weapon combos.
+  mainHandUniqueHash?: string;
+  offHandUniqueHash?: string;
 
   constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
     this.id = id;
