@@ -13,6 +13,7 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 
 /**
  * == Top Gear Engine ==
@@ -68,19 +69,7 @@ function autoSocketItems(itemList) {
   return itemList;
 }
 
-// TODO: Add blocklist. It can be fairly basic.
-const generateReportCode = () => {
-  let result = "";
-  const stringLength = 12;
-  const possChars ='abcdefhijklmnopqrstuvwxyz';
 
-  const charLength = possChars.length;
-  for ( let i = 0; i < stringLength; i++ ) {
-      result += possChars.charAt(Math.floor(Math.random() * charLength));
-  }
-
-  return result;
-}
 
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
@@ -451,7 +440,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
 
   // == Enchants and gems ==
-  const enchants = userSettings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
+  const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
   // Sockets
   //const highestWeight = getHighestWeight(castModel);
@@ -569,8 +558,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     else if (stat === "mana") {
       hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
     }
-    else if (stat === "allyStats" && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
-      hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
+    else if (stat === "allyStats") {
+      if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
+        hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
+      }
     }
     else {
       hardScore += evalStats[stat] * adjusted_weights[stat];

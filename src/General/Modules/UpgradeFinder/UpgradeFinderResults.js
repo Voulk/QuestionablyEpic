@@ -12,12 +12,34 @@ import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
 import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
 import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
   };
+}
+
+function shortenReport(player, contentType, result) {
+  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
+
+  return report;
+}
+
+const sendReport = (shortReport) => {
+
+  /*
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
+  
+  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
+  .then(response => console.log(response));
+  */
 }
 
 export default function UpgradeFinderResults(props) {
@@ -29,10 +51,12 @@ export default function UpgradeFinderResults(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const { t } = useTranslation();
   const result = props.itemSelection;
-  console.log(result);
+  
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
-  console.log("Total Item Count: " + itemDifferentials.length);
+  //console.log("Total Item Count: " + itemDifferentials.length);
+  //console.log(JSON.stringify(itemDifferentials));
+  sendReport(shortenReport(props.player, result.contentType, result));
   const gameType = useSelector((state) => state.gameType);
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
   const handleTabChange = (event, newValue) => {
@@ -80,11 +104,11 @@ export default function UpgradeFinderResults(props) {
                 {/* Mythic Plus */}
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
                 {/* PVP */}
-                <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} />
+                {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
                 {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(2)} />
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(3)} />
               </Tabs>
             </AppBar>
           </Grid>
@@ -117,7 +141,7 @@ export default function UpgradeFinderResults(props) {
             </UFTabPanel>
           </Grid>
 
-          {/* PVP */}
+          {/* PVP 
           <Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
@@ -126,11 +150,11 @@ export default function UpgradeFinderResults(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid>*/}
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={3}>
+            <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
                   <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -141,7 +165,7 @@ export default function UpgradeFinderResults(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={4}>
+            <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />

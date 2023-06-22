@@ -22,17 +22,17 @@ export const evokerDefaultSpellData = (contentType) => {
       intellect: 1,
       haste: 0.4, 
       crit: 0.496, 
-      mastery: 0.68, 
+      mastery: 0.682, 
       versatility: 0.501, 
       leech: 0.56,
       defaults: true,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.55,
-      crit: 0.535,
-      mastery: 0.43,
-      versatility: 0.48,
+      haste: 0.535,
+      crit: 0.531,
+      mastery: 0.454,
+      versatility: 0.51,
       leech: 0.4,
       defaults: true,
     };
