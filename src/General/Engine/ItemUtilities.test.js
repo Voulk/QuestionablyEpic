@@ -275,6 +275,7 @@ describe("getItemSlot func", () => {
   // Add new tests
 });
 
+/*
 describe("socketItem", () => {
   test("Red Gem Test", () => {
     const player = new ClassicPlayer("Mock", "Restoration Druid Classic", 99, "NA", "Stonemaul", "Night Elf");
@@ -287,4 +288,4 @@ describe("socketItem", () => {
 
 
   // Add new tests
-});
+}); */

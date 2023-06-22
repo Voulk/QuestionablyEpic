@@ -113,7 +113,7 @@ describe("Top Gear full test", () => {
         //console.log(player.activeItems);
         const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
-        const setStats = result.itemSet.setStats;
+        //const setStats = result.itemSet.setStats;
 
         expect(true).toEqual(true); // Put stats check in here.
     });
