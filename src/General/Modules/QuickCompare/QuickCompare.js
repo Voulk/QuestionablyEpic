@@ -6,7 +6,7 @@ import { Grid, Typography, Divider, Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import "./QuickCompare.css";
-import { buildWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos } from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
@@ -153,7 +153,7 @@ export default function QuickCompare(props) {
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   // const calculateScore = (item) => {};
 
-  const wepCombos = buildWepCombos(props.player);
+  const wepCombos = buildNewWepCombos(props.player);
 
   return (
     <div className={classes.header}>

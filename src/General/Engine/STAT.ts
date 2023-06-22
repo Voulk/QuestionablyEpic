@@ -31,14 +31,13 @@ export const BASESTAT = {
   },
 };
 
-export const STATDIMINISHINGRETURNS = {
+export const STATDIMINISHINGRETURNS: Record<string, number[]> = {
   CRIT: [5400, 7200, 9000, 10800, 12600],
   MASTERY: [5400, 7200, 9000, 10800, 12600],
   VERSATILITY: [6150, 8200, 10250, 12300, 14350],
   HASTE: [5100, 6800, 8500, 10200, 11900],
-  LEECH: [1100, 1100, 1650, 1650, 2200, 2200]
-
-}
+  LEECH: [1100, 1100, 1650, 1650, 2200, 2200],
+};
 
 export const getMasteryPercentage = (statQuantity: number, spec: string) => {
   return statQuantity / STATCONVERSION.MASTERY * STATCONVERSION.MASTERYMULT[spec];

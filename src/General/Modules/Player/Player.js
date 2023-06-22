@@ -167,7 +167,7 @@ export class Player {
   scoreActiveItems = (contentType, playerSettings) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType, this.gameType, playerSettings);
+      item.softScore = scoreItem(item, this, contentType, "Retail", playerSettings);
 
       // Error checking
       if (item.softScore < 0) {

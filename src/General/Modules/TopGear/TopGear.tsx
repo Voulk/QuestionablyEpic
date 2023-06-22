@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
-import { buildNewWepCombos, buildWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 //import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";

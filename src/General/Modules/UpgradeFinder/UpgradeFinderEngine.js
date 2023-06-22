@@ -1,7 +1,7 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
@@ -18,6 +18,7 @@ The core Upgrade Finder loop is as follows:
 
 // This is a copy paste from buildWepCombos.
 // TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it.
+/*
 export function buildWepCombosUF(player, itemList) {
   let wep_list = [];
   let main_hands = filterItemListByType(itemList, "1H Weapon");
@@ -63,7 +64,7 @@ export function buildWepCombosUF(player, itemList) {
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
 
   return wep_list.slice(0, 9);
-}
+} */
 
 // This is a new version of WepCombos that simply stores them in an array instead of in a weird 
 // composite "fake item". Top Gear can then separate them after combinations have been built.
