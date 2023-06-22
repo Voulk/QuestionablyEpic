@@ -1,7 +1,8 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, buildPrimGems } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp } from "../../Engine/ItemUtilities";
+import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
 import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
 import critSocket from "../../../Images/Resources/critSocket.jpg";

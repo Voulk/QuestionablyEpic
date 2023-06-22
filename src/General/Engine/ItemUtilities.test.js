@@ -12,7 +12,6 @@ import {
   checkItemExists,
   getItemSlot,
   socketItem,
-  getLegendaryID,
   getItem
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";

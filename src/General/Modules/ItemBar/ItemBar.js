@@ -18,7 +18,6 @@ import {
   scoreItem,
   getItemAllocations,
   calcStatsAtLevel,
-  getLegendaryID,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";

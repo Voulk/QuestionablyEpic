@@ -1,7 +1,8 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, buildPrimGems } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
