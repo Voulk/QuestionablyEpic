@@ -353,6 +353,10 @@
         "chromaticEssenceBuff": {
           "title": "Ominous Chromatic Buff",
           "tooltip": "Select which buff you'd like to run."
+        },
+        "chromaticEssenceAllies": {
+          "title": "Ominous Chromatic Allies",
+          "tooltip": "Chromatic Ominous can be calculated with all or no ally buffs."
         }
 
         
