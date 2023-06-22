@@ -7,6 +7,7 @@ export default function MessageOfTheDay(props) {
   const messageOfTheDay = {
     "Retail": [
       "-> If you raid mythic, add a log to best analyze Onyx Annulet.",
+      "-> Note that Dragonscale value dropped slightly, but it's still an excellent trinket.",
       "-> Tier Set formulas are preliminary."
   ],
   "Classic": [""]
