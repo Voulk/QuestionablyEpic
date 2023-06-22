@@ -43,7 +43,6 @@ export default function RetailSettings(props) {
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
 
   const specBuilds = props.player.getAllModels(props.contentType);
-  console.log(specBuilds);
 
   const updateValue = (setting, value) => {
     const newPlayerSettings = { ...playerSettings };

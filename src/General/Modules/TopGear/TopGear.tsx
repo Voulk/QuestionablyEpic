@@ -419,16 +419,24 @@ export default function TopGear(props: any) {
 
       instance
         .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, playerSettings, strippedCastModel)
-        .then((result: TopGearResult) => {
-          // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
-          apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          //props.setTopResult(result);
-          const shortResult = shortenReport(result, props.player);
-          if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
-          props.setTopResult(shortResult);
+        .then((result: TopGearResult | null) => {
+          if (result instanceof TopGearResult) {
+            // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
+            apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
+            //props.setTopResult(result);
+            const shortResult = shortenReport(result, props.player);
+            if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
+            props.setTopResult(shortResult);
 
-          instance.terminate();
-          history.push("/report/");
+            instance.terminate();
+            history.push("/report/");
+          }
+          else { // A valid set was not returned.
+            setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
+            console.log("Null Set Returned");
+            instance.terminate();
+            setBtnActive(true);
+          }
         })
         .catch((err: Error) => {
           // If top gear crashes for any reason, log the error and then terminate the worker.

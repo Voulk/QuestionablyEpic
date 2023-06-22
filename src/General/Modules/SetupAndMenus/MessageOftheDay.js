@@ -6,8 +6,7 @@ export default function MessageOfTheDay(props) {
   const gameType = props.gameType || "Retail";
   const messageOfTheDay = {
     "Retail": [
-      "-> If you raid mythic, add a log to best analyze Onyx Annulet.",
-      "-> Tier Set formulas are preliminary."
+      "-> THIS IS THE TEST VERSION OF QE LIVE. Results and tools in general may not be stable.",
   ],
   "Classic": [""]
   }
