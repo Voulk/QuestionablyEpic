@@ -17,11 +17,11 @@ const initialState = {
   contentType: ls.get("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
-    incarnateAllies: { value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
+    incarnateAllies: { value: "Solo", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
     idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
-    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
+    //rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
     alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
-    enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
+    //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
     catalystLimit: { value: 1, options: [1, 2, 3], category: "topGear", type: "selector" },
     upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector" },
     primordialGems: {
@@ -31,8 +31,10 @@ const initialState = {
       type: "selector",
     },
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
-    healingDartsOverheal: { value: 60, options: [], category: "embellishments", type: "Entry" },
+    healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry" },
     lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
+    chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector" },
+    chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector" },
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
 };

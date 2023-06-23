@@ -290,27 +290,49 @@ export function getItemLevelBoost(bossID) {
   else if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
   else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
   else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkareth
-
+  
   else return 0;
 }
 
-export function getVeryRareItemLevelBoost(itemID, bossID) {
+const isMaxxed = (difficulty) => {
+  return difficulty === 2 || difficulty === 4;
+}
+
+export function getVeryRareItemLevelBoost(itemID, bossID, difficulty) {
   const boostedItems = [204465, 204201, 204202, 204211, 202612];
 
   if (boostedItems.includes(itemID)) {
-    if (bossID === 2520 || bossID === 2523) return 7;
-    else return 6;
+    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
+    if (difficulty === 2 && itemID !== 202612) return 4;
+    else if (difficulty === 4 && itemID !== 202612) return 3;
+    else if (bossID === 2520 || bossID === 2523) return 7;
+    else if (itemID !== 202612) return 6;
+    else return 0;
   } 
   else return 0;
 }
 
-export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, pvpRank = 0) {
+export function filterItemListByDropLoc(itemList, sourceInstance, sourceBoss, loc, difficulty) {
+  let temp = itemList.filter(function (item) {
+    //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+    return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
+  });
+  return temp;
+
+}
+
+export function filterItemListBySource(itemList, sourceInstance, sourceBoss, level, difficulty = 0) {
   let temp = itemList.filter(function (item) {
     let itemEncounter = item.source.encounterId;
     let expectedItemLevel = level;
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
-    if ('source' in item && item.source.instanceId === 1208) expectedItemLevel += getItemLevelBoost(itemEncounter) + getVeryRareItemLevelBoost(item.id, itemEncounter);
+    if ('source' in item && item.source.instanceId === 1208) {
+      const max = isMaxxed(difficulty);
+      if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
+      else expectedItemLevel += getItemLevelBoost(itemEncounter) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
+      
+    }
     else if (item.source.instanceId === 1205) { // World Bosses
       if (itemEncounter === 2531) expectedItemLevel = 415
       else expectedItemLevel = 389;
@@ -529,6 +551,8 @@ function getItemCat(slot) {
   }
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
 export function buildNewWepCombos(player, active = false, equipped = false) {
   let wep_list = [];
   let main_hands = player.getActiveItems("1H Weapon", active, equipped);
@@ -553,10 +577,9 @@ export function buildNewWepCombos(player, active = false, equipped = false) {
   }
 
   for (let j = 0; j < two_handers.length; j++) {
-    combos.push(two_handers[j]);
+    combos.push([two_handers[j]]);
   }
 
-  //wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
   return combos
 }
 
@@ -752,18 +775,19 @@ export function getPrimordialImage(id) {
 
 export function buildPrimGems(gemCombo) {
   const gemData = {socket: [], string: "&gems="}
-  for (i = 0; i < 3; i++) {
+
+  for (let i = 0; i < 3; i++) {
     //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
     gemData.string += gemCombo[i] + ":";
     gemData.socket.push (
       <div style={{ marginRight: 4, display: "inline"}} >
-        <a
+        {/*<a
         data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
         target="_blank"
         rel="noopener noreferrer"
-      >
+    > */}
         <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
-        </a>
+        {/*</a>*/}
       </div>
     );
     }

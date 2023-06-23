@@ -176,7 +176,7 @@ export const dungeonTrinketData = [
       const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
+      const whelpSetting = "Crit Buff"; // getSetting(additionalData.settings, "rubyWhelpShell");
       if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = bigProc; procRates["HasteProc"] = smallProc; }
@@ -266,6 +266,29 @@ export const dungeonTrinketData = [
         bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
       }
 
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Irideus Fragment                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    // This is technically a party buff but because it comes with downside, that portion isn't currently included.
+    name: "Irideus Fragment",
+    effects: [
+      { // +Int Portion
+        coefficient: 0.214403, 
+        table: -1,
+        duration: 20,
+        cooldown: 180,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const averageStacks = 20 / 2;
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStacks * 20 / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c" + data[0].cooldown, "cooldownMult") || 1);
 
       return bonus_stats;
     }

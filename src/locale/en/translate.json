@@ -251,9 +251,11 @@
     "Raid": "Raid",
     "RaidDifficulty": {
       "Heroic": "Heroic",
+      "Heroic (Max)": "Heroic (Max)",
       "Mythic": "Mythic",
       "Normal": "Normal",
-      "Raid Finder": "Looking for Raid"
+      "Normal (Max)": "Normal (Max)",
+      "Raid Finder": "LFR"
     },
     "Region": "Region",
     "Remove": "Remove",
@@ -347,6 +349,14 @@
         "topGearAutoGem": {
           "title": "Auto-add Sockets",
           "tooltip": "Automatically add sockets to eligible items."
+        },
+        "chromaticEssenceBuff": {
+          "title": "Ominous Chromatic Buff",
+          "tooltip": "Select which buff you'd like to run."
+        },
+        "chromaticEssenceAllies": {
+          "title": "Ominous Chromatic Allies",
+          "tooltip": "Chromatic Ominous can be calculated with all or no ally buffs."
         }
 
         

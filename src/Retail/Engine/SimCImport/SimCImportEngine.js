@@ -206,7 +206,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   let itemEquipped = !line.includes("#");
   let bonusIDS = "";
   let uniqueTag = "";
-  let itemQuality = 4;
+  let itemQuality = 0;
   let upgradeTrack = "";
   let upgradeRank = 0;
 
@@ -215,7 +215,6 @@ export function processItem(line, player, contentType, type, playerSettings = {}
   let itemLevelGain = 0;
   let itemBaseLevelPriority = 999; // Blizzard like to include more than 1 baseLevel ID on items with a weird priority system. So we'll keep track of that.
   
-
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
   for (var j = 0; j < infoArray.length; j++) {
@@ -227,12 +226,14 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     //itemSlot = correctCasing(
     //  info.replace("1", "").replace("=", "").replace("# ", "")
     //);
-    else if (info.includes("bonus_id=")) {
+    else if (info.includes("bonus_id=") && !(info.includes("gem_bonus_id="))) {
+      
       itemBonusIDs = info.split("=")[1].split("/");
       bonusIDS = itemBonusIDs.join(":");
-    } else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
+    } 
+    else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
-    else if (info.includes("id=")) itemID = parseInt(info.split("=")[1]);
+    else if (info.includes("id=") && !(info.includes("gem_bonus_id="))) itemID = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
     else if (info.includes("ilevel=") || info.includes("ilvl=")) levelOverride = parseInt(info.split("=")[1]);
@@ -428,7 +429,7 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       item.upgradeRank = upgradeRank || 0;
     }
 
-    item.quality = itemQuality;
+    item.quality = itemQuality !== 0 ? itemQuality : (getItemProp(itemID, "quality") || 4);
     item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
 
     return item;  

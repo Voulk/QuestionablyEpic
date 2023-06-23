@@ -2,7 +2,7 @@ import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities"
 import Player from '../../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
-import { buildWepCombos } from "General/Engine/ItemUtilities"
+import { buildNewWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
 import each from "jest-each";
 
@@ -111,7 +111,7 @@ describe("Top Gear full test", () => {
 
         }
         //console.log(player.activeItems);
-        const wepCombos = buildWepCombos(player, true);
+        const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
         const setStats = result.itemSet.setStats;
 
@@ -131,7 +131,7 @@ describe("Top Gear full test", () => {
 
         }
         //console.log(player.activeItems);
-        const wepCombos = buildWepCombos(player, true);
+        const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
         const setEffects = result.itemSet.effectList;
 
@@ -151,7 +151,7 @@ describe("Top Gear full test", () => {
     
             }
             //console.log(player.activeItems);
-            const wepCombos = buildWepCombos(player, true);
+            const wepCombos = buildNewWepCombos(player, true);
             const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
             const setEffects = result.itemSet.effectList;
     

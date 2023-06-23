@@ -10,8 +10,59 @@
 export const changeLog = [
   {
     version: "10.1.0",
+    update: 13,
+    date: "21 June",
+    changes: [ 
+      "New Setting: Chromatic Essence Ally Buffs.",
+      "Screaming Black Dragonscale will now show at the correct item level in MAX versions of the Upgrade Finder."
+  ]},
+  {
+    version: "10.1.0",
+    update: 12,
+    date: "16 June",
+    changes: [ 
+      "New Setting: Chromatic Essence Stat / Resonance.",
+      "Added 5 new Trinket Deep Dive cards.",
+      "Bugfix: The expected uptime of Dragonscale and Call to Chaos decreased slightly to better match in-game values. Due to the way these trinkets proc they just don't live up to the uptime the spell data would suggest. Note that while this changes trinket order, both are still powerful options.",
+      "In game Hotfix: Magmawclaw Lure nerfed by ~67%."
+  ]},
+  {
+    version: "10.1.0",
+    update: 11,
+    date: "12 June",
+    changes: [ 
+      "Fixed a bug where Annulet could import at a higher item level depending on your version of the SimC addon.",
+      "Added Magmaclaw Lure.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 10,
+    date: "7 June",
+    changes: [ 
+      "Added Heroic and Normal Max versions to Upgrade Finder so that you can test fully upgraded versions of items.",
+      "Added an Avenging Crusader playstyle for Holy Paladin.",
+      "Toxic Thorn boots now assume you spend more of the procs on healing and fewer on damage.",
+  ]},
+  {
+    version: "10.1.0",
+    update: 9,
+    date: "23 May",
+    changes: [ 
+      "You can now click the cog on items to change its item level.",
+      "New trinkets: Ward of Faceless Ire, Eye of Blazing Power (Timewalking), Necromantic Focus (Timewalking).",
+      "New Embellishment: Slimy Expulsion Boots.",
+      "Updated trinket chart with some missing items.",
+      "Greatly improved error checking in top gear.",
+      "Incarnate Icon now defaults to solo only.",
+      "The legendary Evoker staff should now import and be scored correctly.",
+      "Bugfix: Fixed a bug where three embellishments could be recommended if one was on a 1H Weapon or offhand.",
+      "Bugfix: Items using a new in-game CurveID should now import correctly.",
+      "Bugfix (Visual): The trinket chart will no longer occasionally show duplicates of icons"
+  ]},
+  {
+    version: "10.1.0",
     update: 8,
-    date: "14 May",
+    date: "17 May",
     changes: [ 
       "In game changes to Healing Darts, Adaptive Dracothyst Armguards and Sporecloak.",
       "Bugfix: Shaman tier 30 should now be correctly valued in all cases.",

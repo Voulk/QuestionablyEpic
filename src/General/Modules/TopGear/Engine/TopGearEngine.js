@@ -13,6 +13,7 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 
 /**
  * == Top Gear Engine ==
@@ -68,19 +69,7 @@ function autoSocketItems(itemList) {
   return itemList;
 }
 
-// TODO: Add blocklist. It can be fairly basic.
-const generateReportCode = () => {
-  let result = "";
-  const stringLength = 12;
-  const possChars ='abcdefhijklmnopqrstuvwxyz';
 
-  const charLength = possChars.length;
-  for ( let i = 0; i < stringLength; i++ ) {
-      result += possChars.charAt(Math.floor(Math.random() * charLength));
-  }
-
-  return result;
-}
 
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
@@ -206,7 +195,7 @@ function createSets(itemList, rawWepCombos, spec) {
       splitItems[slot].push(itemList[i]);
     }
   }
-  slotLengths.Weapon = Object.keys(wepCombos).length;
+  slotLengths.Weapon = wepCombos.length;
 
   for (var head = 0; head < slotLengths.Head; head++) {
     let softScore = { head: splitItems.Head[head].softScore };
@@ -275,8 +264,10 @@ function createSets(itemList, rawWepCombos, spec) {
                                       splitItems.Finger[finger2],
                                       splitItems.Trinket[trinket],
                                       splitItems.Trinket[trinket2],
-                                      wepCombos[weapon],
+                                      wepCombos[weapon][0]
                                     ];
+                                    if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
+                                    //console.log(JSON.stringify(wepCombos[weapon]));
                                     let sumSoft = sumScore(softScore);
                                     itemSets.push(new ItemSet(setCount, includedItems, sumSoft, spec));
                                     setCount++;
@@ -311,15 +302,25 @@ function buildDifferential(itemSet, primeSet, player, contentType) {
   };
 
   for (var x = 0; x < primeList.length; x++) {
-    if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {
+    // Check if the other set has the corresponding slot.
+    if ((primeList[x].slot === "Offhand" && !diffList[x])) {
+      // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
+      continue;
+    }
+    if (diffList[x] && primeList[x].uniqueHash !== diffList[x].uniqueHash) {
       differentials.items.push(diffList[x]);
       doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
 
+      // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
         differentials.items.push(diffList[x - 1]);
       }
     }
   }
+  if (diffList.length > primeList.length) {
+    differentials.items.push(diffList[diffList.length - 1]);
+  }
+
   return differentials;
 }
 
@@ -439,7 +440,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
 
   // == Enchants and gems ==
-  const enchants = userSettings.enchantItems ? enchantItems(bonus_stats, setStats.intellect, castModel) : {};
+  const enchants = enchantItems(bonus_stats, setStats.intellect, castModel);
 
   // Sockets
   //const highestWeight = getHighestWeight(castModel);
@@ -557,8 +558,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     else if (stat === "mana") {
       hardScore += evalStats[stat] * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
     }
-    else if (stat === "allyStats" && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
-      hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
+    else if (stat === "allyStats") {
+      if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
+        hardScore += evalStats[stat] * CONSTANTS.allyStatWeight;
+      }
     }
     else {
       hardScore += evalStats[stat] * adjusted_weights[stat];

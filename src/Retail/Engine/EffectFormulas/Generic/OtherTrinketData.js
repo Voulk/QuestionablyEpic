@@ -434,5 +434,86 @@ export const otherTrinketData = [
       return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings);
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Eye of Blazing Power                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Eye of Blazing Power",
+    effects: [
+      {  // Heal effect
+        coefficient: 118.3393,
+        table: -9,
+        secondaries: ['versatility', 'crit'],
+        efficiency: 0.85,
+        ppm: 60 / 50, // ICD: 45
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm / 60 * player.getStatMults(data[0].secondaries);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Necromantic Focus                                          */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Necromantic Focus",
+    effects: [
+      { // Small Proc
+        coefficient: 0.058876 * 0.8, // Nerfed
+        table: -7,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      let averageStacks = 0;
+      const spec = player.spec;
+
+      if (spec === "Discipline Priest") averageStacks = 10;
+      else if (spec === "Holy Paladin") averageStacks = 8.7;
+      else if (spec === "Holy Priest" || spec === "Resto Druid" || spec === "Restoration Shaman") averageStacks = 1.5;
+      else if (spec === "Mistweaver Monk") averageStacks = 0;
+      else if (spec === "Preservation Evoker") {
+        const fireBreathCPM = 1.95;
+        averageStacks = 20 * 5 * player.getStatPerc('haste') * fireBreathCPM / 60; // duration x average stacks x cpm / 60
+      }
+
+
+      bonus_stats.mastery = processedValue(data[0], itemLevel) * averageStacks;
+      return bonus_stats;
+
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                             Magmaclaw Lure                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Magmaclaw Lure",
+    effects: [
+      { 
+        coefficient: 448.172 * 0.331, // Nerf
+        table: -9,
+        secondaries: ['versatility'],
+        cooldown: 150,
+        efficiency: {Raid: 0.62, Dungeon: 0.76}, //
+        targets: 5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
+
+      return bonus_stats;
+    }
+  },
 
 ]

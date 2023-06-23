@@ -1,7 +1,7 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
 import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
-import { paladinCasterSpecialQueries, paladinCasterSpellData, paladinCasterStatWeights } from "./ClassDefaults/Paladin/PaladinCaster";
+import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/Paladin/PaladinAvengingCrusader";
 import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinMelee";
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
@@ -63,8 +63,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 115000,
-      rawhps: 130000,
+      hps: 110000,
+      rawhps: 125000,
       dps: 9000,
       fightLength: 400,
       reportID: "Default",
@@ -86,28 +86,28 @@ class CastModel {
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights("Raid");
-        this.fightInfo.dps = 6000;
+        this.fightInfo.dps = 17000;
       }
-      else if (modelID === "Caster Default") {
-        this.modelName = "Caster Default";
-        spellList = paladinCasterSpellData(contentType);
-        specialQueries = paladinCasterSpecialQueries(contentType);
-        this.baseStatWeights = paladinCasterStatWeights("Raid");
-        this.fightInfo.dps = 2100;
+      else if (modelID === "Avenging Crusader") {
+        this.modelName = "Avenging Crusader";
+        spellList = paladinACSpellData(contentType);
+        specialQueries = paladinACSpecialQueries(contentType);
+        this.baseStatWeights = paladinACStatWeights("Raid");
+        this.fightInfo.dps = 15000;
       }
       else if (modelID === "Default") { // Dungeon
         this.modelName = "Default";
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights(contentType);
-        this.fightInfo.dps = 4800;
+        this.fightInfo.dps = 25000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
       this.modelName = "Default";
       spellList = shamanDefaultSpellData(contentType);
       specialQueries = shamanDefaultSpecialQueries(contentType);
       this.baseStatWeights = shamanDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 825 : 4600);
+      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
@@ -117,14 +117,14 @@ class CastModel {
         spellList = monkDefaultSpellData("Raid");
         specialQueries = monkDefaultSpecialQueries("Raid");
         this.baseStatWeights = monkDefaultStatWeights("Raid");
-        this.fightInfo.dps = 9000;
+        this.fightInfo.dps = 14000;
       }
       else if (modelID === "Dungeon Default") {
         this.modelName = "Dungeon Default"
         spellList = monkDefaultSpellData("Dungeon");
         specialQueries = monkDefaultSpecialQueries(contentType);
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
-        this.fightInfo.dps = 2100;
+        this.fightInfo.dps = 16000;
       }
       else if (modelID === "Sinister Teachings") {
         this.modelName = "Sinister Teachings"
@@ -154,7 +154,7 @@ class CastModel {
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
+        this.fightInfo.dps = (contentType === "Raid" ? 14000 : 17500);
       }
 
 
@@ -163,7 +163,7 @@ class CastModel {
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
+      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 13500);
     } 
     else if (spec === SPEC.PRESEVOKER) {
       // TODO
@@ -171,7 +171,7 @@ class CastModel {
       spellList = evokerDefaultSpellData(contentType);
       specialQueries = evokerDefaultSpecialQueries(contentType);
       this.baseStatWeights = evokerDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 875 : 2100);
+      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 18000);
     } 
     
     // Burning Crusade Profiles

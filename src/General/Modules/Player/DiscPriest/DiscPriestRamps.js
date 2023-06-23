@@ -206,12 +206,12 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     const flatHealBonus = (spellName === "Power Word: Shield" && checkBuffActive(state.activeBuffs, "T29_4")) ? state.activeBuffs.filter(function (buff) {return buff.name === "T29_4"})[0].value : 0
 
-    const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS, flatHealBonus) * (1 - spell.overheal) * healingMult * targetMult;
+    const healingVal = getSpellRaw(spell, currentStats, DISCCONSTANTS, flatHealBonus) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
     if (!spellName.includes("hot") || true) {
-        let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.overheal * 100}%`;
+        let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%`;
         if (targetMult > 1) base += `, ${spell.targets} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
         base += ")";
@@ -464,7 +464,9 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
                 
             });   
-            nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
+            if (fullSpell[0].castTime === 0 && fullSpell[0].offGCD) nextSpell += 0;
+            else if (fullSpell[0].castTime === 0 && !(fullSpell[0].offGCD)) nextSpell += (1.5 / getHaste(currentStats));
+            else nextSpell += (fullSpell[0].castTime / getHaste(currentStats));
         }
     }
 
