@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc } from "../EffectUtilities";
 
 export const raidTrinketData = [
   {
@@ -17,13 +17,17 @@ export const raidTrinketData = [
         ppm: 1,
       },
       { // Self-damage portion
-
+        coefficient: -16.71962,
+        table: -8,
+        ticks: 6,
+        ppm: 1,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player);
       //if (player.spec === "Restoration Druid" || player.spec === "Holy Priest") bonus_stats.intellect *= 0.25;
 
       return bonus_stats;
@@ -69,13 +73,36 @@ export const raidTrinketData = [
         stat: "intellect",
         duration: 18,
         classMod: {"Preservation Evoker": 1, "Holy Paladin": 1},
-        ppm: 1,
+        ppm: 1 * 0.775, // Ultimately neither spec generates enough AoE events to get close to the advertised PPM.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * (data[0].classMod[player.spec] || 0.5);
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         Ward of Faceless Ire                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Ward of Faceless Ire",
+    effects: [
+      {  // Heal effect
+        coefficient: 371.7325,
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.62, Dungeon: 0.78}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+        cooldown: 120, 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) / data[0].cooldown;
 
       return bonus_stats;
     }
@@ -85,6 +112,11 @@ export const raidTrinketData = [
     /*                                    Rashok's Molten Heart                                       */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
+    -- Spells that can proc it (incomplete list) --
+    Evoker: 
+    - Emerald Blossom
+    - Time Spiral
+
     */
     name: "Rashok's Molten Heart",
     effects: [
@@ -136,7 +168,9 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Screaming Black Dragonscale                                   */
     /* ---------------------------------------------------------------------------------------------- */
-    /* This shouldn't scale with haste, but does.
+    /* This has an awkward 15s internal cooldown which makes modelling expected uptime much more annoying.
+    // This is an annoying PPM + ICD based trinket and so we're actually going to simulate the uptime outside of the app and use that fixed value 
+    // instead of calculating it here since simulating it each time would be much slower and still end on the same result.
     */
     name: "Screaming Black Dragonscale",
     effects: [
@@ -146,6 +180,7 @@ export const raidTrinketData = [
         stat: "crit",
         duration: 15,
         ppm: 3,
+        expectedUptime: 0.475,
       },
       { // Leech Portion
         coefficient: 0.256105,
@@ -157,8 +192,13 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60;
-      bonus_stats.leech = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm / 60;
+
+      
+      //bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
+      //bonus_stats.leech = runGenericPPMTrinket(data[1], itemLevel);
+
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].expectedUptime;
+      bonus_stats.leech = processedValue(data[1], itemLevel) * data[0].expectedUptime;
 
       return bonus_stats;
     }
@@ -181,16 +221,36 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       // Versatility Portion
-      let bonus_stats = {};
-      const bestSecondary = player.getHighestStatWeight(additionalData.contentType);
-      bonus_stats[bestSecondary] = processedValue(data[0], itemLevel);
+      let bonus_stats = {haste: 0, crit: 0, mastery: 0, versatility: 0};
+      const buffSetting = getSetting(additionalData.settings, "chromaticEssenceBuff");
+      const includeAllies = getSetting(additionalData.settings, "chromaticEssenceAllies");
+      let primaryBuff = (buffSetting === "Automatic" ? player.getHighestStatWeight(additionalData.contentType) : buffSetting).toLowerCase();
+      const primaryValue = processedValue(data[0], itemLevel);
+      const secondaryValue = includeAllies ? processedValue(data[1], itemLevel) : 0;
 
       // Buffs from allies
-      ["haste", "versatility", "crit", "haste"].forEach(stat => {
-        const secondaryValue = processedValue(data[1], itemLevel);
-        if (stat !== bestSecondary) bonus_stats[stat] = secondaryValue * 1.25; // The Obsidian buff splits its buff into four.
-      });
 
+      ["haste", "versatility", "crit", "mastery", "quad buff"].forEach(stat => {
+        if (stat === "quad buff") {
+          if (primaryBuff === "quad buff") {
+            bonus_stats["haste"] += primaryValue / 4;
+            bonus_stats["crit"] += primaryValue / 4;
+            bonus_stats["versatility"] += primaryValue / 4;
+            bonus_stats["mastery"] += primaryValue / 4;
+          }
+          else {
+            bonus_stats["haste"] += secondaryValue / 4;
+            bonus_stats["crit"] += secondaryValue / 4;
+            bonus_stats["versatility"] += secondaryValue / 4;
+            bonus_stats["mastery"] += secondaryValue / 4;
+          }
+        }
+        else {
+          if (stat === primaryBuff) bonus_stats[stat] += primaryValue;
+          else bonus_stats[stat] += secondaryValue;
+        }
+        
+      });
       return bonus_stats;
     }
   },

@@ -3,9 +3,10 @@ import React from "react";
 // WowheadLink component definition.
 // This component creates a link to Wowhead with optional query parameters.
 // It handles two types: 'item' and 'spell', and returns the children for 'none'.
-const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, keyProp = "defaultKey", rank }) => {
-  // If type is 'none', return the children.
-  if (type === "none") {
+
+const WowheadTooltip = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, keyProp = "defaultKey",rank }) => {
+  // If type is 'none' or Onyx Annulet, return the children.
+  if (type === "none" || id === 203460) {
     return children;
   }
 

@@ -131,6 +131,17 @@ export const PALADINSPELLDB = {
         value: (20 * 170), // 
         buffDuration: 20,
     }],
+    "Avenging Crusader": [{
+        spellData: {id: 318849, icon: "spell_holy_avenginewrath", cat: "cooldown"},
+        type: "buff",
+        name: "Avenging Crusader",
+        castTime: 0,
+        cost: 0,
+        cooldown: 45,
+        holyPower: -5,
+        buffType: 'special',
+        buffDuration: 12,
+    }],
     "Divine Toll": [{
         spellData: {id: 31884, icon: "", cat: "cooldown"},
         type: "function",
@@ -218,7 +229,7 @@ export const baseTalents = {
         };
         addBuff(state, buff, "Seal of Might")
 
-        stats.intellect *= (1 + 0.02 * points);
+        //stats.intellect *= (1 + 0.02 * points);
     }}, 
 
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
@@ -259,7 +270,7 @@ export const baseTalents = {
     // Strength of Conviction - While in Consecration, Word of Glory heals for 10% more.
 
     // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
-    divinePurpose: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    divinePurpose: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const buffSpell = {
             name: "Divine Purpose",
             chance: 0.15, //0.075 * points,
@@ -366,6 +377,7 @@ export const baseTalents = {
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
 
     // Might - Gain 20% Crit during wings. Currently just built in.
+    avengingCrusader: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
@@ -373,18 +385,32 @@ export const baseTalents = {
 
     // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
     awakening: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Light of Dawn'].push({
-            name: "Avenging Wrath",
-            chance: 0.075 * points,
-            type: "buff",
-            castTime: 0,
-            cost: 0,
-            cooldown: 120,
-            buffType: 'statsMult',
-            stat: 'crit',
-            value: (20 * 170), // 
-            buffDuration: 8,
-        });
+
+        if (state.talents.avengingCrusader.points > 0) {
+            spellDB['Light of Dawn'].push({
+                name: "Avenging Crusader",
+                chance: 0.075 * points,
+                type: "buff",
+                buffType: 'special',
+                buffDuration: 8,
+            });
+        }
+        else {
+            spellDB['Light of Dawn'].push({
+                name: "Avenging Wrath",
+                chance: 0.075 * points,
+                type: "buff",
+                castTime: 0,
+                cost: 0,
+                cooldown: 120,
+                buffType: 'statsMult',
+                stat: 'crit',
+                value: (20 * 170), // 
+                buffDuration: 8,
+            });
+        }
+
+
 
     }}, 
 

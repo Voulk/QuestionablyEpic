@@ -122,7 +122,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
   if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
 
-  return score;
+  return Math.max(score, 0);
 
 };
 

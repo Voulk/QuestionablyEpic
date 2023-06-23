@@ -65,6 +65,38 @@ export function buildWepCombosUF(player, itemList) {
   return wep_list.slice(0, 9);
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
+export function buildNewWepCombosUF(player, itemList) {
+  let wep_list = [];
+  let main_hands = filterItemListByType(itemList, "1H Weapon");
+  let off_hands = filterItemListByType(itemList, "Offhands");
+  let two_handers = filterItemListByType(itemList, "2H Weapon");
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push([two_handers[j]]);
+  }
+
+  return combos
+}
+
 export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
 
@@ -73,9 +105,10 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
-  const wepList = buildWepCombosUF(player, baseItemList);
+  //const wepList = buildWepCombosUF(player, baseItemList);
+  const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.getActiveModel(contentType);
-  //buildWepCombos(player, false, false); // TODO: DEL
+
 
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
@@ -100,7 +133,13 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
   const boostedItems = [204465, 204201, 204202, 204211, 202612]
-  if (instanceID === 1208) itemLevel = itemLevels.raid[playerSettings.raid[raidIndex]] + getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+  if (instanceID === 1208) {
+    const difficulty = playerSettings.raid[raidIndex];
+    itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
+    if (difficulty === 2 || difficulty === 4) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    else itemLevel += getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+
+  }
 
   // World Bosses
   else if (instanceID === 1205) {
@@ -151,11 +190,13 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const isRaid = primarySource === 1208 || primarySource === -22;
 
       if (isRaid) {
-        // Sepulcher
+        // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
+          item.dropLoc = "Raid";
+          item.dropDifficulty = playerSettings.raid[x];
 
           itemPoss.push(item);
         }
@@ -211,7 +252,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
 function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
-  const wepList = buildWepCombosUF(player, newItemList);
+  const wepList = buildNewWepCombosUF(player, newItemList);
   const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
 
   const newScore = newTGSet.itemSet.hardScore;
@@ -224,7 +265,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
 
-  return { item: item.id, level: item.level, score: differential, rawDiff: rawDiff, percDiff: percDiff };
+  return { item: item.id, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
 }
 
 function checkItemViable(rawItem, player) {

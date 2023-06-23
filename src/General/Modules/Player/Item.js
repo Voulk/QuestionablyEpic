@@ -99,7 +99,7 @@ class Item {
 
   getQualityColor() {
     const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity" || this.id === 2068200;
-    if (isLegendary) return "#ff8000";
+    if (isLegendary || this.quality === 5) return "#ff8000";
     else if (this.quality === 4) return "#a73fee";
     else if (this.quality === 3) return "#328CE3";
     else return "#1eff00";
