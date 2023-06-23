@@ -1,5 +1,5 @@
 // Returns Array of Healer Information replaces importHealerLogData in functions
-async function convertHealerData(data) {
+async function convertHealers(data) {
   console.log(data);
   let healers = [];
   const monkData = Object.keys(data.monkData.data.entries)
@@ -25,4 +25,4 @@ async function convertHealerData(data) {
   return healers;
 }
 
-export default convertHealerData;
+export default convertHealers;

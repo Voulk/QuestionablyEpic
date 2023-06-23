@@ -4,7 +4,7 @@ import {
 } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
-import convertHealerData from "General/Modules/FightAnalysis/Engine/Functions/convertHealerData.js";
+import convertHealers from "General/Modules/FightAnalysis/Engine/Functions/convertHealers";
 import getFightAnalysisData from "General/Modules/FightAnalysis/Engine/Functions/getFightAnalysisData";
 import getDamageTakenData from "General/Modules/FightAnalysis/Engine/Functions/getDamageTakenData";
 import getDefensiveCasts from "General/Modules/FightAnalysis/Engine/Functions/getDefensiveCasts";
@@ -35,7 +35,7 @@ export default async function updatechartdata(starttime, endtime, reportID, boss
 
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   const [healers, playerIDs, summary, damage, health, defensives] = await Promise.all([
-    convertHealerData(WCLDATA),
+    convertHealers(WCLDATA),
     convertCharacterIDs(WCLDATA.characterIDs.data.playerDetails),
     convertSummaryData(WCLDATA.summaryData.data.playerDetails),
     getDamageTakenData(reportID, id, boss, starttime, endtime),
