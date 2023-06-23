@@ -4,16 +4,16 @@ import {
 } from "../../CooldownPlanner/Functions/Functions";
 import moment from "moment";
 import { cooldownDB } from "../../CooldownPlanner/Data/CooldownDB";
-import convertHealerData from "./Functions/convertHealerData";
-import getFightAnalysisData from "./Functions/getFightAnalysisData";
-import getDamageTakenData from "./Functions/getDamageTakenData";
-import getDefensiveCasts from "./Functions/getDefensiveCasts";
-import convertCharacterIDs from "./Functions/convertCharacterIDs";
-// import convertEnemyIDs from "./Functions/convertEnemyIDs";
-import convertSummaryData from "./Functions/convertSummaryData";
-import getExternalCasts from "./Functions/getExternalCasts";
-import getCooldownCasts from "./Functions/getCooldownCasts";
-import getTalents from "./Functions/getTalents";
+import convertHealerData from "General/Modules/FightAnalysis/Engine/Functions/convertHealerData.js";
+import getFightAnalysisData from "General/Modules/FightAnalysis/Engine/Functions/getFightAnalysisData";
+import getDamageTakenData from "General/Modules/FightAnalysis/Engine/Functions/getDamageTakenData";
+import getDefensiveCasts from "General/Modules/FightAnalysis/Engine/Functions/getDefensiveCasts";
+import convertCharacterIDs from "General/Modules/FightAnalysis/Engine/Functions/convertCharacterIDs";
+// import convertEnemyIDs from "General/Modules/FightAnalysis/Engine/Functions/convertEnemyIDs";
+import convertSummaryData from "General/Modules/FightAnalysis/Engine/Functions/convertSummaryData";
+import getExternalCasts from "General/Modules/FightAnalysis/Engine/Functions/getExternalCasts";
+import getCooldownCasts from "General/Modules/FightAnalysis/Engine/Functions/getCooldownCasts";
+import getTalents from "General/Modules/FightAnalysis/Engine/Functions/getTalents";
 
 export default async function updatechartdata(starttime, endtime, reportID, boss, difficulty, id) {
   /* -------- Note we are using alot of imported functions Here to save bloat in the Code. -------- */
