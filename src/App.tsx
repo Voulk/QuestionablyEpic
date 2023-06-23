@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import CustomRoute from "./CustomRoute";
 import ReportRoute from "./ReportRoute";
@@ -20,9 +20,8 @@ import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELo
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
-import ErrorBoundary from "General/SystemTools/ErrorLogging/ErrorBoundary";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import ls from "local-storage";
+import * as ls from "local-storage";
 import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackBar";
 import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
@@ -30,33 +29,48 @@ import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/C
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import ReactGA from "react-ga";
+import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
+import Player from "General/Modules/Player/Player";
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
-class App extends Component {
-  constructor() {
-    super();
+const App = () => {
     /* ---------------- Here we bind functions to this component ---------------- */
     /* ---------- This is so they can be used as props in other modules --------- */
     /* -------------------- And they will change states here -------------------- */
-    this.handleCharSnackOpen = this.handleCharSnackOpen.bind(this);
-    this.handleCharUpdateSnackOpen = this.handleCharUpdateSnackOpen.bind(this);
-    this.handleLoginSnackOpen = this.handleLoginSnackOpen.bind(this);
-    this.handleSimCSnackOpen = this.handleSimCSnackOpen.bind(this);
-    this.handleLogSnackOpen = this.handleLogSnackOpen.bind(this);
-    this.handleEmailSnackOpen = this.handleEmailSnackOpen.bind(this);
-    this.handleEmailErrorSnackOpen = this.handleEmailErrorSnackOpen.bind(this);
-    this.setEmail = this.setEmail.bind(this);
-    this.setPatron = this.setPatron.bind(this);
-    this.checkPatron = this.checkPatron.bind(this);
-    this.setArticleList = this.setArticleList.bind(this);
-    this.langSet = this.langSet.bind(this);
-    this.userLogout = this.userLogout.bind(this);
-    this.state = {
-      characters: new PlayerChars(),
+
+    const [characters, setCharacters] = React.useState(new PlayerChars());
+    const [email, setEmail] = useState<string>("");
+    const [client_id, setClient_id] = useState<string>("1be64387daf6494da2de568527ad82cc");
+    const [playerLoginID, setPlayerLoginID] = useState("");
+    const [playerRegion, setPlayerRegion] = useState<string>("us");
+    const [playerBattleTag, setPlayerBattleTag] = useState<string>("");
+    const [accessToken, setAccessToken] = useState<string>("");
+    const [patronStatus, setPatronStatus] = useState<string>("Standard");
+    const [topSet, setTopSet] = useState<TopGearResult | null>(null);
+    const [articleList, setArticleList] = useState<any[]>([]);
+    const [lang, setLang] = useState<string>("en");
+
+    const [charSnackState, setCharSnackState] = useState<boolean>(false);
+    const [charUpdateState, setCharUpdateState] = useState<boolean>(false);
+    const [loginSnackState, setLoginSnackState] = useState<boolean>(false);
+    const [simcSnackState, setSimcSnackState] = useState<boolean>(false);
+    const [logImportSnackState, setLogImportSnackState] = useState<boolean>(false);
+    const [emailSnackState, setEmailSnackState] = useState<boolean>(false);
+    const [emailSnackErrorState, setEmailSnackErrorState] = useState<boolean>(false);
+
+    //setEmail = setEmail.bind(this);
+    /*
+    setPatron = setPatron.bind(this);
+    checkPatron = checkPatron.bind(this);
+    //setArticleList = setArticleList.bind(this);
+    langSet = langSet.bind(this);
+    userLogout = userLogout.bind(this); */
+    /*state = {
+      //characters: new PlayerChars(),
       playerRegion: "us",
-      client_id: "1be64387daf6494da2de568527ad82cc",
-      email: "",
+      //client_id: "1be64387daf6494da2de568527ad82cc",
+      //email: "",
       playerLoginID: "",
       playerBattleTag: "",
       accessToken: "",
@@ -71,10 +85,10 @@ class App extends Component {
       topSet: null,
       articleList: [],
     };
-  }
+  }*/
 
-  setTopResult = (set) => {
-    this.setState({ topSet: set });
+  const setTopResult = (set: TopGearResult) => {
+    setTopSet(set);
   };
 
   /* -------------------------------------------------------------------------- */
@@ -82,210 +96,208 @@ class App extends Component {
   /* -------------------------------------------------------------------------- */
 
   /* ----------------------------- Character Added ---------------------------- */
-  handleCharSnackOpen = () => {
-    this.setState({ charSnackState: true });
+
+  
+  const handleCharSnackOpen = () => {
+    setCharSnackState(true);
+
   };
-  handleCharSnackClose = (event, reason) => {
+  const handleCharSnackClose = (event: any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ charSnackState: false });
+    setCharSnackState(false);
   };
 
   /* ---------------------------- Character Updated --------------------------- */
-  handleCharUpdateSnackOpen = () => {
-    this.setState({ charUpdateState: true });
+  const handleCharUpdateSnackOpen = () => {
+    setCharUpdateState(true);
   };
-  handleCharUpdateSnackClose = (event, reason) => {
+  const handleCharUpdateSnackClose = (event: any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ charUpdateState: false });
+    setCharUpdateState(false);
   };
 
   /* ---------------------------------- Login --------------------------------- */
-  handleLoginSnackOpen = () => {
-    this.setState({ loginSnackState: true });
+  const handleLoginSnackOpen = () => {
+    setLoginSnackState(true);
   };
-  handleLoginClose = (event, reason) => {
+  const handleLoginClose = (event : any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ loginSnackState: false });
+    setLogImportSnackState(false);
+
   };
 
   /* ------------------------------- SimC Added ------------------------------- */
-  handleSimCSnackOpen = () => {
-    this.setState({ simcSnackState: true });
+  const handleSimCSnackOpen = () => {
+    setSimcSnackState(true);
   };
-  handleSimCSnackClose = (event, reason) => {
+  const handleSimCSnackClose = (event: any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ simcSnackState: false });
+    setSimcSnackState(false);
   };
 
   /* ---------------------------- Log Import Snack ---------------------------- */
-  handleLogSnackOpen = () => {
-    this.setState({ logImportSnackState: true });
+  const handleLogSnackOpen = () => {
+    setLogImportSnackState(true);
   };
-  handleLogSnackClose = (event, reason) => {
+  const handleLogSnackClose = (event: any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ logImportSnackState: false });
+    setLogImportSnackState(false);
   };
 
   /* ---------------------------- Log Import Snack ---------------------------- */
-  handleEmailSnackOpen = () => {
-    this.setState({ emailSnackState: true });
+  const handleEmailSnackOpen = () => {
+    setEmailSnackState(true);
   };
-  handleEmailSnackClose = (event, reason) => {
+  const handleEmailSnackClose = (event: any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ emailSnackState: false });
+    setEmailSnackState(false);
   };
 
   /* ---------------------------- Log Import Snack ---------------------------- */
-  handleEmailErrorSnackOpen = () => {
-    this.setState({ emailSnackErrorState: true });
+  const handleEmailErrorSnackOpen = () => {
+    setEmailSnackErrorState(true);
   };
-  handleEmailErrorSnackClose = (event, reason) => {
+  const handleEmailErrorSnackClose = (event: any, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
-    this.setState({ emailSnackErrorState: false });
+    setEmailSnackErrorState(false);
   };
 
-  /* -------------------------------------------------------------------------- */
-  /*                              Function Handlers                             */
-  /* -------------------------------------------------------------------------- */
+  /* -------------------------------------------------------------------------- 
+  /*                              Function Handlers                             
+  /* -------------------------------------------------------------------------- 
 
   /* ---------------------------- Language Handler ---------------------------- */
-  langSet = (props) => {
-    this.setState({ lang: props });
-    ls.set("lang", props);
+  const updateLang = (newLang: string) => {
+    setLang(newLang)
+    ls.set("lang", newLang);
   };
 
-  updatePlayerChars = (allChars) => {
-    this.setState({ characters: allChars });
+  const updatePlayerChars = (allChars: any) => {
+    setCharacters(allChars);
   };
 
-  /* -------------------------- Patron Status Handler ------------------------- */
-  setPatron = (status) => {
-    this.setState({ patronStatus: status });
+  /* -------------------- Update Character Information Handler ------------------- */
+  const updatePlayerChar = (player: Player) => {
+    let allChars = characters;
+    allChars.updatePlayerChar(player);
+    setCharacters(allChars);
+    allChars.saveAllChar();
+    
+  };
+
+    /* -------------------------- Patron Status Handler ------------------------- */
+  const updatePatron = (status: string) => {
+    setPatronStatus(status);
 
     //dispatch(togglePatronStatus(response)); // TODO: Check the response is good.
   };
 
-  /* ----------------------- Article List Handler ----------------------------- */
-  setArticleList = (list) => {
-    if (list)  this.setState({ articleList: list });
-  };
-
   /* ------------------ Checks Patron Status from Users Email ----------------- */
-  checkPatron = (email) => {
-    if (email !== "") {
-      dbCheckPatron(email, this.setPatron);
+  const checkPatron = (email: string) => {
+    if (email) {
+      dbCheckPatron(email, setPatronStatus);
     }
   };
 
+
   /* ------------------- Get Article List ------------------------------------- */
-  getArticleList = () => {
-    dbGetArticleList(this.setArticleList);
+  const getArticleList = () => {
+    dbGetArticleList(setArticleList);
   };
 
   /* -------------- Sets the Users Email to state & Local Storage ------------- */
-  setEmail = (emailAdd) => {
-    this.setState({ email: emailAdd });
+  const updateEmail = (emailAdd: string) => {
+    //setState({ email: emailAdd });
+    setEmail(emailAdd);
     ls.set("email", emailAdd);
-    this.checkPatron(emailAdd);
+    checkPatron(emailAdd);
   };
 
-  /* -------------------- Update Character Information Handler ------------------- */
-  updatePlayerChar = (player) => {
-    let allChars = this.state.characters;
-    allChars.updatePlayerChar(player);
-    this.setState({ characters: allChars });
-    allChars.saveAllChar();
-  };
+
 
   /* ---------------------------- Delete Character ---------------------------- */
-  deletePlayerChar = (unique) => {
-    let allChars = this.state.characters;
+  const deletePlayerChar = (unique: string) => {
+    let allChars = characters;
     allChars.delSpecificChar(unique);
-    this.setState({ characters: allChars });
+    setCharacters(allChars);
     allChars.saveAllChar();
   };
 
-  /* ----------------------------- Region Handlers ---------------------------- */
-  setRegion = (props) => {
-    this.setState({ playerRegion: props });
-  };
 
   /* ---------------------------- Battletag Handler --------------------------- */
-  updatePlayerID = (id, battletag) => {
-    this.setState({ playerLoginID: id });
-    this.setState({ playerBattleTag: battletag });
+  const updatePlayerID = (id: string, battletag: string) => {
+
+    setPlayerLoginID(id);
+    setPlayerBattleTag(battletag);
 
     ls.set("id", id);
     ls.set("btag", battletag);
   };
 
   /* ----------------------------- Logout Handler ----------------------------- */
-  userLogout() {
+  const userLogout = () => {
     // Do other stuff later.
-    this.setState({ playerLoginID: 0 });
-    this.setState({ playerBattleTag: "" });
+
+    setPlayerLoginID("");
+    setPlayerBattleTag("");
+
     ls.remove("id");
     ls.remove("btag");
   }
 
   /* ---------------------------- Login URL Handler --------------------------- */
-  buildLoginURL = () => {
+  const buildLoginURL = () => {
     // China is a little different from the other regions and uses its own URL.
-    if (this.state.playerRegion === "cn") {
-      return "https://www.battlenet.com.cn/oauth/authorize?client_id=" + this.state.client_id + "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid";
+    if (playerRegion === "cn") {
+      return "https://www.battlenet.com.cn/oauth/authorize?client_id=" + client_id + "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid";
     }
     return (
       "https://" +
-      this.state.playerRegion +
+      playerRegion +
       ".battle.net/oauth/authorize?client_id=" +
-      this.state.client_id +
+      client_id +
       "&redirect_uri=http://questionablyepic.com/live/confirmlogin/&response_type=code&scope=openid"
     );
   };
 
-  /* ---- When component mounts, check local storage for battle tag or ID. ---- */
-  componentDidMount() {
+  // When component mounts, check local storage for battle tag or ID
+  useEffect(() => {
     if (ls.get("lang") === "undefined" || ls.get("lang") === undefined || ls.get("lang") === null) {
       ls.set("lang", "en");
     }
     console.log("QE Live Initialised");
-    this.setState({
+    /*
+    setState({
       playerLoginID: ls.get("id") || "",
       playerBattleTag: ls.get("btag") || "",
       lang: ls.get("lang") || "en",
       email: ls.get("email") || "",
-    });
-    this.checkPatron(ls.get("email"));
-    this.getArticleList();
-    this.state.characters.setupChars(); // Do any post-mount processing like Disc ramps, player pictures etc. 
+    }); */
+    checkPatron(ls.get("email"));
+    getArticleList();
+    characters.setupChars(); // Do any post-mount processing like Disc ramps, player pictures etc. 
+  }, [])
 
-    //i18n.changeLanguage(ls.get("lang") || "en");
-  }
-
-
-  render() {
-    let activePlayer = this.state.characters.getActiveChar();
-    let allChars = this.state.characters;
-
-  
-    const vertical = "bottom";
-    const horizontal = "left";
-
-    return (
+  let activePlayer = characters.getActiveChar();
+  let allChars = characters;
+  const vertical = "bottom";
+  const horizontal = "left";
+ 
+  return (
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <Router basename={process.env.REACT_APP_HOMEPAGE}>
@@ -293,30 +305,30 @@ class App extends Component {
               // style={{ marginTop: 96 }}
               >
                 <QEHeader
-                  logFunc={this.userLogout}
-                  patronStatus={this.state.patronStatus}
-                  playerTag={this.state.playerBattleTag}
-                  setRegion={this.setRegion}
+                  logFunc={userLogout}
+                  patronStatus={patronStatus}
+                  playerTag={playerBattleTag}
+                  setRegion={setPlayerRegion}
                   player={activePlayer}
-                  simcSnack={this.handleSimCSnackOpen}
-                  logImportSnack={this.handleLogSnackOpen}
+                  simcSnack={handleSimCSnackOpen}
+                  logImportSnack={handleLogSnackOpen}
                   allChars={allChars}
                 />
 
                 {/* --------------------------- Char Added Snackbar -------------------------- */}
-                <QESnackbar open={this.state.charSnackState} onClose={this.handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess" />
+                <QESnackbar open={charSnackState} onClose={handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess" />
                 {/* -------------------------- Char Updated Snackbar ------------------------- */}
-                <QESnackbar open={this.state.charUpdateState} onClose={this.handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess" />
+                <QESnackbar open={charUpdateState} onClose={handleCharUpdateSnackClose} severity="success" message="Snackbars.CharUpdateSuccess" />
                 {/* ------------------------- Login Success Snackbar ------------------------- */}
-                <QESnackbar open={this.state.loginSnackState} onClose={this.handleLoginClose} severity="success" message="Snackbars.LoginSuccess" />
+                <QESnackbar open={loginSnackState} onClose={handleLoginClose} severity="success" message="Snackbars.LoginSuccess" />
                 {/* -------------------------- SimC Success Snackbar ------------------------- */}
-                <QESnackbar open={this.state.simcSnackState} onClose={this.handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess" />
+                <QESnackbar open={simcSnackState} onClose={handleSimCSnackClose} severity="success" anchorOrigin={{ vertical, horizontal }} message="Snackbars.SimCImportSuccess" />
                 {/* ----------------------- Log Import Success Snackbar ---------------------- */}
-                <QESnackbar open={this.state.logImportSnackState} onClose={this.handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess" />
+                <QESnackbar open={logImportSnackState} onClose={handleLogSnackClose} severity="success" message="Snackbars.LogImportSuccess" />
                 {/* ---------------------- Email Import Success Snackbar --------------------- */}
-                <QESnackbar open={this.state.emailSnackState} onClose={this.handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess" />
+                <QESnackbar open={emailSnackState} onClose={handleEmailSnackClose} severity="success" message="Snackbars.EmailUpdateSuccess" />
                 {/* ------------------- Email Error Import Success Snackbar ------------------ */}
-                <QESnackbar open={this.state.emailSnackErrorState} onClose={this.handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError" />
+                <QESnackbar open={emailSnackErrorState} onClose={handleEmailErrorSnackClose} severity="error" message="Snackbars.EmailError" />
 
                 {/* -------------------------------------------------------------------------- */
                 /*                               Module Routing                               */
@@ -328,19 +340,19 @@ class App extends Component {
                     render={() => (
                       <QEMainMenu
                         allChars={allChars}
-                        charUpdate={this.updatePlayerChars}
-                        singleUpdate={this.updatePlayerChar}
+                        charUpdate={updatePlayerChars}
+                        singleUpdate={updatePlayerChar}
                         player={activePlayer}
-                        charAddedSnack={this.handleCharSnackOpen}
-                        charUpdatedSnack={this.handleCharUpdateSnackOpen}
-                        patronStatus={this.state.patronStatus}
-                        delChar={this.deletePlayerChar}
-                        articleList={this.state.articleList}
+                        charAddedSnack={handleCharSnackOpen}
+                        charUpdatedSnack={handleCharUpdateSnackOpen}
+                        patronStatus={patronStatus}
+                        delChar={deletePlayerChar}
+                        articleList={articleList}
                       />
                     )}
                   />
-                  <Route path="/fightAnalysis" render={() => <FightAnalysis patronStatus={this.state.patronStatus} />} />
-                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={this.state.patronStatus} />} />
+                  <Route path="/fightAnalysis" render={() => <FightAnalysis patronStatus={patronStatus} />} />
+                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={patronStatus} />} />
                   <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
                   <Route path="/oneshot" render={() => <OneShot/>} />
@@ -349,20 +361,20 @@ class App extends Component {
                     player={activePlayer} 
                     path="/quickcompare" 
                     render={() => (
-                      <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus} />
+                      <QuickCompare player={activePlayer} allChars={allChars} simcSnack={handleSimCSnackOpen} singleUpdate={updatePlayerChar} patronStatus={patronStatus} />
                       )} />
-                  <CustomRoute player={activePlayer} path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+                  <CustomRoute player={activePlayer} path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={handleSimCSnackOpen} allChars={allChars} singleUpdate={updatePlayerChar} />} />
                   <CustomRoute
                     path="/topgear"
                     player={activePlayer}
                     render={() => (
                       <TopGear
                         player={activePlayer}
-                        setTopResult={this.setTopResult}
+                        setTopResult={setTopResult}
                         allChars={allChars}
-                        simcSnack={this.handleSimCSnackOpen}
-                        singleUpdate={this.updatePlayerChar}
-                        patronStatus={this.state.patronStatus}
+                        simcSnack={handleSimCSnackOpen}
+                        singleUpdate={updatePlayerChar}
+                        patronStatus={patronStatus}
                       />
                     )}
                   />
@@ -372,11 +384,11 @@ class App extends Component {
                     render={() => (
                       <TrinketAnalysis
                         player={activePlayer}
-                        updatePlayerChar={this.updatePlayerChar}
-                        singleUpdate={this.updatePlayerChar}
+                        updatePlayerChar={updatePlayerChar}
+                        singleUpdate={updatePlayerChar}
                         allChars={allChars}
-                        simcSnack={this.handleSimCSnackOpen}
-                        patronStatus={this.state.patronStatus}
+                        simcSnack={handleSimCSnackOpen}
+                        patronStatus={patronStatus}
                       />
                     )}
                   />
@@ -386,24 +398,31 @@ class App extends Component {
                     render={() => (
                       <EmbellishmentAnalysis
                         player={activePlayer}
-                        updatePlayerChar={this.updatePlayerChar}
-                        singleUpdate={this.updatePlayerChar}
+                        updatePlayerChar={updatePlayerChar}
+                        singleUpdate={updatePlayerChar}
                         allChars={allChars}
-                        simcSnack={this.handleSimCSnackOpen}
-                        patronStatus={this.state.patronStatus}
+                        simcSnack={handleSimCSnackOpen}
+                        patronStatus={patronStatus}
                       />
                     )}
                   />
                   
                   <ReportRoute 
-                    report={this.state.topSet} 
+                    report={topSet} 
                     player={activePlayer}
                     path="/report" 
-                    render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
+                    render={() => <TopGearReport player={activePlayer || null} result={topSet || null} />} />
 
-                  <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
-                  <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
-                  <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
+                  <Route path="/login" render={() => <QELogin setRegion={setPlayerRegion} />} />
+                  <Route
+                    path="/attemptlogin"
+                    render={() => {
+                      window.location.assign(buildLoginURL());
+                      return null;
+                    }}
+
+                    />
+                  <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={handleLoginSnackOpen} updatePlayerID={updatePlayerID} />} />
 
 
                   {/* ---------------------------------------------------------------------------------------------- */
@@ -414,11 +433,11 @@ class App extends Component {
                     path="/profile/"
                     render={() => (
                       <QEProfile
-                        setEmail={this.setEmail}
-                        playerTag={this.state.playerBattleTag}
-                        patronStatus={this.state.patronStatus}
-                        emailSnack={this.handleEmailSnackOpen}
-                        emailSnackError={this.handleEmailErrorSnackOpen}
+                        setEmail={updateEmail}
+                        playerTag={playerBattleTag}
+                        patronStatus={patronStatus}
+                        emailSnack={handleEmailSnackOpen}
+                        emailSnackError={handleEmailErrorSnackOpen}
                       />
                     )}
                   />
@@ -428,8 +447,9 @@ class App extends Component {
           </ThemeProvider>
         </StyledEngineProvider>
 
-    );
-  }
+  );
 }
 
 export default withTranslation()(App);
+
+

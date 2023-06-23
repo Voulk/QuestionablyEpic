@@ -24,6 +24,7 @@ declare type gameTypes = "Retail" | "Classic";
 
 // Unimplemented for now.
 declare type playerSpecs = "Restoration Druid" | "Mistweaver Monk" | "Restoration Shaman" | "Holy Priest" | "Discipline Priest" | "Preservation Evoker" | "Holy Paladin";
+declare type patronTypes = "Gold" | "Basic" | "Rolls Royce" | "Diamond" | "Sapphire"
 
 interface PlayerSettings {
     includeGroupBenefits: { value: boolean; options: boolean[]; category: string; type: string };
