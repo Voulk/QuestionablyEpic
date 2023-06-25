@@ -42,7 +42,6 @@ export function createPlayerChars(): PlayerChars {
   
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
-      console.log(this);
       return this;
     },
   
