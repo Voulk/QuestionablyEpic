@@ -1,8 +1,8 @@
-import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import { bonus_IDs } from "../BonusIDs";
 import { curveDB } from "../ItemCurves";
-import { checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
+import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
+import Player from "General/Modules/Player/Player";
 
 
 /**
@@ -11,32 +11,33 @@ import Item from "../../../General/Modules/Player/Item";
  * 
  */
 
-const stat_ids = {
+const stat_ids: {[key: number]: string} = {
   36: "haste",
   32: "crit",
   40: "versatility",
   49: "mastery",
 };
 
-export function runSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, playerSettings) {
+export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
+                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
   if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
     player.clearActiveItems();
 
-    /*  Loop through our SimC string. 
-            We're looking for the following:
-            - The items ID which we'll cross reference with our ItemDB.
-            - The items slot which is always found at the start of the line.
-            - The items bonus ID's which we'll use to calculate it's item level, whether it has a socket and what tertiaries might be attached.
-                - Bonus IDs can also identify a Timewalking item.
-    
-            We should take care that we never use the Name tags in the string.
+    /* Loop through our SimC string. 
+        We're looking for the following:
+        - The items ID which we'll cross reference with our ItemDB.
+        - The items slot which is always found at the start of the line.
+        - The items bonus ID's which we'll use to calculate it's item level, whether it has a socket and what tertiaries might be attached.
+            - Bonus IDs can also identify a Timewalking item.
+
+        We should take care that we never use the Name tags in the string.
     */
 
-    let linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
-    let vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
+    const linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
+    const vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings);
 
@@ -46,14 +47,16 @@ export function runSimC(simCInput, player, contentType, setErrorMessage, snackHa
   }
 }
 
-export function processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings) {
+export function processAllLines(player: Player, contentType: contentTypes, lines: string[], linkedItems: number, vaultItems: number, playerSettings: PlayerSettings) {
   for (var i = 8; i < lines.length; i++) {
     let line = lines[i];
     let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
     // If our line doesn't include an item ID, skip it.
     if (line.includes("id=")) {
       if (line.includes("unknown")) {
-        processToken(line, player, contentType, type);
+        // There aren't currently any tokens in the game and haven't been since Nathria.
+        // this code is left in in case we need to res it in future.
+        //processToken(line, player, contentType, type);
       } else {
         const item = processItem(line, player, contentType, type, playerSettings);
         if (item) player.addActiveItem(item);
@@ -68,22 +71,25 @@ export function processAllLines(player, contentType, lines, linkedItems, vaultIt
 // - The level in the string is 60 (50 also available pre-release).
 // - The version of the SimC addon is reasonably up to date. This is currently not active so automatically passes.
 // - The string length is less than our specified maximum. This is a loose requirement that's mostly designed around preventing user error like copy pasting their string twice.
-function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
+function checkSimCValid(simCHeader: string[], length: number, playerClass: string, setErrorMessage: (errorMessage: string) => void) {
   // console.log("Checking SimC Valid");
-  let checks = {
+  let checks: {
+    class: boolean;
+    version: boolean;
+    level: boolean;
+    length: boolean;
+  } = {
     class: false,
-    version: true,
+    version: true, // Note that version is not actually checked right now. There's generally just not a lot of need unless there are breaking addon changes.
     level: true,
-    length: length < 600,
+    length: length < 600, // This really only prevents abuse cases since 600 is a very long regular SimC string.
   };
   let errorMessage = "";
-
-  // console.log(simCHeader);
-  // console.log(playerClass);
 
   for (var i = 0; i < simCHeader.length; i++) {
     let line = simCHeader[i];
 
+    // Check that the player class matches. This is actually quite a common error since people swap characters but don't swap in QE Live.
     if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
     else if (line.split("=")[0] === "level" && (line.split("=")[1] === "60" || line.split("=")[1] === "70")) checks.level = true;
   }
@@ -97,6 +103,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
 }
 
 /*
+// Tokens are not currently in game and haven't been since Nathria. This code might need conversion to TS and some clean up if they are re-added ever.
 function processToken(line, player, contentType, type, covenant) {
   let infoArray = line.split(",");
   let tokenID = -1;
@@ -153,17 +160,19 @@ function processToken(line, player, contentType, type, covenant) {
 
 /**
  *
- * @param {*} curveID The curveID we'll use to check the item levels available.
+ * @param {*} curveID The curveID we'll use to check the item levels available. It's a number but indexed as a string.
  * @param {*} dropLevel The player level when the item dropped.
  * @returns
  */
-export function processCurve(curveID, dropLevel) {
+export function processCurve(curveID: string, dropLevel: number) {
   const curve = curveDB[curveID].points;
 
   let jump = 0;
   let playerLevelGap = 0;
 
+  // If we can't find a curve that matches, return 0.
   if (curve.length === 0 || curve === undefined || dropLevel === 0) return 0;
+  // If a curve only has 1 point, return that point.
   if (curve.length === 1) return curve[0].itemLevel;
   else {
     for (var i = 0; i < curve.length; i++) {
@@ -185,47 +194,55 @@ export function processCurve(curveID, dropLevel) {
   return 0;
 }
 
-export function processItem(line, player, contentType, type, playerSettings = {}) {
+export function processItem(line: string, player: Player, contentType: contentTypes, type: string, playerSettings: PlayerSettings) {
   // Split string.
-  let infoArray = line.split(",");
-  let itemID = -1;
-  let itemSlot = "";
-  let itemBonusIDs = [];
-  let itemLevel = 0;
-  let itemSockets = 0;
-  let itemTertiary = "";
-  let dropLevel = 0;
-  let levelOverride = 0; // A player can forgo the bonus_id system and override an items level if they wish by entering ilevel= at the end of an item.
-  let craftedStats = [];
-  let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
-  let gemID = []; // Used for Domination sockets only (currently).
-  let gemString = "";
-  let enchantID = 0; // currently unused.
-  let missiveStats = [];
-  let itemEffect = {}; // This is called automatically for everything except Legendaries.
-  let itemEquipped = !line.includes("#");
-  let bonusIDS = "";
-  let uniqueTag = "";
-  let itemQuality = 0;
-  let upgradeTrack = "";
-  let upgradeRank = 0;
+  interface ProtoItem {
+    id: number;
+    slot: string;
+    upgradeTrack: string;
+    upgradeRank: number;
+    level: {drop: number; override: number; baseLevel: number; baseLevelPriority: number; levelGain: number; finalLevel: number };
+    uniqueTag: string;
+    itemEquipped: boolean;
+    sockets: number;
+    tertiary: Tertiaries
+    quality: number;
+    missiveStats: string[];
+    effect?: ItemEffect | null;
+  }
 
-  let specialAllocations = {};
-  let itemBaseLevel = 0; // This is an items base level. We'll add any level gain bonus IDs to it.
-  let itemLevelGain = 0;
-  let itemBaseLevelPriority = 999; // Blizzard like to include more than 1 baseLevel ID on items with a weird priority system. So we'll keep track of that.
+  let protoItem: ProtoItem = {
+    id: -1,
+    slot: "",
+    upgradeTrack: "",
+    upgradeRank: 0,
+    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 999, levelGain: 0, finalLevel: 0},
+    uniqueTag: "",
+    itemEquipped: !line.includes("#"),
+    sockets: 0,
+    tertiary: "",
+    quality: 0,
+    missiveStats: [],
+  }
+
+  let infoArray = line.split(",");
+  let itemBonusIDs: string[] = [];
+  let itemBonusStats = {}; // Bonus_stats that don't naturally come on the item. Crafting and "of the X" items are the primary example.
+  let gemID: string[] = []; // This is used to construct a gem string but doesn't affect any stats on the item.
+  let gemString: string = ""; // Gem string. Just used for tooltips.
+  let bonusIDS = "";
+  let enchantID = 0;
+
+  let specialAllocations: {[key: string]: number} = {};
   
   // Build out our item information.
-  // This is not the finest code in the land but it is effective at pulling the information we need.
+  // WoW bonus IDs are very messy, and so this is somewhat messy too but documentation is added to make things clearer where possible. 
   for (var j = 0; j < infoArray.length; j++) {
     let info = infoArray[j];
 
     if (j === 0) {
       // Do nothing.
     }
-    //itemSlot = correctCasing(
-    //  info.replace("1", "").replace("=", "").replace("# ", "")
-    //);
     else if (info.includes("bonus_id=") && !(info.includes("gem_bonus_id="))) {
       
       itemBonusIDs = info.split("=")[1].split("/");
@@ -233,15 +250,21 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     } 
     else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
-    else if (info.includes("id=") && !(info.includes("gem_bonus_id="))) itemID = parseInt(info.split("=")[1]);
-    else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
-    else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
-    else if (info.includes("ilevel=") || info.includes("ilvl=")) levelOverride = parseInt(info.split("=")[1]);
+    else if (info.includes("id=") && !(info.includes("gem_bonus_id="))) protoItem.id = parseInt(info.split("=")[1]);
+    else if (info.includes("drop_level=")) protoItem.level.drop = parseInt(info.split("=")[1]);
+    else if (info.includes("crafted_stats=")) {
+      const craftedStats = info.split("=")[1].split("/");
+      craftedStats.forEach(stat => {
+        protoItem.missiveStats.push(stat_ids[parseInt(stat)]);
+      });
+      
+    }
+    else if (info.includes("ilevel=") || info.includes("ilvl=")) protoItem.level.override = parseInt(info.split("=")[1]);//  levelOverride = 
   }
 
   // Grab the items base level from our item database.
-  itemBaseLevel = getItemProp(itemID, "itemLevel");
-  itemSlot = getItemProp(itemID, "slot");
+  protoItem.level.baseLevel = getItemProp(protoItem.id, "itemLevel");
+  protoItem.slot = getItemProp(protoItem.id, "slot");
 
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -250,22 +273,26 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     let idPayload = bonus_IDs[bonus_id];
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
-        itemLevelGain += idPayload["level"];
+        protoItem.level.levelGain += idPayload["level"];
+        //itemLevelGain += idPayload["level"];
       } else if ("socket" in idPayload) {
-        itemSockets = idPayload["socket"];
+        protoItem.sockets += idPayload["socket"];
+        //itemSockets = idPayload["socket"];
       } else if ("base_level" in idPayload) {
         // If the base_level has a priority level, then make sure it's lower than our existing priority level.
-        if (("base_level_priority" in idPayload && idPayload["base_level_priority"] < itemBaseLevelPriority) ||
+        if (("base_level_priority" in idPayload && idPayload["base_level_priority"] < protoItem.level.baseLevelPriority) ||
             "base_level_priority" in idPayload === false) {
-              itemBaseLevel = idPayload["base_level"];
-              itemBaseLevelPriority = idPayload["base_level_priority"];
+              protoItem.level.baseLevel = idPayload["base_level"];
+              protoItem.level.baseLevelPriority = idPayload["base_level_priority"];
+              //itemBaseLevel = idPayload["base_level"];
+              //itemBaseLevelPriority = idPayload["base_level_priority"];
             }
       }
       else if (bonus_id === "41") {
-        itemTertiary = "Leech";
+        protoItem.tertiary = "Leech";
       }
       else if ("rawStats" in idPayload) {
-      idPayload["rawStats"].forEach((stat) => {
+      idPayload["rawStats"].forEach((stat: any) => {
         if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
           let statName = stat["name"].toLowerCase();
           if (statName === "vers") statName = "versatility"; // Pain
@@ -275,51 +302,55 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       } else if ("curveId" in idPayload) {
         let curve = idPayload["curveId"];
 
-        levelOverride = processCurve(curve, dropLevel);
+        protoItem.level.override = processCurve(curve, protoItem.level.drop);
+        //levelOverride = processCurve(curve, protoItem.level.drop);
 
       } 
       else if ("upgrade" in idPayload && "name" in idPayload.upgrade) {
         const upgradeName = idPayload.upgrade.name;
         if (["Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName)) {
-          upgradeTrack = upgradeName;
-          upgradeRank = idPayload.upgrade.level;
+          protoItem.upgradeTrack = upgradeName;
+          protoItem.upgradeRank = idPayload.upgrade.level;
         }
       }
       
       else if ("name_override" in idPayload) {
-          if ("base" in idPayload.name_override && idPayload.name_override.base === "Unity") {
-            // Unity
-            itemEffect = {
-              type: "unity",
-              name: "Unity",
-              level: 0, // Irrelevant to legendaries.
-            };
-          } 
-        }
-        if ("quality" in idPayload) {
-          itemQuality = idPayload["quality"];
-        } 
-        //if (bonusID === 9365 || bonusID == 9366) itemQuality = 4; // Ingenuity Crafted
-        if ("craftedStats" in idPayload) {
-          craftedStats = idPayload['craftedStats'];
-        }
-        else {
-        }
+        // Currently unused, but previously used for Unity. 
+      }
+      if ("quality" in idPayload) {
+        protoItem.quality = idPayload["quality"];
+      } 
+      //if (bonusID === 9365 || bonusID == 9366) itemQuality = 4; // Ingenuity Crafted
+      if ("craftedStats" in idPayload) {
+        //craftedStats = idPayload['craftedStats'];
+        const craftedStats: number[] = idPayload['craftedStats'];
+        craftedStats.forEach((stat: number) => {
+          protoItem.missiveStats.push(stat_ids[stat]);
+        });
+      }
+      else {
+      }
 
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
         if ("effect" in idPayload) {
           if ("spell" in idPayload["effect"] && bonus_id !== "8174") { // Ignore Flavor Packet.
             const specialEffectName = idPayload["effect"]["spell"]["name"]
-            itemEffect = {
+            /*itemEffect = {
               type: "embellishment",
               name: specialEffectName,
-              level: (itemBaseLevel + itemLevelGain),
-            };
+              level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
+            };*/
+
+            protoItem.effect = {
+              type: "embellishment",
+              name: specialEffectName,
+              level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
+            }
 
             // Embellishments that require a tag.
             if (['Potion Absorption Inhibitor', 'Blue Silken Lining', 'Magazine of Healing Darts'].includes(specialEffectName)) {
-              uniqueTag = "embellishment";
+              protoItem.uniqueTag = "embellishment";
             }
 
           }
@@ -331,17 +362,17 @@ export function processItem(line, player, contentType, type, playerSettings = {}
     // Crafted items will either have a missive ID and an INCORRECT crafted_stats id or just a CORRECT crafted_stats ID.
     // Therefore if a missive ID is present, we need to kill the crafted_stats value.
     else if (bonus_id === "6647") {
-      missiveStats.push("crit");
-      craftedStats = "";
+      protoItem.missiveStats.push("crit");
+      //craftedStats = [];
     } else if (bonus_id === "6648") {
-      missiveStats.push("mastery");
-      craftedStats = "";
+      protoItem.missiveStats.push("mastery");
+      //craftedStats = [];
     } else if (bonus_id === "6649") {
-      missiveStats.push("haste");
-      craftedStats = "";
+      protoItem.missiveStats.push("haste");
+      //craftedStats = [];
     } else if (bonus_id === "6650") {
-      missiveStats.push("versatility");
-      craftedStats = "";
+      protoItem.missiveStats.push("versatility");
+      //craftedStats = [];
     }
     /* They've thankfully converted these to a nice array so we don't need messy overrides anymore.
     else if (bonus_id === "8790") {
@@ -386,50 +417,59 @@ export function processItem(line, player, contentType, type, playerSettings = {}
       // Versatility Crafted Override
       craftedStats = ["40"]
     }*/
-    if (bonus_id === "7881") uniqueTag = "crafted";
-    else if (bonus_id === "8960") uniqueTag = "embellishment";
+    if (bonus_id === "7881") protoItem.uniqueTag = "crafted";
+    else if (bonus_id === "8960") protoItem.uniqueTag = "embellishment";
   }
   //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
-  if (craftedStats.length !== 0) {
+  
+  /*if (craftedStats.length !== 0) {
     craftedStats.forEach(stat => {
       missiveStats.push(stat_ids[stat]);
     });
-  }
-  if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
-  else itemLevel = itemBaseLevel + itemLevelGain;
+  } */
+  /*if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
+  else itemLevel = itemBaseLevel + itemLevelGain; */
+
+  // If our item has a special level override then we'll use that. If not, our level is equal to our baseLevel and our levelGain.
+  if (protoItem.level.override !== 0) protoItem.level.finalLevel = Math.min(699, protoItem.level.override);
+  else protoItem.level.finalLevel = protoItem.level.baseLevel + protoItem.level.levelGain;
+
   // Check Gems for Dom sockets
   if (gemID.length > 0) {
-    gemID.forEach((gem) => {
+    gemID.forEach((gem: string) => {
       gemString += gem + ":";
     });
   }
 
   // Add the new item to our characters item collection.
-  if (itemLevel > 180 && itemID !== 0 && getItem(itemID) !== "") {
-    let itemAllocations = getItemAllocations(itemID, missiveStats);
+  // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.
+  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "") {
+    let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
-    let item = new Item(itemID, "", itemSlot, itemSockets || checkDefaultSocket(itemID), itemTertiary, 0, itemLevel, bonusIDS);
+    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level.finalLevel, bonusIDS);
+
+    // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";
-    item.active = itemEquipped || item.vaultItem;
-    item.isEquipped = itemEquipped;
-    item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, itemTertiary);
+    item.isEquipped = protoItem.itemEquipped;
+    item.active = protoItem.itemEquipped || item.vaultItem;
+
+    // Add stats to our item based on its item allocations.
+    item.stats = calcStatsAtLevel(item.level, protoItem.slot, itemAllocations, protoItem.tertiary);
     item.gemString = gemString !== "" ? gemString.slice(0, -1) : "";
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
-    item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
+    // Special effects. Note we handle them here instead of in the items constructor in case the player has added an effect to an item like an Embellishment.
+    item.effect = protoItem.effect ? protoItem.effect : getItemProp(protoItem.id, "effect");
 
-    if (item.effect.type && item.effect.type === "spec legendary") item.uniqueEquip = "legendary";
-    else if (item.effect.type && item.effect.type === "unity") {
-      item.uniqueEquip = "unity";
-    } else if (item.vaultItem) item.uniqueEquip = "vault";
-    else if (uniqueTag !== "") item.uniqueEquip = uniqueTag;
+    if (item.vaultItem) item.uniqueEquip = "vault";
+    else if (protoItem.uniqueTag !== "") item.uniqueEquip = protoItem.uniqueTag;
 
-    if (upgradeTrack !== "") {
-      item.upgradeTrack = upgradeTrack;
-      item.upgradeRank = upgradeRank || 0;
+    if (protoItem.upgradeTrack !== "") {
+      item.upgradeTrack = protoItem.upgradeTrack;
+      item.upgradeRank = protoItem.upgradeRank || 0;
     }
 
-    item.quality = itemQuality !== 0 ? itemQuality : (getItemProp(itemID, "quality") || 4);
+    item.quality = protoItem.quality !== 0 ? protoItem.quality : (getItemProp(protoItem.id, "quality") || 4);
     item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
 
     return item;  
@@ -443,7 +483,8 @@ export function processItem(line, player, contentType, type, playerSettings = {}
  * @deprecated
  * 
  */
-function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) {
+/*
+function getSecondaryAllocationAtItemLevel(itemLevel: number, slot: string, crafted_stats: any = []) {
   let allocation = 0;
   let bonus_stats = {};
 
@@ -475,20 +516,21 @@ function getSecondaryAllocationAtItemLevel(itemLevel, slot, crafted_stats = []) 
     else if (itemLevel >= 117) allocation = 24;
   }
 
-  crafted_stats.forEach((stat) => {
+  crafted_stats.forEach((stat: any) => {
     bonus_stats[stat_ids[stat]] = allocation;
   });
 
   return bonus_stats;
-}
+} */
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc.
+/*
 function compileStats(stats, bonus_stats) {
   for (var stat in stats) {
     stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
   }
 
   return stats;
-}
+}*/
 
 

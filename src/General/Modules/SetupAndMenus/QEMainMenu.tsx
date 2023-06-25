@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -12,7 +12,6 @@ import MessageOfTheDay from "./MessageOftheDay";
 import ArticleCard from "../ArticleCards/ArcticleCard";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useSelector } from "react-redux";
-import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
 import * as ls from "local-storage";
 import QEFooter from "./Footer/QEFooter";

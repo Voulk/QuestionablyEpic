@@ -1,4 +1,4 @@
-export const bonus_IDs = {
+export const bonus_IDs: {[key: string]: any} = {
   "1": {
     "id": 1,
     "rawStats": [
