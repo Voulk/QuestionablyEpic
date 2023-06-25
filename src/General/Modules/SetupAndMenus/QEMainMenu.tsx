@@ -14,10 +14,12 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useSelector } from "react-redux";
 import GameTypeSwitch from "./GameTypeToggle";
 import WelcomeDialog from "../Welcome/Welcome";
-import ls from "local-storage";
+import * as ls from "local-storage";
 import QEFooter from "./Footer/QEFooter";
+import Player from "../Player/Player";
+import { RootState } from "Redux/Reducers/RootReducer";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     [theme.breakpoints.down("md")]: {
       margin: "auto",
@@ -48,12 +50,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function QEMainMenu(props) {
+interface Props {
+    allChars: any;
+    charUpdate: (allChars: any) => void;
+    singleUpdate: (char: Player) => void;
+    player: Player;
+    charAddedSnack: () => void;
+    charUpdatedSnack: () => void;
+    patronStatus: string;
+    delChar: (unique: string) => void;
+    articleList: any[];
+}
+
+export default function QEMainMenu(props: Props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  const gameType = useSelector((state) => state.gameType);
+  const gameType = useSelector((state: RootState) => state.gameType);
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Warning                                            */
@@ -61,7 +75,16 @@ export default function QEMainMenu(props) {
   /*                    Consider the titles here to be ID's rather than strings                     */
   /* ---------------------------------------------------------------------------------------------- */
   // [route, show button?, tooltip]
-  const mainMenuOptions =
+  interface MainMenuOption {
+    route: string;
+    disabled: boolean;
+    tooltip: string;
+    type: string;
+    order: number;
+    localization: string;
+  }
+
+  const mainMenuOptions: MainMenuOption[] =
     gameType === "Retail"
       ? [
           // Gearing
@@ -88,12 +111,12 @@ export default function QEMainMenu(props) {
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile" },
         ];
 
-  const filterByType = (type) => mainMenuOptions.filter((item) => item.type === type);
+  const filterByType = (type: string) => mainMenuOptions.filter((item) => item.type === type);
 
   const gearItems = filterByType("Gearing");
   const toolItems = filterByType("Tools");
 
-  const generateButtons = (items) =>
+  const generateButtons = (items: MainMenuOption[]) =>
     items
       .sort((a, b) => a.order - b.order)
       .map((key, index) => (
@@ -148,7 +171,7 @@ export default function QEMainMenu(props) {
     articles.sort((a, b) => (a.date < b.date ? 1 : -1));
     articles = articles.slice(0, 3);
   }
-  const oddEven = (number) => {
+  const oddEven = (number: number) => {
     if (number % 2 == 0) {
       return "left";
     }
@@ -233,7 +256,7 @@ export default function QEMainMenu(props) {
           {props.allChars.getAllChar(gameType).length > 0
             ? props.allChars
                 .getAllChar(gameType)
-                .map((char, index) => (
+                .map((char: Player, index: number) => (
                   <CharCards
                     key={index}
                     name={char.charName}
