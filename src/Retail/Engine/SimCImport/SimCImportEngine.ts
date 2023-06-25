@@ -102,7 +102,7 @@ function checkSimCValid(simCHeader: string[], length: number, playerClass: strin
   return checks.class && checks.version && checks.level && checks.length;
 }
 
-/*
+/* 
 // Tokens are not currently in game and haven't been since Nathria. This code might need conversion to TS and some clean up if they are re-added ever.
 function processToken(line, player, contentType, type, covenant) {
   let infoArray = line.split(",");
@@ -324,6 +324,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
       if ("craftedStats" in idPayload) {
         //craftedStats = idPayload['craftedStats'];
         const craftedStats: number[] = idPayload['craftedStats'];
+        protoItem.missiveStats = []; // Override any existing stats.
         craftedStats.forEach((stat: number) => {
           protoItem.missiveStats.push(stat_ids[stat]);
         });

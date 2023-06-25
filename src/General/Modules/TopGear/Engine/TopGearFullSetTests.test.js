@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processAllLines } from "Retail/Engine/SimCImport/SimCImportEngine.js"
+import { processAllLines } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
 import { applyDiminishingReturns, buildNewWepCombos } from "General/Engine/ItemUtilities"
 
@@ -27,7 +27,7 @@ describe("Top Gear full test", () => {
           topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
           healingDartsOverheal: { value: 55, options: [], category: "embellishments", type: "Entry" },
           lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
-        } // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
+        } 
 
     test("Test 1, Disc full gear Check", () => {
 
@@ -35,7 +35,7 @@ describe("Top Gear full test", () => {
         var lines = discSet.split("\n");
 
 
-        processAllLines(player, "Raid", lines, -1, -1)
+        processAllLines(player, "Raid", lines, -1, -1, settings)
         player.activateAll();
         const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))
@@ -64,7 +64,7 @@ describe("Top Gear full test", () => {
         var lines = monkSet.split("\n");
 
 
-        processAllLines(player, "Raid", lines, -1, -1)
+        processAllLines(player, "Raid", lines, -1, -1, settings)
         player.activateAll();
         const wepCombos = buildNewWepCombos(player, true);
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))

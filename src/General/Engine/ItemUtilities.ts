@@ -500,6 +500,7 @@ export function getItemAllocations(id: number, missiveStats: any[] = []) {
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
         statArray[mStat] += item.stats.unallocated;
+        
       }
     }
   }

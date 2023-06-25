@@ -128,7 +128,6 @@ export class Player {
 
   addActiveItem = (item) => {
     this.activeItems.push(item);
-    console.log(this.activeItems);
   };
 
   clearActiveItems = () => {
