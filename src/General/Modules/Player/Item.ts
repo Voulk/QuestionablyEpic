@@ -36,6 +36,7 @@ export class Item {
   offhandID: number = 0; // Only used for correctly translating weapon combos.
   mainHandUniqueHash?: string;
   offHandUniqueHash?: string;
+  gemString?: string;
 
   constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
     this.id = id;

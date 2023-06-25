@@ -8,7 +8,6 @@ import RetailSettings from "./Modules/RetailSettings";
 import BurningCrusadeSettings from "./Modules/BurningCrusadeSettings";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
-// import userSettings from "./SettingsObject";
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -56,8 +55,6 @@ export default function Settings(props : any) {
             <RetailSettings
               player={props.player}
               contentType={props.contentType}
-              userSettings={props.userSettings}
-              editSettings={props.editSettings}
               singleUpdate={props.singleUpdate}
             />
           ) : (

@@ -409,7 +409,7 @@ export function getEmbellishmentIcon(id: number) {
 
 // Grabs a specific item from whichever item database is currently selected.
 export function getItem(id: number, gameType = "Retail") {
-  let temp = getItemDB(gameType).filter(function (item) {
+  let temp = getItemDB(gameType).filter(function (item: any) {
     return item.id === id;
   });
   if (temp.length > 0) return temp[0];
@@ -477,7 +477,7 @@ export function getGemIcon(id: number) {
 // Returns true if an item always has a socket attached like some crafted rings etc. 
 // Is not designed to check if an item has had a socket added via token or RNG.
 export function checkDefaultSocket(id: number) {
-  let temp = itemDB.filter(function (item) {
+  let temp = itemDB.filter(function (item: any) {
     return item.id === id;
   });
 
@@ -500,6 +500,7 @@ export function getItemAllocations(id: number, missiveStats: any[] = []) {
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
         statArray[mStat] += item.stats.unallocated;
+        
       }
     }
   }
@@ -752,7 +753,7 @@ export function getPrimordialImage(id) {
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc.
 // TODO, this is identical to TopGearShared, so put it somewhere accessible to both.
-function compileStats(stats: Stats, bonus_stats: Stats) {
+export function compileStats(stats: Stats, bonus_stats: Stats) {
   for (const stat in stats) {
     if (stat !== "bonus_stats") {
       stats[stat] += bonus_stats !== undefined && stat in bonus_stats ? bonus_stats[stat] : 0;

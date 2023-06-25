@@ -23,6 +23,6 @@ export const CONSTRAINTS = {
 
 // This will return the value itself if it is between min and max, and a boundary otherwise. 
 // Example: 30, 10, 60 returns 30. 0, 10, 60 returns 10 and so forth. 
-export function setBounds(value, min, max) {
+export function setBounds(value: number, min: number, max: number) {
     return Math.max(min, Math.min(value, max))
 }

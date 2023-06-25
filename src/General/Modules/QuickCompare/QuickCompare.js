@@ -163,7 +163,6 @@ export default function QuickCompare(props) {
   const [activeSlot, setSlot] = useState("");
   /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-
   const slots = getSlots();
   const helpBlurb = [t("QuickCompare.HelpText")];
   const helpText = [

@@ -1,4 +1,14 @@
-export const curveDB = 
+interface CurvePoint {
+  playerLevel: number;
+  itemLevel: number;
+}
+
+interface CurveData {
+  curveId: number;
+  points: CurvePoint[];
+}
+
+export const curveDB: { [key: string]: CurveData }= 
 {
   "956": {
     "curveId": 956,
