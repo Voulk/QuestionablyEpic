@@ -7,7 +7,14 @@
 // Template for Changelog Entry
 // {version: "", update: , date: "", changes: ["",""]}
 
-export const changeLog = [
+interface entry {
+  version: string;
+  update: number;
+  date: string;
+  changes: string[];
+}
+
+export const changeLog: entry[] = [
   {
     version: "10.1.0",
     update: 13,

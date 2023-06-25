@@ -105,7 +105,7 @@ export default function ItemBar(props) {
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
   const [inputValue, setInputValue] = useState("");
   const [dominationSocket, setDominationSocket] = useState("");
-  const [missives, setMissives] = useState("");
+  const [missives, setMissives] = useState("Haste / Versatility");
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 

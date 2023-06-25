@@ -5,7 +5,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
@@ -22,13 +22,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+type ScrollType = "paper" | "body" | undefined;
+
 export default function Changelog() {
   const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState("paper");
+  const [scroll, setScroll] = React.useState<ScrollType>("paper");
   const classes = useStyles();
   const { t } = useTranslation();
 
-  const handleClickOpen = (scrollType) => () => {
+  const handleClickOpen = (scrollType: ScrollType) => () => {
     setOpen(true);
     setScroll(scrollType);
   };
