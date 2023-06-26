@@ -418,7 +418,7 @@ function dupObject(set : any) {
  * @param {*} baseHPS
  * @param {*} userSettings
  * @param {*} castModel
- * @returns
+ * @returns 
  */
 function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number, userSettings: any, castModel: any, reporting: boolean = false) {
   // == Setup ==

@@ -12,7 +12,7 @@ import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
-import PlayerChars from "General/Modules/Player/PlayerChars";
+import { createPlayerChars } from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
 import OneShot from "General/Modules/OneShot/OneShot";
 import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
@@ -39,7 +39,7 @@ const App = () => {
     /* ---------- This is so they can be used as props in other modules --------- */
     /* -------------------- And they will change states here -------------------- */
 
-    const [characters, setCharacters] = React.useState(new PlayerChars());
+    const [characters, setCharacters] = React.useState(createPlayerChars());
     const [email, setEmail] = useState<string>("");
     const [client_id, setClient_id] = useState<string>("1be64387daf6494da2de568527ad82cc");
     const [playerLoginID, setPlayerLoginID] = useState("");
@@ -186,8 +186,8 @@ const App = () => {
     ls.set("lang", newLang);
   };
 
-  const updatePlayerChars = (allChars: any) => {
-    setCharacters(allChars);
+  const updatePlayerChars = (allChars: PlayerChars): void => {
+    setCharacters({ ...allChars });
   };
 
   /* -------------------- Update Character Information Handler ------------------- */
@@ -196,6 +196,7 @@ const App = () => {
     allChars.updatePlayerChar(player);
     setCharacters(allChars);
     allChars.saveAllChar();
+    
     
   };
 
@@ -276,6 +277,8 @@ const App = () => {
 
   // When component mounts, check local storage for battle tag or ID
   useEffect(() => {
+
+    //characters.setupChars(); // Do any post-mount processing like Disc ramps, player pictures etc. 
     if (ls.get("lang") === "undefined" || ls.get("lang") === undefined || ls.get("lang") === null) {
       ls.set("lang", "en");
     }
@@ -289,11 +292,11 @@ const App = () => {
     }); */
     checkPatron(ls.get("email"));
     getArticleList();
-    characters.setupChars(); // Do any post-mount processing like Disc ramps, player pictures etc. 
   }, [])
 
   let activePlayer = characters.getActiveChar();
   let allChars = characters;
+
   const vertical = "bottom";
   const horizontal = "left";
  

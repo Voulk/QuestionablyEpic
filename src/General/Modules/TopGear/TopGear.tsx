@@ -419,7 +419,7 @@ export default function TopGear(props: any) {
 
       instance
         .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, playerSettings, strippedCastModel)
-        .then((result: TopGearResult | null) => {
+        .then((result: TopGearResult | null) => { // 
           if (result) {
             // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
             apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);

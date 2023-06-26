@@ -25,6 +25,23 @@ declare type gameTypes = "Retail" | "Classic";
 // Unimplemented for now.
 declare type playerSpecs = "Restoration Druid" | "Mistweaver Monk" | "Restoration Shaman" | "Holy Priest" | "Discipline Priest" | "Preservation Evoker" | "Holy Paladin";
 declare type patronTypes = "Gold" | "Basic" | "Rolls Royce" | "Diamond" | "Sapphire"
+declare type Tertiaries = "Leech" | "Avoidance" | "Speed" | "Indestructible" | "";
+
+interface PlayerChars {
+    allChar: any[];
+    activeChar: number;
+    init(): PlayerChars;
+    getActiveChar(): Player;
+    setActiveChar(index: number): void;
+    setupChars(): void;
+    getAllChar(gameType?: string): any[];
+    updatePlayerChar(player: any): void;
+    setLowestChar(gameType: string): void;
+    saveAllChar(): void;
+    addChar(name: string, spec: string, region: string, realm: string, race: string, gameType: string): void;
+    delActiveChar(): void;
+    delSpecificChar(unique: string): void;
+}
 
 interface PlayerSettings {
     includeGroupBenefits: { value: boolean; options: boolean[]; category: string; type: string };
