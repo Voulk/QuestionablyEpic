@@ -5,7 +5,7 @@ import "./Chart.css";
 import moment from "moment";
 import i18n from "i18next";
 import { Paper } from "@mui/material";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 class Chart extends Component {
   constructor(props) {

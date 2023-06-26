@@ -2,7 +2,7 @@ import { cooldownDB } from "General/Modules/CooldownPlanner/Data/CooldownDB";
 import { useTranslation } from "react-i18next";
 import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "General/Modules/CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export const cooldownTimelineColumns = () => {
   const { t, i18n } = useTranslation();

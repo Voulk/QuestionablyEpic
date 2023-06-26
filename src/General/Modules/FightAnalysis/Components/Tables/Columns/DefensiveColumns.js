@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "General/Modules/CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { defensiveDB } from "Databases/DefensiveDB";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export const defensiveColumns = () => {
   const { t, i18n } = useTranslation();

@@ -1,36 +1,51 @@
-import React from "react";
+import React, { MouseEvent, useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-const getMenuItems = (item) => {
-  const itemLevel = item.level;
-  let items = []
-  const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441]
-  const itemLevelCaps = {"Champion": 437, "Hero": 441, "Explorer": 398, "Adventurer": 411, "Veteran": 424}
-
-  if (item.upgradeTrack !== "") {
-    fullItemLevels.forEach((level) => {
-      if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
-        items.push({id: items.length+1, ilvlMinimum: level, label: "Upgrade to " + level})
-      }
-  
-    })
-  }
-
-
-  return items;
+interface MenuItemType {
+  id: number;
+  ilvlMinimum: number;
+  label: string;
 }
 
-export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const { t, i18n } = useTranslation();
+interface ItemCardButtonWithMenuProps {
+  key: string;
+  deleteActive: boolean;
+  deleteItem: () => void;
+  canBeCatalyzed: boolean;
+  catalyseItemCard: () => void;
+  itemLevel: number;
+  upgradeItem: (item: any, ilvlMinimum: number) => void;
+  item: any;
+}
+
+const getMenuItems = (item: any): MenuItemType[] => {
+  const itemLevel = item.level;
+  let items: MenuItemType[] = [];
+  const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441];
+  const itemLevelCaps: { [key: string]: number } = { Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
+
+  if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
+    fullItemLevels.forEach((level) => {
+      if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
+        items.push({ id: items.length + 1, ilvlMinimum: level, label: "Upgrade to " + level });
+      }
+    });
+  }
+
+  return items;
+};
+
+const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item }) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const { t } = useTranslation();
 
   const menuItems = getMenuItems(item);
 
-  const handleClick = (event) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -39,7 +54,7 @@ export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, 
   };
 
   // Function to execute when menu item is clicked
-  const handleMenuItemClick = (menuItem) => {
+  const handleMenuItemClick = (menuItem: MenuItemType) => {
     upgradeItem(item, menuItem.ilvlMinimum);
     handleClose();
   };
@@ -66,8 +81,8 @@ export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, 
         MenuListProps={{
           sx: {
             padding: 0,
-            border: "1px solid #888888", // Change this as per your requirement
-            borderRadius: "4px", // Adds rounded corners to the border }
+            border: "1px solid #888888",
+            borderRadius: "4px",
           },
         }}
       >
@@ -91,4 +106,6 @@ export default function ItemCardButtonWithMenu({ key, deleteActive, deleteItem, 
       </Menu>
     </div>
   );
-}
+};
+
+export default ItemCardButtonWithMenu;

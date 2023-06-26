@@ -3,7 +3,7 @@ import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassC
 import { externalsDB } from "Databases/ExternalsDB";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export const externalColumns = () => {
   const { t, i18n } = useTranslation();
