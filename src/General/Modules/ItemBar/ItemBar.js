@@ -45,6 +45,44 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
+// Create and return an item. Could maybe be merged with the SimC createItem function?
+export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary, missives = "") => {
+
+  //let player = props.player;
+  let item = "";
+
+  const itemSlot = getItemProp(itemID, "slot");
+  const isCrafted = getItemProp(itemID, "crafted");
+
+  if (isCrafted) {
+    // Item is a legendary and gets special handling.
+    const missiveStats = missives.toLowerCase().replace(" (engineering)", "").replace(/ /g, "").split("/");
+    let itemAllocations = getItemAllocations(itemID, missiveStats);
+    let craftedSocket = itemSocket || checkDefaultSocket(itemID);
+    item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
+    item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+    if (item.slot === "Neck") item.socket = 3;
+    //if (item.effect.type.includes("unity")) item.uniqueEquip = "unity";
+    //item.uniqueEquip = "legendary";
+    let bonusString = "";
+    if (missives.includes("Haste")) bonusString += ":6649";
+    if (missives.includes("Mastery")) bonusString += ":6648";
+    if (missives.includes("Crit")) bonusString += ":6647";
+    if (missives.includes("Versatility")) bonusString += ":6650";
+
+    item.bonusIDS = bonusString;
+    item.guessItemQuality();
+  } else {
+    item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
+    if (item.slot === "Neck" && itemSocket) item.socket = 3;
+    item.guessItemQuality();
+  }
+  //item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
+
+  return item;
+
+};
+
 export default function ItemBar(props) {
   const contentType = useSelector((state) => state.contentType);
   const { t, i18n } = useTranslation();
@@ -124,9 +162,26 @@ export default function ItemBar(props) {
       return null;
     }
     let player = props.player;
-    let item = "";
+    //let item = "";
 
     if (gameType === "Retail") {
+      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary)
+
+      if (item) {
+        player.addActiveItem(item);
+        setItemList([...player.getActiveItems(activeSlot)]);
+        props.setItemList([...player.getActiveItems(activeSlot)]);
+        
+        setOpen(true);
+        setInputValue("");
+        setItemLevel("");
+        setItemSocket(false);
+        setItemTertiary("");
+      }
+          
+
+    };
+      /*
       const itemSlot = getItemProp(itemID, "slot", gameType);
       const isCrafted = getItemProp(itemID, "crafted", gameType);
 
@@ -159,16 +214,8 @@ export default function ItemBar(props) {
     }
 
     item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
+    */
 
-    player.addActiveItem(item);
-    setItemList([...player.getActiveItems(activeSlot)]);
-    props.setItemList([...player.getActiveItems(activeSlot)]);
-    setOpen(true);
-
-    setInputValue("");
-    setItemLevel("");
-    setItemSocket(false);
-    setItemTertiary("");
   };
 
   const itemNameChanged = (event, val) => {
