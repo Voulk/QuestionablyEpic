@@ -11,6 +11,7 @@ import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
 // import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
+import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -90,6 +91,25 @@ const PvPRating = [
   { value: 1800, label: "Duelist 2100+" },
   { value: 2000, label: "Elite 2400+" },
 ];
+
+function shortenReport(player, contentType, result) {
+  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
+
+  return report;
+}
+
+const sendReport = (shortReport) => {
+
+  const requestOptions = {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(shortReport)
+  };
+  
+  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
+  .then(response => console.log(response));
+}
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                    Burning Crusade Constants                                   */
@@ -283,7 +303,10 @@ export default function UpgradeFinderFront(props) {
     if (gameType === "Retail") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      const shortReport = shortenReport(props.player, result.contentType, result)
+      sendReport(shortReport);
       props.setItemSelection(result);
+      props.setReport(shortReport);
       props.setShowReport(true);
     } else if (gameType === "Classic") {
       const playerSettings = props.playerSettings;
