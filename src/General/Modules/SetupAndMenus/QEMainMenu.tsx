@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CharCards from "./CharacterModules/CharacterCards";
 import AddNewChar from "./CharacterModules/CharacterCreator";
-import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Grid, Button, Typography, Tooltip, Divider, Box } from "@mui/material";
@@ -17,48 +16,47 @@ import * as ls from "local-storage";
 import QEFooter from "./Footer/QEFooter";
 import Player from "../Player/Player";
 import { RootState } from "Redux/Reducers/RootReducer";
+import { styled } from "@mui/system";
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
-    [theme.breakpoints.down("md")]: {
-      margin: "auto",
-      width: "85%",
-      justifyContent: "center",
-      display: "block",
-      marginTop: 44,
-    },
-    [theme.breakpoints.up("sm")]: {
-      margin: "auto",
-      width: "80%",
-      justifyContent: "center",
-      display: "block",
-      marginTop: 24,
-    },
-    [theme.breakpoints.up("md")]: {
-      margin: "auto",
-      width: "65%",
-      justifyContent: "center",
-      display: "block",
-    },
-    [theme.breakpoints.up("lg")]: {
-      margin: "auto",
-      width: "45%",
-      justifyContent: "center",
-      display: "block",
-    },
+const Root = styled("div")(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    margin: "auto",
+    width: "85%",
+    justifyContent: "center",
+    display: "block",
+    marginTop: 44,
+  },
+  [theme.breakpoints.up("sm")]: {
+    margin: "auto",
+    width: "80%",
+    justifyContent: "center",
+    display: "block",
+    marginTop: 24,
+  },
+  [theme.breakpoints.up("md")]: {
+    margin: "auto",
+    width: "65%",
+    justifyContent: "center",
+    display: "block",
+  },
+  [theme.breakpoints.up("lg")]: {
+    margin: "auto",
+    width: "45%",
+    justifyContent: "center",
+    display: "block",
   },
 }));
 
 interface Props {
-    allChars: any;
-    charUpdate: (allChars: any) => void;
-    singleUpdate: (char: Player) => void;
-    player: Player;
-    charAddedSnack: () => void;
-    charUpdatedSnack: () => void;
-    patronStatus: string;
-    delChar: (unique: string) => void;
-    articleList: any[];
+  allChars: any;
+  charUpdate: (allChars: any) => void;
+  singleUpdate: (char: Player) => void;
+  player: Player;
+  charAddedSnack: () => void;
+  charUpdatedSnack: () => void;
+  patronStatus: string;
+  delChar: (unique: string) => void;
+  articleList: any[];
 }
 
 export default function QEMainMenu(props: Props) {
@@ -159,7 +157,6 @@ export default function QEMainMenu(props: Props) {
       ));
 
   const { t } = useTranslation();
-  const classes = useStyles();
   const characterCount = props.allChars.getAllChar(gameType).length;
   const characterCountAll = props.allChars.getAllChar("All").length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
@@ -188,7 +185,7 @@ export default function QEMainMenu(props: Props) {
 
   return (
     <div style={{ backgroundColor: "#313131", height: "100%" }}>
-      <div className={classes.root}>
+      <Root>
         <div style={{ height: 96 }} />
         <Grid container spacing={2}>
           {/*<Grid item xs={12} style={{ textAlign: "center" }}>
@@ -294,7 +291,7 @@ export default function QEMainMenu(props: Props) {
         )}
 
         <WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
-      </div>
+      </Root>
 
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                             Footer                                             */
