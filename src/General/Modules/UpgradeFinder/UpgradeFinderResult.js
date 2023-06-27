@@ -5,7 +5,7 @@ class UpgradeFinderResult {
     this.contentType = contentType;
   }
 
-  
+  id = 0;
   itemSet = [];
   differentials = [];
   itemsCompared = 0;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import UpgradeFinderFront from "./UpgradeFinderFront";
 import UpgradeFinderReport from "./UpgradeFinderReport";
 import ReactGA from "react-ga";
+import { useHistory } from "react-router-dom";
 
 export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
@@ -11,6 +12,7 @@ export function UpgradeFinder(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
+
 
   const setRaidDifficulty = (difficulty) => {
     let currDiff = playerSettings.raid;
@@ -100,7 +102,7 @@ export function UpgradeFinder(props) {
       setPVPDifficulty={setPVPDifficulty}
       setBCDungeonDifficulty={setBCDungeonDifficulty}
       singleUpdate={props.singleUpdate}
-      setReport={setReport}
+      setReport={props.setUFResult}
     />
   );
 }

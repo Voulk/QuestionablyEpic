@@ -8,10 +8,11 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -126,6 +127,7 @@ export default function UpgradeFinderFront(props) {
   const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
+  let history = useHistory();
   const helpText =
     gameType === "Retail"
       ? [
@@ -304,10 +306,12 @@ export default function UpgradeFinderFront(props) {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
       const shortReport = shortenReport(props.player, result.contentType, result)
+      result.id = shortReport.id;
       sendReport(shortReport);
       props.setItemSelection(result);
-      props.setReport(shortReport);
-      props.setShowReport(true);
+      props.setReport(result);
+      //props.setShowReport(true);
+      history.push("/upgradereport/");
     } else if (gameType === "Classic") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);

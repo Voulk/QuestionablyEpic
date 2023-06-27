@@ -33,7 +33,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
 
       if (typeof(data) === "string") {
         const jsonData = JSON.parse(data);
-        const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
+        //const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
         setResult(JSON.parse(data))
         
       }

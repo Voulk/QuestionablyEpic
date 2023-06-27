@@ -21,6 +21,39 @@ function a11yProps(index) {
   };
 }
 
+async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
+  // Check that the reportCode is acceptable.
+  /*const requestOptions = {
+    method: 'GET',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+  };*/
+
+  const url = "https://questionablyepic.com/api/getUpgradeReport.php?reportID=" + reportCode;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      //console.log(data);
+
+      if (typeof(data) === "string") {
+        const jsonData = JSON.parse(data);
+        //const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
+        setResult(JSON.parse(data))
+        
+      }
+      else if (typeof(data) === "object"){
+        if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT");
+      }
+      else {
+        console.error("Invalid Report Data Type");
+      }
+
+    })
+
+    //.catch(err => { throw err });
+}
+
 
 
 export default function UpgradeFinderReport(props) {
@@ -31,8 +64,9 @@ export default function UpgradeFinderReport(props) {
   const classes = UpgradeFinderStyles();
   const [tabvalue, setTabValue] = React.useState(0);
   const { t } = useTranslation();
-  const result = props.itemSelection;
-  const report = props.report;
+  //const result = props.itemSelection;
+  const result = props.result;
+  //const report = props.report;
   
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
@@ -52,16 +86,26 @@ export default function UpgradeFinderReport(props) {
   useEffect(() => {
     if (result/* && result.new*/) {
       if (process.env.PUBLIC_URL.includes("live")) {
-        window.history.pushState('QE Live Report', 'Title', 'live/upgradefinder/' + report.id);
+        window.history.pushState('QE Live Report', 'Title', 'live/upgradereport/' + result.id);
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
-        window.history.pushState('QE Live Report', 'Title', 'dev/upgradefinder/' + report.id);
+        window.history.pushState('QE Live Report', 'Title', 'dev/upgradereport/' + result.id);
       }
       else {
         // Call Error
       }
   
     }
+
+    if (result !== null && checkResult(result)) {
+      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+    }
+    else {
+      // No result queued. Check URL for report code and load that.
+      fetchUpgradeReport(location.pathname.split("/")[2], setResult, setBackgroundImage);
+    }
+
+
     }, []);
 
   const upgradeFinderResultsRetail = () => {

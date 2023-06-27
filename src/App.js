@@ -11,6 +11,7 @@ import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/Embelli
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
+import UpgradeFinderReport from "General/Modules/UpgradeFinder/UpgradeFinderReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import PlayerChars from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
@@ -69,12 +70,18 @@ class App extends Component {
       emailSnackState: false,
       emailSnackErrorState: false,
       topSet: null,
+      ufSet: null,
       articleList: [],
     };
   }
 
   setTopResult = (set) => {
     this.setState({ topSet: set });
+  };
+
+  
+  setUFResult = (set) => {
+    this.setState({ ufSet: set });
   };
 
   /* -------------------------------------------------------------------------- */
@@ -351,7 +358,10 @@ class App extends Component {
                     render={() => (
                       <QuickCompare player={activePlayer} allChars={allChars} simcSnack={this.handleSimCSnackOpen} singleUpdate={this.updatePlayerChar} patronStatus={this.state.patronStatus} />
                       )} />
-                  <CustomRoute player={activePlayer} path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+                  <CustomRoute 
+                    player={activePlayer} 
+                    path="/UpgradeFinder/" 
+                    render={() => <UpgradeFinder player={activePlayer} setUFResult={this.setUFResult} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
                   <CustomRoute
                     path="/topgear"
                     player={activePlayer}
@@ -400,7 +410,11 @@ class App extends Component {
                     player={activePlayer}
                     path="/report" 
                     render={() => <TopGearReport player={activePlayer || null} result={this.state.topSet || null} />} />
-
+                  <Route 
+                    report={this.state.topSet} 
+                    player={activePlayer}
+                    path="/upgradereport" 
+                    render={() => <UpgradeFinderReport player={activePlayer || null} result={this.state.ufSet || null} />} />
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                   <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
