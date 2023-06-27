@@ -1,6 +1,31 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
 
 export const otherTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                             Paracausal Fragment of Seschenal                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Paracausal Fragment of Seschenal",
+    effects: [
+      { 
+        coefficient: 32.20039, // Note that this coefficient is for when the target is below 20% health.
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        ticks: 5 * 2, // Can be extended to 10 ticks.
+        ppm: 1,
+        efficiency: 0.75,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                    Static-Charged Scale                                        */
