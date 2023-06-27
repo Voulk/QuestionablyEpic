@@ -203,8 +203,8 @@ export default function CharCards(props) {
 
   useEffect(() => {
     async function setImg() {
-      const img = await apiGetPlayerImage(props.char);
-      setBackgroundImage(img);
+      //const img = await apiGetPlayerImage(props.char);
+      //setBackgroundImage(img);
     }
 
     setImg();

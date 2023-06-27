@@ -89,7 +89,7 @@ class PlayerChars {
   setupChars = () => {
     this.allChar.forEach(char => {
       if (char.spec === "Discipline Priest") char.getActiveModel("Raid").setRampInfo(char.activeStats, [])
-      char.setPlayerAvatars();
+      //char.setPlayerAvatars();
     
     });
   }
