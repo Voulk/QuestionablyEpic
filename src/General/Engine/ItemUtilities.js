@@ -302,10 +302,12 @@ export function getVeryRareItemLevelBoost(itemID, bossID, difficulty) {
   const boostedItems = [204465, 204201, 204202, 204211, 202612];
 
   if (boostedItems.includes(itemID)) {
-    if (difficulty === 2) return 4;
-    else if (difficulty === 4) return 3;
+    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
+    if (difficulty === 2 && itemID !== 202612) return 4;
+    else if (difficulty === 4 && itemID !== 202612) return 3;
     else if (bossID === 2520 || bossID === 2523) return 7;
-    else return 6;
+    else if (itemID !== 202612) return 6;
+    else return 0;
   } 
   else return 0;
 }
@@ -773,18 +775,19 @@ export function getPrimordialImage(id) {
 
 export function buildPrimGems(gemCombo) {
   const gemData = {socket: [], string: "&gems="}
-  for (i = 0; i < 3; i++) {
+
+  for (let i = 0; i < 3; i++) {
     //const gemTooltip = data-wowhead={"item=" + item.id + "&" + "ilvl=" + item.level + gemString + "&bonus=" + item.bonusIDS + "&domain=" + wowheadDom
     gemData.string += gemCombo[i] + ":";
     gemData.socket.push (
       <div style={{ marginRight: 4, display: "inline"}} >
-        <a
+        {/*<a
         data-wowhead={"item=" + gemCombo[i] + "&ilvl=" + 424}
         target="_blank"
         rel="noopener noreferrer"
-      >
+    > */}
         <img src={getPrimordialImage(gemCombo[i])} width={15} height={15} alt="Socket"  />
-        </a>
+        {/*</a>*/}
       </div>
     );
     }

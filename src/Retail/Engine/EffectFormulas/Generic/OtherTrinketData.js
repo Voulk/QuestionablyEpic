@@ -516,5 +516,29 @@ export const otherTrinketData = [
 
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                             Magmaclaw Lure                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Magmaclaw Lure",
+    effects: [
+      { 
+        coefficient: 448.172 * 0.331, // Nerf
+        table: -9,
+        secondaries: ['versatility'],
+        cooldown: 150,
+        efficiency: {Raid: 0.62, Dungeon: 0.76}, //
+        targets: 5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
+
+      return bonus_stats;
+    }
+  },
 
 ]
