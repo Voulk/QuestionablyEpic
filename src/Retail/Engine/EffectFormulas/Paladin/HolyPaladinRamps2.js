@@ -179,10 +179,10 @@ const triggerGlimmerOfLight = (state) => {
 
     const glimmerTargets = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
     if (glimmerTargets > 0) {
-        
+        const glimmerMult = (1 + 0.1 * state.talents.gloriousDawn.points)
         const glimmerOfLight = {
             name: "Glimmer of Light",
-            coeff: 1.6416 * (1 + glimmerTargets * 0.06) / glimmerTargets, // This is split between all targets
+            coeff: 1.6416 * (1 + glimmerTargets * 0.06) * glimmerMult / glimmerTargets, // This is split between all targets
             targets: glimmerTargets,
             expectedOverheal: 0.25,
             secondaries: ["crit", "versatility", "mastery"],
@@ -191,7 +191,7 @@ const triggerGlimmerOfLight = (state) => {
 
         const glimmerOfLightAbsorb = {
             name: "Glimmer of Light (Absorb)",
-            coeff: glimmerOfLight.coeff * glimmerOfLight.expectedOverheal * 0.5,
+            coeff: glimmerOfLight.coeff * glimmerOfLight.expectedOverheal * state.talents.overflowingLight.points * 0.5,
             targets: glimmerTargets,
             expectedOverheal: 0.05,
             secondaries: ["crit", "versatility", "mastery"],

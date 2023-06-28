@@ -280,6 +280,10 @@ export const baseTalents = {
         //stats.intellect *= (1 + 0.02 * points);
     }}, 
 
+    overflowingLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+        // Handled inside.
+    }},
+
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
 
     // Golden Path - Consecration heals 6 allies on tick.
@@ -612,7 +616,7 @@ export const baseTalents = {
                 const roll = Math.random();
                 const canProceed = roll < (0.1 + (0.015 * glimmerBuffs));
 
-                if (canProceed) holyShock.cooldown = 0;
+                if (canProceed) holyShock[0].cooldown = 0;
 
             }
         }

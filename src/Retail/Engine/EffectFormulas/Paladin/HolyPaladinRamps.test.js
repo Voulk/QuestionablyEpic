@@ -146,7 +146,7 @@ describe("Evang Cast Sequence", () => {
 
 
         //console.log(seq);
-        const iterations = 1000;
+        const iterations = 1;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
@@ -166,13 +166,15 @@ describe("Evang Cast Sequence", () => {
         console.log("Avg Healing: " + Math.round((sumHealing / iterations)));
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
-        evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
+        
+        
+        //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
         
 
     });
 
-    /*
-    test("Stat Weights", () => {
+    
+    /*test("Stat Weights", () => {
 
 
         const activeStats = {
@@ -185,7 +187,7 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 6000;
+        const iterations = 1500;
         const metric = 'totalHealing';
         // Weights
 
