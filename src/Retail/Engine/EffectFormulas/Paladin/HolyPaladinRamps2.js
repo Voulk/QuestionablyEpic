@@ -26,7 +26,7 @@ const PALADINCONSTANTS = {
     enemyTargets: 1, 
 
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
-    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment"],
+    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment"],
 
     infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2}
 }
@@ -121,9 +121,12 @@ const apl = [
     }
 
     if (getTalentPoints(state, "inflorescenceOfTheSunwell")) {
-        PALADINCONSTANTS.infusion.flashOfLightReduction += 0.3;
-        PALADINCONSTANTS.infusion.holyLightHoPo += 0.34;
-        PALADINCONSTANTS.infusion.judgmentBonus *= 1.5;
+        PALADINCONSTANTS.infusion.flashOfLightReduction = 0.7 + 0.3;
+        PALADINCONSTANTS.infusion.holyLightHoPo = 2 + 0.34;
+        PALADINCONSTANTS.infusion.judgmentBonus = 2 * 1.5;
+    }
+    else {
+        PALADINCONSTANTS.infusion = {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2}
     }
 
 
@@ -179,7 +182,7 @@ const triggerGlimmerOfLight = (state) => {
         
         const glimmerOfLight = {
             name: "Glimmer of Light",
-            coeff: 2.052 * (1 + glimmerTargets * 0.06) / glimmerTargets, // This is split between all targets
+            coeff: 1.6416 * (1 + glimmerTargets * 0.06) / glimmerTargets, // This is split between all targets
             targets: glimmerTargets,
             expectedOverheal: 0.25,
             secondaries: ["crit", "versatility", "mastery"],
@@ -267,8 +270,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
     else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
 
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.4 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.27 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.35 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.245 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
@@ -658,7 +661,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith"};
 
     let currentStats = JSON.parse(JSON.stringify(stats));
-    
+
     const sequenceLength = 35; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 

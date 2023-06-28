@@ -108,22 +108,56 @@ describe("Evang Cast Sequence", () => {
 
     const seq = ["Light of Dawn", "Holy Shock", "Rest"] 
 
+    const evalTalent = (talents, talentName, incStats, settings) => {
+        let healing = 0;
+        const prevPoints = talents[talentName].points;
+        talents[talentName].points = 0;
+        const iterations = 800;
+        for (let i = 0; i < iterations; i++) {
+            const stats = JSON.parse(JSON.stringify(incStats));
+            const newBaseline = runCastSequence(seq, stats, settings, talents);
+            healing += newBaseline.hps;
+        }
+        talents[talentName].points = prevPoints;
+        //console.log(healing);
+        return healing / iterations;
+
+    }
+
+    const evalAllTalents = (baselineScore, talents, stats, settings) => {
+        const talentScores = {};
+        Object.keys(talents).forEach(talentName => {
+            const newTalent = evalTalent(talents, talentName, stats, settings);
+            talentScores[talentName] = Math.round((baselineScore - newTalent) / baselineScore * 10000) / 100;
+        })
+
+        //console.log(talentScores);
+        const sorted = Object.entries(talentScores)
+        .sort((a, b) => a[1] - b[1])
+        .reverse()
+        .reduce((a, c) => (a[c[0]] = c[1], a), {})
+
+        console.log(sorted);
+    }
+
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
 
 
         //console.log(seq);
-        const iterations = 1;
+        const iterations = 1000;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
+        let baselineHealing = 0;
 
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(activeStats));
             const baseline = runCastSequence(seq, stats, settings, talents)
             //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
             sumHealing = sumHealing + baseline.hps;
-            if (iterations === 1 || i === iterations - 1) printReport(baseline);
+            baselineHealing += baseline.hps;
+            //if (iterations === 1 || i === iterations - 1) printReport(baseline);
         }
 
         
@@ -132,6 +166,7 @@ describe("Evang Cast Sequence", () => {
         console.log("Avg Healing: " + Math.round((sumHealing / iterations)));
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
+        evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
         
 
     });

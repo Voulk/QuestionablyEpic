@@ -36,7 +36,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 2.6,
+        cost: 2.4,
         coeff: 1.535, // 1.395, 
         cooldown: 8.5,
         expectedOverheal: 0.25,
@@ -93,7 +93,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 2.5,
         cost: 2.4,
-        coeff: 3,
+        coeff: 3.25, // 
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -139,7 +139,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 24275, icon: "spell_paladin_hammerofwrath", cat: "damage"},
         type: "damage",
         castTime: 1.5,
-        cost: 0,
+        cost: 1,
         coeff: 1.302, 
         cooldown: 7.5,
         hastedCooldown: true,
@@ -151,7 +151,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 1.2,
-        coeff: 0.91476,
+        coeff: 0.8334,
         expectedOverheal: 0.3,
         holyPower: -3,
         targets: 5,
@@ -336,6 +336,7 @@ export const baseTalents = {
     // Justification. +10% Judgment damage.
     justification: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'][0].coeff *= 1.1;
+        console.log("LoD Coeff" + spellDB['Light of Dawn'][0].coeff);
     }},
 
     // SotR heals 5 nearby allies for 1% max health. Doesn't scale with anything. 
@@ -356,7 +357,7 @@ export const baseTalents = {
         const buff = {
             type: "buff",
             buffType: "heal",
-            coeff: 0.1 * points * 1.04, // 
+            coeff: 0.1 * points * 1.04 * 1.3, // 1.3 = 30% buff. 
             tickRate: 2.6,
             targets: 1,
             buffDuration: 999,
@@ -549,11 +550,11 @@ export const baseTalents = {
     }},
 
     // Awestruck
-    // Holy Shock, Holy Light, Flash of Light critical healing increased by 15%.
+    // Holy Shock, Holy Light, Flash of Light critical healing increased by 20%..
     aweStruck: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Flash of Light'][0].statMods.critEffect += 0.15;
-        spellDB['Holy Light'][0].statMods.critEffect += 0.15;
-        spellDB['Holy Shock'][0].statMods.critEffect += 0.15;
+        spellDB['Flash of Light'][0].statMods.critEffect += 0.2;
+        spellDB['Holy Light'][0].statMods.critEffect += 0.2;
+        spellDB['Holy Shock'][0].statMods.critEffect += 0.2;
     }},
 
     // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
@@ -597,6 +598,27 @@ export const baseTalents = {
             maxStacks: 8,
             buffDuration: 30,
         });
+    }},
+
+    // Holy Shock has a 10 + 1.5% chance per glimmer to refund a charge when cast. Glimmer of Lights damage and healing is increased by 10%.
+    gloriousDawn: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const resetSlice = {
+            type: "function",
+            runFunc: function (state, spell, spellDB) {
+                // Cast 5 Holy Shocks
+                const holyShock = spellDB["Holy Shock"];
+                const glimmerBuffs = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
+
+                const roll = Math.random();
+                const canProceed = roll < (0.1 + (0.015 * glimmerBuffs));
+
+                if (canProceed) holyShock.cooldown = 0;
+
+            }
+        }
+
+        spellDB['Holy Shock'].push(resetSlice);
+
     }},
 
     // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
