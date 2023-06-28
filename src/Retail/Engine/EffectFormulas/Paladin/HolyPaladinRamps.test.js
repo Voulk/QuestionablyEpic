@@ -140,13 +140,34 @@ describe("Evang Cast Sequence", () => {
         console.log(sorted);
     }
 
+    const evalTalentStrings = (talentArr, talents, incStats, settings, baselineScore) => {
+
+        talentArr.forEach(talent => {
+            if (talent in talents) {
+                talents[talent].points = talents[talent].maxPoints;
+            }
+            
+        })
+
+        let healing = 0;
+        const iterations = 4000;
+        for (let i = 0; i < iterations; i++) {
+            const stats = JSON.parse(JSON.stringify(incStats));
+            const newBaseline = runCastSequence(seq, stats, settings, talents);
+            healing += newBaseline.hps;
+        }
+
+        const diff = Math.round(((healing / iterations) - baselineScore) / baselineScore * 10000) / 100;
+        console.log("Clarius Build: +" + diff + "% (" + healing / iterations + ") HPS");
+    }
+
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
 
 
         //console.log(seq);
-        const iterations = 1;
+        const iterations = 1
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
@@ -155,9 +176,11 @@ describe("Evang Cast Sequence", () => {
             const stats = JSON.parse(JSON.stringify(activeStats));
             const baseline = runCastSequence(seq, stats, settings, talents)
             //const baseline = allRamps(runCastSequence(seq, activeStats, settings, talents).totalHealing)
+
+            //console.log(baseline);
             sumHealing = sumHealing + baseline.hps;
             baselineHealing += baseline.hps;
-            //if (iterations === 1 || i === iterations - 1) printReport(baseline);
+            if (iterations === 1 || i === iterations - 1) printReport(baseline);
         }
 
         
@@ -166,6 +189,12 @@ describe("Evang Cast Sequence", () => {
         console.log("Avg Healing: " + Math.round((sumHealing / iterations)));
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
+        
+        const build1 = ["lightsHammer", "commandingLight", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
+                            "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "inflorescenceOfTheSunwell", "boundlessSalvation"]
+
+        //evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations);
+        
         
         
         //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);

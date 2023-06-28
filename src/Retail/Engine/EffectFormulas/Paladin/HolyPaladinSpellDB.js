@@ -1,5 +1,5 @@
 import { addBuff, getHealth } from "../Generic/RampBase";
-import { runHeal } from "./HolyPaladinRamps2";
+import { runHeal, triggerGlimmerOfLight } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -209,6 +209,22 @@ export const PALADINSPELLDB = {
 
         }
     }],
+    "Daybreak": [{ // Absorb all glimmers, healing for twice the amount.
+        spellData: {id: 31884, icon: "", cat: "cooldown"},
+        type: "function",
+        cost: 0,
+        castTime: 0,
+        cooldown: 60,
+        runFunc: function (state, spell, spellDB) {
+            // Cast 5 Holy Shocks
+
+            const numGlimmers = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
+            triggerGlimmerOfLight(state);
+
+            state.manaSpent -= 3000 * numGlimmers;
+
+        }
+    }],
     "Light's Hammer": [{
         // Ticks on cast. Probably need to create a generic case for this.
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
@@ -415,16 +431,7 @@ export const baseTalents = {
     }}, 
 
 
-    // === Spec Tree ===
-    // Crusader's Might
-    crusadersMight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Crusader Strike'].push({
-            type: "cooldownReduction",
-            cooldownReduction: 1.5 * points,
-            targetSpell: "Holy Shock",
-        });
 
-    }}, 
 
     // Judgment also adds an absorb to the target.
     greaterJudgment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -437,6 +444,17 @@ export const baseTalents = {
             secondaries: ['versatility']
         })
     }},
+
+    // === Spec Tree ===
+    // Crusader's Might
+    crusadersMight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Crusader Strike'].push({
+            type: "cooldownReduction",
+            cooldownReduction: 1.5 * points,
+            targetSpell: "Holy Shock",
+        });
+
+    }}, 
 
     // Shining Savior - WoG / LoD +5%.
     // == REMOVED ==
@@ -465,12 +483,12 @@ export const baseTalents = {
 
     // Divine Rev - While empowered by IoL, Flash heals for +20% and Holy Light refunds 1% mana.
     // Handled inside.
-    divineRevelations: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, data: {holyLightMana: 0.005 * 250000, flashBonus: 1.2}, runFunc: function (state, spellDB, points) {}},
+    divineRevelations: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, data: {holyLightMana: 0.005 * 250000, flashBonus: 1.2}, runFunc: function (state, spellDB, points) {}},
 
     // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
 
     // Divine Glimpse - Holy Shock / Judgment have +7.5/15% crit chance.
-    divineGlimpse: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    divineGlimpse: {points: 0, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Holy Shock'][0].statMods.crit += (0.075 * points);
         spellDB['Judgment'][0].statMods.crit += (0.075 * points);
     }}, 
@@ -493,7 +511,7 @@ export const baseTalents = {
     }}, */ 
 
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
-    veneration: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    veneration: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Hammer of Wrath'][0].convertToHealing = 1.8;
         const venerationBuff = { // Push a HoW reset
             type: "buff",
@@ -511,7 +529,7 @@ export const baseTalents = {
     }},
 
     // Untempered Dedication - LotM healing +10% per cast, stacks up to 15s.
-    untemperedDedication: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    untemperedDedication: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of the Martyr'].push({
             type: "buff",
             name: "Untempered Dedication",
@@ -526,7 +544,7 @@ export const baseTalents = {
     }},
 
     // Maraads Dying Breath - LoD increases your LotM healing by 10% for each target healed. That LotM can heal through Beacon.
-    maraadsDyingBreath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    maraadsDyingBreath: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Light of Dawn'].push({
             type: "buff",
             name: "Maraads Dying Breath",
@@ -548,14 +566,14 @@ export const baseTalents = {
 
     // Holy Infusion
     // Crusader strike generates +1 HoPo and deals +25% damage.
-    holyInfusion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    holyInfusion: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'][0].coeff *= 1.25;
         spellDB['Crusader Strike'][0].holyPower += 1;
     }},
 
     // Awestruck
     // Holy Shock, Holy Light, Flash of Light critical healing increased by 20%..
-    aweStruck: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    aweStruck: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Flash of Light'][0].statMods.critEffect += 0.2;
         spellDB['Holy Light'][0].statMods.critEffect += 0.2;
         spellDB['Holy Shock'][0].statMods.critEffect += 0.2;
@@ -605,7 +623,7 @@ export const baseTalents = {
     }},
 
     // Holy Shock has a 10 + 1.5% chance per glimmer to refund a charge when cast. Glimmer of Lights damage and healing is increased by 10%.
-    gloriousDawn: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    gloriousDawn: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const resetSlice = {
             type: "function",
             runFunc: function (state, spell, spellDB) {
@@ -625,12 +643,30 @@ export const baseTalents = {
 
     }},
 
+    // Daybreak
+    // Consume glimmers, triggering their effects at 200% value and granting 3k mana per glimmer consumed. 
+    daybreak: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Active spell.
+    }},
+
+    // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
+    risingSunlight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        spellDB['Daybreak'].push({
+            name: "Rising Sunlight",
+            type: "buff",
+            buffType: 'special',
+            canStack: true,
+            stacks: 2,
+            buffDuration: 20,
+        });
+    }},
+
     // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
 
     // Boundless Salvation
 
     // Inflorescence of the Sunwell
-    inflorescenceOfTheSunwell: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    inflorescenceOfTheSunwell: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Holy Shock'][1].stacks = 2;
 
     }}

@@ -52,8 +52,9 @@ const PALADINCONSTANTS = {
 
 // Avenging Wrath / Might
 const apl = [
-    {s: "Avenging Wrath"}, 
-    {s: "Divine Toll"}, 
+    {s: "Avenging Wrath"},
+    {s: "Daybreak", c: {type: "time", timer: 5, talent: "daybreak"}}, 
+    {s: "Divine Toll", c: {type: "time", timer: 5}}, 
     {s: "Light's Hammer"}, 
     {s: "Light of Dawn"},
     //{s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
@@ -170,7 +171,7 @@ const applyTalents = (state, spellDB, stats) => {
 
 }
 
-const triggerGlimmerOfLight = (state) => {
+export const triggerGlimmerOfLight = (state) => {
     // Glimmer of Light places a buff on each target you Holy Shock up to a 1/3/8 target cap.
     // Whenever you Holy Shock everyone with Glimmer is healed.
 
@@ -275,8 +276,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
-    else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+    if (targetMult > 1 && !(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
+    else if (!(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
     if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
 
     // Trigger Glimmer of Light
@@ -323,6 +324,11 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
         if (conditions.type === "buff") {
             aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
         }
+        else if (conditions.type === "time") {
+            aplReq = state.t >= conditions.timer;
+        }
+
+        if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
     }
 
     //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
@@ -483,6 +489,17 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                             buff.runEndFunc = true;
                             buff.runFunc = spell.runFunc;
                             buff.canPartialTick = true;
+
+                        }
+
+                        if (spell.name === "Glimmer of Light") {
+                            // If we have 8 glimmer of lights out already, remove the oldest one.
+                            const glimmers = state.activeBuffs.filter(function (buff) {return buff.name === "Glimmer of Light"})
+                            if (glimmers.length >= 8) {
+                                const oldestGlimmer = glimmers.sort(function (a, b) {return a.expiration - b.expiration})[0];
+                                oldestGlimmer.expiration = state.t;
+                            }
+
 
                         }
 
@@ -662,7 +679,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 
-    const sequenceLength = 35; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 80; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -788,6 +805,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
             spendSpellCost(fullSpell, state, spellName);
 
+
+            // Rising Sunlight - If has buff, cast Holy Shock three times instead of twice.
+            if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
+                runSpell(fullSpell, state, spellName, paladinSpells);
+                runSpell(fullSpell, state, spellName, paladinSpells);
+                removeBuffStack(state.activeBuffs, "Rising Sunlight");
+            }
             runSpell(fullSpell, state, spellName, paladinSpells);
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
 
