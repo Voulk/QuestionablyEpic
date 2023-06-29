@@ -73,11 +73,11 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 10000,
-        haste: 5500,
-        crit: 3200,
-        mastery: 2500,
-        versatility: 1200,
+        intellect: 11400 * 1.05, // Arcane int
+        haste: 5200,
+        crit: 3800,
+        mastery: 2800,
+        versatility: 1600 + (3 * 205), // MotW
         stamina: 0,
 }
     
@@ -112,8 +112,8 @@ describe("Evang Cast Sequence", () => {
     const evalTalent = (talents, talentName, incStats, settings) => {
         let healing = 0;
         const prevPoints = talents[talentName].points;
-        talents[talentName].points = 0;
-        const iterations = 800;
+        talents[talentName].points = talents[talentName].maxPoints;
+        const iterations = 5000;
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(incStats));
             const newBaseline = runCastSequence(seq, stats, settings, talents);
@@ -129,7 +129,7 @@ describe("Evang Cast Sequence", () => {
         const talentScores = {};
         Object.keys(talents).forEach(talentName => {
             const newTalent = evalTalent(talents, talentName, stats, settings);
-            talentScores[talentName] = Math.round((baselineScore - newTalent) / baselineScore * 10000) / 100;
+            talentScores[talentName] = Math.round((newTalent - baselineScore) / baselineScore * 10000) / 100;
         })
 
         //console.log(talentScores);
@@ -141,14 +141,17 @@ describe("Evang Cast Sequence", () => {
         console.log(sorted);
     }
 
-    const evalTalentStrings = (talentArr, talents, incStats, settings, baselineScore) => {
-
-        talentArr.forEach(talent => {
-            if (talent in talents) {
-                talents[talent].points = talents[talent].maxPoints;
+    const evalTalentStrings = (talentArr, incTalents, incStats, settings, baselineScore, name) => {
+        const talents = deepCopyFunction(incTalents);
+        
+        Object.keys(talents).forEach(talentName => {
+            const talent = talents[talentName]
+            if (talentArr.includes(talentName)) {
+                talent.points = talent.maxPoints;
             }
             
         })
+        //console.log(talents)
 
         let healing = 0;
         const iterations = 4000;
@@ -159,27 +162,39 @@ describe("Evang Cast Sequence", () => {
         }
 
         const diff = Math.round(((healing / iterations) - baselineScore) / baselineScore * 10000) / 100;
-        console.log("Clarius Build: +" + diff + "% (" + healing / iterations + ") HPS");
+
+        return name + ": +" + diff + "% (" + Math.round(healing / iterations) + ") HPS"
     }
 
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
-        const build1 = ["lightsHammer", "commandingLight", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
-        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "inflorescenceOfTheSunwell", "boundlessSalvation"]
+        const build1 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
+        "divinePurpose"]
+
+        const build2 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
+        "divinePurpose"];
+
+        const build3 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
+        "reclamation", "tyrsDeliverance", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
+        "divinePurpose", "crusadersMight", "Awakening"]; //"daybreak", "risingSunlight",
+        
 
         //console.log(seq);
-        const iterations = 1
+        const iterations = 5000;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
 
-        build1.forEach(talent => {
+        /*build2.forEach(talent => {
             if (talent in talents) {
                 talents[talent].points = talents[talent].maxPoints;
             }
             
-        })
+        })*/
+        //console.log(talents); 
 
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(activeStats));
@@ -200,10 +215,13 @@ describe("Evang Cast Sequence", () => {
         //console.log(baseline.report);
         
 
-
-        //evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations);
         
+        let strings = [];
+        strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Clarius Build + Inflo"));
+        strings.push(evalTalentStrings(build2, talents, activeStats, settings, baselineHealing / iterations, "Daybreak"));
+        strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
         
+        console.log(strings); 
         
         //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
         
@@ -256,3 +274,25 @@ describe("Evang Cast Sequence", () => {
         console.log(weights); 
     }); */
 }); 
+
+// This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
+// We need this to ensure we're always running a clean DB, free from any changes made on previous runs.
+const deepCopyFunction = (inObject) => {
+    let outObject, value, key;
+  
+    if (typeof inObject !== "object" || inObject === null) {
+      return inObject; // Return the value if inObject is not an object
+    }
+  
+    // Create an array or object to hold the values
+    outObject = Array.isArray(inObject) ? [] : {};
+  
+    for (key in inObject) {
+      value = inObject[key];
+  
+      // Recursively (deep) copy for nested objects, including arrays
+      outObject[key] = deepCopyFunction(value);
+    }
+  
+    return outObject;
+  };

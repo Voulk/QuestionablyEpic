@@ -39,7 +39,7 @@ export const PALADINSPELLDB = {
         cost: 2.4,
         coeff: 1.535, // 1.395, 
         cooldown: 8.5,
-        expectedOverheal: 0.25,
+        expectedOverheal: 0.22,
         holyPower: 1,
         hastedCooldown: true,
         statMods: {'crit': 0, critEffect: 0},
@@ -50,8 +50,9 @@ export const PALADINSPELLDB = {
         onCrit: true,
         name: "Infusion of Light",
         buffType: 'special',
-        canStack: false,
+        canStack: true,
         stacks: 1,
+        maxStacks: 1,
         buffDuration: 30,
     }
 ],
@@ -73,7 +74,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 1.5,
         cost: 22,
-        coeff: 2.02, // Not final
+        coeff: 2.02 * 1.35, // Test this since it's an aura mess.
         expectedOverheal: 0.14,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -152,7 +153,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 1.2,
         coeff: 0.8334,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.26,
         holyPower: -3,
         targets: 5,
         secondaries: ['crit', 'vers', 'mastery']
@@ -368,7 +369,7 @@ export const baseTalents = {
     divinePurpose: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const buffSpell = {
             name: "Divine Purpose",
-            chance: 0.15, //0.075 * points,
+            chance: 0.15, //1,//0.15, //0.075 * points,
             type: 'buff',
             buffType: 'special',
             value: 1.15,
@@ -381,8 +382,7 @@ export const baseTalents = {
 
     // Justification. +10% Judgment damage.
     justification: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Light of Dawn'][0].coeff *= 1.1;
-        console.log("LoD Coeff" + spellDB['Light of Dawn'][0].coeff);
+        spellDB['Judgment'][0].coeff *= 1.1;
     }},
 
     // SotR heals 5 nearby allies for 1% max health. Doesn't scale with anything. 
@@ -398,7 +398,7 @@ export const baseTalents = {
         })
     }},
 
-    sealOfTheCrusader: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    sealOfTheCrusader: {points: 0, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         // Seal of the Crusader heals when we connect a weapon swing. We don't actually swing here, but a HoT is effectively the same.
         const buff = {
             type: "buff",
@@ -497,15 +497,11 @@ export const baseTalents = {
         spellDB['Holy Shock'][0].charges += 1;
     }}, 
 
-    // Radiant Onslaught - Extra CS charge.
-
     // Tower of Radiance - Casting FoL / HL on Beacon gives +1 HoPo. Casting FoL / HL on anyone else has a chance to give +1 HoPo.
 
     // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 2s.
     // Implemented in function.
-    imbuedInfusions: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-
-    }},
+    imbuedInfusions: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
     // Divine Rev - While empowered by IoL, Flash heals for +20% and Holy Light refunds 1% mana.
     // Handled inside.
@@ -523,7 +519,7 @@ export const baseTalents = {
     // Note that the CD portion is handled in Ramps instead of here.
     // == REMOVED ==
     
-    sanctifiedWrath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    sanctifiedWrath: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Avenging Wrath'][0].buffDuration += 5;
     }},
 
@@ -605,34 +601,23 @@ export const baseTalents = {
         spellDB['Holy Shock'][0].statMods.critEffect += 0.2;
     }},
 
-    // Awakening - WoG / LoD have a 7% chance to grant you Avenging Wrath for 8s.
-    awakening: {points: 0, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    // Awakening - WoG / LoD 
+    // When we get 12 stacks, remove Awakening buff, and add "Awakening - Final". Awakening Final causes the next Judgment cast to crit, deal 30% more damage and activate
+    // wings for 12s.
+    // Judgment crit portion not currently included but also very minor since it has no healing implications.
+    awakening: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const awakeningBuff = {
+            name: "Awakening",
+            canStack: true,
+            type: "buff",
+            buffType: "special",
+            buffDuration: 999,
+            maxStacks: 12,
 
-        if (state.talents.avengingCrusader.points > 0) {
-            spellDB['Light of Dawn'].push({
-                name: "Avenging Crusader",
-                chance: 0.075 * points,
-                type: "buff",
-                buffType: 'special',
-                buffDuration: 8,
-            });
-        }
-        else {
-            spellDB['Light of Dawn'].push({
-                name: "Avenging Wrath",
-                chance: 0.075 * points,
-                type: "buff",
-                castTime: 0,
-                cost: 0,
-                cooldown: 120,
-                buffType: 'statsMult',
-                stat: 'crit',
-                value: (20 * 170), // 
-                buffDuration: 8,
-            });
         }
 
-
+        spellDB['Light of Dawn'].push(awakeningBuff);
+        spellDB['Word of Glory'].push(awakeningBuff);
 
     }}, 
 
@@ -648,8 +633,23 @@ export const baseTalents = {
         });
     }},
 
+    // Spending Holy Power has a 25% chance to trigger Glimmer of Light.
+    glisteningRadiance: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const glisten = {
+            type: "function",
+            chance: 0.25,
+            runFunc: function (state, spell, spellDB) {
+                triggerGlimmerOfLight(state);
+            }
+        }
+
+        spellDB['Word of Glory'].push(glisten);
+        spellDB['Light of Dawn'].push(glisten);
+
+    }},
+
     // Holy Shock has a 10 + 1.5% chance per glimmer to refund a charge when cast. Glimmer of Lights damage and healing is increased by 10%.
-    gloriousDawn: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    gloriousDawn: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const resetSlice = {
             type: "function",
             runFunc: function (state, spell, spellDB) {
@@ -682,7 +682,7 @@ export const baseTalents = {
             type: "buff",
             buffType: 'special',
             canStack: true,
-            stacks: 2,
+            stacks: 3,
             buffDuration: 20,
         });
     }},
@@ -698,6 +698,7 @@ export const baseTalents = {
     // Inflorescence of the Sunwell
     inflorescenceOfTheSunwell: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Holy Shock'][1].stacks = 2;
+        spellDB['Holy Shock'][1].maxStacks = 2;
 
     }}
 }

@@ -28,6 +28,7 @@ const PALADINCONSTANTS = {
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
     beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment"],
 
+    tyrsHitRate: 0.8,
     infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2}
 }
 
@@ -53,18 +54,19 @@ const PALADINCONSTANTS = {
 // Avenging Wrath / Might
 const apl = [
     {s: "Avenging Wrath"},
+    {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
     {s: "Daybreak", c: {type: "time", timer: 5, talent: "daybreak"}}, 
     {s: "Divine Toll", c: {type: "time", timer: 5}}, 
     {s: "Light's Hammer"}, 
     {s: "Light of Dawn"},
     {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
-    //{s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
     {s: "Holy Shock"}, 
+    {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
     {s: "Crusader Strike"}, 
-    {s: "Judgment"}, 
+    //{s: "Judgment"}, 
     {s: "Rest"}]
 
 
@@ -234,7 +236,6 @@ const getHealingMult = (state, t, spellName, talents) => {
 
     if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
         mult *= 1.15;
-        state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
     }
     if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light") && getTalentPoints(state, "divineRevelations") > 0) mult *= getTalentData(state, "divineRevelations", "flashBonus");
     else if (spellName === "Judgment" && checkBuffActive(state.activeBuffs, "Infusion of Light")) mult *= PALADINCONSTANTS.infusion.judgmentBonus;
@@ -248,6 +249,10 @@ const getHealingMult = (state, t, spellName, talents) => {
         state.activeBuffs = removeBuff(state.activeBuffs, "Maraads Dying Breath");
 
     }
+    if (["Flash of Light", "Holy Light", "Holy Shock"].includes(spellName) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
+        mult *= (0.3 * PALADINCONSTANTS.tyrsHitRate + 1);
+    }
+
     return mult;
 }
 
@@ -380,7 +385,7 @@ export const genSpell = (state, spells) => {
 
 
 const runSpell = (fullSpell, state, spellName, paladinSpells) => {
-
+    addReport(state, "Casting: " + spellName);
     fullSpell.forEach(spell => {
 
         let canProceed = false
@@ -498,17 +503,35 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                             const glimmers = state.activeBuffs.filter(function (buff) {return buff.name === "Glimmer of Light"})
                             if (glimmers.length >= 8) {
                                 const oldestGlimmer = glimmers.sort(function (a, b) {return a.expiration - b.expiration})[0];
-                                oldestGlimmer.expiration = state.t;
+                                state.activeBuffs = state.activeBuffs.filter((buff) => buff !== oldestGlimmer);
+
                             }
 
                         }
+                        state.activeBuffs.push(buff);
 
                         //if (spell.name === "Temporal Compression") console.log(buff);
-                        state.activeBuffs.push(buff);
+ 
                     }
                     else {
                         const buff = state.activeBuffs.filter(function (buff) {return buff.name === spell.name})[0];
-                        if (spell.name === "Avenging Crusader") {
+
+                        if (spell.name === "Awakening") {
+                            if ((buff.stacks + 1) >= buff.maxStacks) {
+                                // At awakening cap. Remove buff, then add new buff.
+                                state.activeBuffs = removeBuff(state.activeBuffs, "Awakening")
+                                const awakeningFinal = {name: "Awakening - Final", expiration: (state.t  + 99), buffType: "special", 
+                                    value: 1.3, stacks: 1, canStack: false};
+                                state.activeBuffs.push(awakeningFinal);
+                                addReport(state, `Adding Awakening - Final`)
+                            }
+                            else {
+                                // Not at awakening cap yet. Increase buff stack by 1.
+                                buff.stacks += 1;
+                            }
+                        }
+
+                        else if (spell.name === "Avenging Crusader") {
                             
 
                             //const buffDuration = buff[0].expiration - state.t;
@@ -526,8 +549,6 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
 
                         addReport(state, `${spell.name} stacks: ${buff.stacks}`)
                     }
-
-
                 }     
                 // Spell amps are buffs that increase the amount of healing the next spell that meets the criteria. The criteria is defined in the buff itself by a function.
                 // Examples might include Call of Ysera or Soul of the Forest.
@@ -563,7 +584,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (spell.cooldown) {
 
                 if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.2);
-                if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
                 else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
                 else spell.activeCooldown = state.t + spell.cooldown;
             }
@@ -572,6 +593,8 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
     }); 
 
     // Any post-spell code.
+
+    // All post-spell infusion code.
     if (["Flash of Light", "Holy Light", "Judgment"].includes(spellName) && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
         if (spellName === "Holy Light") {
             if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "holyLightMana");
@@ -587,8 +610,29 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
         // Remove a stack of IoL.
         state.activeBuffs = removeBuffStack(state.activeBuffs, "Infusion of Light");
     }
-    if (spellName === "Hammer of Wrath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Veneration");
+    else if (spellName === "Hammer of Wrath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Veneration");
+    if (spellName === "Judgment" && checkBuffActive(state.activeBuffs, "Awakening - Final")) {
+        // Add wings
+        const buffExists = state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length;
+        if (buffExists) {
+            const buff = state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"})[0];
+            buff.expiration = buff.expiration + 12;
+            addReport(state, "Awakening: Extending Wings Buff");
+        }
+        else {
+            const wings = {name: "Avenging Wrath", expiration: (state.t + 12), buffType: "statsMult", stat: "crit", value: (15 * 170)};
+            state.activeBuffs.push(wings);
+            addReport(state, "Awakening Proc! Wings for 12s!");
+        }
 
+        // Remove 
+        state.activeBuffs = removeBuff(state.activeBuffs, "Awakening - Final");
+    }
+    else if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
+        // Refund HoPo
+        state.holyPower += 3;
+        state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
+    }
 }
 
 const getTalentPoints = (state, talentName) => {
@@ -678,7 +722,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 
-    const sequenceLength = 80; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 120; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -807,6 +851,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
             // Rising Sunlight - If has buff, cast Holy Shock three times instead of twice.
             if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
+                addReport(state, "Casting Multiple Holy Shocks due to Rising Sunlight")
                 runSpell(fullSpell, state, spellName, paladinSpells);
                 runSpell(fullSpell, state, spellName, paladinSpells);
                 removeBuffStack(state.activeBuffs, "Rising Sunlight");
