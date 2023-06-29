@@ -100,10 +100,11 @@ describe("Evang Cast Sequence", () => {
         Object.keys(sorted).forEach(key => {
             healingOrd.push(key + ": " + Math.round(sorted[key]) + " (" + Math.round(sorted[key] / report.totalHealing * 10000) / 100 + "%)") ;
         });
+        console.log(report);
         console.log("Healing");
         console.log(healingOrd);
         console.log("HPS: " + Math.round(report.hps) + ". HPM: " + Math.round(100 * report.hpm) / 100);
-        console.log(report);
+        
     }
 
     const seq = ["Light of Dawn", "Holy Shock", "Rest"] 
@@ -164,13 +165,21 @@ describe("Evang Cast Sequence", () => {
     test("Test Stuff", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
-
+        const build1 = ["lightsHammer", "commandingLight", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "inflorescenceOfTheSunwell", "boundlessSalvation"]
 
         //console.log(seq);
         const iterations = 1
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
+
+        build1.forEach(talent => {
+            if (talent in talents) {
+                talents[talent].points = talents[talent].maxPoints;
+            }
+            
+        })
 
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(activeStats));
@@ -190,8 +199,7 @@ describe("Evang Cast Sequence", () => {
         //console.log("Total Healing: " + baseline.totalHealing);
         //console.log(baseline.report);
         
-        const build1 = ["lightsHammer", "commandingLight", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
-                            "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "inflorescenceOfTheSunwell", "boundlessSalvation"]
+
 
         //evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations);
         

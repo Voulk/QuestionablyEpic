@@ -57,6 +57,7 @@ const apl = [
     {s: "Divine Toll", c: {type: "time", timer: 5}}, 
     {s: "Light's Hammer"}, 
     {s: "Light of Dawn"},
+    {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     //{s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
     {s: "Holy Shock"}, 
@@ -500,9 +501,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                                 oldestGlimmer.expiration = state.t;
                             }
 
-
                         }
-
 
                         //if (spell.name === "Temporal Compression") console.log(buff);
                         state.activeBuffs.push(buff);
@@ -563,7 +562,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
             if (spell.cooldown) {
 
-                //if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.4);
+                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.2);
                 if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
                 else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
                 else spell.activeCooldown = state.t + spell.cooldown;

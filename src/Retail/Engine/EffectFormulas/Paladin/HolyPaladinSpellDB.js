@@ -250,6 +250,32 @@ export const PALADINSPELLDB = {
         tickRate: 2,
         expectedOverheal: 0.45,
     }],
+    "Tyr's Deliverance": [{
+        // Ticks on cast. Probably need to create a generic case for this.
+        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
+        castTime: 2,
+        type: "heal",
+        cost: 2.4,
+        coeff: 0.7375,
+        targets: 5,
+        secondaries: ['crit', 'vers', 'mastery'],
+        cooldown: 90,
+        expectedOverheal: 0.45,
+    },
+    {
+        // 
+        type: "buff",
+        name: "Tyr's Deliverance",
+        buffType: "heal",
+        coeff: 0.7375,
+        targets: 1,
+        secondaries: ['crit', 'vers', 'mastery'],
+        canPartialTick: false,
+        buffDuration: 20,
+        buffCap: 60,
+        tickRate: 1,
+        expectedOverheal: 0.55,
+    }],
 
 }
 
@@ -496,10 +522,10 @@ export const baseTalents = {
     // Sanctified Wrath - Holy Shock CD reduced by 40% during wings. +5s Wings duration.
     // Note that the CD portion is handled in Ramps instead of here.
     // == REMOVED ==
-    /*
+    
     sanctifiedWrath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Avenging Wrath'][0].buffDuration += 5;
-    }}, */
+    }},
 
     // Second Sunrise - Light of Dawn heals a second time for 20% of the amount.
     // TODO: Check if Empyrean Legacy affects both.
@@ -562,7 +588,7 @@ export const baseTalents = {
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
-    // Spending Holy Power gives you +1% haste for 12s. Stacks up to 3 times.
+    // Spending Holy Power gives you +1% haste for 12s. Stacks up to 5 times.
 
     // Holy Infusion
     // Crusader strike generates +1 HoPo and deals +25% damage.
@@ -650,7 +676,7 @@ export const baseTalents = {
     }},
 
     // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
-    risingSunlight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    risingSunlight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Daybreak'].push({
             name: "Rising Sunlight",
             type: "buff",
@@ -659,6 +685,10 @@ export const baseTalents = {
             stacks: 2,
             buffDuration: 20,
         });
+    }},
+
+    tyrsDeliverance: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Active spell.
     }},
 
     // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
