@@ -183,17 +183,17 @@ describe("Evang Cast Sequence", () => {
         
 
         //console.log(seq);
-        const iterations = 5000;
+        const iterations = 1;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
 
-        /*build2.forEach(talent => {
+        build2.forEach(talent => {
             if (talent in talents) {
                 talents[talent].points = talents[talent].maxPoints;
             }
             
-        })*/
+        })
         //console.log(talents); 
 
         for (let i = 0; i < iterations; i++) {
@@ -215,21 +215,22 @@ describe("Evang Cast Sequence", () => {
         //console.log(baseline.report);
         
 
-        
+        /*
         let strings = [];
         strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Clarius Build + Inflo"));
         strings.push(evalTalentStrings(build2, talents, activeStats, settings, baselineHealing / iterations, "Daybreak"));
         strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
         
         console.log(strings); 
-        
+        */
+
         //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
         
 
     });
 
     
-    /*test("Stat Weights", () => {
+    test("Stat Weights", () => {
 
 
         const activeStats = {
@@ -242,11 +243,22 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 1500;
+        const iterations = 2500;
         const metric = 'totalHealing';
         // Weights
 
-        const stats = ['intellect','versatility', 'crit', 'mastery', 'haste'];
+        const build2 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
+        "divinePurpose"];
+
+        build2.forEach(talent => {
+            if (talent in talents) {
+                talents[talent].points = talents[talent].maxPoints;
+            }
+            
+        })
+
+        const stats = ['intellect','crit', 'mastery', 'haste', 'versatility', ];
         const baseline = runCastSequence(seq, activeStats, settings, talents)[metric]
         const results = {};
         stats.forEach(stat => {
@@ -272,7 +284,7 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    }); */
+    });
 }); 
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.

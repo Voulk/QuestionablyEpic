@@ -189,7 +189,7 @@ export const triggerGlimmerOfLight = (state) => {
             coeff: 1.6416 * (1 + glimmerTargets * 0.06) * glimmerMult / glimmerTargets, // This is split between all targets
             targets: glimmerTargets,
             expectedOverheal: 0.25,
-            secondaries: ["crit", "versatility", "mastery"],
+            secondaries: ["crit", "vers", "mastery"],
             type: "heal",
         }
 
@@ -198,7 +198,7 @@ export const triggerGlimmerOfLight = (state) => {
             coeff: glimmerOfLight.coeff * glimmerOfLight.expectedOverheal * state.talents.overflowingLight.points * 0.5,
             targets: glimmerTargets,
             expectedOverheal: 0.05,
-            secondaries: ["crit", "versatility", "mastery"],
+            secondaries: ["crit", "vers", "mastery"],
             type: "heal",
         }
 
