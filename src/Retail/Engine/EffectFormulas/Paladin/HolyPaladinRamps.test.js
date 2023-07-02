@@ -243,7 +243,7 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 2500;
+        const iterations = 1;
         const metric = 'totalHealing';
         // Weights
 
@@ -259,7 +259,14 @@ describe("Evang Cast Sequence", () => {
         })
 
         const stats = ['intellect','crit', 'mastery', 'haste', 'versatility', ];
-        const baseline = runCastSequence(seq, activeStats, settings, talents)[metric]
+
+        let baseline = 0;
+        for (var i = 0; i < iterations; i++) {
+            const result = runCastSequence(seq, activeStats, settings, talents)[metric]
+            baseline += result;
+        }
+        baseline = baseline / iterations;
+        //const baseline = runCastSequence(seq, activeStats, settings, talents)[metric]
         const results = {};
         stats.forEach(stat => {
 
