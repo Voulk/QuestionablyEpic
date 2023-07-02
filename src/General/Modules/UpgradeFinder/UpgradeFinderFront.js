@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic"];
+const raidDifficulty = ["Raid Finder", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -280,6 +280,7 @@ export default function UpgradeFinderFront(props) {
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
   const [selectedHeroicMax, setSelectedHeroicMax] = React.useState(false);
   const [selectedMythic, setSelectedMythic] = React.useState(false);
+  const [selectedMythicMax, setSelectedMythicMax] = React.useState(false);
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
@@ -292,8 +293,8 @@ export default function UpgradeFinderFront(props) {
 
   // let history = useHistory();
 
-  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic];
-  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic];
+  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic, selectedMythicMax];
+  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic, setSelectedMythicMax];
 
   const editSettings = (setting, newValue) => {
     userSettings[setting] = newValue;

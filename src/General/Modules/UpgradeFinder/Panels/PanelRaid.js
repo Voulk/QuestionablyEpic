@@ -29,6 +29,8 @@ const getDifficultyName = (difficulty) => {
       return "Heroic (Max)";
     case 5:
       return "Mythic";
+    case 6:
+      return "Mythic (Max)";
   }
 };
 

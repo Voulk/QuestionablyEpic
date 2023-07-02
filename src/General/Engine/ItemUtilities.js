@@ -281,17 +281,22 @@ export function filterClassicItemListBySource(itemList, sourceInstance, sourceBo
   return temp;
 }
 
-export function getItemLevelBoost(bossID) {
-  // Vault
-  if (bossID ===  2502 || bossID === 2491) return 6;    // Dathea and Kurog 
-  else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
+export function getItemLevelBoost(bossID, difficulty) {
 
-  // Aberrus
-  else if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
+  // Handle max difficulties
+  if (difficulty === CONSTANTS.difficulties.mythicMax) {
+    console.log("MYTHIC MAX");
+    if (bossID === 2523 || bossID === 2520) return 3;
+    else return 0;
+  } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
+  else if (difficulty === CONSTANTS.difficulties.normalMax || difficulty === CONSTANTS.difficulties.heroicMax) return 0;
+
+  // Handle non-max difficulties.
+  if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
   else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
-  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkareth
-  
-  else return 0;
+  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+
+  return 0;
 }
 
 const isMaxxed = (difficulty) => {
@@ -303,8 +308,8 @@ export function getVeryRareItemLevelBoost(itemID, bossID, difficulty) {
 
   if (boostedItems.includes(itemID)) {
     // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
-    if (difficulty === 2 && itemID !== 202612) return 4;
-    else if (difficulty === 4 && itemID !== 202612) return 3;
+    if (difficulty === CONSTANTS.difficulties.normalMax && itemID !== 202612) return 4;
+    else if (difficulty === CONSTANTS.difficulties.heroicMax && itemID !== 202612) return 3;
     else if (bossID === 2520 || bossID === 2523) return 7;
     else if (itemID !== 202612) return 6;
     else return 0;
