@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
+const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -93,23 +93,21 @@ const PvPRating = [
 ];
 
 function shortenReport(player, contentType, result) {
-  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
+  const report = { id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials };
 
   return report;
 }
 
 const sendReport = (shortReport) => {
-
   const requestOptions = {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(shortReport)
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(shortReport),
   };
-  
-  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
-  .then(response => console.log(response));
-}
+
+  fetch("https://questionablyepic.com/api/addUpgradeReport.php", requestOptions).then((response) => console.log(response));
+};
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                    Burning Crusade Constants                                   */
@@ -275,6 +273,7 @@ export default function UpgradeFinderFront(props) {
   ];
 
   const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
+  const [selectedRaidFinderMax, setSelectedRaidFinderMax] = React.useState(false);
   const [selectedNormal, setSelectedNormal] = React.useState(false);
   const [selectedNormalMax, setSelectedNormalMax] = React.useState(false);
   const [selectedHeroic, setSelectedHeroic] = React.useState(false);
@@ -293,8 +292,8 @@ export default function UpgradeFinderFront(props) {
 
   // let history = useHistory();
 
-  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic, selectedMythicMax];
-  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic, setSelectedMythicMax];
+  const selectsPvE = [selectedRaidFinder, selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic, selectedMythicMax];
+  const setsPvE = [setSelectedRaidFinder, setSelectedRaidFinderMax, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic, setSelectedMythicMax];
 
   const editSettings = (setting, newValue) => {
     userSettings[setting] = newValue;
@@ -304,7 +303,7 @@ export default function UpgradeFinderFront(props) {
     if (gameType === "Retail") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result)
+      const shortReport = shortenReport(props.player, result.contentType, result);
       sendReport(shortReport);
       props.setItemSelection(result);
       props.setReport(shortReport);
@@ -390,26 +389,103 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justifyContent="center" spacing={1}>
-                  {raidDifficulty.map((key, i) => (
-                    <Grid item xs="auto" key={i}>
-                      <ToggleButton
-                        classes={{
-                          root: classes.red,
-                          selected: classes.selectedRed,
-                        }}
-                        value="check"
-                        selected={props.playerSettings.raid.includes(i)}
-                        style={{ width: 140, height: 40 }}
-                        onChange={() => {
-                          setsPvE[i](!selectsPvE[i]);
-                          props.setRaidDifficulty(i);
-                        }}
-                      >
-                        {t("RaidDifficulty." + key)}
-                      </ToggleButton>
+                <Grid container justifyContent="center" spacing={1} columns={8}>
+                  <Grid item xs={2}>
+                    <Grid container justifyContent="center" spacing={1}>
+                      {raidDifficulty.slice(0, 2).map((key, i) => (
+                        <Grid item xs={12} key={i}>
+                          <ToggleButton
+                            classes={{
+                              root: classes.red,
+                              selected: classes.selectedRed,
+                            }}
+                            value="check"
+                            fullWidth
+                            selected={props.playerSettings.raid.includes(i)}
+                            style={{ height: 40 }}
+                            onChange={() => {
+                              setsPvE[i](!selectsPvE[i]);
+                              props.setRaidDifficulty(i);
+                            }}
+                          >
+                            {t("RaidDifficulty." + key)}
+                          </ToggleButton>
+                        </Grid>
+                      ))}
                     </Grid>
-                  ))}
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Grid container justifyContent="center" spacing={1}>
+                      {raidDifficulty.slice(2, 4).map((key, i) => (
+                        <Grid item xs={12} key={i + 1}>
+                          <ToggleButton
+                            classes={{
+                              root: classes.red,
+                              selected: classes.selectedRed,
+                            }}
+                            value="check"
+                            fullWidth
+                            selected={props.playerSettings.raid.includes(i + 1)}
+                            style={{ height: 40 }}
+                            onChange={() => {
+                              setsPvE[i + 1](!selectsPvE[i + 1]);
+                              props.setRaidDifficulty(i + 1);
+                            }}
+                          >
+                            {t("RaidDifficulty." + key)}
+                          </ToggleButton>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Grid container justifyContent="center" spacing={1}>
+                      {raidDifficulty.slice(4, 6).map((key, i) => (
+                        <Grid item xs={12} key={i + 3}>
+                          <ToggleButton
+                            classes={{
+                              root: classes.red,
+                              selected: classes.selectedRed,
+                            }}
+                            value="check"
+                            fullWidth
+                            selected={props.playerSettings.raid.includes(i + 3)}
+                            style={{ height: 40 }}
+                            onChange={() => {
+                              setsPvE[i + 3](!selectsPvE[i + 3]);
+                              props.setRaidDifficulty(i + 3);
+                            }}
+                          >
+                            {t("RaidDifficulty." + key)}
+                          </ToggleButton>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Grid container justifyContent="center" spacing={1}>
+                      {raidDifficulty.slice(6, 8).map((key, i) => (
+                        <Grid item xs={12} key={i + 5}>
+                          <ToggleButton
+                            classes={{
+                              root: classes.red,
+                              selected: classes.selectedRed,
+                            }}
+                            value="check"
+                            fullWidth
+                            selected={props.playerSettings.raid.includes(i + 5)}
+                            style={{ height: 40 }}
+                            onChange={() => {
+                              setsPvE[i + 5](!selectsPvE[i + 5]);
+                              props.setRaidDifficulty(i + 5);
+                            }}
+                          >
+                            {t("RaidDifficulty." + key)}
+                          </ToggleButton>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Grid>
                 </Grid>
               </div>
             </Paper>
@@ -520,7 +596,7 @@ export default function UpgradeFinderFront(props) {
           </Paper>
         </Grid> */}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
-      </Grid> 
+      </Grid>
 
       <div
         style={{
