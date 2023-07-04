@@ -1,7 +1,7 @@
 import React from "react";
 import { MenuItem, ListSubheader } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 import { cooldownDB } from "../Data/CooldownDB";
 

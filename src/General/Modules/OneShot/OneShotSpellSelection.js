@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Grid, Typography, Paper } from "@mui/material";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export default function OneShotSpellSelection(props) {
   const { defensives, activateSpell, defensiveType, label } = props;

@@ -47,6 +47,7 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 // to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
 // You can expand this function with more fields if they're necessary.
 export function runGenericFlatProc(effect, itemLevel, player) {
+
   const value = processedValue(effect, itemLevel, effect.efficiency || 1);
   let mult = 1;
 
@@ -55,8 +56,8 @@ export function runGenericFlatProc(effect, itemLevel, player) {
   if ('secondaries' in effect) mult *= player.getStatMults(effect.secondaries);
   if ('ppm' in effect) mult *= (effect.ppm * 1.13);
 
-  return value * mult / 60;
-
+  if ('cooldown' in effect) return value * mult / effect.cooldown;
+  else return value * mult / 60;
 
 }
 
@@ -71,6 +72,10 @@ export function runDiscOnUseTrinket(trinketName, trinketValue, playerStats, cast
 
 export function convertPPMToUptime(PPM, duration) {
   return 1.13 * (1 - Math.E ** -((PPM * duration) / 60));
+}
+
+export function convertPPMToUptimeWithICD(PPM, duration) {
+  
 }
 
 export function getHighestStat(stats) {

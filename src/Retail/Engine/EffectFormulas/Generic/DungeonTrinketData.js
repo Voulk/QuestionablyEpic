@@ -1,6 +1,40 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Echoing Tyrstone                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* TODO: Test target count, test crit / vers scaling (possibly neither?). 
+    */
+    name: "Echoing Tyrstone",
+    effects: [
+      { 
+        coefficient: 167.2488, 
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        targets: 5, // TODO: Test.
+        cooldown: 120, // cooldown of 120.
+        efficiency: 0.6,
+      },
+      { // AoE Haste effect
+        coefficient: 0.094992, 
+        table: -7,
+        targets: 5, // TODO: Test.
+        cooldown: 120, // cooldown of 120.
+        efficiency: 0.6,
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets * data[1].efficiency * data[1].duration / data[1].cooldown;
+ 
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                            Rainsong                                            */
@@ -176,7 +210,7 @@ export const dungeonTrinketData = [
       const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
+      const whelpSetting = "Crit Buff"; // getSetting(additionalData.settings, "rubyWhelpShell");
       if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = bigProc; procRates["HasteProc"] = smallProc; }
