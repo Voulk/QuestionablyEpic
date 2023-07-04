@@ -356,8 +356,6 @@ export default function UpgradeFinderFront(props) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}

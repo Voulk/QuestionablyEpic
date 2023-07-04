@@ -11,7 +11,7 @@ import Looks3Icon from "@mui/icons-material/Looks3";
 import Looks4Icon from "@mui/icons-material/Looks4";
 import ClearIcon from "@mui/icons-material/Clear";
 import BuildIcon from "@mui/icons-material/Build";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 import { getBossAbilityTranslation } from "General/Modules/CooldownPlanner/Data/CooldownPlannerBaillAbilityTranslations.js";
 
 const selectMenu = createTheme({

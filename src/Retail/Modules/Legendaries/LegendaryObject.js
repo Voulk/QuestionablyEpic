@@ -4,7 +4,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { legendaryImages } from "./LegendaryIcons";
 import { legendaryNameTranslator } from "./LegendaryTranslations";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles({
   root: {
@@ -66,7 +66,7 @@ export default function LegendaryObject(props) {
                   <img
                     height={40}
                     width={40}
-                    src={legendaryImages[item.name].default}
+                    src={legendaryImages[item.name]}
                     alt=""
                     style={{
                       borderRadius: 4,

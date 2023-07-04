@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { getTranslatedClassName } from "locale/ClassNames";
 
 
-const addBtn = require("../../../../Images/AddBtn.jpg").default;
+const addBtn = require("../../../../Images/AddBtn.jpg");
 
 const useStyles = makeStyles((theme) => ({
   formControl: {

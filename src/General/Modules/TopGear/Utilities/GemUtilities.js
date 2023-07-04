@@ -1,5 +1,5 @@
 
-import { getBestGem } from "../../../Engine/ItemUtilities";
+import { getBestGem } from "../../../Engine/ItemUtilitiesClassic";
 import { deepCopyFunction } from "../Engine/TopGearEngineShared";
 import { GEMS } from "General/Engine/GEMS";
 

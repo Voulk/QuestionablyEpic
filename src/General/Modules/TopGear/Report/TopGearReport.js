@@ -54,27 +54,27 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
   const classIcon = (spec) => {
     switch (spec) {
       case "Holy Paladin":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Holy Paladin Classic":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Restoration Shaman":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Restoration Shaman Classic":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Holy Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Holy Priest Classic":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Preservation Evoker":
-        return require("Images/Classes/Evoker/icon_dracthyr.png").default;
+        return require("Images/Classes/Evoker/icon_dracthyr.png");
       case "Restoration Druid Classic":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Mistweaver Monk":
-        return require("Images/Classes/Monk/icon-monk.png").default;
+        return require("Images/Classes/Monk/icon-monk.png");
       default:
         break;
     }
@@ -112,7 +112,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
-      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
     }
     else {
       // No result queued. Check URL for report code and load that.

@@ -1,5 +1,5 @@
 import React from "react";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export const SpellIcon = ({ spell, spec, iconType, size, className, alt = "", ...others }) => {
   if (!spell) {
@@ -21,7 +21,7 @@ export const SpellIcon = ({ spell, spec, iconType, size, className, alt = "", ..
     // This is a temporary icon override since Evoker spells aren't in the WoW render DB yet.
     // We can also add spell IDs to the icon list above if they are use Dragonflight specific icons.
     // When the expansion goes live these will all just be pulled via Blizzard API.
-    fullURL = require("Images/Spells/" + icon + ".jpg").default || "";
+    fullURL = require("Images/Spells/" + icon + ".jpg") || "";
   }
 
   // TODO: Refine the centered text here.
