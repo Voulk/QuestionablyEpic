@@ -94,7 +94,19 @@ export default function ItemBar(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
-  const playerSettings = useSelector((state) => state.playerSettings);
+
+  const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
+  /* ------------------------------ Define State ----------------------------- */
+  const [itemLevel, setItemLevel] = useState("");
+  const [itemID, setItemID] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [activeSlot, setSlot] = useState("");
+  const [itemSocket, setItemSocket] = useState(false);
+  const [itemTertiary, setItemTertiary] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [missives, setMissives] = useState("Haste / Versatility");
+
+  /* ------------------------ End Simc Module Functions ----------------------- */
 
   /* ----------------------------- Snackbar State ----------------------------- */
   const [open, setOpen] = useState(false);
@@ -131,20 +143,6 @@ export default function ItemBar(props) {
     return newItemList;
   };
 
-  const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
-  /* ------------------------------ Define State ----------------------------- */
-  const [itemLevel, setItemLevel] = useState("");
-  const [itemID, setItemID] = useState("");
-  const [itemName, setItemName] = useState("");
-  const [activeSlot, setSlot] = useState("");
-  const [itemSocket, setItemSocket] = useState(false);
-  const [itemTertiary, setItemTertiary] = useState("");
-  const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-  const [inputValue, setInputValue] = useState("");
-  const [missives, setMissives] = useState("Haste / Versatility");
-
-  /* ------------------------ End Simc Module Functions ----------------------- */
-
   const handleClosePop = () => {
     setAnchorEl(null);
   };
@@ -166,11 +164,11 @@ export default function ItemBar(props) {
     //let item = "";
 
     if (gameType === "Retail") {
-      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary)
+      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary, missives)
 
       if (item) {
+        item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
         player.addActiveItem(item);
-        setItemList([...player.getActiveItems(activeSlot)]);
         props.setItemList([...player.getActiveItems(activeSlot)]);
         
         setOpen(true);

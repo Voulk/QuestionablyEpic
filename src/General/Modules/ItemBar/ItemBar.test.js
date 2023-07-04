@@ -17,7 +17,6 @@ describe("Top Gear full test", () => {
         expect(item.stats.crit).toEqual(605);
         expect(item.stats.mastery).toEqual(605);
         expect(item.socket).toEqual(3);
-
     })
 
 })
