@@ -6,6 +6,7 @@ import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -137,8 +138,12 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   if (instanceID === 1208) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
-    if (difficulty === 2 || difficulty === 4) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
-    else itemLevel += getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+
+    // If we're looking at Max difficulties then only grab the very rare boost.
+    //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+
+    // Otherwise grab both the very rare and any boss-specific item level increase.
+    itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
 
@@ -167,7 +172,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
-  
+
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   if (item.slot === "Neck") item.socket = 3;
   //let itemAllocations = getItemAllocations(itemID, []);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Tabs, Tab, AppBar, Typography, Grid } from "@mui/material";
 // import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -21,28 +21,9 @@ function a11yProps(index) {
   };
 }
 
-function shortenReport(player, contentType, result) {
-  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
 
-  return report;
-}
 
-const sendReport = (shortReport) => {
-
-  /*
-  const requestOptions = {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(shortReport)
-  };
-  
-  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
-  .then(response => console.log(response));
-  */
-}
-
-export default function UpgradeFinderResults(props) {
+export default function UpgradeFinderReport(props) {
   //   useEffect(() => {
   //     ReactGA.pageview(window.location.pathname + window.location.search);
   //   }, []);
@@ -51,12 +32,13 @@ export default function UpgradeFinderResults(props) {
   const [tabvalue, setTabValue] = React.useState(0);
   const { t } = useTranslation();
   const result = props.itemSelection;
+  const report = props.report;
   
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
   //console.log("Total Item Count: " + itemDifferentials.length);
   //console.log(JSON.stringify(itemDifferentials));
-  sendReport(shortenReport(props.player, result.contentType, result));
+  
   const gameType = useSelector((state) => state.gameType);
   itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
   const handleTabChange = (event, newValue) => {
@@ -66,6 +48,21 @@ export default function UpgradeFinderResults(props) {
   const returnToSetup = () => {
     props.setShowReport(false);
   };
+
+  useEffect(() => {
+    if (result/* && result.new*/) {
+      if (process.env.PUBLIC_URL.includes("live")) {
+        window.history.pushState('QE Live Report', 'Title', 'live/upgradefinder/' + report.id);
+      }
+      else if (process.env.PUBLIC_URL.includes("dev")) {
+        window.history.pushState('QE Live Report', 'Title', 'dev/upgradefinder/' + report.id);
+      }
+      else {
+        // Call Error
+      }
+  
+    }
+    }, []);
 
   const upgradeFinderResultsRetail = () => {
     return (
