@@ -106,7 +106,8 @@ export async function apiGetPlayerImage(player) {
 /*                      Get player armory image from Blizzard API via QE API                      */
 /* ---------------------------------------------------------------------------------------------- */
 export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion, setBackgroundImage) {
-  console.log("Calling 3");
+  return;
+  // Blizzard API changes have removed the image this pointed to. Might revisit it with a custom image later.
   if (playerName && playerRealm && playerRegion) {
     
     let region = playerRegion.toLowerCase();
@@ -114,10 +115,10 @@ export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion, 
     let realm = playerRealm.toLowerCase().replace(" ", "-");
     let urlReturned = "";
     let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
+    console.log(fetchUrl);
     await fetch(fetchUrl)
       .then((res) => res.text())
       .then((response) => {
-
         urlReturned = response.toString();
         setBackgroundImage(urlReturned);
       })

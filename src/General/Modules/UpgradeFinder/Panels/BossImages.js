@@ -5,21 +5,21 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
     /* ---------------------------------------------------------------------------------------------- */
     switch (props) {
       case 2437: // Zo'phex the Sentinel
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/zophex.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/zophex.png");
       case 2454: // The Grand Menagerie
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/menagerie.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/menagerie.png");
       case 2436: // Mailroom Mayhem
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/postmaster.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/postmaster.png");
       case 2452: // Myza's Oasis
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/oasis.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/oasis.png");
       case 2451: // So'azmi
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/soazmi.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/soazmi.png");
       case 2448: // Hylbrande
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/hylbrande.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/hylbrande.png");
       case 2449: // Timecap'n Hooktail
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/timecapn.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/timecapn.png");
       case 2455: // So'leah
-        return require("Images/MythicPlus/TazaveshTheVeiledMarket/soleah.png").default;
+        return require("Images/MythicPlus/TazaveshTheVeiledMarket/soleah.png");
       default:
         // Error Checking
         return "Error: Boss Missing :(";
@@ -76,44 +76,44 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
       /*                                   Sepulcher of the First Ones                                  */
       /* ---------------------------------------------------------------------------------------------- */
       case 2458: // Vigilant Guardian
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/VigilantGuardian.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/VigilantGuardian.png");
       case 2465: // Skolex, the Insatiable Ravener
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Skolex.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Skolex.png");
       case 2470: // Artificer Xy'mox
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Xymox.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Xymox.png");
       case 2460: // Prototype Pantheon
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/ProtoTypePantheon.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/ProtoTypePantheon.png");
       case 2459: // Dausegne, the Fallen Oracle
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Dausegne.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Dausegne.png");
       case 2461: // Lihuvim, Principle Architect
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Lihuvim.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Lihuvim.png");
       case 2463: // Halondrus the Reclaimer
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Halondrus.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Halondrus.png");
       case 2469: // Anduin Wrynn
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Anduin.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Anduin.png");
       case 2457: // Lords of Dread
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/LordsOfDread.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/LordsOfDread.png");
       case 2467: // Rygelon
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Rygelon.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Rygelon.png");
       case 2464: // The Jailer
-        return require("Images/Bosses/SepulcherOfTheFirstOnes/Jailer.png").default;
+        return require("Images/Bosses/SepulcherOfTheFirstOnes/Jailer.png");
       case 999: // Bind on Equips
-        return require("Images/Bosses/BOE.png").default;
+        return require("Images/Bosses/BOE.png");
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          World Bosses                                          */
       /* ---------------------------------------------------------------------------------------------- */
       case 2430: // Valinor
-        return require("Images/Bosses/WorldBosses/ValinorUGF.png").default;
+        return require("Images/Bosses/WorldBosses/ValinorUGF.png");
       case 2431: // Mortanis
-        return require("Images/Bosses/WorldBosses/MortanisUGF.png").default;
+        return require("Images/Bosses/WorldBosses/MortanisUGF.png");
       case 2432: // Oranomonos
-        return require("Images/Bosses/WorldBosses/OranomonosUGF.png").default;
+        return require("Images/Bosses/WorldBosses/OranomonosUGF.png");
       case 2433: // Nurgash
-        return require("Images/Bosses/WorldBosses/NurgashUGF.png").default;
+        return require("Images/Bosses/WorldBosses/NurgashUGF.png");
       case 2456: // Morgeth
-        return require("Images/Bosses/WorldBosses/morgethUGF.png").default;
+        return require("Images/Bosses/WorldBosses/morgethUGF.png");
       case 2468: // Antros
-        return require("Images/Bosses/WorldBosses/AntrosUGF.png").default;
+        return require("Images/Bosses/WorldBosses/AntrosUGF.png");
       /* ---------------------------------------------------------------------------------------------- */
       /*                                            Karazhan                                            */
       /* ---------------------------------------------------------------------------------------------- */

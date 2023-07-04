@@ -11,7 +11,6 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
-import userSettings from "../Settings/SettingsObject";
 import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -249,9 +248,6 @@ export default function TrinketAnalysis(props) {
   ];
   const classes = useStyles();
 
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
-  };
 
   let activeTrinkets = [];
   let finalDB = gameType === "Retail" ? filteredTrinketDB : trinketDB;
@@ -298,8 +294,6 @@ export default function TrinketAnalysis(props) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}

@@ -3,7 +3,7 @@ import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassC
 import { externalsDB } from "Databases/ExternalsDB";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export const externalColumns = () => {
   const { t, i18n } = useTranslation();
@@ -22,7 +22,7 @@ export const externalColumns = () => {
         fontSize: 14,
       },
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.casterClass), display: "inline-flex" }}>
+        <div style={{ color: classColoursJS(rowData.casterClass), display: "inline-flex", verticalAlign: "middle" }}>
           {classIcons(rowData.casterClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {rowData.caster}
         </div>
@@ -92,7 +92,7 @@ export const externalColumns = () => {
         fontSize: 14,
       },
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.targetClass), display: "inline-flex" }}>
+        <div style={{ color: classColoursJS(rowData.targetClass), display: "inline-flex", verticalAlign: "middle" }}>
           {classIcons(rowData.targetClass, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {rowData.target}
         </div>

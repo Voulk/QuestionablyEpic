@@ -6,17 +6,16 @@ import { Grid, Typography, Divider, Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import "./QuickCompare.css";
-import { buildWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos } from "../../Engine/ItemUtilities";
 import ItemCard from "./ItemCard";
 import HelpText from "../SetupAndMenus/HelpText";
-import UpgradeFinderSimC from "../UpgradeFinder/UpgradeFinderSimCImport";
 import { useSelector } from "react-redux";
 import Settings from "../Settings/Settings";
-import userSettings from "../Settings/SettingsObject";
 import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
+import { Item } from "General/Modules/Player/Item"
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -81,6 +80,70 @@ function getSlots() {
   return slots;
 }
 
+function sumObjectsByKey(...objs) {
+  return objs.reduce((a, b) => {
+    for (let k in b) {
+      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+    }
+    return a;
+  }, {});
+} 
+
+export function buildWepCombos(player, active = false, equipped = false) {
+  let wep_list = [];
+  let main_hands = player.getActiveItems("1H Weapon", active, equipped);
+  let off_hands = player.getActiveItems("Offhands", active, equipped);
+  let two_handers = player.getActiveItems("2H Weapon", active, equipped);
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        let item = new Item(
+          main_hand.id,
+          "Combined Weapon", // TODO
+          "CombinedWeapon",
+          0, //main_hand.socket + off_hand.socket, // Socket - Weapons can't actually get sockets so this is always false.
+          "", // Tertiary
+          0,
+          Math.round((main_hand.level + off_hand.level) / 2),
+          "", // Bonus Ids
+        );
+        item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
+        item.stats.bonus_stats = {};
+        item.vaultItem = main_hand.vaultItem || off_hand.vaultItem;
+        item.uniqueEquip = item.vaultItem ? "vault" : (main_hand.uniqueEquip || off_hand.uniqueEquip);
+        item.softScore = main_hand.softScore + off_hand.softScore;
+        item.offhandID = off_hand.id;
+        item.mainHandLevel = main_hand.level;
+        item.offHandLevel = off_hand.level;
+        item.mainHandTertiary = main_hand.tertiary;
+        item.offHandTertiary = off_hand.tertiary;
+        item.mainHandUniqueHash = main_hand.uniqueHash;
+        item.offHandUniqueHash = off_hand.uniqueHash;
+
+        // For future perhaps
+        // item.mainHandSocket = main_Hand.socket
+        // item.offHandSocket = off_Hand.socket
+        wep_list.push(item);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    wep_list.push(two_handers[j]);
+  }
+
+  wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
+  return wep_list.slice(0, 9);
+} 
+
 export default function QuickCompare(props) {
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
@@ -100,7 +163,6 @@ export default function QuickCompare(props) {
   const [activeSlot, setSlot] = useState("");
   /* ------------ itemList isn't used for anything here other than to trigger rerenders ----------- */
   const [itemList, setItemList] = useState(props.player.getActiveItems(activeSlot));
-
   const slots = getSlots();
   const helpBlurb = [t("QuickCompare.HelpText")];
   const helpText = [
@@ -145,10 +207,6 @@ export default function QuickCompare(props) {
   /*                                       Settings Functions                                       */
   /* ---------------------------------------------------------------------------------------------- */
 
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
-  };
-
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   // const calculateScore = (item) => {};
@@ -185,8 +243,6 @@ export default function QuickCompare(props) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}

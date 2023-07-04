@@ -112,8 +112,8 @@ describe("Top Gear full test", () => {
         }
         //console.log(player.activeItems);
         const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
-        const setStats = result.itemSet.setStats;
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
+        //const setStats = result.itemSet.setStats;
 
         expect(true).toEqual(true); // Put stats check in here.
     });
@@ -132,7 +132,7 @@ describe("Top Gear full test", () => {
         }
         //console.log(player.activeItems);
         const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
         const setEffects = result.itemSet.effectList;
 
         expect(setEffects.filter(effect => effect.name === "Drakebreaker's Versatility").length).toEqual(1);
@@ -152,7 +152,7 @@ describe("Top Gear full test", () => {
             }
             //console.log(player.activeItems);
             const wepCombos = buildNewWepCombos(player, true);
-            const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+            const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
             const setEffects = result.itemSet.effectList;
     
             
