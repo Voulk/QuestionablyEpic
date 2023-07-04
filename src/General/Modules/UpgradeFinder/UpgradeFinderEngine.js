@@ -156,7 +156,9 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   else if (instanceID === -1) {
     if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -30) itemLevel = 359;
+  } 
+  else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
+  else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
@@ -206,8 +208,8 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
 
           itemPoss.push(item);
         }
-      } else if (primarySource === -1 || primarySource === 1205) {
-        // M+ Dungeons & World Bosses
+      } else if (primarySource === -1 || primarySource === 1205 || playerSource === 1209) {
+        // M+ Dungeons, Dawn of the Infinite & World Bosses
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
