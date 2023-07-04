@@ -56,8 +56,8 @@ export function runGenericFlatProc(effect, itemLevel, player) {
   if ('secondaries' in effect) mult *= player.getStatMults(effect.secondaries);
   if ('ppm' in effect) mult *= (effect.ppm * 1.13);
 
-  return value * mult / 60;
-
+  if ('cooldown' in effect) return value * mult / effect.cooldown;
+  else return value * mult / 60;
 
 }
 

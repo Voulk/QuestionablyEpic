@@ -1,7 +1,58 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
 
 export const otherTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                             Paracausal Fragment of Seschenal                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Paracausal Fragment of Seschenal",
+    effects: [
+      { 
+        coefficient: 32.20039, // Note that this coefficient is for when the target is below 20% health.
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        ticks: 5 * 2, // Can be extended to 10 ticks.
+        ppm: 1,
+        efficiency: 0.75,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                             Paracausal Fragment of Val'anyr                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Can it procs off HoTs? Is the 10 shield limit per player? Do AoE spells work?
+    /* Current rating could change drastically based on the above.
+    */
+    name: "Paracausal Fragment of Val'anyr",
+    effects: [
+      { 
+        coefficient: 27.19764, // 
+        table: -9,
+        secondaries: ['versatility'],
+        ticks: 10, // Says it can tick 10 times "per target". Honestly who knows.
+        ppm: 1,
+        efficiency: 0.94,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                    Static-Charged Scale                                        */

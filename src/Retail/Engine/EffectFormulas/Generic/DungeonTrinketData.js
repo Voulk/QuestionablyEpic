@@ -1,6 +1,40 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Echoing Tyrstone                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* TODO: Test target count, test crit / vers scaling (possibly neither?). 
+    */
+    name: "Echoing Tyrstone",
+    effects: [
+      { 
+        coefficient: 167.2488, 
+        table: -9,
+        secondaries: ['crit', 'versatility'],
+        targets: 5, // TODO: Test.
+        cooldown: 120, // cooldown of 120.
+        efficiency: 0.6,
+      },
+      { // AoE Haste effect
+        coefficient: 0.094992, 
+        table: -7,
+        targets: 5, // TODO: Test.
+        cooldown: 120, // cooldown of 120.
+        efficiency: 0.6,
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets * data[1].efficiency * data[1].duration / data[1].cooldown;
+ 
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                            Rainsong                                            */
