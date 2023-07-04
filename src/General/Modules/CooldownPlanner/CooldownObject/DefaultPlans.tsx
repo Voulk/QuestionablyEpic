@@ -1,4 +1,23 @@
-export const defaultPlans = {
+interface BossAbility {
+  bossAbility: string | number;
+  time: string;
+}
+
+interface Difficulty {
+  default: BossAbility[];
+}
+
+interface Boss {
+  Normal: Difficulty;
+  Heroic: Difficulty;
+  Mythic: Difficulty;
+}
+
+interface DefaultPlans {
+  [key: number]: Boss;
+}
+
+export const defaultPlans: DefaultPlans = {
   2587: {
     // Eranog
     Normal: {

@@ -1,44 +1,49 @@
-import React from "react";
+import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Divider, Typography, Paper, useMediaQuery, useTheme, Grid } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { getItemIcon } from "General/Engine/ItemUtilities";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minWidth: 275,
-    borderColor: theme.palette.secondary.main,
-    padding: 8,
-    height: 175,
-  },
-  container: {
-    display: "grid",
-    gridTemplateRows: "auto 1fr auto",
-    height: "100%",
-  },
-  description: {
-    maxHeight: "calc(100% - 10px)",
-    overflowY: "auto",
-  },
-}));
+interface Item {
+  id: number;
+  slot: string;
+  name: string;
+  description: string;
+  metrics: string[];
+}
 
-function ItemDetailCard(props) {
-  const item = props.item;
+interface ItemDetailCardProps {
+  item: Item;
+}
+
+const ItemDetailCard: FC<ItemDetailCardProps> = ({ item }) => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const classes = useStyles();
 
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("xs"));
   const titleFontSize = isXs ? "0.8rem" : item.slot === "Trinket" ? "0.9rem" : "1rem";
   const metricPadding = isXs ? "2px" : "8px";
 
-  const coloredDescription = item.description; //item.description.replace(/Trinket/g, '<span style="color: red;">Trinket</span>');
+  const coloredDescription = item.description;
 
   return (
-    <Paper className={classes.root} variant="outlined">
-      <div className={classes.container}>
+    <Paper
+      sx={{
+        minWidth: 275,
+        borderColor: theme.palette.secondary.main,
+        padding: "8px",
+        height: 175,
+      }}
+      variant="outlined"
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateRows: "auto 1fr auto",
+          height: "100%",
+        }}
+      >
         <div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <WowheadTooltip type="item" id={item.id} domain={currentLanguage}>
@@ -53,7 +58,12 @@ function ItemDetailCard(props) {
           </div>
           <Divider />
         </div>
-        <div className={classes.description}>
+        <div
+          style={{
+            maxHeight: "calc(100% - 10px)",
+            overflowY: "auto",
+          }}
+        >
           <Typography variant="body2" color="text.secondary" component="div" dangerouslySetInnerHTML={{ __html: coloredDescription }} />
         </div>
         <div>
@@ -80,6 +90,6 @@ function ItemDetailCard(props) {
       </div>
     </Paper>
   );
-}
+};
 
 export default ItemDetailCard;

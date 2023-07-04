@@ -1,4 +1,17 @@
-export const cooldownDB = [
+export interface Cooldown {
+  guid: number | string;
+  name: { en: string; fr?: string; de?: string; ru?: string; ch?: string };
+  icon: string;
+  duration: number;
+  cooldown: number;
+  type: string;
+  class: string;
+  spec: string;
+  cdPlannerMenuActive: boolean;
+  cdPlannerImport: boolean;
+}
+
+export const cooldownDB: Cooldown[] = [
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Paladin                                            */
   /* ---------------------------------------------------------------------------------------------- */
@@ -561,7 +574,6 @@ export const cooldownDB = [
     type: "cooldown",
     cdPlannerMenuActive: true,
     cdPlannerImport: true,
-    type: "cooldown",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -823,10 +835,12 @@ export const cooldownDB = [
     },
     icon: require("Images/CooldownPlanner/SpellIcons/trade_alchemy_potionb5.jpg"),
     duration: 1,
-    // cooldown: 120,
+    cooldown: 0,
     class: "",
     cdPlannerMenuActive: true,
     cdPlannerImport: false,
+    type: "potion",
+    spec: "",
   },
 
   {
@@ -840,25 +854,11 @@ export const cooldownDB = [
     },
     icon: require("Images/CooldownPlanner/SpellIcons/inv_shield_30.jpg"),
     duration: 1,
-    // cooldown: 120,
+    cooldown: 0,
     class: "",
     cdPlannerMenuActive: true,
     cdPlannerImport: false,
+    type: "personals",
+    spec: "",
   },
-  // {
-  //   guid: "",
-  //   name: {
-  //     en: "Remove",
-  //     fr: "Remove",
-  //     de: "Remove",
-  //     ru: "Remove",
-  //     ch: "Remove",
-  //   },
-  //   icon: "",
-  //   // duration: 1,
-  //   // cooldown: 120,
-  //   class: "",
-  //   cdPlannerMenuActive: true,
-  //   cdPlannerImport: false,
-  // },
 ];

@@ -11,7 +11,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 
 const useStyles = makeStyles({

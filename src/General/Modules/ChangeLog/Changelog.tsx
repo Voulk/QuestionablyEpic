@@ -1,36 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, AccordionSummary, AccordionDetails, Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Typography, Link } from "@mui/material";
-import { changeLog } from "./Log";
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from "@mui/system";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
+import { Theme } from "@mui/material/styles";
+import { changeLog } from "./Log";
 
-const useStyles = makeStyles((theme: any) => ({
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
+interface ChangeLog {
+  version: string;
+  update: string;
+  date: string;
+  changes: string[];
+}
+
+const Heading = styled(Typography)(({ theme }) => ({
+  fontSize: (theme as Theme).typography.pxToRem(15),
+  fontWeight: (theme as Theme).typography.fontWeightRegular,
+}));
+
+const ButtonStyle = styled(Button)(({ theme }) => ({
+  [(theme as Theme).breakpoints.down("md")]: {
+    fontSize: (theme as Theme).typography.pxToRem(14),
+    maxWidth: 300,
   },
-  buttonStyle: {
-    [theme.breakpoints.down('md')]: {
-      fontSize: 12,
-      maxWidth: 300,
-    },
-    [theme.breakpoints.up("xs")]: {
-      fontSize: 12,
-      textTransform: "none",
-    },
+  [(theme as Theme).breakpoints.up("xs")]: {
+    fontSize: (theme as Theme).typography.pxToRem(14),
   },
 }));
 
-type ScrollType = "paper" | "body" | undefined;
-
-export default function Changelog() {
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState<ScrollType>("paper");
-  const classes = useStyles();
+const Changelog: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const [scroll, setScroll] = useState<"paper" | "body">("paper");
   const { t } = useTranslation();
 
-  const handleClickOpen = (scrollType: ScrollType) => () => {
+  const handleClickOpen = (scrollType: "paper" | "body") => () => {
     setOpen(true);
     setScroll(scrollType);
   };
@@ -54,9 +57,9 @@ export default function Changelog() {
           {changeLog.slice(0, 5).map((key, i) => (
             <Accordion elevation={0} style={{ backgroundColor: "rgb(82, 82, 82)" }} key={i}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                <Typography className={classes.heading}>
+                <Heading>
                   {t("Changelog.Version")}: {key.version} - {t("Changelog.Update")}: {key.update} - {t("Changelog.Date")}: {key.date}
-                </Typography>
+                </Heading>
               </AccordionSummary>
               <Divider variant="middle" />
               <AccordionDetails>
@@ -72,11 +75,13 @@ export default function Changelog() {
           ))}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <ButtonStyle onClick={handleClose} color="primary">
             {t("Cancel")}
-          </Button>
+          </ButtonStyle>
         </DialogActions>
       </Dialog>
     </div>
   );
-}
+};
+
+export default Changelog;

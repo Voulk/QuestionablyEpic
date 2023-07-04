@@ -21,6 +21,7 @@ import {
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { getTranslatedStats } from "locale/statsLocale";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {

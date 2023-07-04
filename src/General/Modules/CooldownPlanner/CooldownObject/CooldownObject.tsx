@@ -1,17 +1,38 @@
 import { bossList, raidDB } from "../Data/CooldownPlannerBossList";
-import ls from "local-storage";
+import * as ls from "local-storage";
 import { defaultPlans } from "./DefaultPlans";
 
+interface DefaultPlans {
+  [key: number]: {
+    Normal: { default: any[] };
+    Heroic: { default: any[] };
+    Mythic: { default: any[] };
+  };
+}
+
+const plans: DefaultPlans = defaultPlans;
+
+interface CooldownsObject {
+  [key: string]: any;
+}
+
+interface RosterObject {
+  [key: string]: any;
+}
+
 class Cooldowns {
-  constructor(plan) {
+  cooldowns: CooldownsObject;
+  roster: RosterObject[];
+
+  constructor(plan: any) {
     this.cooldowns = JSON.parse(ls.get("cooldownPlans")) || {};
     this.roster = ls.get("healerInfo") || [];
     raidDB.map((key) => {
       bossList
         .filter((filter) => filter.zoneID === key.ID)
         .map((map) => {
-          if (Object.entries(this.cooldowns[map.DungeonEncounterID] === undefined || this.cooldowns[map.DungeonEncounterID]).length === 0) {
-            Object.assign(this.cooldowns, { [map.DungeonEncounterID]: this.defaultTimeGenerator(map.DungeonEncounterID) });
+          if (Object.entries(this.cooldowns[map.DungeonEncounterID.toString()] || {}).length === 0) {
+            Object.assign(this.cooldowns, { [map.DungeonEncounterID.toString()]: this.defaultTimeGenerator(map.DungeonEncounterID) });
           }
         });
       this.updateCooldownsAll(this.cooldowns);
@@ -20,9 +41,6 @@ class Cooldowns {
     // Generate New Default on Load
     if (Object.entries(this.cooldowns).length > 0) {
       raidDB.map((key) => {
-        // bossList
-        //   .filter((filter) => filter.zoneID === key.ID)
-        //   .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Normal"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Normal"]["default"]));
         bossList
           .filter((filter) => filter.zoneID === key.ID)
           .map((map) => Object.assign(this.cooldowns[map.DungeonEncounterID]["Heroic"]["default"], this.defaultTimeGenerator(map.DungeonEncounterID)["Heroic"]["default"]));
@@ -59,69 +77,71 @@ class Cooldowns {
     }
   }
 
-  getCooldownsArray = () => {
+  getCooldownsArray = (): CooldownsObject => {
     return this.cooldowns;
   };
 
-  getCooldowns = (bossID, difficulty) => {
+  getCooldowns = (bossID: string, difficulty: string): any => {
     return this.cooldowns[bossID][difficulty];
   };
 
-  getBossPlanNames = (bossID, difficulty) => {
+  getBossPlanNames = (bossID: string, difficulty: string): string[] => {
     return Object.keys(this.cooldowns[bossID][difficulty]);
   };
 
-  addCooldown = (item) => {
+  addCooldown = (item: any): void => {
     this.cooldowns.push(item);
   };
 
-  addNewPlan = (planName, boss, difficulty) => {
+  addNewPlan = (planName: string, boss: string, difficulty: string): void => {
     Object.assign(this.cooldowns[boss][difficulty], { [planName]: [] });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
-  copyNewPlan = (planName, boss, newPlanName, difficulty) => {
+  copyNewPlan = (planName: string, boss: string, newPlanName: string, difficulty: string): void => {
     Object.assign(this.cooldowns[boss][difficulty], { [newPlanName]: this.cooldowns[boss][difficulty][planName] });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
-  importLogPlan = (planName, boss, difficulty, planData) => {
+  importLogPlan = (planName: string, boss: string, difficulty: string, planData: any): void => {
     Object.assign(this.cooldowns[boss][difficulty], { [planName]: planData });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
-  deletePlan = (planName, boss, difficulty) => {
+  deletePlan = (planName: string, boss: string, difficulty: string): void => {
     delete this.cooldowns[boss][difficulty][planName];
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
-  deleteCooldown = () => {
+  deleteCooldown = (): void => {
     this.cooldowns = [];
   };
 
-  importPlan = (boss, planName, importedPlanObject, difficulty) => {
+  importPlan = (boss: string, planName: string, importedPlanObject: any, difficulty: string): void => {
     Object.assign(this.cooldowns[boss][difficulty], { [planName]: importedPlanObject });
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
-  updateCooldownPlan = (boss, plan, cooldowns, difficulty) => {
+  updateCooldownPlan = (boss: string, plan: string, cooldowns: any, difficulty: string): void => {
     this.cooldowns[boss][difficulty][plan] = cooldowns;
     ls.set("cooldownPlans", JSON.stringify(this.cooldowns));
   };
 
-  updateCooldownsAll = (object) => {
+  updateCooldownsAll = (object: CooldownsObject): void => {
     ls.set("cooldownPlans", JSON.stringify(object));
   };
-  updateRoster = (array) => {
+
+  updateRoster = (array: RosterObject[]): void => {
     ls.set("healerInfo", array);
   };
 
-  defaultTimeGenerator = (bossID) => {
-    let defaultTimers = defaultPlans[bossID];
+  defaultTimeGenerator = (bossID: number): any => {
+    let defaultTimers = plans[bossID];
     return defaultTimers;
   };
 
-  findAndReplace(data, findVal, replaceVal) {
+
+  findAndReplace(data: any, findVal: any, replaceVal: any): any {
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; i++) {
         if (data[i] === null) {
