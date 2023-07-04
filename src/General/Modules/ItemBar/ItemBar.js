@@ -95,24 +95,6 @@ export default function ItemBar(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
 
-  const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
-  /* ------------------------------ Define State ----------------------------- */
-  const [itemLevel, setItemLevel] = useState("");
-  const [itemID, setItemID] = useState("");
-  const [itemName, setItemName] = useState("");
-  const [activeSlot, setSlot] = useState("");
-  const [itemSocket, setItemSocket] = useState(false);
-  const [itemTertiary, setItemTertiary] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [missives, setMissives] = useState("Haste / Versatility");
-
-  /* ------------------------ End Simc Module Functions ----------------------- */
-
-  /* ----------------------------- Snackbar State ----------------------------- */
-  const [open, setOpen] = useState(false);
-  const [openDelete, setOpenDelete] = useState(false);
-
-
   const fillItems = (slotName, spec) => {
     const acceptableArmorTypes = getValidArmorTypes(spec);
     const acceptableWeaponTypes = getValidWeaponTypesBySpec(spec);
@@ -142,6 +124,27 @@ export default function ItemBar(props) {
 
     return newItemList;
   };
+
+
+  const [itemDropdown, setItemDropdown] = useState(fillItems("", props.player.spec)); // Filled later based on item slot and armor type.
+  /* ------------------------------ Define State ----------------------------- */
+  const [itemLevel, setItemLevel] = useState("");
+  const [itemID, setItemID] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [activeSlot, setSlot] = useState("");
+  const [itemSocket, setItemSocket] = useState(false);
+  const [itemTertiary, setItemTertiary] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [missives, setMissives] = useState("Haste / Versatility");
+
+  /* ------------------------ End Simc Module Functions ----------------------- */
+
+  /* ----------------------------- Snackbar State ----------------------------- */
+  const [open, setOpen] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
+
+
+
 
   const handleClosePop = () => {
     setAnchorEl(null);
