@@ -21,16 +21,18 @@ const getDifficultyName = (difficulty) => {
     case 0:
       return "LFR";
     case 1:
-      return "Normal";
+      return "LFR (Max)";
     case 2:
-      return "Normal (Max)";
+      return "Normal";
     case 3:
-      return "Heroic";
+      return "Normal (Max)";
     case 4:
-      return "Heroic (Max)";
+      return "Heroic";
     case 5:
-      return "Mythic";
+      return "Heroic (Max)";
     case 6:
+      return "Mythic";
+    case 7:
       return "Mythic (Max)";
   }
 };

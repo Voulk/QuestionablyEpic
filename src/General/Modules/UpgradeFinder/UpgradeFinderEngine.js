@@ -208,7 +208,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
 
           itemPoss.push(item);
         }
-      } else if (primarySource === -1 || primarySource === 1205 || playerSource === 1209) {
+      } else if (primarySource === -1 || primarySource === 1205 || primarySource === 1209) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
