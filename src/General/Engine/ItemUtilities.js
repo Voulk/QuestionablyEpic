@@ -285,7 +285,6 @@ export function getItemLevelBoost(bossID, difficulty) {
 
   // Handle max difficulties
   if (difficulty === CONSTANTS.difficulties.mythicMax) {
-    console.log("MYTHIC MAX");
     if (bossID === 2523 || bossID === 2520) return 3;
     else return 0;
   } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
