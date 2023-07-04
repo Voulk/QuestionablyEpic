@@ -5,12 +5,13 @@ export const CONSTANTS = {
     allyStatWeight: 0.42,
     difficulties: {
         "LFR": 0,
-        "normal": 1,
-        "normalMax": 2,
-        "heroic": 3,
-        "heroicMax": 4,
-        "mythic": 5,
-        "mythicMax": 6,
+        "LFRMax": 1,
+        "normal": 2,
+        "normalMax": 3,
+        "heroic": 4,
+        "heroicMax": 5,
+        "mythic": 6,
+        "mythicMax": 7,
     }
 
 }

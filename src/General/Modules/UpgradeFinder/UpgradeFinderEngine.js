@@ -130,7 +130,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
+export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
