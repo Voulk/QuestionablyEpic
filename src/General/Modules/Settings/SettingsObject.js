@@ -1,8 +1,11 @@
 
-
+//
+// @deprecated
 const userSettings = {
 
     // Editable Settings
+
+    /*
     enchantItems: false,
     includeGroupBenefits: true,
     autoSocket: false, // Automatically sockets viable items.
@@ -19,7 +22,7 @@ const userSettings = {
     metaGem: "Bracing Earthstorm Diamond",
     autoEnchant: true,
     gemRarity: "rare"
-
+    */
 }
 
 export default userSettings;

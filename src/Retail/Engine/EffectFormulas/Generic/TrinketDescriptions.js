@@ -148,7 +148,7 @@ const ominousChromaticEssence = (data, itemLevel, player, additionalData) => {
         metrics: ["Chosen Stat: " + Math.round(primary + secondary * 0.25),
                     "Other Secondaries: " + Math.round(secondary * 1.25)],
         description:
-          "Great passive stat trinket. If your raid needs a specific buff it's ok to use it even if it's slightly worse for you. If you get to choose, then " + playerBestStat + " is likely to be your best option.",
+          "Great passive stat trinket. If your raid needs a specific buff it's ok to use it even if it's slightly worse for you. If you get to choose, then " + playerBestStat + " is likely to be your best option. You can toggle whether you are getting buffs from allies in the settings panel.",
       };
 }
 

@@ -12,7 +12,7 @@ export function getItemSet(id, pieces, spec) {
       }
       return effects;
     }
-    else return "";
+    else return effects;
   }
 
 export const itemSets = [
