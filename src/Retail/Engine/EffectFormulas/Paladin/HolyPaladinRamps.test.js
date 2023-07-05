@@ -154,7 +154,7 @@ describe("Evang Cast Sequence", () => {
         //console.log(talents)
 
         let healing = 0;
-        const iterations = 4000;
+        const iterations = 3000;
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(incStats));
             const newBaseline = runCastSequence(seq, stats, settings, talents);
@@ -170,30 +170,31 @@ describe("Evang Cast Sequence", () => {
 
         //const baseline = allRamps(evangSeq, fiendSeq, activeStats, {"playstyle": "Venthyr Evangelism", "Power of the Dark Side": true, true);
         const build1 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
-        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "imbuedInfusions",
         "divinePurpose"]
 
         const build2 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
-        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
-        "divinePurpose"];
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "imbuedInfusions",
+        "divinePurpose", "awakening"]; // Same with awakening.
 
         const build3 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
-        "reclamation", "tyrsDeliverance", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
-        "divinePurpose", "crusadersMight", "Awakening"]; //"daybreak", "risingSunlight",
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "imbuedInfusions",
+        "divinePurpose", "boundlessSalvation"] // Boundless
         
 
         //console.log(seq);
-        const iterations = 1;
+        const iterations = 5000;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
 
-        build2.forEach(talent => {
+        /*
+        build1.forEach(talent => {
             if (talent in talents) {
                 talents[talent].points = talents[talent].maxPoints;
             }
             
-        })
+        }) */
         //console.log(talents); 
 
         for (let i = 0; i < iterations; i++) {
@@ -215,21 +216,30 @@ describe("Evang Cast Sequence", () => {
         //console.log(baseline.report);
         
 
-        /*
+        
         let strings = [];
-        strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Clarius Build + Inflo"));
-        strings.push(evalTalentStrings(build2, talents, activeStats, settings, baselineHealing / iterations, "Daybreak"));
-        strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
+        strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Unspent Point"));
+        //strings.push(evalTalentStrings([...build1, "veneration"], talents, activeStats, settings, baselineHealing / iterations, "Veneration"));
+        //strings.push(evalTalentStrings([...build1, "might"], talents, activeStats, settings, baselineHealing / iterations, "Might"));
+        strings.push(evalTalentStrings([...build1, "relentlessInquisitor"], talents, activeStats, settings, baselineHealing / iterations, "RI"));
+        strings.push(evalTalentStrings([...build1, "barrierOfFaith"], talents, activeStats, settings, baselineHealing / iterations, "Barrier of Faith"));
+        strings.push(evalTalentStrings([...build1, "boundlessSalvation"], talents, activeStats, settings, baselineHealing / iterations, "Boundless Salv"));
+        /*strings.push(evalTalentStrings([...build1, "sanctifiedWrath"], talents, activeStats, settings, baselineHealing / iterations, "Sanctified Wrath"));
+        strings.push(evalTalentStrings([...build1, "awakening"], talents, activeStats, settings, baselineHealing / iterations, "Awakening"));
+        
+
+        */
+        //strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
         
         console.log(strings); 
-        */
+        
 
         //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
         
 
     });
 
-    
+    /*
     test("Stat Weights", () => {
 
 
@@ -291,7 +301,7 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    });
+    });*/
 }); 
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.

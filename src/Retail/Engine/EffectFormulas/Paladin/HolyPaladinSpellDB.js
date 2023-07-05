@@ -177,7 +177,7 @@ export const PALADINSPELLDB = {
         cooldown: 120,
         buffType: 'statsMult',
         stat: 'crit',
-        value: (15 * 170), // 
+        value: 0, // 
         buffDuration: 20,
     }],
     "Avenging Crusader": [{
@@ -276,6 +276,26 @@ export const PALADINSPELLDB = {
         buffCap: 60,
         tickRate: 1,
         expectedOverheal: 0.55,
+    }],
+    "Barrier of Faith": [{
+        // Absorb on cast, then buff.
+        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
+        castTime: 0,
+        type: "heal",
+        cost: 2.4,
+        coeff: 5,
+        targets: 6,
+        secondaries: ['crit', 'vers'], // No mastery scaling
+        cooldown: 60,
+        expectedOverheal: 0.4,
+    },
+    {
+        // 
+        type: "buff",
+        name: "Barrier of Faith",
+        buffType: "special",
+        targets: 1,
+        buffDuration: 24,
     }],
 
 }
@@ -510,7 +530,7 @@ export const baseTalents = {
     // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
 
     // Divine Glimpse - Holy Shock / Judgment have +7.5/15% crit chance.
-    divineGlimpse: {points: 0, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    divineGlimpse: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Holy Shock'][0].statMods.crit += (0.075 * points);
         spellDB['Judgment'][0].statMods.crit += (0.075 * points);
     }}, 
@@ -582,9 +602,27 @@ export const baseTalents = {
     // Might - Gain 20% Crit during wings. Currently just built in.
     avengingCrusader: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
+    might: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Avenging Wrath'][0].value = (15 * 170);
+    }},
+
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 5 times.
+    relentlessInquisitor: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+        // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
+        const buff = {
+            name: "Relentless Inquisitor",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'statsMult',
+            stat: 'haste',
+            value: (0.05 * points + 1)
+        };
+        addBuff(state, buff, "Relentless Inquisitor")
+
+    }}, 
 
     // Holy Infusion
     // Crusader strike generates +1 HoPo and deals +25% damage.
@@ -675,6 +713,13 @@ export const baseTalents = {
         // Active spell.
     }},
 
+
+    // Barrier of Faith
+    // Consume glimmers, triggering their effects at 200% value and granting 3k mana per glimmer consumed. 
+    barrierOfFaith: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Active spell.
+    }},
+
     // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
     risingSunlight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Daybreak'].push({
@@ -694,6 +739,9 @@ export const baseTalents = {
     // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
 
     // Boundless Salvation
+    boundlessSalvation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        spellDB["Tyr's Deliverance"][1].buffDuration = 60;
+    }},
 
     // Inflorescence of the Sunwell
     inflorescenceOfTheSunwell: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 

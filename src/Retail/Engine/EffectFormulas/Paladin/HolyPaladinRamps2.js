@@ -25,10 +25,12 @@ const PALADINCONSTANTS = {
     goldenHourHealing: 18000,
     enemyTargets: 1, 
 
+
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
     beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment"],
 
     tyrsHitRate: 0.8,
+    barrierOverhealing: 0.85,
     infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2}
 }
 
@@ -58,6 +60,7 @@ const apl = [
     {s: "Daybreak", c: {type: "time", timer: 5, talent: "daybreak"}}, 
     {s: "Divine Toll", c: {type: "time", timer: 5}}, 
     {s: "Light's Hammer"}, 
+    {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}}, 
     {s: "Light of Dawn"},
     {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
@@ -66,7 +69,7 @@ const apl = [
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
     {s: "Crusader Strike"}, 
-    //{s: "Judgment"}, 
+    {s: "Judgment"}, 
     {s: "Rest"}]
 
 
@@ -277,14 +280,26 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
     else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
 
+
+    // Beacon of Light
     if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.35 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.245 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+
+
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1 && !(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else if (!(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
     if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
+
+
+    // Barrier of Faith
+    if (["Flash of Light", "Holy Light", "Holy Shock"].includes(spellName) && checkBuffActive(state.activeBuffs, "Barrier of Faith")) {
+        const barrierHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.barrierOverhealing);
+        if (compile) state.healingDone["Barrier of Faith (Charge)"] = (state.healingDone["Barrier of Faith (Charge)"] || 0) + barrierHealing;
+        addReport(state, `Barrier of Faith stored ${Math.round(barrierHealing)} (Exp OH: ${PALADINCONSTANTS.barrierOverhealing * 100}%)`)
+    }
 
     // Trigger Glimmer of Light
     if (spellName === "Holy Shock") triggerGlimmerOfLight(state);
@@ -620,7 +635,7 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             addReport(state, "Awakening: Extending Wings Buff");
         }
         else {
-            const wings = {name: "Avenging Wrath", expiration: (state.t + 12), buffType: "statsMult", stat: "crit", value: (15 * 170)};
+            const wings = {name: "Avenging Wrath", expiration: (state.t + 12), buffType: "statsMult", stat: "crit", value: (state.talents.might.points * 15 * 170)};
             state.activeBuffs.push(wings);
             addReport(state, "Awakening Proc! Wings for 12s!");
         }
