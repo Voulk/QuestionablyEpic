@@ -18,20 +18,27 @@ const PALADINCONSTANTS = {
     masteryMod: 1.5, 
     masteryEfficiency: 0.80, 
     baseMana: 250000,
-    beaconOverhealing: 0.4,
 
     auraHealingBuff: 1.06,
     auraDamageBuff: 0.92 * 1.1,
     goldenHourHealing: 18000,
-    enemyTargets: 1, 
+    enemyTargets: 1,
+    enemyGlimmers: 0, 
 
-
+    // Beacon Section
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
     beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment"],
+    beaconOverhealing: 0.4,
 
+    // Talents
     tyrsHitRate: 0.8,
     barrierOverhealing: 0.85,
-    infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2}
+    infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2},
+    reclamation: {avgHealHealth: 0.75, avgDamHealth: 0.5, manaReduction: 0.15, throughputIncrease: 0.5},
+    
+    // Fading light
+    duskSpellList: ["Holy Shock", "Judgment", "Holy Shock (Divine Toll)", "Hammer of Wrath", "Crusader Strike", "Flash of Light", "Holy Light"], 
+    fadingLight: {effect: 0.2, efficiency: 0.9 }
 }
 
 // Conditions
@@ -56,6 +63,8 @@ const PALADINCONSTANTS = {
 // Avenging Wrath / Might
 const apl = [
     {s: "Avenging Wrath"},
+    //{s: "Beacon of Virtue"},
+    //{s: "Beacon of Virtue", c: {type: "state", beacon: "Beacon of Virtue"}}, // Nothing to check against state sadge, maybe best to move them both to talents?
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
     {s: "Daybreak", c: {type: "time", timer: 5, talent: "daybreak"}}, 
     {s: "Divine Toll", c: {type: "time", timer: 5}}, 
@@ -177,7 +186,7 @@ const applyTalents = (state, spellDB, stats) => {
 
 }
 
-export const triggerGlimmerOfLight = (state) => {
+export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light") => {
     // Glimmer of Light places a buff on each target you Holy Shock up to a 1/3/8 target cap.
     // Whenever you Holy Shock everyone with Glimmer is healed.
 
@@ -190,23 +199,37 @@ export const triggerGlimmerOfLight = (state) => {
         const glimmerOfLight = {
             name: "Glimmer of Light",
             coeff: 1.6416 * (1 + glimmerTargets * 0.06) * glimmerMult / glimmerTargets, // This is split between all targets
-            targets: glimmerTargets,
+            targets: glimmerTargets - PALADINCONSTANTS.enemyGlimmers,
             expectedOverheal: 0.25,
             secondaries: ["crit", "vers", "mastery"],
             type: "heal",
         }
 
+        /* Now done within Run Heal, really just for Daybreak
         const glimmerOfLightAbsorb = {
             name: "Glimmer of Light (Absorb)",
             coeff: glimmerOfLight.coeff * glimmerOfLight.expectedOverheal * state.talents.overflowingLight.points * 0.5,
-            targets: glimmerTargets,
+            targets: glimmerTargets - PALADINCONSTANTS.enemyGlimmers,
             expectedOverheal: 0.05,
             secondaries: ["crit", "vers", "mastery"],
             type: "heal",
+        }*/
+
+        if (PALADINCONSTANTS.enemyGlimmers > 0) {
+            const glimmerOfLightDamage = {
+                name: "Glimmer of Light Damage",
+                coeff: 1.6416 * (1 + glimmerTargets * 0.06) * glimmerMult / glimmerTargets, // This is split between all targets
+                targets: PALADINCONSTANTS.enemyGlimmers,
+                expectedOverheal: 0.25,
+                secondaries: ["crit", "vers"],
+                type: "damage",
+            }
+            
+            runDamage(state, glimmerOfLightDamage, "Glimmer of Light Damage");
         }
 
-        runHeal(state, glimmerOfLight, "Glimmer of Light", true);
-        runHeal(state, glimmerOfLightAbsorb, "Overflowing Light (Glimmer)", true);
+        runHeal(state, glimmerOfLight, (glimmerSource === "Glimmer of Light" ? "Glimmer of Light" : "Glimmer of Light (" + glimmerSource + ")"), true);
+        //runHeal(state, glimmerOfLightAbsorb, "Overflowing Light (Glimmer)", true);
     }
 
     
@@ -224,7 +247,8 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.15 : 1); 
     mult *= ((["Crusader Strike", "Judgment"].includes(spellName) && buffs.filter(function (buff) {return buff.name === "Avenging Crusader"}).length > 0) ? 1.3 : 1); 
-
+    mult *= ((["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) ? 1 + PALADINCONSTANTS.reclamation.avgDamHealth * PALADINCONSTANTS.reclamation.throughputIncrease : 1);
+    
     return mult;
 }
 
@@ -252,8 +276,13 @@ const getHealingMult = (state, t, spellName, talents) => {
         state.activeBuffs = removeBuff(state.activeBuffs, "Maraads Dying Breath");
 
     }
+
     if (["Flash of Light", "Holy Light", "Holy Shock"].includes(spellName) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
         mult *= (0.3 * PALADINCONSTANTS.tyrsHitRate + 1);
+    }
+
+    if (["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) {
+        mult *= ((["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) ? 1 + PALADINCONSTANTS.reclamation.avgHealHealth * PALADINCONSTANTS.reclamation.throughputIncrease : 1);
     }
 
     return mult;
@@ -277,21 +306,20 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     // Beacon
     let beaconHealing = 0;
     let beaconMult = 1;
-    if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
+    if (PALADINCONSTANTS.beaconAoEList.includes(spellName) || spellName.includes("Glimmer of Light")) beaconMult = 0.5;
     else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
 
 
     // Beacon of Light
     if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.35 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.245 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-
-
+    else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.35 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1 && !(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else if (!(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
-    if (compile) state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
+    if (compile) state.healingDone[(state.beacon == "Beacon of Faith" ? "Beacon of Light + Faith" : state.beacon)] = (state.healingDone[(state.beacon == "Beacon of Faith" ? "Beacon of Light + Faith" : state.beacon)] || 0) + beaconHealing;
 
 
     // Barrier of Faith
@@ -302,7 +330,32 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     }
 
     // Trigger Glimmer of Light
-    if (spellName === "Holy Shock") triggerGlimmerOfLight(state);
+    if (spellName === "Holy Shock") triggerGlimmerOfLight(state, "Holy Shock");
+    if (spellName === "Holy Shock (Divine Toll)") triggerGlimmerOfLight(state, "Divine Toll");
+
+    // Handle Overflowing Light
+    if (spellName.includes("Glimmer of Light")) {
+        const glimmerOfLightAbsorb = healingVal * spell.expectedOverheal * state.talents.overflowingLight.points * 0.5 * 0.95; 
+        if (compile) state.healingDone["Overflowing Light (Glimmer)"] = (state.healingDone["Overflowing Light (Glimmer)"] || 0) + glimmerOfLightAbsorb;
+    
+        // Puts the name of the triggering spell in brackets, but it's probably fine to just use Glimmer
+        /*
+        var shortName = spellName;
+        if (spellName != "Glimmer of Light"){
+            shortName = shortName.replace( /(^.*\(|\).*$)/g, '' );;
+        }
+        else{
+            shortName = "Glimmer";
+        }
+        
+        if (compile) state.healingDone["Overflowing Light (" + shortName + ")"] = (state.healingDone["Overflowing Light (" + shortName + ")"] || 0) + glimmerOfLightAbsorb;
+        */
+    }
+
+    // Fading Light
+    if (PALADINCONSTANTS.duskSpellList.includes(spellName) && state.talents.fadingLight.points == 1) {
+        if (compile) state.healingDone["Fading Light"] = (state.healingDone["Fading Light"] || 0) + (healingVal * PALADINCONSTANTS.fadingLight.effect * PALADINCONSTANTS.fadingLight.efficiency);
+    }
 
     return healingVal;
 }
@@ -325,6 +378,11 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     if (spell.convertToHealing) {
         const healSpell = {type: "heal", coeff: 0, flatHeal: damageVal * spell.convertToHealing, secondaries: ['mastery'], expectedOverheal: 0.35, targets: 1}
         runHeal(state, healSpell, spellName + " (heal)");
+    }
+
+    // Fading Light
+    if (PALADINCONSTANTS.duskSpellList.includes(spellName) && state.talents.fadingLight.points == 1) {
+        if (compile) state.healingDone["Fading Light"] = (state.healingDone["Fading Light"] || 0) + (damageVal * PALADINCONSTANTS.fadingLight.effect * PALADINCONSTANTS.fadingLight.efficiency);
     }
 
     return damageVal;
@@ -687,7 +745,12 @@ const spendSpellCost = (spell, state, spellName) => {
     } 
         
     else if ('cost' in spell[0]) {
-        if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light")) state.manaSpent += spell[0].cost * (1 - PALADINCONSTANTS.infusion.flashOfLightReduction);
+        if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
+            state.manaSpent += spell[0].cost * (1 - PALADINCONSTANTS.infusion.flashOfLightReduction); }
+        else if (spellName == "Holy Shock" && state.talents.reclamation.points == 1) {
+            state.manaSpent += spell[0].cost * (1 - (PALADINCONSTANTS.reclamation.avgHealHealth * (1 - PALADINCONSTANTS.reclamation.manaReduction))); }
+        else if (spellName == "Crusader Strike" && state.talents.reclamation.points == 1) {
+            state.manaSpent += spell[0].cost * (1 - (PALADINCONSTANTS.reclamation.avgDamHealth * (1 - PALADINCONSTANTS.reclamation.manaReduction))); }
         else state.manaSpent += spell[0].cost;
     }
     else {

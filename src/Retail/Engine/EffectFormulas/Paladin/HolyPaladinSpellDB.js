@@ -139,7 +139,7 @@ export const PALADINSPELLDB = {
     "Hammer of Wrath": [{
         spellData: {id: 24275, icon: "spell_paladin_hammerofwrath", cat: "damage"},
         type: "damage",
-        castTime: 1.5,
+        castTime: 0,
         cost: 1,
         coeff: 1.302, 
         cooldown: 7.5,
@@ -173,18 +173,20 @@ export const PALADINSPELLDB = {
         type: "buff",
         name: "Avenging Wrath",
         castTime: 0,
+        offGCD: true,
         cost: 0,
         cooldown: 120,
         buffType: 'statsMult',
         stat: 'crit',
         value: 0, // 
-        buffDuration: 20,
+        buffDuration: 20
     }],
     "Avenging Crusader": [{
         spellData: {id: 318849, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
         name: "Avenging Crusader",
         castTime: 0,
+        offGCD: true,
         cost: 3.6,
         cooldown: 60,
         holyPower: -3,
@@ -217,11 +219,18 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cooldown: 60,
         runFunc: function (state, spell, spellDB) {
-            // Cast 5 Holy Shocks
-
+            // Activates Glimmer on all targets for 200% value
             const numGlimmers = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
-            triggerGlimmerOfLight(state);
+            const triggeredGlimmer = {
+                name: "Glimmer of Light (Daybreak)",
+                coeff: 1.6416 * 2, // This version of the spell is not split, activates on every target at 200% base value, but is not increased by number of targets
+                targets: numGlimmers,
+                expectedOverheal: 0.25,
+                secondaries: ["crit", "vers", "mastery"],
+                type: "heal",
+            }
 
+            runHeal(state, triggeredGlimmer, "Glimmer of Light (Daybreak)", true);
             state.manaSpent -= 3000 * numGlimmers;
 
         }
@@ -297,7 +306,16 @@ export const PALADINSPELLDB = {
         targets: 1,
         buffDuration: 24,
     }],
-
+    "Beacon of Virtue": [{
+        spellData: {id: 200025, icon: "BeaconOfVirtueIcon", cat: "cooldown"},
+        type: "buff",
+        name: "Beacon of Virtue",
+        castTime: 0,
+        cost: 4,
+        cooldown: 15,
+        buffType: 'special',
+        buffDuration: 8,
+    }],
 }
 
 // These could be reworked to take state and to do the work here instead of in its own big function.
@@ -467,13 +485,21 @@ export const baseTalents = {
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
 
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
+    sealOfOder: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const cooldownMultiplier = 0.9; // Dusk uptime is basically 100%.
+        spellDB['Holy Shock'][0].cooldown *= cooldownMultiplier;
+        spellDB['Judgment'][0].cooldown *= cooldownMultiplier;
+        spellDB['Divine Toll'][0].cooldown *= cooldownMultiplier;
+        spellDB['Hammer of Wrath'][0].cooldown *= cooldownMultiplier;
+        spellDB['Crusader Strike'][0].cooldown *= cooldownMultiplier;
+
+        // Seal of Order also increases the power of Dawn by 10%.
+    }}, 
 
     // Fading Light - 
     fadingLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        const expectedShieldEfficiency= 0.9; // Dusk uptime is basically 100%.
-        spellDB['Holy Shock'][0].coeff *= (1 + 0.2 * expectedShieldEfficiency);
 
-        // Fading Light also increases the power of Dawn by 10%.
+        // Fading Light also increases the power of Dawn by 10%. NYI
     }}, 
 
 
@@ -677,7 +703,7 @@ export const baseTalents = {
             type: "function",
             chance: 0.25,
             runFunc: function (state, spell, spellDB) {
-                triggerGlimmerOfLight(state);
+                triggerGlimmerOfLight(state, "Glistening Radiance");
             }
         }
 
@@ -709,7 +735,7 @@ export const baseTalents = {
 
     // Daybreak
     // Consume glimmers, triggering their effects at 200% value and granting 3k mana per glimmer consumed. 
-    daybreak: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    daybreak: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Active spell.
     }},
 
@@ -748,5 +774,10 @@ export const baseTalents = {
         spellDB['Holy Shock'][1].stacks = 2;
         spellDB['Holy Shock'][1].maxStacks = 2;
 
-    }}
+    }},
+
+    // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
+    reclamation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Handled in ramp / constants
+        }}
 }
