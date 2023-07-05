@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import UpgradeFinderFront from "./UpgradeFinderFront";
-import UpgradeFinderResults from "./UpgradeFinderResults";
+import UpgradeFinderReport from "./UpgradeFinderReport";
 import ReactGA from "react-ga";
 
 export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
+  const [report, setReport] = React.useState(null);
   const [showReport, setShowReport] = React.useState(false);
-  const [playerSettings, setPlayerSettings] = React.useState({ raid: [4, 5], dungeon: 6, pvp: 0 });
+  const [playerSettings, setPlayerSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -18,7 +19,7 @@ export function UpgradeFinder(props) {
     else {
       currDiff.push(difficulty);
       if (currDiff.length > 2) currDiff.splice(0, 1);
-    }
+  }
     setPlayerSettings({ ...playerSettings, raid: currDiff });
   };
 
@@ -83,7 +84,7 @@ export function UpgradeFinder(props) {
 
   return showReport ? (
     <div>
-      <UpgradeFinderResults player={player} itemSelection={itemSelection} playerSettings={playerSettings} setShowReport={setShowReport} />
+      <UpgradeFinderReport player={player} report={report} itemSelection={itemSelection} playerSettings={playerSettings} setShowReport={setShowReport} />
       <div style={{ marginBottom: 100 }} />
     </div>
   ) : (
@@ -99,6 +100,7 @@ export function UpgradeFinder(props) {
       setPVPDifficulty={setPVPDifficulty}
       setBCDungeonDifficulty={setBCDungeonDifficulty}
       singleUpdate={props.singleUpdate}
+      setReport={setReport}
     />
   );
 }

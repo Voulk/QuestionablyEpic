@@ -6,6 +6,7 @@ import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -129,7 +130,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
+export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
@@ -137,8 +138,12 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   if (instanceID === 1208) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
-    if (difficulty === 2 || difficulty === 4) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
-    else itemLevel += getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+
+    // If we're looking at Max difficulties then only grab the very rare boost.
+    //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+
+    // Otherwise grab both the very rare and any boss-specific item level increase.
+    itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
 
@@ -151,7 +156,9 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   else if (instanceID === -1) {
     if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -30) itemLevel = 359;
+  } 
+  else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
+  else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
@@ -167,7 +174,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
-  
+
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   if (item.slot === "Neck") item.socket = 3;
   //let itemAllocations = getItemAllocations(itemID, []);
@@ -201,8 +208,8 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
 
           itemPoss.push(item);
         }
-      } else if (primarySource === -1 || primarySource === 1205) {
-        // M+ Dungeons & World Bosses
+      } else if (primarySource === -1 || primarySource === 1205 || primarySource === 1209) {
+        // M+ Dungeons, Dawn of the Infinite & World Bosses
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;

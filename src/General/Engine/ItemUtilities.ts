@@ -268,21 +268,25 @@ export function getValidWeaponTypesBySpec(spec: string) {
 }
 
 
-export function getItemLevelBoost(bossID: number) {
-  // Vault
-  if (bossID ===  2502 || bossID === 2491) return 6;    // Dathea and Kurog 
-  else if (bossID === 2493 || bossID === 2499) return 9; // Broodkeeper and Raszageth
+export function getItemLevelBoost(bossID: number, difficulty: number) {
+  // Handle max difficulties
+  if (difficulty === CONSTANTS.difficulties.mythicMax) {
+    if (bossID === 2523 || bossID === 2520) return 3;
+    else return 0;
+  } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
+  else if (isMaxxed(difficulty)) return 0;
 
-  // Aberrus
-  else if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
+  // Handle non-max difficulties.
+  if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
   else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
-  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkareth
-  
-  else return 0;
+  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+
+  return 0;
 }
 
 const isMaxxed = (difficulty: number) => {
-  return difficulty === 2 || difficulty === 4;
+  return difficulty === CONSTANTS.difficulties.LFRMax || difficulty === CONSTANTS.difficulties.normalMax || 
+          difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax;
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
@@ -290,10 +294,11 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
 
   if (boostedItems.includes(itemID)) {
     // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
-    if (difficulty === 2 && itemID !== 202612) return 4;
-    else if (difficulty === 4 && itemID !== 202612) return 3;
+    if (difficulty === CONSTANTS.difficulties.normalMax && itemID !== 202612) return 4;
+    else if (difficulty === CONSTANTS.difficulties.heroicMax && itemID !== 202612) return 6;
     else if (bossID === 2520 || bossID === 2523) return 7;
-    else if (itemID !== 202612) return 6;
+    /*else if (itemID !== 202612) return 6; */
+    else if (!isMaxxed(difficulty)) return 6;
     else return 0;
   } 
   else return 0;
@@ -317,7 +322,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     if ('source' in item && item.source.instanceId === 1208) {
       const max = isMaxxed(difficulty);
       if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
-      else expectedItemLevel += getItemLevelBoost(itemEncounter) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
+      else expectedItemLevel += getItemLevelBoost(itemEncounter, difficulty) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       
     }
     else if (item.source.instanceId === 1205) { // World Bosses

@@ -51,50 +51,50 @@ export const raidStyles = makeStyles((theme) => {
     },
     naxxramasHeaderStyle: {
       ...commonStyles,
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/Naxxramas.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/Naxxramas.jpg")})`,
     },
     malygosHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/Malygos.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/Malygos.jpg")})`,
       ...commonStyles,
     },
     argentRaidHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/ArgentRaid.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/ArgentRaid.jpg")})`,
       ...commonStyles,
     },
     magtheridonHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/MagtheridonsLair.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/MagtheridonsLair.jpg")})`,
       ...commonStyles,
     },
     ulduarHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/Ulduar.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/Ulduar.jpg")})`,
       ...commonStyles,
     },
     vaultOfArchavonHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/VaultOfArchavon.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/VaultOfArchavon.jpg")})`,
       ...commonStyles,
     },
     obsidianSanctumHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/ObsidianSanctum.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/ObsidianSanctum.jpg")})`,
       ...commonStyles,
     },
     onyxiaLairHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/OnyxiaLair.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/OnyxiaLair.jpg")})`,
       ...commonStyles,
     },
     icecrownCitadelHeaderStyle: {
-      backgroundImage: `url(${require("../../../../Images/Classic/Raid/IcecrownCitadel.jpg").default})`,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/IcecrownCitadel.jpg")})`,
       ...commonStyles,
     },
     nathriaHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/Aberrus/AberrusRaidLong.png").default})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/Aberrus/AberrusRaidLong.png")})`,
       ...commonStyles,
     },
     sepulcherHeader: {
-      backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png").default})`,
+      backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png")})`,
       ...commonStyles,
     },
     sanctumHeader: {
-      backgroundImage: `url(${require("Images/Bosses/SanctumOfDomination/SanctumArt.png").default})`,
+      backgroundImage: `url(${require("Images/Bosses/SanctumOfDomination/SanctumArt.png")})`,
       ...commonStyles,
     },
   };
@@ -109,11 +109,11 @@ export const dungeonStyles = makeStyles((theme) => {
       padding: 4,
     },
     mythicHeader: {
-      backgroundImage: `url(${require("Images/Bosses/MythicLong.png").default})`,
+      backgroundImage: `url(${require("Images/Bosses/DawnLong.png")})`,
       ...commonStyles,
     },
     mythicPlusHeader: {
-      backgroundImage: `url(${require("Images/Bosses/MythicPlusLong.png").default})`,
+      backgroundImage: `url(${require("Images/Bosses/MythicPlusLong.png")})`,
       ...commonStyles,
     },
   };

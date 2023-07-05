@@ -2013,4 +2013,90 @@ export const encounterDB = {
       },
     },
   },
+
+  // Dawn of the Infinite
+  1209: { // mapId 2579
+    bossOrder: [
+      2521, //2666, // Chronikar
+      2526, //2670, // Tyr, the Infinite Keeper
+      2528, //2667, // Manifested Timeways
+      2533, //2672, // Time-Lost Battlefield - Can also be 2534
+      2535, //2668, // Blight of Galakrond
+      2536, //2671, // Morchie
+      2537, //2669, // Iridikron the Stonescaled
+      2538, //2673, // Chrono-Lord Deios
+    ],
+    2521: {
+      name: {
+        en: "Chronikar",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2526: {
+      name: {
+        en: "Tyr, the Infinite Keeper",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2528: {
+      name: {
+        en: "Manifested Timeways",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2533: {
+      name: {
+        en: "Time-Lost Battlefield",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2535: {
+      name: {
+        en: "Blight of Galakrond",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2536: {
+      name: {
+        en: "Morchie",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2537: {
+      name: {
+        en: "Iridikron the Stonescaled",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2538: {
+      name: {
+        en: "Chrono-Lord Deios",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+  },
 };

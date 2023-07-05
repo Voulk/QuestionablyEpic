@@ -3,6 +3,12 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
 
+const trinketCategories = {
+    RAIDDROPS: "Raid Drops",
+    DUNGEONDROPS: "Dungeon Drops",
+    OTHER: "Other",
+    DPS: "DPS Trinkets",
+}
 
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
@@ -50,6 +56,7 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
+        category: trinketCategories.RAIDDROPS,
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
@@ -63,6 +70,7 @@ const neltharionsCallToChaos = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
+        category: trinketCategories.RAIDDROPS,
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
@@ -76,6 +84,7 @@ const screamingBlackDragonscale = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
+        category: trinketCategories.RAIDDROPS,
         metrics: ["Uptime: " + effect.expectedUptime * 100 + "%", 
                 "Average Crit: " + Math.round(bonus_stats.crit),
                 "Average Leech: " + Math.round(bonus_stats.leech)],
@@ -90,6 +99,7 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
+        category: trinketCategories.RAIDDROPS,
         metrics: ["Mana / Min: " + Math.round(bonus_stats.mana * 60), 
                 "HPS: " + Math.round(bonus_stats.hps),
                 "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
@@ -105,6 +115,7 @@ const magmaclawLure = (data, itemLevel, player, additionalData) => {
     
 
     return {
+        category: trinketCategories.OTHER,
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
                 "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
         description:
@@ -117,6 +128,7 @@ const wardOfFacelessIre = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
+        category: trinketCategories.RAIDDROPS,
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
                 "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
         description:
@@ -132,6 +144,7 @@ const ominousChromaticEssence = (data, itemLevel, player, additionalData) => {
     const playerBestStat = player.getHighestStatWeight(additionalData.contentType);
 
     return {
+        category: trinketCategories.RAIDDROPS,
         metrics: ["Chosen Stat: " + Math.round(primary + secondary * 0.25),
                     "Other Secondaries: " + Math.round(secondary * 1.25)],
         description:
@@ -144,6 +157,7 @@ const rainsong = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
+        category: trinketCategories.DUNGEONDROPS,
         metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
                     "Self Haste: " + Math.round(bonus_stats.haste), 
                     "Gifted Haste: " + Math.round(bonus_stats.allyStats)],

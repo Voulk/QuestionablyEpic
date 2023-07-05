@@ -33,7 +33,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
 
       if (typeof(data) === "string") {
         const jsonData = JSON.parse(data);
-        const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
+        setBackgroundImage(apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage));
         setResult(JSON.parse(data))
         
       }
@@ -100,6 +100,7 @@ function TopGearReport(props) {
     if (result && result.new) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
+        apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
         window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
@@ -152,14 +153,16 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let itemList = {};
   let statList = {};
 
+
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")
     const location = useLocation();
     fetchReport(location.pathname.split("/")[3])
+
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-  
+    
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
