@@ -560,10 +560,42 @@ export default function bossHeaders(props, style, QEmodule) {
   if (props === 2693 || props === 2530) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheForgottenExperiments.png");
   }
-
   // The Zaqali Elders
   if (props === 2696 || props === 2531) {
     source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-TheZaqaliElders.png");
+  }
+
+  // Chronikar
+  if (props === 2666) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Chronikar.png");
+  }
+  // Tyr
+  if (props === 2670) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Tyr.png");
+  }
+  // Manifested Timeways
+  if (props === 2667) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Manifested.png");
+  }
+  // Time-Lost Battlefield
+  if (props === 2672) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Battlefield.png");
+  }
+  // Blight of Galakrond
+  if (props === 2668) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Galakrond.png");
+  }
+  // Morchie
+  if (props === 2671) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Morchie.png");
+  }
+  // Iridikron
+  if (props === 2669) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Iridikron.png");
+  }
+  // Deios
+  if (props === 2673) {
+    source = require("Images/MythicPlus/DawnOfTheInfinite/Deios.png");
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;

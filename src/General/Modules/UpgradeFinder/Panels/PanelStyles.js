@@ -109,7 +109,7 @@ export const dungeonStyles = makeStyles((theme) => {
       padding: 4,
     },
     mythicHeader: {
-      backgroundImage: `url(${require("Images/Bosses/MythicLong.png")})`,
+      backgroundImage: `url(${require("Images/Bosses/DawnLong.png")})`,
       ...commonStyles,
     },
     mythicPlusHeader: {

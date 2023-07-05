@@ -2035,7 +2035,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2454: {
+    2670: {
       name: {
         en: "Tyr, the Infinite Keeper",
         fr: "",
