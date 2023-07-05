@@ -156,13 +156,13 @@ export default function MythicPlusGearContainer(props) {
                               {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB[1209][key].name[currentLanguage]} -{" "}
-                              {[...filterItemListBySource(itemList, 1209, key, 372)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
+                              {[...filterItemListBySource(itemList, 1209, key, 441)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemList, 1209, key, 372)].map((item, index) => (
+                              {[...filterItemListBySource(itemList, 1209, key, 441)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>

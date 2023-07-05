@@ -566,35 +566,35 @@ export default function bossHeaders(props, style, QEmodule) {
   }
 
   // Chronikar
-  if (props === 2666) {
+  if (props === 2666 || props === 2521) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Chronikar.png");
   }
   // Tyr
-  if (props === 2670) {
+  if (props === 2670  || props === 2526) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Tyr.png");
   }
   // Manifested Timeways
-  if (props === 2667) {
+  if (props === 2667 || props === 2528) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Manifested.png");
   }
   // Time-Lost Battlefield
-  if (props === 2672) {
+  if (props === 2672 || props === 2533) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Battlefield.png");
   }
   // Blight of Galakrond
-  if (props === 2668) {
+  if (props === 2668 || props === 2535) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Galakrond.png");
   }
   // Morchie
-  if (props === 2671) {
+  if (props === 2671 || props === 2536) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Morchie.png");
   }
   // Iridikron
-  if (props === 2669) {
+  if (props === 2669 || props === 2537) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Iridikron.png");
   }
   // Deios
-  if (props === 2673) {
+  if (props === 2673 || props === 2538) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Deios.png");
   }
 

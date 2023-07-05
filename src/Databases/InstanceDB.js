@@ -2017,16 +2017,16 @@ export const encounterDB = {
   // Dawn of the Infinite
   1209: { // mapId 2579
     bossOrder: [
-      2666, // Chronikar
-      2670, // Tyr, the Infinite Keeper
-      2667, // Manifested Timeways
-      2672, // Time-Lost Battlefield
-      2668, // Blight of Galakrond
-      2671, // Morchie
-      2669, // Iridikron the Stonescaled
-      2673, // Chrono-Lord Deios
+      2521, //2666, // Chronikar
+      2526, //2670, // Tyr, the Infinite Keeper
+      2528, //2667, // Manifested Timeways
+      2533, //2672, // Time-Lost Battlefield - Can also be 2534
+      2535, //2668, // Blight of Galakrond
+      2536, //2671, // Morchie
+      2537, //2669, // Iridikron the Stonescaled
+      2538, //2673, // Chrono-Lord Deios
     ],
-    2666: {
+    2521: {
       name: {
         en: "Chronikar",
         fr: "",
@@ -2035,7 +2035,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2670: {
+    2526: {
       name: {
         en: "Tyr, the Infinite Keeper",
         fr: "",
@@ -2044,7 +2044,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2667: {
+    2528: {
       name: {
         en: "Manifested Timeways",
         fr: "",
@@ -2053,7 +2053,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2672: {
+    2533: {
       name: {
         en: "Time-Lost Battlefield",
         fr: "",
@@ -2062,7 +2062,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2668: {
+    2535: {
       name: {
         en: "Blight of Galakrond",
         fr: "",
@@ -2071,7 +2071,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2671: {
+    2536: {
       name: {
         en: "Morchie",
         fr: "",
@@ -2080,7 +2080,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2669: {
+    2537: {
       name: {
         en: "Iridikron the Stonescaled",
         fr: "",
@@ -2089,7 +2089,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2673: {
+    2538: {
       name: {
         en: "Chrono-Lord Deios",
         fr: "",
