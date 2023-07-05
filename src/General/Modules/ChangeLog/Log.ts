@@ -18,10 +18,12 @@ export const changeLog: entry[] = [
   {
     version: "10.1.5",
     update: 1,
-    date: "July",
+    date: "July 10",
     changes: [ 
+      "Added all 10.1.5 content including new items, effects and more.",
       "Upgrade Finder: Added LFR Max and Mythic Max options.",
       "Upgrade Finder: Reports will now have a unique ID in the URL for external resources like WoWAudit.",
+      "Upgrade Finder: Added Dawn of the Infinite mega dungeon.",
       "Item Entry: You can now add a socket to crafted items. You can no longer add crafted items without Missives.",
       "Dev: Rewrote most of the application in Typescript.",
       "Dev: Updated to React 18."

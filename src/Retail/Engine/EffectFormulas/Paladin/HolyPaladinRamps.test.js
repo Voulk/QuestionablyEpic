@@ -183,7 +183,7 @@ describe("Evang Cast Sequence", () => {
         
 
         //console.log(seq);
-        const iterations = 5000;
+        const iterations = 1;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
@@ -216,7 +216,7 @@ describe("Evang Cast Sequence", () => {
         //console.log(baseline.report);
         
 
-        
+        /*
         let strings = [];
         strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Unspent Point"));
         //strings.push(evalTalentStrings([...build1, "veneration"], talents, activeStats, settings, baselineHealing / iterations, "Veneration"));

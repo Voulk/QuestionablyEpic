@@ -42,6 +42,7 @@ export function createPlayerChars(): PlayerChars {
   
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
+      this.setupChars();
       return this;
     },
   
@@ -71,8 +72,9 @@ export function createPlayerChars(): PlayerChars {
   
     setupChars() {
       this.allChar.forEach(char => {
+        console.log(char.spec);
         if (char.spec === "Discipline Priest") char.getActiveModel("Raid").setRampInfo(char.activeStats, []);
-        char.setPlayerAvatars();
+        //char.setPlayerAvatars();
       });
     },
   
