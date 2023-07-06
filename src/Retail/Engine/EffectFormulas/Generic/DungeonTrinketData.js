@@ -38,15 +38,15 @@ export const dungeonTrinketData = [
         coefficient: 167.2488, 
         table: -9,
         secondaries: ['crit', 'versatility'],
-        targets: 0, // TODO: Test.
-        cooldown: 120, // cooldown of 120.
+        targets: 15, // TODO: Test on live, confirmed on PTR.
+        cooldown: 120,
         efficiency: 0.6,
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
-        targets: 16, // TODO: Test.
-        cooldown: 120, // cooldown of 120.
+        targets: 15, // TODO: Test.
+        cooldown: 120,
         efficiency: 0.6,
         duration: 15,
       },

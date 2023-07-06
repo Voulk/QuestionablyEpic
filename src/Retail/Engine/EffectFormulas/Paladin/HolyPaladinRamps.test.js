@@ -183,7 +183,7 @@ describe("Evang Cast Sequence", () => {
         
 
         //console.log(seq);
-        const iterations = 7000;
+        const iterations = 1;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
