@@ -18,8 +18,8 @@ const PALADINCONSTANTS = {
     enemyGlimmers: 0, 
 
     // Beacon Section
-    beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
-    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment", "Shield of the Righteous", "Barrier of Faith"],
+    beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"], // Glimmer is handled manually to catch other sources of glimmer
+    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", "Judgment", "Shield of the Righteous", "Barrier of Faith"],
     beaconOverhealing: 0.4,
 
     // Talents
@@ -414,7 +414,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
 
     // Added workaround CDR/Stacks pending rework
     // const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
-    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? spell.cooldown * spell.charges : 0))) || !spell.cooldown;
+    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? (spell.cooldown * 1 / getHaste(state.currentStats)) * spell.charges : 0))) || !spell.cooldown;
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
