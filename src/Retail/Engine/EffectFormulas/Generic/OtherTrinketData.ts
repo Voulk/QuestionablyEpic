@@ -16,7 +16,7 @@ export const otherTrinketData = [
         secondaries: ['crit', 'versatility'],
         ticks: 5 * 2, // Can be extended to 10 ticks.
         ppm: 1,
-        efficiency: 0.75,
+        efficiency: 0.65,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -40,7 +40,7 @@ export const otherTrinketData = [
         coefficient: 27.19764, // 
         table: -9,
         secondaries: ['versatility'],
-        ticks: 10, // Says it can tick 10 times "per target". Honestly who knows.
+        ticks: 10, // Says it can tick 10 times "per target". This appears to be an overall 10 shield cap.
         ppm: 1,
         efficiency: 0.94,
       },

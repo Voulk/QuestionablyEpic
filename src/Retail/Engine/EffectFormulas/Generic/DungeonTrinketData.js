@@ -1,6 +1,31 @@
-import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../EffectUtilities";
 
 export const dungeonTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                            Mirror of Fractured Tomorrows                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    //
+    name: "Mirror of Fractured Tomorrows",
+    effects: [
+      { // Highest secondary
+        coefficient: 2.521002, 
+        table: -7,
+        duration: 20,
+        cooldown: 180, 
+      },
+      { // Clone portion (currently unknown)
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const bestStat = getHighestStat(additionalData.setStats);//player.getHighestStatWeight(additionalData.contentType);
+      bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Echoing Tyrstone                                        */
@@ -13,14 +38,14 @@ export const dungeonTrinketData = [
         coefficient: 167.2488, 
         table: -9,
         secondaries: ['crit', 'versatility'],
-        targets: 5, // TODO: Test.
+        targets: 0, // TODO: Test.
         cooldown: 120, // cooldown of 120.
         efficiency: 0.6,
       },
       { // AoE Haste effect
-        coefficient: 0.094992, 
+        coefficient: 0.189052, 
         table: -7,
-        targets: 5, // TODO: Test.
+        targets: 16, // TODO: Test.
         cooldown: 120, // cooldown of 120.
         efficiency: 0.6,
         duration: 15,

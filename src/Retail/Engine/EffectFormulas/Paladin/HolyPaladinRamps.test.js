@@ -216,8 +216,9 @@ describe("Evang Cast Sequence", () => {
         //console.log(baseline.report);
         
 
-        /*
+        
         let strings = [];
+        /*
         strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Unspent Point"));
         //strings.push(evalTalentStrings([...build1, "veneration"], talents, activeStats, settings, baselineHealing / iterations, "Veneration"));
         //strings.push(evalTalentStrings([...build1, "might"], talents, activeStats, settings, baselineHealing / iterations, "Might"));
