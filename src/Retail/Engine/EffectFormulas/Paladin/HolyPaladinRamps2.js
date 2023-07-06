@@ -19,12 +19,12 @@ const PALADINCONSTANTS = {
 
     // Beacon Section
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
-    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment", "Shield of the Righteous"],
+    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment", "Shield of the Righteous", "Barrier of Faith"],
     beaconOverhealing: 0.4,
 
     // Talents
     tyrsHitRate: 0.8,
-    barrierOverhealing: 0.15, // Expected overhealing. Likely to be quite low.
+    barrierOverhealing: 0.15, // Barrier of Faith - Expected overhealing. Likely to be quite low.
     infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2},
     reclamation: {avgHealHealth: 0.75, avgDamHealth: 0.5, manaReduction: 0.15, throughputIncrease: 0.5},
     
@@ -297,8 +297,8 @@ const getHealingMult = (state, t, spellName, talents) => {
         mult *= (0.3 * PALADINCONSTANTS.tyrsHitRate + 1);
     }
 
-    if (["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) {
-        mult *= ((["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) ? 1 + PALADINCONSTANTS.reclamation.avgHealHealth * PALADINCONSTANTS.reclamation.throughputIncrease : 1);
+    if ((["Crusader Strike"].includes(spellName) || spellName.includes("Holy Shock")) && state.talents.reclamation.points == 1) {
+        mult *= 1 + PALADINCONSTANTS.reclamation.avgHealHealth * PALADINCONSTANTS.reclamation.throughputIncrease;
     }
 
     return mult;
@@ -339,7 +339,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
 
     // Barrier of Faith
-    if (["Flash of Light", "Holy Light", "Holy Shock"].includes(spellName) && checkBuffActive(state.activeBuffs, "Barrier of Faith")) {
+    if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Barrier of Faith")) {
         const barrierHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.barrierOverhealing);
         if (compile) state.healingDone["Barrier of Faith (Charge)"] = (state.healingDone["Barrier of Faith (Charge)"] || 0) + barrierHealing;
         addReport(state, `Barrier of Faith stored ${Math.round(barrierHealing)} (Exp OH: ${PALADINCONSTANTS.barrierOverhealing * 100}%)`)

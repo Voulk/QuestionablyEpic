@@ -309,7 +309,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         cost: 2.4,
         coeff: 5,
-        targets: 6,
+        targets: 1,
         secondaries: ['crit', 'vers'], // No mastery scaling
         cooldown: 30,
         expectedOverheal: 0.4,
@@ -806,13 +806,12 @@ export const baseTalents = {
 
 
     // Barrier of Faith
-    // Consume glimmers, triggering their effects at 200% value and granting 3k mana per glimmer consumed. 
-    barrierOfFaith: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    barrierOfFaith: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Active spell.
     }},
 
     // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
-    reclamation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    reclamation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Handled in ramp / constants
         }},
 
