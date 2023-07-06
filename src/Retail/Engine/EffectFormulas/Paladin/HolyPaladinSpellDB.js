@@ -1,5 +1,5 @@
 import { addBuff, getHealth } from "../Generic/RampBase";
-import { runHeal, triggerGlimmerOfLight } from "./HolyPaladinRamps2";
+import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -133,6 +133,7 @@ export const PALADINSPELLDB = {
         cost: 2.4,
         coeff: 1.125,
         cooldown: 12,
+        holyPower: 1,
         statMods: {'crit': 0},
         secondaries: ['crit', 'vers']
     }],
@@ -178,7 +179,7 @@ export const PALADINSPELLDB = {
         cooldown: 120,
         buffType: 'statsMult',
         stat: 'crit',
-        value: 0, // 
+        value: 0, // For handling Avenging Wrath: Might
         buffDuration: 20
     }],
     "Avenging Crusader": [{
@@ -201,14 +202,13 @@ export const PALADINSPELLDB = {
         cooldown: 60,
         count: 5,
         runFunc: function (state, spell, spellDB) {
-            // Cast 5 Holy Shocks
-            const holyShock = spellDB["Holy Shock"];
-            
-
+            // Cast 5 Holy Shocks           
             for (let i = 0; i < spell.count; i++) {
                 state.holyPower = Math.max(5, state.holyPower + 1);
-                runHeal(state, holyShock[0], "Holy Shock (Divine Toll)");
+                runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB);
             }
+
+            triggerGlimmerOfLight(state, "Divine Toll");
 
         }
     }],
@@ -404,7 +404,7 @@ export const baseTalents = {
     // Strength of Conviction - While in Consecration, SotR and Word of Glory deal 10/20% more damage and healing. 
 
     // Divine Purpose - HoPo abilities have a chance to make your next HoPo ability free and deal +15% damage or healing.
-    divinePurpose: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    divinePurpose: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const buffSpell = {
             name: "Divine Purpose",
             chance: 0.15, //1,//0.15, //0.075 * points,
@@ -416,10 +416,11 @@ export const baseTalents = {
 
         spellDB['Light of Dawn'].push(buffSpell);
         spellDB['Word of Glory'].push(buffSpell);
+        spellDB['Avenging Crusader'].push(buffSpell);
     }}, 
 
     // Justification. +10% Judgment damage.
-    justification: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    justification: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'][0].coeff *= 1.1;
     }},
 
@@ -478,7 +479,7 @@ export const baseTalents = {
     // Divine Resonance - Buff that casts a free Holy Shock every 5s for 15s.
 
     // Quickened Invocation - 15s off DT cooldown.
-    quickenedInvocation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    quickenedInvocation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Divine Toll'][0].cooldown -= 15;
     }}, 
 
@@ -509,11 +510,10 @@ export const baseTalents = {
     greaterJudgment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'].push({
             type: "heal",
-            coeff: 2.5,
+            coeff: 2,
             expectedOverheal: 0.04,
             targets: 1,
-            statMods: {'crit': 0},
-            secondaries: ['versatility']
+            secondaries: ['crit', 'versatility']
         })
     }},
 
@@ -547,18 +547,18 @@ export const baseTalents = {
 
     // Inbued Infusions - Consuming IoL reduces the CD of Holy Shock by 2s.
     // Implemented in function.
-    imbuedInfusions: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
+    imbuedInfusions: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
     // Divine Rev - While empowered by IoL, Flash heals for +20% and Holy Light refunds 1% mana.
     // Handled inside.
-    divineRevelations: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, data: {holyLightMana: 0.005 * 250000, flashBonus: 1.2}, runFunc: function (state, spellDB, points) {}},
+    divineRevelations: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, data: {manaReturn: 0.005 * 250000, flashBonus: 1.2}, runFunc: function (state, spellDB, points) {}},
 
     // Commanding Light - Beacon transfers an extra 10/20%. Baked in for now.
 
-    // Divine Glimpse - Holy Shock / Judgment have +7.5/15% crit chance.
-    divineGlimpse: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Holy Shock'][0].statMods.crit += (0.075 * points);
-        spellDB['Judgment'][0].statMods.crit += (0.075 * points);
+    // Divine Glimpse - Holy Shock / Judgment have +8% crit chance.
+    divineGlimpse: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Shock'][0].statMods.crit += (0.08 * points);
+        spellDB['Judgment'][0].statMods.crit += (0.08 * points);
     }}, 
 
     // Sanctified Wrath - Holy Shock CD reduced by 40% during wings. +5s Wings duration.
@@ -628,14 +628,14 @@ export const baseTalents = {
     // Might - Gain 20% Crit during wings. Currently just built in.
     avengingCrusader: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
-    might: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    might: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Avenging Wrath'][0].value = (15 * 170);
     }},
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 5 times.
-    relentlessInquisitor: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+    relentlessInquisitor: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
         // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
         const buff = {
             name: "Relentless Inquisitor",
@@ -652,7 +652,7 @@ export const baseTalents = {
 
     // Holy Infusion
     // Crusader strike generates +1 HoPo and deals +25% damage.
-    holyInfusion: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    holyInfusion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'][0].coeff *= 1.25;
         spellDB['Crusader Strike'][0].holyPower += 1;
     }},
@@ -698,7 +698,7 @@ export const baseTalents = {
     }},
 
     // Spending Holy Power has a 25% chance to trigger Glimmer of Light.
-    glisteningRadiance: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    glisteningRadiance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const glisten = {
             type: "function",
             chance: 0.25,
@@ -709,6 +709,8 @@ export const baseTalents = {
 
         spellDB['Word of Glory'].push(glisten);
         spellDB['Light of Dawn'].push(glisten);
+        spellDB['Shield of the Righteous'].push(glisten);
+        spellDB['Avenging Crusader'].push(glisten);
 
     }},
 
@@ -717,14 +719,13 @@ export const baseTalents = {
         const resetSlice = {
             type: "function",
             runFunc: function (state, spell, spellDB) {
-                // Cast 5 Holy Shocks
                 const holyShock = spellDB["Holy Shock"];
                 const glimmerBuffs = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
 
                 const roll = Math.random();
                 const canProceed = roll < (0.1 + (0.015 * glimmerBuffs));
 
-                if (canProceed) holyShock[0].cooldown = 0;
+                if (canProceed) holyShock[0].activeCooldown = 0;
 
             }
         }
@@ -747,7 +748,7 @@ export const baseTalents = {
     }},
 
     // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
-    risingSunlight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    risingSunlight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Daybreak'].push({
             name: "Rising Sunlight",
             type: "buff",
@@ -758,14 +759,14 @@ export const baseTalents = {
         });
     }},
 
-    tyrsDeliverance: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    tyrsDeliverance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Active spell.
     }},
 
     // Empyrean Legacy - Judgment empowers the next WoD to automatically cast Light of Dawn with +25% effectiveness. 30s cooldown.
 
     // Boundless Salvation
-    boundlessSalvation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    boundlessSalvation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB["Tyr's Deliverance"][1].buffDuration = 60;
     }},
 
@@ -777,7 +778,33 @@ export const baseTalents = {
     }},
 
     // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
-    reclamation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    reclamation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Handled in ramp / constants
-        }}
+        }},
+
+    // Righteous Judgment 
+    righteousJudgment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        spellDB['Judgment'].push({
+            type: "buff",
+            name: "Righteous Judgment (Golden Path)",
+            buffType: "heal",
+            coeff: 0.05 / 2,
+            buffDuration: 12,
+            expectedOverheal: 0.50,
+            targets: 5,
+            tickRate: 1,
+            secondaries: ['crit', 'versatility', 'haste']
+        })
+
+        spellDB['Judgment'].push({
+            type: "buff",
+            name: "Righteous Judgment",
+            buffType: "damage",
+            coeff: 0.05 / 2 * 1.05,
+            buffDuration: 12,
+            targets: 5,
+            tickRate: 1,
+            secondaries: ['crit', 'versatility', 'haste']
+        })
+    }}
 }

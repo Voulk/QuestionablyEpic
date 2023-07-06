@@ -27,7 +27,7 @@ const PALADINCONSTANTS = {
 
     // Beacon Section
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"],
-    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment"],
+    beaconExclusionList: ["Overflowing Light (Glimmer)", "Greater Judgment", "Beacon of Light", "Judgment", "Shield of the Righteous"],
     beaconOverhealing: 0.4,
 
     // Talents
@@ -37,8 +37,8 @@ const PALADINCONSTANTS = {
     reclamation: {avgHealHealth: 0.75, avgDamHealth: 0.5, manaReduction: 0.15, throughputIncrease: 0.5},
     
     // Fading light
-    duskSpellList: ["Holy Shock", "Judgment", "Holy Shock (Divine Toll)", "Hammer of Wrath", "Crusader Strike", "Flash of Light", "Holy Light"], 
-    fadingLight: {effect: 0.2, efficiency: 0.9 }
+    duskSpellList: ["Holy Shock", "Judgment", "Holy Shock (Divine Toll)", "Holy Shock (Rising Sunlight)", "Hammer of Wrath", "Crusader Strike", "Flash of Light", "Holy Light"], 
+    fadingLight: {effect: 0.1, efficiency: 0.9 }
 }
 
 // Conditions
@@ -47,17 +47,20 @@ const PALADINCONSTANTS = {
 //const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
 
 // Avenging Crusader
-/*const apl = [
-                {s: "Divine Toll"}, 
-                {s: "Avenging Crusader"}, 
-                {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
-                {s: "Crusader Strike", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
-                {s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
-                {s: "Light's Hammer"}, 
-                {s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 5}}, // Don't cast LoD if AC is coming off cooldown.
-                {s: "Holy Shock"}, 
-                {s: "Crusader Strike", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 4}},
-                {s: "Rest"}] */
+const apl2 = [
+        {s: "Daybreak", c: {talent: "daybreak"}}, 
+        {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
+        {s: "Avenging Crusader"}, 
+        {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+        {s: "Crusader Strike", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+        //{s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
+        {s: "Light's Hammer"}, 
+        {s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 3}}, // Don't cast LoD if AC is coming off cooldown.
+        {s: "Holy Shock"}, 
+        {s: "Judgment", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 8}},
+        {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
+        {s: "Crusader Strike", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 3}},
+        {s: "Rest"}] 
 
 
 // Avenging Wrath / Might
@@ -66,19 +69,21 @@ const apl = [
     //{s: "Beacon of Virtue"},
     //{s: "Beacon of Virtue", c: {type: "state", beacon: "Beacon of Virtue"}}, // Nothing to check against state sadge, maybe best to move them both to talents?
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
-    {s: "Daybreak", c: {type: "time", timer: 5, talent: "daybreak"}}, 
-    {s: "Divine Toll", c: {type: "time", timer: 5}}, 
+    {s: "Daybreak", c: {talent: "daybreak"}}, 
+    {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
     {s: "Light's Hammer"}, 
     {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}}, 
     {s: "Light of Dawn"},
     {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
     {s: "Holy Shock"}, 
+    {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light"}},
     {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
+    {s: "Judgment"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
     {s: "Crusader Strike"}, 
-    {s: "Judgment"}, 
+    {s: "Holy Light"},
     {s: "Rest"}]
 
 
@@ -277,7 +282,7 @@ const getHealingMult = (state, t, spellName, talents) => {
 
     }
 
-    if (["Flash of Light", "Holy Light", "Holy Shock"].includes(spellName) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
+    if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
         mult *= (0.3 * PALADINCONSTANTS.tyrsHitRate + 1);
     }
 
@@ -331,7 +336,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Trigger Glimmer of Light
     if (spellName === "Holy Shock") triggerGlimmerOfLight(state, "Holy Shock");
-    if (spellName === "Holy Shock (Divine Toll)") triggerGlimmerOfLight(state, "Divine Toll");
+    // if (spellName === "Holy Shock (Divine Toll)") triggerGlimmerOfLight(state, "Divine Toll"); This only happens once on cast
 
     // Handle Overflowing Light
     if (spellName.includes("Glimmer of Light")) {
@@ -457,7 +462,7 @@ export const genSpell = (state, spells) => {
 
 
 
-const runSpell = (fullSpell, state, spellName, paladinSpells) => {
+export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
     addReport(state, "Casting: " + spellName);
     fullSpell.forEach(spell => {
 
@@ -670,8 +675,12 @@ const runSpell = (fullSpell, state, spellName, paladinSpells) => {
     // All post-spell infusion code.
     if (["Flash of Light", "Holy Light", "Judgment"].includes(spellName) && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
         if (spellName === "Holy Light") {
-            if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "holyLightMana");
+            if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "manaReturn");
             state.holyPower = Math.min(state.holyPower + PALADINCONSTANTS.infusion.holyLightHoPo, 5);
+        }
+
+        if (spellName === "Judgment") {
+            if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "manaReturn");
         }
 
         // Apply Imbued Infusions
@@ -800,7 +809,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 
-    const sequenceLength = 120; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 240; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Auto" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -930,8 +939,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             // Rising Sunlight - If has buff, cast Holy Shock three times instead of twice.
             if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
                 addReport(state, "Casting Multiple Holy Shocks due to Rising Sunlight")
-                runSpell(fullSpell, state, spellName, paladinSpells);
-                runSpell(fullSpell, state, spellName, paladinSpells);
+                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells);
+                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells);
                 removeBuffStack(state.activeBuffs, "Rising Sunlight");
             }
             runSpell(fullSpell, state, spellName, paladinSpells);
