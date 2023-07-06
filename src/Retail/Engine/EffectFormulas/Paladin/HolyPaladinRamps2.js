@@ -40,41 +40,51 @@ const PALADINCONSTANTS = {
 
 // Avenging Crusader
 const apl2 = [
-        {s: "Daybreak", c: {talent: "daybreak"}}, 
+        {s: "Beacon of Virtue", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 13}},
+        {s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
+        //{s: "Daybreak", c: {talent: "daybreak"}}, 
         {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
         {s: "Avenging Crusader"}, 
         {s: "Judgment", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
         {s: "Crusader Strike", conditions: {type: "buff", buffName: "Avenging Crusader"}}, 
+        //{s: "Shield of the Righteous", conditions: {type: "buff", buffName: "Avenging Crusader"}}, Worth a shot
         //{s: "Hammer of Wrath", conditions: {type: "buff", buffName: "Avenging Crusader"}},
         {s: "Light's Hammer"}, 
-        {s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 3}}, // Don't cast LoD if AC is coming off cooldown.
+        {s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
+        //{s: "Light of Dawn", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 3}}, // Don't cast LoD if AC is coming off cooldown.
         {s: "Holy Shock"}, 
         {s: "Judgment", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 8}},
         {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
         {s: "Crusader Strike", conditions: {type: "CooldownDown", cooldownName: "Avenging Crusader", timer: 3}},
+        {s: "Consecration"}, 
+        {s: "Holy Light"},
         {s: "Rest"}] 
 
 
 // Avenging Wrath / Might
 const apl = [
+    {s: "Beacon of Virtue"},
     {s: "Avenging Wrath"},
-    //{s: "Beacon of Virtue"},
-    //{s: "Beacon of Virtue", c: {type: "state", beacon: "Beacon of Virtue"}}, // Nothing to check against state sadge, maybe best to move them both to talents?
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
-    {s: "Daybreak", c: {talent: "daybreak"}}, 
+    {s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
+    //{s: "Daybreak", c: {talent: "daybreak"}}, 
     {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
     {s: "Light's Hammer"}, 
-    {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}}, 
-    {s: "Light of Dawn"},
+    {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}},
+    {s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
+    //{s: "Light of Dawn"},
     {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
-    {s: "Holy Shock"}, 
+    //{s: "Holy Shock"}, 
+    {s: "Holy Shock", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 5}}, // Some kind of hold for Virtue
     {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light"}},
-    {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
-    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
+    //{s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
+    {s: "Holy Light", c: {type: "buff", buffName: "Infusion of Light"}}, // Infusion spell doesn't REALLY matter, the benefit here is resplentant light
+    {s: "Holy Light", c: {type: "buff", buffName: "Beacon of Virtue"}}, // Not sure if we can do "buff duration" as a condition element?
+    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}}, 
     {s: "Judgment"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
-    {s: "Crusader Strike"}, 
+    {s: "Crusader Strike"},
     {s: "Consecration"}, 
     {s: "Holy Light"},
     {s: "Rest"}]
@@ -247,6 +257,11 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     mult *= ((["Crusader Strike", "Judgment"].includes(spellName) && buffs.filter(function (buff) {return buff.name === "Avenging Crusader"}).length > 0) ? 1.3 : 1); 
     mult *= ((["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) ? 1 + PALADINCONSTANTS.reclamation.avgDamHealth * PALADINCONSTANTS.reclamation.throughputIncrease : 1);
     
+    if ((spellName === "Shield of the Righteous") && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
+        mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * (0.2 + (getTalentPoints(state, "sealOfOrder") || getTalentPoints(state, "fadingLight") ? 0.1 : 0)));
+        removeBuff(state.activeBuffs, "Blessing of Dawn");
+    }
+
     return mult;
 }
 
@@ -269,8 +284,8 @@ const getHealingMult = (state, t, spellName, talents) => {
     else if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Untempered Dedication")) {
         mult *= (1 + getBuffStacks(state.activeBuffs, "Untempered Dedication") * 0.1);
     }
-    else if (spellName === "Light of Dawn" && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
-        mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * 0.3);
+    else if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
+        mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * (0.2 + (getTalentPoints(state, "sealOfOrder") || getTalentPoints(state, "fadingLight") ? 0.1 : 0)));
         removeBuff(state.activeBuffs, "Blessing of Dawn");
     }
     if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Maraads Dying Breath")) {
@@ -373,7 +388,7 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
 
     // Avenging Crusader
     if (checkBuffActive(state.activeBuffs, "Avenging Crusader") && ["Judgment", "Crusader Strike"].includes(spellName)) {
-        const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 3.6, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 5}
+        const acSpell = {type: "heal", coeff: 0, flatHeal: damageVal * 3.6, secondaries: ['mastery'], expectedOverheal: 0.4, targets: 1} // Healing is split between 5 targets, so count as 1
         runHeal(state, acSpell, "Avenging Crusader")
     }
     if (spell.convertToHealing) {
@@ -396,7 +411,10 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     let aplReq = true;
     let miscReq = true;
     const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
-    const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
+
+    // Added workaround CDR/Stacks pending rework
+    // const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
+    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? spell.cooldown * spell.charges : 0))) || !spell.cooldown;
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
@@ -606,7 +624,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                         }
                         if (spell.name === "Blessing of Dawn Stacker") {
                             if ((buff.stacks + 1) >= buff.maxStacks) {
-                                // At awakening cap. Remove buff, then add new buff.
+                                // At Blessing of Dawn cap. Remove buff, then add new buff.
                                 state.activeBuffs = removeBuff(state.activeBuffs, "Blessing of Dawn Stacker")
                                 const dawnFinal = {name: "Blessing of Dawn", expiration: (state.t  + 99), buffType: "special", 
                                     value: 1.2, stacks: 1, canStack: true};
@@ -614,7 +632,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                                 addReport(state, `Adding Blessing of Dawn`)
                             }
                             else {
-                                // Not at awakening cap yet. Increase buff stack by 1.
+                                // Not at Blessing of Dawn cap yet. Increase buff stack by 1.
                                 buff.stacks += 1;
                             }
                         }
@@ -815,7 +833,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith"};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Virtue"};
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 

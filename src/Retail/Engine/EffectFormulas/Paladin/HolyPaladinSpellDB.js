@@ -1,4 +1,4 @@
-import { addBuff, getHealth } from "../Generic/RampBase";
+import { addBuff, getHaste, getHealth } from "../Generic/RampBase";
 import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
@@ -528,6 +528,7 @@ export const baseTalents = {
 
         }
 
+        // Daybreak and Divine Toll gain a stack per Holy Shock
         spellDB['Holy Shock'].push(dawnStacker);
         spellDB['Judgment'].push(dawnStacker);
         spellDB['Flash of Light'].push(dawnStacker);
@@ -588,6 +589,16 @@ export const baseTalents = {
     }},  */
 
     // Resplendent Light - Holy Light splashes to 5 targets for 8% each.
+    // This ISN'T AOE reduced by Beacon, and scales off of raw healing, not effective
+    resplendentLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Light'].push({
+            type: "heal",
+            coeff: spellDB['Holy Light'][0].coeff * 0.08,
+            expectedOverheal: 0.5,
+            targets: 5,
+            secondaries: ['crit', 'versatility', 'mastery']
+        })
+    }}, 
 
     // Divine Insight - +1 Holy shock charge
     divineInsight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -776,8 +787,10 @@ export const baseTalents = {
                 const roll = Math.random();
                 const canProceed = roll < (0.1 + (0.015 * glimmerBuffs));
 
-                if (canProceed) holyShock[0].activeCooldown = 0;
-
+                // Previous logic, with charges bandaid fix would have been giving 2 charges
+                //if (canProceed) holyShock[0].activeCooldown = 0;
+                // New logic, counts as giving one extra charge.
+                if (canProceed) holyShock[0].activeCooldown -= holyShock[0].cooldown * (1 / getHaste(state.currentStats))
             }
         }
 
