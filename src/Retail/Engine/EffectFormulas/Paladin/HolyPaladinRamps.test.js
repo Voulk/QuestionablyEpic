@@ -73,7 +73,7 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 11400 * 1.05, // Arcane int
+        intellect: 11400 * 1.05 * 1.04, // Arcane int + Seal of Might
         haste: 5200,
         crit: 3800,
         mastery: 2800,
@@ -183,7 +183,7 @@ describe("Evang Cast Sequence", () => {
         
 
         //console.log(seq);
-        const iterations = 1000;
+        const iterations = 7000;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
@@ -196,6 +196,12 @@ describe("Evang Cast Sequence", () => {
             
         }) */
         //console.log(talents); 
+
+        Object.keys(talents).forEach(talentName => {
+            const talent = talents[talentName]
+            if (talent.points === 0) console.log(talentName)
+            
+        })
 
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(activeStats));

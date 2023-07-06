@@ -5,18 +5,10 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, 
             getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, removeBuff } from "../Generic/RampBase";
 
-
-
-// Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
-const discSettings = {
-    chaosBrand: true
-}
-
-
 const PALADINCONSTANTS = {
     
     masteryMod: 1.5, 
-    masteryEfficiency: 0.80, 
+    masteryEfficiency: 0.84, 
     baseMana: 250000,
 
     auraHealingBuff: 1.06,
@@ -32,7 +24,7 @@ const PALADINCONSTANTS = {
 
     // Talents
     tyrsHitRate: 0.8,
-    barrierOverhealing: 0.85,
+    barrierOverhealing: 0.15, // Expected overhealing. Likely to be quite low.
     infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2},
     reclamation: {avgHealHealth: 0.75, avgDamHealth: 0.5, manaReduction: 0.15, throughputIncrease: 0.5},
     
@@ -83,6 +75,7 @@ const apl = [
     {s: "Judgment"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
     {s: "Crusader Strike"}, 
+    {s: "Consecration"}, 
     {s: "Holy Light"},
     {s: "Rest"}]
 

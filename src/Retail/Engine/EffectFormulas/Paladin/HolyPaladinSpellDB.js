@@ -73,8 +73,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
-        cost: 22,
-        coeff: 2.02 * 1.35, // Test this since it's an aura mess.
+        cost: 18,
+        coeff: 2.727, // Test this since it's an aura mess.
         expectedOverheal: 0.14,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -286,6 +286,22 @@ export const PALADINSPELLDB = {
         tickRate: 1,
         expectedOverheal: 0.55,
     }],
+    "Consecration": [{
+        // Ticks on cast. Probably need to create a generic case for this.
+        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
+        castTime: 0,
+        cost: 2.4,
+        coeff: 0.05 * 1.04 * 1.05, // AP boost.
+        targets: 5,
+        secondaries: ['crit', 'vers'],
+        cooldown: 11, // Technically 9
+        type: "buff",
+        name: "Tyr's Deliverance",
+        buffType: "damage",
+        canPartialTick: false,
+        buffDuration: 12,
+        tickRate: 1,
+    }],
     "Barrier of Faith": [{
         // Absorb on cast, then buff.
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
@@ -295,7 +311,7 @@ export const PALADINSPELLDB = {
         coeff: 5,
         targets: 6,
         secondaries: ['crit', 'vers'], // No mastery scaling
-        cooldown: 60,
+        cooldown: 30,
         expectedOverheal: 0.4,
     },
     {
@@ -368,6 +384,20 @@ export const baseTalents = {
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
 
     // Golden Path - Consecration heals 6 allies on tick.
+    goldenPath: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        spellDB['Consecration'].push({
+            type: "buff",
+            name: "Golden Path",
+            buffType: "heal",
+            coeff: 0.05,
+            buffDuration: 12,
+            expectedOverheal: 0.5,
+            targets: 6,
+            tickRate: 1,
+            secondaries: ['crit', 'versatility', 'haste']
+        })
+    }},
+
     // Seal of Mercy - Golden Path heals the lowest health ally an additional time for 100% value.
 
     // Judgment of Light - Judgment heals allies 5 times.
@@ -486,7 +516,7 @@ export const baseTalents = {
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
 
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
-    sealOfOder: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    sealOfOrder: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const cooldownMultiplier = 0.9; // Dusk uptime is basically 100%.
         spellDB['Holy Shock'][0].cooldown *= cooldownMultiplier;
         spellDB['Judgment'][0].cooldown *= cooldownMultiplier;
@@ -743,9 +773,14 @@ export const baseTalents = {
 
     // Barrier of Faith
     // Consume glimmers, triggering their effects at 200% value and granting 3k mana per glimmer consumed. 
-    barrierOfFaith: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    barrierOfFaith: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Active spell.
     }},
+
+    // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
+    reclamation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Handled in ramp / constants
+        }},
 
     // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
     risingSunlight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
@@ -777,10 +812,7 @@ export const baseTalents = {
 
     }},
 
-    // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
-    reclamation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
-        // Handled in ramp / constants
-        }},
+
 
     // Righteous Judgment 
     righteousJudgment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
@@ -791,7 +823,7 @@ export const baseTalents = {
             coeff: 0.05 / 2,
             buffDuration: 12,
             expectedOverheal: 0.50,
-            targets: 5,
+            targets: 6,
             tickRate: 1,
             secondaries: ['crit', 'versatility', 'haste']
         })
