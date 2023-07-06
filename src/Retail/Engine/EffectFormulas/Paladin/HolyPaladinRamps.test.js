@@ -183,7 +183,7 @@ describe("Evang Cast Sequence", () => {
         
 
         //console.log(seq);
-        const iterations = 1;
+        const iterations = 1000;
         const settings = {reporting: true, 'DefaultLoadout': false}
         let sumHealing = 0;
         let baselineHealing = 0;
@@ -231,7 +231,7 @@ describe("Evang Cast Sequence", () => {
         */
         //strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
         
-        console.log(strings); 
+        // console.log(strings); 
         
 
         //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);
