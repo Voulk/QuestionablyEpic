@@ -399,6 +399,9 @@ export const baseTalents = {
     }},
 
     // Seal of Mercy - Golden Path heals the lowest health ally an additional time for 100% value.
+    sealOfMercy: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        spellDB['Consecration'][1].targets += 1;
+    }},
 
     // Judgment of Light - Judgment heals allies 5 times.
     judgmentOfLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -514,6 +517,24 @@ export const baseTalents = {
     }}, 
 
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
+    ofDuskAndDawn: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const dawnStacker = {
+            name: "Blessing of Dawn Stacker",
+            canStack: true,
+            type: "buff",
+            buffType: "special",
+            buffDuration: 999, // Hidden buff in game.
+            maxStacks: 3,
+
+        }
+
+        spellDB['Holy Shock'].push(dawnStacker);
+        spellDB['Judgment'].push(dawnStacker);
+        spellDB['Flash of Light'].push(dawnStacker);
+        spellDB['Holy Light'].push(dawnStacker);
+        spellDB['Crusader Strike'].push(dawnStacker);
+        spellDB['Hammer of Wrath'].push(dawnStacker);
+    }},
 
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
     sealOfOrder: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {

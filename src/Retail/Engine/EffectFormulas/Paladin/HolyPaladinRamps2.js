@@ -269,10 +269,13 @@ const getHealingMult = (state, t, spellName, talents) => {
     else if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Untempered Dedication")) {
         mult *= (1 + getBuffStacks(state.activeBuffs, "Untempered Dedication") * 0.1);
     }
+    else if (spellName === "Light of Dawn" && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
+        mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * 0.3);
+        removeBuff(state.activeBuffs, "Blessing of Dawn");
+    }
     if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Maraads Dying Breath")) {
         mult *= 1.5;
         state.activeBuffs = removeBuff(state.activeBuffs, "Maraads Dying Breath");
-
     }
 
     if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
@@ -595,6 +598,20 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
                                     value: 1.3, stacks: 1, canStack: false};
                                 state.activeBuffs.push(awakeningFinal);
                                 addReport(state, `Adding Awakening - Final`)
+                            }
+                            else {
+                                // Not at awakening cap yet. Increase buff stack by 1.
+                                buff.stacks += 1;
+                            }
+                        }
+                        if (spell.name === "Blessing of Dawn Stacker") {
+                            if ((buff.stacks + 1) >= buff.maxStacks) {
+                                // At awakening cap. Remove buff, then add new buff.
+                                state.activeBuffs = removeBuff(state.activeBuffs, "Blessing of Dawn Stacker")
+                                const dawnFinal = {name: "Blessing of Dawn", expiration: (state.t  + 99), buffType: "special", 
+                                    value: 1.2, stacks: 1, canStack: true};
+                                state.activeBuffs.push(dawnFinal);
+                                addReport(state, `Adding Blessing of Dawn`)
                             }
                             else {
                                 // Not at awakening cap yet. Increase buff stack by 1.
