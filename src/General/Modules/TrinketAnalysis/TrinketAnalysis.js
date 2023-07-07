@@ -74,7 +74,7 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 //
 const setupItemCardData = (trinketList, contentType, player, playerSettings) => {
   const itemData = [];
-  const additionalData = {contentType: contentType, settings: playerSettings}
+  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType)}
   trinketList.forEach((trinket) => {
     const data = getTrinketDescription(trinket.name, player, additionalData);
     //const data = null;

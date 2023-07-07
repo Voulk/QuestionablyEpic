@@ -11,12 +11,12 @@ export const otherTrinketData = [
     name: "Paracausal Fragment of Seschenal",
     effects: [
       { 
-        coefficient: 32.20039, // Note that this coefficient is for when the target is below 20% health.
+        coefficient: 22.03581, 
         table: -9,
-        secondaries: ['crit', 'versatility'],
-        ticks: 5 * 2, // Can be extended to 10 ticks.
+        secondaries: ['haste', 'crit', 'versatility'],
+        ticks: 5 * 2, // Can be extended to 10 ticks. This is a best case scenario.
         ppm: 1,
-        efficiency: 0.75,
+        efficiency: 0.65,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -37,10 +37,10 @@ export const otherTrinketData = [
     name: "Paracausal Fragment of Val'anyr",
     effects: [
       { 
-        coefficient: 27.19764, // 
+        coefficient: 21.15372, // 
         table: -9,
-        secondaries: ['versatility'],
-        ticks: 10, // Says it can tick 10 times "per target". Honestly who knows.
+        secondaries: ['haste', 'versatility'],
+        ticks: 10, // Says it can tick 10 times "per target". This appears to be an overall 10 shield cap.
         ppm: 1,
         efficiency: 0.94,
       },

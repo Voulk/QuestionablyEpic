@@ -73,7 +73,7 @@ describe("Evang Cast Sequence", () => {
             stamina: 1900,
     } */
     const activeStats = {
-        intellect: 11400 * 1.05, // Arcane int
+        intellect: 11400 * 1.05 * 1.04, // Arcane int + Seal of Might
         haste: 5200,
         crit: 3800,
         mastery: 2800,
@@ -197,6 +197,12 @@ describe("Evang Cast Sequence", () => {
         }) */
         //console.log(talents); 
 
+        Object.keys(talents).forEach(talentName => {
+            const talent = talents[talentName]
+            if (talent.points === 0) console.log(talentName)
+            
+        })
+
         for (let i = 0; i < iterations; i++) {
             const stats = JSON.parse(JSON.stringify(activeStats));
             const baseline = runCastSequence(seq, stats, settings, talents)
@@ -216,8 +222,9 @@ describe("Evang Cast Sequence", () => {
         //console.log(baseline.report);
         
 
-        /*
+        
         let strings = [];
+        /*
         strings.push(evalTalentStrings(build1, talents, activeStats, settings, baselineHealing / iterations, "Unspent Point"));
         //strings.push(evalTalentStrings([...build1, "veneration"], talents, activeStats, settings, baselineHealing / iterations, "Veneration"));
         //strings.push(evalTalentStrings([...build1, "might"], talents, activeStats, settings, baselineHealing / iterations, "Might"));
@@ -231,7 +238,7 @@ describe("Evang Cast Sequence", () => {
         */
         //strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
         
-        console.log(strings); 
+        // console.log(strings); 
         
 
         //evalAllTalents(baselineHealing / iterations, {...talents}, JSON.parse(JSON.stringify(activeStats)), settings);

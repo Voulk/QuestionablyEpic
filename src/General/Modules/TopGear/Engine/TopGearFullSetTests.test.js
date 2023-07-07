@@ -86,10 +86,13 @@ describe("Top Gear full test", () => {
         const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))
 
         // Tier sets
-        expect(result.itemSet.effectList.filter(effect => effect.name === "Evoker T29-4").length).toEqual(1);
+        console.log(result.itemSet.effectList);
+        expect(result.itemSet.effectList.filter(effect => effect.name === "Evoker T30-4").length).toEqual(1);
 
         // Trinkets
+        const itemList = result.itemSet.itemList;
         const trinkets = itemList.filter(item => item.slot === "Trinket")
+        
         expect(trinkets.filter(trinket => trinket.effect.name === "Rashok's Molten Heart").length).toEqual(1);
 
         // Enchants

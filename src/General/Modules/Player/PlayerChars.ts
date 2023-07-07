@@ -72,7 +72,6 @@ export function createPlayerChars(): PlayerChars {
   
     setupChars() {
       this.allChar.forEach(char => {
-        console.log(char.spec);
         if (char.spec === "Discipline Priest") char.getActiveModel("Raid").setRampInfo(char.activeStats, []);
         //char.setPlayerAvatars();
       });
