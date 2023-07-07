@@ -3,6 +3,30 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Time-Thief's Gambit                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    //
+    name: "Time-Thief's Gambit",
+    effects: [
+      { // Haste. Stun portion not included.
+        coefficient: 1.680047, 
+        table: -7,
+        duration: 15,
+        cooldown: 60, 
+      },
+      { // 
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                            Mirror of Fractured Tomorrows                                       */
     /* ---------------------------------------------------------------------------------------------- */
     //
@@ -40,14 +64,14 @@ export const dungeonTrinketData = [
         secondaries: ['crit', 'versatility'],
         targets: 15, // TODO: Test on live, confirmed on PTR.
         cooldown: 120,
-        efficiency: 0.6,
+        efficiency: 0.5,
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
         targets: 15, // TODO: Test.
         cooldown: 120,
-        efficiency: 0.6,
+        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
@@ -56,7 +80,6 @@ export const dungeonTrinketData = [
 
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets * data[1].efficiency * data[1].duration / data[1].cooldown;
- 
       return bonus_stats;
     }
   },

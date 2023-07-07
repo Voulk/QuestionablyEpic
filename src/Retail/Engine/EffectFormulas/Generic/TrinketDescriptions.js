@@ -15,6 +15,14 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
     const itemLevel = 441;
     if (trinketData === null) return null;
     switch (trinketName) {
+        case "Echoing Tyrstone":
+            return echoingTyrstone(trinketData, itemLevel, player, additionalData);
+        case "Paracausal Fragment of Val'anyr":
+            return paracausalFragmentOfValanyr(trinketData, 424, player, additionalData);
+        case "Mirror of Fractured Tomorrows":
+            return mirrorOfFracturedTomorrows(trinketData, itemLevel, player, additionalData);
+        case "Time-Thief's Gambit":
+            return timeThiefsGambit(trinketData, itemLevel, player, additionalData);
         case "Neltharion's Call to Suffering":
             return neltharionsCallToSuffering(trinketData, itemLevel, player, additionalData);
         case "Neltharion's Call to Chaos":
@@ -107,6 +115,64 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
           "A massive package of mana, healing and versatility given out to your party. Capped at 10 buffs out per proc. Procs off an almost random assortment of spells for each spec with no real logic.",
       };
 
+}
+
+const echoingTyrstone = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["Effective HPS: " + Math.round(bonus_stats.hps),
+                "Expected Overhealing: " + Math.round((1 - effect.efficiency)*100) + "%", 
+                "Equiv Haste: " + Math.round(bonus_stats.allyStats)],
+        description:
+          "Expect nerfs. Currently hits all allies in a very large range and charging it to full is trivial. Very limited testing was possible on the PTR.",
+      };
+}
+
+const paracausalFragmentOfValanyr = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.OTHER,
+        metrics: ["HPS: " + Math.round(bonus_stats.hps),
+                "Expected Wastage: " + Math.round((1 - effect.efficiency)*10000)/100 + "%", 
+                "Shields / Min: " + Math.round(effect.ppm * effect.ticks * player.getStatPerc('haste'))],
+        description:
+          "10 shield charges per proc and you can expect a little more than 1 proc per minute depending on your haste. A decent option but appears capped at 424 item level. \
+          Basically all heal events use one of your shield charges.",
+      };
+}
+
+const mirrorOfFracturedTomorrows = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    const stat = Object.keys(bonus_stats)[0]
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["Uptime: " + Math.round(effect.duration / effect.cooldown * 100) + "%", 
+                "Average Stat Gain: " + Math.round(bonus_stats[stat]),
+                "Stat while active: " + Math.round(processedValue(effect, itemLevel))],
+        description:
+          "The clone isn't functional on the PTR making this quite a weak option but check back soon after launch since they're likely to fix it. Underwhelming as a stat trinket alone. It's \
+          also difficult to leverage a three minute on-use effect as a " + player.spec + ".",
+      };
+}
+
+const timeThiefsGambit = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["Uptime: " + Math.round(effect.duration / effect.cooldown * 100) + "%", 
+                "Average Haste Gain: " + Math.round(bonus_stats.haste),
+                "Stat while active: " + Math.round(processedValue(effect, itemLevel))],
+        description:
+          "More information to come on what mobs 'reset the timeline'. Unlikely to be worth the risk in raid.",
+      };
 }
 
 const magmaclawLure = (data, itemLevel, player, additionalData) => {
