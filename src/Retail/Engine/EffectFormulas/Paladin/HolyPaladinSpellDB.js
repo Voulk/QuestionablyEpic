@@ -1,4 +1,4 @@
-import { addBuff, getHaste, getHealth } from "../Generic/RampBase";
+import { addBuff, getHaste, getHealth, getBuffStacks, removeBuff, checkBuffActive } from "../Generic/RampBase";
 import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
@@ -332,6 +332,85 @@ export const PALADINSPELLDB = {
         cooldown: 15,
         buffType: 'special',
         buffDuration: 8,
+    }],
+    "Aura Mastery": [{
+        spellData: {id: 31821, icon: "spell_holy_auramastery", cat: "cooldown"},
+        type: "buff",
+        name: "Aura Mastery",
+        castTime: 0,
+        cost: 0,
+        cooldown: 180,
+        buffType: 'special',
+        buffDuration: 8,
+    }],
+    "Blessing of Seasons": [{ // Rotating Buff, handles rotation. 
+        spellData: {id: 388007, icon: "", cat: "cooldown"},
+        type: "function",
+        cost: 1,
+        castTime: 0,
+        cooldown: 45,
+        runFunc: function (state, spell, spellDB) {
+            // Activatate the next buff, then increment the buff number
+            const stacker = {
+                name: "Blessing of Seasons Stacker",
+                canStack: true,
+                type: "buff",
+                buffType: "special",
+                buffDuration: 999, // Hidden buff in game.
+                maxStacks: 3,    
+            };
+
+            if (checkBuffActive(state.activeBuffs, "Blessing of Seasons Stacker")) {
+                if (getBuffStacks(state.activeBuffs, "Blessing of Seasons Stacker") === 1)
+                {
+                    // 1 = Blessing of Autumn
+                    const buff = {
+                        name: "Blessing of Autumn",
+                        type: "buff",
+                        buffType: "special",
+                        value: 0.3, // Unused, implemented in sequence
+                        buffDuration: 30, 
+                    };
+
+                    state.activeBuffs.push(buff);
+                    state.activeBuffs.push(stacker);
+                }
+                
+                if (getBuffStacks(state.activeBuffs, "Blessing of Seasons Stacker") === 2)
+                {
+                    // 2 = Blessing of Winter
+                    state.manaSpent -= 0.15 * 250000; // Would much rather this use the value in PALADINCONSTANTS
+                    state.activeBuffs.push(stacker);
+                }
+                
+                if (getBuffStacks(state.activeBuffs, "Blessing of Seasons Stacker") === 3)
+                {
+                    // 3 = Blessing of Spring
+                    const buff = {
+                        name: "Blessing of Spring",
+                        type: "buff",
+                        buffType: "special", // Ignores healing received
+                        value: 0.15, // Unused, implemented in getHealingMult
+                        buffDuration: 30, 
+                    };
+
+                    state.activeBuffs.push(buff);
+                    removeBuff(state.activeBuffs, "Blessing of Seasons Stacker");
+                }
+            } else {
+                // 0 = Blessing of Summer
+                const buff = {
+                    name: "Blessing of Summer",
+                    type: "buff",
+                    buffType: "special",
+                    value: 0.4 * 0.3, // Unused, implemented in getDamMulti
+                    buffDuration: 30, 
+                };
+
+                state.activeBuffs.push(buff);
+                state.activeBuffs.push(stacker);
+            }
+        }
     }],
 }
 
@@ -871,6 +950,39 @@ export const baseTalents = {
             targets: 5,
             tickRate: 1,
             secondaries: ['crit', 'versatility', 'haste']
+        })
+    }},
+
+    // Blessing of Seasons
+    blessingOfSeasons: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Active Spell
+    }},
+
+    // Merciful Auras - Aura of Mercy
+    mercifulAuras: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        const buff = {
+            type: "buff",
+            buffType: "heal",
+            coeff: 0.21, 
+            tickRate: 2 * getHaste(state.currentStats), // Not Hasted
+            targets: 3,
+            buffDuration: 999,
+            expectedOverheal: 0.5,
+            secondaries: ['crit', 'vers'], // Not Hasted
+        };
+
+        addBuff(state, buff, "Merciful Auras (Passive)")
+
+        spellDB['Aura Mastery'].push({
+            type: "buff",
+            name: "Merciful Auras (Active)",
+            buffType: "heal",
+            coeff: 0.21 * 1.5,
+            buffDuration: 8,
+            expectedOverheal: 0.30,
+            targets: 20,
+            tickRate: 2 * getHaste(state.currentStats), // Not Hasted
+            secondaries: ['crit', 'versatility']
         })
     }}
 }

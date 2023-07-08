@@ -64,6 +64,8 @@ const apl2 = [
 // Avenging Wrath / Might
 const apl = [
     //{s: "Beacon of Virtue"},
+    {s: "Blessing of Seasons", c: {talent: "blessingOfSeasons"}},
+    {s: "Aura Mastery", c: {talent: "mercifulAuras"}},
     {s: "Avenging Wrath"},
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
     //{s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
@@ -263,6 +265,10 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
         removeBuff(state.activeBuffs, "Blessing of Dawn");
     }
 
+    if (checkBuffActive(state.activeBuffs, "Blessing of Summer")) {
+        mult *= 1 + (0.4 * 0.3);
+    }
+
     return mult;
 }
 
@@ -302,6 +308,10 @@ const getHealingMult = (state, t, spellName, talents) => {
         mult *= 1 + (1 - PALADINCONSTANTS.reclamation.avgHealHealth) * PALADINCONSTANTS.reclamation.throughputIncrease;
     }
 
+    if (checkBuffActive(state.activeBuffs, "Blessing of Spring")) {
+        mult *= 1.15;
+    }
+
     return mult;
 }
 
@@ -319,6 +329,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
+    if (spellName === "Merciful Auras (Passive)" && checkBuffActive(state.activeBuffs, "Aura Mastery")) healingVal = 0;
 
     // Beacon
     let beaconHealing = 0;
@@ -691,12 +702,11 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
             if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
             if (spell.cooldown && !bonusSpell) {
                 // Handle charges by changing the base cooldown value
-                var newCooldownBase = ((spell.charges > 1 && spell.activeCooldown > state.t) ? spell.activeCooldown : state.t)
-                //var newCooldownBase = state.t;
-                //}
+                const newCooldownBase = ((spell.charges > 1 && spell.activeCooldown > state.t) ? spell.activeCooldown : state.t)
+                //const newCooldownBase = state.t;
 
                 if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.2);
-                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.3)
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.3);
                 else if (spell.hastedCooldown) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats));
                 else spell.activeCooldown = newCooldownBase + spell.cooldown;
             }
@@ -988,6 +998,36 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
         if (seq.length === 0 && queuedSpell === "" && healBuffs.length === 0) {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             //state.t = 999;
+        }
+
+        // Autumn, only checks every second and reduces to save processing
+        const checkInterval = 1;
+        if (t % checkInterval === 0) {
+            if (getTalentPoints(state, "blessingOfSeasons")) {
+                if (checkBuffActive(state.activeBuffs, "Blessing of Autumn")) // This takes a bit of processing time :(
+                {
+                    // Smaller list of spells, to reduce processing.. experimented with this but it wasn't any quicker
+                    /*const spellList = ["Holy Shock"];
+
+                    spellList.forEach(checkCooldownSpells => {
+                    if (paladinSpells[checkCooldownSpells][0].activeCooldown - (0.3 * checkInterval) > t) {
+                        paladinSpells[checkCooldownSpells][0].activeCooldown -= 0.3 * checkInterval;
+                    }})*/
+
+                    paladinSpells.foreach(spellCD => {
+                        if (spellCD[0].cooldown) {
+                            if (spellCD[0].activeCooldown > t) {
+                                if (spellCD[0].activeCooldown - (0.3 * checkInterval) > t){
+                                    spellCD[0].activeCooldown -= 0.3 * checkInterval;
+                                }
+                                else {
+                                    spellCD[0].activeCooldown = t;
+                                }
+                            }                    
+                        }
+                    })
+                }
+            }
         }
     }
 
