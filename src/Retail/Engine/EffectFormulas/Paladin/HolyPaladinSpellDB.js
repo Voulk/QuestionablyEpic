@@ -146,6 +146,7 @@ export const PALADINSPELLDB = {
         coeff: 1.302, 
         cooldown: 7.5,
         hastedCooldown: true,
+        stacks: 1,
         holyPower: 1,
         secondaries: ['crit', 'vers']
     }],
@@ -450,7 +451,7 @@ export const baseTalents = {
             buffDuration: 999,
             buffType: 'statsMult',
             stat: 'mastery',
-            value: (0.03 * points + 1)
+            value: (0.02 * points + 1)
         };
         addBuff(state, buff, "Seal of Might")
 
@@ -722,7 +723,7 @@ export const baseTalents = {
 
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
     veneration: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Hammer of Wrath'][0].convertToHealing = 1.8;
+        spellDB['Hammer of Wrath'][0].convertToHealing = 2;
         const venerationBuff = { // Push a HoW reset
             type: "buff",
             onCrit: true,
@@ -954,7 +955,7 @@ export const baseTalents = {
     }},
 
     // Blessing of Seasons
-    blessingOfSeasons: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    blessingOfSeasons: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Active Spell
     }},
 

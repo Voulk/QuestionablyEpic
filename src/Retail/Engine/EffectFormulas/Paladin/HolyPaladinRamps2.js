@@ -83,10 +83,10 @@ const apl = [
     {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light"}},
     //{s: "Holy Light", c: {type: "buff", buffName: "Infusion of Light"}}, // Infusion spell doesn't REALLY matter, the benefit here is resplentant light
     {s: "Holy Light", c: {type: "buff", buffName: "Beacon of Virtue"}}, // Not sure if we can do "buff duration" as a condition element?
-    {s: "Light of Dawn"},
-    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}}, 
-    {s: "Judgment"}, 
+    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
+    {s: "Light of Dawn"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
+    {s: "Judgment"}, 
     {s: "Crusader Strike"},
     {s: "Consecration"}, 
     {s: "Holy Light"},
@@ -404,7 +404,7 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
         runHeal(state, acSpell, "Avenging Crusader")
     }
     if (spell.convertToHealing) {
-        const healSpell = {type: "heal", coeff: 0, flatHeal: damageVal * spell.convertToHealing, secondaries: ['mastery'], expectedOverheal: 0.35, targets: 1}
+        const healSpell = {type: "heal", coeff: 0, flatHeal: damageVal * spell.convertToHealing, secondaries: ['mastery'], expectedOverheal: 0.25, targets: 1}
         runHeal(state, healSpell, spellName + " (heal)");
     }
 
@@ -429,7 +429,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? (spell.cooldown / (spell.hastedCooldown ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldown;
     
     if (spellName === "Hammer of Wrath") {
-        if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
+        if (!checkBuffActive(state.activeBuffs, "Avenging Wrath") && !checkBuffActive(state.activeBuffs, "Veneration")) miscReq = false;
     } 
     else if (conditions !== {}) {
         if (conditions.type === "buff") {
