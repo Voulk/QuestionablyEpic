@@ -633,7 +633,7 @@ export const baseTalents = {
     // Fading Light - 
     fadingLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
-        // Fading Light also increases the power of Dawn by 10%. NYI
+        // Fading Light also increases the power of Dawn by 10%. 
     }}, 
 
 
@@ -920,7 +920,7 @@ export const baseTalents = {
     }},
 
     // Inflorescence of the Sunwell
-    inflorescenceOfTheSunwell: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    inflorescenceOfTheSunwell: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Holy Shock'][1].stacks = 2;
         spellDB['Holy Shock'][1].maxStacks = 2;
 

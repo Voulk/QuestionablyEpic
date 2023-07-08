@@ -68,6 +68,7 @@ const apl = [
     {s: "Aura Mastery", c: {talent: "mercifulAuras"}},
     {s: "Avenging Wrath"},
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
+    {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     //{s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
     {s: "Daybreak", c: {talent: "daybreak"}}, 
     {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
@@ -75,8 +76,8 @@ const apl = [
     {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}},
     //{s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
     {s: "Light of Dawn", c: {type:"buff", buffName: "Blessing of Dawn", stacks: 2}},
-    {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
+    {s: "Light of Dawn", c: {holyPower: 5, talent:"awakening"}}, // Don't overcap hopo with Awakening
     {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Holy Shock"}, 
     //{s: "Holy Shock", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 5}}, // Some kind of hold for Virtue
@@ -87,9 +88,9 @@ const apl = [
     {s: "Light of Dawn"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
     {s: "Judgment"}, 
-    {s: "Crusader Strike"},
     {s: "Consecration"}, 
     {s: "Holy Light"},
+    {s: "Crusader Strike"},
     {s: "Rest"}]
 
 
@@ -263,6 +264,14 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     if ((spellName === "Shield of the Righteous") && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
         mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * (0.2 + (getTalentPoints(state, "sealOfOrder") || getTalentPoints(state, "fadingLight") ? 0.1 : 0)));
         removeBuff(state.activeBuffs, "Blessing of Dawn");
+        const buff = {
+            name: "Dusk",
+            type: "buff",
+            stacks: false,
+            buffDuration: 10,
+            buffType: 'special'
+        };
+        addBuff(state, buff, "Dusk");
     }
 
     if (checkBuffActive(state.activeBuffs, "Blessing of Summer")) {
@@ -294,6 +303,14 @@ const getHealingMult = (state, t, spellName, talents) => {
     else if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
         mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * (0.2 + (getTalentPoints(state, "sealOfOrder") || getTalentPoints(state, "fadingLight") ? 0.1 : 0)));
         removeBuff(state.activeBuffs, "Blessing of Dawn");
+        const buff = {
+            name: "Dusk",
+            type: "buff",
+            stacks: false,
+            buffDuration: 10,
+            buffType: 'special'
+        };
+        addBuff(state, buff, "Dusk");
     }
     if (spellName === "Light of the Martyr" && checkBuffActive(state.activeBuffs, "Maraads Dying Breath")) {
         mult *= 1.5;
@@ -381,7 +398,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     }
 
     // Fading Light
-    if (PALADINCONSTANTS.duskSpellList.includes(spellName) && state.talents.fadingLight.points == 1) {
+    if (PALADINCONSTANTS.duskSpellList.includes(spellName) && state.talents.fadingLight.points == 1 && checkBuffActive(state.activeBuffs, "Dusk")) {
         if (compile) state.healingDone["Fading Light"] = (state.healingDone["Fading Light"] || 0) + (healingVal * PALADINCONSTANTS.fadingLight.effect * PALADINCONSTANTS.fadingLight.efficiency);
     }
 
@@ -431,16 +448,23 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath") && !checkBuffActive(state.activeBuffs, "Veneration")) miscReq = false;
     } 
-    else if (conditions !== {}) {
-        if (conditions.type === "buff") {
-            aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
-        }
-        else if (conditions.type === "time") {
-            aplReq = state.t >= conditions.timer;
-        }
-
+    
+    if (conditions !== {}) {
         if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
-    }
+        if (state.holyPower >= conditions.holyPower) aplReq = false;
+
+        if (aplReq) {
+            if (conditions.type === "buff") {
+                aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
+                if (conditions.stacks && aplReq){
+                    aplReq = getBuffStacks(state.activeBuffs, conditions.buffName) >= conditions.stacks;
+                }
+            } else if (conditions.type === "time") {
+                aplReq = state.t >= conditions.timer;
+            } 
+        }
+    } 
+
 
     //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
     return cooldownReq && holyPowReq && miscReq && aplReq;
