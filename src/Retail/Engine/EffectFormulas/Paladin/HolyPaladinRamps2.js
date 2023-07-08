@@ -63,24 +63,25 @@ const apl2 = [
 
 // Avenging Wrath / Might
 const apl = [
-    {s: "Beacon of Virtue"},
+    //{s: "Beacon of Virtue"},
     {s: "Avenging Wrath"},
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
-    {s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
-    //{s: "Daybreak", c: {talent: "daybreak"}}, 
+    //{s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
+    {s: "Daybreak", c: {talent: "daybreak"}}, 
     {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
     {s: "Light's Hammer"}, 
     {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}},
-    {s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
-    //{s: "Light of Dawn"},
+    //{s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
+    {s: "Light of Dawn", c: {type:"buff", buffName: "Blessing of Dawn", stacks: 2}},
     {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
-    //{s: "Holy Shock"}, 
-    {s: "Holy Shock", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 5}}, // Some kind of hold for Virtue
+    {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
+    {s: "Holy Shock"}, 
+    //{s: "Holy Shock", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 5}}, // Some kind of hold for Virtue
     {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light"}},
-    //{s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
-    {s: "Holy Light", c: {type: "buff", buffName: "Infusion of Light"}}, // Infusion spell doesn't REALLY matter, the benefit here is resplentant light
+    //{s: "Holy Light", c: {type: "buff", buffName: "Infusion of Light"}}, // Infusion spell doesn't REALLY matter, the benefit here is resplentant light
     {s: "Holy Light", c: {type: "buff", buffName: "Beacon of Virtue"}}, // Not sure if we can do "buff duration" as a condition element?
+    {s: "Light of Dawn"},
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}}, 
     {s: "Judgment"}, 
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
@@ -255,7 +256,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 
     mult *= (buffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length > 0 ? 1.15 : 1); 
     mult *= ((["Crusader Strike", "Judgment"].includes(spellName) && buffs.filter(function (buff) {return buff.name === "Avenging Crusader"}).length > 0) ? 1.3 : 1); 
-    mult *= ((["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) ? 1 + PALADINCONSTANTS.reclamation.avgDamHealth * PALADINCONSTANTS.reclamation.throughputIncrease : 1);
+    mult *= ((["Crusader Strike", "Holy Shock"].includes(spellName) && state.talents.reclamation.points == 1) ? 1 + (1 - PALADINCONSTANTS.reclamation.avgDamHealth) * PALADINCONSTANTS.reclamation.throughputIncrease : 1);
     
     if ((spellName === "Shield of the Righteous") && checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
         mult *= (1 + getBuffStacks(state.activeBuffs, "Blessing of Dawn") * (0.2 + (getTalentPoints(state, "sealOfOrder") || getTalentPoints(state, "fadingLight") ? 0.1 : 0)));
@@ -298,7 +299,7 @@ const getHealingMult = (state, t, spellName, talents) => {
     }
 
     if ((["Crusader Strike"].includes(spellName) || spellName.includes("Holy Shock")) && state.talents.reclamation.points == 1) {
-        mult *= 1 + PALADINCONSTANTS.reclamation.avgHealHealth * PALADINCONSTANTS.reclamation.throughputIncrease;
+        mult *= 1 + (1 - PALADINCONSTANTS.reclamation.avgHealHealth) * PALADINCONSTANTS.reclamation.throughputIncrease;
     }
 
     return mult;
@@ -413,8 +414,9 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
 
     // Added workaround CDR/Stacks pending rework
-    // const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
-    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? (spell.cooldown * 1 / getHaste(state.currentStats)) * spell.charges : 0))) || !spell.cooldown;
+    //const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
+    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? (spell.cooldown / (spell.hastedCooldown ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldown;
+    
     if (spellName === "Hammer of Wrath") {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
     } 
@@ -476,7 +478,7 @@ export const genSpell = (state, spells) => {
 
 
 
-export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
+export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell = false) => {
     addReport(state, "Casting: " + spellName);
     fullSpell.forEach(spell => {
 
@@ -499,7 +501,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             if (spell.type === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
                 const newSpell = paladinSpells[spell.storedSpell];
-                runSpell(newSpell, state, spell.storedSpell, paladinSpells);
+                runSpell(newSpell, state, spell.storedSpell, paladinSpells); // Maybe these should be "bonus spells" else they put the spell on cooldown
             }
             // The spell has a healing component. Add it's effective healing.
             // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
@@ -687,12 +689,16 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
             // These are special exceptions where we need to write something special that can't be as easily generalized.
 
             if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
-            if (spell.cooldown) {
+            if (spell.cooldown && !bonusSpell) {
+                // Handle charges by changing the base cooldown value
+                var newCooldownBase = ((spell.charges > 1 && spell.activeCooldown > state.t) ? spell.activeCooldown : state.t)
+                //var newCooldownBase = state.t;
+                //}
 
-                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.2);
-                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats) / 1.3)
-                else if (spell.hastedCooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
-                else spell.activeCooldown = state.t + spell.cooldown;
+                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.2);
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.3)
+                else if (spell.hastedCooldown) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats));
+                else spell.activeCooldown = newCooldownBase + spell.cooldown;
             }
         }
 
@@ -741,6 +747,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells) => {
     else if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
         // Refund HoPo
         state.holyPower += 3;
+        state.manaSpent -= paladinSpells[spellName][0].cost;
         state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
     }
 }
@@ -785,9 +792,9 @@ const spendSpellCost = (spell, state, spellName) => {
         if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
             state.manaSpent += spell[0].cost * (1 - PALADINCONSTANTS.infusion.flashOfLightReduction); }
         else if (spellName == "Holy Shock" && state.talents.reclamation.points == 1) {
-            state.manaSpent += spell[0].cost * (1 - (PALADINCONSTANTS.reclamation.avgHealHealth * (1 - PALADINCONSTANTS.reclamation.manaReduction))); }
+            state.manaSpent += spell[0].cost * (1 - ((1 - PALADINCONSTANTS.reclamation.avgHealHealth) * (PALADINCONSTANTS.reclamation.manaReduction))); }
         else if (spellName == "Crusader Strike" && state.talents.reclamation.points == 1) {
-            state.manaSpent += spell[0].cost * (1 - (PALADINCONSTANTS.reclamation.avgDamHealth * (1 - PALADINCONSTANTS.reclamation.manaReduction))); }
+            state.manaSpent += spell[0].cost * (1 - ((1 - PALADINCONSTANTS.reclamation.avgDamHealth) * (PALADINCONSTANTS.reclamation.manaReduction))); }
         else state.manaSpent += spell[0].cost;
     }
     else {
@@ -799,7 +806,7 @@ const getSpellCastTime = (spell, state, currentStats) => {
     if ('castTime' in spell) {
         let castTime = spell.castTime;
 
-        if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        if (castTime === 0 && spell.offGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
         else castTime = castTime / getHaste(currentStats);
 
         return castTime;
@@ -833,7 +840,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Virtue"};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith"};
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 
@@ -967,8 +974,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             // Rising Sunlight - If has buff, cast Holy Shock three times instead of twice.
             if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
                 addReport(state, "Casting Multiple Holy Shocks due to Rising Sunlight")
-                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells);
-                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells);
+                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
+                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
                 removeBuffStack(state.activeBuffs, "Rising Sunlight");
             }
             runSpell(fullSpell, state, spellName, paladinSpells);

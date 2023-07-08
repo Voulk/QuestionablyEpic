@@ -74,12 +74,18 @@ describe("Evang Cast Sequence", () => {
     } */
     const activeStats = {
         intellect: 11400 * 1.05 * 1.04, // Arcane int + Seal of Might
+        haste: 3215,
+        crit: 4140,
+        mastery: 3283,
+        versatility: 2762 + (3 * 205), // MotW
+        stamina: 0,
+}
+/* Old Stats
         haste: 5200,
         crit: 3800,
         mastery: 2800,
         versatility: 1600 + (3 * 205), // MotW
-        stamina: 0,
-}
+        */
     
     // Old Sequences
     const talents = baseTalents;
@@ -260,13 +266,12 @@ describe("Evang Cast Sequence", () => {
         }
         const settings = {reporting: true}
         const talents = baseTalents;
-        const iterations = 1;
+        const iterations = 13000;
         const metric = 'totalHealing';
         // Weights
 
         const build2 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
-        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions",
-        "divinePurpose"];
+        "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "boundlessSalvation", "imbuedInfusions", "divinePurpose"];
 
         build2.forEach(talent => {
             if (talent in talents) {
@@ -308,9 +313,9 @@ describe("Evang Cast Sequence", () => {
         });
 
         console.log(weights); 
-    });*/
+    });
+    */
 }); 
-
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
 // We need this to ensure we're always running a clean DB, free from any changes made on previous runs.
 const deepCopyFunction = (inObject) => {
