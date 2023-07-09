@@ -778,7 +778,7 @@ export const baseTalents = {
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 5 times.
-    relentlessInquisitor: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+    relentlessInquisitor: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
         // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
         const buff = {
             name: "Relentless Inquisitor",
