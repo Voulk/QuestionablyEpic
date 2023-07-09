@@ -4,6 +4,52 @@ import { Player } from "General/Modules/Player/Player";
 export const otherTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                           Paracausal Fragment of Frostmourne                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    name: "Paracausal Fragment of Frostmourne",
+    effects: [
+      { // Mana Portion
+        coefficient: 0.602795, // 1.506561 * 0.7, 
+        table: -9,
+        soulsPerUse: 3,
+        cooldown: 150,
+      },
+      { // Heal on attack portion -- S8
+        coefficient: 19.10983, //3.86182,
+        table: -9, 
+        efficiency: 0.8,
+        duration: 20,
+        ppm: 30 * (20 / 150), // ppm is 30 while active, but it's only active 13% of the time.
+        secondaries: ["versatility", "crit"], 
+      },
+      { // Haste portion -- S9
+        coefficient: 1.80037,
+        table: -7, 
+        duration: 10,
+        cooldown: 150,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      // This can probably be rewritten in a much easier way now that it doesn't have weird haste scaling.
+
+      let bonus_stats = {};
+      const contentType = additionalData.contentType || "Raid";
+      //if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
+      // Healing Portion
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player);
+
+      // Mana Portion
+      bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].soulsPerUse / data[0].cooldown;
+
+      // Haste portion
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = runGenericOnUseTrinket(data[2], itemLevel, player, contentType);
+      console.log(itemLevel + JSON.stringify(bonus_stats));
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                             Paracausal Fragment of Seschenal                                   */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
