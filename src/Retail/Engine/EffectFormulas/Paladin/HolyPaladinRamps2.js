@@ -444,7 +444,10 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     if (conditions !== {}) {
         if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
         if (state.holyPower >= conditions.holyPower) aplReq = false;
-        if (conditions.talentNot && (typeof state.talents[conditions.talentNot] != "undefined")) aplReq = false;
+        if (conditions.talentNot){
+            if (typeof state.talents[conditions.talentNot] == "undefined") aplReq = false;
+            else if (state.talents[conditions.talentNot].points > 0) aplReq = false;
+        } 
         
         if (aplReq) {
             if (conditions.type === "buff") {
