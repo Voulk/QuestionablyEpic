@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> THIS IS THE TEST VERSION OF QE LIVE. Results and tools in general may not be stable.",
+      "-> New trinkets were difficult to test on PTR. Rankings are preliminary.",
   ]
 ;
 

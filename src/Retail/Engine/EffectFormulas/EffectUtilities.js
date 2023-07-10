@@ -48,6 +48,12 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 // You can expand this function with more fields if they're necessary.
 export function runGenericFlatProc(effect, itemLevel, player, contentType = "Raid") {
 
+  let efficiency = 1;
+  if ('efficiency' in effect) {
+    if (effect.efficiency[contentType]) efficiency = effect.efficiency[contentType];
+    else efficiency = effect.efficiency;
+  }
+
   const value = processedValue(effect, itemLevel, effect.efficiency || 1);
   let mult = 1;
 
