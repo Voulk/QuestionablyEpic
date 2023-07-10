@@ -75,7 +75,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 1.5,
         cost: 3.6,
-        coeff: 2.727, // Test this since it's an aura mess.
+        coeff: 3.03, //2.727, // Test this since it's an aura mess.
         expectedOverheal: 0.14,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -95,7 +95,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 2.5,
         cost: 2.4,
-        coeff: 3.25, // 
+        coeff: 3.64, // 2.6 * 1.4,
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']

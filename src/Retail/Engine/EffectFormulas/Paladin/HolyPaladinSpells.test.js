@@ -26,7 +26,8 @@ describe("Test Base Spells", () => {
     each`
         spellName                       | expectedResult
         ${"Holy Shock"}                 | ${740}
-        ${"Flash of Light"}             | ${1314}
+        ${"Flash of Light"}             | ${1460}
+        ${"Holy Light"}                 | ${1754}
         ${"Light of Dawn"}              | ${401}
 
         // add new test cases here. Update the ones below.
