@@ -1,4 +1,4 @@
-import { addBuff, getHaste, getHealth } from "../Generic/RampBase";
+import { addBuff, getHaste, getHealth, getBuffStacks, removeBuff, checkBuffActive } from "../Generic/RampBase";
 import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps2";
 
 // This is the Disc spell database. 
@@ -39,6 +39,7 @@ export const PALADINSPELLDB = {
         cost: 2.4,
         coeff: 1.535, // 1.395, 
         cooldown: 8.5,
+        charges: 1,
         expectedOverheal: 0.22,
         holyPower: 1,
         hastedCooldown: true,
@@ -73,8 +74,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
-        cost: 18,
-        coeff: 2.727, // Test this since it's an aura mess.
+        cost: 3.6,
+        coeff: 3.03, //2.727, // Test this since it's an aura mess.
         expectedOverheal: 0.14,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -83,7 +84,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 22,
+        cost: 1.6,
         coeff: 2.3, // Not final
         expectedOverheal: 0.15,
         statMods: {'crit': 0, critEffect: 0},
@@ -94,7 +95,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 2.5,
         cost: 2.4,
-        coeff: 3.25, // 
+        coeff: 3.64, // 2.6 * 1.4,
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -145,6 +146,7 @@ export const PALADINSPELLDB = {
         coeff: 1.302, 
         cooldown: 7.5,
         hastedCooldown: true,
+        stacks: 1,
         holyPower: 1,
         secondaries: ['crit', 'vers']
     }],
@@ -197,7 +199,7 @@ export const PALADINSPELLDB = {
     "Divine Toll": [{
         spellData: {id: 31884, icon: "", cat: "cooldown"},
         type: "function",
-        cost: 15,
+        cost: 3,
         castTime: 0,
         cooldown: 60,
         count: 5,
@@ -205,7 +207,7 @@ export const PALADINSPELLDB = {
             // Cast 5 Holy Shocks           
             for (let i = 0; i < spell.count; i++) {
                 state.holyPower = Math.max(5, state.holyPower + 1);
-                runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB);
+                runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB, true);
             }
 
             triggerGlimmerOfLight(state, "Divine Toll");
@@ -290,13 +292,13 @@ export const PALADINSPELLDB = {
         // Ticks on cast. Probably need to create a generic case for this.
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
         castTime: 0,
-        cost: 2.4,
+        cost: 0,
         coeff: 0.05 * 1.04 * 1.05, // AP boost.
         targets: 5,
         secondaries: ['crit', 'vers'],
         cooldown: 11, // Technically 9
         type: "buff",
-        name: "Tyr's Deliverance",
+        name: "Consecration",
         buffType: "damage",
         canPartialTick: false,
         buffDuration: 12,
@@ -331,6 +333,85 @@ export const PALADINSPELLDB = {
         cooldown: 15,
         buffType: 'special',
         buffDuration: 8,
+    }],
+    "Aura Mastery": [{
+        spellData: {id: 31821, icon: "spell_holy_auramastery", cat: "cooldown"},
+        type: "buff",
+        name: "Aura Mastery",
+        castTime: 0,
+        cost: 0,
+        cooldown: 180,
+        buffType: 'special',
+        buffDuration: 8,
+    }],
+    "Blessing of Seasons": [{ // Rotating Buff, handles rotation. 
+        spellData: {id: 388007, icon: "", cat: "cooldown"},
+        type: "function",
+        cost: 1,
+        castTime: 0,
+        cooldown: 45,
+        runFunc: function (state, spell, spellDB) {
+            // Activatate the next buff, then increment the buff number
+            const stacker = {
+                name: "Blessing of Seasons Stacker",
+                canStack: true,
+                type: "buff",
+                buffType: "special",
+                buffDuration: 999, // Hidden buff in game.
+                maxStacks: 3,    
+            };
+
+            if (checkBuffActive(state.activeBuffs, "Blessing of Seasons Stacker")) {
+                if (getBuffStacks(state.activeBuffs, "Blessing of Seasons Stacker") === 1)
+                {
+                    // 1 = Blessing of Autumn
+                    const buff = {
+                        name: "Blessing of Autumn",
+                        type: "buff",
+                        buffType: "special",
+                        value: 0.3, // Unused, implemented in sequence
+                        buffDuration: 30, 
+                    };
+
+                    state.activeBuffs.push(buff);
+                    state.activeBuffs.push(stacker);
+                }
+                
+                if (getBuffStacks(state.activeBuffs, "Blessing of Seasons Stacker") === 2)
+                {
+                    // 2 = Blessing of Winter
+                    state.manaSpent -= 0.15 * 250000; // Would much rather this use the value in PALADINCONSTANTS
+                    state.activeBuffs.push(stacker);
+                }
+                
+                if (getBuffStacks(state.activeBuffs, "Blessing of Seasons Stacker") === 3)
+                {
+                    // 3 = Blessing of Spring
+                    const buff = {
+                        name: "Blessing of Spring",
+                        type: "buff",
+                        buffType: "special", // Ignores healing received
+                        value: 0.15, // Unused, implemented in getHealingMult
+                        buffDuration: 30, 
+                    };
+
+                    state.activeBuffs.push(buff);
+                    removeBuff(state.activeBuffs, "Blessing of Seasons Stacker");
+                }
+            } else {
+                // 0 = Blessing of Summer
+                const buff = {
+                    name: "Blessing of Summer",
+                    type: "buff",
+                    buffType: "special",
+                    value: 0.4 * 0.3, // Unused, implemented in getDamMulti
+                    buffDuration: 30, 
+                };
+
+                state.activeBuffs.push(buff);
+                state.activeBuffs.push(stacker);
+            }
+        }
     }],
 }
 
@@ -370,7 +451,7 @@ export const baseTalents = {
             buffDuration: 999,
             buffType: 'statsMult',
             stat: 'mastery',
-            value: (0.03 * points + 1)
+            value: (0.02 * points + 1)
         };
         addBuff(state, buff, "Seal of Might")
 
@@ -517,7 +598,7 @@ export const baseTalents = {
     }}, 
 
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
-    ofDuskAndDawn: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    ofDuskAndDawn: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const dawnStacker = {
             name: "Blessing of Dawn Stacker",
             canStack: true,
@@ -552,7 +633,7 @@ export const baseTalents = {
     // Fading Light - 
     fadingLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
-        // Fading Light also increases the power of Dawn by 10%. NYI
+        // Fading Light also increases the power of Dawn by 10%. 
     }}, 
 
 
@@ -590,7 +671,7 @@ export const baseTalents = {
 
     // Resplendent Light - Holy Light splashes to 5 targets for 8% each.
     // This ISN'T AOE reduced by Beacon, and scales off of raw healing, not effective
-    resplendentLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    resplendentLight: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Holy Light'].push({
             type: "heal",
             coeff: spellDB['Holy Light'][0].coeff * 0.08,
@@ -642,7 +723,7 @@ export const baseTalents = {
 
     // Veneration - Flash of Light, Holy Light and Judgment critical strikes reset the CD of Hammer of Wrath and make it usable on any target.
     veneration: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Hammer of Wrath'][0].convertToHealing = 1.8;
+        spellDB['Hammer of Wrath'][0].convertToHealing = 2;
         const venerationBuff = { // Push a HoW reset
             type: "buff",
             onCrit: true,
@@ -714,14 +795,14 @@ export const baseTalents = {
 
     // Holy Infusion
     // Crusader strike generates +1 HoPo and deals +25% damage.
-    holyInfusion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    holyInfusion: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'][0].coeff *= 1.25;
         spellDB['Crusader Strike'][0].holyPower += 1;
     }},
 
     // Awestruck
     // Holy Shock, Holy Light, Flash of Light critical healing increased by 20%..
-    aweStruck: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    aweStruck: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Flash of Light'][0].statMods.critEffect += 0.2;
         spellDB['Holy Light'][0].statMods.critEffect += 0.2;
         spellDB['Holy Shock'][0].statMods.critEffect += 0.2;
@@ -790,7 +871,7 @@ export const baseTalents = {
                 // Previous logic, with charges bandaid fix would have been giving 2 charges
                 //if (canProceed) holyShock[0].activeCooldown = 0;
                 // New logic, counts as giving one extra charge.
-                if (canProceed) holyShock[0].activeCooldown -= holyShock[0].cooldown * (1 / getHaste(state.currentStats))
+                if (canProceed) holyShock[0].activeCooldown -= holyShock[0].cooldown / getHaste(state.currentStats)
             }
         }
 
@@ -806,12 +887,12 @@ export const baseTalents = {
 
 
     // Barrier of Faith
-    barrierOfFaith: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    barrierOfFaith: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Active spell.
     }},
 
     // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
-    reclamation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    reclamation: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Handled in ramp / constants
         }},
 
@@ -870,6 +951,39 @@ export const baseTalents = {
             targets: 5,
             tickRate: 1,
             secondaries: ['crit', 'versatility', 'haste']
+        })
+    }},
+
+    // Blessing of Seasons
+    blessingOfSeasons: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        // Active Spell
+    }},
+
+    // Merciful Auras - Aura of Mercy
+    mercifulAuras: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+        const buff = {
+            type: "buff",
+            buffType: "heal",
+            coeff: 0.21, 
+            tickRate: 2 * getHaste(state.currentStats), // Not Hasted
+            targets: 3,
+            buffDuration: 999,
+            expectedOverheal: 0.5,
+            secondaries: ['crit', 'vers'], // Not Hasted
+        };
+
+        addBuff(state, buff, "Merciful Auras (Passive)")
+
+        spellDB['Aura Mastery'].push({
+            type: "buff",
+            name: "Merciful Auras (Active)",
+            buffType: "heal",
+            coeff: 0.21 * 1.5,
+            buffDuration: 8,
+            expectedOverheal: 0.30,
+            targets: 20,
+            tickRate: 2 * getHaste(state.currentStats), // Not Hasted
+            secondaries: ['crit', 'versatility']
         })
     }}
 }

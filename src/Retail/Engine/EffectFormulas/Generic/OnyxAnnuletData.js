@@ -149,7 +149,7 @@ export const annuletGemData = [
             coefficient: 11.029875,
             table: -9,
             ppm: 2.5,
-            efficiency: 0.45,
+            efficiency: {Raid: 0.45, Dungeon: 0.35},
             ticks: 6,
             secondaries: ['crit', 'versatility'], // Was fixed to scale with crit.
           },
@@ -178,7 +178,7 @@ export const annuletGemData = [
             table: -9,
             ppm: 3,
             targets: 3,
-            efficiency: 0.75, 
+            efficiency: {Raid: 0.75, Dungeon: 0.5},
             secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
@@ -428,7 +428,7 @@ export const annuletGemData = [
             coefficient: 1.954597,// 2.188874,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
             table: -9,
             targets: 5,
-            efficiency: 0.7,
+            efficiency: {Raid: 0.65, Dungeon: 0.4},
             ticks: 7,
             secondaries: ['crit', 'versatility'], // Was fixed to scale with Crit.
           },

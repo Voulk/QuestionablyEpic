@@ -16,9 +16,9 @@ import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
 import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
+import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -309,6 +309,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
+              <InformationBox information="Dawn of the Infinite trinkets including Echoing Tyrstone are preliminary rankings and could change in-game. It currently heals all allies! Testing was limited." color="firebrick" />
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                   <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">

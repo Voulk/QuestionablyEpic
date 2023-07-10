@@ -61,15 +61,15 @@ export const dungeonTrinketData = [
       { 
         coefficient: 167.2488, 
         table: -9,
-        secondaries: ['crit', 'versatility'],
-        targets: 15, // TODO: Test on live, confirmed on PTR.
+        secondaries: [],
+        targets: {Raid: 15, Dungeon: 5}, // TODO: Test on live, confirmed on PTR.
         cooldown: 120,
-        efficiency: 0.5,
+        efficiency: 0.55,
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
-        targets: 15, // TODO: Test.
+        targets: {Raid: 15, Dungeon: 5}, // TODO: Test.
         cooldown: 120,
         efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
@@ -78,8 +78,8 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
-      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets * data[1].efficiency * data[1].duration / data[1].cooldown;
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid");
+      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
       return bonus_stats;
     }
   },
