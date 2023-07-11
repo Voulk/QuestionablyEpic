@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processItem, processCurve, processAllLines, runSimC} from "Retail/Engine/SimCImport/SimCImportEngine.js"
+import { processItem, processCurve, processAllLines, runSimC} from "Retail/Engine/SimCImport/SimCImportEngine"
 
 const testDruidSet = 
 `
@@ -79,6 +79,25 @@ trinket2=,id=178298,bonus_id=6784/1485/6616
 main_hand=,id=178714,enchant_id=6229,bonus_id=6807/6652/1498/6646
 `
 
+const settings = {
+    includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
+    incarnateAllies: { value: "DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
+    idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
+    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
+    alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
+    enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
+    catalystLimit: { value: 1, options: [1, 2, 3], category: "topGear", type: "selector" },
+    upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector" },
+    primordialGems: {
+      value: "Automatic",
+      options: ["Automatic", "Wild Spirit, Exuding Steam, Deluging Water", "Wild Spirit, Exuding Steam, Desirous Blood", "Flame Licked, Wild Spirit, Exuding Steam"],
+      category: "topGear",
+      type: "selector",
+    },
+    topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
+    healingDartsOverheal: { value: 55, options: [], category: "embellishments", type: "Entry" },
+    lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
+  } 
 
 describe("Test Curve IDs", () => {
     test("Evoker Starting Items", () => {
@@ -108,14 +127,14 @@ describe("Test Regular Items", () => {
 
     test("Stitchflesh's Misplaced Signet w/ Socket", () => {
         const line = "finger1=,id=178736,bonus_id=7389/7359/6652/6935/1540/6646";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         //expect(item.stats.versatility).toEqual(77);
         expect(item.socket).toEqual(1)
     });
 
     test("Origin BoE Cape - Of the Aurora", () => {
         const line = "back=,id=190334,enchant_id=6204,bonus_id=7189/8072/8133/8138/1472/6646";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         //expect(item.stats.versatility).toEqual(59);
         expect(true).toEqual(true);
     });
@@ -129,7 +148,7 @@ describe("Test Upgrade Track", () => {
 
     test("Claws of Obsidian Secrets 5/8 Champion", () => {
         const line = "hands=,id=202489,bonus_id=6652/9230/7979/9325/1479/8767";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
 
         expect(item.upgradeTrack).toEqual("Champion");
         expect(item.upgradeRank).toEqual(5);
@@ -138,7 +157,7 @@ describe("Test Upgrade Track", () => {
 
     test("Raoul's Barrelhook Bracers 1/5 Hero", () => {
         const line = "hands=,id=202489,bonus_id=6652/9230/7979/9325/1479/87wrist=,id=159356,enchant_id=6580,bonus_id=9331/6652/9415/9223/9220/9144/3301/8767";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
 
         expect(item.upgradeTrack).toEqual("Hero");
         expect(item.upgradeRank).toEqual(2);
@@ -147,7 +166,7 @@ describe("Test Upgrade Track", () => {
 
     test("Bestowed Cape 3/8 Explorer", () => {
         const line = "# back=,id=204617,bonus_id=9296/1472/8766";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
 
         expect(item.upgradeTrack).toEqual("Explorer");
         expect(item.upgradeRank).toEqual(3);
@@ -163,7 +182,7 @@ describe("Test Crafted Items", () => {
 
     test("Quick Oxxein Ring - No Missive IDs", () => {
         const line = "finger1=,id=173133,bonus_id=7461,drop_level=60,crafted_stats=49";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(230);
         //expect(item.stats.mastery).toEqual(63);
         expect(item.socket).toEqual(1);
@@ -172,7 +191,7 @@ describe("Test Crafted Items", () => {
 
     test("Elemental Lariat", () => {
         const line = "neck=,id=193001,gem_id=192980/192921/192920,bonus_id=8836/8840/8902/8960/8783/8782/8801/8791,crafted_stats=49/32";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(389);
         expect(item.stats.crit).toEqual(468);
         expect(item.stats.mastery).toEqual(468);
@@ -182,7 +201,7 @@ describe("Test Crafted Items", () => {
 
     test("Elemental Lariat with wrong crafted_stats", () => {
         const line = "neck=,id=193001,gem_id=192987,bonus_id=8836/8840/8902/8960/8783/8782/8802/8791/8845,crafted_stats=40/32";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(405);
         expect(item.stats.crit).toEqual(536);
         expect(item.stats.mastery).toEqual(536);
@@ -193,7 +212,7 @@ describe("Test Crafted Items", () => {
 
     test("Obsidian Seared Hexblade", () => {
         const line = "main_hand=,id=190511,enchant_id=6628,bonus_id=8836/8840/8902/8801/8845/8791/8175/8960,crafted_stats=40/36";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(402);
         expect(item.stats.crit).toEqual(176);
         expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
@@ -203,7 +222,7 @@ describe("Test Crafted Items", () => {
 
     test("Ring with Embellishment", () => {
         const line = "finger1=,id=192999,enchant_id=6556,gem_id=192948,bonus_id=8836/8840/8902/8780/8802/8793/8846/8960/8175,crafted_stats=36/49";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 418});
         expect(item.socket).toEqual(1);
         expect(item.uniqueEquip).toEqual("embellishment");
@@ -211,14 +230,14 @@ describe("Test Crafted Items", () => {
 
     test("Warlords of Draenor Timewalking - Blackwater Belt", () => {
         const line = "waist=,id=109842,bonus_id=6652/8812/8171/7756,drop_level=70";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(359);
         expect(item.stats.intellect).toEqual(210);
     });
 
     test("Engineering Wrists with Crit (override used)", () => {
         const line = "wrist=,id=198332,enchant_id=6580,gem_id=201408,bonus_id=8836/8840/8902/7936/8802/8846/8949/8864,crafted_stats=49";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(418);
         expect(item.stats.crit).toEqual(429);
 
@@ -227,7 +246,7 @@ describe("Test Crafted Items", () => {
     // 10.1 Crafted Items
     test("Elemental Lariat 10.1 - 395 item level", () => {
         const line = "neck=,id=193001,gem_id=192948/192948/192948,bonus_id=8836/8840/8902/8960/8784/8782/9405/8793/9365,crafted_stats=40/49,crafting_quality=5";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(395);
         expect(item.stats.haste).toEqual(494);
         expect(item.stats.mastery).toEqual(494);
@@ -238,7 +257,7 @@ describe("Test Crafted Items", () => {
 
     test("Elemental Lariat 10.1 - 421 item level", () => {
         const line = "neck=,id=193001,gem_id=192987/192922/192958,bonus_id=8836/8840/8902/8960/8783/8782/9405/8791/8846/9365,crafted_stats=40/32,crafting_quality=5";
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
 
         expect(item.level).toEqual(421);
         expect(item.stats.crit).toEqual(605);
@@ -251,7 +270,7 @@ describe("Test Crafted Items", () => {
     // Regular blue item. 
     test("Pioneer's Practiced Belt - 336 item level", () => { 
         const line = "waist=,id=201945,bonus_id=8851/8852/9403/9415,crafted_stats=32/49,crafting_quality=3"
-        const item = processItem(line, player, contentType, type)
+        const item = processItem(line, player, contentType, type, settings)
     
         expect(item.level).toEqual(336);
         expect(item.stats.crit).toEqual(150);

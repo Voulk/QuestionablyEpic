@@ -11,14 +11,14 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
-import userSettings from "../Settings/SettingsObject";
 import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
 import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
+import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
+import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -74,7 +74,7 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 //
 const setupItemCardData = (trinketList, contentType, player, playerSettings) => {
   const itemData = [];
-  const additionalData = {contentType: contentType, settings: playerSettings}
+  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType)}
   trinketList.forEach((trinket) => {
     const data = getTrinketDescription(trinket.name, player, additionalData);
     //const data = null;
@@ -249,9 +249,6 @@ export default function TrinketAnalysis(props) {
   ];
   const classes = useStyles();
 
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
-  };
 
   let activeTrinkets = [];
   let finalDB = gameType === "Retail" ? filteredTrinketDB : trinketDB;
@@ -298,8 +295,6 @@ export default function TrinketAnalysis(props) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}
@@ -314,6 +309,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
+              <InformationBox information="Dawn of the Infinite trinkets including Echoing Tyrstone are preliminary rankings and could change in-game. It currently heals all allies! Testing was limited." color="firebrick" />
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                   <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
@@ -381,14 +377,19 @@ export default function TrinketAnalysis(props) {
           </TabPanel>
 
           <TabPanel value={tabIndex} index={1}>
-            <Grid container spacing={1} sx={{ marginTop: "16px" }}>
+            <TrinketDeepDive 
+              itemCardData={itemCardData}
+              tabIndex={tabIndex}
+            />
+            {/*<Grid container spacing={1} sx={{ marginTop: "16px" }}>
               {itemCardData.map((item) => (
                 <Grid item xs={6}>
                   <ItemDetailCard item={item} />
                 </Grid>
               ))}
-            </Grid>
-          </TabPanel>
+            </Grid>*/}
+          </TabPanel> 
+
         </Grid>
       </Grid>
 

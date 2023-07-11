@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js"
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx"
 // import { legendaryImages } from "./LegendaryIcons";
 
 const useStyles = makeStyles({

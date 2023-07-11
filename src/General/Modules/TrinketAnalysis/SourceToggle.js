@@ -32,7 +32,7 @@ export default function SourceToggle(props) {
           <div style={{ display: "inline-flex" }}>
             <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              src={require("Images/achievement_raid_torghastraid.jpg").default}
+              src={require("Images/achievement_raid_torghastraid.jpg")}
               alt={"Raids"}
             />
             <Typography variant="button">{"Raids"}</Typography>
@@ -45,7 +45,7 @@ export default function SourceToggle(props) {
           <div style={{ display: "inline-flex" }}>
             <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              src={require("Images/inv_relics_hourglass.jpg").default}
+              src={require("Images/inv_relics_hourglass.jpg")}
               alt={"Dungeons"}
             />
             <Typography variant="button">{"Dungeons"}</Typography>
@@ -57,7 +57,7 @@ export default function SourceToggle(props) {
       <ToggleButton style={{ padding: 5 }} value="The Rest" aria-label="hpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"The Rest"} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/Resources/worldQuest.png").default} alt={"World Quests"} />
+            <img style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4 }} src={require("Images/Resources/worldQuest.png")} alt={"World Quests"} />
             <Typography variant="button">{"The Rest"}</Typography>
           </div>
         </Tooltip>

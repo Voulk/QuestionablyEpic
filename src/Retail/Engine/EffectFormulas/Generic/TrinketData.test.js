@@ -1,7 +1,6 @@
 
 
 import {getProcessedValue, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { trinket_data} from "./ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
