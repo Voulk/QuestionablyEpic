@@ -253,9 +253,11 @@
       "Heroic": "Heroic",
       "Heroic (Max)": "Heroic (Max)",
       "Mythic": "Mythic",
+      "Mythic (Max)": "Mythic (Max)",
       "Normal": "Normal",
       "Normal (Max)": "Normal (Max)",
-      "Raid Finder": "LFR"
+      "Raid Finder": "LFR",
+      "Raid Finder (Max)": "LFR (Max)"
     },
     "Region": "Region",
     "Remove": "Remove",

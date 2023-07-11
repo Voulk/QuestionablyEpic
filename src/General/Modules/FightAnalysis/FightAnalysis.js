@@ -89,6 +89,7 @@ class FightAnalysis extends Component {
       enemyCastsTimelineData: [],
       customPlanSelected: "",
       cooldownObject: new Cooldowns(),
+      fightID: null,
     };
   }
 
@@ -110,6 +111,7 @@ class FightAnalysis extends Component {
       currentKeystone: info[7],
       cooldownPlannerCurrentRaid: info[8],
       cooldownPlannerCurrentBoss: info[5],
+      fightID: info[9],
     });
   };
 
@@ -172,9 +174,11 @@ class FightAnalysis extends Component {
 
     return (
       <div
-        style={{
-          // marginTop: 32,
-        }}
+        style={
+          {
+            // marginTop: 32,
+          }
+        }
       >
         <div style={{ height: 96 }} />
         <div style={{ margin: "0px 5% 20px 5%" }}>

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { classColoursJS } from "General/Modules/CooldownPlanner/Functions/ClassColourFunctions";
 import classIcons from "General/Modules/CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { defensiveDB } from "Databases/DefensiveDB";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export const defensiveColumns = () => {
   const { t, i18n } = useTranslation();
@@ -20,7 +20,7 @@ export const defensiveColumns = () => {
         fontSize: 14,
       },
       render: (rowData) => (
-        <div style={{ color: classColoursJS(rowData.class), display: "inline-flex" }}>
+        <div style={{ color: classColoursJS(rowData.class), display: "inline-flex", verticalAlign: "middle" }}>
           {classIcons(rowData.class, { height: 20, width: 20, padding: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4 })}
           {rowData.name}
         </div>

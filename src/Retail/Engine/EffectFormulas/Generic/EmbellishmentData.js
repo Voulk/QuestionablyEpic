@@ -247,7 +247,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.645985,
             table: -8, // No idea why this is -8
-            stacks: {Raid: 0.2, Dungeon: 1.5} // Revisit dungeon stacks.
+            stacks: {Raid: 0.2, Dungeon: 0.9} // Revisit dungeon stacks.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {

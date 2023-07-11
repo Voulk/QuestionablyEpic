@@ -16,7 +16,7 @@ import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 
-class Player {
+export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
     this.spec = specName.replace("BC", "Classic");
     this.charName = playerName;
@@ -167,7 +167,7 @@ class Player {
   scoreActiveItems = (contentType, playerSettings) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType, this.gameType, playerSettings);
+      item.softScore = scoreItem(item, this, contentType, "Retail", playerSettings);
 
       // Error checking
       if (item.softScore < 0) {
@@ -275,6 +275,19 @@ class Player {
     newItem.quality = item.quality || 4;
     this.activeItems = this.activeItems.concat(newItem);
   };
+
+  // TODO: Move to playerUtilities and just call addItem.
+  cloneAndSocketItem = (item) => {
+    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
+    newItem.active = true;
+    newItem.socket = 1;
+    if (item.uniqueEquip === "vault") {
+      newItem.uniqueEquip = "vault";
+      newItem.vaultItem = true;
+    }
+    newItem.quality = item.quality || 4;
+    this.activeItems = this.activeItems.concat(newItem);
+  }
 
   sortItems = (container) => {
     // Current default sorting is by HPS but we could get creative here in future.

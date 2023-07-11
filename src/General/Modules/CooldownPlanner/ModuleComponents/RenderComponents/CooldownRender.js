@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { cooldownDB } from "../../Data/CooldownDB";
 import { classColoursFonts, classColoursJS } from "../../Functions/ClassColourFunctions";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export default function CastTextField(rowData, cooldown, className) {
   const { t, i18n } = useTranslation();

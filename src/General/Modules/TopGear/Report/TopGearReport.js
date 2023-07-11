@@ -33,7 +33,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
 
       if (typeof(data) === "string") {
         const jsonData = JSON.parse(data);
-        const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
+        setBackgroundImage(apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage));
         setResult(JSON.parse(data))
         
       }
@@ -54,27 +54,27 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
   const classIcon = (spec) => {
     switch (spec) {
       case "Holy Paladin":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Holy Paladin Classic":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Restoration Shaman":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Restoration Shaman Classic":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Holy Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Holy Priest Classic":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Preservation Evoker":
-        return require("Images/Classes/Evoker/icon_dracthyr.png").default;
+        return require("Images/Classes/Evoker/icon_dracthyr.png");
       case "Restoration Druid Classic":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Mistweaver Monk":
-        return require("Images/Classes/Monk/icon-monk.png").default;
+        return require("Images/Classes/Monk/icon-monk.png");
       default:
         break;
     }
@@ -100,6 +100,7 @@ function TopGearReport(props) {
     if (result && result.new) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
+        apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
         window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
@@ -111,7 +112,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
-      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -152,14 +153,16 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let itemList = {};
   let statList = {};
 
+
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")
     const location = useLocation();
     fetchReport(location.pathname.split("/")[3])
+
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-  
+    
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;

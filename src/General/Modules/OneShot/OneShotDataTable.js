@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useTranslation } from "react-i18next";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 function createData(ability, tyrannical, fortified, spellID, icon, guid, active) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active };

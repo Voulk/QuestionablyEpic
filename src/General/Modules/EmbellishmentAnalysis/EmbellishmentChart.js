@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import { getGemIcon, getEmbellishmentIcon, getTranslatedEmbellishment } from "General/Engine/ItemUtilities";
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const getRankDiff = (rank, map2, prevRank) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */

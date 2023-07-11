@@ -1,6 +1,27 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat } from "../EffectUtilities";
 
 export const effectData = [
+  {
+    /* -------------------- */
+    /* Imbued Frostweave Slipper (Spirit)                  
+    /* -------------------- */
+    /* 
+    */
+    name: "Imbued Frostweave Slippers",
+    effects: [
+      { 
+        coefficient: 0.131768,
+        table: -1,
+        ppm: 60, // Ticks every second.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.mana = processedValue(data[0], itemLevel);
+      return bonus_stats;
+    }
+  },
 {
     /* -------------------- */
     /* Assembly Preserver's Band                       

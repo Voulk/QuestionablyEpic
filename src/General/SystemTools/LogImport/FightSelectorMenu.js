@@ -1,128 +1,234 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import moment from "moment";
-import { MenuItem } from "@mui/material";
+import { MenuItem, ListSubheader, Collapse, Divider } from "@mui/material";
 import bossIcons from "../../Modules/CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { fightDuration, logDifficulty } from "../../Modules/CooldownPlanner/Functions/Functions";
 import { bossList } from "../../Modules/CooldownPlanner/Data/CooldownPlannerBossList";
+import axios from "axios";
+import { accessToken } from "./accessToken";
+import { makeStyles } from "@mui/styles";
 
-const API = "https://www.warcraftlogs.com:443/v1/report/fights/";
-const API2 = "?api_key=92fc5d4ae86447df22a8c0917c1404dc";
-class LogImport extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reportid: this.props.reportid,
-      fights: [],
-      reportidnew: this.props.reportid,
+const killwipe = (check) => (check ? "Kill!" : "Wipe ");
+
+const whichWipe = (fight, list) => (fight.kill ? "" : list[fight.encounterID + fight.difficulty].indexOf(fight) + 1);
+
+const formatName = (fight, list) => {
+  const start = logDifficulty(fight.difficulty) + " - " + moment.utc(fightDuration(fight.endTime, fight.startTime)).format("mm:ss") + " - ";
+  let end = killwipe(fight.kill);
+  let styleColor = "#00ff1a";
+
+  if (!fight.kill) {
+    end += whichWipe(fight, list) + (fight.kill ? "" : " - " + fight.bossPercentage + "%");
+    styleColor = "";
+  }
+
+  return <div style={{ color: styleColor }}>{start + end}</div>;
+};
+
+const useStyles = makeStyles({
+  divider: {
+    "&.MuiDivider-root": {
+      marginTop: 0,
+      marginBottom: 0,
+    },
+  },
+});
+
+const LogImport = ({ reportid, cooldownImportFilter, clicker, close, update }) => {
+  const classes = useStyles();
+  const [fights, setFights] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [selectedBoss, setSelectedBoss] = useState(null);
+
+  useEffect(() => {
+    const fetchReport = async () => {
+      setIsLoading(true);
+      setError(null);
+      const REPORT_QUERY = `
+        query ReportQuery($reportID: String!) {
+          reportData {
+            report(code: $reportID) {
+              fights(translate:true,killType:Encounters ){
+                id  
+                encounterID
+                difficulty
+                name
+                startTime
+                endTime
+                bossPercentage
+                fightPercentage
+                inProgress
+                size
+                maps{id }
+                kill
+                keystoneLevel
+                gameZone{id
+                name}
+            }
+            }
+          }
+        }
+      `;
+
+      try {
+        const response = await axios({
+          url: "https://www.warcraftlogs.com/api/v2/client",
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          data: {
+            query: REPORT_QUERY,
+            variables: {
+              reportID: reportid,
+            },
+          },
+        });
+
+        setFights(response.data.data.reportData.report.fights);
+      } catch (error) {
+        console.error(error);
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
     };
+
+    if (reportid !== null) {
+      fetchReport();
+    } else {
+      setFights([]);
+    }
+  }, [reportid]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
-  componentDidMount = () => {
-    if (this.state.reportid === null) {
-      this.setState({ fights: "No Report" });
-    }
-    this.setState({ reportid: this.props.reportid });
-    fetch(API + this.state.reportid + API2)
-      .then((response) => response.json())
-      .then((data) => this.setState({ fights: data.fights }));
-  };
 
-  killwipe = (check) => {
-    return check ? "Kill!" : "Wipe ";
-  };
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
-  whichWipe = (fight, list) => {
-    return fight.kill ? "" : list[fight.boss + fight.difficulty].indexOf(fight) + 1;
-  };
+  const filteredFights = cooldownImportFilter ? fights.filter((name) => name.boss !== 0 && name.difficulty !== 1 && name.difficulty !== 3) : fights.filter((name) => name.boss !== 0);
 
-  formatName = (fight, list) => {
-    const start = logDifficulty(fight.difficulty) + " " + fight.name + " - " + moment.utc(fightDuration(fight.end_time, fight.start_time)).format("mm:ss") + " - ";
+  const fightsMapped = {};
+  filteredFights.forEach((fight) =>
+    fightsMapped[fight.encounterID + fight.difficulty] ? fightsMapped[fight.encounterID + fight.difficulty].push(fight) : (fightsMapped[fight.encounterID + fight.difficulty] = [fight]),
+  );
 
-    let end = this.killwipe(fight.kill);
-    let styleColor = "#00ff1a";
-
-    //this is very hacky due ot the fact killwipe already checks that...
-    if (!fight.kill) {
-      end += this.whichWipe(fight, list) + (fight.kill ? "" : " - " + fight.bossPercentage / 100 + "%");
-      styleColor = "";
-    }
-
-    return <div style={{ color: styleColor }}>{start + end}</div>;
-  };
-
-  render() {
-    const { fights } = this.state;
-    if (this.state.reportid === null) {
-      return (
-        <MenuItem key={99} value="Fight">
-          No Report Loaded
-        </MenuItem>
-      );
-    }
-
-    // Split up fights for indexing
-    // limit fights on what we want to prevent bad fights? idk options man
-    // const filteredFights = fights.filter(fight => bossList.find(boss => fight.boss === boss.id));
-    // filter LFR & Normal logs if cooldownImportFilter === true
-    const filteredFights =
-      this.props.cooldownImportFilter === true ? fights.filter((name) => name.boss !== 0 && name.difficulty !== 1 && name.difficulty !== 3) : fights.filter((name) => name.boss !== 0);
-
-    // show message if log only contains lfr & normal logs (cooldown import only)
-    if (filteredFights.length === 0 && this.props.cooldownImportFilter === true) {
-      return (
-        <MenuItem key={98} value="noValid">
-          No Valid Fights (Only Heroic and Mythic Supported)
-        </MenuItem>
-      );
-    }
-
-    // now we map (i dislike this klunkyness but hey sucks don't it)
-    const fightsMapped = {};
-    filteredFights.forEach((fight) =>
-      fightsMapped[fight.boss + fight.difficulty] ? fightsMapped[fight.boss + fight.difficulty].push(fight) : (fightsMapped[fight.boss + fight.difficulty] = [fight]),
+  if (fights.length === 0) {
+    return (
+      <MenuItem key="no-report" value="Fight">
+        No Report Loaded
+      </MenuItem>
     );
-
-    let menuItems = filteredFights.map((fight, i, arr) => {
-      let lastItem = i + 1 === arr.length ? false : true;
-      return (
-        <MenuItem
-          divider={lastItem}
-          key={i}
-          onClick={() => {
-            this.props.clicker([
-              fight.start_time,
-              fight.end_time,
-              fight.name,
-              moment.utc(fightDuration(fight.end_time, fight.start_time)).format("mm:ss"),
-              this.killwipe(fight.kill) + this.whichWipe(fight, fightsMapped),
-              fight.boss,
-              fight.difficulty,
-              fight.keystoneLevel,
-              fight.zoneID ||
-                bossList
-                  .filter((obj) => {
-                    return obj.id === fight.boss;
-                  })
-                  .map((obj) => obj.zoneID),
-            ]);
-            this.props.close();
-            this.props.update(
-              // Used by QELog Import
-              fight.start_time,
-              fight.end_time,
-              this.state.reportid,
-              // Used by Cooldown Plan Log Import
-              fight.boss,
-              fight.difficulty,
-            );
-          }}
-        >
-          {bossIcons(fight.boss)}
-          {this.formatName(fight, fightsMapped)}
-        </MenuItem>
-      );
-    });
-    return menuItems;
   }
-}
+
+  if (filteredFights.length === 0 && cooldownImportFilter) {
+    return (
+      <MenuItem key="no-valid" value="noValid">
+        No Valid Fights (Only Heroic and Mythic Supported)
+      </MenuItem>
+    );
+  }
+
+  // Group fights by boss and kill status
+  const groupedFights = filteredFights.reduce((groups, fight) => {
+    const bossGroup = groups[fight.encounterID] || { boss: fight.name, kills: [], wipes: [], encounterID: fight.encounterID };
+    fight.kill ? bossGroup.kills.push(fight) : bossGroup.wipes.push(fight);
+    groups[fight.encounterID] = bossGroup;
+    return groups;
+  }, {});
+
+  return Object.entries(groupedFights).map(([bossId, { boss, kills, wipes, encounterID }]) => {
+    const isBossSelected = selectedBoss === encounterID;
+    const hasWipes = wipes.length > 0;
+
+    return (
+      <div key={encounterID}>
+        <ListSubheader style={{ padding: "4px 8px", lineHeight: "1.43", fontSize: "0.875rem", letterSpacing: "0.01071em", backgroundColor: "#525252", color: "gold" }}>
+          {bossIcons(encounterID)}
+          {boss}
+        </ListSubheader>
+        {kills.map((fight, index) => (
+          <div key={fight.id}>
+            <MenuItem
+              dense
+              onClick={() => {
+                clicker([
+                  fight.startTime,
+                  fight.endTime,
+                  fight.name,
+                  moment.utc(fightDuration(fight.endTime, fight.startTime)).format("mm:ss"),
+                  killwipe(fight.kill) + whichWipe(fight, fightsMapped),
+                  fight.encounterID,
+                  fight.difficulty,
+                  fight.keystoneLevel,
+                  fight.gameZone.id ||
+                    bossList
+                      .filter((obj) => {
+                        return obj.id === fight.encounterID;
+                      })
+                      .map((obj) => obj.zoneID),
+                  fight.id,
+                ]);
+                close();
+                update(fight.startTime, fight.endTime, reportid, fight.encounterID, fight.difficulty, fight.id);
+              }}
+            >
+              {formatName(fight, fightsMapped)}
+            </MenuItem>
+            {index < kills.length - 1 && <Divider className={classes.divider} />}
+          </div>
+        ))}
+        {kills.length > 0 && <Divider />}
+        {hasWipes && (
+          <>
+            <ListSubheader style={{ padding: "4px 16px", lineHeight: "1.43", fontSize: "0.875rem", letterSpacing: "0.01071em" }} onClick={() => setSelectedBoss(isBossSelected ? null : encounterID)}>
+              Wipes {isBossSelected ? "▲" : "▼"}
+            </ListSubheader>
+            <Collapse in={isBossSelected}>
+              {wipes.map((fight, index) => (
+                <div key={fight.id}>
+                  {index == 0 && <Divider className={classes.divider} />}
+                  <MenuItem
+                    dense
+                    onClick={() => {
+                      clicker([
+                        fight.startTime,
+                        fight.endTime,
+                        fight.name,
+                        moment.utc(fightDuration(fight.endTime, fight.startTime)).format("mm:ss"),
+                        killwipe(fight.kill) + whichWipe(fight, fightsMapped),
+                        fight.encounterID,
+                        fight.difficulty,
+                        fight.keystoneLevel,
+                        fight.gameZone.id ||
+                          bossList
+                            .filter((obj) => {
+                              return obj.id === fight.encounterID;
+                            })
+                            .map((obj) => obj.zoneID),
+                      ]);
+                      close();
+                      update(fight.startTime, fight.endTime, reportid, fight.encounterID, fight.difficulty, fight.id);
+                    }}
+                  >
+                    {formatName(fight, fightsMapped)}
+                  </MenuItem>
+                  {index < wipes.length - 1 && <Divider className={classes.divider} />}
+                </div>
+              ))}
+            </Collapse>
+          </>
+        )}
+        {wipes.length > 0 && <Divider />}
+      </div>
+    );
+  });
+};
 
 export default LogImport;

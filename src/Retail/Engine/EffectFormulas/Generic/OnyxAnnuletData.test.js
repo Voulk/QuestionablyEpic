@@ -1,5 +1,4 @@
 import { getProcessedValue, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { userSettings } from "General/Modules/Settings/SettingsObject";
 import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";

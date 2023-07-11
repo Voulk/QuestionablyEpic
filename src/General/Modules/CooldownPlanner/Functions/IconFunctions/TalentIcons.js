@@ -1,6 +1,6 @@
 import React from "react";
 import { talentDB } from "Databases/TalentDB";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 export default function talentIcons(props) {
   const getBossIcon = (props) => {

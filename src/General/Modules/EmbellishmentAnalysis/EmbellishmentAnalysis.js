@@ -11,11 +11,8 @@ import { embellishmentDB } from "Databases/EmbellishmentDB";
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "./MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
-import userSettings from "../Settings/SettingsObject";
 import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
-
-// import userSettings from "../Settings/SettingsObject";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -212,8 +209,6 @@ export default function EmbellishmentAnalysis(props) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}

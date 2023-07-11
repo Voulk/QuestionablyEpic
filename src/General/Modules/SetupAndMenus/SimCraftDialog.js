@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@mui/material";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { runBCSimC } from "../../../Classic/Engine/SimCImport/SimCImportEngineBC";
-// import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/system";
 

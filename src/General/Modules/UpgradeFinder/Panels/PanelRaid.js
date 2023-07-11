@@ -6,7 +6,8 @@ import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterItemListByDropLoc, filterClassicItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -20,15 +21,19 @@ const getDifficultyName = (difficulty) => {
     case 0:
       return "LFR";
     case 1:
-      return "Normal";
+      return "LFR (Max)";
     case 2:
-      return "Normal (Max)";
+      return "Normal";
     case 3:
-      return "Heroic";
+      return "Normal (Max)";
     case 4:
-      return "Heroic (Max)";
+      return "Heroic";
     case 5:
+      return "Heroic (Max)";
+    case 6:
       return "Mythic";
+    case 7:
+      return "Mythic (Max)";
   }
 };
 

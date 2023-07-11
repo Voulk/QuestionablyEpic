@@ -1,14 +1,15 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage, buildPrimGems } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage } from "../../Engine/ItemUtilities";
+import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./ItemCard.css";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles({
   root: {

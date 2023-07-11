@@ -46,18 +46,27 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
 // This function helps out with generic flat damage or healing procs. It makes implementing them much faster and more difficult
 // to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
 // You can expand this function with more fields if they're necessary.
-export function runGenericFlatProc(effect, itemLevel, player) {
+export function runGenericFlatProc(effect, itemLevel, player, contentType = "Raid") {
+
+  let efficiency = 1;
+  if ('efficiency' in effect) {
+    if (effect.efficiency[contentType]) efficiency = effect.efficiency[contentType];
+    else efficiency = effect.efficiency;
+  }
 
   const value = processedValue(effect, itemLevel, effect.efficiency || 1);
   let mult = 1;
 
-  if ('targets' in effect) mult *= effect.targets;
+  if ('targets' in effect) {
+    if (effect.targets[contentType]) mult *= effect.targets[contentType];
+    else mult *= effect.targets;
+  }
   if ('ticks' in effect) mult *= effect.ticks;
   if ('secondaries' in effect) mult *= player.getStatMults(effect.secondaries);
   if ('ppm' in effect) mult *= (effect.ppm * 1.13);
 
-  return value * mult / 60;
-
+  if ('cooldown' in effect) return value * mult / effect.cooldown;
+  else return value * mult / 60;
 
 }
 
