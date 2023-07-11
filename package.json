@@ -76,8 +76,8 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "jest-canvas-mock": "^2.3.1",
     "prettier": "2.0.5",
-    "prettier-eslint": "^8.2.2",
-    "prettier-eslint-cli": "^5.0.1",
+    "prettier-eslint": "^15.0.1",
+    "prettier-eslint-cli": "^7.1.0",
     "redux-mock-store": "^1.5.4",
     "workerize-loader": "^2.0.2"
   },
