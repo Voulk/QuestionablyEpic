@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 2,
+    date: "July 11",
+    changes: [ 
+      "Fixed a bug where Onyx Annulet was being undervalued in Raid today.",
+      "You can once again select Tertiaries when manually adding items.",
+      "Added support for the new Myth track."
+    ]},
+  {
+    version: "10.1.5",
     update: 1,
     date: "July 11",
     changes: [ 
