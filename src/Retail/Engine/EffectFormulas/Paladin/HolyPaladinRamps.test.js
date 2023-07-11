@@ -235,10 +235,10 @@ describe("Evang Cast Sequence", () => {
 
         
         let strings = [""];
-        strings.push(evalTalentStrings(build0, talents, activeStats, settings, baselineHealing / iterations, "Unspent Point"));
+        //strings.push(evalTalentStrings(build0, talents, activeStats, settings, baselineHealing / iterations, "Unspent Point"));
         //strings.push(evalTalentStrings([...build0, "tyrsDeliverance", "boundlessSalvation", "awestruck"], talents, activeStats, settings, baselineHealing / iterations, "Tyrs"));
-        strings.push(evalTalentStrings([...build0, "judgementInfusionUseIfUp", "judgementInfusionHold"], talents, activeStats, settings, baselineHealing / iterations, "Judgment held for infusion"));
-        strings.push(evalTalentStrings([...build0, "judgementInfusionUseIfUp"], talents, activeStats, settings, baselineHealing / iterations, "Judgment used on infusion if available"));
+        //strings.push(evalTalentStrings([...build0, "judgementInfusionUseIfUp", "judgementInfusionHold"], talents, activeStats, settings, baselineHealing / iterations, "Judgment held for infusion"));
+        //strings.push(evalTalentStrings([...build0, "judgementInfusionUseIfUp"], talents, activeStats, settings, baselineHealing / iterations, "Judgment used on infusion if available"));
         //strings.push(evalTalentStrings([...build0, "sealOfOrder"], talents, activeStats, settings, baselineHealing / iterations, "sealOfOrder"));
         //strings.push(evalTalentStrings([...build0, "awakening", "holyInfusion"], talents, activeStats, settings, baselineHealing / iterations, "awakening + holy infusion"));
         //strings.push(evalTalentStrings([...build0, "awakening", "aweStruck"], talents, activeStats, settings, baselineHealing / iterations, "awakening + awestruck"));
