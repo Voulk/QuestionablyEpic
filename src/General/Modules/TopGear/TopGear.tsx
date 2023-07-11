@@ -24,6 +24,7 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { Item } from "General/Modules/Player/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
+import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 
 type ShortReport = {
   id: string;
@@ -415,7 +416,7 @@ export default function TopGear(props: any) {
     if (gameType === "Retail") {
       const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
-      console.log(instance);
+      //console.log(instance);
 
       instance
         .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, playerSettings, strippedCastModel)
@@ -548,9 +549,6 @@ export default function TopGear(props: any) {
             allChars={props.allChars}
             contentType={contentType}
             singleUpdate={props.singleUpdate}
-            hymnalShow={true}
-            groupBuffShow={true}
-            autoSocket={true}
           />
         </Grid>
 

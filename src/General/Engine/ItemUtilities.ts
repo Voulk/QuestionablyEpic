@@ -166,7 +166,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     gemArray.push(192958)
     return gemArray;
   }
-  else if (spec === "Restoration Druid" || spec === "Holy Paladin") {
+  else if (spec === "Restoration Druid") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -212,6 +212,21 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     bonus_stats.versatility = (bonus_stats.versatility || 0) + 33 * (gemCount);
     gemArray.push(192923)
     return gemArray;
+  }
+  else if (spec === "Holy Paladin") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
+      bonus_stats.crit = (bonus_stats.crit || 0) + 66;
+      gemCount -= 1;
+      gemArray.push(192982)
+    }
+
+    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+    bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
+    gemArray.push(192919);
+    return gemArray;
+
   }
   else {
     // This should never be called.
