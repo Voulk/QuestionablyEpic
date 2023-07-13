@@ -5,7 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@material-table/core": "^0.2.11",
+    "@material-table/core": "^6.2.1",
     "@mui/icons-material": "^5.6.2",
     "@mui/lab": "^5.0.0-alpha.54",
     "@mui/material": "^5.1.0",
@@ -53,8 +53,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/eslint-plugin": "^7.12.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@sentry/webpack-plugin": "^1.16.0",
     "@testing-library/react": "^11.2.6",
     "@types/react-router-dom": "^5.3.3",
