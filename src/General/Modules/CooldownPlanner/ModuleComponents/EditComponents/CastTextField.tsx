@@ -1,8 +1,7 @@
 import * as React from "react";
-import TextField from "@mui/material/TextField";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import TimePicker from "@mui/lab/TimePicker";
+import TextField, { TextFieldProps } from "@mui/material/TextField";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { TimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { styled } from "@mui/material/styles";
 
 const CssTextField = styled(TextField)({
@@ -15,13 +14,13 @@ const CssTextField = styled(TextField)({
 // turn debugging (console logging) on/off
 const debug = false;
 
-export default function CastTextField(props) {
+const CastTextField: React.FC<TextFieldProps> = (props) => {
   debug && console.log(" -- Debugging On -> CastTextField.js --");
   // log props provided to function
   debug && console.log(props);
 
   // Convert Time String (00:05) back into date format for input handling
-  const constructTime = (timeString) => {
+  const constructTime = (timeString: string): Date => {
     let minutes = 0;
     let seconds = 0;
     let newDate = new Date();
@@ -43,25 +42,30 @@ export default function CastTextField(props) {
     return newDate;
   };
 
-  const [value, setValue] = React.useState(constructTime(props.value)); // construct state "value" from provided time string
+  const [value, setValue] = React.useState<Date>(constructTime(props.value)); // construct state "value" from provided time string
 
   // After checking for errors set state and update table data
-  const updateTime = (time) => {
+  const updateTime = (time: Date | null) => {
     // log the time provided
     debug && console.log(time);
 
-    if (time === null || time.toString() === "Invalid Date") {
+    if (time === null || time?.toString() === "Invalid Date") {
       let newDate = new Date();
       newDate.setMinutes(0);
       newDate.setSeconds(0);
       setValue(newDate); // update state
       let splitTime = newDate.toString().split(" ")[4].split(":");
       props.onChange(splitTime[1] + ":" + splitTime[2]); // update table data
-    } else {
+    } else if (time) {
       setValue(time); // update state
       let splitTime = time.toString().split(" ")[4].split(":");
       props.onChange(splitTime[1] + ":" + splitTime[2]); // update table data
     }
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value.replace(/[^0-9.]/g, "").replace(/(\..*)\./g, "$1");
+    props.onChange(value);
   };
 
   return (
@@ -74,21 +78,20 @@ export default function CastTextField(props) {
         inputFormat="mm:ss"
         mask="__:__"
         value={value}
-        onChange={(newValue) => {
-          updateTime(newValue);
-        }}
+        onChange={updateTime}
         sx={{ whiteSpace: "nowrap", width: "100%" }}
         renderInput={(params) => (
           <CssTextField
-            inputProps={{
-              oninput: (value) =>
-                // only allow numbers
-                value.replace(/[^0-9.]/g, "").replace(/(\..*)\./g, "$1"),
-            }}
             {...params}
+            InputProps={{
+              ...params.InputProps,
+              onChange: handleInputChange,
+            }}
           />
         )}
       />
     </LocalizationProvider>
   );
-}
+};
+
+export default CastTextField;

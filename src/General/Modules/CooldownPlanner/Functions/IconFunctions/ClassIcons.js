@@ -16,6 +16,8 @@ import HunterIcon from "Images/Classes/Hunter/Icons/HunterIcon.jpg";
 import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
 import EvokerIcon from "Images/Classes/Evoker/classicon_evoker_preservation.jpg";
 import DevastationEvokerIcon from "Images/Classes/Evoker/classicon_evoker_devastation.jpg";
+import AugmenationEvokerIcon from "Images/Classes/Evoker/classicon_evoker_augmentation.jpg";
+
 import ShamanIcon from "Images/Classes/Shaman/Icons/class_shaman.jpg";
 
 export default function classIcons(props, style) {
@@ -32,6 +34,12 @@ export default function classIcons(props, style) {
   if (iconName === "devastationevoker" || iconName === "devastation evoker" || iconName === "evoker-devastation" || iconName === "devastationevoker") {
     src = DevastationEvokerIcon;
     alt = "Devastation Evoker";
+  }
+
+  // Devastation Evoker
+  if (iconName === "augmenationevoker" || iconName === "augmenation evoker" || iconName === "evoker-augmenation" || iconName === "augmenationevoker") {
+    src = AugmenationEvokerIcon;
+    alt = "Augmenation Evoker";
   }
 
   // Paladin Cooldowns

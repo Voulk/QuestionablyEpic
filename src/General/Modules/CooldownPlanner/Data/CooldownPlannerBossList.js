@@ -10,7 +10,7 @@ export const raidDB = [
       ch: "化身巨龙牢窟",
     },
     expansion: 9,
-    icon: require("Images/achievement_raidprimalist_raid.jpg").default,
+    icon: require("Images/achievement_raidprimalist_raid.jpg"),
   },
   {
     ID: 2569,
@@ -23,7 +23,7 @@ export const raidDB = [
       ch: "",
     },
     expansion: 9,
-    icon: require("Images/achievement_raidprimalist_raid.jpg").default,
+    icon: require("Images/achievement_raidprimalist_raid.jpg"),
   },
 ];
 
@@ -43,7 +43,7 @@ export const bossList = [
       ch: "艾拉诺格",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_eranog.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_eranog.jpg"),
   },
 
   {
@@ -57,7 +57,7 @@ export const bossList = [
       ch: "泰洛斯",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_terros.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_terros.jpg"),
   },
 
   {
@@ -71,7 +71,7 @@ export const bossList = [
       ch: "拜荒者议会",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_council.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_council.jpg"),
   },
 
   {
@@ -85,7 +85,7 @@ export const bossList = [
       ch: "瑟娜尔丝，冰冷之息",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_sennarth.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_sennarth.jpg"),
   },
 
   {
@@ -99,7 +99,7 @@ export const bossList = [
       ch: "晋升者达瑟雅",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_windelemental.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_windelemental.jpg"),
   },
 
   {
@@ -113,7 +113,7 @@ export const bossList = [
       ch: "库洛格·恐怖图腾",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_kurog.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_kurog.jpg"),
   },
 
   {
@@ -127,7 +127,7 @@ export const bossList = [
       ch: "巢穴守护者迪乌尔娜",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_diurna.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_diurna.jpg"),
   },
 
   {
@@ -141,7 +141,7 @@ export const bossList = [
       ch: "莱萨杰丝，噬雷之龙",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -158,7 +158,7 @@ export const bossList = [
       ru: "Каззара из Преисподней",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_kazzara.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_kazzara.jpg"),
   },
   {
     DungeonEncounterID: 2687,
@@ -171,7 +171,7 @@ export const bossList = [
       ru: "Чертог слияния",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_amalgamationchamber.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_amalgamationchamber.jpg"),
   },
   {
     DungeonEncounterID: 2693,
@@ -184,7 +184,7 @@ export const bossList = [
       ru: "Забытые эксперименты",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_forgottenexperiments.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_forgottenexperiments.jpg"),
   },
   {
     DungeonEncounterID: 2682,
@@ -197,7 +197,7 @@ export const bossList = [
       ru: "Нападение закали",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zaqaliassault.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zaqaliassault.jpg"),
   },
   {
     DungeonEncounterID: 2680,
@@ -210,7 +210,7 @@ export const bossList = [
       ru: "Рашок Древний",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_rashok.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_rashok.jpg"),
   },
   {
     DungeonEncounterID: 2689,
@@ -223,7 +223,7 @@ export const bossList = [
       ru: "Бдительный распорядитель Шкарн",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zskarn.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zskarn.jpg"),
   },
   {
     DungeonEncounterID: 2683,
@@ -236,7 +236,7 @@ export const bossList = [
       ru: "Магморакс",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_magmorax.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_magmorax.jpg"),
   },
   {
     DungeonEncounterID: 2684,
@@ -249,7 +249,7 @@ export const bossList = [
       ru: "Эхо Нелтариона",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_neltharion.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_neltharion.jpg"),
   },
   {
     DungeonEncounterID: 2685,
@@ -262,7 +262,7 @@ export const bossList = [
       ru: "Дракомандир Саркарет",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg"),
   },
   /*
   {
@@ -276,7 +276,7 @@ export const bossList = [
       ru: "Старейшины закали",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg"),
   }, */
 
 ];
