@@ -7,11 +7,12 @@ const checkHasItem = (itemList: Item[], itemID: number) => {
 }
 
 // Returns an array of tips.
-const getDynamicAdvice = (report : any, player: Player, contentType: contentTypes) => {
+export const getDynamicAdvice = (report : any, player: Player, contentType: contentTypes) => {
     let advice: string[] = [];
     const topSet = report.itemSet;
     const itemList = topSet.itemSet;
-    const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
+    console.log(report);
+    //const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
     const differentials = report.differentials;
 
     // General Advice

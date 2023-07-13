@@ -16,6 +16,7 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
+import { getDynamicAdvice } from "./DynamicAdvice";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -103,7 +104,7 @@ function TopGearReport(props) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
         apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
-        advice = getDynamicAdvice(result, props.player, contentType);
+        //advice = getDynamicAdvice(result, props.player, contentType);
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
         window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
