@@ -15,6 +15,7 @@ import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
+import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -94,6 +95,7 @@ function TopGearReport(props) {
   const currentLanguage = i18n.language;
   const gameType = useSelector((state) => state.gameType);
   const location = useLocation();
+  let advice = [];
   
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
@@ -101,6 +103,7 @@ function TopGearReport(props) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
         apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
+        advice = getDynamicAdvice(result, props.player, contentType);
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
         window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
@@ -112,7 +115,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
-      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage, advice);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -124,7 +127,7 @@ function TopGearReport(props) {
 
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+    return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage, advice);
   }
   else {
     return   (  <div
@@ -141,7 +144,7 @@ function TopGearReport(props) {
 
 }
 
-function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
+function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage, advice = []) {
   const boxWidth = gameType === "Classic" ? "60%" : "60%";
 
   let resultValid = true;
@@ -366,6 +369,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
+      {advice && advice.length > 0 ? <ListedInformationBox introText="Hello There" bulletPoints={advice} /> : ""}
     </div>
   );
 }

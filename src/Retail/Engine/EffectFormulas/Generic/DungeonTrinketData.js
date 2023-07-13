@@ -62,14 +62,14 @@ export const dungeonTrinketData = [
         coefficient: 167.2488, 
         table: -9,
         secondaries: [],
-        targets: {Raid: 15, Dungeon: 5}, // TODO: Test on live, confirmed on PTR.
+        targets: {Raid: 20, Dungeon: 5}, // TODO: Test on live, confirmed on PTR.
         cooldown: 120,
         efficiency: 0.55,
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
-        targets: {Raid: 15, Dungeon: 5}, // TODO: Test.
+        targets: {Raid: 20, Dungeon: 5}, // TODO: Test.
         cooldown: 120,
         efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,

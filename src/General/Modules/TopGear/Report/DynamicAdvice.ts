@@ -19,6 +19,13 @@ const getDynamicAdvice = (report : any, player: Player, contentType: contentType
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
         by clicking on them in the top gear item select screen.")
     }
+    if (isNaN(topSet.hardScore)) {
+        advice.push("Something might have gone wrong with this set. Sorry about that. Results might be dicey or inaccurate. It's been automatically reported.")
+    }
+
+    if (differentials.length > 0 && differentials[0].rawDifference < 200) {
+        advice.push("Your top alternative is very close in value. You could safely wear either here without a noticeable impact on performance.")
+    }
 
     // -- Individual Item advice or warnings
     if (checkHasItem(itemList, 203460)) { // Annulet
@@ -40,7 +47,9 @@ const getDynamicAdvice = (report : any, player: Player, contentType: contentType
     }
     
     // Mythic+ advice.
-
+    if (contentType === "Dungeon" && player.spec === "Holy Paladin") {
+        //advice.push("Note that the Paladin M+ profile focuses on a mix of damage and healing. You might find that Mastery drops quite a bit in value because of this since it doesn't add any damage.")
+    }
 
 
 
