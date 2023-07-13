@@ -17,10 +17,20 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 2,
+    date: "July 11",
+    changes: [ 
+      "Fixed a bug where Onyx Annulet was being undervalued in Raid today.",
+      "You can once again select Tertiaries when manually adding items.",
+      "Added support for the new Myth track."
+    ]},
+  {
+    version: "10.1.5",
     update: 1,
-    date: "July 10",
+    date: "July 11",
     changes: [ 
       "Added all 10.1.5 content including new items, effects and more.",
+      "Updated all Paladin profiles for the rework.",
       "Upgrade Finder: Added LFR Max and Mythic Max options.",
       "Upgrade Finder: Reports will now have a unique ID in the URL for external resources like WoWAudit.",
       "Upgrade Finder: Added Dawn of the Infinite mega dungeon.",

@@ -40118,12 +40118,8 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8108,
     "quality": 3
   },
-  "8116": {
-    "id": 8116,
-    "item_conversion": 2
-  },
-  "8117": {
-    "id": 8117,
+  "8118": {
+    "id": 8118,
     "item_conversion": 2
   },
   "8119": {
@@ -40330,12 +40326,20 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "item_limit_category": 496
   },
-  "8137": {
-    "id": 8137,
+  "8131": {
+    "id": 8131,
     "item_conversion": 2
   },
-  "8138": {
-    "id": 8138,
+  "8132": {
+    "id": 8132,
+    "item_conversion": 2
+  },
+  "8133": {
+    "id": 8133,
+    "item_conversion": 2
+  },
+  "8136": {
+    "id": 8136,
     "item_conversion": 2
   },
   "8142": {
@@ -44006,36 +44010,24 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8810,
     "socket": 1
   },
-  "8813": {
-    "id": 8813,
+  "8821": {
+    "id": 8821,
     "item_conversion": 3
   },
-  "8814": {
-    "id": 8814,
+  "8822": {
+    "id": 8822,
     "item_conversion": 3
   },
-  "8815": {
-    "id": 8815,
+  "8823": {
+    "id": 8823,
     "item_conversion": 3
   },
-  "8816": {
-    "id": 8816,
+  "8824": {
+    "id": 8824,
     "item_conversion": 3
   },
-  "8817": {
-    "id": 8817,
-    "item_conversion": 3
-  },
-  "8818": {
-    "id": 8818,
-    "item_conversion": 3
-  },
-  "8819": {
-    "id": 8819,
-    "item_conversion": 3
-  },
-  "8820": {
-    "id": 8820,
+  "8825": {
+    "id": 8825,
     "item_conversion": 3
   },
   "8831": {
@@ -44284,7 +44276,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "id": 170400,
       "index": 0,
       "spell": {
-        "id": 385347,
+        "id": 415446,
         "name": "Magazine of Healing Darts",
         "icon": "inv_gizmo_runichealthinjector"
       }
@@ -48239,36 +48231,24 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "206 @plvl 45 - 327 @plvl 327",
     "curveId": 30724
   },
-  "9214": {
-    "id": 9214,
+  "9222": {
+    "id": 9222,
     "item_conversion": 6
   },
-  "9215": {
-    "id": 9215,
+  "9223": {
+    "id": 9223,
     "item_conversion": 6
   },
-  "9216": {
-    "id": 9216,
+  "9224": {
+    "id": 9224,
     "item_conversion": 6
   },
-  "9217": {
-    "id": 9217,
+  "9225": {
+    "id": 9225,
     "item_conversion": 6
   },
-  "9218": {
-    "id": 9218,
-    "item_conversion": 6
-  },
-  "9219": {
-    "id": 9219,
-    "item_conversion": 6
-  },
-  "9220": {
-    "id": 9220,
-    "item_conversion": 6
-  },
-  "9221": {
-    "id": 9221,
+  "9226": {
+    "id": 9226,
     "item_conversion": 6
   },
   "9232": {
@@ -56184,6 +56164,13 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 1749,
     "quality": 4
   },
+  "9360": {
+    "id": 9360,
+    "effect": {
+      "id": 173912,
+      "index": 0
+    }
+  },
   "9362": {
     "id": 9362,
     "ilevel": "47 @plvl 1 - 220 @plvl 220",
@@ -56223,7 +56210,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9370": {
     "id": 9370,
-    "ilevel": "1 @plvl 1 - 167 @plvl 167",
+    "ilevel": "1 @plvl 1 - 174 @plvl 174",
     "curveId": 63292
   },
   "9371": {
@@ -56293,15 +56280,576 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9380": {
     "id": 9380,
-    "quality": 4
+    "quality": 4,
+    "upgrade": {
+      "level": 1,
+      "max": 3,
+      "group": 295,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9380,
+      "itemLevel": 441,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 21
+    }
   },
   "9381": {
     "id": 9381,
-    "quality": 4
+    "quality": 4,
+    "upgrade": {
+      "level": 2,
+      "max": 3,
+      "group": 295,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9381,
+      "itemLevel": 444,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 21
+    }
   },
   "9382": {
     "id": 9382,
-    "quality": 4
+    "quality": 4,
+    "upgrade": {
+      "level": 3,
+      "max": 3,
+      "group": 295,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "itemId": 204194,
+              "amount": 1,
+              "name": "Aspect's Shadowflame Crest",
+              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9382,
+      "itemLevel": 447,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "item",
+          "id": 204195,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204196,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204194,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "item",
+          "id": 204193,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 21
+    }
   },
   "9383": {
     "id": 9383,
@@ -58811,5 +59359,30 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9492,
     "ilevel": "21 @plvl 1 - 385 @plvl 385",
     "curveId": 66349
+  },
+  "9520": {
+    "id": 9520,
+    "ilevel": "206 @plvl 58 - 316 @plvl 316",
+    "curveId": 68635
+  },
+  "9522": {
+    "id": 9522,
+    "tag": "Divergent"
+  },
+  "9524": {
+    "id": 9524,
+    "tag": "Divergent"
+  },
+  "9525": {
+    "id": 9525,
+    "tag": "Divergent"
+  },
+  "9526": {
+    "id": 9526,
+    "tag": "Divergent"
+  },
+  "9529": {
+    "id": 9529,
+    "tag": "Divergent"
   }
 }

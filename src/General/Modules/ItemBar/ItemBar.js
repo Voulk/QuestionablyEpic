@@ -436,7 +436,7 @@ export default function ItemBar(props) {
         /*                              Tertiary Dropdown                             */
         /* -------------------------------------------------------------------------- */}
 
-        {availableFields.tertiary ? (
+        {availableFields.tertiaries ? (
           <Grid item>
             <FormControl
               className={classes.formControl}

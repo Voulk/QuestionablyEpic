@@ -308,7 +308,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
       } 
       else if ("upgrade" in idPayload && "name" in idPayload.upgrade) {
         const upgradeName = idPayload.upgrade.name;
-        if (["Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName)) {
+        if (["Myth", "Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName)) {
           protoItem.upgradeTrack = upgradeName;
           protoItem.upgradeRank = idPayload.upgrade.level;
         }

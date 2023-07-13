@@ -53,8 +53,7 @@ export function runGenericFlatProc(effect, itemLevel, player, contentType = "Rai
     if (effect.efficiency[contentType]) efficiency = effect.efficiency[contentType];
     else efficiency = effect.efficiency;
   }
-
-  const value = processedValue(effect, itemLevel, effect.efficiency || 1);
+  const value = processedValue(effect, itemLevel, efficiency || 1);
   let mult = 1;
 
   if ('targets' in effect) {

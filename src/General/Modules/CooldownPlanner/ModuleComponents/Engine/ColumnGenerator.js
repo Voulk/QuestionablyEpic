@@ -27,7 +27,7 @@ export const generateColumns = (currentBoss, currentDifficulty) => {
       // Times currently must be entered in the 00:00 format.
       // Currently due to sorting, the user must either use a time, or label the cooldowns, 1, 2, 3, 4 etc to keep them in order.
       // This can probably be handled a lot better than how is handled currently.
-      editComponent: (props) => CastTextField(props),
+      editComponent: (props) => <CastTextField {...props} />,
     },
     {
       /* ----------- Here the user can select which boss ability the cooldown should cover. ----------- */

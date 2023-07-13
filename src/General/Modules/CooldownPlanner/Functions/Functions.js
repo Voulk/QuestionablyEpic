@@ -824,6 +824,9 @@ export function wclClassConverter(wclClass) {
     case "Evoker-Devastation":
       newClass = "Evoker";
       break;
+    case "Evoker-Augmentation":
+      newClass = "Evoker";
+      break;
     default:
       newClass = "No Class";
       break;

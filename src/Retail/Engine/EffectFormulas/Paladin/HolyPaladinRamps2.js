@@ -67,28 +67,31 @@ const apl = [
     {s: "Blessing of Seasons", c: {talent: "blessingOfSeasons"}},
     {s: "Aura Mastery", c: {talent: "mercifulAuras"}},
     {s: "Avenging Wrath"},
+    {s: "Light's Hammer"}, 
     {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
     {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
     //{s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
     {s: "Daybreak", c: {talent: "daybreak"}}, 
+    {s: "Divine Toll", c: {talentNot: "Rising Sunlight"}}, 
     {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
-    {s: "Light's Hammer"}, 
     {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}},
     //{s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
     {s: "Light of Dawn", c: {type:"buff", buffName: "Blessing of Dawn", stacks: 2}},
     {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
     {s: "Light of Dawn", c: {holyPower: 4, talent:"awakening"}}, // Don't overcap hopo with Awakening
     {s: "Light of Dawn", c: {holyPower: 5, talent:"awakening"}}, // Don't overcap hopo with Awakening
+    {s: "Light of Dawn"}, // Testing using LoD first
     {s: "Holy Light", c: {type: "buff", buffName: "Infusion of Light", talent: "awakening"}}, // Use Holy Light for Awakening uptime
+    {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light", talent:"judgementInfusionUseIfUp"}},
     {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
     {s: "Holy Shock"}, 
     //{s: "Holy Shock", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 5}}, // Some kind of hold for Virtue
-    {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light"}},
     {s: "Holy Light", c: {type: "buff", buffName: "Beacon of Virtue"}}, // Not sure if we can do "buff duration" as a condition element?
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
     {s: "Light of Dawn"}, 
+    {s: "Crusader Strike", c: {talent: "holyInfusion"}},
     {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
-    {s: "Judgment"}, 
+    {s: "Judgment", c: {talentNot: "judgementInfusionHold"}}, 
     {s: "Consecration"}, 
     {s: "Holy Light"},
     {s: "Crusader Strike"},
@@ -441,7 +444,11 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     if (conditions !== {}) {
         if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
         if (state.holyPower >= conditions.holyPower) aplReq = false;
-
+        if (conditions.talentNot){
+            if (typeof state.talents[conditions.talentNot] == "undefined") aplReq = false;
+            else if (state.talents[conditions.talentNot].points > 0) aplReq = false;
+        } 
+        
         if (aplReq) {
             if (conditions.type === "buff") {
                 aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
