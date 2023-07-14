@@ -10,8 +10,8 @@ const checkHasItem = (itemList: Item[], itemID: number) => {
 export const getDynamicAdvice = (report : any, player: Player, contentType: contentTypes) => {
     let advice: string[] = [];
     const topSet = report.itemSet;
-    const itemList = topSet.itemSet;
-    console.log(report);
+    const itemList = topSet.itemList;
+
     //const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
     const differentials = report.differentials;
 
@@ -20,11 +20,11 @@ export const getDynamicAdvice = (report : any, player: Player, contentType: cont
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
         by clicking on them in the top gear item select screen.")
     }
-    if (isNaN(topSet.hardScore)) {
+    /*if (isNaN(topSet.hardScore)) {
         advice.push("Something might have gone wrong with this set. Sorry about that. Results might be dicey or inaccurate. It's been automatically reported.")
-    }
+    }*/ // This information is not currently stored.
 
-    if (differentials.length > 0 && differentials[0].rawDifference < 200) {
+    if (differentials.length > 0 && Math.abs(differentials[0].rawDifference) < 200) {
         advice.push("Your top alternative is very close in value. You could safely wear either here without a noticeable impact on performance.")
     }
 
@@ -51,10 +51,6 @@ export const getDynamicAdvice = (report : any, player: Player, contentType: cont
     if (contentType === "Dungeon" && player.spec === "Holy Paladin") {
         //advice.push("Note that the Paladin M+ profile focuses on a mix of damage and healing. You might find that Mastery drops quite a bit in value because of this since it doesn't add any damage.")
     }
-
-
-
-
 
     return advice;
 
