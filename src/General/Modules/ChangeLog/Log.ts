@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 3,
+    date: "July 14",
+    changes: [ 
+      "New Feature: Top Gear Contexts. Top Gear will now give you extra information on your set sometimes to make it easier to parse out the decisions made.",
+      "Relaxed the conservative estimate on Echoing Tyrstone now that we can see it's just as overpowered as expected.",
+      "Added support for the new dungeon leather pants that have natural leech.",
+      "Cooldown Planner: Fixed images not popping up.",
+    ]},
+  {
+    version: "10.1.5",
     update: 2,
     date: "July 11",
     changes: [ 
