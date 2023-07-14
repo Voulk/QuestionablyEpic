@@ -13,7 +13,7 @@ export default function ClassCooldownMenuItems(props) {
     Paladin: ["Holy"],
     Priest: ["Holy", "Discipline", "Shadow"],
     Druid: ["Restoration", "Druid"],
-    Evoker: ["Preservation", "Evoker"],
+    Evoker: ["Preservation", "Augmentation", "Evoker"],
     DemonHunter: ["DemonHunter"],
     Warrior: ["Warrior"],
     Monk: ["Mistweaver", "Monk"],
