@@ -65,7 +65,6 @@ export function createPlayerChars(): PlayerChars {
     },
   
     setActiveChar(index) {
-      console.log("Setting active char to " + index);
       this.activeChar = index;
       this.saveAllChar();
     },

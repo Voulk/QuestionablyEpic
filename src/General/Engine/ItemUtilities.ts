@@ -519,12 +519,11 @@ export function getItemAllocations(id: number, missiveStats: any[] = []) {
     if ("unallocated" in item.stats) {
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
-        statArray[mStat] += item.stats.unallocated;
+        statArray[mStat] = (statArray[mStat] || 0) +  item.stats.unallocated;
         
       }
     }
   }
-
   if (item) return statArray;
   else return {};
 }

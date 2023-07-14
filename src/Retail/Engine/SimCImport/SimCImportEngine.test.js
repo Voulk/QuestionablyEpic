@@ -132,12 +132,6 @@ describe("Test Regular Items", () => {
         expect(item.socket).toEqual(1)
     });
 
-    test("Origin BoE Cape - Of the Aurora", () => {
-        const line = "back=,id=190334,enchant_id=6204,bonus_id=7189/8072/8133/8138/1472/6646";
-        const item = processItem(line, player, contentType, type, settings)
-        //expect(item.stats.versatility).toEqual(59);
-        expect(true).toEqual(true);
-    });
 
 });
 
