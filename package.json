@@ -5,11 +5,12 @@
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@material-table/core": "^6.2.1",
+    "@material-table/core": "^0.2.11",
     "@mui/icons-material": "^5.6.2",
     "@mui/lab": "^5.0.0-alpha.54",
     "@mui/material": "^5.1.0",
     "@mui/styles": "^5.1.0",
+    "@mui/x-date-pickers": "^6.10.0",
     "@redux-devtools/extension": "^3.2.5",
     "@sentry/browser": "^6.9.0",
     "@sentry/react": "^6.9.0",
