@@ -60,7 +60,7 @@ export default function ItemCard(props) {
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
-  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const tertiary = "leech" in item.stats && item.stats.leech !== 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
 
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;

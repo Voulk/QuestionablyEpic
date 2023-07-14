@@ -118,9 +118,7 @@ describe("Get Item Allocations func", () => {
     const expectedResult = {
       intellect: 5259,
       stamina: 7889,
-      haste: 0,
       crit: 2450,
-      mastery: 0,
       versatility: 4550,
     };
 
