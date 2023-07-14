@@ -517,14 +517,15 @@ export function getItemAllocations(id: number, missiveStats: any[] = []) {
     statArray = { ...item.stats };
     // Some items have "unallocated" stats which are then assigned using missives or crafted bonus IDs. We'll handle those here.
     if ("unallocated" in item.stats) {
+      console.log("Allocated found" + missiveStats);
       for (var i = 0; i < missiveStats.length; i++) {
         let mStat = missiveStats[i];
-        statArray[mStat] += item.stats.unallocated;
+        statArray[mStat] = (statArray[mStat] || 0) +  item.stats.unallocated;
         
       }
     }
   }
-
+  console.log("Item Stats" + JSON.stringify(statArray));
   if (item) return statArray;
   else return {};
 }
