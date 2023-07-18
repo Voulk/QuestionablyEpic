@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> New trinkets were difficult to test on PTR. Rankings are preliminary.",
+      "-> Echoing Tyrstone nerf is in!",
   ]
 ;
 

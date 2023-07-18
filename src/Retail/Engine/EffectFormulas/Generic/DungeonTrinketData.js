@@ -54,31 +54,31 @@ export const dungeonTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Echoing Tyrstone                                        */
     /* ---------------------------------------------------------------------------------------------- */
-    /* TODO: Test target count, test crit / vers scaling (possibly neither?). 
+    /* Can currently hit pets and full health allies which increases overhealing and kills off a quarter of the value.
     */
     name: "Echoing Tyrstone",
     effects: [
       { 
-        coefficient: 167.2488, 
+        coefficient: 167.2488 * 1.7, 
         table: -9,
-        secondaries: [],
-        targets: {Raid: 20, Dungeon: 5}, // TODO: Test on live, confirmed on PTR.
+        secondaries: ["versatility", "crit"],
+        targets: {Raid: 1, Dungeon: 1}, // This is now split.
         cooldown: 120,
-        efficiency: 0.55,
+        efficiency: 0.55 * 0.75, // TODO: Split properly to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
-        targets: {Raid: 20, Dungeon: 5}, // TODO: Test.
+        targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
         cooldown: 120,
-        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.85, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid");
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 5);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
       return bonus_stats;
     }
