@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 4,
+    date: "July 18",
+    changes: [ 
+      "Applied nerf to Echoing Tyrstone",
+      "Rewrote ally stats code to better represent how many of them go on DPS players."
+    ]},
+  {
+    version: "10.1.5",
     update: 3,
     date: "July 14",
     changes: [ 
