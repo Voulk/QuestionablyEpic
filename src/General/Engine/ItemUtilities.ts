@@ -704,7 +704,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
       stats.leech = Math.ceil(194 + 1.2307 * (itemLevel - 376));
     } else {
       const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
-      stats.leech = Math.floor(terMult * ((stats.haste) || 0 + (stats.crit || 0) + (stats.mastery || 0) + (stats.versatility || 0)));
+      stats.leech = Math.floor(terMult * (((stats.haste) || 0) + (stats.crit || 0) + (stats.mastery || 0) + (stats.versatility || 0)));
     }
   }
   return stats;

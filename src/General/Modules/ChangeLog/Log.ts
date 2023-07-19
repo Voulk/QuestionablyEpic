@@ -17,12 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
-    update: 4,
-    date: "July 18",
+    update: 5,
+    date: "July 19",
     changes: [ 
       "In game change: Tyrstone no longer splits to pets.",
       "Rewrote ally buff code to a more reasonable DPS / healing split.",
       "The Top Gear stat panel will now properly show stats gained from talents",
+      "Bugfix: Leech will no longer be calculated incorrectly on a few specific items.",
+      "UI Bugfix: Leech will once again show in Top Gear reports."
     ]},
   {
     version: "10.1.5",
