@@ -4,10 +4,6 @@ import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip }
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
-import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
-import critSocket from "../../../Images/Resources/critSocket.jpg";
-import masterySocket from "../../../Images/Resources/masterySocket.jpg";
-import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
@@ -58,10 +54,10 @@ export default function ItemCardReport(props) {
   let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = getGemProp(enchants["Gems"], "icon");
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-
+  console.log(item);
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
