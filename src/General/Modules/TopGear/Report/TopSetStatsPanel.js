@@ -34,10 +34,19 @@ export default function TopSetStatsPanel(props) {
         ];
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
-  function printStat(stat, value) {
+  function printStat(stat, value, spec) {
     if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
     } else return t(stat) + ": " + Math.floor(value);
+  }
+
+  function addMods(spec, stat, value) {
+    if (spec === "Holy Paladin") {
+      if (stat === "Crit") return value + 0.04;
+      else if (stat === "Haste") return value * 1.04;
+      else if (stat === "Mastery") return value + 0.06;
+    }
+
   }
 
   return (

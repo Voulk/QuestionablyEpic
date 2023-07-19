@@ -851,9 +851,10 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Add any group benefit, if we're interested in it.
-  // TODO: Clean up code.
+  // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
   if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
-    score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
+    //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
+    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player);
   }
 
   // Classic specific sockets
@@ -864,6 +865,13 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   } */
 
   return Math.round(100 * score) / 100;
+}
+
+// Returns an intellect value.
+export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player) => { // Maybe add PlayerSettings
+  const dpsValue = statValue * CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.activeStats.intellect;
+  const healerValue = statValue * CONSTANTS.allyStatWeight;
+  return dpsValue * 0.75 + healerValue * 0.25;
 }
 
 /*

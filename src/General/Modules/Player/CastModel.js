@@ -100,7 +100,7 @@ class CastModel {
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights(contentType);
-        this.fightInfo.dps = 25000;
+        this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
       this.modelName = "Default";

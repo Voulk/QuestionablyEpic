@@ -6,7 +6,7 @@ import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/Eff
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns, getGems } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getAllyStatsValue, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -401,6 +401,10 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any) {
   enchants["CombinedWeapon"] = "Sophic Devotion"; 
   enchants["2H Weapon"] = "Sophic Devotion"; 
   enchants["1H Weapon"] = "Sophic Devotion"; 
+
+
+
+
   return enchants;
 }
 
@@ -461,6 +465,14 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel);
 
+  // == Flasks ==
+  if (player.spec === "Holy Paladin") {
+    bonus_stats.crit = bonus_stats.crit + (1118 * 0.8);
+  }
+  else {
+    bonus_stats.versatility = bonus_stats.versatility + 745;
+  }
+
   // Sockets
   //const highestWeight = getHighestWeight(castModel);
   //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
@@ -476,10 +488,6 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
   // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
   // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
-
-
-
-
 
   // ------------------
 
@@ -545,12 +553,31 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
     evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0);
   }
 
+
+
   // == Diminishing Returns ==
   // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
   if (!(player.spec === "Discipline Priest" && contentType === "Raid")) {
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
+
+    // Talents (DR does not apply)
+    if (player.spec === "Holy Paladin") {
+      setStats.haste = (((setStats.haste || 0) / STATCONVERSION.HASTE / 100 + 1) * 1.04 - 1) * STATCONVERSION.HASTE * 100;
+      setStats.crit = (setStats.crit || 0) + STATCONVERSION.CRIT * 4;
+      setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
+      setStats.intellect = (setStats.intellect || 0) * 1.04;
+
+      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.06;
+      mergedEffectStats.crit = (mergedEffectStats.crit || 0) + STATCONVERSION.CRIT * 4;
+      mergedEffectStats.mastery = (mergedEffectStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
+      mergedEffectStats.intellect = (mergedEffectStats.intellect || 0) * 1.04;
+    }
+    else if (player.spec === "Restoration Druid") {
+      setStats.haste = (((setStats.haste || 0) / STATCONVERSION.HASTE / 100 + 1) * 1.06 - 1) * STATCONVERSION.HASTE * 100;
+      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.06;
+    }
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;
@@ -566,6 +593,8 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
+
+
 
     evalStats = setStats;
   }
@@ -591,7 +620,8 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
     // Note that this is actually a setting and players can opt out if they'd like the score to be personal benefit only.
     else if (stat === "allyStats" && evalStats.allyStats) {
       if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
-        hardScore += evalStats.allyStats * CONSTANTS.allyStatWeight;
+        //hardScore += evalStats.allyStats * CONSTANTS.allyStatWeight;
+        hardScore += getAllyStatsValue(contentType, evalStats.allyStats, player) || 0
       }
     }
     // This covers all other stats, which are invariably our secondaries + leech.

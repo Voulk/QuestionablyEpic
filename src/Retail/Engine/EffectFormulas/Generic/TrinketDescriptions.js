@@ -127,7 +127,7 @@ const echoingTyrstone = (data, itemLevel, player, additionalData) => {
                 "Expected Overhealing: " + Math.round((1 - effect.efficiency)*100) + "%", 
                 "Equiv Haste: " + Math.round(bonus_stats.allyStats)],
         description:
-          "Nerfed. Now splits healing among all targets including pets although the haste portion is still uncapped. A lot of the value now comes from this haste portion so don't expect it to do mega numbers on your meters anymore. More information to come.",
+          "Heal now splits between targets, haste is uncapped. You can also pre-charge it before combat (not included in score).",
       };
 }
 
