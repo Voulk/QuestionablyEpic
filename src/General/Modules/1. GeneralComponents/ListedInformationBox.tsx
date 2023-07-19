@@ -2,7 +2,6 @@ import { Grid, Paper, Typography, ListItem, List, ListItemText } from "@mui/mate
 
 // The listed Information Box is one that includes introduction text and then a list of strings.
 export default function ListedInformationBox(props: { introText: string, bulletPoints: string[], color?: string }) {
-console.log(props.bulletPoints);
 
 return (
   <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
