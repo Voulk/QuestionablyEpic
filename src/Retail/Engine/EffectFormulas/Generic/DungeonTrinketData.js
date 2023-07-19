@@ -64,14 +64,14 @@ export const dungeonTrinketData = [
         secondaries: ["versatility", "crit"],
         targets: {Raid: 1, Dungeon: 1}, // This is now split.
         cooldown: 120,
-        efficiency: 0.75, // No longer splits to pets.
+        efficiency: 0.72, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
         targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
         cooldown: 120,
-        efficiency: 0.9, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.82, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
