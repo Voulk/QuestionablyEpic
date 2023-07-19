@@ -64,7 +64,7 @@ export const dungeonTrinketData = [
         secondaries: ["versatility", "crit"],
         targets: {Raid: 1, Dungeon: 1}, // This is now split.
         cooldown: 120,
-        efficiency: 0.55, // TODO: Split properly to pets.
+        efficiency: 0.75, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
@@ -80,6 +80,7 @@ export const dungeonTrinketData = [
 
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 5);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
+      if (player.spec === "Holy Priest") bonus_stats.hps *= ((player.getStatPerc("mastery") - 1) * 0.75 + 1);
       return bonus_stats;
     }
   },

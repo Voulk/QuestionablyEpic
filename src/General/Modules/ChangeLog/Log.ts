@@ -20,6 +20,15 @@ export const changeLog: entry[] = [
     update: 4,
     date: "July 18",
     changes: [ 
+      "In game change: Tyrstone no longer splits to pets.",
+      "Rewrote ally buff code to a more reasonable DPS / healing split.",
+      "The Top Gear stat panel will now properly show stats gained from talents",
+    ]},
+  {
+    version: "10.1.5",
+    update: 4,
+    date: "July 18",
+    changes: [ 
       "Applied nerf to Echoing Tyrstone",
       "Rewrote ally stats code to better represent how many of them go on DPS players."
     ]},
