@@ -15,6 +15,8 @@ import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
+import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
+import { getDynamicAdvice } from "./DynamicAdvice";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -100,7 +102,7 @@ function TopGearReport(props) {
     if (result && result.new) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
-        apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
+        //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
         window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
@@ -152,6 +154,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let differentials = {};
   let itemList = {};
   let statList = {};
+  const advice = getDynamicAdvice(result, player, contentType);
 
 
   if (result === null) {
@@ -359,13 +362,15 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-          <CompetitiveAlternatives differentials={differentials} player={player} />
+           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
+           <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="The above set of gear is your best, but here are some notes on your set:" bulletPoints={advice} /> : ""}</Grid>                     
+          <Grid item style={{ height: 60 }} xs={12} />
 
-          <Grid item style={{ height: 40 }} xs={12} />
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
+
     </div>
   );
 }

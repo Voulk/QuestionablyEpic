@@ -309,7 +309,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Dawn of the Infinite trinkets including Echoing Tyrstone are preliminary rankings and could change in-game. It currently heals all allies! Testing was limited." color="firebrick" />
+              <InformationBox information="Tyrstone was nerfed and now splits its healing among targets. It's still a fairly decent option (though not BiS), mostly owing to the large Haste buff across your raid." color="firebrick" />
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                   <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">

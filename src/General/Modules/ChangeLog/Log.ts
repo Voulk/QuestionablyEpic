@@ -17,6 +17,35 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 5,
+    date: "July 19",
+    changes: [ 
+      "In game change: Tyrstone no longer splits to pets.",
+      "Rewrote ally buff code to a more reasonable DPS / healing split.",
+      "The Top Gear stat panel will now properly show stats gained from talents",
+      "Bugfix: Leech will no longer be calculated incorrectly on a few specific items.",
+      "UI Bugfix: Leech will once again show in Top Gear reports."
+    ]},
+  {
+    version: "10.1.5",
+    update: 4,
+    date: "July 18",
+    changes: [ 
+      "Applied nerf to Echoing Tyrstone",
+      "Rewrote ally stats code to better represent how many of them go on DPS players."
+    ]},
+  {
+    version: "10.1.5",
+    update: 3,
+    date: "July 14",
+    changes: [ 
+      "New Feature: Top Gear Contexts. Top Gear will now give you extra information on your set sometimes to make it easier to parse out the decisions made.",
+      "Relaxed the conservative estimate on Echoing Tyrstone now that we can see it's just as overpowered as expected.",
+      "Added support for the new dungeon leather pants that have natural leech.",
+      "Cooldown Planner: Fixed images not popping up.",
+    ]},
+  {
+    version: "10.1.5",
     update: 2,
     date: "July 11",
     changes: [ 

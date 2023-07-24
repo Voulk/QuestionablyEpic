@@ -123,6 +123,43 @@ export const cooldownDB: Cooldown[] = [
     cdPlannerMenuActive: false,
     cdPlannerImport: false,
   },
+
+  {
+    name: {
+      en: "Daybreak",
+      fr: "Aube",
+      de: "Tagesanbruch",
+      ru: "Рассвет",
+      ch: "晨辉",
+    },
+    guid: 414170,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_holy_aspiration.jpg"),
+    duration: 1,
+    cooldown: 60,
+    class: "Paladin",
+    spec: "Holy",
+    type: "cooldown",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: true,
+  },
+  {
+    name: {
+      en: "Light's Hammer",
+      fr: "Marteau de Lumière",
+      de: "Hammer des Lichts",
+      ru: "Молот Света",
+      ch: "圣光之锤",
+    },
+    guid: 114158,
+    icon: require("Images/CooldownPlanner/SpellIcons/spell_paladin_lightshammer.jpg"),
+    duration: 14,
+    cooldown: 60,
+    class: "Paladin",
+    spec: "Holy",
+    type: "cooldown",
+    cdPlannerMenuActive: true,
+    cdPlannerImport: false,
+  },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
   /* ---------------------------------------------------------------------------------------------- */

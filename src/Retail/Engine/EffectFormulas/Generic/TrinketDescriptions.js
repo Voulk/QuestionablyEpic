@@ -127,7 +127,7 @@ const echoingTyrstone = (data, itemLevel, player, additionalData) => {
                 "Expected Overhealing: " + Math.round((1 - effect.efficiency)*100) + "%", 
                 "Equiv Haste: " + Math.round(bonus_stats.allyStats)],
         description:
-          "Expect nerfs. Currently hits all allies in a very large range and charging it to full is trivial. Very limited testing was possible on the PTR.",
+          "Heal now splits between targets, haste is uncapped. You can also pre-charge it before combat (not included in score).",
       };
 }
 
