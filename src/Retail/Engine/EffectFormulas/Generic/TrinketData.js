@@ -95,7 +95,7 @@ export const raidTrinketData = [
         coefficient: 371.7325,
         table: -9,
         secondaries: ['versatility'],
-        efficiency: {Raid: 0.62, Dungeon: 0.78}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+        efficiency: {Raid: 0.62, Dungeon: 0.74}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
         cooldown: 120, 
       },
     ],
