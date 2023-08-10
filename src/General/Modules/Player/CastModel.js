@@ -1,6 +1,8 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
-import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
+import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
+import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./RestorationDruid/DruidBalancedFocus";
+
 import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/Paladin/PaladinAvengingCrusader";
 import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinMelee";
 
@@ -63,8 +65,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 118000,
-      rawhps: 128000,
+      hps: 136000,
+      rawhps: 148000,
       dps: 9000,
       fightLength: 400,
       reportID: "Default",
@@ -74,11 +76,21 @@ class CastModel {
     let spellList = {};
     let specialQueries = {};
     if (spec === SPEC.RESTODRUID) {
-      this.modelName = "Default";
-      spellList = druidDefaultSpellData(contentType);
-      specialQueries = druidDefaultSpecialQueries(contentType);
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+      if (modelID === "Healing Focused") {
+        this.modelName = "Healing Focused";
+        spellList = druidDefaultSpellData(contentType);
+        specialQueries = druidDefaultSpecialQueries(contentType);
+        this.baseStatWeights = druidDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+      }
+      else if (modelID === "Balanced") {
+        this.modelName = "Balanced";
+        spellList = druidBalancedSpellData(contentType);
+        specialQueries = druidBalancedSpecialQueries(contentType);
+        this.baseStatWeights = druidBalancedStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+
+      }
 
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Melee Default") {

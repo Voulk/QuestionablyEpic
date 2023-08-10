@@ -154,7 +154,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let differentials = {};
   let itemList = {};
   let statList = {};
-  const advice = getDynamicAdvice(result, player, contentType);
+  
 
 
   if (result === null) {
@@ -165,7 +165,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
 
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-    
+    const advice = getDynamicAdvice(result, player, result.contentType);
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;

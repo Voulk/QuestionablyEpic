@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 6,
+    date: "August 10",
+    changes: [ 
+      "Added a healing focused playstyle for Resto Druid in Dungeons.",
+      "Increased each models base HPS since we're now quite late in the tier. Results will be unchanged if you entered a log.",
+      "Added more advice in Top Gear.",
+      "Fixed some items icons."
+    ]},
+  {
+    version: "10.1.5",
     update: 5,
     date: "July 19",
     changes: [ 
