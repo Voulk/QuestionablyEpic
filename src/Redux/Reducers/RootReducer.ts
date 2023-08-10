@@ -27,19 +27,19 @@ const initialState : RootState = {
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
-    incarnateAllies: { value: "Solo", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
+    //incarnateAllies: { value: "Solo", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
     idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
     //rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
     alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
     catalystLimit: { value: 1, options: [1, 2, 3], category: "topGear", type: "selector" },
     upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector" },
-    primordialGems: {
+    /*primordialGems: {
       value: "Automatic",
       options: ["Automatic", "Wild Spirit, Exuding Steam, Deluging Water", "Wild Spirit, Exuding Steam, Desirous Blood", "Flame Licked, Wild Spirit, Exuding Steam"],
       category: "topGear",
       type: "selector",
-    },
+    }, */
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
     healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry" },
     lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },

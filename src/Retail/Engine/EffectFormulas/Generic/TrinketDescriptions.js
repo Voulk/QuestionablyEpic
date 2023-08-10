@@ -127,7 +127,7 @@ const echoingTyrstone = (data, itemLevel, player, additionalData) => {
                 "Expected Overhealing: " + Math.round((1 - effect.efficiency)*100) + "%", 
                 "Equiv Haste: " + Math.round(bonus_stats.allyStats)],
         description:
-          "Heal now splits between targets, haste is uncapped. You can also pre-charge it before combat (not included in score).",
+          "Heal splits between targets, haste is uncapped. You can also pre-charge it before combat (not included in score). Note that the haste buff makes up about half the trinkets value. Expect 2-3% healing out of it.",
       };
 }
 

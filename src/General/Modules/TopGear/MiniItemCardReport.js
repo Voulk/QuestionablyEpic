@@ -57,7 +57,7 @@ export default function ItemCardReport(props) {
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-  console.log(item);
+
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {

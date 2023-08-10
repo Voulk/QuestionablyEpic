@@ -45,12 +45,11 @@ interface PlayerChars {
 
 interface PlayerSettings {
     includeGroupBenefits: { value: boolean; options: boolean[]; category: string; type: string };
-    incarnateAllies: { value: string; options: string[]; category: string; type: string };
     idolGems: { value: number; options: number[]; category: string; type: string };
     alchStonePotions: { value: number; options: number[]; category: string; type: string };
     catalystLimit: { value: number; options: number[]; category: string; type: string };
     upgradeFinderMetric: { value: string; options: string[]; category: string; type: string };
-    primordialGems: { value: string; options: string[]; category: string; type: string };
+    //primordialGems: { value: string; options: string[]; category: string; type: string };
     topGearAutoGem: { value: boolean; options: boolean[]; category: string; type: string };
     healingDartsOverheal: { value: number; options: any[]; category: string; type: string };
     lariatGems: { value: number; options: any[]; category: string; type: string };
