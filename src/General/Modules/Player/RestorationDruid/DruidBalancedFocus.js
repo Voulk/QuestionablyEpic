@@ -1,4 +1,4 @@
-export const druidDefaultSpellData = (contentType) => {
+export const druidBalancedSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
@@ -27,10 +27,10 @@ export const druidDefaultSpellData = (contentType) => {
   return spellList;
 };
 
-export const druidDefaultStatWeights = (contentType) => {
+export const druidBalancedStatWeights = (contentType) => {
   let statWeights = {};
 
-  statWeights.Raid = {
+  statWeights.Raid = { // Unused.
     intellect: 1,
     haste: 0.663, 
     crit: 0.524, 
@@ -39,7 +39,7 @@ export const druidDefaultStatWeights = (contentType) => {
     leech: 0.43,
     defaults: true,
   };
-  statWeights.Dungeon = {
+  statWeights.Dungeon = { // Balanced DPS / HPS focus.
     intellect: 1,
     haste: 0.6,
     crit: 0.51,
@@ -52,7 +52,7 @@ export const druidDefaultStatWeights = (contentType) => {
   return statWeights[contentType];
 };
 
-export const druidDefaultSpecialQueries = (contentType) => {
+export const druidBalancedSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
