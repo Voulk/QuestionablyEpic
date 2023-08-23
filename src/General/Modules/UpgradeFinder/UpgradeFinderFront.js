@@ -92,9 +92,14 @@ const PvPRating = [
   { value: 2000, label: "Elite 2400+" },
 ];
 
-function shortenReport(player, contentType, result) {
-  const report = { id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials };
+function shortenReport(player, contentType, result, settings) {
+  const now = new Date();
+  const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
 
+  const socketSetting = settings.topGearAutoGem.value || false;
+  
+  const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials };
   return report;
 }
 
@@ -295,7 +300,7 @@ export default function UpgradeFinderFront(props) {
     if (gameType === "Retail") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result);
+      const shortReport = shortenReport(props.player, result.contentType, result, userSettings);
       sendReport(shortReport);
       props.setItemSelection(result);
       props.setReport(shortReport);

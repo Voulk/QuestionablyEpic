@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.5",
+    update: 7,
+    date: "August 23",
+    changes: [ 
+      "Added Black Temple Timewalking gear including Spire of Karabor and Memento of Tyrande.",
+      "Added more information to the Upgrade Finder JSON file.",
+    ]},
+  {
+    version: "10.1.5",
     update: 6,
     date: "August 10",
     changes: [ 
