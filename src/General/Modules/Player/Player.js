@@ -181,18 +181,11 @@ export class Player {
   // Saved = preset gems from Top Gear.
   getBestPrimordialIDs = (settings, contentType, itemLevel = 242, saved = []) => {
 
-    const automatic = settings.primordialGems.value === "Automatic";
+    const automatic = true;
 
     if (saved.length > 0) return saved;
     else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
-    else {
-      const setGems = []
-      settings.primordialGems.value.split(",").forEach(gem => {
-        setGems.push(convertGemNameToID(gem.trim() + " Stone"))
-      })
 
-      return setGems;
-    }
 
   }
 

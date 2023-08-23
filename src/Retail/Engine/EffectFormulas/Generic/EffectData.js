@@ -3,6 +3,29 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestSta
 export const effectData = [
   {
     /* -------------------- */
+    /* Crystal Spire of Karabor                       
+    /* -------------------- */
+    /* Healing spells have a chance to do more healing
+    */
+    name: "Crystal Spire of Karabor",
+    effects: [
+      { 
+        coefficient: 16.3376,
+        table: -9,
+        efficiency: 0.6,
+        ppm: 8,
+        secondaries: ['crit', 'versatility'],
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
     /* Imbued Frostweave Slipper (Spirit)                  
     /* -------------------- */
     /* 

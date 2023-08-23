@@ -4,6 +4,28 @@ import { Player } from "General/Modules/Player/Player";
 export const otherTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Dreamscape Prism                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Memento of Tyrande",
+    effects: [
+      { // Mana proc chance.
+        coefficient: 2.03251,
+        table: -7,
+        ppm: 2.5,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].ppm! / 60 * player.getStatPerc('haste');
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                           Paracausal Fragment of Frostmourne                                   */
     /* ---------------------------------------------------------------------------------------------- */
 
