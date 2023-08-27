@@ -92,11 +92,14 @@ const PvPRating = [
   { value: 2000, label: "Elite 2400+" },
 ];
 
+
+
 function shortenReport(player, contentType, result, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
 
   const socketSetting = settings.topGearAutoGem.value || false;
+  
   
   const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
                     autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials };

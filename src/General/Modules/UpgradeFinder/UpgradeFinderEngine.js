@@ -168,10 +168,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   return itemLevel;
 }
 
-function convertRaidDifficultyToString(raidID) {
-  const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
-  return raidDifficulty[raidID];
-}
+
 
 function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemSource = source; //rawItem.sources[0];
@@ -189,6 +186,11 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   item.source = itemSource;
 
   return item;
+}
+
+function convertRaidDifficultyToString(raidID) {
+  const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
+  return raidDifficulty[raidID];
 }
 
 function buildItemPossibilities(player, contentType, playerSettings, settings) {
@@ -209,7 +211,8 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
           item.dropLoc = "Raid";
-          item.dropDifficulty = convertRaidDifficultyToString(playerSettings.raid[x]);
+          item.dropDifficulty = playerSettings.raid[x]; //
+          item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[x]);
           itemPoss.push(item);
         }
       } else if (primarySource === -1 || primarySource === 1205 || primarySource === 1209) {
@@ -218,6 +221,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.dropLoc = "Mythic+";
         item.dropDifficulty = "";
+        item.dropDifficultyTxt = "";
         item.quality = 4;
         itemPoss.push(item);
       } 
