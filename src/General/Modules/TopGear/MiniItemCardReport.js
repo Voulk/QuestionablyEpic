@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
@@ -52,7 +52,7 @@ export default function ItemCardReport(props) {
   const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
-  const socketImage = getGemProp(enchants["Gems"], "icon");
+  const socketImage = getGemIcon(enchants["Gems"]);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
@@ -93,7 +93,7 @@ export default function ItemCardReport(props) {
       socket.push(
         <div style={{ display: "inline", marginRight: "5px" }}>
           <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][0], "name"))} arrow>
-            <img src={getGemProp(enchants["Gems"][0], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+            <img src={getGemIcon(enchants["Gems"][0])} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
           </Tooltip>
         </div>,
       );
@@ -103,7 +103,7 @@ export default function ItemCardReport(props) {
       socket.push(
         <div style={{ display: "inline", marginRight: "5px" }}>
           <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][1], "name"))} arrow>
-            <img src={getGemProp(enchants["Gems"][1], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+            <img src={getGemIcon(enchants["Gems"][1])} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
           </Tooltip>
         </div>,
       );
