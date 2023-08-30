@@ -404,7 +404,7 @@ export const PALADINSPELLDB = {
                     name: "Blessing of Summer",
                     type: "buff",
                     buffType: "special",
-                    value: 0.4 * 0.3, // Unused, implemented in getDamMulti
+                    value: 0.4 * 0.2, // Unused, implemented in getDamMulti
                     buffDuration: 30, 
                 };
 
