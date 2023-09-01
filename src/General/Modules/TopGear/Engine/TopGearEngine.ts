@@ -484,7 +484,7 @@ export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Sta
   
   const adjGemCount = gemCount - 1;
   const gemStats = gemDB.filter(gem => gem.id === gemID)[0].stats;
-  console.log(adjGemCount)
+
   Object.keys(gemStats).forEach(stat => {
     bonus_stats[stat] = (bonus_stats[stat] || 0) + (gemStats[stat] * adjGemCount);
 

@@ -68,7 +68,6 @@ class ItemSet {
 
     // Create a clone of the current instance
     clone(): ItemSet {
-      console.log("Cloning");
       const clonedSet = new ItemSet(this.id, this.itemList.slice(), this.sumSoftScore, this.spec);
   
       // Copy other properties
