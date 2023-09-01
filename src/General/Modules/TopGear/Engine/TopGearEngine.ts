@@ -72,7 +72,41 @@ function autoSocketItems(itemList: Item[]) {
   return itemList;
 }
 
+function getGemOptions(spec: string, contentType: contentTypes) {
+  if (spec === "Holy Paladin") {
+    // Crit / haste, crit / mastery
+    return [192919, 192922];
+  }
+  else if (spec === "Discipline Priest") {
+    // Haste / Crit, Crit / Haste
+    return [192945, 192919];
+  }
+  else if (spec === "Holy Priest") {
+    // Crit / Mastery, Mastery / Crit
+    return [192922, 192958]
+  }
+  else if (spec === "Restoration Druid") {
+    // Haste / Mastery
+    return [192948];
+  }
+  else if (spec === "Preservation Evoker") {
+    // Mastery / Crit, Mastery / Vers
+    return [192958, 192964];
+  }
+  else if (spec === "Mistweaver Monk") {
+    // Haste / Crit
+    return [192945];
+  }
+  else if (spec === "Restoration Shaman") {
+    // Crit / Vers
+    return [192923];
 
+  }
+  else {
+    // Error
+  }
+
+}
 
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
@@ -116,7 +150,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     // Create sets for each gem type.
-    const gemPoss = [192958, 192964, 192945] // TODO: Turn this into a function
+    const gemPoss = getGemOptions(player.spec) // TODO: Turn this into a function
 
     if (gemPoss.length > 0) {
       gemPoss.forEach(gem => {
@@ -437,14 +471,34 @@ function dupObject(set : any) {
 }
 
 export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Stats) {
+  
+  let gemArray = [];
+  const primaryGems = {
+    'haste':  192985,
+    'crit': 192982,
+    'mastery': 192988,
+    'versatility': 192990
+  }
+  if (gemCount === 0) return [];
+
+  
   const adjGemCount = gemCount - 1;
   const gemStats = gemDB.filter(gem => gem.id === gemID)[0].stats;
-
+  console.log(adjGemCount)
   Object.keys(gemStats).forEach(stat => {
     bonus_stats[stat] = (bonus_stats[stat] || 0) + (gemStats[stat] * adjGemCount);
-  })
 
-  return [192988, gemID]
+    if (gemStats[stat] === 70) {
+      // Do primary gem
+      gemArray.push(primaryGems[stat]);
+      bonus_stats['intellect'] = (bonus_stats['intellect'] || 0) + 75;
+      bonus_stats[stat] = (bonus_stats[stat] || 0) + 66;
+      
+    }
+  })
+  gemArray.push(gemID);
+  
+  return gemArray;
 
 
 }
