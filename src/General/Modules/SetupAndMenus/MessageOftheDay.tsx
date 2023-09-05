@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Echoing Tyrstone nerf is in!",
+      "-> QE Live is up to date for patch 10.1.7.",
   ]
 ;
 
