@@ -30,6 +30,7 @@ import { addReport } from "../Generic/RampBase";
 export const EVOKERSPELLDB = {
     // Essence recharge rate: 3s?
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
         type: "",
         castTime: 1.5,
         cost: 0,
@@ -54,7 +55,7 @@ export const EVOKERSPELLDB = {
         school: "red",
         castTime: 2,
         cost: 0,//2.0,
-        coeff: 1.61,
+        coeff: 2.76,
         secondaries: ['crit', 'vers']
     }],
     "Verdant Embrace": [{ 
@@ -65,14 +66,14 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         onGCD: true,
         cost: 3.0,
-        coeff: 3.096,
+        coeff: 4.18,
         cooldown: 18,
         expectedOverheal: 0.15,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Spiritbloom": [{  
         // Spiritbloom is a charge ability that adds a target per charge tier.
-        // TODO: Assumption is chained targets are random injured not lowest health or distance based. 
+        // Spiritbloom is smart healing.
         spellData: {id: 382731, icon: "ability_evoker_spiritbloom2", cat: "heal"},
         type: "heal",
         school: "green",
@@ -80,9 +81,9 @@ export const EVOKERSPELLDB = {
         empowered: true,
         cost: 3.8,
         cooldown: 30,
-        coeff: 5.085,
+        coeff: 6.35,
         targets: [1, 2, 3, 4], // 
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Dream Breath": [{  
@@ -128,7 +129,7 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         school: 'green',
         onGCD: true,
-        delay: 2, // The number of seconds before the spell heals.
+        delay: 1.5, // The number of seconds before the spell heals.
         targets: 3,
         essence: 3,
         cost: 4.8,
@@ -230,7 +231,7 @@ export const EVOKERSPELLDB = {
             //runHeal(state, absorb, "buff.name")
             
             if (state.talents.resonatingSphere) {
-                const echoBuffs = 4;
+                const echoBuffs = 3;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
                     value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
                 
