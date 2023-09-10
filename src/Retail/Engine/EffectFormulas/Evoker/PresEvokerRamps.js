@@ -411,6 +411,21 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Dream Breath'].push(bonus);
 
     }
+    if (settings.t31_4) {
+        const echoBuff = {
+            name: "Echo",
+            type: "buff",
+            value: 0.7 * (1 + state.talents.timeLord * 0.25),
+            stacks: 0, // Note that we can have Echo out on multiple people at once, just not two on one person.
+            canStack: false,
+            buffDuration: 999,
+            buffType: 'special',
+            chance: 0.2,
+        }
+
+        evokerSpells['Living Flame'].push(echoBuff);
+        evokerSpells['Living Flame D'].push(echoBuff);
+    }
 
 
     // ==== Tier Sets ====

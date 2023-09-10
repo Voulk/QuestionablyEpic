@@ -190,25 +190,8 @@ export const EVOKERSPELLDB = {
         }
 
     }],
-    "Temporal Anomaly": [/*{
-        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
-        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
-        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
-        name: "Temporal Anomaly",
-        type: "buff",
-        buffType: "heal",
-        school: "bronze",
-        castTime: 1.5,
-        buffDuration: 6,
-        tickRate: 2,
-        cooldown: 6,
-        cost: 7.5,
-        coeff: 1.75, 
-        targets: 2, 
-        expectedOverheal: 0.4, // Note that while this is called ExpectedOverhealing it's really just an efficiency value.
-        secondaries: ['vers', 'mastery']
-    }, */
-    { // I should turn these hasteDuration flags into a proper "flags" subobject.
+    "Temporal Anomaly": [
+    { 
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
         name: "Temporal Anomaly",
         type: "heal",
@@ -226,10 +209,7 @@ export const EVOKERSPELLDB = {
     { 
         type: "function",
         runFunc: function (state, spell) {
-            //const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
-            
-            //runHeal(state, absorb, "buff.name")
-            
+
             if (state.talents.resonatingSphere) {
                 const echoBuffs = 3;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 

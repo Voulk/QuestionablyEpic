@@ -19,11 +19,10 @@ describe("Get Spell Data", () => {
         ["Verdant Embrace", "Dream Breath"],
         ["Temporal Anomaly", "Dream Breath"],
         ["Temporal Anomaly", "Spiritbloom"],
-        ["Dream Breath"]
     ];
 
     const baseSpells = EVOKERSPELLDB;
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
     const talents = {...evokerTalents};
    
     Object.keys(talents).forEach(talentName => {
@@ -48,7 +47,7 @@ describe("Get Spell Data", () => {
 
             if (fullSpell[0].spellData.cat === "heal") {
                 const sequence = [spellName];
-                const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false}, talents)
+                const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
                 results.push(spellName + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
             }
         });
@@ -60,7 +59,7 @@ describe("Get Spell Data", () => {
     test("Sequences", () => {
         const results = [];
         combos.forEach(sequence => {
-            const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false}, talents)
+            const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
             results.push(sequence + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
         });
         console.log(results);
