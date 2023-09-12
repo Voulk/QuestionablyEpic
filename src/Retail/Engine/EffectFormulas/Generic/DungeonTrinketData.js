@@ -23,6 +23,7 @@ export const dungeonTrinketData = [
       //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ticks * averageStacks / data[0].cooldown;
 
       return bonus_stats;
+    }
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
