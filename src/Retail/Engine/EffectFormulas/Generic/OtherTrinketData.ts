@@ -66,7 +66,7 @@ export const otherTrinketData = [
 
       // Haste portion
       if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = runGenericOnUseTrinket(data[2], itemLevel, player, contentType);
-      console.log(itemLevel + JSON.stringify(bonus_stats));
+
       return bonus_stats;
     }
   },

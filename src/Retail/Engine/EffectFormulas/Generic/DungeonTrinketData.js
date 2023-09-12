@@ -3,6 +3,58 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Lady Waycrests Music Box                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Caps at 13. Everything after that is just full strength.
+    */
+    name: "Lady Waycrests Music Box",
+    effects: [
+      { // Healing
+        coefficient: 2.098214,
+        table: -9,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 1,
+        efficiency: {Raid: 0.7, Dungeon: 0.8},
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ticks * averageStacks / data[0].cooldown;
+
+      return bonus_stats;
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Revitalizing Voodoo Totem                                  */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Caps at 13. Everything after that is just full strength.
+    */
+    name: "Revitalizing Voodoo Totem",
+    effects: [
+      { 
+        coefficient: 2.098214,
+        table: -9,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ticks: 12, // Haste adds ticks / partial ticks. 
+        cooldown: 90,
+        tickRate: 0.5,
+        maxStacks: 13,
+        efficiency: {Raid: 0.7, Dungeon: 0.8},
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const timeToMax = (13 * (0.5/player.getStatPerc('haste')))
+      const averageStacks = timeToMax / 6 * 6.5 + (1-(timeToMax / 6)) * 13;
+      
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ticks * averageStacks / data[0].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Time-Thief's Gambit                                         */
     /* ---------------------------------------------------------------------------------------------- */
     //

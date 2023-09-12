@@ -3,6 +3,71 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, r
 export const raidTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Pip's Emerald Friendship Badge                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Pip's Emerald Friendship Badge",
+    effects: [
+      { //
+        coefficient: 2.328225, //0.815295, //0.906145,
+        table: -7,
+        duration: 12,
+      },
+      { // 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Blossom of Amirdrrassil                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Check crit / haste scaling. Check if HoT coefficients are one tick or full heal split into ticks.
+    */
+    name: "Blossom of Amirdrassil",
+    effects: [
+      {  // HoT effect
+        coefficient: 93.51453,
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.6, Dungeon: 0.65}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+        ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
+      },
+      {  // Spread HoT effect
+        coefficient: 46.75641,
+        table: -9,
+        targets: 3,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.55, Dungeon: 0.57}, 
+        percentProc: 0.5,
+      },
+      {  // Shield effect
+        coefficient: 140.2709,
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
+        percentProc: 0.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]);
+      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets;
+      bonus_stats.hps += processedValue(data[2], itemLevel, data[2].efficiency[additionalData.contentType]) * data[2].percentProc;
+
+      bonus_stats.hps = bonus_stats.hps * data[0].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                  Neltharion's Call to Suffering                                */
     /* ---------------------------------------------------------------------------------------------- */
     /* Now fixed and procs off HoTs.
