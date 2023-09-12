@@ -5,23 +5,30 @@ export const dungeonTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                     Lady Waycrests Music Box                                   */
     /* ---------------------------------------------------------------------------------------------- */
-    /* Caps at 13. Everything after that is just full strength.
+    /* Damage and healing procs appear to be split. Ring NYI.
     */
-    name: "Lady Waycrests Music Box",
+    name: "Lady Waycrest's Music Box",
     effects: [
       { // Healing
-        coefficient: 2.098214,
+        coefficient: 27.10605,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 1,
-        efficiency: {Raid: 0.7, Dungeon: 0.8},
+        ppm: 3,
+        efficiency: {Raid: 0.82, Dungeon: 0.8},
+      },
+      { // Damage
+        coefficient: 4.50443,
+        table: -1,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 3,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       
-      //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ticks * averageStacks / data[0].cooldown;
-
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      //bonus_stats.dps
+      console.log(bonus_stats);
       return bonus_stats;
     }
   },
