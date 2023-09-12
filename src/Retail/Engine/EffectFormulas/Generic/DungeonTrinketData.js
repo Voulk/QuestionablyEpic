@@ -73,6 +73,7 @@ export const dungeonTrinketData = [
         table: -7,
         duration: 15,
         cooldown: 60, 
+        penalty: 0.2,
       },
       { // 
 
@@ -80,7 +81,7 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].penalty;
 
       return bonus_stats;
     }
