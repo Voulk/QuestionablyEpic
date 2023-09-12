@@ -121,7 +121,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.813774, // 1.506561 * 0.7, 
+        coefficient: 0.813774 * 0.3, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,

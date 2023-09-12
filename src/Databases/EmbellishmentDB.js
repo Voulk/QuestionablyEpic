@@ -493,6 +493,57 @@ export const embellishmentDB = [
       rank: 0, 
     },
   },
+  {
+    id: 208187,
+    icon: "inv_trinket_ardenweald_01_orange", 
+    armorType: 0, // All
+    name: {
+      en: "Verdant Conduit",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Verdant Conduit",
+      rank: 0, 
+    },
+  },
+  {
+    id: 210671,
+    icon: "inv_10_tailoring_embroiderythread_color3", 
+    armorType: 0, // All
+    name: {
+      en: "Verdant Tether",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Verdant Tether",
+      rank: 0, 
+    },
+  },
+  {
+    id: 210646,
+    icon: "inv_plate_outdooremeralddream_d_01_helm", 
+    armorType: 4, // All  
+    name: {
+      en: "Flourishing Dream Helm",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Flourishing Dream Helm",
+      rank: 0, 
+    },
+  },
   /*
   {
     id: 194894,

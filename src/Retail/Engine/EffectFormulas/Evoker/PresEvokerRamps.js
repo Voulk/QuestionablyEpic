@@ -137,8 +137,10 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
+    settings['DefaultLoadout'] = true;
     if (settings['DefaultLoadout']) {
-
+        settings.t31_2 = true;
+        settings.t31_4 = true;
     }
 
 

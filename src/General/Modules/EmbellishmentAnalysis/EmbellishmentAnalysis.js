@@ -13,6 +13,7 @@ import MetricToggle from "./MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
+import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -125,7 +126,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r447 //gem.r5;
+  return gem.r483 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -155,9 +156,10 @@ export default function EmbellishmentAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const [metric, setMetric] = React.useState("hps");
+  const [theme, setTheme] = React.useState(false);
 
   let history = useHistory();
-  const itemLevels = [411, 421, 427, 437, 443, 447];
+  const itemLevels = [437, 443, 447, 460, 470, 473, 477, 480, 483];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -237,7 +239,7 @@ export default function EmbellishmentAnalysis(props) {
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<EmbelChart data={activeGems} db={db} />}
+                {<EmbelChart data={activeGems} db={db} theme={themeSelection(theme ? "candidate2" : "candidate7")} />}
               </Paper>
             </Grid>
           </Grid>
