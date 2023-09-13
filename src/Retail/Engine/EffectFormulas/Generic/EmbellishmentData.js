@@ -61,7 +61,7 @@ export const embellishmentData = [
         duration: 10, // 5s + 1s per equipped gem. 
         ppm: 1.15,
         uptime: 1,
-        multiplier: 0.8, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+        multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -648,7 +648,7 @@ export const embellishmentData = [
           { // Vers portion
             coefficient: 0.30097,
             table: -9, // They will probably correct this.
-            expectedUptime: 0.8,
+            expectedUptime: 0.85,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
