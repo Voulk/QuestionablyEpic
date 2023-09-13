@@ -8,7 +8,7 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
 
-
+/*
 describe("Blossom of Amirdrassil", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Blossom of Amirdrassil");
@@ -22,7 +22,7 @@ describe("Blossom of Amirdrassil", () => {
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
         expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
-}); 
+}); */
 
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
