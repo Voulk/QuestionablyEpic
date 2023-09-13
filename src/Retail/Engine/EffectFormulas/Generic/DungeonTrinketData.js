@@ -27,8 +27,8 @@ export const dungeonTrinketData = [
       let bonus_stats = {};
       
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-      //bonus_stats.dps
-      console.log(bonus_stats);
+      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
       return bonus_stats;
     }
   },

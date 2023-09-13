@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue } from "../EffectUtilities";
 
 export const raidTrinketData = [
   {
@@ -26,7 +26,7 @@ export const raidTrinketData = [
       let bonus_stats = {};
 
       bonus_stats.hps = processedValue(data[0], itemLevel) / data[0].cooldown;
-      console.log(processedValue(data[0], itemLevel));
+
       bonus_stats.intellect = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
 
       return bonus_stats;
@@ -56,13 +56,23 @@ export const raidTrinketData = [
 
       ['crit', 'versatility', 'mastery'].forEach(stat => {
         const passiveValue = processedValue(data[0], itemLevel) / 12;
-        const activeValue = passiveValue * 6.5;
 
-        // TODO: Add Diminishing Returns.
+        // Passive stat bonus
         bonus_stats[stat] = passiveValue * (1 - data[0].uptime) / 3;
-        bonus_stats[stat] = bonus_stats[stat] + activeValue * data[0].uptime / 3;
+
+        // Active bonus. The code here is a little long since we need to check for diminishing returns at every stack count.
+        // The earlier into the proc we are, the more we lose to diminishing returns.
+        let trinketSum = 0
+        const setStat = additionalData.setStats ? additionalData.setStats[stat] || 0 : 0
+        // Add raw values for stacks 1 through 12.
+        for (var i = 1; i <= 12; i++) {
+          let adjVal = getDiminishedValue(stat, passiveValue * i, setStat)
+          trinketSum += adjVal
+        }
+        bonus_stats[stat] = bonus_stats[stat] + trinketSum / 12 * data[0].uptime / 3;
 
       });
+
 
       return bonus_stats;
     }

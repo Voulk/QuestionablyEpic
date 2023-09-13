@@ -238,6 +238,7 @@ const ladyWaycrestsMusicBox = (data, itemLevel, player, additionalData) => {
     return {
         category: trinketCategories.DUNGEONDROPS,
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
+                "DPS: " + Math.round(bonus_stats.dps),
                 "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
         description:
           "",
