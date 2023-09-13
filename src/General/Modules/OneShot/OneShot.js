@@ -207,7 +207,8 @@ export default function OneShot(props) {
     const dungeonName = encounterDB["-1"][dungeon]["name"]["en"]; // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
-
+    console.log(dungeonName);
+    console.log(spellList);
     spellList.forEach((spell) => {
       damageList.push(calcDamage(spell, defensives, stats));
     });

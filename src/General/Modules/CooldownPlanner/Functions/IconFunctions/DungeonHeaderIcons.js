@@ -205,11 +205,11 @@ export default function DungeonHeaderIcons(props) {
     source = NL;
   }
   /* -------------------------------------- Darkheart Thicket ------------------------------------- */
-  if (props === 762) {
+  if (props === 762 || props === 2) {
     source = DHT;
   }
   /* --------------------------------------- Black Rook Hold -------------------------------------- */
-  if (props === 740) {
+  if (props === 740 || props === 3) {
     source = BRH;
   }
   /* --------------------------------------- Eye of Azshara --------------------------------------- */
