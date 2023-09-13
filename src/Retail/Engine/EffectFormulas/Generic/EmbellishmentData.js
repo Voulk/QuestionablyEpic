@@ -158,7 +158,6 @@ export const embellishmentData = [
           const newData = {...data[0], duration: duration};
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
           bonus_stats[playerBestSecondary] = runGenericPPMTrinket(newData, itemLevel);
-
           return bonus_stats;
         }
       },
@@ -632,19 +631,24 @@ export const embellishmentData = [
         */
         name: "Undulating Sporecloak",
         effects: [
-          { 
+          { // Passive Heal
             coefficient: 10.73745, //44.02832,
             table: -9,
-            ppm: 60 / 5,
+            ppm: 60 / 5, // The cloak heals every 5 seconds.
             secondaries: ['versatility'],
             efficiency: 0.55,
           },
           { // Shield portion
-            coefficient: 257.6989, //44.02832,
+            coefficient: 129.4445, //257.6989, 
             table: -9,
             ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.52,
+          },
+          { // Vers portion
+            coefficient: 0.30097,
+            table: -9, // They will probably correct this.
+            expectedUptime: 0.8,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -653,6 +657,8 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+          bonus_stats.versatility = processedValue(data[2], itemLevel) * data[2].expectedUptime;
+
           return bonus_stats;
         }
       },
