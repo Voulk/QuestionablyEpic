@@ -59,8 +59,8 @@ export const raidTrinketData = [
         const activeValue = passiveValue * 6.5;
 
         // TODO: Add Diminishing Returns.
-        //bonus_stats[stat] = passiveValue * (1 - data[0].uptime) / 3;
-        //bonus_stats[stat] = bonus_stats[stat] + activeValue * data[0].uptime / 3;
+        bonus_stats[stat] = passiveValue * (1 - data[0].uptime) / 3;
+        bonus_stats[stat] = bonus_stats[stat] + activeValue * data[0].uptime / 3;
 
       });
 
