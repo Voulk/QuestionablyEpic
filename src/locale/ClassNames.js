@@ -79,6 +79,19 @@ export const classNameDB = [
   },
   {
     name: {
+      en: "Augmentation Evoker",
+      fr: "Augmentation Evoker",
+      de: "Augmentation Evoker",
+      ru: "Augmentation Evoker",
+      ch: "Augmentation Evoker",
+    },
+    id: ["AugmentationEvoker", "Augmentation Evoker"],
+    cooldownPlannerMenu: true,
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_augmentation.jpg"),
+  },
+  {
+    name: {
       en: "Druid",
       fr: "Druid",
       de: "Druid",
@@ -599,13 +612,13 @@ export const cdPlannerSpecDB = [
   },
   {
     name: {
-      en: "Augmenation",
+      en: "Augmentation",
       fr: "Augmentation",
       de: "Augmentation",
       ru: "Augmentation",
       ch: "Augmentation",
     },
-    id: ["Augmenation", "augmenation evoker"],
+    id: ["Augmenation Evoker", "augmentation evoker"],
     color: "#33937F",
     icon: require("Images/Classes/Evoker/classicon_evoker_augmentation.jpg"),
   },

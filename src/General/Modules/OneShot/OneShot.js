@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       marginTop: 32,
       margin: "auto",
-      width: "55%",
+      width: "60%",
       display: "block",
     },
   },
@@ -149,7 +149,9 @@ export const getRawDamage = (spell, keyLevel) => {
 export const calcDR = (defensives, versatility, avoidance, stamina, armor, spell) => {
   // All of these are in percentage damage *taken* form. If you have 3% DR from vers then the variable should be 0.97 not 0.03.
   const defensiveDR = calcDefensives(defensives, spell);
-  const versDR = 1 - versatility / 410 / 100;
+  let versDR = 1 - versatility / 410 / 100;
+  if (defensives.filter((d) => d.name === "Mark of the Wild")[0].active) versDR -= 0.015;
+
 
   const armorDR = spell.damageType === "Physical" && !("tags" in spell && spell.tags.includes("ignoreArmor")) ? calcArmor(armor) : 1;
   const avoidanceDR = spell.avoidance ? 1 - avoidance / 72 / 100 : 1; // TODO: Add DR to Avoidance.
@@ -174,7 +176,7 @@ export default function OneShot(props) {
   const [keyLevel, setKeyLevel] = React.useState(24);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
 
-  const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 16500, armor: 8000, absorb: 0, health: calcHealth(16500, 0) });
+  const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 29000, armor: 8000, absorb: 0, health: calcHealth(29000, 0) });
 
   const spellArray = [
     { label: "Defensives", type: "defensive" },
@@ -182,6 +184,10 @@ export default function OneShot(props) {
     { label: "Passive Talents", type: "talent" },
     { label: "Group Buffs", type: "raidBuff" },
   ];
+
+  const runUpdate = () => {
+
+  }
 
   const updateStats = (statName, statValue) => {
     // TODO: We could add some extras here like checking if a stat is in a valid range.
@@ -207,8 +213,7 @@ export default function OneShot(props) {
     const dungeonName = encounterDB["-1"][dungeon]["name"]["en"]; // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
-    console.log(dungeonName);
-    console.log(spellList);
+
     spellList.forEach((spell) => {
       damageList.push(calcDamage(spell, defensives, stats));
     });
@@ -218,7 +223,7 @@ export default function OneShot(props) {
 
   const calcDamage = (spell, defensives, stats) => {
     const sumDamageReduction = calcDR(defensives, stats.versatility, stats.avoidance, stats.stamina, stats.armor, spell);
-    console.log("Sum DR: ", sumDamageReduction);
+
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
     let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID, icon: spell.icon };
