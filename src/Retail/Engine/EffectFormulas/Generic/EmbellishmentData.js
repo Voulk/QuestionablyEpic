@@ -17,6 +17,90 @@ export const getEmbellishmentEffect = (effectName, player, contentType, itemLeve
 }
 
 export const embellishmentData = [
+  {
+    /* -------------------- */
+    /* Flourishing Dream Helm                       
+    /* -------------------- */
+    /* No duration in spell data. Maybe just moves around who you're attached to?
+    */
+    name: "Flourishing Dream Helm",
+    effects: [
+      { // Self shield portion
+        coefficient: 91.45733, 
+        table: -9,
+        duration: 15, // 
+        ppm: 0,
+        efficiency: 0.8,
+      },
+      { // Ally + Self Shield
+        coefficient: 60.97212, 
+        table: -9,
+        duration: 15, 
+        ppm: 0,
+        efficiency: 0.8,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // 
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Verdant Tether                       
+    /* -------------------- */
+    /* No duration in spell data. Maybe just moves around who you're attached to?
+    */
+    name: "Verdant Tether",
+    effects: [
+      { 
+        coefficient: 0.229097, // 0.482408 * 0.95,
+        table: -7,
+        duration: 10, // 5s + 1s per equipped gem. 
+        ppm: 1.15,
+        uptime: 1,
+        multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO Add top gear support for auto-generating gems.
+      const versAvg = processedValue(data[0], itemLevel, data[0].multiplier)
+      bonus_stats.versatility = versAvg;
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versAvg;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Verdant Conduit                       
+    /* -------------------- */
+    /* Gain X of a random secondary. PPM but with 10s internal cooldown. 
+    */
+    name: "Verdant Conduit",
+    effects: [
+      { 
+        coefficient: 0.213265, 
+        table: -7,
+        duration: 10, 
+        ppm: 5,
+        uptime: 0.48588,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO Add top gear support for auto-generating gems.
+
+      ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
+        bonus_stats[stat] = processedValue(data[0], itemLevel) * data[0].uptime / 4;
+      });
+
+      return bonus_stats;
+    }
+  },
     {
         /* ---------------------------------------------------------------------------------------------- */
         /*                         Potent Venom (Venom-Steeped Stompers)                                  */
@@ -74,7 +158,6 @@ export const embellishmentData = [
           const newData = {...data[0], duration: duration};
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
           bonus_stats[playerBestSecondary] = runGenericPPMTrinket(newData, itemLevel);
-
           return bonus_stats;
         }
       },
@@ -548,19 +631,24 @@ export const embellishmentData = [
         */
         name: "Undulating Sporecloak",
         effects: [
-          { 
+          { // Passive Heal
             coefficient: 10.73745, //44.02832,
             table: -9,
-            ppm: 60 / 5,
+            ppm: 60 / 5, // The cloak heals every 5 seconds.
             secondaries: ['versatility'],
             efficiency: 0.55,
           },
           { // Shield portion
-            coefficient: 257.6989, //44.02832,
+            coefficient: 129.4445, //257.6989, 
             table: -9,
             ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
-            efficiency: 0.5,
+            efficiency: 0.52,
+          },
+          { // Vers portion
+            coefficient: 0.30097,
+            table: -9, // They will probably correct this.
+            expectedUptime: 0.85,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -569,6 +657,8 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+          bonus_stats.versatility = processedValue(data[2], itemLevel) * data[2].expectedUptime;
+
           return bonus_stats;
         }
       },

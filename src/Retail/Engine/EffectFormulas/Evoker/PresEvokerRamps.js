@@ -18,7 +18,7 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.80, 
     baseMana: 250000,
 
-    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0},
+    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 3, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
     auraHealingBuff: 1,
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
@@ -60,7 +60,7 @@ const EVOKERCONSTANTS = {
         buffDuration: 10,
         buffType: 'stats',
         stat: 'critMult',
-        value: 0.15
+        value: 0.3
     },
     renewingBreathBuff: {
         type: "buff",
@@ -137,9 +137,13 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
+    settings['DefaultLoadout'] = true;
     if (settings['DefaultLoadout']) {
-
+        settings.t31_2 = true;
+        settings.t31_4 = true;
     }
+
+
 
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
@@ -396,7 +400,34 @@ const triggerCycleOfLife = (state, rawHealing) => {
     evokerSpells['Emerald Communion'][1].flatHeal = ecBonus;
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
+    if (settings.t31_2) {
+        const bonus = {
+            type: "castSpell",
+            storedSpell: "Living Flame",
+            powerMod: 0.4,
+            targetMod: 5, // This technically is up to 5 since it's based on targets hit.
+            chance: 1,
+        }
 
+        evokerSpells['Spiritbloom'].push(bonus);
+        evokerSpells['Dream Breath'].push(bonus);
+
+    }
+    if (settings.t31_4) {
+        const echoBuff = {
+            name: "Echo",
+            type: "buff",
+            value: 0.7 * (1 + state.talents.timeLord * 0.25),
+            stacks: 0, // Note that we can have Echo out on multiple people at once, just not two on one person.
+            canStack: false,
+            buffDuration: 999,
+            buffType: 'special',
+            chance: 0.2,
+        }
+
+        evokerSpells['Living Flame'].push(echoBuff);
+        evokerSpells['Living Flame D'].push(echoBuff);
+    }
 
 
     // ==== Tier Sets ====
@@ -440,7 +471,6 @@ const getHealingMult = (state, t, spellName, talents) => {
     if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
         if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
-        console.log("Buffing Dream Breath");
         //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
@@ -585,8 +615,22 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             // The spell casts a different spell. 
             if (spell.type === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
-                const newSpell = evokerSpells[spell.storedSpell];
-                runSpell(newSpell, state, spell.storedSpell, evokerSpells);
+                const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
+                if (spell.powerMod) {
+                    newSpell[0].coeff = newSpell[0].coeff * spell.powerMod; // Increases or reduces the power of the free spell.
+                    newSpell[0].flatHeal = (newSpell[0].flatHeal * spell.powerMod) || 0;
+                    newSpell[0].flatDamage = (newSpell[0].flatDamage * spell.powerMod) || 0;
+                }
+                if (spell.targetMod) {
+                    for (let i = 0; i < spell.targetMod; i++) {
+                        runSpell(newSpell, state, spell.storedSpell, evokerSpells);
+                    }
+                }
+                else {
+                    runSpell(newSpell, state, spell.storedSpell, evokerSpells);
+                }
+
+                
             }
             // The spell has a healing component. Add it's effective healing.
             // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.

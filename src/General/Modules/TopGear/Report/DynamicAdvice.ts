@@ -7,14 +7,14 @@ const checkHasItem = (itemList: Item[], itemID: number) => {
 }
 
 // Returns an array of tips.
-export const getDynamicAdvice = (report : any, player: Player, contentType: contentTypes) => {
+// Note that
+export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType: contentTypes) => {
     let advice: string[] = [];
     const topSet = report.itemSet;
     const itemList = topSet.itemList;
 
     //const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
     const differentials = report.differentials;
-
     // General Advice
     if (differentials.length === 0) {
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
@@ -23,6 +23,18 @@ export const getDynamicAdvice = (report : any, player: Player, contentType: cont
     /*if (isNaN(topSet.hardScore)) {
         advice.push("Something might have gone wrong with this set. Sorry about that. Results might be dicey or inaccurate. It's been automatically reported.")
     }*/ // This information is not currently stored.
+
+    // Dungeon notes
+    if (contentType === "Dungeon") {
+        if (strippedPlayer.model === "Healing Focused") {
+            advice.push("This is a healing focused set and values mastery quite heavily. You might notice some players choose to drop mastery in order to maximize DPS. \
+                This is a reasonable choice but it can be smarter to focus more on healing to begin with. You can change playstyle in QE Live to a more damage \
+                focused one once you're comfortable.")
+        }
+        else if (strippedPlayer.model === "Balanced" || strippedPlayer.model === "Damage Focused") {
+            advice.push("This is a damage focused set and plays little mastery as a result. There's also a healing focused profile which I'd recommend to newer players.")
+        }
+    }
 
     if (differentials.length > 0 && Math.abs(differentials[0].rawDifference) < 200) {
         advice.push("Your top alternative is very close in value. You could safely wear either here without a noticeable impact on performance.")
@@ -36,7 +48,7 @@ export const getDynamicAdvice = (report : any, player: Player, contentType: cont
 
 
     // Rashoks - Evoker only
-    if (checkHasItem(itemList, 202614) && player.spec === "Preservation Evoker") { // Evoker 
+    if (checkHasItem(itemList, 202614) && strippedPlayer.spec === "Preservation Evoker") { // Evoker 
         advice.push("Rashoks is an amazing trinket for all healers. Evoker has to work slightly harder for it since a lot of spells won't proc the HoT. \
             I advise tracking the buff and using Time Spiral, Zephyr, Emerald Blossom and Dream Breath to proc it.")
     }
@@ -47,10 +59,6 @@ export const getDynamicAdvice = (report : any, player: Player, contentType: cont
     
     }
     
-    // Mythic+ advice.
-    if (contentType === "Dungeon" && player.spec === "Holy Paladin") {
-        //advice.push("Note that the Paladin M+ profile focuses on a mix of damage and healing. You might find that Mastery drops quite a bit in value because of this since it doesn't add any damage.")
-    }
 
     return advice;
 

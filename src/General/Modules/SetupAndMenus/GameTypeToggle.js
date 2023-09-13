@@ -9,6 +9,9 @@ import { Tooltip, Typography } from "@mui/material";
 import makeStyles from '@mui/styles/makeStyles';
 import { toggleContent } from "Redux/Actions";
 
+import RetailLogo from "../../../Images/Logos/Logo_Dragonflight.png";
+import ClassicLogo from "../../../Images/Logos/Logo_LichKingComingSoon.png";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down('md')]: {
@@ -78,12 +81,12 @@ export default function GameTypeSwitch(props) {
   return (
     <ToggleButtonGroup value={gameType} exclusive onChange={handleContent} aria-label="gameToggle" size="large">
       {/* ---------------------------------------------------------------------------------------------- */
-      /*                                  Shadowlands Game Type Toggle                                  */
+      /*                                  Dragonflight Game Type Toggle                                  */
       /* ----------------------------------------------------------------------------------------------  */}
       <ToggleButton className={classes.root} value="Retail" aria-label="retailLabel">
         <Tooltip title={t("GameTypeToggle.Retail")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_Dragonflight.png").default} alt={t("Dragonflight")} />
+            <img src={RetailLogo} alt={t("Dragonflight")} />
           </div>
         </Tooltip>
       </ToggleButton>
@@ -94,7 +97,7 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel" disabled>
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={require("../../../Images/Logos/Logo_LichKingComingSoon.png").default} alt={t("Burning Crusade")} />
+            <img src={ClassicLogo} alt={t("Wrath of the Lich King")} />
           </div>
         </Tooltip>
       </ToggleButton>

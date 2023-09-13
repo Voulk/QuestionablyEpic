@@ -160,6 +160,7 @@ export default function TrinketAnalysis(props) {
       //1195, // Sepulcher
       1200, // Vault of the Incarnates
       1208, // Aberrus
+      1207, // Amirdrassil
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -190,6 +191,10 @@ export default function TrinketAnalysis(props) {
       68, // Vortex Pinnacle
       1001, // Freehold
       1022, // Underrot
+
+      1209, // Dawn
+
+      // S3 dungeons.
     ];
     const legionTimewalking = [];
     const shadowlandsTheRest = [
@@ -230,7 +235,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [405, 408, 411, 415, 418, 421, 424, 431, 434, 437, 441, 444, 447, 450, 457];
+  const itemLevels = [424, 431, 434, 437, 441, 444, 447, 450, 457, 460, 463, 470, 473, 476, 483, 486, 489];
 
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -341,7 +346,7 @@ export default function TrinketAnalysis(props) {
                     )}
                     {gameType === "Retail" ? (
                       <Grid item xs={12}>
-                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} />
                       </Grid>
                     ) : (
                       <Grid item xs={12}>

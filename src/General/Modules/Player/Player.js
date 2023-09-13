@@ -6,7 +6,7 @@ import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
-import { druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
+import { druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
@@ -181,18 +181,11 @@ export class Player {
   // Saved = preset gems from Top Gear.
   getBestPrimordialIDs = (settings, contentType, itemLevel = 242, saved = []) => {
 
-    const automatic = settings.primordialGems.value === "Automatic";
+    const automatic = true;
 
     if (saved.length > 0) return saved;
     else if (automatic) return getBestCombo(this, contentType, 424, this.activeStats, settings);
-    else {
-      const setGems = []
-      settings.primordialGems.value.split(",").forEach(gem => {
-        setGems.push(convertGemNameToID(gem.trim() + " Stone"))
-      })
 
-      return setGems;
-    }
 
   }
 
@@ -572,8 +565,9 @@ export class Player {
     //console.log(this.castModels);
 
     if (spec === SPEC.RESTODRUID) {
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
 
       this.activeStats = {
         intellect: 10500,

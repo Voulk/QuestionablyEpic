@@ -168,6 +168,8 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   return itemLevel;
 }
 
+
+
 function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
@@ -184,6 +186,11 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   item.source = itemSource;
 
   return item;
+}
+
+function convertRaidDifficultyToString(raidID) {
+  const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
+  return raidDifficulty[raidID];
 }
 
 function buildItemPossibilities(player, contentType, playerSettings, settings) {
@@ -204,14 +211,17 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
           item.dropLoc = "Raid";
-          item.dropDifficulty = playerSettings.raid[x];
-
+          item.dropDifficulty = playerSettings.raid[x]; //
+          item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[x]);
           itemPoss.push(item);
         }
       } else if (primarySource === -1 || primarySource === 1205 || primarySource === 1209) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+        item.dropLoc = "Mythic+";
+        item.dropDifficulty = "";
+        item.dropDifficultyTxt = "";
         item.quality = 4;
         itemPoss.push(item);
       } 
@@ -272,8 +282,8 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
 
   if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
-
-  return { item: item.id, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
+  //console.log(item);
+  return { item: item.id, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
 }
 
 function checkItemViable(rawItem, player) {

@@ -3,12 +3,12 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Echoing Tyrstone nerf is in!",
+      "-> Warning: PTR version. Everything subject to change.",
   ]
 ;
 
   return (
-    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
+    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "red" }}>
       <Grid container spacing={1}>
         {messageOfTheDay.map((key, i) => (
           <Grid item xs={12} key={i}>

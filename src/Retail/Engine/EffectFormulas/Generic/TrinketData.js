@@ -1,6 +1,125 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue } from "../EffectUtilities";
 
 export const raidTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Smoldering Treant Seedling                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* == Naive implementation. == Can refine when trinket is available for testing. Likely to have some form of meteor effect.
+    */
+    name: "Smoldering Treant Seedling",
+    effects: [
+      { // 
+        coefficient: 1042.025, 
+        table: -8,
+        duration: 12,
+        cooldown: 120,
+      },
+      { // 
+        coefficient: 0.432156, 
+        table: -1,
+        duration: 10,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel) / data[0].cooldown;
+
+      bonus_stats.intellect = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Pip's Emerald Friendship Badge                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Not final. Diminishing effect on the proc needs to be more accurately implemented.
+    /* NEEDS DIMINISHING RETURNS
+    */
+    name: "Pip's Emerald Friendship Badge",
+    effects: [
+      { //
+        coefficient: 2.328225, 
+        table: -7,
+        duration: 12,
+        ppm: 2,
+        uptime: 0.328986,
+      },
+      { // 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      ['crit', 'versatility', 'mastery'].forEach(stat => {
+        const passiveValue = processedValue(data[0], itemLevel) / 12;
+
+        // Passive stat bonus
+        bonus_stats[stat] = passiveValue * (1 - data[0].uptime) / 3;
+
+        // Active bonus. The code here is a little long since we need to check for diminishing returns at every stack count.
+        // The earlier into the proc we are, the more we lose to diminishing returns.
+        let trinketSum = 0
+        const setStat = additionalData.setStats ? additionalData.setStats[stat] || 0 : 0
+        // Add raw values for stacks 1 through 12.
+        for (var i = 1; i <= 12; i++) {
+          let adjVal = getDiminishedValue(stat, passiveValue * i, setStat)
+          trinketSum += adjVal
+        }
+        bonus_stats[stat] = bonus_stats[stat] + trinketSum / 12 * data[0].uptime / 3;
+
+      });
+
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Blossom of Amirdrrassil                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Check crit / haste scaling. Check if HoT coefficients are one tick or full heal split into ticks.
+    */
+    name: "Blossom of Amirdrassil",
+    effects: [
+      {  // HoT effect
+        coefficient: 15.58547, // 93.51453,
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.6, Dungeon: 0.65}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+        ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
+      },
+      {  // Spread HoT effect
+        coefficient: 7.792735, // 46.75641,
+        table: -9,
+        targets: 3,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.55, Dungeon: 0.57}, 
+        percentProc: 0.5,
+      },
+      {  // Shield effect
+        coefficient: 140.2709,
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
+        percentProc: 0.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]);
+      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets;
+      bonus_stats.hps += processedValue(data[2], itemLevel, data[2].efficiency[additionalData.contentType]) * data[2].percentProc;
+
+      bonus_stats.hps = bonus_stats.hps * data[0].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Neltharion's Call to Suffering                                */
@@ -95,7 +214,7 @@ export const raidTrinketData = [
         coefficient: 371.7325,
         table: -9,
         secondaries: ['versatility'],
-        efficiency: {Raid: 0.62, Dungeon: 0.78}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+        efficiency: {Raid: 0.62, Dungeon: 0.74}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
         cooldown: 120, 
       },
     ],
@@ -121,7 +240,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.813774, // 1.506561 * 0.7, 
+        coefficient: 0.813774 * 0.3, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,

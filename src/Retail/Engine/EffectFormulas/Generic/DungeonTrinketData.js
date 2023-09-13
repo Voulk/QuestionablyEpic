@@ -3,6 +3,66 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Lady Waycrests Music Box                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Damage and healing procs appear to be split. Ring NYI.
+    */
+    name: "Lady Waycrest's Music Box",
+    effects: [
+      { // Healing
+        coefficient: 27.10605,
+        table: -9,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 3,
+        efficiency: {Raid: 0.82, Dungeon: 0.8},
+      },
+      { // Damage
+        coefficient: 4.50443,
+        table: -1,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 3,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Revitalizing Voodoo Totem                                  */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Caps at 13. Everything after that is just full strength.
+    */
+    name: "Revitalizing Voodoo Totem",
+    effects: [
+      { 
+        coefficient: 2.098214,
+        table: -9,
+        secondaries: ['haste', 'crit', 'versatility'],
+        ticks: 12, // Haste adds ticks / partial ticks. 
+        cooldown: 90,
+        tickRate: 0.5,
+        maxStacks: 13,
+        efficiency: {Raid: 0.7, Dungeon: 0.8},
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const timeToMax = (13 * (0.5/player.getStatPerc('haste')))
+      const averageStacks = timeToMax / 6 * 6.5 + (1-(timeToMax / 6)) * 13;
+      
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ticks * averageStacks / data[0].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Time-Thief's Gambit                                         */
     /* ---------------------------------------------------------------------------------------------- */
     //
@@ -13,6 +73,7 @@ export const dungeonTrinketData = [
         table: -7,
         duration: 15,
         cooldown: 60, 
+        penalty: 0.2,
       },
       { // 
 
@@ -20,7 +81,7 @@ export const dungeonTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].penalty;
 
       return bonus_stats;
     }
@@ -64,7 +125,7 @@ export const dungeonTrinketData = [
         secondaries: ["versatility", "crit"],
         targets: {Raid: 1, Dungeon: 1}, // This is now split.
         cooldown: 120,
-        efficiency: 0.72, // No longer splits to pets.
+        efficiency: 0.68, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
@@ -81,6 +142,7 @@ export const dungeonTrinketData = [
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 5);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
       if (player.spec === "Holy Priest") bonus_stats.hps *= ((player.getStatPerc("mastery") - 1) * 0.75 + 1);
+
       return bonus_stats;
     }
   },
