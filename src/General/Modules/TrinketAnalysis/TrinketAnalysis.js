@@ -160,6 +160,7 @@ export default function TrinketAnalysis(props) {
       //1195, // Sepulcher
       1200, // Vault of the Incarnates
       1208, // Aberrus
+      1207, // Amirdrassil
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -190,6 +191,10 @@ export default function TrinketAnalysis(props) {
       68, // Vortex Pinnacle
       1001, // Freehold
       1022, // Underrot
+
+      1209, // Dawn
+
+      // S3 dungeons.
     ];
     const legionTimewalking = [];
     const shadowlandsTheRest = [

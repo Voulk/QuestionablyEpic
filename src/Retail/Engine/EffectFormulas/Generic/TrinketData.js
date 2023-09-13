@@ -3,22 +3,66 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, r
 export const raidTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Smoldering Treant Seedling                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* == Naive implementation. == Can refine when trinket is available for testing. Likely to have some form of meteor effect.
+    */
+    name: "Smoldering Treant Seedling",
+    effects: [
+      { // 
+        coefficient: 1042.025, 
+        table: -8,
+        duration: 12,
+        cooldown: 120,
+      },
+      { // 
+        coefficient: 0.432156, 
+        table: -1,
+        duration: 10,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel) / data[0].cooldown;
+      console.log(processedValue(data[0], itemLevel));
+      bonus_stats.intellect = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                  Pip's Emerald Friendship Badge                                */
     /* ---------------------------------------------------------------------------------------------- */
-    /* 
+    /* Not final. Diminishing effect on the proc needs to be more accurately implemented.
+    /* NEEDS DIMINISHING RETURNS
     */
     name: "Pip's Emerald Friendship Badge",
     effects: [
       { //
-        coefficient: 2.328225, //0.815295, //0.906145,
+        coefficient: 2.328225, 
         table: -7,
         duration: 12,
+        ppm: 2,
+        uptime: 0.328986,
       },
       { // 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+
+      ['crit', 'versatility', 'mastery'].forEach(stat => {
+        const passiveValue = processedValue(data[0], itemLevel) / 12;
+        const activeValue = passiveValue * 6.5;
+
+        // TODO: Add Diminishing Returns.
+        //bonus_stats[stat] = passiveValue * (1 - data[0].uptime) / 3;
+        //bonus_stats[stat] = bonus_stats[stat] + activeValue * data[0].uptime / 3;
+
+      });
 
       return bonus_stats;
     }
@@ -32,14 +76,14 @@ export const raidTrinketData = [
     name: "Blossom of Amirdrassil",
     effects: [
       {  // HoT effect
-        coefficient: 93.51453,
+        coefficient: 15.58547, // 93.51453,
         table: -9,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.6, Dungeon: 0.65}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
       },
       {  // Spread HoT effect
-        coefficient: 46.75641,
+        coefficient: 7.792735, // 46.75641,
         table: -9,
         targets: 3,
         secondaries: ['versatility'],
