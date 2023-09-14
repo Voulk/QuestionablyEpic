@@ -204,22 +204,22 @@ export default function DungeonHeaderIcons(props) {
   }
 
   // Ataldazar
-  if (props === 5) {
+  if (props === 968) {
     source = Ataldazar;
   }
 
   // Waycrest Manor
-  if (props === 4) {
+  if (props === 1021) {
     source = WaycrestManor;
   }
 
   // Throne of the Tides
-  if (props === 7) {
+  if (props === 65) {
     source = ThroneOfTheTides;
   }
 
   // Everbloom
-  if (props === 6) {
+  if (props === 537) {
     source = Everbloom;
   }
 

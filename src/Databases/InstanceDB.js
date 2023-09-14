@@ -1870,12 +1870,12 @@ export const encounterDB = {
 
       0, // Dawn of the Infinites: Galakrond's Fall
       1, // Dawn of the Infinites: Murozond's Rise
-      2, // Darkheart Thicket
-      3, // Black Rook Hold
-      4, // Waycrest Manor
-      5, // Atal'Dazar
-      6, // Everbloom
-      7, // Throne of the Tides
+      762, // Darkheart Thicket
+      740, // Black Rook Hold
+      1021, // Waycrest Manor
+      968, // Atal'Dazar
+      537, // Everbloom
+      65, // Throne of the Tides
     ],
 
     313: {
@@ -2040,7 +2040,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    2: {
+    762: {
       name: {
         en: "Darkheart Thicket",
         fr: "",
@@ -2049,7 +2049,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    3: {
+    740: {
       name: {
         en: "Black Rook Hold",
         fr: "",
@@ -2058,7 +2058,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    4: {
+    1021: {
       name: {
         en: "Waycrest Manor",
         fr: "",
@@ -2067,7 +2067,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    5: {
+    968: {
       name: {
         en: "Atal'Dazar",
         fr: "",
@@ -2076,7 +2076,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    6: {
+    537: {
       name: {
         en: "Everbloom",
         fr: "",
@@ -2085,7 +2085,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    7: {
+    65: {
       name: {
         en: "Throne of the Tides",
         fr: "",
