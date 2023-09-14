@@ -56,6 +56,13 @@ import TheUnderrot from "../../../../../Images/MythicPlus/TheUnderrot.png";
 import TheVortexPinnacle from "../../../../../Images/MythicPlus/TheVortexPinnacle.png";
 import NL from "../../../../../Images/MythicPlus/NeltharionsLair.png";
 
+
+import Ataldazar from "../../../../../Images/MythicPlus/Ataldazar.png";
+import WaycrestManor from "../../../../../Images/MythicPlus/WaycrestManor.png";
+import ThroneOfTheTides from "../../../../../Images/MythicPlus/ThroneOfTheTides.png";
+import Everbloom from "../../../../../Images/MythicPlus/Everbloom.png";
+import DawnOfTheInfinites from "../../../../../Images/MythicPlus/DawnOfTheInfinites.png";
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -194,6 +201,31 @@ export default function DungeonHeaderIcons(props) {
   if (props === 800) {
     // Court of Stars
     source = CourtofStars;
+  }
+
+  // Ataldazar
+  if (props === 5) {
+    source = Ataldazar;
+  }
+
+  // Waycrest Manor
+  if (props === 4) {
+    source = WaycrestManor;
+  }
+
+  // Throne of the Tides
+  if (props === 7) {
+    source = ThroneOfTheTides;
+  }
+
+  // Everbloom
+  if (props === 6) {
+    source = Everbloom;
+  }
+
+  // Dawn of the Infinites
+  if (props === 0 || props === 1) {
+    source = DawnOfTheInfinites;
   }
 
   /* ---------------------------------------------------------------------------------------------- */
