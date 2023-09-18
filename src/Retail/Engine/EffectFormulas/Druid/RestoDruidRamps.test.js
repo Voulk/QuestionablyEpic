@@ -1,5 +1,5 @@
-import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
+import { getSpellRaw, runCastSequence } from "./RestoDruidRamps";
+import { DRUIDSPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
 
 
 
@@ -12,22 +12,20 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 // This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
 
 // This will just print HPCT and HPM data for a bunch of little combos.
+
+
 describe("Get Spell Data", () => {
     const combos = [
-        ["Echo", "Spiritbloom"],
-        ["Verdant Embrace", "Living Flame"],
-        ["Verdant Embrace", "Dream Breath"],
-        ["Temporal Anomaly", "Dream Breath"],
-        ["Temporal Anomaly", "Spiritbloom"],
+        //["Echo", "Spiritbloom"],
+
     ];
 
-    const baseSpells = EVOKERSPELLDB;
+    const baseSpells = DRUIDSPELLDB;
     const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
-    const talents = {...evokerTalents};
+    const talents = {...druidTalents};
    
     Object.keys(talents).forEach(talentName => {
-        if (talentName !== "fieldOfDreams" && talentName !== "Lifebind" && talentName !== "exhilaratingBurst" && talentName !== "lifeforceMender") talents[talentName].points = talents[talentName].maxPoints;
-        
+        if (talentName !== "fieldOfDreams") talents[talentName].points = talents[talentName].maxPoints;
     });
     
     const activeStats = {
@@ -48,6 +46,8 @@ describe("Get Spell Data", () => {
             if (fullSpell[0].spellData.cat === "heal") {
                 const sequence = [spellName];
                 const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+                console.log(sequence);
+                console.log(result);
                 results.push(spellName + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
             }
         });
@@ -71,6 +71,8 @@ describe("Get Spell Data", () => {
 
 
 });
+
+
 /* Remove to re-enable test cases.
 
 

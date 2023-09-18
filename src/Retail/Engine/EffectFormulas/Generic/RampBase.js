@@ -15,12 +15,23 @@ const GLOBALCONST = {
 
 }
 
+const applyTalents = (state, spellDB, stats) => {
+    const talents = Object.keys(state.talents);
+    Object.keys(state.talents).forEach(talentName => {
+        const talent = state.talents[talentName];
+        if (talent.points > 0) {
+            talent.runFunc(state, spellDB, talent.points, stats)
+        }
+    });
+
+}
 
 // Cleanup is called after every hard spell cast. 
 export const spellCleanup = (spell, state) => {
 
     // Check for any buffs that buffed the spell and remove them.
 }
+
 
 export const addBuff = (state, spell, spellName) => {
     let newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType};
