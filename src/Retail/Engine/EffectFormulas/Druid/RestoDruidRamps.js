@@ -3,14 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getBuffStacks, getHealth, getCrit, addBuff, applyTalents } from "../Generic/RampBase";
-
-
-
-// Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
-const discSettings = {
-    chaosBrand: true
-}
+            getBuffStacks, getHealth, getCrit, addBuff, applyTalents, runBuffs } from "../Generic/RampBase";
 
 
 const DRUIDCONSTANTS = {
@@ -19,82 +12,12 @@ const DRUIDCONSTANTS = {
     masteryEfficiency: 0.80, 
     baseMana: 250000,
 
-    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 3, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
-    auraHealingBuff: 1,
-    auraDamageBuff: 1.15,
-    goldenHourHealing: 18000,
+    auraHealingBuff: 0.98,
+    auraDamageBuff: 1.71,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
-    lifebindSpells: ['Spiritbloom', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
-    essenceBurstBuff: {
-        name: "Essence Burst",
-        type: "buff",
-        stacks: true,
-        maxStacks: 2,
-        expiration: 999,
-        buffDuration: 15,
-        buffType: 'special',
-    },
-    exhilBurstBuff: {
-        name: "Exhilarating Burst",
-        type: "buff",
-        stacks: false,
-        buffDuration: 10,
-        buffType: 'stats',
-        stat: 'critMult',
-        value: 0.3
-    },
-    renewingBreathBuff: {
-        type: "buff",
-        buffType: "heal",
-        name: "Renewing Breath",
-        tickRate: 2,
-        targets: 5,
-        coeff: 0, // Renewing Breath uses a flat heal system instead of a coefficient since the scaling is based on the healing the Dream Breath did.
-        flatHeal: 0, 
-        hasted: false,
-        buffDuration: 10, // Note that this is contrary to the tooltip.
-        expectedOverheal: 0.45, // 0.45
-        secondaries: [], // It technically scales with secondaries but these influence the base heal, not the HoT.
-        mult: 0.15, // This is multiplied by our talent points.
-    },
+    echoExceptionSpells: [], // These are spells that do not consume or otherwise interact with our Echo buff.
 }
 
-// Remove Temporal and add Essence Burst if necessary.
-const triggerTemporal = (state) => {
-    if (state.talents.sacralEmpowerment) triggerEssenceBurst(state);
-    state.activeBuffs = state.activeBuffs.filter(buff => buff.name !== "Temporal Compression")
-}
-
-const triggerEssenceBurst = (state) => {
-    if (state.talents.exhilaratingBurst) {
-        // If we're talented into Exhil Burst then also add that buff.
-        // If we already have an Exhilarating Burst active then we'll just refresh it's duration instead.
-        // If not, we'll create a new buff.
-        const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Exhilarating Burst"});
-        const exhilBurst = DRUIDCONSTANTS.exhilBurstBuff;
-        if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
-        else {
-            exhilBurst.expiration = (state.t + exhilBurst.buffDuration);
-            addBuff(state, DRUIDCONSTANTS.essenceBurstBuff, "Essence Burst")
-            addReport(state, `Adding buff: Exhilirating Burst`);
-            state.activeBuffs.push(exhilBurst);
-        }
-    }
-    else {
-        addBuff(state, DRUIDCONSTANTS.essenceBurstBuff, "Essence Burst")
-    }
-}
-
-const triggerCycleOfLife = (state, rawHealing) => {
-    // For each flower, add 5% of raw healing to the flower value.
-    const cycleBuffs = state.activeBuffs.filter(buff => buff.name === "Cycle of Life");
-
-    cycleBuffs.forEach(buff => {
-        buff.value += rawHealing * 0.1; 
-    })
-
-}
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -154,7 +77,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         if (!spellInfo.targets) spellInfo.targets = 1;
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * DRUIDCONSTANTS.baseMana / 100;
-
+       
         if (settings.includeOverheal === "No") {
             value.forEach(spellSlice => {
                 if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
@@ -194,31 +117,9 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  */
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = DRUIDCONSTANTS.auraHealingBuff;
-
-    
-    // Grace Period
-    if (talents.gracePeriod) {
-        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.05);
-        else {
-            const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
-            mult *= (1 + talents.gracePeriod * 0.05 * buffsActive / 20);
-
-        }
-    }   
-
-    if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
-        if (spellName.includes("Dream Breath")) mult *= 1.4;
-        if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
-        //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
-
-    } 
-    else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
-    if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
     
     return mult;
 }
-
-
 
 
 export const runHeal = (state, spell, spellName, compile = true) => {
@@ -241,16 +142,6 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
-
-    if (checkBuffActive(state.activeBuffs, "Lifebind") && DRUIDCONSTANTS.lifebindSpells.includes(spellName)) {
-        const lifebindBuffs = state.activeBuffs.filter(buff => buff.name === "Lifebind");
-        const lifebindMult = lifebindBuffs.map(b => b.value).reduce((a, b) => a+b, 0);
-
-
-        const lifebindSpell = {name: "Lifebind", flatHeal: healingVal * lifebindMult / targetMult, targets: 1, coeff: 0, secondaries: [], expectedOverheal: 0.2};
-        runHeal(state, lifebindSpell, "Lifebind", true);
-
-    }
 
     return healingVal;
 }
@@ -281,11 +172,27 @@ const canCastSpell = (state, spellDB, spellName) => {
     return cooldownReq && essenceReq && miscReq;
 }
 
-const getSpellHPM = (state, spellDB, spellName) => {
-    const spell = spellDB[spellName][0];
-    const spellHealing = runHeal(state, spell, spellName, false)
 
-    return spellHealing / spell.cost || 0;
+// It's time for a buff to tick, and it should do so here.
+// This will also be called if a buff ticks on cast.
+// This is relatively generic and can be used across specs. It does hook into runHeal files though.
+const tickBuff = (state, buff, spellDB) => {
+    if (buff.buffType === "heal") {
+        const spell = buff.attSpell;
+        runHeal(state, spell, buff.name + " (HoT)")
+    }
+    else if (buff.buffType === "damage") {
+        const spell = buff.attSpell;
+        runDamage(state, spell, buff.name)
+    }
+    else if (buff.buffType === "function") {
+        const func = buff.attFunction;
+        const spell = buff.attSpell;
+        func(state, spell);
+    }
+
+    if (buff.onTick) buff.onTick(state, buff, runSpell, spellDB);
+    
 }
 
 
@@ -324,7 +231,7 @@ export const genSpell = (state, spells) => {
 const apl = ["Reversion", "Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, druidSpells) => {
-    console.log("Running spell " +  spellName);
+
     fullSpell.forEach(spell => {
 
         let canProceed = false
@@ -377,7 +284,8 @@ const runSpell = (fullSpell, state, spellName, druidSpells) => {
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
-                addBuff(state, spell, spellName);
+                const newBuff = addBuff(state, spell, spellName);
+                if (spell.tickData.tickOnCast) {tickBuff(state, newBuff, druidSpells) };
             }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
@@ -451,17 +359,18 @@ const getSpellCastTime = (spell, state, currentStats) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
+export const runCastSequence = (sequence, stats, settings = {}, talents = {}) => {
     //console.log("Running cast sequence");
 
     // Flatten talents
     // Talents come with a lot of extra data we don't need like icons, max points and such.
     // This quick bit of code flattens it out by creating key / value pairs for name: points.
     // Can be removed to RampGeneral.
+    /*
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
         talents[key] = value.points;
-    }
+    } */
 
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
@@ -473,9 +382,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
 
-    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
-    let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
+
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
     let queuedSpell = "";
@@ -493,56 +402,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
-        // ---- Heal over time and Damage over time effects ----
-        // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
-        // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
-        // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
-        // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
-        // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
-        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
-        if (healBuffs.length > 0) {
-            healBuffs.forEach((buff) => {
-               
-                let currentStats = {...stats};
-                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-
-                if (buff.buffType === "heal") {
-                    const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name + " (HoT)")
-                }
-                else if (buff.buffType === "damage") {
-                    const spell = buff.attSpell;
-                    runDamage(state, spell, buff.name)
-                }
-                else if (buff.buffType === "function") {
-                    const func = buff.attFunction;
-                    const spell = buff.attSpell;
-                    func(state, spell);
-                }
-
-                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
-                else buff.next = buff.next + (buff.tickRate);
-            });  
-        }
-
-        // -- Partial Ticks --
-        // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
-        // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
-        // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
-        expiringHots.forEach(buff => {
-
-            if (buff.buffType === "heal" || buff.buffType === "damage") {
-                const tickRate = buff.tickRate / getHaste(state.currentStats)
-                const partialTickPercentage = (buff.next - state.t) / tickRate;
-                const spell = buff.attSpell;
-                spell.coeff = spell.coeff * partialTickPercentage;
-
-                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-                else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
-            }
-            else if (buff.runEndFunc) buff.runFunc(state, buff);
-        })
+        runBuffs(state, tickBuff, currentStats, druidSpells);
 
         // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
         state.activeBuffs = state.activeBuffs.filter(function (buff) {return buff.expiration > state.t});
@@ -637,7 +497,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             spellFinish = 0;
         }
 
-        if (seq.length === 0 && queuedSpell === "" && healBuffs.length === 0) {
+        if (seq.length === 0 && queuedSpell === ""/* && healBuffs.length === 0 */) {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             //state.t = 999;
         }

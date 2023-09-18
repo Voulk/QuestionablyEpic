@@ -16,7 +16,7 @@ import { DRUIDSPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
 
 describe("Get Spell Data", () => {
     const combos = [
-        //["Echo", "Spiritbloom"],
+        ["Rejuvenation"],
 
     ];
 
@@ -24,19 +24,20 @@ describe("Get Spell Data", () => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
     const talents = {...druidTalents};
    
-    Object.keys(talents).forEach(talentName => {
+    /*Object.keys(talents).forEach(talentName => {
         if (talentName !== "fieldOfDreams") talents[talentName].points = talents[talentName].maxPoints;
-    });
+    }); */
     
     const activeStats = {
         intellect: 12000,
-        haste: 2000,
+        haste: 6000,
         crit: 2000,
         mastery: 6500,
         versatility: 3000,
         stamina: 29000,
         critMult: 2,
     }
+    /*
     test("Individual Spells", () => {
         const results = [];
         Object.keys(baseSpells).forEach(spellName => {
@@ -46,22 +47,30 @@ describe("Get Spell Data", () => {
             if (fullSpell[0].spellData.cat === "heal") {
                 const sequence = [spellName];
                 const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
-                console.log(sequence);
-                console.log(result);
+
                 results.push(spellName + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
             }
         });
         console.log(results);
         expect(true).toEqual(true);
 
-    })
+    }) */
     
     test("Sequences", () => {
         const results = [];
+        const iter = 5000;
+        let healing = 0;
+        let manaSpent = 0;
         combos.forEach(sequence => {
-            const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
-            results.push(sequence + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
-        });
+            for (let i = 0; i < iter; i++) {
+                const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+                healing += result.totalHealing;
+                manaSpent += result.manaSpent;
+                        
+            };
+            results.push(sequence + ". Healing: " + healing / iter + ". HPM: " + Math.round(100*healing / manaSpent)/100);
+        })
+
         console.log(results);
         expect(true).toEqual(true);
 
