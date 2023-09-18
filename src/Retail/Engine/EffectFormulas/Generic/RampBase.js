@@ -23,20 +23,38 @@ export const spellCleanup = (spell, state) => {
 }
 
 export const addBuff = (state, spell, spellName) => {
+    let newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType};
+    // (state.t + spell.castTime + spell.buffDuration)
 
     if (spell.buffType === "stats") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
-        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+        newBuff = {...newBuff, value: spell.value, stat: spell.stat}
+        state.activeBuffs.push(newBuff);
     }
     else if (spell.buffType === "statsMult") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + " - Mult)");
-        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+        newBuff = {...newBuff, value: spell.value, stat: spell.stat}
+        state.activeBuffs.push(newBuff);
     }
-    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
-        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+    else if (spell.buffType === "damage" || spell.buffType === "heal" || spell.buffType === "function") {     
+        //const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
+        //    tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+        
+        newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick, 
+                    next: state.t + (spell.tickData.tickRate / getHaste(state.currentStats))}
+        
+        // If our spell has a hasted duration we'll reduce the expiration. These are at least fairly rare nowadays.
+        if (spell.tickData.hastedDuration) newBuff.expiration = state.t + (spell.buffDuration / getHaste(state.currentStats));            
+        if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
 
-        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+        if (spell.buffType === "Function") {
+            newBuff.attFunction = spell.function;
+        }
+        else {
+            newBuff.attSpell = spell;
+        }
+
+
         state.activeBuffs.push(newBuff)
 
     }
@@ -51,18 +69,25 @@ export const addBuff = (state, spell, spellName) => {
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
 
+        // Buff doesn't exist already. We'll add the buff new.
         if (buffStacks === 0) {
-            state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
-                                        buffType: "spellAmp", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
-                                        buffedSpellName: spell.buffedSpellName
-                                        });
+            newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName}
+            state.activeBuffs.push(newBuff);
         }
+        // The buff does already exist. We can just add a stack.
+        // Note that the duration usually refreshes here too.
+        // We could add a flag to not refresh if it's ever necessary.
+
+        // If a buff is unable to stack, we'll just refresh the duration instead.
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
             if (buff.canStack) buff.stacks += 1;
+            buff.expiration = newBuff.expiration;
         }
     }
+
+    // This category could possibly be folded into others. Currently a bit of a messy catch all.
     else if (spell.buffType === "special") {
         
         // Check if buff already exists, if it does add a stack.
@@ -76,17 +101,8 @@ export const addBuff = (state, spell, spellName) => {
             if (buff.canStack) buff.stacks += 1;
         }
     }
-    else if (spell.buffType === "function") {
-        const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
-            tickRate: spell.tickRate / getHaste(state.currentStats), canPartialTick: spell.canPartialTick || false, 
-            next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-        newBuff.attFunction = spell.function;
-        newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
-        
-        state.activeBuffs.push(newBuff);
-
-    }     
     else {
+        addReport(state, "Adding Buff with INVALID category: " + spellName);
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
     }
     
@@ -126,6 +142,30 @@ export const removeBuffStack = (buffs, buffName) => {
  */
 export const checkBuffActive = (buffs, buffName) => {
     return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
+}
+
+
+export const generateBuffTarget = (state, spell) => {
+    // Attempt to find unique target for HoT.
+    const filteredBuffs = state.activeBuffs.filter(buff => buff.name === spell.name)
+
+    // Create an array of possible targets from 1 to 20. We could add better support for M+ by capping this at 5.
+    const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
+    // Get all the 'target' values from the input array
+    const targets = new Set(filteredBuffs.map(obj => obj.target));
+
+    // Find the smallest number that isn't in the 'targets'
+    for (let num of numbers) {
+        if (!targets.has(num)) {
+            addReport(state, "Adding Buff: " + spell.name + " to target " + num);
+            return num;
+        }
+    }
+    // If all buffs are taken, return 0 instead. The technically correct answer here would be to check for the shortest buff while we're finding the smallest
+    // number and return that but we'll leave that for another time. Note that it's a very minor optimization. 
+    return 0;
+
 }
 
 /** Check if a specific buff is active and returns how many stacks of it we have.
