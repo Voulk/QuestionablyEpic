@@ -1,3 +1,4 @@
+import { runHeal } from "./RestoDruidRamps";
 
 // Add onTick, onExpiry functions to spells.
 export const DRUIDSPELLDB = {
@@ -33,6 +34,42 @@ export const DRUIDSPELLDB = {
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Wild Growth": [
+        {
+        // HoT portion - Note the free tick on cast.
+        spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "heal"},
+        castTime: 0,
+        cost: 2.2, // 5500
+        type: "buff",
+        buffType: "function",
+        runFunc: function (state, spell, buff) {
+            const decayRate = 0.07 / (buff.expiration - buff.startTime);
+            const t = state.t - buff.startTime;
+            const wildGrowthAura = 1.15;
+
+            const decay = spell.coeff - decayRate * t;
+            const netCoeff = decay * wildGrowthAura;
+
+            const wgCast = {
+                name: "Wild Growth",
+                coeff: netCoeff, 
+                targets: 1, // TODO
+                expectedOverheal: 0, // TODO
+                secondaries: ["vers"], // TODO
+                type: "heal",
+            }
+            
+            runHeal(state, wgCast, "Wild Growth", true);
+
+        },
+        tickData: {tickRate: 1, canPartialTick: true, tickOnCast: false}, 
+        buffDuration: 7,
+        targets: 1, // Talent to increase to 6.
+        coeff: 0.175*0.96, // This is the base coefficient before decay.
+        expectedOverheal: 0.2,
+        flags: {targeted: true},
+        secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
 
 

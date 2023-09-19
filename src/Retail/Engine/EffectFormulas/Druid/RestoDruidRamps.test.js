@@ -16,7 +16,7 @@ import { DRUIDSPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
 
 describe("Get Spell Data", () => {
     const combos = [
-        ["Rejuvenation"],
+        ["Wild Growth"],
 
     ];
 
@@ -29,11 +29,11 @@ describe("Get Spell Data", () => {
     }); */
     
     const activeStats = {
-        intellect: 12000,
-        haste: 6000,
-        crit: 2000,
-        mastery: 6500,
-        versatility: 3000,
+        intellect: 2088,
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 205,
         stamina: 29000,
         critMult: 2,
     }
@@ -58,7 +58,7 @@ describe("Get Spell Data", () => {
     
     test("Sequences", () => {
         const results = [];
-        const iter = 5000;
+        const iter = 1;
         let healing = 0;
         let manaSpent = 0;
         combos.forEach(sequence => {

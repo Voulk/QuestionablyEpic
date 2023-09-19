@@ -188,7 +188,7 @@ const tickBuff = (state, buff, spellDB) => {
     else if (buff.buffType === "function") {
         const func = buff.attFunction;
         const spell = buff.attSpell;
-        func(state, spell);
+        func(state, spell, buff);
     }
 
     if (buff.onTick) buff.onTick(state, buff, runSpell, spellDB);

@@ -83,7 +83,7 @@ export const spellCleanup = (spell, state) => {
 
 
 export const addBuff = (state, spell, spellName) => {
-    let newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType};
+    let newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
     // (state.t + spell.castTime + spell.buffDuration)
 
     if (spell.buffType === "stats") {
@@ -107,8 +107,9 @@ export const addBuff = (state, spell, spellName) => {
         if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
 
         // The spell will run a function on tick.
-        if (spell.buffType === "Function") {
-            newBuff.attFunction = spell.function;
+        if (spell.buffType === "function") {
+            newBuff.attFunction = spell.runFunc;
+            newBuff.attSpell = spell;
         }
         // The spell will cast a spell on tick. Examples: Any standard HoT or DoT.
         else {
