@@ -16,7 +16,7 @@ import { DRUIDSPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
 
 describe("Get Spell Data", () => {
     const combos = [
-        ["Flourish", "Rejuvenation"],
+        ["Rejuvenation"],
 
     ];
 
@@ -30,11 +30,11 @@ describe("Get Spell Data", () => {
     
     const activeStats = {
         intellect: 2088,
-        haste: 0,
+        haste: 2000,
         crit: 0,
         mastery: 0,
         versatility: 205,
-        stamina: 29000,
+        stamina: 28000,
         critMult: 2,
     }
     /*
@@ -66,8 +66,7 @@ describe("Get Spell Data", () => {
                 const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
                 healing += result.totalHealing;
                 manaSpent += result.manaSpent;
-                console.log(result);
-                        
+                if (testSettings.reporting) console.log(result);
             };
             results.push(sequence + ". Healing: " + healing / iter + ". HPM: " + Math.round(100*healing / manaSpent)/100);
         })

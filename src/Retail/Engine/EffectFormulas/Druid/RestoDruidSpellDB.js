@@ -29,7 +29,9 @@ export const DRUIDSPELLDB = {
     },
     {
         // Regrowth HoT portion
-        type: "heal",
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 12,
         coeff: 0.0864, // The coefficient for a single regrowth tick.
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,

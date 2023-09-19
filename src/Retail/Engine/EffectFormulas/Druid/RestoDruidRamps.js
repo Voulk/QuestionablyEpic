@@ -16,6 +16,18 @@ const DRUIDCONSTANTS = {
     auraDamageBuff: 1.71,
     enemyTargets: 1, 
     echoExceptionSpells: [], // These are spells that do not consume or otherwise interact with our Echo buff.
+
+    yserasGift: {
+        // Regrowth HoT portion
+        name: "Ysera's Gift",
+        buffType: "heal",
+        buffDuration: 9999,
+        coeff: 0, // The coefficient for a single regrowth tick.
+        flatHeal: 0,
+        tickData: {tickRate: 5, canPartialTick: false, tickOnCast: false, hasted: false}, 
+        expectedOverheal: 0.4,
+        secondaries: []
+    }
 }
 
 
@@ -399,6 +411,10 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}) =>
 
     const druidSpells = applyLoadoutEffects(deepCopyFunction(DRUIDSPELLDB), settings, talents, state, stats);
     applyTalents(state, druidSpells, stats)
+
+    const yserasGift = {...DRUIDCONSTANTS.yserasGift};
+    yserasGift.flatHeal = getHealth(state.currentStats, talents) * 0.05;
+    addBuff(state, yserasGift, "Ysera's Gift");
 
     // Extra Settings
     if (settings.masteryEfficiency) DRUIDCONSTANTS.masteryEfficiency = settings.masteryEfficiency;

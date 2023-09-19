@@ -105,13 +105,23 @@ export const addBuff = (state, spell, spellName) => {
         state.activeBuffs.push(newBuff);
     }
     else if (spell.buffType === "damage" || spell.buffType === "heal" || spell.buffType === "function") {     
-        newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick, 
-                    next: state.t + getNextTick(state, spell.tickData.tickRate)}
+        newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick}
         
         // If our spell has a hasted duration we'll reduce the expiration. These are at least fairly rare nowadays.
         if (spell.tickData.hastedDuration) newBuff.expiration = state.t + (spell.buffDuration / getHaste(state.currentStats));
         
-        // The target of the buff is relevant to its functionality. Generate one.
+        // Most HoTs and DoTs will scale with haste via a faster tick rate. There are some exceptions though like Yseras Gift and
+        // so we'll check for a hasted flag so we can handle those too. If a flag doesn't exist at all then we'll assume it's hasted.
+        if (spell.tickData.hasted || spell.tickData.hasted === undefined) {
+            newBuff.next = state.t + getNextTick(state, spell.tickData.tickRate);
+            newBuff.hasted = true;
+        }
+        else {
+            newBuff.next = state.t + (spell.tickData.tickRate);
+            newBuff.hasted = false;
+        }
+
+        // If the target of the buff is relevant to its functionality. Generate one.
         if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
 
         // The spell will run a function on tick.
