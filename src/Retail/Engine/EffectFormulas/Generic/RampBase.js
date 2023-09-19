@@ -18,8 +18,16 @@ const GLOBALCONST = {
 // Returns any increased tick rate the spell might currently have.
 // Examples include Flourish, Photosynthesis.
 // Note that tick rate increases are multiplicative with each other. 
-export const getIncreasedTickRate = (state, spellName) => {
+export const getIncreasedTickRate = (state, tickRate) => {
+    let adjTick = tickRate;
+    state.activeBuffs.filter(buff => buff.buffType === "periodicSpeed").forEach(buff => {
+        adjTick /= buff.value;
+    });
+    return adjTick;
+}
 
+const getNextTick = (state, tickRate) => {
+    return getIncreasedTickRate(state, tickRate / getHaste(state.currentStats));
 }
 
 
@@ -38,7 +46,7 @@ export const runBuffs = (state, tickBuff, stats, spellDB) => {
                 state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
                 tickBuff(state, buff, spellDB);
 
-                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
+                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + getNextTick(state, buff.tickRate);
                 else buff.next = buff.next + (buff.tickRate);
             });  
         }
@@ -98,7 +106,7 @@ export const addBuff = (state, spell, spellName) => {
     }
     else if (spell.buffType === "damage" || spell.buffType === "heal" || spell.buffType === "function") {     
         newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick, 
-                    next: state.t + (spell.tickData.tickRate / getHaste(state.currentStats))}
+                    next: state.t + getNextTick(state, spell.tickData.tickRate)}
         
         // If our spell has a hasted duration we'll reduce the expiration. These are at least fairly rare nowadays.
         if (spell.tickData.hastedDuration) newBuff.expiration = state.t + (spell.buffDuration / getHaste(state.currentStats));
@@ -151,17 +159,21 @@ export const addBuff = (state, spell, spellName) => {
     }
 
     // This category could possibly be folded into others. Currently a bit of a messy catch all.
-    else if (spell.buffType === "special") {
+    else if (spell.buffType === "special" || spell.buffType === "periodicSpeed") {
         
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
 
-        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
+        if (buffStacks === 0) {
+            newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
+            state.activeBuffs.push(newBuff);
+        }
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
             if (buff.canStack) buff.stacks += 1;
+            buff.expiration = newBuff.expiration;
         }
     }
     else {

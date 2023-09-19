@@ -54,7 +54,7 @@ export const DRUIDSPELLDB = {
             const wgCast = {
                 name: "Wild Growth",
                 coeff: netCoeff, 
-                targets: 1, // TODO
+                targets: spell.targets, // TODO
                 expectedOverheal: 0, // TODO
                 secondaries: ["vers"], // TODO
                 type: "heal",
@@ -70,6 +70,21 @@ export const DRUIDSPELLDB = {
         expectedOverheal: 0.2,
         flags: {targeted: true},
         secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+    }],
+    "Flourish": [{
+        // Two portions: extends active HoTs, and then increases tick rate.
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "heal"},
+        type: "extension",
+        castTime: 0, 
+        cost: 0, 
+        extensionList: ["Rejuvenation", "Regrowth", "Wild Growth", "Cenarion Ward", "Spring Blossoms", "Adaptive Swarm", "Lifebloom"],
+        extensionDuration: 6,
+    },
+    {
+        type: "buff",
+        buffType: "periodicSpeed",
+        buffDuration: 6,
+        value: 1.25,
     }],
 
 

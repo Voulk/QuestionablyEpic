@@ -285,7 +285,12 @@ const runSpell = (fullSpell, state, spellName, druidSpells) => {
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
                 const newBuff = addBuff(state, spell, spellName);
-                if (spell.tickData.tickOnCast) {tickBuff(state, newBuff, druidSpells) };
+                if ('tickData' in spell && spell.tickData.tickOnCast) {tickBuff(state, newBuff, druidSpells) };
+            }
+            else if (spell.type === "extension") {
+                state.activeBuffs.filter(buff => spell.extensionList.includes(buff.name)).forEach(buff => {
+                    buff.expiration += spell.extensionDuration;
+                })
             }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.

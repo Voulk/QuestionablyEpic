@@ -16,12 +16,12 @@ import { DRUIDSPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
 
 describe("Get Spell Data", () => {
     const combos = [
-        ["Wild Growth"],
+        ["Flourish", "Rejuvenation"],
 
     ];
 
     const baseSpells = DRUIDSPELLDB;
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false};
     const talents = {...druidTalents};
    
     /*Object.keys(talents).forEach(talentName => {
@@ -66,6 +66,7 @@ describe("Get Spell Data", () => {
                 const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
                 healing += result.totalHealing;
                 manaSpent += result.manaSpent;
+                console.log(result);
                         
             };
             results.push(sequence + ". Healing: " + healing / iter + ". HPM: " + Math.round(100*healing / manaSpent)/100);
