@@ -168,16 +168,10 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.4;
+    const atonementBaseTransfer = 0.32;
     return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
-
-
-// This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
-const getTime = (t) => {
-    return Math.round(t*1000)/1000
-}
 
 // Some spells do more than the usual amount of atonement healing. An example might be through Abssal Reverie.
 // We'll handle those here.
@@ -359,6 +353,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
+            console.log(spellName);
             state.manaSpent += fullSpell[0].cost;
             fullSpell.forEach(spell => {
 
