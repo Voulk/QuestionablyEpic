@@ -35,7 +35,7 @@ export default function OneShotDataTable(props) {
           {rows.map((row) => (
             <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
               <TableCell component="th" scope="row">
-                <WowheadTooltip type="spell" id={row.spellID} domain={currentLanguage}>
+                <WowheadTooltip type="spell" id={row.spellID} domain={currentLanguage} >
                   <div style={{ display: "inline-flex", alignItems: "center" }}>
                     <OneShotSpellIcon spell={row} iconType={"Spell"} className="table" />
                     <div>{row.ability}</div>

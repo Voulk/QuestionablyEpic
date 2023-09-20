@@ -20,7 +20,7 @@ export const DISCCONSTANTS = {
     masteryEfficiency: 1,
 
     auraHealingBuff: 1, 
-    auraDamageBuff: 0.94,
+    auraDamageBuff: 0.94 * 1.1,
     
     atonementMults: {"shadow": 1, "holy": 1},
     shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
@@ -353,7 +353,6 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
-            console.log(spellName);
             state.manaSpent += fullSpell[0].cost;
             fullSpell.forEach(spell => {
 

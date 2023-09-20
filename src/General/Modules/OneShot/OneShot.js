@@ -244,7 +244,7 @@ export default function OneShot(props) {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#313131" }}>
+    <div style={{ backgroundColor: "#313131", paddingTop: "34px" }}>
       <div className={classes.root}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
