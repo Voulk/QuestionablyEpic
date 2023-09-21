@@ -173,7 +173,7 @@ export default function OneShot(props) {
   const [selectedSpec, setSelectedSpec] = React.useState("preservation");
   const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
   const [enemySpellList, setEnemySpellList] = React.useState([]);
-  const [keyLevel, setKeyLevel] = React.useState(24);
+  const [keyLevel, setKeyLevel] = React.useState(20);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
 
   const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 29000, armor: 8000, absorb: 0, health: calcHealth(29000, 0) });

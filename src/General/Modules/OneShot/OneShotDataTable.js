@@ -42,8 +42,8 @@ export default function OneShotDataTable(props) {
                   </div>
                 </WowheadTooltip>
               </TableCell>
-              <TableCell align="right">{row.tyrannical}</TableCell>
-              <TableCell align="right">{row.fortified}</TableCell>
+              <TableCell align="right">{row.tyrannical.toLocaleString()}</TableCell>
+              <TableCell align="right">{row.fortified.toLocaleString()}</TableCell>
             </TableRow>
           ))}
         </TableBody>
