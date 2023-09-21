@@ -49,12 +49,314 @@ export const enemySpellDB =
     "Dawn of the Infinites: Murozond's Rise": [{
 
     }],
-    "Darkheart Thicket": [{
-
-    }],
-    "Black Rook Hold": [{
-
-    }],
+    "Darkheart Thicket": 
+    [
+        {
+            "name": "Grievous Leap",
+            "spellID": 196348,
+            "bossName": "Archdruid Glaidalis",
+            "baseDamage": 32768,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Grievous Tear (DoT)",
+            "spellID": 196376,
+            "bossName": "Archdruid Glaidalis",
+            "baseDamage": 19456,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Crushing Grip (Direct)",
+            "spellID": 204611,
+            "bossName": "Oakheart",
+            "baseDamage": 40959,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Crushing Grip (DoT)",
+            "spellID": 204611,
+            "bossName": "Oakheart",
+            "baseDamage": 2191,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Shattered Earth",
+            "spellID": 204666,
+            "bossName": "Oakheart",
+            "baseDamage": 43007,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Nightmare Breath (Direct)",
+            "spellID": 204667,
+            "bossName": "Oakheart",
+            "baseDamage": 32768,
+            "damageType": "Magic",
+            "school": "Fire",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Nightmare Breath (DoT)",
+            "spellID": 204667,
+            "bossName": "Oakheart",
+            "baseDamage": 10240,
+            "damageType": "Magic",
+            "school": "Fire",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Breath of Corruption (DoT)",
+            "spellID": 191325,
+            "bossName": "Dresaron",
+            "baseDamage": 32768,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Down Draft (DoT)",
+            "spellID": 199345,
+            "bossName": "Dresaron",
+            "baseDamage": 8192,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Earthshaking Roar (Direct)",
+            "spellID": 199389,
+            "bossName": "Dresaron",
+            "baseDamage": 40959,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Earthshaking Roar (DoT)",
+            "spellID": 199389,
+            "bossName": "Dresaron",
+            "baseDamage": 20480,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Feed on the Weak (DoT)",
+            "spellID": 200238,
+            "bossName": "Shade of Xavius",
+            "baseDamage": 10240,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Nightmare Bolt",
+            "spellID": 200185,
+            "bossName": "Shade of Xavius",
+            "baseDamage": 33791,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Apocalyptic Nightmare",
+            "spellID": 200050,
+            "bossName": "Shade of Xavius",
+            "baseDamage": 55295,
+            "damageType": "Magic",
+            "school": "Fire",
+            "avoidance": false,
+            "source": "Boss"
+        }
+    ],
+    "Black Rook Hold": 
+    [
+        {
+            "name": "Reap Soul",
+            "spellID": 194956,
+            "baseDamage": 147748,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Swirling Scythe",
+            "spellID": 196517,
+            "baseDamage": 92342,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Soul Echoes",
+            "spellID": 194960,
+            "baseDamage": 92343,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Soul Burst",
+            "spellID": 196587,
+            "baseDamage": 81262,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Vengeful Shear (Tank)",
+            "spellID": 197418,
+            "baseDamage": 184685,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Dark Rush",
+            "spellID": 197478,
+            "baseDamage": 72027,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Brutal Glaive (Direct)",
+            "spellID": 197546,
+            "baseDamage": 59099,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Brutal Glaive (DoT)",
+            "spellID": 197546,
+            "baseDamage": 14775,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Arcane Blitz",
+            "spellID": 197797,
+            "baseDamage": 55406,
+            "damageType": "Magic",
+            "school": "Arcane",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Earthshaking Stomp",
+            "spellID": 198073,
+            "baseDamage": 59099,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Hateful Charge",
+            "spellID": 198080,
+            "baseDamage": 81262,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Brutal Haymaker (Tank)",
+            "spellID": 198245,
+            "baseDamage": 147748,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Unerring Shear (Direct)",
+            "spellID": 198635,
+            "baseDamage": 147748,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Unerring Shear (DoT)",
+            "spellID": 198635,
+            "baseDamage": 14775,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Whirling Blade",
+            "spellID": 198641,
+            "baseDamage": 92343,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Shadow Bolt",
+            "spellID": 198833,
+            "baseDamage": 71836,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Stinging Swarm (DoT)",
+            "spellID": 201733,
+            "baseDamage": 77568,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Shadow Bolt Volley",
+            "spellID": 202019,
+            "baseDamage": 110811,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        }
+    ],
     "Waycrest Manor": 
     [
         {

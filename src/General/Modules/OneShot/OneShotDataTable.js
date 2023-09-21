@@ -6,20 +6,25 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
 import { OneShotSpellIcon } from "./OneShotSpellIcon";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
-function createData(ability, tyrannical, fortified, spellID, icon, guid, active) {
-  return { ability, tyrannical, fortified, spellID, icon, guid, active };
+function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
+  return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
 }
 
 export default function OneShotDataTable(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
+  
+
   const data = props.data;
-  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellIDw, true));
+  const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellID, true, row.bossName));
+  console.log(rows);
+  const bossNames = ["Archdruid Glaidalis", "Oakheart", "Dresaron", "Shade of Xavius", "Trash"];
 
   return (
     <TableContainer component={Paper} elevation={0} sx={{ border: "1px solid rgba(255, 255, 255, 0.24)" }}>
@@ -32,20 +37,33 @@ export default function OneShotDataTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-              <TableCell component="th" scope="row">
-                <WowheadTooltip type="spell" id={row.spellID} domain={currentLanguage} >
-                  <div style={{ display: "inline-flex", alignItems: "center" }}>
-                    <OneShotSpellIcon spell={row} iconType={"Spell"} className="table" />
-                    <div>{row.ability}</div>
-                  </div>
-                </WowheadTooltip>
+          {bossNames.map((boss) => (
+            <>
+            <TableRow key={boss} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+              <TableCell component="th" scope="row" colSpan={3}>
+                <Typography style={{color: "goldenrod"}}>
+                  {boss}
+                </Typography>
               </TableCell>
-              <TableCell align="right">{row.tyrannical.toLocaleString()}</TableCell>
-              <TableCell align="right">{row.fortified.toLocaleString()}</TableCell>
             </TableRow>
-          ))}
+
+            {rows.filter(row => row.bossName === boss).map((row) => (
+              <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                <TableCell component="th" scope="row">
+                  <WowheadTooltip type="spell" id={row.spellID} domain={currentLanguage} >
+                    <div style={{ display: "inline-flex", alignItems: "center" }}>
+                      <OneShotSpellIcon spell={row} iconType={"Spell"} className="table" />
+                      <div>{row.ability}</div>
+                    </div>
+                  </WowheadTooltip>
+                </TableCell>
+                <TableCell align="right">{row.tyrannical.toLocaleString()}</TableCell>
+                <TableCell align="right">{row.fortified.toLocaleString()}</TableCell>
+              </TableRow>
+            ))}
+            </>
+            ))}
+
         </TableBody>
       </Table>
     </TableContainer>
