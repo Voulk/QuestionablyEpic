@@ -55,7 +55,8 @@ export const enemySpellDB =
     "Black Rook Hold": [{
 
     }],
-    "Waycrest Manor": [
+    "Waycrest Manor": 
+    [
         {
             "name": "Bramble Bolt",
             "spellID": 260701,
@@ -66,7 +67,16 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Jagged Nettles",
+            "name": "Jagged Nettles (Direct)",
+            "spellID": 260741,
+            "baseDamage": 36863,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Jagged Nettles (DoT)",
             "spellID": 260741,
             "baseDamage": 9216,
             "damageType": "Physical",
@@ -75,7 +85,7 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Aura of Thorns",
+            "name": "Aura of Thorns (DoT)",
             "spellID": 268122,
             "baseDamage": 3072,
             "damageType": "Physical",
@@ -93,7 +103,7 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Unstable Runic Mark",
+            "name": "Unstable Runic Mark (Direct)",
             "spellID": 260703,
             "baseDamage": 28672,
             "damageType": "Magic",
@@ -102,7 +112,16 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Aura of Dread",
+            "name": "Unstable Runic Mark (DoT)",
+            "spellID": 260703,
+            "baseDamage": 5120,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Aura of Dread (DoT)",
             "spellID": 268088,
             "baseDamage": 510,
             "damageType": "Magic",
@@ -120,7 +139,7 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Soul Thorns",
+            "name": "Soul Thorns (DoT)",
             "spellID": 260551,
             "baseDamage": 1134,
             "damageType": "Physical",
@@ -129,7 +148,7 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Crush",
+            "name": "Crush (Tank)",
             "spellID": 260508,
             "baseDamage": 92159,
             "damageType": "Physical",
@@ -138,7 +157,7 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Wildfire",
+            "name": "Wildfire (DoT)",
             "spellID": 260570,
             "baseDamage": 2127,
             "damageType": "Magic",
@@ -147,114 +166,126 @@ export const enemySpellDB =
             "source": "Boss"
         },
         {
-            "name": "Burning Brush",
+            "name": "Burning Brush (DoT)",
             "spellID": 260541,
             "baseDamage": 8192,
             "damageType": "Magic",
             "school": "Fire",
             "avoidance": false,
             "source": "Boss"
-    }],
-    "Atal'Dazar": [
-        {
-            "name": "Rapid Decay",
-            "spellID": 250241,
-            "baseDamage": 607,
-            "damageType": "Magic",
-            "school": "Shadow",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Toxic Pool",
-            "spellID": 250585,
-            "baseDamage": 5687,
-            "damageType": "Magic",
-            "school": "Nature",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Toxic Leap",
-            "spellID": 250258,
-            "baseDamage": 61439,
-            "damageType": "Magic",
-            "school": "Nature",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Noxious Stench",
-            "spellID": 250368,
-            "baseDamage": 20479,
-            "damageType": "Magic",
-            "school": "Nature",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Lingering Nausea",
-            "spellID": 250372,
-            "baseDamage": 5267,
-            "damageType": "Magic",
-            "school": "Nature",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Soulrend",
-            "spellID": 259190,
-            "baseDamage": 37396,
-            "damageType": "Magic",
-            "school": "Shadow",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Soulfeast",
-            "spellID": 256577,
-            "baseDamage": 851,
-            "damageType": "Magic",
-            "school": "Shadow",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Echoes of Shadra",
-            "spellID": 250050,
-            "baseDamage": 67583,
-            "damageType": "Magic",
-            "school": "Shadow",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Shadowy Remains",
-            "spellID": 250036,
-            "baseDamage": 1843,
-            "damageType": "Magic",
-            "school": "Shadow",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Wracking Pain",
-            "spellID": 250096,
-            "baseDamage": 14336,
-            "damageType": "Magic",
-            "school": "Shadow",
-            "avoidance": false,
-            "source": "Boss"
-        },
-        {
-            "name": "Skewer",
-            "spellID": 249919,
-            "baseDamage": 112638,
-            "damageType": "Physical",
-            "school": "Physical",
-            "avoidance": false,
-            "source": "Boss"
-        }],
+        }
+    ],
+    "Atal'Dazar": 
+        [
+            {
+                "name": "Rapid Decay (DoT)",
+                "spellID": 250241,
+                "baseDamage": 607,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Toxic Pool (DoT)",
+                "spellID": 250585,
+                "baseDamage": 5687,
+                "damageType": "Magic",
+                "school": "Nature",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Toxic Leap",
+                "spellID": 250258,
+                "baseDamage": 61439,
+                "damageType": "Magic",
+                "school": "Nature",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Noxious Stench (DoT)",
+                "spellID": 250368,
+                "baseDamage": 20479,
+                "damageType": "Magic",
+                "school": "Nature",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Lingering Nausea (DoT)",
+                "spellID": 250372,
+                "baseDamage": 5267,
+                "damageType": "Magic",
+                "school": "Nature",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Soulrend",
+                "spellID": 259190,
+                "baseDamage": 37396,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Soulfeast (DoT)",
+                "spellID": 256577,
+                "baseDamage": 851,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Echoes of Shadra",
+                "spellID": 250050,
+                "baseDamage": 67583,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Shadowy Remains (DoT)",
+                "spellID": 250036,
+                "baseDamage": 1843,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Wracking Pain (DoT)",
+                "spellID": 250096,
+                "baseDamage": 14336,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Wracking Pain (DoT)",
+                "spellID": 250096,
+                "baseDamage": 14336,
+                "damageType": "Magic",
+                "school": "Shadow",
+                "avoidance": false,
+                "source": "Boss"
+            },
+            {
+                "name": "Skewer (Tank)",
+                "spellID": 249919,
+                "baseDamage": 112638,
+                "damageType": "Physical",
+                "school": "Physical",
+                "avoidance": false,
+                "source": "Boss"
+            }
+        ],
     "Everbloom": [{
 
     }],

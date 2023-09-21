@@ -36,7 +36,6 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
       rel="noopener noreferrer"
       key={keyProp}
       style={{ color: "white", textDecoration: "none" }}
-      data-wh-icon-size="small"
     >
       {children}
     </a>
