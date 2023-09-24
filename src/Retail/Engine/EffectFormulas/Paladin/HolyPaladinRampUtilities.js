@@ -1,5 +1,5 @@
 import { buildRamp } from "./HolyPaladinRampGen";
-import { runCastSequence } from "./HolyPaladinRamps";
+import { runCastSequence } from "./HolyPaladinRamps2";
 
 // This is a very simple function that just condenses our ramp sequence down to make it more human readable in reports. 
 const rampShortener = (seq) => {

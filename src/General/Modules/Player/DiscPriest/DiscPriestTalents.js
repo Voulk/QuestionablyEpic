@@ -18,8 +18,8 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    // we don't have full information about a character.
    // As always, Top Gear is able to provide a more complete picture. 
    if (settings['DefaultLoadout']) {
-       settings['T29_2'] = true;
-       settings['T29_4'] = true;
+       settings['T31_2'] = true;
+       settings['T31_4'] = true;
 
    }
 
@@ -28,11 +28,11 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
 
    if (talents.throesOfPain) {
        // ASSUMPTION: Throes of Pain should work on both DoTs but let's double check anyway.
-       discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.03 * talents.throesOfPain);
-       discSpells['Purge the Wicked'][0].coeff *= (1 + 0.03 * talents.throesOfPain);
+       discSpells['Shadow Word: Pain'][0].coeff *= (1 + 0.025 * talents.throesOfPain);
+       discSpells['Purge the Wicked'][0].coeff *= (1 + 0.025 * talents.throesOfPain);
 
-       discSpells['Shadow Word: Pain'][1].coeff *= (1 + 0.03 * talents.throesOfPain);
-       discSpells['Purge the Wicked'][1].coeff *= (1 + 0.03 * talents.throesOfPain);
+       discSpells['Shadow Word: Pain'][1].coeff *= (1 + 0.025 * talents.throesOfPain);
+       discSpells['Purge the Wicked'][1].coeff *= (1 + 0.025 * talents.throesOfPain);
    }
 
    // Disc specific talents.
@@ -53,7 +53,27 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            type: "buffExtension",
            buffName: "Purge the Wicked",
            extension: 1.5,
-   })
+        })
+   }
+   if (talents.sanctuary) {
+        discSpells['Smite'].push({
+            name: "Smite (Sanctuary)",
+            type: "heal",
+            coeff: 0.8,
+            secondaries: ['vers'],
+            overheal: 0.03,
+        });
+   }
+   if (talents.schism) {
+        // Adds Schisms former effect to Mind Blast
+        discSpells['Mind Blast'].push({
+            type: "buff",
+            buffDuration: 9,
+            buffType: "special",
+            value: 1.1,
+            name: "Schism",
+            canStack: false,
+        });
    }
    if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
    if (talents.enduringLuminescence) {
@@ -102,24 +122,29 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            }
        })
    }
-   if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.2 * talents.stolenPsyche);
+   //if (talents.stolenPsyche) discSpells['Mind Blast'][0].atonementBonus = (1 + 0.2 * talents.stolenPsyche);
 
    // Tier 3 talents
    if (talents.trainOfThought) {
        // Can be mostly handled in RampGen.
+       discSpells['Smite'].push({
+        type: "cooldownReduction",
+        cooldownReduction: 0.5,
+        targetSpell: "Penance",
+       })
    }
    if (talents.blazeOfLight) {
        //+7.5% to Penance / Smite.
        discSpells['Penance'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
        discSpells['Smite'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
-       discSpells['Power Word: Solace'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
    }
    if (talents.divineAegis) {
        // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
        // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
-       stats.critMult *= (1 + 0.05 * talents.divineAegis);
-
+       stats.critMult *= (1 + 0.1 * talents.divineAegis);
+       // TODO: PW:S Crit mod
    }
+   /*
    if (talents.wrathUnleashed) {
        discSpells["Light's Wrath"][0].castTime -= 1;
        discSpells["Light's Wrath"][0].critMod = 0.15;
@@ -129,16 +154,16 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            buffType: 'special',
            value: 1.4, //
            buffDuration: 15,
-       })
+       }) 
        // TODO: Add Smite buff
-   }
+   }*/
    if (talents.harshDiscipline && settings.harshDiscipline) {
        // Can probably just add a buff on sequence start for the first Penance.
        state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
    }
    if (talents.expiation) {
-       discSpells["Mind Blast"][0].coeff *= 1.1;
-       discSpells["Shadow Word: Death"][0].coeff *= 1.1;
+       discSpells["Mind Blast"][0].coeff *= (1 + 0.1 * talents.expiation);
+       discSpells["Shadow Word: Death"][0].coeff *= (1 + 0.1 * talents.expiation);
        // TODO: Add special function to Mindblast / SWD spell that consumes SWP
        discSpells["Mind Blast"].push(
        {
@@ -168,7 +193,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    }
    if (talents.darkIndulgence) {
        discSpells["Mind Blast"][0].cost *= 0.6; // 40% cost reduction.
-       discSpells["Mind Blast"][0].charges = 2;
+       discSpells["Mind Blast"].push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true});
    }
    if (talents.twilightEquilibrium) {
        // This is not required to be implemented here, and is done elsewhere.
@@ -177,13 +202,28 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    if (talents.inescapableTorment) {
        // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
    }
-   if (talents.embraceShadow) {
-       discSpells["Shadow Covenant"][1].buffDuration += 8;
-   }
+    /*
    if (talents.twilightCorruption) {
        // Shadow Covenant increases damage / healing by an extra 10%.
        discSpells["Shadow Covenant"][1].value += 0.1;
+   }*/
+   if (talents.embraceShadow) {
+        discSpells["Shadow Covenant"][1].buffDuration += 8;
    }
+
+   // Passive Shadow Cov
+   if (talents.shadowCovenant) {
+    const shadowCov = {
+        type: "buff",
+        buffDuration: 15 + (8 * talents.embraceShadow),
+        buffType: "special",
+        value: 1.25 + (0.1 * talents.twilightCorruption),
+        name: "Shadow Covenant",
+        canStack: false,
+    }
+    discSpells["Mindbender"].push(shadowCov);
+   }
+
    if (talents.crystallineReflection) {
        discSpells["Power Word: Shield"].push({
            name: "Crystalline Reflection",
@@ -203,9 +243,9 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    if (talents.aegisOfWrath) {
        discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - settings.aegisOfWrathWastage);
    }
-   if (talents.makeAmends) {
+   /*if (talents.makeAmends) {
        // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
-   }
+   }*/
    if (talents.shatteredPerceptions) {
        discSpells['Mindgames'][0].coeff *= 1.25;
        discSpells['Mindgames'][1].coeff *= 1.25;
@@ -274,26 +314,6 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
    // Unity Note: Unity is automatically converted to the legendary it represents and should not have an entry here.
 
-
-   // -- Shadow Word: Manipulation --
-   // SWM has two effects. 
-   // -> First, it buffs the healing / absorb portion of the spell by 10%.
-   // -> Secondly, it adds a large crit buff when the absorb is used. This can technically vary from 0->50% but we'll use an average of 45%.
-   if (settings['Shadow Word: Manipulation']) {
-       discSpells['Mindgames'][1].coeff *= 1.1; 
-
-       discSpells['Mindgames'].push({
-           type: "buff",
-           castTime: 0,
-           cost: 0,
-           cooldown: 0,
-           buffType: 'statsMult',
-           stat: 'crit',
-           value: 45 * 35, // This is equal to 45% crit, though the stats are applied post DR. 
-           buffDuration: 10,
-   })
-   }; 
-
    // -- Penitent One --
    // Power Word: Radiance has a chance to make your next Penance free, and fire 3 extra bolts.
    // This is a close estimate, and could be made more accurate by tracking the buff and adding ticks instead of power.
@@ -322,11 +342,9 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    }
 
    // ==== Tier & Other Effects ====
-   // Remember that anything that isn't wired into a ramp can just be calculated normally (like Genesis Lathe for example).
+   // Remember that anything that isn't wired into a ramp can just be calculated normally (like flat heal procs trinkets).
 
-   
-
-   // If player doesn't have 4T28, then we might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
+   // We might still opt to start them with a PotDS proc on major ramps since the chance of it being active is extremely high.
    // This is unnecessary with 4pc since we'll always have a PotDS proc during our sequences due to Radiance always coming before Penance.
    if (settings['Power of the Dark Side']) {
        state.activeBuffs.push({name: "Power of the Dark Side", expiration: 999, buffType: "special", value: 1.5, stacks: 1, canStack: true})
@@ -336,10 +354,6 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
    // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
    //if (settings["Instructor's Divine Bell"]) discSpells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
-   if (settings["Instructor's Divine Bell (new)"]) discSpells["Instructor's Divine Bell (new)"][0].value = settings["Instructor's Divine Bell (new)"];
-   if (settings["Flame of Battle"]) discSpells["Flame of Battle"][0].value = settings["Flame of Battle"];
-   if (settings['Shadowed Orb']) discSpells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
-   if (settings['Soulletting Ruby']) discSpells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
    if (settings["Voidmender's Shadowgem"]) discSpells["Voidmender's Shadowgem"][0].value = settings["Voidmender's Shadowgem"];
    //
 

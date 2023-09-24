@@ -7,7 +7,7 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const rampTime = 180;
 
     // Baselines
-    const discBaseline = allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const discBaseline = 5000// allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
     //console.log("DISC BASELINE: " + discBaseline);
     /*
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])

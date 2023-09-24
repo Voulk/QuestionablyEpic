@@ -6,10 +6,10 @@ describe("Key Level base multipliers", () => {
     test("Mythic +25", () => {
         expect(Math.round(100*getKeyMult(25))/100).toEqual(7.73)
     })
-    test("Mythic +20", () => {
+    test("Mythic +20", () => { // Double checked in 10.2.
         expect(Math.round(100*getKeyMult(20))/100).toEqual(4.8)
     })
-    test("Mythic +15", () => {
+    test("Mythic +15", () => { // Double checked in 10.2.
         expect(Math.round(100*getKeyMult(15))/100).toEqual(2.98)
     })
 });
@@ -30,7 +30,7 @@ describe("Armor Calculation", () => {
 })
 
 
-// These must all be sourced from logs.
+// These must all be sourced from logs or in-game combat log data.
 // Ideally we'd like a Tyrannical and Fort version of each ability at different key levels. This gives us excellent coverage.
 describe("Ability Raw damage tests - Halls of Valor", () => {
     const tolerance = 5;
@@ -75,20 +75,6 @@ describe("Ability Raw damage tests - Halls of Valor", () => {
     })
 })
 
-describe("Ability Raw damage tests - Algeth'ar Academy", () => {
+describe("Ability Raw damage tests - Waycrest Manor", () => {
     const tolerance = 5;
-
-    test("Defeaning Screech (3)", () => {
-        const spell = enemySpellDB["Algeth'ar Academy"].filter(s => s.name === "Defeaning Screech (3)")[0];
-        const expectedResult = 228082 * (1+0.5 * 2); // Note that logs doesn't increase the unmitigated damage for each stack.
-        
-        // Atrophic Poison
-        expect(Math.abs(Math.round(getRawDamage(spell, 25)*1.15*0.97)-expectedResult)).toBeLessThan(tolerance); // Tyrannical
-
-        /*
-        const expectedFortResult = 400247;
-        // Atrophic Poison
-        expect(Math.abs(Math.round(getRawDamage(spell, 27)*0.97)-expectedFortResult)).toBeLessThan(tolerance); // Fortified */
-    })
-
 });

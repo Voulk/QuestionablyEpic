@@ -20,7 +20,7 @@ export const DISCCONSTANTS = {
     masteryEfficiency: 1,
 
     auraHealingBuff: 1, 
-    auraDamageBuff: 0.94,
+    auraDamageBuff: 0.94 * 1.1,
     
     atonementMults: {"shadow": 1, "holy": 1},
     shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
@@ -168,16 +168,10 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.4;
+    const atonementBaseTransfer = 0.32;
     return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
-
-
-// This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
-const getTime = (t) => {
-    return Math.round(t*1000)/1000
-}
 
 // Some spells do more than the usual amount of atonement healing. An example might be through Abssal Reverie.
 // We'll handle those here.

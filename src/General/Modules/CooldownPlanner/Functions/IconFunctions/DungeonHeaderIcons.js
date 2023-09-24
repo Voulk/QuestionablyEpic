@@ -56,6 +56,13 @@ import TheUnderrot from "../../../../../Images/MythicPlus/TheUnderrot.png";
 import TheVortexPinnacle from "../../../../../Images/MythicPlus/TheVortexPinnacle.png";
 import NL from "../../../../../Images/MythicPlus/NeltharionsLair.png";
 
+
+import Ataldazar from "../../../../../Images/MythicPlus/Ataldazar.png";
+import WaycrestManor from "../../../../../Images/MythicPlus/WaycrestManor.png";
+import ThroneOfTheTides from "../../../../../Images/MythicPlus/ThroneOfTheTides.png";
+import Everbloom from "../../../../../Images/MythicPlus/Everbloom.png";
+import DawnOfTheInfinites from "../../../../../Images/MythicPlus/DawnOfTheInfinites.png";
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -196,6 +203,31 @@ export default function DungeonHeaderIcons(props) {
     source = CourtofStars;
   }
 
+  // Ataldazar
+  if (props === 968) {
+    source = Ataldazar;
+  }
+
+  // Waycrest Manor
+  if (props === 1021) {
+    source = WaycrestManor;
+  }
+
+  // Throne of the Tides
+  if (props === 65) {
+    source = ThroneOfTheTides;
+  }
+
+  // Everbloom
+  if (props === 537) {
+    source = Everbloom;
+  }
+
+  // Dawn of the Infinites
+  if (props === 0 || props === 1) {
+    source = DawnOfTheInfinites;
+  }
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Legion Timewalking                                       */
   /* ---------------------------------------------------------------------------------------------- */
@@ -205,11 +237,11 @@ export default function DungeonHeaderIcons(props) {
     source = NL;
   }
   /* -------------------------------------- Darkheart Thicket ------------------------------------- */
-  if (props === 762) {
+  if (props === 762 || props === 2) {
     source = DHT;
   }
   /* --------------------------------------- Black Rook Hold -------------------------------------- */
-  if (props === 740) {
+  if (props === 740 || props === 3) {
     source = BRH;
   }
   /* --------------------------------------- Eye of Azshara --------------------------------------- */

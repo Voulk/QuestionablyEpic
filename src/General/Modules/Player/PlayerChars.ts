@@ -18,20 +18,21 @@ export function createPlayerChars(): PlayerChars {
   const playerChars: PlayerChars = {
     allChar: [],
     activeChar: 0,
-  
+    
     init() {
       let playerChars = JSON.parse(ls.get("allChar")) || [];
-  
+      let specsAdded: String[] = [];
       let charArray: Player[] = [];
+      let index = 0;
       if (playerChars.length !== 0) {
-        let index = 0;
         playerChars.forEach(function (player: any) {
           if (player.gameType === "Classic" || player.gameType === "BurningCrusade") {
-            charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
+            //charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
           }
           else {
             let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
             if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+            specsAdded.push(player.spec);
             charArray.push(newChar);
           }
           index += 1;
@@ -39,7 +40,17 @@ export function createPlayerChars(): PlayerChars {
       } else {
         charArray = [];
       }
-  
+      
+      // Auto-add any missing specs.
+      ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"].forEach(spec => {
+          if (!(specsAdded.includes(spec))) {
+            const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Preservation", "Pres");
+            let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default");
+            if (spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, []);
+            charArray.push(newChar);
+          }
+      })
+
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
       this.setupChars();

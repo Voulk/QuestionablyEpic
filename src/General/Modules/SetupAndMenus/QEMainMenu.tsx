@@ -92,9 +92,10 @@ export default function QEMainMenu(props: Props) {
           { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare" },
           // Tools
           { route: "/cooldownplanner", disabled: false, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner" },
-          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 1, localization: "MainMenu.FightAnalysis" },
-          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 2, localization: "MainMenu.SequenceSandbox" },
-          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 3, localization: "MainMenu.Profile" },
+          { route: "/oneshot", disabled: false, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot"},
+          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis" },
+          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox" },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile" },
         ]
       : [
           // Gearing

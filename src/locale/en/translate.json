@@ -171,7 +171,7 @@
       },
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
-      "CooldownPlanner": "Cooldown Planner (Alpha)",
+      "CooldownPlanner": "Cooldown Planner (Beta)",
       "ExploreCovenants": "Covenants & Conduits",
       "FightAnalysis": "Fight Analysis (Alpha)",
       "EmbellishmentAnalysis": "Embellishment Analysis",
@@ -193,12 +193,14 @@
         "FightAnalysis": "",
         "TrinketAnalysis": "A multiple item level trinket graph",
         "UpgradeFinder": "Find your next piece of gear",
-        "SequenceSandbox": "Details coming soon"
+        "SequenceSandbox": "Details coming soon",
+        "OneShot": "Mythic+ Damage Calculator"
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
-      "SequenceSandbox": "Sequence Sandbox (Pre-Alpha)"
+      "SequenceSandbox": "Sequence Sandbox (Pre-Alpha)",
+      "OneShot": "One Shot (Beta)"
     },
     "Name": "Name",
     "No": "No",
@@ -207,7 +209,9 @@
     "PatreonTiers": {
       "Diamond": "Diamond",
       "Gold": "Gold",
+      "Sapphire": "Sapphire",
       "RollsRoyce": "Rolls Royce"
+
     },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",

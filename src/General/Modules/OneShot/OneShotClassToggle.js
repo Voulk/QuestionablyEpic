@@ -13,7 +13,7 @@ export default function OneShotClassToggle(props) {
   // const classList = ["Evoker", "Druid", "Priest", "Shaman", "Monk", "Warrior", "DemonHunter", "DeathKnight", "Rogue", "Warlock", "Hunter", "Mage"];
 
   const newClassList = [
-    { Class: "evoker", specs: ["preservation", "devastation"] },
+    { Class: "evoker", specs: ["preservation", "devastation", "augmentation"] },
     { Class: "paladin", specs: ["holy", "protection", "retribution"] },
     { Class: "druid", specs: ["restoration", "balance", "feral", "guardian"] },
     { Class: "priest", specs: ["discipline", "holy", "shadow"] },
