@@ -171,9 +171,9 @@ export default function OneShot(props) {
 
   const [selectedClass, setSelectedClass] = React.useState("evoker");
   const [selectedSpec, setSelectedSpec] = React.useState("preservation");
-  const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
+  const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[3]);
   const [enemySpellList, setEnemySpellList] = React.useState([]);
-  const [keyLevel, setKeyLevel] = React.useState(24);
+  const [keyLevel, setKeyLevel] = React.useState(20);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
 
   const [stats, setStats] = React.useState({ versatility: 2000, avoidance: 0, stamina: 29000, armor: 8000, absorb: 0, health: calcHealth(29000, 0) });
@@ -226,7 +226,7 @@ export default function OneShot(props) {
 
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
-    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID, icon: spell.icon };
+    let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID, icon: spell.icon, bossName: spell.bossName || "" };
     spellData.tyrannical = Math.round(spellData.tyrannical * (spell.source === "Boss" ? 1.15 : 1));
     spellData.fortified = Math.round(spellData.fortified * (spell.source === "Trash" ? 1.3 : 1));
 
@@ -244,7 +244,7 @@ export default function OneShot(props) {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#313131" }}>
+    <div style={{ backgroundColor: "#313131", paddingTop: "34px", paddingBottom: "34px" }}>
       <div className={classes.root}>
         <Grid container spacing={1}>
           <Grid item xs={12}>

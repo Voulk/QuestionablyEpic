@@ -1,5 +1,5 @@
-import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
+import { getSpellRaw, runCastSequence } from "./RestoDruidRamps";
+import { DRUIDSPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
 
 
 
@@ -12,33 +12,32 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 // This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
 
 // This will just print HPCT and HPM data for a bunch of little combos.
+
+
 describe("Get Spell Data", () => {
     const combos = [
-        ["Echo", "Spiritbloom"],
-        ["Verdant Embrace", "Living Flame"],
-        ["Verdant Embrace", "Dream Breath"],
-        ["Temporal Anomaly", "Dream Breath"],
-        ["Temporal Anomaly", "Spiritbloom"],
+        ["Rejuvenation"],
+
     ];
 
-    const baseSpells = EVOKERSPELLDB;
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
-    const talents = {...evokerTalents};
+    const baseSpells = DRUIDSPELLDB;
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false};
+    const talents = {...druidTalents};
    
-    Object.keys(talents).forEach(talentName => {
-        if (talentName !== "fieldOfDreams" && talentName !== "Lifebind" && talentName !== "exhilaratingBurst" && talentName !== "lifeforceMender") talents[talentName].points = talents[talentName].maxPoints;
-        
-    });
+    /*Object.keys(talents).forEach(talentName => {
+        if (talentName !== "fieldOfDreams") talents[talentName].points = talents[talentName].maxPoints;
+    }); */
     
     const activeStats = {
-        intellect: 12000,
+        intellect: 2088,
         haste: 2000,
-        crit: 2000,
-        mastery: 6500,
-        versatility: 3000,
-        stamina: 29000,
+        crit: 0,
+        mastery: 0,
+        versatility: 205,
+        stamina: 28000,
         critMult: 2,
     }
+    /*
     test("Individual Spells", () => {
         const results = [];
         Object.keys(baseSpells).forEach(spellName => {
@@ -48,20 +47,30 @@ describe("Get Spell Data", () => {
             if (fullSpell[0].spellData.cat === "heal") {
                 const sequence = [spellName];
                 const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+
                 results.push(spellName + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
             }
         });
         console.log(results);
         expect(true).toEqual(true);
 
-    })
+    }) */
     
     test("Sequences", () => {
         const results = [];
+        const iter = 1;
+        let healing = 0;
+        let manaSpent = 0;
         combos.forEach(sequence => {
-            const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
-            results.push(sequence + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
-        });
+            for (let i = 0; i < iter; i++) {
+                const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+                healing += result.totalHealing;
+                manaSpent += result.manaSpent;
+                if (testSettings.reporting) console.log(result);
+            };
+            results.push(sequence + ". Healing: " + healing / iter + ". HPM: " + Math.round(100*healing / manaSpent)/100);
+        })
+
         console.log(results);
         expect(true).toEqual(true);
 
@@ -71,6 +80,8 @@ describe("Get Spell Data", () => {
 
 
 });
+
+
 /* Remove to re-enable test cases.
 
 

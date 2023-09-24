@@ -58,16 +58,15 @@ export const embellishmentData = [
       { 
         coefficient: 0.229097, // 0.482408 * 0.95,
         table: -7,
-        duration: 10, // 5s + 1s per equipped gem. 
+        duration: 15, 
         ppm: 1.15,
-        uptime: 1,
         multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // TODO Add top gear support for auto-generating gems.
-      const versAvg = processedValue(data[0], itemLevel, data[0].multiplier)
+      const versAvg = runGenericPPMTrinket(data[0], itemLevel);
       bonus_stats.versatility = versAvg;
       if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versAvg;
 
