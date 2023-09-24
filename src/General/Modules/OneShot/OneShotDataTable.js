@@ -22,9 +22,11 @@ export default function OneShotDataTable(props) {
   
 
   const data = props.data;
+  let bossNames = [...new Set(data.map(spell => spell.bossName))];
+  bossNames.push("Trash");
+
   const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellID, true, row.bossName));
-  console.log(rows);
-  const bossNames = ["Archdruid Glaidalis", "Oakheart", "Dresaron", "Shade of Xavius", "Trash"];
+  //const bossNames = ["Archdruid Glaidalis", "Oakheart", "Dresaron", "Shade of Xavius", "Trash"];
 
   return (
     <TableContainer component={Paper} elevation={0} sx={{ border: "1px solid rgba(255, 255, 255, 0.24)" }}>
