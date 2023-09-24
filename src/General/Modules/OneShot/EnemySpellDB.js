@@ -429,5 +429,16 @@ export const enemySpellDB =
             "avoidance": false,
             "source": "Boss"
         }
-    ]
+    ],
+    "Everbloom": [{
+
+    }],
+    "Throne of the Tides": [{
+
+    }],
+    "Dawn of the Infinites: Galakrond's Fall": [{
+    }],
+    "Dawn of the Infinites: Murozond's Rise": [{
+
+    }],
 };

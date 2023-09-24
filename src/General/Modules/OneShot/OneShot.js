@@ -171,7 +171,7 @@ export default function OneShot(props) {
 
   const [selectedClass, setSelectedClass] = React.useState("evoker");
   const [selectedSpec, setSelectedSpec] = React.useState("preservation");
-  const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[0]);
+  const [selectedDungeon, setSelectedDungeon] = React.useState(dungeonList[3]);
   const [enemySpellList, setEnemySpellList] = React.useState([]);
   const [keyLevel, setKeyLevel] = React.useState(20);
   const [defensives, setDefensives] = React.useState(updateSpec(selectedClass, selectedSpec));
