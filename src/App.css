@@ -9,6 +9,3 @@
 .App.default-bg {
   background-color: #313131;
 }
-body > #root > div {
-  height: 100vh;
-}

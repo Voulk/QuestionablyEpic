@@ -57,8 +57,7 @@ export default function QEHeader(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
-  const bgColor = props.isPTR ? "#000065" : "#353535";
-  console.log(bgColor)
+  const bgColor = props.isPTR ? "#000065" : "#353535"; // Not functional yet.
   //const hasAccount = props.pl && props.allChar;
   //const patronStatus = useSelector((state) => state.patronStatus);
 
@@ -155,9 +154,9 @@ export default function QEHeader(props) {
                     allChars={props.allChars}
                   />
                 </Grid>
-                <Grid item>
+                {/*<Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
-                </Grid>
+                </Grid> */}
                 <Grid item>
                   <LanguageSelector />
                 </Grid>
