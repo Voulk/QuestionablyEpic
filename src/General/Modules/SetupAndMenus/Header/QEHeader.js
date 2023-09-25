@@ -57,6 +57,8 @@ export default function QEHeader(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const gameType = useSelector((state) => state.gameType);
+  const bgColor = props.isPTR ? "#000065" : "#353535";
+  console.log(bgColor)
   //const hasAccount = props.pl && props.allChar;
   //const patronStatus = useSelector((state) => state.patronStatus);
 
@@ -80,7 +82,7 @@ export default function QEHeader(props) {
 
   // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   return (
-    <div style={{ backgroundColor: "#353535" }}>
+    <div style={{  }}>
       <AppBar position="fixed" color="inherit">
         <Toolbar className={classes.headerMargins}>
           <Grid container direction="row" spacing={0} justifyContent="space-between" alignItems="center">
