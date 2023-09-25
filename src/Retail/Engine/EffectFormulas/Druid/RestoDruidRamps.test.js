@@ -21,7 +21,7 @@ describe("Get Spell Data", () => {
     ];
 
     const baseSpells = DRUIDSPELLDB;
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
     const talents = {...druidTalents};
    
     /*Object.keys(talents).forEach(talentName => {
