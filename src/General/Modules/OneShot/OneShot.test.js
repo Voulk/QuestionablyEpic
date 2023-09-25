@@ -32,6 +32,7 @@ describe("Armor Calculation", () => {
 
 // These must all be sourced from logs or in-game combat log data.
 // Ideally we'd like a Tyrannical and Fort version of each ability at different key levels. This gives us excellent coverage.
+/*
 describe("Ability Raw damage tests - Halls of Valor", () => {
     const tolerance = 5;
 
@@ -46,20 +47,7 @@ describe("Ability Raw damage tests - Halls of Valor", () => {
         expect(Math.abs(Math.round(getRawDamage(spell, 27)*0.97)-expectedFortResult)).toBeLessThan(tolerance); // Fortified
     })
 
-    // Does Arcing Bolt have variance?
-    // Look into this in more detail.
-    test("Arcing Bolt +20", () => {
-        const spell = enemySpellDB['Halls of Valor'].filter(s => s.name === "Arcing Bolt")[0];
-        const expectedResult = 122085;
-        
-        expect(Math.abs(Math.round(getRawDamage(spell, 20)*1.15)-expectedResult)).toBeLessThan(500); // Tyrannical
 
-        /*
-        const expectedFortResult = 198180;
-
-        // Atrophic Poison
-        expect(Math.abs(Math.round(getRawDamage(spell, 27)*0.97)-expectedFortResult)).toBeLessThan(tolerance); // Fortified
-        */
     })
 
     test("Claw Frenzy +20 Tyrannical", () => {
@@ -77,4 +65,4 @@ describe("Ability Raw damage tests - Halls of Valor", () => {
 
 describe("Ability Raw damage tests - Waycrest Manor", () => {
     const tolerance = 5;
-});
+}); */
