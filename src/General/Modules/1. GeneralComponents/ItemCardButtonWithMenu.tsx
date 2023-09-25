@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 interface MenuItemType {
   id: number;
@@ -25,8 +26,10 @@ interface ItemCardButtonWithMenuProps {
 const getMenuItems = (item: any): MenuItemType[] => {
   const itemLevel = item.level;
   let items: MenuItemType[] = [];
-  const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
-  const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
+  //const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
+  //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
+  const fullItemLevels = [415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447, 450, 454, 457, 460, 463, 467, 470, 473, 476, 480, 483, 486, 489];
+  const itemLevelCaps: { [key: string]: number } = { Myth: 489, Champion: 476, Hero: 483, Explorer: 437, Adventurer: 450, Veteran: 463 };
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
       if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
@@ -38,11 +41,29 @@ const getMenuItems = (item: any): MenuItemType[] => {
   return items;
 };
 
+const getExtraMenuItems = (item: any): MenuItemType[] => {
+  const items: MenuItemType[] = [];
+
+  if (CONSTANTS.socketSlots.includes(item.slot) && item.slot !== "Neck") {
+    // If the item is in a compatible slot, add an option to add or remove a socket.
+    // Note that necks are hard coded to have three sockets so we won't offer the option there.
+    if (item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label:"Remove Socket"})
+    else items.push({id: items.length + 1, ilvlMinimum: 0, label:"Add Socket"})
+  }
+
+  // Add embellishment options.
+  
+  
+  return items;
+
+}
+
 const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
 
   const menuItems = getMenuItems(item);
+  const extraMenuItems = getExtraMenuItems(item);
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -95,7 +116,14 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
             <MenuItem key={item.id} onClick={() => handleMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
+        ))}
+        {extraMenuItems
+          .map((item) => (
+            <MenuItem key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+              {item.label}
+            </MenuItem>
           ))}
+
         {deleteActive ? (
           <MenuItem onClick={handledeleteItem} style={{ color: "#ff1744" }}>
             {t("Delete")}

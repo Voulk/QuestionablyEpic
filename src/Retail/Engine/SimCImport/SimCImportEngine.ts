@@ -3,6 +3,7 @@ import { curveDB } from "../ItemCurves";
 import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "../../../General/Modules/Player/Item";
 import Player from "General/Modules/Player/Player";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 
 /**
@@ -209,6 +210,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     quality: number;
     missiveStats: string[];
     effect?: ItemEffect | null;
+    itemConversion?: number;
   }
 
   let protoItem: ProtoItem = {
@@ -308,12 +310,17 @@ export function processItem(line: string, player: Player, contentType: contentTy
       } 
       else if ("upgrade" in idPayload && "name" in idPayload.upgrade) {
         const upgradeName = idPayload.upgrade.name;
+        // Note that previous seasons have their bonus IDs updated to be an item tag instead of an upgrade track.
+        // For that reason we don't really need to support multiple seasons at once.
         if (["Myth", "Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName)) {
           protoItem.upgradeTrack = upgradeName;
           protoItem.upgradeRank = idPayload.upgrade.level;
         }
       }
-      
+      else if ("item_conversion" in idPayload) {
+        const itemConversion = idPayload["item_conversion"];
+        if (itemConversion === CONSTANTS.seasonalItemConversion) protoItem.itemConversion = CONSTANTS.seasonalItemConversion;
+      }
       else if ("name_override" in idPayload) {
         // Currently unused, but previously used for Unity. 
       }
@@ -452,6 +459,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";
     item.isEquipped = protoItem.itemEquipped;
+    item.itemConversion = protoItem.itemConversion || 0;
     item.active = protoItem.itemEquipped || item.vaultItem;
 
     // Add stats to our item based on its item allocations.
