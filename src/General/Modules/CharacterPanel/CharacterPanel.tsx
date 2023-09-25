@@ -12,7 +12,7 @@ import Settings from "../Settings/Settings";
 // import ErrorTooltip from "./ErrorTooltip";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 
 // Define your types here
 interface Player {

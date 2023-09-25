@@ -20,7 +20,7 @@ const stat_ids: {[key: number]: string} = {
 };
 
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
-                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings) {
+                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, allPlayers: PlayerChars) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -41,6 +41,9 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     const vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings);
+    player.savedPTRString = simCInput;
+    allPlayers.updatePlayerChar(player);
+    allPlayers.saveAllChar();
 
     snackHandler();
     closeDialog();
@@ -65,6 +68,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
     }
   }
   player.updatePlayerStats();
+  
 }
 
 // A simC string is valid if it fulfills the following conditions:
