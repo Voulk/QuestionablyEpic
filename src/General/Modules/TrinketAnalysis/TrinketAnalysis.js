@@ -314,7 +314,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Tyrstone was nerfed and now splits its healing among targets. It's still a fairly decent option (though not BiS), mostly owing to the large Haste buff across your raid. Rashoks will be nerfed further." color="firebrick" />
+              <InformationBox information="Rashoks will be nerfed further before launch. Several trinkets NYI." color="firebrick" />
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                   <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">

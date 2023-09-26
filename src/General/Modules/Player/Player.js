@@ -507,7 +507,7 @@ export class Player {
   };
 
   setSpellPattern = (spellList) => {
-    if (spellList !== {}) this.getActiveModel("Raid").setSpellList(spellList);
+    if (spellList) this.getActiveModel("Raid").setSpellList(spellList);
   };
 
   setActiveStats = (stats) => {
