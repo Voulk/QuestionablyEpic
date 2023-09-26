@@ -25,6 +25,7 @@ export const buildEvokerChartData = (stats) => {
     const sequences = [
         ["Spiritbloom"],
         ["Dream Breath"],
+        ["Emerald Blossom"],
         ["Echo", "Spiritbloom"],
         ["Verdant Embrace", "Living Flame"],
         ["Verdant Embrace", "Dream Breath"],
