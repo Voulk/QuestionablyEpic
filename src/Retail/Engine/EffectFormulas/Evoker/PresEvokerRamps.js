@@ -925,7 +925,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
-                    console.log("=========== " + buff.name + " ===========");
                     func(state, spell);
                 }
 

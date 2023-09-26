@@ -188,8 +188,6 @@ export default function SequenceGenerator(props) {
       temp.push(JSON.parse(JSON.stringify(sequence)));
       const simFunc = getSequence(selectedSpec);
       const sim = simFunc(sequences[i].spells, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
-      console.log("i" + i);
-      console.log(sim);
       temp[i].spells = sequences[i].spells;
       temp[i].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
       // multiple state updates get bundled by react into one update
