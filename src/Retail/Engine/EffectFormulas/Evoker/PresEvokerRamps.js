@@ -32,8 +32,9 @@ const EVOKERCONSTANTS = {
         buffType: 'function',
         stacks: false,
         tickRate: 5,
+        tickData: {tickRate: 5, canPartialTick: false, hasted: false},
         hastedDuration: true,
-        function: function (state, buff) {
+        runFunc: function (state, buff) {
             
             state.essence += 1;
 
@@ -183,6 +184,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             buffType: "heal",
             buffDuration: evokerSpells['Fire Breath'][1].buffDuration[EVOKERCONSTANTS.defaultEmpower['Fire Breath']],
             tickRate: evokerSpells['Fire Breath'][1].tickRate,
+            tickData: {tickData: evokerSpells['Fire Breath'][1].tickRate, canPartialTick: true},
             coeff: (evokerSpells['Fire Breath'][1].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
             expectedOverheal: 0.4,
             targets: 1,
@@ -401,6 +403,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
     if (settings.t31_2) {
+        /*
         const bonus = {
             type: "castSpell",
             storedSpell: "Living Flame",
@@ -411,7 +414,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
         evokerSpells['Spiritbloom'].push(bonus);
         evokerSpells['Dream Breath'].push(bonus);
-
+        */
     }
     if (settings.t31_4) {
         const echoBuff = {
@@ -674,7 +677,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                     const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
                         tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-                    newBuff.attFunction = spell.function;
+                    newBuff.attFunction = spell.runFunc;
 
                     if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats) + spell.statMods.crit - 1)))); // TODO; Replace 0.25 with crit.
                     else newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
@@ -922,6 +925,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
+                    console.log("=========== " + buff.name + " ===========");
                     func(state, spell);
                 }
 

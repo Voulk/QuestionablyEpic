@@ -46,6 +46,7 @@ describe("Get Spell Data", () => {
             const fullSpell = baseSpells[spellName];
 
             if (fullSpell[0].spellData.cat === "heal") {
+                console.log("Running" + spellName)
                 const sequence = [spellName];
                 const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
                 results.push(spellName + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);

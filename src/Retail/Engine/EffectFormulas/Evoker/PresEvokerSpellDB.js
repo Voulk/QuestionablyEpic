@@ -115,6 +115,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: [16, 12, 8, 4],
+        tickData: {tickRate: 2, canPartialTick: true},
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
@@ -175,12 +176,13 @@ export const EVOKERSPELLDB = {
         buffType: "function",
         school: "bronze",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
         statMods: {'crit': 0.15},
         buffDuration: 12,
-        function: function (state, buff) {
+        runFunc: function (state, buff) {
             const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
 
             runHeal(state, hotHeal, buff.name)
@@ -251,6 +253,7 @@ export const EVOKERSPELLDB = {
         buffName: "Dream Flight",
         buffType: "heal",
         tickRate: 3,
+        tickData: {tickRate: 3, canPartialTick: true},
         targets: 10,
         coeff: 0.5,
         buffDuration: 15,
@@ -290,6 +293,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         targets: 5,
         coeff: 0.35,
         buffDuration: [4, 8, 12, 16],
@@ -313,6 +317,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 3,
         coeff: 0.76,
         secondaries: ['crit', 'haste', 'vers'],
@@ -335,6 +340,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 5,
         coeff: 0,
         flatHeal: 0,
