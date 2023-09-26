@@ -430,6 +430,258 @@ export const enemySpellDB =
             "source": "Boss"
         }
     ],
+    "Waycrest Manor": [
+        {
+            "name": "Bramble Bolt",
+            "spellID": 260701,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 20245,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Jagged Nettles (Direct)",
+            "spellID": 260741,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 66487,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Jagged Nettles (DoT)",
+            "spellID": 260741,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 16622,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Aura of Thorns (DoT)",
+            "spellID": 268122,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 5541,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Ruinous Bolt",
+            "spellID": 260700,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 18284,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Unstable Runic Mark (Direct)",
+            "spellID": 260703,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 51712,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Unstable Runic Mark (DoT)",
+            "spellID": 260703,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 9234,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Aura of Dread (DoT)",
+            "spellID": 268088,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 6649,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Soul Bolt",
+            "spellID": 260699,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 18284,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Dire Ritual",
+            "spellID": 260773,
+            "bossName": "Heartsbane Triad",
+            "baseDamage": 88649,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Crush (Tank)",
+            "spellID": 260508,
+            "bossName": "Soulbound Goliath",
+            "baseDamage": 166217,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Burning Brush (DoT)",
+            "spellID": 260541,
+            "bossName": "Soulbound Goliath",
+            "baseDamage": 14775,
+            "damageType": "Magic",
+            "school": "Fire",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Consume All (DoT)",
+            "spellID": 264734,
+            "bossName": "Raal the Gluttonous",
+            "baseDamage": 101577,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Rotten Expulsion (Direct)",
+            "spellID": 264694,
+            "bossName": "Raal the Gluttonous",
+            "baseDamage": 71104,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Rotten Expulsion (DoT)",
+            "spellID": 264694,
+            "bossName": "Raal the Gluttonous",
+            "baseDamage": 27728,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Bile Explosion",
+            "spellID": 268234,
+            "bossName": "Raal the Gluttonous",
+            "baseDamage": 55406,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Wracking Chord",
+            "spellID": 268271,
+            "bossName": "Lord and Lady Waycrest",
+            "baseDamage": 31396,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Discordant Cadenza",
+            "spellID": 268306,
+            "bossName": "Lord and Lady Waycrest",
+            "baseDamage": 73874,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Wasting Strike (Direct)",
+            "spellID": 261438,
+            "bossName": "Lord and Lady Waycrest",
+            "baseDamage": 73874,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Wasting Strike (DoT)",
+            "spellID": 261438,
+            "bossName": "Lord and Lady Waycrest",
+            "baseDamage": 18469,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Virulent Pathogen (DoT)",
+            "spellID": 261440,
+            "bossName": "Lord and Lady Waycrest",
+            "baseDamage": 16622,
+            "damageType": "Magic",
+            "school": "Nature",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Dread Essence",
+            "spellID": 266181,
+            "bossName": "Gorak Tul",
+            "baseDamage": 64640,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Death Lens (DoT)",
+            "spellID": 268202,
+            "bossName": "Gorak Tul",
+            "baseDamage": 24009,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Dark Leap (DoT)",
+            "spellID": 273657,
+            "bossName": "Gorak Tul",
+            "baseDamage": 24378,
+            "damageType": "Physical",
+            "school": "Physical",
+            "avoidance": false,
+            "source": "Boss"
+        },
+        {
+            "name": "Darkened Lightning",
+            "spellID": 266225,
+            "bossName": "Gorak Tul",
+            "baseDamage": 54852,
+            "damageType": "Magic",
+            "school": "Shadow",
+            "avoidance": false,
+            "source": "Boss"
+        }
+    ],
     "Everbloom": [{
 
     }],

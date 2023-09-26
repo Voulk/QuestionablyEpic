@@ -200,7 +200,7 @@ export default function OneShot(props) {
 
   const updateKeyLevel = (newKeyLevel) => {
     setKeyLevel(newKeyLevel);
-    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats));
+    setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats, newKeyLevel));
   };
 
   const activateSpell = (e, spell) => {
@@ -209,21 +209,20 @@ export default function OneShot(props) {
     setEnemySpellList(updateDungeonSpellList(selectedDungeon, defensives, stats));
   };
 
-  const updateDungeonSpellList = (dungeon, defensives, stats) => {
+  const updateDungeonSpellList = (dungeon, defensives, stats, newKeyLevel = keyLevel) => {
     const dungeonName = encounterDB["-1"][dungeon]["name"]["en"]; // We're using this as an object reference so we don't want to translate it.
     const spellList = enemySpellDB[dungeonName];
     let damageList = [];
 
     spellList.forEach((spell) => {
-      damageList.push(calcDamage(spell, defensives, stats));
+      damageList.push(calcDamage(spell, defensives, stats, newKeyLevel));
     });
 
     return damageList;
   };
 
-  const calcDamage = (spell, defensives, stats) => {
+  const calcDamage = (spell, defensives, stats, keyLevel) => {
     const sumDamageReduction = calcDR(defensives, stats.versatility, stats.avoidance, stats.stamina, stats.armor, spell);
-
     const baseMultiplier = getKeyMult(keyLevel) * sumDamageReduction; // The key multiplier. We'll add Tyrannical / Fort afterwards.
 
     let spellData = { name: spell.name, tyrannical: spell.baseDamage * baseMultiplier, fortified: spell.baseDamage * baseMultiplier, spellID: spell.spellID, icon: spell.icon, bossName: spell.bossName || "" };
