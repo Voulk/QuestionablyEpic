@@ -17,6 +17,13 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.7",
+    update: 2,
+    date: "September 26",
+    changes: [ 
+      "Added some missing Timewalking items.",
+    ]},
+  {
+    version: "10.1.7",
     update: 1,
     date: "September 5",
     changes: [ 
