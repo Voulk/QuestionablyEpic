@@ -32,6 +32,7 @@ export function createPlayerChars(): PlayerChars {
           else {
             let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
             if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+            if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
             specsAdded.push(player.spec);
             charArray.push(newChar);
           }

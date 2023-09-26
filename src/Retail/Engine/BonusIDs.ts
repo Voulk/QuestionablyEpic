@@ -38249,14 +38249,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "285 @plvl 1 - 285 @plvl 285",
     "curveId": 30735
   },
-  "7976": {
-    "id": 7976,
-    "tag": "Heroic"
-  },
-  "7977": {
-    "id": 7977,
-    "tag": "Mythic"
-  },
   "7978": {
     "id": 7978,
     "ilevel": "226 @plvl 45 - 346 @plvl 346",
@@ -49105,2482 +49097,82 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9294": {
     "id": 9294,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9294,
-      "itemLevel": 376,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 1/8",
     "quality": 2
   },
   "9295": {
     "id": 9295,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9295,
-      "itemLevel": 379,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 2/8",
     "quality": 2
   },
   "9296": {
     "id": 9296,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9296,
-      "itemLevel": 382,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 3/8",
     "quality": 3
   },
   "9297": {
     "id": 9297,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9297,
-      "itemLevel": 385,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 4/8",
     "quality": 3
   },
   "9298": {
     "id": 9298,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9298,
-      "itemLevel": 389,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 5/8",
     "quality": 3
   },
   "9299": {
     "id": 9299,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9299,
-      "itemLevel": 392,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 6/8",
     "quality": 3
   },
   "9300": {
     "id": 9300,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9300,
-      "itemLevel": 395,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 7/8",
     "quality": 3
   },
   "9301": {
     "id": 9301,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 283,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9301,
-      "itemLevel": 398,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Explorer 8/8",
     "quality": 3
   },
   "9302": {
     "id": 9302,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9302,
-      "itemLevel": 389,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 1/8",
     "quality": 3
   },
   "9303": {
     "id": 9303,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9303,
-      "itemLevel": 392,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 2/8",
     "quality": 3
   },
   "9304": {
     "id": 9304,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9304,
-      "itemLevel": 395,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 3/8",
     "quality": 3
   },
   "9305": {
     "id": 9305,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9305,
-      "itemLevel": 398,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 4/8",
     "quality": 3
   },
   "9306": {
     "id": 9306,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9306,
-      "itemLevel": 402,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 5/8",
     "quality": 4
   },
   "9307": {
     "id": 9307,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9307,
-      "itemLevel": 405,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 6/8",
     "quality": 4
   },
   "9308": {
     "id": 9308,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9308,
-      "itemLevel": 408,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 7/8",
     "quality": 4
   },
   "9309": {
     "id": 9309,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 284,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9309,
-      "itemLevel": 411,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Adventurer 8/8",
     "quality": 4
   },
   "9310": {
@@ -51596,4013 +49188,107 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9313": {
     "id": 9313,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9313,
-      "itemLevel": 402,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 1/8",
     "quality": 4
   },
   "9314": {
     "id": 9314,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9314,
-      "itemLevel": 405,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 2/8",
     "quality": 4
   },
   "9315": {
     "id": 9315,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9315,
-      "itemLevel": 408,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 3/8",
     "quality": 4
   },
   "9316": {
     "id": 9316,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204193,
-              "amount": 1,
-              "name": "Whelpling's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_whelplingsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9316,
-      "itemLevel": 411,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 4/8",
     "quality": 4
   },
   "9317": {
     "id": 9317,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9317,
-      "itemLevel": 415,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 5/8",
     "quality": 4
   },
   "9318": {
     "id": 9318,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9318,
-      "itemLevel": 418,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 6/8",
     "quality": 4
   },
   "9319": {
     "id": 9319,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9319,
-      "itemLevel": 421,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 7/8",
     "quality": 4
   },
   "9320": {
     "id": 9320,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 285,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9320,
-      "itemLevel": 424,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Veteran 8/8",
     "quality": 4
   },
   "9321": {
     "id": 9321,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9321,
-      "itemLevel": 415,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 1/8",
     "quality": 4
   },
   "9322": {
     "id": 9322,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9322,
-      "itemLevel": 418,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 2/8",
     "quality": 4
   },
   "9323": {
     "id": 9323,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9323,
-      "itemLevel": 421,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 3/8",
     "quality": 4
   },
   "9324": {
     "id": 9324,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204195,
-              "amount": 1,
-              "name": "Drake's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_drakesshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9324,
-      "itemLevel": 424,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 4/8",
     "quality": 4
   },
   "9325": {
     "id": 9325,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9325,
-      "itemLevel": 428,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 5/8",
     "quality": 4
   },
   "9327": {
     "id": 9327,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9327,
-      "itemLevel": 431,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 6/8",
     "quality": 4
   },
   "9328": {
     "id": 9328,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9328,
-      "itemLevel": 434,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 7/8",
     "quality": 4
   },
   "9329": {
     "id": 9329,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 286,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9329,
-      "itemLevel": 437,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Champion 8/8",
     "quality": 4
   },
   "9330": {
     "id": 9330,
-    "upgrade": {
-      "level": 1,
-      "max": 5,
-      "group": 287,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9330,
-      "itemLevel": 428,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Hero 1/5",
     "quality": 4
   },
   "9331": {
     "id": 9331,
-    "upgrade": {
-      "level": 2,
-      "max": 5,
-      "group": 287,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9331,
-      "itemLevel": 431,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Hero 2/5",
     "quality": 4
   },
   "9332": {
     "id": 9332,
-    "upgrade": {
-      "level": 3,
-      "max": 5,
-      "group": 287,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9332,
-      "itemLevel": 434,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Hero 3/5",
     "quality": 4
   },
   "9333": {
     "id": 9333,
-    "upgrade": {
-      "level": 4,
-      "max": 5,
-      "group": 287,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204196,
-              "amount": 1,
-              "name": "Wyrm's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_wyrmsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9333,
-      "itemLevel": 437,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Hero 4/5",
     "quality": 4
   },
   "9334": {
     "id": 9334,
-    "upgrade": {
-      "level": 5,
-      "max": 5,
-      "group": 287,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9334,
-      "itemLevel": 441,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    },
+    "tag": "|nUpgrade Level: Hero 5/5",
     "quality": 4
   },
   "9335": {
@@ -56210,7 +49896,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9370": {
     "id": 9370,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "14 @plvl 1 - 187 @plvl 187",
     "curveId": 63292
   },
   "9371": {
@@ -56280,587 +49966,32 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9380": {
     "id": 9380,
-    "quality": 4,
-    "upgrade": {
-      "level": 1,
-      "max": 3,
-      "group": 295,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9380,
-      "itemLevel": 441,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    }
+    "tag": "|nUpgrade Level: Myth 1/3",
+    "quality": 4
   },
   "9381": {
     "id": 9381,
-    "quality": 4,
-    "upgrade": {
-      "level": 2,
-      "max": 3,
-      "group": 295,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9381,
-      "itemLevel": 444,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    }
+    "tag": "|nUpgrade Level: Myth 2/3",
+    "quality": 4
   },
   "9382": {
     "id": 9382,
-    "quality": 4,
-    "upgrade": {
-      "level": 3,
-      "max": 3,
-      "group": 295,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "itemId": 204194,
-              "amount": 1,
-              "name": "Aspect's Shadowflame Crest",
-              "icon": "inv_10_gearupgrade_aspectsshadowflamecrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9382,
-      "itemLevel": 447,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "item",
-          "id": 204195,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204196,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204194,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "item",
-          "id": 204193,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ],
-      "seasonId": 21
-    }
+    "tag": "|nUpgrade Level: Myth 3/3",
+    "quality": 4
   },
   "9383": {
     "id": 9383,
+    "tag": "Dragonflight Season 2",
     "quality": 4
   },
   "9384": {
     "id": 9384,
+    "tag": "Dragonflight Season 2",
     "quality": 4
   },
   "9385": {
     "id": 9385,
+    "tag": "Dragonflight Season 2",
     "quality": 4
   },
   "9399": {
@@ -56918,18 +50049,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "21 @plvl 1 - 385 @plvl 385",
     "curveId": 64774,
     "quality": 3
-  },
-  "9409": {
-    "id": 9409,
-    "tag": "Heroic"
-  },
-  "9410": {
-    "id": 9410,
-    "tag": "Mythic"
-  },
-  "9411": {
-    "id": 9411,
-    "tag": "Raid Finder"
   },
   "9412": {
     "id": 9412,
@@ -59360,10 +52479,68 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "21 @plvl 1 - 385 @plvl 385",
     "curveId": 66349
   },
+  "9498": {
+    "id": 9498,
+    "base_level": 447,
+    "base_level_priority": 70,
+    "tag": "Dream Crafted"
+  },
+  "9499": {
+    "id": 9499,
+    "base_level": 460,
+    "base_level_priority": 65
+  },
+  "9500": {
+    "id": 9500,
+    "base_level": 470,
+    "base_level_priority": 65
+  },
+  "9502": {
+    "id": 9502,
+    "base_level": 431,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "9505": {
+    "id": 9505,
+    "item_conversion": 7
+  },
+  "9506": {
+    "id": 9506,
+    "item_conversion": 7
+  },
+  "9507": {
+    "id": 9507,
+    "item_conversion": 7
+  },
+  "9508": {
+    "id": 9508,
+    "item_conversion": 7
+  },
+  "9509": {
+    "id": 9509,
+    "item_conversion": 7
+  },
+  "9516": {
+    "id": 9516,
+    "socket": 1
+  },
   "9520": {
     "id": 9520,
     "ilevel": "206 @plvl 58 - 316 @plvl 316",
     "curveId": 68635
+  },
+  "9521": {
+    "id": 9521,
+    "effect": {
+      "id": 179513,
+      "index": 0,
+      "spell": {
+        "id": 418410,
+        "name": "Verdant Conduit",
+        "icon": "inv_legion_faction_dreamweavers"
+      }
+    }
   },
   "9522": {
     "id": 9522,
@@ -59381,8 +52558,7332 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9526,
     "tag": "Divergent"
   },
+  "9527": {
+    "id": 9527,
+    "base_level": 399,
+    "base_level_priority": 100
+  },
   "9529": {
     "id": 9529,
     "tag": "Divergent"
+  },
+  "9532": {
+    "id": 9532,
+    "effect": {
+      "id": 179870,
+      "index": 0,
+      "spell": {
+        "id": 419368,
+        "name": "Dreamtender's Charm",
+        "icon": "inv_10_jewelcrafting_trinket_stonedragon3_color3"
+      }
+    }
+  },
+  "9533": {
+    "id": 9533,
+    "ilevel": "21 @plvl 1 - 411 @plvl 411",
+    "curveId": 69326,
+    "tag": "Timewarped"
+  },
+  "9534": {
+    "id": 9534,
+    "ilevel": "21 @plvl 1 - 428 @plvl 428",
+    "curveId": 69336,
+    "quality": 3
+  },
+  "9535": {
+    "id": 9535,
+    "ilevel": "21 @plvl 1 - 428 @plvl 428",
+    "curveId": 69337
+  },
+  "9536": {
+    "id": 9536,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9536,
+      "itemLevel": 428,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9537": {
+    "id": 9537,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9537,
+      "itemLevel": 431,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9538": {
+    "id": 9538,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9538,
+      "itemLevel": 434,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9539": {
+    "id": 9539,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9539,
+      "itemLevel": 437,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9540": {
+    "id": 9540,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9540,
+      "itemLevel": 441,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9541": {
+    "id": 9541,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9541,
+      "itemLevel": 444,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9542": {
+    "id": 9542,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9542,
+      "itemLevel": 447,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9543": {
+    "id": 9543,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 306,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9543,
+      "itemLevel": 450,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9544": {
+    "id": 9544,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9544,
+      "itemLevel": 415,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 2
+  },
+  "9545": {
+    "id": 9545,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9545,
+      "itemLevel": 418,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 2
+  },
+  "9546": {
+    "id": 9546,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9546,
+      "itemLevel": 421,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9547": {
+    "id": 9547,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9547,
+      "itemLevel": 424,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9548": {
+    "id": 9548,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9548,
+      "itemLevel": 428,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9549": {
+    "id": 9549,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9549,
+      "itemLevel": 431,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9550": {
+    "id": 9550,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9550,
+      "itemLevel": 434,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9551": {
+    "id": 9551,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 305,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9551,
+      "itemLevel": 437,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 3
+  },
+  "9552": {
+    "id": 9552,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9552,
+      "itemLevel": 441,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9553": {
+    "id": 9553,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9553,
+      "itemLevel": 444,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9554": {
+    "id": 9554,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9554,
+      "itemLevel": 447,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9555": {
+    "id": 9555,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9555,
+      "itemLevel": 450,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9556": {
+    "id": 9556,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9556,
+      "itemLevel": 454,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9557": {
+    "id": 9557,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9557,
+      "itemLevel": 457,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9558": {
+    "id": 9558,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9558,
+      "itemLevel": 460,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9559": {
+    "id": 9559,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 307,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9559,
+      "itemLevel": 463,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9560": {
+    "id": 9560,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9560,
+      "itemLevel": 454,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9561": {
+    "id": 9561,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9561,
+      "itemLevel": 457,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9562": {
+    "id": 9562,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9562,
+      "itemLevel": 460,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9563": {
+    "id": 9563,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2707,
+              "amount": 15,
+              "name": "Drake's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9563,
+      "itemLevel": 463,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9564": {
+    "id": 9564,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9564,
+      "itemLevel": 467,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9565": {
+    "id": 9565,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9565,
+      "itemLevel": 470,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9566": {
+    "id": 9566,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9566,
+      "itemLevel": 473,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9567": {
+    "id": 9567,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 308,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9567,
+      "itemLevel": 476,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9568": {
+    "id": 9568,
+    "upgrade": {
+      "level": 1,
+      "max": 6,
+      "group": 309,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9568,
+      "itemLevel": 467,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9569": {
+    "id": 9569,
+    "upgrade": {
+      "level": 2,
+      "max": 6,
+      "group": 309,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9569,
+      "itemLevel": 470,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9570": {
+    "id": 9570,
+    "upgrade": {
+      "level": 3,
+      "max": 6,
+      "group": 309,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9570,
+      "itemLevel": 473,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9571": {
+    "id": 9571,
+    "upgrade": {
+      "level": 4,
+      "max": 6,
+      "group": 309,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2708,
+              "amount": 15,
+              "name": "Wyrm's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9571,
+      "itemLevel": 476,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9572": {
+    "id": 9572,
+    "upgrade": {
+      "level": 5,
+      "max": 6,
+      "group": 309,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9572,
+      "itemLevel": 480,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9573": {
+    "id": 9573,
+    "upgrade": {
+      "level": 1,
+      "max": 4,
+      "group": 310,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9573,
+      "itemLevel": 480,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9574": {
+    "id": 9574,
+    "upgrade": {
+      "level": 2,
+      "max": 4,
+      "group": 310,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9574,
+      "itemLevel": 483,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9575": {
+    "id": 9575,
+    "upgrade": {
+      "level": 3,
+      "max": 4,
+      "group": 310,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9575,
+      "itemLevel": 486,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9576": {
+    "id": 9576,
+    "quality": 4,
+    "upgrade": {
+      "level": 4,
+      "max": 4,
+      "group": 310,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9576,
+      "itemLevel": 489,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    }
+  },
+  "9577": {
+    "id": 9577,
+    "quality": 4
+  },
+  "9578": {
+    "id": 9578,
+    "quality": 4
+  },
+  "9581": {
+    "id": 9581,
+    "upgrade": {
+      "level": 6,
+      "max": 6,
+      "group": 309,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 9581,
+      "itemLevel": 483,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2706,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2709,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2708,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2707,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ],
+      "seasonId": 22
+    },
+    "quality": 4
+  },
+  "9584": {
+    "id": 9584,
+    "tag": "Shadowflame Suffused"
+  },
+  "9614": {
+    "id": 9614,
+    "effect": {
+      "id": 180720,
+      "index": 0,
+      "spell": {
+        "id": 426552,
+        "name": "Verdant Tether",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "9634": {
+    "id": 9634,
+    "quality": 3
+  },
+  "9635": {
+    "id": 9635,
+    "tag": "Mythic"
+  },
+  "9636": {
+    "id": 9636,
+    "tag": "Heroic"
   }
 }
