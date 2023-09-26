@@ -185,7 +185,7 @@ export default function QEMainMenu(props: Props) {
   // };
 
   return (
-    <div style={{ backgroundColor: "#313131", height: "100%" }}>
+    <div style={{ height: "100%" }}>
       <Root>
         <div style={{ height: 96 }} />
         <Grid container spacing={2}>

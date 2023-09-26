@@ -49,6 +49,7 @@ export class Player {
   talents = [];
   gameType = ""; // Currently the options are Retail or Classic
   activeModelID = { Raid: 0, Dungeon: 1 }; // Currently active Cast Model.
+  savedPTRString = "";
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.
@@ -506,7 +507,7 @@ export class Player {
   };
 
   setSpellPattern = (spellList) => {
-    if (spellList !== {}) this.getActiveModel("Raid").setSpellList(spellList);
+    if (spellList) this.getActiveModel("Raid").setSpellList(spellList);
   };
 
   setActiveStats = (stats) => {

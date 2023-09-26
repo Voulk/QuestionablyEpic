@@ -374,7 +374,7 @@ export default function SequenceGenerator(props) {
   //#endregion
 
   return (
-    <div style={{ backgroundColor: "#313131" }}>
+    <div style={{ }}>
       <div className={classes.root}>
         <Grid container spacing={1}>
           <Grid item xs={6}>
