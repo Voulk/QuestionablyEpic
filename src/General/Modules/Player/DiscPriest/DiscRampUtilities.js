@@ -147,6 +147,7 @@ export const buildDiscChartData = (stats, incTalents) => {
     const sequences = [
         ["Mind Blast", "Penance", "Smite", "Smite", "Smite", "Penance"],
         ["Penance", "Mind Blast", "Smite", "Smite", "Smite", "Penance"],
+        ["Shadowfiend", "Penance", "Mind Blast", "Smite", "Smite", "Penance"],
 
     ]
 
@@ -163,7 +164,7 @@ export const buildDiscChartData = (stats, incTalents) => {
     sequences.forEach(seq => {
         const newSeq = atoneRamp.concat(seq);
         const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
-        results.push({seq: seq, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.dps) || "-"})
+        results.push({seq: seq, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
     });    
 
     return results;
