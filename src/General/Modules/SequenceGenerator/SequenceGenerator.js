@@ -570,7 +570,7 @@ export default function SequenceGenerator(props) {
             </Grid>
           </Grid>
           <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
-          <SequenceDataTable data={""} />
+          <SequenceDataTable data={""} stats={stats} talents={talentDB} />
         </Grid>
         </Grid>
 

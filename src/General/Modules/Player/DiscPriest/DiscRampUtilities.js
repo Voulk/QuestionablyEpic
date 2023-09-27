@@ -127,3 +127,45 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, trinkets, repo
 
     return rampResult; //boonRamp + fiendRamp + miniRamp * 2;
 }
+
+export const buildDiscChartData = (stats, incTalents) => {
+    let results = [];
+
+    const activeStats = {
+        intellect: 12000,
+        haste: 2000,
+        crit: 2000,
+        mastery: 6500,
+        versatility: 3000,
+        stamina: 29000,
+        critMult: 2,
+    }
+    console.log(incTalents);
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
+    const talents = {...incTalents};
+
+    const sequences = [
+        ["Mind Blast", "Penance", "Smite", "Smite", "Smite", "Penance"],
+        ["Penance", "Mind Blast", "Smite", "Smite", "Smite", "Penance"],
+
+    ]
+
+    const atoneRamp = ["Purge the Wicked"]
+
+    for (var x = 0; x < 9; x++) {
+        if (talents.trainOfThought && x % 4 === 0) atoneRamp.push('Power Word: Shield');
+        else if (!talents.trainOfThought && x % 5 === 0) atoneRamp.push('Power Word: Shield');
+        else atoneRamp.push('Renew');
+    }
+    atoneRamp.push("Evangelism")
+
+
+    sequences.forEach(seq => {
+        const newSeq = atoneRamp.concat(seq);
+        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+        results.push({seq: seq, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.dps) || "-"})
+    });    
+
+    return results;
+
+}

@@ -462,7 +462,6 @@ export const baseTalents = {
     indemnity: {points: 1, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 373049, select: true, tier: 2},
     painAndSuffering: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowwordpain", id: 390689, select: true, tier: 2},
     twilightCovenant: {points: 0, maxPoints: 1, icon: "spell_warlock_demonsoul", id: 0, select: true, tier: 2},
-    embraceShadow: {points: 0, maxPoints: 1, icon: "spell_warlock_demonsoul", id: 372985, select: true, tier: 2},
     twilightCorruption: {points: 1, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true, tier: 2},
     borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true, tier: 2},
     castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true, tier: 2},
