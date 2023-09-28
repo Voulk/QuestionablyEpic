@@ -130,7 +130,7 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, trinkets, repo
 
 export const buildDiscChartData = (stats, incTalents) => {
     let results = [];
-
+    
     const activeStats = {
         intellect: 12000,
         haste: 2000,
@@ -145,10 +145,12 @@ export const buildDiscChartData = (stats, incTalents) => {
     const talents = {...incTalents};
 
     const sequences = [
+        /*
         {tag: "Ramp + DoT only", seq: []},
         {tag: "Ramp -> Pen, Mind Blast, Smite / Pen", seq: ["Penance", "Mind Blast", "Smite", "Mind Blast", "Smite", "Penance"]},
         {tag: "Sfiend Ramp -> Pen, Mind Blast, Smite, Mind Blast, Pen / Smite", seq: ["Shadowfiend", "Penance", "Mind Blast", "Smite", "Mind Blast", "Penance"]},
         {tag: "Bender Ramp -> Pen, Mind Blast, Smite, Mind Blast, Pen / Smite", seq: ["Mindbender", "Penance", "Mind Blast", "Smite", "Mind Blast", "Penance"]},
+        */
     ]
 
     const atoneRamp = ["Purge the Wicked"]
@@ -165,7 +167,7 @@ export const buildDiscChartData = (stats, incTalents) => {
         const newSeq = atoneRamp.concat(sequence.seq);
         const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents);
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
-        //console.log(result);
+        console.log(result);
         results.push({tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
     });    
 

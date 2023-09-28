@@ -91,7 +91,7 @@ export const spellCleanup = (spell, state) => {
 
 
 export const addBuff = (state, spell, spellName) => {
-    let newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
+    let newBuff = {name: spell.name || spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
     // (state.t + spell.castTime + spell.buffDuration)
 
     if (spell.buffType === "stats") {
@@ -175,11 +175,12 @@ export const addBuff = (state, spell, spellName) => {
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+        
 
         if (buffStacks === 0) {
             newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
             state.activeBuffs.push(newBuff);
-            console.log(newBuff);
+            //console.log(newBuff);
         }
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
@@ -187,6 +188,7 @@ export const addBuff = (state, spell, spellName) => {
             if (buff.canStack) buff.stacks += 1;
             buff.expiration = newBuff.expiration;
         }
+
     }
     else {
         addReport(state, "Adding Buff with INVALID category: " + spellName);

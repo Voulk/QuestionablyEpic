@@ -1,5 +1,6 @@
 
-import { DISCCONSTANTS } from "./DiscPriestRamps";
+import { DISCCONSTANTS, runDamage } from "./DiscPriestRamps";
+import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampBase"
 
 /**
 * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -158,8 +159,17 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        // TODO: Add Smite buff
    }*/
    if (talents.harshDiscipline && settings.harshDiscipline) {
-       // Can probably just add a buff on sequence start for the first Penance.
-       state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
+       const hdBuff = {
+        name: "Harsh Discipline",
+        type: "buff",
+        buffDuration: 30,
+        buffType: "special",
+        value: talents.harshDiscipline, 
+        stacks: 1, 
+        canStack: true, 
+        maxStacks: 2
+       }
+       discSpells["Power Word: Radiance"].push(hdBuff);
    }
    if (talents.expiation) {
        discSpells["Mind Blast"][0].coeff *= (1 + 0.1 * talents.expiation);

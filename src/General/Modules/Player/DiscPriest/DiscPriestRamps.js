@@ -3,7 +3,8 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, 
+            getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
@@ -75,7 +76,6 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
-    else if (spellName === "Light's Wrath") mult *= (1 + (0.06 + talents.resplendentLight * 0.02) * activeAtones);
 
     if (checkBuffActive(buffs, "Twilight Equilibrium - Shadow") && "school" in spell && spell.school === "shadow" && !spellName.includes("dot")) {
         mult *= 1.15;
@@ -87,10 +87,8 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
-        console.log("Scov fired" + getBuffValue(state.activeBuffs, "Shadow Covenant"))
+
     }
-    if (checkBuffActive(buffs, "Shadow Covenant")) console.log("CoV trying to fire");
-    if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
 
     if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
         mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.12);
@@ -416,14 +414,16 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     let penanceCoeff = discSpells[spellName][0].coeff;
                     let penTickName = spellName === "Penance" ? "PenanceTick" : "DefPenanceTick";
 
+                    
                     if (checkBuffActive(state.activeBuffs, "Penitent One")) {
                         penanceBolts += 3;
                         removeBuffStack(state.activeBuffs, "Penitent One"); 
                     }
+                    
                     else if (checkBuffActive(state.activeBuffs, "Harsh Discipline")) {
-                        penanceBolts += 3;
-                        removeBuffStack(state.activeBuffs, "Harsh Discipline");
-                    }
+                        penanceBolts += getBuffValue(state.activeBuffs, "Harsh Discipline") * getBuffStacks(state.activeBuffs, "Harsh Discipline");
+                        removeBuff(state.activeBuffs, "Harsh Discipline");
+                    } 
 
                     discSpells[penTickName][0].castTime = 2 / penanceBolts;
                     discSpells[penTickName][0].coeff = penanceCoeff;
