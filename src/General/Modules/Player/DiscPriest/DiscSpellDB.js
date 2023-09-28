@@ -78,15 +78,25 @@ export const DISCSPELLS = {
     }],
     "Ultimate Penitence": [{
         spellData: {id: 47540, icon: "ability_priest_ascendance", cat: "cooldown"},
-        type: "special",
-        castTime: 5, // The spell takes place over 5 seconds (before Haste).
+        type: "special", // Channel
+        castTime: 0, // The spell takes place over 5 seconds (before Haste).
         cost: 0,
         coeff: 0.8, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 24,
         atoneOverheal: 0.18,
+        cooldown: 240,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
+    "Ultimate Penitence Tick": [{
+        type: "damage", // Channel
+        castTime: 5 / 24, // The spell takes place over 5 seconds (before Haste).
+        coeff: 0.8, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        atoneOverheal: 0.18,
+        school: "holy",
+        secondaries: ['crit', 'vers'],
+    }],
+
     /*
     "Schism": [{
         spellData: {id: 214621, icon: "spell_warlock_focusshadow", cat: "damage"},

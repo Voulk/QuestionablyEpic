@@ -427,7 +427,16 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     }
                 }
 
-                if (state.talents.twilightEquilibrium && spell.type === 'damage') {
+                else if (spellName === "Ultimate Penitence" || spellName === "DefUltimate Penitence") {
+                    
+                    let bolts = discSpells[spellName][0].bolts;
+
+                    for (var i = 0; i < bolts; i++) {
+                        seq.unshift("Ultimate Penitence Tick");
+                    }
+                }
+
+                if (state.talents.twilightEquilibrium && spell.type === 'damage' && !spellName.includes("Tick")) {
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
                     //const spellSchool = spell.school;
