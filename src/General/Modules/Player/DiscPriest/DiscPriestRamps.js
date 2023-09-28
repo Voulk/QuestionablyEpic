@@ -405,7 +405,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 }
 
                 // These are special exceptions where we need to write something special that can't be as easily generalized.
-                // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 
+                // Penance will queue anywhere from 4 to 8 ticks.
                 // These ticks are queued at the front of our array and will take place immediately. 
                 // This can be remade to work with any given number of ticks.
                 else if (spellName === "Penance" || spellName === "DefPenance") {
@@ -414,13 +414,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     let penanceCoeff = discSpells[spellName][0].coeff;
                     let penTickName = spellName === "Penance" ? "PenanceTick" : "DefPenanceTick";
 
-                    
-                    if (checkBuffActive(state.activeBuffs, "Penitent One")) {
-                        penanceBolts += 3;
-                        removeBuffStack(state.activeBuffs, "Penitent One"); 
-                    }
-                    
-                    else if (checkBuffActive(state.activeBuffs, "Harsh Discipline")) {
+                    // Harsh Discipline adds 1-4 bolts depending on stacks and talent points.
+                    if (checkBuffActive(state.activeBuffs, "Harsh Discipline")) {
                         penanceBolts += getBuffValue(state.activeBuffs, "Harsh Discipline") * getBuffStacks(state.activeBuffs, "Harsh Discipline");
                         removeBuff(state.activeBuffs, "Harsh Discipline");
                     } 

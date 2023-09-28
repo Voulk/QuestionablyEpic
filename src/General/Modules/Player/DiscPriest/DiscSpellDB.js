@@ -76,6 +76,17 @@ export const DISCSPELLS = {
         expectedOverheal: 0.6,
         secondaries: ['crit', 'vers', 'mastery'],
     }],
+    "Ultimate Penitence": [{
+        spellData: {id: 47540, icon: "ability_priest_ascendance", cat: "cooldown"},
+        type: "special",
+        castTime: 5, // The spell takes place over 5 seconds (before Haste).
+        cost: 0,
+        coeff: 0.8, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        bolts: 24,
+        atoneOverheal: 0.18,
+        school: "holy",
+        secondaries: ['crit', 'vers'],
+    }],
     /*
     "Schism": [{
         spellData: {id: 214621, icon: "spell_warlock_focusshadow", cat: "damage"},
@@ -152,6 +163,7 @@ export const DISCSPELLS = {
         school: "shadow",
         secondaries: ['crit', 'vers']
     }],
+    /*
     "Light's Wrath": [{
         spellData: {id: 207948, icon: "inv_staff_2h_artifacttome_d_01", cat: "cooldown"},
         type: "damage",
@@ -162,7 +174,7 @@ export const DISCSPELLS = {
         school: "holy",
         atoneOverheal: 0.25,
         secondaries: ['crit', 'vers'],
-    }],
+    }], */
     "Mindgames": [{
         spellData: {id: 323673, icon: "ability_revendreth_priest", cat: "damage"},
         type: "damage",
@@ -298,6 +310,7 @@ export const DISCSPELLS = {
     },
     {
         type: "buff",
+        buffType: "special",
         cooldown: 90,
         buffDuration: 8,
     }],
@@ -442,6 +455,7 @@ export const baseTalents = {
     // Disc spec tree
     // Tier 1
     lightsPromise: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 322115, select: false, tier: 1},
+    sanctuary: {points: 1, maxPoints: 1, icon: "spell_holy_holysmite", id: 231682, select: true, tier: 1},
     darkIndulgence: {points: 1, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true, tier: 1},
     schism: {points: 1, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false, tier: 1},
     brightPupil: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true, tier: 1},

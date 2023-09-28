@@ -62,7 +62,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
             type: "heal",
             coeff: 0.8,
             secondaries: ['vers'],
-            overheal: 0.03,
+            expectedOverheal: 0.03,
         });
    }
    if (talents.schism) {
@@ -118,7 +118,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            type: "function",
            runFunc: function (state, atonementApp) {
                const atonementCount = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-               const spell = {type: "heal", coeff: 0.0936 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
+               const spell = {type: "heal", coeff: 0.0936 * talents.contrition, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
                runHeal(state, spell, "Contrition");
            }
        })
@@ -270,18 +270,19 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            type: "heal",
            coeff: 0.42,
            secondaries: ['crit', 'vers', 'mastery'],
-           overheal: 0.6,
+           expectedOverheal: 0.6,
        })
        discSpells["Rapture"].push({
            name: "Crystalline Reflection",
            type: "heal",
            coeff: 0.42,
            secondaries: ['crit', 'vers', 'mastery'],
-           overheal: 0.6,
+           expectedOverheal: 0.6,
        })
    }
    if (talents.aegisOfWrath) {
-       discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - settings.aegisOfWrathWastage);
+        const aegisWastage = 0.06;
+        discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - aegisWastage);
    }
    /*if (talents.makeAmends) {
        // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
@@ -314,7 +315,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            atonementPos: 'end',
            targets: 1,
            secondaries: ['crit', 'vers'],
-           overheal: 0.5,
+           expectedOverheal: 0.5,
        })
    }
 
