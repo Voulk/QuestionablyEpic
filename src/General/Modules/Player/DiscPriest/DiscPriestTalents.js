@@ -141,7 +141,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    if (talents.divineAegis) {
        // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
        // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
-       stats.critMult *= (1 + 0.1 * talents.divineAegis);
+       stats.critMult *= (1 + 0.2 * talents.divineAegis);
        // TODO: PW:S Crit mod
    }
    /*
@@ -200,28 +200,58 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
 
    }
    if (talents.inescapableTorment) {
-       // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
+       // Note that this damage only fires if a Shadowfiend / Mindbender is active.
+       // We should add a "Condition" field that autoruns a quick function to see if a spell can proceed.
+       const inescapableTormentDmg = {
+            name: "Inescapable Torment",
+            type: "damage",
+            coeff: 1.9 * 0.442 * 0.6 * 1.6, // Don't get me started on the auras on this spell. The 1.6 will presumably be baked into its SP.
+            aura: 1,
+            targets: 1, // 5
+            atoneOverheal: 0.22,
+            school: "shadow",
+            secondaries: ['crit', 'vers'],
+       }
+       const inescapableTormentDuration = {
+            type: "buffExtension",
+            buffName: "Shadowfiend",
+            extension: 1,
+       }
+
+       discSpells["Mind Blast"].push(inescapableTormentDmg);
+       discSpells["Mind Blast"].push(inescapableTormentDuration);
+
+       discSpells["Shadow Word: Death"].push(inescapableTormentDmg);
+       discSpells["Shadow Word: Death"].push(inescapableTormentDuration);
+
+       discSpells["Penance"].push(inescapableTormentDmg);
+       discSpells["Penance"].push(inescapableTormentDuration);
    }
-    /*
-   if (talents.twilightCorruption) {
+
+
+   // Merged into Shadow Covenant as a modifier.
+   /*if (talents.twilightCorruption) {
        // Shadow Covenant increases damage / healing by an extra 10%.
        discSpells["Shadow Covenant"][1].value += 0.1;
-   }*/
+   } */
+   /*
    if (talents.embraceShadow) {
         discSpells["Shadow Covenant"][1].buffDuration += 8;
-   }
+   } */
 
    // Passive Shadow Cov
    if (talents.shadowCovenant) {
     const shadowCov = {
         type: "buff",
-        buffDuration: 15 + (8 * talents.embraceShadow),
+        buffDuration: 15,
         buffType: "special",
         value: 1.25 + (0.1 * talents.twilightCorruption),
         name: "Shadow Covenant",
         canStack: false,
     }
+
     discSpells["Mindbender"].push(shadowCov);
+    discSpells["Shadowfiend"].push(shadowCov);
    }
 
    if (talents.crystallineReflection) {

@@ -87,7 +87,9 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
+        console.log("Scov fired" + getBuffValue(state.activeBuffs, "Shadow Covenant"))
     }
+    if (checkBuffActive(buffs, "Shadow Covenant")) console.log("CoV trying to fire");
     if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
 
     if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
@@ -376,7 +378,13 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
-                    runDamage(state, spell, spellName, atonementApp)
+                    // This should be refactored into a more generic conditional on spells.
+                    if (spell.name === "Inescapable Torment") {
+                        if (state.activeBuffs.filter(buff => buff.name === "Shadowfiend" || buff.name === "Mindbender").length > 0) runDamage(state, spell, spellName, atonementApp)
+                    }
+                    else {
+                        runDamage(state, spell, spellName, atonementApp)
+                    }
                 }
 
                 // The spell extends atonements already active. This is specific to Evanglism. 

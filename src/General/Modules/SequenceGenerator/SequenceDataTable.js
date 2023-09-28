@@ -38,7 +38,7 @@ export default function SequenceDataTable(props) {
                 <TableCell component="th" scope="row">
                     <div style={{ display: "inline-flex", alignItems: "center" }}>
                       {/*<OneShotSpellIcon spell={row} iconType={"Spell"} className="table" /> */}
-                      <div>{row.seq.join(", ")}</div>
+                      <div>{row.tag}</div>
                     </div>
                 </TableCell>
                 <TableCell align="right">{row.hps.toLocaleString()}</TableCell>

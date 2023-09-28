@@ -105,6 +105,7 @@ export const addBuff = (state, spell, spellName) => {
         state.activeBuffs.push(newBuff);
     }
     else if (spell.buffType === "damage" || spell.buffType === "heal" || spell.buffType === "function") {     
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds.");
         newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick}
         
         // If our spell has a hasted duration we'll reduce the expiration. These are at least fairly rare nowadays.
@@ -178,6 +179,7 @@ export const addBuff = (state, spell, spellName) => {
         if (buffStacks === 0) {
             newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
             state.activeBuffs.push(newBuff);
+            console.log(newBuff);
         }
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]

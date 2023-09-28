@@ -140,15 +140,15 @@ export const buildDiscChartData = (stats, incTalents) => {
         stamina: 29000,
         critMult: 2,
     }
-    console.log(incTalents);
+
     const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
     const talents = {...incTalents};
 
     const sequences = [
-        ["Mind Blast", "Penance", "Smite", "Smite", "Smite", "Penance"],
-        ["Penance", "Mind Blast", "Smite", "Smite", "Smite", "Penance"],
-        ["Shadowfiend", "Penance", "Mind Blast", "Smite", "Smite", "Penance"],
-
+        {tag: "Ramp + DoT only", seq: []},
+        {tag: "Ramp -> Pen, Mind Blast, Smite / Pen", seq: ["Penance", "Mind Blast", "Smite", "Mind Blast", "Smite", "Penance"]},
+        {tag: "Sfiend Ramp -> Pen, Mind Blast, Smite, Mind Blast, Pen / Smite", seq: ["Shadowfiend", "Penance", "Mind Blast", "Smite", "Mind Blast", "Penance"]},
+        {tag: "Bender Ramp -> Pen, Mind Blast, Smite, Mind Blast, Pen / Smite", seq: ["Mindbender", "Penance", "Mind Blast", "Smite", "Mind Blast", "Penance"]},
     ]
 
     const atoneRamp = ["Purge the Wicked"]
@@ -161,10 +161,12 @@ export const buildDiscChartData = (stats, incTalents) => {
     atoneRamp.push("Evangelism")
 
 
-    sequences.forEach(seq => {
-        const newSeq = atoneRamp.concat(seq);
-        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
-        results.push({seq: seq, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
+    sequences.forEach(sequence => {
+        const newSeq = atoneRamp.concat(sequence.seq);
+        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents);
+        const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
+        //console.log(result);
+        results.push({tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
     });    
 
     return results;
