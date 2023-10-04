@@ -8,21 +8,36 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
 
-/*
+
 describe("Blossom of Amirdrassil", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Blossom of Amirdrassil");
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${489}  | ${[155999,  77998, 233997]}
+    ${483}  | ${[Math.floor(272517/6),  Math.floor(136250/6), 408768]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
         expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
-}); */
+}); 
+
+describe("Smoldering Seedling", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Smoldering Seedling");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${473}  | ${[598406, 720]}
+    // add new test cases here
+    `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+        //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
+    });
+}); 
 
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

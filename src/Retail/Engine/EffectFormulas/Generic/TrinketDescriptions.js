@@ -20,7 +20,7 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
         // -- Season 3 Raid --
         case "Blossom of Amirdrassil":
             return blossomOfAmirdrassil(trinketData, itemLevel, player, additionalData);
-        case "Smoldering Treant Seedling":
+        case "Smoldering Seedling":
             return smolderingTreantSeedling(trinketData, itemLevel, player, additionalData);
         case "Pip's Emerald Friendship Badge":
             return pipsEmeraldFriendshipBadge(trinketData, itemLevel, player, additionalData);   
@@ -138,7 +138,7 @@ const smolderingTreantSeedling = (data, itemLevel, player, additionalData) => {
     return {
         category: trinketCategories.RAIDDROPS,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
-                "Intellect: " + Math.round(bonus_stats.intellect)],
+                "Mastery: " + Math.round(bonus_stats.mastery)],
         description:
           "",
       };
