@@ -23,6 +23,10 @@ export const raidTrinketData = [
         duration: 10,
         cooldown: 120,
       },
+      { // 
+        coefficient: 617.6665, 
+        table: -1,
+      },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
@@ -30,7 +34,7 @@ export const raidTrinketData = [
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) / data[0].cooldown * data[0].targetScaling;
 
       bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
-
+      console.log(itemLevel + " " + processedValue(data[2], itemLevel))
       return bonus_stats;
     }
   },
