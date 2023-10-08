@@ -66,7 +66,7 @@ export const runBuffs = (state, tickBuff, stats, spellDB) => {
             }
             else if (buff.runEndFunc) buff.runFunc(state, buff);
         })
-    }
+}
 
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {

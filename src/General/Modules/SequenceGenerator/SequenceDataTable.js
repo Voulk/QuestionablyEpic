@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
+import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
@@ -17,7 +18,7 @@ import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUt
 
 export default function SequenceDataTable(props) {
   const { t, i18n } = useTranslation();
-  const data = buildDiscChartData(props.stats, props.talents);//buildEvokerChartData(); //props.data;
+  const data = buildPaladinChartData(props.stats, props.talents);//buildEvokerChartData(); //props.data;
     const rows = data;
   //const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellID, true, row.bossName));
 

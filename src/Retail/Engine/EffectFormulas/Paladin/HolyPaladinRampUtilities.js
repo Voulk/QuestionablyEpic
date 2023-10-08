@@ -103,3 +103,40 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, reporting = fa
 
     return rampResult; //boonRamp + fiendRamp + miniRamp * 2;
 }
+
+export const buildPaladinChartData = (stats, incTalents) => {
+    let results = [];
+    
+    const activeStats = {
+        intellect: 12000,
+        haste: 2000,
+        crit: 2000,
+        mastery: 6500,
+        versatility: 3000,
+        stamina: 29000,
+        critMult: 2,
+    }
+
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false, preBuffs: []};
+    const talents = {...incTalents};
+
+    const sequences = [
+        {tag: "Faith: Flash of Light", seq: ["Flash of Light"], preBuffs: []},
+        {tag: "Faith: Flash of Light (IoL)", seq: ["Flash of Light"], preBuffs: ["Infusion of Light"]},
+        {tag: "Faith: Barrier of Faith active", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith"]},
+        {tag: "Faith: Barrier of Faith active", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith", "Infusion of Light"]},
+        {tag: "Faith: Holy Light", seq: ["Holy Light"], preBuffs: []},
+    ]
+
+
+    sequences.forEach(sequence => {
+        const newSeq = sequence.seq;
+        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents);
+        const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
+        console.log(result);
+        results.push({tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
+    });    
+
+    return results;
+
+}

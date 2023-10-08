@@ -441,7 +441,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath") && !checkBuffActive(state.activeBuffs, "Veneration")) miscReq = false;
     } 
     
-    if (conditions !== {}) {
+    if (conditions) {
         if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
         if (state.holyPower >= conditions.holyPower) aplReq = false;
         if (conditions.talentNot){
@@ -882,7 +882,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     let currentStats = JSON.parse(JSON.stringify(stats));
 
     const sequenceLength = 240; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const seqType = "Auto" // Auto / Manual.
+    const seqType = "Manual" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
