@@ -42,7 +42,7 @@ const initialState : RootState = {
     }, */
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
     healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry" },
-    lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
+    lariatGems: { value: 5, options: [], category: "embellishments", type: "Entry" },
     chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector" },
     chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector" },
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},

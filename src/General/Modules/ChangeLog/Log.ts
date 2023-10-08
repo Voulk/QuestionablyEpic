@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.7",
+    update: 3,
+    date: "October 8",
+    changes: [ 
+      "Small fix for Holy Priest dungeon gem advice.",
+      "Updated Lariat default gems to 5",
+      "Note that most development has moved to the 10.2 branch of the app."
+    ]},
+  {
+    version: "10.1.7",
     update: 2,
     date: "September 26",
     changes: [ 
