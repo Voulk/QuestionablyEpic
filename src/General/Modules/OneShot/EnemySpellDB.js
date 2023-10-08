@@ -176,7 +176,7 @@ export const enemySpellDB =
             "source": "Boss"
         }
     ],
-    "Throne of Tides": [
+    "Throne of the Tides": [
         {
             "name": "Geyser",
             "spellID": 427769,
