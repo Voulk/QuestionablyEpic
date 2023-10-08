@@ -246,8 +246,8 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.645985,
-            table: -8, // No idea why this is -8
-            stacks: {Raid: 0.2, Dungeon: 0.9} // Revisit dungeon stacks.
+            table: -8, // 
+            stacks: {Raid: 0.2, Dungeon: 0.5} // Revisit dungeon stacks.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -553,14 +553,14 @@ export const embellishmentData = [
             table: -9,
             ppm: 60 / 5,
             secondaries: ['versatility'],
-            efficiency: 0.55,
+            efficiency: 0.57,
           },
           { // Shield portion
             coefficient: 257.6989, //44.02832,
             table: -9,
-            ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
+            ppm: 0.09, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
-            efficiency: 0.5,
+            efficiency: 0.65,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
