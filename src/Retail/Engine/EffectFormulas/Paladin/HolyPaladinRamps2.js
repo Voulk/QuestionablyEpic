@@ -11,7 +11,7 @@ const PALADINCONSTANTS = {
     masteryEfficiency: 0.84, 
     baseMana: 250000,
 
-    auraHealingBuff: 1.06 * 0.95,
+    auraHealingBuff: 0.82,
     auraDamageBuff: 0.92 * 1.1,
     goldenHourHealing: 18000,
     enemyTargets: 1,
@@ -322,7 +322,7 @@ const getHealingMult = (state, t, spellName, talents) => {
     }
 
     if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
-        mult *= (0.3 * PALADINCONSTANTS.tyrsHitRate + 1);
+        mult *= (0.15 * PALADINCONSTANTS.tyrsHitRate + 1);
     }
 
     if ((["Crusader Strike"].includes(spellName) || spellName.includes("Holy Shock")) && state.talents.reclamation.points == 1) {
@@ -363,13 +363,11 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.35 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.245 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.35 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
-
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1 && !(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else if (!(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
     if (compile) state.healingDone[(state.beacon == "Beacon of Faith" ? "Beacon of Light + Faith" : state.beacon)] = (state.healingDone[(state.beacon == "Beacon of Faith" ? "Beacon of Light + Faith" : state.beacon)] || 0) + beaconHealing;
-
 
     // Barrier of Faith
     if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Barrier of Faith")) {
@@ -786,6 +784,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
         state.holyPower += 3;
         state.manaSpent -= paladinSpells[spellName][0].cost;
         state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
+
     }
 }
 
@@ -906,11 +905,29 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             if (buffName === "Infusion of Light") addBuff(state, paladinSpells["Holy Shock"][1], "Infusion of Light");
             else if (buffName === "Barrier of Faith") addBuff(state, paladinSpells["Barrier of Faith"][1], "Barrier of Faith");
             else if (buffName === "Glimmer of Light 8") {
-                console.log(paladinSpells["Holy Shock"][2])
                 for (let i = 0; i < 8; i++) addBuff(state, paladinSpells["Holy Shock"][2], "Glimmer of Light");
+            }
+            else if (buffName === "Tyr's Deliverance") {
+                addBuff(state, paladinSpells["Tyr's Deliverance"][1], "Tyr's Deliverance");
+                paladinSpells["Tyr's Deliverance"][1].coeff = 0; // Disable HoT for the purpose of tracking the healing increase only.
+            }
+            else if (buffName === "Blessing of Dawn") {
+                const dawnStacker = {
+                    name: "Blessing of Dawn",
+                    canStack: true,
+                    type: "buff",
+                    buffType: "special",
+                    buffDuration: 999, // Hidden buff in game.
+                    maxStacks: 3,
+        
+                }
+                addBuff(state, dawnStacker, "Blessing of Dawn");
             }
         })
     }
+    if (settings.includeOverheal === "No") PALADINCONSTANTS.beaconOverhealing = 0;
+
+    //
     const seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {

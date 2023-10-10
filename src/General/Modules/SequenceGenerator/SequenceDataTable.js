@@ -7,6 +7,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
@@ -18,7 +20,11 @@ import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/Holy
 
 export default function SequenceDataTable(props) {
   const { t, i18n } = useTranslation();
+  const lightColor = "#5B5B5B"; // Example light color
+  const darkColor = "#4C4C4C"; // Example dark color
+
   const data = buildPaladinChartData(props.stats, props.talents);//buildEvokerChartData(); //props.data;
+  
   const rows = data;
   const cats = [...new Set(data.map(item => item.cat))];
   //const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellID, true, row.bossName));
@@ -28,39 +34,48 @@ export default function SequenceDataTable(props) {
       <Table sx={{}} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Spell Combo</TableCell>
+            <TableCell style={{ fontWeight: 'bold' }}>Spell Combo</TableCell>
             <TableCell align="right">Healing</TableCell>
             <TableCell align="right">HPM</TableCell>
             <TableCell align="right">DPS</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {cats.map((cat) => (
-            <>
-              <TableRow>
-                <TableCell colSpan={4} style={{ fontWeight: 'bold' }}>{cat}</TableCell>
-              </TableRow>
-              {rows
-                .filter(row => row.cat === cat)
-                .map((row) => (
-                  <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                    <TableCell component="th" scope="row">
-                      <div style={{ display: "inline-flex", alignItems: "center" }}>
-                        {/*<OneShotSpellIcon spell={row} iconType={"Spell"} className="table" /> */}
-                        <div>{row.tag}</div>
-                      </div>
-                    </TableCell>
-                    <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
-                    <TableCell align="right">{row.hpm}</TableCell>
-                    <TableCell align="right">{row.dps}</TableCell>
-                  </TableRow>
-                ))
-              }
-            </>
-  ))}
+            <TableBody>
+              {cats.map((cat) => {
+                  let currentColor = lightColor;
 
-
-        </TableBody>
+                  // Here, we explicitly return the content for each category
+                  return (
+                    <>
+                      <TableRow>
+                        <TableCell colSpan={4} style={{ fontWeight: 'bold' }}>{cat}</TableCell>
+                      </TableRow>
+                      {rows
+                        .filter(row => row.cat === cat)
+                        .map((row, index) => {
+                          currentColor = currentColor === lightColor ? darkColor : lightColor;
+                          
+                          // Also here, explicitly return the TableRow for each row
+                          return (
+                            <TableRow key={row.name} style={{ backgroundColor: currentColor }} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                              <TableCell component="th" scope="row">
+                                <div style={{ display: "inline-flex", alignItems: "center" }}>
+                                  <SpellIcon spell={row.spell} iconType={"Spell"} className="table" 
+                                    style={{ display: "flex", width: '20px', height: '20px', marginRight: "10px", border: "1px solid rgba(20, 20, 20, 0.5)" }} />
+                                  <div>{row.tag}</div>
+                                </div>
+                              </TableCell>
+                              <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
+                              <TableCell align="right">{row.hpm}</TableCell>
+                              <TableCell align="right">{row.dps}</TableCell>
+                            </TableRow>
+                          );
+                        })
+                      }
+                    </>
+                  );
+                })}
+      </TableBody>
       </Table>
     </TableContainer>
   );

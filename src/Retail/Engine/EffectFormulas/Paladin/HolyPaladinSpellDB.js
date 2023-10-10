@@ -91,7 +91,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Holy Light": [{
-        spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
+        spellData: {id: 19750, icon: "spell_holy_surgeoflight", cat: "heal"},
         type: "heal",
         castTime: 2.5,
         cost: 2.4,
@@ -162,7 +162,7 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Word of Glory": [{
-        spellData: {id: 0, icon: "", cat: "heal"},
+        spellData: {id: 0, icon: "inv_helmet_96", cat: "heal"},
         type: "heal",
         castTime: 0,
         cost: 1.2,
@@ -282,6 +282,7 @@ export const PALADINSPELLDB = {
         coeff: 0.7375,
         targets: 1,
         secondaries: ['crit', 'vers', 'mastery'],
+        tickData: {tickRate: 1},
         canPartialTick: false,
         buffDuration: 20,
         buffCap: 60,
