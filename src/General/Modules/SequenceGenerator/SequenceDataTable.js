@@ -18,12 +18,25 @@ import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/Holy
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
 } */
 
+function buildChartData(spec, stats, talents) {
+  if (spec === "Holy Paladin") {
+    return buildPaladinChartData(stats, talents);
+  } else if (spec === "Discipline Priest") {
+    return buildDiscChartData(stats, talents);
+  } else if (spec === "Preservation Evoker") {
+    return buildEvokerChartData(stats, talents);
+  }
+  else {
+    return [];
+  }
+}
+
 export default function SequenceDataTable(props) {
   const { t, i18n } = useTranslation();
-  const lightColor = "#5B5B5B"; // Example light color
-  const darkColor = "#4C4C4C"; // Example dark color
+  const lightColor = "#515151"; // Example light color
+  const darkColor = "#474747"; // Example dark color
 
-  const data = buildPaladinChartData(props.stats, props.talents);//buildEvokerChartData(); //props.data;
+  const data = buildChartData(props.spec, props.stats, props.talents);//buildEvokerChartData(); //props.data;
   
   const rows = data;
   const cats = [...new Set(data.map(item => item.cat))];
@@ -59,9 +72,9 @@ export default function SequenceDataTable(props) {
                           return (
                             <TableRow key={row.name} style={{ backgroundColor: currentColor }} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                               <TableCell component="th" scope="row">
-                                <div style={{ display: "inline-flex", alignItems: "center" }}>
+                                <div style={{ display: "inline-flex", justifyContent: "center", alignItems: "center" }}>
                                   <SpellIcon spell={row.spell} iconType={"Spell"} className="table" 
-                                    style={{ display: "flex", width: '20px', height: '20px', marginRight: "10px", border: "1px solid rgba(20, 20, 20, 0.5)" }} />
+                                    style={{ display: "block", width: '18px', height: '18px', marginRight: "10px", verticalAlign: 'middle', border: "1px solid rgba(20, 20, 20, 0.5)" }} />
                                   <div>{row.tag}</div>
                                 </div>
                               </TableCell>
