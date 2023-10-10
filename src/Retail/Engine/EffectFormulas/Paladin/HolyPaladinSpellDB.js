@@ -75,7 +75,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 1.5,
         cost: 3.6,
-        coeff: 3.03, //2.727, // Test this since it's an aura mess.
+        coeff: 3.03 * 1.3, //2.727, // Test this since it's an aura mess.
         expectedOverheal: 0.14,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -95,7 +95,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 2.5,
         cost: 2.4,
-        coeff: 3.64, // 2.6 * 1.4,
+        coeff: 3.64 * 1.4, // 2.6 * 1.4,
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -166,7 +166,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 1.2,
-        coeff: 3.15, //2.89
+        coeff: 3.15 * 1.1, //2.89
         expectedOverheal: 0.3,
         holyPower: -3,
         secondaries: ['crit', 'vers', 'mastery']
@@ -421,6 +421,18 @@ export const baseTalents = {
     talentName: {points: 0, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
     }}, 
+
+    // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
+    glimmerOfLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Shock'].push({
+            name: "Glimmer of Light",
+            type: "buff",
+            buffType: 'special',
+            canStack: false,
+            maxStacks: 8,
+            buffDuration: 30,
+        });
+    }},
 
 
     // == Holy Tree ==
@@ -828,17 +840,7 @@ export const baseTalents = {
 
     }}, 
 
-    // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
-    glimmerOfLight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Holy Shock'].push({
-            name: "Glimmer of Light",
-            type: "buff",
-            buffType: 'special',
-            canStack: false,
-            maxStacks: 8,
-            buffDuration: 30,
-        });
-    }},
+
 
     // Spending Holy Power has a 25% chance to trigger Glimmer of Light.
     glisteningRadiance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {

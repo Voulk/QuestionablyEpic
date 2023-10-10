@@ -19,7 +19,8 @@ import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/Holy
 export default function SequenceDataTable(props) {
   const { t, i18n } = useTranslation();
   const data = buildPaladinChartData(props.stats, props.talents);//buildEvokerChartData(); //props.data;
-    const rows = data;
+  const rows = data;
+  const cats = [...new Set(data.map(item => item.cat))];
   //const rows = data.map((row) => createData(row.name, row.tyrannical, row.fortified, row.spellID, row.icon, row.spellID, true, row.bossName));
 
   return (
@@ -34,19 +35,30 @@ export default function SequenceDataTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                <TableCell component="th" scope="row">
-                    <div style={{ display: "inline-flex", alignItems: "center" }}>
-                      {/*<OneShotSpellIcon spell={row} iconType={"Spell"} className="table" /> */}
-                      <div>{row.tag}</div>
-                    </div>
-                </TableCell>
-                <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
-                <TableCell align="right">{row.hpm}</TableCell>
-                <TableCell align="right">{row.dps}</TableCell>
+          {cats.map((cat) => (
+            <>
+              <TableRow>
+                <TableCell colSpan={4} style={{ fontWeight: 'bold' }}>{cat}</TableCell>
               </TableRow>
-            ))}
+              {rows
+                .filter(row => row.cat === cat)
+                .map((row) => (
+                  <TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                    <TableCell component="th" scope="row">
+                      <div style={{ display: "inline-flex", alignItems: "center" }}>
+                        {/*<OneShotSpellIcon spell={row} iconType={"Spell"} className="table" /> */}
+                        <div>{row.tag}</div>
+                      </div>
+                    </TableCell>
+                    <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
+                    <TableCell align="right">{row.hpm}</TableCell>
+                    <TableCell align="right">{row.dps}</TableCell>
+                  </TableRow>
+                ))
+              }
+            </>
+  ))}
+
 
         </TableBody>
       </Table>

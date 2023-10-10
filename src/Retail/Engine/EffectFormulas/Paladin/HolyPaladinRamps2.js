@@ -11,7 +11,7 @@ const PALADINCONSTANTS = {
     masteryEfficiency: 0.84, 
     baseMana: 250000,
 
-    auraHealingBuff: 1.06,
+    auraHealingBuff: 1.06 * 0.95,
     auraDamageBuff: 0.92 * 1.1,
     goldenHourHealing: 18000,
     enemyTargets: 1,
@@ -373,7 +373,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Barrier of Faith
     if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Barrier of Faith")) {
-        const barrierHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.barrierOverhealing);
+        const barrierHealing = healingVal * 0.25 * (1 - PALADINCONSTANTS.barrierOverhealing);
         if (compile) state.healingDone["Barrier of Faith (Charge)"] = (state.healingDone["Barrier of Faith (Charge)"] || 0) + barrierHealing;
         addReport(state, `Barrier of Faith stored ${Math.round(barrierHealing)} (Exp OH: ${PALADINCONSTANTS.barrierOverhealing * 100}%)`)
     }
@@ -899,7 +899,18 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     // Extra Settings
     if (settings.masteryEfficiency) PALADINCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
-
+    if (settings.preBuffs) {
+        // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            console.log("Adding prebuff: " + buffName)
+            if (buffName === "Infusion of Light") addBuff(state, paladinSpells["Holy Shock"][1], "Infusion of Light");
+            else if (buffName === "Barrier of Faith") addBuff(state, paladinSpells["Barrier of Faith"][1], "Barrier of Faith");
+            else if (buffName === "Glimmer of Light 8") {
+                console.log(paladinSpells["Holy Shock"][2])
+                for (let i = 0; i < 8; i++) addBuff(state, paladinSpells["Holy Shock"][2], "Glimmer of Light");
+            }
+        })
+    }
     const seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {

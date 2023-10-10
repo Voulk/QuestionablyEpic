@@ -121,20 +121,30 @@ export const buildPaladinChartData = (stats, incTalents) => {
     const talents = {...incTalents};
 
     const sequences = [
-        {tag: "Faith: Flash of Light", seq: ["Flash of Light"], preBuffs: []},
-        {tag: "Faith: Flash of Light (IoL)", seq: ["Flash of Light"], preBuffs: ["Infusion of Light"]},
-        {tag: "Faith: Barrier of Faith active", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith"]},
-        {tag: "Faith: Barrier of Faith active", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith", "Infusion of Light"]},
-        {tag: "Faith: Holy Light", seq: ["Holy Light"], preBuffs: []},
+        {cat: "Holy Shock", tag: "Holy Shock Raw", seq: ["Holy Shock"], preBuffs: []},
+        {cat: "Holy Shock", tag: "Holy Shock + 8 Glimmer", seq: ["Holy Shock"], preBuffs: ["Glimmer of Light 8"]},
+        {cat: "Hard Casts", tag: "Flash of Light", seq: ["Flash of Light"], preBuffs: []},
+        {cat: "Hard Casts", tag: "Flash of Light (IoL)", seq: ["Flash of Light"], preBuffs: ["Infusion of Light"]},
+        {cat: "Hard Casts", tag: "Flash of Light (Barr)", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith"]},
+        {cat: "Hard Casts", tag: "Flash of Light (Barr, IoL)", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith", "Infusion of Light"]},
+        {cat: "Hard Casts", tag: "Holy Light", seq: ["Holy Light"], preBuffs: []},
+        {cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: []},
+        {cat: "Spenders", tag: "Light of Dawn (1x BoD)", seq: ["Light of Dawn"], preBuffs: ["Blessing of Dawn"]},
+        {cat: "Spenders", tag: "Light of Dawn (2x BoD)", seq: ["Light of Dawn"], preBuffs: ["Blessing of Dawn", "Blessing of Dawn"]},
+        {cat: "Spenders", tag: "Word of Glory", seq: ["Word of Glory"], preBuffs: []},
+        {cat: "Spenders", tag: "Word of Glory (1x BoD)", seq: ["Word of Glory"], preBuffs: ["Blessing of Dawn"]},
+        {cat: "Spenders", tag: "Word of Glory (2x BoD)", seq: ["Word of Glory"], preBuffs: ["Blessing of Dawn", "Blessing of Dawn"]},
+        
     ]
 
 
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
-        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), testSettings, talents);
+        
+        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
         console.log(result);
-        results.push({tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
+        results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-"})
     });    
 
     return results;
