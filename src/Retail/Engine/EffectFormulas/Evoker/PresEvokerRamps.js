@@ -263,7 +263,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         coeff: 2.5,
         targets: 1,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers']
+        secondaries: ['crit', 'vers', 'mastery']
     })
     if (talents.fieldOfDreams) evokerSpells['Emerald Blossom'].push({
         type: "castSpell",
