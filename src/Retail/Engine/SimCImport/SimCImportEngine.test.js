@@ -134,7 +134,8 @@ describe("Test Regular Items", () => {
 
 
 });
-/*
+
+/* These tests need to be updated with season 3 items since S2 upgrade tracks are no longer valid. We don't have many S3 items on the PTR yet but come back to this.
 describe("Test Upgrade Track", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
