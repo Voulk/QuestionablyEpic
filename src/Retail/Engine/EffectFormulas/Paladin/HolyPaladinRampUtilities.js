@@ -134,12 +134,12 @@ export const buildPaladinChartData = (stats, incTalents) => {
         {cat: "Hard Casts", tag: "Flash of Light (Barr, IoL, Tyrs)", seq: ["Flash of Light"], preBuffs: ["Barrier of Faith", "Infusion of Light", "Tyr's Deliverance"]},
         {cat: "Hard Casts", tag: "Holy Light", seq: ["Holy Light"], preBuffs: []},
 
-        {cat: "Spenders", tag: "Word of Glory", seq: ["Word of Glory"], preBuffs: []},
-        {cat: "Spenders", tag: "Word of Glory (1x BoD)", seq: ["Word of Glory"], preBuffs: ["Blessing of Dawn"]},
-        {cat: "Spenders", tag: "Word of Glory (2x BoD)", seq: ["Word of Glory"], preBuffs: ["Blessing of Dawn", "Blessing of Dawn"]},
-        {cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: []},
-        {cat: "Spenders", tag: "Light of Dawn (1x BoD)", seq: ["Light of Dawn"], preBuffs: ["Blessing of Dawn"]},
-        {cat: "Spenders", tag: "Light of Dawn (2x BoD)", seq: ["Light of Dawn"], preBuffs: ["Blessing of Dawn", "Blessing of Dawn"]},
+        {cat: "Spenders (8x glimmer)", tag: "Word of Glory", seq: ["Word of Glory"], preBuffs: ["Glimmer of Light 8"]},
+        {cat: "Spenders (8x glimmer)", tag: "Word of Glory (1x BoD)", seq: ["Word of Glory"], preBuffs: ["Glimmer of Light 8", "Blessing of Dawn"]},
+        {cat: "Spenders (8x glimmer)", tag: "Word of Glory (2x BoD)", seq: ["Word of Glory"], preBuffs: ["Glimmer of Light 8", "Blessing of Dawn", "Blessing of Dawn"]},
+        {cat: "Spenders (8x glimmer)", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Glimmer of Light 8"]},
+        {cat: "Spenders (8x glimmer)", tag: "Light of Dawn (1x BoD)", seq: ["Light of Dawn"], preBuffs: ["Glimmer of Light 8", "Blessing of Dawn"]},
+        {cat: "Spenders (8x glimmer)", tag: "Light of Dawn (2x BoD)", seq: ["Light of Dawn"], preBuffs: ["Glimmer of Light 8", "Blessing of Dawn", "Blessing of Dawn"]},
 
         
     ]

@@ -848,9 +848,11 @@ export const baseTalents = {
     glisteningRadiance: {points: 1, maxPoints: 1, icon: "spell_paladin_divinecircle", id: 414139, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const glisten = {
             type: "function",
-            chance: 0.25,
+            chance: 1, 
             runFunc: function (state, spell, spellDB) {
-                triggerGlimmerOfLight(state, "Glistening Radiance");
+                // You can either model this as a 25% chance of a full Glimmer, or a 100% chance of a 25% Glimmer. The former has more technical accuracy but 
+                // we really like flattening RNG where possible. 
+                triggerGlimmerOfLight(state, "Glistening Radiance", 0.25);
             }
         }
 
@@ -858,6 +860,7 @@ export const baseTalents = {
         spellDB['Light of Dawn'].push(glisten);
         spellDB['Shield of the Righteous'].push(glisten);
         spellDB['Avenging Crusader'].push(glisten);
+
 
     }},
 

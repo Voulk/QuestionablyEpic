@@ -27,7 +27,7 @@ export const SpellIcon = ({ spell, spec, iconType, size, className, alt = "", ..
   // TODO: Refine the centered text here.
   // //position: "relative"
   return (
-    <div style={{  }}> 
+    <div style={{position: "relative"  }}> 
       <WowheadTooltip type="spell" id={spellId}>
         <img src={fullURL} alt={alt} className={`icon ${className || ""}`} {...others} />
         {iconType === "Talent" ? (

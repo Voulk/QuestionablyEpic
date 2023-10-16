@@ -202,7 +202,7 @@ const applyTalents = (state, spellDB, stats) => {
 
 }
 
-export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light") => {
+export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light", specialMult = 1) => {
     // Glimmer of Light places a buff on each target you Holy Shock up to a 1/3/8 target cap.
     // Whenever you Holy Shock everyone with Glimmer is healed.
 
@@ -211,10 +211,11 @@ export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light")
 
     const glimmerTargets = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
     if (glimmerTargets > 0) {
-        const glimmerMult = (1 + 0.1 * state.talents.gloriousDawn.points)
+        const glimmerMult = (1 + 0.1 * state.talents.gloriousDawn.points) * specialMult;
+        console.log(glimmerMult);
         const glimmerOfLight = {
             name: "Glimmer of Light",
-            coeff: 1.6416 * (1 + glimmerTargets * 0.06) * glimmerMult / glimmerTargets, // This is split between all targets
+            coeff: 1.6416 * (1 + glimmerTargets * 0.04) * glimmerMult / glimmerTargets, // This is split between all targets
             targets: glimmerTargets - PALADINCONSTANTS.enemyGlimmers,
             expectedOverheal: 0.25,
             secondaries: ["crit", "vers", "mastery"],
