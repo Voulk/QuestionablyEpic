@@ -7,27 +7,33 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /* == Naive implementation. == Can refine when trinket is available for testing. Likely to have some form of meteor effect.
     */
-    name: "Smoldering Treant Seedling",
+    name: "Smoldering Seedling",
     effects: [
       { // 
-        coefficient: 1042.025, 
-        table: -8,
+        coefficient: 534.5043, 
+        table: -9,
         duration: 12,
+        cooldown: 120,
+        targetScaling: 0.6, // Confirm this in game. It's behaving weird on PTR. Think about whether this should actually be 1.6 or 0.6.
+        efficiency: 0.95, // The tree does pulse smart healing but it's also a little inefficient to pushing healing into a tree instead of the raid.
+      },
+      { // 
+        coefficient: 0.518729, 
+        table: -7,
+        duration: 10,
         cooldown: 120,
       },
       { // 
-        coefficient: 0.432156, 
+        coefficient: 617.6665, 
         table: -1,
-        duration: 10,
-        cooldown: 120,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel) / data[0].cooldown;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) / data[0].cooldown * data[0].targetScaling;
 
-      bonus_stats.intellect = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+      bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
 
       return bonus_stats;
     }
@@ -37,7 +43,6 @@ export const raidTrinketData = [
     /*                                  Pip's Emerald Friendship Badge                                */
     /* ---------------------------------------------------------------------------------------------- */
     /* Not final. Diminishing effect on the proc needs to be more accurately implemented.
-    /* NEEDS DIMINISHING RETURNS
     */
     name: "Pip's Emerald Friendship Badge",
     effects: [
@@ -86,22 +91,24 @@ export const raidTrinketData = [
     name: "Blossom of Amirdrassil",
     effects: [
       {  // HoT effect
-        coefficient: 15.58547, // 93.51453,
+        coefficient: 29.5139, // This is probably 1 HoT tick.
         table: -9,
         secondaries: ['versatility'],
-        efficiency: {Raid: 0.6, Dungeon: 0.65}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+        efficiency: {Raid: 0.6, Dungeon: 0.65}, 
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
+        ticks: 6,
       },
       {  // Spread HoT effect
-        coefficient: 7.792735, // 46.75641,
+        coefficient: 14.75609, // 46.75641,
         table: -9,
         targets: 3,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.55, Dungeon: 0.57}, 
         percentProc: 0.5,
+        ticks: 6,
       },
       {  // Shield effect
-        coefficient: 140.2709,
+        coefficient: 265.6199,
         table: -9,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
@@ -111,8 +118,8 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]);
-      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].ticks;
+      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets * data[0].ticks;
       bonus_stats.hps += processedValue(data[2], itemLevel, data[2].efficiency[additionalData.contentType]) * data[2].percentProc;
 
       bonus_stats.hps = bonus_stats.hps * data[0].ppm / 60;
@@ -240,7 +247,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.813774 * 0.3, // 1.506561 * 0.7, 
+        coefficient: 0.244196, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,

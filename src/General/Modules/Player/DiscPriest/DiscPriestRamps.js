@@ -1,9 +1,9 @@
 // 
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, 
+            getHealth, extendBuff, addBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
@@ -75,7 +75,6 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
         }
     }
-    else if (spellName === "Light's Wrath") mult *= (1 + (0.06 + talents.resplendentLight * 0.02) * activeAtones);
 
     if (checkBuffActive(buffs, "Twilight Equilibrium - Shadow") && "school" in spell && spell.school === "shadow" && !spellName.includes("dot")) {
         mult *= 1.15;
@@ -87,8 +86,8 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
+
     }
-    if (checkBuffActive(buffs, "Wrath Unleashed") && spellName === "Smite") mult *= 1.4;
 
     if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
         mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.12);
@@ -376,7 +375,13 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
                 else if (spell.type === 'damage') {
-                    runDamage(state, spell, spellName, atonementApp)
+                    // This should be refactored into a more generic conditional on spells.
+                    if (spell.name === "Inescapable Torment") {
+                        if (state.activeBuffs.filter(buff => buff.name === "Shadowfiend" || buff.name === "Mindbender").length > 0) runDamage(state, spell, spellName, atonementApp)
+                    }
+                    else {
+                        runDamage(state, spell, spellName, atonementApp)
+                    }
                 }
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
@@ -399,7 +404,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 }
 
                 // These are special exceptions where we need to write something special that can't be as easily generalized.
-                // Penance will queue either 3 or 6 ticks depending on if we have a Penitent One proc or not. 
+                // Penance will queue anywhere from 4 to 8 ticks.
                 // These ticks are queued at the front of our array and will take place immediately. 
                 // This can be remade to work with any given number of ticks.
                 else if (spellName === "Penance" || spellName === "DefPenance") {
@@ -408,14 +413,11 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     let penanceCoeff = discSpells[spellName][0].coeff;
                     let penTickName = spellName === "Penance" ? "PenanceTick" : "DefPenanceTick";
 
-                    if (checkBuffActive(state.activeBuffs, "Penitent One")) {
-                        penanceBolts += 3;
-                        removeBuffStack(state.activeBuffs, "Penitent One"); 
-                    }
-                    else if (checkBuffActive(state.activeBuffs, "Harsh Discipline")) {
-                        penanceBolts += 3;
-                        removeBuffStack(state.activeBuffs, "Harsh Discipline");
-                    }
+                    // Harsh Discipline adds 1-4 bolts depending on stacks and talent points.
+                    if (checkBuffActive(state.activeBuffs, "Harsh Discipline")) {
+                        penanceBolts += getBuffValue(state.activeBuffs, "Harsh Discipline") * getBuffStacks(state.activeBuffs, "Harsh Discipline");
+                        removeBuff(state.activeBuffs, "Harsh Discipline");
+                    } 
 
                     discSpells[penTickName][0].castTime = 2 / penanceBolts;
                     discSpells[penTickName][0].coeff = penanceCoeff;
@@ -424,7 +426,16 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     }
                 }
 
-                if (state.talents.twilightEquilibrium && spell.type === 'damage') {
+                else if (spellName === "Ultimate Penitence" || spellName === "DefUltimate Penitence") {
+                    
+                    let bolts = discSpells[spellName][0].bolts;
+
+                    for (var i = 0; i < bolts; i++) {
+                        seq.unshift("Ultimate Penitence Tick");
+                    }
+                }
+
+                if (state.talents.twilightEquilibrium && spell.type === 'damage' && !spellName.includes("Tick")) {
                     // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
                     // increases the power of our next cast of the opposite school by 15%.
                     //const spellSchool = spell.school;

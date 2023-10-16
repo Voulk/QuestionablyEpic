@@ -1,5 +1,6 @@
 
-import { DISCCONSTANTS } from "./DiscPriestRamps";
+import { DISCCONSTANTS, runDamage } from "./DiscPriestRamps";
+import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampBase"
 
 /**
 * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -61,7 +62,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
             type: "heal",
             coeff: 0.8,
             secondaries: ['vers'],
-            overheal: 0.03,
+            expectedOverheal: 0.03,
         });
    }
    if (talents.schism) {
@@ -117,7 +118,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            type: "function",
            runFunc: function (state, atonementApp) {
                const atonementCount = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
-               const spell = {type: "heal", coeff: 0.0936 * talents.contrition, overheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
+               const spell = {type: "heal", coeff: 0.0936 * talents.contrition, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], targets: atonementCount}
                runHeal(state, spell, "Contrition");
            }
        })
@@ -141,7 +142,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    if (talents.divineAegis) {
        // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
        // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
-       stats.critMult *= (1 + 0.1 * talents.divineAegis);
+       stats.critMult *= (1 + 0.2 * talents.divineAegis);
        // TODO: PW:S Crit mod
    }
    /*
@@ -158,8 +159,17 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        // TODO: Add Smite buff
    }*/
    if (talents.harshDiscipline && settings.harshDiscipline) {
-       // Can probably just add a buff on sequence start for the first Penance.
-       state.activeBuffs.push({name: "Harsh Discipline", expiration: 999, buffType: "special", value: 3, stacks: 1, canStack: false})
+       const hdBuff = {
+        name: "Harsh Discipline",
+        type: "buff",
+        buffDuration: 30,
+        buffType: "special",
+        value: talents.harshDiscipline, 
+        stacks: 1, 
+        canStack: true, 
+        maxStacks: 2
+       }
+       discSpells["Power Word: Radiance"].push(hdBuff);
    }
    if (talents.expiation) {
        discSpells["Mind Blast"][0].coeff *= (1 + 0.1 * talents.expiation);
@@ -200,28 +210,58 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
 
    }
    if (talents.inescapableTorment) {
-       // TODO: Add two spell components, an AoE damage spell and a Shadowfiend / Mindbender duration increase function spell component.
+       // Note that this damage only fires if a Shadowfiend / Mindbender is active.
+       // We should add a "Condition" field that autoruns a quick function to see if a spell can proceed.
+       const inescapableTormentDmg = {
+            name: "Inescapable Torment",
+            type: "damage",
+            coeff: 1.9 * 0.442 * 0.6 * 1.6, // Don't get me started on the auras on this spell. The 1.6 will presumably be baked into its SP.
+            aura: 1,
+            targets: 1, // 5
+            atoneOverheal: 0.22,
+            school: "shadow",
+            secondaries: ['crit', 'vers'],
+       }
+       const inescapableTormentDuration = {
+            type: "buffExtension",
+            buffName: "Shadowfiend",
+            extension: 1,
+       }
+
+       discSpells["Mind Blast"].push(inescapableTormentDmg);
+       discSpells["Mind Blast"].push(inescapableTormentDuration);
+
+       discSpells["Shadow Word: Death"].push(inescapableTormentDmg);
+       discSpells["Shadow Word: Death"].push(inescapableTormentDuration);
+
+       discSpells["Penance"].push(inescapableTormentDmg);
+       discSpells["Penance"].push(inescapableTormentDuration);
    }
-    /*
-   if (talents.twilightCorruption) {
+
+
+   // Merged into Shadow Covenant as a modifier.
+   /*if (talents.twilightCorruption) {
        // Shadow Covenant increases damage / healing by an extra 10%.
        discSpells["Shadow Covenant"][1].value += 0.1;
-   }*/
+   } */
+   /*
    if (talents.embraceShadow) {
         discSpells["Shadow Covenant"][1].buffDuration += 8;
-   }
+   } */
 
    // Passive Shadow Cov
    if (talents.shadowCovenant) {
     const shadowCov = {
         type: "buff",
-        buffDuration: 15 + (8 * talents.embraceShadow),
+        buffDuration: 15,
         buffType: "special",
         value: 1.25 + (0.1 * talents.twilightCorruption),
         name: "Shadow Covenant",
         canStack: false,
     }
+
     discSpells["Mindbender"].push(shadowCov);
+    discSpells["Shadowfiend"].push(shadowCov);
    }
 
    if (talents.crystallineReflection) {
@@ -230,18 +270,19 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            type: "heal",
            coeff: 0.42,
            secondaries: ['crit', 'vers', 'mastery'],
-           overheal: 0.6,
+           expectedOverheal: 0.6,
        })
        discSpells["Rapture"].push({
            name: "Crystalline Reflection",
            type: "heal",
            coeff: 0.42,
            secondaries: ['crit', 'vers', 'mastery'],
-           overheal: 0.6,
+           expectedOverheal: 0.6,
        })
    }
    if (talents.aegisOfWrath) {
-       discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - settings.aegisOfWrathWastage);
+        const aegisWastage = 0.06;
+        discSpells["Power Word: Shield"][0].coeff *= 1.3 * (1 - aegisWastage);
    }
    /*if (talents.makeAmends) {
        // We can kind of model this, but benefit isn't really going to be concentrated on ramps.
@@ -274,7 +315,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            atonementPos: 'end',
            targets: 1,
            secondaries: ['crit', 'vers'],
-           overheal: 0.5,
+           expectedOverheal: 0.5,
        })
    }
 

@@ -1,7 +1,4 @@
 // 
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-
-
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
@@ -69,7 +66,7 @@ export const runBuffs = (state, tickBuff, stats, spellDB) => {
             }
             else if (buff.runEndFunc) buff.runFunc(state, buff);
         })
-    }
+}
 
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
@@ -91,7 +88,7 @@ export const spellCleanup = (spell, state) => {
 
 
 export const addBuff = (state, spell, spellName) => {
-    let newBuff = {name: spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
+    let newBuff = {name: spell.name || spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
     // (state.t + spell.castTime + spell.buffDuration)
 
     if (spell.buffType === "stats") {
@@ -105,6 +102,7 @@ export const addBuff = (state, spell, spellName) => {
         state.activeBuffs.push(newBuff);
     }
     else if (spell.buffType === "damage" || spell.buffType === "heal" || spell.buffType === "function") {     
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds.");
         newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick}
         
         // If our spell has a hasted duration we'll reduce the expiration. These are at least fairly rare nowadays.
@@ -174,10 +172,12 @@ export const addBuff = (state, spell, spellName) => {
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+        
 
         if (buffStacks === 0) {
             newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
             state.activeBuffs.push(newBuff);
+            //console.log(newBuff);
         }
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
@@ -185,6 +185,7 @@ export const addBuff = (state, spell, spellName) => {
             if (buff.canStack) buff.stacks += 1;
             buff.expiration = newBuff.expiration;
         }
+
     }
     else {
         addReport(state, "Adding Buff with INVALID category: " + spellName);
