@@ -3,6 +3,84 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                               Leaf of the Ancient Protectors                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Leaf of the Ancient Protectors",
+    effects: [
+      {  // Absorb
+        coefficient: 155.9272,
+        table: -8,
+        secondaries: ["versatility"],
+        cooldown: 60,
+        efficiency: 0.95, // This is a fairly medium sized absorb. You should be able to use it fine in most content.
+      },
+      { // Gifted Versatility
+        coefficient: 0.964816, 
+        table: -7,
+        cooldown: 60,
+        efficiency: 0.95, // If the absorb is not fully consumed, then they don't get the versatility.
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].efficiency * data[1].duration / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Coagulated Genesaur Blood                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Coagulated Genesaur Blood",
+    effects: [
+      {
+        coefficient: 2.883274,
+        table: -7,
+        stat: "crit",
+        duration: 10,
+        ppm: 1,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                          Sea Star                                              */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Sea Star",
+    effects: [
+      {
+        coefficient: 1.415952,
+        table: -1,
+        stat: "intellect",
+        duration: 15,
+        ppm: 1.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                     Lady Waycrests Music Box                                   */
     /* ---------------------------------------------------------------------------------------------- */
     /* Damage and healing procs appear to be split. Ring NYI.
@@ -10,15 +88,15 @@ export const dungeonTrinketData = [
     name: "Lady Waycrest's Music Box",
     effects: [
       { // Healing
-        coefficient: 27.10605,
+        coefficient: 26.44263,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
         efficiency: {Raid: 0.82, Dungeon: 0.8},
       },
       { // Damage
-        coefficient: 4.50443,
-        table: -1,
+        coefficient: 17.61531,
+        table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
       },
@@ -41,14 +119,14 @@ export const dungeonTrinketData = [
     name: "Revitalizing Voodoo Totem",
     effects: [
       { 
-        coefficient: 2.098214,
+        coefficient: 3.182418,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ticks: 12, // Haste adds ticks / partial ticks. 
         cooldown: 90,
         tickRate: 0.5,
         maxStacks: 13,
-        efficiency: {Raid: 0.7, Dungeon: 0.8},
+        efficiency: {Raid: 0.55, Dungeon: 0.65},
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {

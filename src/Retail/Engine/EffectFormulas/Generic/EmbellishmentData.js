@@ -59,7 +59,7 @@ export const embellishmentData = [
         coefficient: 0.229097, // 0.482408 * 0.95,
         table: -7,
         duration: 15, 
-        ppm: 1.15,
+        ppm: 2.2,
         multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
@@ -169,7 +169,7 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 117.1906 * 1.15, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
+            coefficient: 117.1906 * 1.15 * 0.65, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
@@ -295,14 +295,14 @@ export const embellishmentData = [
         name: "Toxic Thorn Footwraps",
         effects: [
           { // Healing Effect
-            coefficient: 34.05239, //15.34544,
+            coefficient: 34.05239 * 0.65, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit'],
             efficiency: 0.55,
             ppm: 3, // 4 / 2
           },
           { // Damage Effect
-            coefficient: 20.43177, //6.820023,
+            coefficient: 20.43177 * 0.65, //6.820023,
             table: -9,
             secondaries: ['haste', 'crit'],
             ppm: 1, // 4 / 2
@@ -350,14 +350,14 @@ export const embellishmentData = [
         name: "Playful Spirit's Fur",
         effects: [
           { 
-            coefficient: 21.79298, //24.55177,
+            coefficient: 21.79298 * 0.65, //24.55177,
             table: -9, // 
             ppm: 1, // 2 / 2
             secondaries: ['haste', 'crit'],
             efficiency: 0.8,
           },
           {  // Damage
-            coefficient: 13.07579, //10.91173,
+            coefficient: 13.07579 * 0.65, //10.91173,
             table: -9, // 
             ppm: 1, // 2 / 2
             secondaries: ['haste', 'crit'],
@@ -455,7 +455,7 @@ export const embellishmentData = [
         name: "Unstable Frostfire Belt",
         effects: [
           {  // Damage
-            coefficient: 7.785769, //3.389522,
+            coefficient: 7.785769 * 0.65, //3.389522,
             table: -8,
             ppm: 3, 
             ticks: 5,
@@ -505,7 +505,7 @@ export const embellishmentData = [
         name: "Amice of the Blue",
         effects: [
           {  // Damage
-            coefficient: 44.45392,
+            coefficient: 44.45392 * 0.65,
             table: -8,
             ppm: 2, 
             secondaries: ['haste', 'crit'],
@@ -576,7 +576,7 @@ export const embellishmentData = [
         name: "Fang Adornments",
         effects: [
           { // Damage Effect
-            coefficient: 15.56666, //7.794756,
+            coefficient: 15.56666 * 0.65, //7.794756,
             table: -9,
             secondaries: ['haste'],
             ppm: 1, //

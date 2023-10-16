@@ -35,6 +35,8 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
 
 }
 
+
+
 export const genStatWeights = (activeStats) => {
     // Weights
     const boonSeq = buildRamp('Boon', 10, [], activeStats.haste, ['Rapture'])

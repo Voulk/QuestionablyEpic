@@ -155,6 +155,13 @@ export default function QEHeader(props) {
                   />
                 </Grid>
                 {/*<Grid item>
+                  <Link to={"https://questionablyepic.com"}>
+                    <Tooltip title={"Guides"} arrow>
+                        <div>Guides</div>
+                    </Tooltip>
+                  </Link>
+                </Grid> */}
+                {/*<Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid> */}
                 <Grid item>

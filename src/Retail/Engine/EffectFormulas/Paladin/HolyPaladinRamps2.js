@@ -11,7 +11,7 @@ const PALADINCONSTANTS = {
     masteryEfficiency: 0.84, 
     baseMana: 250000,
 
-    auraHealingBuff: 1.06,
+    auraHealingBuff: 0.82,
     auraDamageBuff: 0.92 * 1.1,
     goldenHourHealing: 18000,
     enemyTargets: 1,
@@ -202,7 +202,7 @@ const applyTalents = (state, spellDB, stats) => {
 
 }
 
-export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light") => {
+export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light", specialMult = 1) => {
     // Glimmer of Light places a buff on each target you Holy Shock up to a 1/3/8 target cap.
     // Whenever you Holy Shock everyone with Glimmer is healed.
 
@@ -211,10 +211,11 @@ export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light")
 
     const glimmerTargets = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
     if (glimmerTargets > 0) {
-        const glimmerMult = (1 + 0.1 * state.talents.gloriousDawn.points)
+        const glimmerMult = (1 + 0.1 * state.talents.gloriousDawn.points) * specialMult;
+        console.log(glimmerMult);
         const glimmerOfLight = {
             name: "Glimmer of Light",
-            coeff: 1.6416 * (1 + glimmerTargets * 0.06) * glimmerMult / glimmerTargets, // This is split between all targets
+            coeff: 1.6416 * (1 + glimmerTargets * 0.04) * glimmerMult / glimmerTargets, // This is split between all targets
             targets: glimmerTargets - PALADINCONSTANTS.enemyGlimmers,
             expectedOverheal: 0.25,
             secondaries: ["crit", "vers", "mastery"],
@@ -322,7 +323,7 @@ const getHealingMult = (state, t, spellName, talents) => {
     }
 
     if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
-        mult *= (0.3 * PALADINCONSTANTS.tyrsHitRate + 1);
+        mult *= (0.15 * PALADINCONSTANTS.tyrsHitRate + 1);
     }
 
     if ((["Crusader Strike"].includes(spellName) || spellName.includes("Holy Shock")) && state.talents.reclamation.points == 1) {
@@ -363,17 +364,15 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.35 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.245 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.35 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
-
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1 && !(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else if (!(spellName.includes("HoT"))) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
     if (compile) state.healingDone[(state.beacon == "Beacon of Faith" ? "Beacon of Light + Faith" : state.beacon)] = (state.healingDone[(state.beacon == "Beacon of Faith" ? "Beacon of Light + Faith" : state.beacon)] || 0) + beaconHealing;
 
-
     // Barrier of Faith
     if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Barrier of Faith")) {
-        const barrierHealing = healingVal * 0.5 * (1 - PALADINCONSTANTS.barrierOverhealing);
+        const barrierHealing = healingVal * 0.25 * (1 - PALADINCONSTANTS.barrierOverhealing);
         if (compile) state.healingDone["Barrier of Faith (Charge)"] = (state.healingDone["Barrier of Faith (Charge)"] || 0) + barrierHealing;
         addReport(state, `Barrier of Faith stored ${Math.round(barrierHealing)} (Exp OH: ${PALADINCONSTANTS.barrierOverhealing * 100}%)`)
     }
@@ -441,7 +440,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
         if (!checkBuffActive(state.activeBuffs, "Avenging Wrath") && !checkBuffActive(state.activeBuffs, "Veneration")) miscReq = false;
     } 
     
-    if (conditions !== {}) {
+    if (conditions) {
         if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
         if (state.holyPower >= conditions.holyPower) aplReq = false;
         if (conditions.talentNot){
@@ -786,6 +785,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
         state.holyPower += 3;
         state.manaSpent -= paladinSpells[spellName][0].cost;
         state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
+
     }
 }
 
@@ -882,7 +882,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     let currentStats = JSON.parse(JSON.stringify(stats));
 
     const sequenceLength = 240; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const seqType = "Auto" // Auto / Manual.
+    const seqType = "Manual" // Auto / Manual.
 
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
@@ -899,7 +899,36 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
     // Extra Settings
     if (settings.masteryEfficiency) PALADINCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
+    if (settings.preBuffs) {
+        // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            console.log("Adding prebuff: " + buffName)
+            if (buffName === "Infusion of Light") addBuff(state, paladinSpells["Holy Shock"][1], "Infusion of Light");
+            else if (buffName === "Barrier of Faith") addBuff(state, paladinSpells["Barrier of Faith"][1], "Barrier of Faith");
+            else if (buffName === "Glimmer of Light 8") {
+                for (let i = 0; i < 8; i++) addBuff(state, paladinSpells["Holy Shock"][2], "Glimmer of Light");
+            }
+            else if (buffName === "Tyr's Deliverance") {
+                addBuff(state, paladinSpells["Tyr's Deliverance"][1], "Tyr's Deliverance");
+                paladinSpells["Tyr's Deliverance"][1].coeff = 0; // Disable HoT for the purpose of tracking the healing increase only.
+            }
+            else if (buffName === "Blessing of Dawn") {
+                const dawnStacker = {
+                    name: "Blessing of Dawn",
+                    canStack: true,
+                    type: "buff",
+                    buffType: "special",
+                    buffDuration: 999, // Hidden buff in game.
+                    maxStacks: 3,
+        
+                }
+                addBuff(state, dawnStacker, "Blessing of Dawn");
+            }
+        })
+    }
+    if (settings.includeOverheal === "No") PALADINCONSTANTS.beaconOverhealing = 0;
 
+    //
     const seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {

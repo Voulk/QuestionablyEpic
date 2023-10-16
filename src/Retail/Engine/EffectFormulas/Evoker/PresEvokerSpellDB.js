@@ -81,7 +81,7 @@ export const EVOKERSPELLDB = {
         empowered: true,
         cost: 3.8,
         cooldown: 30,
-        coeff: 6.35,
+        coeff: 5.085,
         targets: [1, 2, 3, 4], // 
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers', 'mastery']
@@ -115,6 +115,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: [16, 12, 8, 4],
+        tickData: {tickRate: 2, canPartialTick: true},
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
@@ -175,12 +176,13 @@ export const EVOKERSPELLDB = {
         buffType: "function",
         school: "bronze",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
         statMods: {'crit': 0.15},
         buffDuration: 12,
-        function: function (state, buff) {
+        runFunc: function (state, buff) {
             const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
 
             runHeal(state, hotHeal, buff.name)
@@ -251,6 +253,7 @@ export const EVOKERSPELLDB = {
         buffName: "Dream Flight",
         buffType: "heal",
         tickRate: 3,
+        tickData: {tickRate: 3, canPartialTick: true},
         targets: 10,
         coeff: 0.5,
         buffDuration: 15,
@@ -290,6 +293,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         targets: 5,
         coeff: 0.35,
         buffDuration: [4, 8, 12, 16],
@@ -313,6 +317,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 3,
         coeff: 0.76,
         secondaries: ['crit', 'haste', 'vers'],
@@ -335,6 +340,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 5,
         coeff: 0,
         flatHeal: 0,
@@ -385,7 +391,7 @@ export const evokerTalents = {
     exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
     fontOfMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", id: 375783, select: true, tier: 3}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "inv_elemental_mote_mana", id: 372233, select: true, tier: 3}, // makes Disintegrate deals more damage and grants mana over it's duration.
-    renewingBreath: {points: 0, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
+    renewingBreath: {points: 2, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
     gracePeriod: {points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
     timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
     dreamFlight: {points: 0, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 
