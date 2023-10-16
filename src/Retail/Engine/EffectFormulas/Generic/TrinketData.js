@@ -10,7 +10,7 @@ export const raidTrinketData = [
     name: "Smoldering Seedling",
     effects: [
       { // 
-        coefficient: 445.4206, 
+        coefficient: 534.5043, 
         table: -9,
         duration: 12,
         cooldown: 120,
@@ -34,7 +34,7 @@ export const raidTrinketData = [
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) / data[0].cooldown * data[0].targetScaling;
 
       bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
-      console.log(itemLevel + " " + processedValue(data[2], itemLevel))
+
       return bonus_stats;
     }
   },
@@ -43,7 +43,6 @@ export const raidTrinketData = [
     /*                                  Pip's Emerald Friendship Badge                                */
     /* ---------------------------------------------------------------------------------------------- */
     /* Not final. Diminishing effect on the proc needs to be more accurately implemented.
-    /* NEEDS DIMINISHING RETURNS
     */
     name: "Pip's Emerald Friendship Badge",
     effects: [
@@ -248,7 +247,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.813774 * 0.3, // 1.506561 * 0.7, 
+        coefficient: 0.244196, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,

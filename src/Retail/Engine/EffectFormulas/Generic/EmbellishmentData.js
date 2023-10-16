@@ -59,7 +59,7 @@ export const embellishmentData = [
         coefficient: 0.229097, // 0.482408 * 0.95,
         table: -7,
         duration: 15, 
-        ppm: 1.15,
+        ppm: 2.2,
         multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],

@@ -10,15 +10,15 @@ export const dungeonTrinketData = [
     name: "Lady Waycrest's Music Box",
     effects: [
       { // Healing
-        coefficient: 27.10605,
+        coefficient: 26.44263,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
         efficiency: {Raid: 0.82, Dungeon: 0.8},
       },
       { // Damage
-        coefficient: 4.50443,
-        table: -1,
+        coefficient: 17.61531,
+        table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
       },
@@ -41,14 +41,14 @@ export const dungeonTrinketData = [
     name: "Revitalizing Voodoo Totem",
     effects: [
       { 
-        coefficient: 2.098214,
+        coefficient: 3.182418,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ticks: 12, // Haste adds ticks / partial ticks. 
         cooldown: 90,
         tickRate: 0.5,
         maxStacks: 13,
-        efficiency: {Raid: 0.7, Dungeon: 0.8},
+        efficiency: {Raid: 0.65, Dungeon: 0.75},
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
