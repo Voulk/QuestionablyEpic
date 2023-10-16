@@ -30,7 +30,7 @@ describe("Smoldering Seedling", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${473}  | ${[598406, 720]}
+    ${473}  | ${[718087, 720]}
     // add new test cases here
     `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
