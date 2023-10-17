@@ -334,7 +334,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     let expectedItemLevel = level;
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
-    if ('source' in item && item.source.instanceId === 1208) {
+    if ('source' in item && item.source.instanceId === 1207) {
       const max = isMaxxed(difficulty);
       if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       else expectedItemLevel += getItemLevelBoost(itemEncounter, difficulty) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
@@ -342,6 +342,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     }
     else if (item.source.instanceId === 1205) { // World Bosses
       if (itemEncounter === 2531) expectedItemLevel = 415
+      else if (itemEncounter === 2562) expectedItemLevel = 454 // Technically the neck is 460.
       else expectedItemLevel = 389;
     }
 

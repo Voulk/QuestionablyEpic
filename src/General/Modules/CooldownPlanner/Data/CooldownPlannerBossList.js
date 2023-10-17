@@ -25,6 +25,19 @@ export const raidDB = [
     expansion: 9,
     icon: require("Images/achievement_raidprimalist_raid.jpg"),
   },
+  {
+    ID: 2570,
+    raidID: 1207,
+    name: {
+      en: "Amirdrassil, The Dream's Hope",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    expansion: 9,
+    icon: require("Images/achievement_raidprimalist_raid.jpg"),
+  },
 ];
 
 export const bossList = [

@@ -134,8 +134,8 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  const boostedItems = [204465, 204201, 204202, 204211, 202612]
-  if (instanceID === 1208) {
+
+  if (instanceID === 1207) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -150,6 +150,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   // World Bosses
   else if (instanceID === 1205) {
     if (bossID === 2531) itemLevel = 415;
+    else if (bossID === 2562) itemLevel = 454 // Technically the neck is 460.
     else itemLevel = 389;
   }
   
@@ -157,7 +158,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } 
-  else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
+  //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
     // Conquest

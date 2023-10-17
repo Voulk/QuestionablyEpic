@@ -73,7 +73,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const shadowlandsList = [1208];
+    const shadowlandsList = [1207];
     const difficulties = props.playerSettings.raid;
 
     difficulties.sort().reverse();
@@ -104,7 +104,7 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1208)} {...a11yProps(0)} />
+                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1207)} {...a11yProps(0)} />
                   {/* ---------------------------------------- Gruul's Lair ----------------------------------------
                   <Tab className={classes.sanctumHeader} label={getTranslatedRaidName(1193)} {...a11yProps(1)} />
                   {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
