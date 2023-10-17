@@ -203,7 +203,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
-      const isRaid = primarySource === 1208 || primarySource === -22;
+      const isRaid = primarySource === 1207 || primarySource === -22;
 
       if (isRaid) {
         // 
