@@ -78,9 +78,7 @@ export default function ItemCard(props) {
   let socket = [];
 
   const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && isVault ? 'selectedVault' : item.isEquipped ? 'selected' : isVault ? 'vault' : 'root';
-  console.log(className);
-  console.log(classes[className])
-  console.log(item);
+
   if (item.id === 203460) {
     const gemCombo = props.primGems;
     const gemData = buildPrimGems(gemCombo);
