@@ -17,6 +17,13 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.7",
+    update: 4,
+    date: "October 17",
+    changes: [ 
+      "Added Terrific Tankard O' Terror (Brewfest)",
+    ]},
+  {
+    version: "10.1.7",
     update: 3,
     date: "October 8",
     changes: [ 
