@@ -10,7 +10,7 @@ export const dungeonTrinketData = [
     name: "Leaf of the Ancient Protectors",
     effects: [
       {  // Absorb
-        coefficient: 155.9272,
+        coefficient: 215.1787,
         table: -8,
         secondaries: ["versatility"],
         cooldown: 60,
