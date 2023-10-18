@@ -45,6 +45,13 @@ const useStyles = makeStyles({
     borderStyle: "dashed",
     height: 52,
   },
+  offspec: {
+    borderColor: "red",
+    backgroundColor: "#544444",
+    borderStyle: "solid",
+    minWidth: 250,
+    height: 52,
+  }
 });
 
 export default function ItemCard(props) {
@@ -69,6 +76,8 @@ export default function ItemCard(props) {
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item.stats && item.stats.leech !== 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null;
   let socket = [];
+
+  const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && isVault ? 'selectedVault' : item.isEquipped ? 'selected' : isVault ? 'vault' : 'root';
 
   if (item.id === 203460) {
     const gemCombo = props.primGems;
@@ -112,7 +121,7 @@ export default function ItemCard(props) {
   if (item.offhandID > 0) {
     return (
       <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-        <Card className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isVault ? classes.vault : classes.root} variant="outlined">
+        <Card className={classes[className]} variant="outlined">
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
             <Grid item xs="auto">
               <CardContent
@@ -227,7 +236,7 @@ export default function ItemCard(props) {
           </Grid>
         </div>
         <Card
-          className={item.isEquipped && isVault ? classes.selectedVault : item.isEquipped ? classes.selected : isCatalystItem ? classes.catalyst : isVault ? classes.vault : classes.root}
+          className={classes[className]}
           variant="outlined"
         >
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">

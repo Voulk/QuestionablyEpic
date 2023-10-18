@@ -36,6 +36,7 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
       rel="noopener noreferrer"
       key={keyProp}
       style={{ color: "white", textDecoration: "none" }}
+      onClick={(e) => e.preventDefault()}
     >
       {children}
     </a>

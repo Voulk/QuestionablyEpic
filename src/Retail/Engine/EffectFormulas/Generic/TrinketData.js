@@ -1,6 +1,132 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue } from "../EffectUtilities";
 
 export const raidTrinketData = [
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Smoldering Treant Seedling                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* == Naive implementation. == Can refine when trinket is available for testing. Likely to have some form of meteor effect.
+    */
+    name: "Smoldering Seedling",
+    effects: [
+      { // 
+        coefficient: 534.5043, 
+        table: -9,
+        duration: 12,
+        cooldown: 120,
+        targetScaling: 0.6, // Confirm this in game. It's behaving weird on PTR. Think about whether this should actually be 1.6 or 0.6.
+        efficiency: 0.95, // The tree does pulse smart healing but it's also a little inefficient to pushing healing into a tree instead of the raid.
+      },
+      { // 
+        coefficient: 0.518729, 
+        table: -7,
+        duration: 10,
+        cooldown: 120,
+      },
+      { // 
+        coefficient: 617.6665, 
+        table: -1,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) / data[0].cooldown * data[0].targetScaling;
+
+      bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Pip's Emerald Friendship Badge                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Not final. Diminishing effect on the proc needs to be more accurately implemented.
+    */
+    name: "Pip's Emerald Friendship Badge",
+    effects: [
+      { //
+        coefficient: 2.328225, 
+        table: -7,
+        duration: 12,
+        ppm: 2,
+        uptime: 0.328986,
+      },
+      { // 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      ['crit', 'versatility', 'mastery'].forEach(stat => {
+        const passiveValue = processedValue(data[0], itemLevel) / 12;
+
+        // Passive stat bonus
+        bonus_stats[stat] = passiveValue * (1 - data[0].uptime) / 3;
+
+        // Active bonus. The code here is a little long since we need to check for diminishing returns at every stack count.
+        // The earlier into the proc we are, the more we lose to diminishing returns.
+        let trinketSum = 0
+        const setStat = additionalData.setStats ? additionalData.setStats[stat] || 0 : 0
+        // Add raw values for stacks 1 through 12.
+        for (var i = 1; i <= 12; i++) {
+          let adjVal = getDiminishedValue(stat, passiveValue * i, setStat)
+          trinketSum += adjVal
+        }
+        bonus_stats[stat] = bonus_stats[stat] + trinketSum / 12 * data[0].uptime / 3;
+
+      });
+
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                      Blossom of Amirdrrassil                                   */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* Check crit / haste scaling. Check if HoT coefficients are one tick or full heal split into ticks.
+    */
+    name: "Blossom of Amirdrassil",
+    effects: [
+      {  // HoT effect
+        coefficient: 29.5139, // This is probably 1 HoT tick.
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.6, Dungeon: 0.65}, 
+        ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
+        ticks: 6,
+      },
+      {  // Spread HoT effect
+        coefficient: 14.75609, // 46.75641,
+        table: -9,
+        targets: 3,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.55, Dungeon: 0.57}, 
+        percentProc: 0.5,
+        ticks: 6,
+      },
+      {  // Shield effect
+        coefficient: 265.6199,
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
+        percentProc: 0.5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].ticks;
+      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets * data[0].ticks;
+      bonus_stats.hps += processedValue(data[2], itemLevel, data[2].efficiency[additionalData.contentType]) * data[2].percentProc;
+
+      bonus_stats.hps = bonus_stats.hps * data[0].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Neltharion's Call to Suffering                                */
@@ -121,7 +247,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.813774, // 1.506561 * 0.7, 
+        coefficient: 0.244196, // 1.506561 * 0.7, 
         table: -9,
         ppm: 2,
         ticks: 10,

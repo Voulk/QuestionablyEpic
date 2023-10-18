@@ -8,37 +8,54 @@ const trinketCategories = {
     DUNGEONDROPS: "Dungeon Drops",
     OTHER: "Other",
     DPS: "DPS Trinkets",
+    LASTTIER: "Last Season Trinkets"
 }
 
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
-    const itemLevel = 441;
+    const itemLevel = 480;
     if (trinketData === null) return null;
     switch (trinketName) {
+
+        // -- Season 3 Raid --
+        case "Blossom of Amirdrassil":
+            return blossomOfAmirdrassil(trinketData, itemLevel, player, additionalData);
+        case "Smoldering Seedling":
+            return smolderingTreantSeedling(trinketData, itemLevel, player, additionalData);
+        case "Pip's Emerald Friendship Badge":
+            return pipsEmeraldFriendshipBadge(trinketData, itemLevel, player, additionalData);   
+
+        // -- Season 3 Dungeons --
         case "Echoing Tyrstone":
             return echoingTyrstone(trinketData, itemLevel, player, additionalData);
-        case "Paracausal Fragment of Val'anyr":
-            return paracausalFragmentOfValanyr(trinketData, 424, player, additionalData);
         case "Mirror of Fractured Tomorrows":
             return mirrorOfFracturedTomorrows(trinketData, itemLevel, player, additionalData);
         case "Time-Thief's Gambit":
             return timeThiefsGambit(trinketData, itemLevel, player, additionalData);
+        case "Lady Waycrest's Music Box":
+            return ladyWaycrestsMusicBox(trinketData, itemLevel, player, additionalData);
+        case "Revitalizing Voodoo Totem":
+            return revitalizingVoodooTotem(trinketData, itemLevel, player, additionalData);
+    
+        // == Season 2 Trinkets ==
+        case "Paracausal Fragment of Val'anyr":
+            return paracausalFragmentOfValanyr(trinketData, 424, player, additionalData);
         case "Neltharion's Call to Suffering":
-            return neltharionsCallToSuffering(trinketData, itemLevel, player, additionalData);
+            return neltharionsCallToSuffering(trinketData, 447, player, additionalData);
         case "Neltharion's Call to Chaos":
-            return neltharionsCallToChaos(trinketData, itemLevel, player, additionalData);
+            return neltharionsCallToChaos(trinketData, 447, player, additionalData);
         case "Screaming Black Dragonscale":
-            return screamingBlackDragonscale(trinketData, itemLevel, player, additionalData);
+            return screamingBlackDragonscale(trinketData, 447, player, additionalData);
         case "Rashok's Molten Heart":
-            return rashoksMoltenHeart(trinketData, itemLevel, player, additionalData);
+            return rashoksMoltenHeart(trinketData, 447, player, additionalData);
         case "Rainsong":
-            return rainsong(trinketData, itemLevel, player, additionalData);
+            return rainsong(trinketData, 447, player, additionalData);
         case "Magmaclaw Lure":
             return magmaclawLure(trinketData, 411, player, additionalData);
         case "Ominous Chromatic Essence":
-            return ominousChromaticEssence(trinketData, itemLevel, player, additionalData);
+            return ominousChromaticEssence(trinketData, 447, player, additionalData);
         case "Ward of Faceless Ire":
-            return wardOfFacelessIre(trinketData, itemLevel, player, additionalData);
+            return wardOfFacelessIre(trinketData, 450, player, additionalData);
         default:
             return null;
     }
@@ -64,7 +81,7 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.LASTTIER,
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
@@ -78,7 +95,7 @@ const neltharionsCallToChaos = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.LASTTIER,
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
@@ -92,7 +109,7 @@ const screamingBlackDragonscale = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.LASTTIER,
         metrics: ["Uptime: " + effect.expectedUptime * 100 + "%", 
                 "Average Crit: " + Math.round(bonus_stats.crit),
                 "Average Leech: " + Math.round(bonus_stats.leech)],
@@ -102,12 +119,51 @@ const screamingBlackDragonscale = (data, itemLevel, player) => {
 
 }
 
-const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
+const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
         category: trinketCategories.RAIDDROPS,
+        metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
+        description:
+          "",
+      };
+}
+
+const smolderingTreantSeedling = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.RAIDDROPS,
+        metrics: [ "HPS: " + Math.round(bonus_stats.hps),
+                "Mastery: " + Math.round(bonus_stats.mastery)],
+        description:
+          "",
+      };
+}
+
+const pipsEmeraldFriendshipBadge = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.RAIDDROPS,
+        metrics: [ "Mastery: " + Math.round(bonus_stats.mastery),
+                "Crit: " + Math.round(bonus_stats.crit),
+                "Versatility: " + Math.round(bonus_stats.versatility)],
+        description:
+          "",
+      };
+}
+
+const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.LASTTIER,
         metrics: ["Mana / Min: " + Math.round(bonus_stats.mana * 60), 
                 "HPS: " + Math.round(bonus_stats.hps),
                 "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
@@ -175,6 +231,33 @@ const timeThiefsGambit = (data, itemLevel, player, additionalData) => {
       };
 }
 
+const ladyWaycrestsMusicBox = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["HPS: " + Math.round(bonus_stats.hps),
+                "DPS: " + Math.round(bonus_stats.dps),
+                "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
+        description:
+          "",
+      };
+}
+
+const revitalizingVoodooTotem = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["HPS: " + Math.round(bonus_stats.hps),
+                "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
+        description:
+          "",
+      };
+}
+
 const magmaclawLure = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
@@ -194,7 +277,7 @@ const wardOfFacelessIre = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.LASTTIER,
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
                 "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
         description:
@@ -210,7 +293,7 @@ const ominousChromaticEssence = (data, itemLevel, player, additionalData) => {
     const playerBestStat = player.getHighestStatWeight(additionalData.contentType);
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.LASTTIER,
         metrics: ["Chosen Stat: " + Math.round(primary + secondary * 0.25),
                     "Other Secondaries: " + Math.round(secondary * 1.25)],
         description:
@@ -223,7 +306,7 @@ const rainsong = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.DUNGEONDROPS,
+        category: trinketCategories.LASTTIER,
         metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
                     "Self Haste: " + Math.round(bonus_stats.haste), 
                     "Gifted Haste: " + Math.round(bonus_stats.allyStats)],

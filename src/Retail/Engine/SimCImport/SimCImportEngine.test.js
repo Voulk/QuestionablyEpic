@@ -135,6 +135,7 @@ describe("Test Regular Items", () => {
 
 });
 
+/* These tests need to be updated with season 3 items since S2 upgrade tracks are no longer valid. We don't have many S3 items on the PTR yet but come back to this.
 describe("Test Upgrade Track", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
@@ -149,6 +150,7 @@ describe("Test Upgrade Track", () => {
         expect(item.level).toEqual(428);
     });
 
+    
     test("Raoul's Barrelhook Bracers 1/5 Hero", () => {
         const line = "hands=,id=202489,bonus_id=6652/9230/7979/9325/1479/87wrist=,id=159356,enchant_id=6580,bonus_id=9331/6652/9415/9223/9220/9144/3301/8767";
         const item = processItem(line, player, contentType, type, settings)
@@ -166,7 +168,7 @@ describe("Test Upgrade Track", () => {
         expect(item.upgradeRank).toEqual(3);
         expect(item.level).toEqual(382);
     });
-});
+}); */
 
 describe("Test Crafted Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");

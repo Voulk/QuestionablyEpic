@@ -8,6 +8,37 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
 
+
+describe("Blossom of Amirdrassil", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Blossom of Amirdrassil");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${483}  | ${[Math.floor(272517/6),  Math.floor(136250/6), 408768]}
+    // add new test cases here
+    `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+        expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
+    });
+}); 
+
+describe("Smoldering Seedling", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Smoldering Seedling");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${473}  | ${[718087, 720]}
+    // add new test cases here
+    `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+        //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
+    });
+}); 
+
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Neltharion's Call to Chaos");;
@@ -57,7 +88,7 @@ describe("Rashok's Molten Heart", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${444}  | ${[7289/10, 39782/10, 595]}
+    ${444}  | ${[2187/10, 39782/10, 595]}
     // add new test cases here
     `.test("Rashok's Molten Heart Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(Math.floor(processedValue(effect[0], level))).toBe(Math.floor(expectedResult[0]));

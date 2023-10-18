@@ -1,5 +1,6 @@
 import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
@@ -26,8 +27,11 @@ export class Item {
   onUse: boolean = false; // True if the item is an on-use trinket. Can be converted to a tag.
   setID: number = 0; // The set this item belongs to. Frequently used for tier but not exclusively.
   quality: number = 4; // The quality number. 
+
   upgradeTrack: string = ""; // These two upgrade track variables could be combined into one.
   upgradeRank: number = 0;
+  itemConversion?: number = 0; // This tells us which set of items our item can be catalyzed into. 3 = S1, 6 = S2, ? = S3
+
   bonusIDS: string = "";
   isCatalystItem: boolean = false; // If true, the item has already been catalyzed and is not viable for a second conversion.
 
@@ -37,6 +41,7 @@ export class Item {
   mainHandUniqueHash?: string;
   offHandUniqueHash?: string;
   gemString?: string;
+  flags: string[] = [];
 
   constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
     this.id = id;
@@ -54,7 +59,7 @@ export class Item {
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
     if (slot === "Neck") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
-
+    if (getItemProp(id, "offspecWeapon")) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
 
   }
@@ -89,7 +94,7 @@ export class Item {
   }
 
   canBeCatalyzed() {
-    return !this.isCatalystItem && !this.isLegendary() && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
+    return !this.isCatalystItem && this.itemConversion === CONSTANTS.seasonalItemConversion && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
   }
 
 

@@ -17,6 +17,89 @@ export const getEmbellishmentEffect = (effectName, player, contentType, itemLeve
 }
 
 export const embellishmentData = [
+  {
+    /* -------------------- */
+    /* Flourishing Dream Helm                       
+    /* -------------------- */
+    /* No duration in spell data. Maybe just moves around who you're attached to?
+    */
+    name: "Flourishing Dream Helm",
+    effects: [
+      { // Self shield portion
+        coefficient: 91.45733, 
+        table: -9,
+        duration: 15, // 
+        ppm: 0,
+        efficiency: 0.8,
+      },
+      { // Ally + Self Shield
+        coefficient: 60.97212, 
+        table: -9,
+        duration: 15, 
+        ppm: 0,
+        efficiency: 0.8,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // 
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Verdant Tether                       
+    /* -------------------- */
+    /* No duration in spell data. Maybe just moves around who you're attached to?
+    */
+    name: "Verdant Tether",
+    effects: [
+      { 
+        coefficient: 0.229097, // 0.482408 * 0.95,
+        table: -7,
+        duration: 15, 
+        ppm: 2.2,
+        multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO Add top gear support for auto-generating gems.
+      const versAvg = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.versatility = versAvg;
+      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versAvg;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Verdant Conduit                       
+    /* -------------------- */
+    /* Gain X of a random secondary. PPM but with 10s internal cooldown. 
+    */
+    name: "Verdant Conduit",
+    effects: [
+      { 
+        coefficient: 0.213265, 
+        table: -7,
+        duration: 10, 
+        ppm: 5,
+        uptime: 0.48588,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO Add top gear support for auto-generating gems.
+
+      ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
+        bonus_stats[stat] = processedValue(data[0], itemLevel) * data[0].uptime / 4;
+      });
+
+      return bonus_stats;
+    }
+  },
     {
         /* ---------------------------------------------------------------------------------------------- */
         /*                         Potent Venom (Venom-Steeped Stompers)                                  */
@@ -74,7 +157,6 @@ export const embellishmentData = [
           const newData = {...data[0], duration: duration};
           const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
           bonus_stats[playerBestSecondary] = runGenericPPMTrinket(newData, itemLevel);
-
           return bonus_stats;
         }
       },
@@ -87,7 +169,7 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 117.1906 * 1.15, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
+            coefficient: 117.1906 * 1.15 * 0.65, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
@@ -213,14 +295,14 @@ export const embellishmentData = [
         name: "Toxic Thorn Footwraps",
         effects: [
           { // Healing Effect
-            coefficient: 34.05239, //15.34544,
+            coefficient: 34.05239 * 0.65, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit'],
             efficiency: 0.55,
             ppm: 3, // 4 / 2
           },
           { // Damage Effect
-            coefficient: 20.43177, //6.820023,
+            coefficient: 20.43177 * 0.65, //6.820023,
             table: -9,
             secondaries: ['haste', 'crit'],
             ppm: 1, // 4 / 2
@@ -268,14 +350,14 @@ export const embellishmentData = [
         name: "Playful Spirit's Fur",
         effects: [
           { 
-            coefficient: 21.79298, //24.55177,
+            coefficient: 21.79298 * 0.65, //24.55177,
             table: -9, // 
             ppm: 1, // 2 / 2
             secondaries: ['haste', 'crit'],
             efficiency: 0.8,
           },
           {  // Damage
-            coefficient: 13.07579, //10.91173,
+            coefficient: 13.07579 * 0.65, //10.91173,
             table: -9, // 
             ppm: 1, // 2 / 2
             secondaries: ['haste', 'crit'],
@@ -373,7 +455,7 @@ export const embellishmentData = [
         name: "Unstable Frostfire Belt",
         effects: [
           {  // Damage
-            coefficient: 7.785769, //3.389522,
+            coefficient: 7.785769 * 0.65, //3.389522,
             table: -8,
             ppm: 3, 
             ticks: 5,
@@ -423,7 +505,7 @@ export const embellishmentData = [
         name: "Amice of the Blue",
         effects: [
           {  // Damage
-            coefficient: 44.45392,
+            coefficient: 44.45392 * 0.65,
             table: -8,
             ppm: 2, 
             secondaries: ['haste', 'crit'],
@@ -494,7 +576,7 @@ export const embellishmentData = [
         name: "Fang Adornments",
         effects: [
           { // Damage Effect
-            coefficient: 15.56666, //7.794756,
+            coefficient: 15.56666 * 0.65, //7.794756,
             table: -9,
             secondaries: ['haste'],
             ppm: 1, //
@@ -548,19 +630,24 @@ export const embellishmentData = [
         */
         name: "Undulating Sporecloak",
         effects: [
-          { 
+          { // Passive Heal
             coefficient: 10.73745, //44.02832,
             table: -9,
-            ppm: 60 / 5,
+            ppm: 60 / 5, // The cloak heals every 5 seconds.
             secondaries: ['versatility'],
             efficiency: 0.55,
           },
           { // Shield portion
-            coefficient: 257.6989, //44.02832,
+            coefficient: 129.4445, //257.6989, 
             table: -9,
             ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
-            efficiency: 0.5,
+            efficiency: 0.52,
+          },
+          { // Vers portion
+            coefficient: 0.30097,
+            table: -9, // They will probably correct this.
+            expectedUptime: 0.85,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -569,6 +656,8 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+          bonus_stats.versatility = processedValue(data[2], itemLevel) * data[2].expectedUptime;
+
           return bonus_stats;
         }
       },

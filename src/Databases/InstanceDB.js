@@ -1849,6 +1849,7 @@ export const encounterDB = {
       1203, // The Azure Vault
     ],
     bossOrderMythicPlus: [
+      /*
       // 313, // Temple of the Jade Serpent
       // 537, // Shadowmoon Burial Grounds
       // 721, // Halls of Valor
@@ -1865,7 +1866,16 @@ export const encounterDB = {
       1001, // Freehold
       1022, // The Underrot
       68, // The Vortex Pinnacle
-      767, // Neltharion's Lair
+      767, // Neltharion's Lair */
+
+      0, // Dawn of the Infinites: Galakrond's Fall
+      1, // Dawn of the Infinites: Murozond's Rise
+      762, // Darkheart Thicket
+      740, // Black Rook Hold
+      1021, // Waycrest Manor
+      968, // Atal'Dazar
+      537, // Everbloom
+      65, // Throne of the Tides
     ],
 
     313: {
@@ -2012,6 +2022,79 @@ export const encounterDB = {
         ch: "地渊孢林",
       },
     },
+    0: {
+      name: {
+        en: "Dawn of the Infinites: Galakrond's Fall",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    1: {
+      name: {
+        en: "Dawn of the Infinites: Murozond's Rise",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    762: {
+      name: {
+        en: "Darkheart Thicket",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    740: {
+      name: {
+        en: "Black Rook Hold",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    1021: {
+      name: {
+        en: "Waycrest Manor",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    968: {
+      name: {
+        en: "Atal'Dazar",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    537: {
+      name: {
+        en: "Everbloom",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    65: {
+      name: {
+        en: "Throne of the Tides",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+
   },
 
   // Dawn of the Infinite

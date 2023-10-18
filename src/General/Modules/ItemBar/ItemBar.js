@@ -172,6 +172,7 @@ export default function ItemBar(props) {
 
       if (item) {
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
+        item.active = true;
         player.addActiveItem(item);
         props.setItemList([...player.getActiveItems(activeSlot)]);
         

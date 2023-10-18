@@ -18,7 +18,7 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.80, 
     baseMana: 250000,
 
-    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0},
+    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 3, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
     auraHealingBuff: 1,
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
@@ -32,8 +32,9 @@ const EVOKERCONSTANTS = {
         buffType: 'function',
         stacks: false,
         tickRate: 5,
+        tickData: {tickRate: 5, canPartialTick: false, hasted: false},
         hastedDuration: true,
-        function: function (state, buff) {
+        runFunc: function (state, buff) {
             
             state.essence += 1;
 
@@ -60,7 +61,7 @@ const EVOKERCONSTANTS = {
         buffDuration: 10,
         buffType: 'stats',
         stat: 'critMult',
-        value: 0.15
+        value: 0.3
     },
     renewingBreathBuff: {
         type: "buff",
@@ -137,9 +138,13 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
     // we don't have full information about a character.
     // As always, Top Gear is able to provide a more complete picture. 
+    settings['DefaultLoadout'] = true;
     if (settings['DefaultLoadout']) {
-
+        settings.t31_2 = true;
+        settings.t31_4 = true;
     }
+
+
 
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
@@ -179,6 +184,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             buffType: "heal",
             buffDuration: evokerSpells['Fire Breath'][1].buffDuration[EVOKERCONSTANTS.defaultEmpower['Fire Breath']],
             tickRate: evokerSpells['Fire Breath'][1].tickRate,
+            tickData: {tickData: evokerSpells['Fire Breath'][1].tickRate, canPartialTick: true},
             coeff: (evokerSpells['Fire Breath'][1].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
             expectedOverheal: 0.4,
             targets: 1,
@@ -257,7 +263,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         coeff: 2.5,
         targets: 1,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers']
+        secondaries: ['crit', 'vers', 'mastery']
     })
     if (talents.fieldOfDreams) evokerSpells['Emerald Blossom'].push({
         type: "castSpell",
@@ -396,7 +402,35 @@ const triggerCycleOfLife = (state, rawHealing) => {
     evokerSpells['Emerald Communion'][1].flatHeal = ecBonus;
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
+    if (settings.t31_2) {
+        /*
+        const bonus = {
+            type: "castSpell",
+            storedSpell: "Living Flame",
+            powerMod: 0.4,
+            targetMod: 5, // This technically is up to 5 since it's based on targets hit.
+            chance: 1,
+        }
 
+        evokerSpells['Spiritbloom'].push(bonus);
+        evokerSpells['Dream Breath'].push(bonus);
+        */
+    }
+    if (settings.t31_4) {
+        const echoBuff = {
+            name: "Echo",
+            type: "buff",
+            value: 0.7 * (1 + state.talents.timeLord * 0.25),
+            stacks: 0, // Note that we can have Echo out on multiple people at once, just not two on one person.
+            canStack: false,
+            buffDuration: 999,
+            buffType: 'special',
+            chance: 0.2,
+        }
+
+        evokerSpells['Living Flame'].push(echoBuff);
+        evokerSpells['Living Flame D'].push(echoBuff);
+    }
 
 
     // ==== Tier Sets ====
@@ -440,11 +474,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
         if (spellName.includes("Dream Breath")) mult *= 1.4;
         if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
-        console.log("Buffing Dream Breath");
         //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
-    else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
+    //else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
     if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
     
     return mult;
@@ -585,8 +618,22 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             // The spell casts a different spell. 
             if (spell.type === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
-                const newSpell = evokerSpells[spell.storedSpell];
-                runSpell(newSpell, state, spell.storedSpell, evokerSpells);
+                const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
+                if (spell.powerMod) {
+                    newSpell[0].coeff = newSpell[0].coeff * spell.powerMod; // Increases or reduces the power of the free spell.
+                    newSpell[0].flatHeal = (newSpell[0].flatHeal * spell.powerMod) || 0;
+                    newSpell[0].flatDamage = (newSpell[0].flatDamage * spell.powerMod) || 0;
+                }
+                if (spell.targetMod) {
+                    for (let i = 0; i < spell.targetMod; i++) {
+                        runSpell(newSpell, state, spell.storedSpell, evokerSpells);
+                    }
+                }
+                else {
+                    runSpell(newSpell, state, spell.storedSpell, evokerSpells);
+                }
+
+                
             }
             // The spell has a healing component. Add it's effective healing.
             // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
@@ -630,7 +677,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                     const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
                         tickRate: spell.tickRate, canPartialTick: spell.canPartialTick || false, 
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-                    newBuff.attFunction = spell.function;
+                    newBuff.attFunction = spell.runFunc;
 
                     if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats) + spell.statMods.crit - 1)))); // TODO; Replace 0.25 with crit.
                     else newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
@@ -801,6 +848,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
 
+
+
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
@@ -812,6 +861,14 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
     // Ideally we'll cover as much as we can in here.
 
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats);
+
+    if (settings.preBuffs) {
+        // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            console.log("Adding prebuff: " + buffName)
+            if (buffName === "Echo") addBuff(state, evokerSpells["Echo"][1], "Echo");
+        })
+    }
 
     // Create Echo clones of each valid spell that can be Echo'd.
     // and add them to the valid spell list
@@ -827,11 +884,19 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             // Make any Echo changes necessary.
 
             if (spellName === "Spiritbloom") echoSpell[0].targets = 1; // An Echo'd Spiritbloom just adds one target.
-            if (spellName === "Emerald Blossom") echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
+            if (spellName === "Emerald Blossom") {
+                echoSpell[0].targets = 1; // An Echo'd Emerald Blossom just adds one target.
+                echoSpell = echoSpell.slice(0, 1); // Remove any Emerald Blossom ties outside of the base spell.
+                /*echoSpell.forEach(slice => {
+                    if (slice.name === "Fluttering Seedlings") slice.coeff = 0; // Fluttering Seedlings no longer procs from Echo.
+                }) */
+            }
             if (spellName === "Dream Breath") {
                 echoSpell[0].targets = 1; // An Echo'd Dream Breath just adds one target.
                 echoSpell[1].targets = 1;
                 echoSpell[2].targets = 1;
+                echoSpell[2].name = "Dream Breath (Echo)";
+
             }
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
