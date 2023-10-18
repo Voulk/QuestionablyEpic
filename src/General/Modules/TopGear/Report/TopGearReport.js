@@ -173,12 +173,16 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-
+    
     // Setup Slots / Set IDs.
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot")
       item.setID = getItemProp(item.id, "itemSetId")
     })
+
+
+    // Build Vault items
+    // Take the top set, and every differential, and if it contains a vault item we haven't included yet, include it with the score differential compared to our *current* set.
 
     //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 

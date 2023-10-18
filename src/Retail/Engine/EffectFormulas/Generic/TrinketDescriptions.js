@@ -50,23 +50,18 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
                                             "A low uptime stat stick with moderate average performance.");
 
         // == Season 2 Trinkets ==
-        case "Paracausal Fragment of Val'anyr":
-            return paracausalFragmentOfValanyr(trinketData, 424, player, additionalData);
         case "Neltharion's Call to Suffering":
-            return neltharionsCallToSuffering(trinketData, 447, player, additionalData);
+            return buildGenericStatStick(trinketData, 447, player, additionalData, trinketCategories.LASTTIER, 
+                                            "Fixed to proc off healing spells including HoTs. Downside IS deducted from its expected throughput, but shouldn't feel too dangerous in practice. Priest / Druid only.");
         case "Neltharion's Call to Chaos":
             return buildGenericStatStick(trinketData, 447, player, additionalData, trinketCategories.LASTTIER, 
                                             "Fixed to proc off healing spells. Very high variance. Damage taken increase not included in formula. Evoker / Paladin only.")
         case "Screaming Black Dragonscale":
             return buildGenericStatStick(trinketData, 447, player, additionalData, trinketCategories.LASTTIER, 
-                "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.")
+                                            "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.")
            
         case "Rashok's Molten Heart":
             return rashoksMoltenHeart(trinketData, 447, player, additionalData);
-        case "Rainsong":
-            return rainsong(trinketData, 447, player, additionalData);
-        case "Magmaclaw Lure":
-            return magmaclawLure(trinketData, 411, player, additionalData);
         case "Ominous Chromatic Essence":
             return ominousChromaticEssence(trinketData, 447, player, additionalData);
         case "Ward of Faceless Ire":
@@ -231,21 +226,6 @@ const echoingTyrstone = (data, itemLevel, player, additionalData) => {
       };
 }
 
-const paracausalFragmentOfValanyr = (data, itemLevel, player, additionalData) => {
-    const effect = data.effects[0];
-    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
-
-    return {
-        category: trinketCategories.OTHER,
-        metrics: ["HPS: " + Math.round(bonus_stats.hps),
-                "Expected Wastage: " + Math.round((1 - effect.efficiency)*10000)/100 + "%", 
-                "Shields / Min: " + Math.round(effect.ppm * effect.ticks * player.getStatPerc('haste'))],
-        description:
-          "10 shield charges per proc and you can expect a little more than 1 proc per minute depending on your haste. A decent option but appears capped at 424 item level. \
-          Basically all heal events use one of your shield charges.",
-      };
-}
-
 const mirrorOfFracturedTomorrows = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
@@ -276,22 +256,6 @@ const timeThiefsGambit = (data, itemLevel, player, additionalData) => {
 }
 
 
-
-
-const magmaclawLure = (data, itemLevel, player, additionalData) => {
-    const effect = data.effects[0];
-    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
-    
-
-    return {
-        category: trinketCategories.OTHER,
-        metrics: ["HPS: " + Math.round(bonus_stats.hps),
-                "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
-        description:
-          "A previously overtuned AoE shield effect that has been nerfed. This is no longer worth wearing if you have access to higher item level alternatives.",
-      };
-}
-
 const wardOfFacelessIre = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
@@ -321,17 +285,5 @@ const ominousChromaticEssence = (data, itemLevel, player, additionalData) => {
       };
 }
 
-const rainsong = (data, itemLevel, player, additionalData) => {
-    const effect = data.effects[0];
-    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
-    return {
-        category: trinketCategories.LASTTIER,
-        metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
-                    "Self Haste: " + Math.round(bonus_stats.haste), 
-                    "Gifted Haste: " + Math.round(bonus_stats.allyStats)],
-        description:
-          "A solid but unexceptional haste trinket, though it leans support heavy so you'll only find it to be a competitive choice if you value giving buffs to allies.",
-      };
-}
 
