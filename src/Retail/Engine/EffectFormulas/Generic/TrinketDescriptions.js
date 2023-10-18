@@ -36,7 +36,13 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
             return ladyWaycrestsMusicBox(trinketData, itemLevel, player, additionalData);
         case "Revitalizing Voodoo Totem":
             return revitalizingVoodooTotem(trinketData, itemLevel, player, additionalData);
-    
+        case "Leaf of the Ancient Protectors":
+            return leafOfTheAncientProtectors(trinketData, itemLevel, player, additionalData);
+        case "Sea Star":
+            return seaStar(trinketData, itemLevel, player, additionalData);
+        case "Coagulated Genesaur Blood":
+            return coagulatedGenesaurBlood(trinketData, itemLevel, player, additionalData);
+
         // == Season 2 Trinkets ==
         case "Paracausal Fragment of Val'anyr":
             return paracausalFragmentOfValanyr(trinketData, 424, player, additionalData);
@@ -90,6 +96,19 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
 
 }
 
+const leafOfTheAncientProtectors = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: [ "HPS: " + Math.round(bonus_stats.hps),
+                "Gifted Vers: " + Math.round(bonus_stats.allyStats)],
+        description:
+          "",
+      };
+}
+
 const neltharionsCallToChaos = (data, itemLevel, player) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
@@ -127,7 +146,33 @@ const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
         category: trinketCategories.RAIDDROPS,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
         description:
-          "",
+          "Currently bugged and spreading to more than 3 targets. Not included in score.",
+      };
+}
+
+const seaStar = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
+                    "Intellect: " + Math.round(bonus_stats.intellect)],
+        description:
+          "A decently high uptime stat stick. A reasonable choice for all healing specs.",
+      };
+}
+
+const coagulatedGenesaurBlood = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+
+    return {
+        category: trinketCategories.DUNGEONDROPS,
+        metrics: ["Uptime: " + convertExpectedUptime(effect, player, false),
+                    "Crit: " + Math.round(bonus_stats.crit)],
+        description:
+          "A low uptime stat stick with high average performance.",
       };
 }
 
@@ -227,7 +272,7 @@ const timeThiefsGambit = (data, itemLevel, player, additionalData) => {
                 "Average Haste Gain: " + Math.round(bonus_stats.haste),
                 "Stat while active: " + Math.round(processedValue(effect, itemLevel))],
         description:
-          "More information to come on what mobs 'reset the timeline'. Unlikely to be worth the risk in raid.",
+          "Just not worth the risk if you have any competitive alternatives.",
       };
 }
 
@@ -252,7 +297,7 @@ const revitalizingVoodooTotem = (data, itemLevel, player, additionalData) => {
     return {
         category: trinketCategories.DUNGEONDROPS,
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
-                "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
+                "Expected Efficiency: " + (Math.round(effect.efficiency[additionalData.contentType]) * 100) + "%"],
         description:
           "",
       };
@@ -313,7 +358,5 @@ const rainsong = (data, itemLevel, player, additionalData) => {
         description:
           "A solid but unexceptional haste trinket, though it leans support heavy so you'll only find it to be a competitive choice if you value giving buffs to allies.",
       };
-
-
 }
 
