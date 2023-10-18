@@ -92,7 +92,7 @@ export const dungeonTrinketData = [
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
-        efficiency: {Raid: 0.82, Dungeon: 0.8},
+        efficiency: {Raid: 0.78, Dungeon: 0.76},
       },
       { // Damage
         coefficient: 17.61531,
