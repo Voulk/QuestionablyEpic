@@ -15,6 +15,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
+import { gemDB } from "Databases/GemDB";
 
 /**
  * == Top Gear Engine ==
@@ -71,7 +72,41 @@ function autoSocketItems(itemList: Item[]) {
   return itemList;
 }
 
+function getGemOptions(spec: string, contentType: contentTypes) {
+  if (spec === "Holy Paladin") {
+    // Crit / haste, crit / mastery
+    return [192919, 192922];
+  }
+  else if (spec === "Discipline Priest") {
+    // Haste / Crit, Crit / Haste
+    return [192945, 192919];
+  }
+  else if (spec === "Holy Priest") {
+    // Crit / Mastery, Mastery / Crit
+    return [192922, 192958]
+  }
+  else if (spec === "Restoration Druid") {
+    // Haste / Mastery
+    return [192948];
+  }
+  else if (spec === "Preservation Evoker") {
+    // Mastery / Crit, Mastery / Vers
+    return [192958, 192964];
+  }
+  else if (spec === "Mistweaver Monk") {
+    // Haste / Crit
+    return [192945];
+  }
+  else if (spec === "Restoration Shaman") {
+    // Crit / Vers
+    return [192923];
 
+  }
+  else {
+    // Error
+  }
+
+}
 
 /**
  * This is our core Top Gear function. It puts together valid sets, then calls for them to be scored.
@@ -108,38 +143,48 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // This just builds a set and adds it to our array so that we can score it later.
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
   let itemSets = createSets(itemList, wepCombos, player.spec);
+  let resultSets = [];
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
   // == Evaluate Sets ==
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting);
+    // Create sets for each gem type.
+    const gemPoss = getGemOptions(player.spec) // TODO: Turn this into a function
+
+    if (gemPoss.length > 0) {
+      gemPoss.forEach(gem => {
+        resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
+      });
+    }
   }
 
   // == Sort and Prune sets ==
   // Prune sets (discard weak sets) outside of our top X sets (usually around 3000 but you can find the variable at the top of this file). This just makes anything further we do faster while not having
   // an impact on results.
-  itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
-
-  itemSets = pruneItems(itemSets, userSettings);
+  //itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
+  resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
+  //itemSets = pruneItems(itemSets, userSettings);
+  //resultSets = pruneItems(resultSets, userSettings);
 
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
   // and so on if they are already close in strength.
   let differentials = [];
-  let primeSet = itemSets[0];
-  for (var k = 1; k < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, itemSets.length); k++) {
-    differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
+  let primeSet = resultSets[0];
+  for (var k = 1; k < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, resultSets.length); k++) {
+    //differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
+    differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType));
   }
 
   // == Return sets ==
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
-  if (itemSets.length === 0) {
+  if (resultSets.length === 0) {
     return null;
   } else {
-    let result: TopGearResult = new TopGearResult(itemSets[0], differentials, contentType);
-    result.itemsCompared = itemSets.length;
+    let result: TopGearResult = new TopGearResult(resultSets[0], differentials, contentType);
+    result.itemsCompared = resultSets.length;
     result.new = true;
     result.id = generateReportCode();
     return result;
@@ -312,10 +357,12 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   const diffList = itemSet.itemList;
   let differentials: {
     items: Item[]; //
+    gems: number[]; //
     scoreDifference: number; 
     rawDifference: number; 
   } = {
     items: [],
+    gems: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
     rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
   };
@@ -336,6 +383,16 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
       }
     }
   }
+
+  // Check for gem differences
+  if (primeSet.enchantBreakdown["Gems"] !== itemSet.enchantBreakdown["Gems"]) {
+    itemSet.enchantBreakdown["Gems"].forEach(gem => {
+      if (!(primeSet.enchantBreakdown["Gems"].includes(gem))) {
+        differentials.gems.push(gem);
+      }
+    });
+  }
+
   if (diffList.length > primeList.length) {
     differentials.items.push(diffList[diffList.length - 1]);
   }
@@ -413,6 +470,38 @@ function dupObject(set : any) {
   return JSON.parse(JSON.stringify(set));
 }
 
+export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Stats) {
+  
+  let gemArray = [];
+  const primaryGems = {
+    'haste':  192985,
+    'crit': 192982,
+    'mastery': 192988,
+    'versatility': 192990
+  }
+  if (gemCount === 0) return [];
+
+  
+  const adjGemCount = gemCount - 1;
+  const gemStats = gemDB.filter(gem => gem.id === gemID)[0].stats;
+
+  Object.keys(gemStats).forEach(stat => {
+    bonus_stats[stat] = (bonus_stats[stat] || 0) + (gemStats[stat] * adjGemCount);
+
+    if (gemStats[stat] === 70) {
+      // Do primary gem
+      gemArray.push(primaryGems[stat]);
+      bonus_stats['intellect'] = (bonus_stats['intellect'] || 0) + 75;
+      bonus_stats[stat] = (bonus_stats[stat] || 0) + 66;
+      
+    }
+  })
+  gemArray.push(gemID);
+  
+  return gemArray;
+
+
+}
 
 /**
  * This is our evaluation function. It takes a complete set of gear and assigns it a score based on the sets stats, effects, legendaries and more.
@@ -424,8 +513,9 @@ function dupObject(set : any) {
  * @param {*} castModel
  * @returns 
  */
-function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number, userSettings: any, castModel: any, reporting: boolean = false) {
+function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number, userSettings: any, castModel: any, reporting: boolean = false, gemID?: number) {
   // == Setup ==
+  let itemSet = rawItemSet.clone();
   let builtSet = itemSet.compileStats("Retail", userSettings);
   let report = {ramp: {}};
   let setStats = builtSet.setStats;
@@ -465,23 +555,31 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel);
 
-  // == Flasks ==
+  // == Flask / Phialss ==
   if (player.spec === "Holy Paladin") {
     bonus_stats.crit = bonus_stats.crit + (1118 * 0.8);
+    enchants.phial = "Iced Phial of Corrupting Rage"
   }
   else {
     bonus_stats.versatility = bonus_stats.versatility + 745;
+    enchants.phial = "Phial of Tepid Versatility"
   }
 
   // Sockets
   //const highestWeight = getHighestWeight(castModel);
   //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
   //enchants["Gems"] = highestWeight;
-  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
+  //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
+  enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+  //console.log(bonus_stats);
   enchants["GemCount"] = builtSet.setSockets;
+
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
   compileStats(gearStats, bonus_stats);
+
+
+
   //builtSet.baseStats = gearStats;
 
   // == Effects ==
@@ -648,6 +746,7 @@ function evalSet(itemSet: ItemSet, player: Player, contentType: contentTypes, ba
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.report = report;
+
   //
   //if (player.spec() === "Discipline Priest" && contentType === "Raid") formatReport(report);
   //console.log(JSON.stringify(effectList));
