@@ -82,7 +82,7 @@ export const embellishmentData = [
     name: "Verdant Conduit",
     effects: [
       { 
-        coefficient: 0.213265, 
+        coefficient: 0.195571, 
         table: -7,
         duration: 10, 
         ppm: 5,
