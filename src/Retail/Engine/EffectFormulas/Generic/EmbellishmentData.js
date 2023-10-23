@@ -199,14 +199,14 @@ export const embellishmentData = [
             coefficient: 14.83545, // 3.268828,
             table: -7,
             ppm: 4 * 0.75,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'versatility'],
             efficiency: 0.6,
           },
           { // DPS Effect
             coefficient: 8.901271,
             table: -7,
             ppm: 4 * 0.25,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'versatility'],
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -215,7 +215,7 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
-
+          console.log(itemLevel + " " + JSON.stringify(bonus_stats));
           return bonus_stats;
         }
       },
@@ -394,7 +394,7 @@ export const embellishmentData = [
           bonus_stats.versatility = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc('haste'));
 
           if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
-
+          console.log(itemLevel + " (wrists) " + processedValue(data[0], itemLevel));
           return bonus_stats;
         }
       },
@@ -597,6 +597,8 @@ export const embellishmentData = [
         /* 
         */
         name: "Adaptive Dracothyst Armguards",
+        cardDescription: "",
+        cardType: "special",
         effects: [
           { 
             coefficient: 0.248319,
@@ -629,6 +631,8 @@ export const embellishmentData = [
         /* Self-HoT every 5s. Big shield if you drop low.
         */
         name: "Undulating Sporecloak",
+        cardDescription: "",
+        cardType: "special",
         effects: [
           { // Passive Heal
             coefficient: 10.73745, //44.02832,
@@ -752,6 +756,29 @@ export const embellishmentData = [
           let bonus_stats = {};
           bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.haste = processedValue(data[1], itemLevel);
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Weathered Explorer's Stave         
+        /* -------------------- */
+        /* 
+        */
+        name: "Weathered Explorer's Stave",
+        effects: [
+          { // Haste
+            coefficient: 3.114016,
+            table: -9,
+            ppm: 1.21,
+          },
+
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel)
+
+          // TODO: Deduct regular secondaries from it if we're looking at the chart.
           return bonus_stats;
         }
       },
