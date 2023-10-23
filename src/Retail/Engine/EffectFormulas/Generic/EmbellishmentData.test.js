@@ -29,6 +29,7 @@ describe("Verdant Conduit Data Check", () => {
 
     each`
     level   | expectedResult
+    ${473}  | ${271}
     ${482}  | ${281}
     // add new test cases here
     `.test(effectName + " Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {

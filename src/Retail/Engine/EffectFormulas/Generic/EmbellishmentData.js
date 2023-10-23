@@ -1,6 +1,6 @@
 import { itemLevels } from "Databases/itemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
-  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
@@ -21,28 +21,28 @@ export const embellishmentData = [
     /* -------------------- */
     /* Flourishing Dream Helm                       
     /* -------------------- */
-    /* No duration in spell data. Maybe just moves around who you're attached to?
-    */
     name: "Flourishing Dream Helm",
     effects: [
       { // Self shield portion
         coefficient: 91.45733, 
         table: -9,
         duration: 15, // 
-        ppm: 0,
+        ppm: 1.21,
         efficiency: 0.8,
       },
       { // Ally + Self Shield
         coefficient: 60.97212, 
         table: -9,
         duration: 15, 
-        ppm: 0,
-        efficiency: 0.8,
+        ppm: 1.21,
+        efficiency: 0.45,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // 
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps += runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * 2;
 
       return bonus_stats;
     }
