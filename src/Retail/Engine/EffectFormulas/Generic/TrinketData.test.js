@@ -39,6 +39,20 @@ describe("Smoldering Seedling", () => {
     });
 }); 
 
+describe("Pip's Emerald Friendship Badge", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Pip's Emerald Friendship Badge");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${470}  | ${266}
+    // add new test cases here
+    `.test("Pip's Emerald Friendship Badge Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
+    });
+}); 
+
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Neltharion's Call to Chaos");;

@@ -215,7 +215,6 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
-          console.log(itemLevel + " " + JSON.stringify(bonus_stats));
           return bonus_stats;
         }
       },
@@ -394,7 +393,6 @@ export const embellishmentData = [
           bonus_stats.versatility = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc('haste'));
 
           if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
-          console.log(itemLevel + " (wrists) " + processedValue(data[0], itemLevel));
           return bonus_stats;
         }
       },
@@ -763,7 +761,7 @@ export const embellishmentData = [
         /* -------------------- */
         /* Weathered Explorer's Stave         
         /* -------------------- */
-        /* 
+        /* Strong on paper due to its incorrect scaling, but has tough competition from on-use damage weapons in raid and M+.
         */
         name: "Weathered Explorer's Stave",
         effects: [

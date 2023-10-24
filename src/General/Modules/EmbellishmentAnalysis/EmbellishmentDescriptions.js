@@ -5,8 +5,6 @@ import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 export const getEmbellishmentDescription = (embellishmentName, player, additionalData) => {
     const embData = embellishmentData.filter(emb => emb.name === embellishmentName)[0];
-    console.log(embellishmentName)
-    console.log(embData)
     const itemLevel = 486;
     //if (trinketData === null) return null;
     switch (embellishmentName) {

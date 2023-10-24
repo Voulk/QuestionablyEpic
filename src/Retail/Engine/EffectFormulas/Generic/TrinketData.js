@@ -47,13 +47,11 @@ export const raidTrinketData = [
     name: "Pip's Emerald Friendship Badge",
     effects: [
       { //
-        coefficient: 2.328225, 
+        coefficient: 2.328225, // This is the coefficient of the passive value.
         table: -7,
         duration: 12,
         ppm: 2,
         uptime: 0.328986,
-      },
-      { // 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
