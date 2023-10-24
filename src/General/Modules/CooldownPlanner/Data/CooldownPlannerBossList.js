@@ -25,6 +25,19 @@ export const raidDB = [
     expansion: 9,
     icon: require("Images/achievement_raidprimalist_raid.jpg"),
   },
+  {
+    ID: 2549,
+    raidID: 1207,
+    name: {
+      en: "Amirdrassil, the Dream's Hope",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    expansion: 9,
+    icon: require("Images/inv_achievement_raidemeralddream_raid.jpg"),
+  },
 ];
 
 export const bossList = [
@@ -264,21 +277,140 @@ export const bossList = [
     zoneID: 2569,
     icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg"),
   },
-  /*
-  {
-    DungeonEncounterID: 2696,
-    ID: 2531,
-    name: {
-      en: "The Zaqali Elders",
-      cn: "扎卡利长老",
-      de: "Die Ältesten der Zaqali",
-      fr: "Les Anciens zaqalis",
-      ru: "Старейшины закали",
-    },
-    zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg"),
-  }, */
+  /* -------------------------------------------------------------------------- */
+  /*                        Amirdrassil, the Dream's Hope                       */
+  /* -------------------------------------------------------------------------- */
 
+  {
+    DungeonEncounterID: 2820,
+    ID: 2564,
+    name: {
+      en: "Gnarlroot",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_fieryancient.jpg"),
+  },
+  {
+    DungeonEncounterID: 2709,
+    ID: 2554,
+    name: {
+      en: "Igira the Cruel",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_igira-the-cruel.jpg"),
+  },
+  {
+    DungeonEncounterID: 2709,
+    ID: 2554,
+    name: {
+      en: "Igira the Cruel",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_igira-the-cruel.jpg"),
+  },
+  {
+    DungeonEncounterID: 2737,
+    ID: 2557,
+    name: {
+      en: "Volcoross",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_lavaserpent.jpg"),
+  },
+  {
+    DungeonEncounterID: 2728,
+    ID: 2555,
+    name: {
+      en: "Council of Dreams",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_dreamcouncil.jpg"),
+  },
+  {
+    DungeonEncounterID: 2731,
+    ID: 2553,
+    name: {
+      en: "Larodar, Keeper of the Flame",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_keeperoftheflames.jpg"),
+  },
+  {
+    DungeonEncounterID: 2708,
+    ID: 2556,
+    name: {
+      en: "Nymue, Weaver of the Cycle",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_dreamweaver.jpg"),
+  },
+  {
+    DungeonEncounterID: 2824,
+    ID: 2563,
+    name: {
+      en: "Smolderon",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_smolderon.jpg"),
+  },
+  {
+    DungeonEncounterID: 2786,
+    ID: 2565,
+    name: {
+      en: "Tindral Sageswift, Seer of the Flame",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_druidoftheflame.jpg"),
+  },
+  {
+    DungeonEncounterID: 2677,
+    ID: 2519,
+    name: {
+      en: "Fyrakk the Blazing",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_fyrakk.jpg"),
+  },
 ];
 
 export const getBossName = (encounterID, lang) => {
