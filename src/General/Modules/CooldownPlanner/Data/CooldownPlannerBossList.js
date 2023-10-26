@@ -308,19 +308,6 @@ export const bossList = [
     icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_igira-the-cruel.jpg"),
   },
   {
-    DungeonEncounterID: 2709,
-    ID: 2554,
-    name: {
-      en: "Igira the Cruel",
-      cn: "",
-      de: "",
-      fr: "",
-      ru: "",
-    },
-    zoneID: 2549,
-    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_igira-the-cruel.jpg"),
-  },
-  {
     DungeonEncounterID: 2737,
     ID: 2557,
     name: {
