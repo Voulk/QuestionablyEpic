@@ -207,7 +207,7 @@ export const dungeonTrinketData = [
         secondaries: ["versatility", "crit"],
         targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
-        meteorSize: 0.15, // Multiplier is capped at 5 allies.
+        meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
         efficiency: 0.68, // No longer splits to pets.
       },
       { // AoE Haste effect
@@ -222,7 +222,7 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 5);
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 4);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
       if (player.spec === "Holy Priest") bonus_stats.hps *= ((player.getStatPerc("mastery") - 1) * 0.75 + 1);
 
