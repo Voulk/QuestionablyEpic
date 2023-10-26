@@ -342,6 +342,29 @@ export const embellishmentData = [
       },
       {
         /* -------------------- */
+        /* Horizon Strider's Garments       
+        /* -------------------- */
+        /* 
+        */
+        name: "Horizon Strider's Garments",
+        effects: [
+          { 
+            coefficient: 0.046937,
+            table: -7,
+            stacks: {Raid: 4.8, Dungeon: 4.6} // Revisit dungeon stacks.
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+          console.log(processedValue(data[0], 479));
+          bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks[additionalData.contentType];
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
         /* Playful Spirit's Fur (Magic Snowball)       
         /* -------------------- */
         /* 
@@ -382,7 +405,7 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.74681,
-            table: -8, // No idea why this is -8
+            table: -8, // No idea why this is -8. It also scales with Haste when it shouldn't. Bug has been raised.
             duration: 10,
             ppm: 1,
           },

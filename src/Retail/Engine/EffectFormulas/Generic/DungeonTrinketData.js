@@ -42,11 +42,11 @@ export const dungeonTrinketData = [
     name: "Coagulated Genesaur Blood",
     effects: [
       {
-        coefficient: 2.883274,
+        coefficient: 1.830916, //2.883274,
         table: -7,
         stat: "crit",
         duration: 10,
-        ppm: 1,
+        ppm: 1.66,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
