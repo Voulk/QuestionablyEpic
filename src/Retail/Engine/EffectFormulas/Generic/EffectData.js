@@ -28,7 +28,7 @@ export const effectData = [
     /* -------------------- */
     /* Imbued Frostweave Slipper (Spirit)                  
     /* -------------------- */
-    /* 
+    /* Capped?
     */
     name: "Imbued Frostweave Slippers",
     effects: [
@@ -41,7 +41,7 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.mana = processedValue(data[0], itemLevel);
+      bonus_stats.mana = processedValue(data[0], 415); // This effect is capped 
       return bonus_stats;
     }
   },
@@ -145,7 +145,7 @@ export const effectData = [
     /* -------------------- */
     /* Drakebreaker's Versatility                       
     /* -------------------- */
-    /* Flat 105 Versatility. We don't need to do anything fancy for it, just return 105 vers.
+    /* Flat Versatility. We don't need to do anything fancy for it, just return 105 vers.
     */
     name: "Drakebreaker's Versatility",
     effects: [

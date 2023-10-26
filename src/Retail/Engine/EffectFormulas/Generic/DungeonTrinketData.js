@@ -10,7 +10,7 @@ export const dungeonTrinketData = [
     name: "Leaf of the Ancient Protectors",
     effects: [
       {  // Absorb
-        coefficient: 155.9272,
+        coefficient: 215.1787,
         table: -8,
         secondaries: ["versatility"],
         cooldown: 60,
@@ -42,11 +42,11 @@ export const dungeonTrinketData = [
     name: "Coagulated Genesaur Blood",
     effects: [
       {
-        coefficient: 2.883274,
+        coefficient: 1.830916, //2.883274,
         table: -7,
         stat: "crit",
         duration: 10,
-        ppm: 1,
+        ppm: 1.66,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -92,7 +92,7 @@ export const dungeonTrinketData = [
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
-        efficiency: {Raid: 0.82, Dungeon: 0.8},
+        efficiency: {Raid: 0.78, Dungeon: 0.76},
       },
       { // Damage
         coefficient: 17.61531,
@@ -177,8 +177,12 @@ export const dungeonTrinketData = [
         duration: 20,
         cooldown: 180, 
       },
-      { // Clone portion (currently unknown)
-
+      { // Clone portion. The clone will spam healing spells, but if the party is topped off he'll take a break for a while. 
+        coefficient: 34.79113, 
+        table: -9,
+        duration: 20,
+        castTime: 2.5, // Not affected by Haste.
+        efficiency: 0.5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -193,16 +197,17 @@ export const dungeonTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Echoing Tyrstone                                        */
     /* ---------------------------------------------------------------------------------------------- */
-    /* Can currently hit pets and full health allies which increases overhealing and kills off a quarter of the value.
+    /* 
     */
     name: "Echoing Tyrstone",
     effects: [
       { 
-        coefficient: 167.2488 * 1.7, 
+        coefficient: 283.4695, 
         table: -9,
         secondaries: ["versatility", "crit"],
-        targets: {Raid: 1, Dungeon: 1}, // This is now split.
+        targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
+        meteorSize: 0.15, // Multiplier is capped at 5 allies.
         efficiency: 0.68, // No longer splits to pets.
       },
       { // AoE Haste effect
