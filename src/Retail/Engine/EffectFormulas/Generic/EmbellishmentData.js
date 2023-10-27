@@ -659,7 +659,7 @@ export const embellishmentData = [
             coefficient: 10.73745, //44.02832,
             table: -9,
             ppm: 60 / 5, // The cloak heals every 5 seconds.
-            secondaries: ['versatility'],
+            secondaries: ['versatility', 'crit'],
             efficiency: 0.55,
           },
           { // Shield portion
