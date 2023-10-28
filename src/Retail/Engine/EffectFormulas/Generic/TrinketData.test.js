@@ -8,6 +8,19 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
 
+describe("Amalgam's Seventh Spine", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Amalgam's Seventh Spine");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${447}  | ${655}
+    // add new test cases here
+    `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult);
+
+    });
+}); 
 
 describe("Blossom of Amirdrassil", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -15,7 +28,7 @@ describe("Blossom of Amirdrassil", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${483}  | ${[Math.floor(272517/6),  Math.floor(136250/6), 408768]}
+    ${483}  | ${[Math.floor(327008/6),  Math.floor(163504/6), 490523]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);

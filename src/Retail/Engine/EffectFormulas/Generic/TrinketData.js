@@ -5,7 +5,7 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Smoldering Treant Seedling                                */
     /* ---------------------------------------------------------------------------------------------- */
-    /* == Naive implementation. == Can refine when trinket is available for testing. Likely to have some form of meteor effect.
+    /* 
     */
     name: "Smoldering Seedling",
     effects: [
@@ -14,16 +14,16 @@ export const raidTrinketData = [
         table: -9,
         duration: 12,
         cooldown: 120,
-        targetScaling: 1, // Confirm this in game. It's behaving weird on PTR. Think about whether this should actually be 2 or 1.
-        efficiency: 0.85, // The tree does pulse smart healing but it's also a little inefficient to pushing healing into a tree instead of the raid.
+        targetScaling: 1, // This actually heals for 2x the amount you feed it, but we deduct the healing spent.
+        efficiency: 0.55, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
       },
-      { // 
+      { // Mastery benefit. This is short and not all that useful.
         coefficient: 0.518729, 
         table: -7,
         duration: 10,
         cooldown: 120,
       },
-      { // 
+      { // Appears unused.
         coefficient: 617.6665, 
         table: -1,
       },
