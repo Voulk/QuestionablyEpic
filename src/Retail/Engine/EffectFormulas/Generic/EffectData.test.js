@@ -3,6 +3,8 @@ import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";
 
+
+
 describe("Assembly Preserver's Band Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeEffect = effectData.find((effect) => effect.name === "Assembly Preserver's Band");

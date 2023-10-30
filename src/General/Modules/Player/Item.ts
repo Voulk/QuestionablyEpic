@@ -41,6 +41,7 @@ export class Item {
   mainHandUniqueHash?: string;
   offHandUniqueHash?: string;
   gemString?: string;
+  flags: string[] = [];
 
   constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
     this.id = id;
@@ -58,7 +59,7 @@ export class Item {
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
     if (this.onUse) this.effect['onUse'] = true;
     if (slot === "Neck") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
-
+    if (getItemProp(id, "offspecWeapon")) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
 
   }

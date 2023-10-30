@@ -45,6 +45,13 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderStyle: "dashed",
   },
+  offspec: {
+    borderColor: "red",
+    backgroundColor: "#544444",
+    borderStyle: "solid",
+    minWidth: 250,
+    height: 52,
+  }
 });
 
 export default function ItemCard(props) {
@@ -66,6 +73,8 @@ export default function ItemCard(props) {
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
 
   let socket = [];
+  const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && item.vaultItem ? 'selectedVault' : item.isEquipped ? 'selected' : item.vaultItem ? 'vault' : 'root';
+
 
   // Onyx Annulet
   if (item.id === 203460) {
@@ -126,7 +135,7 @@ export default function ItemCard(props) {
           </Grid>
         </div>
         <Card
-          className={item.active && isVault ? classes.selectedVault : item.active ? classes.selected : catalyst ? classes.catalyst : isVault ? classes.vault : classes.root}
+          className={classes[className]}
           elevation={0}
           variant="outlined"
         >

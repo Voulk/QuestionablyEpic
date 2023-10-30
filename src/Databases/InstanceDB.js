@@ -8,6 +8,7 @@ export const instanceDB = {
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
   "1208": "Aberrus, the Shadowed Crucible",
+  "1207": "Amirdrassil, The Dream's Hope",
 };
 
 export const encounterDB = {
@@ -1818,6 +1819,111 @@ export const encounterDB = {
           de: "Die vergessenen Experimente",
           fr: "Les expériences oubliées",
           ru: "Забытые эксперименты",
+        },
+      },
+
+      999: {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
+    },
+  },
+  // Amirdrassil
+  1207: {
+    name: {
+      en: "Amirdrassil, the Dream's Hope",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
+    bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, 999],
+    bosses: {
+      2564: {
+        name: {
+          en: "Gnarlroot",
+          ch: "Gnarlroot",
+          de: "Gnarlroot",
+          fr: "Gnarlroot",
+          ru: "Gnarlroot",
+        },
+      },
+      2554: {
+        name: {
+          en: "Igira the Cruel",
+          ch: "Igira the Cruel",
+          de: "Igira the Cruel",
+          fr: "Igira the Cruel",
+          ru: "Igira the Cruel",
+        },
+      },
+      2557: {
+        name: {
+          en: "Volcoross",
+          ch: "Volcoross",
+          de: "Volcoross",
+          fr: "Volcoross",
+          ru: "Volcoross",
+        },
+      },
+      2555: {
+        name: {
+          en: "Council of Dreams",
+          ch: "Council of Dreams",
+          de: "Council of Dreams",
+          fr: "Council of Dreams",
+          ru: "Council of Dreams",
+        },
+      },
+      2553: {
+        name: {
+          en: "Larodar, Keeper of the Flame",
+          ch: "Larodar, Keeper of the Flame",
+          de: "Larodar, Keeper of the Flame",
+          fr: "Larodar, Keeper of the Flame",
+          ru: "Larodar, Keeper of the Flame",
+        },
+      },
+      2556: {
+        name: {
+          en: "Nymue, Weaver of the Cycle",
+          ch: "Nymue, Weaver of the Cycle",
+          de: "Nymue, Weaver of the Cycle",
+          fr: "Nymue, Weaver of the Cycle",
+          ru: "Nymue, Weaver of the Cycle",
+        },
+      },
+      2563: {
+        name: {
+          en: "Smolderon",
+          ch: "Smolderon",
+          de: "Smolderon",
+          fr: "Smolderon",
+          ru: "Smolderon",
+        },
+      },
+      2565: {
+        name: {
+          en: "Tindral Sageswift, Seer of the Flame",
+          ch: "Tindral Sageswift, Seer of the Flame",
+          de: "Tindral Sageswift, Seer of the Flame",
+          fr: "Tindral Sageswift, Seer of the Flame",
+          ru: "Tindral Sageswift, Seer of the Flame",
+        },
+      },
+      2519: {
+        name: {
+          en: "Fyrakk the Blazing",
+          ch: "Fyrakk the Blazing",
+          de: "Fyrakk the Blazing",
+          fr: "Fyrakk the Blazing",
+          ru: "Fyrakk the Blazing",
         },
       },
 

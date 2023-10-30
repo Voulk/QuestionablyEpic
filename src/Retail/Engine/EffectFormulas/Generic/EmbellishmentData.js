@@ -1,6 +1,6 @@
 import { itemLevels } from "Databases/itemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
-  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
@@ -21,28 +21,28 @@ export const embellishmentData = [
     /* -------------------- */
     /* Flourishing Dream Helm                       
     /* -------------------- */
-    /* No duration in spell data. Maybe just moves around who you're attached to?
-    */
     name: "Flourishing Dream Helm",
     effects: [
       { // Self shield portion
         coefficient: 91.45733, 
         table: -9,
         duration: 15, // 
-        ppm: 0,
+        ppm: 1.21,
         efficiency: 0.8,
       },
       { // Ally + Self Shield
         coefficient: 60.97212, 
         table: -9,
         duration: 15, 
-        ppm: 0,
-        efficiency: 0.8,
+        ppm: 1.21,
+        efficiency: 0.45,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // 
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps += runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * 2;
 
       return bonus_stats;
     }
@@ -51,16 +51,17 @@ export const embellishmentData = [
     /* -------------------- */
     /* Verdant Tether                       
     /* -------------------- */
-    /* No duration in spell data. Maybe just moves around who you're attached to?
+    /* Max value at 0yd distance, min value at 30yds distance. Procs on the target of your heal, can't proc on self heals. 
+       Adds a little green trail going from you to your target.
     */
     name: "Verdant Tether",
     effects: [
       { 
-        coefficient: 0.229097, // 0.482408 * 0.95,
+        coefficient: 0.229097,
         table: -7,
         duration: 15, 
         ppm: 2.2,
-        multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+        multiplier: 0.7, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -82,7 +83,7 @@ export const embellishmentData = [
     name: "Verdant Conduit",
     effects: [
       { 
-        coefficient: 0.213265, 
+        coefficient: 0.195571, 
         table: -7,
         duration: 10, 
         ppm: 5,
@@ -199,14 +200,14 @@ export const embellishmentData = [
             coefficient: 14.83545, // 3.268828,
             table: -7,
             ppm: 4 * 0.75,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'versatility'],
             efficiency: 0.6,
           },
           { // DPS Effect
             coefficient: 8.901271,
             table: -7,
             ppm: 4 * 0.25,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'versatility'],
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -215,7 +216,6 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
-
           return bonus_stats;
         }
       },
@@ -343,6 +343,29 @@ export const embellishmentData = [
       },
       {
         /* -------------------- */
+        /* Horizon Strider's Garments       
+        /* -------------------- */
+        /* 
+        */
+        name: "Horizon Strider's Garments",
+        effects: [
+          { 
+            coefficient: 0.046937,
+            table: -7,
+            stacks: {Raid: 4.8, Dungeon: 4.6} // Revisit dungeon stacks.
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+          console.log(processedValue(data[0], 479));
+          bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks[additionalData.contentType];
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
         /* Playful Spirit's Fur (Magic Snowball)       
         /* -------------------- */
         /* 
@@ -383,7 +406,7 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.74681,
-            table: -8, // No idea why this is -8
+            table: -8, // No idea why this is -8. It also scales with Haste when it shouldn't. Bug has been raised.
             duration: 10,
             ppm: 1,
           },
@@ -394,7 +417,6 @@ export const embellishmentData = [
           bonus_stats.versatility = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc('haste'));
 
           if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
-
           return bonus_stats;
         }
       },
@@ -597,6 +619,8 @@ export const embellishmentData = [
         /* 
         */
         name: "Adaptive Dracothyst Armguards",
+        cardDescription: "",
+        cardType: "special",
         effects: [
           { 
             coefficient: 0.248319,
@@ -629,12 +653,14 @@ export const embellishmentData = [
         /* Self-HoT every 5s. Big shield if you drop low.
         */
         name: "Undulating Sporecloak",
+        cardDescription: "",
+        cardType: "special",
         effects: [
           { // Passive Heal
             coefficient: 10.73745, //44.02832,
             table: -9,
             ppm: 60 / 5, // The cloak heals every 5 seconds.
-            secondaries: ['versatility'],
+            secondaries: ['versatility', 'crit'],
             efficiency: 0.55,
           },
           { // Shield portion
@@ -752,6 +778,29 @@ export const embellishmentData = [
           let bonus_stats = {};
           bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.haste = processedValue(data[1], itemLevel);
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Weathered Explorer's Stave         
+        /* -------------------- */
+        /* Strong on paper due to its incorrect scaling, but has tough competition from on-use damage weapons in raid and M+.
+        */
+        name: "Weathered Explorer's Stave",
+        effects: [
+          { // Haste
+            coefficient: 3.114016,
+            table: -9,
+            ppm: 1.21,
+          },
+
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel)
+
+          // TODO: Deduct regular secondaries from it if we're looking at the chart.
           return bonus_stats;
         }
       },

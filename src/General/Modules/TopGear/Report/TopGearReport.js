@@ -173,12 +173,16 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-
+    
     // Setup Slots / Set IDs.
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot")
       item.setID = getItemProp(item.id, "itemSetId")
     })
+
+
+    // Build Vault items
+    // Take the top set, and every differential, and if it contains a vault item we haven't included yet, include it with the score differential compared to our *current* set.
 
     //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
@@ -363,7 +367,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
            <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
-           <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="The above set of gear is your best, but here are some notes on your set:" bulletPoints={advice} /> : ""}</Grid>                     
+           <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="The above set of gear is your best, but here are some notes on your set:" bulletPoints={advice} title="Insights - Set Notes" /> : ""}</Grid>                     
           <Grid item style={{ height: 60 }} xs={12} />
 
         </Grid>

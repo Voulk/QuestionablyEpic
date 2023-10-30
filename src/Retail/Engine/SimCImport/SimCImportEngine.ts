@@ -42,6 +42,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
 
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings);
     player.savedPTRString = simCInput;
+
     allPlayers.updatePlayerChar(player);
     allPlayers.saveAllChar();
 

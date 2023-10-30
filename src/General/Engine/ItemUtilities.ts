@@ -1,5 +1,4 @@
 import { itemDB } from "Databases/ItemDB";
-import { dominationGemDB } from "../../Databases/DominationGemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { ClassicItemDB } from "Databases/ClassicItemDB";
@@ -145,6 +144,35 @@ export function getEstimatedHPS(bonus_stats: Stats, player: Player, contentType:
     }
   }
   return Math.round(100 * estHPS) / 100;
+}
+
+// Auto generate gems based on stat DR and adjusted weights. 
+export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, setStats: Stats, adjustedWeights: any) {
+  interface gemData {bigStat: string, smallStat: string, score: number, gemID: number}
+  let gemArray: gemData[] = []
+  const secondaries = ["haste", "mastery", "crit", "versatility"];
+  
+  const adjGemCount = gemCount - 1;
+
+  const highStat = 70 * adjGemCount;
+  const lowStat = 33 * adjGemCount;
+
+  for (let i = 0; i < secondaries.length; i++) {
+    for (let j = 0; j < secondaries.length; j++) {
+      if (i !== j) {
+        const bigStat = secondaries[i];
+        const smallStat = secondaries[j];
+        const score = (adjustedWeights[bigStat] * highStat) + (adjustedWeights[smallStat] * lowStat);
+        //const gemID = getGemID(bigStat, smallStat, spec, setStats, contentType);
+        const gemID = 0;
+        gemArray.push({bigStat, smallStat, score, gemID});
+        console.log({bigStat, smallStat, score, gemID})
+      }
+
+    }
+  }
+
+
 }
 
 // This is an extremely simple function that just returns default gems.
@@ -334,7 +362,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     let expectedItemLevel = level;
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
-    if ('source' in item && item.source.instanceId === 1208) {
+    if ('source' in item && item.source.instanceId === 1207) {
       const max = isMaxxed(difficulty);
       if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       else expectedItemLevel += getItemLevelBoost(itemEncounter, difficulty) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
@@ -342,6 +370,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     }
     else if (item.source.instanceId === 1205) { // World Bosses
       if (itemEncounter === 2531) expectedItemLevel = 415
+      else if (itemEncounter === 2562) expectedItemLevel = 454 // Technically the neck is 460.
       else expectedItemLevel = 389;
     }
 
@@ -485,12 +514,15 @@ export function getItemIcon(id: number, gameType = "Retail") {
 
 
 export function getGemIcon(id: number) {
-  const gem = dominationGemDB.filter((gem) => gem.gemID === id);
-  let gemIcon = "";
+  console.log(id);
+  const gem = gemDB.filter((gem) => gem.id === id);
+  console.log(gem);
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
   } else {
-    return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon + ".jpg";
+    //return process.env.PUBLIC_URL + "/Images/Icons/" + gem.icon + ".jpg";
+    console.log()
+    return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon.replace("Images/Icon", "") + ".jpg"
   }
 }
 
