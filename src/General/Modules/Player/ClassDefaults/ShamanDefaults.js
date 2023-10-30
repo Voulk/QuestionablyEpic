@@ -109,10 +109,10 @@ export const shamanDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.394,
-    crit: 0.524,
-    mastery: 0.441,
-    versatility: 0.502,
+    haste: 0.496,
+    crit: 0.640,
+    mastery: 0.471,
+    versatility: 0.602,
     leech: 0.45,
   };
   statWeights.Dungeon = {
