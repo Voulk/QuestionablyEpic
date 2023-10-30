@@ -81,7 +81,7 @@ describe("Neltharion's Call to Chaos", () => {
     });
 }); 
 
-describe("Ominous Chromatic Essence", () => {
+describe("Ominous Chromatic Essence", () => { 
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Ominous Chromatic Essence");;
     const effect = activeTrinket.effects;
