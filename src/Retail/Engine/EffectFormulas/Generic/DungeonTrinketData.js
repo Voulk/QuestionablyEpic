@@ -3,6 +3,29 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Emerald Coach's Whistle                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Amalgam's Seventh Spine",
+    effects: [
+      { // Mastery portion
+        coefficient: 0.525248,
+        table: -7,
+        ppm: {"Restoration Druid": 27, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+              "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.mana = data[0].ppm[player.spec] * processedValue(data[0], itemLevel) / 60;
+      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.7; // Druid has a -30% aura on Amalgam's Spine.
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                               Leaf of the Ancient Protectors                                   */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
@@ -105,7 +128,7 @@ export const dungeonTrinketData = [
       let bonus_stats = {};
       
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+      //bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
     }
@@ -176,6 +199,7 @@ export const dungeonTrinketData = [
         table: -7,
         duration: 20,
         cooldown: 180, 
+        expectedWastage: 0.7,
       },
       { // Clone portion. The clone will spam healing spells, but if the party is topped off he'll take a break for a while. 
         coefficient: 34.79113, 
@@ -188,7 +212,7 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const bestStat = getHighestStat(additionalData.setStats);//player.getHighestStatWeight(additionalData.contentType);
-      bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].expectedWastage;
 
       return bonus_stats;
     }
@@ -207,22 +231,22 @@ export const dungeonTrinketData = [
         secondaries: ["versatility", "crit"],
         targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
-        meteorSize: 0.15, // Multiplier is capped at 5 allies.
-        efficiency: 0.68, // No longer splits to pets.
+        meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
+        efficiency: 0.65, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
         targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
         cooldown: 120,
-        efficiency: 0.82, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 5);
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 4);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
       if (player.spec === "Holy Priest") bonus_stats.hps *= ((player.getStatPerc("mastery") - 1) * 0.75 + 1);
 
