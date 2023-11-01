@@ -2194,4 +2194,121 @@ export const defaultPlans: DefaultPlans = {
       ],
     },
   },
+
+  2820: {
+    // Gnarlroot
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2709: {
+    // Igira the Cruel
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2737: {
+    // Volcoross
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2728: {
+    // Council of Dreams
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2731: {
+    // Larodar, Keeper of the Flame
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2708: {
+    // Nymue, Weaver of the Cycle
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2824: {
+    // Smolderon
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2786: {
+    // Tindral Sageswift, Seer of the Flame
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
+
+  2677: {
+    // Fyrakk the Blazing
+    Normal: {
+      default: [],
+    },
+    Heroic: {
+      default: [],
+    },
+    Mythic: {
+      default: [],
+    },
+  },
 };
