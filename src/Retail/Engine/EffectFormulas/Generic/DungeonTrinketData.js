@@ -10,7 +10,7 @@ export const dungeonTrinketData = [
     name: "Amalgam's Seventh Spine",
     effects: [
       { // Mastery portion
-        coefficient: 0.525248,
+        coefficient: 0.666804,
         table: -7,
         ppm: {"Restoration Druid": 27, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
               "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
@@ -19,7 +19,8 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.mana = data[0].ppm[player.spec] * processedValue(data[0], itemLevel) / 60;
-      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.7; // Druid has a -30% aura on Amalgam's Spine.
+      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.6; // Druid has a -40% aura on Amalgam's Spine.
+      else if (player.spec === "Preservation Evoker") bonus_stats.mana *= 1.1; // Evoker has a +10% aura.
 
       return bonus_stats;
     }
@@ -33,7 +34,7 @@ export const dungeonTrinketData = [
     name: "Leaf of the Ancient Protectors",
     effects: [
       {  // Absorb
-        coefficient: 215.1787,
+        coefficient: 486.278931,
         table: -8,
         secondaries: ["versatility"],
         cooldown: 60,
