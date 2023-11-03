@@ -17,7 +17,7 @@ import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColo
 import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
 
 // 
-
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
@@ -103,7 +103,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += ((value * 0.42) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
+      estHPS += ((value * CONSTANTS.allyStatWeight) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -127,7 +127,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += ((value * 0.42) / player.activeStats.intellect) * 75000 * 0.75;
+      estDPS += CONSTANTS.allyDPSPerPoint * 0.75 * value;
     }
   }
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));

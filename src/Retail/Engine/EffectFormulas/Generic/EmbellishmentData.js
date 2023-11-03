@@ -406,17 +406,19 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.74681,
-            table: -8, // No idea why this is -8. It also scales with Haste when it shouldn't. Bug has been raised.
+            table: -8, // No idea why this is -8. It no longer incorrectly scales with Haste.
             duration: 10,
             ppm: 1,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO
-          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
+          // We're going to ignore overlapping procs here since we have a reasonable expectation that they'll go on different targets.
+          // This ends up a minor overestimation since the proc on ourself might overlap since we're always a target.
+          bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60 * 1.13;
 
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 4;
+          console.log(itemLevel + " " + JSON.stringify(bonus_stats));
           return bonus_stats;
         }
       },
@@ -691,7 +693,7 @@ export const embellishmentData = [
         /* -------------------- */
         /* Spore Keeper's Baton (Sporeadic Adaptability)     
         /* -------------------- */
-        /* 
+        /* This has a 12s ICD which means our ppm is a little lower than a regular proc trinket might be. We can refine this later but realistically this isn't a top pick.
         */
         name: "Spore Keeper's Baton",
         effects: [
@@ -699,34 +701,34 @@ export const embellishmentData = [
             coefficient: 0.875413,
             table: -7, 
             duration: 12,
-            ppm: 2 / 2, // Haste scaling. Also has an internal CD of 12s because why not.
+            ppm: 2 / 2 / 1.1, // Haste scaling removed. Also has an internal CD of 12s because why not.
           },
           { // DPS effect
             coefficient: 2.855669,
             table: -9, 
             ticks: 12, // TODO: Confirm it's 12 ticks.
-            ppm: 2 / 2,
-            secondaries: ['crit'], // Check DoT haste scaling but shouldn't have it.
+            ppm: 2 / 2 / 1.1,
+            secondaries: ['crit'], // Check DoT haste scaling but shouldn't have it. Didn't originally have vers scaling either. What a nice item.
           },
           { // Shield effect. Procs with the damage.
             coefficient: 23.53642,
             table: -9, 
             efficiency: 0.95,
             secondaries: ['versatility'],
-            ppm: 2 / 2,
+            ppm: 2 / 2 / 1.1,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // 
-          const versEffect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+          const versEffect = runGenericPPMTrinket(data[0], itemLevel);
           if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versEffect;
 
           // Damage effect
-          const ppm = data[0].ppm * player.getStatPerc('haste');
+          const ppm = data[0].ppm;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
-
+          console.log("B: " + itemLevel + " " + JSON.stringify(bonus_stats));
           return bonus_stats;
         }
       },
