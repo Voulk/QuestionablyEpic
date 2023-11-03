@@ -170,7 +170,7 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 117.1906 * 1.15 * 0.65, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
+            coefficient: 76.17424, //117.1906 * 1.15 * 0.65, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. Not included for now.
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
@@ -434,7 +434,7 @@ export const embellishmentData = [
             coefficient: 1.478889,
             table: -7, 
             duration: 20,
-            ppm: 9,
+            ppm: 9, // May have haste scaling. 
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
