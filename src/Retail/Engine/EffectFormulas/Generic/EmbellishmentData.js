@@ -230,7 +230,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.389637,
             table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
-            uptime: 0.3,
+            uptime: 0.25,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -406,7 +406,7 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.74681,
-            table: -8, // No idea why this is -8. It no longer incorrectly scales with Haste.
+            table: -8, // It no longer incorrectly scales with Haste.
             duration: 10,
             ppm: 1,
           },
@@ -414,11 +414,11 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // We're going to ignore overlapping procs here since we have a reasonable expectation that they'll go on different targets.
-          // This ends up a minor overestimation since the proc on ourself might overlap since we're always a target.
-          bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60 * 1.13;
+          // This ends up a minor overestimation since in practice you might clip the same target twice but it doesn't meaningfully change the value.
+          const allyVers = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60 * 1.13;
+          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
 
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 4;
-          console.log(itemLevel + " " + JSON.stringify(bonus_stats));
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = allyVers * 4;
           return bonus_stats;
         }
       },
