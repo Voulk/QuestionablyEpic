@@ -4409,6 +4409,15 @@ export const bossAbilities = {
   ],
   // Gnarlroot
   2820: [
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
     {
       cooldownPlannerActive: true,
       createEvent: false,
@@ -4439,10 +4448,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 421986,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_herb_flamecap.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Tainted Bloom",
         de: "",
@@ -4453,8 +4462,8 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
-      guid: 421421,
+      createEvent: true,
+      guid: 421013,
       icon: require("Images/CooldownPlanner/BossAbilities/trade_herbalism.jpg"),
       importActive: true,
       name: {
@@ -4480,11 +4489,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 422053,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_nature_thorns_nightmare.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Shadow Spines",
         de: "",
