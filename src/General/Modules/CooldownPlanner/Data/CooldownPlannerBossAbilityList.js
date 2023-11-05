@@ -4633,10 +4633,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 422776,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_mage_tormentoftheweak.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Marked for Torment",
         de: "",
