@@ -20,6 +20,8 @@ export const getEmbellishmentDescription = (embellishmentName, player, additiona
             return getVerdantConduit(embData, itemLevel, player, additionalData);
         case "Magazine of Healing Darts":
             return getHealingDarts(embData, itemLevel, player, additionalData);
+        case "Toxic Thorn Footwraps":
+            return getToxicThorn(embData, itemLevel, player, additionalData);
         case "Allied Heartwarming Fur Coat":
         case "Allied Wristguards of Time Dilation":
         case "Allied Legguards of Sansok Khan":
@@ -123,8 +125,24 @@ const getHealingDarts = (data, itemLevel, player, additionalData) => {
 
     return {
         category: "Item Attachments",
-        metrics: ["Avg Procs per Minute: " + effect.ppm,
+        metrics: ["Procs / Min: " + Math.round(100*effect.ppm * player.getStatPerc("Haste"))/100,
                 "Expected Overhealing: " + getSetting(additionalData.settings, "healingDartsOverheal") + "%",
+                "Average HPS: " + Math.round(bonus_stats.hps),
+                ],
+        description: description,
+      };
+}
+
+const getToxicThorn = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    let description = "Damage and healing procs are shared which means the more damage you do the more damage procs you'll get and the fewer healing procs. Realistically in raid \
+                        you'll mostly just get healing procs.";
+
+    return {
+        category: "Items",
+        metrics: ["Procs / Min: " + Math.round(100*effect.ppm * player.getStatPerc("Haste"))/100,
+                "Overhealing: " + Math.round(10000*(1 - effect.efficiency))/100 + "%",
                 "Average HPS: " + Math.round(bonus_stats.hps),
                 ],
         description: description,

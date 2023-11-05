@@ -298,7 +298,7 @@ export const embellishmentData = [
             coefficient: 34.05239 * 0.65, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit'],
-            efficiency: 0.55,
+            efficiency: 0.5,
             ppm: 3, // 4 / 2
           },
           { // Damage Effect
