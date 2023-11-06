@@ -71,35 +71,35 @@ export default function CooldownPlanner(props) {
   // console.log(cooldownObject.getCooldownsArray())
 
   // Console log plan data (used for importing default plans for a log)
-  console.log(
-    data
-      // Map each element in the data array to a new object
-      // with the "bossAbility" and "time" properties
-      .map((key) => {
-        if (key.hasOwnProperty("bossAbility")) {
-          return { bossAbility: key.bossAbility, time: key.time };
-        }
-      })
-      // Remove any null elements from the array
-      .filter(Boolean)
-      // Sort the array by time in ascending order
-      .sort((a, b) => {
-        // Convert the time strings to Date objects for sorting
-        // Use the current date and set the hours and minutes from the time string
-        const date = new Date();
-        const timeA = new Date(date.setHours(...a.time.split(":")));
-        const timeB = new Date(date.setHours(...b.time.split(":")));
+  // console.log(
+  //   data
+  //     // Map each element in the data array to a new object
+  //     // with the "bossAbility" and "time" properties
+  //     .map((key) => {
+  //       if (key.hasOwnProperty("bossAbility")) {
+  //         return { bossAbility: key.bossAbility, time: key.time };
+  //       }
+  //     })
+  //     // Remove any null elements from the array
+  //     .filter(Boolean)
+  //     // Sort the array by time in ascending order
+  //     .sort((a, b) => {
+  //       // Convert the time strings to Date objects for sorting
+  //       // Use the current date and set the hours and minutes from the time string
+  //       const date = new Date();
+  //       const timeA = new Date(date.setHours(...a.time.split(":")));
+  //       const timeB = new Date(date.setHours(...b.time.split(":")));
 
-        // Sort in ascending order by time
-        if (timeA < timeB) {
-          return -1;
-        } else if (timeA > timeB) {
-          return 1;
-        } else {
-          return 0;
-        }
-      }),
-  );
+  //       // Sort in ascending order by time
+  //       if (timeA < timeB) {
+  //         return -1;
+  //       } else if (timeA > timeB) {
+  //         return 1;
+  //       } else {
+  //         return 0;
+  //       }
+  //     }),
+  // );
 
   /* ------------------------------------------ Add Plan ------------------------------------------ */
   const [openAddPlanDialog, setOpenAddPlanDialog] = React.useState(false);

@@ -4851,11 +4851,11 @@ export const bossAbilities = {
   // Smolderon
   2824: [
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 422691,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_shaman_lavasurge.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Lava Geysers",
         de: "",
@@ -4893,11 +4893,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 422277,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_fire_ragnaros_molteninferno.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Devour Essence",
         de: "",
@@ -4966,11 +4966,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 423610,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_mage_burnout.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Consuming Flame",
         de: "",
@@ -4995,7 +4995,7 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 421316,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_mage_burnout.jpg"),
       importActive: true,
@@ -5007,15 +5007,25 @@ export const bossAbilities = {
         ch: "",
       },
     },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
   ],
   // Nymue, Weaver of the Cycle
   2708: [
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 420554,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_jewelcrafting_mithrilfiligree.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Verdant Matrix",
         de: "",
@@ -5025,11 +5035,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 423195,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_trailofflowers.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Inflorescence",
         de: "",
@@ -5039,11 +5049,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 425038,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_rogue_imrovedrecuperate.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Threaded Blast",
         de: "",
@@ -5053,11 +5063,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 426147,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_staff_2h_dreamweaver_d_01.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Threaded Blast",
         de: "",
