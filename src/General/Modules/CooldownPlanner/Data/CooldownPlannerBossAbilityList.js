@@ -4663,11 +4663,11 @@ export const bossAbilities = {
   // Volcoross
   2737: [
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 421616,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_fire_ragnaros_lavabolt.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Volcanic Disgorge",
         de: "",
@@ -4740,7 +4740,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 421031,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_firedancer_01.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Song of the Dragon",
         de: "",
@@ -4750,11 +4750,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 420671,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_nature_abolishmagic.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Noxious Blossom",
         de: "",
@@ -4764,11 +4764,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 420856,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_hunter_exoticmunitions_poisoned.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Poisonous Javelin",
         de: "",
@@ -4820,13 +4820,27 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 421029,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_firedancer_01.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Song of the Dragon",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 420946,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_xavius_tormentingswipe.jpg"),
+      importActive: true,
+      name: {
+        en: "Barreling Charge",
         de: "",
         fr: "",
         ru: "",
