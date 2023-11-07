@@ -18,6 +18,8 @@ export const getEmbellishmentDescription = (embellishmentName, player, additiona
             return getVerdantTether(embData, itemLevel, player, additionalData);
         case "Verdant Conduit":
             return getVerdantConduit(embData, itemLevel, player, additionalData);
+        case "Blue Silken Lining":
+            return getBlueSilkenLining(embData, itemLevel, player, additionalData);
         case "Magazine of Healing Darts":
             return getHealingDarts(embData, itemLevel, player, additionalData);
         case "Toxic Thorn Footwraps":
@@ -117,6 +119,20 @@ const getVerdantConduit = (data, itemLevel, player, additionalData) => {
         category: "Item Attachments",
         metrics: ["Uptime: " + Math.round(10000 * effect.uptime) / 100 + "%",
                 "Total Avg Secondaries: " + Math.round(bonus_stats.versatility + bonus_stats.mastery + bonus_stats.haste + bonus_stats.crit),
+                ],
+        description: description,
+      };
+}
+
+const getBlueSilkenLining = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    let description = processedValue(effect, itemLevel) + " mastery while above 90% health.";
+
+    return {
+        category: "Item Attachments",
+        metrics: ["Uptime: " + Math.round(10000 * effect.uptime) / 100 + "%",
+                "Avg Mastery: " + Math.round(bonus_stats.mastery),
                 ],
         description: description,
       };

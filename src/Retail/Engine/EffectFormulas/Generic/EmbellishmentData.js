@@ -234,7 +234,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.389637,
             table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
-            uptime: 0.25,
+            uptime: 0.24,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
