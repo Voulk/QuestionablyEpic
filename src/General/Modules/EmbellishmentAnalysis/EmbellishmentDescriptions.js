@@ -22,6 +22,8 @@ export const getEmbellishmentDescription = (embellishmentName, player, additiona
             return getHealingDarts(embData, itemLevel, player, additionalData);
         case "Toxic Thorn Footwraps":
             return getToxicThorn(embData, itemLevel, player, additionalData);
+        case "Venom-Steeped Stompers":
+            return getStompers(embData, itemLevel, player, additionalData);
         case "Adaptive Dracothyst Armguards":
             return getAdaptiveDracothyst(embData, itemLevel, player, additionalData);
         case "Allied Heartwarming Fur Coat":
@@ -70,7 +72,7 @@ const getSporecloak = (data, itemLevel, player, additionalData) => {
                 "HPS: " + Math.round(bonus_stats.hps),
                 "Versatility: " + Math.round(bonus_stats.versatility)],
         description:
-          "Sporecloak is a leviathan of an item offering one of the best secondary stat packages in the game (" + processedValue(data.effects[2], itemLevel) + " vers when active) alongside a powerful shield and mostly decent ticking heal effect.",
+          "Sporecloak was nerfed extremely hard at the last minute and the paltry " + processedValue(data.effects[1], itemLevel) + " shield is unlikely to offer any real defensive benefit. You'll also get " + processedValue(data.effects[2], itemLevel) + " vers while healthy and a tiny ticking HoT.",
       };
 }
 
@@ -130,6 +132,28 @@ const getAdaptiveDracothyst = (data, itemLevel, player, additionalData) => {
         metrics: ["Uptime: " + 0 + "%",
                 "Mast & Haste: " + Math.round(bonus_stats.haste),
                 "Crit & Vers: " + Math.round(bonus_stats.crit),
+                ],
+        description: description,
+      };
+}
+
+const getStompers = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects;
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    let description = "";
+    let buffedValue = ""; 
+    let nerfedValue = "";
+    console.log(bonus_stats);
+    for (const [key, value] of Object.entries(bonus_stats)) {
+        if (value > 0) buffedValue = key;
+        else if (value < 0) nerfedValue = key;
+      }
+
+    return {
+        category: "Items",
+        metrics: ["Uptime: " + 0 + "%",
+                "Gained Stats: " + Math.round(bonus_stats[buffedValue]),
+                "Lost Stats: " + Math.round(bonus_stats[nerfedValue]),
                 ],
         description: description,
       };

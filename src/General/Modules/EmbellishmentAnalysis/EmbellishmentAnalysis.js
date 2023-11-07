@@ -34,7 +34,7 @@ function TabPanel(props) {
 
 const setupItemCardData = (embList, contentType, player, playerSettings) => {
   const itemData = [];
-  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType)}
+  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType), setStats: player.activeStats}
   embList.forEach((emb) => {
     const data = getEmbellishmentDescription(emb.name['en'], player, additionalData);
     //const data = null;

@@ -65,7 +65,7 @@ export const embellishmentData = [
         table: -7,
         duration: 15, 
         ppm: 2.2,
-        multiplier: 0.5, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+        multiplier: 0.7, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -362,7 +362,7 @@ export const embellishmentData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // TODO
-          console.log(processedValue(data[0], 479));
+
           bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks[additionalData.contentType];
 
           return bonus_stats;
@@ -732,7 +732,7 @@ export const embellishmentData = [
           const ppm = data[0].ppm;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
-          console.log("B: " + itemLevel + " " + JSON.stringify(bonus_stats));
+
           return bonus_stats;
         }
       },
