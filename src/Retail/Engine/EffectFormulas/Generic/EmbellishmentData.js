@@ -4,8 +4,12 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPM
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
+    let activeEffect;
+    
+    
+    if (effectName.includes("Allied") && effectName !== "Allied Wristguard of Companionship") activeEffect = embellishmentData.find((effect) => effect.name === "Rallied to Victory");
+    else activeEffect = embellishmentData.find((effect) => effect.name === effectName);
 
-    let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
     let additionalData = {contentType: contentType, setStats: setStats, settings: settings};
     if (activeEffect !== undefined) {
       return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
@@ -61,13 +65,13 @@ export const embellishmentData = [
         table: -7,
         duration: 15, 
         ppm: 2.2,
-        multiplier: 0.7, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+        multiplier: 0.5, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // TODO Add top gear support for auto-generating gems.
-      const versAvg = runGenericPPMTrinket(data[0], itemLevel);
+      const versAvg = runGenericPPMTrinket(data[0], itemLevel) * data[0].multiplier;
       bonus_stats.versatility = versAvg;
       if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versAvg;
 
@@ -659,21 +663,21 @@ export const embellishmentData = [
         cardType: "special",
         effects: [
           { // Passive Heal
-            coefficient: 10.73745, //44.02832,
+            coefficient: 10.73745 * 0.2, //44.02832,
             table: -9,
             ppm: 60 / 5, // The cloak heals every 5 seconds.
             secondaries: ['versatility', 'crit'],
-            efficiency: 0.55,
+            efficiency: 0.6,
           },
           { // Shield portion
-            coefficient: 129.4445, //257.6989, 
+            coefficient: 129.4445 * 2 * 0.21, //257.6989, 
             table: -9,
             ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.52,
           },
           { // Vers portion
-            coefficient: 0.30097,
+            coefficient: 0.30097 * 0.25,
             table: -9, // They will probably correct this.
             expectedUptime: 0.85,
           },
