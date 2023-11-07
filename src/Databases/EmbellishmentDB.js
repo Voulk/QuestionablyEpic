@@ -374,6 +374,7 @@ export const embellishmentDB = [
       rank: 0, 
     },
   },
+  /* Disabled from chart until missing secondaries are fixed. No good way to show it otherwise.
   {
     id: 193453,
     icon: "inv_leather_dragondungeon_c_01_chest",
@@ -390,7 +391,7 @@ export const embellishmentDB = [
       name: "Rallied to Victory",
       rank: 0, 
     },
-  },
+  },*/
   {
     id: 193464,
     icon: "inv_mail_dragondungeon_c_01_pant",

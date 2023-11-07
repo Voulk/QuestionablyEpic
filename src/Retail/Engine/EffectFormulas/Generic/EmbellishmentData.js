@@ -234,7 +234,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.389637,
             table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
-            uptime: 0.24,
+            uptime: 0.21,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -667,7 +667,7 @@ export const embellishmentData = [
             table: -9,
             ppm: 60 / 5, // The cloak heals every 5 seconds.
             secondaries: ['versatility', 'crit'],
-            efficiency: 0.6,
+            efficiency: 0.5,
           },
           { // Shield portion
             coefficient: 129.4445 * 2 * 0.21, //257.6989, 
