@@ -150,14 +150,20 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     // Create sets for each gem type.
-    const gemPoss = getGemOptions(player.spec) // TODO: Turn this into a function
+    const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (gemPoss.length > 0) {
-      gemPoss.forEach(gem => {
-        resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
-      });
+    if (false) { // Add setting here.
+      if (gemPoss.length > 0) {
+        gemPoss.forEach(gem => {
+          resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
+        });
+      }
+    }
+    else { // Advanced Gems not turned on. 
+      resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, 0));
     }
   }
+
 
   // == Sort and Prune sets ==
   // Prune sets (discard weak sets) outside of our top X sets (usually around 3000 but you can find the variable at the top of this file). This just makes anything further we do faster while not having
@@ -566,12 +572,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Sockets
-  //const highestWeight = getHighestWeight(castModel);
-  //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
-  //enchants["Gems"] = highestWeight;
-  //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
-  enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
-  //console.log(bonus_stats);
+  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
+
+  // Check for Advanced gem setting and then run this instead of the above.
+  //enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+
   enchants["GemCount"] = builtSet.setSockets;
 
   // Add together the sets base stats & any enchants or gems we've added.
