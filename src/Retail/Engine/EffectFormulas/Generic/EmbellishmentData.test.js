@@ -66,8 +66,7 @@ describe("Undulating Sporecloak Data Check", () => {
 
     each`
     level   | expectedResult
-    ${447}  | ${[10039, 121024, 281]}
-    ${473}  | ${[14425, 173904, 404]}
+    ${447}  | ${[2179, 52316, 71]}
     // add new test cases here
     `.test(effectName + " Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
   

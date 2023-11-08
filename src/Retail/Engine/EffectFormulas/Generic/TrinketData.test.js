@@ -14,7 +14,7 @@ describe("Amalgam's Seventh Spine", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${447}  | ${655} // 832    499   459   499
+    ${447}  | ${832} // 832    499   459   499
     // add new test cases here
     `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult);

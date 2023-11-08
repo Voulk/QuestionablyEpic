@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> QE Live is up to date for patch 10.1.7. The 10.2 build will release on 7th November.",
+      "-> QE Live is up to date for patch 10.2. Expect changes through the week.",
   ]
 ;
 
