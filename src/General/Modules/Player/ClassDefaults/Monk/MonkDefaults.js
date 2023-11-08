@@ -56,7 +56,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingDuringLC: 98,
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
-      OneManaHealing: 7.2,
+      OneManaHealing: 5.6,
       cooldownMult: {
         c60: 1.55,
         c90: 1,

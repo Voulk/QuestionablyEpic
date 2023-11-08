@@ -332,8 +332,8 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.645985,
-            table: -8, // No idea why this is -8
-            stacks: {Raid: 0.2, Dungeon: 0.9} // Revisit dungeon stacks.
+            table: -8, // 
+            stacks: {Raid: 0.2, Dungeon: 0.5} // Revisit dungeon stacks.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -665,14 +665,14 @@ export const embellishmentData = [
           { // Passive Heal
             coefficient: 2.33081, //44.02832,
             table: -9,
-            ppm: 60 / 5, // The cloak heals every 5 seconds.
-            secondaries: ['versatility', 'crit'],
-            efficiency: 0.5,
+            ppm: 60 / 5,
+            secondaries: ['versatility'],
+            efficiency: 0.57,
           },
           { // Shield portion
             coefficient: 55.9565,
             table: -9,
-            ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
+            ppm: 0.09, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.52,
           },
