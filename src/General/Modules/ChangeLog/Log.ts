@@ -16,6 +16,17 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2",
+    update: 1,
+    date: "November 7",
+    changes: [ 
+      "All season 3 content is now live.",
+      "There's now a default version of every spec so that character creation is unnecessary.",
+      "SimC strings are now saved in between app uses.",
+      "Common offspec weapons are now included in the app (though of little value).",
+      "Items you add manually will now automatically be added to the app."
+    ]},
+  {
     version: "10.1.7",
     update: 4,
     date: "October 17",
