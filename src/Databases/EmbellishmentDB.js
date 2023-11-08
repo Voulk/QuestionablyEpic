@@ -374,6 +374,7 @@ export const embellishmentDB = [
       rank: 0, 
     },
   },
+  /* Disabled from chart until missing secondaries are fixed. No good way to show it otherwise.
   {
     id: 193453,
     icon: "inv_leather_dragondungeon_c_01_chest",
@@ -390,7 +391,7 @@ export const embellishmentDB = [
       name: "Rallied to Victory",
       rank: 0, 
     },
-  },
+  },*/
   {
     id: 193464,
     icon: "inv_mail_dragondungeon_c_01_pant",
@@ -475,7 +476,7 @@ export const embellishmentDB = [
       name: "Undulating Sporecloak",
       rank: 0, 
     },
-  },
+  },/*
   {
     id: 204401,
     icon: "inv_wand_1h_enchanting_b_01", 
@@ -492,7 +493,58 @@ export const embellishmentDB = [
       name: "Spore Keeper's Baton",
       rank: 0, 
     },
+  },*/
+  {
+    id: 208187,
+    icon: "inv_trinket_ardenweald_01_orange", 
+    armorType: 0, // All
+    name: {
+      en: "Verdant Conduit",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Verdant Conduit",
+      rank: 0, 
+    },
   },
+  {
+    id: 210671,
+    icon: "inv_10_tailoring_embroiderythread_color3", 
+    armorType: 0, // All
+    name: {
+      en: "Verdant Tether",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Verdant Tether",
+      rank: 0, 
+    },
+  },/*
+  {
+    id: 210646,
+    icon: "inv_plate_outdooremeralddream_d_01_helm", 
+    armorType: 4, // All  
+    name: {
+      en: "Flourishing Dream Helm",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Flourishing Dream Helm",
+      rank: 0, 
+    },
+  }, */
   /*
   {
     id: 194894,

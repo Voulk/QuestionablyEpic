@@ -31,6 +31,8 @@ export const externalsDB = [
     external: true,
     include: true,
     cooldown: 120,
+    reduction: 0.3,
+    type: "All", // The type of damage the DR applies to.
   },
   {
     guid: 1022,
@@ -94,6 +96,8 @@ export const externalsDB = [
     autoIcon: "spell_druid_ironbark",
     external: true,
     cooldown: 90,
+    reduction: 0.2,
+    type: "All", // The type of damage the DR applies to.
     include: true,
   },
   {
@@ -178,6 +182,8 @@ export const externalsDB = [
     autoIcon: "spell_holy_painsupression",
     external: true,
     cooldown: 180,
+    reduction: 0.4,
+    type: "All", // The type of damage the DR applies to.
     include: true,
   },
 

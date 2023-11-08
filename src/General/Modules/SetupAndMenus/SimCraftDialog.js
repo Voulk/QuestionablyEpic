@@ -19,7 +19,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 export default function SimCraftInput(props) {
   const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
-  const [simC, setSimC] = React.useState("");
+  const [simC, setSimC] = React.useState(props.player.savedPTRString || "");
   const [errorMessage, setErrorMessage] = React.useState("");
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
@@ -28,15 +28,18 @@ export default function SimCraftInput(props) {
   const gameType = useSelector((state) => state.gameType);
   const addonLink = gameType === "Classic" ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-Classic" : "https://www.curseforge.com/wow/addons/simulationcraft"
   const handleClickOpen = () => {
+    setSimC(props.player.savedPTRString || "");
     setOpen(true);
+    
   };
+  
 
   const handleClose = () => {
     setOpen(false);
   };
 
   const handleSubmit = () => {
-    if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings);
+    if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars);
     else runBCSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
   };
 
@@ -85,6 +88,7 @@ export default function SimCraftInput(props) {
             label={t("SimCInput.SimCStringLabel")}
             fullWidth
             style={{ height: "100%" }}
+            value={simC}
             variant="outlined"
             onChange={(e) => setSimC(e.target.value)}
             onKeyPress={(e) => {

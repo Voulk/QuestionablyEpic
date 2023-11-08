@@ -14,7 +14,7 @@ export default function OneShotSlider(props) {
   const marks = [];
 
   // loop 30 times and push a new object into the array each time
-  for (let i = 10; i < 31; i++) {
+  for (let i = 10; i < 33; i++) {
     marks.push({
       value: i,
       label: i,
@@ -50,7 +50,7 @@ export default function OneShotSlider(props) {
                 step={1}
                 marks={marks}
                 min={10}
-                max={30}
+                max={32}
               />
             </Box>
           </Grid>

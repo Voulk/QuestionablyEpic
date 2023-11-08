@@ -8,7 +8,7 @@ import { sequence, SequenceObject } from "./Sequence";
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
-import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
+import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps2";
 import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
 import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
@@ -17,7 +17,7 @@ import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoke
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
-import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
+import { DRUIDSPELLDB, druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
 import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -25,6 +25,7 @@ import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerR
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
+import SequenceDataTable from "./SequenceDataTable";
 
 import SequenceSettings from "General/Modules/SequenceGenerator/SequenceSettings";
 
@@ -55,7 +56,8 @@ const useStyles = makeStyles((theme) => ({
       width: "66%",
       justifyContent: "center",
       display: "block",
-      marginTop: 80,
+      paddingTop: 80,
+      paddingBottom: 40
     },
   },
 }));
@@ -186,8 +188,6 @@ export default function SequenceGenerator(props) {
       temp.push(JSON.parse(JSON.stringify(sequence)));
       const simFunc = getSequence(selectedSpec);
       const sim = simFunc(sequences[i].spells, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
-      console.log("i" + i);
-      console.log(sim);
       temp[i].spells = sequences[i].spells;
       temp[i].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
       // multiple state updates get bundled by react into one update
@@ -374,7 +374,7 @@ export default function SequenceGenerator(props) {
   //#endregion
 
   return (
-    <div style={{ backgroundColor: "#313131" }}>
+    <div height="100%">
       <div className={classes.root}>
         <Grid container spacing={1}>
           <Grid item xs={6}>
@@ -562,16 +562,21 @@ export default function SequenceGenerator(props) {
                     </Grid>
                     {/* Combat Log */}
                     <Grid item xs={12}>
-                      <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={10} maxRows={10} fullWidth disabled style={{ whiteSpace: "pre-line" }} />
+                      <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={8} maxRows={8} fullWidth disabled style={{ whiteSpace: "pre-line" }} />
                     </Grid>
                   </Grid>
                 </Paper>
               </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
+          <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={talentDB} />
         </Grid>
-        <div style={{ height: 50 }} />
+        </Grid>
+
+        {/*<div style={{ height: 50 }}>&nbsp;</div> */}
       </div>
+
     </div>
   );
 }

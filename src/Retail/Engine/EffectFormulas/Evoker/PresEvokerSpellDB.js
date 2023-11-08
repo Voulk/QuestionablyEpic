@@ -30,6 +30,7 @@ import { addReport } from "../Generic/RampBase";
 export const EVOKERSPELLDB = {
     // Essence recharge rate: 3s?
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
         type: "",
         castTime: 1.5,
         cost: 0,
@@ -54,7 +55,7 @@ export const EVOKERSPELLDB = {
         school: "red",
         castTime: 2,
         cost: 0,//2.0,
-        coeff: 1.61,
+        coeff: 2.76,
         secondaries: ['crit', 'vers']
     }],
     "Verdant Embrace": [{ 
@@ -65,14 +66,14 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         onGCD: true,
         cost: 3.0,
-        coeff: 3.096,
+        coeff: 4.18,
         cooldown: 18,
         expectedOverheal: 0.15,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Spiritbloom": [{  
         // Spiritbloom is a charge ability that adds a target per charge tier.
-        // TODO: Assumption is chained targets are random injured not lowest health or distance based. 
+        // Spiritbloom is smart healing.
         spellData: {id: 382731, icon: "ability_evoker_spiritbloom2", cat: "heal"},
         type: "heal",
         school: "green",
@@ -82,7 +83,7 @@ export const EVOKERSPELLDB = {
         cooldown: 30,
         coeff: 5.085,
         targets: [1, 2, 3, 4], // 
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Dream Breath": [{  
@@ -114,6 +115,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: [16, 12, 8, 4],
+        tickData: {tickRate: 2, canPartialTick: true},
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
@@ -128,7 +130,7 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         school: 'green',
         onGCD: true,
-        delay: 2, // The number of seconds before the spell heals.
+        delay: 1.5, // The number of seconds before the spell heals.
         targets: 3,
         essence: 3,
         cost: 4.8,
@@ -174,12 +176,13 @@ export const EVOKERSPELLDB = {
         buffType: "function",
         school: "bronze",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
         statMods: {'crit': 0.15},
         buffDuration: 12,
-        function: function (state, buff) {
+        runFunc: function (state, buff) {
             const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
 
             runHeal(state, hotHeal, buff.name)
@@ -189,25 +192,8 @@ export const EVOKERSPELLDB = {
         }
 
     }],
-    "Temporal Anomaly": [/*{
-        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
-        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
-        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
-        name: "Temporal Anomaly",
-        type: "buff",
-        buffType: "heal",
-        school: "bronze",
-        castTime: 1.5,
-        buffDuration: 6,
-        tickRate: 2,
-        cooldown: 6,
-        cost: 7.5,
-        coeff: 1.75, 
-        targets: 2, 
-        expectedOverheal: 0.4, // Note that while this is called ExpectedOverhealing it's really just an efficiency value.
-        secondaries: ['vers', 'mastery']
-    }, */
-    { // I should turn these hasteDuration flags into a proper "flags" subobject.
+    "Temporal Anomaly": [
+    { 
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
         name: "Temporal Anomaly",
         type: "heal",
@@ -225,12 +211,9 @@ export const EVOKERSPELLDB = {
     { 
         type: "function",
         runFunc: function (state, spell) {
-            //const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
-            
-            //runHeal(state, absorb, "buff.name")
-            
+
             if (state.talents.resonatingSphere) {
-                const echoBuffs = 4;
+                const echoBuffs = 3;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
                     value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
                 
@@ -270,6 +253,7 @@ export const EVOKERSPELLDB = {
         buffName: "Dream Flight",
         buffType: "heal",
         tickRate: 3,
+        tickData: {tickRate: 3, canPartialTick: true},
         targets: 10,
         coeff: 0.5,
         buffDuration: 15,
@@ -309,6 +293,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         targets: 5,
         coeff: 0.35,
         buffDuration: [4, 8, 12, 16],
@@ -332,6 +317,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 3,
         coeff: 0.76,
         secondaries: ['crit', 'haste', 'vers'],
@@ -354,6 +340,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 5,
         coeff: 0,
         flatHeal: 0,
@@ -404,7 +391,7 @@ export const evokerTalents = {
     exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
     fontOfMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", id: 375783, select: true, tier: 3}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "inv_elemental_mote_mana", id: 372233, select: true, tier: 3}, // makes Disintegrate deals more damage and grants mana over it's duration.
-    renewingBreath: {points: 0, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
+    renewingBreath: {points: 2, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
     gracePeriod: {points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
     timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
     dreamFlight: {points: 0, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 

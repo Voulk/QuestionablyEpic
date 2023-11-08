@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
+  
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
   item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
@@ -160,6 +161,7 @@ export default function TrinketAnalysis(props) {
       //1195, // Sepulcher
       1200, // Vault of the Incarnates
       1208, // Aberrus
+      1207, // Amirdrassil
     ];
     const shadowlandsDungeons = [
       -1, // General Dungeons
@@ -190,6 +192,10 @@ export default function TrinketAnalysis(props) {
       68, // Vortex Pinnacle
       1001, // Freehold
       1022, // Underrot
+
+      1209, // Dawn
+
+      // S3 dungeons.
     ];
     const legionTimewalking = [];
     const shadowlandsTheRest = [
@@ -230,7 +236,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [405, 408, 411, 415, 418, 421, 424, 431, 434, 437, 441, 444, 447, 450, 457];
+  const itemLevels = [424, 431, 434, 437, 441, 444, 447, 450, 457, 460, 463, 470, 473, 476, 483, 486, 489];
 
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -309,7 +315,8 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Tyrstone was nerfed and now splits its healing among targets. It's still a fairly decent option (though not BiS), mostly owing to the large Haste buff across your raid." color="firebrick" />
+              <InformationBox information="Warning: Expect changes during this first week of patch!" color="firebrick" />
+
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                   <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
@@ -341,7 +348,7 @@ export default function TrinketAnalysis(props) {
                     )}
                     {gameType === "Retail" ? (
                       <Grid item xs={12}>
-                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} />
                       </Grid>
                     ) : (
                       <Grid item xs={12}>
