@@ -3,23 +3,24 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Emerald Coach's Whistle                                      */
+    /*                                    Amalgam's Seventh Spine                                     */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
     */
     name: "Amalgam's Seventh Spine",
     effects: [
       { // Mastery portion
-        coefficient: 0.525248,
+        coefficient: 0.666804,
         table: -7,
-        ppm: {"Restoration Druid": 27, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+        ppm: {"Restoration Druid": 28, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
               "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.mana = data[0].ppm[player.spec] * processedValue(data[0], itemLevel) / 60;
-      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.7; // Druid has a -30% aura on Amalgam's Spine.
+      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.6; // Druid has a -40% aura on Amalgam's Spine.
+      else if (player.spec === "Preservation Evoker") bonus_stats.mana *= 1.1; // Evoker has a +10% aura.
 
       return bonus_stats;
     }
@@ -33,7 +34,7 @@ export const dungeonTrinketData = [
     name: "Leaf of the Ancient Protectors",
     effects: [
       {  // Absorb
-        coefficient: 215.1787,
+        coefficient: 486.278931,
         table: -8,
         secondaries: ["versatility"],
         cooldown: 60,
@@ -149,7 +150,7 @@ export const dungeonTrinketData = [
         cooldown: 90,
         tickRate: 0.5,
         maxStacks: 13,
-        efficiency: {Raid: 0.55, Dungeon: 0.65},
+        efficiency: {Raid: 0.45, Dungeon: 0.45},
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -183,6 +184,31 @@ export const dungeonTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].penalty;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Time-Thief's Gambit                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    //
+    name: "Balefire Branch",
+    effects: [
+      { 
+        coefficient: 0.03685, 
+        table: -1,
+        duration: 20,
+        cooldown: 90, 
+        effectiveDecayRate: 44, // You start with 100 stacks, and decay down to 0. This includes minor losses to damage taken.
+      },
+      { // 
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].effectiveDecayRate;
 
       return bonus_stats;
     }
@@ -232,7 +258,7 @@ export const dungeonTrinketData = [
         targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
         meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
-        efficiency: 0.65, // No longer splits to pets.
+        efficiency: 0.5, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 

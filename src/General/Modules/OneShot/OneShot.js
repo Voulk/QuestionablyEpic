@@ -137,7 +137,7 @@ export const calcHealth = (stamina, absorb = 0, defensives) => {
 // We need to update this each major patch.
 // /run local _, A = UnitArmor('player'); local r = PaperDollFrame_GetArmorReductionAgainstTarget(A) / 100; print('K ~ ', (A-r*A)/r);
 export const calcArmor = (armor) => {
-  const kValue = 12824.94;
+  const kValue = 18672.64201458984; // 12824.94;
 
   return 1 - armor / (armor + kValue);
 };

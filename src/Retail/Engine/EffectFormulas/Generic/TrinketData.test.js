@@ -14,7 +14,7 @@ describe("Amalgam's Seventh Spine", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${447}  | ${655}
+    ${447}  | ${655} // 832    499   459   499
     // add new test cases here
     `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult);
@@ -81,7 +81,7 @@ describe("Neltharion's Call to Chaos", () => {
     });
 }); 
 
-describe("Ominous Chromatic Essence", () => {
+describe("Ominous Chromatic Essence", () => { 
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Ominous Chromatic Essence");;
     const effect = activeTrinket.effects;

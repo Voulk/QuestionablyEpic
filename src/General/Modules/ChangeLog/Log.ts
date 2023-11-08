@@ -17,6 +17,29 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.1.7",
+    update: 4,
+    date: "October 17",
+    changes: [ 
+      "Added Terrific Tankard O' Terror (Brewfest)",
+    ]},
+  {
+    version: "10.1.7",
+    update: 3,
+    date: "October 8",
+    changes: [ 
+      "Small fix for Holy Priest dungeon gem advice.",
+      "Updated Lariat default gems to 5",
+      "Note that most development has moved to the 10.2 branch of the app."
+    ]},
+  {
+    version: "10.1.7",
+    update: 2,
+    date: "September 26",
+    changes: [ 
+      "Added some missing Timewalking items.",
+    ]},
+  {
+    version: "10.1.7",
     update: 1,
     date: "September 5",
     changes: [ 

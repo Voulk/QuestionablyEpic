@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Warning: PTR version. Everything subject to change. Don't share this link publicly. Last updated 30 Oct.",
+      "-> QE Live is up to date for patch 10.1.7. The 10.2 build will release on 7th November.",
   ]
 ;
 

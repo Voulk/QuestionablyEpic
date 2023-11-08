@@ -56,7 +56,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingDuringLC: 98,
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
-      OneManaHealing: 10.2,
+      OneManaHealing: 5.6,
       cooldownMult: {
         c60: 1.55,
         c90: 1,
@@ -114,10 +114,10 @@ export const monkDefaultStatWeights = (contentType) => {
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.54,
-    crit: 0.49,
-    mastery: 0.4,
-    versatility: 0.482,
+    haste: 0.59,
+    crit: 0.562,
+    mastery: 0.43,
+    versatility: 0.542,
     leech: 0.42,
   };
 
