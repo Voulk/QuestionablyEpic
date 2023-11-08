@@ -15,7 +15,7 @@ export const raidTrinketData = [
         duration: 12,
         cooldown: 120,
         targetScaling: 1, // This actually heals for 2x the amount you feed it, but we deduct the healing spent.
-        efficiency: 0.55, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        efficiency: {Raid: 0.55, Dungeon: 0.3}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
       },
       { // Mastery benefit. This is short and not all that useful.
         coefficient: 0.518729, 
@@ -31,7 +31,7 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) / data[0].cooldown * data[0].targetScaling;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) / data[0].cooldown * data[0].targetScaling;
 
       bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
 

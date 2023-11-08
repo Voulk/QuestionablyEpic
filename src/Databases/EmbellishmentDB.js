@@ -476,7 +476,7 @@ export const embellishmentDB = [
       name: "Undulating Sporecloak",
       rank: 0, 
     },
-  },
+  },/*
   {
     id: 204401,
     icon: "inv_wand_1h_enchanting_b_01", 
@@ -493,7 +493,7 @@ export const embellishmentDB = [
       name: "Spore Keeper's Baton",
       rank: 0, 
     },
-  },
+  },*/
   {
     id: 208187,
     icon: "inv_trinket_ardenweald_01_orange", 
@@ -527,7 +527,7 @@ export const embellishmentDB = [
       name: "Verdant Tether",
       rank: 0, 
     },
-  },
+  },/*
   {
     id: 210646,
     icon: "inv_plate_outdooremeralddream_d_01_helm", 
@@ -544,7 +544,7 @@ export const embellishmentDB = [
       name: "Flourishing Dream Helm",
       rank: 0, 
     },
-  },
+  }, */
   /*
   {
     id: 194894,

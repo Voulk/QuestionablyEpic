@@ -262,7 +262,7 @@ export default function EmbellishmentAnalysis(props) {
         </Tabs>
 
         <TabPanel value={tabIndex} index={0}>
-        <InformationBox information="Sporecloak remains a great choice for progression post-fix. Be sure to consult your favourite guide before crafting anything" color="firebrick" />
+        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers. Flourishing Dream Helm will require live testing before it's added to the list." color="firebrick" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

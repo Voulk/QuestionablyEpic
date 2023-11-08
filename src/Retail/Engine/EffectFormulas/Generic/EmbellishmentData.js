@@ -663,22 +663,22 @@ export const embellishmentData = [
         cardType: "special",
         effects: [
           { // Passive Heal
-            coefficient: 10.73745 * 0.2, //44.02832,
+            coefficient: 2.33081, //44.02832,
             table: -9,
             ppm: 60 / 5, // The cloak heals every 5 seconds.
             secondaries: ['versatility', 'crit'],
             efficiency: 0.5,
           },
           { // Shield portion
-            coefficient: 129.4445 * 2 * 0.21, //257.6989, 
+            coefficient: 55.9565,
             table: -9,
             ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.52,
           },
           { // Vers portion
-            coefficient: 0.30097 * 0.25,
-            table: -9, // They will probably correct this.
+            coefficient: 0.0572,
+            table: -7, 
             expectedUptime: 0.85,
           },
         ],
