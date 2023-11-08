@@ -28,7 +28,7 @@ export default function OneShotSpellSelection(props) {
                 .filter((d) => d.defensiveType === defensiveType)
                 .map((spell, index) => (
                   <Grid item xs="auto" key={index}>
-                    <WowheadTooltip type="spell" id={spell.guid}>
+                    {/*<WowheadTooltip type="spell" id={spell.guid}> */}
                       <OneShotSpellIcon
                         spell={spell}
                         iconType={"Spell"}
@@ -37,7 +37,7 @@ export default function OneShotSpellSelection(props) {
                           activateSpell(e, spell);
                         }}
                       />
-                    </WowheadTooltip>
+                    {/*</WowheadTooltip> */}
                   </Grid>
                 ))}
             </Grid>

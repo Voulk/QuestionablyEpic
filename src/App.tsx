@@ -59,6 +59,9 @@ const App = () => {
     const [emailSnackState, setEmailSnackState] = useState<boolean>(false);
     const [emailSnackErrorState, setEmailSnackErrorState] = useState<boolean>(false);
 
+    const [isPTR, setIsPTR] = useState<boolean>(window.location.href.includes("localhost") || window.location.href.includes("ptr"));
+
+
     //setEmail = setEmail.bind(this);
     /*
     setPatron = setPatron.bind(this);
@@ -217,7 +220,7 @@ const App = () => {
 
   /* ------------------- Get Article List ------------------------------------- */
   const getArticleList = () => {
-    dbGetArticleList(setArticleList);
+    //dbGetArticleList(setArticleList);
   };
 
   /* -------------- Sets the Users Email to state & Local Storage ------------- */
@@ -304,7 +307,7 @@ const App = () => {
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <Router basename={process.env.REACT_APP_HOMEPAGE}>
-              <div className="App" 
+              <div className={`App ${isPTR ? 'special-bg' : 'default-bg'}`}
               // style={{ marginTop: 96 }}
               >
                 <QEHeader
@@ -316,6 +319,7 @@ const App = () => {
                   simcSnack={handleSimCSnackOpen}
                   logImportSnack={handleLogSnackOpen}
                   allChars={allChars}
+                  isPTR={isPTR}
                 />
 
                 {/* --------------------------- Char Added Snackbar -------------------------- */}

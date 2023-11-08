@@ -28,7 +28,7 @@ export const effectData = [
     /* -------------------- */
     /* Imbued Frostweave Slipper (Spirit)                  
     /* -------------------- */
-    /* 
+    /* Capped?
     */
     name: "Imbued Frostweave Slippers",
     effects: [
@@ -41,7 +41,7 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.mana = processedValue(data[0], itemLevel);
+      bonus_stats.mana = processedValue(data[0], 415); // This effect is capped 
       return bonus_stats;
     }
   },
@@ -145,7 +145,7 @@ export const effectData = [
     /* -------------------- */
     /* Drakebreaker's Versatility                       
     /* -------------------- */
-    /* Flat 105 Versatility. We don't need to do anything fancy for it, just return 105 vers.
+    /* Flat Versatility. We don't need to do anything fancy for it, just return 105 vers.
     */
     name: "Drakebreaker's Versatility",
     effects: [
@@ -193,9 +193,10 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // TODO
-      const ppm = 6;
+      const ppm = 6.5; // We get 2 Dream Breaths, 2 Fire Breaths and 2-3 Spiritblooms per minute. 
       const duration = 10;
-      bonus_stats.allyStats = 500 / 0.4 * duration * ppm / 60;
+      bonus_stats.intellect = 500 * duration * ppm / 60 * 0.5; // We'll assume we get about half the uptime, and our allies get about half the uptime. 
+      bonus_stats.allyStats = 500 * duration * ppm / 60 * 0.5;
 
       return bonus_stats;
     }

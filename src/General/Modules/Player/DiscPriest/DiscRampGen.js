@@ -102,14 +102,14 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
 
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    sequence.push('Shadow Covenant');
-    sequence.push('Schism');
+    //sequence.push('Shadow Covenant');
+    //sequence.push('Schism');
     sequence.push(getPenance(talents));
     if (talents.mindgames) sequence.push("Mindgames");
     sequence.push('Mind Blast');
     sequence.push('Mind Blast');
-    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
-    else sequence.push("Smite");
+    //if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    sequence.push("Smite");
     sequence.push('Shadow Word: Death');
     if (talents.divineStar) sequence.push("Divine Star");
     sequence.push("Power Word: Shield");
@@ -139,8 +139,8 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
     }
 
     sequence.push(getPenance(talents));
-    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
-    else sequence.push("Smite");
+    //if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    sequence.push("Smite");
     if (talents.divineStar) sequence.push("Divine Star");
 
     for (var i = 0; i < 3; i++) {
@@ -180,16 +180,16 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
 
     sequence.push('Power Word: Radiance');
     sequence.push('Power Word: Radiance');
-    sequence.push('Shadow Covenant');
-    sequence.push('Schism');
-    sequence.push("Light's Wrath")
+    //sequence.push('Shadow Covenant');
+    //sequence.push('Schism');
+    //sequence.push("Light's Wrath")
     sequence.push('Mind Blast');
     sequence.push(getPenance(talents));
     sequence.push('Shadow Word: Death');
     sequence.push('Halo');
     sequence.push('Mind Blast');
-    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
-    else sequence.push("Smite");
+    //if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    sequence.push("Smite");
     if (talents.divineStar) sequence.push("Divine Star");
 
     for (var i = 0; i < 3; i++) {
@@ -234,16 +234,16 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
 
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
-    sequence.push('Shadow Covenant');
-    sequence.push('Schism');
+    //sequence.push('Shadow Covenant');
+    //sequence.push('Schism');
     //if (talents.lightsWrath) sequence.push("Light's Wrath");
     sequence.push(getPenance(talents));
     sequence.push('Mind Blast');
     sequence.push('Halo');
     sequence.push('Mind Blast');
     sequence.push("Mindgames");
-    if (talents.powerWordSolace) sequence.push('Power Word: Solace');
-    else sequence.push("Smite");
+    //if (talents.powerWordSolace) sequence.push('Power Word: Solace');
+    sequence.push("Smite");
     sequence.push("Smite");
     if (talents.mindgames) sequence.push('Mindgames');
     sequence.push("Penance");
@@ -289,12 +289,12 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Power Word: Radiance');
     sequence.push('Evangelism');
 
-    sequence.push('Schism');
+    //sequence.push('Schism');
     sequence.push('Mindgames')
     sequence.push('Penance');
     if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
     sequence.push('Mind Blast');
-    sequence.push('Power Word: Solace');
+    //sequence.push('Power Word: Solace');
 
     for (var i = 0; i < 3; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics.

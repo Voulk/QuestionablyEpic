@@ -1,6 +1,6 @@
-# Evoulker - Preservation - 2023-04-19 14:48 - US/Stonemaul
-# SimC Addon 10.0.7-03
-# WoW 10.0.7.48999, TOC 100007
+# Evoulker - Preservation - 2023-09-01 11:11 - US/Stonemaul
+# SimC Addon 10.1.5-03
+# WoW 10.1.5.51130, TOC 100105
 # Requires SimulationCraft 1000-01 or newer
 
 evoker="Evoulker"
@@ -9,165 +9,290 @@ race=dracthyr
 region=us
 server=stonemaul
 role=attack
-professions=leatherworking=100/alchemy=32
+professions=leatherworking=100/alchemy=51
 spec=preservation
 
-talents=BwbBP6s2QqC9+fmxbctIlW1vfTTClQEiIlDkkESLaJJJIBAAAAAkkUSkAQikkkIQSC
+talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAASSSERSiEkColkQAAQSkIIikAJBAAAIJJkIJSSCAE
 
-# Saved Loadout: Raid
-# talents=BwbBP6s2QqC9+fmxbctIlW1vfDJIkEgUkkESLplkkkkAAAAAAQSLRCQkIJJhQkkA
 # Saved Loadout: Dungeon
-# talents=BwbBP6s2QqC9+fmxbctIlW1vfDBlIgkIFJJJJOgWSSSIAAAAAgQSLRiEJBSSSIESC
+# talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAASSSapEIRSkikEHAAAAJRiEiIJgEAAAgkEkIJSSyBAQA
 # Saved Loadout: Reversion
-# talents=BwbBP6s2QqC9+fmxbctIlW1vfTTClQEiIlDkkESLaJJJIBAAAAAkkUSkAQikkkIQSC
+# talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAAAAAAAAAAAAAAAAAAAAAAAA
 # Saved Loadout: PVP
-# talents=BwbBP6s2QqC9+fmxbctIlW1vfTLQJIhICSSyBSLaJJJhAAAAAAQSTkABikkkkQkkA
-# Saved Loadout: dwq
-# talents=BwbBP6s2QqC9+fmxbctIlW1vfDJIkEgUkkESLplkkkkAAAAAAQSLRCQkIJJhQkkA
+# talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAAAAAAAAAAAAAAAAAAAAAAAA
+# Saved Loadout: dwqd
+# talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAAIJplWOASSSkCSakEAAQSkIIikASAAAASSCJSikkEAE
+# Saved Loadout: Blooms
+# talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAAIJplWgkkkDkCSakEAAgEJCiIJgEAAAgkkQSJJSSSAQA
+# Saved Loadout: Big Blossom
+# talents=BwbBsJu/D+01p9npZvkV+nWIkDAAAAASSSERSiEkColkQAAQSkIIikAJBAAAIJJkIJSSCAE
 
-head=,id=200381,gem_id=192958,bonus_id=7981/6652/7935/8828/1498/8767
-neck=,id=193001,gem_id=192987/192922/192958,bonus_id=8836/8840/8902/8960/8783/8782/8802/8791/8846,crafted_stats=40/32
-shoulder=,id=200383,bonus_id=7981/40/8826/1498/8767
-back=,id=133639,enchant_id=6598,bonus_id=9130/7977/6652/8822/8819/9144/3300/8767
-chest=,id=200378,enchant_id=6625,bonus_id=7981/6652/8830/1498/8767
+# Crown of Obsidian Secrets (447)
+head=,id=202488,gem_id=192964,bonus_id=6652/9229/9410/9382/1504/8767/9413
+# Magmorax's Fourth Collar (441)
+neck=,id=204397,gem_id=192988/192958/192958,bonus_id=6652/9409/9334/1492/8767/9477/8782
+# Wingspan of Obsidian Secrets (447)
+shoulder=,id=202486,bonus_id=6652/43/9382/9227/1504
+# Undulating Sporecloak  (447)
+back=,id=205025,enchant_id=6598,bonus_id=8836/8840/8902/8960/9405/9366/9376,crafting_quality=5
+# Sundered Edgelord's Breastplate (444)
+chest=,id=204420,enchant_id=6625,bonus_id=9410/6652/9224/9221/9381/1501/8767
+# Gilded Dracthyr's Tabard (1)
 tabard=,id=194675
-wrist=,id=133626,enchant_id=6580,bonus_id=8974/7977/6652/7936/8822/8819/9144/3297/8767
-hands=,id=200380,bonus_id=6652/8829/9130/7977/1498/8767
-waist=,id=193425,bonus_id=8836/8840/8902/7937/8802/8846/8791,crafted_stats=49/32
-legs=,id=195522,enchant_id=6544,bonus_id=6652/7981/8823/8820/1498/8767
-feet=,id=193421,enchant_id=6607,bonus_id=8836/8840/8902/8802/8846/8175/8960/8793,crafted_stats=49/32
-finger1=,id=195526,enchant_id=6562,gem_id=192958,bonus_id=6652/7980/1485/8767/8780
-finger2=,id=203460,enchant_id=6562,gem_id=204020/204010/204013,gem_bonus_id=9369:1472/9369:1472/9369:1472,bonus_id=1491
-trinket1=,id=194307,bonus_id=7979/6652/1472/8767
-trinket2=,id=194300,bonus_id=41/7980/1485/8767
-main_hand=,id=193707,enchant_id=6643,bonus_id=9130/7977/6652/9147/1643/8767
+# Adaptive Dracothyst Armguards  (447)
+wrist=,id=204704,enchant_id=6580,gem_id=192958,bonus_id=8836/8840/8902/8960/9405/9376/9366/9413,crafting_quality=5
+# Claws of Obsidian Secrets (447)
+hands=,id=202489,bonus_id=6652/9230/9410/9382/1498/8767
+# Gloomfused Chemistry Belt (437)
+waist=,id=202605,enchant_id=6904,gem_id=192958,bonus_id=7979/6652/9413/9222/9219/9329/1494/8767
+# Chausses of Obsidian Secrets (447)
+legs=,id=202487,enchant_id=6544,bonus_id=6652/9228/9382/1504/8767
+# Exacting Augmenter's Sabatons (447)
+feet=,id=202588,bonus_id=9410/41/9224/9219/9382/1501/8767
+# Entropic Convergence Loop (441)
+finger1=,id=202572,enchant_id=6562,bonus_id=9409/41/9415/9334/1498/8767
+# Signet of Titanic Insight  (447)
+finger2=,id=192999,enchant_id=6562,gem_id=192958,bonus_id=8836/8840/8902/8780/9405/8791/9376/8174/9366,crafted_stats=49/32,crafting_quality=5
+# Ominous Chromatic Essence (447)
+trinket1=,id=203729,bonus_id=9410/6652/9382/1501/8767
+# Rashok's Molten Heart (447)
+trinket2=,id=202614,bonus_id=6652/9410/9382/1501/8767
+# Obsidian Seared Hexsword  (447)
+main_hand=,id=190511,enchant_id=6643,bonus_id=8836/8840/8902/9405/9376/8791/9237/9366,crafted_stats=40/36,crafting_quality=5
+# Irontorch Igniter (447)
+off_hand=,id=193783,bonus_id=9382/6652/9144/1669/8767
 
 ### Gear from Bags
+#
+# Crown of the Awakened (424)
+# head=,id=200381,gem_id=192958,bonus_id=7981/6652/7935/8828/1498/8767
+#
+# Underlight Headwrap (385)
+# head=,id=205302,bonus_id=9297/6652/9415/1507/8766
+#
+# Crown of Obsidian Secrets (441)
+# head=,id=202488,bonus_id=6652/9414/9229/9409/9334/1498/8767
+#
+# Helm of Hardened Gold (431)
+# head=,id=193777,bonus_id=9331/6652/9415/9223/9221/9144/8835/1653/8767
 #
 # Crown of the Awakened (411)
 # head=,id=200381,bonus_id=7980/41/7936/8828/1485/8767
 #
-# Eranog's Adorned Sallet (402)
-# head=,id=195476,bonus_id=6652/7936/7980/8825/8820/1485/8767
-#
-# Pendant of the Stormforger (421)
-# neck=,id=133767,bonus_id=9130/7977/6652/7937/8783/9144/3300/8767
+# Elemental Lariat  (421)
+# neck=,id=193001,gem_id=192987/192922/192958,bonus_id=8836/8840/8902/8960/8783/8782/9405/8791/8846/9365,crafted_stats=40/32,crafting_quality=5
 #
 # Eye of the Vengeful Hurricane (421)
 # neck=,id=195496,bonus_id=6652/7937/8783/7981/1498/8767
 #
+# Magmorax's Fourth Collar (431)
+# neck=,id=204397,bonus_id=6652/9415/8784/7979/9327/1482/8767
+#
+# Pendant of the Stormforger (421)
+# neck=,id=133767,gem_id=192987/192964/192964,bonus_id=9130/7977/6652/9144/3300/8767/9477/8782
+#
+# Amulet of Tender Breath (431)
+# neck=,id=206183,bonus_id=9331/6652/9414/8784/9144/1653/8767
+#
 # Talons of the Awakened (424)
 # shoulder=,id=200383,bonus_id=7981/41/8826/1498/8767
 #
-# Acid-Proof Webbing (402)
-# back=,id=195511,enchant_id=6598,bonus_id=6652/8825/8819/7980/1485/8767
+# Wingspan of Obsidian Secrets (441)
+# shoulder=,id=202486,bonus_id=6652/9227/9409/9334/1498/8767
 #
-# Cloak of Failing Will (405)
-# back=,id=144115,bonus_id=8970/7977/6652/8822/8819/9144/3295/8767
+# Kazzara's Grafted Companion (441)
+# shoulder=,id=202590,bonus_id=9410/9380/6652/9224/9218/1498/8767
 #
-# Surging-Song Conductors (421)
-# wrist=,id=195516,bonus_id=6652/7936/7981/8823/8819/1498/8767
+# Wingspan of Obsidian Secrets (437)
+# shoulder=,id=202486,bonus_id=6652/9227/7979/9329/1494/8767
 #
-# Crimson Aspirant's Chain Handguards (340)
-# hands=,id=201138,bonus_id=8985/6652/8990/1472
+# Goldscar Pelt (421)
+# back=,id=133639,enchant_id=6598,bonus_id=9130/7977/6652/8822/8819/9144/3300/8767
 #
-# Gauntlets of the Awakened (408)
-# hands=,id=200380,bonus_id=7980/6652/8829/1485/8767
+# Putrid Carapace (431)
+# back=,id=134408,bonus_id=9331/6652/9223/9220/9144/3310/8767
 #
-# Tideskorn Cinch (405)
-# waist=,id=134207,bonus_id=8970/7977/6652/7936/8822/8818/9144/3284/8767
+# Zaralek Surveyor's Drape (382)
+# back=,id=205055,bonus_id=9296/6652/1504/8766
 #
-# Egg Tender's Leggings (405)
-# legs=,id=193759,bonus_id=8970/7977/6652/8822/8820/9144/1627/8767
+# Hauberk of Obsidian Secrets (421)
+# chest=,id=202491,bonus_id=6652/9231/9323/7979/1472/8767
 #
-# Sharpeye Greaves (395)
-# feet=,id=109791,enchant_id=6606,bonus_id=8967/7977/6652/8822/8818/9144/3280/8767
+# Cuirass of Meticulous Mixture (428)
+# chest=,id=202598,bonus_id=9409/9330/6652/9226/9221/1485/8767
 #
-# Lightning-Charged Striders (421)
-# feet=,id=193685,bonus_id=9130/7977/6652/8822/8818/9144/1643/8767
+# Hauberk of Obsidian Secrets (447)
+# chest=,id=202491,bonus_id=41/9231/9410/9382/1498/8767
+#
+# Cuirass of Meticulous Mixture (441)
+# chest=,id=202598,enchant_id=6625,bonus_id=9409/41/9226/9221/9334/1498/8767
+#
+# Cuirass of Meticulous Mixture (441)
+# chest=,id=202598,enchant_id=6625,bonus_id=9409/6652/9226/9221/9334/1498/8767
+#
+# Hauberk of the Awakened (421)
+# chest=,id=200378,enchant_id=6625,bonus_id=7981/6652/8830/1498/8767
+#
+# Raoul's Barrelhook Bracers (431)
+# wrist=,id=159356,enchant_id=6580,bonus_id=9331/6652/9415/9223/9220/9144/3301/8767
+#
+# Raoul's Barrelhook Bracers (431)
+# wrist=,id=159356,bonus_id=9331/6652/9414/9223/9220/9144/3301/8767
+#
+# Grasps of Welded Anguish (428)
+# hands=,id=202583,bonus_id=9409/9330/41/9226/9218/1485/8767
+#
+# Bite-Resistant Chain Gloves (431)
+# hands=,id=155892,bonus_id=9331/6652/9223/9218/9144/3301/8767
+#
+# Claws of Obsidian Secrets (441)
+# hands=,id=202489,bonus_id=6652/9230/9409/9334/1492/8767
+#
+# Gauntlets of the Awakened (421)
+# hands=,id=200380,bonus_id=6652/8829/9130/7977/1498/8767
+#
+# Claws of Obsidian Secrets (437)
+# hands=,id=202489,bonus_id=6652/9230/7979/9329/1488/8767
+#
+# Gloomfused Chemistry Belt (428)
+# waist=,id=202605,bonus_id=9409/9330/6652/9414/9226/9219/1485/8767
+#
+# Flame-Touched Chain  (421)
+# waist=,id=193425,bonus_id=8836/8840/8902/9405/8846/8791/9365/7937,crafted_stats=49/32,crafting_quality=5
+#
+# Chausses of Obsidian Secrets (441)
+# legs=,id=202487,enchant_id=6544,bonus_id=6652/9228/9409/9334/1498/8767
+#
+# Chausses of Obsidian Secrets (418)
+# legs=,id=202487,bonus_id=6652/9228/7979/9322/1475/8767
+#
+# Timeways Intruder's Greaves (437)
+# legs=,id=207819,bonus_id=9333/7977/9223/9221/6652/1527/8767
+#
+# Skyless Greaves (392)
+# legs=,id=204941,bonus_id=6652/9303/1614/8766
+#
+# Chausses of Obsidian Secrets (437)
+# legs=,id=202487,enchant_id=6541,bonus_id=6652/9228/7979/9329/1494/8767
+#
+# Tassets of Densified Ooze (431)
+# legs=,id=193662,bonus_id=9331/6652/9223/9221/9144/1653/8767
+#
+# Chausses of Obsidian Secrets (450)
+# legs=,id=202487,bonus_id=6652/9383/9410/8095/9228/1507
+#
+# Faultline Leggings (428)
+# legs=,id=134474,bonus_id=9330/6652/9223/9221/9144/3307/8767
+#
+# Flame-Touched Treads  (447)
+# feet=,id=193421,enchant_id=6607,bonus_id=8836/8840/8902/9405/9376/8791/9366,crafted_stats=32/40,crafting_quality=5
+#
+# Exacting Augmenter's Sabatons (441)
+# feet=,id=202588,enchant_id=6607,bonus_id=9409/6652/9226/9219/9334/1495/8767
+#
+# Crechebound Soldier's Boots (424)
+# feet=,id=204424,enchant_id=6607,bonus_id=6652/9222/9219/9324/7979/1472/8767
+#
+# Flame-Touched Treads  (417)
+# feet=,id=193421,enchant_id=6607,bonus_id=8836/8840/8902/9404/8846/8913/8960/8793/9365,crafted_stats=49/32,crafting_quality=4
+#
+# Grunt's Eternal Treads (437)
+# feet=,id=207878,bonus_id=9333/7977/9223/9219/6652/1530/8767
+#
+# Deeprock Loop (376)
+# finger1=,id=204916,bonus_id=6652/9415/9294/9501/1598
 #
 # Seal of Diurna's Chosen (421)
 # finger1=,id=195480,enchant_id=6556,bonus_id=6652/7936/7981/1498/8767
 #
-# Signet of Titanic Insight (418)
-# finger1=,id=192999,enchant_id=6562,gem_id=192958,bonus_id=8836/8840/8902/8780/8802/8791/8846/8174,crafted_stats=49/32
+# Scalebane Signet (431)
+# finger1=,id=193768,bonus_id=9331/6652/9415/9144/1653/8767
 #
-# Crimson Aspirant's Ring (340)
-# finger1=,id=201744,bonus_id=8985/6652/7936/8990/1472
-#
-# Thunderous Downburst Ring (389)
-# finger1=,id=193696,enchant_id=6559,bonus_id=8965/7977/6652/7937/9144/1611/8767
+# Entropic Convergence Loop (441)
+# finger1=,id=202572,enchant_id=6562,bonus_id=9410/9380/6652/9415/1498/8767
 #
 # Platinum Star Band (421)
 # finger1=,id=193708,bonus_id=9130/7977/6652/7936/9144/1643/8767
 #
+# Onyx Annulet (424)
+# finger1=,id=203460,enchant_id=6562,gem_id=204020/204010/204013,bonus_id=1491,gem_bonus_id=1472/2/9369/1472/2/9369/1472/0/0
+#
+# Bloodied Wedding Ring (447)
+# finger1=,id=193671,enchant_id=6562,bonus_id=9382/6652/9414/9144/1669/8767
+#
+# Scalebane Signet (424)
+# finger1=,id=193768,bonus_id=9324/6652/9415/9144/1646/8767
+#
+# Seal of Filial Duty (418)
+# finger1=,id=195526,enchant_id=6562,gem_id=192958,bonus_id=6652/7980/1485/8767/8780
+#
+# Seal of Questionable Loyalties (441)
+# finger1=,id=158314,enchant_id=6550,bonus_id=6652/9414/9144/9334/3311/8767
+#
 # Thunderous Downburst Ring (402)
 # finger1=,id=193696,bonus_id=8969/7977/6652/7936/9144/1624/8767
 #
-# Conjured Chillglobe (415)
-# trinket1=,id=194300,bonus_id=6652/7981/1498/8767
+# Ward of Faceless Ire (441)
+# trinket1=,id=203714,bonus_id=6652/9409/9334/1489/8767
+#
+# Screaming Black Dragonscale (441)
+# trinket1=,id=202612,bonus_id=6652/9409/9334/1492/8767
+#
+# Ward of Faceless Ire (437)
+# trinket1=,id=203714,bonus_id=40/9409/9333/1485/8767
+#
+# Broodkeeper's Promise (398)
+# trinket1=,id=194307,bonus_id=7979/6652/1472/8767
 #
 # Furious Ragefeather (411)
 # trinket1=,id=193677,bonus_id=7977/6652/9144/8972/1633/8767
 #
-# Emerald Coach's Whistle (402)
-# trinket1=,id=193718,bonus_id=8969/7977/6652/9144/1624/8767
-#
-# Primal Ritual Shell (372)
-# trinket1=,id=200563,bonus_id=6652/1475/5864/8767
-#
 # Crimson Aspirant's Medallion (340)
 # trinket1=,id=201450,bonus_id=8985/6652/8990/1472
+#
+# Water's Beating Heart (424)
+# trinket1=,id=193736,bonus_id=9324/6652/9144/1646/8767
 #
 # Voidmender's Shadowgem (415)
 # trinket1=,id=110007,bonus_id=7977/6652/9144/8973/3300/8767
 #
-# Sands of Temporal Perfection (389)
-# trinket1=,id=202015,bonus_id=9377/1489/8767
+# Beacon to the Beyond (437)
+# trinket1=,id=203963,bonus_id=6652/9409/9333/1485/8767
 #
-# Tome of Unstable Power (402)
-# trinket1=,id=193628,bonus_id=8969/7977/6652/9144/1624/8767
+# Ward of Faceless Ire (431)
+# trinket1=,id=203714,bonus_id=6652/7979/9327/1479/8767
 #
-# Crimson Aspirant's Insignia of Alacrity (340)
-# trinket1=,id=201451,bonus_id=8985/6652/8990/1472
+# Necromantic Focus (118)
+# trinket1=,id=69139,bonus_id=9055,drop_level=35
 #
-# Unstable Elemental Confluence (187)
-# trinket1=,id=199686
-#
-# Emerald Coach's Whistle (359)
-# trinket1=,id=193718,bonus_id=7976/6652/1581/8766
-#
-# Engraved Spearhead (372)
-# trinket1=,id=193568,bonus_id=6652/1475/5864/8767
-#
-# Kyrakka's Searing Embers (405)
-# trinket1=,id=193748,bonus_id=8970/7977/6652/9144/1627/8767
+# Spoils of Neltharus (441)
+# trinket1=,id=193773,bonus_id=6652/9144/9334/1663/8767
 #
 # Kharnalex, The First Light (411)
 # main_hand=,id=195519,enchant_id=6640,bonus_id=40/7980/1485/8767/9418
 #
-# Crimson Gladiator's Staff (382)
-# main_hand=,id=201976,bonus_id=8999/6652/9009/1472/8767
+# Ancestral Stoneshaper (431)
+# main_hand=,id=193674,bonus_id=9331/6652/9147/1653/8767
 #
-# Drakebreaker's Broadsword (366)
-# main_hand=,id=199084,bonus_id=8978/6652/1488/8766/9274
+# Erethos, the Empty Promise (424)
+# main_hand=,id=202565,bonus_id=6652/9324/7979/1472/8767
 #
-# Skullsplitting Axe of the Feverflare (302)
-# main_hand=,id=199043,bonus_id=7969/6652/1700,drop_level=70
+# Smoldering Censer of Purity (415)
+# main_hand=,id=173273,bonus_id=9321/7756/3284/8767
 #
-# Portal-Ripper's Staff (405)
-# main_hand=,id=110039,bonus_id=8970/7977/6652/9147/3290/8767
+# Livestock Lochaber Axe (385)
+# main_hand=,id=143327,bonus_id=9492,drop_level=70
 #
-# Qalashi Crustshaper's Greatmace (382)
-# main_hand=,id=192021,bonus_id=6652/1485/5864/8767
+# Rod of Perfect Order (424)
+# off_hand=,id=193745,bonus_id=6652/9144/9324/1646/8767
 #
-# Obsidian Seared Hexsword (418)
-# main_hand=,id=190511,enchant_id=6643,bonus_id=8836/8840/8902/8802/8846/8791/8175/8960,crafted_stats=40/36
-#
-# Hornstrider's Mace of the Peerless (302)
-# main_hand=,id=199025,bonus_id=7969/42/1688,drop_level=70
-#
-# Sadana's Grisly Visage (415)
-# off_hand=,id=110035,bonus_id=7977/6652/9144/8973/3300/8767
+# Rod of Perfect Order (444)
+# off_hand=,id=193745,bonus_id=9381/6652/9144/1666/8767
 
-# Checksum: c565cf7b
+### Additional Character Info
+#
+# upgrade_currencies=c:1792:15000/c:2245:1795/i:204195:2/i:204193:4/i:198059:4/i:204682:1/i:198058:1/i:198048:3/i:204196:1
+#
+# slot_high_watermarks=0:447:447/1:441:447/2:447:447/3:447:447/4:437:437/5:450:450/6:447:447/7:447:447/8:447:447/9:447:447/10:447:447/11:447:447/12:431:447/13:447:447/14:0:292/15:0:0/16:447:447
+
+# Checksum: 621e25c0

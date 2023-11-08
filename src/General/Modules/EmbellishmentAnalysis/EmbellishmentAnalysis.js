@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import EmbelChart from "./EmbellishmentChart";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
@@ -13,8 +13,40 @@ import MetricToggle from "./MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
+import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";
+import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
+
+// 
+import { CONSTANTS } from "General/Engine/CONSTANTS";
+import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
+import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
+
+function TabPanel(props) {
+  const { children, value, index } = props;
+  return (
+    <div role="tabpanel" hidden={value !== index}>
+      {value === index && children}
+    </div>
+  );
+}
+
+const setupItemCardData = (embList, contentType, player, playerSettings) => {
+  const itemData = [];
+  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType), setStats: player.activeStats}
+  embList.forEach((emb) => {
+    const data = getEmbellishmentDescription(emb.name['en'], player, additionalData);
+    //const data = null;
+    if (data) {
+      data.name = emb.name['en'];
+      data.id = emb.id;
+      itemData.push(data);
+    }
+  });
+
+  return itemData;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,7 +103,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += ((value * 0.42) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
+      estHPS += ((value * CONSTANTS.allyStatWeight) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -95,7 +127,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += ((value * 0.42) / player.activeStats.intellect) * 75000 * 0.75;
+      estDPS += CONSTANTS.allyDPSPerPoint * 0.75 * value;
     }
   }
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
@@ -125,7 +157,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r447 //gem.r5;
+  return gem.r486 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -155,9 +187,16 @@ export default function EmbellishmentAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const [metric, setMetric] = React.useState("hps");
+  const [theme, setTheme] = React.useState(false);
+  const [tabIndex, setTabIndex] = React.useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    setTabIndex(newValue);
+  };
+
 
   let history = useHistory();
-  const itemLevels = [411, 421, 427, 437, 443, 447];
+  const itemLevels = [447, 460, 470, 473, 477, 480, 483, 486];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -175,7 +214,8 @@ export default function EmbellishmentAnalysis(props) {
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
-
+  const itemCardData = setupItemCardData(db, contentType, props.player, playerSettings);
+  console.log(itemCardData);
   let activeGems = [];
 
   for (var i = 0; i < db.length; i++) {
@@ -216,33 +256,41 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-          <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
-          <Grid container spacing={1}>
-              <Grid item xs={12} key={i}>
-                <Typography align="left" variant="body1" key={i}>
-                  {"Sporecloak remains a great choice for progression post-fix. Be sure to consult your favourite guide before crafting anything."}
-                </Typography>
-              </Grid>
-          </Grid>
-      </Paper>
-        </Grid>
-        <Grid item xs={12}>
+        <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth" style={{marginBottom: "10px"}}>
+            <Tab label={"Embellishments at a Glance"} />
+            <Tab label={"Embellishment Deep Dive"} />
+        </Tabs>
+
+        <TabPanel value={tabIndex} index={0}>
+        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers. Flourishing Dream Helm will require live testing before it's added to the list." color="firebrick" />
+
+        <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
         </Grid>
-        {/* <Grid item xs={12}>
-          <Settings player={props.player} userSettings={userSettings} editSettings={editSettings} hymnalShow={true} groupBuffShow={true} />
-        </Grid> */}
         <Grid item xs={12}>
 
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<EmbelChart data={activeGems} db={db} />}
+                {<EmbelChart data={activeGems} db={db} theme={themeSelection(theme ? "candidate2" : "candidate7")} />}
               </Paper>
+
             </Grid>
+            
           </Grid>
+          
         </Grid>
+        </TabPanel>
+
+        <TabPanel value={tabIndex} index={1}>
+          <EmbellishmentDeepDive 
+            itemCardData={itemCardData}
+            tabIndex={tabIndex}
+          />
+        </TabPanel> 
       </Grid>
+      </Grid>
+    <div style={{ height: 200 }} />
     </div>
   );
 }

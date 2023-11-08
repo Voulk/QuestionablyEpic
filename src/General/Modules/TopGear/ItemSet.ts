@@ -66,6 +66,30 @@ class ItemSet {
     this.spec = spec;
   }
 
+    // Create a clone of the current instance
+    clone(): ItemSet {
+      const clonedSet = new ItemSet(this.id, this.itemList.slice(), this.sumSoftScore, this.spec);
+  
+      // Copy other properties
+      clonedSet.spec = this.spec;
+      clonedSet.sumSoftScore = this.sumSoftScore;
+      clonedSet.hardScore = this.hardScore;
+      clonedSet.setSockets = this.setSockets;
+      clonedSet.uniques = { ...this.uniques };
+      clonedSet.effectList = this.effectList.slice();
+      clonedSet.onUseTrinkets = this.onUseTrinkets.slice();
+      clonedSet.primGems = this.primGems.slice();
+      clonedSet.enchantBreakdown = { ...this.enchantBreakdown };
+      clonedSet.itemList = this.itemList.slice();
+      clonedSet.setStats = { ...this.setStats };
+      clonedSet.sets = { ...this.sets };
+      clonedSet.bcSockets = { ...this.bcSockets };
+      clonedSet.firstSocket = this.firstSocket;
+      clonedSet.report = this.report;
+  
+      return clonedSet;
+    }
+
   // This is for testing purposes only. It will print every item in the collection to the console.
   // printSet() {
   //   console.log("Printing Set with ID: " + this.id + ". Soft score: " + this.sumSoftScore + ". Hard Score: " + this.hardScore + " with stats: " + JSON.stringify(this.setStats));

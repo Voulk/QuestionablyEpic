@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@mui/material";
-import { getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
+import { getGemIcon, getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
@@ -68,24 +68,7 @@ function CompetitiveAlternatives(props) {
                         {key.items.map((item, i) => {
                           let itemArray = [];
                           // scuffed breakdown of weapon combos to seperate them for the report
-                          if (false) {
-                            // item.slot === "CombinedWeapon") {
-                            let newWeaponCombos = [];
-                            let mainHandItem = "";
-                            let offHandItem = "";
-
-                            if (item.offhandID > 0) {
-                              mainHandItem = props.player.getItemByHash(item.mainHandUniqueHash);
-                              offHandItem = props.player.getItemByHash(item.offHandUniqueHash);
-                              newWeaponCombos.push(mainHandItem, offHandItem);
-                            } else {
-                              mainHandItem = props.player.getItemByHash(item.uniqueHash);
-                              newWeaponCombos.push(mainHandItem);
-                            }
-                            itemArray = newWeaponCombos.flat();
-                          } else {
-                            itemArray = [item];
-                          }
+                          itemArray = [item];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
                               <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom}>
@@ -103,6 +86,34 @@ function CompetitiveAlternatives(props) {
                                     }}
                                   />
                                   <div className="bottom-right-ItemCards"> {item.level} </div>
+                                </div>
+                              </WowheadTooltip>
+                            </Grid>
+                          ));
+                        })}
+                      </Grid>
+                      <Grid item container xs={10} spacing={1}>
+                        {key.gems.map((gem, i) => {
+                          let itemArray = [];
+                          // scuffed breakdown of weapon combos to seperate them for the report
+                          itemArray = [gem];
+                          return itemArray.map((item) => (
+                            <Grid item key={i}>
+                              <WowheadTooltip type="item" id={gem} domain={wowheadDom}>
+                                <div className="container-ItemCards" style={{ height: 42 }}>
+                                  <img
+                                    alt="img"
+                                    width={40}
+                                    height={40}
+                                    src={getGemIcon(gem)}
+                                    style={{
+                                      borderRadius: 4,
+                                      borderWidth: item.vaultItem ? "2px" : "1px",
+                                      borderStyle: item.vaultItem ? "dashed" : "solid",
+                                      borderColor: "purple",//item.vaultItem ? "#0288d1" : itemQuality(item, gameType),
+                                    }}
+                                  />
+                                  {/*<div className="bottom-right-ItemCards"> {item.level} </div> */}
                                 </div>
                               </WowheadTooltip>
                             </Grid>

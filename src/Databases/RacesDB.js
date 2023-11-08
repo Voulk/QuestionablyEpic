@@ -268,12 +268,16 @@ export const raceDB = [
 ];
 
 export const getTranslatedRaceName = (string, currentLanguage) => {
-  let translatedName = raceDB
-    .filter((obj) => {
-      return obj.id === string;
-    })
-    .map((obj) => obj.name[currentLanguage])[0]
-    .toString();
+  if (string === "Default" || string === "" || currentLanguage === undefined) return string;
+  else {
+    let translatedName = raceDB
+      .filter((obj) => {
+        return obj.id === string;
+      })
+      .map((obj) => obj.name[currentLanguage])[0]
+      .toString();
 
   return translatedName;
+  }
+
 };

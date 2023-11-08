@@ -86,15 +86,16 @@ export default function QEMainMenu(props: Props) {
       ? [
           // Gearing
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear" },
-          { route: "/UpgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder" },
+          { route: "/UpgradeFinder", disabled: true, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder" },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis" },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis" },
           { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare" },
           // Tools
           { route: "/cooldownplanner", disabled: false, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner" },
-          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 1, localization: "MainMenu.FightAnalysis" },
-          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 2, localization: "MainMenu.SequenceSandbox" },
-          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 3, localization: "MainMenu.Profile" },
+          { route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot"},
+          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis" },
+          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox" },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile" },
         ]
       : [
           // Gearing
@@ -184,7 +185,7 @@ export default function QEMainMenu(props: Props) {
   // };
 
   return (
-    <div style={{ backgroundColor: "#313131", height: "100%" }}>
+    <div style={{ height: "100%" }}>
       <Root>
         <div style={{ height: 96 }} />
         <Grid container spacing={2}>
@@ -270,7 +271,7 @@ export default function QEMainMenu(props: Props) {
           {props.allChars.getAllChar(gameType).length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
-        {articles.length > 0 ? (
+        {/*articles.length > 0 ? (
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
@@ -279,7 +280,7 @@ export default function QEMainMenu(props: Props) {
                 {/* Help Text for Articles */}
                 {/* <Tooltip title={t("MainMenu.Articles.HelpText")} placement="top-start">
                   <InfoOutlinedIcon style={{ color: "white", marginLeft: 4 }} fontSize="small" />
-                </Tooltip> */}
+                </Tooltip> }
               </Typography>
             </Grid>
             {articles.map((key, i) => (
@@ -288,9 +289,9 @@ export default function QEMainMenu(props: Props) {
           </Grid>
         ) : (
           ""
-        )}
+        )*/}
 
-        <WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} />
+        {/*<WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> */}
       </Root>
 
       {/* ---------------------------------------------------------------------------------------------- */
