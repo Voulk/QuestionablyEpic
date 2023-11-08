@@ -173,8 +173,6 @@ class ItemSet {
 
   // Verifies that the set is usable in game. We'll test if it has the correct number of embellishments, no more than 1 vault item and so on.
   verifySet(settings = {}) {
-    console.log("Verifying Set");
-    console.log(this.uniques);
     /*
     if (this.uniques["legendary"] && this.uniques["legendary"] > 1) {
       return false;

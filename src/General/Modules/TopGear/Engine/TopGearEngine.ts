@@ -414,7 +414,6 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
  */
 function pruneItems(itemSets: ItemSet[], userSettings: any) {
   let temp = itemSets.filter(function (set) {
-    console.log(JSON.stringify(set));
     return set.verifySet(userSettings);
   });
 
