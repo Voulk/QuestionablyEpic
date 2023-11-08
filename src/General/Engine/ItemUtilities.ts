@@ -540,9 +540,9 @@ export function getItemIcon(id: number, gameType = "Retail") {
 
 
 export function getGemIcon(id: number) {
-  console.log(id);
+
   const gem = gemDB.filter((gem) => gem.id === id);
-  console.log(gem);
+
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
   } else {

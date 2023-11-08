@@ -144,8 +144,9 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
-  itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
+  itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
+  
   // == Evaluate Sets ==
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
@@ -171,7 +172,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   //itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   //itemSets = pruneItems(itemSets, userSettings);
-  //resultSets = pruneItems(resultSets, userSettings);
+  resultSets = pruneSets(resultSets, userSettings);
 
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
@@ -413,11 +414,22 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
  */
 function pruneItems(itemSets: ItemSet[], userSettings: any) {
   let temp = itemSets.filter(function (set) {
+    console.log(JSON.stringify(set));
     return set.verifySet(userSettings);
   });
 
   return temp.slice(0, softSlice);
 }
+
+function pruneSets(resultSets: any[], userSettings: any) {
+  
+  let temp = resultSets.filter(function (result) {
+    return result.verifySet(userSettings);
+  });
+
+  return temp.slice(0, softSlice);
+}
+
 
 function sumScore(obj: any) {
   var sum = 0;
