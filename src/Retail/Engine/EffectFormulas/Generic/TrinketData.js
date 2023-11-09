@@ -169,7 +169,7 @@ export const raidTrinketData = [
         coefficient: 0.442388,
         table: -1,
         stat: "intellect",
-        duration: 10,
+        duration: 20,
         ppm: 3,
       },
     ],
