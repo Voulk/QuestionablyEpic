@@ -123,6 +123,49 @@ export const otherTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                             Rune of the Umbramane                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Rune of the Umbramane",
+    effects: [
+      { 
+        coefficient: 79.32618, // 
+        table: -9,
+        secondaries: ['haste', 'versatility'],
+        ppm: 1,
+        efficiency: 0.92,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Pinch of Dream Magic                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Pinch of Dream Magic",
+    effects: [
+      { 
+        coefficient: 1.424874,
+        table: -7,
+        duration: 9, // Check in-game. Could be 9s. Doesn't make much of a difference since trinket is not good.
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.94; // The 10s ICD will cut average uptime. We can revisit it and give it a proper adjusted uptime if we have time.
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Static-Charged Scale                                        */
     /* ---------------------------------------------------------------------------------------------- */
     /* 

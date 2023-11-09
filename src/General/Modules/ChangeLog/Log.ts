@@ -17,6 +17,13 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 2,
+    date: "November 8",
+    changes: [ 
+      "Added formulas for a few new world quest trinkets",
+    ]},
+  {
+    version: "10.2",
     update: 1,
     date: "November 7",
     changes: [ 
