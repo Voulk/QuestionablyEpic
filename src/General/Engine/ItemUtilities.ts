@@ -166,7 +166,6 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
         //const gemID = getGemID(bigStat, smallStat, spec, setStats, contentType);
         const gemID = 0;
         gemArray.push({bigStat, smallStat, score, gemID});
-        console.log({bigStat, smallStat, score, gemID})
       }
 
     }
@@ -359,14 +358,14 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [204465, 204201, 204202, 204211, 202612];
+  const boostedItems = [208616, 210214, 207171];
 
   if (boostedItems.includes(itemID)) {
-    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
-    if (difficulty === CONSTANTS.difficulties.normalMax && itemID !== 202612) return 4;
-    else if (difficulty === CONSTANTS.difficulties.heroicMax && itemID !== 202612) return 6;
-    else if (bossID === 2520 || bossID === 2523) return 7;
-    /*else if (itemID !== 202612) return 6; */
+    // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
+    if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
+    else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
+    else if (bossID === 2519) return 7;
+    else if (bossID === 2556) return 3; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;
   } 

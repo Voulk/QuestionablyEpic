@@ -63,7 +63,7 @@ export default function MythicPlusGearContainer(props) {
                   {/* ------------------------------------------ Mythic + ------------------------------------------*/}
                   <Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} />
                   {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
-                  <Tab className={classes.mythicHeader} label={"Dawn of the Infinite"} {...a11yProps(1)} />
+                  {/*<Tab className={classes.mythicHeader} label={"Dawn of the Infinite"} {...a11yProps(1)} /> */}
                 </Tabs>
               </AppBar>
             </Grid>
