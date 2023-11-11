@@ -10,12 +10,12 @@ export const raidTrinketData = [
     name: "Smoldering Seedling",
     effects: [
       { // 
-        coefficient: 534.5043, 
+        coefficient: 534.5043 * 1.05, 
         table: -9,
         duration: 12,
         cooldown: 120,
-        targetScaling: 1, // This actually heals for 2x the amount you feed it, but we deduct the healing spent.
-        efficiency: {Raid: 0.55, Dungeon: 0.3}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        targetScaling: 1.5, // This actually heals for 2.5x the amount you feed it, but we deduct the healing spent.
+        efficiency: {Raid: 0.5, Dungeon: 0.3}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
       },
       { // Mastery benefit. This is short and not all that useful.
         coefficient: 0.518729, 
@@ -89,24 +89,24 @@ export const raidTrinketData = [
     name: "Blossom of Amirdrassil",
     effects: [
       {  // HoT effect
-        coefficient: 35.4153, // This is probably 1 HoT tick.
+        coefficient: 35.4153 * 1.05, // This is probably 1 HoT tick.
         table: -9,
-        secondaries: ['versatility'],
+        secondaries: ['versatility', 'crit'], // Crit added post-release.
         efficiency: {Raid: 0.72, Dungeon: 0.65}, 
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
         ticks: 6,
       },
       {  // Spread HoT effect
-        coefficient: 17.70765, // 46.75641,
+        coefficient: 17.70765 * 1.05, // 46.75641,
         table: -9,
         targets: 3, // Currently 9 on PTR.
-        secondaries: ['versatility'],
+        secondaries: ['versatility', 'crit'],
         efficiency: {Raid: 0.68, Dungeon: 0.57}, 
         percentProc: 0.75,
         ticks: 6,
       },
       {  // Shield effect
-        coefficient: 318.7446,
+        coefficient: 318.7446 * 1.05,
         table: -9,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
@@ -116,8 +116,8 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].ticks;
-      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets * data[0].ticks;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].ticks * player.getStatMults(data[0].secondaries);
+      bonus_stats.hps += processedValue(data[1], itemLevel, data[1].efficiency[additionalData.contentType]) * data[1].percentProc * data[1].targets * data[0].ticks * player.getStatMults(data[0].secondaries);
       bonus_stats.hps += processedValue(data[2], itemLevel, data[2].efficiency[additionalData.contentType]) * data[2].percentProc;
 
       bonus_stats.hps = bonus_stats.hps * data[0].ppm / 60;

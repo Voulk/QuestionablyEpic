@@ -352,7 +352,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
-            state.manaSpent += fullSpell[0].cost;
+            state.manaSpent += 'cost' in fullSpell ? fullSpell[0].cost : 0;
             fullSpell.forEach(spell => {
 
                 // The spell is an atonement applicator. Add atonement expiry time to our array.
