@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
+  
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
   item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
@@ -314,7 +315,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Rashoks will be nerfed further before launch. Amirdrassil spread bug not included. Several trinkets NYI." color="firebrick" />
+              <InformationBox information="Warning: Expect changes during this first week of patch!" color="firebrick" />
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

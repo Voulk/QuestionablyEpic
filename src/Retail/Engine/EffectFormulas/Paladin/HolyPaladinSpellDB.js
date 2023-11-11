@@ -36,7 +36,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 2.4,
+        cost: 2.8,
         coeff: 1.535, // 1.395, 
         cooldown: 8.5,
         charges: 1,
@@ -61,7 +61,7 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
         castTime: 0,
-        cost: 2.6,
+        cost: 2.8,
         coeff: 0.612, 
         cooldown: 8.5,
         expectedOverheal: 0.29,
@@ -335,6 +335,17 @@ export const PALADINSPELLDB = {
         buffType: 'special',
         buffDuration: 8,
     }],
+    "Divine Favor": [{
+        spellData: {id: 210294, icon: "spell_holy_heal", cat: "cooldown"},
+        type: "buff",
+        name: "Divine Favor",
+        castTime: 0,
+        cost: 0,
+        cooldown: 30,
+        offGCD: true,
+        buffType: 'special',
+        buffDuration: 99,
+    }],
     "Aura Mastery": [{
         spellData: {id: 31821, icon: "spell_holy_auramastery", cat: "cooldown"},
         type: "buff",
@@ -405,7 +416,7 @@ export const PALADINSPELLDB = {
                     name: "Blessing of Summer",
                     type: "buff",
                     buffType: "special",
-                    value: 0.4 * 0.3, // Unused, implemented in getDamMulti
+                    value: 0.4 * 0.2, // Unused, implemented in getDamMulti
                     buffDuration: 30, 
                 };
 

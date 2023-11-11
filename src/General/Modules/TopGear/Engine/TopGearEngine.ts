@@ -144,20 +144,27 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
-  itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
+  itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
+  
   // == Evaluate Sets ==
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     // Create sets for each gem type.
-    const gemPoss = getGemOptions(player.spec) // TODO: Turn this into a function
+    const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (gemPoss.length > 0) {
-      gemPoss.forEach(gem => {
-        resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
-      });
+    if (false) { // Add setting here.
+      if (gemPoss.length > 0) {
+        gemPoss.forEach(gem => {
+          resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
+        });
+      }
+    }
+    else { // Advanced Gems not turned on. 
+      resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, 0));
     }
   }
+
 
   // == Sort and Prune sets ==
   // Prune sets (discard weak sets) outside of our top X sets (usually around 3000 but you can find the variable at the top of this file). This just makes anything further we do faster while not having
@@ -165,7 +172,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   //itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   //itemSets = pruneItems(itemSets, userSettings);
-  //resultSets = pruneItems(resultSets, userSettings);
+  resultSets = pruneSets(resultSets, userSettings);
 
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
@@ -413,6 +420,16 @@ function pruneItems(itemSets: ItemSet[], userSettings: any) {
   return temp.slice(0, softSlice);
 }
 
+function pruneSets(resultSets: any[], userSettings: any) {
+  
+  let temp = resultSets.filter(function (result) {
+    return result.verifySet(userSettings);
+  });
+
+  return temp.slice(0, softSlice);
+}
+
+
 function sumScore(obj: any) {
   var sum = 0;
   for (var el in obj) {
@@ -566,12 +583,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Sockets
-  //const highestWeight = getHighestWeight(castModel);
-  //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
-  //enchants["Gems"] = highestWeight;
-  //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
-  enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
-  //console.log(bonus_stats);
+  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
+
+  // Check for Advanced gem setting and then run this instead of the above.
+  //enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+
   enchants["GemCount"] = builtSet.setSockets;
 
   // Add together the sets base stats & any enchants or gems we've added.

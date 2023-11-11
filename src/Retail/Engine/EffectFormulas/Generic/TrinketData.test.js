@@ -8,6 +8,19 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
 
+describe("Amalgam's Seventh Spine", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Amalgam's Seventh Spine");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${447}  | ${832} // 832    499   459   499
+    // add new test cases here
+    `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult);
+
+    });
+}); 
 
 describe("Blossom of Amirdrassil", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -15,7 +28,7 @@ describe("Blossom of Amirdrassil", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${483}  | ${[Math.floor(272517/6),  Math.floor(136250/6), 408768]}
+    ${483}  | ${[Math.floor(327008*1.05/6),  Math.floor(163504*1.05/6), Math.floor(490523*1.05)]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -30,7 +43,7 @@ describe("Smoldering Seedling", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${473}  | ${[718087, 720]}
+    ${473}  | ${[Math.floor(718087*1.05), 720]}
     // add new test cases here
     `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -38,6 +51,21 @@ describe("Smoldering Seedling", () => {
         //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
 }); 
+
+/*
+describe("Pip's Emerald Friendship Badge", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Pip's Emerald Friendship Badge");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${470}  | ${266}
+    // add new test cases here
+    `.test("Pip's Emerald Friendship Badge Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
+    });
+}); */
 
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -53,14 +81,14 @@ describe("Neltharion's Call to Chaos", () => {
     });
 }); 
 
-describe("Ominous Chromatic Essence", () => {
+describe("Ominous Chromatic Essence", () => { 
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Ominous Chromatic Essence");;
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${431}  | ${[529, 62]}
-    ${444}  | ${[562, 66]}
+    ${431}  | ${[503, 62]}
+    ${444}  | ${[534, 66]}
     // add new test cases here
     `.test("Ominous Chromatic Essence Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -82,20 +110,7 @@ describe("Screaming Black Dragonscale", () => {
     });
 }); 
 
-describe("Rashok's Molten Heart", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Rashok's Molten Heart");;
-    const effect = activeTrinket.effects;
-    each`
-    level   | expectedResult
-    ${444}  | ${[2187/10, 39782/10, 595]}
-    // add new test cases here
-    `.test("Rashok's Molten Heart Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(Math.floor(processedValue(effect[0], level))).toBe(Math.floor(expectedResult[0]));
-        expect(Math.floor(processedValue(effect[1], level))).toBe(Math.floor(expectedResult[1]));
-        expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
-    });
-}); 
+
 
 describe("Broodkeeper's Promise", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

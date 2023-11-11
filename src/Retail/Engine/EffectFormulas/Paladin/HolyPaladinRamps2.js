@@ -280,7 +280,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     }
 
     if (checkBuffActive(state.activeBuffs, "Blessing of Summer")) {
-        mult *= 1 + (0.4 * 0.3);
+        mult *= 1 + (0.4 * 0.2);
     }
 
     return mult;
@@ -322,9 +322,16 @@ const getHealingMult = (state, t, spellName, talents) => {
         state.activeBuffs = removeBuff(state.activeBuffs, "Maraads Dying Breath");
     }
 
-    if ((["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) && checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
-        mult *= (0.15 * PALADINCONSTANTS.tyrsHitRate + 1);
+    if (["Flash of Light", "Holy Light"].includes(spellName) || spellName.includes("Holy Shock")) {
+        if (checkBuffActive(state.activeBuffs, "Tyr's Deliverance")) {
+            mult *= (0.15 * PALADINCONSTANTS.tyrsHitRate + 1);
+        }
+        if (checkBuffActive(state.activeBuffs, "Divine Favor")) {
+            mult *= 1.6
+            state.activeBuffs = removeBuff(state.activeBuffs, "Divine Favor");
+        }
     }
+
 
     if ((["Crusader Strike"].includes(spellName) || spellName.includes("Holy Shock")) && state.talents.reclamation.points == 1) {
         mult *= 1 + (1 - PALADINCONSTANTS.reclamation.avgHealHealth) * PALADINCONSTANTS.reclamation.throughputIncrease;
@@ -828,6 +835,8 @@ const spendSpellCost = (spell, state, spellName) => {
     else if ('cost' in spell[0]) {
         if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
             state.manaSpent += spell[0].cost * (1 - PALADINCONSTANTS.infusion.flashOfLightReduction); }
+        if ((spellName === "Flash of Light" || spellName === "Holy Light") && checkBuffActive(state.activeBuffs, "Divine Favor")) {
+            state.manaSpent += spell[0].cost * 0.5; }
         else if (spellName == "Holy Shock" && state.talents.reclamation.points == 1) {
             state.manaSpent += spell[0].cost * (1 - ((1 - PALADINCONSTANTS.reclamation.avgHealHealth) * (PALADINCONSTANTS.reclamation.manaReduction))); }
         else if (spellName == "Crusader Strike" && state.talents.reclamation.points == 1) {

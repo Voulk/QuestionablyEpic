@@ -113,7 +113,7 @@ const sendReport = (shortReport) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(shortReport),
   };
-
+  console.log(shortReport);
   fetch("https://questionablyepic.com/api/addUpgradeReport.php", requestOptions).then((response) => console.log(response));
 };
 
@@ -152,7 +152,7 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>lvl 402</div>
+          <div>lvl 441</div>
           <div>M 2</div>
         </div>
       ),
@@ -161,7 +161,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 405</div>
+          <div>lvl 444</div>
           <div>M 3/4</div>
         </div>
       ),
@@ -170,7 +170,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 408</div>
+          <div>lvl 447</div>
           <div>M 5/6</div>
         </div>
       ),
@@ -179,7 +179,7 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 411</div>
+          <div>lvl 450</div>
           <div>M 7/8</div>
         </div>
       ),
@@ -188,7 +188,7 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 415</div>
+          <div>lvl 454</div>
           <div>M 9/10</div>
         </div>
       ),
@@ -197,7 +197,7 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 418</div>
+          <div>lvl 457</div>
           <div>M 11/12</div>
         </div>
       ),
@@ -206,7 +206,7 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 421</div>
+          <div>lvl 460</div>
           <div>M 13/14</div>
         </div>
       ),
@@ -215,7 +215,7 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 424</div>
+          <div>lvl 463</div>
           <div>M 15/16</div>
         </div>
       ),
@@ -224,7 +224,7 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 428</div>
+          <div>lvl 467</div>
           <div>M 17/18</div>
         </div>
       ),
@@ -233,7 +233,7 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 431</div>
+          <div>lvl 470</div>
           <div>M 19/20</div>
         </div>
       ),
@@ -242,7 +242,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 434</div>
+          <div>lvl 473</div>
         </div>
       ),
     },
@@ -250,7 +250,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 437</div>
+          <div>lvl 476</div>
         </div>
       ),
     },
@@ -258,7 +258,7 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 441</div>
+          <div>lvl 480</div>
         </div>
       ),
     },
@@ -266,15 +266,7 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 444</div>
-        </div>
-      ),
-    },
-    {
-      value: 14,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 447</div>
+          <div>lvl 483</div>
         </div>
       ),
     },

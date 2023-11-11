@@ -29,12 +29,7 @@ export const raidDB = [
     ID: 2549,
     raidID: 1207,
     name: {
-      en: "Amirdrassil, the Dream's Hope",
-      fr: "",
-      de: "",
-      ru: "",
-      ch: "",
-    },
+      en: "Amirdrassil, The Dream's Hope",
     expansion: 9,
     icon: require("Images/inv_achievement_raidemeralddream_raid.jpg"),
   },

@@ -166,7 +166,6 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
         //const gemID = getGemID(bigStat, smallStat, spec, setStats, contentType);
         const gemID = 0;
         gemArray.push({bigStat, smallStat, score, gemID});
-        console.log({bigStat, smallStat, score, gemID})
       }
 
     }
@@ -180,7 +179,7 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
 export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, topGear: boolean = true) {
   let gemArray = []
   if (gemCount === 0) return [];
-  if (spec === "Preservation Evoker" || spec === "Holy Priest") {
+  if (spec === "Preservation Evoker") {
     // 
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
@@ -192,6 +191,32 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     bonus_stats.mastery = (bonus_stats.mastery || 0) + 70 * (gemCount);
     bonus_stats.crit = (bonus_stats.crit || 0) + 33 * (gemCount);
     gemArray.push(192958)
+    return gemArray;
+  }
+  else if (spec === "Holy Priest" && contentType === "Raid") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
+      bonus_stats.crit = (bonus_stats.crit || 0) + 66;
+      gemCount -= 1;
+      gemArray.push(192982)
+    }
+    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 33 * (gemCount);
+    gemArray.push(192958)
+    return gemArray;
+  }
+  else if (spec === "Holy Priest" && contentType === "Dungeon") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
+      bonus_stats.crit = (bonus_stats.crit || 0) + 66;
+      gemCount -= 1;
+      gemArray.push(192982)
+    }
+    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+    bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
+    gemArray.push(192919)
     return gemArray;
   }
   else if (spec === "Restoration Druid") {
@@ -320,9 +345,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
-  else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
-  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+  if (bossID === 2737 || bossID === 2728) return 3; // Forgotten Experiments, Rashok, 
+  else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
+  else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
 
   return 0;
 }
@@ -333,14 +358,14 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [204465, 204201, 204202, 204211, 202612];
+  const boostedItems = [208616, 210214, 207171];
 
   if (boostedItems.includes(itemID)) {
-    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
-    if (difficulty === CONSTANTS.difficulties.normalMax && itemID !== 202612) return 4;
-    else if (difficulty === CONSTANTS.difficulties.heroicMax && itemID !== 202612) return 6;
-    else if (bossID === 2520 || bossID === 2523) return 7;
-    /*else if (itemID !== 202612) return 6; */
+    // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
+    if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
+    else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
+    else if (bossID === 2519) return 7;
+    else if (bossID === 2556) return 3; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;
   } 
@@ -362,7 +387,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     let expectedItemLevel = level;
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
-    if ('source' in item && item.source.instanceId === 1208) {
+    if ('source' in item && item.source.instanceId === 1207) {
       const max = isMaxxed(difficulty);
       if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       else expectedItemLevel += getItemLevelBoost(itemEncounter, difficulty) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
@@ -370,6 +395,7 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     }
     else if (item.source.instanceId === 1205) { // World Bosses
       if (itemEncounter === 2531) expectedItemLevel = 415
+      else if (itemEncounter === 2562) expectedItemLevel = 454 // Technically the neck is 460.
       else expectedItemLevel = 389;
     }
 
@@ -513,9 +539,9 @@ export function getItemIcon(id: number, gameType = "Retail") {
 
 
 export function getGemIcon(id: number) {
-  console.log(id);
+
   const gem = gemDB.filter((gem) => gem.id === id);
-  console.log(gem);
+
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
   } else {

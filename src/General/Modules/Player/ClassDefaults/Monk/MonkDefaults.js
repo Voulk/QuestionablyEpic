@@ -56,16 +56,16 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingDuringLC: 98,
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
-      OneManaHealing: 10.2,
+      OneManaHealing: 5.6,
       cooldownMult: {
-        c60: 1.6,
+        c60: 1.38,
         c90: 1,
-        c120: 1.1,
+        c120: 1.115,
         c180: 1,
 
-        oneMinute: 1.6,
+        oneMinute: 1.42,
         ninetySeconds: 1,
-        twoMinutes: 1.1,
+        twoMinutes: 1.15,
         twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },
@@ -106,18 +106,18 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.61,
-    crit: 0.524,
-    mastery: 0.32,
-    versatility: 0.509,
+    haste: 0.65,
+    crit: 0.624,
+    mastery: 0.36,
+    versatility: 0.609,
     leech: 0.49,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.54,
-    crit: 0.49,
-    mastery: 0.4,
-    versatility: 0.482,
+    haste: 0.59,
+    crit: 0.562,
+    mastery: 0.43,
+    versatility: 0.542,
     leech: 0.42,
   };
 

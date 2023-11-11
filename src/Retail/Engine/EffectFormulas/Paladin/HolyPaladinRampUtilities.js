@@ -141,7 +141,8 @@ export const buildPaladinChartData = (stats, incTalents) => {
         {cat: "Spenders (8x glimmer)", tag: "Light of Dawn (1x BoD)", seq: ["Light of Dawn"], preBuffs: ["Glimmer of Light 8", "Blessing of Dawn"]},
         {cat: "Spenders (8x glimmer)", tag: "Light of Dawn (2x BoD)", seq: ["Light of Dawn"], preBuffs: ["Glimmer of Light 8", "Blessing of Dawn", "Blessing of Dawn"]},
 
-        
+        {cat: "Combos", tag: "Divine Favor -> Flash of Light (raw)", seq: ["Divine Favor", "Flash of Light"], preBuffs: []},
+        {cat: "Combos", tag: "Divine Favor -> Holy Light", seq: ["Divine Favor", "Holy Light"], preBuffs: []},
     ]
 
 

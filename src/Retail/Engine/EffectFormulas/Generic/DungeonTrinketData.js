@@ -3,6 +3,30 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Amalgam's Seventh Spine                                     */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Amalgam's Seventh Spine",
+    effects: [
+      { // Mastery portion
+        coefficient: 0.666804,
+        table: -7,
+        ppm: {"Restoration Druid": 28, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+              "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.mana = data[0].ppm[player.spec] * processedValue(data[0], itemLevel) / 60;
+      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.6; // Druid has a -40% aura on Amalgam's Spine.
+      else if (player.spec === "Preservation Evoker") bonus_stats.mana *= 1.1; // Evoker has a +10% aura.
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                               Leaf of the Ancient Protectors                                   */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
@@ -10,7 +34,7 @@ export const dungeonTrinketData = [
     name: "Leaf of the Ancient Protectors",
     effects: [
       {  // Absorb
-        coefficient: 155.9272,
+        coefficient: 486.278931,
         table: -8,
         secondaries: ["versatility"],
         cooldown: 60,
@@ -42,11 +66,11 @@ export const dungeonTrinketData = [
     name: "Coagulated Genesaur Blood",
     effects: [
       {
-        coefficient: 2.883274,
+        coefficient: 1.830916, //2.883274,
         table: -7,
         stat: "crit",
         duration: 10,
-        ppm: 1,
+        ppm: 1.66,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -92,7 +116,7 @@ export const dungeonTrinketData = [
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
         ppm: 3,
-        efficiency: {Raid: 0.82, Dungeon: 0.8},
+        efficiency: {Raid: 0.78, Dungeon: 0.76},
       },
       { // Damage
         coefficient: 17.61531,
@@ -105,7 +129,7 @@ export const dungeonTrinketData = [
       let bonus_stats = {};
       
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+      //bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
     }
@@ -126,7 +150,7 @@ export const dungeonTrinketData = [
         cooldown: 90,
         tickRate: 0.5,
         maxStacks: 13,
-        efficiency: {Raid: 0.55, Dungeon: 0.65},
+        efficiency: {Raid: 0.45, Dungeon: 0.45},
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -166,6 +190,31 @@ export const dungeonTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Time-Thief's Gambit                                         */
+    /* ---------------------------------------------------------------------------------------------- */
+    //
+    name: "Balefire Branch",
+    effects: [
+      { 
+        coefficient: 0.03685, 
+        table: -1,
+        duration: 20,
+        cooldown: 90, 
+        effectiveDecayRate: 44, // You start with 100 stacks, and decay down to 0. This includes minor losses to damage taken.
+      },
+      { // 
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].effectiveDecayRate;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                            Mirror of Fractured Tomorrows                                       */
     /* ---------------------------------------------------------------------------------------------- */
     //
@@ -176,15 +225,20 @@ export const dungeonTrinketData = [
         table: -7,
         duration: 20,
         cooldown: 180, 
+        expectedWastage: 0.7,
       },
-      { // Clone portion (currently unknown)
-
+      { // Clone portion. The clone will spam healing spells, but if the party is topped off he'll take a break for a while. 
+        coefficient: 34.79113, 
+        table: -9,
+        duration: 20,
+        castTime: 2.5, // Not affected by Haste.
+        efficiency: 0.5,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const bestStat = getHighestStat(additionalData.setStats);//player.getHighestStatWeight(additionalData.contentType);
-      bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].expectedWastage;
 
       return bonus_stats;
     }
@@ -193,31 +247,32 @@ export const dungeonTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                        Echoing Tyrstone                                        */
     /* ---------------------------------------------------------------------------------------------- */
-    /* Can currently hit pets and full health allies which increases overhealing and kills off a quarter of the value.
+    /* 
     */
     name: "Echoing Tyrstone",
     effects: [
       { 
-        coefficient: 167.2488 * 1.7, 
+        coefficient: 283.4695, 
         table: -9,
         secondaries: ["versatility", "crit"],
-        targets: {Raid: 1, Dungeon: 1}, // This is now split.
+        targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
-        efficiency: 0.68, // No longer splits to pets.
+        meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
+        efficiency: 0.5, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
         targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
         cooldown: 120,
-        efficiency: 0.82, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 5);
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 4);
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
       if (player.spec === "Holy Priest") bonus_stats.hps *= ((player.getStatPerc("mastery") - 1) * 0.75 + 1);
 

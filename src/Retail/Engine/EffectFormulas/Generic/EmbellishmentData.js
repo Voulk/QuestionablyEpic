@@ -1,11 +1,15 @@
 import { itemLevels } from "Databases/itemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
-  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
+    let activeEffect;
+    
+    
+    if (effectName.includes("Allied") && effectName !== "Allied Wristguard of Companionship") activeEffect = embellishmentData.find((effect) => effect.name === "Rallied to Victory");
+    else activeEffect = embellishmentData.find((effect) => effect.name === effectName);
 
-    let activeEffect = embellishmentData.find((effect) => effect.name === effectName);
     let additionalData = {contentType: contentType, setStats: setStats, settings: settings};
     if (activeEffect !== undefined) {
       return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
@@ -21,28 +25,28 @@ export const embellishmentData = [
     /* -------------------- */
     /* Flourishing Dream Helm                       
     /* -------------------- */
-    /* No duration in spell data. Maybe just moves around who you're attached to?
-    */
     name: "Flourishing Dream Helm",
     effects: [
       { // Self shield portion
         coefficient: 91.45733, 
         table: -9,
         duration: 15, // 
-        ppm: 0,
+        ppm: 1.21,
         efficiency: 0.8,
       },
       { // Ally + Self Shield
         coefficient: 60.97212, 
         table: -9,
         duration: 15, 
-        ppm: 0,
-        efficiency: 0.8,
+        ppm: 1.21,
+        efficiency: 0.45,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // 
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps += runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * 2;
 
       return bonus_stats;
     }
@@ -51,22 +55,23 @@ export const embellishmentData = [
     /* -------------------- */
     /* Verdant Tether                       
     /* -------------------- */
-    /* No duration in spell data. Maybe just moves around who you're attached to?
+    /* Max value at 0yd distance, min value at 30yds distance. Procs on the target of your heal, can't proc on self heals. 
+       Adds a little green trail going from you to your target.
     */
     name: "Verdant Tether",
     effects: [
       { 
-        coefficient: 0.229097, // 0.482408 * 0.95,
+        coefficient: 0.229097,
         table: -7,
         duration: 15, 
         ppm: 2.2,
-        multiplier: 0.75, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
+        multiplier: 0.7, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // TODO Add top gear support for auto-generating gems.
-      const versAvg = runGenericPPMTrinket(data[0], itemLevel);
+      const versAvg = runGenericPPMTrinket(data[0], itemLevel) * data[0].multiplier;
       bonus_stats.versatility = versAvg;
       if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versAvg;
 
@@ -82,7 +87,7 @@ export const embellishmentData = [
     name: "Verdant Conduit",
     effects: [
       { 
-        coefficient: 0.213265, 
+        coefficient: 0.195571, 
         table: -7,
         duration: 10, 
         ppm: 5,
@@ -169,7 +174,7 @@ export const embellishmentData = [
         name: "Magazine of Healing Darts",
         effects: [
           { 
-            coefficient: 117.1906 * 1.15 * 0.65, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. //44.02832,
+            coefficient: 76.17424, //117.1906 * 1.15 * 0.65, // Inexplicitly heals for 15% more than tooltip value. It isn't talents, nor secondaries. Not included for now.
             table: -8,
             ppm: 2,
             secondaries: ['haste', 'crit', 'versatility'],
@@ -199,14 +204,14 @@ export const embellishmentData = [
             coefficient: 14.83545, // 3.268828,
             table: -7,
             ppm: 4 * 0.75,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'versatility'],
             efficiency: 0.6,
           },
           { // DPS Effect
             coefficient: 8.901271,
             table: -7,
             ppm: 4 * 0.25,
-            secondaries: ['haste', 'crit', 'versatility'],
+            secondaries: ['haste', 'versatility'],
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -215,7 +220,6 @@ export const embellishmentData = [
 
           bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
-
           return bonus_stats;
         }
       },
@@ -230,7 +234,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.389637,
             table: -9, // Changed from -7 in 10.1. I have no idea why and -7 was more technically correct.
-            uptime: 0.3,
+            uptime: 0.21,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -298,7 +302,7 @@ export const embellishmentData = [
             coefficient: 34.05239 * 0.65, //15.34544,
             table: -9,
             secondaries: ['haste', 'crit'],
-            efficiency: 0.55,
+            efficiency: 0.5,
             ppm: 3, // 4 / 2
           },
           { // Damage Effect
@@ -328,8 +332,31 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.645985,
-            table: -8, // No idea why this is -8
-            stacks: {Raid: 0.2, Dungeon: 0.9} // Revisit dungeon stacks.
+            table: -8, // 
+            stacks: {Raid: 0.2, Dungeon: 0.5} // Revisit dungeon stacks.
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          // TODO
+
+          bonus_stats.haste = processedValue(data[0], itemLevel) * data[0].stacks[additionalData.contentType];
+
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Horizon Strider's Garments       
+        /* -------------------- */
+        /* 
+        */
+        name: "Horizon Strider's Garments",
+        effects: [
+          { 
+            coefficient: 0.046937,
+            table: -7,
+            stacks: {Raid: 4.8, Dungeon: 4.6} // Revisit dungeon stacks.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -383,18 +410,19 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.74681,
-            table: -8, // No idea why this is -8
+            table: -8, // It no longer incorrectly scales with Haste.
             duration: 10,
             ppm: 1,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO
-          bonus_stats.versatility = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc('haste'));
+          // We're going to ignore overlapping procs here since we have a reasonable expectation that they'll go on different targets.
+          // This ends up a minor overestimation since in practice you might clip the same target twice but it doesn't meaningfully change the value.
+          const allyVers = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60 * 1.13;
+          bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
 
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = bonus_stats.versatility * 3.8;
-
+          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = allyVers * 4;
           return bonus_stats;
         }
       },
@@ -410,7 +438,7 @@ export const embellishmentData = [
             coefficient: 1.478889,
             table: -7, 
             duration: 20,
-            ppm: 9,
+            ppm: 9, // May have haste scaling. 
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
@@ -597,6 +625,8 @@ export const embellishmentData = [
         /* 
         */
         name: "Adaptive Dracothyst Armguards",
+        cardDescription: "",
+        cardType: "special",
         effects: [
           { 
             coefficient: 0.248319,
@@ -629,24 +659,26 @@ export const embellishmentData = [
         /* Self-HoT every 5s. Big shield if you drop low.
         */
         name: "Undulating Sporecloak",
+        cardDescription: "",
+        cardType: "special",
         effects: [
           { // Passive Heal
-            coefficient: 10.73745, //44.02832,
+            coefficient: 2.33081, //44.02832,
             table: -9,
-            ppm: 60 / 5, // The cloak heals every 5 seconds.
+            ppm: 60 / 5,
             secondaries: ['versatility'],
-            efficiency: 0.55,
+            efficiency: 0.57,
           },
           { // Shield portion
-            coefficient: 129.4445, //257.6989, 
+            coefficient: 55.9565,
             table: -9,
-            ppm: 0.07, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
+            ppm: 0.09, // 120s cooldown, but will proc rarely. Max PPM is 0.5.
             secondaries: ['versatility'],
             efficiency: 0.52,
           },
           { // Vers portion
-            coefficient: 0.30097,
-            table: -9, // They will probably correct this.
+            coefficient: 0.0572,
+            table: -7, 
             expectedUptime: 0.85,
           },
         ],
@@ -665,7 +697,7 @@ export const embellishmentData = [
         /* -------------------- */
         /* Spore Keeper's Baton (Sporeadic Adaptability)     
         /* -------------------- */
-        /* 
+        /* This has a 12s ICD which means our ppm is a little lower than a regular proc trinket might be. We can refine this later but realistically this isn't a top pick.
         */
         name: "Spore Keeper's Baton",
         effects: [
@@ -673,31 +705,31 @@ export const embellishmentData = [
             coefficient: 0.875413,
             table: -7, 
             duration: 12,
-            ppm: 2 / 2, // Haste scaling. Also has an internal CD of 12s because why not.
+            ppm: 2 / 2 / 1.1, // Haste scaling removed. Also has an internal CD of 12s because why not.
           },
           { // DPS effect
             coefficient: 2.855669,
             table: -9, 
             ticks: 12, // TODO: Confirm it's 12 ticks.
-            ppm: 2 / 2,
-            secondaries: ['crit'], // Check DoT haste scaling but shouldn't have it.
+            ppm: 2 / 2 / 1.1,
+            secondaries: ['crit'], // Check DoT haste scaling but shouldn't have it. Didn't originally have vers scaling either. What a nice item.
           },
           { // Shield effect. Procs with the damage.
             coefficient: 23.53642,
             table: -9, 
             efficiency: 0.95,
             secondaries: ['versatility'],
-            ppm: 2 / 2,
+            ppm: 2 / 2 / 1.1,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           // 
-          const versEffect = runGenericPPMTrinket(data[0], itemLevel) * player.getStatPerc('haste');
+          const versEffect = runGenericPPMTrinket(data[0], itemLevel);
           if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versEffect;
 
           // Damage effect
-          const ppm = data[0].ppm * player.getStatPerc('haste');
+          const ppm = data[0].ppm;
           bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ticks * ppm / 60;
           bonus_stats.hps = processedValue(data[2], itemLevel, data[2].efficiency) * player.getStatMults(data[2].secondaries) * ppm / 60;
 
@@ -752,6 +784,29 @@ export const embellishmentData = [
           let bonus_stats = {};
           bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
           bonus_stats.haste = processedValue(data[1], itemLevel);
+          return bonus_stats;
+        }
+      },
+      {
+        /* -------------------- */
+        /* Weathered Explorer's Stave         
+        /* -------------------- */
+        /* Strong on paper due to its incorrect scaling, but has tough competition from on-use damage weapons in raid and M+.
+        */
+        name: "Weathered Explorer's Stave",
+        effects: [
+          { // Haste
+            coefficient: 3.114016,
+            table: -9,
+            ppm: 1.21,
+          },
+
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel)
+
+          // TODO: Deduct regular secondaries from it if we're looking at the chart.
           return bonus_stats;
         }
       },

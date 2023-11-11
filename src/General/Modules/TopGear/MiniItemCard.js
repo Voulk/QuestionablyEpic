@@ -73,7 +73,7 @@ export default function ItemCard(props) {
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
 
   let socket = [];
-  const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && isVault ? 'selectedVault' : item.isEquipped ? 'selected' : isVault ? 'vault' : 'root';
+  const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.active && item.vaultItem ? 'selectedVault' : item.active ? 'selected' : item.vaultItem ? 'vault' : 'root';
 
 
   // Onyx Annulet
