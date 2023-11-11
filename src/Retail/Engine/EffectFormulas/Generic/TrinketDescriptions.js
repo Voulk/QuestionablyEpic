@@ -119,7 +119,7 @@ const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
         category: trinketCategories.RAIDDROPS,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
         description:
-          "Currently bugged and spreading to more than 3 targets. Not included in score.",
+          "Recent buffs included.",
       };
 }
 

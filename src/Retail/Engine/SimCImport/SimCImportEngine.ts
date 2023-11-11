@@ -19,9 +19,20 @@ const stat_ids: {[key: number]: string} = {
   49: "mastery",
 };
 
+function getPlayerServerName(lines: string[]) {
+  let serverName = ""
+  lines.forEach((line: string)  => {
+    if (line.includes("server")) {
+        serverName = line.split("=")[1];
+    }
+  })
+
+  return serverName;
+}
+
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
                             closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, allPlayers: PlayerChars) {
-  var lines = simCInput.split("\n");
+  let lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
   if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
@@ -40,6 +51,16 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     const linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     const vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
+    if (lines[0].includes("#")) {
+      const playerName = lines[0].split("-")[0].replace("#", "").trim();
+
+      if (playerName) {
+        player.charName = playerName;
+        console.log(getPlayerServerName(lines))
+        player.realm = getPlayerServerName(lines);
+      }
+    }
+    
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings);
     player.savedPTRString = simCInput;
 
