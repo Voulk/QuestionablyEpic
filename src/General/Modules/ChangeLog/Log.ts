@@ -17,6 +17,13 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 3,
+    date: "November 11",
+    changes: [ 
+      "Re-enabled Upgrade Finder & Cooldown Planner",
+    ]},
+  {
+    version: "10.2",
     update: 2,
     date: "November 8",
     changes: [ 
