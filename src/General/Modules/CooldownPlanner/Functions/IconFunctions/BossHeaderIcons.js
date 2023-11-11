@@ -570,7 +570,7 @@ export default function bossHeaders(props, style, QEmodule) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Chronikar.png");
   }
   // Tyr
-  if (props === 2670  || props === 2526) {
+  if (props === 2670 || props === 2526) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Tyr.png");
   }
   // Manifested Timeways
@@ -596,6 +596,56 @@ export default function bossHeaders(props, style, QEmodule) {
   // Deios
   if (props === 2673 || props === 2538) {
     source = require("Images/MythicPlus/DawnOfTheInfinite/Deios.png");
+  }
+
+  // Gnarlroot
+  if (props === 2820 || props === 2564) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-Gnarlroot.png");
+  }
+
+  // Igira the Cruel
+  if (props === 2709 || props === 2554) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-IgiratheCruel.png");
+  }
+
+  // Volcoross
+  if (props === 2557 || props === 2737) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-Volcoross.png");
+  }
+
+  // Council of Dreams
+  if (props === 2728 || props === 2555) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-CouncilofDreams.png");
+  }
+
+  // Larodar, Keeper of the Flame
+  if (props === 2731 || props === 2553) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-LarodarKeeperoftheFlame.png");
+  }
+
+  // Nymue, Weaver of the Cycle
+  if (props === 2708 || props === 2556) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-NymueWeaveroftheCycle.png");
+  }
+
+  // Smolderon
+  if (props === 2563 || props === 2824) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-Smolderon.png");
+  }
+
+  // Tindral Sageswift, Seer of the Flame
+  if (props === 2565 || props === 2786) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-TindralSageswiftSeerofFlame.png");
+  }
+
+  // Fyrakk the Blazing
+  if (props === 2677 || props === 2519) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-FyrakktheBurning.png");
+  }
+
+  // Aurostor World Boss
+  if (props === 2562 || props === 2828 || props === 1205) {
+    source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-AurostortheHibernator.png");
   }
 
   return <img style={{ ...style }} src={source} alt={props} />;

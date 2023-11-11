@@ -1,4 +1,4 @@
-import { combat_ratings_mult_by_ilvl } from "../CombatMultByLevel";
+import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
@@ -157,13 +157,19 @@ export function buildIdolTrinket(data, itemLevel, stat, settings) {
 } 
 
 export function getScalarValue(table, itemLevel) {
-  if (table === -9) { // Was -8 in SL QE/L.
+  if (table === -9) { 
       return randPropPoints[itemLevel]["p8"];
-  } else if (table === -1) {
+  } 
+  else if (table === -1) {
       return randPropPoints[itemLevel]["slotValues"][0];
-  } else if (table === -7) {
+  } 
+  else if (table === -7) {
       return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl[itemLevel];
-  } else if (table === -6) {
+  } 
+  else if (table === -72) { // Jewelry
+    return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  }
+  else if (table === -6) {
       return 166776.2798; // This is a level-scaled value and 23316.22963 is the value for level 60.
   } 
   else if (table === -8) {

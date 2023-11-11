@@ -216,7 +216,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[x]);
           itemPoss.push(item);
         }
-      } else if (primarySource === -1 || primarySource === 1205 || primarySource === 1209) {
+      } else if (primarySource === -1 || primarySource === 1205) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);

@@ -166,7 +166,6 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
         //const gemID = getGemID(bigStat, smallStat, spec, setStats, contentType);
         const gemID = 0;
         gemArray.push({bigStat, smallStat, score, gemID});
-        console.log({bigStat, smallStat, score, gemID})
       }
 
     }
@@ -346,9 +345,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
-  else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
-  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+  if (bossID === 2737 || bossID === 2728) return 3; // Forgotten Experiments, Rashok, 
+  else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
+  else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
 
   return 0;
 }
@@ -359,14 +358,14 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [204465, 204201, 204202, 204211, 202612];
+  const boostedItems = [208616, 210214, 207171];
 
   if (boostedItems.includes(itemID)) {
-    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
-    if (difficulty === CONSTANTS.difficulties.normalMax && itemID !== 202612) return 4;
-    else if (difficulty === CONSTANTS.difficulties.heroicMax && itemID !== 202612) return 6;
-    else if (bossID === 2520 || bossID === 2523) return 7;
-    /*else if (itemID !== 202612) return 6; */
+    // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
+    if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
+    else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
+    else if (bossID === 2519) return 7;
+    else if (bossID === 2556) return 3; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;
   } 

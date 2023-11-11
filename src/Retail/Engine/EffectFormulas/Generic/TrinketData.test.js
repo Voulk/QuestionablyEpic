@@ -28,7 +28,7 @@ describe("Blossom of Amirdrassil", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${483}  | ${[Math.floor(327008/6),  Math.floor(163504/6), 490523]}
+    ${483}  | ${[Math.floor(327008*1.05/6),  Math.floor(163504*1.05/6), Math.floor(490523*1.05)]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -43,7 +43,7 @@ describe("Smoldering Seedling", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${473}  | ${[718087, 720]}
+    ${473}  | ${[Math.floor(718087*1.05), 720]}
     // add new test cases here
     `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
