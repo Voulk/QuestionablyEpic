@@ -345,9 +345,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
-  else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
-  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+  if (bossID === 2737 || bossID === 2728) return 3; // Forgotten Experiments, Rashok, 
+  else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
+  else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
 
   return 0;
 }

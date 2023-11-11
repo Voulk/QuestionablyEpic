@@ -624,7 +624,7 @@ export default function bossHeaders(props, style, QEmodule) {
   }
 
   // Nymue, Weaver of the Cycle
-  if (props === 2708 || props === 2553) {
+  if (props === 2708 || props === 2556) {
     source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-NymueWeaveroftheCycle.png");
   }
 
