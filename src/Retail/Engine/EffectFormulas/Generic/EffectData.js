@@ -2,6 +2,29 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestSta
 
 export const effectData = [
   {
+
+    name: "String of Delicacies",
+    effects: [
+      { 
+        coefficient: 0.392073,
+        table: -72,
+        ppm: 2,
+        alliesHit: 4,
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      // We split the mastery formula here because we'll lose some personal value from procs overlapping which is much less likely for our allies (since it's likely to apply to others).
+      const mastValue = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60;
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.allyStats = mastValue * data[0].alliesHit;
+
+      return bonus_stats;
+    }
+  },
+  {
     /* -------------------- */
     /* Crystal Spire of Karabor                       
     /* -------------------- */

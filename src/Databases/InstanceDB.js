@@ -1974,8 +1974,8 @@ export const encounterDB = {
       68, // The Vortex Pinnacle
       767, // Neltharion's Lair */
 
-      0, // Dawn of the Infinites: Galakrond's Fall
-      1, // Dawn of the Infinites: Murozond's Rise
+      "-55", // Dawn of the Infinites: Galakrond's Fall
+      "-56", // Dawn of the Infinites: Murozond's Rise
       762, // Darkheart Thicket
       740, // Black Rook Hold
       1021, // Waycrest Manor
@@ -2128,7 +2128,7 @@ export const encounterDB = {
         ch: "地渊孢林",
       },
     },
-    0: {
+    "-55": {
       name: {
         en: "Dawn of the Infinites: Galakrond's Fall",
         fr: "",
@@ -2137,7 +2137,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    1: {
+    "-56": {
       name: {
         en: "Dawn of the Infinites: Murozond's Rise",
         fr: "",
