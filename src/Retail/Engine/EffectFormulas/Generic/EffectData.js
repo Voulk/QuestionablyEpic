@@ -56,7 +56,7 @@ export const effectData = [
     name: "Imbued Frostweave Slippers",
     effects: [
       { 
-        coefficient: 0.131768,
+        coefficient: 0.040201,
         table: -1,
         ppm: 60, // Ticks every second.
       },

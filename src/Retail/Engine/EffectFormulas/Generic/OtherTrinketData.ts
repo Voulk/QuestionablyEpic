@@ -204,7 +204,8 @@ export const otherTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-      const extraPotions = getSetting(additionalData.settings, "alchStonePotions")
+      //const extraPotions = getSetting(additionalData.settings, "alchStonePotions")
+      const extraPotions = 1;
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
@@ -522,7 +523,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "haste", additionalData.settings);
+      return buildIdolTrinket(data, itemLevel, "haste", additionalData.settings, additionalData.setStats);
     }
   },
   {
@@ -546,7 +547,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "crit", additionalData.settings);
+      return buildIdolTrinket(data, itemLevel, "crit", additionalData.settings, additionalData.setStats);
     }
   },
   {
@@ -570,7 +571,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "versatility", additionalData.settings);
+      return buildIdolTrinket(data, itemLevel, "versatility", additionalData.settings, additionalData.setStats);
     }
   },
   {
@@ -594,7 +595,8 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings);
+
+      return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings, additionalData.setStats);
     }
   },
   {
