@@ -203,9 +203,10 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
+      const encounter = itemSources[0].encounterId;
       const isRaid = primarySource === 1207 || primarySource === -22;
 
-      if (isRaid) {
+      if (isRaid && encounter > 0) {
         // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
@@ -218,13 +219,16 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         }
       } else if (primarySource === -1 || primarySource === 1205) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
-        item.dropLoc = "Mythic+";
-        item.dropDifficulty = "";
-        item.dropDifficultyTxt = "";
-        item.quality = 4;
-        itemPoss.push(item);
+        if ([-55, -56, 762, 740,1021, 968, 556, 65,].includes(encounter) || primarySource === 1205) {
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          item.dropLoc = "Mythic+";
+          item.dropDifficulty = "";
+          item.dropDifficultyTxt = "";
+          item.quality = 4;
+          itemPoss.push(item);
+        }
+
       } 
       /*else if (primarySource !== -18) {
         /*

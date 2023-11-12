@@ -296,6 +296,7 @@ export default function UpgradeFinderFront(props) {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
       const shortReport = shortenReport(props.player, result.contentType, result, userSettings);
+
       sendReport(shortReport);
       props.setItemSelection(result);
       props.setReport(shortReport);
