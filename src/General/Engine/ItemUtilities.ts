@@ -275,9 +275,18 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
       gemArray.push(192982)
     }
 
-    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
-    bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
-    gemArray.push(192919);
+    if (contentType === "Raid") {
+      bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+      bonus_stats.mastery = (bonus_stats.haste || 0) + 33 * (gemCount);
+      gemArray.push(192958);
+    }
+    else if (contentType === "Dungeon") {
+      bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+      bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
+      gemArray.push(192919);
+    }
+
+
     return gemArray;
 
   }

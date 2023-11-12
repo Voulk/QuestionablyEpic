@@ -255,7 +255,7 @@ export const raidTrinketData = [
         coefficient: 2.221365, //4.441092, //3.86182,
         table: -9, 
         targets: {"Raid": 8, "Dungeon": 5},
-        efficiency: 0.65,
+        efficiency: 0.72,
         ticks: 10,
         secondaries: ["versatility"], 
       },

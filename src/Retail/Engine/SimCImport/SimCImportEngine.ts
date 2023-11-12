@@ -23,10 +23,13 @@ function getPlayerServerName(lines: string[]) {
   let serverName = ""
   lines.forEach((line: string)  => {
     if (line.includes("server")) {
-        serverName = correctCasing(line.split("=")[1] || "");
+      serverName = line.split("=")[1].replace("_", " ");
+      serverName = serverName.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
     }
   })
-
   return serverName;
 }
 
@@ -39,6 +42,22 @@ function getPlayerServerRegion(lines: string[]) {
   })
 
   return serverRegion;
+}
+
+function getPlayerRace(lines: string[]) {
+  let playerRace = ""
+  lines.forEach((line: string)  => {
+    if (line.includes("race=")) {
+      console.log(line);
+      playerRace = (line.split("=")[1].replace("_", " "));
+      /*playerRace = playerRace.toLowerCase()
+      .split(' ')
+      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ');*/
+    }
+  })
+  console.log(playerRace);
+  return "Races." + playerRace;
 }
 
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
@@ -69,6 +88,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
         player.charName = playerName;
         player.realm = getPlayerServerName(lines) || "";
         player.region = getPlayerServerRegion(lines) || "";
+        //player.race = getPlayerRace(lines) || "";
       }
     }
     

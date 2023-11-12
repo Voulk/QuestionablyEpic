@@ -95,7 +95,7 @@ function CompetitiveAlternatives(props) {
                       <Grid item container xs={10} spacing={1}>
                         {key.gems.map((gem, i) => {
                           let itemArray = [];
-                          // scuffed breakdown of weapon combos to seperate them for the report
+                          // 
                           itemArray = [gem];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
