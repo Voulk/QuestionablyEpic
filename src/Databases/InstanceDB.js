@@ -1032,7 +1032,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1205: {
-    bossOrder: [2515, 2506, 2517, 2518, 2531],
+    bossOrder: [2515, 2506, 2517, 2518, 2531, 2562],
     2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
@@ -1076,6 +1076,15 @@ export const encounterDB = {
         de: "Die Ältesten der Zaqali",
         fr: "Les Anciens zaqalis",
         ru: "Старейшины закали",
+      },
+    },
+    2562: {
+      name: {
+        en: "Aurostor the Hibernator",
+        ch: "Aurostor the Hibernator",
+        de: "Aurostor the Hibernator",
+        fr: "Aurostor the Hibernator",
+        ru: "Aurostor the Hibernator",
       },
     },
   },
@@ -1980,7 +1989,7 @@ export const encounterDB = {
       740, // Black Rook Hold
       1021, // Waycrest Manor
       968, // Atal'Dazar
-      537, // Everbloom
+      556, // Everbloom
       65, // Throne of the Tides
     ],
 
@@ -2181,8 +2190,17 @@ export const encounterDB = {
         de: "",
         ch: "",
       },
-    },
+    },/*
     537: {
+      name: {
+        en: "Everbloom",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },*/
+    556: {
       name: {
         en: "Everbloom",
         fr: "",

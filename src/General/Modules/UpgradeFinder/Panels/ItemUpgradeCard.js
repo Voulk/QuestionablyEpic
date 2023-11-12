@@ -97,6 +97,9 @@ export default function ItemCard(props) {
     if (item.source.instanceId === 1208 && item.source.encounterId > 0) {
       return encounterDB[1208].bosses[item.source.encounterId].name[currentLanguage];
     }
+    if (item.source.instanceId === 1207 && item.source.encounterId > 0) {
+      return encounterDB[1207].bosses[item.source.encounterId].name[currentLanguage];
+    }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
     }
