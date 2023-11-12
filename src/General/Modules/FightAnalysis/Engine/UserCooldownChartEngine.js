@@ -17,7 +17,7 @@ const getTranslatedSpellName = (spellID) => {
     .filter((obj) => {
       return obj.guid === spellID;
     })
-    .map((obj) => obj.name[currentLanguage])[0]
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"])[0]
     .toString();
 
   return spellName;

@@ -3,11 +3,14 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import XHR from "i18next-xhr-backend";
 import languageEN from "./locale/en/translate.json";
-// import languageCH from "./locale/ch/translate.json";
+import languageCH from "./locale/ch/translate.json";
 import languageRU from "./locale/ru/translate.json";
-// import languageFR from "./locale/fr/translate.json";
+import languageFR from "./locale/fr/translate.json";
 import languageDE from "./locale/de/translate.json";
+import languageIT from "./locale/it/translate.json";
 import ls from "local-storage";
+
+var userLang = (navigator.language || navigator.userLanguage).slice(0,2);
 
 i18n
   .use(XHR)
@@ -16,13 +19,14 @@ i18n
   .init({
     resources: {
       en: languageEN,
-      //cn: languageCH,
+      cn: languageCH,
       ru: languageRU,
-      //fr: languageFR,
+      fr: languageFR,
       de: languageDE,
+      it: languageIT
     },
     /* default language when load the website in browser */
-    lng: "en",
+    lng: userLang,
     /* When react i18next not finding any language to as default in browser */
     fallbackLng: "en",
     /* debugger For Development environment */

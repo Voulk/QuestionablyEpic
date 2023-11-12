@@ -26,7 +26,7 @@ export const getTranslatedPvP = (pvp, currentLanguage) => {
     .filter((obj) => {
       return obj.id.includes(pvp);
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
 
   return name;
 };

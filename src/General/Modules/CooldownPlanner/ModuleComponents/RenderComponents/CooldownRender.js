@@ -17,7 +17,7 @@ export default function CastTextField(rowData, cooldown, className) {
   const getTranslatedSpellName = (spellID) => {
     let spell = cooldownDB.find((obj) => obj.guid === spellID);
     if (spell) {
-      let spellName = spell.name[currentLanguage].toString();
+      let spellName = spell.name[currentLanguage]?.toString() ?? spell.name["en"];
       return spellName;
     } else {
       return spellID;

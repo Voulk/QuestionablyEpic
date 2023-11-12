@@ -274,7 +274,7 @@ export const getTranslatedRaceName = (string, currentLanguage) => {
       .filter((obj) => {
         return obj.id === string;
       })
-      .map((obj) => obj.name[currentLanguage])[0]
+      .map((obj) => obj.name[currentLanguage] ?? obj.name["en"])[0]
       .toString();
 
   return translatedName;
