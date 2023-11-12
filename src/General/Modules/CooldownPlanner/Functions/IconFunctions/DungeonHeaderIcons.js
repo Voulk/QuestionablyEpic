@@ -219,7 +219,7 @@ export default function DungeonHeaderIcons(props) {
   }
 
   // Everbloom
-  if (props === 537) {
+  if (props === 556) {
     source = Everbloom;
   }
 
