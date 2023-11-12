@@ -1,0 +1,476 @@
+{
+    "translations": {
+        "Account": "Account",
+        "true": "Sì",
+        "false": "No",
+        "Add": "Aggiungi",
+        "BadgeGear": "Insegne di Giustizia",
+        "Battletag": "Battletag",
+        "Bonus DPS": "Bonus DPS",
+        "Bonus HPS": "Bonus HPS",
+        "Haste": "Celerità",
+        "Crit": "Critico",
+        "Mastery": "Maestria",
+        "Versatility": "Versatilità",
+        "Haste / Mastery": "Celerità / Maestria",
+        "Haste / Crit": "Celerità / Critico",
+        "Haste / Versatility": "Celerità / Versatilità",
+        "Mastery / Versatility": "Maestria / Versatilità",
+        "Crit / Mastery": "Critico / Maestria",
+        "Crit / Versatility": "Critico / Versatilità",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "Leech": "Ritorno vitale",
+        "Burning Crusade": "Burning Crusade",
+        "Cancel": "Annulla",
+        "Casts": "Lanci",
+        "Catalyst": "Catalizzatore",
+        "Changelog": {
+            "Date": "Data",
+            "Header": "Registro delle modifiche",
+            "LastUpdated": "Ultimo aggiornamento",
+            "Update": "Aggiornamento",
+            "Version": "Versione"
+        },
+        "EmbellishmentAnalysis": {
+            "Header": "Abbellimenti",
+            "HelpText": "Una panoramica di tutti gli effetti di decorazione disponibili"
+        },
+        "CharacterCreator": {
+            "AddChar": "Aggiungi Personaggio",
+            "CharName": "Nome del Personaggio",
+            "CharacterInfo": "Informazioni sul Personaggio",
+            "CreateChar": "Crea Nuovo Personaggio",
+            "DeleteCharacter": "Elimina Personaggio",
+            "SavedLogs": {
+                "Boss": "Boss",
+                "FightLength": "Durata Combattimento",
+                "HPS": "HPS",
+                "Header": "Registro Corrente",
+                "RawHPS": "HPS Grezzo",
+                "Report": "Report",
+                "ResetToDefaults": "Ripristina impostazioni predefinite",
+                "TabHeader": "Registri Salvati (Prossimamente)"
+            },
+            "ServerName": "Nome del Server",
+            "StatMessage": "Anche se i pesi delle statistiche sono modificabili, le impostazioni predefinite di QE Live sono consigliate per la maggior parte delle situazioni.",
+            "StatWeights": "Pesi delle Statistiche"
+        },
+        "Class": "Classe",
+        "Cooldown": "Tempo di Recupero",
+        "CooldownPlanner": {
+            "AddPlanDialog": {
+                "ButtonLabel": "Aggiungi",
+                "ButtonTooltip": "Aggiungi un nuovo piano con un registro di esempio, un set di impostazioni predefinite o un foglio bianco.",
+                "HeaderTitle": "Inserisci Nome del Piano"
+            },
+            "ChartLabels": {
+                "MitigatedDamageLabel": "Danno Attenuato",
+                "UnmitigatedDamageLabel": "Danno Non Attenuato"
+            },
+            "CopyPlanDialog": {
+                "ButtonLabel": "Copia",
+                "ButtonTooltip": "Copia un piano con un nuovo nome",
+                "NewPlanTitle": "Nome Nuovo Piano",
+                "SelectPlanTitle": "Seleziona il piano da copiare"
+            },
+            "DeletePlanDialog": {
+                "ButtonLabel": "Elimina",
+                "ButtonTooltip": "Elimina il tuo piano definitivamente.",
+                "HeaderTitle": "Sei sicuro di voler eliminare il piano corrente?",
+                "PlaceholderText": "Digita 'Elimina' per confermare"
+            },
+            "DuplicatePlanError": "Rilevato nome duplicato del piano, per favore scegli un altro.",
+            "ExportPlanDialog": {
+                "ButtonLabel": "Esporta",
+                "HeaderTitle": "Esporta Piano"
+            },
+            "Headers": {
+                "CooldownTimeline": "Cronologia Tempo di Recupero",
+                "EnemyCastTimeline": "Cronologia Lanci Nemici",
+                "ExternalTimeline": "Cronologia Esterna"
+            },
+            "HealerCards": {
+                "SoulbindAbilities": "Abilità Legame dell'Anima",
+                "SoulbindConduits": "Condotte Legame dell'Anima",
+                "StatsHeading": "Statistiche",
+                "TalentHeader": "Talenti"
+            },
+            "ImportPlanDialog": {
+                "ButtonLabel": "Importa",
+                "Errors": {
+                    "DuplicatePlanWarning": "Rilevato nome duplicato del piano, l'importazione di questo piano lo sovrascriverà con questo import!",
+                    "HeaderError": "Questo non sembra essere una stringa di QE Planner, per favore controlla e riprova",
+                    "StringError": "C'è qualcosa che non va con la stringa, per favore controlla e riprova"
+                },
+                "HeaderTitle": "Importa Piano"
+            },
+            "NoteExportDialog": {
+                "ButtonLabel": "Nota MRT",
+                "HeaderTitle": "Esporta Nota",
+                "NoteExportTooltip": "Esporta il tuo piano in un formato di nota compatibile con ERT / MRT."
+            },
+            "TableLabels": {
+                "BossAbilityLabel": "Abilità del Boss",
+                "BossSelectorLabel": "Seleziona Boss",
+                "CastTimeLabel": "Lancio",
+                "HealTeamHeader": "Roster",
+                "NotesLabel": "Note",
+                "OffCooldownLabel": "Fuori Ricarica",
+                "RaidSelectorLabel": "Seleziona Incursione",
+                "TypeSelector": "Formati"
+            },
+            "UserInputs": {
+                "Loglink": "Incolla il Link di WarcraftLog Qui",
+                "fightButtonLabel": "Seleziona Combattimento"
+            }
+        },
+        "CovLegendaries": "Leggendari del Patto",
+        "Covenant": "Patto",
+        "CreationCatalyst": "Catalizzatore di Creazione",
+        "Default": "Predefinito",
+        "Delete": "Elimina",
+        "Dungeon": "Spedizione",
+        "Edit": "Modifica",
+        "Email": "Email",
+        "Equipped": "Equipaggiato",
+        "Error": "Errore",
+        "External": "Esterno",
+        "Filter": "Filtro",
+        "GameTypeToggle": {
+            "Classic": "Cambia a Classic (Wrath of the Lich King)",
+            "Retail": "Cambia a Retail (Dragonflight)"
+        },
+        "HPS": "HPS",
+        "HallOfFame": {
+            "buttonLabel": "QE Hall of Fame",
+            "introduction": "QE non sarebbe stato possibile senza di te. Grazie mille!",
+            "title": "Hall of Fame"
+        },
+        "Healing": "Guarigione",
+        "HowToUse": "Come funziona",
+        "InsertLog": {
+            "InsertLogHeader": "Incolla il tuo Report di Warcraft Logs Qui",
+            "PlsSelectFight": "Seleziona un Combattimento per favore"
+        },
+        "Intellect": "Intelletto",
+        "Item Level": "ilvl",
+        "LegendaryCompare": {
+            "Title": "Leggendari in breve"
+        },
+        "Login": "Accesso",
+        "MainMenu": {
+            "Articles": {
+                "Header": "Articoli Spec Recenti"
+            },
+            "CharHeader": "Personaggi",
+            "CharHelpText": "Aggiungi i tuoi personaggi qui. Fai clic con il pulsante destro per modificare i pesi delle statistiche, le informazioni sul reame e altro.",
+            "CooldownPlanner": "Pianificatore Recupero (Beta)",
+            "ExploreCovenants": "Esplora Congreghe e Condotte",
+            "FightAnalysis": "Analisi Combattimento (Alpha)",
+            "EmbellishmentAnalysis": "Analisi Decorazioni",
+            "LegendaryAnalysis": "Scomposizione Leggendari",
+            "PatronInvite": "Ami l'app? Supporta il sito su Patreon!",
+            "PatronThanks": "Grazie mille per il tuo supporto!",
+            "Profile": "Profilo",
+            "QuickCompare": "Confronto Rapido Oggetti",
+            "TierSets": "Tier sets",
+            "Tooltips": {
+                "CooldownPlanner": "Pianifica i tempi di recupero del tuo raid",
+                "ExploreCovenants": "Informazioni su Legame dell'Anima e condotte",
+                "LegendaryAnalysis": "I migliori leggendari per la tua specializzazione e dove ottenerli",
+                "Profile": "Modifica i tuoi dettagli e collegati a Patreon",
+                "QuickCompare": "Una panoramica rapida di tutti i tuoi oggetti in una volta sola",
+                "TierSets": "Scopri quanto sono potenti i set tier della tua classe.",
+                "TopGear": "Trova il tuo miglior set di equipaggiamento",
+                "EmbellishmentAnalysis": "Visualizza tutti gli effetti delle decorazioni in una volta sola",
+                "FightAnalysis": "",
+                "TrinketAnalysis": "Un grafico su più livelli di oggetti trinket",
+                "UpgradeFinder": "Trova il tuo prossimo pezzo di equipaggiamento",
+                "SequenceSandbox": "Dettagli in arrivo",
+                "OneShot": "Calcolatore Danni Mitici+"
+            },
+            "TopGear": "Equipaggiamento Migliore",
+            "TrinketAnalysis": "Trinket",
+            "UpgradeFinder": "Trova Aggiornamento",
+            "SequenceSandbox": "Sandbox Sequenza (Pre-Alpha)",
+            "OneShot": "Colpo Singolo (Beta)"
+        },
+        "Name": "Nome",
+        "No": "No",
+        "None": "Nessuno",
+        "Overhealing": "Eccesso di cura",
+        "PatreonTiers": {
+            "Diamond": "Diamante",
+            "Gold": "Oro",
+            "Sapphire": "Zaffiro",
+            "RollsRoyce": "Rolls Royce"
+        },
+        "QeHeader": {
+            "InsertLogLabel": "Inserisci Log",
+            "Login": "Accesso",
+            "Tooltip": {
+                "ClassicSimC": "Inserisci una stringa di importazione QE per importare il tuo equipaggiamento.",
+                "ChangeToDungeon": "Passa a Contenuto Dungeon",
+                "ChangeToRaid": "Passa a Contenuto Raid",
+                "Home": "Menu Principale",
+                "InsertLog": "Inserisci un log per aumentare la precisione.",
+                "Language": "Cambia Lingua",
+                "Login": "Accedi al tuo account Battle.net",
+                "RetailSimC": "Inserisci una stringa SimC per importare il tuo equipaggiamento."
+            }
+        },
+        "QeProfile": {
+            "EditionAffix": "Edizione",
+            "EmailMsg": "Inserisci/Aggiorna la tua Email per collegarti a Patreon",
+            "NoBattleTag": "Nessun account Battlenet collegato",
+            "NoEmail": "Nessuna Email inserita",
+            "ProfileHeader": "Informazioni Profilo",
+            "QeTier": "Tier QE Live",
+            "StandardEdition": "Edizione Standard"
+        },
+        "QuickCompare": {
+            "AddButton": "Aggiungi",
+            "HelpText": "Quick Compare ti consente di confrontare gli oggetti uno per uno. I punteggi includono statistiche, gemme ed effetti, ma non bonus di set o rendimenti decrescenti. Usa Top Gear per includerli.",
+            "ItemAdded": "Oggetto Aggiunto!",
+            "ItemBarTitle": "Aggiungi Oggetti (Opzionale)",
+            "ItemDeleted": "Oggetto Eliminato!",
+            "ItemErrorMsg": "Oggetto Non Aggiunto. Superato il limite di ilvl.",
+            "ItemLevel": "Livello Oggetto",
+            "ItemName": "Nome Oggetto",
+            "Missives": "Missives",
+            "Slot": "Incavo",
+            "Socket": "Socket",
+            "Tertiary": "Terziario",
+            "Title": "Confronto Rapido"
+        },
+        "Race": "Razza",
+        "Raid": "Raid",
+        "RaidDifficulty": {
+            "Heroic": "Eroico",
+            "Heroic (Max)": "Eroico (Max)",
+            "Mythic": "Mitico",
+            "Mythic (Max)": "Mitico (Max)",
+            "Normal": "Normale",
+            "Normal (Max)": "Normale (Max)",
+            "Raid Finder": "LFR",
+            "Raid Finder (Max)": "LFR (Max)"
+        },
+        "Region": "Regione",
+        "Remove": "Rimuovi",
+        "Renown Level": "Livello di Fama",
+        "Save": "Salva",
+        "Select Class": "Seleziona Classe",
+        "Select Race": "Seleziona Razza",
+        "Settings": {
+            "Classic": {
+                "Setting0Title": "Profilo Mana",
+                "Setting0Tooltip": "Il mana varia leggermente in valore in base alla durata del combattimento e a quanto frequentemente lanci incantesimi.",
+                "Setting1Title": "Includere i Buff del Raid?",
+                "Setting1Tooltip": "Abilita questa opzione per includere i comuni buff del raid nel confronto dell'equipaggiamento.",
+                "Setting2Title": "Gemme Meta",
+                "Setting2Tooltip": "Scegli quale gemma Meta vorresti che l'app provasse a incastonare.",
+                "Setting3Title": "Auto-Incantamento Oggetti?",
+                "Setting4Title": "Rarità delle Gemme",
+                "Setting4Tooltip": "Scegli quali gemme vorresti che l'app incastonasse. Gli aspetti specifici della Gioielleria sono ignorati per ora."
+            },
+            "Retail": {
+                "topGear": "Top Gear",
+                "trinkets": "Trinket",
+                "upgradeFinder": "Trova Aggiornamento",
+                "embellishments": "Abbellimenti",
+                "Setting0TextFieldLabel": "",
+                "Setting0Title": "Incantamento Oggetti",
+                "Setting0Tooltip": "Scegli se vuoi che QE Live incanti i tuoi oggetti per te.",
+                "Setting1Title": "Buff degli Alleati",
+                "Setting1Tooltip": "Alcuni oggetti conferiscono buff agli alleati. Se selezioni questa opzione, includerà una stima di quel beneficio nel punteggio di un oggetto.",
+                "Setting3Title": "Aggiungi Socket",
+                "Setting3Tooltip": "Questo aggiungerà automaticamente un socket agli oggetti che non ne hanno in slot compatibili.",
+                "Setting4TextFieldLabel": "Upgrade Finder: Visualizzazione",
+                "Setting4Title": "UF: Visualizzazione Risultati",
+                "Setting4Tooltip": "Puoi mostrare i risultati di Upgrade Finder come un aggiornamento in percentuale o in HPS efficace.",
+                "Setting5TextFieldLabel": "Stile di Gioco",
+                "Setting5Title": "Stile di Gioco",
+                "Setting5Tooltip": "Scegli il tuo stile di gioco",
+                "Setting6TextFieldLabel": "Limite",
+                "Setting6Title": "Limite Catalizzatore",
+                "Setting6Tooltip": "Seleziona quante cariche di catalizzatore hai. Questo determina quanti oggetti con catalizzatore Top Gear sarà limitato a inserire.",
+                "Setting7TextFieldLabel": "Leech",
+                "Setting7Title": "UF: Leech",
+                "Setting7Tooltip": "Attivando questa opzione, verrà automaticamente aggiunto Leech a tutte le scelte di Upgrade Finder.",
+                "enchantItems": {
+                    "title": "Incantamento Oggetti",
+                    "tooltip": ""
+                },
+                "includeGroupBenefits": {
+                    "title": "Buff degli Alleati",
+                    "tooltip": "Stima del valore dalle statistiche che dai al tuo gruppo."
+                },
+                "incarnateAllies": {
+                    "title": "Icone Incarnate Ruoli",
+                    "tooltip": "Seleziona quali ruoli nel tuo gruppo indossano il trinket."
+                },
+                "idolGems": {
+                    "title": "Gemme Idolo JC",
+                    "tooltip": "Seleziona quante gemme associate hai nel tuo equipaggiamento."
+                },
+                "alchStonePotions": {
+                    "title": "Pietra Alchemica",
+                    "tooltip": "Numero di pozioni extra che la Pietra Alchemica ti fornisce durante un combattimento."
+                },
+                "upgradeFinderMetric": {
+                    "title": "Upgrade Finder",
+                    "tooltip": "Attiva per mostrare i risultati di Upgrade Finder in valori grezzi o in %."
+                },
+                "rubyWhelpShell": {
+                    "title": "Specializzazione Scudo Piccolo Rosso",
+                    "tooltip": "Se hai addestrato il tuo Scudo Piccolo Rosso, puoi selezionare il suo bersaglio di addestramento qui."
+                },
+                "catalystLimit": {
+                    "title": "Limite Catalizzatore",
+                    "tooltip": "Scegli il numero massimo di oggetti con catalizzatore che Top Gear inserirà in un set."
+                },
+                "primordialGems": {
+                    "title": "Gemme Primordiali",
+                    "tooltip": "Lascia che QE Live configuri le tue gemme per te, o scegli un set specifico."
+                },
+                "lariatGems": {
+                    "title": "Gemme Lariat",
+                    "tooltip": "Seleziona il numero di gemme che hai incastonato nel tuo equipaggiamento."
+                },
+                "healingDartsOverheal": {
+                    "title": "Sovracura Dardi Curativi",
+                    "tooltip": "Sovracura prevista in % su Dardi Curativi."
+                },
+                "topGearAutoGem": {
+                    "title": "Aggiungi Sockets Automaticamente",
+                    "tooltip": "Aggiunge automaticamente i sockets agli oggetti idonei."
+                },
+                "chromaticEssenceBuff": {
+                    "title": "Buff Cromatico Minaccioso",
+                    "tooltip": "Scegli quale buff vorresti attivare."
+                },
+                "chromaticEssenceAllies": {
+                    "title": "Alleati Cromatici Minacciosi",
+                    "tooltip": "Cromatica Minacciosa può essere calcolata con tutti o nessun buff degli alleati."
+                }
+            },
+            "SettingsTitle": "Impostazioni Opzionali"
+        },
+        "Show HPS": "Mostra HPS",
+        "0": "0",
+        "Solo": "Solo",
+        "DPS": "DPS",
+        "Tank": "Tank",
+        "AoE Heal": "Cura di Area",
+        "ST Heal": "Cura Singola Bersaglio",
+        "Crit Buff": "Buff Critico",
+        "Haste Buff": "Buff Celerità",
+        "Shadowlands": "Terre d'Ombra",
+        "Dragonflight": "Volo dei Draghi",
+        "SimCInput": {
+            "SimCDialogueTitleClassic": "Incolla la tua Stringa di Importazione QE",
+            "SimCDialogueTitleRetail": "Incolla la tua Stringa SimC",
+            "SimCHeaderButtonLabelClassic": "Importa Equipaggiamento",
+            "SimCHeaderButtonLabelRetail": "SimC",
+            "SimCStringLabel": "Stringa di Importazione"
+        },
+        "Snackbars": {
+            "CharAddSuccess": "Personaggio Aggiunto!",
+            "CharUpdateSuccess": "Personaggio Aggiornato!",
+            "EmailError": "Controlla l'Email e riprova",
+            "EmailUpdateSuccess": "Email Aggiornata!",
+            "LogImportSuccess": "Log Importato con Successo!",
+            "LoginSuccess": "Accesso Riuscito!",
+            "SimCImportSuccess": "Equipaggiamento Importato con Successo!"
+        },
+        "Soulbinds": {
+            "ConduitInstructions": "Clicca Destro/Sinistro sui Conduits per cambiare il livello di ilvl",
+            "EnduranceConduit": "Condotto di Resistenza",
+            "FinesseConduit": "Condotto di Destrezza",
+            "Header": "Esplorazione del Patto",
+            "PotencyConduit": "Condotto di Potenza",
+            "RenownTooltip": "Importa la tua Fama tramite SimC/Inserisci il tuo livello di Fama qui",
+            "StatPanel": {
+                "CovenantEstimate": "Abilità del Patto",
+                "Score": "Punteggio",
+                "SelectedNodes": "Nodi Selezionati",
+                "Summary": "Sommario"
+            }
+        },
+        "Source": "Origine",
+        "SourceToggle": {
+            "FilterTooltip": "Puoi filtrare il grafico attivando/disattivando questi pulsanti"
+        },
+        "Submit": "Invia",
+        "Tier": "Set",
+        "TierSets": {
+            "2Set": "2 Set HPS",
+            "4Set": "4 Set HPS",
+            "6Set": "6 Set HPS",
+            "Title": "Set Tier"
+        },
+        "TopGear": {
+            "BackToGearSelection": "Torna alla Selezione dell'Equipaggiamento",
+            "CompetitiveAlternative": "Alternative Competitive",
+            "CompetitiveAlternativeHelp": "Questo è quanto sono vicini altri set al tuo migliore. Qualsiasi cosa estremamente vicina nel punteggio può essere considerata un sidegrade.",
+            "ErrorMessage": "Spiacente, sembra che tu abbia incontrato un errore. Di solito è causato dalla mancanza di possibilità di creare set validi. Verifica di avere selezionato un'arma con intelletto, almeno due anelli e almeno due trinket. Se sono selezionati più leggendari, deve esserci un'alternativa valida per ciascuno.",
+            "GoMsg": "Vai!",
+            "HelpTextClassic": "Top Gear ti consente di confrontare ogni possibile combinazione del tuo equipaggiamento selezionato in una sola volta!",
+            "HelpTextRetail": "Top Gear ti consente di confrontare ogni possibile combinazione del tuo equipaggiamento selezionato in una sola volta!",
+            "ItemsHereMessage": "I tuoi oggetti verranno visualizzati qui dopo l'importazione, quindi premi 'Vai' una volta soddisfatto della tua selezione.",
+            "SelectedItems": "Oggetti Selezionati",
+            "StatPanel": {
+                "AvgStats": "Statistiche Medie (include procs)"
+            },
+            "Title": "Top Gear",
+            "itemMissingError": "Errore: Aggiungi oggetto - "
+        },
+        "TrinketAnalysis": {
+            "Header": "Analisi Gioielli",
+            "HelpText": "Utilizza il grafico qui sotto come guida approssimativa su quali gioielli vale la pena perseguire."
+        },
+        "UpgradeFinder": {
+            "BackButton": "Indietro alla Configurazione",
+            "CurrentRaid": "Sepulcher of the First Ones",
+            "Header": "Trova il tuo prossimo miglioramento!",
+            "MythicPlus": "Mitica +",
+            "PvP": "PvP",
+            "UpgradeBySlot": "Miglioramenti per Slot",
+            "WorldBosses": "World Boss"
+        },
+        "UpgradeFinderFront": {
+            "Header": "Cercatore di Miglioramenti",
+            "HelpText": "Trova il tuo prossimo oggetto con liste di oggetti per istanza e per slot, tutte basate sul tuo personaggio specifico.",
+            "MythicPlusBody": "Utilizza lo slider per selezionare il livello oggetto del dungeon",
+            "MythicPlusHeader": "Mitica Plus Ilvl (Chiavi e Valor)",
+            "PvPBody": "Seleziona il tuo Punteggio",
+            "PvPHeader": "Punteggio PvP",
+            "RaidDifficultyBody": "Seleziona fino a due difficoltà per trovare miglioramenti da",
+            "RaidDifficultyHeader": "Difficoltà Raid",
+            "SimCBody1Good": "Importa - Tutto a Posto!",
+            "SimCBody1Invalid": "Importa - Slot Oggetto Vuoto",
+            "SimCBody1Missing": "Importa - Mancante",
+            "SimCBody2": "Equipaggiamento Attualmente Equipaggiato:",
+            "SimCButton": "Importa Equipaggiamento",
+            "SimCHeader": "Importazione SimC/QE"
+        },
+        "Welcome": {
+            "ContinueMessage": "Per iniziare ad utilizzare l'app, aggiungi uno dei tuoi personaggi qui sotto.",
+            "CreateCharacter": "Crea Personaggio",
+            "GameTypeMessage": "Seleziona con quale versione vuoi iniziare.",
+            "WelcomeTo": "Benvenuto In"
+        },
+        "WrathOfTheLichKing": "Wrath of the Lich King",
+        "Yes": "Sì",
+        "itemTags": {
+            "effect": "Effetto",
+            "greatvault": "Great Vault"
+        }
+    }
+}
