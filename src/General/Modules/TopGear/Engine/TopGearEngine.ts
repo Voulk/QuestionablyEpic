@@ -538,7 +538,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
-
+  const useSeq = false;
   let enchantStats = {};
   let evalStats: Stats = {};
   let hardScore = 0;
@@ -617,32 +617,32 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
-  // Note that we don't need to include this for specs that already have fire damage sources in their base kits.
-  // This code could probably be removed now since fire combos are not really viable in S2.
+  // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
   let fireMult = 0;
   // Frostfire Belt, Flaring Cowl, Flame Licked
   if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
   else if (builtSet.checkHasItem(193494)) fireMult = 1;
-  else if ('primGems' in userSettings && userSettings.primGems.value.includes("Flame Licked")) fireMult = convertPPMToUptime(2.5, 7);
 
   userSettings.fireMult = fireMult || 0;
 
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
-    if (player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
+    if (!useSeq || player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
   }
 
   // Special 10.0.7 Ring
+  // Ultimately this ring has mostly been outscaled now. We'll leave it in for completeness but it would only see use on very undergeared players.
+
   // Check if ring in set.
   if (builtSet.checkHasItem(203460)) {
     // Auto gen best gems.
     const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 424;
 
     const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
-    //const combo = getBestCombo(player, contentType, itemLevel, player.activeStats, userSettings)
+    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
 
     // Handle Annulet
     const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
@@ -656,7 +656,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
-  if (player.spec === "Discipline Priest" && contentType === "Raid") {
+  if (player.spec === "Discipline Priest" && contentType === "Raid" && useSeq) {
     setStats.intellect = (setStats.intellect || 0) * 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
     if (reporting) report.ramp = setRamp;
@@ -673,7 +673,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
-  if (!(player.spec === "Discipline Priest" && contentType === "Raid")) {
+  if (!(player.spec === "Discipline Priest" && contentType === "Raid" && useSeq)) {
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
     // Talents (DR does not apply)

@@ -199,7 +199,7 @@ export default function ItemCard(props) {
                       justifyContent: "center",
                     }}
                   >
-                    {itemDifferential > 0 && itemDifferential < 0.1 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
+                    {itemDifferential > 0 && itemDifferential < 0.2 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
                   </Typography>
                 </Grid>
               </Grid>

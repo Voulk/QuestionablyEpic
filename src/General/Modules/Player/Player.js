@@ -15,6 +15,7 @@ import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { classRaceDB } from "Databases/ClassRaceDB";
 
 export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -33,6 +34,7 @@ export class Player {
     if (gameType === "Retail") {
       this.setupDefaults(specName);
       this.gameType = "Retail";
+      if (this.race === "Default" || this.race === "") this.race = classRaceDB[this.spec].races[0];
     }
 
   }

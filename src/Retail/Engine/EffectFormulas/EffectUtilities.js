@@ -10,12 +10,18 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
   const totalStat = baseStat + procValue;
   let currentStat = baseStat + procValue;
+  let procSize = procValue
 
   for (var j = 0; j < DRBreakpoints.length; j++) {
-    currentStat -= Math.max((totalStat - DRBreakpoints[j]) * 0.1, 0);
+    if (totalStat > DRBreakpoints[j])  {
+      // Calculate proportion that's above DR.
+      procSize -= (Math.min(procSize, totalStat - DRBreakpoints[j]) * 0.1);
+
+    }
+    
   }
 
-  return Math.round(procValue - (totalStat - currentStat));
+  return Math.round(procSize);
 }
 
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
@@ -134,7 +140,7 @@ export function getLowestStat(stats) {
 
 
 // We need to do four of these so we'll just outsource the work to this function instead of repeating ourselves.
-export function buildIdolTrinket(data, itemLevel, stat, settings) {
+export function buildIdolTrinket(data, itemLevel, stat, settings, setStats) {
   let bonus_stats = {};
   const gemsEquipped = getSetting(settings, "idolGems"); // TODO: Make this dynamically update based on the number of gems equipped.
 
@@ -149,10 +155,17 @@ export function buildIdolTrinket(data, itemLevel, stat, settings) {
   bonus_stats.crit = uptime * bigProc / 4;
   bonus_stats.mastery = uptime * bigProc / 4;
   bonus_stats.versatility = uptime * bigProc / 4;
-
-  bonus_stats[stat] += (smallPerGem * 7.8 * (1 - uptime)); // 8.5 is slightly more accurate but it tends to be slightly lossy. 
-
-  return bonus_stats;
+  let sumSmallGems = 0;
+  // Calculate DR on the stacking proc at every stack level.
+  for (let i = 1; i < 18; i++) {
+    const effectiveValue = getDiminishedValue(stat, smallPerGem * i, setStats[stat]);
+    sumSmallGems += effectiveValue;
+  }
+  
+  //bonus_stats[stat] += (smallPerGem * 7.8 * (1 - uptime)); // 8.5 is slightly more accurate but it tends to be slightly lossy. 
+  bonus_stats[stat] += (sumSmallGems / 18  * (1 - uptime) * 0.92); // The proc is slightly lossy.
+  
+  return bonus_stats; // 1345
 
 } 
 

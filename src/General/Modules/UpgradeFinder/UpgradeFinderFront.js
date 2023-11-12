@@ -113,7 +113,6 @@ const sendReport = (shortReport) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(shortReport),
   };
-  console.log(shortReport);
   fetch("https://questionablyepic.com/api/addUpgradeReport.php", requestOptions).then((response) => console.log(response));
 };
 

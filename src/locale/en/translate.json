@@ -446,7 +446,7 @@
     },
     "UpgradeFinder": {
       "BackButton": "Back to Setup",
-      "CurrentRaid": "Sepulcher of the First Ones",
+      "CurrentRaid": "Amirdrassil",
       "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
       "PvP": "PvP",
@@ -457,7 +457,7 @@
       "Header": "Upgrade Finder",
       "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
       "MythicPlusBody": "Use the slider to select dungeon item level",
-      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
+      "MythicPlusHeader": "Mythic Plus Key Level",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
