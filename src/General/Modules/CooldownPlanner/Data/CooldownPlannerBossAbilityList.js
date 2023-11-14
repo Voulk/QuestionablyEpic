@@ -4564,6 +4564,15 @@ export const bossAbilities = {
     {
       cooldownPlannerActive: true,
       createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
       guid: 414425,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_shadowflame_nova.jpg"),
       importActive: true,
@@ -5007,6 +5016,20 @@ export const bossAbilities = {
         ch: "",
       },
     },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 427252,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_ironmaidens_rapidfire.jpg"),
+      importActive: true,
+      name: {
+        en: "Falling Embers",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
     {
       cooldownPlannerActive: true,
@@ -5140,6 +5163,20 @@ export const bossAbilities = {
       importActive: true,
       name: {
         en: "Growing Power of the Dream",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 426855,
+      icon: require("Images/CooldownPlanner/BossAbilities/spell_shaman_giftearthmother.jpg"),
+      importActive: false,
+      name: {
+        en: "Full Bloom",
         de: "",
         fr: "",
         ru: "",
