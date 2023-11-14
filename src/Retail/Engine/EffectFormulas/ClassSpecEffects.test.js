@@ -32,6 +32,9 @@ describe("Shaman", () => {
         const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
         console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T31-2", player, contentType)))
         console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T31-4", player, contentType)))
+
+        console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-2", player, contentType)))
+        console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
     })
 
     test("Holy Paladin", () => {

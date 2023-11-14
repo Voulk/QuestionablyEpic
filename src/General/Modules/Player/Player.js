@@ -650,7 +650,7 @@ export class Player {
           crit: 4000,
           mastery: 5800,
           versatility: 3200,
-          stamina: 1900,
+          stamina: 30000,
         }
       /*
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
