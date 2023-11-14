@@ -24,7 +24,7 @@ export function UpgradeFinder(props) {
   };
 
   const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= 14 && difficulty >= 0) setPlayerSettings({ ...playerSettings, dungeon: difficulty });
+    if (difficulty <= 15 && difficulty >= 0) setPlayerSettings({ ...playerSettings, dungeon: difficulty });
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {

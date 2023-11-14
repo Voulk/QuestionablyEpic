@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> QE Live is up to date for patch 10.2. Expect changes through the week.",
+      "-> Expect changes through the week. Amirdrassil tier sets will be in with season release.",
   ]
 ;
 

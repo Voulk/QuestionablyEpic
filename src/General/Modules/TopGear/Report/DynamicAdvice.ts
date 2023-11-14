@@ -12,7 +12,6 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     let advice: string[] = [];
     const topSet = report.itemSet;
     const itemList = topSet.itemList;
-    console.log(topSet);
     //const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
     const differentials = report.differentials;
     // General Advice

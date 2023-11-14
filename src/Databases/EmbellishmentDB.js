@@ -516,7 +516,7 @@ export const embellishmentDB = [
     icon: "inv_10_tailoring_embroiderythread_color3", 
     armorType: 0, // All
     name: {
-      en: "Verdant Tether",
+      en: "Verdant Tether (Ring)",
       de: "",
       fr: "",
       ru: "",
