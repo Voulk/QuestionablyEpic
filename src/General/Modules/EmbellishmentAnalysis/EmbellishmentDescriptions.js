@@ -99,7 +99,7 @@ const getVerdantTether = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
     const maxValue = processedValue(effect, itemLevel);
-    let description = Math.round(maxValue/2) + " to " + maxValue + " versatility for you and a friend. Minimum value is at 30 yards, maximum is pixel stacked on top. The green trail will show you where your ally is. 2.2 procs per minute.";
+    let description = Math.round(maxValue/2) + " to " + maxValue + " versatility for you and a friend. Minimum value is at 30 yards, maximum is pixel stacked on top. The green trail will show you where your ally is. 2.2 procs per minute. +22% if put on a ring (reflected in score).";
 
     return {
         category: "Item Attachments",

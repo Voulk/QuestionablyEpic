@@ -628,7 +628,7 @@ export class Player {
         stamina: 1900,
         critMult: 2,
       };
-      //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
+      this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));

@@ -43,6 +43,12 @@ describe("Shaman", () => {
         console.log("Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-4", player, contentType)))
     })
 
+    test("Disc Priest", () => {
+        const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Disc 2pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-2", player, contentType)))
+        console.log("Disc 4pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-4", player, contentType)))
+    })
+
     
 
 
