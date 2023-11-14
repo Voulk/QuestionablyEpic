@@ -62,7 +62,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.229097,
-        table: -7,
+        table: -72,
         duration: 15, 
         ppm: 2.2,
         multiplier: 0.7, // Mult: 1 = you are next to the target. Mult: 0.5 = You are far away from the target.
@@ -148,7 +148,7 @@ export const embellishmentData = [
         effects: [
           { 
             coefficient: 0.458195, // 0.482408 * 0.95,
-            table: -7,
+            table: -72,
             duration: 8, // 5s + 1s per equipped gem. 
             ppm: 2,
           },
@@ -356,7 +356,7 @@ export const embellishmentData = [
           { 
             coefficient: 0.046937,
             table: -7,
-            stacks: {Raid: 4.8, Dungeon: 4.6} // Revisit dungeon stacks.
+            stacks: {Raid: 4.1, Dungeon: 3.9} // Revisit dungeon stacks.
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {

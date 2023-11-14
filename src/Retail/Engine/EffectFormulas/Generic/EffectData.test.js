@@ -3,6 +3,8 @@ import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";
 
+
+
 describe("String of Delicacies Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     // ${428}  | ${505}

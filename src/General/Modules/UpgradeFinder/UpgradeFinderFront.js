@@ -269,6 +269,14 @@ export default function UpgradeFinderFront(props) {
         </div>
       ),
     },
+    {
+      value: 14,
+      label: (
+        <div className={classes.labels}>
+          <div>lvl 489</div>
+        </div>
+      ),
+    },
   ];
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");

@@ -487,7 +487,7 @@ export default function bossHeaders(props, style, QEmodule) {
     }
   }
 
-  if (props === 999 || props === 998) {
+  if (props === 999 || props === 998 || props === -54) {
     source = require("Images/Classic/Raid/JournalImages/BOE.png");
   }
 
