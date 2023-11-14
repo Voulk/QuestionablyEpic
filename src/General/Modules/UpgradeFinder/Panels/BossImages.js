@@ -97,7 +97,7 @@ export default function UpgradeFinderBossImages(props, gameType, other) {
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Rygelon.png");
       case 2464: // The Jailer
         return require("Images/Bosses/SepulcherOfTheFirstOnes/Jailer.png");
-      case 999: // Bind on Equips
+      case -54: // Bind on Equips
         return require("Images/Bosses/BOE.png");
       /* ---------------------------------------------------------------------------------------------- */
       /*                                          World Bosses                                          */

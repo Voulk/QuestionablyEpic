@@ -87,7 +87,7 @@ const getRalliedToVictory = (data, itemLevel, player, additionalData) => {
     
     return {
         category: "Items",
-        metrics: ["Uptime: " + (data.effects[0].ppm * 100) + "%",
+        metrics: ["Uptime: " + (convertExpectedUptime(effect, player, false)),
                 "Personal Vers: " + Math.round(bonus_stats.versatility),
                 "Shared Vers: " + Math.round(bonus_stats.allyStats)],
         description:
@@ -145,7 +145,7 @@ const getAdaptiveDracothyst = (data, itemLevel, player, additionalData) => {
 
     return {
         category: "Items",
-        metrics: ["Uptime: " + 0 + "%",
+        metrics: ["Uptime: " + (convertExpectedUptime(effect, player, false)),
                 "Mast & Haste: " + Math.round(bonus_stats.haste),
                 "Crit & Vers: " + Math.round(bonus_stats.crit),
                 ],
@@ -167,7 +167,7 @@ const getStompers = (data, itemLevel, player, additionalData) => {
 
     return {
         category: "Items",
-        metrics: ["Uptime: " + 0 + "%",
+        metrics: ["Uptime: " + (convertExpectedUptime(effect[0], player, false)),
                 "Gained Stats: " + Math.round(bonus_stats[buffedValue]),
                 "Lost Stats: " + Math.round(bonus_stats[nerfedValue]),
                 ],

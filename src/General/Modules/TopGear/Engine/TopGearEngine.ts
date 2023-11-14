@@ -26,7 +26,7 @@ import { gemDB } from "Databases/GemDB";
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00497669230769231;
+const DR_CONST = 0.00297669230769231; // 0.00497669230769231;
 const DR_CONSTLEECH = 0.04922569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -699,7 +699,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility!) / STATCONVERSION.VERSATILITY)) / 2;
     adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery!) / (STATCONVERSION.MASTERY / STATCONVERSION.MASTERYMULT[player.spec]))) / 2;
     adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech!) / STATCONVERSION.LEECH)) / 2;
-
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
 
@@ -707,8 +706,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
-
-
 
     evalStats = setStats;
   }
@@ -740,7 +737,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
     // This covers all other stats, which are invariably our secondaries + leech.
     else {
-      if (stat in evalStats) {
+      if (stat in evalStats && stat !== "dps" && stat !== "allyStats") {
         hardScore += (evalStats[stat] * adjusted_weights[stat]) || 0;
       }
     }
@@ -762,7 +759,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.report = report;
-
+  
   //
   //if (player.spec() === "Discipline Priest" && contentType === "Raid") formatReport(report);
   //console.log(JSON.stringify(effectList));

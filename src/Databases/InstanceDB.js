@@ -1852,7 +1852,7 @@ export const encounterDB = {
       ch: "",
     },
     //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
-    bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, 999],
+    bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, -54],
     bosses: {
       2564: {
         name: {
@@ -1936,7 +1936,7 @@ export const encounterDB = {
         },
       },
 
-      999: {
+      "-54": {
         name: {
           en: "BoE Trash Drops",
           fr: "BoE Trash Drops",

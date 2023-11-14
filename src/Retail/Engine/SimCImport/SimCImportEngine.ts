@@ -50,14 +50,13 @@ function getPlayerRace(lines: string[]) {
     if (line.includes("race=")) {
       console.log(line);
       playerRace = (line.split("=")[1].replace("_", " "));
-      /*playerRace = playerRace.toLowerCase()
+      playerRace = playerRace.toLowerCase()
       .split(' ')
       .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-      .join(' ');*/
+      .join(' ');
     }
   })
-  console.log(playerRace);
-  return "Races." + playerRace;
+  return playerRace;
 }
 
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 

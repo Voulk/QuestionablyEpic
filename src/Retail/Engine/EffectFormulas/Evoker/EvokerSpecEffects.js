@@ -1,11 +1,41 @@
+import { EVOKERSPELLDB } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 
+const valueEssenceBurst = (player, contentType) => {
+  const blossomData = EVOKERSPELLDB["Emerald Blossom"][0];
+
+  const emeraldBlossomHealing = blossomData.coeff * player.getStatMults(blossomData.secondaries);
+  const fieldOfDreams = 1/(1-0.3);
+  const seedlings = 0.777 * 2 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]); 
+  console.log(emeraldBlossomHealing * seedlings * fieldOfDreams)
+  return emeraldBlossomHealing * seedlings * fieldOfDreams;
+
+}
 
 export const getEvokerSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
 
 
   let bonus_stats = {};
-  if (effectName === "Evoker T30-2") {
+
+  if (effectName === "Evoker T31-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    const essenceBurst = valueEssenceBurst(player, contentType);
+    const empowersCPM = 2 + 2 + 2.5; 
+    const livingFlamesPerEmpower = 3;
+    const averageEssenceBursts = livingFlamesPerEmpower * 0.2;
+    const livingFlameData = EVOKERSPELLDB["Living Flame"][0];
+    const oneLivingFlame = livingFlameData.coeff * player.getStatMults(livingFlameData.secondaries);
+
+    bonus_stats.hps = (averageEssenceBursts * essenceBurst / 60) + (empowersCPM * oneLivingFlame * 3 / 60);
+
+  }
+  else if (effectName === "Evoker T31-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 5500;
+
+  }
+
+  else if (effectName === "Evoker T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
     bonus_stats.hps = 8750;
 
