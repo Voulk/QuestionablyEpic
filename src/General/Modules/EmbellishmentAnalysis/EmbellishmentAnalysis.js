@@ -215,7 +215,6 @@ export default function EmbellishmentAnalysis(props) {
   ];
   const classes = useStyles();
   const itemCardData = setupItemCardData(db, contentType, props.player, playerSettings);
-  console.log(itemCardData);
   let activeGems = [];
 
   for (var i = 0; i < db.length; i++) {

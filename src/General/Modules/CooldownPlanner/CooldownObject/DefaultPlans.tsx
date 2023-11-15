@@ -3011,6 +3011,10 @@ export const defaultPlans: DefaultPlans = {
           time: "04:12",
         },
         {
+          bossAbility: 427252,
+          time: "04:19",
+        },
+        {
           bossAbility: 421407,
           time: "04:24",
         },
@@ -3021,6 +3025,10 @@ export const defaultPlans: DefaultPlans = {
         {
           bossAbility: 427299,
           time: "04:38",
+        },
+        {
+          bossAbility: 427252,
+          time: "04:46",
         },
         {
           bossAbility: 421467,
@@ -3056,79 +3064,75 @@ export const defaultPlans: DefaultPlans = {
         },
         {
           bossAbility: 417634,
-          time: "01:49",
+          time: "01:45",
         },
         {
           bossAbility: 425025,
-          time: "02:02",
+          time: "01:59",
         },
         {
           bossAbility: 425025,
-          time: "02:25",
+          time: "02:21",
         },
         {
           bossAbility: 425025,
-          time: "02:56",
+          time: "02:52",
         },
         {
           bossAbility: 425025,
-          time: "03:09",
+          time: "03:06",
         },
         {
           bossAbility: 417634,
-          time: "03:42",
-        },
-        {
-          bossAbility: 417634,
-          time: "03:42",
-        },
-        {
-          bossAbility: 425025,
-          time: "04:15",
-        },
-        {
-          bossAbility: 425025,
-          time: "04:38",
-        },
-        {
-          bossAbility: 425025,
-          time: "05:00",
-        },
-        {
-          bossAbility: 417634,
-          time: "05:34",
-        },
-        {
-          bossAbility: 425025,
-          time: "05:48",
-        },
-        {
-          bossAbility: 425025,
-          time: "06:10",
+          time: "03:38",
         },
         {
           bossAbility: "Intermission",
-          time: "06:22",
+          time: "03:52",
         },
         {
           bossAbility: 421316,
-          time: "06:23",
+          time: "03:53",
         },
         {
           bossAbility: "Phase 2",
-          time: "06:39",
+          time: "04:09",
         },
         {
           bossAbility: 421407,
-          time: "06:42",
+          time: "04:12",
+        },
+        {
+          bossAbility: 427252,
+          time: "04:19",
         },
         {
           bossAbility: 421407,
-          time: "06:54",
+          time: "04:24",
         },
         {
           bossAbility: 421407,
-          time: "07:06",
+          time: "04:36",
+        },
+        {
+          bossAbility: 427299,
+          time: "04:38",
+        },
+        {
+          bossAbility: 427252,
+          time: "04:46",
+        },
+        {
+          bossAbility: 421467,
+          time: "04:47",
+        },
+        {
+          bossAbility: 421407,
+          time: "04:48",
+        },
+        {
+          bossAbility: 421407,
+          time: "05:00",
         },
       ],
     },

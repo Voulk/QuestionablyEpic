@@ -12,14 +12,28 @@ const IDMARTYR = 183998;
 export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "Paladin T30-2") {
+  if (effectName === "Paladin T31-2") {
+    // 
+    const holyShockCPM = 15 + (5 + 4) * 60/45; // Holy Shock raw + Divine Toll / Rising Sunlight
+    const oneReverb = 1.08 * player.getStatMults(["intellect", "versatility", "crit", "mastery"])
+
+    bonus_stats.hps = holyShockCPM * oneReverb / 60;
+
+  }
+  else if (effectName === "Paladin T31-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 9750;
+
+  }
+
+  else if (effectName === "Paladin T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
     bonus_stats.hps = 750;
 
   }
   else if (effectName === "Paladin T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 9750;
+    bonus_stats.hps = 3000;
 
   }
 

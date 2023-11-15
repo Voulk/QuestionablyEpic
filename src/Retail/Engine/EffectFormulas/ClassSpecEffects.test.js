@@ -32,12 +32,21 @@ describe("Shaman", () => {
         const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
         console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T31-2", player, contentType)))
         console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T31-4", player, contentType)))
+
+        console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-2", player, contentType)))
+        console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
     })
 
     test("Holy Paladin", () => {
         const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
         console.log("Paladin 2pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-2", player, contentType)))
         console.log("Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-4", player, contentType)))
+    })
+
+    test("Disc Priest", () => {
+        const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Disc 2pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-2", player, contentType)))
+        console.log("Disc 4pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-4", player, contentType)))
     })
 
     

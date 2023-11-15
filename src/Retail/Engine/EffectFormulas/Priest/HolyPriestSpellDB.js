@@ -28,13 +28,20 @@ export const HOLYPRIESTSPELLDB = {
         castTime: 2.5,
         cost: 0.4,
         coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
-        atoneOverheal: 0.2,
+        expectedOverheal: 0.15,
         school: "holy",
         secondaries: ['crit', 'vers'],
     }],
     
     "Renew": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0.4, // TODO
+        coeff: 0.52875, // TODO
+        school: "holy",
+        expectedOverheal: 0.15,
+        secondaries: ['crit', 'vers'], // Haste handled elsewhere.
 
     }], 
     "Circle of Healing": [{
@@ -47,6 +54,13 @@ export const HOLYPRIESTSPELLDB = {
     }], 
     "Power Word: Sanctify": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0.4, // TODO
+        coeff: 0.52875, // TODO
+        school: "holy",
+        expectedOverheal: 0.15,
+        secondaries: ['crit', 'vers'], 
 
     }], 
     "Prayer of Healing": [{

@@ -1,10 +1,35 @@
-
+import HOLYPRIESTSPELLDB from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
 
 
 export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
 
+  if (effectName === "HPriest T31-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    const renewData = HOLYPRIESTSPELLDB["Renew"][0];
+    const renewHPS = 0;
+    const serenityCPM = 0;
+    const sancCPM = 0;
+    
+    const serenityHPS = serenityCPM * renewHPS * 14;
+    const sancHPS = sancCPM * renewHPS * 4 * 5; // Refactor to use Sanc target count instead of a magic number. 
+
+    bonus_stats.hps = 12500;
+  }
+  else if (effectName === "HPriest T31-4") {
+    // Placeholder from sheet. Replace very soon.
+
+    const effectivePPM = 3.2;
+    const sancData = HOLYPRIESTSPELLDB["Sanctify"][0];
+    const oneSanc = sancData.coeff * player.getInt() * player.getStatMults(sancData.secondaries);
+    
+    const oneSalv = 0;
+    const effectiveSalvCD = 0;
+
+    //bonus_stats.hps = oneSanc * effectivePPM;
+    bonus_stats.hps = 14250;
+  }
 
   if (effectName === "HPriest T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
