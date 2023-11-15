@@ -120,6 +120,21 @@ describe("Test Curve IDs", () => {
     
 })
 
+describe("Test S3 Items", () => {
+    const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    const contentType = "Raid";
+    const type = "Regular";
+
+    test("Sea Star 450", () => {
+        const line = "trinket1=,id=133201,bonus_id=9555/9639/6652/9144/9836/8767";
+        const item = processItem(line, player, contentType, type, settings)
+        //expect(item.stats.versatility).toEqual(77);
+        expect(item.level).toEqual(450)
+    });
+    
+
+})
+
 describe("Test Regular Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";

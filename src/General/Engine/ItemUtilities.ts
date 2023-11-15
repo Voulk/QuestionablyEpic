@@ -555,7 +555,6 @@ export function getGemIcon(id: number) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
   } else {
     //return process.env.PUBLIC_URL + "/Images/Icons/" + gem.icon + ".jpg";
-    console.log()
     return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon.replace("Images/Icon", "") + ".jpg"
   }
 }

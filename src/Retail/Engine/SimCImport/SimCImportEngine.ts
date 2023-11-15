@@ -48,7 +48,6 @@ function getPlayerRace(lines: string[]) {
   let playerRace = ""
   lines.forEach((line: string)  => {
     if (line.includes("race=")) {
-      console.log(line);
       playerRace = (line.split("=")[1].replace("_", " "));
       playerRace = playerRace.toLowerCase()
       .split(' ')

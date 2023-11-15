@@ -159,7 +159,6 @@ const getStompers = (data, itemLevel, player, additionalData) => {
     let description = "";
     let buffedValue = ""; 
     let nerfedValue = "";
-    console.log(bonus_stats);
     for (const [key, value] of Object.entries(bonus_stats)) {
         if (value > 0) buffedValue = key;
         else if (value < 0) nerfedValue = key;
