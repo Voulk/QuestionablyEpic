@@ -7,7 +7,10 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const rampTime = 180;
 
     // Baselines
-    const discBaseline = 5000// allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const discBaseline = allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const disc2pc = 14500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const disc4pc = 22500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+
     //console.log("DISC BASELINE: " + discBaseline);
     /*
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])
@@ -28,7 +31,8 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     */
     const rampData = {
         baseline: discBaseline / rampTime,
-
+        twoPc: disc2pc, //(disc2pc - discBaseline) / rampTime,
+        fourPc: disc4pc, //(disc4pc - discBaseline) / rampTime,
     }
     return rampData; 
     //return {};

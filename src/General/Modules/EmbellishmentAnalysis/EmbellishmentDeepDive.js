@@ -5,7 +5,6 @@ import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Divider } from "@mui/mater
 export default function EmbellishmentDeepDive(props) {
     const itemCardData = props.itemCardData;
     const categories = ["Items", "Item Attachments"]
-    console.log(itemCardData);
     return (
         <Grid container spacing={1} sx={{ marginTop: "16px" }}>
         {categories.map((key, index) => {

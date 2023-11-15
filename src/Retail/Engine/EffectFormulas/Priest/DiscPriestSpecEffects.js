@@ -5,8 +5,19 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
+  if (effectName === "DPriest T31-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = player.getRampID('twoPc', contentType);
+
+  }
+  else if (effectName === "DPriest T31-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = player.getRampID('fourPc', contentType);
+
+  }
+
   // Tier Sets
-  if (effectName === "DPriest T30-2") {
+  else if (effectName === "DPriest T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
     bonus_stats.hps = 2750;
 

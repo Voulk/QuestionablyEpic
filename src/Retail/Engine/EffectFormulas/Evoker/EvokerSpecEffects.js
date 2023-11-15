@@ -3,51 +3,67 @@ import { EVOKERSPELLDB } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpe
 const valueEssenceBurst = (player, contentType) => {
   const blossomData = EVOKERSPELLDB["Emerald Blossom"][0];
 
-  const emeraldBlossomHealing = blossomData.coeff * player.getStatMults(blossomData.secondaries);
+  const emeraldBlossomHealing = blossomData.coeff * player.getInt() * player.getStatMults(blossomData.secondaries) * 1.1 * 1.04; // Lush Growth
   const fieldOfDreams = 1/(1-0.3);
-  const seedlings = 0.777 * 2 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]); 
-  console.log(emeraldBlossomHealing * seedlings * fieldOfDreams)
-  return emeraldBlossomHealing * seedlings * fieldOfDreams;
+  const seedlings = 0.777 * 2 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]) * 1.1 * 1.04; // Lush Growth 
+
+  return emeraldBlossomHealing * fieldOfDreams + seedlings;
 
 }
 
 export const getEvokerSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
 
-
+  const healingBonus = 1.04;
+  const empowersCPM = 2 + 2 + 2.5; 
+  const essenceBurst = valueEssenceBurst(player, contentType);
   let bonus_stats = {};
 
   if (effectName === "Evoker T31-2") {
-    // Placeholder pulled from sheet. Replace very soon.
-    const essenceBurst = valueEssenceBurst(player, contentType);
-    const empowersCPM = 2 + 2 + 2.5; 
+    // 
+    
+    
     const livingFlamesPerEmpower = 3;
     const averageEssenceBursts = livingFlamesPerEmpower * 0.2;
     const livingFlameData = EVOKERSPELLDB["Living Flame"][0];
-    const oneLivingFlame = livingFlameData.coeff * player.getStatMults(livingFlameData.secondaries);
+    const oneLivingFlame = (livingFlameData.coeff * player.getInt() * player.getStatMults(livingFlameData.secondaries) + player.getHealth() * 0.02)* 0.5;
 
-    bonus_stats.hps = (averageEssenceBursts * essenceBurst / 60) + (empowersCPM * oneLivingFlame * 3 / 60);
+    bonus_stats.hps = ((empowersCPM * averageEssenceBursts * essenceBurst) + (empowersCPM * oneLivingFlame * 3)) / 60 * healingBonus;
 
   }
   else if (effectName === "Evoker T31-4") {
-    // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 5500;
+    // 
+    const livingFlameData = EVOKERSPELLDB["Living Flame"][0];
+    const oneLivingFlame = (livingFlameData.coeff * player.getInt() * player.getStatMults(livingFlameData.secondaries) + player.getHealth() * 0.02)* 0.5;
+    const oneEcho = oneLivingFlame * 0.7;
+    const livingFlameCPM = 11 + (5 * 2) + empowersCPM * 3; // Leaping Flames gives us a ton of extra value here. We're also including 2pc
+    const echoesGenerated = livingFlameCPM * 0.33;
+
+    const averageEssenceBursts = echoesGenerated * 0.2;
+    const essenceBurstHPS = averageEssenceBursts * essenceBurst;
+
+    bonus_stats.hps = (essenceBurstHPS + oneEcho * echoesGenerated * healingBonus) / 60;
 
   }
 
   else if (effectName === "Evoker T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 8750;
+    const spiritbloomCPM = 2.5;
+    const spiritbloomData = EVOKERSPELLDB["Spiritbloom"][0];
+    const oneSpiritbloom = spiritbloomData.coeff * 4 * player.getInt() *player.getStatMults(spiritbloomData.secondaries) * 0.4 * 1.1 * healingBonus; // Lush Growth
+
+    bonus_stats.hps = oneSpiritbloom * spiritbloomCPM / 60;
 
   }
   else if (effectName === "Evoker T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 6500;
+    const essenceBurstsGenerated = empowersCPM / 4 * 2; // Every 4 empowers we get two free essence bursts.
+    bonus_stats.hps = essenceBurstsGenerated * essenceBurst / 60;
 
   }
   else if (effectName === "Evoker T29-2") {
     // This needs a much more comprehensive formula.
-    const reversionPercent = contentType === "Raid" ? 0.1 : 0.15;
+    const reversionPercent = contentType === "Raid" ? 0.05 : 0.15;
     const critIncrease = 25;
     const uptime = 0.55;
     bonus_stats.crit = reversionPercent * critIncrease * 170 * uptime;
