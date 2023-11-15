@@ -22,7 +22,7 @@ const stat_ids: {[key: number]: string} = {
 function getPlayerServerName(lines: string[]) {
   let serverName = ""
   lines.forEach((line: string)  => {
-    if (line.includes("server")) {
+    if (line.includes("server=")) {
       serverName = line.split("=")[1].replace("_", " ");
       serverName = serverName.toLowerCase()
         .split(' ')
@@ -36,7 +36,7 @@ function getPlayerServerName(lines: string[]) {
 function getPlayerServerRegion(lines: string[]) {
   let serverRegion = ""
   lines.forEach((line: string)  => {
-    if (line.includes("region")) {
+    if (line.includes("region=")) {
         serverRegion = (line.split("=")[1] || "").toUpperCase();
     }
   })
