@@ -28,12 +28,12 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
   else if (effectName === "Paladin T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 750;
+    bonus_stats.hps = 3800;
 
   }
   else if (effectName === "Paladin T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 3000;
+    bonus_stats.hps = 6500;
 
   }
 
