@@ -232,13 +232,13 @@ export class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "of the Furnace Seraph",
-      "Discipline Priest": "of the Furnace Seraph",
-      "Restoration Druid": "of the Autumn Blaze",
-      "Restoration Shaman": "of the Cinderwolf",
-      "Mistweaver Monk": "of the Vermillion Forge",
-      "Holy Paladin": "Heartfire Sentinel's",
-      "Preservation Evoker": "of Obsidian Secrets",
+      "Holy Priest": "of Lunar Communion",
+      "Discipline Priest": "of Lunar Communion",
+      "Restoration Druid": "Benevolent Embersage's",
+      "Restoration Shaman": "Greatwolf Outcast's",
+      "Mistweaver Monk": "Mystic Heron's",
+      "Holy Paladin": "Zealous Pyreknight's",
+      "Preservation Evoker": "Weyrnkeeper's Timeless",
     };
 
     const temp = itemDB.filter(function (item) {
