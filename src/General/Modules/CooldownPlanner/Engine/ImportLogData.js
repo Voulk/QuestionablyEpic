@@ -10,6 +10,7 @@ import {
 import importEnemyHealth from "./Imports/importEnemyHealth";
 import importEnemyEnergy from "./Imports/importEnemyEnergy";
 import importDebuffDataFiltered from "./Imports/importDebuffDataFiltered";
+import getEnemyDebuffs from "./Imports/getEnemyDebuffs";
 import importDamageLogDataFiltered from "./Imports/importDamageLogDataFiltered";
 import importCasts from "./Imports/importCasts";
 import importEnemyBuffs from "./Imports/importEnemyBuffs";
@@ -38,6 +39,7 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
   const damageTakenData = await importDamageLogDataFiltered(starttime, endtime, reportID, boss);
 
   const debuffData = await importDebuffDataFiltered(starttime, endtime, reportID, boss);
+  const enemyDebuffData = await getEnemyDebuffs(starttime, endtime, reportID, boss);
   const buffData = await importEnemyBuffs(starttime, endtime, reportID, boss);
   /* ------------------------------- Import Log data for enemy casts ------------------------------ */
   setLoadingProgress(80);
@@ -67,5 +69,6 @@ export default async function importLogData(starttime, endtime, reportID, boss, 
     buffData: buffData,
     friendlyHealth: friendlyHealth,
     enemyEnergy: enemyEnergy,
+    enemyDebuffData: enemyDebuffData,
   });
 }
