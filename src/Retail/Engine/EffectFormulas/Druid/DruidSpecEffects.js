@@ -32,7 +32,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   else if (effectName === "Druid T30-4") {
     // TODO
-    bonus_stats.hps = 8570;
+    bonus_stats.hps = 9870;
 
   }
 
