@@ -48,11 +48,11 @@ export const HOLYPRIESTSPELLDB = {
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
 
     }], 
-    "Power Word: Serenity": [{
+    "Holy Word: Serenity": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
 
     }], 
-    "Power Word: Sanctify": [{
+    "Holy Word: Sanctify": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
         type: "heal",
         castTime: 0,

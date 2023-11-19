@@ -22,18 +22,23 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Paladin T31-4") {
     // Placeholder pulled from sheet. Replace very soon.
+    const daybreakData = 0;
+    const oneDaybreak = 0;
+    
+
     bonus_stats.hps = 9750;
+    bonus_stats.haste = 0;
 
   }
 
   else if (effectName === "Paladin T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 3800;
+    bonus_stats.hps = 4200;
 
   }
   else if (effectName === "Paladin T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 6500;
+    bonus_stats.hps = 8500;
 
   }
 

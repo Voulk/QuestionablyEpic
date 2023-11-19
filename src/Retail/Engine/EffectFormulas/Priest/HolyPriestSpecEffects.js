@@ -21,7 +21,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     // Placeholder from sheet. Replace very soon.
 
     const effectivePPM = 3.2;
-    const sancData = HOLYPRIESTSPELLDB["Sanctify"][0];
+    const sancData = HOLYPRIESTSPELLDB["Holy Word: Sanctify"][0];
     const oneSanc = sancData.coeff * player.getInt() * player.getStatMults(sancData.secondaries);
     
     const oneSalv = 0;
@@ -31,7 +31,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = 14250;
   }
 
-  if (effectName === "HPriest T30-2") {
+  else if (effectName === "HPriest T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
     bonus_stats.hps = 6750;
   }
