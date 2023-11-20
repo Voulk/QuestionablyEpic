@@ -5345,7 +5345,7 @@ export const bossAbilities = {
   2677: [
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 412761,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_protodragon2shadowflamemount.jpg"),
       importActive: true,
@@ -5358,11 +5358,11 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: true,
+      cooldownPlannerActive: false,
       createEvent: false,
       guid: 417806,
       icon: require("Images/CooldownPlanner/BossAbilities/10_2_raidability_fyrakk.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Burning Presence",
         de: "",
@@ -5469,6 +5469,22 @@ export const bossAbilities = {
         ch: "",
       },
     },
+    {
+      // debuff
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 421922,
+      icon: require("Images/CooldownPlanner/BossAbilities/inv_shield_deathwingraid_d_02.jpg"),
+      importActive: true,
+      name: {
+        en: "Corrupt",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+
     {
       cooldownPlannerActive: true,
       createEvent: false,
