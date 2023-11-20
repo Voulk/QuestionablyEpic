@@ -221,7 +221,10 @@ function processToken(line, player, contentType, type, covenant) {
  * @returns
  */
 export function processCurve(curveID: string, dropLevel: number) {
-  const curve = curveDB[curveID].points;
+  const curveData = curveDB[curveID];
+  if (!curveData || !curveData.points) return 0;
+
+  const curve = curveData.points;
 
   let jump = 0;
   let playerLevelGap = 0;
