@@ -5376,7 +5376,7 @@ export const bossAbilities = {
       createEvent: false,
       guid: 422836,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_10_skinning_scales_red.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Burning Scales",
         de: "",
@@ -5487,12 +5487,26 @@ export const bossAbilities = {
 
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 422935,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_warlock_inferno.jpg"),
       importActive: true,
       name: {
         en: "Eternal Firestorm",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 422605,
+      icon: require("Images/CooldownPlanner/BossAbilities/inv_10_elementalcombinedfoozle_emeralddream.jpg"),
+      importActive: false,
+      name: {
+        en: "Lifeforce Barrier",
         de: "",
         fr: "",
         ru: "",

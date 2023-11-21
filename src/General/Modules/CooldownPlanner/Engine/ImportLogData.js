@@ -14,14 +14,15 @@ import getEnemyDebuffs from "./Imports/getEnemyDebuffs";
 import importDamageLogDataFiltered from "./Imports/importDamageLogDataFiltered";
 import importCasts from "./Imports/importCasts";
 import importEnemyBuffs from "./Imports/importEnemyBuffs";
-import importFriendlyHealth from "./Imports/importFriendlyHealth";
+import importFriendlyHealthdata from "./Imports/importFriendlyHealthdata";
 
 export default async function importLogData(starttime, endtime, reportID, boss, logDif, setLogData, setLoadingProgress) {
   setLoadingProgress(20);
 
   const enemyEnergy = await importEnemyEnergy(starttime, endtime, reportID);
   const enemyHealth = await importEnemyHealth(starttime, endtime, reportID);
-  const friendlyHealth = await importFriendlyHealth(starttime, endtime, reportID);
+  const friendlyHealth = await importFriendlyHealthdata(starttime, endtime, reportID);
+
   const dif = logDifficulty(logDif);
   /* ----------- Import Healer Info from the Logs healing table for each healing class. ----------- */
   setLoadingProgress(40);

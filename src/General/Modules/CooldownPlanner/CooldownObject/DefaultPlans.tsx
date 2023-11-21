@@ -4016,7 +4016,7 @@ export const defaultPlans: DefaultPlans = {
     Heroic: {
       default: [
         {
-          bossAbility: 417806,
+          bossAbility: "Phase 1",
           time: "00:00",
         },
         {
@@ -4040,73 +4040,222 @@ export const defaultPlans: DefaultPlans = {
           time: "01:37",
         },
         {
-          bossAbility: 412761,
-          time: "01:49",
+          bossAbility: "Intermission",
+          time: "01:43",
         },
         {
-          bossAbility: 422836,
-          time: "01:59",
+          bossAbility: 412761,
+          time: "01:49",
         },
         {
           bossAbility: 419144,
           time: "02:02",
         },
         {
-          bossAbility: 417806,
-          time: "02:34",
-        },
-        {
-          bossAbility: 412761,
-          time: "03:10",
-        },
-        {
-          bossAbility: 422524,
-          time: "03:22",
-        },
-        {
-          bossAbility: 417806,
-          time: "03:49",
-        },
-        {
-          bossAbility: 412761,
-          time: "04:30",
-        },
-        {
-          bossAbility: 422524,
-          time: "04:42",
+          bossAbility: "Phase 2",
+          time: "02:24",
         },
         {
           bossAbility: 419123,
-          time: "05:09",
+          time: "02:35",
         },
         {
-          bossAbility: 417806,
-          time: "05:10",
+          bossAbility: 422605,
+          time: "02:42",
         },
         {
           bossAbility: 412761,
-          time: "05:49",
+          time: "03:11",
         },
         {
-          bossAbility: 422935,
+          bossAbility: 422605,
+          time: "03:12",
+        },
+        {
+          bossAbility: 422524,
+          time: "03:23",
+        },
+        {
+          bossAbility: 422605,
+          time: "03:42",
+        },
+        {
+          bossAbility: 419123,
+          time: "03:50",
+        },
+        {
+          bossAbility: 422605,
+          time: "04:12",
+        },
+        {
+          bossAbility: 412761,
+          time: "04:31",
+        },
+        {
+          bossAbility: 422605,
+          time: "04:42",
+        },
+        {
+          bossAbility: 422524,
+          time: "04:43",
+        },
+        {
+          bossAbility: 419123,
+          time: "05:10",
+        },
+        {
+          bossAbility: 422605,
+          time: "05:12",
+        },
+        {
+          bossAbility: 412761,
+          time: "05:50",
+        },
+        {
+          bossAbility: "Phase 3",
           time: "05:59",
         },
         {
-          bossAbility: 422837,
-          time: "06:38",
+          bossAbility: 422935,
+          time: "06:00",
         },
         {
           bossAbility: 422837,
-          time: "07:19",
+          time: "06:39",
         },
         {
           bossAbility: 422837,
-          time: "08:00",
+          time: "07:20",
+        },
+        {
+          bossAbility: 422837,
+          time: "08:01",
         },
       ],
     },
     Mythic: {
-      default: [],
+      default: [
+        {
+          bossAbility: "Phase 1",
+          time: "00:00",
+        },
+        {
+          bossAbility: 420422,
+          time: "00:05",
+        },
+        {
+          bossAbility: 420422,
+          time: "00:29",
+        },
+        {
+          bossAbility: 417455,
+          time: "00:44",
+        },
+        {
+          bossAbility: 420422,
+          time: "01:23",
+        },
+        {
+          bossAbility: 417455,
+          time: "01:37",
+        },
+        {
+          bossAbility: "Intermission",
+          time: "01:43",
+        },
+        {
+          bossAbility: 412761,
+          time: "01:49",
+        },
+        {
+          bossAbility: 419144,
+          time: "02:02",
+        },
+        {
+          bossAbility: 419144,
+          time: "02:02",
+        },
+        {
+          bossAbility: "Phase 2",
+          time: "02:24",
+        },
+        {
+          bossAbility: 419123,
+          time: "02:35",
+        },
+        {
+          bossAbility: 422605,
+          time: "02:42",
+        },
+        {
+          bossAbility: 412761,
+          time: "03:11",
+        },
+        {
+          bossAbility: 422605,
+          time: "03:12",
+        },
+        {
+          bossAbility: 422524,
+          time: "03:23",
+        },
+        {
+          bossAbility: 422605,
+          time: "03:42",
+        },
+        {
+          bossAbility: 419123,
+          time: "03:50",
+        },
+        {
+          bossAbility: 422605,
+          time: "04:12",
+        },
+        {
+          bossAbility: 412761,
+          time: "04:31",
+        },
+        {
+          bossAbility: 422605,
+          time: "04:42",
+        },
+        {
+          bossAbility: 422524,
+          time: "04:43",
+        },
+        {
+          bossAbility: 419123,
+          time: "05:10",
+        },
+        {
+          bossAbility: 422605,
+          time: "05:12",
+        },
+        {
+          bossAbility: 412761,
+          time: "05:50",
+        },
+        {
+          bossAbility: "Phase 3",
+          time: "05:59",
+        },
+        {
+          bossAbility: 422935,
+          time: "06:00",
+        },
+        {
+          bossAbility: 422837,
+          time: "06:39",
+        },
+        {
+          bossAbility: 422837,
+          time: "07:20",
+        },
+        {
+          bossAbility: 422837,
+          time: "08:01",
+        },
+      ],
     },
   },
 };

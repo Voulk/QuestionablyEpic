@@ -23,52 +23,60 @@ export default function createFyrakkEvents(bossID, difficulty, damageTakenData, 
 
   intermission !== undefined ? events.push({ time: moment.utc(fightDuration(intermission.time, starttime)).startOf("second").format("mm:ss"), bossAbility: "Intermission" }) : "";
 
-  const incarnate = 412761;
-  // if (logGuids.includes(incarnate)) {
-  //   const incarnateCast = enemyCasts.filter((filter) => filter.ability.guid === incarnate);
-  //   const incarnateCastTime = 2500;
-
-  //   incarnateCast.map((key) =>
-  //     events.push({
-  //       time: moment
-  //         .utc(fightDuration(key.timestamp - incarnateCastTime, starttime))
-  //         .startOf("second")
-  //         .format("mm:ss"),
-  //       bossAbility: "Intermission",
-  //     }),
-  //   );
-  // }
-
   const corruptBuff = 421922;
-
-  const Phase3Trigger1 = bossHealthData.filter((filter) => filter.health <= 25)[0];
-  let Phase3Trigger2 = "";
-
   if (logGuids.includes(corruptBuff)) {
     const corruptBuffRemoved = buffData.filter((filter) => filter.ability.guid === corruptBuff && filter.type === "removebuff");
 
     corruptBuffRemoved.map((key, i) => {
       events.push({
         time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
-        bossAbility: "Phase 1",
-      }),
-        (Phase3Trigger2 = key.timestamp + 180000);
+        bossAbility: "Phase 2",
+      });
     });
   }
 
-  let Phase3TriggerConfirmed = "";
+  const healAddData = friendlyHealth["series"].filter((filter) => filter.guid === 207800);
+  const healAddHealthData = Object.entries(healAddData[0]["data"]).map((key) => {
+    return {
+      time: key[1][0],
+      health: key[1][1],
+    };
+  });
 
-  if (Phase3Trigger1 !== undefined) {
-    if (Phase3Trigger2 !== "") {
-      console.log(Phase3Trigger1);
-      console.log(Phase3Trigger2);
-      Phase3TriggerConfirmed = Phase3Trigger2 < Phase3Trigger1.time ? Phase3Trigger2 : Phase3Trigger1.time;
-    } else {
-      Phase3TriggerConfirmed = Phase3Trigger1;
+  const healAddFirstSpawn = healAddHealthData[0];
+
+  const eternalFirestorm = 422935;
+  const eternalFirestormCast = enemyCasts.filter((filter) => filter.ability.guid === eternalFirestorm && filter.type === "cast");
+
+  if (healAddFirstSpawn !== undefined) {
+    events.push({ time: moment.utc(fightDuration(healAddFirstSpawn.time, starttime)).startOf("second").format("mm:ss"), bossAbility: 422605 });
+
+    const timeBetweenEvents = 30000; // 30 seconds in milliseconds
+
+    const exclusionTime = 25000; // 25 seconds in milliseconds
+
+    for (let a = healAddFirstSpawn.time; a <= eternalFirestormCast[0].timestamp; a += timeBetweenEvents) {
+      // Check if 'a' is not within 25 seconds of 'eternalFirestormCast[0].timestamp'
+      if (Math.abs(a - eternalFirestormCast[0].timestamp) >= exclusionTime) {
+        events.push({
+          time: moment.utc(fightDuration(a, starttime)).startOf("second").format("mm:ss"),
+          bossAbility: 422605,
+        });
+      }
     }
   }
 
-  Phase3TriggerConfirmed !== undefined ? events.push({ time: moment.utc(fightDuration(Phase3TriggerConfirmed, starttime)).startOf("second").format("mm:ss"), bossAbility: "Phase 3" }) : "";
+  if (logGuids.includes(eternalFirestorm)) {
+    eternalFirestormCast.map((key, i) => {
+      events.push({
+        time: moment
+          .utc(fightDuration(key.timestamp - 1000, starttime))
+          .startOf("second")
+          .format("mm:ss"),
+        bossAbility: "Phase 3",
+      });
+    });
+  }
 
   return events;
 }

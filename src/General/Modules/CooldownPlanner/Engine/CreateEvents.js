@@ -51,7 +51,6 @@ import createTindralSageswiftEvents from "./BossEvents/AmirdrassilEvents/8. Tind
 import createFyrakkEvents from "./BossEvents/AmirdrassilEvents/9. Fyrakk";
 
 export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData) {
-  console.log(enemyDebuffData);
   let returnedEvents = [];
 
   /* ---------------------------------------------------------------------------------------------- */

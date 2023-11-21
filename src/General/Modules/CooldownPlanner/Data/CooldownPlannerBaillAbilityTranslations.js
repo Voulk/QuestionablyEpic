@@ -1329,12 +1329,28 @@ export const bossAbilityTranslations = [
     ch: "Corrupt",
   },
   {
+    guid: 421922,
+    en: "Corrupt",
+    de: "Corrupt",
+    fr: "Corrupt",
+    ru: "Corrupt",
+    ch: "Corrupt",
+  },
+  {
     guid: 422935,
     en: "Eternal Firestorm",
     de: "Eternal Firestorm",
     fr: "Eternal Firestorm",
     ru: "Eternal Firestorm",
     ch: "Eternal Firestorm",
+  },
+  {
+    guid: 422605,
+    en: "Lifeforce Barrier",
+    de: "Lifeforce Barrier",
+    fr: "Lifeforce Barrier",
+    ru: "Lifeforce Barrier",
+    ch: "Lifeforce Barrier",
   },
   {
     guid: 404448,
