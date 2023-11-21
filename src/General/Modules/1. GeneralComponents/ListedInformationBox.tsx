@@ -5,7 +5,7 @@ import HelpIcon from "@mui/icons-material/Help";
 export default function ListedInformationBox(props: { introText: string, bulletPoints: string[], color?: string, title?: string }) {
 
 return (
-  <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "goldenrod" }}>
+  <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: props.color || "goldenrod" }}>
     {props.title ? 
     <div style={{ display: "inline-flex" }}>
       <HelpIcon />
