@@ -17,6 +17,23 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 5,
+    date: "November 22",
+    changes: [ 
+      "Saved SimC strings are now auto-selected when you open the SimC dialog and pasting a new string will automatically overwrite it.",
+      "Converting an item via the Catalyst menu option will keep any Upgrade Tracks it's connected to.",
+      "Added some missing item icons.",
+      "Dreaming Devotion is now included as an option in Top Gear. It'll primarily be chosen in raid.",
+    ]},
+  {
+    version: "10.2",
+    update: 4,
+    date: "November 16",
+    changes: [ 
+      "Added a ton of missing items.",
+    ]},
+  {
+    version: "10.2",
     update: 3,
     date: "November 11",
     changes: [ 

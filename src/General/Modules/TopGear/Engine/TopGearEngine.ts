@@ -16,6 +16,7 @@ import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
+import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 /**
  * == Top Gear Engine ==
@@ -440,7 +441,7 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setInt: number, castModel: any) {
+function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, contentType: contentTypes) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
@@ -469,12 +470,31 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any) {
   bonus_stats.intellect += 177;
   enchants["Legs"] = "Temporal Spellthread";
 
-  // Weapon - Sophic Devotion
-  let expected_uptime = convertPPMToUptime(1, 15);
-  bonus_stats.intellect += 932 * expected_uptime;
-  enchants["CombinedWeapon"] = "Sophic Devotion"; 
-  enchants["2H Weapon"] = "Sophic Devotion"; 
-  enchants["1H Weapon"] = "Sophic Devotion"; 
+
+
+  if (contentType === "Raid") {
+    const dreamingData =  { // Mastery benefit. This is short and not all that useful.
+      coefficient: 83.09494, 
+      table: -9,
+      ppm: 3,
+      targets: 4,
+    };
+    bonus_stats.hps! = (bonus_stats.hps! || 0) + (processedValue(dreamingData, 342) * dreamingData.ppm * dreamingData.targets / 60);
+
+    enchants["CombinedWeapon"] = "Dreaming Devotion"; 
+    enchants["2H Weapon"] = "Dreaming Devotion"; 
+    enchants["1H Weapon"] = "Dreaming Devotion"; 
+  }
+  else {
+    // Weapon - Sophic Devotion
+    let expected_uptime = convertPPMToUptime(1, 15);
+    bonus_stats.intellect += 932 * expected_uptime;
+
+    enchants["CombinedWeapon"] = "Sophic Devotion"; 
+    enchants["2H Weapon"] = "Sophic Devotion"; 
+    enchants["1H Weapon"] = "Sophic Devotion"; 
+  }
+
 
 
 
@@ -570,7 +590,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel);
+  const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
 
   // == Flask / Phialss ==
   if (player.spec === "Holy Paladin") {

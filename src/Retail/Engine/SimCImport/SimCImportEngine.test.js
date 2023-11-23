@@ -131,6 +131,15 @@ describe("Test S3 Items", () => {
         //expect(item.stats.versatility).toEqual(77);
         expect(item.level).toEqual(450)
     });
+    test("Throne of Tides - Cloth 489", () => {
+        const line = "head=,id=133182,bonus_id=9639/6652/9599/9506/9144/9576/9919/8767";
+        const item = processItem(line, player, contentType, type, settings)
+        //expect(item.stats.versatility).toEqual(77);
+        expect(item.level).toEqual(489)
+    });
+
+
+    "head=,id=133182,bonus_id=9639/6652/9599/9506/9144/9576/9919/8767"
     
 
 })
