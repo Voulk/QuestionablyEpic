@@ -1,17 +1,19 @@
 import moment from "moment";
 import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functions";
 
-export default function createGnarlrootEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData) {
+export default function createGnarlrootEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData) {
   let events = [];
+  console.log(enemyDebuffData);
 
   events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
 
   const taintedBloom = 421986;
   const doomCultivation = 421013;
+  const uprootedAgony = 421840;
 
   const logGuids = damageTakenData
     .map((key) => key.ability.guid)
-    .concat(debuffs.map((key) => key.ability.guid))
+    .concat(enemyDebuffData.map((key) => key.ability.guid))
     .concat(buffData.map((key) => key.ability.guid));
 
   // Conductive Mark
@@ -55,7 +57,6 @@ export default function createGnarlrootEvents(bossID, difficulty, damageTakenDat
 
   if (logGuids.includes(doomCultivation)) {
     const doomCultivationApplied = buffData.filter((filter) => filter.ability.guid === doomCultivation && filter.type === "applybuff");
-    const doomCultivationRemoved = buffData.filter((filter) => filter.ability.guid === doomCultivation && filter.type === "removebuff");
 
     doomCultivationApplied.map((key) =>
       events.push(
@@ -72,8 +73,12 @@ export default function createGnarlrootEvents(bossID, difficulty, damageTakenDat
         },
       ),
     );
+  }
 
-    doomCultivationRemoved.map((key, i) => {
+  if (logGuids.includes(uprootedAgony)) {
+    const uprootedAgonyRemoved = enemyDebuffData.filter((filter) => filter.ability.guid === uprootedAgony && filter.type === "removedebuff");
+
+    uprootedAgonyRemoved.map((key, i) => {
       events.push({
         time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"),
         bossAbility: "Phase 1",
