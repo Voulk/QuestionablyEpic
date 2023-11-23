@@ -5203,6 +5203,17 @@ export const bossAbilities = {
     {
       cooldownPlannerActive: true,
       createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
       guid: 423260,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_druid_wildmushroom_frenzy.jpg"),
       importActive: true,
@@ -5314,10 +5325,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 421603,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_dreamowl_firemount.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Incarnation: Owl of the Flame",
         de: "",
@@ -5340,9 +5351,34 @@ export const bossAbilities = {
         ch: "",
       },
     },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 424140,
+      icon: require("Images/CooldownPlanner/BossAbilities/spell_fire_felflamering_red.jpg"),
+      importActive: true,
+      name: {
+        en: "Supernova",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
   ],
   // Fyrakk the Blazing
   2677: [
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: true,

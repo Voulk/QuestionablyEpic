@@ -3649,6 +3649,14 @@ export const bossAbilityTranslations = [
     ch: "Typhoon",
   },
   {
+    guid: 424140,
+    en: "Supernova",
+    de: "Supernova",
+    fr: "Supernova",
+    ru: "Supernova",
+    ch: "Supernova",
+  },
+  {
     guid: "Phase 1",
     en: "Phase 1",
     de: "Phase 1",
