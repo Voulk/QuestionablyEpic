@@ -32,14 +32,22 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
 
   }
   else if (effectName === "Evoker T31-4") {
-    // 
+    
+    
+    // We can consume our 4pc echoes in a number of ways but it'll chiefly be Living Flame and Emerald Blossom.
+    const consumptionRatios = {"Living Flame": 1, "Emerald Blossom": 0} // TODO
+    
     const livingFlameData = EVOKERSPELLDB["Living Flame"][0];
     const oneLivingFlame = (livingFlameData.coeff * player.getInt() * player.getStatMults(livingFlameData.secondaries) + player.getHealth() * 0.02)* 0.5;
-    const oneEcho = oneLivingFlame * 0.7;
+    const oneEcho = oneLivingFlame * 0.7 * consumptionRatios["Living Flame"];
+
+
+
     const livingFlameCPM = 11 + (5 * 2) + empowersCPM * 3; // Leaping Flames gives us a ton of extra value here. We're also including 2pc
+    
     const echoesGenerated = livingFlameCPM * 0.33;
 
-    const averageEssenceBursts = echoesGenerated * 0.2;
+    const averageEssenceBursts = echoesGenerated * 0.2 * consumptionRatios["Living Flame"];
     const essenceBurstHPS = averageEssenceBursts * essenceBurst;
 
     bonus_stats.hps = (essenceBurstHPS + oneEcho * echoesGenerated * healingBonus) / 60;

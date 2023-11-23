@@ -255,6 +255,8 @@ export class Player {
         newItem.vaultItem = true;
       }
       newItem.quality = 4;
+      newItem.upgradeTrack = item.upgradeTrack;
+      newItem.upgradeRank = item.upgradeRank;
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.
