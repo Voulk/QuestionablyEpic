@@ -462,9 +462,14 @@ export function getTranslatedItemName(id: number, lang: string, effect: any, gam
   if (effect && effect.type === "spec legendary") {
     return effect.name;
   } else {
+    let itemName = ""
     // @ts-ignore
-    if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
-    else return "Unknown Item";
+    if (idAsString in nameDB && nameDB[idAsString][lang]) itemName = nameDB[idAsString][lang];
+    // @ts-ignore
+    else if (idAsString in nameDB && nameDB[idAsString]["en"]) itemName = nameDB[idAsString]["en"];
+    else itemName = "Unknown Item";
+    
+    return itemName;
   }
 }
 
@@ -476,7 +481,7 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
     return embel.id === id;
   });
   // @ts-ignore
-  if (temp.length > 0) return temp[0].name[lang];
+  if (temp.length > 0) return temp[0].name[lang] ?? temp[0].name["en"];
   else return "Unknown Effect";
 }
 

@@ -126,7 +126,7 @@ export const getTranslatedSoulbind = (soulbind, currentLanguage) => {
     .filter((obj) => {
       return obj.id === soulbind;
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
 
   return name;
 };

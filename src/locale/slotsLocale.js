@@ -176,7 +176,7 @@ export const getTranslatedSlotName = (slot, currentLanguage) => {
     .filter((obj) => {
       return obj.id === slot;
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
 
   return name;
 };

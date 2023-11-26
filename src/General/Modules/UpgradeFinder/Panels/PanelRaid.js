@@ -60,8 +60,9 @@ export default function RaidGearContainer(props) {
 
   const getTranslatedRaidName = (raid) => {
     const raidName = raidDB.filter((obj) => {
-      return obj.raidID === raid;
-    })[0]["name"][currentLanguage];
+      if(obj.raidID === raid)
+        return obj.name[currentLanguage] ?? obj.name["en"]
+    })[0];
 
     return raidName;
   };

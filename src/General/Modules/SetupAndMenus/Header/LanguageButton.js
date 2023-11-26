@@ -93,23 +93,24 @@ export default function LanguageSelector() {
                       paddingBottom: 0,
                     }}
                   >
-                    {/* 
                     <MenuItem divider onClick={(e) => handleClose(e, "cn")}>
                       简体中文
                     </MenuItem>
-                     */}
                     <MenuItem divider onClick={(e) => handleClose(e, "en")}>
                       English
                     </MenuItem>
-                    {/* 
                     <MenuItem divider onClick={(e) => handleClose(e, "fr")}>
                       Français
                     </MenuItem>
-                    */}
                     <MenuItem divider onClick={(e) => handleClose(e, "ru")}>
                       Русский
                     </MenuItem>
-                    <MenuItem onClick={(e) => handleClose(e, "de")}>Deutsch</MenuItem>
+                    <MenuItem divider onClick={(e) => handleClose(e, "de")}>
+                      Deutsch
+                    </MenuItem>
+                    <MenuItem divider onClick={(e) => handleClose(e, "it")}>
+                      Italian
+                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

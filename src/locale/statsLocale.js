@@ -116,7 +116,7 @@ export const getTranslatedStats = (stat, currentLanguage) => {
     .filter((obj) => {
       return obj.id.includes(stat);
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
 
   return stats;
 };

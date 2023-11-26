@@ -215,7 +215,7 @@ export const getTranslatedClassName = (className, currentLanguage) => {
     .filter((obj) => {
       return obj.id.includes(className);
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
   return name;
 };
 export const getClassColour = (className) => {
@@ -428,7 +428,7 @@ export const getTranslatedClassNameCD = (className, currentLanguage) => {
     .filter((obj) => {
       return obj.id.includes(className);
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
   return name;
 };
 export const getClassColourCD = (className) => {
@@ -978,7 +978,7 @@ export const getTranslatedSpecNameCD = (specName, currentLanguage) => {
     .filter((obj) => {
       return obj.id.includes(specName);
     })
-    .map((obj) => obj.name[currentLanguage]);
+    .map((obj) => obj.name[currentLanguage] ?? obj.name["en"]);
   return name;
 };
 export const getSpecColourCD = (specName) => {
