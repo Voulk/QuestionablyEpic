@@ -4903,7 +4903,7 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 422172,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_racial_foregedinflames.jpg"),
       importActive: true,
@@ -4923,6 +4923,48 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Devour Essence",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 422577,
+      icon: require("Images/CooldownPlanner/BossAbilities/spell_fire_ragnaros_supernova.jpg"),
+      importActive: false,
+      name: {
+        en: "Searing Aftermath",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 426018,
+      icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_orb_05.jpg"),
+      importActive: false,
+      name: {
+        en: "Seeking Inferno",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 430325,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_warlock_moltencore.jpg"),
+      importActive: false,
+      name: {
+        en: "Inferno",
         de: "",
         fr: "",
         ru: "",
@@ -5044,6 +5086,7 @@ export const bossAbilities = {
         ch: "",
       },
     },
+
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
     {
       cooldownPlannerActive: true,
