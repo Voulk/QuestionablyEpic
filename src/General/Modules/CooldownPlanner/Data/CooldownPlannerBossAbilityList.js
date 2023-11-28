@@ -4873,6 +4873,15 @@ export const bossAbilities = {
   ],
   // Smolderon
   2824: [
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
     {
       cooldownPlannerActive: false,
       createEvent: false,
@@ -4948,6 +4957,20 @@ export const bossAbilities = {
       createEvent: false,
       guid: 426018,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_orb_05.jpg"),
+      importActive: false,
+      name: {
+        en: "Seeking Inferno",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 426010,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_fixated_state_orange.jpg"),
       importActive: false,
       name: {
         en: "Seeking Inferno",

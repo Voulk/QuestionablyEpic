@@ -3594,104 +3594,248 @@ export const defaultPlans: DefaultPlans = {
     Heroic: {
       default: [
         {
-          bossAbility: 421343,
-          time: "00:16",
+          bossAbility: "Phase 1",
+          time: "00:00",
         },
         {
           bossAbility: 421343,
-          time: "00:46",
+          time: "00:15",
+        },
+        {
+          bossAbility: 422577,
+          time: "00:22",
+        },
+        {
+          bossAbility: 421343,
+          time: "00:45",
+        },
+        {
+          bossAbility: 422577,
+          time: "00:52",
+        },
+        {
+          bossAbility: "Intermission",
+          time: "01:06",
         },
         {
           bossAbility: 422172,
-          time: "01:08",
+          time: "01:07",
+        },
+        {
+          bossAbility: "Phase 1",
+          time: "01:37",
         },
         {
           bossAbility: 421343,
-          time: "01:54",
+          time: "01:53",
+        },
+        {
+          bossAbility: 422577,
+          time: "01:59",
         },
         {
           bossAbility: 421343,
-          time: "02:24",
+          time: "02:23",
+        },
+        {
+          bossAbility: 422577,
+          time: "02:29",
+        },
+        {
+          bossAbility: "Intermission",
+          time: "02:44",
         },
         {
           bossAbility: 422172,
-          time: "02:46",
+          time: "02:45",
+        },
+        {
+          bossAbility: "Phase 1",
+          time: "03:15",
         },
         {
           bossAbility: 421343,
-          time: "03:32",
+          time: "03:31",
+        },
+        {
+          bossAbility: 422577,
+          time: "03:37",
         },
         {
           bossAbility: 421343,
-          time: "04:02",
+          time: "04:01",
+        },
+        {
+          bossAbility: 422577,
+          time: "04:07",
+        },
+        {
+          bossAbility: "Intermission",
+          time: "04:22",
         },
         {
           bossAbility: 422172,
-          time: "04:24",
+          time: "04:23",
         },
         {
-          bossAbility: 421343,
-          time: "05:10",
-        },
-        {
-          bossAbility: 421343,
-          time: "05:40",
-        },
-        {
-          bossAbility: 422172,
-          time: "06:02",
+          bossAbility: "Phase 1",
+          time: "04:53",
         },
       ],
     },
     Mythic: {
       default: [
         {
+          bossAbility: "Phase 1",
+          time: "00:00",
+        },
+        {
           bossAbility: 421343,
           time: "00:16",
         },
         {
           bossAbility: 421343,
-          time: "00:46",
+          time: "00:16",
+        },
+        {
+          bossAbility: 422577,
+          time: "00:22",
+        },
+        {
+          bossAbility: 426018,
+          time: "00:31",
+        },
+        {
+          bossAbility: 421343,
+          time: "00:45",
+        },
+        {
+          bossAbility: 422577,
+          time: "00:52",
+        },
+        {
+          bossAbility: 426018,
+          time: "00:56",
+        },
+        {
+          bossAbility: "Intermission",
+          time: "01:07",
         },
         {
           bossAbility: 422172,
           time: "01:08",
         },
         {
+          bossAbility: "Phase 1",
+          time: "01:38",
+        },
+        {
           bossAbility: 421343,
           time: "01:54",
+        },
+        {
+          bossAbility: 422577,
+          time: "02:00",
+        },
+        {
+          bossAbility: 426018,
+          time: "02:09",
         },
         {
           bossAbility: 421343,
           time: "02:24",
         },
         {
-          bossAbility: 422172,
+          bossAbility: 422577,
+          time: "02:30",
+        },
+        {
+          bossAbility: 426018,
+          time: "02:34",
+        },
+        {
+          bossAbility: "Intermission",
           time: "02:46",
         },
         {
-          bossAbility: 421343,
-          time: "03:32",
-        },
-        {
-          bossAbility: 421343,
-          time: "04:02",
-        },
-        {
           bossAbility: 422172,
+          time: "02:47",
+        },
+        {
+          bossAbility: "Phase 1",
+          time: "03:17",
+        },
+        {
+          bossAbility: 421343,
+          time: "03:33",
+        },
+        {
+          bossAbility: 422577,
+          time: "03:39",
+        },
+        {
+          bossAbility: 426018,
+          time: "03:48",
+        },
+        {
+          bossAbility: 421343,
+          time: "04:03",
+        },
+        {
+          bossAbility: 422577,
+          time: "04:09",
+        },
+        {
+          bossAbility: 426018,
+          time: "04:13",
+        },
+        {
+          bossAbility: "Intermission",
           time: "04:24",
         },
         {
-          bossAbility: 421343,
-          time: "05:10",
+          bossAbility: 422172,
+          time: "04:25",
+        },
+        {
+          bossAbility: "Phase 1",
+          time: "04:55",
         },
         {
           bossAbility: 421343,
-          time: "05:40",
+          time: "05:11",
+        },
+        {
+          bossAbility: 422577,
+          time: "05:17",
+        },
+        {
+          bossAbility: 426018,
+          time: "05:26",
+        },
+        {
+          bossAbility: 421343,
+          time: "05:41",
+        },
+        {
+          bossAbility: 422577,
+          time: "05:47",
+        },
+        {
+          bossAbility: 426018,
+          time: "05:51",
+        },
+        {
+          bossAbility: "Intermission",
+          time: "06:01",
         },
         {
           bossAbility: 422172,
           time: "06:02",
+        },
+        {
+          bossAbility: "Phase 1",
+          time: "06:32",
         },
       ],
     },
@@ -4222,10 +4366,6 @@ export const defaultPlans: DefaultPlans = {
         {
           bossAbility: 412761,
           time: "01:49",
-        },
-        {
-          bossAbility: 419144,
-          time: "02:02",
         },
         {
           bossAbility: 419144,

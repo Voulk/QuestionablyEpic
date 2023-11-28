@@ -12,8 +12,8 @@ export default function createSmolderonEvents(bossID, difficulty, damageTakenDat
     .concat(enemyCasts.map((key) => key.ability.guid));
 
   const searingAftermath = 422577;
-  const seekingInfernoHitDebuff = 430325;
   const seekingInfernoSpellID = 426018;
+  const seekingInfernoDebuffID = 426010;
 
   const worldInFlame = 422172;
 
@@ -35,7 +35,7 @@ export default function createSmolderonEvents(bossID, difficulty, damageTakenDat
           .utc(fightDuration(key.timestamp - 1000, starttime))
           .startOf("second")
           .format("mm:ss"),
-        bossAbility: "Phase 2",
+        bossAbility: "Intermission",
       });
     });
   }
@@ -51,24 +51,24 @@ export default function createSmolderonEvents(bossID, difficulty, damageTakenDat
     });
   }
 
-  // if (logGuids.includes(seekingInfernoHitDebuff)) {
-  //   const seekingInferno = enemyCasts.filter((filter) => filter.ability.guid === seekingInfernoSpellID);
-  //   const threshold = 20000;
-  //   events.push(
-  //     seekingInferno.map((key) => {
-  //       return { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: seekingInfernoSpellID };
-  //     })[0],
-  //   );
+  if (logGuids.includes(seekingInfernoDebuffID)) {
+    const seekingInferno = debuffs.filter((filter) => filter.ability.guid === seekingInfernoDebuffID && filter.type === "applydebuff");
+    const threshold = 20000;
+    events.push(
+      seekingInferno.map((key) => {
+        return { time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: seekingInfernoSpellID };
+      })[0],
+    );
 
-  //   let lastChosen = seekingInferno.map((key) => key.timestamp)[0];
+    let lastChosen = seekingInferno.map((key) => key.timestamp)[0];
 
-  //   seekingInferno.map((key) => {
-  //     if (key.timestamp > lastChosen + threshold) {
-  //       lastChosen = key.timestamp;
-  //       events.push({ time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: seekingInfernoSpellID });
-  //     }
-  //   });
-  // }
+    seekingInferno.map((key) => {
+      if (key.timestamp > lastChosen + threshold) {
+        lastChosen = key.timestamp;
+        events.push({ time: moment.utc(fightDuration(key.timestamp, starttime)).startOf("second").format("mm:ss"), bossAbility: seekingInfernoSpellID });
+      }
+    });
+  }
 
   return events;
 }
