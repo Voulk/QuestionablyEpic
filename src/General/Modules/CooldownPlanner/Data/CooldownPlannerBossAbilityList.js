@@ -5209,10 +5209,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 413443,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_nature_skinofearth.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Life Ward",
         de: "",
@@ -5250,13 +5250,27 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 426855,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_shaman_giftearthmother.jpg"),
       importActive: false,
       name: {
         en: "Full Bloom",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 425357,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_monk_explodingjadeblossom.jpg"),
+      importActive: false,
+      name: {
+        en: "Surging Growth",
         de: "",
         fr: "",
         ru: "",
