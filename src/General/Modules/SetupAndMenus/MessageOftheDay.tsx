@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Expect changes through the week. Amirdrassil tier sets will be in with season release.",
+      "-> Blizzard continue to make both class and item changes.",
   ]
 ;
 
