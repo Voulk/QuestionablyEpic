@@ -4873,6 +4873,15 @@ export const bossAbilities = {
   ],
   // Smolderon
   2824: [
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
     {
       cooldownPlannerActive: false,
       createEvent: false,
@@ -4903,7 +4912,7 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 422172,
       icon: require("Images/CooldownPlanner/BossAbilities/ability_racial_foregedinflames.jpg"),
       importActive: true,
@@ -4923,6 +4932,62 @@ export const bossAbilities = {
       importActive: false,
       name: {
         en: "Devour Essence",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 422577,
+      icon: require("Images/CooldownPlanner/BossAbilities/spell_fire_ragnaros_supernova.jpg"),
+      importActive: false,
+      name: {
+        en: "Searing Aftermath",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 426018,
+      icon: require("Images/CooldownPlanner/BossAbilities/inv_misc_orb_05.jpg"),
+      importActive: false,
+      name: {
+        en: "Seeking Inferno",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: true,
+      guid: 426010,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_fixated_state_orange.jpg"),
+      importActive: false,
+      name: {
+        en: "Seeking Inferno",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    {
+      cooldownPlannerActive: false,
+      createEvent: false,
+      guid: 430325,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_warlock_moltencore.jpg"),
+      importActive: false,
+      name: {
+        en: "Inferno",
         de: "",
         fr: "",
         ru: "",
@@ -5044,6 +5109,7 @@ export const bossAbilities = {
         ch: "",
       },
     },
+
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
     {
       cooldownPlannerActive: true,
@@ -5143,10 +5209,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 413443,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_nature_skinofearth.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Life Ward",
         de: "",
@@ -5184,8 +5250,8 @@ export const bossAbilities = {
       },
     },
     {
-      cooldownPlannerActive: false,
-      createEvent: false,
+      cooldownPlannerActive: true,
+      createEvent: true,
       guid: 426855,
       icon: require("Images/CooldownPlanner/BossAbilities/spell_shaman_giftearthmother.jpg"),
       importActive: false,
@@ -5197,9 +5263,34 @@ export const bossAbilities = {
         ch: "",
       },
     },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 425357,
+      icon: require("Images/CooldownPlanner/BossAbilities/ability_monk_explodingjadeblossom.jpg"),
+      importActive: false,
+      name: {
+        en: "Surging Growth",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
   ],
   // Tindral Sageswift, Seer of the Flame
   2786: [
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: false,
@@ -5314,10 +5405,10 @@ export const bossAbilities = {
     },
     {
       cooldownPlannerActive: true,
-      createEvent: false,
+      createEvent: true,
       guid: 421603,
       icon: require("Images/CooldownPlanner/BossAbilities/inv_dreamowl_firemount.jpg"),
-      importActive: true,
+      importActive: false,
       name: {
         en: "Incarnation: Owl of the Flame",
         de: "",
@@ -5340,9 +5431,34 @@ export const bossAbilities = {
         ch: "",
       },
     },
+    {
+      cooldownPlannerActive: true,
+      createEvent: true,
+      guid: 424140,
+      icon: require("Images/CooldownPlanner/BossAbilities/spell_fire_felflamering_red.jpg"),
+      importActive: true,
+      name: {
+        en: "Supernova",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
   ],
   // Fyrakk the Blazing
   2677: [
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: "Intermission",
+      icon: "",
+      importActive: false,
+      name: { ch: "Intermission", de: "Intermission", en: "Intermission", fr: "Intermission", ru: "Intermission" },
+    },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
+    { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
     {
       cooldownPlannerActive: true,
       createEvent: true,
