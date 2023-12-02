@@ -358,7 +358,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
   else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
 
-  
+  else if (bossID === 2557 || bossID === 2555) return 3; // Volcoross, Council: +3
+  else if (bossID === 2553 || bossID === 2556 || bossID === 2563) return 6; // Larodar, Nymue, Smolderon: +6
+  else if (bossID === 2565 || bossID === 2519) return 9; // Tindral, Fyrakk: +9
 
   return 0;
 }
