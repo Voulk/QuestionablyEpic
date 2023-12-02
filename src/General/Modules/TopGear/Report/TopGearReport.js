@@ -213,7 +213,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       <div style={{ height: 96 }} />
       {resultValid ? (
         <Grid container spacing={1}>
-          <ListedInformationBox introText={"Your first vault is a vital choice where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like Pip's Emerald Friendship Badge can be excellent pick ups since competition for them can be fierce.", 
+          <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like Pip's Emerald Friendship Badge can be excellent pick ups since competition for them can be fierce.", 
             "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Week 1 Vault"} />
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>
