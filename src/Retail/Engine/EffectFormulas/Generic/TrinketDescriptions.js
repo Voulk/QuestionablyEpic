@@ -119,7 +119,7 @@ const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
         category: trinketCategories.RAIDDROPS,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
         description:
-          "Recent buffs included.",
+          "Very strong in normal / heroic content. Falls off quite significantly as you progress through Mythic. Expect it to do a decent amount on your healing meter but it's hamstrung by its lack of passive intellect.",
       };
 }
 

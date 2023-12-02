@@ -405,6 +405,7 @@ export class Player {
     if (this.spec === "Discipline Priest") {
       //this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
       this.getActiveModel("Raid").setRampInfo(stats);
+      this.getActiveModel("Dungeon").setRampInfo(stats);
     }
   };
 
@@ -414,6 +415,7 @@ export class Player {
       this.activeModelID[contentType] = id;
 
         this.getActiveModel("Raid").setRampInfo(this.activeStats);
+        this.getActiveModel("Dungeon").setRampInfo(this.activeStats);
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
@@ -622,7 +624,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 12500,
+        intellect: 12000,
         haste: 6000,
         crit: 4852,
         mastery: 1550,
