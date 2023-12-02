@@ -43,7 +43,7 @@ export const druidDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.709,
     crit: 0.585,
-    mastery: 0.649,
+    mastery: 0.652,
     versatility: 0.625,
     leech: 0.377,
     defaults: true,
@@ -58,7 +58,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
     specialQueries = {
       chilledClarityExtension: 33000,
       ConvokeChannelHPS: 480,
-      OneManaHealing: 26.5, // This is an upper bound already.
+      OneManaHealing: 26.8, // This is an upper bound already.
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
         c60: 1.1,

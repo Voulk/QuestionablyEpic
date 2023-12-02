@@ -358,6 +358,8 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
   else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
 
+  
+
   return 0;
 }
 
@@ -374,7 +376,7 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
     if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
     else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
     else if (bossID === 2519) return 7;
-    else if (bossID === 2556) return 3; // ???
+    else if (bossID === 2556) return 0; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;
   } 

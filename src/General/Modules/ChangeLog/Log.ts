@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 6,
+    date: "December 1",
+    changes: [ 
+      "In-game Blossom buff #6",
+      "Removed low season 2 item levels from the chart",
+      "Re-evaluated the 1:1 portion of Smoldering Seedling",
+    ]},
+  {
+    version: "10.2",
     update: 5,
     date: "November 22",
     changes: [ 

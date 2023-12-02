@@ -1,11 +1,43 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket } from "../EffectUtilities";
 
 export const raidTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                  Smoldering Treant Seedling                                */
+    /*                                     Nymue's Unraveling Spindle                                 */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
+    */
+    name: "Nymue's Unraveling Spindle",
+    effects: [
+      { // 
+        coefficient: 259.8929, 
+        table: -9,
+        cooldown: 120,
+        ticks: 6,
+      },
+      { // Mastery benefit
+        coefficient: 2.263035, 
+        table: -7,
+        duration: 18,
+        cooldown: 120,
+        stacks: 6,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.dps = processedValue(data[0], itemLevel) / data[0].cooldown;
+
+      bonus_stats.mastery = runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel) * data[1].stacks / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Smoldering Treant Seedling                                */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* This will need a larger revamp to properly account for the 1:1 portion at the end since it's an efficiency increase rather than added healing.
     */
     name: "Smoldering Seedling",
     effects: [
@@ -15,7 +47,9 @@ export const raidTrinketData = [
         duration: 12,
         cooldown: 120,
         targetScaling: 1.5, // This actually heals for 2.5x the amount you feed it, but we deduct the healing spent.
-        efficiency: {Raid: 0.5, Dungeon: 0.3}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        efficiency: {Raid: 0.6, Dungeon: 0.3}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        specEfficiency: { "Restoration Druid": 0.8, "Holy Paladin": 1, "Holy Priest": 0.9, "Discipline Priest": 0.6, "Mistweaver Monk": 1.2, 
+                          "Restoration Shaman": 0.8, "Preservation Evoker": 0.8 }, // Note the comment above. This could be replaced by a proper sequence comparison.
       },
       { // Mastery benefit. This is short and not all that useful.
         coefficient: 0.518729, 
@@ -31,7 +65,8 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) / data[0].cooldown * data[0].targetScaling;
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) / data[0].cooldown * data[0].targetScaling
+                          * data[0].specEfficiency[player.spec];
 
       bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
 
@@ -89,28 +124,28 @@ export const raidTrinketData = [
     name: "Blossom of Amirdrassil",
     effects: [
       {  // HoT effect
-        coefficient: 35.4153 * 1.05, // This is probably 1 HoT tick.
+        coefficient: 40.9063, // This is probably 1 HoT tick.
         table: -9,
         secondaries: ['versatility', 'crit'], // Crit added post-release.
-        efficiency: {Raid: 0.72, Dungeon: 0.65}, 
+        efficiency: {Raid: 0.7, Dungeon: 0.64}, 
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
         ticks: 6,
       },
       {  // Spread HoT effect
-        coefficient: 17.70765 * 1.05, // 46.75641,
+        coefficient: 20.45229, // 46.75641,
         table: -9,
-        targets: 3, // Currently 9 on PTR.
+        targets: 3, // 
         secondaries: ['versatility', 'crit'],
-        efficiency: {Raid: 0.68, Dungeon: 0.57}, 
-        percentProc: 0.75,
+        efficiency: {Raid: 0.58, Dungeon: 0.5}, 
+        percentProc: 0.82,
         ticks: 6,
       },
       {  // Shield effect
-        coefficient: 318.7446 * 1.05,
+        coefficient: 368.1498,
         table: -9,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
-        percentProc: 0.25,
+        percentProc: 0.18,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
