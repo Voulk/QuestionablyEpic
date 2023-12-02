@@ -28,7 +28,7 @@ describe("Blossom of Amirdrassil", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${483}  | ${[Math.floor(327008*1.05/6),  Math.floor(163504*1.05/6), Math.floor(490523*1.05)]}
+    ${483}  | ${[Math.floor(62951),  Math.floor(163504*1.05*1.1/6), Math.floor(490523*1.05*1.1)]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
