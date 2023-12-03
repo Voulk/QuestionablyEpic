@@ -47,8 +47,9 @@ const getExtraMenuItems = (item: any): MenuItemType[] => {
   if (CONSTANTS.socketSlots.includes(item.slot) && item.slot !== "Neck") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
-    //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
+    if (!item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
+    //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
+
   }
   if (!item.vaultItem) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Convert to Vault"})
 
