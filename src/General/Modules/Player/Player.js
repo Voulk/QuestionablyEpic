@@ -289,6 +289,8 @@ export class Player {
   };
 
   // TODO: Move to playerUtilities and just call addItem.
+  // @deprecated
+  // Use UpgradeItem above.
   cloneAndSocketItem = (item) => {
     const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
     newItem.active = true;
