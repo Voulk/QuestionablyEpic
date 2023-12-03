@@ -47,9 +47,10 @@ const getExtraMenuItems = (item: any): MenuItemType[] => {
   if (CONSTANTS.socketSlots.includes(item.slot) && item.slot !== "Neck") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label:"Remove Socket"})
-    else items.push({id: items.length + 1, ilvlMinimum: 0, label:"Add Socket"})
+    if (item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
+    //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
   }
+  if (!item.vaultItem) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Convert to Vault"})
 
   // Add embellishment options.
   
@@ -74,9 +75,16 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
 
   // Function to execute when menu item is clicked
   const handleMenuItemClick = (menuItem: MenuItemType) => {
-    upgradeItem(item, menuItem.ilvlMinimum);
+    upgradeItem(item, menuItem.ilvlMinimum, false, false);
     handleClose();
   };
+
+  const handleExtraMenuItemClick = (menuItem: MenuItemType) => {
+    if (menuItem.label === "Add Socket") upgradeItem(item, 0, true, false);
+    else if (menuItem.label === "Convert to Vault") upgradeItem(item, 0, false, true);
+    handleClose();
+
+  }
 
   const handlecatalyseItemCard = () => {
     catalyseItemCard();
@@ -119,7 +127,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         ))}
         {extraMenuItems
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+            <MenuItem key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
           ))}

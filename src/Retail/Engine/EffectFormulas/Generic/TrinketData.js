@@ -3,6 +3,36 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, r
 export const raidTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                                     Ashes of the Embersoul                                 */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Ashes of the Embersoul",
+    effects: [
+      { // 
+        coefficient: 4.106037 / 2, // Average. This is not integrated into any cast sequences currently but could be.  
+        table: -1,
+        cooldown: 120,
+        duration: 20,
+      },
+      { // 
+        coefficient: -0.500103, 
+        table: -7,
+        duration: 60,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      bonus_stats.haste = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                     Nymue's Unraveling Spindle                                 */
     /* ---------------------------------------------------------------------------------------------- */
     /* 

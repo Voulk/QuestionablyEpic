@@ -263,14 +263,28 @@ export class Player {
     }
   };
 
-  upgradeItem = (item, newLevel) => {
-    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, newLevel, "");
+  // Options: Convert to Vault, Add socket, change item level.
+  upgradeItem = (item, newLevel, socketFlag, vaultFlag) => {
+
+    /*
+    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
     newItem.active = true;
+    if (newLevel !== 0) item.level = newLevel;
+    if (socketFlag) item.socket = 1;
     if (item.uniqueEquip === "vault") {
       newItem.uniqueEquip = "vault";
       newItem.vaultItem = true;
     }
     newItem.quality = item.quality || 4;
+    newItem.itemConversion = item.itemConversion || 0;
+    this.activeItems = this.activeItems.concat(newItem); */
+
+    const newItem = item.clone();
+    newItem.active = true;
+    if (newLevel !== 0) newItem.level = newLevel;
+    if (socketFlag) newItem.socket = 1;
+    if (vaultFlag) newItem.vaultItem = true;
+
     this.activeItems = this.activeItems.concat(newItem);
   };
 
@@ -286,6 +300,7 @@ export class Player {
     newItem.quality = item.quality || 4;
     this.activeItems = this.activeItems.concat(newItem);
   }
+
 
   sortItems = (container) => {
     // Current default sorting is by HPS but we could get creative here in future.
