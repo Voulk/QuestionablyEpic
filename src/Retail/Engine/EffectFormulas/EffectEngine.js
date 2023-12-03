@@ -37,6 +37,8 @@ import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
 export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
   let bonus_stats = {};
+  if (!effect) return bonus_stats;
+  
   let effectName = effect.name;
   let effectType = effect.type;
 

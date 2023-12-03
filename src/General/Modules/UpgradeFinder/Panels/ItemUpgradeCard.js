@@ -48,7 +48,7 @@ export default function ItemCard(props) {
   const item = props.item;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+  const isLegendary = false; // "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
   const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);

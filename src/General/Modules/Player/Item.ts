@@ -16,7 +16,7 @@ export class Item {
   stats: Stats = {}; // The stats on a given item.
 
 
-  effect: ItemEffect | undefined;
+  effect: ItemEffect | "";
   uniqueHash: string; // Technically not a hash.
   uniqueEquip: string; // Unique Equip type if relevant.
   active: boolean = false; // An active item is selected for inclusion in Top Gear.
@@ -77,8 +77,7 @@ export class Item {
     );
 
     // 
-    clonedItem.effect = this.effect ? { ...this.effect } : undefined; 
-    clonedItem.uniqueHash = this.uniqueHash;
+    clonedItem.effect = this.effect ? { ...this.effect } : ""; 
     clonedItem.uniqueEquip = this.uniqueEquip;
     clonedItem.active = this.active;
     clonedItem.vaultItem = this.vaultItem;
@@ -103,6 +102,11 @@ export class Item {
     // ... (copy other properties as needed)
 
     return clonedItem;
+  }
+
+  updateLevel(level: number) {
+    this.level = level;
+    this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot"), getItemAllocations(this.id), this.tertiary);
   }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and

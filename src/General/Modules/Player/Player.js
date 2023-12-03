@@ -281,11 +281,12 @@ export class Player {
 
     const newItem = item.clone();
     newItem.active = true;
-    if (newLevel !== 0) newItem.level = newLevel;
+    if (newLevel !== 0) newItem.updateLevel(newLevel);
     if (socketFlag) newItem.socket = 1;
     if (vaultFlag) newItem.vaultItem = true;
 
-    this.activeItems = this.activeItems.concat(newItem);
+    if (newItem) this.activeItems = this.activeItems.concat(newItem);
+    
   };
 
   // TODO: Move to playerUtilities and just call addItem.
