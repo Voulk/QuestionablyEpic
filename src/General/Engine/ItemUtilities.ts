@@ -463,13 +463,14 @@ export function checkItemExists(id: number) {
 // Returns a translated item name based on an ID.
 export function getTranslatedItemName(id: number, lang: string, effect: any, gameType: gameTypes = "Retail") {
   const idAsString = id.toString();
-  if (effect && effect.type === "spec legendary") {
+  /*if (effect && effect.type === "spec legendary") {
     return effect.name;
-  } else {
+  } */
+  //else {
     // @ts-ignore
-    if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
-    else return "Unknown Item";
-  }
+
+  if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
+  else return "Unknown Item";
 }
 
 // Returns a translated Embellishment name based on an ID.
@@ -809,7 +810,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
+  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.

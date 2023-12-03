@@ -49,7 +49,7 @@ export default function ItemCardReport(props) {
   const currentLanguage = i18n.language;
   const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;
-  const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
+  const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = getGemIcon(enchants["Gems"]);
