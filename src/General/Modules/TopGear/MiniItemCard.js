@@ -62,7 +62,7 @@ export default function ItemCard(props) {
   const item = props.item;
   const itemLevel = item.level;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
-  const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
+  const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const isCatalystItem = item.isCatalystItem;
   const gameType = useSelector((state) => state.gameType);
   const itemQuality = item.getQualityColor();

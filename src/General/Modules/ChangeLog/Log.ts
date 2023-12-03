@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 7,
+    date: "December 2",
+    changes: [ 
+      "Upgrade Finder: Non-max difficulties should now show correct item levels for later bosses.",
+      "Item Cards: Add Socket should now work correctly.",
+      "Item Cards: Added an option to add a Vault tag to items.",
+    ]},
+  {
+    version: "10.2",
     update: 6,
     date: "December 1",
     changes: [ 
