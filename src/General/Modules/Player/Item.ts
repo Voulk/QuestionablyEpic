@@ -16,7 +16,7 @@ export class Item {
   stats: Stats = {}; // The stats on a given item.
 
 
-  effect: ItemEffect;
+  effect: ItemEffect | undefined;
   uniqueHash: string; // Technically not a hash.
   uniqueEquip: string; // Unique Equip type if relevant.
   active: boolean = false; // An active item is selected for inclusion in Top Gear.
@@ -57,35 +57,53 @@ export class Item {
     this.setID = getItemProp(id, "itemSetId");
     this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
-    if (this.onUse) this.effect['onUse'] = true;
+    if (this.onUse && this.effect) this.effect['onUse'] = true;
     if (slot === "Neck") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
     if (getItemProp(id, "offspecWeapon")) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
 
   }
 
-  // The stats on the item. These should already be adjusted for item level.
-  // HPS is a calculated field. It includes any item effects that provide healing or absorbs.
-  /*
-  stats = {
-    intellect: 0,
-    stamina: 0,
-    haste: 0,
-    mastery: 0,
-    versatility: 0,
-    crit: 0,
-    leech: 0,
-    hps: 0,
-    dps: 0,
-    bonus_stats: {
-      intellect: 0,
-      haste: 0,
-      mastery: 0,
-      versatility: 0,
-      leech: 0,
-      hps: 0,
-    },
-  }; */
+  clone(): Item {
+    const clonedItem = new Item(
+      this.id,
+      this.name,
+      this.slot,
+      this.socket,
+      this.tertiary,
+      this.softScore,
+      this.level,
+      this.bonusIDS
+    );
+
+    // 
+    clonedItem.effect = this.effect ? { ...this.effect } : undefined; 
+    clonedItem.uniqueHash = this.uniqueHash;
+    clonedItem.uniqueEquip = this.uniqueEquip;
+    clonedItem.active = this.active;
+    clonedItem.vaultItem = this.vaultItem;
+    clonedItem.isEquipped = false; // We don't want to duplicate isEquipped since it isn't possible for the original and the clone to both be equipped at the same time.
+    clonedItem.source = { ...this.source };
+    clonedItem.onUse = this.onUse;
+    clonedItem.setID = this.setID;
+    clonedItem.quality = this.quality;
+    clonedItem.upgradeTrack = this.upgradeTrack;
+    clonedItem.upgradeRank = this.upgradeRank;
+    clonedItem.itemConversion = this.itemConversion;
+    clonedItem.bonusIDS = this.bonusIDS;
+    clonedItem.isCatalystItem = this.isCatalystItem;
+    clonedItem.overriddenName = this.overriddenName;
+    clonedItem.offhandID = this.offhandID;
+    clonedItem.mainHandUniqueHash = this.mainHandUniqueHash;
+    clonedItem.offHandUniqueHash = this.offHandUniqueHash;
+    clonedItem.gemString = this.gemString;
+    clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
+
+    
+    // ... (copy other properties as needed)
+
+    return clonedItem;
+  }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and
   // it isn't life crushing if they do ever dup.
@@ -110,15 +128,16 @@ export class Item {
   // Special override for legendaries though if we have their SimC string then they'll just naturally be at quality 5 anyway.
   // This could arguably be moved to ItemUtilities.
   getQualityColor() {
-    const isLegendary = this.effect.type === "spec legendary" || this.effect.type === "unity" || this.id === 2068200;
+    const isLegendary = this.id === 2068200;
     if (isLegendary || this.quality === 5) return "#ff8000";
     else if (this.quality === 4) return "#a73fee";
     else if (this.quality === 3) return "#328CE3";
     else return "#1eff00";
   } 
 
+  //@deprecated
   isLegendary() {
-    return this.effect !== null && (this.effect.type === "unity" || this.effect.type === "spec legendary");
+    return false;
   }
 
   // This is only of moderate accuracy since there can be non-tier sets that use the same slots as tier.

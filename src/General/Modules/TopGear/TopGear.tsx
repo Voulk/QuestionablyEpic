@@ -167,9 +167,9 @@ export default function TopGear(props: any) {
   const topGearCap = patronCaps[patronStatus] ? patronCaps[patronStatus] : 30; // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
-  const upgradeItem = (item: Item, newItemLevel: number) => {
+  const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
     let player = props.player;
-    player.upgradeItem(item, newItemLevel);
+    player.upgradeItem(item, newItemLevel, socketFlag, vaultFlag);
     setItemList([...player.getActiveItems(activeSlot)]);
   }
 

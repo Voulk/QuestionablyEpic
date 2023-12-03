@@ -197,9 +197,9 @@ export default function QuickCompare(props) {
     setItemList([...player.getActiveItems(activeSlot)]);
   };
 
-  const upgradeItem = (item, newItemLevel) => {
+  const upgradeItem = (item, newItemLevel, socketFlag = false, vaultFlag = false) => {
     let player = props.player;
-    player.upgradeItem(item, newItemLevel);
+    player.upgradeItem(item, newItemLevel, socketFlag, vaultFlag);
     setItemList([...player.getActiveItems(activeSlot)]);
   }
 

@@ -40,12 +40,12 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
                                             overall to be a top tier choice.")
         case "Revitalizing Voodoo Totem":
             return buildGenericHealProc(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
-                                            "Decently large healing on a single target, but very prone to overhealing.")
+                                            "Decently large healing on a single target, but very prone to overhealing. Useful to have a healer run one on Larodar.")
         case "Leaf of the Ancient Protectors":
             return leafOfTheAncientProtectors(trinketData, itemLevel, player, additionalData);
         case "Sea Star":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
-                                            "A decently high uptime stat stick. A reasonable choice for all healing specs.");
+                                            "A medium uptime stat stick. A reasonable choice for all healing specs.");
         case "Coagulated Genesaur Blood":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
                                             "A low uptime stat stick with moderate average performance.");
@@ -106,7 +106,7 @@ const leafOfTheAncientProtectors = (data, itemLevel, player, additionalData) => 
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Gifted Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "",
+          "A very niche trinket useful for preventing one shots in high keys. Little use outside of that.",
       };
 }
 
@@ -133,7 +133,7 @@ const smolderingSeedling = (data, itemLevel, player, additionalData) => {
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Mastery: " + Math.round(bonus_stats.mastery)],
         description:
-          "",
+          "Seedling duplicates healing it receives to 5 nearby allies. Once the pool of bonus healing is used up it transfers at a 1:1 ratio. This is a very good trinket if you have efficient single target healing, though it's log percentage isn't a good reflection of healing added.",
       };
 }
 
@@ -147,7 +147,7 @@ const pipsEmeraldFriendshipBadge = (data, itemLevel, player, additionalData) => 
                 "Crit: " + Math.round(bonus_stats.crit),
                 "Versatility: " + Math.round(bonus_stats.versatility)],
         description:
-          "",
+          "Pip's competes well with the top stat sticks this tier while also being much more consistent. A fantastic choice for all healing specs.",
       };
 }
 
@@ -161,7 +161,7 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
                 "HPS: " + Math.round(bonus_stats.hps),
                 "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "A massive package of mana, healing and versatility given out to your party. Capped at 10 buffs out per proc. Procs off an almost random assortment of spells for each spec with no real logic.",
+          "A massive package of mana, healing and versatility. Holds up ok in season 3 but it's become mostly useful for its vers buff and you'll replace it when you have ~470+ alternatives.",
       };
 
 }
