@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
-
+import { genSpell } from "../Generic/APLBase";
 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
@@ -354,7 +354,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
                 const defaultEmpower = EVOKERCONSTANTS.defaultEmpower[key];
                 if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[defaultEmpower];
                 if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[defaultEmpower];
-                if (spell.cooldown && typeof spell.cooldown === "object") spell.cooldown = spell.cooldown[defaultEmpower];
                 if (spell.buffDuration && typeof spell.buffDuration === "object") spell.buffDuration = spell.buffDuration[defaultEmpower];
                 //if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
                 //console.log(typeof spell.coeff)
@@ -546,61 +545,12 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     return damageVal;
 }
 
-const canCastSpell = (state, spellDB, spellName) => {
-    
-    const spell = spellDB[spellName][0];
-    let miscReq = true;
-    const essenceReq = (state.essence >= spell.essence ) || !spell.essence;
-    const cooldownReq = (state.t > spell.activeCooldown) || !spell.cooldown;
-    
-    if (spellName === "Hammer of Wrath") {
-        if (!checkBuffActive(state.activeBuffs, "Avenging Wrath")) miscReq = false;
-    } 
-
-    return cooldownReq && essenceReq && miscReq;
-}
-
 const getSpellHPM = (state, spellDB, spellName) => {
     const spell = spellDB[spellName][0];
     const spellHealing = runHeal(state, spell, spellName, false)
 
     return spellHealing / spell.cost || 0;
 }
-
-
-
-export const genSpell = (state, spells) => {
-    let spellName = ""
-
-    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell));
-
-    /*
-    if (state.holyPower >= 3) {
-        spellName = "Light of Dawn";
-    }
-    else {
-        let possibleCasts = [{name: "Holy Shock", score: 0}, {name: "Flash of Light", score: 0}]
-
-        possibleCasts.forEach(spellData => {
-            if (canCastSpell(state, spells, spellData['name'])) {
-                spellData.score = getSpellHPM(state, spells, spellData['name'])
-            }
-            else {
-                spellData.score = -1;
-            }
-        });
-        possibleCasts.sort((a, b) => (a.score < b.score ? 1 : -1));
-        console.log(possibleCasts);
-        spellName = possibleCasts[0].name;
-    }
-    console.log("Gen: " + spellName + "|");
-    */
-    return usableSpells[0];
-
-}
-
-
-const apl = ["Reversion", "Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 
@@ -751,9 +701,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
-
-            if (spell.holyPower) state.holyPower += spell.holyPower;
-            if (spell.cooldown) spell.activeCooldown = state.t + (spell.cooldown / getHaste(state.currentStats));
+            if (spell.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
         
             }
 
@@ -826,7 +774,7 @@ const getSpellCastTime = (spell, state, currentStats) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
+export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => {
     //console.log("Running cast sequence");
 
     // Flatten talents
@@ -851,7 +799,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
 
 
     const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const seqType = "Manual" // Auto / Manual.
+    const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
@@ -996,9 +944,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             // follow the given sequence list
             if (seqType === "Manual") queuedSpell = seq.shift();
             // if its is "Auto", use genSpell to auto generate a cast sequence
-            else queuedSpell = genSpell(state, evokerSpells);
+            else queuedSpell = genSpell(state, evokerSpells, apl);
 
             const fullSpell = evokerSpells[queuedSpell];
+            console.log(queuedSpell);
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);

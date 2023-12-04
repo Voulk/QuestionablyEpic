@@ -256,7 +256,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 406254,
+    id: 204710, //406254,
     icon: "inv_10_skinning_craftedoptionalreagent_shadowflamearmorpatch",
     armorType: 0, // Extra
     name: {
