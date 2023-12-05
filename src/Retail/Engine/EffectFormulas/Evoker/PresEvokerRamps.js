@@ -346,7 +346,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
     for (const [key, value] of Object.entries(evokerSpells)) {
         const fullSpell = value;
         const spellInfo = fullSpell[0];
-
+        
+        if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
 
         if (fullSpell[0].empowered) {
             fullSpell[0].castTime = fullSpell[0].castTime[EVOKERCONSTANTS.defaultEmpower[key]]
@@ -382,7 +383,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
-        if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
+        if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
 
         if (settings.includeOverheal === "No") {
@@ -701,7 +702,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
-            if (spell.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
+            if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
         
             }
 
@@ -713,6 +714,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
     // Any post-spell code.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
+
 }
 
 const spendSpellCost = (spell, state) => {
@@ -944,10 +946,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // follow the given sequence list
             if (seqType === "Manual") queuedSpell = seq.shift();
             // if its is "Auto", use genSpell to auto generate a cast sequence
-            else queuedSpell = genSpell(state, evokerSpells, apl);
+            else {
+                // TODO: allow arrays too (queue first spell, add rest to seq).
+                queuedSpell = genSpell(state, evokerSpells, apl);
+            }
 
             const fullSpell = evokerSpells[queuedSpell];
-            console.log(queuedSpell);
+
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);

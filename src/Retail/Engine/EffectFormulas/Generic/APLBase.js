@@ -1,3 +1,5 @@
+import { checkBuffActive } from "./RampBase";
+
 // Checks if a spell is a valid cast.
 // The following checks are made:
 // Is the spell on cooldown? Do they have an available charge?
@@ -19,16 +21,17 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
 
     let aplReq = true;
     let miscReq = true;
+    let cooldownReq = true;
     const secondaryResourceReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
 
     // Added workaround CDR/Stacks pending rework
     //const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
-    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? (spell.cooldown / (spell.hastedCooldown ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldown;
+    if (spell.cooldownData) {
+        cooldownReq = (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
+    }
     
-    console.log(conditions);
     if (conditions) {
         conditions.forEach(condition => {
-            console.log(condition);
             if (condition.type === "talent" && state.talents[conditions.talentName].points === 0) aplReq = false;
             else if (condition.type === "talentMissing") {
                 if (typeof state.talents[condition.talentNot] == "undefined") aplReq = false;
@@ -37,6 +40,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
             else if (condition.type === "resource" && condition.resourceName === "Holy Power") aplReq = state.holyPower >= condition.holyPower;
             else if (condition.type === "resource" && condition.resourceName === "Essence") aplReq = state.essence >= condition.resourceCost;
             else if (condition.type ==="buff") aplReq = checkBuffActive(state.activeBuffs, condition.buffName);
+            else if (condition.type ==="buffMissing") aplReq = !checkBuffActive(state.activeBuffs, condition.buffName);
             else if (condition.type === "buffStacks") aplReq = getBuffStacks(state.activeBuffs, condition.buffName) >= condition.stacks;
             else if (condition.type === "afterTime") aplReq = state.t >= condition.timer;
             else if (condition.type === "beforeTime") aplReq = state.t <= condition.timer;
