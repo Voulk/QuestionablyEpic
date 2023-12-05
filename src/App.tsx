@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import CustomRoute from "./CustomRoute";
 import ReportRoute from "./ReportRoute";
-import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
+import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.tsx";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";

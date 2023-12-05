@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@mui/material";
-import CooldownPlanner from "../CooldownPlanner/ModuleComponents/CooldownPlanner.js";
-import HealTeam from "../CooldownPlanner/ModuleComponents/HealTeamTable";
-import HelpText from "../SetupAndMenus/HelpText";
+import CooldownPlanner from "./ModuleComponents/CooldownPlanner.js";
+import HealTeam from "./ModuleComponents/HealTeamTable.js";
+import HelpText from "../SetupAndMenus/HelpText.js";
 
-class CooldownPlannerModule extends Component {
+interface CooldownPlannerModuleState {
+  healTeamDialogState: boolean;
+  mitigatedChartDataNoCooldowns: any[]; // Replace 'any' with a more specific type if possible
+  unmitigatedChartDataNoCooldowns: any[];
+  cooldownlistcustom2: any[];
+}
+
+class CooldownPlannerModule extends Component<{}, CooldownPlannerModuleState> {
   constructor() {
     super();
     /* ----------------------- We bind the below functions to this Component. ----------------------- */
@@ -20,11 +27,11 @@ class CooldownPlannerModule extends Component {
   }
 
   /* ---------------------------------- Heal Team Dialog Handlers --------------------------------- */
-  handleHealTeamClickOpen = () => {
+  handleHealTeamClickOpen = (): void => {
     this.setState({ healTeamDialogState: true });
   };
 
-  handleHealTeamClose = () => {
+  handleHealTeamClose = (): void => {
     this.setState({ healTeamDialogState: false });
   };
 
@@ -40,9 +47,11 @@ class CooldownPlannerModule extends Component {
 
     return (
       <div
-        style={{
-          // marginTop: 32,
-        }}
+        style={
+          {
+            // marginTop: 32,
+          }
+        }
       >
         <div style={{ height: 96 }} />
         <div style={{ margin: "0px 3% 20px 3%" }}>
