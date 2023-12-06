@@ -1,4 +1,4 @@
-import { checkBuffActive } from "./RampBase";
+import { checkBuffActive, isSpellAvailable } from "./RampBase";
 
 // Checks if a spell is a valid cast.
 // The following checks are made:
@@ -44,6 +44,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
             else if (condition.type === "buffStacks") aplReq = getBuffStacks(state.activeBuffs, condition.buffName) >= condition.stacks;
             else if (condition.type === "afterTime") aplReq = state.t >= condition.timer;
             else if (condition.type === "beforeTime") aplReq = state.t <= condition.timer;
+            else if (condition.type === "cooldownAvailable") aplReq = isSpellAvailable(state, spellDB, condition.spellName);
         })
     } 
 

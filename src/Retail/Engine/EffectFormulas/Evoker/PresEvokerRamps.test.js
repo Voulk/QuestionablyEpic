@@ -9,6 +9,10 @@ import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
 describe("Test APL", () => {
     test("Test APL", () => {
         console.log("Testing APL");
+        const iter = 1000;
+        let hps = 0;
+        let maxHPS = 0;
+        let minHPS = 999999;
         const activeStats = {
             intellect: 12000,
             haste: 2000,
@@ -20,10 +24,25 @@ describe("Test APL", () => {
         }
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
-        const talents = {...evokerTalents};
-        const result = runCastSequence(["Living Flame"], JSON.parse(JSON.stringify(activeStats)), testSettings, talents, evokerDefaultAPL)
-        console.log(result);
+        const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
+        for (let i = 0; i < iter; i++) {
+            
+            const talents = {...evokerTalents};
+            const result = runCastSequence(["Living Flame"], JSON.parse(JSON.stringify(activeStats)), testSettings, talents, evokerDefaultAPL);
+            result.activeBuffs = [];
+            hps += result.hps;
+
+            if (result.hps > maxHPS) {
+                maxHPS = result.hps;
+            }
+            if (result.hps < minHPS) {
+                minHPS = result.hps;
+            }
+            
+        }
+
+        console.log("Average HPS: " + Math.round(hps / iter) + " Max HPS: " + maxHPS  + " Min HPS: " + minHPS)
+
     
         expect(true).toEqual(true);
     })

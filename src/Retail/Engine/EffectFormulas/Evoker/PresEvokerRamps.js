@@ -720,7 +720,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
 const spendSpellCost = (spell, state) => {
     if ('essence' in spell[0]) {
         if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
-            removeBuffStack(state.activeBuffs, "Essence Burst");
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
             addReport(state, `Essence Burst consumed!`);
             state.manaSpent += 0;
         }
@@ -800,7 +800,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
 
 
-    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 'seqLength' in settings ? settings.seqLength : 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
@@ -1030,8 +1030,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.talents = {};
-    state.hps = (state.totalHealing / sequenceLength);
-    state.dps = (state.totalDamage / sequenceLength);
+    state.hps = Math.round(state.totalHealing / sequenceLength);
+    state.dps = Math.round(state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
     const endTime = performance.now();
