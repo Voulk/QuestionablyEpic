@@ -283,8 +283,10 @@ export class Player {
     newItem.active = true;
     if (newLevel !== 0) newItem.updateLevel(newLevel);
     if (socketFlag) newItem.socket = 1;
-    if (vaultFlag) newItem.vaultItem = true;
-
+    if (vaultFlag) {
+      newItem.vaultItem = true;
+      newItem.uniqueEquip = "vault";
+    }
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
@@ -651,6 +653,7 @@ export class Player {
         critMult: 2,
       };
       this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
+      this.getActiveModel("Dungeon").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));

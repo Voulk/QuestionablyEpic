@@ -3,7 +3,7 @@ import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
-import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
+import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
@@ -61,13 +61,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
-  item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
+  item.softScore = scoreTrinket(item, player, contentType, "Retail", playerSettings);
 
   return item.softScore;
 };
