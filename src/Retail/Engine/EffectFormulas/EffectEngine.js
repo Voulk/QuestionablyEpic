@@ -8,7 +8,7 @@ import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
-import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
+import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
 import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
@@ -98,9 +98,9 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   }
   // -------------------------------------------
 
-  // ----- Burning Crusade & Wrath of the Lich King Effect Formulas -----
-  // Includes "Tier Set" bonuses, trinkets, and special effects on items that aren't just pure stats. 
-  else if (gameType === "Classic" || gameType === "BurningCrusade") {
+  // ----- Cataclysm Effect Formulas -----
+  // Includes Tier Set bonuses, trinkets, and special effects on items that aren't just pure stats. 
+  else if (gameType === "Classic") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
       switch (player.spec) {
         case "Holy Priest Classic":
@@ -125,7 +125,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffectClassic(effectName, player, userSettings);
+      bonus_stats = getTrinketEffectClassic(effectName, player, itemLevel, userSettings);
     }
     else if (effectType === "relic") {
       switch (player.spec) {
@@ -149,10 +149,3 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   return bonus_stats;
 }
 
-export function getConduitFormula() {
-
-}
-
-export function getCovAbility() {
-  
-}
