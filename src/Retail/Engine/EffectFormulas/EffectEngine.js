@@ -6,31 +6,20 @@ import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
 import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
 import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
-import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
-import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
-import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
-import { getPriestConduit } from "./Priest/PriestConduitFormulas";
-import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
-import { getShamanConduit } from "./Shaman/ShamanConduitFormulas";
-import { getMonkConduit } from "./Monk/MonkConduitFormulas";
-import { getDruidConduit } from "./Druid/DruidConduitFormulas";
-import { getPaladinCovAbility } from "./Paladin/PaladinMiscFormulas";
-import SPEC from "../../../General/Engine/SPECS";
-import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
-
+// Classic
+import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
+import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getDruidTierSet } from "Classic/Engine/EffectFormulas/Druid/DruidTierSets";
 import { getShamanTierSet } from "Classic/Engine/EffectFormulas/Shaman/ShamanTierSets";
 import { getPaladinTierSet } from "Classic/Engine/EffectFormulas/Paladin/PaladinTierSets";
 import { getPriestTierSet } from "Classic/Engine/EffectFormulas/Priest/PriestTierSets";
-
-import { getDruidRelic } from "Classic/Engine/EffectFormulas/Druid/DruidRelics";
-import { getShamanRelic } from "Classic/Engine/EffectFormulas/Shaman/ShamanRelics";
-import { getPaladinRelic } from "Classic/Engine/EffectFormulas/Paladin/PaladinRelics";
-
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
+
+import SPEC from "../../../General/Engine/SPECS";
+
 
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
