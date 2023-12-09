@@ -17,6 +17,7 @@ import QEFooter from "./Footer/QEFooter";
 import Player from "../Player/Player";
 import { RootState } from "Redux/Reducers/RootReducer";
 import { styled } from "@mui/system";
+import GameTypeSwitch from "./GameTypeToggle";
 
 const Root = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -104,7 +105,7 @@ export default function QEMainMenu(props: Props) {
           { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare" },
           { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 3, localization: "MainMenu.TierSets" },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 4, localization: "MainMenu.TrinketAnalysis" },
-          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare" },
+          { route: "/sequenceGen", disabled: false, tooltip: "SequenceSandbox", type: "Tools", order: 2, localization: "MainMenu.SequenceSandbox" },
           // Tools
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile" },
         ];
@@ -189,9 +190,9 @@ export default function QEMainMenu(props: Props) {
       <Root>
         <div style={{ height: 96 }} />
         <Grid container spacing={2}>
-          {/*<Grid item xs={12} style={{ textAlign: "center" }}>
+          <Grid item xs={12} style={{ textAlign: "center" }}>
             <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
-            </Grid> */}
+            </Grid>
           <Grid item xs={12}>
             <Button
               key={321}

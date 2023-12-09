@@ -2,6 +2,7 @@ import Player from "./Player";
 import * as ls from "local-storage";
 import ClassicPlayer from "./ClassicPlayer";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 // On app start, load player data.
 // First, we will check if they are signed in and have character data.
@@ -31,7 +32,7 @@ export function createPlayerChars(): PlayerChars {
             //charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
           }
           else {
-            let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights);
+            let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
             if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
             if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
             specsAdded.push(player.spec);
@@ -44,7 +45,7 @@ export function createPlayerChars(): PlayerChars {
       }
       
       // Auto-add any missing specs.
-      ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"].forEach(spec => {
+      CONSTANTS.specs.forEach(spec => {
           if (!(specsAdded.includes(spec))) {
             const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Preservation", "Pres");
             let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default");
@@ -53,6 +54,16 @@ export function createPlayerChars(): PlayerChars {
             charArray.push(newChar);
           }
       })
+
+      // Auto-add Classic Specs
+      CONSTANTS.classicSpecs.forEach(spec => {
+        if (!(specsAdded.includes(spec))) {
+          const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
+          let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
+          console.log(newChar);
+          charArray.push(newChar);
+        }
+    })
 
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
