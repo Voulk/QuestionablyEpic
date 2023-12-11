@@ -1,18 +1,16 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
-
+import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
 
 describe("Test APL", () => {
     test("Test APL", () => {
+        
         console.log("Testing APL");
-        const iter = 1000;
-        let hps = 0;
-        let maxHPS = 0;
-        let minHPS = 999999;
+
         const activeStats = {
             intellect: 12000,
             haste: 2000,
@@ -25,6 +23,12 @@ describe("Test APL", () => {
     
         const baseSpells = EVOKERSPELLDB;
         const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
+
+        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
+        const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
+        console.log(data);
+
+        /*
         for (let i = 0; i < iter; i++) {
             
             const talents = {...evokerTalents};
@@ -42,7 +46,7 @@ describe("Test APL", () => {
         }
 
         console.log("Average HPS: " + Math.round(hps / iter) + " Max HPS: " + maxHPS  + " Min HPS: " + minHPS)
-
+        */
     
         expect(true).toEqual(true);
     })
