@@ -1,6 +1,7 @@
 
 
 export const evokerDefaultAPL = [
+    {s: "Dream Flight", conditions: [{type: "afterTime", timer: 15}]},
     {s: "Verdant Embrace", conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}] }, // Combo with Verdant Embrace
     {s: "Dream Breath" }, // Combo with Verdant Embrace
     {s: "Spiritbloom" }, // Combo with Verdant Embrace

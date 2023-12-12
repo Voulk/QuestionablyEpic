@@ -1,7 +1,7 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
-import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
+import { runAPLSuites, runStatSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -12,10 +12,10 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 12000,
+            intellect: 14000,
             haste: 2000,
-            crit: 2000,
-            mastery: 6500,
+            crit: 3000,
+            mastery: 4500,
             versatility: 3000,
             stamina: 29000,
             critMult: 2,
@@ -25,9 +25,10 @@ describe("Test APL", () => {
         const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
-        const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
-        console.log(data);
+        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
+        //console.log(data);
 
+        const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
         /*
         for (let i = 0; i < iter; i++) {
             

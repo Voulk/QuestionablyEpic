@@ -15,11 +15,11 @@ const discSettings = {
 const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
-    masteryEfficiency: 0.80, 
+    masteryEfficiency: 0.82, 
     baseMana: 250000,
 
     defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 3, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
-    auraHealingBuff: 1,
+    auraHealingBuff: 1.05,
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
     enemyTargets: 1, 

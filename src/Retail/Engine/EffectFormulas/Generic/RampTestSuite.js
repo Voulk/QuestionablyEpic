@@ -17,6 +17,34 @@ export function runAPLSuites(playerData, aplList, runCastSequence) {
 
 }
 
+export function runStatSuites(playerData, aplList, runCastSequence) {
+        // Weights
+        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+
+        const baseline = runSuite(playerData, aplList, runCastSequence, "APL").avgHPS;
+        
+        const results = {};
+        stats.forEach(stat => {
+
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 600;
+            const newPlayerData = {...playerData, stats: playerStats};
+            const result = runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS;
+            results[stat] = result;
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+
+        console.log(weights); 
+        return weights;
+
+
+
+}
+
 function runSuite(playerData, aplList, runCastSequence, type) {
     const iterations = 1000;
     let hps = [];
