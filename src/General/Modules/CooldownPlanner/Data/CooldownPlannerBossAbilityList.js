@@ -5459,6 +5459,21 @@ export const bossAbilities = {
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 1", icon: "", importActive: false, name: { ch: "Phase 1", de: "Phase 1", en: "Phase 1", fr: "Phase 1", ru: "Phase 1" } },
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 2", icon: "", importActive: false, name: { ch: "Phase 2", de: "Phase 2", en: "Phase 2", fr: "Phase 2", ru: "Phase 2" } },
     { cooldownPlannerActive: true, createEvent: false, guid: "Phase 3", icon: "", importActive: false, name: { ch: "Phase 3", de: "Phase 3", en: "Phase 3", fr: "Phase 3", ru: "Phase 3" } },
+
+    {
+      cooldownPlannerActive: true,
+      createEvent: false,
+      guid: 426368,
+      icon: require("Images/CooldownPlanner/BossAbilities/inv_axe_1h_emeralddreamraid_d_01.jpg"),
+      importActive: true,
+      name: {
+        en: "Darkflame Cleave",
+        de: "",
+        fr: "",
+        ru: "",
+        ch: "",
+      },
+    },
     {
       cooldownPlannerActive: true,
       createEvent: true,

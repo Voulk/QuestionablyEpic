@@ -3888,4 +3888,12 @@ export const bossAbilityTranslations = [
     ru: "Inferno",
     ch: "Inferno",
   },
+  {
+    guid: 426368,
+    en: "Darkflame Cleave",
+    de: "Darkflame Cleave",
+    fr: "Darkflame Cleave",
+    ru: "Darkflame Cleave",
+    ch: "Darkflame Cleave",
+  },
 ];
