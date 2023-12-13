@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Typography, Grid, Dialog } from "@mui/material";
-import CooldownPlanner from "./ModuleComponents/CooldownPlanner.js";
+import CooldownPlanner from "./ModuleComponents/CooldownPlannerModule/CooldownPlanner.js";
 import HealTeam from "./ModuleComponents/HealTeamTable.js";
 import HelpText from "../SetupAndMenus/HelpText.js";
 

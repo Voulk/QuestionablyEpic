@@ -3,25 +3,27 @@ import MaterialTable, { MTableToolbar, MTableBody, MTableHeader, MTableBodyRow, 
 import { AddBox, ArrowDownward, Check, Clear, DeleteOutline, Edit, FilterList, Search } from "@mui/icons-material";
 import { Button, TextField, MenuItem, Paper, Grid } from "@mui/material";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-import { bossList, raidDB } from "../Data/CooldownPlannerBossList";
+import { bossList, raidDB } from "../../Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { getTableLocale } from "locale/GetTableLocale";
-import bossIcons from "../Functions/IconFunctions/BossIcons";
-import Cooldowns from "../CooldownObject/CooldownObject";
-import AddPlanDialog from "./AddPlanDialog";
-import CopyPlanDialog from "./CopyPlanDialog";
-import DeletePlanDialog from "./DeletePlanDialog";
-import ExportPlanDialog from "./ExportPlanDialog";
-import ImportPlanDialog from "./ImportPlanDialog";
-import ExportERTDialog from "./ERTDialog";
-import { generateColumns } from "./Engine/ColumnGenerator";
-import { CooldownPlannerTheme } from "./Styles/CooldownPlannerTheme";
+import Cooldowns from "../../CooldownObject/CooldownObject";
+import AddPlanDialog from "../AddPlanDialog";
+import CopyPlanDialog from "../CopyPlanDialog";
+import DeletePlanDialog from "../DeletePlanDialog";
+import ExportPlanDialog from "../ExportPlanDialog";
+import ImportPlanDialog from "../ImportPlanDialog";
+import ExportERTDialog from "../ERTDialog";
+import { generateColumns } from "../Engine/ColumnGenerator";
+import { CooldownPlannerTheme } from "../Styles/CooldownPlannerTheme";
 import ls from "local-storage";
 import { styled } from "@mui/material/styles";
 import { green } from "@mui/material/colors";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
-import CooldownPlannerThemeCheckbox from "./ThemeToggle";
-import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
+import CooldownPlannerThemeCheckbox from "../ThemeToggle";
+import RaidSelector from "./Components/RaidSelector";
+import BossSelector from "./Components/BossSelector";
+import DifficultySelector from "./Components/DifficultySelector";
+import PlanSelector from "./Components/PlanSelector";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -150,11 +152,11 @@ export default function CooldownPlanner(props) {
   };
 
   const changeRaid = (e) => {
-    setCurrentRaid(e.target.value);
+    setCurrentRaid(e);
 
     let boss = bossList
       .filter((obj) => {
-        return obj.zoneID === e.target.value;
+        return obj.zoneID === e;
       })
       .map((key, i) => key.DungeonEncounterID);
     changeBoss(boss[0]);
@@ -183,13 +185,13 @@ export default function CooldownPlanner(props) {
   };
 
   /* -------------------------------------- Changes the Boss -------------------------------------- */
-  const changeBoss = (newBoss, currentDif) => {
+  const changeBoss = (newBoss) => {
     setCurrentBoss(newBoss);
     setCurrentPlan("");
     setData([]);
   };
 
-  const changeDifficulty = (newBoss, currentDif) => {
+  const changeDifficulty = (currentDif) => {
     setDifficulty(currentDif);
     setCurrentPlan("");
     setData([]);
@@ -292,111 +294,31 @@ export default function CooldownPlanner(props) {
                       </Button>
                     </LightTooltip>
                   </Grid>
-                  {/* ---------------------------------- Raid Selection Drop Down ---------------------------------- */}
+                  {/* Raid Selection Drop Down */}
                   <Grid item xs={12} sm={6} md={6} lg={4} xl="auto">
-                    <TextField
-                      id="RaidSelector"
-                      select
-                      value={currentRaid}
-                      onChange={(e) => changeRaid(e)}
-                      label={t("CooldownPlanner.TableLabels.RaidSelectorLabel")}
-                      size="small"
-                      sx={{ minWidth: 200, width: "100%" }}
-                    >
-                      {raidDB
-                        .filter((obj) => {
-                          return obj.expansion === expansion;
-                        })
-                        .map((key, i, arr) => {
-                          let lastItem = i + 1 === arr.length ? false : true;
-                          return (
-                            <MenuItem divider={lastItem} key={"RS" + i} value={key.ID}>
-                              <img
-                                style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-                                src={key.icon}
-                                alt={key.name[currentLanguage]}
-                              />
-                              {key.name[currentLanguage]}
-                            </MenuItem>
-                          );
-                        })}
-                    </TextField>
-                  </Grid>
-                  {/* ----------------------------------- Boss Selection Dropdown ---------------------------------- */}
-                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
-                      label={t("Boss")}
-                      select
-                      value={currentBoss}
-                      placeholder={"Boss"}
-                      onChange={(e) => changeBoss(e.target.value, currentDifficulty)}
-                      // disabled={RosterCheck}
-                      size="small"
-                    >
-                      {bossList
-                        .filter((obj) => {
-                          return obj.zoneID === currentRaid;
-                        })
-                        .map((key, i, arr) => {
-                          let lastItem = i + 1 === arr.length ? false : true;
-                          return (
-                            <MenuItem divider={lastItem} key={"BS" + i} value={key.DungeonEncounterID}>
-                              {bossIcons(key.DungeonEncounterID)}
-                              {key.name[currentLanguage]}
-                            </MenuItem>
-                          );
-                        })}
-                    </TextField>
+                    <RaidSelector currentRaid={currentRaid} changeRaid={changeRaid} expansion={expansion} />
                   </Grid>
 
+                  {/* Boss Selection Dropdown */}
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
-                      select
-                      label={t("Difficulty")}
-                      id="DifficultySelector"
-                      placeholder={t("Difficulty")}
-                      value={currentDifficulty}
-                      onChange={(e) => changeDifficulty(currentBoss, e.target.value)}
-                      disabled={currentBoss === "" ? true : false}
-                      size="small"
-                    >
-                      {["Heroic", "Mythic"].map((key, i, arr) => {
-                        let lastItem = i + 1 === arr.length ? false : true;
-                        return (
-                          <MenuItem key={key} divider={lastItem} value={key}>
-                            {key}
-                          </MenuItem>
-                        );
-                      })}
-                    </TextField>
+                    <BossSelector currentBoss={currentBoss} changeBoss={changeBoss} currentRaid={currentRaid} />
                   </Grid>
 
-                  {/* ----------------------------------- Plan Selection Dropdown ---------------------------------- */}
+                  {/* Difficulty Selection Dropdown */}
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
-                    <TextField
-                      sx={{ minWidth: 100, width: "100%" }}
-                      select
-                      label={t("Plan")}
-                      id="PlanSelector"
-                      value={currentPlan}
-                      InputLabelProps={{ style: { lineHeight: "normal" } }}
-                      onChange={(e) => loadPlanData(currentBoss, e.target.value, currentDifficulty)}
-                      disabled={currentBoss === "" || RosterCheck ? true : false || getBossPlanNames(currentBoss, currentDifficulty).length === 1}
-                      size="small"
-                    >
-                      {getBossPlanNames(currentBoss, currentDifficulty)
-                        .filter((key) => key !== "default")
-                        .map((key, i, arr) => {
-                          let lastItem = i + 1 === arr.length ? false : true;
-                          return (
-                            <MenuItem key={key} divider={lastItem} value={key}>
-                              {key}
-                            </MenuItem>
-                          );
-                        })}
-                    </TextField>
+                    <DifficultySelector currentDifficulty={currentDifficulty} changeDifficulty={changeDifficulty} disabled={currentBoss === ""} />
+                  </Grid>
+
+                  {/* Plan Selection Dropdown */}
+                  <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
+                    <PlanSelector
+                      currentPlan={currentPlan}
+                      loadPlanData={loadPlanData}
+                      currentDifficulty={currentDifficulty}
+                      currentBoss={currentBoss}
+                      plans={getBossPlanNames(currentBoss, currentDifficulty)}
+                      disabled={currentBoss === "" || RosterCheck || getBossPlanNames(currentBoss, currentDifficulty).length === 1}
+                    />
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={4} lg={3} xl="auto">
