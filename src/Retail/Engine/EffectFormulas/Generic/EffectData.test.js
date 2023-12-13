@@ -4,21 +4,19 @@ import { effectData} from "./EffectData";
 import each from "jest-each";
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 
-describe("Larodar Effect test", () => {
+// Tests to make sure calling effect functions returns values. We're not checking for specific return values here
+// since to do so we'd end up napkin mathing every effect in the game in order to compare. You can however do that to be comprehensive if you'd like.
+describe("Effect Return tests", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     
-
     test("Larodar", () => {
         const bonus_stats = getEffectValue({name: "Larodar's Fiery Reverie", type: "special"}, player, {}, contentType, 489, {}, "Retail", {})
-        console.log(bonus_stats)
         expect(bonus_stats.hps).toBeGreaterThan(0);
     })
 });
 
 describe("Larodar's Fiery Reverie Data Check", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    // ${428}  | ${505}
     const activeEffect = effectData.find((effect) => effect.name === "Larodar's Fiery Reverie");
     const effect = activeEffect.effects;
 
