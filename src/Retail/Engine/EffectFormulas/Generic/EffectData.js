@@ -1,6 +1,44 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { // Helm Enchant
+    name: "Larodar's Fiery Reverie",
+    effects: [
+      { // Absorb portion
+        coefficient: 87.55497,
+        table: -9,
+        ppm: 1,
+        secondaries: ['versatility', 'haste'],
+        efficiency: 0.9,
+      },
+      { // HoT portion
+        coefficient: 25.55682,
+        table: -9,
+        ppm: 1,
+        secondaries: ['crit', 'versatility', 'haste'],
+        ticks: 6,
+        efficiency: 0.55,
+        percentage: 0.7,
+      },
+      { // Gifted Vers portion
+        coefficient: 0.795322,
+        table: -7,
+        ppm: 1,
+        duration: 10,
+        percentage: 0.3,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      // We split the mastery formula here because we'll lose some personal value from procs overlapping which is much less likely for our allies (since it's likely to apply to others).
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+      bonus_stats.hps += runGenericFlatProc(data[1], itemLevel, player) * data[1].percentage;
+      bonus_stats.allyStats = runGenericPPMTrinket(data[2], itemLevel) * player.getStatPerc('haste') * data[2].percentage;
+
+      return bonus_stats;
+    }
+  },
   {
 
     name: "String of Delicacies",

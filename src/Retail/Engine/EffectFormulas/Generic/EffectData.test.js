@@ -2,8 +2,35 @@ import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "General/Modules/Player/Player";
 import { effectData} from "./EffectData";
 import each from "jest-each";
+import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 
+describe("Larodar Effect test", () => {
+    const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    const contentType = "Raid";
+    
 
+    test("Larodar", () => {
+        const bonus_stats = getEffectValue({name: "Larodar's Fiery Reverie", type: "special"}, player, {}, contentType, 489, {}, "Retail", {})
+        console.log(bonus_stats)
+        expect(bonus_stats.hps).toBeGreaterThan(0);
+    })
+});
+
+describe("Larodar's Fiery Reverie Data Check", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    // ${428}  | ${505}
+    const activeEffect = effectData.find((effect) => effect.name === "Larodar's Fiery Reverie");
+    const effect = activeEffect.effects;
+
+    each`
+    level   | expectedResult
+    ${483}  | ${[134740]}
+    // add new test cases here
+    `.test("Larodar's Fiery Reverie Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+  
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+    });
+});
 
 describe("String of Delicacies Data Check", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
