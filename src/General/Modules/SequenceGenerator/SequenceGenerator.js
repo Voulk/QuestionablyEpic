@@ -173,7 +173,7 @@ export default function SequenceGenerator(props) {
 
   const stats = {
     intellect: 9200,
-    haste: 4000,
+    haste: 2000,
     crit: 3300,
     mastery: 3500,
     versatility: 1200,

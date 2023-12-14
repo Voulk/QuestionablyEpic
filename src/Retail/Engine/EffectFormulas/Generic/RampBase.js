@@ -174,7 +174,7 @@ export const addBuff = (state, spell, spellName) => {
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
         
 
-        if (buffStacks === 0) {
+        if (buffStacks === 0 || !spell.canStack) {
             newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
             state.activeBuffs.push(newBuff);
             //console.log(newBuff);

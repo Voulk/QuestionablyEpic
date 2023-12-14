@@ -10,7 +10,7 @@ export const buildEvokerChartData = (stats) => {
     let results = [];
 
     const activeStats = {
-        intellect: 12000,
+        intellect: 14000,
         haste: 1200,
         crit: 2000,
         mastery: 6500,
@@ -20,7 +20,7 @@ export const buildEvokerChartData = (stats) => {
     }
 
     const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
-    const talents = {...evokerTalents};
+    let talents = {...evokerTalents};
 
     const sequences = [
         {cat: "Base Spells", tag: "Spiritbloom R4", seq: ["Spiritbloom"], preBuffs: []},
@@ -30,15 +30,23 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Base Spells", tag: "Temporal Anomaly", seq: ["Temporal Anomaly"], preBuffs: []},
         {cat: "Base Spells", tag: "Reversion", seq: ["Reversion"], preBuffs: []},
 
+        {cat: "Base Spells", tag: "Verdant Embrace -> Dream Breath", seq: ["Verdant Embrace", "Dream Breath"], preBuffs: []},
+        {cat: "Base Spells", tag: "Verdant Embrace -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: []},
+
         {cat: "Consumed Echo", tag: "E Spiritbloom", seq: ["Spiritbloom"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Dream Breath", seq: ["Dream Breath"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: ["Echo"]},
+        {cat: "Consumed Echo", tag: "E Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: ["Echo"]},
 
+        {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
+        {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
+        {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
     ]
 
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
         
+        if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
         const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
         const spellData = {id: 0, icon: EVOKERSPELLDB[newSeq[0]][0].spellData.icon || ""};
@@ -47,6 +55,13 @@ export const buildEvokerChartData = (stats) => {
             // These are awkward since we only want to grab the Echo bit.
             const healingDone = Object.entries(result.healingDone)
                                     .filter(([key]) => key.includes("(Echo)"))
+                                    .reduce((sum, [, value]) => sum + value, 0);
+            console.log(result);
+            results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+        }
+        else if (sequence.cat === "Lifebind Ramps") {
+            const healingDone = Object.entries(result.healingDone)
+                                    .filter(([key]) => key.includes("Lifebind"))
                                     .reduce((sum, [, value]) => sum + value, 0);
             console.log(result);
             results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})

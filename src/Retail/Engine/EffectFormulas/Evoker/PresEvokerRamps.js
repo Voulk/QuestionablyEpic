@@ -18,13 +18,13 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 
-    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 3, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
+    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
     auraHealingBuff: 1.05,
     auraDamageBuff: 1.15,
     goldenHourHealing: 18000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame D', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
-    lifebindSpells: ['Spiritbloom', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
+    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    lifebindSpells: ['Spiritbloom', 'Living Flame', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
     essenceBuff: {
         name: "EssenceGen",
         expiration: 5,
@@ -76,6 +76,16 @@ const EVOKERCONSTANTS = {
         expectedOverheal: 0.45, // 0.45
         secondaries: [], // It technically scales with secondaries but these influence the base heal, not the HoT.
         mult: 0.15, // This is multiplied by our talent points.
+    },
+    temporalCompressionBuff: {
+        name: "Temporal Compression",
+        type: "buff",
+        canStack: true,
+        stacks: 1,
+        maxStacks: 4,
+        value: 0.05,
+        buffDuration: 999,
+        buffType: 'special',
     },
 
     // Grace Period can be seen as a healing multiplier on the raid since we don't have a good way of knowing which spells are hitting Grace Period targets.
@@ -149,13 +159,13 @@ const triggerCycleOfLife = (state, rawHealing) => {
     // ==== Talents ====
     // Not all talents just make base modifications to spells, but those that do can be handled here.
 
-    // Natural Convergence makes Disintegrate channels 20% faster
+    // Natural Convergence makes Disintegrate channel 20% faster
     if (talents.naturalConvergence) {
         evokerSpells['Disintegrate'][0].castTime -= (evokerSpells['Disintegrate'][0].castTime * 0.2);
         evokerSpells['Disintegrate'][1].tickRate += (evokerSpells['Disintegrate'][1].tickRate * 0.2);
     }
 
-    // Energy Loop makes Disintegrate more damage and grants mana over it's duration.
+    // Energy Loop makes Disintegrate deal more damage and grants mana over it's duration.
     if (talents.energyLoop) {
         evokerSpells['Disintegrate'][0].coeff *= 1.2;
         evokerSpells['Disintegrate'][1].coeff *= 1.2;
@@ -197,7 +207,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
         evokerSpells['Fire Breath'][0].flatDamage = bonus;
         if (evokerSpells.length > 2) evokerSpells['Fire Breath'][2].flatHeal = bonus;
-        evokerSpells['Living Flame D'][0].flatDamage = bonus;
+        evokerSpells['Living Flame O'][0].flatDamage = bonus;
         evokerSpells['Living Flame'][0].flatHeal = bonus;
     }
 
@@ -211,7 +221,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
 
     if (talents.enkindled) {
         evokerSpells['Living Flame'][0].coeff *= (1 + 0.03 * talents.enkindled);
-        evokerSpells['Living Flame D'][0].coeff *= (1 + 0.03 * talents.enkindled);
+        evokerSpells['Living Flame O'][0].coeff *= (1 + 0.03 * talents.enkindled);
     }
 
     // Evoker Spec Talents
@@ -272,7 +282,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     });
     if (talents.essenceBurst) {
         evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
-        evokerSpells['Living Flame D'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
+        evokerSpells['Living Flame O'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
     }
 
 
@@ -296,6 +306,20 @@ const triggerCycleOfLife = (state, rawHealing) => {
             buffType: 'spellAmp',
             value: 1.4,
     })
+    }
+    if (talents.ancientFlame) {
+        const ancientFlame = {
+            name: "Ancient Flame",
+            type: "buff",
+            stacks: false,
+            canStack: false,
+            buffDuration: 15,
+            buffType: 'special',
+            unique: true,
+            value: 0.4,
+        }
+        evokerSpells['Verdant Embrace'].push(ancientFlame);
+        evokerSpells['Emerald Blossom'].push(ancientFlame);
     }
 
     if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
@@ -363,16 +387,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         }
 
         if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
-            evokerSpells[key].push({
-                name: "Temporal Compression",
-                type: "buff",
-                canStack: true,
-                stacks: 1,
-                maxStacks: 4,
-                value: 0.05 * talents.temporalCompression,
-                buffDuration: 999,
-                buffType: 'special',
-            })
+            evokerSpells[key].push(EVOKERCONSTANTS.temporalCompressionBuff)
         }
         if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) {
             value.forEach(spellSlice => {
@@ -429,7 +444,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         }
 
         evokerSpells['Living Flame'].push(echoBuff);
-        evokerSpells['Living Flame D'].push(echoBuff);
+        evokerSpells['Living Flame O'].push(echoBuff);
     }
 
 
@@ -473,7 +488,7 @@ const getHealingMult = (state, t, spellName, talents) => {
 
     if ((spellName.includes("Dream Breath") || spellName === "Living Flame") && checkBuffActive(state.activeBuffs, "Call of Ysera")) {
         if (spellName.includes("Dream Breath")) mult *= 1.4;
-        if (spellName === "Living Flame" || spellName === "Living Flame D") mult *= 2;
+        if (spellName === "Living Flame" || spellName === "Living Flame O") mult *= 2;
         //state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
 
     } 
@@ -511,7 +526,6 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if (checkBuffActive(state.activeBuffs, "Lifebind") && EVOKERCONSTANTS.lifebindSpells.includes(spellName)) {
         const lifebindBuffs = state.activeBuffs.filter(buff => buff.name === "Lifebind");
         const lifebindMult = lifebindBuffs.map(b => b.value).reduce((a, b) => a+b, 0);
-
 
         const lifebindSpell = {name: "Lifebind", flatHeal: healingVal * lifebindMult / targetMult, targets: 1, coeff: 0, secondaries: [], expectedOverheal: 0.2};
         runHeal(state, lifebindSpell, "Lifebind", true);
@@ -759,6 +773,7 @@ const getSpellCastTime = (spell, state, currentStats) => {
         } 
 
         else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
         else castTime = castTime / getHaste(currentStats);
 
         return castTime;
@@ -815,8 +830,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
-            console.log("Adding prebuff: " + buffName)
             if (buffName === "Echo") addBuff(state, evokerSpells["Echo"][1], "Echo");
+            else if (buffName === "Temporal Compression") {
+                for (let i = 0; i < 4; i++) addBuff(state, EVOKERCONSTANTS.temporalCompressionBuff, "Temporal Compression")
+            }
+            else if (buffName === "Echo 8") {
+                for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
+            }
         })
     }
 

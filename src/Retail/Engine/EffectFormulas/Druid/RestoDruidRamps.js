@@ -240,7 +240,7 @@ export const genSpell = (state, spells) => {
 }
 
 
-const apl = ["Reversion", "Emerald Blossom", "Verdant Embrace", "Living Flame D", "Rest"]
+const apl = ["Reversion", "Emerald Blossom", "Verdant Embrace", "Living Flame O", "Rest"]
 
 const runSpell = (fullSpell, state, spellName, druidSpells) => {
 

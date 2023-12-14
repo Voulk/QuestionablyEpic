@@ -40,6 +40,7 @@ export const EVOKERSPELLDB = {
     "Living Flame": [{ 
         // Can be used for DPS or Healing. This is the healing version but both can be included either together or separately (the latter might be more efficient).
         spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "heal"},
+        name: "Living Flame",
         type: "heal",
         school: 'red',
         castTime: 2,
@@ -48,9 +49,10 @@ export const EVOKERSPELLDB = {
         expectedOverheal: 0.22,
         secondaries: ['crit', 'vers', 'mastery']
     }],
-    "Living Flame D": [{ 
-        // This is the DPS version of Living Flame.
+    "Living Flame O": [{ 
+        // This is the Offensive, DPS version of Living Flame.
         spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "damage"},
+        name: "Living Flame O",
         type: "damage",
         school: "red",
         castTime: 2,
@@ -387,7 +389,7 @@ export const evokerTalents = {
     lifebind: {points: 0, maxPoints: 1, icon: "ability_evoker_hoverred", id: 373270, select: true, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 1, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
 
-
+    ancientFlame: {points: 1, maxPoints: 1, icon: "ability_evoker_rescue", id: 99998, select: false},
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Needs testing.
     sacralEmpowerment: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
     exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
