@@ -187,7 +187,7 @@ export default function SequenceGenerator(props) {
     for (let i = 0; i < sequences.length; i++) {
       temp.push(JSON.parse(JSON.stringify(sequence)));
       const simFunc = getSequence(selectedSpec);
-      const sim = simFunc(sequences[i].spells, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
+      const sim = simFunc(sequences[i].spells, stats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
       temp[i].spells = sequences[i].spells;
       temp[i].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
       // multiple state updates get bundled by react into one update
@@ -205,7 +205,7 @@ export default function SequenceGenerator(props) {
   
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
+    const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
@@ -223,7 +223,7 @@ export default function SequenceGenerator(props) {
       //const baseline = runCastSequence(sequence, activeStats, settings, talents)
 
       //const simFunc = getSequence(selectedSpec);
-      const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true }, ...compressSettings(seqSettings) }, talents);
+      const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
 
       results.totalHealing += sim.totalHealing;
       results.manaSpent += sim.manaSpent;

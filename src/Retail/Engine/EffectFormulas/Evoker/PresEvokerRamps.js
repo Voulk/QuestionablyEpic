@@ -347,7 +347,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
             name: "Cycle of Life",
             type: "buff",
             canStack: false,
-            buffDuration: 15,
+            buffDuration: 8,
             value: 0,
             buffType: 'special',
             canPartialTick: true,
@@ -644,7 +644,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                     newBuff.attFunction = spell.runFunc;
 
-                    if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats) + spell.statMods.crit - 1)))); // TODO; Replace 0.25 with crit.
+                    if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats))))); // TODO; Replace 0.25 with crit.
                     else newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
                     
                     state.activeBuffs.push(newBuff);
@@ -813,11 +813,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
 
-
-
+    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const sequenceLength = 'seqLength' in settings ? settings.seqLength : 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-    let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
     let queuedSpell = "";
@@ -888,6 +886,14 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
+
+        // Advanced reporting
+        if (state.settings.advancedReporting && (Math.floor(state.t * 100) % 100 === 0)) {
+            const hps = (Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0) / state.t;
+            if ('advancedReport' in state === false) state.advancedReport = [];
+            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent});
+            console.log(state.advancedReport);
+        }
 
         // ---- Heal over time and Damage over time effects ----
         // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
@@ -1045,7 +1051,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
 
     // Add up our healing values (including atonement) and return it.
-    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    
     //state.activeBuffs = [];
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;

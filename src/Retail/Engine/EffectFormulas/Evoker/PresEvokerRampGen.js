@@ -1,6 +1,7 @@
 
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
+import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
 /**
 
  */
@@ -19,7 +20,7 @@ export const buildEvokerChartData = (stats) => {
         critMult: 2,
     }
 
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, advancedReporting: true, t31_2: false};
     let talents = {...evokerTalents};
 
     const sequences = [
@@ -41,13 +42,16 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
+
+        {cat: "Blossom Auto", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
     ]
 
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
         
         if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
-        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
+        const apl = sequence.cat.includes("Auto") ? evokerDefaultAPL : [];
+        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents, apl);
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
         const spellData = {id: 0, icon: EVOKERSPELLDB[newSeq[0]][0].spellData.icon || ""};
 
@@ -63,8 +67,12 @@ export const buildEvokerChartData = (stats) => {
             const healingDone = Object.entries(result.healingDone)
                                     .filter(([key]) => key.includes("Lifebind"))
                                     .reduce((sum, [, value]) => sum + value, 0);
-            console.log(result);
+
             results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+        }
+        else if (sequence.cat.includes("Auto")) {
+            console.log(result.advancedReport);
+            results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData, advancedReport: result.advancedReport})
         }
         else {
             results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})

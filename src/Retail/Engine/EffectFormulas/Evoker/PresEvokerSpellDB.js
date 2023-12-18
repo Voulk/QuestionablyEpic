@@ -28,7 +28,7 @@ import { addReport } from "../Generic/RampBase";
 
 // For spells with aura effects, include it in the coefficient itself. Aura effects that buff the entire spec are handled in EVOKERCONST.
 export const EVOKERSPELLDB = {
-    // Essence recharge rate: 3s?
+    // Essence recharge rate: 5s / haste.
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
         type: "",
@@ -70,7 +70,7 @@ export const EVOKERSPELLDB = {
         cost: 3.0,
         coeff: 4.18,
         cooldownData: {cooldown: 18, hasted: true}, 
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.5,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Spiritbloom": [{  
@@ -85,7 +85,7 @@ export const EVOKERSPELLDB = {
         cooldownData: {cooldown: 30, hasted: false}, 
         coeff: 5.085,
         targets: [1, 2, 3, 4], // 
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.5,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Dream Breath": [{  
@@ -121,7 +121,7 @@ export const EVOKERSPELLDB = {
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.6,
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
@@ -137,7 +137,7 @@ export const EVOKERSPELLDB = {
         essence: 3,
         cost: 4.8,
         coeff: 1.5,
-        expectedOverheal: 0.35,
+        expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Echo": [{
@@ -154,7 +154,7 @@ export const EVOKERSPELLDB = {
         essence: 2,
         cost: 1.7,
         coeff: 1.2, // Aura
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.4,
         targets: 1, // 
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -181,11 +181,10 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
-        statMods: {'crit': 0.15},
         cooldownData: {cooldown: 8, hasted: true}, 
         buffDuration: 12,
         runFunc: function (state, buff) {
-            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
+            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
 
             runHeal(state, hotHeal, buff.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
@@ -215,7 +214,7 @@ export const EVOKERSPELLDB = {
         runFunc: function (state, spell) {
 
             if (state.talents.resonatingSphere) {
-                const echoBuffs = 3;
+                const echoBuffs = 5;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
                     value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
                 
@@ -239,7 +238,6 @@ export const EVOKERSPELLDB = {
     }],
     "Dream Flight": [{
         // Large upfront heal and leaves a 15s HoT on anyone it hits.
-        // 1 min cooldown. Travels up to 60 yards. 
         spellData: {id: 359816, icon: "ability_evoker_dreamflight", cat: "cooldown"},
         type: "heal",
         school: "green",
@@ -247,7 +245,7 @@ export const EVOKERSPELLDB = {
         cooldownData: {cooldown: 120, hasted: false}, 
         cost: 4.0,
         coeff: 4,
-        targets: 10, // Can hit everyone. Likely to be retuned around sqrt scaling.
+        targets: 15, // Can hit everyone. No sqrt scaling.
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -264,7 +262,7 @@ export const EVOKERSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Azure Strike": [{
-        // Two target hit. Instant.
+        // Hits two targets. Instant.
         spellData: {id: 362969, icon: "ability_evoker_azurestrike", cat: "damage"},
         type: "damage",
         school: "blue",
@@ -277,10 +275,6 @@ export const EVOKERSPELLDB = {
     }],
     "Fire Breath": [{
         // Hits all targets in front of you. Reduced after 5 targets.
-        // Questions:
-        // - Is it sqrt scaling after 5 targets?
-        // - Is the HoT also reduced damage after 5 targets?
-        // - Does Lifegivers Flame also heal for the DoT amount?
         spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
         type: "damage",
         empowered: true,

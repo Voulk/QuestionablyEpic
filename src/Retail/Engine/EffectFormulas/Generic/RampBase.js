@@ -289,6 +289,13 @@ export const isSpellAvailable = (state, spellDB, spellName) => {
     return (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
 }
 
+export const getSpellCooldown = (state, spellDB, spellName) => {
+    const spell = spellDB[spellName][0]
+    if (!spell || !('cooldownData' in spell)) return false;
+    return spell.cooldownData.activeCooldown - state.t;
+
+}
+
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
  * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
