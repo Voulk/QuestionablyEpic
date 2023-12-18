@@ -179,7 +179,7 @@ export const EVOKERSPELLDB = {
         school: "bronze",
         tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
-        coeff: 0.57 * 0.67,
+        coeff: 0.342,
         cost: 2.0,
         cooldownData: {cooldown: 8, hasted: true}, 
         buffDuration: 12,

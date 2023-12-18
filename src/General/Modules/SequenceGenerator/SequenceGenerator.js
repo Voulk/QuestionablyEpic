@@ -172,10 +172,10 @@ export default function SequenceGenerator(props) {
   const [talents, setTalents] = useState({ ...talentDB });
 
   const stats = {
-    intellect: 9200,
+    intellect: 14500,
     haste: 2000,
     crit: 3300,
-    mastery: 3500,
+    mastery: 6500,
     versatility: 1200,
     stamina: 16000,
 

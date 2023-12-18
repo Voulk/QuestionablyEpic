@@ -1,7 +1,7 @@
 
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
+import { evokerDefaultAPL, reversionAPL } from "./PresEvokerDefaultAPL";
 /**
 
  */
@@ -13,7 +13,7 @@ export const buildEvokerChartData = (stats) => {
     const activeStats = {
         intellect: 14000,
         haste: 1200,
-        crit: 8000,
+        crit: 11000,
         mastery: 6500,
         versatility: 3000,
         stamina: 29000,
@@ -44,14 +44,15 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
 
-        {cat: "Blossom Auto", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
+        {cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
+        {cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]
 
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
         
         if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
-        const apl = sequence.cat.includes("Auto") ? evokerDefaultAPL : [];
+        const apl = sequence.tag.includes("Blossom Auto") ? evokerDefaultAPL : sequence.tag === "Reversion Auto" ? reversionAPL : [];
         const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents, apl);
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
         const spellData = {id: 0, icon: EVOKERSPELLDB[newSeq[0]][0].spellData.icon || ""};
@@ -59,7 +60,7 @@ export const buildEvokerChartData = (stats) => {
         if (sequence.cat === "Consumed Echo") {
             // These are awkward since we only want to grab the Echo bit.
             const healingDone = Object.entries(result.healingDone)
-                                    .filter(([key]) => key.includes("(Echo)"))
+                                    .filter(([key]) => key.includes("(Echo)") || key.includes("(HoT - Echo)"))
                                     .reduce((sum, [, value]) => sum + value, 0);
             console.log(result);
             results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
@@ -71,8 +72,9 @@ export const buildEvokerChartData = (stats) => {
 
             results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
         }
-        else if (sequence.cat.includes("Auto")) {
+        else if (sequence.cat.includes("APLs")) {
             console.log(result.advancedReport);
+            console.log(result);
             results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData, advancedReport: result.advancedReport})
         }
         else {

@@ -21,9 +21,9 @@ const EVOKERCONSTANTS = {
     defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
     auraHealingBuff: 1.05,
     auraDamageBuff: 1.15,
-    goldenHourHealing: 18000,
+    goldenHourHealing: 50000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
     lifebindSpells: ['Spiritbloom', 'Living Flame', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
     essenceBuff: {
         name: "EssenceGen",
@@ -478,10 +478,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     
     // Grace Period
     if (talents.gracePeriod) {
-        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.05);
+        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.1);
         else {
             const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
-            mult *= (1 + talents.gracePeriod * 0.05 * buffsActive / 20);
+            mult *= (1 + talents.gracePeriod * 0.1 * buffsActive / 20);
 
         }
     }   
@@ -818,7 +818,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    const sequenceLength = 'seqLength' in settings ? settings.seqLength : 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 'seqLength' in settings ? settings.seqLength : 120; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
@@ -840,6 +840,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
             }
         })
+        addBuff(state, EVOKERCONSTANTS.exhilBurstBuff, "Exhilarating Burst");
     }
 
     // Create Echo clones of each valid spell that can be Echo'd.
@@ -934,10 +935,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
         // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
         // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
+        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "function" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
         expiringHots.forEach(buff => {
 
-            if (buff.buffType === "heal" || buff.buffType === "damage") {
+            if (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") {
                 const tickRate = buff.tickRate / getHaste(state.currentStats)
                 const partialTickPercentage = (buff.next - state.t) / tickRate;
                 const spell = buff.attSpell;
@@ -945,6 +946,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
                 if (buff.buffType === "damage") runDamage(state, spell, buff.name);
                 else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
+                else if (buff.buffType === "function") {
+                    const func = buff.attFunction;
+                    const spell = buff.attSpell;
+                    func(state, spell);
+                }
             }
             else if (buff.runEndFunc) buff.runFunc(state, buff);
         })
