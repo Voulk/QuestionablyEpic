@@ -122,6 +122,13 @@ export const addBuff = (state, spell, spellName) => {
         // If the target of the buff is relevant to its functionality. Generate one.
         if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
 
+        // Check if any buffs affect the spell. If they do we'll have to adjust the coefficient.
+        // Examples: Dream Breath (Call of Ysera).
+        if (state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName).length > 0) {
+            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName)[0];
+            spell.coeff = spell.coeff * spellAmp.value;
+        }
+
         // The spell will run a function on tick.
         if (spell.buffType === "function") {
             newBuff.attFunction = spell.runFunc;
@@ -131,9 +138,12 @@ export const addBuff = (state, spell, spellName) => {
         else {
             newBuff.attSpell = spell;
         }
-        // Run a function when the spell ticks. Examples: Lux Soil, Reversion.
+        // Run a function when the spell ticks. Examples: Lux Soil, Reversion. NYI.
         if (spell.tickData.onTick) newBuff.onTick = spell.tickData.onTick;
+        // The spell does something on application. Note that standard "heals on application" shouldn't be applied here. This is for special effects.
+        if (spell.onApplication) spell.onApplication(state, spell, newBuff);
         
+
         state.activeBuffs.push(newBuff)
 
     }
@@ -351,7 +361,7 @@ export const getHaste = (stats) => {
 }
 
 export const getCrit = (stats) => {
-    return 1 + stats.crit / 180 / 100;
+    return 1.05 + stats.crit / 180 / 100;
 }
 
 export const addReport = (state, entry) => {

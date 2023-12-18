@@ -13,7 +13,7 @@ export const buildEvokerChartData = (stats) => {
     const activeStats = {
         intellect: 14000,
         haste: 1200,
-        crit: 2000,
+        crit: 8000,
         mastery: 6500,
         versatility: 3000,
         stamina: 29000,
@@ -38,6 +38,7 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Consumed Echo", tag: "E Dream Breath", seq: ["Dream Breath"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: ["Echo"]},
+        {cat: "Consumed Echo", tag: "E Reversion", seq: ["Reversion"], preBuffs: ["Echo"]},
 
         {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},

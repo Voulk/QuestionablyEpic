@@ -616,12 +616,16 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                 spell.runFunc(state, spell);
             }
 
-            // TODO: This needs to be converted to use the RampBase addBuff function. There are some unique ones here which could be converted to some kind of 
-            // function run on buff gain.
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
+                addBuff(state, spell, spellName);
 
+                if (spell.name === "Essence Burst") {
+                    triggerEssenceBurst(state);
+                }
+
+                /*
                 addReport(state, `Adding buff: ${spell.name}`);
                 if (spell.buffType === "stats") {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
@@ -644,7 +648,9 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                         next: state.t + (spell.tickRate / getHaste(state.currentStats))}
                     newBuff.attFunction = spell.runFunc;
 
-                    if (spellName.includes("Reversion")) newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats))))); // TODO; Replace 0.25 with crit.
+                    if (spellName.includes("Reversion")) {
+                        newBuff.expiration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats)-1))));
+                    }
                     else newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
                     
                     state.activeBuffs.push(newBuff);
@@ -682,9 +688,7 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                         addReport(state, `${spell.name} stacks: ${buff.stacks}`)
                     }
 
-                    if (spell.name === "Essence Burst") {
-                        triggerEssenceBurst(state);
-                    }
+
 
                 }     
                 // Spell amps are buffs that increase the amount of healing the next spell that meets the criteria. The criteria is defined in the buff itself by a function.
@@ -712,8 +716,8 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
                 }
                 else {
                     state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
-                }
-            }
+                }*/
+            } 
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
             if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
@@ -892,7 +896,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             const hps = (Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0) / state.t;
             if ('advancedReport' in state === false) state.advancedReport = [];
             state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent});
-            console.log(state.advancedReport);
         }
 
         // ---- Heal over time and Damage over time effects ----
@@ -1028,7 +1031,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                     })
 
                     // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
-                    if (spellName === "Reversion") echoSpell[0].function = evokerSpells["Reversion"][0].function;
+                    // Possibly just use Lodash or something here. 
+                    if (spellName === "Reversion") {
+                        echoSpell[0].onApplication = evokerSpells["Reversion"][0].onApplication;
+                        echoSpell[0].runFunc= evokerSpells["Reversion"][0].runFunc;
+                    }
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
 
                 }
