@@ -21,7 +21,7 @@ export const buildEvokerChartData = (stats) => {
         critMult: 2,
     }
 
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, advancedReporting: true, t31_2: false};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: true, t31_2: false};
     let talents = {...evokerTalents};
 
     const sequences = [
@@ -46,7 +46,7 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
 
         {cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
-        {cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
+        //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]
 
     sequences.forEach(sequence => {
@@ -57,11 +57,20 @@ export const buildEvokerChartData = (stats) => {
 
         if (cat === "APLs") {
             // All auto based.
-            const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: talents, stats: activeStats }
-
             const profile = sequence.tag.includes("Blossom Auto") ? blossomProfile : sequence.tag === "Reversion Auto" ? reversionProfile : {};
+            const newTalents = JSON.parse(JSON.stringify(evokerTalents));
+            profile.talents.forEach(talentName => {
+                newTalents[talentName].points = newTalents[talentName].maxPoints;
+            })
+
+            const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: newTalents, stats: activeStats }
+
+            
             const result = runAPLSuites(playerData, profile.apl, runCastSequence)
-            //const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents, profile.apl);
+            const oneIteration = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, preBuffs: sequence.preBuffs, reporting: true}, talents, profile.apl);
+            
+            
+            console.log(oneIteration);
             console.log(result);
             results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: result.advancedReport})
         }

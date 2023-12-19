@@ -53,6 +53,7 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
             else if (condition.type ==="buff") aplReq = checkBuffActive(state.activeBuffs, condition.buffName);
             else if (condition.type ==="buffMissing") aplReq = !checkBuffActive(state.activeBuffs, condition.buffName);
             else if (condition.type === "buffStacks") aplReq = getBuffStacks(state.activeBuffs, condition.buffName) >= condition.stacks;
+            else if (condition.type === "buffCountMinimum") aplReq = state.activeBuffs.filter(buff => buff.name === condition.buffName).length >= condition.buffCount;
 
             // Cooldown related conditions
             // type: cooldownAvailable. Returns yes if spell is available to cast.

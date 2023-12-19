@@ -48,7 +48,8 @@ const EVOKERCONSTANTS = {
     essenceBurstBuff: {
         name: "Essence Burst",
         type: "buff",
-        stacks: true,
+        stacks: 1,
+        canStack: true,
         maxStacks: 2,
         expiration: 999,
         buffDuration: 15,
@@ -283,6 +284,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
     if (talents.essenceBurst) {
         evokerSpells['Living Flame'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
         evokerSpells['Living Flame O'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.2})
+        evokerSpells['Reversion'].push({...EVOKERCONSTANTS.essenceBurstBuff, chance: 0.15})
     }
 
 
@@ -519,7 +521,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
 
     // Compile healing and add report if necessary.
-    if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+    if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
@@ -619,12 +621,14 @@ const runSpell = (fullSpell, state, spellName, evokerSpells) => {
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
             else if (spell.type === "buff") {
-                addBuff(state, spell, spellName);
-
                 if (spell.name === "Essence Burst") {
+                    // Special code for essence burst.
                     triggerEssenceBurst(state);
                 }
-
+                else {
+                    addBuff(state, spell, spellName);
+                }
+                
                 /*
                 addReport(state, `Adding buff: ${spell.name}`);
                 if (spell.buffType === "stats") {
@@ -811,7 +815,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
     stats.mastery += 180;
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essence: 5};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essence: 5};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -840,7 +844,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
             }
         })
-        addBuff(state, EVOKERCONSTANTS.exhilBurstBuff, "Exhilarating Burst");
+        //addBuff(state, EVOKERCONSTANTS.exhilBurstBuff, "Exhilarating Burst");
     }
 
     // Create Echo clones of each valid spell that can be Echo'd.
@@ -1008,6 +1012,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             const spellName = queuedSpell;
             const fullSpell = evokerSpells[queuedSpell];
+            state.casts[spellName] = (state.casts[spellName] || 0) + 1;
 
             spendSpellCost(fullSpell, state);
 
@@ -1069,6 +1074,24 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.talents = {};
+
+    // Tidy up and offer percentages. Could be culled for run time if reporting is off.
+    
+
+    if (settings.advancedReporting) {
+        state.healingDoneReport = {};
+        
+
+        Object.keys(state.healingDone).forEach(spellName => {
+            state.healingDoneReport[spellName] = Math.round(state.healingDone[spellName] / state.totalHealing * 10000) / 100 + "% (" + Math.round(state.healingDone[spellName] / sequenceLength) + " hps)";
+        })
+
+        Object.keys(state.casts).forEach(spellName => {
+            state.casts[spellName] = Math.round(state.casts[spellName] / (sequenceLength / 60) * 100) / 100;
+        });
+    }
+
+
     state.hps = Math.round(state.totalHealing / sequenceLength);
     state.dps = Math.round(state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;

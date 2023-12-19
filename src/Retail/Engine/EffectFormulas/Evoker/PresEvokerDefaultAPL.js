@@ -10,9 +10,10 @@ export const blossomProfile = {
         stamina: 29000,
         critMult: 2,
     },
-    talents: [], // These will be turned on at maximum points
+    talents: ['flutteringSeedlings', 'cycleOfLife', 'fontOfMagic', 'renewingBreath', 'lifeforceMender'], // These will be turned on at maximum points
     apl: [
     {s: "Dream Flight", conditions: [{type: "afterTime", timer: 15}]},
+    {s: "Living Flame", conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 4}]}, 
     {s: "Verdant Embrace", conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}] }, // Combo with Verdant Embrace
     {s: "Dream Breath" }, // Combo with Verdant Embrace
     {s: "Spiritbloom" }, // Combo with Verdant Embrace
