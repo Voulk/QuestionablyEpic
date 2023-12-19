@@ -1,7 +1,8 @@
 
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-import { evokerDefaultAPL, reversionAPL } from "./PresEvokerDefaultAPL";
+import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
+import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
 /**
 
  */
@@ -50,38 +51,49 @@ export const buildEvokerChartData = (stats) => {
 
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
-        
-        if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
-        const apl = sequence.tag.includes("Blossom Auto") ? evokerDefaultAPL : sequence.tag === "Reversion Auto" ? reversionAPL : [];
-        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents, apl);
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
         const spellData = {id: 0, icon: EVOKERSPELLDB[newSeq[0]][0].spellData.icon || ""};
+        const cat = sequence.cat;
 
-        if (sequence.cat === "Consumed Echo") {
-            // These are awkward since we only want to grab the Echo bit.
-            const healingDone = Object.entries(result.healingDone)
-                                    .filter(([key]) => key.includes("(Echo)") || key.includes("(HoT - Echo)"))
-                                    .reduce((sum, [, value]) => sum + value, 0);
-            console.log(result);
-            results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
-        }
-        else if (sequence.cat === "Lifebind Ramps") {
-            const healingDone = Object.entries(result.healingDone)
-                                    .filter(([key]) => key.includes("Lifebind"))
-                                    .reduce((sum, [, value]) => sum + value, 0);
+        if (cat === "APLs") {
+            // All auto based.
+            const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: talents, stats: activeStats }
 
-            results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
-        }
-        else if (sequence.cat.includes("APLs")) {
-            console.log(result.advancedReport);
+            const profile = sequence.tag.includes("Blossom Auto") ? blossomProfile : sequence.tag === "Reversion Auto" ? reversionProfile : {};
+            const result = runAPLSuites(playerData, profile.apl, runCastSequence)
+            //const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents, profile.apl);
             console.log(result);
-            results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData, advancedReport: result.advancedReport})
+            results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: result.advancedReport})
         }
         else {
-            results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})
+            // All sequence based.
+            if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
+            const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
 
-        }
-    });      
+    
+            if (sequence.cat === "Consumed Echo") {
+                // These are awkward since we only want to grab the Echo bit.
+                const healingDone = Object.entries(result.healingDone)
+                                        .filter(([key]) => key.includes("(Echo)") || key.includes("(HoT - Echo)"))
+                                        .reduce((sum, [, value]) => sum + value, 0);
+                //console.log(result);
+                results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+            }
+            else if (sequence.cat === "Lifebind Ramps") {
+                const healingDone = Object.entries(result.healingDone)
+                                        .filter(([key]) => key.includes("Lifebind"))
+                                        .reduce((sum, [, value]) => sum + value, 0);
+    
+                results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+            }
+            else {
+                results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})
+    
+            }
+        };  
+    }); 
+        
+
 
     return results;
 

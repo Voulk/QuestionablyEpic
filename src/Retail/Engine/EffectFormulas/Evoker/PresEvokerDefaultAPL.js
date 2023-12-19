@@ -1,6 +1,17 @@
 
 
-export const evokerDefaultAPL = [
+export const blossomProfile = {
+    defaultStats: {
+        intellect: 14000,
+        haste: 1600,
+        crit: 11000,
+        mastery: 6500,
+        versatility: 3000,
+        stamina: 29000,
+        critMult: 2,
+    },
+    talents: [], // These will be turned on at maximum points
+    apl: [
     {s: "Dream Flight", conditions: [{type: "afterTime", timer: 15}]},
     {s: "Verdant Embrace", conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}] }, // Combo with Verdant Embrace
     {s: "Dream Breath" }, // Combo with Verdant Embrace
@@ -11,9 +22,20 @@ export const evokerDefaultAPL = [
     
     {s: "Living Flame O"},
 
-]
+]}
 
-export const reversionAPL = [
+export const reversionProfile = {
+    defaultStats: {
+        intellect: 14000,
+        haste: 1600,
+        crit: 11000,
+        mastery: 6500,
+        versatility: 3000,
+        stamina: 29000,
+        critMult: 2,
+    },
+    talents: [], // These will be turned on at maximum points
+    apl: [
     {s: "Dream Flight", conditions: [{type: "afterTime", timer: 15}]},
     {s: "Verdant Embrace", conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}, {type: "buffMissing", buffName: "Echo"}] }, // Combo with Verdant Embrace
     {s: "Dream Breath", conditions: [{type: "buffMissing", buffName: "Echo"}] }, // Avoid consuming Echo buffs.
@@ -21,5 +43,5 @@ export const reversionAPL = [
     {s: "Echo", conditions: [{type: "resource", resourceName: "Essence", resourceCost: 2}]},
     {s: "Reversion" }, 
     {s: "Living Flame O"},
-
-]
+    ]
+    }

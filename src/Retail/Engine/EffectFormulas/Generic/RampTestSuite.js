@@ -1,7 +1,7 @@
 
 
 // Run Spell Combos
-// playerData = { spec, baseSpells, baseSettings, baseTalents, activeStats }
+// playerData = { spec, baseSpells, baseSettings, baseTalents, stats }
 export function runSpellComboSuite(playerData, comboList, runCastSequence) {
     const simData = runSuite(playerData, comboList, runCastSequence, "Sequence");  
 
@@ -46,7 +46,7 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 }
 
 function runSuite(playerData, aplList, runCastSequence, type) {
-    const iterations = 1000;
+    const iterations = 100;
     let hps = [];
     let hpm = [];
     const simData = {

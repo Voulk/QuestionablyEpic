@@ -186,13 +186,12 @@ export const EVOKERSPELLDB = {
         onApplication: function (state, spell, buff) {
             const newDuration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats)-1))));
             buff.expiration = newDuration;
-            console.log("Crit: " + getCrit(state.currentStats))
-            console.log("Duration: " + (spell.buffDuration / (1 - (getCrit(state.currentStats)-1))) )
+
             return buff;
         },
         runFunc: function (state, buff) {
             const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
-            console.log("Running Reversion");
+
             runHeal(state, hotHeal, buff.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
             // This can't take into account on-use crit increases though whereas rolling it each time will (but requires more iterations for a proper valuation).
