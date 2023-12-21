@@ -7,7 +7,7 @@ import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGems } from "General/Engine/ItemUtilities";
-import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
+import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";

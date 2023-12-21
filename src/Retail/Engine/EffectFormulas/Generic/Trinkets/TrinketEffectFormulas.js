@@ -1,17 +1,17 @@
-import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../EffectUtilities";
-import { trinket_data } from "./ShadowlandsTrinketData";
+import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../../EffectUtilities";
+import { trinket_data } from "../ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { useSelector } from "react-redux";
-import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
-import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
+import { getAdjustedHolyShock } from "../../Paladin/PaladinMiscFormulas"
+import { getMasteryAddition } from "../../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
-import SPEC from "../../../../General/Engine/SPECS";
+import SPEC from "../../../../../General/Engine/SPECS";
 
 
 export function getTrinketValueSL(trinketName, itemLevel) {
