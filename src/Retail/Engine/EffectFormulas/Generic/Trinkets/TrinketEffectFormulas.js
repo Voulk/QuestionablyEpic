@@ -3,6 +3,7 @@ import { trinket_data } from "../ShadowlandsTrinketData";
 import { raidTrinketData } from "./TrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
+import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { useSelector } from "react-redux";
 import { getAdjustedHolyShock } from "../../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../../Monk/MistweaverMiscFormulas"
@@ -30,7 +31,7 @@ export function getTrinketValueSL(trinketName, itemLevel) {
 }
 
 export function getTrinketValue(trinketName, itemLevel) {
-  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData)
   let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 
   if (trinketName === "Voidmender's Shadowgem") {
@@ -57,7 +58,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
   let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
-  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData)
   let activeTrinket = trinketData.find((trinket) => trinket.name === effectName);
 
 
