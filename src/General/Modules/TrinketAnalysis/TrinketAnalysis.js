@@ -16,7 +16,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
+import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
