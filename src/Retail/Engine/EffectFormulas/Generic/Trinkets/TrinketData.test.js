@@ -3,7 +3,7 @@
 import {getProcessedValue, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "General/Modules/Player/Player";
 import { trinket_data} from "../ShadowlandsTrinketData";
-import { raidTrinketData } from "./TrinketData";
+import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";

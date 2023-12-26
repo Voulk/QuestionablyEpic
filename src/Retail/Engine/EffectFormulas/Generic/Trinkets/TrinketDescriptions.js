@@ -1,4 +1,4 @@
-import { raidTrinketData } from "./TrinketData";
+import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
