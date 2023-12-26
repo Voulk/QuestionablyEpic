@@ -18,7 +18,7 @@ export const changeLog: entry[] = [
   {
     version: "10.2",
     update: 8,
-    date: "December 21",
+    date: "December 26",
     changes: [ 
       "Timewalking: Added Skull of Gul'dan.",
       "Timewalking: Added some missing Legion timewalking items.",
