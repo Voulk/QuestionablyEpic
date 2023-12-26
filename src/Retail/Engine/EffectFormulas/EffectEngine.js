@@ -7,7 +7,7 @@ import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
 import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
-import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
+import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
 import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";

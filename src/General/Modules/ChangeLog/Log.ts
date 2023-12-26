@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 8,
+    date: "December 26",
+    changes: [ 
+      "Timewalking: Added Skull of Gul'dan.",
+      "Timewalking: Added some missing Legion timewalking items.",
+      "Goldsteel Sabatons will now show in the Upgrade Finder for Paladin."
+
+    ]},
+  {
+    version: "10.2",
     update: 7,
     date: "December 2",
     changes: [ 

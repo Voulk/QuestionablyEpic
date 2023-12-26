@@ -7,7 +7,7 @@ import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGems } from "General/Engine/ItemUtilities";
-import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
+import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
@@ -449,6 +449,10 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  128; // 64 x 2.
   enchants["Finger"] = "+82 " + highestWeight;
+
+  // Helm 
+  // This has been available for a couple weeks so we'll include it now. It won't impact results. 
+  enchants["Head"] = "Incandescent Essence";
 
   // Chest
   // There is a mana option too that we might include later.
