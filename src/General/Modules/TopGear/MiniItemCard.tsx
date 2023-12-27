@@ -55,9 +55,41 @@ const useStyles = makeStyles({
   }
 });
 
+// This can probably be cleaned up a lot.
+// It adds colored tags to the item card, separated by a / where applicable.
+const GetItemTags: React.FC<{ showTags: any; isVault: boolean, t: any }> = ({ showTags, isVault, t }) => {
+  return (
+    <div style={{ display: "flex" }}>
+      {showTags.tertiary ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null}
+      {showTags.tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+      {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+      {(showTags.tertiary && showTags.tier) || (isVault && showTags.tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+      {showTags.tier ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null}
+      {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+      {showTags.catalyst ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null}
+  </div>
+  )
+}
+
+const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
+  if (!item.socket) {
+    return null; // No sockets, return null or another default content
+  }
+
+  return (
+    <div style={{ verticalAlign: "middle" }}>
+      {Array.from({ length: item.socket }).map((_, index) => (
+        <div key={index} style={{ marginRight: 4, display: "inline" }}>
+          <img src={socketImage} width={15} height={15} alt={`Socket ${index + 1}`} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 interface ItemCardProps {
   // Define your prop types here
-  itemKey: string;
+  itemKey: number;
   item: Item;
   upgradeItem: (item: Item, newItemLevel: number, socketFlag: boolean, vaultFlag: boolean) => void;
   activateItem: (unique: string, active: boolean) => void;
@@ -71,11 +103,11 @@ export default function ItemCard(props: ItemCardProps) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const itemKey = props.itemKey;
+  
+  const itemKey: number = props.itemKey;
   const item: Item = props.item;
   const itemLevel: number = item.level;
   const statString: string = buildStatString(item.stats, item.effect, currentLanguage);
-  const isCatalystItem: boolean = item.isCatalystItem;
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
@@ -94,7 +126,7 @@ export default function ItemCard(props: ItemCardProps) {
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const reforge = item.checkHasFlag("Reforged") ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Reforged")}</div> : null;
   */
-  let socket = [];
+  //let socket = [];
   const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.active && item.vaultItem ? 'selectedVault' : item.active ? 'selected' : item.vaultItem ? 'vault' : 'root';
 
 
@@ -109,16 +141,6 @@ export default function ItemCard(props: ItemCardProps) {
     //gemString = gemData.string;
   } */
   
-  if (item.socket) {
-    for (let i = 0; i < item.socket; i++) {
-      socket.push(
-        /*<div style={{ marginRight: 4, display: "inline" }}>
-          <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>, */
-      );
-    }
-    //socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
-  }
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
@@ -207,19 +229,7 @@ export default function ItemCard(props: ItemCardProps) {
                         >
                           {itemName}
                         </div>
-                        {true ? (
-                          <div style={{ display: "flex" }}>
-                            {showTags.tertiary ? null : null}
-                            {showTags.tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                            {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
-                            {(showTags.tertiary && showTags.tier) || (isVault && showTags.tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                            {showTags.tier ? null : null}
-                            {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                            {showTags.catalyst ? null : null}
-                          </div>
-                        ) : (
-                          ""
-                        )}
+                        <GetItemTags showTags={showTags} isVault={isVault} t={t} />
                       </Typography>
                     </Grid>
                     <Grid
@@ -249,7 +259,7 @@ export default function ItemCard(props: ItemCardProps) {
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                     <Grid item xs={11}>
                       <div style={{ display: "inline-flex", marginLeft: 4, height: 15, verticalAlign: "middle" }}>
-                        {socket}
+                        <GetSockets item={item} />
                         <Typography variant="subtitle2" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
                           {statString}
                         </Typography>

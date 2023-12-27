@@ -151,7 +151,7 @@ export class Item {
   // This is only of moderate accuracy since there can be non-tier sets that use the same slots as tier.
   // We only use this to color Tier pieces differently so it's ok if it colors non-tier set pieces.
   isTierPiece(): boolean {
-    return this.setID !== 0 && this.slot !== "Trinket" && this.slot !== "Finger";
+    return this.setID !== 0 && this.setID !== "" && this.slot !== "Trinket" && this.slot !== "Finger";
   }
 
   // This compiles an additional stat array into an item.
