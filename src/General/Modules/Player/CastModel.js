@@ -8,7 +8,7 @@ import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeig
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
+import { monkTearSpecialQueries, monkTearSpellData, monkTearStatWeights } from "./ClassDefaults/Monk/MonkTear";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights } from "./ClassDefaults/EvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
@@ -124,8 +124,8 @@ class CastModel {
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
-      if (modelID === "Raid Default") {
-        this.modelName = "Raid Default"
+      if (modelID === "Rising Mist") {
+        this.modelName = "Rising Mist"
         spellList = monkDefaultSpellData("Raid");
         specialQueries = monkDefaultSpecialQueries("Raid");
         this.baseStatWeights = monkDefaultStatWeights("Raid");
@@ -138,12 +138,12 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
-      else if (modelID === "Sinister Teachings") {
-        this.modelName = "Sinister Teachings"
-        spellList = monkSinSpellData(contentType);
-        specialQueries = monkSinSpecialQueries(contentType);
-        this.baseStatWeights = monkSinStatWeights("Raid");
-        this.fightInfo.dps = 1600;
+      else if (modelID === "Tear of Morning") {
+        this.modelName = "Tear of Morning"
+        spellList = monkTearSpellData(contentType);
+        specialQueries = monkTearSpecialQueries(contentType);
+        this.baseStatWeights = monkTearStatWeights("Raid");
+        this.fightInfo.dps = 6000;
       }
 
     } else if (spec === SPEC.DISCPRIEST) {

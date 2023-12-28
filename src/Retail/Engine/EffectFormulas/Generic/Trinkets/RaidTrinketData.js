@@ -413,7 +413,7 @@ export const raidTrinketData = [
       // Versatility Portion
       let bonus_stats = {haste: 0, crit: 0, mastery: 0, versatility: 0};
       const buffSetting = getSetting(additionalData.settings, "chromaticEssenceBuff");
-      const includeAllies = getSetting(additionalData.settings, "chromaticEssenceAllies");
+      const includeAllies = false;// getSetting(additionalData.settings, "chromaticEssenceAllies");
       let primaryBuff = (buffSetting === "Automatic" ? player.getHighestStatWeight(additionalData.contentType) : buffSetting).toLowerCase();
       const primaryValue = processedValue(data[0], itemLevel);
       const secondaryValue = includeAllies ? processedValue(data[1], itemLevel) : 0;
