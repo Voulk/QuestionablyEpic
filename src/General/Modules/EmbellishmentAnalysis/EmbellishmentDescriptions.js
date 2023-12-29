@@ -127,7 +127,7 @@ const getVerdantConduit = (data, itemLevel, player, additionalData) => {
 const getBlueSilkenLining = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
-    let description = processedValue(effect, itemLevel) + " mastery while above 90% health.";
+    let description = processedValue(effect, itemLevel) + " mastery while above 90% health. Tends to underwhelm because it's tough to be consistently above 90% health while you're doing the majority of your healing.";
 
     return {
         category: "Item Attachments",
