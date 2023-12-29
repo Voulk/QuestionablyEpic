@@ -37,8 +37,9 @@ export const DISCSPELLS = {
     "Penance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage"},
         type: "special",
-        castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 1.6,
+        onGCD: true,
         coeff: 0.4 * 1.15, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.16,
@@ -58,8 +59,9 @@ export const DISCSPELLS = {
     "DefPenance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
         type: "special",
-        castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 1.6,
+        onGCD: true,
         coeff: 1.25 * 1.3, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         expectedOverheal: 0.6,

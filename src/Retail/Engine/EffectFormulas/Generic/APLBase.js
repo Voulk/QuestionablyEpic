@@ -99,7 +99,30 @@ export const genSpell = (state, spells, apl) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-    if (usableSpells.length > 0) return usableSpells[0].s;
-    else return "Rest";
+    
+    if (usableSpells.length > 0) {
+        if (typeof usableSpells[0].s === "string") return [usableSpells[0].s];
+        else return usableSpells[0].s;
+    }
+    else return ["Rest"];
 
+}
+
+// Unused.
+export const queueSpell = (state, spells, apl, seq) => {
+    let queuedSpell = "";
+    // If the sequence type is not "Auto" it should
+    // follow the given sequence list
+    if (seqType === "Manual") queuedSpell = seq.shift();
+    
+    else {
+        // If we're creating our sequence via APL then we'll 
+        if (seq.length > 0) queuedSpell = seq.shift();
+        else {
+            seq = genSpell(state, discSpells, apl);
+            queuedSpell = seq.unshift();
+        }
+        // TODO: allow arrays too (queue first spell, add rest to seq).
+        
+    }
 }

@@ -349,6 +349,21 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            maxStacks: 1,
        })
    }
+   if (settings.T31_2) {
+    // +20% Smite / Penance damage. Smite extends the duration of one atonement by 2s.
+    discSpells["Smite"][0].coeff *= 1.2;
+    discSpells["Penance"][0].coeff *= 1.2;
+    
+   }
+   if (settings.T31_4) {
+    // Smite casts an additional time during Shadow Covenant, triggering additional CDR and atonement extension.
+    discSpells["Smite"].push({
+        type: "castSpell",
+        storedSpell: "Smite",
+        canRepeat: false,
+        condition: {type: "buff", buffName: "Shadow Covenant"},
+    })
+   }
 
 
    // ==== Legendaries ====
