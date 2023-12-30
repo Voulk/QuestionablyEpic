@@ -20,11 +20,11 @@ export const DISCCONSTANTS = {
     masteryMod: 1.35,
     masteryEfficiency: 1,
 
-    auraHealingBuff: 1, 
+    auraHealingBuff: 0.97, 
     auraDamageBuff: {
-        periodic: 0.94 * 1.1,
-        direct: 0.94 * 1.1,
-        pet: 1.2,
+        periodic: 0.915,
+        direct: 0.915,
+        pet: 1.17,
     },
     
     atonementMults: {"shadow": 1, "holy": 1},
@@ -63,8 +63,12 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     // Some of our buffs don't apply to our pet attacks. We'll include those here.
     if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.1 : 1; 
-        sinMult = DISCCONSTANTS.sins[activeAtones]
-        mult = schism * sinMult[activeAtones];
+        sinMult = DISCCONSTANTS.sins[activeAtones];
+        mult = schism * sinMult;
+    }
+    else if (spellName === "Inescapable Torment") {
+        // IT is a special baby that uses both player and pet auras.
+        mult *= DISCCONSTANTS.auraDamageBuff.direct * DISCCONSTANTS.auraDamageBuff.pet;
     }
     else {
         // Pet special cases.
@@ -289,11 +293,11 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
                 }
                 if (spell.targetMod) {
                     for (let i = 0; i < spell.targetMod; i++) {
-                        runSpell(newSpell, state, spell.storedSpell, specSpells, spell.canRepeat || true);
+                        runSpell(newSpell, state, spell.storedSpell, specSpells, atonementApp, spell.canRepeat || true);
                     }
                 }
                 else {
-                    runSpell(newSpell, state, spell.storedSpell, specSpells, spell.canRepeat || true);
+                    runSpell(newSpell, state, spell.storedSpell, specSpells, atonementApp, spell.canRepeat || true);
                 }
 
                 
@@ -537,16 +541,14 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             
             else {
                 // If we're creating our sequence via APL then we'll 
-                console.log("Auto finding spell");
+
                 if (seq.length > 0) queuedSpell = seq.shift();
                 else {
                     seq = genSpell(state, discSpells, apl);
                     queuedSpell = seq.shift();
-                    console.log(apl);
-                    console.log(queuedSpell);
                     
                 }
-                console.log(queuedSpell);
+
                 // TODO: allow arrays too (queue first spell, add rest to seq).
                 
             }
@@ -558,8 +560,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
             else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
             else nextSpell = state.t + castTime;
-            console.log(nextSpell);
-            console.log(seqType);
+
         }
         // We'll iterate through the different effects the spell has.
         // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,

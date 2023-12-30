@@ -22,7 +22,7 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
     let miscReq = true;
     let cooldownReq = true;
     let secondaryResourceReq = true;
-
+    console.log(spellNames);
     // Spell checks. Performed on each spell in the array. If any fail, return false. 
     spellNames.forEach(spellName => {
         const spell = spellDB[spellName][0];
@@ -76,6 +76,7 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
             // type: everyX. Returns yes every x seconds. NYI. 
             else if (condition.type === "afterTime") aplReq = state.t >= condition.timer;
             else if (condition.type === "beforeTime") aplReq = state.t <= condition.timer;
+            else if (condition.type === "betweenTime") aplReq = state.t >= condition.after && state.t <= condition.before;
             else if (condition.type === "EveryX") aplReq = Math.floor(state.t * 100) % condition.timer === 0;
         })
     } 
@@ -84,10 +85,10 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
 }
 
 export const genSpell = (state, spells, apl) => {
-    console.log(apl);
-    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));
-    console.log(usableSpells);
-    console.log(apl);
+
+    //const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));  
+    const usableSpells = JSON.parse(JSON.stringify(apl)).filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));
+
     /*
     if (state.holyPower >= 3) {
         spellName = "Light of Dawn";
