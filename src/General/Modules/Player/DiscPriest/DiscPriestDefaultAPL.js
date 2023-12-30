@@ -30,6 +30,6 @@ export const shadowFiendProfile = {
     },
     talents: [], // These will be turned on at maximum points
     apl: [
-
+        {s: ["Smite"]},
     ]
     }

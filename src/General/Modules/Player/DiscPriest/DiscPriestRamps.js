@@ -64,7 +64,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
         schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.1 : 1; 
         sinMult = DISCCONSTANTS.sins[activeAtones]
-        mult = schism * sins[activeAtones];
+        mult = schism * sinMult[activeAtones];
     }
     else {
         // Pet special cases.
@@ -457,7 +457,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     // Ideally we'll cover as much as we can in here.
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
 
-    const seq = [...sequence];
+    let seq = [...sequence];
     const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
 
     // Setup Trinkets
@@ -524,7 +524,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
-        if (seq.length > 0 && (state.t > nextSpell)) {
+        if (/*seq.length > 0 && */(state.t > nextSpell)) {
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
@@ -537,11 +537,16 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             
             else {
                 // If we're creating our sequence via APL then we'll 
+                console.log("Auto finding spell");
                 if (seq.length > 0) queuedSpell = seq.shift();
                 else {
                     seq = genSpell(state, discSpells, apl);
-                    queuedSpell = seq.unshift();
+                    queuedSpell = seq.shift();
+                    console.log(apl);
+                    console.log(queuedSpell);
+                    
                 }
+                console.log(queuedSpell);
                 // TODO: allow arrays too (queue first spell, add rest to seq).
                 
             }
@@ -553,7 +558,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
             else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
             else nextSpell = state.t + castTime;
-
+            console.log(nextSpell);
+            console.log(seqType);
         }
         // We'll iterate through the different effects the spell has.
         // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,

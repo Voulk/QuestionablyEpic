@@ -24,6 +24,12 @@
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
 export const DISCSPELLS = {
+    "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
+        type: "",
+        castTime: 0.5,
+        cost: 0,
+    }],
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",

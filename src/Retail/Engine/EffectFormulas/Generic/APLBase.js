@@ -15,20 +15,29 @@ import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase"
 // - Do we have a certain amount of a resource? (Useful for not overcapping on something).
 // APL conditions are an array and we can have more than one. If any fail then the function returns false. 
 // If you're looking for an OR condition, add multiple entries. If these are used a lot then we could add a more natural way to do it. 
-const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
+const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
+    //const spell = spellDB[spellName][0];
     
-    const spell = spellDB[spellName][0];
-
     let aplReq = true;
     let miscReq = true;
     let cooldownReq = true;
-    const secondaryResourceReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
+    let secondaryResourceReq = true;
 
-    // Added workaround CDR/Stacks pending rework
-    //const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
-    if (spell.cooldownData) {
-        cooldownReq = (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
-    }
+    // Spell checks. Performed on each spell in the array. If any fail, return false. 
+    spellNames.forEach(spellName => {
+        const spell = spellDB[spellName][0];
+        //miscReq = spell.activeCooldown <= state.t || !spell.activeCooldown;
+        secondaryResourceReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
+        // Added workaround CDR/Stacks pending rework
+
+        if (spell.cooldownData) {
+            cooldownReq = (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
+        }
+        
+    })
+
+
+
     
     if (conditions) {
         conditions.forEach(condition => {
@@ -75,9 +84,10 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
 }
 
 export const genSpell = (state, spells, apl) => {
-
+    console.log(apl);
     const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));
-
+    console.log(usableSpells);
+    console.log(apl);
     /*
     if (state.holyPower >= 3) {
         spellName = "Light of Dawn";
@@ -100,7 +110,7 @@ export const genSpell = (state, spells, apl) => {
     console.log("Gen: " + spellName + "|");
     */
     
-    if (usableSpells.length > 0) {
+    if (usableSpells.length > 0) { // This appears to be modifying APL. Work through that.
         if (typeof usableSpells[0].s === "string") return [usableSpells[0].s];
         else return usableSpells[0].s;
     }
