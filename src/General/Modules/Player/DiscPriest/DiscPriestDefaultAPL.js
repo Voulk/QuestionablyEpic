@@ -1,7 +1,7 @@
 
 
 export const mindbenderProfile = {
-    defaultStats: {
+    defaultStats: { // This is a fallback stat allocation if one is not explicitly provided. It need not be technically optimal - just something reasonable.
         intellect: 14000,
         haste: 6500,
         crit: 4000,
@@ -19,7 +19,7 @@ export const mindbenderProfile = {
 ]}
 
 export const shadowFiendProfile = {
-    defaultStats: {
+    defaultStats: { // This is a fallback stat allocation if one is not explicitly provided. It need not be technically optimal - just something reasonable.
         intellect: 14000,
         haste: 6500,
         crit: 4000,

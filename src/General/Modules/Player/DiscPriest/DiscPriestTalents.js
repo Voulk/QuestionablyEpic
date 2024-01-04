@@ -69,14 +69,14 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
         // Adds Schisms former effect to Mind Blast
         discSpells['Mind Blast'].push({
             type: "buff",
-            buffDuration: 9,
+            buffDuration: 9 + 6 * talents.maliciousIntent,
             buffType: "special",
             value: 1.1,
             name: "Schism",
             canStack: false,
         });
    }
-   if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
+
    if (talents.enduringLuminescence) {
         discSpells['Power Word: Radiance'][0].atonement *= 1.1;
         discSpells['Power Word: Radiance'][0].castTime /= 1.3;
