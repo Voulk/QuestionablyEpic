@@ -29,25 +29,6 @@ describe("Test APL", () => {
         //console.log(data);
 
         const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
-        /*
-        for (let i = 0; i < iter; i++) {
-            
-            const talents = {...evokerTalents};
-            const result = runCastSequence(["Living Flame"], JSON.parse(JSON.stringify(activeStats)), testSettings, talents, evokerDefaultAPL);
-            result.activeBuffs = [];
-            hps += result.hps;
-
-            if (result.hps > maxHPS) {
-                maxHPS = result.hps;
-            }
-            if (result.hps < minHPS) {
-                minHPS = result.hps;
-            }
-            
-        }
-
-        console.log("Average HPS: " + Math.round(hps / iter) + " Max HPS: " + maxHPS  + " Min HPS: " + minHPS)
-        */
     
         expect(true).toEqual(true);
     })

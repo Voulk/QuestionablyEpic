@@ -86,6 +86,33 @@ export const spellCleanup = (spell, state) => {
     // Check for any buffs that buffed the spell and remove them.
 }
 
+// TODO: Generalize secondary spell costs and then flatten this function. 
+export const spendSpellCost = (spell, state) => {
+    if ('essence' in spell[0]) {
+        if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
+            addReport(state, `Essence Burst consumed!`);
+            state.manaSpent += 0;
+        }
+        else {
+            // Essence buff is not active. Spend Essence and mana.
+            state.manaSpent += spell[0].cost;
+            state.essence -= spell[0].essence;
+
+            // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
+            // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
+            if (checkBuffActive(state.activeBuffs, "EssenceGen") === false) {
+                addBuff(state, EVOKERCONSTANTS.essenceBuff, "EssenceGen");
+            }
+        }
+    } 
+        
+    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else {
+        // No cost. Do nothing.
+    };    
+}
+
 
 export const addBuff = (state, spell, spellName) => {
     let newBuff = {name: spell.name || spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
@@ -304,6 +331,20 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
     if (!spell || !('cooldownData' in spell)) return false;
     return spell.cooldownData.activeCooldown - state.t;
 
+}
+
+export const getSpellCastTime = (spell, state, currentStats) => {
+    if ('castTime' in spell) {
+        let castTime = spell.castTime;
+
+        if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        // Replace with generic cast time decreases.
+        else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
+        else castTime = castTime / getHaste(currentStats);
+
+        return castTime;
+    }
+    else console.log("CAST TIME ERROR. Spell: " + spellName);
 }
 
 /**

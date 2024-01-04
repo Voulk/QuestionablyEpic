@@ -24,12 +24,18 @@
 
 // Spell coefficients combine a spells base coefficient with any relevant auras that might impact the spell. 
 export const DISCSPELLS = {
+    "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
+        type: "",
+        castTime: 0.5,
+        cost: 0,
+    }],
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",
         castTime: 1.5,
         cost: 0.4,
-        coeff: 0.52875, // 0.705 x 0.7 (smite aura nerf)
+        coeff: 0.52875, // 0.47 * 1.5 * 0.75 (smite aura nerf)
         atoneOverheal: 0.2,
         school: "holy",
         secondaries: ['crit', 'vers'],
@@ -37,8 +43,10 @@ export const DISCSPELLS = {
     "Penance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage"},
         type: "special",
-        castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 1.6,
+        onGCD: true,
+        travelTime: 0.8, // Fixed for now but could be dynamic based on distance from target.
         coeff: 0.4 * 1.15, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.16,
@@ -50,7 +58,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 0.4 * 1.15,
+        coeff: 0.53,
         school: "holy",
         atoneOverheal: 0.16,
         secondaries: ['crit', 'vers'],
@@ -58,8 +66,9 @@ export const DISCSPELLS = {
     "DefPenance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
         type: "special",
-        castTime: 2, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
+        castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 1.6,
+        onGCD: true,
         coeff: 1.25 * 1.3, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         expectedOverheal: 0.6,
@@ -122,7 +131,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0.96,
-        coeff: 1.0929 * 1.3, // 0.9792 x 0.809 (Mind Blast aura) x 1.38 x 
+        coeff: 1.42115, // 0.9792 x 0.809 (Mind Blast aura) x 1.38 x 
         cooldownData: {cooldown: 24, hasted: false}, 
         school: "shadow",
         atoneOverheal: 0.15,
@@ -173,18 +182,6 @@ export const DISCSPELLS = {
         school: "shadow",
         secondaries: ['crit', 'vers']
     }],
-    /*
-    "Light's Wrath": [{
-        spellData: {id: 207948, icon: "inv_staff_2h_artifacttome_d_01", cat: "cooldown"},
-        type: "damage",
-        castTime: 2.5,
-        cost: 2,
-        coeff: 2.1875, 
-        cooldown: 90,
-        school: "holy",
-        atoneOverheal: 0.25,
-        secondaries: ['crit', 'vers'],
-    }], */
     "Mindgames": [{
         spellData: {id: 323673, icon: "ability_revendreth_priest", cat: "damage"},
         type: "damage",
@@ -198,7 +195,7 @@ export const DISCSPELLS = {
     },
     { // This is the absorb / damage reverse portion.
         type: "heal",
-        coeff: 9, // This is 4.5 x 2 since the damage is both negated and then the target healed.
+        coeff: 6, // This is 3 x 2 since the damage is both negated and then the target healed.
         targets: 1,
         secondaries: ['vers'],
         expectedOverheal: 0.15, // 
@@ -255,7 +252,7 @@ export const DISCSPELLS = {
         school: "holy",
         castTime: 0,
         cost: 2.4,
-        coeff: 4.2 * 1.1,
+        coeff: 4.6032,
         cooldownData: {cooldown: 7.5, hasted: true}, 
         atonement: 15,
         atonementPos: 'start',
@@ -271,7 +268,7 @@ export const DISCSPELLS = {
         school: "holy",
         castTime: 0,
         cost: 2.4,
-        coeff: 0.32 * 1.25,
+        coeff: 0.4,
         atonement: 15,
         atonementPos: 'start',
         secondaries: ['crit', 'vers'],
@@ -294,7 +291,7 @@ export const DISCSPELLS = {
         school: "holy",
         castTime: 1.5,
         cost: 3.6,
-        coeff: 3.29875 * 1.4,
+        coeff: 4.61825,
         atonement: 15,
         atonementPos: 'end',
         targets: 1,
@@ -328,7 +325,7 @@ export const DISCSPELLS = {
         castTime: 2,
         cost: 4.5,
         school: "holy",
-        coeff: 4.095, // 100% buff applied.
+        coeff: 4.095,
         aura: 1,
         targets: 5,
         cooldownData: {cooldown: 20, hasted: false}, 
@@ -342,7 +339,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 0,
         cost: 1.8,
-        coeff: 0.223, // 0.18,
+        coeff: 0.234, // 0.18,
         school: "holy", // This is Radiant damage so Fire / Holy.
         secondaries: ['crit', 'vers'],
         atoneOverheal: 0.14,
@@ -350,7 +347,7 @@ export const DISCSPELLS = {
     {
         type: "buff",
         buffType: "damage",
-        coeff: 0.12, // 
+        coeff: 0.1302, // 
         tickRate: 2,
         tickData: {tickRate: 2, canPartialTick: true},
         buffDuration: 20, //26,
@@ -363,7 +360,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 0,
         cost: 0.3,
-        coeff: 0.1384, 
+        coeff: 0.14212, 
         aura: 1,
         atoneOverheal: 0.16,
         school: "shadow",
@@ -372,7 +369,7 @@ export const DISCSPELLS = {
     {
         type: "buff",
         buffType: "damage",
-        coeff: 0.10268, // 
+        coeff: 0.10546, // 
         tickRate: 2,
         buffDuration: 16, //20.8,
         tickData: {tickRate: 2, canPartialTick: true},
@@ -441,7 +438,7 @@ export const DISCSPELLS = {
         buffType: 'statsMult',
         ongcd: true,
         stat: "haste",
-        value: 1.25, // Trinket values are replaced by the value on the specific version of the trinket.
+        value: 1.2, 
     }],
     "Voidmender's Shadowgem": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
@@ -498,7 +495,7 @@ export const baseTalents = {
     blazeOfLight: {points: 2, maxPoints: 2, icon: "spell_holy_searinglight", id: 215768, select: true, tier: 3},
     harshDiscipline: {points: 2, maxPoints: 2, icon: "ability_paladin_handoflight", id: 373180, select: true, tier: 3},
     expiation: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowpower", id: 390832, select: true, tier: 3},
-    voidSummoner: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowfiend", id: 391218, select: true, tier: 3},
+    voidSummoner: {points: 0, maxPoints: 1, icon: "spell_shadow_shadowfiend", id: 391218, select: true, tier: 3},
     aegisOfWrath: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 238135, select: true, tier: 3},
     //makeAmends: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 391079, select: true, tier: 3},
     wealAndWoe: {points: 1, maxPoints: 1, icon: "spell_priest_burningwill", id: 390786, select: true, tier: 3},

@@ -10,8 +10,8 @@ export function runSpellComboSuite(playerData, comboList, runCastSequence) {
 
 
 // Run APL
-export function runAPLSuites(playerData, aplList, runCastSequence) {
-    const simData = runSuite(playerData, aplList, runCastSequence, "APL");  
+export function runAPLSuites(playerData, aplProfile, runCastSequence) {
+    const simData = runSuite(playerData, aplProfile, runCastSequence, "APL");  
 
     return simData;
 
@@ -45,8 +45,8 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 
 }
 
-function runSuite(playerData, aplList, runCastSequence, type) {
-    const iterations = 100;
+function runSuite(playerData, profile, runCastSequence, type) {
+    const iterations = 1;
     let hps = [];
     let hpm = [];
     const simData = {
@@ -55,13 +55,16 @@ function runSuite(playerData, aplList, runCastSequence, type) {
         minHPS: 0,
         avgHPM: 0,
     }
+    console.log(profile.apl);
+
+    // Handle profile talents.
 
     for (let i = 0; i < iterations; i++) {
         let result = null;
-        if (type === "APL") result = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents, aplList);
-        else if (type === "Sequence") result = runCastSequence(aplList, JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents);
+        if (type === "APL") result = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents, profile.apl);
+        else if (type === "Sequence") result = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents);
         else console.error("Invalid type passed to runSuite()");
-
+        console.log(result);
         hps.push(result.hps);
         hpm.push(result.hpm);
 
