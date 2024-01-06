@@ -176,7 +176,7 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
 
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
-export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, topGear: boolean = true) {
+export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, modelName: string, topGear: boolean = true) {
   let gemArray = []
   if (gemCount === 0) return [];
   if (spec === "Preservation Evoker") {
@@ -239,7 +239,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     }
     return gemArray;
   }
-  else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
+  else if (spec === "Discipline Priest" || modelName === "Rising Mist") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -252,7 +252,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     gemArray.push(192945);
     return gemArray;
   }
-  else if (spec === "Restoration Shaman") {
+  else if (spec === "Restoration Shaman" || modelName === "Tear of Morning") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -890,7 +890,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   // Add Retail Socket
   if (item.socket) {
-    getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
+    getGems(player.spec, item.socket || 1, bonus_stats, contentType, player.getActiveModel(contentType).modelName, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 

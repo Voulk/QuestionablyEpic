@@ -1,9 +1,9 @@
-export const monkSinSpellData = (contentType) => {
+export const monkTearSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
-    spellList = {
+    spellList = { // Unused. Replaced with log data.
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
-      191840: { cpm: 3.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
+      191840: { cpm: 3.5, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist
@@ -28,7 +28,8 @@ export const monkSinSpellData = (contentType) => {
     };
   } else if (contentType === "Dungeon") {
     spellList = {
-      191840: { cpm: 2.46, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
+      196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
+      191840: { cpm: 2.49, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
       115310: { cpm: 0.31, avgcast: 168141.11, hps: 878.24, overhealing: 0.35 }, // Revival
       119611: { cpm: 5.41, avgcast: 6911.81, hps: 623.78, overhealing: 0.35 }, // Renewing Mist
@@ -45,7 +46,7 @@ export const monkSinSpellData = (contentType) => {
   return spellList;
 };
 
-export const monkSinSpecialQueries = (contentType) => {
+export const monkTearSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
@@ -55,11 +56,16 @@ export const monkSinSpecialQueries = (contentType) => {
       HPSHotHealingDuringLC: 98,
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
-      OneManaHealing: 4.2,
+      OneManaHealing: 6.8,
       cooldownMult: {
-        oneMinute: 1.12,
+        c60: 1.38,
+        c90: 1,
+        c120: 1.115,
+        c180: 1,
+
+        oneMinute: 1.42,
         ninetySeconds: 1,
-        twoMinutes: 1.48,
+        twoMinutes: 1.15,
         twoMinutesOrb: 1.11,
         threeMinutes: 1.2,
       },
@@ -75,11 +81,16 @@ export const monkSinSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 1.4,
       cooldownMult: {
-        oneMinute: 1,
+        c60: 1.1,
+        c90: 1,
+        c120: 1.1,
+        c180: 1,
+
+        oneMinute: 1.2,
         ninetySeconds: 1,
-        twoMinutes: 1.42,
-        twoMinutesOrb: 1,
-        threeMinutes: 1,
+        twoMinutes: 1.2,
+        twoMinutesOrb: 1.1,
+        threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
     };
@@ -90,25 +101,24 @@ export const monkSinSpecialQueries = (contentType) => {
   return specialQueries;
 };
 
-export const monkSinStatWeights = (contentType) => {
+export const monkTearStatWeights = (contentType) => {
   let statWeights = {};
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.63,
-    crit: 0.64,
-    mastery: 0.31,
-    versatility: 0.57,
-    leech: 0.75,
-  };
-  statWeights.Dungeon = {
-    intellect: 1,
-    haste: 0.61,
-    crit: 0.63,
-    mastery: 0.4,
-    versatility: 0.62,
+    haste: 0.552,
+    crit: 0.639,
+    mastery: 0.34,
+    versatility: 0.602,
     leech: 0.46,
   };
-
+  statWeights.Dungeon = { // Invalid choice
+    intellect: 1,
+    haste: 0.59,
+    crit: 0.562,
+    mastery: 0.43,
+    versatility: 0.542,
+    leech: 0.42,
+  };
   return statWeights[contentType];
 };

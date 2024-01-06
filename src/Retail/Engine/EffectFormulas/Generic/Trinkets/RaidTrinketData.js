@@ -1,5 +1,6 @@
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket } from "../../EffectUtilities";
 
+// Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
   {
     /* ---------------------------------------------------------------------------------------------- */
@@ -412,7 +413,7 @@ export const raidTrinketData = [
       // Versatility Portion
       let bonus_stats = {haste: 0, crit: 0, mastery: 0, versatility: 0};
       const buffSetting = getSetting(additionalData.settings, "chromaticEssenceBuff");
-      const includeAllies = getSetting(additionalData.settings, "chromaticEssenceAllies");
+      const includeAllies = false;// getSetting(additionalData.settings, "chromaticEssenceAllies");
       let primaryBuff = (buffSetting === "Automatic" ? player.getHighestStatWeight(additionalData.contentType) : buffSetting).toLowerCase();
       const primaryValue = processedValue(data[0], itemLevel);
       const secondaryValue = includeAllies ? processedValue(data[1], itemLevel) : 0;

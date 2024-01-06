@@ -4,14 +4,15 @@ import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } fro
 import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
-import socketImage from "../../../Images/Resources/EmptySocket.png";
+import socketImage from "Images/Resources/EmptySocket.png";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
 import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import Item from "../Player/Item";
 
 
 const useStyles = makeStyles({
@@ -54,44 +55,92 @@ const useStyles = makeStyles({
   }
 });
 
-export default function ItemCard(props) {
+// This can probably be cleaned up a lot.
+// It adds colored tags to the item card, separated by a / where applicable.
+const GetItemTags: React.FC<{ showTags: any; isVault: boolean, t: any }> = ({ showTags, isVault, t }) => {
+  return (
+    <div style={{ display: "flex" }}>
+      {showTags.tertiary ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null}
+      {showTags.tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+      {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+      {(showTags.tertiary && showTags.tier) || (isVault && showTags.tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+      {showTags.tier ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null}
+      {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
+      {showTags.catalyst ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null}
+  </div>
+  )
+}
+
+const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
+  if (!item.socket) {
+    return null; // No sockets, return null or another default content
+  }
+
+  return (
+    <div style={{ verticalAlign: "middle" }}>
+      {Array.from({ length: item.socket }).map((_, index) => (
+        <div key={index} style={{ marginRight: 4, display: "inline" }}>
+          <img src={socketImage} width={15} height={15} alt={`Socket ${index + 1}`} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+interface ItemCardProps {
+  // Define your prop types here
+  itemKey: number;
+  item: Item;
+  upgradeItem: (item: Item, newItemLevel: number, socketFlag: boolean, vaultFlag: boolean) => void;
+  activateItem: (unique: string, active: boolean) => void;
+  delete: (unique: string) => void;
+  catalyze: (item: Item) => void;
+  itemDescription: string;
+  // ... other props
+}
+
+export default function ItemCard(props: ItemCardProps) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const itemKey = props.key;
-  const item = props.item;
-  const itemLevel = item.level;
-  const statString = buildStatString(item.stats, item.effect, currentLanguage);
-  const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const isCatalystItem = item.isCatalystItem;
-  const gameType = useSelector((state) => state.gameType);
+  
+  const itemKey: number = props.itemKey;
+  const item: Item = props.item;
+  const itemLevel: number = item.level;
+  const statString: string = buildStatString(item.stats, item.effect, currentLanguage);
+  const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
+  
+  const showTags: {tier: boolean, tertiary: boolean, catalyst: boolean, reforge: boolean} = 
+                  {tier: item.isTierPiece(),
+                    tertiary: ("leech" in item.stats && item.stats.leech !== 0),
+                    catalyst: item.isCatalystItem,
+                    reforge: item.checkHasFlag("Reforged")};
+
+
+  // Special tags.
+  /*
   const tertiary = "leech" in item.stats && item.stats.leech !== 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null;
-  const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-
+  const tier: any = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-
-  let socket = [];
+  const reforge = item.checkHasFlag("Reforged") ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Reforged")}</div> : null;
+  */
+  //let socket = [];
   const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.active && item.vaultItem ? 'selectedVault' : item.active ? 'selected' : item.vaultItem ? 'vault' : 'root';
 
 
   // Onyx Annulet
+  // Onyx Annulet is no longer supported as part of the UI.
+  // Realistically people should just farm better rings.
+  /*
   if (item.id === 203460) {
     const gemCombo = props.primGems;
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     //gemString = gemData.string;
-  } else if (item.socket) {
-    for (let i = 0; i < item.socket; i++) {
-      socket.push(
-        <div style={{ marginRight: 4, display: "inline" }}>
-          <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>,
-      );
-    }
-    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
-  }
+  } */
+  
 
   const activateItemCard = () => {
     props.activateItem(item.uniqueHash, item.active);
@@ -111,8 +160,7 @@ export default function ItemCard(props) {
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
   } else {
-    if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
+    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
   }
 
   return (
@@ -172,28 +220,16 @@ export default function ItemCard(props) {
                 <Grid item container direction="column" justifyContent="space-around" xs="auto">
                   <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                     <Grid item xs={11} display="inline">
-                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
+                      <Typography variant="subtitle2" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
                         <div
                           style={{
                             color: itemQuality,
-                            lineHeight: tertiary || isVault || tier || catalyst ? "normal" : 1.57,
+                            lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
                           }}
                         >
                           {itemName}
                         </div>
-                        {tertiary || isVault || tier || catalyst ? (
-                          <div style={{ display: "flex" }}>
-                            {tertiary}
-                            {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                            {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
-                            {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                            {tier}
-                            {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-                            {catalyst}
-                          </div>
-                        ) : (
-                          ""
-                        )}
+                        <GetItemTags showTags={showTags} isVault={isVault} t={t} />
                       </Typography>
                     </Grid>
                     <Grid
@@ -207,7 +243,6 @@ export default function ItemCard(props) {
                     >
                       <Typography
                         variant="subtitle1"
-                        wrap="nowrap"
                         display="inline"
                         align="center"
                         style={{
@@ -224,8 +259,8 @@ export default function ItemCard(props) {
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                     <Grid item xs={11}>
                       <div style={{ display: "inline-flex", marginLeft: 4, height: 15, verticalAlign: "middle" }}>
-                        {socket}
-                        <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
+                        <GetSockets item={item} />
+                        <Typography variant="subtitle2" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
                           {statString}
                         </Typography>
                       </div>
