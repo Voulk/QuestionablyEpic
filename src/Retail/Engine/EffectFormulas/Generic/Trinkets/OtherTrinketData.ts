@@ -1,29 +1,7 @@
-import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
 
 export const otherTrinketData = [
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                        Dreamscape Prism                                        */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Memento of Tyrande",
-    effects: [
-      { // Mana proc chance.
-        coefficient: 2.03251,
-        table: -7,
-        ppm: 2.5,
-      },
-    ],
-    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      let bonus_stats: Stats = {};
-
-      bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].ppm! / 60 * player.getStatPerc('haste');
-
-      return bonus_stats;
-    }
-  },
   {
     /* ---------------------------------------------------------------------------------------------- */
     /*                           Paracausal Fragment of Frostmourne                                   */
@@ -123,6 +101,49 @@ export const otherTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
+    /*                             Rune of the Umbramane                                    */
+    /* ---------------------------------------------------------------------------------------------- */
+    name: "Rune of the Umbramane",
+    effects: [
+      { 
+        coefficient: 79.32618, // 
+        table: -9,
+        secondaries: ['haste', 'versatility'],
+        ppm: 1,
+        efficiency: 0.92,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                    Pinch of Dream Magic                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Pinch of Dream Magic",
+    effects: [
+      { 
+        coefficient: 1.424874,
+        table: -7,
+        duration: 9, // Check in-game. Could be 9s. Doesn't make much of a difference since trinket is not good.
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.94; // The 10s ICD will cut average uptime. We can revisit it and give it a proper adjusted uptime if we have time.
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
     /*                                    Static-Charged Scale                                        */
     /* ---------------------------------------------------------------------------------------------- */
     /* 
@@ -161,11 +182,12 @@ export const otherTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-      const extraPotions = getSetting(additionalData.settings, "alchStonePotions")
+      //const extraPotions = getSetting(additionalData.settings, "alchStonePotions")
+      const extraPotions = 1;
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
-      bonus_stats.mana = 48300 * extraPotions / 420 * 0.7; // Rest in peace Chilled Clarity potion. It is very difficult to use this potion on cooldown.
+      bonus_stats.mana = 27600 * extraPotions / 420 * 0.7; // Rest in peace Chilled Clarity potion. It is very difficult to use this potion on cooldown.
 
 
       return bonus_stats;
@@ -479,7 +501,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "haste", additionalData.settings);
+      return buildIdolTrinket(data, itemLevel, "haste", additionalData.settings, additionalData.setStats);
     }
   },
   {
@@ -503,7 +525,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "crit", additionalData.settings);
+      return buildIdolTrinket(data, itemLevel, "crit", additionalData.settings, additionalData.setStats);
     }
   },
   {
@@ -527,7 +549,7 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "versatility", additionalData.settings);
+      return buildIdolTrinket(data, itemLevel, "versatility", additionalData.settings, additionalData.setStats);
     }
   },
   {
@@ -551,7 +573,8 @@ export const otherTrinketData = [
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings);
+
+      return buildIdolTrinket(data, itemLevel, "mastery", additionalData.settings, additionalData.setStats);
     }
   },
   {

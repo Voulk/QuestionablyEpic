@@ -17,7 +17,7 @@ import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColo
 import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
 
 // 
-
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
@@ -34,7 +34,7 @@ function TabPanel(props) {
 
 const setupItemCardData = (embList, contentType, player, playerSettings) => {
   const itemData = [];
-  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType)}
+  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType), setStats: player.activeStats}
   embList.forEach((emb) => {
     const data = getEmbellishmentDescription(emb.name['en'], player, additionalData);
     //const data = null;
@@ -103,7 +103,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += ((value * 0.42) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
+      estHPS += ((value * CONSTANTS.allyStatWeight) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -127,7 +127,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += ((value * 0.42) / player.activeStats.intellect) * 75000 * 0.75;
+      estDPS += CONSTANTS.allyDPSPerPoint * 0.75 * value;
     }
   }
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
@@ -157,7 +157,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r483 //gem.r5;
+  return gem.r486 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -196,7 +196,7 @@ export default function EmbellishmentAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [437, 443, 447, 460, 470, 473, 477, 480, 483];
+  const itemLevels = [447, 460, 470, 473, 477, 480, 483, 486];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -215,7 +215,6 @@ export default function EmbellishmentAnalysis(props) {
   ];
   const classes = useStyles();
   const itemCardData = setupItemCardData(db, contentType, props.player, playerSettings);
-  console.log(itemCardData);
   let activeGems = [];
 
   for (var i = 0; i < db.length; i++) {
@@ -262,7 +261,7 @@ export default function EmbellishmentAnalysis(props) {
         </Tabs>
 
         <TabPanel value={tabIndex} index={0}>
-        <InformationBox information="Sporecloak remains a great choice for progression post-fix. Be sure to consult your favourite guide before crafting anything" color="firebrick" />
+        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers. Flourishing Dream Helm will require live testing before it's added to the list." color="firebrick" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

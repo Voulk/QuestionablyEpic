@@ -97,6 +97,7 @@ export default function SimCraftInput(props) {
                 handleSubmit();
               }
             }}
+            onFocus={(e) => e.target.select()} // Automatically selects text on focus
           />
         </DialogContent>
         <DialogActions>

@@ -16,6 +16,106 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2",
+    update: 9,
+    date: "December 29",
+    changes: [ 
+      "Mistweaver: Added Tear of Morning playstyle.",
+
+    ]},
+  {
+    version: "10.2",
+    update: 8,
+    date: "December 26",
+    changes: [ 
+      "Timewalking: Added Skull of Gul'dan.",
+      "Timewalking: Added some missing Legion timewalking items.",
+      "Goldsteel Sabatons will now show in the Upgrade Finder for Paladin."
+    ]},
+  {
+    version: "10.2",
+    update: 7,
+    date: "December 2",
+    changes: [ 
+      "Upgrade Finder: Non-max difficulties should now show correct item levels for later bosses.",
+      "Item Cards: Add Socket should now work correctly.",
+      "Item Cards: Added an option to add a Vault tag to items.",
+    ]},
+  {
+    version: "10.2",
+    update: 6,
+    date: "December 1",
+    changes: [ 
+      "In-game Blossom buff #6",
+      "Removed low season 2 item levels from the chart",
+      "Re-evaluated the 1:1 portion of Smoldering Seedling",
+    ]},
+  {
+    version: "10.2",
+    update: 5,
+    date: "November 22",
+    changes: [ 
+      "Saved SimC strings are now auto-selected when you open the SimC dialog and pasting a new string will automatically overwrite it.",
+      "Converting an item via the Catalyst menu option will keep any Upgrade Tracks it's connected to.",
+      "Added some missing item icons.",
+      "Dreaming Devotion is now included as an option in Top Gear. It'll primarily be chosen in raid.",
+    ]},
+  {
+    version: "10.2",
+    update: 4,
+    date: "November 16",
+    changes: [ 
+      "Added a ton of missing items.",
+    ]},
+  {
+    version: "10.2",
+    update: 3,
+    date: "November 11",
+    changes: [ 
+      "Re-enabled Upgrade Finder & Cooldown Planner",
+    ]},
+  {
+    version: "10.2",
+    update: 2,
+    date: "November 8",
+    changes: [ 
+      "Added formulas for a few new world quest trinkets",
+    ]},
+  {
+    version: "10.2",
+    update: 1,
+    date: "November 7",
+    changes: [ 
+      "All season 3 content is now live.",
+      "There's now a default version of every spec so that character creation is unnecessary.",
+      "SimC strings are now saved in between app uses.",
+      "Common offspec weapons are now included in the app (though of little value).",
+      "Items you add manually will now automatically be added to the app."
+    ]},
+  {
+    version: "10.1.7",
+    update: 4,
+    date: "October 17",
+    changes: [ 
+      "Added Terrific Tankard O' Terror (Brewfest)",
+    ]},
+  {
+    version: "10.1.7",
+    update: 3,
+    date: "October 8",
+    changes: [ 
+      "Small fix for Holy Priest dungeon gem advice.",
+      "Updated Lariat default gems to 5",
+      "Note that most development has moved to the 10.2 branch of the app."
+    ]},
+  {
+    version: "10.1.7",
+    update: 2,
+    date: "September 26",
+    changes: [ 
+      "Added some missing Timewalking items.",
+    ]},
+  {
     version: "10.1.7",
     update: 1,
     date: "September 5",

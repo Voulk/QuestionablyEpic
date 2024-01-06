@@ -1,63 +1,42 @@
-import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../EffectUtilities";
-import { trinket_data } from "./ShadowlandsTrinketData";
-import { raidTrinketData } from "./TrinketData";
+import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../../EffectUtilities";
+import { trinket_data } from "../ShadowlandsTrinketData";
+import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
+import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { useSelector } from "react-redux";
-import { getAdjustedHolyShock } from "../Paladin/PaladinMiscFormulas"
-import { getMasteryAddition } from "../Monk/MistweaverMiscFormulas"
+import { getAdjustedHolyShock } from "../../Paladin/PaladinMiscFormulas"
+import { getMasteryAddition } from "../../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
-import SPEC from "../../../../General/Engine/SPECS";
+import SPEC from "../../../../../General/Engine/SPECS";
 
 
-export function getTrinketValueSL(trinketName, itemLevel) {
-  let activeTrinket = trinket_data.find((trinket) => trinket.name === trinketName);
-  if (trinketName === "Soulletting Ruby") {
-    const effect = activeTrinket.effects[0];
-    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel, effect.efficiency) * effect.multiplier;
-    return trinketValue;
-  }
-  else {
-    const effect = activeTrinket.effects[0];
-    const trinketValue = getProcessedValue(effect.coefficient, effect.table, itemLevel);
-    return trinketValue;
 
-  }
-}
-
+// Returns the value of a trinket effect while active. This is different to its average value which is typically what we'll use.
 export function getTrinketValue(trinketName, itemLevel) {
-  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData)
   let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 
-  if (trinketName === "Voidmender's Shadowgem") {
-    const effect = activeTrinket.effects;
+  const effect = activeTrinket.effects[0];
+  const trinketValue = processedValue(effect, itemLevel);
+  return trinketValue;
 
-    const critPerStack = processedValue(effect[1], itemLevel)
-    const effectiveCrit = processedValue(effect[0], itemLevel) + critPerStack * (effect[1].ppm * (effect[0].duration / 60)/2)
-    return effectiveCrit;
-  }
-  else {
-    const effect = activeTrinket.effects[0];
-    const trinketValue = processedValue(effect, itemLevel);
-    return trinketValue;
-
-  }
 }
 
 
 
-// TODO: Write proper comments. See Lingering Sunmote for an example.
+// Return the effect of running a trinkets runFunc function. This will return a bonus_stats object if the trinket exists and an empty one if it does not.
 export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, playerSettings = {}, setStats = {}) {
   let bonus_stats = {};
   
   let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
-  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData)
   let activeTrinket = trinketData.find((trinket) => trinket.name === effectName);
 
 

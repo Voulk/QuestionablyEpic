@@ -1,7 +1,7 @@
-import { raidTrinketData } from "./TrinketData";
+import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
 import { correctCasing } from "General/Engine/ItemUtilities";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 
@@ -40,12 +40,12 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
                                             overall to be a top tier choice.")
         case "Revitalizing Voodoo Totem":
             return buildGenericHealProc(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
-                                            "Decently large healing on a single target, but very prone to overhealing.")
+                                            "Decently large healing on a single target, but very prone to overhealing. Useful to have a healer run one on Larodar.")
         case "Leaf of the Ancient Protectors":
             return leafOfTheAncientProtectors(trinketData, itemLevel, player, additionalData);
         case "Sea Star":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
-                                            "A decently high uptime stat stick. A reasonable choice for all healing specs.");
+                                            "A medium uptime stat stick. A reasonable choice for all healing specs.");
         case "Coagulated Genesaur Blood":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
                                             "A low uptime stat stick with moderate average performance.");
@@ -106,7 +106,7 @@ const leafOfTheAncientProtectors = (data, itemLevel, player, additionalData) => 
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Gifted Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "",
+          "Can be extremely good for preventing one shots or single target burst damage in Mythic+. Poor for general throughput.",
       };
 }
 
@@ -119,7 +119,7 @@ const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
         category: trinketCategories.RAIDDROPS,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
         description:
-          "Currently bugged and spreading to more than 3 targets. Not included in score.",
+          "Expect Blossom to look quite good on your healing meter but the lack of intellect hurts it overall and prevents it from being better than top 5 - and that's if your spec likes haste. Falls off further as you approach late mythic.",
       };
 }
 
@@ -133,7 +133,7 @@ const smolderingSeedling = (data, itemLevel, player, additionalData) => {
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Mastery: " + Math.round(bonus_stats.mastery)],
         description:
-          "",
+          "Seedling duplicates healing it receives to 5 nearby allies. Once the pool of bonus healing is used up it transfers at a 1:1 ratio. This is a very good trinket if you have efficient single target healing, though it's log percentage isn't a good reflection of healing added.",
       };
 }
 
@@ -147,7 +147,7 @@ const pipsEmeraldFriendshipBadge = (data, itemLevel, player, additionalData) => 
                 "Crit: " + Math.round(bonus_stats.crit),
                 "Versatility: " + Math.round(bonus_stats.versatility)],
         description:
-          "",
+          "Pip's competes well with the top stat sticks this tier while also being much more consistent. A fantastic choice for all healing specs.",
       };
 }
 
@@ -161,7 +161,7 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
                 "HPS: " + Math.round(bonus_stats.hps),
                 "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "A massive package of mana, healing and versatility given out to your party. Capped at 10 buffs out per proc. Procs off an almost random assortment of spells for each spec with no real logic.",
+          "A massive package of mana, healing and versatility. Holds up ok in season 3 but it's become mostly useful for its vers buff and you'll replace it when you have ~470+ alternatives.",
       };
 
 }
@@ -190,8 +190,8 @@ const mirrorOfFracturedTomorrows = (data, itemLevel, player, additionalData) => 
                 "Average Stat Gain: " + Math.round(bonus_stats[stat]),
                 "Stat while active: " + Math.round(processedValue(effect, itemLevel))],
         description:
-          "The clone isn't functional on the PTR making this quite a weak option but check back soon after launch since they're likely to fix it. Underwhelming as a stat trinket alone. It's \
-          also difficult to leverage a three minute on-use effect as a " + player.spec + ".",
+          "Underwhelming as a stat trinket alone. It's \
+          also difficult to leverage a three minute on-use effect as a " + player.spec + ". Mostly just a fill in while you search for better.",
       };
 }
 

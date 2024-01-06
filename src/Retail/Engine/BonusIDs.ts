@@ -48351,7 +48351,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48363,7 +48363,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48375,7 +48375,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48387,7 +48387,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48399,7 +48399,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48411,7 +48411,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48435,7 +48435,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48447,7 +48447,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48459,7 +48459,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48471,7 +48471,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48483,7 +48483,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48495,7 +48495,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48520,7 +48520,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48532,7 +48532,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48544,7 +48544,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48556,7 +48556,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48568,7 +48568,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48580,7 +48580,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48605,7 +48605,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48617,7 +48617,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48629,7 +48629,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48641,7 +48641,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48653,7 +48653,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48665,7 +48665,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48689,7 +48689,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48701,7 +48701,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48713,7 +48713,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48725,7 +48725,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48737,7 +48737,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48749,7 +48749,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48773,7 +48773,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48785,7 +48785,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48797,7 +48797,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48809,7 +48809,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48821,7 +48821,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48833,7 +48833,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48857,7 +48857,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48869,7 +48869,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48881,7 +48881,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48893,7 +48893,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48905,7 +48905,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48917,7 +48917,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48941,7 +48941,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48953,7 +48953,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48965,7 +48965,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48977,7 +48977,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -48989,7 +48989,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49001,7 +49001,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49025,7 +49025,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49037,7 +49037,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49049,7 +49049,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49061,7 +49061,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49073,7 +49073,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -49085,7 +49085,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -50049,6 +50049,18 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "21 @plvl 1 - 385 @plvl 385",
     "curveId": 64774,
     "quality": 3
+  },
+  "9409": {
+    "id": 9409,
+    "tag": "Heroic|n"
+  },
+  "9410": {
+    "id": 9410,
+    "tag": "Mythic|n"
+  },
+  "9411": {
+    "id": 9411,
+    "tag": "Raid Finder|n"
   },
   "9412": {
     "id": 9412,
@@ -51816,7 +51828,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51828,7 +51840,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51840,7 +51852,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51852,7 +51864,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51864,7 +51876,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51876,7 +51888,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51900,7 +51912,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51912,7 +51924,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51924,7 +51936,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51936,7 +51948,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51948,7 +51960,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51960,7 +51972,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51984,7 +51996,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -51996,7 +52008,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52008,7 +52020,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52020,7 +52032,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52032,7 +52044,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52044,7 +52056,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52068,7 +52080,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52080,7 +52092,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52092,7 +52104,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52104,7 +52116,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52116,7 +52128,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52128,7 +52140,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52152,7 +52164,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52164,7 +52176,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52176,7 +52188,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52188,7 +52200,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52200,7 +52212,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52212,7 +52224,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52236,7 +52248,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52248,7 +52260,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52260,7 +52272,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52272,7 +52284,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52284,7 +52296,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52296,7 +52308,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52320,7 +52332,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52332,7 +52344,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52344,7 +52356,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52356,7 +52368,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52368,7 +52380,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52380,7 +52392,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52404,7 +52416,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 7,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52416,7 +52428,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 9,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52428,7 +52440,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 10,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52440,7 +52452,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52452,7 +52464,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 14,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52464,7 +52476,7 @@ export const bonus_IDs: {[key: string]: any} = {
             {
               "itemId": 206366,
               "amount": 5,
-              "name": "Trophy of Strife",
+              "name": "Cracked Trophy of Strife",
               "icon": "ability_bossfelorcs_necromancer_orange"
             }
           ]
@@ -52481,23 +52493,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9498": {
     "id": 9498,
-    "base_level": 447,
+    "base_level": 450,
     "base_level_priority": 70,
     "tag": "Dream Crafted"
   },
   "9499": {
     "id": 9499,
-    "base_level": 460,
+    "base_level": 463,
     "base_level_priority": 65
   },
   "9500": {
     "id": 9500,
-    "base_level": 470,
+    "base_level": 473,
     "base_level_priority": 65
   },
   "9502": {
     "id": 9502,
-    "base_level": 431,
+    "base_level": 434,
     "base_level_priority": 1,
     "quality": 4
   },
@@ -53182,9 +53194,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 120,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53194,9 +53212,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 65,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53206,9 +53230,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53218,9 +53248,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53230,9 +53266,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 80,
+              "amount": 125,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53242,9 +53284,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53254,9 +53302,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53266,9 +53320,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         }
@@ -53325,9 +53385,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 120,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53337,9 +53403,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 65,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53349,9 +53421,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53361,9 +53439,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53373,9 +53457,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 80,
+              "amount": 125,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53385,9 +53475,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53397,9 +53493,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53409,9 +53511,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         }
@@ -53468,9 +53576,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 120,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53480,9 +53594,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 65,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53492,9 +53612,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53504,9 +53630,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53516,9 +53648,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 80,
+              "amount": 125,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53528,9 +53666,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53540,9 +53684,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53552,9 +53702,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         }
@@ -53611,9 +53767,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 120,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53623,9 +53785,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 65,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53635,9 +53803,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53647,9 +53821,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 40,
+              "amount": 65,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53659,9 +53839,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 80,
+              "amount": 125,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53671,9 +53857,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53683,9 +53875,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         },
@@ -53695,9 +53893,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 250,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2706,
+              "amount": 15,
+              "name": "Whelpling's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
             }
           ]
         }
@@ -59860,7 +60064,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9584": {
     "id": 9584,
-    "tag": "Shadowflame Suffused"
+    "tag": "|nShadowflame Suffused"
   },
   "9614": {
     "id": 9614,
@@ -59885,5 +60089,418 @@ export const bonus_IDs: {[key: string]: any} = {
   "9636": {
     "id": 9636,
     "tag": "Heroic"
+  },
+  "9639": {
+    "id": 9639,
+    "tag": "Mythic+"
+  },
+  "9813": {
+    "id": 9813,
+    "tag": "Unranked"
+  },
+  "9814": {
+    "id": 9814,
+    "tag": "Combatant I"
+  },
+  "9815": {
+    "id": 9815,
+    "tag": "Combatant II"
+  },
+  "9816": {
+    "id": 9816,
+    "tag": "Challenger I"
+  },
+  "9817": {
+    "id": 9817,
+    "tag": "Challenger II"
+  },
+  "9818": {
+    "id": 9818,
+    "tag": "Rival I"
+  },
+  "9819": {
+    "id": 9819,
+    "tag": "Rival II"
+  },
+  "9820": {
+    "id": 9820,
+    "tag": "Duelist"
+  },
+  "9821": {
+    "id": 9821,
+    "tag": "Elite"
+  },
+  "9834": {
+    "id": 9834,
+    "level": 411
+  },
+  "9835": {
+    "id": 9835,
+    "level": 412
+  },
+  "9836": {
+    "id": 9836,
+    "level": 413
+  },
+  "9837": {
+    "id": 9837,
+    "level": 414
+  },
+  "9838": {
+    "id": 9838,
+    "level": 415
+  },
+  "9839": {
+    "id": 9839,
+    "level": 416
+  },
+  "9840": {
+    "id": 9840,
+    "level": 417
+  },
+  "9841": {
+    "id": 9841,
+    "level": 418
+  },
+  "9842": {
+    "id": 9842,
+    "level": 419
+  },
+  "9843": {
+    "id": 9843,
+    "level": 420
+  },
+  "9844": {
+    "id": 9844,
+    "level": 421
+  },
+  "9845": {
+    "id": 9845,
+    "level": 422
+  },
+  "9846": {
+    "id": 9846,
+    "level": 423
+  },
+  "9847": {
+    "id": 9847,
+    "level": 424
+  },
+  "9848": {
+    "id": 9848,
+    "level": 425
+  },
+  "9849": {
+    "id": 9849,
+    "level": 426
+  },
+  "9850": {
+    "id": 9850,
+    "level": 427
+  },
+  "9851": {
+    "id": 9851,
+    "level": 428
+  },
+  "9852": {
+    "id": 9852,
+    "level": 429
+  },
+  "9853": {
+    "id": 9853,
+    "level": 430
+  },
+  "9854": {
+    "id": 9854,
+    "level": -411
+  },
+  "9855": {
+    "id": 9855,
+    "level": -412
+  },
+  "9856": {
+    "id": 9856,
+    "level": -413
+  },
+  "9857": {
+    "id": 9857,
+    "level": -414
+  },
+  "9858": {
+    "id": 9858,
+    "level": -415
+  },
+  "9859": {
+    "id": 9859,
+    "level": -416
+  },
+  "9860": {
+    "id": 9860,
+    "level": -417
+  },
+  "9861": {
+    "id": 9861,
+    "level": -418
+  },
+  "9862": {
+    "id": 9862,
+    "level": -419
+  },
+  "9863": {
+    "id": 9863,
+    "level": -420
+  },
+  "9864": {
+    "id": 9864,
+    "level": -421
+  },
+  "9865": {
+    "id": 9865,
+    "level": -422
+  },
+  "9866": {
+    "id": 9866,
+    "level": -423
+  },
+  "9867": {
+    "id": 9867,
+    "level": -424
+  },
+  "9868": {
+    "id": 9868,
+    "level": -425
+  },
+  "9869": {
+    "id": 9869,
+    "level": -426
+  },
+  "9870": {
+    "id": 9870,
+    "level": -427
+  },
+  "9871": {
+    "id": 9871,
+    "level": -428
+  },
+  "9872": {
+    "id": 9872,
+    "level": -429
+  },
+  "9873": {
+    "id": 9873,
+    "level": -430
+  },
+  "9874": {
+    "id": 9874,
+    "level": 431
+  },
+  "9875": {
+    "id": 9875,
+    "level": 432
+  },
+  "9876": {
+    "id": 9876,
+    "level": 433
+  },
+  "9877": {
+    "id": 9877,
+    "level": 434
+  },
+  "9878": {
+    "id": 9878,
+    "level": 435
+  },
+  "9879": {
+    "id": 9879,
+    "level": 436
+  },
+  "9880": {
+    "id": 9880,
+    "level": 437
+  },
+  "9881": {
+    "id": 9881,
+    "level": 438
+  },
+  "9882": {
+    "id": 9882,
+    "level": 439
+  },
+  "9883": {
+    "id": 9883,
+    "level": 440
+  },
+  "9884": {
+    "id": 9884,
+    "level": 441
+  },
+  "9885": {
+    "id": 9885,
+    "level": 442
+  },
+  "9886": {
+    "id": 9886,
+    "level": 443
+  },
+  "9887": {
+    "id": 9887,
+    "level": 444
+  },
+  "9888": {
+    "id": 9888,
+    "level": 445
+  },
+  "9889": {
+    "id": 9889,
+    "level": 446
+  },
+  "9890": {
+    "id": 9890,
+    "level": 447
+  },
+  "9891": {
+    "id": 9891,
+    "level": 448
+  },
+  "9892": {
+    "id": 9892,
+    "level": 449
+  },
+  "9893": {
+    "id": 9893,
+    "level": 450
+  },
+  "9894": {
+    "id": 9894,
+    "level": -431
+  },
+  "9895": {
+    "id": 9895,
+    "level": -432
+  },
+  "9896": {
+    "id": 9896,
+    "level": -433
+  },
+  "9897": {
+    "id": 9897,
+    "level": -434
+  },
+  "9898": {
+    "id": 9898,
+    "level": -435
+  },
+  "9899": {
+    "id": 9899,
+    "level": -436
+  },
+  "9900": {
+    "id": 9900,
+    "level": -437
+  },
+  "9901": {
+    "id": 9901,
+    "level": -438
+  },
+  "9902": {
+    "id": 9902,
+    "level": -439
+  },
+  "9903": {
+    "id": 9903,
+    "level": -440
+  },
+  "9904": {
+    "id": 9904,
+    "level": -441
+  },
+  "9905": {
+    "id": 9905,
+    "level": -442
+  },
+  "9906": {
+    "id": 9906,
+    "level": -443
+  },
+  "9907": {
+    "id": 9907,
+    "level": -444
+  },
+  "9908": {
+    "id": 9908,
+    "level": -445
+  },
+  "9909": {
+    "id": 9909,
+    "level": -446
+  },
+  "9910": {
+    "id": 9910,
+    "level": -447
+  },
+  "9911": {
+    "id": 9911,
+    "level": -448
+  },
+  "9912": {
+    "id": 9912,
+    "level": -449
+  },
+  "9913": {
+    "id": 9913,
+    "level": -450
+  },
+  "9916": {
+    "id": 9916,
+    "quality": 4
+  },
+  "9918": {
+    "id": 9918,
+    "level": 451
+  },
+  "9919": {
+    "id": 9919,
+    "level": 452
+  },
+  "9920": {
+    "id": 9920,
+    "level": 453
+  },
+  "9921": {
+    "id": 9921,
+    "level": 454
+  },
+  "9922": {
+    "id": 9922,
+    "level": 455
+  },
+  "10068": {
+    "id": 10068,
+    "level": -451
+  },
+  "10069": {
+    "id": 10069,
+    "level": -452
+  },
+  "10070": {
+    "id": 10070,
+    "level": -453
+  },
+  "10071": {
+    "id": 10071,
+    "level": -454
+  },
+  "10072": {
+    "id": 10072,
+    "level": -455
+  },
+  "10247": {
+    "id": 10247,
+    "tag": "Shadowflame Suffused"
+  },
+  "10426": {
+    "id": 10426,
+    "ilevel": "5 @plvl 1 - 441 @plvl 441",
+    "curveId": 71965
   }
 }

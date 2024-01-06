@@ -9,16 +9,36 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   const IDWILDGROWTH = 48438;
 
   let bonus_stats = {};
+  const healingMult = 1.06 * 1.04 // Class talents
+  if (effectName === "Druid T31-4") {
+    // 
 
-  if (effectName === "Druid T30-4") {
+    const oneNourish = 2.23 * player.getStatMults(["intellect", "crit", "versatility"]) * ((player.getStatPerc("mastery") - 1) * 3 * 1.9 + 1) * 1.8 * healingMult; // Triple mastery value.
+    const procsPerMinute = 60 * 0.05 * player.getStatPerc("haste"); // You get 60 chances at a proc per minute with single lifebloom. We assume the Tranquil Mind talent but it doesn't matter all too much. 
+  
+    bonus_stats.hps = oneNourish * procsPerMinute / 60;
+  }
+
+  else if (effectName === "Druid T31-2") {
+    //
+    const groveGuardiansPerMinute = 3 + (3 / 2) + 1; // 3 baseline, 3 from Tree of Life every two minutes, 1 from Reforestation per minute.
+    const oneNourish = 0.5 * 0.8 * player.getStatMults(["intellect", "crit", "versatility"]) * ((player.getStatPerc("mastery") - 1) * 3 * 2.3 + 1) * healingMult; 
+    // Triple mastery value. Each Nourish gets buffed by 80% so that's the piece we're capturing.
+    const nourishPerTree = Math.floor(15 / 2 * player.getStatPerc("haste"));
+    bonus_stats.hps = oneNourish * nourishPerTree * groveGuardiansPerMinute / 60;
+
+
+  }
+
+  else if (effectName === "Druid T30-4") {
     // TODO
-    bonus_stats.hps = 7270;
+    bonus_stats.hps = 9870;
 
   }
 
   else if (effectName === "Druid T30-2") {
-    // +10% rejuv healing, +10% lifebloom healing, +50% regrowth HoT healing.
-    const percentEffected = 0.48; 
+    // +10% rejuv healing, +10% lifebloom healing, +35% regrowth HoT healing.
+    const percentEffected = 0.45; 
     bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
 
   }

@@ -2,8 +2,8 @@
 
 import {getProcessedValue, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "General/Modules/Player/Player";
-import { trinket_data} from "./ShadowlandsTrinketData";
-import { raidTrinketData } from "./TrinketData";
+import { trinket_data} from "../ShadowlandsTrinketData";
+import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import each from "jest-each";
@@ -14,7 +14,7 @@ describe("Amalgam's Seventh Spine", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${447}  | ${655}
+    ${447}  | ${832} // 832    499   459   499
     // add new test cases here
     `.test("Amalgam's Seventh Spine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult);
@@ -28,7 +28,7 @@ describe("Blossom of Amirdrassil", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${483}  | ${[Math.floor(327008/6),  Math.floor(163504/6), 490523]}
+    ${483}  | ${[Math.floor(62951),  Math.floor(163504*1.05*1.1/6), Math.floor(490523*1.05*1.1)]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -43,7 +43,7 @@ describe("Smoldering Seedling", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${473}  | ${[718087, 720]}
+    ${473}  | ${[Math.floor(718087*1.05), 720]}
     // add new test cases here
     `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -81,7 +81,7 @@ describe("Neltharion's Call to Chaos", () => {
     });
 }); 
 
-describe("Ominous Chromatic Essence", () => {
+describe("Ominous Chromatic Essence", () => { 
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Ominous Chromatic Essence");;
     const effect = activeTrinket.effects;

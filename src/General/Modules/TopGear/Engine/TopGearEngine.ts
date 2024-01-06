@@ -7,7 +7,7 @@ import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGems } from "General/Engine/ItemUtilities";
-import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/TrinketEffectFormulas";
+import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
@@ -16,6 +16,7 @@ import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
+import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 /**
  * == Top Gear Engine ==
@@ -26,7 +27,7 @@ import { gemDB } from "Databases/GemDB";
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00497669230769231;
+const DR_CONST = 0.00297669230769231; // 0.00497669230769231;
 const DR_CONSTLEECH = 0.04922569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -144,20 +145,27 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
-  itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
 
+  itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
+  
   // == Evaluate Sets ==
   // We'll explain this more in the evalSet function header but we assign each set a score that includes stats, effects and more.
   for (var i = 0; i < itemSets.length; i++) {
     // Create sets for each gem type.
-    const gemPoss = getGemOptions(player.spec) // TODO: Turn this into a function
+    const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (gemPoss.length > 0) {
-      gemPoss.forEach(gem => {
-        resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
-      });
+    if (false) { // Add setting here.
+      if (gemPoss.length > 0) {
+        gemPoss.forEach(gem => {
+          resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
+        });
+      }
+    }
+    else { // Advanced Gems not turned on. 
+      resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, 0));
     }
   }
+
 
   // == Sort and Prune sets ==
   // Prune sets (discard weak sets) outside of our top X sets (usually around 3000 but you can find the variable at the top of this file). This just makes anything further we do faster while not having
@@ -165,7 +173,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   //itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   //itemSets = pruneItems(itemSets, userSettings);
-  //resultSets = pruneItems(resultSets, userSettings);
+  resultSets = pruneSets(resultSets, userSettings);
 
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
@@ -413,6 +421,16 @@ function pruneItems(itemSets: ItemSet[], userSettings: any) {
   return temp.slice(0, softSlice);
 }
 
+function pruneSets(resultSets: any[], userSettings: any) {
+  
+  let temp = resultSets.filter(function (result) {
+    return result.verifySet(userSettings);
+  });
+
+  return temp.slice(0, softSlice);
+}
+
+
 function sumScore(obj: any) {
   var sum = 0;
   for (var el in obj) {
@@ -423,7 +441,7 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setInt: number, castModel: any) {
+function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, contentType: contentTypes) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
@@ -431,6 +449,10 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any) {
   let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  128; // 64 x 2.
   enchants["Finger"] = "+82 " + highestWeight;
+
+  // Helm 
+  // This has been available for a couple weeks so we'll include it now. It won't impact results. 
+  enchants["Head"] = "Incandescent Essence";
 
   // Chest
   // There is a mana option too that we might include later.
@@ -452,12 +474,31 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any) {
   bonus_stats.intellect += 177;
   enchants["Legs"] = "Temporal Spellthread";
 
-  // Weapon - Sophic Devotion
-  let expected_uptime = convertPPMToUptime(1, 15);
-  bonus_stats.intellect += 932 * expected_uptime;
-  enchants["CombinedWeapon"] = "Sophic Devotion"; 
-  enchants["2H Weapon"] = "Sophic Devotion"; 
-  enchants["1H Weapon"] = "Sophic Devotion"; 
+
+
+  if (contentType === "Raid") {
+    const dreamingData =  { // Mastery benefit. This is short and not all that useful.
+      coefficient: 83.09494, 
+      table: -9,
+      ppm: 3,
+      targets: 4,
+    };
+    bonus_stats.hps! = (bonus_stats.hps! || 0) + (processedValue(dreamingData, 342) * dreamingData.ppm * dreamingData.targets / 60);
+
+    enchants["CombinedWeapon"] = "Dreaming Devotion"; 
+    enchants["2H Weapon"] = "Dreaming Devotion"; 
+    enchants["1H Weapon"] = "Dreaming Devotion"; 
+  }
+  else {
+    // Weapon - Sophic Devotion
+    let expected_uptime = convertPPMToUptime(1, 15);
+    bonus_stats.intellect += 932 * expected_uptime;
+
+    enchants["CombinedWeapon"] = "Sophic Devotion"; 
+    enchants["2H Weapon"] = "Sophic Devotion"; 
+    enchants["1H Weapon"] = "Sophic Devotion"; 
+  }
+
 
 
 
@@ -521,7 +562,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
   const setBonuses = builtSet.sets;
-
+  const useSeq = false;
   let enchantStats = {};
   let evalStats: Stats = {};
   let hardScore = 0;
@@ -553,7 +594,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel);
+  const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
 
   // == Flask / Phialss ==
   if (player.spec === "Holy Paladin") {
@@ -566,12 +607,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Sockets
-  //const highestWeight = getHighestWeight(castModel);
-  //bonus_stats[highestWeight] += 88 * builtSet.setSockets;
-  //enchants["Gems"] = highestWeight;
-  //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType);
-  enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
-  //console.log(bonus_stats);
+  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+
+  // Check for Advanced gem setting and then run this instead of the above.
+  //enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+
   enchants["GemCount"] = builtSet.setSockets;
 
   // Add together the sets base stats & any enchants or gems we've added.
@@ -601,32 +641,32 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
-  // Note that we don't need to include this for specs that already have fire damage sources in their base kits.
-  // This code could probably be removed now since fire combos are not really viable in S2.
+  // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
   let fireMult = 0;
   // Frostfire Belt, Flaring Cowl, Flame Licked
   if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
   else if (builtSet.checkHasItem(193494)) fireMult = 1;
-  else if ('primGems' in userSettings && userSettings.primGems.value.includes("Flame Licked")) fireMult = convertPPMToUptime(2.5, 7);
 
   userSettings.fireMult = fireMult || 0;
 
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
-    if (player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
+    if (!useSeq || player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
     }
   }
 
   // Special 10.0.7 Ring
+  // Ultimately this ring has mostly been outscaled now. We'll leave it in for completeness but it would only see use on very undergeared players.
+
   // Check if ring in set.
   if (builtSet.checkHasItem(203460)) {
     // Auto gen best gems.
     const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 424;
 
     const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
-    //const combo = getBestCombo(player, contentType, itemLevel, player.activeStats, userSettings)
+    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
 
     // Handle Annulet
     const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
@@ -640,7 +680,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
-  if (player.spec === "Discipline Priest" && contentType === "Raid") {
+  if (player.spec === "Discipline Priest" && contentType === "Raid" && useSeq) {
     setStats.intellect = (setStats.intellect || 0) * 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
     if (reporting) report.ramp = setRamp;
@@ -657,7 +697,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
-  if (!(player.spec === "Discipline Priest" && contentType === "Raid")) {
+  if (!(player.spec === "Discipline Priest" && contentType === "Raid" && useSeq)) {
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
     // Talents (DR does not apply)
@@ -683,7 +723,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility!) / STATCONVERSION.VERSATILITY)) / 2;
     adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery!) / (STATCONVERSION.MASTERY / STATCONVERSION.MASTERYMULT[player.spec]))) / 2;
     adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech!) / STATCONVERSION.LEECH)) / 2;
-
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
 
@@ -691,8 +730,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // 5% int boost for wearing the same items.
     // The system doesn't actually allow you to add items of different armor types so this is always on.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
-
-
 
     evalStats = setStats;
   }
@@ -724,7 +761,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
     // This covers all other stats, which are invariably our secondaries + leech.
     else {
-      if (stat in evalStats) {
+      if (stat in evalStats && stat !== "dps" && stat !== "allyStats") {
         hardScore += (evalStats[stat] * adjusted_weights[stat]) || 0;
       }
     }
@@ -746,7 +783,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.report = report;
-
+  
   //
   //if (player.spec() === "Discipline Priest" && contentType === "Raid") formatReport(report);
   //console.log(JSON.stringify(effectList));

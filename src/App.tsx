@@ -220,7 +220,7 @@ const App = () => {
 
   /* ------------------- Get Article List ------------------------------------- */
   const getArticleList = () => {
-    dbGetArticleList(setArticleList);
+    //dbGetArticleList(setArticleList);
   };
 
   /* -------------- Sets the Users Email to state & Local Storage ------------- */

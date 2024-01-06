@@ -166,7 +166,6 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
         //const gemID = getGemID(bigStat, smallStat, spec, setStats, contentType);
         const gemID = 0;
         gemArray.push({bigStat, smallStat, score, gemID});
-        console.log({bigStat, smallStat, score, gemID})
       }
 
     }
@@ -177,10 +176,10 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
 
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
-export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, topGear: boolean = true) {
+export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, modelName: string, topGear: boolean = true) {
   let gemArray = []
   if (gemCount === 0) return [];
-  if (spec === "Preservation Evoker" || spec === "Holy Priest") {
+  if (spec === "Preservation Evoker") {
     // 
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
@@ -192,6 +191,32 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     bonus_stats.mastery = (bonus_stats.mastery || 0) + 70 * (gemCount);
     bonus_stats.crit = (bonus_stats.crit || 0) + 33 * (gemCount);
     gemArray.push(192958)
+    return gemArray;
+  }
+  else if (spec === "Holy Priest" && contentType === "Raid") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
+      bonus_stats.crit = (bonus_stats.crit || 0) + 66;
+      gemCount -= 1;
+      gemArray.push(192982)
+    }
+    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 33 * (gemCount);
+    gemArray.push(192958)
+    return gemArray;
+  }
+  else if (spec === "Holy Priest" && contentType === "Dungeon") {
+    if (topGear && gemCount > 0) {
+      // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
+      bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
+      bonus_stats.crit = (bonus_stats.crit || 0) + 66;
+      gemCount -= 1;
+      gemArray.push(192982)
+    }
+    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+    bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
+    gemArray.push(192919)
     return gemArray;
   }
   else if (spec === "Restoration Druid") {
@@ -214,7 +239,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     }
     return gemArray;
   }
-  else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
+  else if (spec === "Discipline Priest" || modelName === "Rising Mist") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -227,7 +252,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     gemArray.push(192945);
     return gemArray;
   }
-  else if (spec === "Restoration Shaman") {
+  else if (spec === "Restoration Shaman" || modelName === "Tear of Morning") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -250,9 +275,18 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
       gemArray.push(192982)
     }
 
-    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
-    bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
-    gemArray.push(192919);
+    if (contentType === "Raid") {
+      bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+      bonus_stats.mastery = (bonus_stats.haste || 0) + 33 * (gemCount);
+      gemArray.push(192958);
+    }
+    else if (contentType === "Dungeon") {
+      bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
+      bonus_stats.haste = (bonus_stats.haste || 0) + 33 * (gemCount);
+      gemArray.push(192919);
+    }
+
+
     return gemArray;
 
   }
@@ -320,9 +354,13 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2530 || bossID === 2525) return 3; // Forgotten Experiments, Rashok, 
-  else if (bossID === 2532 || bossID === 2527) return 6; // Zskarn, Magmorax
-  else if (bossID === 2523 || bossID === 2520) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+  if (bossID === 2737 || bossID === 2728) return 3; // Forgotten Experiments, Rashok, 
+  else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
+  else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+
+  else if (bossID === 2557 || bossID === 2555) return 3; // Volcoross, Council: +3
+  else if (bossID === 2553 || bossID === 2556 || bossID === 2563) return 6; // Larodar, Nymue, Smolderon: +6
+  else if (bossID === 2565 || bossID === 2519) return 9; // Tindral, Fyrakk: +9
 
   return 0;
 }
@@ -333,14 +371,14 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [204465, 204201, 204202, 204211, 202612];
+  const boostedItems = [208616, 210214, 207171];
 
   if (boostedItems.includes(itemID)) {
-    // Note here that Dragonscale doesn't get the boost if we're looking at MAX versions of gear.
-    if (difficulty === CONSTANTS.difficulties.normalMax && itemID !== 202612) return 4;
-    else if (difficulty === CONSTANTS.difficulties.heroicMax && itemID !== 202612) return 6;
-    else if (bossID === 2520 || bossID === 2523) return 7;
-    /*else if (itemID !== 202612) return 6; */
+    // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
+    if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
+    else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
+    else if (bossID === 2519) return 7;
+    else if (bossID === 2556) return 0; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;
   } 
@@ -425,13 +463,14 @@ export function checkItemExists(id: number) {
 // Returns a translated item name based on an ID.
 export function getTranslatedItemName(id: number, lang: string, effect: any, gameType: gameTypes = "Retail") {
   const idAsString = id.toString();
-  if (effect && effect.type === "spec legendary") {
+  /*if (effect && effect.type === "spec legendary") {
     return effect.name;
-  } else {
+  } */
+  //else {
     // @ts-ignore
-    if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
-    else return "Unknown Item";
-  }
+
+  if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
+  else return "Unknown Item";
 }
 
 // Returns a translated Embellishment name based on an ID.
@@ -514,14 +553,13 @@ export function getItemIcon(id: number, gameType = "Retail") {
 
 
 export function getGemIcon(id: number) {
-  console.log(id);
+
   const gem = gemDB.filter((gem) => gem.id === id);
-  console.log(gem);
+
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
   } else {
     //return process.env.PUBLIC_URL + "/Images/Icons/" + gem.icon + ".jpg";
-    console.log()
     return "https://wow.zamimg.com/images/wow/icons/large/" + gem[0].icon.replace("Images/Icon", "") + ".jpg"
   }
 }
@@ -772,7 +810,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect && effect.type !== "spec legendary") statString += "Effect" + " / "; // t("itemTags.effect")
+  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
@@ -852,7 +890,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   // Add Retail Socket
   if (item.socket) {
-    getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
+    getGems(player.spec, item.socket || 1, bonus_stats, contentType, player.getActiveModel(contentType).modelName, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
@@ -895,6 +933,57 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];
   } */
+
+  return Math.round(100 * score) / 100;
+}
+
+// Return an item score.
+// Score is calculated by multiplying out an items stats against the players stat weights.
+// Special effects, sockets and leech are then added afterwards.
+export function scoreTrinket(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
+  let score = 0;
+  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
+  let item_stats = { ...item.stats };
+  // Calculate Effect.
+  if (item.effect) {
+    const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    bonus_stats = compileStats(bonus_stats, effectStats as Stats);
+  }
+
+
+  // Multiply the item's stats by our stat weights.
+  let sumStats = compileStats(item_stats, bonus_stats);
+  //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
+
+  for (var stat in sumStats) {
+    if (stat !== "bonus_stats") {
+      let statSum = sumStats[stat];
+      // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
+      score += statSum * player.getStatWeight(contentType, stat) / 12500 * player.getHPS(contentType);
+    }
+  }
+
+  // Add any bonus HPS
+  if (bonus_stats.hps) {
+    score += bonus_stats.hps;
+  }
+
+  // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
+  if (contentType === "Dungeon" && bonus_stats.dps) {
+    score += (bonus_stats.dps * CONSTANTS.dpsValue);
+  }
+
+  // Add any bonus Mana
+  if (bonus_stats.mana) {
+    score += (bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType));
+  }
+
+  // Add any group benefit, if we're interested in it.
+  // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
+  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+    //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
+    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player) / player.getInt() * player.getHPS(contentType);
+  }
 
   return Math.round(100 * score) / 100;
 }

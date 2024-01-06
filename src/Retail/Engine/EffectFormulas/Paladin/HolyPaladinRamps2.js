@@ -280,7 +280,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     }
 
     if (checkBuffActive(state.activeBuffs, "Blessing of Summer")) {
-        mult *= 1 + (0.4 * 0.3);
+        mult *= 1 + (0.4 * 0.2);
     }
 
     return mult;

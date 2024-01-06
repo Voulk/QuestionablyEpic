@@ -15,6 +15,7 @@ import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { classRaceDB } from "Databases/ClassRaceDB";
 
 export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -33,6 +34,7 @@ export class Player {
     if (gameType === "Retail") {
       this.setupDefaults(specName);
       this.gameType = "Retail";
+      if (this.race === "Default" || this.race === "") this.race = classRaceDB[this.spec].races[0];
     }
 
   }
@@ -230,13 +232,13 @@ export class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "of the Furnace Seraph",
-      "Discipline Priest": "of the Furnace Seraph",
-      "Restoration Druid": "of the Autumn Blaze",
-      "Restoration Shaman": "of the Cinderwolf",
-      "Mistweaver Monk": "of the Vermillion Forge",
-      "Holy Paladin": "Heartfire Sentinel's",
-      "Preservation Evoker": "of Obsidian Secrets",
+      "Holy Priest": "of Lunar Communion",
+      "Discipline Priest": "of Lunar Communion",
+      "Restoration Druid": "Benevolent Embersage's",
+      "Restoration Shaman": "Greatwolf Outcast's",
+      "Mistweaver Monk": "Mystic Heron's",
+      "Holy Paladin": "Zealous Pyreknight's",
+      "Preservation Evoker": "Weyrnkeeper's Timeless",
     };
 
     const temp = itemDB.filter(function (item) {
@@ -253,24 +255,45 @@ export class Player {
         newItem.vaultItem = true;
       }
       newItem.quality = 4;
+      newItem.upgradeTrack = item.upgradeTrack;
+      newItem.upgradeRank = item.upgradeRank;
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.
     }
   };
 
-  upgradeItem = (item, newLevel) => {
-    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, newLevel, "");
+  // Options: Convert to Vault, Add socket, change item level.
+  upgradeItem = (item, newLevel, socketFlag, vaultFlag) => {
+
+    /*
+    const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
     newItem.active = true;
+    if (newLevel !== 0) item.level = newLevel;
+    if (socketFlag) item.socket = 1;
     if (item.uniqueEquip === "vault") {
       newItem.uniqueEquip = "vault";
       newItem.vaultItem = true;
     }
     newItem.quality = item.quality || 4;
-    this.activeItems = this.activeItems.concat(newItem);
+    newItem.itemConversion = item.itemConversion || 0;
+    this.activeItems = this.activeItems.concat(newItem); */
+
+    const newItem = item.clone();
+    newItem.active = true;
+    if (newLevel !== 0) newItem.updateLevel(newLevel);
+    if (socketFlag) newItem.socket = 1;
+    if (vaultFlag) {
+      newItem.vaultItem = true;
+      newItem.uniqueEquip = "vault";
+    }
+    if (newItem) this.activeItems = this.activeItems.concat(newItem);
+    
   };
 
   // TODO: Move to playerUtilities and just call addItem.
+  // @deprecated
+  // Use UpgradeItem above.
   cloneAndSocketItem = (item) => {
     const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
     newItem.active = true;
@@ -282,6 +305,7 @@ export class Player {
     newItem.quality = item.quality || 4;
     this.activeItems = this.activeItems.concat(newItem);
   }
+
 
   sortItems = (container) => {
     // Current default sorting is by HPS but we could get creative here in future.
@@ -401,6 +425,7 @@ export class Player {
     if (this.spec === "Discipline Priest") {
       //this.getActiveModel("Raid").updateStatWeights(stats, "Raid");
       this.getActiveModel("Raid").setRampInfo(stats);
+      this.getActiveModel("Dungeon").setRampInfo(stats);
     }
   };
 
@@ -410,6 +435,7 @@ export class Player {
       this.activeModelID[contentType] = id;
 
         this.getActiveModel("Raid").setRampInfo(this.activeStats);
+        this.getActiveModel("Dungeon").setRampInfo(this.activeStats);
     } else {
       // This is a critical error that could crash the app so we'll reset models to defaults
       this.activeModelID["Raid"] = 0;
@@ -571,11 +597,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
 
       this.activeStats = {
-        intellect: 10500,
-        haste: 4700,
+        intellect: 12500,
+        haste: 5200,
         crit: 2350,
-        mastery: 4250,
-        versatility: 1050,
+        mastery: 4650,
+        versatility: 1450,
         stamina: 1900,
       };
       /*
@@ -589,11 +615,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Avenging Crusader", 2));
 
       this.activeStats = {
-        intellect: 10500,
+        intellect: 12500,
         haste: 4200,
-        crit: 2100,
-        mastery: 3100,
-        versatility: 1700,
+        crit: 5400,
+        mastery: 3800,
+        versatility: 1900,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
@@ -601,11 +627,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 10500,
-        haste: 1615,
-        crit: 4400,
-        mastery: 1800,
-        versatility: 4000,
+        intellect: 12500,
+        haste: 1915,
+        crit: 5000,
+        mastery: 1950,
+        versatility: 4500,
         stamina: 1900,
       };
       /*
@@ -618,24 +644,25 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 10500,
-        haste: 4400,
+        intellect: 12000,
+        haste: 6000,
         crit: 4852,
-        mastery: 1150,
+        mastery: 1550,
         versatility: 3000,
         stamina: 1900,
         critMult: 2,
       };
-      //this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
+      this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
+      this.getActiveModel("Dungeon").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 7500,
-        haste: 1710,
-        crit: 3700,
-        mastery: 3400,
-        versatility: 2350,
+        intellect: 11500,
+        haste: 1910,
+        crit: 5050,
+        mastery: 4700,
+        versatility: 3400,
         stamina: 1900,
       }
     }
@@ -643,12 +670,12 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
         this.activeStats = {
-          intellect: 10500,
+          intellect: 12500,
           haste: 2000,
-          crit: 3000,
-          mastery: 5100,
-          versatility: 2800,
-          stamina: 1900,
+          crit: 4000,
+          mastery: 5800,
+          versatility: 3200,
+          stamina: 30000,
         }
       /*
       this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
@@ -656,17 +683,18 @@ export class Player {
       this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Raid Default", content: "Raid" },
+        { identifier: "Rising Mist", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
+        { identifier: "Tear of Morning", content: "Raid" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 10500,
-        haste: 4900,
-        crit: 2450,
+        intellect: 12500,
+        haste: 5050,
+        crit: 4850,
         mastery: 1900,
-        versatility: 2120,
+        versatility: 2420,
         stamina: 1900,
       };
       /*

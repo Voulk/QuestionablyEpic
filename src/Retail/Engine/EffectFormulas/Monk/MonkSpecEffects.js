@@ -12,10 +12,21 @@ const ID_ENVELOPING_BREATH_ID = 325209;
 export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "Monk T30-2") {
+  if (effectName === "Monk T31-2") {
     // Placeholder pulled from sheet. Replace very soon.
     const expectedPPM = 10 * 0.5;
-    bonus_stats.hps = expectedPPM * (250000 * 0.03) * player.getSpecialQuery("OneManaHealing", contentType) / 60;
+    bonus_stats.hps = 9500;
+  }
+  else if (effectName === "Monk T31-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = 8750;
+  }
+
+  else if (effectName === "Monk T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    const expectedPPM = 10 * 0.5;
+    //bonus_stats.hps = expectedPPM * (250000 * 0.03) * player.getSpecialQuery("OneManaHealing", contentType) / 60;
+    bonus_stats.hps = 4000;
   }
   else if (effectName === "Monk T30-4") {
     // Placeholder pulled from sheet. Replace very soon.

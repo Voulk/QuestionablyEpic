@@ -47,21 +47,20 @@ export default class EmbelChart extends PureComponent {
     const barColours = this.props.theme;
     let arr = [];
     let cleanedArray = [];
-    // [437, 443, 447, 460, 470, 473, 477, 480, 483]
+    // 
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
-        arr.push({
+        arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
           name: map2.id,
-          437: map2.r437,
-          443: getRankDiff(443, map2, 437),
-          447: getRankDiff(447, map2, 443),
+          447: map2.r447,
           460: getRankDiff(460, map2, 447),
           470: getRankDiff(470, map2, 460),
           473: getRankDiff(473, map2, 470),
           477: getRankDiff(477, map2, 473),
           480: getRankDiff(480, map2, 477),
           483: getRankDiff(483, map2, 480),
+          486: getRankDiff(486, map2, 483),
         });
       });
 
@@ -126,7 +125,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[437, 443, 447, 460, 470, 473, 477, 480, 483].map((key, i) => (
+          {[447, 460, 470, 473, 477, 480, 483, 486].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

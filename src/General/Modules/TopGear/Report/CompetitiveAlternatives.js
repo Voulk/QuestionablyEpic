@@ -15,7 +15,7 @@ function CompetitiveAlternatives(props) {
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
-      const isLegendary = item.effect.type === "spec legendary";
+      const isLegendary = false; // item.effect.type === "spec legendary";
       if (isLegendary) return "#ff8000";
       else if (item.level >= 183) return "#a73fee";
       else if (item.level >= 120) return "#328CE3";
@@ -95,7 +95,7 @@ function CompetitiveAlternatives(props) {
                       <Grid item container xs={10} spacing={1}>
                         {key.gems.map((gem, i) => {
                           let itemArray = [];
-                          // scuffed breakdown of weapon combos to seperate them for the report
+                          // 
                           itemArray = [gem];
                           return itemArray.map((item) => (
                             <Grid item key={i}>

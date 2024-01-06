@@ -1,7 +1,7 @@
 export const monkDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
-    spellList = {
+    spellList = { // Unused. Replaced with log data.
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
       191840: { cpm: 3.5, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
@@ -56,14 +56,14 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSHotHealingDuringLC: 98,
       HPSHotHealingAfterLC: 0,
       HPSExpelHarmOnSelf: 0,
-      OneManaHealing: 10.2,
+      OneManaHealing: 5.6,
       cooldownMult: {
-        c60: 1.55,
+        c60: 1.38,
         c90: 1,
         c120: 1.115,
         c180: 1,
 
-        oneMinute: 1.55,
+        oneMinute: 1.42,
         ninetySeconds: 1,
         twoMinutes: 1.15,
         twoMinutesOrb: 1.11,
@@ -106,7 +106,7 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.65,
+    haste: 0.643,
     crit: 0.624,
     mastery: 0.36,
     versatility: 0.609,
@@ -114,10 +114,10 @@ export const monkDefaultStatWeights = (contentType) => {
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.54,
-    crit: 0.49,
-    mastery: 0.4,
-    versatility: 0.482,
+    haste: 0.59,
+    crit: 0.562,
+    mastery: 0.43,
+    versatility: 0.542,
     leech: 0.42,
   };
 

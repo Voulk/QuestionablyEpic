@@ -252,7 +252,7 @@ export default function CharacterPanel(props: Props) {
                           <Typography style={{ fontSize: 11, lineHeight: 1 }}>{"Stats (pre-enchants):"}</Typography>
                         </Grid>
                         {Object.keys(playerStats)
-                          .filter((filterOut) => filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech")
+                          .filter((filterOut) => ["intellect", "haste", "crit", "mastery", "versatility"].includes(filterOut)) //filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech" && filterOut !== "mana")
                           .map((key, i) => (
                             <Grid item xs={4} sm="auto" key={"stat" + i}>
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{getTranslatedStats(capitalizeFirstLetter(key), currentLanguage) + ": " + playerStats[key]}</Typography>

@@ -39,7 +39,7 @@
       "Version": "Version"
     },
     "EmbellishmentAnalysis": {
-      "Header": "Embellishment Analysis",
+      "Header": "Embellishments",
       "HelpText": "An overview of all Embellishment effects available"
     },
     "CharacterCreator": {
@@ -174,7 +174,7 @@
       "CooldownPlanner": "Cooldown Planner (Beta)",
       "ExploreCovenants": "Covenants & Conduits",
       "FightAnalysis": "Fight Analysis (Alpha)",
-      "EmbellishmentAnalysis": "Embellishment Analysis",
+      "EmbellishmentAnalysis": "Embellishments",
       "LegendaryAnalysis": "Legendary Breakdown",
       "PatronInvite": "Love the app? Support the site on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
@@ -182,7 +182,7 @@
       "QuickCompare": "Item Quick Compare",
       "TierSets": "Tier Sets",
       "Tooltips": {
-        "CooldownPlanner": "Plan your Vault healing cooldowns",
+        "CooldownPlanner": "Plan your raid healing cooldowns",
         "ExploreCovenants": "Soulbind and conduit information",
         "LegendaryAnalysis": "Your specs best legendaries and where to craft them",
         "Profile": "Edit your details and connect to Patreon",
@@ -446,7 +446,7 @@
     },
     "UpgradeFinder": {
       "BackButton": "Back to Setup",
-      "CurrentRaid": "Sepulcher of the First Ones",
+      "CurrentRaid": "Amirdrassil",
       "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
       "PvP": "PvP",
@@ -457,7 +457,7 @@
       "Header": "Upgrade Finder",
       "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
       "MythicPlusBody": "Use the slider to select dungeon item level",
-      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
+      "MythicPlusHeader": "Mythic Plus Key Level",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",

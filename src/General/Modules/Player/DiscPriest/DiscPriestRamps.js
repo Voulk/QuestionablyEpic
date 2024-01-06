@@ -25,10 +25,10 @@ export const DISCCONSTANTS = {
     atonementMults: {"shadow": 1, "holy": 1},
     shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
     enemyTargets: 1, 
-    sins: {0: 1.4, 1: 1.4, 2: 1.4, 3: 1.4, 4: 1.4, 5: 1.4, 
-            6: 1.35, 7: 1.3, 8: 1.25, 9: 1.2, 10: 1.15,
-            11: 1.11, 12: 1.08, 13: 1.05, 14: 1.04, 15: 1.03, 
-            16: 1.025, 17: 1.02, 18: 1.015, 19: 1.0125, 20: 1.01},
+    sins: {0: 1.2, 1: 1.2, 2: 1.2, 3: 1.2, 4: 1.2, 5: 1.2, 
+            6: 1.175, 7: 1.15, 8: 1.125, 9: 1.1, 10: 1.075,
+            11: 1.055, 12: 1.04, 13: 1.025, 14: 1.02, 15: 1.015, 
+            16: 1.0125, 17: 1.01, 18: 1.0075, 19: 1.006, 20: 1.005},
     shieldDisciplineEfficiency: 0.8,
 }   
 
@@ -55,7 +55,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     let schism = 1;
 
     if (spellName !== "Mindbender" && spellName !== "Shadowfiend") {
-        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.15 : 1; 
+        schism = buffs.filter(function (buff) {return buff.name === "Schism"}).length > 0 ? 1.1 : 1; 
     }
     
     let mult = schism * sins[activeAtones];
@@ -90,7 +90,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
 
     if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
-        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.12);
+        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.2);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
     }
     if (checkBuffActive(buffs, "Light Weaving")) {
@@ -167,7 +167,7 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.32;
+    const atonementBaseTransfer = 0.4;
     return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
 }
 
@@ -352,7 +352,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             // We'll iterate through the different effects the spell has.
             // Smite for example would just trigger damage (and resulting atonement healing), whereas something like Mind Blast would trigger two effects (damage,
             // and the absorb effect).
-            state.manaSpent += fullSpell[0].cost;
+            state.manaSpent += 'cost' in fullSpell ? fullSpell[0].cost : 0;
             fullSpell.forEach(spell => {
 
                 // The spell is an atonement applicator. Add atonement expiry time to our array.

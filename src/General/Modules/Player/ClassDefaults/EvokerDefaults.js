@@ -20,11 +20,11 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.4, 
-      crit: 0.61, 
+      haste: 0.401, 
+      crit: 0.6, 
       mastery: 0.822, 
-      versatility: 0.601, 
-      leech: 0.54,
+      versatility: 0.591, 
+      leech: 0.53,
       defaults: true,
     };
     statWeights.Dungeon = {
@@ -49,7 +49,7 @@ export const evokerDefaultSpellData = (contentType) => {
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
           c60: 1,
-          c90: 1.2,
+          c90: 1,
           c120: 1.15,
           c180: 1,
 

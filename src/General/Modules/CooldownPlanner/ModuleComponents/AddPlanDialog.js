@@ -77,6 +77,7 @@ export default function AddPlanDialog(props) {
     buffData: [],
     friendlyHealth: [],
     enemyEnergy: [],
+    enemyDebuffData: [],
   });
   const [logDataLoading, setLogDataLoading] = React.useState(false);
   const [loadingProgress, setLoadingProgress] = React.useState(0);
@@ -159,6 +160,7 @@ export default function AddPlanDialog(props) {
       buffData: [],
       friendlyHealth: [],
       enemyEnergy: [],
+      enemyDebuffData: [],
     });
     // set data returned from wcl (some useless data here as we are reusing code)
     setLogInfo([
@@ -187,7 +189,7 @@ export default function AddPlanDialog(props) {
 
   const importPlanToCooldownObject = (planName, boss, difficulty, importType) => {
     const startTime = logInfo[0].time;
-    const endTime = logInfo[0].timeend
+    const endTime = logInfo[0].timeend;
     const enemyCasts = logData.enemyCasts;
     const healerCasts = logData.healerCasts;
     const healers = logData.healers;
@@ -197,6 +199,7 @@ export default function AddPlanDialog(props) {
     const buffData = logData.buffData;
     const friendlyHealth = logData.friendlyHealth;
     const enemyEnergy = logData.enemyEnergy;
+    const enemyDebuffData = logData.enemyDebuffData;
     // transform the imported data into plan data
     let transformedData = transformData(
       startTime,
@@ -213,7 +216,8 @@ export default function AddPlanDialog(props) {
       nameObject,
       friendlyHealth,
       enemyEnergy,
-      endTime
+      endTime,
+      enemyDebuffData,
     );
     cooldownObject.importLogPlan(planName, boss, difficulty, transformedData);
     loadPlanData(boss, planName, difficulty); // load the imported plan data

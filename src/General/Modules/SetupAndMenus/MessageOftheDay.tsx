@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Warning: PTR version. Everything subject to change. Don't share this link publicly. Last updated 30 Oct.",
+      "-> Blizzard continue to make both class and item changes.",
   ]
 ;
 

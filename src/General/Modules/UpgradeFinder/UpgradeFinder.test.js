@@ -4,14 +4,13 @@ import { getSetItemLevel } from "./UpgradeFinderEngine";
 describe("LFR Item Level tests", () => {
     const lfrSettings = {"raid": [0, 0]}
     const lfrMaxSettings = {"raid": [1, 1]}
-    const kazzara = [{
-        "instanceId": 1208,
-        "encounterId": 2522 // Kazzara
+    const gnarlroot = [{
+        "instanceId": 1207,
+        "encounterId": 2820 // Gnarlroot
     }]
 
     test("LFR Max - Regular Item", () => {
-        //expect(getSetItemLevel(kazzara, lfrMaxSettings, 0, 202573)).toEqual(424);
-        expect(true).toEqual(true);
+        expect(getSetItemLevel(gnarlroot, lfrSettings, 0, 207794)).toEqual(441);
     })
     /*
     test("LFR Max - Dragonscale", () => {
@@ -21,43 +20,46 @@ describe("LFR Item Level tests", () => {
     test("LFR Standard - Dragonscale", () => {
         expect(getSetItemLevel(kazzara, lfrSettings, 0, 202612)).toEqual(408);
     }) */
-}) 
- /*
+})
+
+
 describe("Normal Item Level tests", () => {
     const normalSettings = {"raid": [2, 2]}
     const normalMaxSettings = {"raid": [3, 3]}
-    const kazzara = [{
-        "instanceId": 1208,
-        "encounterId": 2522 // Kazzara
+    const gnarlroot = [{
+        "instanceId": 1207,
+        "encounterId": 2820 // Gnarlroot
     }]
-    const sark = [{
-        "instanceId": 1208,
-        "encounterId": 2520 // Sark
+    const fyrakk = [{
+        "instanceId": 1207,
+        "encounterId": 2677 // Sark
     }]
 
-    // Kazzara drops
+    // Gnarlroot drops
+    
     test("Normal Max - Regular Item", () => {
-        expect(getSetItemLevel(kazzara, normalMaxSettings, 0, 202573)).toEqual(437);
+        expect(getSetItemLevel(gnarlroot, normalMaxSettings, 0, 207794)).toEqual(476);
     })
+    /*
     test("Normal Max - Dragonscale", () => {
-        expect(getSetItemLevel(kazzara, normalMaxSettings, 0, 202612)).toEqual(437);
+        expect(getSetItemLevel(gnarlroot, normalMaxSettings, 0, 202612)).toEqual(437);
     })
     test("Normal Standard - Dragonscale", () => {
-        expect(getSetItemLevel(kazzara, normalSettings, 0, 202612)).toEqual(421);
+        expect(getSetItemLevel(gnarlroot, normalSettings, 0, 202612)).toEqual(421);
     })
 
     // Sark drops
     test("Normal Standard - Sark Regular Drop", () => {
-        expect(getSetItemLevel(sark, normalSettings, 0, 202565)).toEqual(424);
+        expect(getSetItemLevel(fyrakk, normalSettings, 0, 202565)).toEqual(424);
     })
     test("Normal Standard - Sark Rare Drop", () => {
-        expect(getSetItemLevel(sark, normalSettings, 0, 204465)).toEqual(431);
+        expect(getSetItemLevel(fyrakk, normalSettings, 0, 204465)).toEqual(431);
     })
     test("Normal Max - Sark Rare Drop", () => {
-        expect(getSetItemLevel(sark, normalMaxSettings, 0, 204465)).toEqual(441);
-    })
+        expect(getSetItemLevel(fyrakk, normalMaxSettings, 0, 204465)).toEqual(441);
+    }) */
 })
-
+/*
 describe("Heroic Item Level tests", () => {
     const heroicSettings = {"raid": [4, 4]}
     const heroicMaxSettings = {"raid": [5, 5]}

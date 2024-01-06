@@ -219,12 +219,12 @@ export default function DungeonHeaderIcons(props) {
   }
 
   // Everbloom
-  if (props === 537) {
+  if (props === 556) {
     source = Everbloom;
   }
 
   // Dawn of the Infinites
-  if (props === 0 || props === 1) {
+  if (props === '-55' || props === '-56') {
     source = DawnOfTheInfinites;
   }
 

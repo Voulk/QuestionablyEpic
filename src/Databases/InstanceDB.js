@@ -1032,7 +1032,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1205: {
-    bossOrder: [2515, 2506, 2517, 2518, 2531],
+    bossOrder: [2515, 2506, 2517, 2518, 2531, 2562],
     2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
@@ -1076,6 +1076,15 @@ export const encounterDB = {
         de: "Die Ältesten der Zaqali",
         fr: "Les Anciens zaqalis",
         ru: "Старейшины закали",
+      },
+    },
+    2562: {
+      name: {
+        en: "Aurostor the Hibernator",
+        ch: "Aurostor the Hibernator",
+        de: "Aurostor the Hibernator",
+        fr: "Aurostor the Hibernator",
+        ru: "Aurostor the Hibernator",
       },
     },
   },
@@ -1843,7 +1852,7 @@ export const encounterDB = {
       ch: "",
     },
     //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
-    bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, 999],
+    bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, -54],
     bosses: {
       2564: {
         name: {
@@ -1927,7 +1936,7 @@ export const encounterDB = {
         },
       },
 
-      999: {
+      "-54": {
         name: {
           en: "BoE Trash Drops",
           fr: "BoE Trash Drops",
@@ -1974,13 +1983,13 @@ export const encounterDB = {
       68, // The Vortex Pinnacle
       767, // Neltharion's Lair */
 
-      0, // Dawn of the Infinites: Galakrond's Fall
-      1, // Dawn of the Infinites: Murozond's Rise
+      "-55", // Dawn of the Infinites: Galakrond's Fall
+      "-56", // Dawn of the Infinites: Murozond's Rise
       762, // Darkheart Thicket
       740, // Black Rook Hold
       1021, // Waycrest Manor
       968, // Atal'Dazar
-      537, // Everbloom
+      556, // Everbloom
       65, // Throne of the Tides
     ],
 
@@ -2128,7 +2137,7 @@ export const encounterDB = {
         ch: "地渊孢林",
       },
     },
-    0: {
+    "-55": {
       name: {
         en: "Dawn of the Infinites: Galakrond's Fall",
         fr: "",
@@ -2137,7 +2146,7 @@ export const encounterDB = {
         ch: "",
       },
     },
-    1: {
+    "-56": {
       name: {
         en: "Dawn of the Infinites: Murozond's Rise",
         fr: "",
@@ -2181,8 +2190,17 @@ export const encounterDB = {
         de: "",
         ch: "",
       },
-    },
+    },/*
     537: {
+      name: {
+        en: "Everbloom",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },*/
+    556: {
       name: {
         en: "Everbloom",
         fr: "",
