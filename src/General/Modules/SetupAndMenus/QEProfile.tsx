@@ -1,12 +1,20 @@
-import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import React, { useState } from "react";
+import makeStyles from "@mui/styles/makeStyles";
 import { Grid, Button, Typography, TextField, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import ls from "local-storage";
+import * as ls from "local-storage";
 
-const useStyles = makeStyles((theme) => ({
+interface QEProfileProps {
+  setEmail: (email: string) => void;
+  emailSnack: () => void;
+  emailSnackError: () => void;
+  patronStatus: string;
+  playerTag?: string;
+}
+
+const useStyles = makeStyles((theme?: any) => ({
   root: {
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down("lg")]: {
       margin: "auto",
       width: "80%",
       justifyContent: "center",
@@ -24,15 +32,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function QEProfile(props) {
+const QEProfile: React.FC<QEProfileProps> = (props) => {
   const classes = useStyles();
   const { t } = useTranslation();
-  const [email, setEmail] = React.useState(ls.get("email") || "");
-  const [emailTemp, setEmailTemp] = React.useState("");
-  const emailHandler = (event) => {
+  const [email, setEmail] = useState<string>(ls.get("email") || "");
+  const [emailTemp, setEmailTemp] = useState<string>("");
+  const handleEmailUpdate = () => {
     if (emailTemp.length > 3 && emailTemp.length < 92) {
-      props.setEmail(event);
-      setEmail(event);
+      props.setEmail(emailTemp);
+      setEmail(emailTemp);
       props.emailSnack();
     } else {
       props.emailSnackError();
@@ -41,7 +49,7 @@ export default function QEProfile(props) {
 
   let patronStatus = props.patronStatus !== "" ? props.patronStatus + " " + t("QeProfile.EditionAffix") : t("QeProfile.StandardEdition");
 
-  let color = {
+  let color: { [key: string]: string } = {
     "Rolls Royce Edition": "#04E07C",
     "Diamond Edition": "#FFB6C1",
     "Gold Edition": "#DAA520",
@@ -91,19 +99,10 @@ export default function QEProfile(props) {
             </Typography>
             <Grid container direction="row" justifyContent="flex-start" alignItems="center" spacing={1} wrap="nowrap">
               <Grid item xs={11}>
-                <TextField
-                  id="outlined-basic"
-                  label="Email"
-                  variant="outlined"
-                  value={emailTemp}
-                  type="email"
-                  fullWidth
-                  size="small"
-                  onChange={(e) => setEmailTemp(e.target.value)}
-                />
+                <TextField id="outlined-basic" label="Email" variant="outlined" value={emailTemp} type="email" fullWidth size="small" onChange={(e) => setEmailTemp(e.target.value)} />
               </Grid>
               <Grid item xs="auto">
-                <Button variant="contained" color="primary" onClick={() => emailHandler(emailTemp)}>
+                <Button variant="contained" color="primary" onClick={() => handleEmailUpdate()}>
                   {t("Save")}
                 </Button>
               </Grid>
@@ -113,4 +112,6 @@ export default function QEProfile(props) {
       </Grid>
     </div>
   );
-}
+};
+
+export default QEProfile;
