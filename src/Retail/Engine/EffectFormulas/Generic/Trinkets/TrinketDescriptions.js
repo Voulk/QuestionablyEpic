@@ -133,7 +133,7 @@ const smolderingSeedling = (data, itemLevel, player, additionalData) => {
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Mastery: " + Math.round(bonus_stats.mastery)],
         description:
-          "Seedling duplicates healing it receives to 5 nearby allies. Once the pool of bonus healing is used up it transfers at a 1:1 ratio. This is a very good trinket if you have efficient single target healing, though it's log percentage isn't a good reflection of healing added.",
+          "Seedling duplicates healing it receives to 5 nearby allies. Once the pool of bonus healing is used up it transfers at a 1:1 ratio. This is a very good trinket if you have efficient single target healing, though its log percentage isn't a good reflection of healing added.",
       };
 }
 

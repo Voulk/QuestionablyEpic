@@ -513,7 +513,7 @@ export const embellishmentDB = [
   },
   {
     id: 210671,
-    icon: "inv_10_tailoring_embroiderythread_color3", 
+    icon: "inv_10_tailoring_tailoringconsumable_color4", 
     armorType: 0, // All
     name: {
       en: "Verdant Tether (Ring)",
