@@ -17,11 +17,17 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2",
+    update: 10,
+    date: "January 10",
+    changes: [ 
+      "Ulduar Timewalking: Added formulas for all trinkets.",
+    ]},
+  {
+    version: "10.2",
     update: 9,
     date: "December 29",
     changes: [ 
       "Mistweaver: Added Tear of Morning playstyle.",
-
     ]},
   {
     version: "10.2",

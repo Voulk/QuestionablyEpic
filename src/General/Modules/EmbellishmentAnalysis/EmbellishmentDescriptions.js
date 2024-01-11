@@ -4,7 +4,8 @@ import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } fr
 import { getSetting, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 export const getEmbellishmentDescription = (embellishmentName, player, additionalData) => {
-    let embData = embellishmentData.filter(emb => emb.name === embellishmentName)[0];
+    let embData = embellishmentData.filter(emb => emb.name === embellishmentName || (emb.name === "Verdant Tether" && embellishmentName.includes("Verdant Tether")))[0];
+    
     const itemLevel = 486;
     //if (trinketData === null) return null;
     switch (embellishmentName) {
@@ -14,7 +15,7 @@ export const getEmbellishmentDescription = (embellishmentName, player, additiona
             return getElementalLariat(embData, itemLevel, player, additionalData);
         case "Undulating Sporecloak":
             return getSporecloak(embData, itemLevel, player, additionalData);
-        case "Verdant Tether":
+        case "Verdant Tether (Ring)":
             return getVerdantTether(embData, itemLevel, player, additionalData);
         case "Verdant Conduit":
             return getVerdantConduit(embData, itemLevel, player, additionalData);

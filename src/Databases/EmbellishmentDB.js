@@ -462,8 +462,8 @@ export const embellishmentDB = [
   },
   {
     id: 205025,
-    icon: "3752753", // ??
-    armorType: 0, // Mail
+    icon: "inv_cape_armor_celestial", 
+    armorType: 0, 
     name: {
       en: "Undulating Sporecloak",
       de: "",

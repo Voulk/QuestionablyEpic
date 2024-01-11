@@ -41,6 +41,7 @@ const setupItemCardData = (embList, contentType, player, playerSettings) => {
     if (data) {
       data.name = emb.name['en'];
       data.id = emb.id;
+      data.icon = emb.icon;
       itemData.push(data);
     }
   });
