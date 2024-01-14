@@ -32,14 +32,14 @@ export const embellishmentData = [
         table: -9,
         duration: 15, // 
         ppm: 1.21,
-        efficiency: 0.8,
+        efficiency: 0,
       },
       { // Ally + Self Shield
         coefficient: 60.97212, 
         table: -9,
         duration: 15, 
         ppm: 1.21,
-        efficiency: 0.45,
+        efficiency: 0,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {

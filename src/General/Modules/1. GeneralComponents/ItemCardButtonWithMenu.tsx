@@ -13,13 +13,13 @@ interface MenuItemType {
 }
 
 interface ItemCardButtonWithMenuProps {
-  key: string;
+  key: number;
   deleteActive: boolean;
   deleteItem: () => void;
   canBeCatalyzed: boolean;
   catalyseItemCard: () => void;
   itemLevel: number;
-  upgradeItem: (item: any, ilvlMinimum: number) => void;
+  upgradeItem: (item: any, ilvlMinimum: number, socketFlag: boolean, vaultFlag: boolean) => void;
   item: any;
 }
 

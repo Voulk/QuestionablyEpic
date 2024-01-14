@@ -1,4 +1,4 @@
-import { raidTrinketData } from "./TrinketData";
+import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
@@ -106,7 +106,7 @@ const leafOfTheAncientProtectors = (data, itemLevel, player, additionalData) => 
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Gifted Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "A very niche trinket useful for preventing one shots in high keys. Little use outside of that.",
+          "Can be extremely good for preventing one shots or single target burst damage in Mythic+. Poor for general throughput.",
       };
 }
 
@@ -119,7 +119,7 @@ const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
         category: trinketCategories.RAIDDROPS,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
         description:
-          "Very strong in normal / heroic content. Falls off quite significantly as you progress through Mythic. Expect it to do a decent amount on your healing meter but it's hamstrung by its lack of passive intellect.",
+          "Expect Blossom to look quite good on your healing meter but the lack of intellect hurts it overall and prevents it from being better than top 5 - and that's if your spec likes haste. Falls off further as you approach late mythic.",
       };
 }
 
@@ -133,7 +133,7 @@ const smolderingSeedling = (data, itemLevel, player, additionalData) => {
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Mastery: " + Math.round(bonus_stats.mastery)],
         description:
-          "Seedling duplicates healing it receives to 5 nearby allies. Once the pool of bonus healing is used up it transfers at a 1:1 ratio. This is a very good trinket if you have efficient single target healing, though it's log percentage isn't a good reflection of healing added.",
+          "Seedling duplicates healing it receives to 5 nearby allies. Once the pool of bonus healing is used up it transfers at a 1:1 ratio. This is a very good trinket if you have efficient single target healing, though its log percentage isn't a good reflection of healing added.",
       };
 }
 
@@ -190,8 +190,8 @@ const mirrorOfFracturedTomorrows = (data, itemLevel, player, additionalData) => 
                 "Average Stat Gain: " + Math.round(bonus_stats[stat]),
                 "Stat while active: " + Math.round(processedValue(effect, itemLevel))],
         description:
-          "The clone isn't functional on the PTR making this quite a weak option but check back soon after launch since they're likely to fix it. Underwhelming as a stat trinket alone. It's \
-          also difficult to leverage a three minute on-use effect as a " + player.spec + ".",
+          "Underwhelming as a stat trinket alone. It's \
+          also difficult to leverage a three minute on-use effect as a " + player.spec + ". Mostly just a fill in while you search for better.",
       };
 }
 

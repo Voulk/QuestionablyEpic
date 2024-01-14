@@ -41,7 +41,7 @@ export class Item {
   mainHandUniqueHash?: string;
   offHandUniqueHash?: string;
   gemString?: string;
-  flags: string[] = [];
+  flags: string[] = []; // Flags: reforged, offspecWeapon. 
 
   constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
     this.id = id;
@@ -115,6 +115,10 @@ export class Item {
     return id + "" + (Math.floor(Math.random() * 100000) + 1).toString();
   }
 
+  checkHasFlag(flag: string) {
+    return this.flags.includes(flag);
+  }
+
   canBeCatalyzed() {
     return !this.isCatalystItem && this.itemConversion === CONSTANTS.seasonalItemConversion && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
   }
@@ -146,8 +150,8 @@ export class Item {
 
   // This is only of moderate accuracy since there can be non-tier sets that use the same slots as tier.
   // We only use this to color Tier pieces differently so it's ok if it colors non-tier set pieces.
-  isTierPiece() {
-    return this.setID && this.slot !== "Trinket" && this.slot !== "Finger";
+  isTierPiece(): boolean {
+    return this.setID !== 0 && this.setID !== "" && this.slot !== "Trinket" && this.slot !== "Finger";
   }
 
   // This compiles an additional stat array into an item.
