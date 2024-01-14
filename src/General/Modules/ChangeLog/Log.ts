@@ -21,6 +21,7 @@ export const changeLog: entry[] = [
     date: "January 10",
     changes: [ 
       "Ulduar Timewalking: Added formulas for all trinkets.",
+      "Added Verdant Tether to the Embellishment Deep Dive."
     ]},
   {
     version: "10.2",

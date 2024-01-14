@@ -46,7 +46,7 @@ export const timewalkingTrinketData = [
           { // Mastery portion
             coefficient: 0.450353,
             table: -7,
-            ppm: {"Restoration Druid": 35-6, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+            ppm: {"Restoration Druid": 35-5, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
                   "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
           },
         ],
