@@ -79,7 +79,7 @@ export const raidTrinketData = [
         cooldown: 120,
         targetScaling: 1.5, // This actually heals for 2.5x the amount you feed it, but we deduct the healing spent.
         efficiency: {Raid: 0.6, Dungeon: 0.4}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
-        specEfficiency: { "Restoration Druid": 0.8, "Holy Paladin": 1, "Holy Priest": 0.9, "Discipline Priest": 0.55, "Mistweaver Monk": 1.36, 
+        specEfficiency: { "Restoration Druid": 0.8, "Holy Paladin": 0.85, "Holy Priest": 0.9, "Discipline Priest": 0.55, "Mistweaver Monk": 1.36, 
                           "Restoration Shaman": 0.7, "Preservation Evoker": 0.75 }, // Note the comment above. This could be replaced by a proper sequence comparison.
       },
       { // Mastery benefit. This is short and not all that useful.
