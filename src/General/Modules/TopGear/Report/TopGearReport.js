@@ -26,14 +26,15 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
     headers: { 'Content-Type': 'application/json' },
   };*/
 
-  const url = "https://questionablyepic.com/api/getReport.php?reportID=" + reportCode;
+  const url = "https://questionablyepic.com/api2/retrieveReport.php?reportID=" + reportCode + "&reporttype=topgear";
+  //const url = "https://questionablyepic.com/api/getReport.php?reportID=" + reportCode;
 
   fetch(url)
     .then(res => res.json())
     .then(data => {
       //console.log(data);
-
       if (typeof(data) === "string") {
+        console.log(data);
         const jsonData = JSON.parse(data);
         setBackgroundImage(apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage));
         setResult(JSON.parse(data))
