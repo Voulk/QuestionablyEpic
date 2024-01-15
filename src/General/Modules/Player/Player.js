@@ -283,8 +283,10 @@ export class Player {
     newItem.active = true;
     if (newLevel !== 0) newItem.updateLevel(newLevel);
     if (socketFlag) newItem.socket = 1;
-    if (vaultFlag) newItem.vaultItem = true;
-
+    if (vaultFlag) {
+      newItem.vaultItem = true;
+      newItem.uniqueEquip = "vault";
+    }
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
@@ -651,6 +653,7 @@ export class Player {
         critMult: 2,
       };
       this.getActiveModel("Raid").setRampInfo(this.activeStats, []); // TODO; Renable
+      this.getActiveModel("Dungeon").setRampInfo(this.activeStats, []); // TODO; Renable
     } else if (spec === SPEC.HOLYPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
@@ -680,8 +683,9 @@ export class Player {
       this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Raid Default", content: "Raid" },
+        { identifier: "Rising Mist", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
+        { identifier: "Tear of Morning", content: "Raid" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 

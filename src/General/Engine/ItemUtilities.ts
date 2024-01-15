@@ -176,7 +176,7 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
 
 // This is an extremely simple function that just returns default gems.
 // We should be calculating best gem dynamically and returning that instead but this is a temporary stop gap that should be good 90% of the time.
-export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, topGear: boolean = true) {
+export function getGems(spec: string, gemCount: number, bonus_stats: Stats, contentType: contentTypes, modelName: string, topGear: boolean = true) {
   let gemArray = []
   if (gemCount === 0) return [];
   if (spec === "Preservation Evoker") {
@@ -239,7 +239,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     }
     return gemArray;
   }
-  else if (spec === "Discipline Priest" || spec === "Mistweaver Monk") {
+  else if (spec === "Discipline Priest" || modelName === "Rising Mist") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -252,7 +252,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     gemArray.push(192945);
     return gemArray;
   }
-  else if (spec === "Restoration Shaman") {
+  else if (spec === "Restoration Shaman" || modelName === "Tear of Morning") {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
@@ -890,7 +890,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   // Add Retail Socket
   if (item.socket) {
-    getGems(player.spec, item.socket || 1, bonus_stats, contentType, false);
+    getGems(player.spec, item.socket || 1, bonus_stats, contentType, player.getActiveModel(contentType).modelName, false);
     //score += 88 * player.getStatWeight(contentType, player.getHighestStatWeight(contentType)) * (item.socket || 1); 
   }
 
@@ -933,6 +933,57 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
     socketItem(item, player.statWeights["Raid"]);
     score += item.socketedGems["score"];
   } */
+
+  return Math.round(100 * score) / 100;
+}
+
+// Return an item score.
+// Score is calculated by multiplying out an items stats against the players stat weights.
+// Special effects, sockets and leech are then added afterwards.
+export function scoreTrinket(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
+  let score = 0;
+  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
+  let item_stats = { ...item.stats };
+  // Calculate Effect.
+  if (item.effect) {
+    const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+    bonus_stats = compileStats(bonus_stats, effectStats as Stats);
+  }
+
+
+  // Multiply the item's stats by our stat weights.
+  let sumStats = compileStats(item_stats, bonus_stats);
+  //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
+
+  for (var stat in sumStats) {
+    if (stat !== "bonus_stats") {
+      let statSum = sumStats[stat];
+      // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
+      score += statSum * player.getStatWeight(contentType, stat) / 12500 * player.getHPS(contentType);
+    }
+  }
+
+  // Add any bonus HPS
+  if (bonus_stats.hps) {
+    score += bonus_stats.hps;
+  }
+
+  // Add any bonus DPS. This is valued 1:1 with bonus HPS in dungeons only.
+  if (contentType === "Dungeon" && bonus_stats.dps) {
+    score += (bonus_stats.dps * CONSTANTS.dpsValue);
+  }
+
+  // Add any bonus Mana
+  if (bonus_stats.mana) {
+    score += (bonus_stats.mana * player.getSpecialQuery("OneManaHealing", contentType));
+  }
+
+  // Add any group benefit, if we're interested in it.
+  // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
+  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+    //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
+    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player) / player.getInt() * player.getHPS(contentType);
+  }
 
   return Math.round(100 * score) / 100;
 }

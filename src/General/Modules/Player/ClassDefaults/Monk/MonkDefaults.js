@@ -1,7 +1,7 @@
 export const monkDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
-    spellList = {
+    spellList = { // Unused. Replaced with log data.
       196725: { cpm: 52.31, avgcast: 1742.69, hps: 1515.74, overhealing: 0.14 }, //Refreshing Jade Wind
       191840: { cpm: 3.5, avgcast: 33582.63, hps: 1316.39, overhealing: 0.27 }, // Essence Font
       325209: { cpm: 0, avgcast: 0, hps: 1076.62, overhealing: 0.48 }, // Enveloping Breath
@@ -106,7 +106,7 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.65,
+    haste: 0.643,
     crit: 0.624,
     mastery: 0.36,
     versatility: 0.609,

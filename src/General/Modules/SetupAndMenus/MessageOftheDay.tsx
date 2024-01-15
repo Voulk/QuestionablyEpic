@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Blizzard continue to make both class and item changes.",
+      "-> Have a great day!",
   ]
 ;
 
