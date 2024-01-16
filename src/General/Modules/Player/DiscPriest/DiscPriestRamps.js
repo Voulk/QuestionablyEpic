@@ -552,7 +552,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 // TODO: allow arrays too (queue first spell, add rest to seq).
                 
             }
-
+            console.log(queuedSpell);
             const fullSpell = discSpells[queuedSpell];
 
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);

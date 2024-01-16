@@ -1,6 +1,6 @@
 
-import { runHeal, getHaste, runDamage } from "./PresEvokerRamps";
-import { addReport, getCrit } from "../Generic/RampBase";
+import { runHeal, runDamage } from "./PresEvokerRamps";
+import { addReport, getCrit, getHaste } from "../Generic/RampBase";
 
 
 // This is the Evoker spell database. 
@@ -183,19 +183,40 @@ export const EVOKERSPELLDB = {
         cost: 2.0,
         cooldownData: {cooldown: 8, hasted: true}, 
         buffDuration: 12,
-        onApplication: function (state, spell, buff) {
+        /*onApplication: function (state, spell, buff) {
             const newDuration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats)-1))));
             buff.expiration = newDuration;
 
             return buff;
-        },
-        runFunc: function (state, buff) {
-            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
+        },*/
+        runFunc: function (state, spell, buff) {
+            const hotHeal = { type: "heal", coeff: spell.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
 
-            runHeal(state, hotHeal, buff.name)
+            runHeal(state, hotHeal, spell.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
             // This can't take into account on-use crit increases though whereas rolling it each time will (but requires more iterations for a proper valuation).
             // Current model uses the deterministic method. TODO. 
+            const roll = Math.random();
+            const extension = roll <= (getCrit(state.currentStats) - 1)
+
+            if (extension) {
+                if ('extensionCount' in buff) {
+                    if (buff.extensionCount < 6) {
+                        buff.extensionCount += 1;
+                        buff.expiration += (2 / getHaste(state.currentStats));
+                    
+                    }
+                    else {
+                        //console.log("Tried to extend but already at cap");
+                    }
+                }
+                else {
+                    buff.extensionCount = 1;
+
+                    buff.expiration += (2 / getHaste(state.currentStats));
+                    console.log(buff);
+                }
+            }
         }
 
     }],

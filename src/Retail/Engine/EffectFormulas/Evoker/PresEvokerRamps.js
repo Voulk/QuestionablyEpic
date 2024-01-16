@@ -254,7 +254,7 @@ const triggerCycleOfLife = (state, rawHealing) => {
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery']
     }) */
-    if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration *= (1 + 0.15 * talents.timelessMagic);
+    if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration *= (1 + 0.1 * talents.timelessMagic);
     if (talents.timeLord) evokerSpells['Echo'][1].value *= (1 + 0.25 * talents.timeLord);
     if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
         // TODO
@@ -480,10 +480,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     
     // Grace Period
     if (talents.gracePeriod) {
-        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.1);
+        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.075);
         else {
             const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
-            mult *= (1 + talents.gracePeriod * 0.1 * buffsActive / 20);
+            mult *= (1 + talents.gracePeriod * 0.075 * buffsActive / 20);
 
         }
     }   
@@ -877,7 +877,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             }
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
-                echoSpell[0].function = spellData[0].function;
+                echoSpell[0].runFunc = spellData[0].runFunc;
             }
             if (spellName === "Verdant Embrace") {
                 if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Call of Ysera") echoSpell.pop();
@@ -927,7 +927,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
-                    func(state, spell);
+                    func(state, spell, buff);
                 }
 
                 if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
@@ -953,7 +953,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 else if (buff.buffType === "function") {
                     const func = buff.attFunction;
                     const spell = buff.attSpell;
-                    func(state, spell);
+                    func(state, spell, buff);
                 }
             }
             else if (buff.runEndFunc) buff.runFunc(state, buff);

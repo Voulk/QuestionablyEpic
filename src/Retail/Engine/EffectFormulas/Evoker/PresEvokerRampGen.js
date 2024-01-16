@@ -14,8 +14,8 @@ export const buildEvokerChartData = (stats) => {
     const activeStats = {
         intellect: 14000,
         haste: 1200,
-        crit: 11000,
-        mastery: 6500,
+        crit: 5500,
+        mastery: 6700,
         versatility: 3000,
         stamina: 29000,
         critMult: 2,
@@ -45,7 +45,7 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
 
-        {cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
+        //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
         //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]
 
