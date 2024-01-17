@@ -25,6 +25,7 @@ export const buildEvokerChartData = (stats) => {
     let talents = {...evokerTalents};
 
     const sequences = [
+        /*
         {cat: "Base Spells", tag: "Spiritbloom R4", seq: ["Spiritbloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Dream Breath R1", seq: ["Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: []},
@@ -44,9 +45,9 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
-
+        */
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
-        //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
+        {cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]
 
     sequences.forEach(sequence => {
@@ -66,12 +67,12 @@ export const buildEvokerChartData = (stats) => {
             const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: newTalents, stats: activeStats }
 
             
-            const result = runAPLSuites(playerData, profile.apl, runCastSequence)
-            const oneIteration = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, preBuffs: sequence.preBuffs, reporting: true}, talents, profile.apl);
+            const result = runAPLSuites(playerData, profile, runCastSequence)
+            const oneIteration = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, reporting: true}, talents, profile.apl);
             
-            
+
             console.log(oneIteration);
-            console.log(result);
+            
             results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: result.advancedReport})
         }
         else {

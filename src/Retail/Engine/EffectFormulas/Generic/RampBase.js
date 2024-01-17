@@ -407,7 +407,11 @@ export const getCrit = (stats) => {
 
 export const addReport = (state, entry) => {
     if (state.settings.reporting) {
-        state.report.push(Math.round(100*state.t)/100 + " " + entry);
+        if (entry.includes("Cast")) {
+            state.report.push(Math.round(100*state.t)/100 + " " + entry);
+            
+        }
+        //state.report.push(Math.round(100*state.t)/100 + " " + entry);
     }
 }
 

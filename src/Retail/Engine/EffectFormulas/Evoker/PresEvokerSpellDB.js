@@ -214,7 +214,7 @@ export const EVOKERSPELLDB = {
                     buff.extensionCount = 1;
 
                     buff.expiration += (2 / getHaste(state.currentStats));
-                    console.log(buff);
+
                 }
             }
         }
@@ -392,7 +392,7 @@ export const evokerTalents = {
     essenceBurst: {points: 1, maxPoints: 1, icon: "ability_evoker_essenceburst", id: 359618, select: true, tier: 1}, // Living Flame has a 20% chance to make your next Essence ability free.
     rewind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1}, // Raid cooldown.
     spiritbloom: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1},
-    lifeGiversFlame: {points: 1, maxPoints: 2, icon: "item_sparkofragnoros", id: 371441, select: true, tier: 1}, // Fire Breath heals a nearby ally for 40/80% of damage done.
+    lifeGiversFlame: {points: 0, maxPoints: 2, icon: "item_sparkofragnoros", id: 371441, select: true, tier: 1}, // Fire Breath heals a nearby ally for 40/80% of damage done.
     timeDilation: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1}, // ST defensive
 
     // Tier 2
@@ -426,7 +426,7 @@ export const evokerTalents = {
     rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},
     //rescue: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
     innateMagic: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 375520, select: true, tier: 4}, // Essence regens 5% faster (2 charges).
-    enkindled: {points: 2, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
+    enkindled: {points: 0, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
     scarletAdaptation: {points: 0, maxPoints: 1, icon: "inv_bijou_red", id: 372469, select: true, tier: 4}, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.
     cauterizingFlame: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Big dispel that also heals.
     tipTheScales: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Your next empowered spell casts instantly. 2 min CD.

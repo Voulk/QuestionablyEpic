@@ -17,12 +17,12 @@ import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase"
 // If you're looking for an OR condition, add multiple entries. If these are used a lot then we could add a more natural way to do it. 
 const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
     //const spell = spellDB[spellName][0];
-    
+
     let aplReq = true;
     let miscReq = true;
     let cooldownReq = true;
     let secondaryResourceReq = true;
-    console.log(spellNames);
+    //console.log(spellNames);
     // Spell checks. Performed on each spell in the array. If any fail, return false. 
     spellNames.forEach(spellName => {
         const spell = spellDB[spellName][0];
@@ -35,8 +35,6 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
         }
         
     })
-
-
 
     
     if (conditions) {
@@ -88,7 +86,6 @@ export const genSpell = (state, spells, apl) => {
 
     //const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));  
     const usableSpells = JSON.parse(JSON.stringify(apl)).filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));
-
     /*
     if (state.holyPower >= 3) {
         spellName = "Light of Dawn";
@@ -110,7 +107,7 @@ export const genSpell = (state, spells, apl) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-    
+
     if (usableSpells.length > 0) { // This appears to be modifying APL. Work through that.
         if (typeof usableSpells[0].s === "string") return [usableSpells[0].s];
         else return usableSpells[0].s;

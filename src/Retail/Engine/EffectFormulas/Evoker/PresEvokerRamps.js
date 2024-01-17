@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
+import { getSqrt, removeBuff, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
 import { genSpell } from "../Generic/APLBase";
 
 
@@ -892,7 +892,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // Extra Settings
     if (settings.masteryEfficiency) EVOKERCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
 
-    const seq = [...sequence];
+    let seq = [...sequence];
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
@@ -973,7 +973,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // If instant and off GCD: spellFinish = state.t, nextSpell = state.t + 0.01
         // If casted: spellFinish = state.t + castTime, nextSpell = state.t + 0.01
 
-        if (seq.length > 0 && (state.t > nextSpell)) {
+        if ((state.t > nextSpell)) {
             // We don't have a spell queued. Queue one.
 
             // Update current stats for this combat tick.
@@ -983,11 +983,18 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
+
             if (seqType === "Manual") queuedSpell = seq.shift();
             // if its is "Auto", use genSpell to auto generate a cast sequence
             else {
-                // TODO: allow arrays too (queue first spell, add rest to seq).
-                queuedSpell = genSpell(state, evokerSpells, apl);
+                // If we're creating our sequence via APL then we'll 
+                if (seq.length > 0) queuedSpell = seq.shift();
+                else {
+                    seq = genSpell(state, evokerSpells, apl);
+                    queuedSpell = seq.shift();
+                    
+                }
+                
             }
 
             const fullSpell = evokerSpells[queuedSpell];
@@ -1013,13 +1020,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             const spellName = queuedSpell;
             const fullSpell = evokerSpells[queuedSpell];
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
-
+            addReport(state, `Casting ${spellName}`);
             spendSpellCost(fullSpell, state);
 
             runSpell(fullSpell, state, spellName, evokerSpells);
 
             // Check if Echo
-            // If we have the Echo buff active, and our current cast is Echo compatible (this will probably change through Alpha) then:
+            // If we have the Echo buff active, and our current cast is Echo compatible then:
             // - Recast the echo version of the spell (created at the start of runtime).
             // - The echo versions of spells are a weird mix of exception cases.
             if (checkBuffActive(state.activeBuffs, "Echo") &&  !(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
@@ -1034,6 +1041,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                     
                     const echoBuff = echoBuffs[j];
                     
+
                     const echoSpell = JSON.parse(JSON.stringify(evokerSpells[spellName + "(Echo)"]));
 
                     echoSpell.forEach(effect => {
@@ -1052,7 +1060,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 }
 
                 // Remove all of our Echo buffs.
-                state.activeBuffs =  state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
+
+                state.activeBuffs = removeBuff(state.activeBuffs, "Echo"); // state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
 
             }
 
