@@ -46,7 +46,7 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1;
+    const iterations = 200;
     let hps = [];
     let hpm = [];
     const simData = {

@@ -361,6 +361,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
+    
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
@@ -407,10 +408,8 @@ export const getCrit = (stats) => {
 
 export const addReport = (state, entry) => {
     if (state.settings.reporting) {
-        if (entry.includes("Cast")) {
-            state.report.push(Math.round(100*state.t)/100 + " " + entry);
+        state.report.push(Math.round(100*state.t)/100 + " " + entry);
             
-        }
         //state.report.push(Math.round(100*state.t)/100 + " " + entry);
     }
 }

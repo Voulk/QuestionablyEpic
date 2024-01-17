@@ -64,7 +64,7 @@ export const buildEvokerChartData = (stats) => {
                 newTalents[talentName].points = newTalents[talentName].maxPoints;
             })
 
-            const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: newTalents, stats: activeStats }
+            const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: newTalents, stats: profile.defaultStats }
 
             
             const result = runAPLSuites(playerData, profile, runCastSequence)

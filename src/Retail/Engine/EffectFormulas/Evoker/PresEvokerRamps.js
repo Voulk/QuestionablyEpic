@@ -110,7 +110,7 @@ const triggerEssenceBurst = (state) => {
         // If we already have an Exhilarating Burst active then we'll just refresh it's duration instead.
         // If not, we'll create a new buff.
         const activeBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Exhilarating Burst"});
-        const exhilBurst = EVOKERCONSTANTS.exhilBurstBuff;
+        const exhilBurst = JSON.parse(JSON.stringify(EVOKERCONSTANTS.exhilBurstBuff));
         if (activeBuff.length > 0) activeBuff.expiration = (state.t + exhilBurst.buffDuration);
         else {
             exhilBurst.expiration = (state.t + exhilBurst.buffDuration);

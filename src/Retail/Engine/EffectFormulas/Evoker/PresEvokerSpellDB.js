@@ -307,6 +307,7 @@ export const EVOKERSPELLDB = {
         empowered: true,
         school: "red",
         castTime: [1, 1.75, 2.5, 3.25],
+        cooldownData: {cooldown: 30, hasted: false}, 
         cost: 2.6,
         coeff: 1.45,
         targets: 5, // Note that multi-target DPS abilities might be capped by enemyTargets in EVOKERCONST.

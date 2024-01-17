@@ -25,8 +25,20 @@ export const blossomProfile = {
 
 ]}
 
+/*
+        intellect: 16000,
+        haste: 1600,
+        crit: 5800,
+        mastery: 6700,
+        versatility: 3000,
+        stamina: 44000,
+        critMult: 2,
+        */
+// 1k mastery -> 1k crit = -1.6k
+// 1k crit -> 1k mastery = +800 
+// 1k mast -> 1k vers = -2k
 export const reversionProfile = {
-    defaultStats: {
+    defaultStats: { // 144,197.241
         intellect: 16000,
         haste: 1600,
         crit: 5800,
@@ -46,7 +58,7 @@ export const reversionProfile = {
     {s: ["Echo"], conditions: [{type: "buff", buffName: "Essence Burst"}]}, 
     {s: ["Echo"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 2}]},
     {s: ["Reversion"], conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 6}] }, 
-    //{s: ["Fire Breath"]}, // Avoid consuming Echo buffs.
+    {s: ["Fire Breath"], conditions: [{type: "buffMissing", buffName: "Exhilarating Burst"}]}, // Avoid consuming Echo buffs.
     
     {s: ["Living Flame O"] },
     ]
