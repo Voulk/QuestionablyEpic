@@ -23,7 +23,8 @@ const EVOKERCONSTANTS = {
     auraDamageBuff: 1.15,
     goldenHourHealing: 50000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 'Disintegrate'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 'Disintegrate', 'Rewind'], // These are spells that do not consume or otherwise interact with our Echo buff.
+    stasisExceptionSpells: ['Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", "Rewind"], // Spells that can't be stored in Stasis. Mostly long cooldowns and offensive spells.
     lifebindSpells: ['Spiritbloom', 'Living Flame', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
     essenceBuff: {
         name: "EssenceGen",

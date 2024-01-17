@@ -40,12 +40,12 @@ export const reversionProfile = {
     {s: ["Dream Flight"], conditions: [{type: "afterTime", timer: 15}]},
     //{s: ["Stasis", "Temporal Anomaly", "Dream Breath", "Spiritbloom"], conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}, {type: "cooldownAvailable", spellName: "Spiritbloom"}, {type: "cooldownAvailable", spellName: "Temporal Anomaly"}]},
     {s: ["Verdant Embrace"], conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}, {type: "buffMissing", buffName: "Echo"}] }, // Combo with Verdant Embrace
-    {s: ["Dream Breath"], conditions: [{type: "buffMissing", buffName: "Echo"}] }, // Avoid consuming Echo buffs.
-    {s: ["Spiritbloom"], conditions: [{type: "buffMissing", buffName: "Echo"}] }, // Avoid consuming Echo buffs.
+    {s: ["Dream Breath"], conditions: [{type: "buffCountMaximum", buffName: "Echo", buffCount: 3}] }, // Avoid consuming Echo buffs.
+    {s: ["Spiritbloom"], conditions: [{type: "buffCountMaximum", buffName: "Echo", buffCount: 2}] }, // Avoid consuming Echo buffs.
     {s: ["Temporal Anomaly"]},
     {s: ["Echo"], conditions: [{type: "buff", buffName: "Essence Burst"}]}, 
     {s: ["Echo"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 2}]},
-    {s: ["Reversion"] }, 
+    {s: ["Reversion"], conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 6}] }, 
     //{s: ["Fire Breath"]}, // Avoid consuming Echo buffs.
     
     {s: ["Living Flame O"] },
