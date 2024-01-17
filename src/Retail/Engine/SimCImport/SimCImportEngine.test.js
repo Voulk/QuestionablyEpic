@@ -113,8 +113,8 @@ describe("Test Curve IDs", () => {
     });
 
     test("Timewalking Item", () => {
-        expect(processCurve(56365, 70)).toEqual(359)
-        
+        expect(processCurve(56365, 70)).toEqual(359);
+        expect(processCurve(69326, 70)).toEqual(411);
     });
     
     
