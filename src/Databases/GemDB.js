@@ -165,7 +165,7 @@ export const gemDB = [
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                       Crafty Queen's Ruby                                      */
+  /*                                       Crafty Queen's                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
     id: 192900,
@@ -174,7 +174,7 @@ export const gemDB = [
     rarity: "normal",
     ilvl: 385,
     name: {
-      en: "Crafty Queen's Ruby",
+      en: "Crafty Queen's",
       de: "Listiger Rubin der Königin",
       fr: "Rubis régalien ingénieux",
       ru: "Коварный рубин королевы",
@@ -190,7 +190,7 @@ export const gemDB = [
     rarity: "normal",
     ilvl: 400,
     name: {
-      en: "Crafty Queen's Ruby",
+      en: "Crafty Queen's",
       de: "Listiger Rubin der Königin",
       fr: "Rubis régalien ingénieux",
       ru: "Коварный рубин королевы",
@@ -206,7 +206,7 @@ export const gemDB = [
     rarity: "normal",
     ilvl: 415,
     name: {
-      en: "Crafty Queen's Ruby",
+      en: "Crafty Queen's",
       de: "Listiger Rubin der Königin",
       fr: "Rubis régalien ingénieux",
       ru: "Коварный рубин королевы",
@@ -1115,7 +1115,7 @@ export const gemDB = [
   /* ---------------------------------------------------------------------------------------------- */
   {
     id: 192917,
-    element: "Air Ruby",
+    element: "Air",
     quality: 1,
     rarity: "rare",
     ilvl: 385,
@@ -1131,7 +1131,7 @@ export const gemDB = [
   },
   {
     id: 192917,
-    element: "Air Ruby",
+    element: "Air",
     quality: 2,
     rarity: "rare",
     ilvl: 400,
@@ -1147,7 +1147,7 @@ export const gemDB = [
   },
   {
     id: 192919,
-    element: "Air Ruby",
+    element: "Air",
     quality: 3,
     rarity: "rare",
     ilvl: 415,
@@ -1167,7 +1167,7 @@ export const gemDB = [
   /* ---------------------------------------------------------------------------------------------- */
   {
     id: 192920,
-    element: "Earth Ruby",
+    element: "Earth",
     quality: 1,
     rarity: "rare",
     ilvl: 385,
@@ -1183,7 +1183,7 @@ export const gemDB = [
   },
   {
     id: 192921,
-    element: "Earth Ruby",
+    element: "Earth",
     quality: 2,
     rarity: "rare",
     ilvl: 400,
@@ -1199,7 +1199,7 @@ export const gemDB = [
   },
   {
     id: 192922,
-    element: "Earth Ruby",
+    element: "Earth",
     quality: 3,
     rarity: "rare",
     ilvl: 415,
@@ -1219,7 +1219,7 @@ export const gemDB = [
   /* ---------------------------------------------------------------------------------------------- */
   {
     id: 192923,
-    element: "Frost Ruby",
+    element: "Frost",
     quality: 1,
     rarity: "rare",
     ilvl: 385,
@@ -1235,7 +1235,7 @@ export const gemDB = [
   },
   {
     id: 192924,
-    element: "Frost Ruby",
+    element: "Frost",
     quality: 2,
     rarity: "rare",
     ilvl: 400,
@@ -1251,7 +1251,7 @@ export const gemDB = [
   },
   {
     id: 192923,
-    element: "Frost Ruby",
+    element: "Frost",
     quality: 3,
     rarity: "rare",
     ilvl: 415,
@@ -1271,7 +1271,7 @@ export const gemDB = [
   /* ---------------------------------------------------------------------------------------------- */
   {
     id: 192926,
-    element: "Fire Ruby",
+    element: "Fire",
     quality: 1,
     rarity: "rare",
     ilvl: 385,
@@ -1287,7 +1287,7 @@ export const gemDB = [
   },
   {
     id: 192927,
-    element: "Fire Ruby",
+    element: "Fire",
     quality: 2,
     rarity: "rare",
     ilvl: 400,
@@ -1303,7 +1303,7 @@ export const gemDB = [
   },
   {
     id: 192928,
-    element: "Fire Ruby",
+    element: "Fire",
     quality: 3,
     rarity: "rare",
     ilvl: 415,

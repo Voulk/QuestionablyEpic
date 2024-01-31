@@ -3,16 +3,16 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPM
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
-export const getEmbellishmentEffect = (effectName, player, contentType, itemLevel, setStats, settings) => {
+export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) => {
     let activeEffect;
     
     
     if (effectName.includes("Allied") && effectName !== "Allied Wristguard of Companionship") activeEffect = embellishmentData.find((effect) => effect.name === "Rallied to Victory");
     else activeEffect = embellishmentData.find((effect) => effect.name === effectName);
 
-    let additionalData = {contentType: contentType, setStats: setStats, settings: settings};
+    //let additionalData = {contentType: contentType, setStats: setStats, settings: settings};
     if (activeEffect !== undefined) {
-      return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
+      return activeEffect.runFunc(activeEffect.effects, additionalData.player, itemLevel, additionalData);
     }
     else {
       return {};
@@ -155,13 +155,32 @@ export const embellishmentData = [
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          // TODO Add top gear support for auto-generating gems.
-          const gems = getSetting(additionalData.settings, "lariatGems") || 3;
-          const duration = 5 + parseInt(gems);
+          
+          let gems = 0;
+          let lariatSecondary = "";
+          if ('gemCount' in additionalData.setVariables) {
+            // This is a Top Gear calculation and we'll use set variables instead of our defaults or settings.
+            // This is a 100% accurate Lariat calculation instead of the close estimate we use in lossier modules. 
+            gems = additionalData.setVariables.gemCount || 3;
+            const element = additionalData.setVariables.socketElement;
 
+            if (element === "Fire") lariatSecondary = "crit";
+            else if (element === "Frost") lariatSecondary = "versatility";
+            else if (element === "Earth") lariatSecondary = "mastery";
+            else lariatSecondary = "haste";
+
+          }
+          else {
+            // This is Quick Compare or Embellishment chart. We're happy to just use an estimate here since we have no knowledge of particular gems used.
+            // Note that this tends to be an overestimation.
+            gems = getSetting(additionalData.settings, "lariatGems") || 3;
+            lariatSecondary = player.getHighestStatWeight(additionalData.contentType);
+          }
+
+          const duration = 5 + parseInt(gems);
           const newData = {...data[0], duration: duration};
-          const playerBestSecondary = player.getHighestStatWeight(additionalData.contentType);
-          bonus_stats[playerBestSecondary] = runGenericPPMTrinket(newData, itemLevel);
+          bonus_stats[lariatSecondary] = runGenericPPMTrinket(newData, itemLevel);
+
           return bonus_stats;
         }
       },

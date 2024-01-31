@@ -6,7 +6,7 @@ import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/Effect
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns, getAllyStatsValue, getGems } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -603,6 +603,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     leech: castModel.baseStatWeights["leech"],
   };
 
+  // These are special variables the set includes. They are passed to effect formulas etc. This is a very flexible object.
+  let setVariables: {[key: string]: number | string | number[]} = {
+    setSockets: 0,
+    socketElement: "",
+    socketList: [],
+    fireMult: 0,
+  };
 
 
   // == Enchants and gems ==
@@ -637,9 +644,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else {
     enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
   }
-  
+  if (enchants["Gems"].length > 1) {
+    // At least two gems, grab element of second. If we don't, then we have no elemental gems and can ignore it. 
+    setVariables.socketElement = getGemElement(enchants["Gems"][1]);
+  }
 
   enchants["GemCount"] = builtSet.setSockets;
+  setVariables.setSockets = builtSet.setSockets;
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
@@ -674,18 +685,19 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
   else if (builtSet.checkHasItem(193494)) fireMult = 1;
 
-  userSettings.fireMult = fireMult || 0;
+  setVariables.fireMult = fireMult || 0;
 
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
     if (!useSeq || player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
-      effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
+      effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
     }
   }
 
   // Special 10.0.7 Ring
   // Ultimately this ring has mostly been outscaled now. We'll leave it in for completeness but it would only see use on very undergeared players.
+  // We pray they do not bring it back in Fated.
 
   // Check if ring in set.
   if (builtSet.checkHasItem(203460)) {

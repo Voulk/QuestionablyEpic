@@ -9,10 +9,10 @@ import { embellishmentData } from "./EmbellishmentData";
 // Examples include the legendary cloak, Azshara's Staff, most Crucible of Storms items and so forth.
 // Dragonflight opened with a few, but there will be more over the expansion.
 
-export function getGenericEffect(effectName, player, contentType, itemLevel = 0, setStats = {}, castModel = null, userSettings = {}) {
+export function getGenericEffect(effectName, itemLevel, additionalData) {
   let bonus_stats = {};
   
-  let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player};
+  //let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const effectsData = effectData.concat(embellishmentData/*, timewalkTrinketData*/)
@@ -20,7 +20,7 @@ export function getGenericEffect(effectName, player, contentType, itemLevel = 0,
 
 
   if (activeEffect !== undefined) {
-    return activeEffect.runFunc(activeEffect.effects, player, itemLevel, additionalData);
+    return activeEffect.runFunc(activeEffect.effects, additionalData.player, itemLevel, additionalData);
   }
   else {
     return {};
