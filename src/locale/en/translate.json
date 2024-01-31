@@ -363,6 +363,19 @@
         "chromaticEssenceAllies": {
           "title": "Ominous Chromatic Allies",
           "tooltip": "Chromatic Ominous can be calculated with all or no ally buffs."
+        },
+
+        "phialChoice": {
+          "title": "Phial",
+          "tooltip": "Pick which phial you want QE Live to use."
+        },
+        "runeChoice": {
+          "title": "Rune",
+          "tooltip": "Pick which rune you want QE Live to use."
+        },
+        "gemSettings": {
+          "title": "Gem Settings",
+          "tooltip": "Simple will use a strong default choice for your spec. Precise will run separate sets for each gem combination."
         }
 
         

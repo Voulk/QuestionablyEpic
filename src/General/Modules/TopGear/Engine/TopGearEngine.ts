@@ -2,7 +2,7 @@ import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
 import { STATPERONEPERCENT, BASESTAT, STATCONVERSION } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
-import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
@@ -165,7 +165,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     // Create sets for each gem type.
     const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (userSettings.gemSettings && userSettings.gemSettings.value === "Precise") { // Add setting here.
+    if (getSetting(userSettings, 'gemSettings') === "Precise") { // Add setting here.
       if (gemPoss.length > 0) {
         console.log(gemPoss);
         gemPoss.forEach(gem => {
@@ -608,8 +608,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
 
-  // == Flask / Phialss ==
-  if (player.spec === "Holy Paladin") {
+  // == Flask / Phials ==
+  if (getSetting(userSettings, "phialChoice") === "Corrupting Rage" || (getSetting(userSettings, "phialChoice") === "Automatic" && player.spec === "Holy Paladin")) {
     bonus_stats.crit = bonus_stats.crit + (1118 * 0.8);
     enchants.phial = "Iced Phial of Corrupting Rage"
   }
@@ -618,10 +618,20 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     enchants.phial = "Phial of Tepid Versatility"
   }
 
+  // == Runes == 
+  // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
+  if (getSetting(userSettings, "runeChoice") !== "Automatic") {
+    bonus_stats[getSetting(userSettings, "runeChoice")] = (bonus_stats[getSetting(userSettings, "runeChoice")] || 0) + 310;
+  }
+  else {
+    // Defaults to best stat that isn't versatility (as no rune exists for it).
+    const highestWeight = getHighestWeight(castModel, "versatility")
+    bonus_stats[highestWeight] = (bonus_stats[highestWeight] || 0) + 310;
+  }
+
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
-  if (userSettings.gemSettings && userSettings.gemSettings.value === "Precise") {
-    console.log("Running Precise Gems");
+  if (getSetting(userSettings, "gemSettings") === "Precise") {
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
   }
   else {
@@ -835,13 +845,13 @@ export function mergeBonusStats(stats: any) {
 }
 
 //
-function getHighestWeight(castModel : any) {
+function getHighestWeight(castModel : any, exclusion?: string): "crit" | "haste" | "mastery" | "versatility" {
   let max = "";
   let maxValue = 0;
   let weights = castModel.getBaseStatWeights();
 
   for (var stat in weights) {
-    if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+    if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat) && stat !== exclusion) {
       max = stat;
       maxValue = weights[stat];
     }

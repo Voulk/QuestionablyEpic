@@ -44,8 +44,10 @@ const initialState : RootState = {
     healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry" },
     lariatGems: { value: 4, options: [], category: "embellishments", type: "Entry" },
     chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector" },
-
+    
     gemSettings: {value: "Simple", options: ["Simple", "Precise"], category: "topGear", type: "selector"}, // TODO: Add a "Keep current".
+    runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector"},
+    phialChoice: {value: "Automatic", options: ["Automatic", "Corrupting Rage", "Tepid Versatility"], category: "topGear", type: "selector"},
     //chromaticEssenceAllies: { value: false, options: [true, false], category: "trinkets", type: "selector" },
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
