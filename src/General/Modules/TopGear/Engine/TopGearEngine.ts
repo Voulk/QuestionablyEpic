@@ -73,38 +73,49 @@ function autoSocketItems(itemList: Item[]) {
   return itemList;
 }
 
+// This just grab the ID for us so that we're less likely to make errors.
+function getGemID(bigStat: string, littleStat: string): number {
+  const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
+                                        && gem.stats[bigStat] === 70 && gem.stats[littleStat] === 33);
+  if (foundGem.length > 0) {
+    return foundGem[0].id;
+  }
+  else return 192945; // Default fallback. Report error.                               
+}
+
 function getGemOptions(spec: string, contentType: contentTypes) {
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
-    return [192919, 192922];
+    return [getGemID('crit', 'haste'), getGemID('crit', 'mastery'), getGemID('crit', 'versatility')];
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    return [192945, 192919];
+    return [getGemID('haste', 'crit')];
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    return [192922, 192958]
+    return [getGemID('mastery', 'crit'), getGemID('crit', 'mastery')]
   }
   else if (spec === "Restoration Druid") {
     // Haste / Mastery
-    return [192948];
+    return [getGemID('haste', 'mastery'), getGemID('haste', 'versatility')];
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    return [192958, 192964];
+    return [getGemID('mastery', 'crit'), getGemID('mastery', 'versatility'), getGemID('crit', 'mastery')] //192958, 192964, 192945];
   }
   else if (spec === "Mistweaver Monk") {
     // Haste / Crit
-    return [192945];
+    return [getGemID('haste', 'crit'), getGemID('haste', 'versatility'), getGemID('crit', 'versatility')];
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [192923];
+    return [getGemID('versatility', 'crit'), getGemID('crit', 'versatility')];
 
   }
   else {
     // Error
+    return [getGemID('haste', 'crit')]
   }
 
 }
@@ -154,8 +165,9 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     // Create sets for each gem type.
     const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (false) { // Add setting here.
+    if (userSettings.gemSettings && userSettings.gemSettings.value === "Precise") { // Add setting here.
       if (gemPoss.length > 0) {
+        console.log(gemPoss);
         gemPoss.forEach(gem => {
           resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
         });
@@ -607,10 +619,15 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Sockets
-  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
-
   // Check for Advanced gem setting and then run this instead of the above.
-  //enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+  if (userSettings.gemSettings && userSettings.gemSettings.value === "Precise") {
+    console.log("Running Precise Gems");
+    enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+  }
+  else {
+    enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+  }
+  
 
   enchants["GemCount"] = builtSet.setSockets;
 
