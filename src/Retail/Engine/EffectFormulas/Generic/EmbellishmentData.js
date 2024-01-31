@@ -158,16 +158,17 @@ export const embellishmentData = [
           
           let gems = 0;
           let lariatSecondary = "";
-          if ('gemCount' in additionalData.setVariables) {
+
+          if ('setSockets' in additionalData.setVariables) {
             // This is a Top Gear calculation and we'll use set variables instead of our defaults or settings.
             // This is a 100% accurate Lariat calculation instead of the close estimate we use in lossier modules. 
-            gems = additionalData.setVariables.gemCount || 3;
+            gems = additionalData.setVariables.setSockets || 3;
             const element = additionalData.setVariables.socketElement;
 
             if (element === "Fire") lariatSecondary = "crit";
             else if (element === "Frost") lariatSecondary = "versatility";
             else if (element === "Earth") lariatSecondary = "mastery";
-            else lariatSecondary = "haste";
+            else lariatSecondary = "haste"; // Air but we'll use it as a fall back too. 
 
           }
           else {
@@ -177,10 +178,10 @@ export const embellishmentData = [
             lariatSecondary = player.getHighestStatWeight(additionalData.contentType);
           }
 
-          const duration = 5 + parseInt(gems);
+          const duration = Math.min(13, 5 + parseInt(gems));
           const newData = {...data[0], duration: duration};
           bonus_stats[lariatSecondary] = runGenericPPMTrinket(newData, itemLevel);
-
+          console.log(JSON.stringify(bonus_stats));
           return bonus_stats;
         }
       },

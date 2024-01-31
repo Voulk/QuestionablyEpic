@@ -177,7 +177,7 @@ export function autoGenGems(spec: string, gemCount: number, bonus_stats: Stats, 
 // Returns the element of the gem. Used for Lariat and Idol trinkets. 
 export function getGemElement(id: number): string {
   const gem = gemDB.filter(gem => gem.id === id);
-  if (gem.length > 0) return 'element' in gem? gem[0].element : "Earth";
+  if (gem.length > 0) return 'element' in gem[0]? gem[0].element : "Earth";
   else return "";
 }
 
