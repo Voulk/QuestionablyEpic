@@ -159,7 +159,7 @@ export const embellishmentData = [
           let gems = 0;
           let lariatSecondary = "";
 
-          if ('setSockets' in additionalData.setVariables) {
+          if ('setVariables' in additionalData && 'setSockets' in additionalData.setVariables) {
             // This is a Top Gear calculation and we'll use set variables instead of our defaults or settings.
             // This is a 100% accurate Lariat calculation instead of the close estimate we use in lossier modules. 
             gems = additionalData.setVariables.setSockets || 3;

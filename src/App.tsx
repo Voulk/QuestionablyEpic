@@ -59,7 +59,7 @@ const App = () => {
     const [emailSnackState, setEmailSnackState] = useState<boolean>(false);
     const [emailSnackErrorState, setEmailSnackErrorState] = useState<boolean>(false);
 
-    const [isPTR, setIsPTR] = useState<boolean>(window.location.href.includes("localhost") || window.location.href.includes("ptr"));
+    const [isPTR, setIsPTR] = useState(false); // useState<boolean>(window.location.href.includes("localhost") || window.location.href.includes("ptr"));
 
 
     //setEmail = setEmail.bind(this);

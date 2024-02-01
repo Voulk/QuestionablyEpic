@@ -3,11 +3,11 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-      "-> Have a great day!",
   ]
 ;
-
+  if (messageOfTheDay.length === 0) return;
   return (
+    
     <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "red" }}>
       <Grid container spacing={1}>
         {messageOfTheDay.map((key, i) => (

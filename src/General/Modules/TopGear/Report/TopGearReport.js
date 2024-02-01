@@ -369,7 +369,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
            <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
-           <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" title="Insights - Set Notes" /> : ""}</Grid>                     
+           <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
           <Grid item style={{ height: 60 }} xs={12} />
 
         </Grid>
