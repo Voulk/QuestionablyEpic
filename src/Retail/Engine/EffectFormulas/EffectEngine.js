@@ -35,7 +35,7 @@ import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}, setVariables = {}) {
+export function getEffectValue(effect, player, castModel, contentType, itemLevel, userSettings, gameType = "Retail", setStats = {}, setVariables = {}) {
   let bonus_stats = {};
   if (!effect) return bonus_stats;
   
@@ -95,8 +95,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       }
     } 
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings, setStats, setVariables);
-      //testTrinkets(player, contentType); //TODO: Remove
+      bonus_stats = getTrinketEffect(effectName, itemLevel, additionalData);
     }
   }
   // -------------------------------------------
@@ -152,10 +151,3 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   return bonus_stats;
 }
 
-export function getConduitFormula() {
-
-}
-
-export function getCovAbility() {
-  
-}

@@ -181,7 +181,7 @@ export const embellishmentData = [
           const duration = Math.min(13, 5 + parseInt(gems));
           const newData = {...data[0], duration: duration};
           bonus_stats[lariatSecondary] = runGenericPPMTrinket(newData, itemLevel);
-          console.log(JSON.stringify(bonus_stats));
+
           return bonus_stats;
         }
       },
