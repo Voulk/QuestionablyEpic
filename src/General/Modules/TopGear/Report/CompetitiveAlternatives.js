@@ -55,7 +55,7 @@ function CompetitiveAlternatives(props) {
           <Grid item xs={12}>
             <Grid item container spacing={0}>
               {differentials.map((key, i) => (
-                <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={i}>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={4} key={i}>
                   <Paper
                     elevation={0}
                     variant="outlined"
@@ -92,8 +92,6 @@ function CompetitiveAlternatives(props) {
                             </Grid>
                           ));
                         })}
-                      </Grid>
-                      <Grid item container xs={10} spacing={1}>
                         {key.gems.map((gem, i) => {
                           let itemArray = [];
                           // 
@@ -134,7 +132,7 @@ function CompetitiveAlternatives(props) {
                               float: "right",
                             }}
                           >
-                            {roundTo(key.scoreDifference, 2) + "%"}
+                            {/*roundTo(key.scoreDifference, 2) + "%"*/}
                           </Typography>
                         </Grid>
                         <Grid item xs={12}>
@@ -147,10 +145,10 @@ function CompetitiveAlternatives(props) {
                               color: "#f20d0d",
                               whiteSpace: "nowrap",
                               float: "right",
-                              fontSize: 12,
+                              fontSize: 14,
                             }}
                           >
-                            {gameType === "Retail" ? key.rawDifference + " HPS" : ""}
+                            {gameType === "Retail" ? key.rawDifference + " HPS (" + Math.abs(roundTo(key.scoreDifference, 2)) + "%)" : ""}
                           </Typography>
                         </Grid>
                       </Grid>
