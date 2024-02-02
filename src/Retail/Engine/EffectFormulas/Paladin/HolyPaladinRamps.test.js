@@ -1,5 +1,5 @@
 import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
-import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps2";
+import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps";
 import { genStatWeights } from './HolyPaladinUtilities';
 import { buildRamp } from "./HolyPaladinRampGen";
 import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDB";

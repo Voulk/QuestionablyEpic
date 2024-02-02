@@ -1,4 +1,4 @@
-import { getGenericEffect, getDominationGemEffect } from "./Generic/GenericEffectFormulas";
+import { getGenericEffect  } from "./Generic/GenericEffectFormulas";
 import { getDruidSpecEffect } from "./Druid/DruidSpecEffects";
 import { getDiscPriestSpecEffect } from "./Priest/DiscPriestSpecEffects";
 import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
@@ -8,20 +8,16 @@ import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
-import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
 import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
 // Classic
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
-import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getDruidTierSet } from "Classic/Engine/EffectFormulas/Druid/DruidTierSets";
 import { getShamanTierSet } from "Classic/Engine/EffectFormulas/Shaman/ShamanTierSets";
 import { getPaladinTierSet } from "Classic/Engine/EffectFormulas/Paladin/PaladinTierSets";
 import { getPriestTierSet } from "Classic/Engine/EffectFormulas/Priest/PriestTierSets";
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
-
-import SPEC from "../../../General/Engine/SPECS";
 
 
 // Effect is a small "dictionary" with two key : value pairs.

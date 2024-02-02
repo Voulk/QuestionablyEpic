@@ -403,7 +403,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        let spell = value[0];
 
        if (!spell.targets) spell.targets = 1;
-       if (spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = 0;
+       if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = 0;
        if (spell.cost) spell.cost = spell.cost * DISCCONSTANTS.baseMana / 100;
 
        if (settings.includeOverheal === "No") {
