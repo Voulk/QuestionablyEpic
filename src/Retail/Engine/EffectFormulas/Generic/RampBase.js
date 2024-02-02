@@ -86,6 +86,33 @@ export const spellCleanup = (spell, state) => {
     // Check for any buffs that buffed the spell and remove them.
 }
 
+// TODO: Generalize secondary spell costs and then flatten this function. 
+export const spendSpellCost = (spell, state) => {
+    if ('essence' in spell[0]) {
+        if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
+            addReport(state, `Essence Burst consumed!`);
+            state.manaSpent += 0;
+        }
+        else {
+            // Essence buff is not active. Spend Essence and mana.
+            state.manaSpent += spell[0].cost;
+            state.essence -= spell[0].essence;
+
+            // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
+            // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
+            if (checkBuffActive(state.activeBuffs, "EssenceGen") === false) {
+                addBuff(state, EVOKERCONSTANTS.essenceBuff, "EssenceGen");
+            }
+        }
+    } 
+        
+    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else {
+        // No cost. Do nothing.
+    };    
+}
+
 
 export const addBuff = (state, spell, spellName) => {
     let newBuff = {name: spell.name || spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
@@ -122,6 +149,13 @@ export const addBuff = (state, spell, spellName) => {
         // If the target of the buff is relevant to its functionality. Generate one.
         if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
 
+        // Check if any buffs affect the spell. If they do we'll have to adjust the coefficient.
+        // Examples: Dream Breath (Call of Ysera).
+        if (state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName).length > 0) {
+            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName)[0];
+            spell.coeff = spell.coeff * spellAmp.value;
+        }
+
         // The spell will run a function on tick.
         if (spell.buffType === "function") {
             newBuff.attFunction = spell.runFunc;
@@ -131,9 +165,12 @@ export const addBuff = (state, spell, spellName) => {
         else {
             newBuff.attSpell = spell;
         }
-        // Run a function when the spell ticks. Examples: Lux Soil, Reversion.
+        // Run a function when the spell ticks. Examples: Lux Soil, Reversion. NYI.
         if (spell.tickData.onTick) newBuff.onTick = spell.tickData.onTick;
+        // The spell does something on application. Note that standard "heals on application" shouldn't be applied here. This is for special effects.
+        if (spell.onApplication) spell.onApplication(state, spell, newBuff);
         
+
         state.activeBuffs.push(newBuff)
 
     }
@@ -174,7 +211,7 @@ export const addBuff = (state, spell, spellName) => {
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
         
 
-        if (buffStacks === 0) {
+        if (buffStacks === 0 || !spell.canStack) {
             newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
             state.activeBuffs.push(newBuff);
             //console.log(newBuff);
@@ -289,6 +326,27 @@ export const isSpellAvailable = (state, spellDB, spellName) => {
     return (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
 }
 
+export const getSpellCooldown = (state, spellDB, spellName) => {
+    const spell = spellDB[spellName][0]
+    if (!spell || !('cooldownData' in spell)) return false;
+    return spell.cooldownData.activeCooldown - state.t;
+
+}
+
+export const getSpellCastTime = (spell, state, currentStats) => {
+    if ('castTime' in spell) {
+        let castTime = spell.castTime;
+
+        if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        // Replace with generic cast time decreases.
+        else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
+        else castTime = castTime / getHaste(currentStats);
+
+        return castTime;
+    }
+    else console.log("CAST TIME ERROR. Spell: " + spellName);
+}
+
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
  * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
@@ -303,6 +361,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
+    
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
@@ -344,12 +403,14 @@ export const getHaste = (stats) => {
 }
 
 export const getCrit = (stats) => {
-    return 1 + stats.crit / 180 / 100;
+    return 1.05 + stats.crit / 180 / 100;
 }
 
 export const addReport = (state, entry) => {
     if (state.settings.reporting) {
         state.report.push(Math.round(100*state.t)/100 + " " + entry);
+            
+        //state.report.push(Math.round(100*state.t)/100 + " " + entry);
     }
 }
 
