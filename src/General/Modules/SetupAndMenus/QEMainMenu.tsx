@@ -80,34 +80,35 @@ export default function QEMainMenu(props: Props) {
     type: string;
     order: number;
     localization: string;
+    glow: boolean;
   }
 
   const mainMenuOptions: MainMenuOption[] =
     gameType === "Retail"
       ? [
           // Gearing
-          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear" },
-          { route: "/upgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder" },
-          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis" },
-          { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis" },
-          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare" },
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
+          { route: "/upgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis", glow: false },
+          { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis", glow: false },
+          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare", glow: false },
           // Tools
-          { route: "/cooldownplanner", disabled: false, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner" },
-          { route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot"},
-          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis" },
-          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox" },
-          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile" },
+          { route: "/cooldownplanner", disabled: false, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
+          { route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot", glow: false },
+          { route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis", glow: false },
+          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile", glow: false },
         ]
       : [
           // Gearing
-          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear" },
-          { route: "/UpgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder" },
-          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare" },
-          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 3, localization: "MainMenu.TierSets" },
-          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 4, localization: "MainMenu.TrinketAnalysis" },
-          { route: "/sequenceGen", disabled: false, tooltip: "SequenceSandbox", type: "Tools", order: 2, localization: "MainMenu.SequenceSandbox" },
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: false },
+          { route: "/UpgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare", glow: false },
+          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 3, localization: "MainMenu.TierSets", glow: false },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 4, localization: "MainMenu.TrinketAnalysis", glow: false },
+          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare", glow: false },
           // Tools
-          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile" },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile", glow: false },
         ];
 
   const filterByType = (type: string) => mainMenuOptions.filter((item) => item.type === type);
@@ -133,6 +134,7 @@ export default function QEMainMenu(props: Props) {
               paddingLeft: "20px",
               textTransform: "none",
               color: !key.disabled && characterCount > 0 ? "#F2BF59" : "#9c9c9c",
+              border: key.glow ? "2px solid #F2BF59" : "",
             }}
             component={Link}
             to={key.route}
@@ -278,8 +280,8 @@ export default function QEMainMenu(props: Props) {
               <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
                 {t("MainMenu.Articles.Header")}
                 {/* TODO: Voulk to Add Help Text */}
-                {/* Help Text for Articles */}
-                {/* <Tooltip title={t("MainMenu.Articles.HelpText")} placement="top-start">
+        {/* Help Text for Articles */}
+        {/* <Tooltip title={t("MainMenu.Articles.HelpText")} placement="top-start">
                   <InfoOutlinedIcon style={{ color: "white", marginLeft: 4 }} fontSize="small" />
                 </Tooltip> }
               </Typography>

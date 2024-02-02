@@ -1,4 +1,5 @@
-import { checkBuffActive, isSpellAvailable } from "./RampBase";
+
+import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase";
 
 // Checks if a spell is a valid cast.
 // The following checks are made:
@@ -8,7 +9,8 @@ import { checkBuffActive, isSpellAvailable } from "./RampBase";
 // In general, spec specific checks are acceptable, but attempt to genericize it if possible and only use something spec specific if required. 
 // Additional APL conditions are welcome if you need them.
 
-// Current APL conditions:
+
+// Example APL conditions:
 // - Has a talent been taken?
 // - If a buff active? Or is it missing?
 // - Are we a certain amount of time into a fight?
@@ -32,19 +34,42 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     
     if (conditions) {
         conditions.forEach(condition => {
+            // Talent related conditions
+
             if (condition.type === "talent" && state.talents[conditions.talentName].points === 0) aplReq = false;
             else if (condition.type === "talentMissing") {
                 if (typeof state.talents[condition.talentNot] == "undefined") aplReq = false;
                 else if (state.talents[condition.talentNot].points > 0) aplReq = false;
             }
-            else if (condition.type === "resource" && condition.resourceName === "Holy Power") aplReq = state.holyPower >= condition.holyPower;
-            else if (condition.type === "resource" && condition.resourceName === "Essence") aplReq = state.essence >= condition.resourceCost;
+
+            // Resource related conditions
+            // Returns yes if we have X or more of resource Y. 
+            // Eventually we'd like to refactor secondary resources so that they aren't just hanging out in state. 
+            // Notably NO mana support currently as mana is tracked as ManaSpent rather than a fluid resource. 
+            else if (condition.type === "resource") aplReq = (condition.resourceName in state && state[condition.resourceName] >= condition.resourceCost);
+
+            // Buff related conditions
+            // type: buff. Check if at least one instance of buff is active.
+            // type: buffMissing. Check if buff is not active.
+            // type: buffStacks. Returns yes if buff is active and has at least X stacks.
             else if (condition.type ==="buff") aplReq = checkBuffActive(state.activeBuffs, condition.buffName);
             else if (condition.type ==="buffMissing") aplReq = !checkBuffActive(state.activeBuffs, condition.buffName);
             else if (condition.type === "buffStacks") aplReq = getBuffStacks(state.activeBuffs, condition.buffName) >= condition.stacks;
+            else if (condition.type === "buffCountMinimum") aplReq = state.activeBuffs.filter(buff => buff.name === condition.buffName).length >= condition.buffCount;
+
+            // Cooldown related conditions
+            // type: cooldownAvailable. Returns yes if spell is available to cast.
+            // type: cooldownClose. Returns yes if spell is close to being available to cast.
+            else if (condition.type === "cooldownAvailable") aplReq = isSpellAvailable(state, spellDB, condition.spellName);
+            else if (condition.type === "cooldownClose") aplReq = getSpellCooldown(state, spellDB, condition.spellName) <= condition.nearTime;
+
+            // Time related conditions
+            // type: afterTime. Returns yes if a certain amount of time has elapsed. 
+            // type: beforeTime. Returns yes if a certain amount of time has not elapsed. Note that pre-simulation effects need to be handled differently.
+            // type: everyX. Returns yes every x seconds. NYI. 
             else if (condition.type === "afterTime") aplReq = state.t >= condition.timer;
             else if (condition.type === "beforeTime") aplReq = state.t <= condition.timer;
-            else if (condition.type === "cooldownAvailable") aplReq = isSpellAvailable(state, spellDB, condition.spellName);
+            else if (condition.type === "EveryX") aplReq = Math.floor(state.t * 100) % condition.timer === 0;
         })
     } 
 

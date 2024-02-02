@@ -3,7 +3,7 @@ import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
-import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreItem, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
+import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/BCChart";
 import HelpText from "../SetupAndMenus/HelpText";
@@ -16,7 +16,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/TrinketDescriptions";
+import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
@@ -61,13 +61,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
   
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
-  item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
+  item.softScore = scoreTrinket(item, player, contentType, "Retail", playerSettings);
 
   return item.softScore;
 };
@@ -155,7 +156,7 @@ export default function TrinketAnalysis(props) {
   /* ---------------------------------------------------------------------------------------------- */
   const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
-    const shadowlandsRaids = [
+    const raidSources = [
       //1190, // Castle Nathria
       //1193, // Sanctum of Domination
       //1195, // Sepulcher
@@ -163,7 +164,7 @@ export default function TrinketAnalysis(props) {
       1208, // Aberrus
       1207, // Amirdrassil
     ];
-    const shadowlandsDungeons = [
+    const dungeonSources = [
       -1, // General Dungeons
       1182, // Necrotic Wake,
       1183, // Plaguefall,
@@ -193,12 +194,23 @@ export default function TrinketAnalysis(props) {
       1001, // Freehold
       1022, // Underrot
 
+      968, // Atal'Dazar
+      556, // Everbloom
+      65, // Throne of the Tides
+      1657, // Darkheart Thicket
+      1021, // Waycrest Manor
+      740, // Blackrook Hold
+
       1209, // Dawn
+      -56, // Dawn 1
+      -55, // Dawn 2
 
       // S3 dungeons.
     ];
-    const legionTimewalking = [];
-    const shadowlandsTheRest = [
+    const legionTimewalking = [
+
+    ];
+    const otherSources = [
       1192, // World Bosses
       1205, // DF World Bosses
       -18, // PVP
@@ -215,9 +227,9 @@ export default function TrinketAnalysis(props) {
         return (
           (item["sources"] === undefined && sources.includes("The Rest")) ||
           (item["sources"] &&
-            ((shadowlandsTheRest.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
-              (shadowlandsRaids.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-              (shadowlandsDungeons.includes(item["sources"][0]["instanceId"]) && !legionTimewalking.includes(item["sources"][0]["encounterId"]) && sources.includes("Dungeons"))))
+            ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
+              (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });
     }
@@ -315,7 +327,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Blizzard continue to tune and bugfix trinkets." color="firebrick" />
+              <InformationBox information="The list below is mostly focused on healing throughput. For M+ you might consider tech trinkets or DPS trinkets instead at high levels." color="firebrick" />
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

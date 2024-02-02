@@ -16,6 +16,40 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2.5",
+    update: 11,
+    date: "January 17",
+    changes: [ 
+      "Minor general 10.2.5 updates.",
+      "Updated Evoker gearing after the 10.2.5 Reversion buff.",
+      "Bugfix: Some timewalking items weren't importing correctly. They should work fine now."
+    ]},
+  {
+    version: "10.2",
+    update: 10,
+    date: "January 10",
+    changes: [ 
+      "Ulduar Timewalking: Added formulas for all trinkets.",
+      "The trinket graph filter buttons have been updated.",
+      "Added Verdant Tether to the Embellishment Deep Dive."
+    ]},
+  {
+    version: "10.2",
+    update: 9,
+    date: "December 29",
+    changes: [ 
+      "Mistweaver: Added Tear of Morning playstyle.",
+    ]},
+  {
+    version: "10.2",
+    update: 8,
+    date: "December 26",
+    changes: [ 
+      "Timewalking: Added Skull of Gul'dan.",
+      "Timewalking: Added some missing Legion timewalking items.",
+      "Goldsteel Sabatons will now show in the Upgrade Finder for Paladin."
+    ]},
+  {
     version: "10.2",
     update: 7,
     date: "December 2",

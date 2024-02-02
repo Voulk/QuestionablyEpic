@@ -65,7 +65,7 @@ interface PlayerSettings {
     healingDartsOverheal: { value: number; options: any[]; category: string; type: string };
     lariatGems: { value: number; options: any[]; category: string; type: string };
     chromaticEssenceBuff: { value: string; options: string[]; category: string; type: string };
-    chromaticEssenceAllies: { value: boolean; options: boolean[]; category: string; type: string };
+    //chromaticEssenceAllies: { value: boolean; options: boolean[]; category: string; type: string };
   }
 
 declare interface effectData  {
@@ -81,6 +81,7 @@ declare interface effectData  {
     cooldown?: number;
     ticks?: number; // The number of ticks a DoT or HoT effect might have.
     targets?: number; // The number of targets affected by the damage or healing effect.
+    stacks?: number; // The number of stacks the buff can stack up to.
 }
 
 // TODO: Split effectData into multiple interfaces

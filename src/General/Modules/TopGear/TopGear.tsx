@@ -336,9 +336,9 @@ export default function TopGear(props: any) {
     handleClickDelete();
   };
 
-  const catalyzeItem = (unique: string) => {
+  const catalyzeItem = (item: Item) => {
     let player = props.player;
-    player.catalyzeItem(unique);
+    player.catalyzeItem(item);
     setItemList([...player.getActiveItems(activeSlot)]);
     // handleClickDelete();
   };
@@ -566,7 +566,7 @@ export default function TopGear(props: any) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
+                    <MiniItemCard key={index} item={item} itemKey={index} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} /*primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)}*/ />
                   ))}
                 </Grid>
               </Grid>

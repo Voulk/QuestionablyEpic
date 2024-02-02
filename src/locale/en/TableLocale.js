@@ -9,7 +9,7 @@ export const localizationEN = {
     bulkEditApprove: "Save all changes",
     bulkEditCancel: "Discard all changes",
     filterRow: {
-      filterTooltip: "Filter",
+      filterTooltip: "Drop Filter",
     },
     editRow: {
       saveTooltip: "Save",
