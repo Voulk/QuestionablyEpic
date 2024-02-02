@@ -1,6 +1,8 @@
 import Player from './Player';
 import CastModel from "./CastModel";
 
+// @deprecated
+// Just use Player now with Classic hooks instead of a different class.
 class ClassicPlayer extends Player {
     constructor(playerName, specName, charID, region, realm, race, statWeights = "default") {
         super(playerName, specName, charID, region, realm, race, statWeights, "Classic")

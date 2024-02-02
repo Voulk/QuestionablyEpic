@@ -282,6 +282,13 @@ export const getBuffValue = (buffs, buffName) => {
     return buff.value || 0;
 }
 
+// Currently checks cooldown. Does not check for other availability but could be expanded to include. 
+export const isSpellAvailable = (state, spellDB, spellName) => {
+    const spell = spellDB[spellName][0]
+    if (!spell || !('cooldownData' in spell)) return false;
+    return (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
+}
+
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
  * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
@@ -400,4 +407,5 @@ const deepCopyFunction = (inObject) => {
   
     return outObject;
   };
+
 

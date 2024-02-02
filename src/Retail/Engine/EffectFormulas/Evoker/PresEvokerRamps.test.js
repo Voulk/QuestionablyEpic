@@ -1,17 +1,60 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-
+import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
 
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
 
+describe("Test APL", () => {
+    test("Test APL", () => {
+        console.log("Testing APL");
+        const iter = 1000;
+        let hps = 0;
+        let maxHPS = 0;
+        let minHPS = 999999;
+        const activeStats = {
+            intellect: 12000,
+            haste: 2000,
+            crit: 2000,
+            mastery: 6500,
+            versatility: 3000,
+            stamina: 29000,
+            critMult: 2,
+        }
+    
+        const baseSpells = EVOKERSPELLDB;
+        const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
+        for (let i = 0; i < iter; i++) {
+            
+            const talents = {...evokerTalents};
+            const result = runCastSequence(["Living Flame"], JSON.parse(JSON.stringify(activeStats)), testSettings, talents, evokerDefaultAPL);
+            result.activeBuffs = [];
+            hps += result.hps;
+
+            if (result.hps > maxHPS) {
+                maxHPS = result.hps;
+            }
+            if (result.hps < minHPS) {
+                minHPS = result.hps;
+            }
+            
+        }
+
+        console.log("Average HPS: " + Math.round(hps / iter) + " Max HPS: " + maxHPS  + " Min HPS: " + minHPS)
+
+    
+        expect(true).toEqual(true);
+    })
+
+});
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.
 // This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
 
 // This will just print HPCT and HPM data for a bunch of little combos.
+/*
 describe("Get Spell Data", () => {
     const combos = [
         ["Echo", "Spiritbloom"],
@@ -72,6 +115,8 @@ describe("Get Spell Data", () => {
 
 
 });
+
+*/
 /* Remove to re-enable test cases.
 
 

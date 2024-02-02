@@ -1,3 +1,4 @@
+
 import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase";
 
 // Checks if a spell is a valid cast.
@@ -7,6 +8,7 @@ import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase"
 // Are the APL conditions met? 
 // In general, spec specific checks are acceptable, but attempt to genericize it if possible and only use something spec specific if required. 
 // Additional APL conditions are welcome if you need them.
+
 
 // Example APL conditions:
 // - Has a talent been taken?
@@ -32,8 +34,8 @@ const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
     
     if (conditions) {
         conditions.forEach(condition => {
-
             // Talent related conditions
+
             if (condition.type === "talent" && state.talents[conditions.talentName].points === 0) aplReq = false;
             else if (condition.type === "talentMissing") {
                 if (typeof state.talents[condition.talentNot] == "undefined") aplReq = false;

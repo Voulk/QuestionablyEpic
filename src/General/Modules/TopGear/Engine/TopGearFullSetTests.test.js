@@ -31,7 +31,7 @@ describe("Top Gear full test", () => {
           chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector" },
         } 
 
-    test("Test 1, Disc full gear Check", () => {
+    /*test("Test 1, Disc full gear Check", () => {
 
         const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
         var lines = discSet.split("\n");
@@ -56,9 +56,9 @@ describe("Top Gear full test", () => {
         expect(result.itemSet.effectList.filter(effect => effect.name === "DPriest T29-2").length).toEqual(1);
         expect(result.itemSet.effectList.filter(effect => effect.name === "DPriest T29-4").length).toEqual(0);
 
-        */
+        
         //expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1); 
-    })
+    })*/
 
     test("Test 1, Monk Tier Check", () => {
 

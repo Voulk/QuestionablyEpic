@@ -67,7 +67,7 @@ export const EVOKERSPELLDB = {
         onGCD: true,
         cost: 3.0,
         coeff: 4.18,
-        cooldown: 18,
+        cooldownData: {cooldown: 18, hasted: true}, 
         expectedOverheal: 0.15,
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -80,7 +80,7 @@ export const EVOKERSPELLDB = {
         castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
         cost: 3.8,
-        cooldown: 30,
+        cooldownData: {cooldown: 30, hasted: false}, 
         coeff: 5.085,
         targets: [1, 2, 3, 4], // 
         expectedOverheal: 0.3,
@@ -95,7 +95,7 @@ export const EVOKERSPELLDB = {
         empowered: true,
         cost: 4.5,
         coeff: 0.768,
-        cooldown: 30,
+        cooldownData: {cooldown: 30, hasted: false}, 
         expectedOverheal: 0.3, // 0.25
         targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
@@ -175,12 +175,12 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "function",
         school: "bronze",
-        tickRate: 2,
         tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
         coeff: 0.57 * 0.67,
         cost: 2.0,
         statMods: {'crit': 0.15},
+        cooldownData: {cooldown: 8, hasted: true}, 
         buffDuration: 12,
         runFunc: function (state, buff) {
             const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
@@ -193,17 +193,17 @@ export const EVOKERSPELLDB = {
 
     }],
     "Temporal Anomaly": [
-    { 
+    { // 
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
         name: "Temporal Anomaly",
         type: "heal",
-        buffType: "function",
         school: "bronze",
         castTime: 1.5,
         coeff: 1.4,
         cost: 7.5,
         targets: 15,
         expectedOverheal: 0.05,
+        cooldownData: {cooldown: 15, hasted: true}, 
         tags: ['sqrt'],
         sqrtMin: 5,
         secondaries: ['vers', 'mastery']
@@ -227,11 +227,12 @@ export const EVOKERSPELLDB = {
     }],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
+        // While it's included for completeness, you really shouldn't use this. 
         spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze", cat: "cooldown"},
         type: "rest",
         school: "bronze",
         castTime: 1.5,
-        cooldown: 15,
+        cooldownData: {cooldown: 15, hasted: false}, 
         cost: 4.0,
     }],
     "Dream Flight": [{
@@ -241,7 +242,7 @@ export const EVOKERSPELLDB = {
         type: "heal",
         school: "green",
         castTime: 3, // TODO: This one has variance based on how far we travel. 
-        cooldown: 120,
+        cooldownData: {cooldown: 120, hasted: false}, 
         cost: 4.0,
         coeff: 4,
         targets: 10, // Can hit everyone. Likely to be retuned around sqrt scaling.
@@ -333,6 +334,7 @@ export const EVOKERSPELLDB = {
         flatHeal: 0,
         targets: 1,
         expectedOverheal: 0.4,
+        cooldownData: {cooldown: 180, hasted: false}, 
         secondaries: [],
     },
     {
