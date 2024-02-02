@@ -10,6 +10,17 @@ declare type Stats = {
     dps?: number;
     mana?: number;
     allyStats?: number;
+} |
+{   // Classic
+    [key: string]: number;
+    intellect?: number;
+    spellpower?: number;
+    haste?: number;
+    crit?: number;
+    mastery?: number;
+    spirit?: number;
+    hps?: number;
+    mana?: number;
 }
 
 declare type ItemEffect = {

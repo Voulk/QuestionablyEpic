@@ -1,5 +1,5 @@
 import { addBuff, getHaste, getHealth, getBuffStacks, removeBuff, checkBuffActive } from "../Generic/RampBase";
-import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps2";
+import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps";
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 

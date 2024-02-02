@@ -171,7 +171,7 @@ const apl = [
 
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
-        if (spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
+        if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * PALADINCONSTANTS.baseMana / 100;
 
         if (settings.includeOverheal === "No") {
@@ -660,7 +660,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
 
             if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
-            if (spell.cooldowndata.cooldown && !bonusSpell) {
+            if ('cooldownData' in spell && spell.cooldownData.cooldown && !bonusSpell) {
                 // Handle charges by changing the base cooldown value
                 const newCooldownBase = ((spell.cooldownData.charges > 1 && spell.cooldownData.activeCooldown > state.t) ? spell.cooldownData.activeCooldown : state.t)
                 //const newCooldownBase = state.t;

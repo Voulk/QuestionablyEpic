@@ -8,6 +8,7 @@ import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase"
 // In general, spec specific checks are acceptable, but attempt to genericize it if possible and only use something spec specific if required. 
 // Additional APL conditions are welcome if you need them.
 
+
 // Example APL conditions:
 // - Has a talent been taken?
 // - If a buff active? Or is it missing?
