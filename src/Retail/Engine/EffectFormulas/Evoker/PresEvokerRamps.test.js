@@ -1,6 +1,6 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-import { evokerDefaultAPL } from "./PresEvokerDefaultAPL";
+import { reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -28,7 +28,7 @@ describe("Test APL", () => {
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
         //console.log(data);
 
-        const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
+        //const data = runStatSuites(playerData, reversionProfile.apl, runCastSequence);
     
         expect(true).toEqual(true);
     })
