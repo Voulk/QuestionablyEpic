@@ -48,19 +48,12 @@ export default function ItemCard(props) {
   const item = props.item;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const isLegendary = false; // "effect" in item && item.effect.type === "spec legendary";
-  const itemDifferential = props.itemDifferential;
-  const hasDom = false; // item.isTierPiece();
+  const isLegendary = false; // Legendaries are currently so rare that we can just ID them when necessary. 
+  const itemDifferential = item.score;
+  const isTierPiece = false; // item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  console.log(props.item);
-  /*
-  const itemQuality = (itemLevel) => {
-    if (isLegendary) return "#ff8000";
-    else if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
-  }; */
+
   const itemQuality = "#a73fee" //item.getQualityColor();
 
   const upgradeColor = (num) => {
@@ -129,7 +122,7 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
-      <Card className={itemDifferential == 0 ? classes.downgrade : hasDom ? classes.dom : classes.root} variant="outlined">
+      <Card className={itemDifferential == 0 ? classes.downgrade : isTierPiece ? classes.dom : classes.root} variant="outlined">
         <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
           <Grid item xs="auto">
             <CardContent

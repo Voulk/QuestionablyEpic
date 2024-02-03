@@ -66,14 +66,21 @@ export default function RaidGearContainer(props) {
     return raidName;
   };
 
+  const getNumUpgrades = (items, raidID, bossID, difficultyID) => {
+    return items.filter((item) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
+    /*
+    [...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)]
+                                    .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
+                                    .filter((item) => item !== 0).length */
+  }
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                           Shadowlands                                          */
+  /*                                           Retail                                          */
   /* ---------------------------------------------------------------------------------------------- */
 
   const contentGenerator = () => {
     // Raid Panel
-    const shadowlandsList = [1207];
+    const raidList = [1207];
     const difficulties = props.playerSettings.raid;
 
     
@@ -113,7 +120,7 @@ export default function RaidGearContainer(props) {
               </AppBar>
             </Grid>
             <Grid item xs={12}>
-              {shadowlandsList.map((raidID, index) => (
+              {raidList.map((raidID, index) => (
                 <UFTabPanel key={"panel" + index} value={tabvalue} index={index}>
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
@@ -136,13 +143,9 @@ export default function RaidGearContainer(props) {
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                                   {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
-                                  {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)]
-                                    .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                    .filter((item) => item !== 0).length +
+                                  {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                     (secondDifficulty !== -1
-                                      ? [...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", secondDifficulty)]
-                                          .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                          .filter((item) => item !== 0).length
+                                      ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
                                       : 0)}{" "}
                                   Upgrades
                                 </Typography>
@@ -163,9 +166,7 @@ export default function RaidGearContainer(props) {
                                         <div style={{ marginLeft: 8 }}>
                                           {getDifficultyName(firstDifficulty)} -{" "}
                                           {
-                                            [...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)]
-                                              .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                              .filter((item) => item !== 0).length
+                                            getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)
                                           }{" "}
                                           Upgrades
                                         </div>
@@ -192,9 +193,7 @@ export default function RaidGearContainer(props) {
                                           <div style={{ marginLeft: 8 }}>
                                             {getDifficultyName(secondDifficulty)} -{" "}
                                             {
-                                              [...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", secondDifficulty)]
-                                                .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                                .filter((item) => item !== 0).length
+                                              getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
                                             }{" "}
                                             Upgrades
                                           </div>
