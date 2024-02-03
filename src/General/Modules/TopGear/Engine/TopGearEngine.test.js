@@ -155,7 +155,7 @@ describe("Top Gear full test", () => {
         var lines = drakebreakersPaladin.split("\n");
 
         for (var line = 0; line < lines.length; line++) {
-            const item = processItem(lines[line], player, "Raid", "Regular")
+            const item = processItem(lines[line], player, "Raid", "Regular", {}, false)
             if (item) player.addActiveItem(item);
 
         }
