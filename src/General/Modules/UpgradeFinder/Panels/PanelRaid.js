@@ -6,7 +6,7 @@ import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
@@ -66,13 +66,7 @@ export default function RaidGearContainer(props) {
     return raidName;
   };
 
-  const getNumUpgrades = (items, raidID, bossID, difficultyID) => {
-    return items.filter((item) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
-    /*
-    [...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)]
-                                    .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                    .filter((item) => item !== 0).length */
-  }
+
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Retail                                          */
@@ -80,10 +74,9 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const raidList = [1207];
+    const raidList = [1207]; // This is an array because there are sometimes multiple raids at a time (fated etc);
     const difficulties = props.playerSettings.raid;
 
-    
     difficulties.sort().reverse();
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;

@@ -461,6 +461,11 @@ export function getDifferentialByID(diffList: any, id: number, level: number) {
   else return -99;
 }
 
+// Returns the number of upgrades (score > 0) for a given section.
+export const getNumUpgrades = (items: any[], raidID : number, bossID : number, difficultyID : number) => {
+  return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
+}
+
 // Returns true or false based on whether an ID exists in our item database.
 // Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
 // Importing these would be a waste of the user interface.

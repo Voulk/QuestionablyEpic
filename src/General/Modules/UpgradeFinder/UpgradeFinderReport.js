@@ -178,7 +178,7 @@ export default function UpgradeFinderReport(props) {
           </Grid>
               
           {/* Mythic Plus */}
-          {/*<Grid item xs={12}>
+          <Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={1}>
               <div className={classes.panel}>
                 <Grid container>
@@ -192,7 +192,7 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>*/}
+          </Grid>
 
           {/* PVP 
           <Grid item xs={12}>
