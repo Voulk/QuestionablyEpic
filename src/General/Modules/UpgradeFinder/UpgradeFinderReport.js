@@ -53,9 +53,7 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
     //.catch(err => { throw err });
 }
 
-const handleTabChange = (event, newValue) => {
-  setTabValue(newValue);
-};
+
 
 
 // Our short report only contains differential information which means we have to set up a few things ourselves.
@@ -79,6 +77,9 @@ export default function UpgradeFinderReport(props) {
   const [result, setResult] = useState(props.result);
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
   //const result = props.itemSelection;
   //const result = props.result;
 
@@ -104,7 +105,7 @@ export default function UpgradeFinderReport(props) {
 
     if (result !== null/* && checkResult(result)*/) {
 
-      upgradeFinderResultsRetail(result, t, result.player, tabValue, setTabValue, classes);
+      upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -114,12 +115,12 @@ export default function UpgradeFinderReport(props) {
     }, []);
 
     if (result !== null) {
-      return upgradeFinderResultsRetail(result, t, result.player, tabValue, setTabValue, classes);
+      return upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes);
     }
   
   } //
 
-  function upgradeFinderResultsRetail(result, t, player, tabValue, setTabValue, classes) {
+  function upgradeFinderResultsRetail(result, t, player, tabValue, handleTabChange, classes) {
     const ufSettings = result.ufSettings;
     //const report = props.report;
     
@@ -228,7 +229,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
-                  <SlotsContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                  <SlotsContainer spec={result.spec} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -337,7 +338,9 @@ export default function UpgradeFinderReport(props) {
             </UFTabPanel>
           </Grid>
         </Grid>
+        <div style={{ height: 400 }} />
       </div>
+      
     );
   };
 

@@ -36,6 +36,7 @@ export default function SlotsContainer(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemDifferentials = props.itemDifferentials;
+  const spec = props.spec;
 
   itemDifferentials.sort((a, b) => (a.score < b.score ? 1 : -1));
 
@@ -82,7 +83,7 @@ export default function SlotsContainer(props) {
     return slotList.map((key, i) => (
       <UFAccordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+          <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
             {[...filterItemListBySlot(itemDifferentials, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
