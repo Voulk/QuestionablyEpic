@@ -9,32 +9,32 @@ export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
   const [report, setReport] = React.useState(null);
   const [showReport, setShowReport] = React.useState(false);
-  const [playerSettings, setPlayerSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
 
   const setRaidDifficulty = (difficulty) => {
-    let currDiff = playerSettings.raid;
+    let currDiff = ufSettings.raid;
     let difficultyIndex = currDiff.indexOf(difficulty);
     if (difficultyIndex > -1) currDiff.splice(difficultyIndex, 1);
     else {
       currDiff.push(difficulty);
       if (currDiff.length > 2) currDiff.splice(0, 1);
   }
-    setPlayerSettings({ ...playerSettings, raid: currDiff });
+    setUFSettings({ ...ufSettings, raid: currDiff });
   };
 
   const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= 15 && difficulty >= 0) setPlayerSettings({ ...playerSettings, dungeon: difficulty });
+    if (difficulty <= 15 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {
     if (difficulty === "Heroic") {
-      setPlayerSettings({ ...playerSettings, dungeon: 1 });
+      setUFSettings({ ...ufSettings, dungeon: 1 });
     } else {
-      setPlayerSettings({ ...playerSettings, dungeon: 0 });
+      setUFSettings({ ...ufSettings, dungeon: 0 });
     }
   };
 
@@ -77,17 +77,17 @@ export function UpgradeFinder(props) {
         break;
     }
 
-    if (newRank <= 8 && newRank >= 0) setPlayerSettings({ ...playerSettings, pvp: newRank });
+    if (newRank <= 8 && newRank >= 0) setUFSettings({ ...ufSettings, pvp: newRank });
   };
 
   const player = props.player;
   const allChars = props.allChars;
   const simcSnack = props.simcSnack;
-  //const playerSettings = { raid: [0,1], dungeon: 15, pvp: 4 };
+  //const ufSettings = { raid: [0,1], dungeon: 15, pvp: 4 };
 
   return showReport ? (
     <div>
-      <UpgradeFinderReport player={player} report={report} itemSelection={itemSelection} playerSettings={playerSettings} setShowReport={setShowReport} />
+      <UpgradeFinderReport player={player} report={report} itemSelection={itemSelection} ufSettings={ufSettings} setShowReport={setShowReport} />
       <div style={{ marginBottom: 100 }} />
     </div>
   ) : (
@@ -97,7 +97,7 @@ export function UpgradeFinder(props) {
       allChars={allChars}
       setItemSelection={setItemSelection}
       setShowReport={setShowReport}
-      playerSettings={playerSettings}
+      ufSettings={ufSettings}
       setRaidDifficulty={setRaidDifficulty}
       setDungeonDifficulty={setDungeonDifficulty}
       setPVPDifficulty={setPVPDifficulty}

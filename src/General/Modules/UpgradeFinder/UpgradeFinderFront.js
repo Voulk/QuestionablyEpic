@@ -94,7 +94,7 @@ const PvPRating = [
 ];
 
 
-
+// playerSettings = Upgrade Finder specific settings. userSettings = playerSettings everywhere else.
 function shortenReport(player, contentType, result, ufSettings, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
@@ -118,11 +118,30 @@ const sendReport = (shortReport) => {
 };
 
 /* ---------------------------------------------------------------------------------------------- */
+
 /*                                    Burning Crusade Constants                                   */
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
+
+const mythicPlusLevels = [
+  { value: 441, label: "+2" },
+  { value: 444, label: "+3" },
+  { value: 447, label: "+5" },
+  { value: 450, label: "+7" },
+  { value: 454, label: "+9" },
+  { value: 457, label: "+11" },
+  { value: 460, label: "+13" },
+  { value: 463, label: "+15" },
+  { value: 467, label: "+17" },
+  { value: 470, label: "+19/20" },
+  { value: 473, label: "" },
+  { value: 476, label: "" },
+  { value: 480, label: "" },
+  { value: 483, label: "" },
+  { value: 489, label: "" },
+]
 
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
@@ -148,7 +167,17 @@ export default function UpgradeFinderFront(props) {
           "Hit Go at the bottom of the page.",
         ];
 
-  const marks = [
+  const marks = mythicPlusLevels.map((level, index) => {
+    return { value: index, 
+      label: (
+      <div className={classes.labels}>
+      <div>{level.value}</div>
+      <div>{level.label}</div>
+      </div>
+  )};
+  });
+  /*
+   [
     {
       value: 0,
       label: (
@@ -279,7 +308,7 @@ export default function UpgradeFinderFront(props) {
         </div>
       ),
     },
-  ];
+  ]; */
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
@@ -302,9 +331,9 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
-      const playerSettings = props.playerSettings;
-      const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result, playerSettings, userSettings);
+      const ufSettings = props.playerSettings;
+      const result = runUpgradeFinder(props.player, contentType, currentLanguage, ufSettings, userSettings);
+      const shortReport = shortenReport(props.player, result.contentType, result, ufSettings, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
       //props.setItemSelection(result);
@@ -315,8 +344,8 @@ export default function UpgradeFinderFront(props) {
       console.log(shortReport);
       history.push("/upgradereport/");
     } else if (gameType === "Classic") {
-      const playerSettings = props.playerSettings;
-      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
+      const ufSettings = props.playerSettings;
+      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
       props.setItemSelection(result);
       props.setShowReport(true);
     }
@@ -349,7 +378,7 @@ export default function UpgradeFinderFront(props) {
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "Classic");
+    return getSimCStatus(player) === "Good" && (props.ufSettings.raid.length > 0 || gameType == "Classic");
   };
 
   return (
@@ -405,7 +434,7 @@ export default function UpgradeFinderFront(props) {
                             }}
                             value="check"
                             fullWidth
-                            selected={props.playerSettings.raid.includes(i)}
+                            selected={props.ufSettings.raid.includes(i)}
                             style={{ height: 40 }}
                             onChange={() => {
                               toggleSelected(key);
