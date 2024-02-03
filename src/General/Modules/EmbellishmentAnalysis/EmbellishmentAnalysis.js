@@ -135,7 +135,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
 }
 
 const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric, playerSettings) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats);
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
   const embel = embellishmentDB.filter(function (emb) {
     return emb.effect.name === effectName;
   });
@@ -262,7 +262,7 @@ export default function EmbellishmentAnalysis(props) {
         </Tabs>
 
         <TabPanel value={tabIndex} index={0}>
-        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers." color="firebrick" />
+        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers." variant="yellow" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

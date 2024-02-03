@@ -23,12 +23,15 @@ import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
+export function getEffectValue(effect, player, castModel, contentType, itemLevel, userSettings, gameType = "Retail", setStats = {}, setVariables = {}) {
   let bonus_stats = {};
   if (!effect) return bonus_stats;
   
   let effectName = effect.name;
   let effectType = effect.type;
+
+  // We'll send this to our effects along with everything else. They won't be used by each, but it's available. 
+  const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
 
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
@@ -37,10 +40,10 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // A special effect is one that appears on an item slot where an effect isn't u sually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
-      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, setStats, castModel, userSettings);
+      bonus_stats = getGenericEffect(effectName, itemLevel, additionalData);
     } 
     else if (effect.type === "embellishment") {
-      bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, setStats, userSettings);
+      bonus_stats = getEmbellishmentEffect(effectName, itemLevel, additionalData);
     } 
     else if (effect.type === "Onyx Annulet") {
       // The Onyx Annuluet is a 10.0.7 special effect ring.
@@ -80,8 +83,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       }
     } 
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings, setStats);
-      //testTrinkets(player, contentType); //TODO: Remove
+      bonus_stats = getTrinketEffect(effectName, itemLevel, additionalData);
     }
   }
   // -------------------------------------------

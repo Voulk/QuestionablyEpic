@@ -65,6 +65,9 @@ interface PlayerSettings {
     healingDartsOverheal: { value: number; options: any[]; category: string; type: string };
     lariatGems: { value: number; options: any[]; category: string; type: string };
     chromaticEssenceBuff: { value: string; options: string[]; category: string; type: string };
+    gemSettings: {value: string; options: string[]; category: string; type: string};
+    phialChoice: {value: string; options: string[]; category: string; type: string};
+    runeChoice: {value: string; options: string[]; category: string; type: string};
     //chromaticEssenceAllies: { value: boolean; options: boolean[]; category: string; type: string };
   }
 

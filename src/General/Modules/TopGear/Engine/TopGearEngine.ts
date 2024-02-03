@@ -2,11 +2,11 @@ import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
 import { STATPERONEPERCENT, BASESTAT, STATCONVERSION } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
-import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns, getAllyStatsValue, getGems } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
@@ -73,38 +73,49 @@ function autoSocketItems(itemList: Item[]) {
   return itemList;
 }
 
+// This just grab the ID for us so that we're less likely to make errors.
+function getGemID(bigStat: string, littleStat: string): number {
+  const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
+                                        && gem.stats[bigStat] === 70 && gem.stats[littleStat] === 33);
+  if (foundGem.length > 0) {
+    return foundGem[0].id;
+  }
+  else return 192945; // Default fallback. Report error.                               
+}
+
 function getGemOptions(spec: string, contentType: contentTypes) {
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
-    return [192919, 192922];
+    return [getGemID('crit', 'haste'), getGemID('crit', 'mastery'), getGemID('crit', 'versatility')];
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    return [192945, 192919];
+    return [getGemID('haste', 'crit')];
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    return [192922, 192958]
+    return [getGemID('mastery', 'crit'), getGemID('crit', 'mastery')]
   }
   else if (spec === "Restoration Druid") {
     // Haste / Mastery
-    return [192948];
+    return [getGemID('haste', 'mastery'), getGemID('haste', 'versatility')];
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    return [192958, 192964];
+    return [getGemID('mastery', 'crit'), getGemID('mastery', 'versatility'), getGemID('crit', 'mastery')] //192958, 192964, 192945];
   }
   else if (spec === "Mistweaver Monk") {
     // Haste / Crit
-    return [192945];
+    return [getGemID('haste', 'crit'), getGemID('haste', 'versatility'), getGemID('crit', 'versatility')];
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [192923];
+    return [getGemID('versatility', 'crit'), getGemID('crit', 'versatility')];
 
   }
   else {
     // Error
+    return [getGemID('haste', 'crit')]
   }
 
 }
@@ -154,8 +165,9 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     // Create sets for each gem type.
     const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (false) { // Add setting here.
+    if (getSetting(userSettings, 'gemSettings') === "Precise") { // Add setting here.
       if (gemPoss.length > 0) {
+        console.log(gemPoss);
         gemPoss.forEach(gem => {
           resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
         });
@@ -591,13 +603,20 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     leech: castModel.baseStatWeights["leech"],
   };
 
+  // These are special variables the set includes. They are passed to effect formulas etc. This is a very flexible object.
+  let setVariables: {[key: string]: number | string | number[]} = {
+    setSockets: 0,
+    socketElement: "",
+    socketList: [],
+    fireMult: 0,
+  };
 
 
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
 
-  // == Flask / Phialss ==
-  if (player.spec === "Holy Paladin") {
+  // == Flask / Phials ==
+  if (getSetting(userSettings, "phialChoice") === "Corrupting Rage" || (getSetting(userSettings, "phialChoice") === "Automatic" && player.spec === "Holy Paladin")) {
     bonus_stats.crit = bonus_stats.crit + (1118 * 0.8);
     enchants.phial = "Iced Phial of Corrupting Rage"
   }
@@ -606,13 +625,32 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     enchants.phial = "Phial of Tepid Versatility"
   }
 
-  // Sockets
-  enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+  // == Runes == 
+  // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
+  if (getSetting(userSettings, "runeChoice") !== "Automatic") {
+    bonus_stats[getSetting(userSettings, "runeChoice")] = (bonus_stats[getSetting(userSettings, "runeChoice")] || 0) + 310;
+  }
+  else {
+    // Defaults to best stat that isn't versatility (as no rune exists for it).
+    const highestWeight = getHighestWeight(castModel, "versatility")
+    bonus_stats[highestWeight] = (bonus_stats[highestWeight] || 0) + 310;
+  }
 
+  // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
-  //enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+  if (getSetting(userSettings, "gemSettings") === "Precise") {
+    enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+  }
+  else {
+    enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+  }
+  if (enchants["Gems"].length > 1) {
+    // At least two gems, grab element of second. If we don't, then we have no elemental gems and can ignore it. 
+    setVariables.socketElement = getGemElement(enchants["Gems"][1]);
+  }
 
   enchants["GemCount"] = builtSet.setSockets;
+  setVariables.setSockets = builtSet.setSockets;
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
@@ -647,18 +685,19 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
   else if (builtSet.checkHasItem(193494)) fireMult = 1;
 
-  userSettings.fireMult = fireMult || 0;
+  setVariables.fireMult = fireMult || 0;
 
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
     if (!useSeq || player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
-      effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats));
+      effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
     }
   }
 
   // Special 10.0.7 Ring
   // Ultimately this ring has mostly been outscaled now. We'll leave it in for completeness but it would only see use on very undergeared players.
+  // We pray they do not bring it back in Fated.
 
   // Check if ring in set.
   if (builtSet.checkHasItem(203460)) {
@@ -818,13 +857,13 @@ export function mergeBonusStats(stats: any) {
 }
 
 //
-function getHighestWeight(castModel : any) {
+function getHighestWeight(castModel : any, exclusion?: string): "crit" | "haste" | "mastery" | "versatility" {
   let max = "";
   let maxValue = 0;
   let weights = castModel.getBaseStatWeights();
 
   for (var stat in weights) {
-    if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat)) {
+    if (weights[stat] > maxValue && ["crit", "haste", "mastery", "versatility"].includes(stat) && stat !== exclusion) {
       max = stat;
       maxValue = weights[stat];
     }

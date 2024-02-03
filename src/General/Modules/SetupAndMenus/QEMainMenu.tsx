@@ -209,7 +209,8 @@ export default function QEMainMenu(props: Props) {
                 justifyContent: "center",
                 textTransform: "none",
                 paddingLeft: "32px",
-                color: "#F2BF59",
+                color: "#F2C160",
+                backgroundColor: "#7F6738",
               }}
             >
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}

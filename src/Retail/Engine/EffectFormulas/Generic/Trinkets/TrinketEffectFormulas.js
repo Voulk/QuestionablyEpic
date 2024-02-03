@@ -30,10 +30,10 @@ export function getTrinketValue(trinketName, itemLevel) {
 
 
 // Return the effect of running a trinkets runFunc function. This will return a bonus_stats object if the trinket exists and an empty one if it does not.
-export function getTrinketEffect(effectName, player, castModel, contentType, itemLevel, playerSettings = {}, setStats = {}) {
+export function getTrinketEffect(effectName, itemLevel, additionalData) {
   let bonus_stats = {};
   
-  let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
+  //let additionalData = {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData)
@@ -41,7 +41,7 @@ export function getTrinketEffect(effectName, player, castModel, contentType, ite
 
 
   if (activeTrinket !== undefined) {
-    return activeTrinket.runFunc(activeTrinket.effects, player, itemLevel, additionalData);
+    return activeTrinket.runFunc(activeTrinket.effects, additionalData.player, itemLevel, additionalData);
   }
   else {
     return {};
