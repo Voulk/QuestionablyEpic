@@ -170,145 +170,12 @@ export default function UpgradeFinderFront(props) {
   const marks = mythicPlusLevels.map((level, index) => {
     return { value: index, 
       label: (
-      <div className={classes.labels}>
-      <div>{level.value}</div>
-      <div>{level.label}</div>
-      </div>
+        <div className={classes.labels}>
+          <div>{level.value}</div>
+          <div>{level.label}</div>
+        </div>
   )};
   });
-  /*
-   [
-    {
-      value: 0,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 441</div>
-          <div>M 2</div>
-        </div>
-      ),
-    },
-    {
-      value: 1,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 444</div>
-          <div>M 3/4</div>
-        </div>
-      ),
-    },
-    {
-      value: 2,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 447</div>
-          <div>M 5/6</div>
-        </div>
-      ),
-    },
-    {
-      value: 3,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 450</div>
-          <div>M 7/8</div>
-        </div>
-      ),
-    },
-    {
-      value: 4,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 454</div>
-          <div>M 9/10</div>
-        </div>
-      ),
-    },
-    {
-      value: 5,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 457</div>
-          <div>M 11/12</div>
-        </div>
-      ),
-    },
-    {
-      value: 6,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 460</div>
-          <div>M 13/14</div>
-        </div>
-      ),
-    },
-    {
-      value: 7,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 463</div>
-          <div>M 15/16</div>
-        </div>
-      ),
-    },
-    {
-      value: 8,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 467</div>
-          <div>M 17/18</div>
-        </div>
-      ),
-    },
-    {
-      value: 9,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 470</div>
-          <div>M 19/20</div>
-        </div>
-      ),
-    },
-    {
-      value: 10,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 473</div>
-        </div>
-      ),
-    },
-    {
-      value: 11,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 476</div>
-        </div>
-      ),
-    },
-    {
-      value: 12,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 480</div>
-        </div>
-      ),
-    },
-    {
-      value: 13,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 483</div>
-        </div>
-      ),
-    },
-    {
-      value: 14,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 489</div>
-        </div>
-      ),
-    },
-  ]; */
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
@@ -331,17 +198,14 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
-      const ufSettings = props.playerSettings;
+      const ufSettings = props.ufSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, ufSettings, userSettings);
       const shortReport = shortenReport(props.player, result.contentType, result, ufSettings, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
       //props.setItemSelection(result);
-      console.log(props);
       props.setUFResult(shortReport);
       //props.setShowReport(true);
-      console.log(result);
-      console.log(shortReport);
       history.push("/upgradereport/");
     } else if (gameType === "Classic") {
       const ufSettings = props.playerSettings;
@@ -350,7 +214,6 @@ export default function UpgradeFinderFront(props) {
       props.setShowReport(true);
     }
 
-    //history.push("/UpgradeFinderReport/");
   };
 
   const getSimCStatus = (player) => {
@@ -358,14 +221,6 @@ export default function UpgradeFinderFront(props) {
     else if (checkCharacterValid(player) === false) return "Invalid";
     else return "Good";
   };
-
-  /*
-  const checkCharacterValid = (player) => {
-    const weaponSet = player.getActiveItems("AllMainhands", false, true);
-    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-
-    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  }; */
 
   const checkCharacterValid = (player, gameType) => {
     const weaponSet = player.getActiveItems("AllMainhands", false, true);

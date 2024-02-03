@@ -50,10 +50,10 @@ export default function ItemCard(props) {
   const currentLanguage = i18n.language;
   const isLegendary = false; // "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
-  const hasDom = item.isTierPiece();
+  const hasDom = false; // item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-
+  console.log(props.item);
   /*
   const itemQuality = (itemLevel) => {
     if (isLegendary) return "#ff8000";
@@ -61,7 +61,7 @@ export default function ItemCard(props) {
     else if (itemLevel >= 120) return "#328CE3";
     else return "#1eff00";
   }; */
-  const itemQuality = item.getQualityColor();
+  const itemQuality = "#a73fee" //item.getQualityColor();
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -71,14 +71,9 @@ export default function ItemCard(props) {
     }
   };
 
-  let itemName = "";
-
-  if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
-  } else {
-    if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
-  }
+  const itemID = item.item;
+  const itemName = getTranslatedItemName(itemID, currentLanguage, "", gameType);
+  
 
   const sourceName = (item) => {
     /* ------------------------------ Dungeon Name ------------------------------ */
@@ -143,13 +138,13 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
+              <WowheadTooltip type="item" id={itemID} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"
                     width={props.slotPanel ? 42 : 28}
                     height={props.slotPanel ? 42 : 28}
-                    src={getItemIcon(item.id, gameType)}
+                    src={getItemIcon(itemID, gameType)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",

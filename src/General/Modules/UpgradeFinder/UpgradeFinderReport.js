@@ -58,7 +58,7 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
 // Our short report only contains differential information which means we have to set up a few things ourselves.
 const addItemSources = (diffList) => {
   diffList.forEach((item) => {
-    item.source = getItem(item.item).sources;
+    item.source = getItem(item.item).sources[0];
   });
   
   return diffList;
