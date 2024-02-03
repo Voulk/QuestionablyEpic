@@ -35,12 +35,9 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
     .then(res => res.json())
     .then(data => {
       //console.log(data);
-      console.log(data);
-      console.log(typeof(data));
       if (typeof(data) === "string") {
         const jsonData = JSON.parse(data);
         //const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
-        console.log("Setting result");
         setResult(JSON.parse(data))
         
       }
@@ -106,7 +103,7 @@ export default function UpgradeFinderReport(props) {
     }
 
     if (result !== null/* && checkResult(result)*/) {
-      console.log("Running report");
+
       upgradeFinderResultsRetail(result, t, result.player, tabValue, setTabValue, classes);
     }
     else {
@@ -125,7 +122,6 @@ export default function UpgradeFinderReport(props) {
   function upgradeFinderResultsRetail(result, t, player, tabValue, setTabValue, classes) {
     const ufSettings = result.ufSettings;
     //const report = props.report;
-    console.log(result);
     
     const itemList = result.itemSet;
     const itemDifferentials = addItemSources(result.results);

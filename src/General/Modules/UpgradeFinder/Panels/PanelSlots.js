@@ -13,7 +13,7 @@ import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 
 function filterItemListBySlot(itemList, slot) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
-  console.log(itemList);
+
   let temp = itemList.filter(function (item) {
     if ("source" in item && !excludedInstance.includes(item.source.instanceId) && item.source.encounterId !== 249) {
       if (slot === "AllMainhands") {
