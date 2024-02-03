@@ -123,6 +123,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);
+  result.new = true;
   // console.log("=== Upgrade Finder Finished ===");
   apiSendUpgradeFinder(player, contentType);
 

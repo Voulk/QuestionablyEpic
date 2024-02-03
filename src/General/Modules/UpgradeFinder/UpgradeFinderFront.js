@@ -203,6 +203,7 @@ export default function UpgradeFinderFront(props) {
       const shortReport = shortenReport(props.player, result.contentType, result, ufSettings, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
+      shortReport.new = true;
       //props.setItemSelection(result);
       props.setUFResult(shortReport);
       //props.setShowReport(true);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Tabs, Tab, AppBar, Typography, Grid } from "@mui/material";
 // import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -35,15 +35,17 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
     .then(res => res.json())
     .then(data => {
       //console.log(data);
-
+      console.log(data);
+      console.log(typeof(data));
       if (typeof(data) === "string") {
         const jsonData = JSON.parse(data);
         //const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
+        console.log("Setting result");
         setResult(JSON.parse(data))
         
       }
       else if (typeof(data) === "object"){
-        if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT");
+        if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT: " + reportCode);
       }
       else {
         console.error("Invalid Report Data Type");
@@ -53,6 +55,10 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
 
     //.catch(err => { throw err });
 }
+
+const handleTabChange = (event, newValue) => {
+  setTabValue(newValue);
+};
 
 
 // Our short report only contains differential information which means we have to set up a few things ourselves.
@@ -71,33 +77,22 @@ export default function UpgradeFinderReport(props) {
   //   }, []);
 
   const classes = UpgradeFinderStyles();
-  const [tabvalue, setTabValue] = React.useState(0);
-  const { t } = useTranslation();
-  //const result = props.itemSelection;
-  const result = props.result;
-  const ufSettings = result.ufSettings;
-  //const report = props.report;
-  console.log(result);
-  
-  const itemList = result.itemSet;
-  const itemDifferentials = addItemSources(result.results);
-  console.log(itemDifferentials);
-  //console.log("Total Item Count: " + itemDifferentials.length);
-  //console.log(JSON.stringify(itemDifferentials));
-  
+  const [tabValue, setTabValue] = React.useState(0);
   const gameType = useSelector((state) => state.gameType);
-  //itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
-  itemDifferentials.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
-  const handleTabChange = (event, newValue) => {
-    setTabValue(newValue);
-  };
+  const [result, setResult] = useState(props.result);
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  //const result = props.itemSelection;
+  //const result = props.result;
+
+
 
   const returnToSetup = () => {
     props.setShowReport(false);
   };
 
   useEffect(() => {
-    if (result/* && result.new*/) {
+    if (result && result.new) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/upgradereport/' + result.id);
       }
@@ -111,17 +106,32 @@ export default function UpgradeFinderReport(props) {
     }
 
     if (result !== null/* && checkResult(result)*/) {
-      //return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      console.log("Running report");
+      upgradeFinderResultsRetail(result, t, result.player, tabValue, setTabValue, classes);
     }
     else {
       // No result queued. Check URL for report code and load that.
-      fetchUpgradeReport(location.pathname.split("/")[2], setResult, setBackgroundImage);
+      fetchUpgradeReport(location.pathname.split("/").pop(), setResult, /*setBackgroundImage*/);
     }
-
 
     }, []);
 
-  const upgradeFinderResultsRetail = () => {
+    if (result !== null) {
+      return upgradeFinderResultsRetail(result, t, result.player, tabValue, setTabValue, classes);
+    }
+  
+  } //
+
+  function upgradeFinderResultsRetail(result, t, player, tabValue, setTabValue, classes) {
+    const ufSettings = result.ufSettings;
+    //const report = props.report;
+    console.log(result);
+    
+    const itemList = result.itemSet;
+    const itemDifferentials = addItemSources(result.results);
+    
+    //itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+    itemDifferentials.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
     return (
       <div className={classes.header}>
         <div style={{ height: 96 }} />
@@ -146,7 +156,7 @@ export default function UpgradeFinderReport(props) {
               elevation={1}
             >
               <Tabs
-                value={tabvalue}
+                value={tabValue}
                 onChange={handleTabChange}
                 aria-label="simple tabs example"
                 variant="fullWidth"
@@ -169,10 +179,10 @@ export default function UpgradeFinderReport(props) {
 
           {/* Raid */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={0}>
+            <UFTabPanel value={tabValue} index={0}>
               <div className={classes.panel}>
                 <Grid container>
-                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                  <RaidGearContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -180,12 +190,12 @@ export default function UpgradeFinderReport(props) {
               
           {/* Mythic Plus */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={1}>
+            <UFTabPanel value={tabValue} index={1}>
               <div className={classes.panel}>
                 <Grid container>
                   <MythicPlusGearContainer
-                    setDungeonDifficulty={props.setDungeonDifficulty}
-                    player={props.player}
+                    //setDungeonDifficulty={props.setDungeonDifficulty}
+                    player={player}
                     itemList={itemList}
                     itemDifferentials={itemDifferentials}
                     playerSettings={ufSettings}
@@ -197,7 +207,7 @@ export default function UpgradeFinderReport(props) {
 
           {/* PVP 
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={2}>
+            <UFTabPanel value={tabValue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
                   <PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -208,10 +218,10 @@ export default function UpgradeFinderReport(props) {
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={2}>
+            <UFTabPanel value={tabValue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
-                  <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                  <WorldBossGearContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -219,10 +229,10 @@ export default function UpgradeFinderReport(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={3}>
+            <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
-                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                  <SlotsContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -256,7 +266,7 @@ export default function UpgradeFinderReport(props) {
               elevation={1}
             >
               <Tabs
-                value={tabvalue}
+                value={tabValue}
                 onChange={handleTabChange}
                 aria-label="simple tabs example"
                 variant="fullWidth"
@@ -276,10 +286,10 @@ export default function UpgradeFinderReport(props) {
           </Grid>
           {/* Raid */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={0}>
+            <UFTabPanel value={tabValue} index={0}>
               <div className={classes.panel}>
                 <Grid container>
-                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                  <RaidGearContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -287,12 +297,12 @@ export default function UpgradeFinderReport(props) {
 
           {/* Mythic Plus */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={1}>
+            <UFTabPanel value={tabValue} index={1}>
               <div className={classes.panel}>
                 <Grid container>
                   <MythicPlusGearContainer
-                    setDungeonDifficulty={props.setDungeonDifficulty}
-                    player={props.player}
+                    //setDungeonDifficulty={props.setDungeonDifficulty}
+                    player={player}
                     itemList={itemList}
                     itemDifferentials={itemDifferentials}
                     playerSettings={ufSettings}
@@ -304,7 +314,7 @@ export default function UpgradeFinderReport(props) {
 
           {/* PVP */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={2}>
+            <UFTabPanel value={tabValue} index={2}>
               <div className={classes.panel}>
                 <Grid container>{/*<PvPGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} /> */}</Grid>
               </div>
@@ -312,7 +322,7 @@ export default function UpgradeFinderReport(props) {
           </Grid>
 
           {/* World Bosses */}
-          {/* <UFTabPanel value={tabvalue} index={3}>
+          {/* <UFTabPanel value={tabValue} index={3}>
           <div className={classes.panel}>
             <Grid container>
               <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
@@ -322,7 +332,7 @@ export default function UpgradeFinderReport(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabvalue} index={3}>
+            <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
@@ -335,9 +345,9 @@ export default function UpgradeFinderReport(props) {
     );
   };
 
+  /*
   return (
     <div>
       {gameType === "Retail" ? upgradeFinderResultsRetail() : upgradeFinderResultsBC()} <div style={{ height: 400 }} />
     </div>
-  );
-}
+  );*/
