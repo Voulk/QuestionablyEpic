@@ -101,7 +101,6 @@ export function buildNewWepCombosUF(player, itemList) {
 
 export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
-
   const completedItemList = [];
 
 

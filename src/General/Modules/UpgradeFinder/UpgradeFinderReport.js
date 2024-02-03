@@ -66,7 +66,9 @@ export default function UpgradeFinderReport(props) {
   const { t } = useTranslation();
   //const result = props.itemSelection;
   const result = props.result;
+  const ufSettings = result.ufSettings;
   //const report = props.report;
+  console.log(result);
   
   const itemList = result.itemSet;
   const itemDifferentials = result.differentials;
@@ -159,7 +161,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabvalue} index={0}>
               <div className={classes.panel}>
                 <Grid container>
-                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -175,7 +177,7 @@ export default function UpgradeFinderReport(props) {
                     player={props.player}
                     itemList={itemList}
                     itemDifferentials={itemDifferentials}
-                    playerSettings={props.playerSettings}
+                    playerSettings={ufSettings}
                   />
                 </Grid>
               </div>
@@ -198,7 +200,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
-                  <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                  <WorldBossGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -209,7 +211,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
-                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -266,7 +268,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabvalue} index={0}>
               <div className={classes.panel}>
                 <Grid container>
-                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                  <RaidGearContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
@@ -282,7 +284,7 @@ export default function UpgradeFinderReport(props) {
                     player={props.player}
                     itemList={itemList}
                     itemDifferentials={itemDifferentials}
-                    playerSettings={props.playerSettings}
+                    playerSettings={ufSettings}
                   />
                 </Grid>
               </div>
@@ -312,7 +314,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
-                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={props.playerSettings} />
+                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>

@@ -379,10 +379,20 @@ const App = () => {
                     render={() => (
                       <QuickCompare player={activePlayer} allChars={allChars} simcSnack={handleSimCSnackOpen} singleUpdate={updatePlayerChar} patronStatus={patronStatus} />
                       )} />
+
                   <CustomRoute 
                     player={activePlayer} 
-                    path="/UpgradeFinder/" 
-                    render={() => <UpgradeFinder player={activePlayer} setUFResult={this.setUFResult} simcSnack={this.handleSimCSnackOpen} allChars={allChars} singleUpdate={this.updatePlayerChar} />} />
+                    path="/upgradefinder/" 
+                    render={() => 
+                      <UpgradeFinder 
+                        player={activePlayer} 
+                        setUFResult={setUFResult} 
+                        simcSnack={handleSimCSnackOpen} 
+                        allChars={allChars} 
+                        singleUpdate={updatePlayerChar} 
+                        />} 
+                  />
+
                   <CustomRoute
                     path="/topgear"
                     player={activePlayer}
@@ -432,10 +442,12 @@ const App = () => {
                     path="/report" 
                     render={() => <TopGearReport player={activePlayer || null} result={topSet || null} />} />
                   <Route 
-                    report={topSet} 
-                    player={activePlayer}
                     path="/upgradereport" 
-                    render={() => <UpgradeFinderReport player={activePlayer || null} result={upgradeFinderSet || null} />} />
+                    render={() => 
+                        <UpgradeFinderReport 
+                          player={activePlayer || null} 
+                          result={upgradeFinderSet || null} />} 
+                          />
                   <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
                   <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
                   <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />

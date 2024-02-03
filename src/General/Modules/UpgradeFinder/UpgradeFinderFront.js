@@ -103,7 +103,7 @@ function shortenReport(player, contentType, result, settings) {
   
   
   const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
-                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials };
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: settings };
   return report;
 }
 
@@ -307,9 +307,12 @@ export default function UpgradeFinderFront(props) {
       const shortReport = shortenReport(props.player, result.contentType, result, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
-      props.setItemSelection(result);
-      props.setReport(result);
+      //props.setItemSelection(result);
+      console.log(props);
+      props.setUFResult(shortReport);
       //props.setShowReport(true);
+      console.log(result);
+      console.log(shortReport);
       history.push("/upgradereport/");
     } else if (gameType === "Classic") {
       const playerSettings = props.playerSettings;

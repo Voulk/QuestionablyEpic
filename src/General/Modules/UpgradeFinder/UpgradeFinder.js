@@ -4,6 +4,7 @@ import UpgradeFinderReport from "./UpgradeFinderReport";
 import ReactGA from "react-ga";
 import { useHistory } from "react-router-dom";
 
+// Does this need to exist anymore? Could we fold it into UpgradeFinderFront and just have two files instead of three?
 export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
   const [report, setReport] = React.useState(null);
@@ -102,7 +103,7 @@ export function UpgradeFinder(props) {
       setPVPDifficulty={setPVPDifficulty}
       setBCDungeonDifficulty={setBCDungeonDifficulty}
       singleUpdate={props.singleUpdate}
-      setReport={props.setUFResult}
+      setUFResult={props.setUFResult}
     />
   );
 }

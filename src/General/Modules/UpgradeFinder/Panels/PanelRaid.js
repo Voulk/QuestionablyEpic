@@ -73,6 +73,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
+    console.log(props.playerSettings);
     const shadowlandsList = [1207];
     const difficulties = props.playerSettings.raid;
     
