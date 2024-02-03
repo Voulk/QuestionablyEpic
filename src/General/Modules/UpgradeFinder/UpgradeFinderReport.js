@@ -59,6 +59,7 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
 const addItemSources = (diffList) => {
   diffList.forEach((item) => {
     item.source = getItem(item.item).sources[0];
+    item.slot = getItem(item.item).slot;
   });
   
   return diffList;
@@ -206,7 +207,7 @@ export default function UpgradeFinderReport(props) {
           </Grid>*/}
 
           {/* World Bosses */}
-          {/*<Grid item xs={12}>
+          <Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
@@ -214,10 +215,10 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>*/}
+          </Grid>
 
           {/* Slots */}
-          {/*<Grid item xs={12}>
+          <Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
@@ -225,7 +226,7 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>*/}
+          </Grid>
         </Grid>
       </div>
     );
