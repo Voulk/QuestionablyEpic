@@ -12,7 +12,7 @@ import "./Panels/ItemUpgrade.css";
 import { useSelector } from "react-redux";
 import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
 import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
-import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 function a11yProps(index) {
   return {
@@ -54,7 +54,9 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
 }
 
 
-
+const returnToSetup = () => {
+  props.setShowReport(false);
+};
 
 // Our short report only contains differential information which means we have to set up a few things ourselves.
 const addItemSources = (diffList) => {
@@ -83,11 +85,6 @@ export default function UpgradeFinderReport(props) {
   //const result = props.itemSelection;
   //const result = props.result;
 
-
-
-  const returnToSetup = () => {
-    props.setShowReport(false);
-  };
 
   useEffect(() => {
     if (result && result.new) {
@@ -124,6 +121,8 @@ export default function UpgradeFinderReport(props) {
     const ufSettings = result.ufSettings;
     //const report = props.report;
     
+
+
     const itemList = result.itemSet;
     const itemDifferentials = addItemSources(result.results);
     
@@ -135,7 +134,7 @@ export default function UpgradeFinderReport(props) {
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <div>
-              <Button color="primary" variant="outlined" onClick={() => returnToSetup()} style={{ position: "absolute" }}>
+            <Button color="primary" variant="outlined" component={Link} to={"/upgradeFinder"} style={{ position: "absolute" }}>
                 {t("UpgradeFinder.BackButton")}
               </Button>
               <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>

@@ -86,7 +86,7 @@ export default function SlotsContainer(props) {
           <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
-            {[...filterItemListBySlot(itemDifferentials, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
+            {[...filterItemListBySlot(itemDifferentials, key.slot)].filter((item) => item.score > 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
