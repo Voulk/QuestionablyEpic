@@ -15,15 +15,29 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   const healingRainCPM = 3.4;
   const riptidesActive = 4.9;
   // Tier Sets
-  if (effectName === "Shaman T30-2") {
+  if (effectName === "Shaman T31-2") {
     // 
-    const oneTidewatersHeal = 2.3 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]);
+
+    bonusStats.hps = 9000;
+
+  }
+  else if (effectName === "Shaman T31-4") {
+    // 
+
+    bonusStats.hps = 8500;
+
+  }
+
+
+  else if (effectName === "Shaman T30-2") {
+    // 
+    const oneTidewatersHeal = 2.3 * 1.4 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]);
 
     bonusStats.hps = healingRainCPM * riptidesActive * oneTidewatersHeal * 0.42 / 60;
 
   }
-  if (effectName === "Shaman T30-4") {
-    const healingBuffUptime = healingRainCPM * 6 / 60;
+  else if (effectName === "Shaman T30-4") {
+    const healingBuffUptime = healingRainCPM * 8 / 60;
     const healingBuffStrength = riptidesActive * 0.01;
 
     const chainHealCast = 6.405 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]) * 1.08 * 1.02 * 1.18 * 1.15;

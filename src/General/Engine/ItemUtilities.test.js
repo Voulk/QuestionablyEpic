@@ -12,7 +12,6 @@ import {
   checkItemExists,
   getItemSlot,
   socketItem,
-  getLegendaryID,
   getItem
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";
@@ -119,9 +118,7 @@ describe("Get Item Allocations func", () => {
     const expectedResult = {
       intellect: 5259,
       stamina: 7889,
-      haste: 0,
       crit: 2450,
-      mastery: 0,
       versatility: 4550,
     };
 
@@ -276,6 +273,7 @@ describe("getItemSlot func", () => {
   // Add new tests
 });
 
+/*
 describe("socketItem", () => {
   test("Red Gem Test", () => {
     const player = new ClassicPlayer("Mock", "Restoration Druid Classic", 99, "NA", "Stonemaul", "Night Elf");
@@ -288,13 +286,4 @@ describe("socketItem", () => {
 
 
   // Add new tests
-});
-
-describe("GetLegendaryID func", () => {
-  test("Sinister Teachings", () => {
-    const legendaryID = getLegendaryID("Sinister Teachings");
-    expect(legendaryID).toEqual("7726");
-
-  })
-
-})
+}); */

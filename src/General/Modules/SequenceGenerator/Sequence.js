@@ -22,7 +22,7 @@ import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoke
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
-import { DRUIDSPELLDB, baseTalents as druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
+import { DRUIDSPELLDB, druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
 import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";

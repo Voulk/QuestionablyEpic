@@ -5,7 +5,7 @@ import "./Chart.css";
 import moment from "moment";
 import i18n from "i18next";
 import { Paper } from "@mui/material";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 class Chart extends Component {
   constructor(props) {
@@ -134,6 +134,31 @@ class Chart extends Component {
     }
   };
 
+  CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      // Filter out items with value 0
+      const nonZeroItems = payload.filter((item) => item.value !== 0);
+
+      return (
+        <div
+          style={{
+            backgroundColor: "#1b1b1b",
+            border: "1px solid #1b1b1b",
+            borderRadius: "10px",
+            padding: "0px 10px 10px 10px",
+          }}
+        >
+          <p style={{ color: "#ffffff", marginBottom: "10px" }}>{moment.utc(label).format("mm:ss")}</p>
+          {nonZeroItems.map((item, index) => (
+            <p key={index} style={{ color: item.color || item.fill, margin: "5px 0" }}>{`${item.name} : ${item.value}`}</p>
+          ))}
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   render() {
     // Shortens long numbers i.e 1000000 will be 1M
     const DataFormater = (number) => {
@@ -192,14 +217,7 @@ class Chart extends Component {
 
               // payload={this.props.legendata}
             />
-            <Tooltip
-              labelStyle={{ color: "#ffffff" }}
-              contentStyle={{
-                backgroundColor: "#1b1b1b",
-                border: "1px solid #1b1b1b",
-              }}
-              labelFormatter={(timeStr) => moment.utc(timeStr).format("mm:ss")}
-            />
+            <Tooltip content={this.CustomTooltip} />
             {this.drawAreas(this.props.cooldownsToShow === "log" ? this.props.cooldown : this.props.customCooldowns)}
             <Line yAxisId="3" type="monotone" dataKey="Raid Health" stroke="#FF0000" dot={false} />
           </ComposedChart>

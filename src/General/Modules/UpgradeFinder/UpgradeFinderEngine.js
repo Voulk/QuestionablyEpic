@@ -1,11 +1,12 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
 import Item from "../Player/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { buildWepCombos, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -18,6 +19,7 @@ The core Upgrade Finder loop is as follows:
 
 // This is a copy paste from buildWepCombos.
 // TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it.
+/*
 export function buildWepCombosUF(player, itemList) {
   let wep_list = [];
   let main_hands = filterItemListByType(itemList, "1H Weapon");
@@ -63,7 +65,7 @@ export function buildWepCombosUF(player, itemList) {
   wep_list.sort((a, b) => (a.softScore < b.softScore ? 1 : -1));
 
   return wep_list.slice(0, 9);
-}
+} */
 
 // This is a new version of WepCombos that simply stores them in an array instead of in a weird 
 // composite "fake item". Top Gear can then separate them after combinations have been built.
@@ -112,7 +114,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
-  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
+  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings, userSettings);
@@ -128,29 +130,36 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
+export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  const boostedItems = [204465, 204201, 204202, 204211, 202612]
-  if (instanceID === 1208) {
+
+  if (instanceID === 1207) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
-    if (difficulty === 2 || difficulty === 4) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
-    else itemLevel += getItemLevelBoost(bossID) + getVeryRareItemLevelBoost(itemID, bossID);
+
+    // If we're looking at Max difficulties then only grab the very rare boost.
+    //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+
+    // Otherwise grab both the very rare and any boss-specific item level increase.
+    itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
 
   // World Bosses
   else if (instanceID === 1205) {
     if (bossID === 2531) itemLevel = 415;
+    else if (bossID === 2562) itemLevel = 454 // Technically the neck is 460.
     else itemLevel = 389;
   }
   
   else if (instanceID === -1) {
     if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } else if (instanceID === -30) itemLevel = 359;
+  } 
+  //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
+  else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
@@ -160,13 +169,15 @@ function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) 
   return itemLevel;
 }
 
+
+
 function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
-  
+
   let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   if (item.slot === "Neck") item.socket = 3;
   //let itemAllocations = getItemAllocations(itemID, []);
@@ -178,6 +189,11 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   return item;
 }
 
+function convertRaidDifficultyToString(raidID) {
+  const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
+  return raidDifficulty[raidID];
+}
+
 function buildItemPossibilities(player, contentType, playerSettings, settings) {
   let itemPoss = [];
 
@@ -187,25 +203,32 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
-      const isRaid = primarySource === 1208 || primarySource === -22;
+      const encounter = itemSources[0].encounterId;
+      const isRaid = primarySource === 1207 || primarySource === -22;
 
-      if (isRaid) {
+      if (isRaid && encounter > 0) {
         // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.quality = 4;
           item.dropLoc = "Raid";
-          item.dropDifficulty = playerSettings.raid[x];
-
+          item.dropDifficulty = playerSettings.raid[x]; //
+          item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[x]);
           itemPoss.push(item);
         }
       } else if (primarySource === -1 || primarySource === 1205) {
-        // M+ Dungeons & World Bosses
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
-        item.quality = 4;
-        itemPoss.push(item);
+        // M+ Dungeons, Dawn of the Infinite & World Bosses
+        if ([-55, -56, 762, 740,1021, 968, 556, 65,].includes(encounter) || primarySource === 1205) {
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          item.dropLoc = "Mythic+";
+          item.dropDifficulty = "";
+          item.dropDifficultyTxt = "";
+          item.quality = 4;
+          itemPoss.push(item);
+        }
+
       } 
       /*else if (primarySource !== -18) {
         /*
@@ -253,7 +276,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   let newItemList = [...baseItemList];
   newItemList.push(item);
   const wepList = buildNewWepCombosUF(player, newItemList);
-  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
+  const newTGSet = runTopGear(newItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
@@ -264,8 +287,8 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
 
   if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
-
-  return { item: item.id, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
+  //console.log(item);
+  return { item: item.id, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
 }
 
 function checkItemViable(rawItem, player) {

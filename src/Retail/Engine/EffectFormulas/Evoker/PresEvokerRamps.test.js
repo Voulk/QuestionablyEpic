@@ -1,15 +1,110 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-
-
+import { reversionProfile } from "./PresEvokerDefaultAPL";
+import { runAPLSuites, runStatSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
 
+describe("Test APL", () => {
+    test("Test APL", () => {
+        
+        console.log("Testing APL");
+
+        const activeStats = {
+            intellect: 14000,
+            haste: 2000,
+            crit: 3000,
+            mastery: 4500,
+            versatility: 3000,
+            stamina: 29000,
+            critMult: 2,
+        }
+    
+        const baseSpells = EVOKERSPELLDB;
+        const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
+
+        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
+        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
+        //console.log(data);
+
+        //const data = runStatSuites(playerData, reversionProfile.apl, runCastSequence);
+    
+        expect(true).toEqual(true);
+    })
+
+});
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.
 // This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
+
+// This will just print HPCT and HPM data for a bunch of little combos.
+/*
+describe("Get Spell Data", () => {
+    const combos = [
+        ["Echo", "Spiritbloom"],
+        ["Verdant Embrace", "Living Flame"],
+        ["Verdant Embrace", "Dream Breath"],
+        ["Temporal Anomaly", "Dream Breath"],
+        ["Temporal Anomaly", "Spiritbloom"],
+    ];
+
+    const baseSpells = EVOKERSPELLDB;
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false};
+    const talents = {...evokerTalents};
+   
+    Object.keys(talents).forEach(talentName => {
+        if (talentName !== "fieldOfDreams" && talentName !== "Lifebind" && talentName !== "exhilaratingBurst" && talentName !== "lifeforceMender") talents[talentName].points = talents[talentName].maxPoints;
+        
+    });
+    
+    const activeStats = {
+        intellect: 12000,
+        haste: 2000,
+        crit: 2000,
+        mastery: 6500,
+        versatility: 3000,
+        stamina: 29000,
+        critMult: 2,
+    }
+    test("Individual Spells", () => {
+        const results = [];
+        Object.keys(baseSpells).forEach(spellName => {
+            
+            const fullSpell = baseSpells[spellName];
+
+            if (fullSpell[0].spellData.cat === "heal") {
+                console.log("Running" + spellName)
+                const sequence = [spellName];
+                const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+                results.push(spellName + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
+            }
+        });
+        console.log(results);
+        expect(true).toEqual(true);
+
+    })
+    
+    test("Sequences", () => {
+        const results = [];
+        combos.forEach(sequence => {
+            const result = runCastSequence(sequence, JSON.parse(JSON.stringify(activeStats)), testSettings, talents)
+            results.push(sequence + ". Healing: " + result.totalHealing + ". HPM: " + Math.round(100*result.hpm)/100);
+        });
+        console.log(results);
+        expect(true).toEqual(true);
+
+    }) 
+
+
+
+
+});
+
+*/
+/* Remove to re-enable test cases.
+
 
 // We don't have a crit flag right now, so we'll need to buff our in game values by 5% to compensate.
 describe("Test Talent Interactions", () => {

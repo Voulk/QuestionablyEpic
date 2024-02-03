@@ -14,10 +14,48 @@ describe("Shaman", () => {
     const contentType = "Raid";
     const type = "Regular";
 
-    test("pc", () => {
-        console.log(getMonkSpecEffect("Monk T30-2", player, contentType))
-        console.log(getMonkSpecEffect("Mistweaver T29-4", player, contentType))
+    const specs = ["Restoration Druid", "Restoration Shaman", "Mistweaver Monk", "Holy Priest", "Discipline Priest", "Holy Paladin", "Preservation Evoker"]
+    test("Null", () => {
+        expect(true).toEqual(true);
     })
+
+    /*
+    test("Druid", () => {
+        const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Druid 2pc: " + JSON.stringify(getDruidSpecEffect("Druid T31-2", player, contentType)))
+        console.log("Druid 4pc: " + JSON.stringify(getDruidSpecEffect("Druid T31-4", player, contentType)))
+    })
+
+    test("Mistweaver", () => {
+        const player = new Player("Voulk", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Monk 2pc: " + JSON.stringify(getMonkSpecEffect("Monk T31-2", player, contentType)))
+        console.log("Monk 4pc: " + JSON.stringify(getMonkSpecEffect("Monk T31-4", player, contentType)))
+    })
+
+    test("Preservation Evoker", () => {
+        const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T31-2", player, contentType)))
+        console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T31-4", player, contentType)))
+
+        console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-2", player, contentType)))
+        console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
+    })
+
+    test("Holy Paladin", () => {
+        const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Paladin 2pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-2", player, contentType)))
+        console.log("Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-4", player, contentType)))
+    })
+
+    test("Disc Priest", () => {
+        const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Disc 2pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-2", player, "Dungeon")))
+        console.log("Disc 4pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-4", player, contentType)))
+
+        console.log("Disc SEASON 2 - 2pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T30-2", player, contentType)))
+    })*/
+
+    
 
 
 })

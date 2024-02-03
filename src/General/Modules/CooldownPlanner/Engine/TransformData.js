@@ -19,7 +19,8 @@ export default function transformData(
   nameObject,
   friendlyHealth,
   enemyEnergy,
-  endTime
+  endTime,
+  enemyDebuffData,
 ) {
   let idsToRemove = [];
   // push healer ids to remove from the cast array
@@ -50,9 +51,8 @@ export default function transformData(
           .map((obj) => obj.importActive)[0],
     )
     .map((cast) => cast.timestamp);
-
   // Create Events such as Phases, Any spells that don't have logged cast times such as gaining debuffs or damage taken at a certain event.
-  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime);
+  let generatedEvents = createEvents(boss, difficulty, damageTaken, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
 
   // Map enemy ability casts into objects for the cooldown planner
   let enemyCastsTimeline = enemyCasts

@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip, Typography, Link } from "@mui/material";
+import {
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Tooltip,
+  Typography,
+  Link,
+  Checkbox,
+  FormControlLabel,
+} from "@mui/material";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
 import { runBCSimC } from "../../../Classic/Engine/SimCImport/SimCImportEngineBC";
-// import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/system";
 
@@ -19,16 +30,22 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 export default function SimCraftInput(props) {
   const { t } = useTranslation();
-  const [open, setOpen] = React.useState(false);
-  const [simC, setSimC] = React.useState("");
-  const [errorMessage, setErrorMessage] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [simC, setSimC] = useState(props.player.savedPTRString || "");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [autoUpgradeVault, setAutoUpgradeVault] = useState(false); // State for checkbox
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const characterCount = props.allChars.getAllChar().length || 0;
   const buttonVariant = props.variant;
   const gameType = useSelector((state) => state.gameType);
-  const addonLink = gameType === "Classic" ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-Classic" : "https://www.curseforge.com/wow/addons/simulationcraft"
+  const addonLink =
+    gameType === "Classic"
+      ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-Classic"
+      : "https://www.curseforge.com/wow/addons/simulationcraft";
+
   const handleClickOpen = () => {
+    setSimC(props.player.savedPTRString || "");
     setOpen(true);
   };
 
@@ -37,8 +54,8 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-    if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings);
-    else runBCSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+      if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault); // Add autoUpgradeVault here.
+      else runBCSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
   };
 
   return (
@@ -47,7 +64,6 @@ export default function SimCraftInput(props) {
         {buttonVariant === "outlined" ? (
           <StyledButton
             disableElevation={props.disableElevation}
-            // style={{ whiteSpace: "nowrap" }}
             color={props.colour}
             style={{ fontSize: "14px" }}
             onClick={handleClickOpen}
@@ -60,7 +76,6 @@ export default function SimCraftInput(props) {
         ) : (
           <Button
             disableElevation={props.disableElevation}
-            // style={{ whiteSpace: "nowrap" }}
             color={props.colour}
             style={{ fontSize: "14px" }}
             onClick={handleClickOpen}
@@ -74,10 +89,10 @@ export default function SimCraftInput(props) {
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle" + gameType)}</DialogTitle>
-        <DialogContent style={{ height: 400}}>
-            <Link target="_blank" href={addonLink}>
-              Click here to download the addon from Curse.
-            </Link>
+        <DialogContent style={{ height: 400 }}>
+          <Link target="_blank" href={addonLink}>
+            Click here to download the addon from Curse.
+          </Link>
           <TextField
             autoFocus
             multiline={true}
@@ -86,6 +101,7 @@ export default function SimCraftInput(props) {
             label={t("SimCInput.SimCStringLabel")}
             fullWidth
             style={{ height: "100%" }}
+            value={simC}
             variant="outlined"
             onChange={(e) => setSimC(e.target.value)}
             onKeyPress={(e) => {
@@ -94,9 +110,15 @@ export default function SimCraftInput(props) {
                 handleSubmit();
               }
             }}
+            onFocus={(e) => e.target.select()} // Automatically selects text on focus
           />
+
         </DialogContent>
         <DialogActions>
+        <FormControlLabel
+            control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
+            label="Upgrade Vault to Max Level"
+          />
           <p id="SimCError">{errorMessage}</p>
           <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}

@@ -1,15 +1,12 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, buildPrimGems } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
-import hasteSocket from "../../../Images/Resources/hasteSocket.jpg";
-import critSocket from "../../../Images/Resources/critSocket.jpg";
-import masterySocket from "../../../Images/Resources/masterySocket.jpg";
-import versSocket from "../../../Images/Resources/versSocket.jpg";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles({
   root: {
@@ -52,12 +49,12 @@ export default function ItemCardReport(props) {
   const currentLanguage = i18n.language;
   const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;
-  const isLegendary = "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
+  const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
-  const socketImage = getGemProp(enchants["Gems"], "icon");
+  const socketImage = getGemIcon(enchants["Gems"]);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
-  const tertiary = "tertiary" in item && item.tertiary !== "" ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t(item.tertiary)}</div> : null;
+  const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
 
@@ -96,7 +93,7 @@ export default function ItemCardReport(props) {
       socket.push(
         <div style={{ display: "inline", marginRight: "5px" }}>
           <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][0], "name"))} arrow>
-            <img src={getGemProp(enchants["Gems"][0], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+            <img src={getGemIcon(enchants["Gems"][0])} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
           </Tooltip>
         </div>,
       );
@@ -106,7 +103,7 @@ export default function ItemCardReport(props) {
       socket.push(
         <div style={{ display: "inline", marginRight: "5px" }}>
           <Tooltip title={capitalizeFirstLetter(getGemProp(enchants["Gems"][1], "name"))} arrow>
-            <img src={getGemProp(enchants["Gems"][1], "icon")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+            <img src={getGemIcon(enchants["Gems"][1])} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
           </Tooltip>
         </div>,
       );

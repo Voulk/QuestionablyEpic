@@ -39,7 +39,7 @@
       "Version": "Version"
     },
     "EmbellishmentAnalysis": {
-      "Header": "Embellishment Analysis",
+      "Header": "Embellishments",
       "HelpText": "An overview of all Embellishment effects available"
     },
     "CharacterCreator": {
@@ -171,18 +171,18 @@
       },
       "CharHeader": "Characters",
       "CharHelpText": "Add your characters here. Right click to edit your stat weights, realm information and more.",
-      "CooldownPlanner": "Cooldown Planner (Alpha)",
+      "CooldownPlanner": "Cooldown Planner (Beta)",
       "ExploreCovenants": "Covenants & Conduits",
       "FightAnalysis": "Fight Analysis (Alpha)",
-      "EmbellishmentAnalysis": "Embellishment Analysis",
+      "EmbellishmentAnalysis": "Embellishments",
       "LegendaryAnalysis": "Legendary Breakdown",
-      "PatronInvite": "Love the app? Support the site on Patreon!",
+      "PatronInvite": "Has the app helped you? Support it on Patreon!",
       "PatronThanks": "Thank you so much for your support!",
       "Profile": "Profile",
       "QuickCompare": "Item Quick Compare",
       "TierSets": "Tier Sets",
       "Tooltips": {
-        "CooldownPlanner": "Plan your Vault healing cooldowns",
+        "CooldownPlanner": "Plan your raid healing cooldowns",
         "ExploreCovenants": "Soulbind and conduit information",
         "LegendaryAnalysis": "Your specs best legendaries and where to craft them",
         "Profile": "Edit your details and connect to Patreon",
@@ -193,12 +193,14 @@
         "FightAnalysis": "",
         "TrinketAnalysis": "A multiple item level trinket graph",
         "UpgradeFinder": "Find your next piece of gear",
-        "SequenceSandbox": "Details coming soon"
+        "SequenceSandbox": "Details coming soon",
+        "OneShot": "Mythic+ Damage Calculator"
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
-      "SequenceSandbox": "Sequence Sandbox (Pre-Alpha)"
+      "SequenceSandbox": "Sequence Sandbox (Pre-Alpha)",
+      "OneShot": "One Shot (Beta)"
     },
     "Name": "Name",
     "No": "No",
@@ -207,7 +209,9 @@
     "PatreonTiers": {
       "Diamond": "Diamond",
       "Gold": "Gold",
+      "Sapphire": "Sapphire",
       "RollsRoyce": "Rolls Royce"
+
     },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
@@ -253,9 +257,11 @@
       "Heroic": "Heroic",
       "Heroic (Max)": "Heroic (Max)",
       "Mythic": "Mythic",
+      "Mythic (Max)": "Mythic (Max)",
       "Normal": "Normal",
       "Normal (Max)": "Normal (Max)",
-      "Raid Finder": "LFR"
+      "Raid Finder": "LFR",
+      "Raid Finder (Max)": "LFR (Max)"
     },
     "Region": "Region",
     "Remove": "Remove",
@@ -357,6 +363,19 @@
         "chromaticEssenceAllies": {
           "title": "Ominous Chromatic Allies",
           "tooltip": "Chromatic Ominous can be calculated with all or no ally buffs."
+        },
+
+        "phialChoice": {
+          "title": "Phial",
+          "tooltip": "Pick which phial you want QE Live to use."
+        },
+        "runeChoice": {
+          "title": "Rune",
+          "tooltip": "Pick which rune you want QE Live to use."
+        },
+        "gemSettings": {
+          "title": "Gem Settings",
+          "tooltip": "Simple will use a strong default choice for your spec. Precise will run separate sets for each gem combination."
         }
 
         
@@ -440,7 +459,7 @@
     },
     "UpgradeFinder": {
       "BackButton": "Back to Setup",
-      "CurrentRaid": "Sepulcher of the First Ones",
+      "CurrentRaid": "Amirdrassil",
       "Header": "Find your next upgrade!",
       "MythicPlus": "Mythic +",
       "PvP": "PvP",
@@ -451,7 +470,7 @@
       "Header": "Upgrade Finder",
       "HelpText": "Find your next item with instance-by-instance and slot-by-slot item lists, all based on your specific character.",
       "MythicPlusBody": "Use the slider to select dungeon item level",
-      "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
+      "MythicPlusHeader": "Mythic Plus Key Level",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
       "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
@@ -469,6 +488,7 @@
       "GameTypeMessage": "Select which version you'd like to start with.",
       "WelcomeTo": "Welcome To"
     },
+    "WrathOfTheLichKing": "Wrath of the Lich King",
     "Yes": "Yes",
     "itemTags": {
       "effect": "Effect",

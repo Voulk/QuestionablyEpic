@@ -1,12 +1,14 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
-import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/DruidDefaults";
+import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
+import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./RestorationDruid/DruidBalancedFocus";
+
 import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/Paladin/PaladinAvengingCrusader";
 import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinMelee";
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { monkSinSpecialQueries, monkSinSpellData, monkSinStatWeights } from "./ClassDefaults/Monk/MonkSinTeachings";
+import { monkTearSpecialQueries, monkTearSpellData, monkTearStatWeights } from "./ClassDefaults/Monk/MonkTear";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights } from "./ClassDefaults/EvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
@@ -63,9 +65,9 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 110000,
-      rawhps: 125000,
-      dps: 9000,
+      hps: 225000,
+      rawhps: 250000,
+      dps: 12000,
       fightLength: 400,
       reportID: "Default",
       bossName: "Default",
@@ -74,11 +76,21 @@ class CastModel {
     let spellList = {};
     let specialQueries = {};
     if (spec === SPEC.RESTODRUID) {
-      this.modelName = "Default";
-      spellList = druidDefaultSpellData(contentType);
-      specialQueries = druidDefaultSpecialQueries(contentType);
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+      if (modelID === "Healing Focused") {
+        this.modelName = "Healing Focused";
+        spellList = druidDefaultSpellData(contentType);
+        specialQueries = druidDefaultSpecialQueries(contentType);
+        this.baseStatWeights = druidDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+      }
+      else if (modelID === "Balanced") {
+        this.modelName = "Balanced";
+        spellList = druidBalancedSpellData(contentType);
+        specialQueries = druidBalancedSpecialQueries(contentType);
+        this.baseStatWeights = druidBalancedStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+
+      }
 
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Melee Default") {
@@ -100,7 +112,7 @@ class CastModel {
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights(contentType);
-        this.fightInfo.dps = 25000;
+        this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
       this.modelName = "Default";
@@ -112,8 +124,8 @@ class CastModel {
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
-      if (modelID === "Raid Default") {
-        this.modelName = "Raid Default"
+      if (modelID === "Rising Mist") {
+        this.modelName = "Rising Mist"
         spellList = monkDefaultSpellData("Raid");
         specialQueries = monkDefaultSpecialQueries("Raid");
         this.baseStatWeights = monkDefaultStatWeights("Raid");
@@ -126,12 +138,12 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
-      else if (modelID === "Sinister Teachings") {
-        this.modelName = "Sinister Teachings"
-        spellList = monkSinSpellData(contentType);
-        specialQueries = monkSinSpecialQueries(contentType);
-        this.baseStatWeights = monkSinStatWeights("Raid");
-        this.fightInfo.dps = 1600;
+      else if (modelID === "Tear of Morning") {
+        this.modelName = "Tear of Morning"
+        spellList = monkTearSpellData(contentType);
+        specialQueries = monkTearSpecialQueries(contentType);
+        this.baseStatWeights = monkTearStatWeights("Raid");
+        this.fightInfo.dps = 6000;
       }
 
     } else if (spec === SPEC.DISCPRIEST) {
@@ -177,12 +189,20 @@ class CastModel {
     // Burning Crusade Profiles
     else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Priest Classic") {
       spellList = this.getClassicPriest();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
+    } 
+    else if (spec === "Discipline Priest Classic") {
+      spellList = this.getClassicPriest();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else {
       spellList = {};
       specialQueries = {};
@@ -201,8 +221,7 @@ class CastModel {
   };
 
   setRampInfo = (stats, trinkets) => {
-    this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
-    //this.baseStatWeights = genStatWeights(stats);
+    //this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
 
   }
 

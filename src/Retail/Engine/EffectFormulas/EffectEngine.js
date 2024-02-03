@@ -1,4 +1,4 @@
-import { getGenericEffect, getDominationGemEffect } from "./Generic/GenericEffectFormulas";
+import { getGenericEffect  } from "./Generic/GenericEffectFormulas";
 import { getDruidSpecEffect } from "./Druid/DruidSpecEffects";
 import { getDiscPriestSpecEffect } from "./Priest/DiscPriestSpecEffects";
 import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
@@ -7,38 +7,31 @@ import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
 import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
-import { getTrinketEffect} from "./Generic/TrinketEffectFormulas";
-import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketEffectFormulasBC"
+import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
 import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
 import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
-import { getPriestConduit } from "./Priest/PriestConduitFormulas";
-import { getPaladinConduit } from "./Paladin/PaladinConduitFormulas";
-import { getShamanConduit } from "./Shaman/ShamanConduitFormulas";
-import { getMonkConduit } from "./Monk/MonkConduitFormulas";
-import { getDruidConduit } from "./Druid/DruidConduitFormulas";
-import { getPaladinCovAbility } from "./Paladin/PaladinMiscFormulas";
-import SPEC from "../../../General/Engine/SPECS";
-import { getShamanCovAbility } from "./Shaman/ShamanCovenantFormulas";
-
+// Classic
+import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
 import { getDruidTierSet } from "Classic/Engine/EffectFormulas/Druid/DruidTierSets";
 import { getShamanTierSet } from "Classic/Engine/EffectFormulas/Shaman/ShamanTierSets";
 import { getPaladinTierSet } from "Classic/Engine/EffectFormulas/Paladin/PaladinTierSets";
 import { getPriestTierSet } from "Classic/Engine/EffectFormulas/Priest/PriestTierSets";
-
-import { getDruidRelic } from "Classic/Engine/EffectFormulas/Druid/DruidRelics";
-import { getShamanRelic } from "Classic/Engine/EffectFormulas/Shaman/ShamanRelics";
-import { getPaladinRelic } from "Classic/Engine/EffectFormulas/Paladin/PaladinRelics";
-
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
+
 
 // Effect is a small "dictionary" with two key : value pairs.
 // The EffectEngine is basically a routing device. It will take your effect and effect type and grab the right formula from the right place.
 // This allows each spec to work on spec-specific calculations without a need to interact with the other specs.
-export function getEffectValue(effect, player, castModel, contentType, itemLevel = 0, userSettings, gameType = "Retail", setStats = {}) {
+export function getEffectValue(effect, player, castModel, contentType, itemLevel, userSettings, gameType = "Retail", setStats = {}, setVariables = {}) {
   let bonus_stats = {};
+  if (!effect) return bonus_stats;
+  
   let effectName = effect.name;
   let effectType = effect.type;
+
+  // We'll send this to our effects along with everything else. They won't be used by each, but it's available. 
+  const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
 
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
@@ -47,10 +40,10 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // A special effect is one that appears on an item slot where an effect isn't u sually expected.
       // This includes stuff like Drape of Shame that adds a crit bonus to a cape slot.
       // Does NOT include trinkets, legendaries, set bonuses etc.
-      bonus_stats = getGenericEffect(effectName, player, contentType, itemLevel, setStats, castModel, userSettings);
+      bonus_stats = getGenericEffect(effectName, itemLevel, additionalData);
     } 
     else if (effect.type === "embellishment") {
-      bonus_stats = getEmbellishmentEffect(effectName, player, contentType, itemLevel, setStats, userSettings);
+      bonus_stats = getEmbellishmentEffect(effectName, itemLevel, additionalData);
     } 
     else if (effect.type === "Onyx Annulet") {
       // The Onyx Annuluet is a 10.0.7 special effect ring.
@@ -90,15 +83,14 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       }
     } 
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffect(effectName, player, castModel, contentType, itemLevel, userSettings, setStats);
-      //testTrinkets(player, contentType); //TODO: Remove
+      bonus_stats = getTrinketEffect(effectName, itemLevel, additionalData);
     }
   }
   // -------------------------------------------
 
-  // ----- Burning Crusade & Wrath of the Lich King Effect Formulas -----
-  // Includes "Tier Set" bonuses, trinkets, and special effects on items that aren't just pure stats. 
-  else if (gameType === "Classic" || gameType === "BurningCrusade") {
+  // ----- Cataclysm Effect Formulas -----
+  // Includes Tier Set bonuses, trinkets, and special effects on items that aren't just pure stats. 
+  else if (gameType === "Classic") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
       switch (player.spec) {
         case "Holy Priest Classic":
@@ -123,7 +115,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffectClassic(effectName, player, userSettings);
+      bonus_stats = getTrinketEffectClassic(effectName, player, itemLevel, userSettings);
     }
     else if (effectType === "relic") {
       switch (player.spec) {
@@ -147,10 +139,3 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   return bonus_stats;
 }
 
-export function getConduitFormula() {
-
-}
-
-export function getCovAbility() {
-  
-}

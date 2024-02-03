@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles({
   root: {
@@ -48,7 +48,7 @@ export default function ItemCard(props) {
   const item = props.item;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const isLegendary = "effect" in item && item.effect.type === "spec legendary";
+  const isLegendary = false; // "effect" in item && item.effect.type === "spec legendary";
   const itemDifferential = props.itemDifferential;
   const hasDom = item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
@@ -96,6 +96,9 @@ export default function ItemCard(props) {
     }
     if (item.source.instanceId === 1208 && item.source.encounterId > 0) {
       return encounterDB[1208].bosses[item.source.encounterId].name[currentLanguage];
+    }
+    if (item.source.instanceId === 1207 && item.source.encounterId > 0) {
+      return encounterDB[1207].bosses[item.source.encounterId].name[currentLanguage];
     }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
       return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
@@ -196,7 +199,7 @@ export default function ItemCard(props) {
                       justifyContent: "center",
                     }}
                   >
-                    {itemDifferential > 0 && itemDifferential < 0.1 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
+                    {itemDifferential > 0 && itemDifferential < 0.2 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
                   </Typography>
                 </Grid>
               </Grid>

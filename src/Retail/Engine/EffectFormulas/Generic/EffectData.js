@@ -1,6 +1,73 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat } from "../EffectUtilities";
 
 export const effectData = [
+  {
+
+    name: "String of Delicacies",
+    effects: [
+      { 
+        coefficient: 0.392073,
+        table: -72,
+        ppm: 2,
+        alliesHit: 4,
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      // We split the mastery formula here because we'll lose some personal value from procs overlapping which is much less likely for our allies (since it's likely to apply to others).
+      const mastValue = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60;
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.allyStats = mastValue * data[0].alliesHit;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Crystal Spire of Karabor                       
+    /* -------------------- */
+    /* Healing spells have a chance to do more healing
+    */
+    name: "Crystal Spire of Karabor",
+    effects: [
+      { 
+        coefficient: 16.3376,
+        table: -9,
+        efficiency: 0.6,
+        ppm: 8,
+        secondaries: ['crit', 'versatility'],
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
+    /* Imbued Frostweave Slipper (Spirit)                  
+    /* -------------------- */
+    /* Capped?
+    */
+    name: "Imbued Frostweave Slippers",
+    effects: [
+      { 
+        coefficient: 0.040201,
+        table: -1,
+        ppm: 60, // Ticks every second.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.mana = processedValue(data[0], 415); // This effect is capped 
+      return bonus_stats;
+    }
+  },
 {
     /* -------------------- */
     /* Assembly Preserver's Band                       
@@ -101,7 +168,7 @@ export const effectData = [
     /* -------------------- */
     /* Drakebreaker's Versatility                       
     /* -------------------- */
-    /* Flat 105 Versatility. We don't need to do anything fancy for it, just return 105 vers.
+    /* Flat Versatility. We don't need to do anything fancy for it, just return 105 vers.
     */
     name: "Drakebreaker's Versatility",
     effects: [
@@ -149,9 +216,10 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // TODO
-      const ppm = 6;
+      const ppm = 6.5; // We get 2 Dream Breaths, 2 Fire Breaths and 2-3 Spiritblooms per minute. 
       const duration = 10;
-      bonus_stats.allyStats = 500 / 0.4 * duration * ppm / 60;
+      bonus_stats.intellect = 500 * duration * ppm / 60 * 0.5; // We'll assume we get about half the uptime, and our allies get about half the uptime. 
+      bonus_stats.allyStats = 500 * duration * ppm / 60 * 0.5;
 
       return bonus_stats;
     }

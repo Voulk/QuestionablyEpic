@@ -8,7 +8,6 @@ import { getEffectValue } from "../../Engine/EffectFormulas/EffectEngine";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import userSettings from "General/Modules/Settings/SettingsObject";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds"
 
@@ -207,10 +206,6 @@ export default function LegendaryCompare(props) {
   fillLegendaries(legendaryList, props.player.spec, props.player, contentType);
   sortLegendaries(legendaryList);
 
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
-  };
-
   return (
     <div className={classes.header}>
       <div style={{ height: 96 }} />
@@ -229,8 +224,6 @@ export default function LegendaryCompare(props) {
               simcSnack={props.simcSnack}
               allChars={props.allChars}
               contentType={contentType}
-              userSettings={userSettings}
-              editSettings={editSettings}
               singleUpdate={props.singleUpdate}
               hymnalShow={true}
               groupBuffShow={true}

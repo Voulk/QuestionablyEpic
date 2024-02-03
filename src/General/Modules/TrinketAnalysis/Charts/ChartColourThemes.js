@@ -2,11 +2,45 @@ import chroma from "chroma-js";
 
 const candidate1 = ["#1f78b4", "#33a02c", "#cd99ff", "#e31a1c", "#ffe375"];
 const candidate2 = ["#1f78b4", "#33a02c", "#ffe375", "#e31a1c", "#cd99ff", "#cd99ff", "#cd99ff", "#cd99fe", "#cd99fd", "#cd99fd", "#cd99fd", "#cd99fd", "#cd99fd"];
+const candidate20 = [
+  "#00876c",
+  "#3d9c73",
+  "#63b179",
+  "#88c580",
+  "#aed987",
+  "#d6ec91",
+  "#ffff9d",
+  "#fee17e",
+  "#fcc267",
+  "#f7a258",
+  "#ef8250",
+  "#e4604e",
+  "#d43d51",
+  "#8f284c",
+  "#a34865",
+  "#b6657e",
+  "#ff6969",
+  ];
+const candidate21 = [
+  "#00876c",
+  "#469b83",
+  "#6eaf9a",
+  "#93c3b3",
+  "#b7d7cc",
+  "#dbebe5",
+  "#ffffff",
+  "#fde0e0",
+  "#f9c2c1",
+  "#f3a3a4",
+  "#eb8387",
+  "#e0636b",
+  "#d43d51",
+]
 const candidate3 = ["#E1BE6A", "#40B0A6", "#EBF2BB", "#000000", "#FFD5BD", "#E7A9C1", "#D3F27A"];
 const candidate4 = ["#ffff99", "#b15928", "#cab2d6", "#6a3d9a", "#b2df8a", "#33a02c", "#fdbf6f", "#ff7f00", "#fb9a99", "#e31a1c", "#a6cee3", "#1f78b4", "#666666"];
 const candidate5 = ["#8e0152", "#ae206e", "#c74389", "#d967a3", "#e48bbb", "#eeafd1", "#f4d3e5", "#f7f7f7", "#d7edb8", "#b8e187", "#a1d26c", "#8bc255", "#76b241", "#61a22f", "#4d9221"];
 const candidate6 = ["#00429d", "#204fa3", "#325da9", "#406aaf", "#4e78b5", "#5a86bb", "#6694c1", "#73a2c6", "#80b1cc", "#8ebfd1", "#9dced6", "#addcda", "#c0eade", "#d8f6e1", "#ffffe0"];
-const candidate7 = ["#7291c4", "#9fb8d7", "#BBCDEA", "#72C47F", "#97d79f", "#bbeabf", "#D8BE7B", "#e0d06b", "#e0d09b", "#eae2bb", "#d87b7b", "#e29b9b", "#eabbbb", "#cd99ff", "#cd9900", "#cd9900", "#cd990a", "#cd990b", "#cd99d4"];
+const candidate7 = ["#7291c4", "#9fb8d7", "#BBCDEA", "#72C47F", "#97d79f", "#bbeabf", "#D8BE7B", "#e0d06b", "#b0d09b", "#eae2bb", "#d87b7b", "#e29b9b", "#eabbbb", "#cd99ff", "#cd9900", "#ed9900", "#ff810a", "#dd890b", "#cd99d4"];
 const candidate10 = ["#4477AA", "#EE6677", "#228833", "#CCBB44", "#66CCEE", "#AA3377", "#BBBBBB"];
 const candidate11 = ["#EE7733", "#0077BB", "#33BBEE", "#EE3377", "#CC3311", "#009988", "#BBBBBB"];
 const candidate12 = [
@@ -128,6 +162,10 @@ export const themeSelection = (profile) => {
     case "candidate13":
       candidate13.map((key) => colourScale.push(chroma(key).darken().hex(), chroma(key).hex(), chroma(key).brighten().hex(), chroma(key).brighten(2).hex()));
       return colourScale.flat();
+    case "candidate21":
+      candidate21.map((key) => colourScale.push(chroma(key).hex(), chroma(key).hex(), chroma(key).hex(), chroma(key).hex()));
+      //return colourScale.flat();
+      return candidate20;
     default:
       candidate2.map((key) => colourScale.push(chroma(key).darken().hex(), chroma(key).hex(), chroma(key).brighten().hex(), chroma(key).brighten(2).hex()));
       return colourScale.flat();

@@ -15,7 +15,7 @@ export const classNameDB = [
     },
     id: ["HolyPaladin", "Holy Paladin", "Holy Paladin Classic"],
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg").default,
+    icon: require("Images/Classes/Paladin/Specialisation/Holy/Icons/HolyPaladin.jpg"),
     cooldownPlannerMenu: true,
   },
   /* ---------------------------------------------------------------------------------------------- */
@@ -32,7 +32,7 @@ export const classNameDB = [
     id: ["DisciplinePriest", "Discipline Priest"],
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg").default,
+    icon: require("Images/Classes/Priest/Specialisation/Discipline/Icons/DisciplinePriest.jpg"),
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -49,7 +49,7 @@ export const classNameDB = [
     id: ["RestorationDruid", "Restoration Druid", "Restoration Druid Classic"],
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg").default,
+    icon: require("Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg"),
   },
   {
     name: {
@@ -62,7 +62,7 @@ export const classNameDB = [
     id: ["PreservationEvoker", "Preservation Evoker"],
     cooldownPlannerMenu: true,
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg"),
   },
   {
     name: {
@@ -75,7 +75,20 @@ export const classNameDB = [
     id: ["DevastationEvoker", "Devastation Evoker"],
     cooldownPlannerMenu: true,
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker_devastation.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker_devastation.jpg"),
+  },
+  {
+    name: {
+      en: "Augmentation Evoker",
+      fr: "Augmentation Evoker",
+      de: "Augmentation Evoker",
+      ru: "Augmentation Evoker",
+      ch: "Augmentation Evoker",
+    },
+    id: ["AugmentationEvoker", "Augmentation Evoker"],
+    cooldownPlannerMenu: true,
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_augmentation.jpg"),
   },
   {
     name: {
@@ -88,7 +101,7 @@ export const classNameDB = [
     id: ["Druid"],
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/classicon_druid.jpg").default,
+    icon: require("Images/Classes/Druid/classicon_druid.jpg"),
   },
   {
     name: {
@@ -101,7 +114,7 @@ export const classNameDB = [
     id: ["HavocDemonHunter", "HavocDemon Hunter"],
     cooldownPlannerMenu: true,
     color: "#A330C9",
-    icon: require("Images/Classes/DemonHunter/DemonHunterIcon.jpg").default,
+    icon: require("Images/Classes/DemonHunter/DemonHunterIcon.jpg"),
   },
   {
     name: {
@@ -114,7 +127,7 @@ export const classNameDB = [
     id: ["Warrior"],
     cooldownPlannerMenu: true,
     color: "#C79C6E",
-    icon: require("Images/Classes/Warrior/WarriorIcon.jpg").default,
+    icon: require("Images/Classes/Warrior/WarriorIcon.jpg"),
   },
   {
     name: {
@@ -127,7 +140,7 @@ export const classNameDB = [
     id: ["HolyPriest", "Holy Priest", "Holy Priest Classic"],
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg").default,
+    icon: require("Images/Classes/Priest/Specialisation/Holy/Icons/HolyPriest.jpg"),
   },
   {
     name: {
@@ -140,7 +153,7 @@ export const classNameDB = [
     id: ["MistweaverMonk", "Mistweaver Monk"],
     cooldownPlannerMenu: true,
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg").default,
+    icon: require("Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg"),
   },
   {
     name: {
@@ -153,7 +166,7 @@ export const classNameDB = [
     id: ["RestorationShaman", "Restoration Shaman", "Restoration Shaman Classic"],
     cooldownPlannerMenu: true,
     color: "#0070DE",
-    icon: require("Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg").default,
+    icon: require("Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg"),
   },
   {
     name: {
@@ -166,7 +179,7 @@ export const classNameDB = [
     id: ["ShamanDPS"],
     cooldownPlannerMenu: true,
     color: "#0070DE",
-    icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg").default,
+    icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg"),
   },
 
   {
@@ -180,7 +193,7 @@ export const classNameDB = [
     id: ["DeathKnight", "Death Knight"],
     cooldownPlannerMenu: true,
     color: "#C41E3A",
-    icon: require("Images/Classes/DeathKnight/DeathKnightIcon.jpg").default,
+    icon: require("Images/Classes/DeathKnight/DeathKnightIcon.jpg"),
   },
   {
     name: {
@@ -193,7 +206,7 @@ export const classNameDB = [
     id: ["ShadowPriest", "Shadow Priest"],
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/Shadow/ShadowPriest.jpg").default,
+    icon: require("Images/Classes/Priest/Specialisation/Shadow/ShadowPriest.jpg"),
   },
 ];
 
@@ -238,7 +251,7 @@ export const cdPlannerclassDB = [
     },
     id: ["Paladin", "paladin"],
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/classicon_paladin.jpg").default,
+    icon: require("Images/Classes/Paladin/classicon_paladin.jpg"),
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Priest                                             */
@@ -254,7 +267,7 @@ export const cdPlannerclassDB = [
     id: ["Priest", "priest"],
     cooldownPlannerMenu: true,
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/classicon_priest.jpg").default,
+    icon: require("Images/Classes/Priest/classicon_priest.jpg"),
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -271,7 +284,7 @@ export const cdPlannerclassDB = [
     id: ["Druid", "druid"],
     cooldownPlannerMenu: true,
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/classicon_druid.jpg").default,
+    icon: require("Images/Classes/Druid/classicon_druid.jpg"),
   },
   {
     name: {
@@ -284,7 +297,7 @@ export const cdPlannerclassDB = [
     id: ["Evoker", "evoker"],
     cooldownPlannerMenu: true,
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker.jpg"),
   },
   {
     name: {
@@ -297,7 +310,7 @@ export const cdPlannerclassDB = [
     id: ["DemonHunter", "demonHunter", "demonhunter"],
     cooldownPlannerMenu: true,
     color: "#A330C9",
-    icon: require("Images/Classes/DemonHunter/DemonHunterIcon.jpg").default,
+    icon: require("Images/Classes/DemonHunter/DemonHunterIcon.jpg"),
   },
   {
     name: {
@@ -310,7 +323,7 @@ export const cdPlannerclassDB = [
     id: ["Warrior", "warrior"],
     cooldownPlannerMenu: true,
     color: "#C79C6E",
-    icon: require("Images/Classes/Warrior/WarriorIcon.jpg").default,
+    icon: require("Images/Classes/Warrior/WarriorIcon.jpg"),
   },
   {
     name: {
@@ -323,7 +336,7 @@ export const cdPlannerclassDB = [
     id: ["Monk", "monk"],
     cooldownPlannerMenu: true,
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/classicon_monk.jpg").default,
+    icon: require("Images/Classes/Monk/classicon_monk.jpg"),
   },
   {
     name: {
@@ -336,7 +349,7 @@ export const cdPlannerclassDB = [
     id: ["Shaman", "shaman"],
     cooldownPlannerMenu: true,
     color: "#0070DE",
-    icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg").default,
+    icon: require("Images/Classes/Shaman/Icons/class_shaman.jpg"),
   },
 
   {
@@ -350,7 +363,7 @@ export const cdPlannerclassDB = [
     id: ["DeathKnight", "deathknight"],
     cooldownPlannerMenu: true,
     color: "#C41E3A",
-    icon: require("Images/Classes/DeathKnight/DeathKnightIcon.jpg").default,
+    icon: require("Images/Classes/DeathKnight/DeathKnightIcon.jpg"),
   },
 
   {
@@ -364,7 +377,7 @@ export const cdPlannerclassDB = [
     id: ["Rogue", "rogue"],
     cooldownPlannerMenu: false,
     color: "#FFF468",
-    icon: require("Images/Classes/Rogue/Icons/RogueIcon.jpg").default,
+    icon: require("Images/Classes/Rogue/Icons/RogueIcon.jpg"),
   },
 
   {
@@ -378,7 +391,7 @@ export const cdPlannerclassDB = [
     id: ["Warlock", "warlock"],
     cooldownPlannerMenu: false,
     color: "#8788EE",
-    icon: require("Images/Classes/Warlock/Icons/WarlockIcon.jpg").default,
+    icon: require("Images/Classes/Warlock/Icons/WarlockIcon.jpg"),
   },
 
   {
@@ -392,7 +405,7 @@ export const cdPlannerclassDB = [
     id: ["Hunter", "hunter"],
     cooldownPlannerMenu: false,
     color: "#AAD372",
-    icon: require("Images/Classes/Hunter/Icons/HunterIcon.jpg").default,
+    icon: require("Images/Classes/Hunter/Icons/HunterIcon.jpg"),
   },
 
   {
@@ -406,7 +419,7 @@ export const cdPlannerclassDB = [
     id: ["Mage", "mage"],
     cooldownPlannerMenu: false,
     color: "#3FC7EB",
-    icon: require("Images/Classes/Mage/Icons/MageIcon.jpg").default,
+    icon: require("Images/Classes/Mage/Icons/MageIcon.jpg"),
   },
 ];
 
@@ -451,7 +464,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["holy paladin"],
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/Specialisation/spell_holy_holybolt.jpg").default,
+    icon: require("Images/Classes/Paladin/Specialisation/spell_holy_holybolt.jpg"),
   },
   {
     name: {
@@ -463,7 +476,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["protection paladin"],
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/Specialisation/ability_paladin_shieldofthetemplar.jpg").default,
+    icon: require("Images/Classes/Paladin/Specialisation/ability_paladin_shieldofthetemplar.jpg"),
   },
   {
     name: {
@@ -475,7 +488,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["retribution paladin"],
     color: "#F58CBA",
-    icon: require("Images/Classes/Paladin/Specialisation/paladin_retribution.jpg").default,
+    icon: require("Images/Classes/Paladin/Specialisation/paladin_retribution.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -491,7 +504,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["holy priest"],
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/spell_holy_guardianspirit.jpg").default,
+    icon: require("Images/Classes/Priest/Specialisation/spell_holy_guardianspirit.jpg"),
   },
   {
     name: {
@@ -503,7 +516,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["shadow priest"],
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/spell_shadow_demonicfortitude.jpg").default,
+    icon: require("Images/Classes/Priest/Specialisation/spell_shadow_demonicfortitude.jpg"),
   },
   {
     name: {
@@ -515,7 +528,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["discipline priest"],
     color: "#FFFFFF",
-    icon: require("Images/Classes/Priest/Specialisation/spell_holy_powerwordshield.jpg").default,
+    icon: require("Images/Classes/Priest/Specialisation/spell_holy_powerwordshield.jpg"),
   },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Druid                                             */
@@ -531,7 +544,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["balance druid"],
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/spell_nature_starfall.jpg").default,
+    icon: require("Images/Classes/Druid/Specialisation/spell_nature_starfall.jpg"),
   },
   {
     name: {
@@ -543,7 +556,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["feral druid"],
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/ability_druid_catform.jpg").default,
+    icon: require("Images/Classes/Druid/Specialisation/ability_druid_catform.jpg"),
   },
   {
     name: {
@@ -555,7 +568,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["guardian druid"],
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/ability_racial_bearform.jpg").default,
+    icon: require("Images/Classes/Druid/Specialisation/ability_racial_bearform.jpg"),
   },
   {
     name: {
@@ -567,7 +580,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["restoration druid"],
     color: "#FF7D0A",
-    icon: require("Images/Classes/Druid/Specialisation/spell_nature_healingtouch.jpg").default,
+    icon: require("Images/Classes/Druid/Specialisation/spell_nature_healingtouch.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -583,7 +596,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["Devastation", "devastation evoker"],
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker_devastation.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker_devastation.jpg"),
   },
   {
     name: {
@@ -595,7 +608,19 @@ export const cdPlannerSpecDB = [
     },
     id: ["Preservation", "preservation evoker"],
     color: "#33937F",
-    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg").default,
+    icon: require("Images/Classes/Evoker/classicon_evoker_preservation.jpg"),
+  },
+  {
+    name: {
+      en: "Augmentation",
+      fr: "Augmentation",
+      de: "Augmentation",
+      ru: "Augmentation",
+      ch: "Augmentation",
+    },
+    id: ["Augmenation Evoker", "augmentation evoker"],
+    color: "#33937F",
+    icon: require("Images/Classes/Evoker/classicon_evoker_augmentation.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -611,7 +636,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["havoc demonhunter"],
     color: "#A330C9",
-    icon: require("Images/Classes/DemonHunter/ability_demonhunter_specdps.jpg").default,
+    icon: require("Images/Classes/DemonHunter/ability_demonhunter_specdps.jpg"),
   },
   {
     name: {
@@ -623,7 +648,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["vengeance demonhunter"],
     color: "#A330C9",
-    icon: require("Images/Classes/DemonHunter/ability_demonhunter_spectank.jpg").default,
+    icon: require("Images/Classes/DemonHunter/ability_demonhunter_spectank.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -639,7 +664,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["arms warrior"],
     color: "#C79C6E",
-    icon: require("Images/Classes/Warrior/ability_warrior_savageblow.jpg").default,
+    icon: require("Images/Classes/Warrior/ability_warrior_savageblow.jpg"),
   },
 
   {
@@ -652,7 +677,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["fury warrior"],
     color: "#C79C6E",
-    icon: require("Images/Classes/Warrior/ability_warrior_innerrage.jpg").default,
+    icon: require("Images/Classes/Warrior/ability_warrior_innerrage.jpg"),
   },
   {
     name: {
@@ -664,7 +689,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["protection warrior"],
     color: "#C79C6E",
-    icon: require("Images/Classes/Warrior/ability_warrior_defensivestance.jpg").default,
+    icon: require("Images/Classes/Warrior/ability_warrior_defensivestance.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -680,7 +705,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["mistweaver monk"],
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/Specialisation/spell_monk_mistweaver_spec.jpg").default,
+    icon: require("Images/Classes/Monk/Specialisation/spell_monk_mistweaver_spec.jpg"),
   },
   {
     name: {
@@ -692,7 +717,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["brewmaster monk"],
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/Specialisation/spell_monk_brewmaster_spec.jpg").default,
+    icon: require("Images/Classes/Monk/Specialisation/spell_monk_brewmaster_spec.jpg"),
   },
   {
     name: {
@@ -704,7 +729,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["windwalker monk"],
     color: "#00FF96",
-    icon: require("Images/Classes/Monk/Specialisation/spell_monk_windwalker_spec.jpg").default,
+    icon: require("Images/Classes/Monk/Specialisation/spell_monk_windwalker_spec.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -720,7 +745,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["elemental shaman"],
     color: "#0070DE",
-    icon: require("Images/Classes/Shaman/Specialisation/spell_nature_lightning.jpg").default,
+    icon: require("Images/Classes/Shaman/Specialisation/spell_nature_lightning.jpg"),
   },
   {
     name: {
@@ -732,7 +757,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["enhancement shaman"],
     color: "#0070DE",
-    icon: require("Images/Classes/Shaman/Specialisation/spell_shaman_improvedstormstrike.jpg").default,
+    icon: require("Images/Classes/Shaman/Specialisation/spell_shaman_improvedstormstrike.jpg"),
   },
   {
     name: {
@@ -744,7 +769,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["restoration shaman"],
     color: "#0070DE",
-    icon: require("Images/Classes/Shaman/Specialisation/spell_nature_magicimmunity.jpg").default,
+    icon: require("Images/Classes/Shaman/Specialisation/spell_nature_magicimmunity.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -760,7 +785,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["blood deathknight"],
     color: "#C41E3A deathknight",
-    icon: require("Images/Classes/DeathKnight/spell_deathknight_bloodpresence.jpg").default,
+    icon: require("Images/Classes/DeathKnight/spell_deathknight_bloodpresence.jpg"),
   },
   {
     name: {
@@ -772,7 +797,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["frost deathknight"],
     color: "#C41E3A",
-    icon: require("Images/Classes/DeathKnight/spell_deathknight_frostpresence.jpg").default,
+    icon: require("Images/Classes/DeathKnight/spell_deathknight_frostpresence.jpg"),
   },
   {
     name: {
@@ -784,7 +809,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["unholy deathknight"],
     color: "#C41E3A",
-    icon: require("Images/Classes/DeathKnight/spell_deathknight_unholypresence.jpg").default,
+    icon: require("Images/Classes/DeathKnight/spell_deathknight_unholypresence.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -800,7 +825,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["assassination rogue"],
     color: "#FFF468",
-    icon: require("Images/Classes/Rogue/Icons/ability_rogue_deadlybrew.jpg").default,
+    icon: require("Images/Classes/Rogue/Icons/ability_rogue_deadlybrew.jpg"),
   },
   {
     name: {
@@ -812,7 +837,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["outlaw rogue"],
     color: "#FFF468",
-    icon: require("Images/Classes/Rogue/Icons/ability_rogue_waylay.jpg").default,
+    icon: require("Images/Classes/Rogue/Icons/ability_rogue_waylay.jpg"),
   },
   {
     name: {
@@ -824,7 +849,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["subtlety rogue"],
     color: "#FFF468",
-    icon: require("Images/Classes/Rogue/Icons/ability_stealth.jpg").default,
+    icon: require("Images/Classes/Rogue/Icons/ability_stealth.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -840,7 +865,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["affliction warlock"],
     color: "#8788EE",
-    icon: require("Images/Classes/Warlock/Icons/spell_shadow_deathcoil.jpg").default,
+    icon: require("Images/Classes/Warlock/Icons/spell_shadow_deathcoil.jpg"),
   },
   {
     name: {
@@ -852,7 +877,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["demonology warlock"],
     color: "#8788EE",
-    icon: require("Images/Classes/Warlock/Icons/spell_shadow_metamorphosis.jpg").default,
+    icon: require("Images/Classes/Warlock/Icons/spell_shadow_metamorphosis.jpg"),
   },
   {
     name: {
@@ -864,7 +889,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["destruction warlock"],
     color: "#8788EE",
-    icon: require("Images/Classes/Warlock/Icons/spell_shadow_rainoffire.jpg").default,
+    icon: require("Images/Classes/Warlock/Icons/spell_shadow_rainoffire.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -880,7 +905,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["beastmastery hunter"],
     color: "#AAD372",
-    icon: require("Images/Classes/Hunter/Icons/ability_hunter_bestialdiscipline.jpg").default,
+    icon: require("Images/Classes/Hunter/Icons/ability_hunter_bestialdiscipline.jpg"),
   },
   {
     name: {
@@ -892,7 +917,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["marksmanship hunter"],
     color: "#AAD372",
-    icon: require("Images/Classes/Hunter/Icons/ability_hunter_focusedaim.jpg").default,
+    icon: require("Images/Classes/Hunter/Icons/ability_hunter_focusedaim.jpg"),
   },
   {
     name: {
@@ -904,7 +929,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["survival hunter"],
     color: "#AAD372",
-    icon: require("Images/Classes/Hunter/Icons/ability_hunter_camouflage.jpg").default,
+    icon: require("Images/Classes/Hunter/Icons/ability_hunter_camouflage.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -920,7 +945,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["arcane mage"],
     color: "#3FC7EB",
-    icon: require("Images/Classes/Mage/Icons/spell_holy_magicalsentry.jpg").default,
+    icon: require("Images/Classes/Mage/Icons/spell_holy_magicalsentry.jpg"),
   },
   {
     name: {
@@ -932,7 +957,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["fire mage"],
     color: "#3FC7EB",
-    icon: require("Images/Classes/Mage/Icons/spell_fire_firebolt02.jpg").default,
+    icon: require("Images/Classes/Mage/Icons/spell_fire_firebolt02.jpg"),
   },
   {
     name: {
@@ -944,7 +969,7 @@ export const cdPlannerSpecDB = [
     },
     id: ["frost mage"],
     color: "#3FC7EB",
-    icon: require("Images/Classes/Mage/Icons/spell_frost_frostbolt02.jpg").default,
+    icon: require("Images/Classes/Mage/Icons/spell_frost_frostbolt02.jpg"),
   },
 ];
 

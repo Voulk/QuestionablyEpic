@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid
 import { getGemIcon, getEmbellishmentIcon, getTranslatedEmbellishment } from "General/Engine/ItemUtilities";
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const getRankDiff = (rank, map2, prevRank) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */
@@ -44,21 +44,23 @@ export default class EmbelChart extends PureComponent {
     const currentLanguage = i18n.language;
     const data = this.props.data;
     const db = this.props.db;
+    const barColours = this.props.theme;
     let arr = [];
     let cleanedArray = [];
-
+    // 
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
-        arr.push({
+        arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
           name: map2.id,
-          //i161: map2.i161,
-          411: map2.r411,
-          421: getRankDiff(421, map2, 411),
-          427: getRankDiff(427, map2, 421),
-          437: getRankDiff(437, map2, 427),
-          443: getRankDiff(443, map2, 437),
-          447: getRankDiff(447, map2, 443),
+          447: map2.r447,
+          460: getRankDiff(460, map2, 447),
+          470: getRankDiff(470, map2, 460),
+          473: getRankDiff(473, map2, 470),
+          477: getRankDiff(477, map2, 473),
+          480: getRankDiff(480, map2, 477),
+          483: getRankDiff(483, map2, 480),
+          486: getRankDiff(486, map2, 483),
         });
       });
 
@@ -123,12 +125,17 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          {[447, 460, 470, 473, 477, 480, 483, 486].map((key, i) => (
+            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
+          ))}
+
+          {/*}
           <Bar dataKey={411} fill={"#208c81"} stackId="a" />
           <Bar dataKey={421} fill={"#2aa497"} stackId="a" />
           <Bar dataKey={427} fill={"#34bdad"} stackId="a" />
           <Bar dataKey={437} fill={"#3ed6c4"} stackId="a" />
           <Bar dataKey={443} fill={"#49f0db"} stackId="a" />
-          <Bar dataKey={447} fill={"#49f5df"} stackId="a" />
+          <Bar dataKey={447} fill={"#49f5df"} stackId="a" /> */}
         </BarChart>
       </ResponsiveContainer>
     );

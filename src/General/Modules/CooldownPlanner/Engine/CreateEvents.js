@@ -40,8 +40,17 @@ import createZskarnEvents from "./BossEvents/AbberusEvents/6. Zskarn";
 import createNeltharionEvents from "./BossEvents/AbberusEvents/8. Neltharion";
 import createRashokEvents from "./BossEvents/AbberusEvents/5. Rashok";
 import createSarkarethEvents from "./BossEvents/AbberusEvents/9. Sarkareth";
+import createGnarlrootEvents from "./BossEvents/AmirdrassilEvents/1. Gnarlroot";
+import createIgiraEvents from "./BossEvents/AmirdrassilEvents/2. Igira";
+import createVolcorossEvents from "./BossEvents/AmirdrassilEvents/3. Volcoross";
+import createCouncilofDreamsEvents from "./BossEvents/AmirdrassilEvents/4. CouncilofDreams";
+import createLarodarEvents from "./BossEvents/AmirdrassilEvents/5. Larodar";
+import createNymueEvents from "./BossEvents/AmirdrassilEvents/6. Nymue";
+import createSmolderonEvents from "./BossEvents/AmirdrassilEvents/7. Smolderon";
+import createTindralSageswiftEvents from "./BossEvents/AmirdrassilEvents/8. TindralSageswift";
+import createFyrakkEvents from "./BossEvents/AmirdrassilEvents/9. Fyrakk";
 
-export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime) {
+export default function createEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData) {
   let returnedEvents = [];
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -214,6 +223,43 @@ export default function createEvents(bossID, difficulty, damageTakenData, debuff
 
   if (bossID === 2685) {
     returnedEvents = createSarkarethEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy);
+  }
+
+  /* -------------------------------- Gnarlroot ------------------------------- */
+  if (bossID === 2820) {
+    returnedEvents = createGnarlrootEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* ----------------------------- Igira the Cruel ---------------------------- */
+  if (bossID === 2709) {
+    returnedEvents = createIgiraEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* -------------------------------- Volcoross ------------------------------- */
+  if (bossID === 2737) {
+    returnedEvents = createVolcorossEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* ---------------------------- Council of Dreams --------------------------- */
+  if (bossID === 2728) {
+    returnedEvents = createCouncilofDreamsEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* ---------------------- Larodar, Keeper of the Flame ---------------------- */
+  if (bossID === 2731) {
+    returnedEvents = createLarodarEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* ----------------------- Nymue, Weaver of the Cycle ----------------------- */
+  if (bossID === 2708) {
+    returnedEvents = createNymueEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* -------------------------------- Smolderon ------------------------------- */
+  if (bossID === 2824) {
+    returnedEvents = createSmolderonEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* ------------------ Tindral Sageswift, Seer of the Flame ------------------ */
+  if (bossID === 2786) {
+    returnedEvents = createTindralSageswiftEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
+  }
+  /* --------------------------- Fyrakk the Blazing --------------------------- */
+  if (bossID === 2677) {
+    returnedEvents = createFyrakkEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData);
   }
 
   return returnedEvents;

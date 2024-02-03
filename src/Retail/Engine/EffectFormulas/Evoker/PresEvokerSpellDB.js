@@ -1,6 +1,6 @@
 
-import { runHeal, getHaste, runDamage } from "./PresEvokerRamps";
-import { addReport } from "../Generic/RampBase";
+import { runHeal, runDamage } from "./PresEvokerRamps";
+import { addReport, getCrit, getHaste } from "../Generic/RampBase";
 
 
 // This is the Evoker spell database. 
@@ -28,8 +28,9 @@ import { addReport } from "../Generic/RampBase";
 
 // For spells with aura effects, include it in the coefficient itself. Aura effects that buff the entire spec are handled in EVOKERCONST.
 export const EVOKERSPELLDB = {
-    // Essence recharge rate: 3s?
+    // Essence recharge rate: 5s / haste.
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
         type: "",
         castTime: 1.5,
         cost: 0,
@@ -39,6 +40,7 @@ export const EVOKERSPELLDB = {
     "Living Flame": [{ 
         // Can be used for DPS or Healing. This is the healing version but both can be included either together or separately (the latter might be more efficient).
         spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "heal"},
+        name: "Living Flame",
         type: "heal",
         school: 'red',
         castTime: 2,
@@ -47,14 +49,15 @@ export const EVOKERSPELLDB = {
         expectedOverheal: 0.22,
         secondaries: ['crit', 'vers', 'mastery']
     }],
-    "Living Flame D": [{ 
-        // This is the DPS version of Living Flame.
+    "Living Flame O": [{ 
+        // This is the Offensive, DPS version of Living Flame.
         spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "damage"},
+        name: "Living Flame O",
         type: "damage",
         school: "red",
         castTime: 2,
         cost: 0,//2.0,
-        coeff: 1.61,
+        coeff: 2.76,
         secondaries: ['crit', 'vers']
     }],
     "Verdant Embrace": [{ 
@@ -65,24 +68,24 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         onGCD: true,
         cost: 3.0,
-        coeff: 3.096,
-        cooldown: 18,
-        expectedOverheal: 0.15,
+        coeff: 4.18,
+        cooldownData: {cooldown: 18, hasted: true}, 
+        expectedOverheal: 0.5,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Spiritbloom": [{  
         // Spiritbloom is a charge ability that adds a target per charge tier.
-        // TODO: Assumption is chained targets are random injured not lowest health or distance based. 
+        // Spiritbloom is smart healing.
         spellData: {id: 382731, icon: "ability_evoker_spiritbloom2", cat: "heal"},
         type: "heal",
         school: "green",
         castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
         cost: 3.8,
-        cooldown: 30,
+        cooldownData: {cooldown: 30, hasted: false}, 
         coeff: 5.085,
         targets: [1, 2, 3, 4], // 
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.5,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Dream Breath": [{  
@@ -94,7 +97,7 @@ export const EVOKERSPELLDB = {
         empowered: true,
         cost: 4.5,
         coeff: 0.768,
-        cooldown: 30,
+        cooldownData: {cooldown: 30, hasted: false}, 
         expectedOverheal: 0.3, // 0.25
         targets: 5, // 
         secondaries: ['crit', 'vers', 'mastery']
@@ -114,10 +117,11 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: [16, 12, 8, 4],
+        tickData: {tickRate: 2, canPartialTick: true},
         tickRate: 2,
         coeff: 0.384, 
         targets: 5, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.6,
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
@@ -128,12 +132,12 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         school: 'green',
         onGCD: true,
-        delay: 2, // The number of seconds before the spell heals.
+        delay: 1.5, // The number of seconds before the spell heals.
         targets: 3,
         essence: 3,
         cost: 4.8,
         coeff: 1.5,
-        expectedOverheal: 0.35,
+        expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Echo": [{
@@ -150,7 +154,7 @@ export const EVOKERSPELLDB = {
         essence: 2,
         cost: 1.7,
         coeff: 1.2, // Aura
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.4,
         targets: 1, // 
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -173,51 +177,61 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "function",
         school: "bronze",
-        tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
-        coeff: 0.57 * 0.67,
+        coeff: 0.342,
         cost: 2.0,
-        statMods: {'crit': 0.15},
+        cooldownData: {cooldown: 8, hasted: true}, 
         buffDuration: 12,
-        function: function (state, buff) {
-            const hotHeal = { type: "heal", coeff: buff.coeff, expectedOverheal: 0.2, secondaries: ['crit', 'vers', 'mastery'], statMods: buff.statMods}
+        /*onApplication: function (state, spell, buff) {
+            const newDuration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats)-1))));
+            buff.expiration = newDuration;
 
-            runHeal(state, hotHeal, buff.name)
+            return buff;
+        },*/
+        runFunc: function (state, spell, buff) {
+            const hotHeal = { type: "heal", coeff: spell.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
+
+            runHeal(state, hotHeal, spell.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
             // This can't take into account on-use crit increases though whereas rolling it each time will (but requires more iterations for a proper valuation).
             // Current model uses the deterministic method. TODO. 
+            const roll = Math.random();
+            const extension = roll <= (getCrit(state.currentStats) - 1)
+
+            if (extension) {
+                if ('extensionCount' in buff) {
+                    if (buff.extensionCount < 6) {
+                        buff.extensionCount += 1;
+                        buff.expiration += (2 / getHaste(state.currentStats));
+                    
+                    }
+                    else {
+                        //console.log("Tried to extend but already at cap");
+                    }
+                }
+                else {
+                    buff.extensionCount = 1;
+
+                    buff.expiration += (2 / getHaste(state.currentStats));
+
+                }
+            }
         }
 
     }],
-    "Temporal Anomaly": [/*{
-        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
-        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
-        spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
-        name: "Temporal Anomaly",
-        type: "buff",
-        buffType: "heal",
-        school: "bronze",
-        castTime: 1.5,
-        buffDuration: 6,
-        tickRate: 2,
-        cooldown: 6,
-        cost: 7.5,
-        coeff: 1.75, 
-        targets: 2, 
-        expectedOverheal: 0.4, // Note that while this is called ExpectedOverhealing it's really just an efficiency value.
-        secondaries: ['vers', 'mastery']
-    }, */
-    { // I should turn these hasteDuration flags into a proper "flags" subobject.
+    "Temporal Anomaly": [
+    { // 
         spellData: {id: 373861, icon: "ability_evoker_temporalanomaly", cat: "heal"},
         name: "Temporal Anomaly",
         type: "heal",
-        buffType: "function",
         school: "bronze",
         castTime: 1.5,
         coeff: 1.4,
         cost: 7.5,
         targets: 15,
         expectedOverheal: 0.05,
+        cooldownData: {cooldown: 15, hasted: true}, 
         tags: ['sqrt'],
         sqrtMin: 5,
         secondaries: ['vers', 'mastery']
@@ -225,12 +239,9 @@ export const EVOKERSPELLDB = {
     { 
         type: "function",
         runFunc: function (state, spell) {
-            //const absorb = { type: "heal", coeff: buff.coeff, expectedOverheal: 0, secondaries: ['vers', 'mastery'], targets: 2}
-            
-            //runHeal(state, absorb, "buff.name")
-            
+
             if (state.talents.resonatingSphere) {
-                const echoBuffs = 4;
+                const echoBuffs = 5;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
                     value: 0.3 * (1 + state.talents.timeLord * 0.25), stacks: 1, canStack: false, maxStacks: 1};
                 
@@ -244,24 +255,24 @@ export const EVOKERSPELLDB = {
     }],
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
+        // While it's included for completeness, you really shouldn't use this. 
         spellData: {id: 364342, icon: "ability_evoker_blessingofthebronze", cat: "cooldown"},
         type: "rest",
         school: "bronze",
         castTime: 1.5,
-        cooldown: 15,
+        cooldownData: {cooldown: 15, hasted: false}, 
         cost: 4.0,
     }],
     "Dream Flight": [{
         // Large upfront heal and leaves a 15s HoT on anyone it hits.
-        // 1 min cooldown. Travels up to 60 yards. 
         spellData: {id: 359816, icon: "ability_evoker_dreamflight", cat: "cooldown"},
         type: "heal",
         school: "green",
         castTime: 3, // TODO: This one has variance based on how far we travel. 
-        cooldown: 120,
+        cooldownData: {cooldown: 120, hasted: false}, 
         cost: 4.0,
         coeff: 4,
-        targets: 10, // Can hit everyone. Likely to be retuned around sqrt scaling.
+        targets: 15, // Can hit everyone. No sqrt scaling.
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -270,6 +281,7 @@ export const EVOKERSPELLDB = {
         buffName: "Dream Flight",
         buffType: "heal",
         tickRate: 3,
+        tickData: {tickRate: 3, canPartialTick: true},
         targets: 10,
         coeff: 0.5,
         buffDuration: 15,
@@ -277,7 +289,7 @@ export const EVOKERSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Azure Strike": [{
-        // Two target hit. Instant.
+        // Hits two targets. Instant.
         spellData: {id: 362969, icon: "ability_evoker_azurestrike", cat: "damage"},
         type: "damage",
         school: "blue",
@@ -290,15 +302,12 @@ export const EVOKERSPELLDB = {
     }],
     "Fire Breath": [{
         // Hits all targets in front of you. Reduced after 5 targets.
-        // Questions:
-        // - Is it sqrt scaling after 5 targets?
-        // - Is the HoT also reduced damage after 5 targets?
-        // - Does Lifegivers Flame also heal for the DoT amount?
         spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
         type: "damage",
         empowered: true,
         school: "red",
         castTime: [1, 1.75, 2.5, 3.25],
+        cooldownData: {cooldown: 30, hasted: false}, 
         cost: 2.6,
         coeff: 1.45,
         targets: 5, // Note that multi-target DPS abilities might be capped by enemyTargets in EVOKERCONST.
@@ -309,6 +318,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 2,
+        tickData: {tickRate: 2, canPartialTick: true},
         targets: 5,
         coeff: 0.35,
         buffDuration: [4, 8, 12, 16],
@@ -332,6 +342,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "damage",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 3,
         coeff: 0.76,
         secondaries: ['crit', 'haste', 'vers'],
@@ -347,6 +358,7 @@ export const EVOKERSPELLDB = {
         flatHeal: 0,
         targets: 1,
         expectedOverheal: 0.4,
+        cooldownData: {cooldown: 180, hasted: false}, 
         secondaries: [],
     },
     {
@@ -354,6 +366,7 @@ export const EVOKERSPELLDB = {
         type: "buff",
         buffType: "heal",
         tickRate: 1,
+        tickData: {tickRate: 1, canPartialTick: false},
         buffDuration: 5,
         coeff: 0,
         flatHeal: 0,
@@ -380,7 +393,7 @@ export const evokerTalents = {
     essenceBurst: {points: 1, maxPoints: 1, icon: "ability_evoker_essenceburst", id: 359618, select: true, tier: 1}, // Living Flame has a 20% chance to make your next Essence ability free.
     rewind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1}, // Raid cooldown.
     spiritbloom: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1},
-    lifeGiversFlame: {points: 1, maxPoints: 2, icon: "item_sparkofragnoros", id: 371441, select: true, tier: 1}, // Fire Breath heals a nearby ally for 40/80% of damage done.
+    lifeGiversFlame: {points: 0, maxPoints: 2, icon: "item_sparkofragnoros", id: 371441, select: true, tier: 1}, // Fire Breath heals a nearby ally for 40/80% of damage done.
     timeDilation: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1}, // ST defensive
 
     // Tier 2
@@ -398,13 +411,13 @@ export const evokerTalents = {
     lifebind: {points: 0, maxPoints: 1, icon: "ability_evoker_hoverred", id: 373270, select: true, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 1, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
 
-
+    ancientFlame: {points: 1, maxPoints: 1, icon: "ability_evoker_rescue", id: 99998, select: false},
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Needs testing.
     sacralEmpowerment: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
     exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
     fontOfMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", id: 375783, select: true, tier: 3}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "inv_elemental_mote_mana", id: 372233, select: true, tier: 3}, // makes Disintegrate deals more damage and grants mana over it's duration.
-    renewingBreath: {points: 0, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
+    renewingBreath: {points: 2, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
     gracePeriod: {points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
     timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
     dreamFlight: {points: 0, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 
@@ -414,7 +427,7 @@ export const evokerTalents = {
     rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},
     //rescue: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
     innateMagic: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 375520, select: true, tier: 4}, // Essence regens 5% faster (2 charges).
-    enkindled: {points: 2, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
+    enkindled: {points: 0, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
     scarletAdaptation: {points: 0, maxPoints: 1, icon: "inv_bijou_red", id: 372469, select: true, tier: 4}, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.
     cauterizingFlame: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Big dispel that also heals.
     tipTheScales: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Your next empowered spell casts instantly. 2 min CD.

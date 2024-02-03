@@ -1,7 +1,4 @@
 // 
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-
-
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
@@ -15,6 +12,73 @@ const GLOBALCONST = {
 
 }
 
+// Returns any increased tick rate the spell might currently have.
+// Examples include Flourish, Photosynthesis.
+// Note that tick rate increases are multiplicative with each other. 
+export const getIncreasedTickRate = (state, tickRate) => {
+    let adjTick = tickRate;
+    state.activeBuffs.filter(buff => buff.buffType === "periodicSpeed").forEach(buff => {
+        adjTick /= buff.value;
+    });
+    return adjTick;
+}
+
+const getNextTick = (state, tickRate) => {
+    return getIncreasedTickRate(state, tickRate / getHaste(state.currentStats));
+}
+
+
+export const runBuffs = (state, tickBuff, stats, spellDB) => {
+        // ---- Heal over time and Damage over time effects ----
+        // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
+        // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
+        // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
+        // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
+        // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
+        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
+        if (healBuffs.length > 0) {
+            healBuffs.forEach((buff) => {
+               
+                let currentStats = {...stats};
+                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
+                tickBuff(state, buff, spellDB);
+
+                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + getNextTick(state, buff.tickRate);
+                else buff.next = buff.next + (buff.tickRate);
+            });  
+        }
+
+        // -- Partial Ticks --
+        // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
+        // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
+        // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
+        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
+        expiringHots.forEach(buff => {
+
+            if (buff.buffType === "heal" || buff.buffType === "damage") {
+                const tickRate = buff.tickRate / getHaste(state.currentStats)
+                const partialTickPercentage = (buff.next - state.t) / tickRate;
+                const spell = buff.attSpell;
+                spell.coeff = spell.coeff * partialTickPercentage;
+
+                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
+                else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
+            }
+            else if (buff.runEndFunc) buff.runFunc(state, buff);
+        })
+}
+
+export const applyTalents = (state, spellDB, stats) => {
+    Object.keys(state.talents).forEach(talentName => {
+        
+        const talent = state.talents[talentName];
+
+        if (talent.points > 0) {
+            talent.runFunc(state, spellDB, talent.points, stats)
+        }
+    });
+
+}
 
 // Cleanup is called after every hard spell cast. 
 export const spellCleanup = (spell, state) => {
@@ -22,21 +86,91 @@ export const spellCleanup = (spell, state) => {
     // Check for any buffs that buffed the spell and remove them.
 }
 
+// TODO: Generalize secondary spell costs and then flatten this function. 
+export const spendSpellCost = (spell, state) => {
+    if ('essence' in spell[0]) {
+        if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
+            state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
+            addReport(state, `Essence Burst consumed!`);
+            state.manaSpent += 0;
+        }
+        else {
+            // Essence buff is not active. Spend Essence and mana.
+            state.manaSpent += spell[0].cost;
+            state.essence -= spell[0].essence;
+
+            // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
+            // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
+            if (checkBuffActive(state.activeBuffs, "EssenceGen") === false) {
+                addBuff(state, EVOKERCONSTANTS.essenceBuff, "EssenceGen");
+            }
+        }
+    } 
+        
+    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else {
+        // No cost. Do nothing.
+    };    
+}
+
+
 export const addBuff = (state, spell, spellName) => {
+    let newBuff = {name: spell.name || spellName, expiration: state.t + spell.buffDuration, buffType: spell.buffType, startTime: state.t};
+    // (state.t + spell.castTime + spell.buffDuration)
 
     if (spell.buffType === "stats") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + ")");
-        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "stats", value: spell.value, stat: spell.stat});
+        newBuff = {...newBuff, value: spell.value, stat: spell.stat}
+        state.activeBuffs.push(newBuff);
     }
     else if (spell.buffType === "statsMult") {
         addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds (" + spell.value + " " + spell.stat + " - Mult)");
-        state.activeBuffs.push({name: spellName, expiration: state.t + spell.buffDuration, buffType: "statsMult", value: spell.value, stat: spell.stat});
+        newBuff = {...newBuff, value: spell.value, stat: spell.stat}
+        state.activeBuffs.push(newBuff);
     }
-    else if (spell.buffType === "damage" || spell.buffType === "heal") {     
-        const newBuff = {name: spellName, buffType: spell.buffType, attSpell: spell,
-            tickRate: spell.tickRate, canPartialTick: spell.canPartialTick, next: state.t + (spell.tickRate / getHaste(state.currentStats))}
+    else if (spell.buffType === "damage" || spell.buffType === "heal" || spell.buffType === "function") {     
+        addReport(state, "Adding Buff: " + spellName + " for " + spell.buffDuration + " seconds.");
+        newBuff = {...newBuff, tickRate: spell.tickData.tickRate, canPartialTick: spell.tickData.canPartialTick}
+        
+        // If our spell has a hasted duration we'll reduce the expiration. These are at least fairly rare nowadays.
+        if (spell.tickData.hastedDuration) newBuff.expiration = state.t + (spell.buffDuration / getHaste(state.currentStats));
+        
+        // Most HoTs and DoTs will scale with haste via a faster tick rate. There are some exceptions though like Yseras Gift and
+        // so we'll check for a hasted flag so we can handle those too. If a flag doesn't exist at all then we'll assume it's hasted.
+        if (spell.tickData.hasted || spell.tickData.hasted === undefined) {
+            newBuff.next = state.t + getNextTick(state, spell.tickData.tickRate);
+            newBuff.hasted = true;
+        }
+        else {
+            newBuff.next = state.t + (spell.tickData.tickRate);
+            newBuff.hasted = false;
+        }
 
-        newBuff['expiration'] = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
+        // If the target of the buff is relevant to its functionality. Generate one.
+        if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
+
+        // Check if any buffs affect the spell. If they do we'll have to adjust the coefficient.
+        // Examples: Dream Breath (Call of Ysera).
+        if (state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName).length > 0) {
+            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName)[0];
+            spell.coeff = spell.coeff * spellAmp.value;
+        }
+
+        // The spell will run a function on tick.
+        if (spell.buffType === "function") {
+            newBuff.attFunction = spell.runFunc;
+            newBuff.attSpell = spell;
+        }
+        // The spell will cast a spell on tick. Examples: Any standard HoT or DoT.
+        else {
+            newBuff.attSpell = spell;
+        }
+        // Run a function when the spell ticks. Examples: Lux Soil, Reversion. NYI.
+        if (spell.tickData.onTick) newBuff.onTick = spell.tickData.onTick;
+        // The spell does something on application. Note that standard "heals on application" shouldn't be applied here. This is for special effects.
+        if (spell.onApplication) spell.onApplication(state, spell, newBuff);
+        
+
         state.activeBuffs.push(newBuff)
 
     }
@@ -51,44 +185,50 @@ export const addBuff = (state, spell, spellName) => {
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
 
+        // Buff doesn't exist already. We'll add the buff new.
         if (buffStacks === 0) {
-            state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, 
-                                        buffType: "spellAmp", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack,
-                                        buffedSpellName: spell.buffedSpellName
-                                        });
+            newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName}
+            state.activeBuffs.push(newBuff);
         }
+        // The buff does already exist. We can just add a stack.
+        // Note that the duration usually refreshes here too.
+        // We could add a flag to not refresh if it's ever necessary.
+
+        // If a buff is unable to stack, we'll just refresh the duration instead.
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
             if (buff.canStack) buff.stacks += 1;
+            buff.expiration = newBuff.expiration;
         }
     }
-    else if (spell.buffType === "special") {
+
+    // This category could possibly be folded into others. Currently a bit of a messy catch all.
+    else if (spell.buffType === "special" || spell.buffType === "periodicSpeed") {
         
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
+        
 
-        if (buffStacks === 0) state.activeBuffs.push({name: spell.name, expiration: (state.t + spell.castTime + spell.buffDuration) || 999, buffType: "special", value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack});
+        if (buffStacks === 0 || !spell.canStack) {
+            newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
+            state.activeBuffs.push(newBuff);
+            //console.log(newBuff);
+        }
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
             if (buff.canStack) buff.stacks += 1;
+            buff.expiration = newBuff.expiration;
         }
-    }
-    else if (spell.buffType === "function") {
-        const newBuff = {name: spell.name, buffType: spell.buffType, attSpell: spell,
-            tickRate: spell.tickRate / getHaste(state.currentStats), canPartialTick: spell.canPartialTick || false, 
-            next: state.t + (spell.tickRate / getHaste(state.currentStats))}
-        newBuff.attFunction = spell.function;
-        newBuff.expiration = spell.hastedDuration ? state.t + (spell.buffDuration / getHaste(state.currentStats)) : state.t + spell.buffDuration
-        
-        state.activeBuffs.push(newBuff);
 
-    }     
+    }
     else {
+        addReport(state, "Adding Buff with INVALID category: " + spellName);
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
     }
+    return newBuff; // Note that we are adding to our state directly. This can just be useful for other functions like TickOnCast.
     
 }
 
@@ -128,6 +268,30 @@ export const checkBuffActive = (buffs, buffName) => {
     return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
+
+export const generateBuffTarget = (state, spell) => {
+    // Attempt to find unique target for HoT.
+    const filteredBuffs = state.activeBuffs.filter(buff => buff.name === spell.name)
+
+    // Create an array of possible targets from 1 to 20. We could add better support for M+ by capping this at 5.
+    const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
+    // Get all the 'target' values from the input array
+    const targets = new Set(filteredBuffs.map(obj => obj.target));
+
+    // Find the smallest number that isn't in the 'targets'
+    for (let num of numbers) {
+        if (!targets.has(num)) {
+            addReport(state, "Adding Buff: " + spell.name + " to target " + num);
+            return num;
+        }
+    }
+    // If all buffs are taken, return 0 instead. The technically correct answer here would be to check for the shortest buff while we're finding the smallest
+    // number and return that but we'll leave that for another time. Note that it's a very minor optimization. 
+    return 0;
+
+}
+
 /** Check if a specific buff is active and returns how many stacks of it we have.
  * @param buffs An array of buff objects.
  * @param buffName The name of the buff we're searching for.
@@ -155,6 +319,34 @@ export const getBuffValue = (buffs, buffName) => {
     return buff.value || 0;
 }
 
+// Currently checks cooldown. Does not check for other availability but could be expanded to include. 
+export const isSpellAvailable = (state, spellDB, spellName) => {
+    const spell = spellDB[spellName][0]
+    if (!spell || !('cooldownData' in spell)) return false;
+    return (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
+}
+
+export const getSpellCooldown = (state, spellDB, spellName) => {
+    const spell = spellDB[spellName][0]
+    if (!spell || !('cooldownData' in spell)) return false;
+    return spell.cooldownData.activeCooldown - state.t;
+
+}
+
+export const getSpellCastTime = (spell, state, currentStats) => {
+    if ('castTime' in spell) {
+        let castTime = spell.castTime;
+
+        if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        // Replace with generic cast time decreases.
+        else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
+        else castTime = castTime / getHaste(currentStats);
+
+        return castTime;
+    }
+    else console.log("CAST TIME ERROR. Spell: " + spellName);
+}
+
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
  * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
@@ -169,6 +361,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
+    
     if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
@@ -210,12 +403,14 @@ export const getHaste = (stats) => {
 }
 
 export const getCrit = (stats) => {
-    return 1 + stats.crit / 180 / 100;
+    return 1.05 + stats.crit / 180 / 100;
 }
 
 export const addReport = (state, entry) => {
     if (state.settings.reporting) {
         state.report.push(Math.round(100*state.t)/100 + " " + entry);
+            
+        //state.report.push(Math.round(100*state.t)/100 + " " + entry);
     }
 }
 
@@ -273,4 +468,5 @@ const deepCopyFunction = (inObject) => {
   
     return outObject;
   };
+
 

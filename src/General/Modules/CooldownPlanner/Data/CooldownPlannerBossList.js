@@ -10,7 +10,7 @@ export const raidDB = [
       ch: "化身巨龙牢窟",
     },
     expansion: 9,
-    icon: require("Images/achievement_raidprimalist_raid.jpg").default,
+    icon: require("Images/achievement_raidprimalist_raid.jpg"),
   },
   {
     ID: 2569,
@@ -23,7 +23,20 @@ export const raidDB = [
       ch: "",
     },
     expansion: 9,
-    icon: require("Images/achievement_raidprimalist_raid.jpg").default,
+    icon: require("Images/inv_achievement_raidemeralddream_raid.jpg"),
+  },
+  {
+    ID: 2549,
+    raidID: 1207,
+    name: {
+      en: "Amirdrassil, the Dream's Hope",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    expansion: 9,
+    icon: require("Images/inv_achievement_raidemeralddream_raid.jpg"),
   },
 ];
 
@@ -43,7 +56,7 @@ export const bossList = [
       ch: "艾拉诺格",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_eranog.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_eranog.jpg"),
   },
 
   {
@@ -57,7 +70,7 @@ export const bossList = [
       ch: "泰洛斯",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_terros.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_terros.jpg"),
   },
 
   {
@@ -71,7 +84,7 @@ export const bossList = [
       ch: "拜荒者议会",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_council.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_council.jpg"),
   },
 
   {
@@ -85,7 +98,7 @@ export const bossList = [
       ch: "瑟娜尔丝，冰冷之息",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_sennarth.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_sennarth.jpg"),
   },
 
   {
@@ -99,7 +112,7 @@ export const bossList = [
       ch: "晋升者达瑟雅",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_windelemental.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_windelemental.jpg"),
   },
 
   {
@@ -113,7 +126,7 @@ export const bossList = [
       ch: "库洛格·恐怖图腾",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_kurog.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_kurog.jpg"),
   },
 
   {
@@ -127,7 +140,7 @@ export const bossList = [
       ch: "巢穴守护者迪乌尔娜",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_diurna.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_diurna.jpg"),
   },
 
   {
@@ -141,7 +154,7 @@ export const bossList = [
       ch: "莱萨杰丝，噬雷之龙",
     },
     zoneID: 2522,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
+    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg"),
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -158,7 +171,7 @@ export const bossList = [
       ru: "Каззара из Преисподней",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_kazzara.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_kazzara.jpg"),
   },
   {
     DungeonEncounterID: 2687,
@@ -171,7 +184,7 @@ export const bossList = [
       ru: "Чертог слияния",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_amalgamationchamber.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_amalgamationchamber.jpg"),
   },
   {
     DungeonEncounterID: 2693,
@@ -184,7 +197,7 @@ export const bossList = [
       ru: "Забытые эксперименты",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_forgottenexperiments.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_forgottenexperiments.jpg"),
   },
   {
     DungeonEncounterID: 2682,
@@ -197,7 +210,7 @@ export const bossList = [
       ru: "Нападение закали",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zaqaliassault.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zaqaliassault.jpg"),
   },
   {
     DungeonEncounterID: 2680,
@@ -210,7 +223,7 @@ export const bossList = [
       ru: "Рашок Древний",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_rashok.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_rashok.jpg"),
   },
   {
     DungeonEncounterID: 2689,
@@ -223,7 +236,7 @@ export const bossList = [
       ru: "Бдительный распорядитель Шкарн",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zskarn.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_zskarn.jpg"),
   },
   {
     DungeonEncounterID: 2683,
@@ -236,7 +249,7 @@ export const bossList = [
       ru: "Магморакс",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_magmorax.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_magmorax.jpg"),
   },
   {
     DungeonEncounterID: 2684,
@@ -249,7 +262,7 @@ export const bossList = [
       ru: "Эхо Нелтариона",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_neltharion.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_neltharion.jpg"),
   },
   {
     DungeonEncounterID: 2685,
@@ -262,23 +275,129 @@ export const bossList = [
       ru: "Дракомандир Саркарет",
     },
     zoneID: 2569,
-    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg").default,
+    icon: require("Images/Bosses/Aberrus/inv_achievement_raiddragon_sarkareth.jpg"),
   },
-  /*
-  {
-    DungeonEncounterID: 2696,
-    ID: 2531,
-    name: {
-      en: "The Zaqali Elders",
-      cn: "扎卡利长老",
-      de: "Die Ältesten der Zaqali",
-      fr: "Les Anciens zaqalis",
-      ru: "Старейшины закали",
-    },
-    zoneID: 2569,
-    icon: require("Images/Bosses/VaultOfTheIncarnates/achievement_raidprimalist_raszageth.jpg").default,
-  }, */
+  /* -------------------------------------------------------------------------- */
+  /*                        Amirdrassil, the Dream's Hope                       */
+  /* -------------------------------------------------------------------------- */
 
+  {
+    DungeonEncounterID: 2820,
+    ID: 2564,
+    name: {
+      en: "Gnarlroot",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_fieryancient.jpg"),
+  },
+  {
+    DungeonEncounterID: 2709,
+    ID: 2554,
+    name: {
+      en: "Igira the Cruel",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_igira-the-cruel.jpg"),
+  },
+  {
+    DungeonEncounterID: 2737,
+    ID: 2557,
+    name: {
+      en: "Volcoross",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_lavaserpent.jpg"),
+  },
+  {
+    DungeonEncounterID: 2728,
+    ID: 2555,
+    name: {
+      en: "Council of Dreams",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_dreamcouncil.jpg"),
+  },
+  {
+    DungeonEncounterID: 2731,
+    ID: 2553,
+    name: {
+      en: "Larodar, Keeper of the Flame",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_keeperoftheflames.jpg"),
+  },
+  {
+    DungeonEncounterID: 2708,
+    ID: 2556,
+    name: {
+      en: "Nymue, Weaver of the Cycle",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_dreamweaver.jpg"),
+  },
+  {
+    DungeonEncounterID: 2824,
+    ID: 2563,
+    name: {
+      en: "Smolderon",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_smolderon.jpg"),
+  },
+  {
+    DungeonEncounterID: 2786,
+    ID: 2565,
+    name: {
+      en: "Tindral Sageswift, Seer of the Flame",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_druidoftheflame.jpg"),
+  },
+  {
+    DungeonEncounterID: 2677,
+    ID: 2519,
+    name: {
+      en: "Fyrakk the Blazing",
+      cn: "",
+      de: "",
+      fr: "",
+      ru: "",
+    },
+    zoneID: 2549,
+    icon: require("Images/Bosses/Amirdrassil/inv_achievement_raidemeralddream_fyrakk.jpg"),
+  },
 ];
 
 export const getBossName = (encounterID, lang) => {

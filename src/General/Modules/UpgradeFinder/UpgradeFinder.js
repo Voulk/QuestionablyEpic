@@ -8,7 +8,7 @@ export function UpgradeFinder(props) {
   const [itemSelection, setItemSelection] = React.useState([]);
   const [report, setReport] = React.useState(null);
   const [showReport, setShowReport] = React.useState(false);
-  const [playerSettings, setPlayerSettings] = React.useState({ raid: [4, 5], dungeon: 6, pvp: 0 });
+  const [playerSettings, setPlayerSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);

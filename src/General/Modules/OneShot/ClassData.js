@@ -24,6 +24,7 @@ export const specData = {
   },
   "preservation evoker": { passives: [], defensives: [] },
   "devastation evoker": { passives: [], defensives: [] },
+  "augmentation evoker": { passives: [], defensives: [] },
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Monk                                              */
   /* ---------------------------------------------------------------------------------------------- */

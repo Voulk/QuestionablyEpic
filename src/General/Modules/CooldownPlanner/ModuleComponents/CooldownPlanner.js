@@ -21,6 +21,7 @@ import { styled } from "@mui/material/styles";
 import { green } from "@mui/material/colors";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import CooldownPlannerThemeCheckbox from "./ThemeToggle";
+import { bossAbilities } from "../Data/CooldownPlannerBossAbilityList";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} style={{ color: "#ffee77" }} ref={ref} />),
@@ -39,6 +40,22 @@ const debug = false;
 
 export default function CooldownPlanner(props) {
   debug && console.log(" -- Debugging On -> CooldownPlanner.js --");
+
+  // let result = Object.keys(bossAbilities).reduce(function (r, k) {
+  //   return r.concat(bossAbilities[k]);
+  // }, []);
+
+  // console.log(result);
+
+  // console.log(
+  //   result.map((key) => {
+  //     let decheck = key.name.de === "" ? key.name.en : key.name.de;
+  //     let frcheck = key.name.fr === "" ? key.name.en : key.name.fr;
+  //     let rucheck = key.name.ru === "" ? key.name.en : key.name.ru;
+  //     let chcheck = key.name.ch === "" ? key.name.en : key.name.ch;
+  //     return { guid: key.guid, en: key.name.en, de: decheck, fr: frcheck, ru: rucheck, ch: chcheck };
+  //   }),
+  // );
 
   if (ls.get("healerInfo") === null || ls.get("healerInfo").length === 0) {
     ls.set("healerInfo", []);
@@ -61,8 +78,8 @@ export default function CooldownPlanner(props) {
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
   const expansion = 9; // Dragonflight
-  const [currentRaid, setCurrentRaid] = useState(2569);
-  const [currentBoss, setCurrentBoss] = useState(2688);
+  const [currentRaid, setCurrentRaid] = useState(2549);
+  const [currentBoss, setCurrentBoss] = useState(2820);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   const [currentPlan, setCurrentPlan] = useState("");
 

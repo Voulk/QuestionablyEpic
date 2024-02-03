@@ -1,10 +1,39 @@
-import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
+import { mergeBonusStats, getTopGearGems } from "./TopGearEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities"
 import Player from '../../Player/Player';
 import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
 import each from "jest-each";
+
+describe("Top Gear Gems", () => {
+    test("Crit / Mastery gem", () => {
+        let bonusStats = {};
+        const gemID = 192958;
+        const gems = getTopGearGems(gemID, 5, bonusStats);
+
+        expect(bonusStats.mastery).toEqual(66 + 4 * 70);
+        expect(bonusStats.intellect).toEqual(75);
+        expect(bonusStats.crit).toEqual(4 * 33);
+    })
+
+    test("Haste / Vers gem - Primary only", () => {
+        let bonusStats = {};
+        const gemID = 192952;
+        const gems = getTopGearGems(gemID, 1, bonusStats);
+
+        expect(bonusStats.intellect).toEqual(75);
+        expect(bonusStats.haste).toEqual(66);
+    })
+
+    test("No gems", () => {
+        let bonusStats = {};
+        const gemID = 192952;
+        const gems = getTopGearGems(gemID, 0, bonusStats);
+
+        expect(Object.keys(bonusStats).length).toEqual(0);
+    })
+});
 
 describe("Test Stat DRs", () => {
     each`
@@ -112,8 +141,8 @@ describe("Top Gear full test", () => {
         }
         //console.log(player.activeItems);
         const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
-        const setStats = result.itemSet.setStats;
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
+        //const setStats = result.itemSet.setStats;
 
         expect(true).toEqual(true); // Put stats check in here.
     });
@@ -126,13 +155,13 @@ describe("Top Gear full test", () => {
         var lines = drakebreakersPaladin.split("\n");
 
         for (var line = 0; line < lines.length; line++) {
-            const item = processItem(lines[line], player, "Raid", "Regular")
+            const item = processItem(lines[line], player, "Raid", "Regular", {}, false)
             if (item) player.addActiveItem(item);
 
         }
         //console.log(player.activeItems);
         const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
         const setEffects = result.itemSet.effectList;
 
         expect(setEffects.filter(effect => effect.name === "Drakebreaker's Versatility").length).toEqual(1);
@@ -152,7 +181,7 @@ describe("Top Gear full test", () => {
             }
             //console.log(player.activeItems);
             const wepCombos = buildNewWepCombos(player, true);
-            const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), "en", {}, player.getActiveModel("Raid"))
+            const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), {}, player.getActiveModel("Raid"))
             const setEffects = result.itemSet.effectList;
     
             

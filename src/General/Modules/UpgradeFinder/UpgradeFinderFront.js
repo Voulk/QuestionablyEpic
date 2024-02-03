@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic"];
+const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -93,24 +93,29 @@ const PvPRating = [
   { value: 2000, label: "Elite 2400+" },
 ];
 
-function shortenReport(player, contentType, result) {
-  const report = {id: generateReportCode(), playername: player.charName, realm: player.realm, contentType: contentType, results: result.differentials};
 
+
+function shortenReport(player, contentType, result, settings) {
+  const now = new Date();
+  const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
+
+  const socketSetting = settings.topGearAutoGem.value || false;
+  
+  
+  const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials };
   return report;
 }
 
 const sendReport = (shortReport) => {
-
   const requestOptions = {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(shortReport)
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(shortReport),
   };
-  
-  fetch('https://questionablyepic.com/api/addUpgradeReport.php', requestOptions)
-  .then(response => console.log(response));
-}
+  fetch("https://questionablyepic.com/api/addUpgradeReport.php", requestOptions).then((response) => console.log(response));
+};
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                    Burning Crusade Constants                                   */
@@ -148,7 +153,7 @@ export default function UpgradeFinderFront(props) {
       value: 0,
       label: (
         <div className={classes.labels}>
-          <div>lvl 402</div>
+          <div>lvl 441</div>
           <div>M 2</div>
         </div>
       ),
@@ -157,7 +162,7 @@ export default function UpgradeFinderFront(props) {
       value: 1,
       label: (
         <div className={classes.labels}>
-          <div>lvl 405</div>
+          <div>lvl 444</div>
           <div>M 3/4</div>
         </div>
       ),
@@ -166,7 +171,7 @@ export default function UpgradeFinderFront(props) {
       value: 2,
       label: (
         <div className={classes.labels}>
-          <div>lvl 408</div>
+          <div>lvl 447</div>
           <div>M 5/6</div>
         </div>
       ),
@@ -175,7 +180,7 @@ export default function UpgradeFinderFront(props) {
       value: 3,
       label: (
         <div className={classes.labels}>
-          <div>lvl 411</div>
+          <div>lvl 450</div>
           <div>M 7/8</div>
         </div>
       ),
@@ -184,7 +189,7 @@ export default function UpgradeFinderFront(props) {
       value: 4,
       label: (
         <div className={classes.labels}>
-          <div>lvl 415</div>
+          <div>lvl 454</div>
           <div>M 9/10</div>
         </div>
       ),
@@ -193,7 +198,7 @@ export default function UpgradeFinderFront(props) {
       value: 5,
       label: (
         <div className={classes.labels}>
-          <div>lvl 418</div>
+          <div>lvl 457</div>
           <div>M 11/12</div>
         </div>
       ),
@@ -202,7 +207,7 @@ export default function UpgradeFinderFront(props) {
       value: 6,
       label: (
         <div className={classes.labels}>
-          <div>lvl 421</div>
+          <div>lvl 460</div>
           <div>M 13/14</div>
         </div>
       ),
@@ -211,7 +216,7 @@ export default function UpgradeFinderFront(props) {
       value: 7,
       label: (
         <div className={classes.labels}>
-          <div>lvl 424</div>
+          <div>lvl 463</div>
           <div>M 15/16</div>
         </div>
       ),
@@ -220,7 +225,7 @@ export default function UpgradeFinderFront(props) {
       value: 8,
       label: (
         <div className={classes.labels}>
-          <div>lvl 428</div>
+          <div>lvl 467</div>
           <div>M 17/18</div>
         </div>
       ),
@@ -229,7 +234,7 @@ export default function UpgradeFinderFront(props) {
       value: 9,
       label: (
         <div className={classes.labels}>
-          <div>lvl 431</div>
+          <div>lvl 470</div>
           <div>M 19/20</div>
         </div>
       ),
@@ -238,7 +243,7 @@ export default function UpgradeFinderFront(props) {
       value: 10,
       label: (
         <div className={classes.labels}>
-          <div>lvl 434</div>
+          <div>lvl 473</div>
         </div>
       ),
     },
@@ -246,7 +251,7 @@ export default function UpgradeFinderFront(props) {
       value: 11,
       label: (
         <div className={classes.labels}>
-          <div>lvl 437</div>
+          <div>lvl 476</div>
         </div>
       ),
     },
@@ -254,7 +259,7 @@ export default function UpgradeFinderFront(props) {
       value: 12,
       label: (
         <div className={classes.labels}>
-          <div>lvl 441</div>
+          <div>lvl 480</div>
         </div>
       ),
     },
@@ -262,7 +267,7 @@ export default function UpgradeFinderFront(props) {
       value: 13,
       label: (
         <div className={classes.labels}>
-          <div>lvl 444</div>
+          <div>lvl 483</div>
         </div>
       ),
     },
@@ -270,18 +275,11 @@ export default function UpgradeFinderFront(props) {
       value: 14,
       label: (
         <div className={classes.labels}>
-          <div>lvl 447</div>
+          <div>lvl 489</div>
         </div>
       ),
     },
   ];
-
-  const [selectedRaidFinder, setSelectedRaidFinder] = React.useState(false);
-  const [selectedNormal, setSelectedNormal] = React.useState(false);
-  const [selectedNormalMax, setSelectedNormalMax] = React.useState(false);
-  const [selectedHeroic, setSelectedHeroic] = React.useState(false);
-  const [selectedHeroicMax, setSelectedHeroicMax] = React.useState(false);
-  const [selectedMythic, setSelectedMythic] = React.useState(false);
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
@@ -292,10 +290,11 @@ export default function UpgradeFinderFront(props) {
     }
   };
 
-  // let history = useHistory();
+  const [selected, setSelected] = React.useState(raidDifficulty.reduce((acc, curr) => ({ ...acc, [curr]: false }), {}));
 
-  const selectsPvE = [selectedRaidFinder, selectedNormal, selectedNormalMax, selectedHeroic, selectedHeroicMax, selectedMythic];
-  const setsPvE = [setSelectedRaidFinder, setSelectedNormal, setSelectedNormalMax, setSelectedHeroic, setSelectedHeroicMax, setSelectedMythic];
+  const toggleSelected = (key) => {
+    setSelected((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const editSettings = (setting, newValue) => {
     userSettings[setting] = newValue;
@@ -305,7 +304,7 @@ export default function UpgradeFinderFront(props) {
     if (gameType === "Retail") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result)
+      const shortReport = shortenReport(props.player, result.contentType, result, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
       props.setItemSelection(result);
@@ -368,8 +367,6 @@ export default function UpgradeFinderFront(props) {
             simcSnack={props.simcSnack}
             allChars={props.allChars}
             contentType={contentType}
-            userSettings={userSettings}
-            editSettings={editSettings}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
             groupBuffShow={true}
@@ -393,24 +390,29 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justifyContent="center" spacing={1}>
+                <Grid container justifyContent="center" spacing={1} columns={8}>
                   {raidDifficulty.map((key, i) => (
-                    <Grid item xs="auto" key={i}>
-                      <ToggleButton
-                        classes={{
-                          root: classes.red,
-                          selected: classes.selectedRed,
-                        }}
-                        value="check"
-                        selected={props.playerSettings.raid.includes(i)}
-                        style={{ width: 140, height: 40 }}
-                        onChange={() => {
-                          setsPvE[i](!selectsPvE[i]);
-                          props.setRaidDifficulty(i);
-                        }}
-                      >
-                        {t("RaidDifficulty." + key)}
-                      </ToggleButton>
+                    <Grid item xs={2} key={i} style={{ order: i % 2 === 0 ? 0 : 1 }}>
+                      <Grid container justifyContent="center" spacing={1}>
+                        <Grid item xs={12}>
+                          <ToggleButton
+                            classes={{
+                              root: classes.red,
+                              selected: classes.selectedRed,
+                            }}
+                            value="check"
+                            fullWidth
+                            selected={props.playerSettings.raid.includes(i)}
+                            style={{ height: 40 }}
+                            onChange={() => {
+                              toggleSelected(key);
+                              props.setRaidDifficulty(i);
+                            }}
+                          >
+                            {t("RaidDifficulty." + key)}
+                          </ToggleButton>
+                        </Grid>
+                      </Grid>
                     </Grid>
                   ))}
                 </Grid>
@@ -445,7 +447,7 @@ export default function UpgradeFinderFront(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={7}
+                  defaultValue={8}
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
@@ -523,7 +525,7 @@ export default function UpgradeFinderFront(props) {
           </Paper>
         </Grid> */}
         <Grid item xs={12} style={{ marginBottom: 100 }} />
-      </Grid> 
+      </Grid>
 
       <div
         style={{

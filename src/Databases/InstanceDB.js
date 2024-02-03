@@ -8,6 +8,7 @@ export const instanceDB = {
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
   "1208": "Aberrus, the Shadowed Crucible",
+  "1207": "Amirdrassil, The Dream's Hope",
 };
 
 export const encounterDB = {
@@ -1031,7 +1032,7 @@ export const encounterDB = {
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
   1205: {
-    bossOrder: [2515, 2506, 2517, 2518, 2531],
+    bossOrder: [2515, 2506, 2517, 2518, 2531, 2562],
     2515: {
       name: {
         en: "Strunraan, The Sky's Misery",
@@ -1075,6 +1076,15 @@ export const encounterDB = {
         de: "Die Ältesten der Zaqali",
         fr: "Les Anciens zaqalis",
         ru: "Старейшины закали",
+      },
+    },
+    2562: {
+      name: {
+        en: "Aurostor the Hibernator",
+        ch: "Aurostor the Hibernator",
+        de: "Aurostor the Hibernator",
+        fr: "Aurostor the Hibernator",
+        ru: "Aurostor the Hibernator",
       },
     },
   },
@@ -1832,6 +1842,111 @@ export const encounterDB = {
       },
     },
   },
+  // Amirdrassil
+  1207: {
+    name: {
+      en: "Amirdrassil, the Dream's Hope",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
+    bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, -54],
+    bosses: {
+      2564: {
+        name: {
+          en: "Gnarlroot",
+          ch: "Gnarlroot",
+          de: "Gnarlroot",
+          fr: "Gnarlroot",
+          ru: "Gnarlroot",
+        },
+      },
+      2554: {
+        name: {
+          en: "Igira the Cruel",
+          ch: "Igira the Cruel",
+          de: "Igira the Cruel",
+          fr: "Igira the Cruel",
+          ru: "Igira the Cruel",
+        },
+      },
+      2557: {
+        name: {
+          en: "Volcoross",
+          ch: "Volcoross",
+          de: "Volcoross",
+          fr: "Volcoross",
+          ru: "Volcoross",
+        },
+      },
+      2555: {
+        name: {
+          en: "Council of Dreams",
+          ch: "Council of Dreams",
+          de: "Council of Dreams",
+          fr: "Council of Dreams",
+          ru: "Council of Dreams",
+        },
+      },
+      2553: {
+        name: {
+          en: "Larodar, Keeper of the Flame",
+          ch: "Larodar, Keeper of the Flame",
+          de: "Larodar, Keeper of the Flame",
+          fr: "Larodar, Keeper of the Flame",
+          ru: "Larodar, Keeper of the Flame",
+        },
+      },
+      2556: {
+        name: {
+          en: "Nymue, Weaver of the Cycle",
+          ch: "Nymue, Weaver of the Cycle",
+          de: "Nymue, Weaver of the Cycle",
+          fr: "Nymue, Weaver of the Cycle",
+          ru: "Nymue, Weaver of the Cycle",
+        },
+      },
+      2563: {
+        name: {
+          en: "Smolderon",
+          ch: "Smolderon",
+          de: "Smolderon",
+          fr: "Smolderon",
+          ru: "Smolderon",
+        },
+      },
+      2565: {
+        name: {
+          en: "Tindral Sageswift, Seer of the Flame",
+          ch: "Tindral Sageswift, Seer of the Flame",
+          de: "Tindral Sageswift, Seer of the Flame",
+          fr: "Tindral Sageswift, Seer of the Flame",
+          ru: "Tindral Sageswift, Seer of the Flame",
+        },
+      },
+      2519: {
+        name: {
+          en: "Fyrakk the Blazing",
+          ch: "Fyrakk the Blazing",
+          de: "Fyrakk the Blazing",
+          fr: "Fyrakk the Blazing",
+          ru: "Fyrakk the Blazing",
+        },
+      },
+
+      "-54": {
+        name: {
+          en: "BoE Trash Drops",
+          fr: "BoE Trash Drops",
+          de: "BoE Trash Drops",
+          ru: "BoE Trash Drops",
+          ch: "BoE Trash Drops",
+        },
+      },
+    },
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Dungeons                                            */
@@ -1849,6 +1964,7 @@ export const encounterDB = {
       1203, // The Azure Vault
     ],
     bossOrderMythicPlus: [
+      /*
       // 313, // Temple of the Jade Serpent
       // 537, // Shadowmoon Burial Grounds
       // 721, // Halls of Valor
@@ -1865,7 +1981,16 @@ export const encounterDB = {
       1001, // Freehold
       1022, // The Underrot
       68, // The Vortex Pinnacle
-      767, // Neltharion's Lair
+      767, // Neltharion's Lair */
+
+      "-55", // Dawn of the Infinites: Galakrond's Fall
+      "-56", // Dawn of the Infinites: Murozond's Rise
+      762, // Darkheart Thicket
+      740, // Black Rook Hold
+      1021, // Waycrest Manor
+      968, // Atal'Dazar
+      556, // Everbloom
+      65, // Throne of the Tides
     ],
 
     313: {
@@ -2010,6 +2135,174 @@ export const encounterDB = {
         ru: "Подгнилье",
         de: "Der Tiefenpfuhl",
         ch: "地渊孢林",
+      },
+    },
+    "-55": {
+      name: {
+        en: "Dawn of the Infinites: Galakrond's Fall",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    "-56": {
+      name: {
+        en: "Dawn of the Infinites: Murozond's Rise",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    762: {
+      name: {
+        en: "Darkheart Thicket",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    740: {
+      name: {
+        en: "Black Rook Hold",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    1021: {
+      name: {
+        en: "Waycrest Manor",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    968: {
+      name: {
+        en: "Atal'Dazar",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },/*
+    537: {
+      name: {
+        en: "Everbloom",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },*/
+    556: {
+      name: {
+        en: "Everbloom",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+    65: {
+      name: {
+        en: "Throne of the Tides",
+        fr: "",
+        ru: "",
+        de: "",
+        ch: "",
+      },
+    },
+
+  },
+
+  // Dawn of the Infinite
+  1209: { // mapId 2579
+    bossOrder: [
+      2521, //2666, // Chronikar
+      2526, //2670, // Tyr, the Infinite Keeper
+      2528, //2667, // Manifested Timeways
+      2533, //2672, // Time-Lost Battlefield - Can also be 2534
+      2535, //2668, // Blight of Galakrond
+      2536, //2671, // Morchie
+      2537, //2669, // Iridikron the Stonescaled
+      2538, //2673, // Chrono-Lord Deios
+    ],
+    2521: {
+      name: {
+        en: "Chronikar",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2526: {
+      name: {
+        en: "Tyr, the Infinite Keeper",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2528: {
+      name: {
+        en: "Manifested Timeways",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2533: {
+      name: {
+        en: "Time-Lost Battlefield",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2535: {
+      name: {
+        en: "Blight of Galakrond",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2536: {
+      name: {
+        en: "Morchie",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2537: {
+      name: {
+        en: "Iridikron the Stonescaled",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+    },
+    2538: {
+      name: {
+        en: "Chrono-Lord Deios",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
       },
     },
   },

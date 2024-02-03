@@ -203,8 +203,8 @@ export default function CharCards(props) {
 
   useEffect(() => {
     async function setImg() {
-      const img = await apiGetPlayerImage(props.char);
-      setBackgroundImage(img);
+      //const img = await apiGetPlayerImage(props.char);
+      //setBackgroundImage(img);
     }
 
     setImg();
@@ -362,7 +362,7 @@ export default function CharCards(props) {
 
         <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
           <Card className={rootClassName} variant="outlined">
-            <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec].default : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
+            <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec] : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
             <Divider orientation="vertical" flexItem />
             <div className={classes.details}>
               <CardContent className={classes.content} style={{ paddingBottom: 0 }}>

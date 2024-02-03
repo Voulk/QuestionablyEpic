@@ -15,6 +15,8 @@ import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
+import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
+import { getDynamicAdvice } from "./DynamicAdvice";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -33,7 +35,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
 
       if (typeof(data) === "string") {
         const jsonData = JSON.parse(data);
-        //const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
+        setBackgroundImage(apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage));
         setResult(JSON.parse(data))
         
       }
@@ -54,27 +56,27 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
   const classIcon = (spec) => {
     switch (spec) {
       case "Holy Paladin":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Holy Paladin Classic":
-        return require("Images/Classes/Paladin/icon-paladin.png").default;
+        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Restoration Shaman":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Restoration Shaman Classic":
-        return require("Images/Classes/Shaman/icon-shaman.png").default;
+        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Holy Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Holy Priest Classic":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
-        return require("Images/Classes/Priest/icon-priest.png").default;
+        return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Preservation Evoker":
-        return require("Images/Classes/Evoker/icon_dracthyr.png").default;
+        return require("Images/Classes/Evoker/icon_dracthyr.png");
       case "Restoration Druid Classic":
-        return require("Images/Classes/Druid/icon-druid.png").default;
+        return require("Images/Classes/Druid/icon-druid.png");
       case "Mistweaver Monk":
-        return require("Images/Classes/Monk/icon-monk.png").default;
+        return require("Images/Classes/Monk/icon-monk.png");
       default:
         break;
     }
@@ -100,6 +102,7 @@ function TopGearReport(props) {
     if (result && result.new) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
+        //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("dev")) {
         window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
@@ -111,7 +114,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
-      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -151,15 +154,18 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let differentials = {};
   let itemList = {};
   let statList = {};
+  
+
 
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")
     const location = useLocation();
     fetchReport(location.pathname.split("/")[3])
+
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-  
+    const advice = getDynamicAdvice(result, player, result.contentType);
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
@@ -167,12 +173,16 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-
+    
     // Setup Slots / Set IDs.
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot")
       item.setID = getItemProp(item.id, "itemSetId")
     })
+
+
+    // Build Vault items
+    // Take the top set, and every differential, and if it contains a vault item we haven't included yet, include it with the score differential compared to our *current* set.
 
     //if (props.player.spec === "Discipline Priest" && contentType === "Raid") formatReport(topSet.report);
 
@@ -203,6 +213,8 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       <div style={{ height: 96 }} />
       {resultValid ? (
         <Grid container spacing={1}>
+          <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like Pip's Emerald Friendship Badge can be excellent pick ups since competition for them can be fierce.", 
+            "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} />
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>
               <div
@@ -356,13 +368,15 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-          <CompetitiveAlternatives differentials={differentials} player={player} />
+           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
+           <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
+          <Grid item style={{ height: 60 }} xs={12} />
 
-          <Grid item style={{ height: 40 }} xs={12} />
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
+
     </div>
   );
 }

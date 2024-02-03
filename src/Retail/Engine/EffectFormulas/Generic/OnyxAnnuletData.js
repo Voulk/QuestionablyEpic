@@ -89,7 +89,7 @@ export const getOnyxAnnuletEffect = (gemNames, player, contentType, itemLevel, s
 
     
     gems.forEach((gem => {
-        const gemStats = gem.runFunc(gem.effects, gems, player, itemLevel, settings);
+        const gemStats = gem.runFunc(gem.effects, gems, player, itemLevel, contentType);
         temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
         bonus_stats.hps += getEstimatedHPS(gemStats, player, contentType);
         bonus_stats.dps += gemStats.dps || 0;
@@ -104,6 +104,7 @@ export const getPrimordialImage = (id) => {
   const gem = annuletGemData.filter(gem => gem.id === id)[0];
   return gem.image;
 }
+
 
 export const annuletGemData = [
     {
@@ -149,15 +150,16 @@ export const annuletGemData = [
             coefficient: 11.029875,
             table: -9,
             ppm: 2.5,
-            efficiency: 0.45,
+            efficiency: {Raid: 0.35, Dungeon: 0.35},
             ticks: 6,
             secondaries: ['crit', 'versatility'], // Was fixed to scale with crit.
           },
         ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        runFunc: function(data, gemData, player, itemLevel, contentType) {
             let bonus_stats = {};
             //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, contentType)
+
             return bonus_stats;
         }
       },
@@ -178,15 +180,16 @@ export const annuletGemData = [
             table: -9,
             ppm: 3,
             targets: 3,
-            efficiency: 0.75, 
+            efficiency: {Raid: 0.65, Dungeon: 0.4},
             secondaries: ['crit', 'versatility'], // Crit confirmed in game.
           },
         ],
-        runFunc: function(data, gemData, player, itemLevel, settings) {
+        runFunc: function(data, gemData, player, itemLevel, contentType) {
             let bonus_stats = {};
 
             //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * data[0].ppm / 60;
-            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, contentType)
+
             return bonus_stats;
         }
       },
@@ -428,12 +431,12 @@ export const annuletGemData = [
             coefficient: 1.954597,// 2.188874,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
             table: -9,
             targets: 5,
-            efficiency: 0.7,
+            efficiency: {Raid: 0.5, Dungeon: 0.35},
             ticks: 7,
             secondaries: ['crit', 'versatility'], // Was fixed to scale with Crit.
           },
         ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        runFunc: function(data, gemData, player, itemLevel, contentType) {
             let bonus_stats = {};
 
             let ppm = 0;
@@ -443,7 +446,7 @@ export const annuletGemData = [
                 if (procCandidate) ppm += gem.effects[0].ppm || 0;
             })
             
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * (1.13 * ppm) / 60;
+            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[contentType]) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * (1.13 * ppm) / 60;
             
             return bonus_stats;
         }

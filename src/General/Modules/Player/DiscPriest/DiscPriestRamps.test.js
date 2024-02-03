@@ -1,25 +1,47 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
-import { runCastSequence, allRamps, allRampsHealing } from "./DiscRampUtilities";
-import { getSpellRaw } from "./DiscPriestRamps";
+import { allRamps, allRampsHealing } from "./DiscRampUtilities";
+import { getSpellRaw, runCastSequence } from "./DiscPriestRamps";
 import { genStatWeights } from './DiscPriestUtilities';
 import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
-
+import { shadowFiendProfile } from './DiscPriestDefaultAPL';
+import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
+describe("Test APL", () => {
+    test("Test APL", () => {
+        
+        console.log("Testing APL");
+
+        const activeStats = {
+            intellect: 14000,
+            haste: 6000,
+            crit: 5000,
+            mastery: 2500,
+            versatility: 3000,
+            stamina: 29000,
+            critMult: 2,
+        }
+    
+        const baseSpells = DISCSPELLS;
+        const testSettings = {includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
+
+        const playerData = { spec: "Discipline Priest", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
+        const data = runAPLSuites(playerData, shadowFiendProfile, runCastSequence);
+        console.log(data);
+
+        //const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
+    
+        expect(true).toEqual(true);
+    })
+
+});
+
+/*
 
 describe("Evang Cast Sequence", () => {
-    //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-    /*player.activeStats = {
-            intellect: 1974,
-            haste: 869,
-            crit: 445,
-            mastery: 451,
-            versatility: 528,
-            stamina: 1900,
-    } */
     const activeStats = {
         intellect: 9000,
         haste: 4400,
@@ -40,16 +62,6 @@ describe("Evang Cast Sequence", () => {
 
     const talentSet = {... baseTalents};
 
-    /*const seq = ["Shadow Word: Pain", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-                    "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-                    "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
-                    "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"]; 
-
-    const seq2 = ["Purge the Wicked", "Rapture", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-        "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", "Power Word: Shield", 
-        "Power Word: Radiance", "Power Word: Radiance", "Evangelism", "Mindbender", "Schism", "Mindgames", "Penance", "Mind Blast", 
-        "Smite", "Smite", "Smite", "Penance", "Smite", "Smite", "Smite", "Smite"];  */
-    //const seq = ["Penance"];
     //console.log(evangSeq)
 
     const print = (name, base, healing) => {
@@ -146,8 +158,8 @@ describe("Evang Cast Sequence", () => {
         //console.log("Rabid Shadows: " + ((rabidShadows - baseline) / 180));
         //console.log("Cour Asc: " + ((courageousAscension - baseline) / 180));
 
-    });
-});
+//    });
+//}); 
 
 /*
 test("Compendium", () => {

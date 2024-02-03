@@ -1,14 +1,29 @@
 import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
-
+import { DISCSPELLS } from "General/Modules/Player/DiscPriest/DiscSpellDB";
 
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  // Tier Sets
-  if (effectName === "DPriest T30-2") {
+  if (effectName === "DPriest T31-2") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 2750;
+    bonus_stats.hps = player.getRampID('twoPc', contentType);
+
+  }
+  else if (effectName === "DPriest T31-4") {
+    // Placeholder pulled from sheet. Replace very soon.
+    bonus_stats.hps = player.getRampID('fourPc', contentType);
+
+  }
+
+  // Tier Sets
+  else if (effectName === "DPriest T30-2") {
+    // Placeholder pulled from sheet. Replace very soon.
+    const radianceData = DISCSPELLS["Power Word: Radiance"][0];
+    const oneRad = (radianceData.coeff * player.getInt() * player.getStatMults(radianceData.secondaries)) * 0.15;
+    const radCPM = 4;
+
+    bonus_stats.hps = oneRad * radCPM / 60 + 2500;
 
   }
   else if (effectName === "DPriest T30-4") {

@@ -119,7 +119,7 @@
     "External": "External",
     "Filter": "Filtrer",
     "GameTypeToggle": {
-      "Classic": "Change to Classic (Burning Crusade)",
+      "Classic": "Change to Classic (Wrath of the Lich King)",
       "Retail": "Change to Retail (Shadowlands)"
     },
     "HPS": "HPS",
@@ -360,6 +360,7 @@
       "GameTypeMessage": "Select which version you'd like to start with.",
       "WelcomeTo": "Welcome To"
     },
+    "WrathOfTheLichKing": "Wrath of the Lich King",
     "Yes": "Oui",
     "itemTags": {
       "effect": "Effet",

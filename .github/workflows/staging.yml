@@ -33,7 +33,7 @@ jobs:
     
     - name: Sync
       env:
-        dest: 'fqsyuhuf@192.245.157.90:public_html/dev/'
+        dest: 'fqsyuhuf@192.245.157.90:public_html/ptr/'
       run: |
         echo "${{secrets.DEPLOY_KEY}}" > deploy_key
         chmod 600 ./deploy_key

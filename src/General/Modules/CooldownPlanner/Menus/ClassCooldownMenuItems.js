@@ -1,7 +1,7 @@
 import React from "react";
 import { MenuItem, ListSubheader } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.js";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 import { cooldownDB } from "../Data/CooldownDB";
 
@@ -13,7 +13,7 @@ export default function ClassCooldownMenuItems(props) {
     Paladin: ["Holy"],
     Priest: ["Holy", "Discipline", "Shadow"],
     Druid: ["Restoration", "Druid"],
-    Evoker: ["Preservation", "Evoker"],
+    Evoker: ["Preservation", "Augmentation", "Evoker"],
     DemonHunter: ["DemonHunter"],
     Warrior: ["Warrior"],
     Monk: ["Mistweaver", "Monk"],
