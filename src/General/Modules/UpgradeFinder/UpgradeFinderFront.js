@@ -95,7 +95,7 @@ const PvPRating = [
 
 
 
-function shortenReport(player, contentType, result, settings) {
+function shortenReport(player, contentType, result, ufSettings, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
 
@@ -103,7 +103,7 @@ function shortenReport(player, contentType, result, settings) {
   
   
   const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
-                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: settings };
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings };
   return report;
 }
 
@@ -304,7 +304,7 @@ export default function UpgradeFinderFront(props) {
     if (gameType === "Retail") {
       const playerSettings = props.playerSettings;
       const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result, userSettings);
+      const shortReport = shortenReport(props.player, result.contentType, result, playerSettings, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
       //props.setItemSelection(result);

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Tabs, Tab, AppBar, Typography, Grid } from "@mui/material";
 // import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { getDifferentialByID } from "../../Engine/ItemUtilities";
+import { getDifferentialByID, getItem } from "../../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
@@ -55,6 +55,14 @@ async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
 }
 
 
+// Our short report only contains differential information which means we have to set up a few things ourselves.
+const addItemSources = (diffList) => {
+  diffList.forEach((item) => {
+    item.source = getItem(item.item).sources;
+  });
+  
+  return diffList;
+}
 
 export default function UpgradeFinderReport(props) {
   //   useEffect(() => {
@@ -71,12 +79,14 @@ export default function UpgradeFinderReport(props) {
   console.log(result);
   
   const itemList = result.itemSet;
-  const itemDifferentials = result.differentials;
+  const itemDifferentials = addItemSources(result.results);
+  console.log(itemDifferentials);
   //console.log("Total Item Count: " + itemDifferentials.length);
   //console.log(JSON.stringify(itemDifferentials));
   
   const gameType = useSelector((state) => state.gameType);
-  itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+  //itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+  itemDifferentials.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
@@ -99,8 +109,8 @@ export default function UpgradeFinderReport(props) {
   
     }
 
-    if (result !== null && checkResult(result)) {
-      return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+    if (result !== null/* && checkResult(result)*/) {
+      //return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -166,9 +176,9 @@ export default function UpgradeFinderReport(props) {
               </div>
             </UFTabPanel>
           </Grid>
-
+              
           {/* Mythic Plus */}
-          <Grid item xs={12}>
+          {/*<Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={1}>
               <div className={classes.panel}>
                 <Grid container>
@@ -182,7 +192,7 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid>*/}
 
           {/* PVP 
           <Grid item xs={12}>
@@ -196,7 +206,7 @@ export default function UpgradeFinderReport(props) {
           </Grid>*/}
 
           {/* World Bosses */}
-          <Grid item xs={12}>
+          {/*<Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
@@ -204,10 +214,10 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid>*/}
 
           {/* Slots */}
-          <Grid item xs={12}>
+          {/*<Grid item xs={12}>
             <UFTabPanel value={tabvalue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
@@ -215,7 +225,7 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid>*/}
         </Grid>
       </div>
     );
