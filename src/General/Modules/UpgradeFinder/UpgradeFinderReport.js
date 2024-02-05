@@ -134,7 +134,7 @@ export default function UpgradeFinderReport(props) {
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <div>
-            <Button color="primary" variant="outlined" component={Link} to={"/upgradeFinder"} style={{ position: "absolute" }}>
+            <Button color="primary" variant="outlined" component={Link} to={"/upgradefinder"} style={{ position: "absolute" }}>
                 {t("UpgradeFinder.BackButton")}
               </Button>
               <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>

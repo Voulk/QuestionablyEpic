@@ -16,7 +16,6 @@ import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import { createPlayerChars } from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
 import OneShot from "General/Modules/OneShot/OneShot";
-import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
@@ -32,6 +31,7 @@ import { theme } from "./theme";
 import ReactGA from "react-ga";
 import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
 import Player from "General/Modules/Player/Player";
+import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -384,7 +384,7 @@ const App = () => {
                     player={activePlayer} 
                     path="/upgradefinder/" 
                     render={() => 
-                      <UpgradeFinder 
+                      <UpgradeFinderFront 
                         player={activePlayer} 
                         setUFResult={setUFResult} 
                         simcSnack={handleSimCSnackOpen} 

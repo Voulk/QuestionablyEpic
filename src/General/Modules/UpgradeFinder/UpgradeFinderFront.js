@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Paper, Grid, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-
+import ReactGA from "react-ga";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -151,6 +151,83 @@ export default function UpgradeFinderFront(props) {
   const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
+
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+
+  const setRaidDifficulty = (difficulty) => {
+    let currDiff = ufSettings.raid;
+    let difficultyIndex = currDiff.indexOf(difficulty);
+    if (difficultyIndex > -1) currDiff.splice(difficultyIndex, 1);
+    else {
+      currDiff.push(difficulty);
+      if (currDiff.length > 2) currDiff.splice(0, 1);
+  }
+    setUFSettings({ ...ufSettings, raid: currDiff });
+  };
+
+  const setDungeonDifficulty = (event, difficulty) => {
+    if (difficulty <= 15 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
+  };
+
+  const setBCDungeonDifficulty = (event, difficulty) => {
+    if (difficulty === "Heroic") {
+      setUFSettings({ ...ufSettings, dungeon: 1 });
+    } else {
+      setUFSettings({ ...ufSettings, dungeon: 0 });
+    }
+  };
+
+  const setPVPDifficulty = (event, rating) => {
+    let newRank = -1;
+    switch (rating) {
+      case 0:
+        newRank = 0;
+        break;
+
+      case 600:
+        newRank = 1;
+        break;
+
+      case 800:
+        newRank = 2;
+        break;
+
+      case 1000:
+        newRank = 3;
+        break;
+
+      case 1200:
+        newRank = 4;
+        break;
+
+      case 1400:
+        newRank = 5;
+        break;
+      case 1600:
+        newRank = 6;
+        break;
+
+      case 1800:
+        newRank = 7;
+        break;
+
+      case 2000:
+        newRank = 8;
+        break;
+    }
+
+    if (newRank <= 8 && newRank >= 0) setUFSettings({ ...ufSettings, pvp: newRank });
+  };
+
+  const player = props.player;
+  const allChars = props.allChars;
+  const simcSnack = props.simcSnack;
+
+
   let history = useHistory();
   const helpText =
     gameType === "Retail"
@@ -182,7 +259,7 @@ export default function UpgradeFinderFront(props) {
   const handleContent = (event, content) => {
     if (content !== null) {
       setDungeonBC(content);
-      props.setBCDungeonDifficulty(event, content);
+      setBCDungeonDifficulty(event, content);
     }
   };
 
@@ -198,21 +275,17 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
-      const ufSettings = props.ufSettings;
-      const result = runUpgradeFinder(props.player, contentType, currentLanguage, ufSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result, ufSettings, userSettings);
+      const result = runUpgradeFinder(player, contentType, currentLanguage, ufSettings, userSettings);
+      const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
       result.id = shortReport.id;
       sendReport(shortReport);
       shortReport.new = true;
-      //props.setItemSelection(result);
       props.setUFResult(shortReport);
       //props.setShowReport(true);
       history.push("/upgradereport/");
     } else if (gameType === "Classic") {
       const ufSettings = props.playerSettings;
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
-      props.setItemSelection(result);
-      props.setShowReport(true);
     }
 
   };
@@ -234,7 +307,7 @@ export default function UpgradeFinderFront(props) {
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && (props.ufSettings.raid.length > 0 || gameType == "Classic");
+    return getSimCStatus(player) === "Good" && (ufSettings.raid.length > 0 || gameType == "Classic");
   };
 
   return (
@@ -251,9 +324,9 @@ export default function UpgradeFinderFront(props) {
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
-            player={props.player}
-            simcSnack={props.simcSnack}
-            allChars={props.allChars}
+            player={player}
+            simcSnack={simcSnack}
+            allChars={allChars}
             contentType={contentType}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
@@ -290,11 +363,11 @@ export default function UpgradeFinderFront(props) {
                             }}
                             value="check"
                             fullWidth
-                            selected={props.ufSettings.raid.includes(i)}
+                            selected={ufSettings.raid.includes(i)}
                             style={{ height: 40 }}
                             onChange={() => {
                               toggleSelected(key);
-                              props.setRaidDifficulty(i);
+                              setRaidDifficulty(i);
                             }}
                           >
                             {t("RaidDifficulty." + key)}
@@ -340,7 +413,7 @@ export default function UpgradeFinderFront(props) {
                   valueLabelDisplay="off"
                   marks={marks}
                   max={14}
-                  change={props.setDungeonDifficulty}
+                  change={setDungeonDifficulty}
                 />
               </div>
             </Paper>
@@ -440,7 +513,7 @@ export default function UpgradeFinderFront(props) {
           }}
         >
           <div>
-            <Button variant="contained" color="primary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(props.player)} onClick={unleashUpgradeFinder}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(player)} onClick={unleashUpgradeFinder}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>
