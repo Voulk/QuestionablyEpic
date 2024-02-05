@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import UpgradeFinderFront from "./UpgradeFinderFront";
 import UpgradeFinderReport from "./UpgradeFinderReport";
 import ReactGA from "react-ga";
-import { useHistory } from "react-router-dom";
 
 // Does this need to exist anymore? Could we fold it into UpgradeFinderFront and just have two files instead of three?
 export function UpgradeFinder(props) {

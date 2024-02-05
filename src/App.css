@@ -1,7 +1,7 @@
 .App {
   margin: 0px;
   border: 2px;
-
+  min-height: 100vh;
 }
 .App.special-bg {
   background-color: #282851; /* Replace with the color you want */
@@ -9,3 +9,5 @@
 .App.default-bg {
   background-color: #313131;
 }
+
+

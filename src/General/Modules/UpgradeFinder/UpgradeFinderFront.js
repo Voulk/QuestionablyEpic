@@ -240,9 +240,9 @@ export default function UpgradeFinderFront(props) {
   return (
     <div className={classes.header}>
       <div style={{ height: 96 }} />
-      <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
+      {/*<Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
         {t("UpgradeFinderFront.Header")}
-      </Typography>
+  </Typography> */}
 
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
