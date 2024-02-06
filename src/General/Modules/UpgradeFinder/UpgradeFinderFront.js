@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Paper, Grid, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -8,10 +8,11 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
 import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import ReactGA from "react-ga";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -93,8 +94,8 @@ const PvPRating = [
 ];
 
 
-
-function shortenReport(player, contentType, result, settings) {
+// playerSettings = Upgrade Finder specific settings. userSettings = playerSettings everywhere else.
+function shortenReport(player, contentType, result, ufSettings, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
 
@@ -102,7 +103,7 @@ function shortenReport(player, contentType, result, settings) {
   
   
   const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
-                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials };
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings };
   return report;
 }
 
@@ -117,11 +118,30 @@ const sendReport = (shortReport) => {
 };
 
 /* ---------------------------------------------------------------------------------------------- */
+
 /*                                    Burning Crusade Constants                                   */
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
+
+const mythicPlusLevels = [
+  { value: 441, label: "+2" },
+  { value: 444, label: "+3" },
+  { value: 447, label: "+5" },
+  { value: 450, label: "+7" },
+  { value: 454, label: "+9" },
+  { value: 457, label: "+11" },
+  { value: 460, label: "+13" },
+  { value: 463, label: "+15" },
+  { value: 467, label: "+17" },
+  { value: 470, label: "+19/20" },
+  { value: 473, label: "" },
+  { value: 476, label: "" },
+  { value: 480, label: "" },
+  { value: 483, label: "" },
+  { value: 489, label: "" },
+]
 
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
@@ -131,12 +151,90 @@ export default function UpgradeFinderFront(props) {
   const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
+
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+
+  const setRaidDifficulty = (difficulty) => {
+    let currDiff = ufSettings.raid;
+    let difficultyIndex = currDiff.indexOf(difficulty);
+    if (difficultyIndex > -1) currDiff.splice(difficultyIndex, 1);
+    else {
+      currDiff.push(difficulty);
+      if (currDiff.length > 2) currDiff.splice(0, 1);
+  }
+    setUFSettings({ ...ufSettings, raid: currDiff });
+  };
+
+  const setDungeonDifficulty = (event, difficulty) => {
+    if (difficulty <= 15 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
+  };
+
+  const setBCDungeonDifficulty = (event, difficulty) => {
+    if (difficulty === "Heroic") {
+      setUFSettings({ ...ufSettings, dungeon: 1 });
+    } else {
+      setUFSettings({ ...ufSettings, dungeon: 0 });
+    }
+  };
+
+  const setPVPDifficulty = (event, rating) => {
+    let newRank = -1;
+    switch (rating) {
+      case 0:
+        newRank = 0;
+        break;
+
+      case 600:
+        newRank = 1;
+        break;
+
+      case 800:
+        newRank = 2;
+        break;
+
+      case 1000:
+        newRank = 3;
+        break;
+
+      case 1200:
+        newRank = 4;
+        break;
+
+      case 1400:
+        newRank = 5;
+        break;
+      case 1600:
+        newRank = 6;
+        break;
+
+      case 1800:
+        newRank = 7;
+        break;
+
+      case 2000:
+        newRank = 8;
+        break;
+    }
+
+    if (newRank <= 8 && newRank >= 0) setUFSettings({ ...ufSettings, pvp: newRank });
+  };
+
+  const player = props.player;
+  const allChars = props.allChars;
+  const simcSnack = props.simcSnack;
+
+
+  let history = useHistory();
   const helpText =
     gameType === "Retail"
       ? [
           "Insert a SimC string to automatically import your gear.",
           "(Optional) Use the settings panel to make further customizations.",
-          "Select a raid difficulty, Mythic+ level and PVP rating. If you don't play any particular content type, feel free to set it to 0.",
+          "Select a raid difficulty and Mythic+ level.",
           "Hit Go at the bottom of the page.",
         ]
       : [
@@ -146,145 +244,22 @@ export default function UpgradeFinderFront(props) {
           "Hit Go at the bottom of the page.",
         ];
 
-  const marks = [
-    {
-      value: 0,
+  const marks = mythicPlusLevels.map((level, index) => {
+    return { value: index, 
       label: (
         <div className={classes.labels}>
-          <div>lvl 441</div>
-          <div>M 2</div>
+          <div>{level.value}</div>
+          <div>{level.label}</div>
         </div>
-      ),
-    },
-    {
-      value: 1,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 444</div>
-          <div>M 3/4</div>
-        </div>
-      ),
-    },
-    {
-      value: 2,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 447</div>
-          <div>M 5/6</div>
-        </div>
-      ),
-    },
-    {
-      value: 3,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 450</div>
-          <div>M 7/8</div>
-        </div>
-      ),
-    },
-    {
-      value: 4,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 454</div>
-          <div>M 9/10</div>
-        </div>
-      ),
-    },
-    {
-      value: 5,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 457</div>
-          <div>M 11/12</div>
-        </div>
-      ),
-    },
-    {
-      value: 6,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 460</div>
-          <div>M 13/14</div>
-        </div>
-      ),
-    },
-    {
-      value: 7,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 463</div>
-          <div>M 15/16</div>
-        </div>
-      ),
-    },
-    {
-      value: 8,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 467</div>
-          <div>M 17/18</div>
-        </div>
-      ),
-    },
-    {
-      value: 9,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 470</div>
-          <div>M 19/20</div>
-        </div>
-      ),
-    },
-    {
-      value: 10,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 473</div>
-        </div>
-      ),
-    },
-    {
-      value: 11,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 476</div>
-        </div>
-      ),
-    },
-    {
-      value: 12,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 480</div>
-        </div>
-      ),
-    },
-    {
-      value: 13,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 483</div>
-        </div>
-      ),
-    },
-    {
-      value: 14,
-      label: (
-        <div className={classes.labels}>
-          <div>lvl 489</div>
-        </div>
-      ),
-    },
-  ];
+  )};
+  });
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
   const handleContent = (event, content) => {
     if (content !== null) {
       setDungeonBC(content);
-      props.setBCDungeonDifficulty(event, content);
+      setBCDungeonDifficulty(event, content);
     }
   };
 
@@ -294,28 +269,21 @@ export default function UpgradeFinderFront(props) {
     setSelected((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
-  };
-
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
-      const playerSettings = props.playerSettings;
-      const result = runUpgradeFinder(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      const shortReport = shortenReport(props.player, result.contentType, result, userSettings);
-
+      const result = runUpgradeFinder(player, contentType, currentLanguage, ufSettings, userSettings);
+      const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
+      result.id = shortReport.id;
       sendReport(shortReport);
-      props.setItemSelection(result);
-      props.setReport(shortReport);
-      props.setShowReport(true);
+      shortReport.new = true;
+      props.setUFResult(shortReport);
+      //props.setShowReport(true);
+      history.push("/upgradereport/");
     } else if (gameType === "Classic") {
-      const playerSettings = props.playerSettings;
-      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, playerSettings, userSettings);
-      props.setItemSelection(result);
-      props.setShowReport(true);
+      const ufSettings = props.playerSettings;
+      const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
     }
 
-    //history.push("/UpgradeFinderReport/");
   };
 
   const getSimCStatus = (player) => {
@@ -323,14 +291,6 @@ export default function UpgradeFinderFront(props) {
     else if (checkCharacterValid(player) === false) return "Invalid";
     else return "Good";
   };
-
-  /*
-  const checkCharacterValid = (player) => {
-    const weaponSet = player.getActiveItems("AllMainhands", false, true);
-    const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
-
-    return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  }; */
 
   const checkCharacterValid = (player, gameType) => {
     const weaponSet = player.getActiveItems("AllMainhands", false, true);
@@ -343,15 +303,15 @@ export default function UpgradeFinderFront(props) {
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && (props.playerSettings.raid.length > 0 || gameType == "Classic");
+    return getSimCStatus(player) === "Good" && (ufSettings.raid.length > 0 || gameType == "Classic");
   };
 
   return (
     <div className={classes.header}>
       <div style={{ height: 96 }} />
-      <Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
+      {/*<Typography variant="h4" color="primary" align="center" style={{ padding: "10px 10px 5px 10px" }}>
         {t("UpgradeFinderFront.Header")}
-      </Typography>
+  </Typography> */}
 
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
@@ -360,9 +320,9 @@ export default function UpgradeFinderFront(props) {
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
-            player={props.player}
-            simcSnack={props.simcSnack}
-            allChars={props.allChars}
+            player={player}
+            simcSnack={simcSnack}
+            allChars={allChars}
             contentType={contentType}
             singleUpdate={props.singleUpdate}
             hymnalShow={true}
@@ -399,11 +359,11 @@ export default function UpgradeFinderFront(props) {
                             }}
                             value="check"
                             fullWidth
-                            selected={props.playerSettings.raid.includes(i)}
+                            selected={ufSettings.raid.includes(i)}
                             style={{ height: 40 }}
                             onChange={() => {
                               toggleSelected(key);
-                              props.setRaidDifficulty(i);
+                              setRaidDifficulty(i);
                             }}
                           >
                             {t("RaidDifficulty." + key)}
@@ -449,7 +409,7 @@ export default function UpgradeFinderFront(props) {
                   valueLabelDisplay="off"
                   marks={marks}
                   max={14}
-                  change={props.setDungeonDifficulty}
+                  change={setDungeonDifficulty}
                 />
               </div>
             </Paper>
@@ -549,7 +509,7 @@ export default function UpgradeFinderFront(props) {
           }}
         >
           <div>
-            <Button variant="contained" color="primary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(props.player)} onClick={unleashUpgradeFinder}>
+            <Button variant="contained" color="primary" align="center" style={{ height: "68%", width: "180px" }} disabled={!getUpgradeFinderReady(player)} onClick={unleashUpgradeFinder}>
               {t("TopGear.GoMsg")}
             </Button>
           </div>

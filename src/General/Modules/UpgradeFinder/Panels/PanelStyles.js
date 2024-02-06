@@ -86,7 +86,7 @@ export const raidStyles = makeStyles((theme) => {
       ...commonStyles,
     },
     nathriaHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/Aberrus/AberrusRaidLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/Amirdrassil/AmirdrassilRaidLong.png")})`,
       ...commonStyles,
     },
     sepulcherHeader: {

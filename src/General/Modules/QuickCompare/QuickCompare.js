@@ -218,14 +218,6 @@ export default function QuickCompare(props) {
       <div style={{ height: 96 }} />
       <div id="banner2"></div>
       <Grid container spacing={1} justifyContent="center">
-        {/* -------------------------------------------------------------------------- */
-        /*                         Quick Compare Title Header                         */
-        /* -------------------------------------------------------------------------- */}
-        <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-            {t("QuickCompare.Title")}
-          </Typography>
-        </Grid>
         {/* ---------------------------------------------------------------------------------------------- */
         /*                                            Help Text                                            */
         /* ---------------------------------------------------------------------------------------------- */}

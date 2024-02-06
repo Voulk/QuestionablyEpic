@@ -6,7 +6,7 @@ import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/Du
 import bossHeaders from "../../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
@@ -102,16 +102,14 @@ export default function MythicPlusGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB["-1"][key].name[currentLanguage]} -{" "}
                               {
-                                [...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])]
-                                  .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                  .filter((item) => item !== 0).length
+                                getNumUpgrades(itemDifferentials, "-1", key, itemLevels.dungeon[difficulty])
                               }{" "}
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemList, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
+                              {[...filterItemListBySource(itemDifferentials, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>
@@ -156,13 +154,13 @@ export default function MythicPlusGearContainer(props) {
                               {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB[1209][key].name[currentLanguage]} -{" "}
-                              {[...filterItemListBySource(itemList, 1209, key, 441)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
+                              {[...filterItemListBySource(itemDifferentials, 1209, key, 441)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemList, 1209, key, 441)].map((item, index) => (
+                              {[...filterItemListBySource(itemDifferentials, 1209, key, 441)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>
@@ -210,12 +208,12 @@ export default function MythicPlusGearContainer(props) {
             <img style={{ height: 36, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB[123][key].name[currentLanguage]} />
             <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
             {encounterDB[123][key].name[currentLanguage]} -{" "}
-            {[...filterClassicItemListBySource(itemList, -1, key)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
+            {[...filterClassicItemListBySource(itemDifferentials, -1, key)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
-            {[...filterClassicItemListBySource(itemList, -1, key)].map((item, index) => (
+            {[...filterClassicItemListBySource(itemDifferentials, -1, key)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
             ))}
           </Grid>

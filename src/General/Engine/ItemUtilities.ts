@@ -395,6 +395,7 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
 export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number) {
   let temp = itemList.filter(function (item) {
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
+    //console.log("loc: " + loc + " vs " + item.dropLoc + " diff: " + difficulty + " vs " + item.dropDifficulty + " source: " + sourceInstance + " vs " + item.source.instanceId + " boss: " + sourceBoss + " vs " + item.source.encounterId)
     return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
   return temp;
@@ -458,6 +459,11 @@ export function getDifferentialByID(diffList: any, id: number, level: number) {
 
   if (temp.length > 0) return temp[0].score;
   else return -99;
+}
+
+// Returns the number of upgrades (score > 0) for a given section.
+export const getNumUpgrades = (items: any[], raidID : number, bossID : number, difficultyID : number) => {
+  return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
 }
 
 // Returns true or false based on whether an ID exists in our item database.

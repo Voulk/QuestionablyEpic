@@ -11,11 +11,11 @@ import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/Embelli
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
+import UpgradeFinderReport from "General/Modules/UpgradeFinder/UpgradeFinderReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import { createPlayerChars } from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
 import OneShot from "General/Modules/OneShot/OneShot";
-import { UpgradeFinder } from "General/Modules/UpgradeFinder/UpgradeFinder";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";
@@ -31,6 +31,7 @@ import { theme } from "./theme";
 import ReactGA from "react-ga";
 import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
 import Player from "General/Modules/Player/Player";
+import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
 
 process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -48,6 +49,8 @@ const App = () => {
     const [accessToken, setAccessToken] = useState<string>("");
     const [patronStatus, setPatronStatus] = useState<string>("Standard");
     const [topSet, setTopSet] = useState<TopGearResult | null>(null);
+    const [upgradeFinderSet, setUpgradeFinderSet] = useState<any>(null);
+
     const [articleList, setArticleList] = useState<any[]>([]);
     const [lang, setLang] = useState<string>("en");
 
@@ -86,12 +89,18 @@ const App = () => {
       emailSnackState: false,
       emailSnackErrorState: false,
       topSet: null,
+      ufSet: null,
       articleList: [],
     };
   }*/
 
   const setTopResult = (set: TopGearResult) => {
     setTopSet(set);
+  };
+
+  
+  const setUFResult = (set: any) => {
+    setUpgradeFinderSet(set);
   };
 
   /* -------------------------------------------------------------------------- */
@@ -370,7 +379,20 @@ const App = () => {
                     render={() => (
                       <QuickCompare player={activePlayer} allChars={allChars} simcSnack={handleSimCSnackOpen} singleUpdate={updatePlayerChar} patronStatus={patronStatus} />
                       )} />
-                  <CustomRoute player={activePlayer} path="/UpgradeFinder/" render={() => <UpgradeFinder player={activePlayer} simcSnack={handleSimCSnackOpen} allChars={allChars} singleUpdate={updatePlayerChar} />} />
+
+                  <CustomRoute 
+                    player={activePlayer} 
+                    path="/upgradefinder/" 
+                    render={() => 
+                      <UpgradeFinderFront 
+                        player={activePlayer} 
+                        setUFResult={setUFResult} 
+                        simcSnack={handleSimCSnackOpen} 
+                        allChars={allChars} 
+                        singleUpdate={updatePlayerChar} 
+                        />} 
+                  />
+
                   <CustomRoute
                     path="/topgear"
                     player={activePlayer}
@@ -419,17 +441,16 @@ const App = () => {
                     player={activePlayer}
                     path="/report" 
                     render={() => <TopGearReport player={activePlayer || null} result={topSet || null} />} />
-
-                  <Route path="/login" render={() => <QELogin setRegion={setPlayerRegion} />} />
-                  <Route
-                    path="/attemptlogin"
-                    render={() => {
-                      window.location.assign(buildLoginURL());
-                      return null;
-                    }}
-
-                    />
-                  <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={handleLoginSnackOpen} updatePlayerID={updatePlayerID} />} />
+                  <Route 
+                    path="/upgradereport" 
+                    render={() => 
+                        <UpgradeFinderReport 
+                          player={activePlayer || null} 
+                          result={upgradeFinderSet || null} />} 
+                          />
+                  <Route path="/login" render={() => <QELogin setRegion={this.setRegion} />} />
+                  <Route path="/attemptlogin" component={() => (window.location = this.buildLoginURL())} />
+                  <Route path="/confirmlogin/" render={() => <ConfirmLogin loginSnackOpen={this.handleLoginSnackOpen} updatePlayerID={this.updatePlayerID} />} />
 
 
                   {/* ---------------------------------------------------------------------------------------------- */
