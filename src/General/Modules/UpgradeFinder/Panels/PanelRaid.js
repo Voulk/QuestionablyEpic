@@ -80,7 +80,6 @@ export default function RaidGearContainer(props) {
     difficulties.sort().reverse();
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
-    console.log(itemDifferentials);
 
     return (
       <Grid item xs={12}>

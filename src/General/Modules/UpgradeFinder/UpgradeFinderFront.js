@@ -234,7 +234,7 @@ export default function UpgradeFinderFront(props) {
       ? [
           "Insert a SimC string to automatically import your gear.",
           "(Optional) Use the settings panel to make further customizations.",
-          "Select a raid difficulty, Mythic+ level and PVP rating. If you don't play any particular content type, feel free to set it to 0.",
+          "Select a raid difficulty and Mythic+ level.",
           "Hit Go at the bottom of the page.",
         ]
       : [
@@ -267,10 +267,6 @@ export default function UpgradeFinderFront(props) {
 
   const toggleSelected = (key) => {
     setSelected((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
-  const editSettings = (setting, newValue) => {
-    userSettings[setting] = newValue;
   };
 
   const unleashUpgradeFinder = () => {

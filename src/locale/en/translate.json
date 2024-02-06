@@ -445,7 +445,7 @@
       "GoMsg": "Go!",
       "HelpTextClassic": "Top Gear lets you compare every possible combination of your selected gear at once!",
       "HelpTextRetail": "Top Gear lets you compare every possible combination of your selected gear at once!",
-      "ItemsHereMessage": "Your items will go here after you import, then hit 'Go' once happy with your selection.",
+      "ItemsHereMessage": "Import gear via SimC string, pick any items you want to compare, then hit 'Go'.",
       "SelectedItems": "Selected Items",
       "StatPanel": {
         "AvgStats": "Average Stats (includes procs)"
