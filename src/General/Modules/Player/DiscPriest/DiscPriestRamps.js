@@ -3,9 +3,9 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, 
-            getHealth, extendBuff, addBuff, getBuffValue, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+            getHealth, extendBuff, addBuff, getBuffValue, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
-import { genSpell } from "Retail/Engine/EffectFormulas/Generic/APLBase";
+import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {

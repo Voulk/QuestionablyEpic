@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getBuffStacks, getHealth, getCrit, addBuff, applyTalents, runBuffs } from "../Generic/RampBase";
+            getBuffStacks, getHealth, getCrit, addBuff, applyTalents, runBuffs } from "../Generic/RampGeneric/RampBase";
 
 
 const DRUIDCONSTANTS = {

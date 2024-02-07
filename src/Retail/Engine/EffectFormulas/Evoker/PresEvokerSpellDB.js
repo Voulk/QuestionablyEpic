@@ -1,6 +1,6 @@
 
 import { runHeal, runDamage } from "./PresEvokerRamps";
-import { addReport, getCrit, getHaste } from "../Generic/RampBase";
+import { addReport, getCrit, getHaste } from "../Generic/RampGeneric/RampBase";
 
 
 // This is the Evoker spell database. 

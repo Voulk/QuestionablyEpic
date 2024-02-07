@@ -2,7 +2,7 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
-import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampTestSuite";
+import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 /**
 
  */

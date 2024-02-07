@@ -1,4 +1,4 @@
-import { addBuff, getHaste, getHealth, getBuffStacks, removeBuff, checkBuffActive } from "../Generic/RampBase";
+import { addBuff, getHaste, getHealth, getBuffStacks, removeBuff, checkBuffActive } from "../Generic/RampGeneric/RampBase";
 import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps";
 
 // This is the Disc spell database. 

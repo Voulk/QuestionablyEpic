@@ -2,8 +2,10 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runRampTidyUp, getSqrt, removeBuff, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, advanceTime } from "../Generic/RampBase";
-import { genSpell } from "../Generic/APLBase";
+import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+            getHealth, getCrit, advanceTime } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff } from "../Generic/RampGeneric/BuffBase";
+import { genSpell } from "../Generic/RampGeneric/APLBase";
 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.

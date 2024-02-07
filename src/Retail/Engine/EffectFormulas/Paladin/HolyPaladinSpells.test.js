@@ -1,5 +1,5 @@
 import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDB";
-import { getSpellRaw } from "Retail/Engine/EffectFormulas/Generic/RampBase";
+import { getSpellRaw } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import each from "jest-each";
 
 describe("Test Base Spells", () => {

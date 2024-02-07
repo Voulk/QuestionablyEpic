@@ -1,6 +1,6 @@
 
 import { DISCCONSTANTS, runDamage } from "./DiscPriestRamps";
-import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampBase"
+import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 
 /**
 * This function handles all of our effects that might change our spell database before the ramps begin.

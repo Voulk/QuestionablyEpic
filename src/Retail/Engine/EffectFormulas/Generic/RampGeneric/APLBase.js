@@ -1,4 +1,5 @@
-import { checkBuffActive, isSpellAvailable, getSpellCooldown } from "./RampBase";
+import { isSpellAvailable, getSpellCooldown } from "./RampBase";
+import { checkBuffActive } from "./BuffBase";
 
 // Checks if a spell is a valid cast.
 // The following checks are made:
