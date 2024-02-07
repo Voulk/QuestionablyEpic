@@ -62,6 +62,85 @@ export const spendSpellCost = (spell, state) => {
     // TODO: Add cost discounts here like Infusion of Light.
 }
 
+// Ideally remove triggerSpecial eventually.
+export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage) => {
+
+    fullSpell.forEach(spell => {
+
+        let canProceed = false
+
+        if (spell.chance) {
+            const roll = Math.random();
+            canProceed = roll <= spell.chance;
+        }
+        else canProceed = true;
+
+        if (canProceed) {
+            // The spell casts a different spell. 
+            if (spell.type === 'castSpell') {
+                addReport(state, `Spell Proc: ${spellName}`)
+                const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
+                if (spell.powerMod) {
+                    newSpell[0].coeff = newSpell[0].coeff * spell.powerMod; // Increases or reduces the power of the free spell.
+                    newSpell[0].flatHeal = (newSpell[0].flatHeal * spell.powerMod) || 0;
+                    newSpell[0].flatDamage = (newSpell[0].flatDamage * spell.powerMod) || 0;
+                }
+                if (spell.targetMod) {
+                    for (let i = 0; i < spell.targetMod; i++) {
+                        runSpell(newSpell, state, spell.storedSpell, evokerSpells, triggerSpecial, runHeal, runDamage);
+                    }
+                }
+                else {
+                    runSpell(newSpell, state, spell.storedSpell, evokerSpells, triggerSpecial, runHeal, runDamage);
+                }
+
+                
+            }
+            // The spell has a healing component. Add it's effective healing.
+            // Absorbs are also treated as heals.
+            else if (spell.type === 'heal') {
+                runHeal(state, spell, spellName)
+            }
+            
+            
+            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            else if (spell.type === 'damage') {
+                runDamage(state, spell, spellName)
+            }
+            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            else if (spell.type === 'function') {
+                spell.runFunc(state, spell);
+            }
+
+            // The spell adds a buff to our player.
+            // We'll track what kind of buff, and when it expires.
+            else if (spell.type === "buff") {
+                if (spell.name === "Essence Burst") {
+                    // Special code for essence burst.
+                    triggerSpecial(state);
+                }
+                else {
+                    addBuff(state, spell, spellName);
+                }
+                
+            } 
+
+            // These are special exceptions where we need to write something special that can't be as easily generalized.
+            if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
+        
+            }
+
+
+ 
+        // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
+    }); 
+
+    // Any post-spell code.
+    if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+    //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
+
+}
+
 export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
 
 
