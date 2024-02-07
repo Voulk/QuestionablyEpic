@@ -3,8 +3,8 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, deepCopyFunction } from "../Generic/RampGeneric/RampBase";
-import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff } from "../Generic/RampGeneric/BuffBase";
+            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 
@@ -340,12 +340,15 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const sequenceLength = ('seqLength' in settings ? settings.seqLength : 120) * (1 + (Math.random() - 0.5) * 0.2); // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-    let nextSpell = 0; // The time when the next spell cast can begin.
-    let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
-    let queuedSpell = "";
+
+    let castState = {
+        nextSpell: 0, // The time when the next spell cast can begin.
+        spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
+        queuedSpell: "",
+    }
+
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-
     const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, EVOKERCONSTANTS);
 
     if (settings.preBuffs) {
@@ -359,7 +362,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
             }
         })
-        //addBuff(state, EVOKERCONSTANTS.exhilBurstBuff, "Exhilarating Burst");
+
     }
 
     // Create Echo clones of each valid spell that can be Echo'd.
@@ -424,7 +427,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
         // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
         // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
-        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
+        
+        /*const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
         if (healBuffs.length > 0) {
             healBuffs.forEach((buff) => {
                
@@ -476,10 +480,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
         // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
         state.activeBuffs = state.activeBuffs.filter(function (buff) {return buff.expiration > state.t});
-
-        // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
-        // It'll also auto-cast Ascended Eruption if Boon expired.
-
+        */
+        runBuffs(state, stats, evokerSpells, runHeal, runDamage);
 
         // Check if there is an ongoing cast and if there is, check if it's ended.
         // Check if the next spell is able to be cast, and if so, queue it.
@@ -488,7 +490,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // If instant and off GCD: spellFinish = state.t, nextSpell = state.t + 0.01
         // If casted: spellFinish = state.t + castTime, nextSpell = state.t + 0.01
 
-        if ((state.t > nextSpell)) {
+        if ((state.t > castState.nextSpell)) {
             // We don't have a spell queued. Queue one.
 
             // Update current stats for this combat tick.
@@ -499,30 +501,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
 
-            if (seqType === "Manual") queuedSpell = seq.shift();
-            // if its is "Auto", use genSpell to auto generate a cast sequence
-            else {
-                // If we're creating our sequence via APL then we'll 
-                if (seq.length > 0) queuedSpell = seq.shift();
-                else {
-                    seq = genSpell(state, evokerSpells, apl);
-                    queuedSpell = seq.shift();
-                    
-                }
-                
-            }
-
-            const fullSpell = evokerSpells[queuedSpell];
-            if (queuedSpell === undefined) console.error("Can't find spell: " + queuedSpell);
-            const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
-            spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
-            else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
-            else nextSpell = state.t + castTime;
-
+            queueSpell(castState, seq, state, evokerSpells, seqType, apl)
 
         }
-        if (queuedSpell !== "" && state.t >= spellFinish) {
+        if (castState.queuedSpell !== "" && state.t >= castState.spellFinish) {
             // We have a queued spell, check if it's finished.
             // Instant spells should proc this immediately.
 
@@ -532,8 +514,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            const spellName = queuedSpell;
-            const fullSpell = evokerSpells[queuedSpell];
+            const spellName = castState.queuedSpell;
+            const fullSpell = evokerSpells[castState.queuedSpell];
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
             addReport(state, `Casting ${spellName}`);
             spendSpellCost(fullSpell, state);
@@ -581,17 +563,17 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             }
 
             // Cleanup
-            queuedSpell = "";
-            spellFinish = 0;
+            castState.queuedSpell = "";
+            castState.spellFinish = 0;
         }
 
-        if (seq.length === 0 && queuedSpell === "" && healBuffs.length === 0) {
+        if (seq.length === 0 && castState.queuedSpell === "") {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             //state.t = 999;
         }
 
         // Time optimization
-        state.t = advanceTime(state.t, nextSpell, spellFinish, state.activeBuffs);
+        state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
 
     }
 

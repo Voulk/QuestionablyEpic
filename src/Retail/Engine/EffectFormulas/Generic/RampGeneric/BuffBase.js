@@ -1,8 +1,8 @@
 
-import { addReport, getHaste } from "./RampBase"
+import { addReport, getHaste, getCurrentStats } from "./RampBase"
 
 
-export const runBuffs = (state, tickBuff, stats, spellDB) => {
+export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
     // ---- Heal over time and Damage over time effects ----
     // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
     // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
@@ -15,7 +15,7 @@ export const runBuffs = (state, tickBuff, stats, spellDB) => {
            
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-            tickBuff(state, buff, spellDB);
+            tickBuff(state, buff, spellDB, runHeal, runDamage);
 
             if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + getNextTick(state, buff.tickRate);
             else buff.next = buff.next + (buff.tickRate);
@@ -40,6 +40,25 @@ export const runBuffs = (state, tickBuff, stats, spellDB) => {
         }
         else if (buff.runEndFunc) buff.runFunc(state, buff);
     })
+}
+
+const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
+    if (buff.buffType === "heal") {
+        const spell = buff.attSpell;
+        runHeal(state, spell, buff.name + " (HoT)")
+    }
+    else if (buff.buffType === "damage") {
+        const spell = buff.attSpell;
+        runDamage(state, spell, buff.name)
+    }
+    else if (buff.buffType === "function") {
+        const func = buff.attFunction;
+        const spell = buff.attSpell;
+        func(state, spell, buff);
+    }
+
+    if (buff.onTick) buff.onTick(state, buff, runSpell, spellDB);
+    
 }
 
 /** Check if a specific buff is active and returns the value of it.

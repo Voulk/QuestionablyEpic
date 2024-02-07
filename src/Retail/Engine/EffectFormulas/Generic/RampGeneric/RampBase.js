@@ -1,6 +1,7 @@
 // 
 import { checkBuffActive, removeBuffStack, addBuff, getBuffStacks } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
+import { genSpell } from "./APLBase";
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
@@ -61,6 +62,30 @@ export const spendSpellCost = (spell, state) => {
     // TODO: Add cost discounts here like Infusion of Light.
 }
 
+export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
+
+
+    if (seqType === "Manual") castState.queuedSpell = seq.shift();
+    // if its is "Auto", use genSpell to auto generate a cast sequence
+    else {
+        // If we're creating our sequence via APL then we'll 
+        if (seq.length > 0) castState.queuedSpell = seq.shift();
+        else {
+            seq = genSpell(state, spellDB, apl);
+            castState.queuedSpell = seq.shift();
+        }
+    }
+
+    const fullSpell = spellDB[castState.queuedSpell];
+    if (!castState.queuedSpell) console.error("Can't find spell: " + castState.queuedSpell);
+    const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
+    castState.spellFinish = state.t + castTime - 0.01;
+    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);
+    else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
+    else castState.nextSpell = state.t + castTime;
+
+    //console.log("Queued: " + castState.queuedSpell + " | Next: " + castState.nextSpell + " | Finish: " + castState.spellFinish);
+}
 
 
 
