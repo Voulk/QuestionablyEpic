@@ -2,6 +2,46 @@
 import { addReport, getHaste } from "./RampBase"
 
 
+export const runBuffs = (state, tickBuff, stats, spellDB) => {
+    // ---- Heal over time and Damage over time effects ----
+    // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
+    // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
+    // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
+    // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
+    // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
+    const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
+    if (healBuffs.length > 0) {
+        healBuffs.forEach((buff) => {
+           
+            let currentStats = {...stats};
+            state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
+            tickBuff(state, buff, spellDB);
+
+            if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + getNextTick(state, buff.tickRate);
+            else buff.next = buff.next + (buff.tickRate);
+        });  
+    }
+
+    // -- Partial Ticks --
+    // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
+    // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
+    // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
+    const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
+    expiringHots.forEach(buff => {
+
+        if (buff.buffType === "heal" || buff.buffType === "damage") {
+            const tickRate = buff.tickRate / getHaste(state.currentStats)
+            const partialTickPercentage = (buff.next - state.t) / tickRate;
+            const spell = buff.attSpell;
+            spell.coeff = spell.coeff * partialTickPercentage;
+
+            if (buff.buffType === "damage") runDamage(state, spell, buff.name);
+            else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
+        }
+        else if (buff.runEndFunc) buff.runFunc(state, buff);
+    })
+}
+
 /** Check if a specific buff is active and returns the value of it.
  * @param buffs An array of buff objects.
  * @param buffName The name of the buff we're searching for.
@@ -195,6 +235,13 @@ export const addBuff = (state, spell, spellName) => {
             if (buff.canStack) buff.stacks += 1;
             buff.expiration = newBuff.expiration;
         }
+
+    }
+    // This category is for buffs that increase the cast speed of our next cast of X spell. 
+    // Example: Ancient Flame
+    else if (spell.buffType === "spellSpeed") {
+        buff.buffSpell = spell.buffSpell;
+        buff.buffSpeed = spell.buffSpeed;
 
     }
     else {

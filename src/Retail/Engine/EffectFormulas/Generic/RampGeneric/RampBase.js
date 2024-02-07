@@ -1,5 +1,6 @@
 // 
-import { checkBuffActive } from "./BuffBase";
+import { checkBuffActive, removeBuffStack, addBuff, getBuffStacks } from "./BuffBase";
+import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
@@ -11,51 +12,6 @@ const GLOBALCONST = {
         leech: 110,
     }
 
-}
-
-
-
-
-
-
-export const runBuffs = (state, tickBuff, stats, spellDB) => {
-        // ---- Heal over time and Damage over time effects ----
-        // When we add buffs, we'll also attach a spell to them. The spell should have coefficient information, secondary scaling and so on. 
-        // When it's time for a HoT or DoT to tick (state.t > buff.nextTick) we'll run the attached spell.
-        // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
-        // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
-        // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
-        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
-        if (healBuffs.length > 0) {
-            healBuffs.forEach((buff) => {
-               
-                let currentStats = {...stats};
-                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-                tickBuff(state, buff, spellDB);
-
-                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + getNextTick(state, buff.tickRate);
-                else buff.next = buff.next + (buff.tickRate);
-            });  
-        }
-
-        // -- Partial Ticks --
-        // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
-        // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
-        // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
-        expiringHots.forEach(buff => {
-
-            if (buff.buffType === "heal" || buff.buffType === "damage") {
-                const tickRate = buff.tickRate / getHaste(state.currentStats)
-                const partialTickPercentage = (buff.next - state.t) / tickRate;
-                const spell = buff.attSpell;
-                spell.coeff = spell.coeff * partialTickPercentage;
-
-                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-                else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
-            }
-            else if (buff.runEndFunc) buff.runFunc(state, buff);
-        })
 }
 
 export const applyTalents = (state, spellDB, stats) => {
@@ -92,7 +48,7 @@ export const spendSpellCost = (spell, state) => {
             // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
             // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
             if (checkBuffActive(state.activeBuffs, "EssenceGen") === false) {
-                addBuff(state, EVOKERCONSTANTS.essenceBuff, "EssenceGen");
+                addBuff(state, getEssenceBuff(), "EssenceGen");
             }
         }
     } 
@@ -101,6 +57,8 @@ export const spendSpellCost = (spell, state) => {
     else {
         // No cost. Do nothing.
     };    
+
+    // TODO: Add cost discounts here like Infusion of Light.
 }
 
 
@@ -174,13 +132,29 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 
 }
 
+const hasCastTimeBuff = (buffs, spellName) => {
+    const buff = buffs.filter( buff => buff.buffType === "spellSpeed" && buff.buffSpell === spellName);
+    if (buff.length > 0) return buff[0].spellSpeed;
+    else return 0
+}
+
+// TODO: Remove empowered section and turn Temporal Compression into a type of cast speed buff.
 export const getSpellCastTime = (spell, state, currentStats) => {
     if ('castTime' in spell) {
         let castTime = spell.castTime;
+    
+        if (spell.empowered) {
+            if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
+                const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
+                castTime *= (1 - 0.05 * buffStacks)
+                if (buffStacks === 4) triggerTemporal(state);
+            }
+            castTime = castTime / getHaste(currentStats); // Empowered spells do scale with haste.
+        } 
 
-        if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
-        // Replace with generic cast time decreases.
-        else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
+        else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
+        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = castTime / getHaste(currentStats) / hasCastTimeBuff(state.activeBuffs, spell.name);
+        //else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
         else castTime = castTime / getHaste(currentStats);
 
         return castTime;
@@ -288,9 +262,10 @@ export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0) =
 }
 
 
+
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
 // We need this to ensure we're always running a clean DB, free from any changes made on previous runs.
-const deepCopyFunction = (inObject) => {
+export const deepCopyFunction = (inObject) => {
     let outObject, value, key;
   
     if (typeof inObject !== "object" || inObject === null) {
@@ -309,5 +284,3 @@ const deepCopyFunction = (inObject) => {
   
     return outObject;
   };
-
-
