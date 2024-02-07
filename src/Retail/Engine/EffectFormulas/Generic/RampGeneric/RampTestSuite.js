@@ -90,6 +90,11 @@ function runSuite(playerData, profile, runCastSequence, type) {
     }
 
     // Handle profile talents.
+    if (profile.talents.length > 0) {
+        profile.talents.forEach(talent => {
+            playerData.talents[talent].points = playerData.talents[talent].maxPoints;
+        });
+    }
 
     for (let i = 0; i < iterations; i++) {
         let result = null;

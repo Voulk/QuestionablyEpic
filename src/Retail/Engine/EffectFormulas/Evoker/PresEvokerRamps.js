@@ -259,6 +259,8 @@ const setupEchoSpells = (evokerSpells) => {
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
                 echoSpell[0].runFunc = spellData[0].runFunc;
+                if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Temporal Compression") echoSpell.pop();
+                // TODO: Remove Temporal Compression.
             }
             if (spellName === "Verdant Embrace") {
                 if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Call of Ysera") echoSpell.pop();

@@ -47,7 +47,7 @@ export const reversionProfile = {
         stamina: 44000,
         critMult: 2,
     },
-    talents: ['gracePeriod', 'timelessMagic'], // These will be turned on at maximum points
+    talents: ['gracePeriod', 'timelessMagic', 'goldenHour'], // These will be turned on at maximum points
     apl: [
     {s: ["Dream Flight"], conditions: [{type: "afterTime", timer: 15}]},
     //{s: ["Stasis", "Temporal Anomaly", "Dream Breath", "Spiritbloom"], conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}, {type: "cooldownAvailable", spellName: "Spiritbloom"}, {type: "cooldownAvailable", spellName: "Temporal Anomaly"}]},

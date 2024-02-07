@@ -266,6 +266,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
     if (settings.t31_2) {
+        /*
         const bonus = {
             type: "castSpell",
             storedSpell: "Living Flame",
@@ -284,6 +285,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         evokerSpells['Spiritbloom'].push(bonus);
         evokerSpells['Dream Breath'].push(bonus);
         evokerSpells['Fire Breath'].push(offensiveBonus);
+        */
     }
     if (settings.t31_4) {
         const echoBuff = {
