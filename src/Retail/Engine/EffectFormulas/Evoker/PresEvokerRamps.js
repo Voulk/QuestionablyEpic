@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, removeBuff, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
+import { runRampTidyUp, getSqrt, removeBuff, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, advanceTime } from "../Generic/RampBase";
 import { genSpell } from "../Generic/APLBase";
 
 
@@ -64,20 +64,6 @@ const EVOKERCONSTANTS = {
         buffType: 'stats',
         stat: 'critMult',
         value: 0.3
-    },
-    renewingBreathBuff: {
-        type: "buff",
-        buffType: "heal",
-        name: "Renewing Breath",
-        tickRate: 2,
-        targets: 5,
-        coeff: 0, // Renewing Breath uses a flat heal system instead of a coefficient since the scaling is based on the healing the Dream Breath did.
-        flatHeal: 0, 
-        hasted: false,
-        buffDuration: 10, // Note that this is contrary to the tooltip.
-        expectedOverheal: 0.45, // 0.45
-        secondaries: [], // It technically scales with secondaries but these influence the base heal, not the HoT.
-        mult: 0.15, // This is multiplied by our talent points.
     },
     temporalCompressionBuff: {
         name: "Temporal Compression",
@@ -325,25 +311,6 @@ const triggerCycleOfLife = (state, rawHealing) => {
         evokerSpells['Emerald Blossom'].push(ancientFlame);
     }
 
-    if (talents.resonatingSphere) /*evokerSpells['Temporal Anomaly'].push({
-
-        // Lasts 8s and heals every 1s within range but it. Puts absorbs on allies. 
-        // Stacks to 3, however the cap is based on how much 3 stacks would absorb pre-mastery.
-        type: "buff",
-        buffType: "special",
-        school: "bronze",
-        name: "Echo",
-        buffDuration: 6,
-        tickRate: 2,
-        value: 0.3 * (1 + talents.timeLord * 0.25),
-        targets: 2, 
-    })*/
-    /* TALENT REMOVED
-    if (talents.groveTender) {
-        evokerSpells['Dream Breath'][0].cost *= 0.9;
-        evokerSpells['Spiritbloom'][0].cost *= 0.9;
-        evokerSpells['Emerald Blossom'][0].cost *= 0.9;
-    } */
     if (talents.cycleOfLife) {
         // This can possibly be handled by just multiplying healing during it's duration like with CBT.
         evokerSpells['Emerald Blossom'].push({
@@ -366,10 +333,8 @@ const triggerCycleOfLife = (state, rawHealing) => {
         })
     }
 
-    
 
     // Setup mana costs & cooldowns.
-
     for (const [key, value] of Object.entries(evokerSpells)) {
         const fullSpell = value;
         const spellInfo = fullSpell[0];
@@ -421,25 +386,31 @@ const triggerCycleOfLife = (state, rawHealing) => {
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
     if (settings.t31_2) {
-        /*
         const bonus = {
             type: "castSpell",
             storedSpell: "Living Flame",
             powerMod: 0.4,
-            targetMod: 5, // This technically is up to 5 since it's based on targets hit.
+            targetMod: 3, // This is dynamic from 1-3 based on targets hit. 
+            chance: 1,
+        }
+        const offensiveBonus = {
+            type: "castSpell",
+            storedSpell: "Living Flame O",
+            powerMod: 0.4,
+            targetMod: 1,
             chance: 1,
         }
 
         evokerSpells['Spiritbloom'].push(bonus);
         evokerSpells['Dream Breath'].push(bonus);
-        */
+        evokerSpells['Fire Breath'].push(offensiveBonus);
     }
     if (settings.t31_4) {
         const echoBuff = {
             name: "Echo",
             type: "buff",
             value: 0.7 * (1 + state.talents.timeLord * 0.25),
-            stacks: 0, // Note that we can have Echo out on multiple people at once, just not two on one person.
+            stacks: 0, 
             canStack: false,
             buffDuration: 999,
             buffType: 'special',
@@ -802,7 +773,7 @@ const getSpellCastTime = (spell, state, currentStats) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => {
     //console.log("Running cast sequence");
-    const start = performance.now();
+    const startTime = performance.now();
     // Flatten talents
     // Talents come with a lot of extra data we don't need like icons, max points and such.
     // This quick bit of code flattens it out by creating key / value pairs for name: points.
@@ -1076,55 +1047,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         }
 
         // Time optimization
-        if (state.activeBuffs.length > 0) {
-            const nextBuff = Math.min(...state.activeBuffs.filter(obj => obj.next !== undefined).map(obj => obj.next));
-            if (nextBuff !== undefined && nextBuff !== 0) state.t = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999, nextBuff);
-            else state.t = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999);
-        }
-        else {
-            state.t = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999);
-        }
-        //console.log(state.t);
-        
-        
-        //console.log(state.t);
-        //console.log(Math.min(nextSpell, spellFinish, Math.min(state.activeBuffs.length > 0 ? ...state.activeBuffs.map(obj => obj.next) : 99999), Math.min(...state.activeBuffs.map(obj => obj.expiration))));
+        state.t = advanceTime(state.t, nextSpell, spellFinish, state.activeBuffs);
+
     }
 
+    runRampTidyUp(state, settings, sequenceLength, startTime)
 
-    // Add up our healing values (including atonement) and return it.
-    
-    state.activeBuffs = [];
-    state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
-    state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
-    state.talents = {};
-
-    // Tidy up and offer percentages. Could be culled for run time if reporting is off.
-    
-
-    if (settings.advancedReporting) {
-        state.healingDoneReport = {};
-        
-
-        Object.keys(state.healingDone).forEach(spellName => {
-            state.healingDoneReport[spellName] = Math.round(state.healingDone[spellName] / state.totalHealing * 10000) / 100 + "% (" + Math.round(state.healingDone[spellName] / sequenceLength) + " hps)";
-        })
-
-        Object.keys(state.casts).forEach(spellName => {
-            state.casts[spellName] = Math.round(state.casts[spellName] / (sequenceLength / 60) * 100) / 100;
-        });
-    }
-
-
-    state.hps = Math.round(state.totalHealing / sequenceLength);
-    state.dps = Math.round(state.totalDamage / sequenceLength);
-    state.hpm = (state.totalHealing / state.manaSpent) || 0;
-
-
-    const end = performance.now();
-    const elapsedTime = end - start;
-    state.elapsedTime = elapsedTime;
-    //console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
     return state;
 
 }

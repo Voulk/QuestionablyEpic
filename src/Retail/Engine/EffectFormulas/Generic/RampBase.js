@@ -292,6 +292,22 @@ export const generateBuffTarget = (state, spell) => {
 
 }
 
+// It can save time to skip dead time in a sequence. If my next HoT ticks in 0.5s, my next cast finishes in 1s then I don't need to loop through 0-0.4. Instead I can skip
+// them and everything will run faster. 
+export const advanceTime = (t, nextSpell, spellFinish, buffs) => {
+    let newTime = t;
+    if (buffs.length > 0) {
+        const nextBuff = Math.min(...buffs.filter(obj => obj.next !== undefined).map(obj => obj.next));
+        if (nextBuff !== undefined && nextBuff !== 0) newTime = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999, nextBuff);
+        else newTime = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999);
+    }
+    else {
+        newTime = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999);
+    }
+
+    return newTime;
+}
+
 /** Check if a specific buff is active and returns how many stacks of it we have.
  * @param buffs An array of buff objects.
  * @param buffName The name of the buff we're searching for.
@@ -308,6 +324,40 @@ export const extendBuff = (activeBuffs, timer, spellName, extension) => {
             buff.expiration += extension;
         }
     });
+}
+
+// When our sequence finishes we run a bit of code to tidy up HPS values and so on.
+// All specs do this so we'll do it in a tidyup function here.
+export const runRampTidyUp = (state, settings, sequenceLength, startTime) => {
+    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    // Add up our healing values and return them.
+    state.activeBuffs = [];
+    state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
+    state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
+    state.talents = {};
+
+    // Tidy up and offer percentages. Could be culled for run time if reporting is off.
+    if (settings.advancedReporting) {
+        state.healingDoneReport = {};
+        
+        Object.keys(state.healingDone).forEach(spellName => {
+            state.healingDoneReport[spellName] = Math.round(state.healingDone[spellName] / state.totalHealing * 10000) / 100 + "% (" + Math.round(state.healingDone[spellName] / sequenceLength) + " hps)";
+        })
+
+        Object.keys(state.casts).forEach(spellName => {
+            state.casts[spellName] = Math.round(state.casts[spellName] / (sequenceLength / 60) * 100) / 100;
+        });
+    }
+
+
+    state.hps = Math.round(state.totalHealing / sequenceLength);
+    state.dps = Math.round(state.totalDamage / sequenceLength);
+    state.hpm = (state.totalHealing / state.manaSpent) || 0;
+
+
+    const end = performance.now();
+    const elapsedTime = end - startTime;
+    state.elapsedTime = elapsedTime;
 }
 
 /** Check if a specific buff is active and returns the value of it.
