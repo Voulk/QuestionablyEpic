@@ -802,7 +802,7 @@ const getSpellCastTime = (spell, state, currentStats) => {
  */
 export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => {
     //console.log("Running cast sequence");
-
+    const start = performance.now();
     // Flatten talents
     // Talents come with a lot of extra data we don't need like icons, max points and such.
     // This quick bit of code flattens it out by creating key / value pairs for name: points.
@@ -820,15 +820,14 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-
+    
 
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    const sequenceLength = 'seqLength' in settings ? settings.seqLength : 120; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = ('seqLength' in settings ? settings.seqLength : 120) * (1 + (Math.random() - 0.5) * 0.2); // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
     let queuedSpell = "";
-    const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
 
@@ -999,7 +998,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             }
 
             const fullSpell = evokerSpells[queuedSpell];
-
+            if (queuedSpell === undefined) console.error("Can't find spell: " + queuedSpell);
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
@@ -1075,12 +1074,27 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             //state.t = 999;
         }
+
+        // Time optimization
+        if (state.activeBuffs.length > 0) {
+            const nextBuff = Math.min(...state.activeBuffs.filter(obj => obj.next !== undefined).map(obj => obj.next));
+            if (nextBuff !== undefined && nextBuff !== 0) state.t = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999, nextBuff);
+            else state.t = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999);
+        }
+        else {
+            state.t = Math.min(nextSpell > 0 ? nextSpell : 9999, spellFinish > 0? spellFinish : 9999);
+        }
+        //console.log(state.t);
+        
+        
+        //console.log(state.t);
+        //console.log(Math.min(nextSpell, spellFinish, Math.min(state.activeBuffs.length > 0 ? ...state.activeBuffs.map(obj => obj.next) : 99999), Math.min(...state.activeBuffs.map(obj => obj.expiration))));
     }
 
 
     // Add up our healing values (including atonement) and return it.
     
-    //state.activeBuffs = [];
+    state.activeBuffs = [];
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.talents = {};
@@ -1106,7 +1120,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     state.dps = Math.round(state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
-    const endTime = performance.now();
+
+    const end = performance.now();
+    const elapsedTime = end - start;
+    state.elapsedTime = elapsedTime;
     //console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
     return state;
 

@@ -39,10 +39,10 @@ export const blossomProfile = {
 // 1k mast -> 1k vers = -2k
 export const reversionProfile = {
     defaultStats: { // 144,197.241
-        intellect: 16000,
+        intellect: 16700,
         haste: 1600,
-        crit: 5800,
-        mastery: 6700,
+        crit: 5400,
+        mastery: 6800,
         versatility: 3000,
         stamina: 44000,
         critMult: 2,
