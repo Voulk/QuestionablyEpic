@@ -384,6 +384,8 @@ export const EVOKERSPELLDB = {
         canStack: false,
         type: "buff",
         buffType: "special",
+        stacks: 0,
+        canStack: false,
         cooldownData: {cooldown: 90, hasted: false}, 
         buffDuration: 90, //30
         special: {

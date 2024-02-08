@@ -70,6 +70,7 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
             // type: cooldownClose. Returns yes if spell is close to being available to cast.
             else if (condition.type === "cooldownAvailable") aplReq = isSpellAvailable(state, spellDB, condition.spellName);
             else if (condition.type === "cooldownClose") aplReq = getSpellCooldown(state, spellDB, condition.spellName) <= condition.nearTime;
+            else if (condition.type === "cooldownFar") aplReq = getSpellCooldown(state, spellDB, condition.spellName) >= condition.farTime;
 
             // Time related conditions
             // type: afterTime. Returns yes if a certain amount of time has elapsed. 

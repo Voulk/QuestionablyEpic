@@ -395,9 +395,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
  
 
             runSpell(fullSpell, state, spellName, evokerSpells, triggerEssenceBurst, runHeal, runDamage);
-            if (checkBuffActive(state.activeBuffs, "Stasis") && !(EVOKERCONSTANTS.stasisExceptionSpells.includes(spellName))) { 
+            if (checkBuffActive(state.activeBuffs, "Stasis") && !(EVOKERCONSTANTS.stasisExceptionSpells.includes(spellName) && !spellName.includes("Echo"))) { 
                 const buff = state.activeBuffs.filter(buff => buff.name === "Stasis")[0];
-                if (buff.special.storedSpells.length <= 3) buff.special.storedSpells.push(spellName);
+                if (buff.special.storedSpells.length <= 3) buff.special.storedSpells.push(spellName); buff.stacks += 1;
             }
 
             
