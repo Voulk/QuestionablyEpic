@@ -1,7 +1,7 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { reversionProfile } from "./PresEvokerDefaultAPL";
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -12,24 +12,25 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 14000,
+            intellect: 16000 * 1.1,
             haste: 2000,
-            crit: 3000,
-            mastery: 4500,
-            versatility: 3000,
+            crit: 5400,
+            mastery: 6700,
+            versatility: 2000 + 300,
             stamina: 29000,
             critMult: 2,
         }
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 75};
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: false, t31_2: false, seqLength: 100};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
         //console.log(data);
 
-        const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
+        //const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
         //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
+        const data = runTimeSuite(playerData, reversionProfile, runCastSequence);
 
         //runSuite(playerData, profile, runCastSequence, type)
         expect(true).toEqual(true);

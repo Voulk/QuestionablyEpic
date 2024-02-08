@@ -75,8 +75,22 @@ export function runStatDifferentialSuite(playerData, aplList, runCastSequence) {
     })
 }
 
+// A small meta suite to run an APL at different durations.
+// Note that we're mostly interested in runtime here, not HPS. We can use it to identify any issues that's causing our APL to run slowly.
+export function runTimeSuite(playerData, aplList, runCastSequence) {
+    const sequenceLengths = [40, 60, 80, 100, 120, 140, 160, 180];
+
+    sequenceLengths.forEach(length => {
+        const newPlayerData = {...playerData, settings: {...playerData.settings, seqLength: length}};
+
+        const result = runSuite(newPlayerData, aplList, runCastSequence, "APL").elapsedTime;
+        console.log(length + " t: " + result + "ms")
+    })
+    
+}
+
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1;
+    const iterations = 6000;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -105,7 +119,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         hpm.push(result.hpm);
         elapsedTime.push(result.elapsedTime);
 
-        console.log(result);
+        //console.log(result)
 
     }
 

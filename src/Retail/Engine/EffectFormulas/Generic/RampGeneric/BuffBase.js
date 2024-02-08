@@ -40,6 +40,8 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
         }
         else if (buff.runEndFunc) buff.runFunc(state, buff);
     })
+
+    state.activeBuffs = state.activeBuffs.filter(function (buff) {return buff.expiration > state.t});
 }
 
 const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {

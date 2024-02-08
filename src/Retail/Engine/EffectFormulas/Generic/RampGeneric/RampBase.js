@@ -192,6 +192,7 @@ export const runRampTidyUp = (state, settings, sequenceLength, startTime) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     // Add up our healing values and return them.
     state.activeBuffs = [];
+    
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.talents = {};
@@ -281,7 +282,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
     
-    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
+    if (stats.includes("vers")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
