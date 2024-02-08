@@ -1,7 +1,7 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { reversionProfile } from "./PresEvokerDefaultAPL";
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -22,17 +22,16 @@ describe("Test APL", () => {
         }
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: false, t31_2: false, seqLength: 100};
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
         //console.log(data);
 
-        //const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
+        const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
         //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
-        const data = runTimeSuite(playerData, reversionProfile, runCastSequence);
 
-        //runSuite(playerData, profile, runCastSequence, type)
+
         expect(true).toEqual(true);
     })
 

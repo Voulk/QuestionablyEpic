@@ -1,6 +1,6 @@
 
 import { runHeal, runDamage } from "./PresEvokerRamps";
-import { addReport, getCrit, getHaste } from "../Generic/RampGeneric/RampBase";
+import { addReport, getCrit, getHaste, runSpell } from "../Generic/RampGeneric/RampBase";
 
 
 // This is the Evoker spell database. 
@@ -239,7 +239,6 @@ export const EVOKERSPELLDB = {
     { 
         type: "function",
         runFunc: function (state, spell) {
-
             if (state.talents.resonatingSphere) {
                 const echoBuffs = 5;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
@@ -375,6 +374,46 @@ export const EVOKERSPELLDB = {
         expectedOverheal: 0.4,
         secondaries: [],
     }],
+    "Stasis": [
+    {
+        spellData: {id: 370984, icon: "ability_evoker_green_01", cat: "cooldown"},
+        name: "Stasis",
+        castTime: 0,
+        cost: 0,
+        onGCD: false,
+        canStack: false,
+        type: "buff",
+        buffType: "special",
+        cooldownData: {cooldown: 90, hasted: false}, 
+        buffDuration: 90, //30
+        special: {
+            storedSpells: [],
+        }
+    }],
+    "StasisRelease": [
+        {
+            spellData: {id: 370984, icon: "ability_evoker_green_01", cat: "cooldown"},
+            name: "StasisRelease",
+            castTime: 0,
+            cost: 0,
+            onGCD: false,
+            canStack: false,
+            type: "function",
+            runFunc: function (state, spell, evokerSpells, triggerSpecial, runHeal, runDamage) {
+                // Get stored spells.
+                const storedSpells = state.activeBuffs.filter(buff => buff.name === "Stasis")[0].special.storedSpells;
+                const flag = {ignoreCD: true};
+                // Cast stored spells.
+                storedSpells.forEach(spellName => {
+                    const fullSpell = evokerSpells[spellName];
+                    runSpell(fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flag)
+                });
+
+                // Remove Stasis.
+                state.activeBuffs = state.activeBuffs.filter(buff => buff.name !== "Stasis");
+            
+            }
+        }],
 }
 
 

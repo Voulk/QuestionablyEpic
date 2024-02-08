@@ -257,6 +257,8 @@ export const addBuff = (state, spell, spellName) => {
             buff.expiration = newBuff.expiration;
         }
 
+        if (spell.special) newBuff.special = spell.special;
+
     }
     // This category is for buffs that increase the cast speed of our next cast of X spell. 
     // Example: Ancient Flame

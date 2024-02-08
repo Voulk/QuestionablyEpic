@@ -63,10 +63,9 @@ export const spendSpellCost = (spell, state) => {
 }
 
 // Ideally remove triggerSpecial eventually.
-export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage) => {
-
+// flags: "ignoreCD"
+export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flags = {}) => {
     fullSpell.forEach(spell => {
-
         let canProceed = false
 
         if (spell.chance) {
@@ -109,7 +108,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             }
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
             else if (spell.type === 'function') {
-                spell.runFunc(state, spell);
+                spell.runFunc(state, spell, evokerSpells, triggerSpecial, runHeal, runDamage);
             }
 
             // The spell adds a buff to our player.
@@ -126,7 +125,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             } 
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
-            if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
+            if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
         
             }
 
