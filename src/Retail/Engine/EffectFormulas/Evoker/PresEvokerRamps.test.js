@@ -22,7 +22,7 @@ describe("Test APL", () => {
         }
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: false, t31_2: false, seqLength: 100};
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
@@ -30,7 +30,7 @@ describe("Test APL", () => {
 
         const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
         //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
-        console.log(data);
+        //console.log(data);
 
         expect(true).toEqual(true);
     })

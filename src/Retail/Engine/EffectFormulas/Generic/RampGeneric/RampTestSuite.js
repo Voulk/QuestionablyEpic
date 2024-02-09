@@ -90,7 +90,7 @@ export function runTimeSuite(playerData, aplList, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 3000;
+    const iterations = 1;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -119,7 +119,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         hpm.push(result.hpm);
         elapsedTime.push(result.elapsedTime);
 
-        //console.log(result)
+        console.log(result.report);
 
     }
 
