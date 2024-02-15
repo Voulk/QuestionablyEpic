@@ -60,7 +60,7 @@ export const reversionProfile = {
     {s: ["StasisRelease"], conditions: [{type: "buff", buffName: "Stasis"}]},
     {s: ["Echo"], conditions: [{type: "buff", buffName: "Essence Burst"}]}, 
     {s: ["Echo"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 2}]},
-    {s: ["Reversion"], conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 6}] }, 
+    {s: ["Reversion"], conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 5}] }, 
     {s: ["Fire Breath"], conditions: [{type: "buffMissing", buffName: "Exhilarating Burst"}]}, // Avoid consuming Echo buffs.
     
     {s: ["Living Flame O"] },
