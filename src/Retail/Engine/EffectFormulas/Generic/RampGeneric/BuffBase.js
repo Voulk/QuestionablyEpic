@@ -1,5 +1,5 @@
 
-import { addReport, getHaste } from "./RampBase"
+import { addReport, getHaste, getCurrentStats } from "./RampBase"
 
 
 export const runBuffs = (state, tickBuff, stats, spellDB) => {

@@ -2,8 +2,9 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, 
-            getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, removeBuff } from "../Generic/RampGeneric/RampBase";
+import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, 
+            getStatMult, GLOBALCONST, getHealth, getCrit } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/RampGeneric/BuffBase";
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 
 const PALADINCONSTANTS = {

@@ -2,9 +2,9 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getBuffStacks, getHealth, getCrit, addBuff, applyTalents, runBuffs } from "../Generic/RampGeneric/RampBase";
-
+import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+            getHealth, getCrit, applyTalents } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
 
 const DRUIDCONSTANTS = {
     
