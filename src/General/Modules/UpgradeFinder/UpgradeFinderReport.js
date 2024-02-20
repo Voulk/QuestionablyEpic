@@ -91,8 +91,8 @@ export default function UpgradeFinderReport(props) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/upgradereport/' + result.id);
       }
-      else if (process.env.PUBLIC_URL.includes("dev")) {
-        window.history.pushState('QE Live Report', 'Title', 'dev/upgradereport/' + result.id);
+      else if (process.env.PUBLIC_URL.includes("ptr")) {
+        window.history.pushState('QE Live Report', 'Title', 'ptr/upgradereport/' + result.id);
       }
       else {
         // Call Error
