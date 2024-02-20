@@ -227,7 +227,7 @@ export default function UpgradeFinderReport(props) {
 
           {/* World Bosses */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabValue} index={2}>
+            <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
                   <WorldBossGearContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
@@ -238,7 +238,7 @@ export default function UpgradeFinderReport(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabValue} index={3}>
+            <UFTabPanel value={tabValue} index={4}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer spec={result.spec} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />

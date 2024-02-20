@@ -102,14 +102,14 @@ export default function CraftedGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {craftedDB[key]} -{" "}
                               {
-                                getNumUpgrades(itemDifferentials, "-1", key, itemLevels.dungeon[difficulty])
+                                getNumUpgrades(itemDifferentials, "-4", key, itemLevels.dungeon[difficulty])
                               }{" "}
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemDifferentials, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
+                              {[...filterItemListBySource(itemDifferentials, "-4", key, 486)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>
@@ -121,56 +121,6 @@ export default function CraftedGearContainer(props) {
                 </div>
               </UFTabPanel>
 
-              <UFTabPanel key={"panel1"} value={tabvalue} index={1}>
-                <div className={classes.panel}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={12}>
-                      {encounterDB[1209].bossOrder.map((key, i) => (
-                        <UFAccordion
-                          key={encounterDB[1209][key].name[currentLanguage] + "-accordian" + i}
-                          elevation={0}
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
-                        >
-                          <UFAccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                            style={{
-                              verticalAlign: "middle",
-                            }}
-                          >
-                            <Typography
-                              variant="h6"
-                              color="primary"
-                              align="left"
-                              style={{
-                                // backgroundColor: "#35383e",
-                                borderRadius: "4px 4px 0px 0px",
-                                display: "flex",
-                              }}
-                            >
-                              {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
-                              <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                              {encounterDB[1209][key].name[currentLanguage]} -{" "}
-                              {[...filterItemListBySource(itemDifferentials, 1209, key, 441)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
-                              Upgrades
-                            </Typography>
-                          </UFAccordionSummary>
-                          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-                            <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemDifferentials, 1209, key, 441)].map((item, index) => (
-                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                              ))}
-                            </Grid>
-                          </AccordionDetails>
-                        </UFAccordion>
-                      ))}
-                    </Grid>
-                  </Grid>
-                </div>
-              </UFTabPanel>
             </Grid>
           </Grid>
         </div>

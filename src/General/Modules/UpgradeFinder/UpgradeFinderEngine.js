@@ -158,6 +158,10 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } 
+  else if (instanceID === -4) {
+    // Crafted
+    itemLevel = 486; // We'll have a setting for this.
+  }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
@@ -229,6 +233,16 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           itemPoss.push(item);
         }
 
+      }
+      else if (primarySource === -4 && rawItem.quality === 4) {
+        // Crafted. Note that we're excluding blue items. Those are only really good early on.
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+        item.dropLoc = "Crafted";
+        item.dropDifficulty = "";
+        item.dropDifficultyTxt = "";
+        item.quality = 4;
+        itemPoss.push(item);
       } 
       /*else if (primarySource !== -18) {
         /*
