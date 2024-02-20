@@ -26,7 +26,7 @@ const ItemDetailCard: FC<ItemDetailCardProps> = ({ item }) => {
   const metricPadding = isXs ? "2px" : "8px";
 
   const coloredDescription = item.description;
-
+  const icon = item.icon ? process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg" : getItemIcon(item.id);
   return (
     <Paper
       sx={{
@@ -47,7 +47,7 @@ const ItemDetailCard: FC<ItemDetailCardProps> = ({ item }) => {
         <div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <WowheadTooltip type="item" id={item.id} domain={currentLanguage}>
-              <img height={40} width={40} src={getItemIcon(item.id)} alt="" style={{ borderRadius: 4, borderWidth: "1px", borderStyle: "solid", borderColor: "#ff8000" }} />
+              <img height={40} width={40} src={icon} alt="" style={{ borderRadius: 4, borderWidth: "1px", borderStyle: "solid", borderColor: "#ff8000" }} />
             </WowheadTooltip>
             <div style={{ marginLeft: 8 }}>
               <Typography color="primary" variant="h6" component="h2" style={{ fontSize: titleFontSize, alignSelf: "center", lineHeight: 1 }}>

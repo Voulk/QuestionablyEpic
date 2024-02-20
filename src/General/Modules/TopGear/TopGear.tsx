@@ -535,12 +535,7 @@ export default function TopGear(props: any) {
       <div style={{ height: 96 }} />
       <Grid container spacing={1} justifyContent="center">
         <Grid item xs={12}>
-          <Typography variant="h4" align="center" style={{ padding: "10px 10px 5px 10px" }} color="primary">
-            {t("TopGear.Title")}
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
+          <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel

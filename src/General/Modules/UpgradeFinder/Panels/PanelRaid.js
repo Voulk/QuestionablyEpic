@@ -6,7 +6,7 @@ import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
@@ -67,19 +67,19 @@ export default function RaidGearContainer(props) {
   };
 
 
+
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                           Shadowlands                                          */
+  /*                                           Retail                                          */
   /* ---------------------------------------------------------------------------------------------- */
 
   const contentGenerator = () => {
     // Raid Panel
-    const shadowlandsList = [1207];
+    const raidList = [1207]; // This is an array because there are sometimes multiple raids at a time (fated etc);
     const difficulties = props.playerSettings.raid;
-    
+
     difficulties.sort().reverse();
     const firstDifficulty = difficulties[0];
     const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
-
 
     return (
       <Grid item xs={12}>
@@ -112,7 +112,7 @@ export default function RaidGearContainer(props) {
               </AppBar>
             </Grid>
             <Grid item xs={12}>
-              {shadowlandsList.map((raidID, index) => (
+              {raidList.map((raidID, index) => (
                 <UFTabPanel key={"panel" + index} value={tabvalue} index={index}>
                   <div className={classes.panel}>
                     <Grid container spacing={1}>
@@ -135,13 +135,9 @@ export default function RaidGearContainer(props) {
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                                   {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
-                                  {[...filterItemListByDropLoc(itemList, raidID, key, "Raid", firstDifficulty)]
-                                    .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                    .filter((item) => item !== 0).length +
+                                  {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                     (secondDifficulty !== -1
-                                      ? [...filterItemListByDropLoc(itemList, raidID, key, "Raid", secondDifficulty)]
-                                          .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                          .filter((item) => item !== 0).length
+                                      ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
                                       : 0)}{" "}
                                   Upgrades
                                 </Typography>
@@ -162,16 +158,14 @@ export default function RaidGearContainer(props) {
                                         <div style={{ marginLeft: 8 }}>
                                           {getDifficultyName(firstDifficulty)} -{" "}
                                           {
-                                            [...filterItemListByDropLoc(itemList, raidID, key, "Raid", firstDifficulty)]
-                                              .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                              .filter((item) => item !== 0).length
+                                            getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)
                                           }{" "}
                                           Upgrades
                                         </div>
                                       </Typography>
                                     </Grid>
 
-                                    {[...filterItemListByDropLoc(itemList, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
@@ -191,16 +185,14 @@ export default function RaidGearContainer(props) {
                                           <div style={{ marginLeft: 8 }}>
                                             {getDifficultyName(secondDifficulty)} -{" "}
                                             {
-                                              [...filterItemListByDropLoc(itemList, raidID, key, "Raid", secondDifficulty)]
-                                                .map((item) => getDifferentialByID(itemDifferentials, item.id, item.level))
-                                                .filter((item) => item !== 0).length
+                                              getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
                                             }{" "}
                                             Upgrades
                                           </div>
                                         </Typography>
                                       </Grid>
 
-                                      {[...filterItemListByDropLoc(itemList, raidID, key, "Raid", secondDifficulty)].map((item, index) => (
+                                      {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", secondDifficulty)].map((item, index) => (
                                         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                       ))}
                                     </Grid>

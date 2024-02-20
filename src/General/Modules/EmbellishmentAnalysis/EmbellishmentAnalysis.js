@@ -41,6 +41,7 @@ const setupItemCardData = (embList, contentType, player, playerSettings) => {
     if (data) {
       data.name = emb.name['en'];
       data.id = emb.id;
+      data.icon = emb.icon;
       itemData.push(data);
     }
   });
@@ -134,7 +135,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
 }
 
 const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric, playerSettings) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats);
+  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
   const embel = embellishmentDB.filter(function (emb) {
     return emb.effect.name === effectName;
   });
@@ -208,8 +209,6 @@ export default function EmbellishmentAnalysis(props) {
   });
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
-    "Embellishments were extremely difficult to test and numbers might change as more data comes in.",
-    "Chilled Clarity potion was nerfed in 10.1, and so extending them is no longer of any value.",
     "Note that the value of the slot some embellishments must be placed on is NOT included in the graph.",
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
@@ -240,7 +239,7 @@ export default function EmbellishmentAnalysis(props) {
       <div id="banner2"></div>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
+          <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
@@ -261,7 +260,7 @@ export default function EmbellishmentAnalysis(props) {
         </Tabs>
 
         <TabPanel value={tabIndex} index={0}>
-        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers. Flourishing Dream Helm will require live testing before it's added to the list." color="firebrick" />
+        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers." variant="yellow" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

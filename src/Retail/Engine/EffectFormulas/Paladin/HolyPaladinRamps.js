@@ -2,8 +2,10 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, extendBuff, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, 
-            getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff, removeBuff } from "../Generic/RampBase";
+import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, 
+            getStatMult, GLOBALCONST, getHealth, getCrit } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/RampGeneric/BuffBase";
+import { genSpell } from "../Generic/RampGeneric/APLBase";
 
 const PALADINCONSTANTS = {
     
@@ -130,7 +132,7 @@ const apl = [
                 // If successful, reduce CD on Light's Hammer by 2s.
                 if (roll < getCrit(state.currentStats) - 1) {
                     const targetSpell = paladinSpells["Light's Hammer"];
-                    targetSpell[0].activeCooldown -= 2;
+                    targetSpell[0].cooldownData.activeCooldown -= 2;
                 }
             }
         })
@@ -170,7 +172,7 @@ const apl = [
 
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
-        if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
+        if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * PALADINCONSTANTS.baseMana / 100;
 
         if (settings.includeOverheal === "No") {
@@ -431,46 +433,6 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     return damageVal;
 }
 
-const canCastSpell = (state, spellDB, spellName, conditions = {}) => {
-    
-    const spell = spellDB[spellName][0];
-
-    let aplReq = true;
-    let miscReq = true;
-    const holyPowReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
-
-    // Added workaround CDR/Stacks pending rework
-    //const cooldownReq = (state.t >= spell.activeCooldown) || !spell.cooldown;
-    const cooldownReq = (state.t >= spell.activeCooldown - ((spell.charges > 1 ? (spell.cooldown / (spell.hastedCooldown ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldown;
-    
-    if (spellName === "Hammer of Wrath") {
-        if (!checkBuffActive(state.activeBuffs, "Avenging Wrath") && !checkBuffActive(state.activeBuffs, "Veneration")) miscReq = false;
-    } 
-    
-    if (conditions) {
-        if (conditions.talent && state.talents[conditions.talent].points === 0) aplReq = false;
-        if (state.holyPower >= conditions.holyPower) aplReq = false;
-        if (conditions.talentNot){
-            if (typeof state.talents[conditions.talentNot] == "undefined") aplReq = false;
-            else if (state.talents[conditions.talentNot].points > 0) aplReq = false;
-        } 
-        
-        if (aplReq) {
-            if (conditions.type === "buff") {
-                aplReq = checkBuffActive(state.activeBuffs, conditions.buffName);
-                if (conditions.stacks && aplReq){
-                    aplReq = getBuffStacks(state.activeBuffs, conditions.buffName) >= conditions.stacks;
-                }
-            } else if (conditions.type === "time") {
-                aplReq = state.t >= conditions.timer;
-            } 
-        }
-    } 
-
-
-    //console.log("Checking if can cast: " + spellName + ": " + holyPowReq + cooldownReq)
-    return cooldownReq && holyPowReq && miscReq && aplReq;
-}
 
 const getSpellHPM = (state, spellDB, spellName) => {
     const spell = spellDB[spellName][0];
@@ -478,40 +440,6 @@ const getSpellHPM = (state, spellDB, spellName) => {
 
     return spellHealing / spell.cost || 0;
 }
-
-
-
-export const genSpell = (state, spells) => {
-    let spellName = ""
-
-    const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.c || ""));
-
-    /*
-    if (state.holyPower >= 3) {
-        spellName = "Light of Dawn";
-    }
-    else {
-        let possibleCasts = [{name: "Holy Shock", score: 0}, {name: "Flash of Light", score: 0}]
-
-        possibleCasts.forEach(spellData => {
-            if (canCastSpell(state, spells, spellData['name'])) {
-                spellData.score = getSpellHPM(state, spells, spellData['name'])
-            }
-            else {
-                spellData.score = -1;
-            }
-        });
-        possibleCasts.sort((a, b) => (a.score < b.score ? 1 : -1));
-        console.log(possibleCasts);
-        spellName = possibleCasts[0].name;
-    }
-    console.log("Gen: " + spellName + "|");
-    */
-
-    return usableSpells[0].s;
-
-}
-
 
 
 
@@ -559,7 +487,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
             // The spell reduces the cooldown of another spell. 
             else if (spell.type === "cooldownReduction") {
                 const targetSpell = paladinSpells[spell.targetSpell];
-                targetSpell[0].activeCooldown -= spell.cooldownReduction;
+                targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
             }
             // The spell extends the duration of a buff.
             // Note that this will extend all instances of the buff which is generally the functionality you're looking for.
@@ -733,15 +661,15 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
 
             if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
-            if (spell.cooldown && !bonusSpell) {
+            if ('cooldownData' in spell && spell.cooldownData.cooldown && !bonusSpell) {
                 // Handle charges by changing the base cooldown value
-                const newCooldownBase = ((spell.charges > 1 && spell.activeCooldown > state.t) ? spell.activeCooldown : state.t)
+                const newCooldownBase = ((spell.cooldownData.charges > 1 && spell.cooldownData.activeCooldown > state.t) ? spell.cooldownData.activeCooldown : state.t)
                 //const newCooldownBase = state.t;
 
-                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.2);
-                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats) / 1.3);
-                else if (spell.hastedCooldown) spell.activeCooldown = newCooldownBase + (spell.cooldown / getHaste(state.currentStats));
-                else spell.activeCooldown = newCooldownBase + spell.cooldown;
+                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats) / 1.2);
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats) / 1.3);
+                else if (spell.hastedCooldown) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats));
+                else spell.cooldownData.activeCooldown = newCooldownBase + spell.cooldown;
             }
         }
 
@@ -763,7 +691,7 @@ export const runSpell = (fullSpell, state, spellName, paladinSpells, bonusSpell 
         // Apply Imbued Infusions
         if (getTalentPoints(state, "imbuedInfusions")) {
             const targetSpell = paladinSpells["Holy Shock"];
-            targetSpell[0].activeCooldown -= 2;
+            targetSpell[0].cooldowndata.cooldownData.activeCooldown -= 2;
         }
 
         // Remove a stack of IoL.
@@ -870,7 +798,7 @@ const getSpellCastTime = (spell, state, currentStats) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}) => {
+export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => {
     //console.log("Running cast sequence");
 
     // Flatten talents
@@ -1019,7 +947,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
             // follow the given sequence list
             if (seqType === "Manual") queuedSpell = seq.shift();
             // if its is "Auto", use genSpell to auto generate a cast sequence
-            else queuedSpell = genSpell(state, paladinSpells);
+            else queuedSpell = genSpell(state, paladinSpells, apl);
 
             const fullSpell = paladinSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
@@ -1075,18 +1003,18 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {})
                     /*const spellList = ["Holy Shock"];
 
                     spellList.forEach(checkCooldownSpells => {
-                    if (paladinSpells[checkCooldownSpells][0].activeCooldown - (0.3 * checkInterval) > t) {
-                        paladinSpells[checkCooldownSpells][0].activeCooldown -= 0.3 * checkInterval;
+                    if (paladinSpells[checkCooldownSpells][0].cooldownData.activeCooldown - (0.3 * checkInterval) > t) {
+                        paladinSpells[checkCooldownSpells][0].cooldownData.activeCooldown -= 0.3 * checkInterval;
                     }})*/
 
                     paladinSpells.foreach(spellCD => {
-                        if (spellCD[0].cooldown) {
-                            if (spellCD[0].activeCooldown > t) {
-                                if (spellCD[0].activeCooldown - (0.3 * checkInterval) > t){
-                                    spellCD[0].activeCooldown -= 0.3 * checkInterval;
+                        if (spellCD[0].cooldowndata.cooldown) {
+                            if (spellCD[0].cooldownData.activeCooldown > t) {
+                                if (spellCD[0].cooldownData.activeCooldown - (0.3 * checkInterval) > t){
+                                    spellCD[0].cooldownData.activeCooldown -= 0.3 * checkInterval;
                                 }
                                 else {
-                                    spellCD[0].activeCooldown = t;
+                                    spellCD[0].cooldownData.activeCooldown = t;
                                 }
                             }                    
                         }

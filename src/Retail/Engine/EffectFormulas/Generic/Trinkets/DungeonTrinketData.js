@@ -12,7 +12,7 @@ export const dungeonTrinketData = [
       { // Mastery portion
         coefficient: 0.666804,
         table: -7,
-        ppm: {"Restoration Druid": 28, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+        ppm: {"Restoration Druid": 29, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
               "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
       },
     ],
@@ -258,7 +258,7 @@ export const dungeonTrinketData = [
         targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
         meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
-        efficiency: 0.5, // No longer splits to pets.
+        efficiency: 0.48, // No longer splits to pets.
       },
       { // AoE Haste effect
         coefficient: 0.189052, 

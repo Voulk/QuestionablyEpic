@@ -12,7 +12,7 @@ export const classRaceDB = {
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
   "Holy Paladin Classic": {
-    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf"],
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf", "Races.Tauren"],
     gameType: "Classic",
   },
 
@@ -28,7 +28,7 @@ export const classRaceDB = {
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
   "Restoration Druid Classic": {
-    races: ["Races.Night Elf", "Races.Tauren"],
+    races: ["Races.Night Elf", "Races.Tauren", "Races.Worgen", "Races.Troll"],
     gameType: "Classic",
   },
 
@@ -106,7 +106,11 @@ export const classRaceDB = {
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
   "Holy Priest Classic": {
-    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead"],
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
+    gameType: "Classic",
+  },
+  "Discipline Priest Classic": {
+    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
     gameType: "Classic",
   },
 
@@ -136,7 +140,7 @@ export const classRaceDB = {
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
   "Restoration Shaman Classic": {
-    races: ["Races.Draenei", "Races.Orc", "Races.Tauren", "Races.Troll"],
+    races: ["Races.Draenei", "Races.Orc", "Races.Tauren", "Races.Troll", "Races.Dwarf", "Races.Goblin"],
     gameType: "Classic",
   },
 

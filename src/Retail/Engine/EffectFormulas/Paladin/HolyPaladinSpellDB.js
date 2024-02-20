@@ -1,5 +1,6 @@
-import { addBuff, getHaste, getHealth, getBuffStacks, removeBuff, checkBuffActive } from "../Generic/RampBase";
-import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps2";
+import { getHaste, getHealth } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, getBuffStacks, addBuff, removeBuff } from "../Generic/RampGeneric/BuffBase";
+import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps";
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -38,11 +39,9 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 2.8,
         coeff: 1.535, // 1.395, 
-        cooldown: 8.5,
-        charges: 1,
+        cooldownData: {cooldown: 8.5, hasted: true, charges: 1, maxCharges: 2},
         expectedOverheal: 0.22,
         holyPower: 1,
-        hastedCooldown: true,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
     },
@@ -63,10 +62,9 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 2.8,
         coeff: 0.612, 
-        cooldown: 8.5,
+        cooldownData: {cooldown: 8.5, hasted: true, charges: 1, maxCharges: 2},
         expectedOverheal: 0.29,
         holyPower: 1,
-        hastedCooldown: true,
         statMods: {'crit': 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -106,9 +104,8 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 1.6,
         coeff: 1.071, 
-        cooldown: 6,
+        cooldownData: {cooldown: 6, hasted: true},
         holyPower: 1,
-        hastedCooldown: true,
         secondaries: ['crit', 'vers']
     }],
     "Shield of the Righteous": [{
@@ -133,7 +130,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 2.4,
         coeff: 1.125,
-        cooldown: 12,
+        cooldownData: {cooldown: 12, hasted: false},
         holyPower: 1,
         statMods: {'crit': 0},
         secondaries: ['crit', 'vers']
@@ -144,9 +141,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 1,
         coeff: 1.302, 
-        cooldown: 7.5,
-        hastedCooldown: true,
-        stacks: 1,
+        cooldownData: {cooldown: 7.5, hasted: true},
         holyPower: 1,
         secondaries: ['crit', 'vers']
     }],
@@ -178,7 +173,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         offGCD: true,
         cost: 0,
-        cooldown: 120,
+        cooldownData: {cooldown: 120, hasted: false},
         buffType: 'statsMult',
         stat: 'crit',
         value: 0, // For handling Avenging Wrath: Might
@@ -191,7 +186,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         offGCD: true,
         cost: 3.6,
-        cooldown: 60,
+        cooldownData: {cooldown: 60, hasted: false},
         holyPower: -3,
         buffType: 'special',
         buffDuration: 12,
@@ -201,7 +196,7 @@ export const PALADINSPELLDB = {
         type: "function",
         cost: 3,
         castTime: 0,
-        cooldown: 60,
+        cooldownData: {cooldown: 60, hasted: true},
         count: 5,
         runFunc: function (state, spell, spellDB) {
             // Cast 5 Holy Shocks           
@@ -219,7 +214,7 @@ export const PALADINSPELLDB = {
         type: "function",
         cost: 0,
         castTime: 0,
-        cooldown: 60,
+        cooldownData: {cooldown: 60, hasted: false},
         runFunc: function (state, spell, spellDB) {
             // Activates Glimmer on all targets for 200% value
             const numGlimmers = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
@@ -246,7 +241,7 @@ export const PALADINSPELLDB = {
         coeff: 0.4 * 1.6,
         targets: 6,
         secondaries: ['crit', 'vers', 'mastery'],
-        cooldown: 60,
+        cooldownData: {cooldown: 60, hasted: false},
         expectedOverheal: 0.4,
     },
     {
@@ -271,7 +266,7 @@ export const PALADINSPELLDB = {
         coeff: 0.7375,
         targets: 5,
         secondaries: ['crit', 'vers', 'mastery'],
-        cooldown: 90,
+        cooldownData: {cooldown: 90, hasted: false},
         expectedOverheal: 0.45,
     },
     {
@@ -297,7 +292,7 @@ export const PALADINSPELLDB = {
         coeff: 0.05 * 1.04 * 1.05, // AP boost.
         targets: 5,
         secondaries: ['crit', 'vers'],
-        cooldown: 11, // Technically 9
+        cooldownData: {cooldown: 11, hasted: false}, // Technically 9
         type: "buff",
         name: "Consecration",
         buffType: "damage",
@@ -314,7 +309,7 @@ export const PALADINSPELLDB = {
         coeff: 5,
         targets: 1,
         secondaries: ['crit', 'vers'], // No mastery scaling
-        cooldown: 30,
+        cooldownData: {cooldown: 30, hasted: false}, // Technically 9
         expectedOverheal: 0.4,
     },
     {
@@ -331,7 +326,7 @@ export const PALADINSPELLDB = {
         name: "Beacon of Virtue",
         castTime: 0,
         cost: 4,
-        cooldown: 15,
+        cooldownData: {cooldown: 15, hasted: false}, 
         buffType: 'special',
         buffDuration: 8,
     }],
@@ -341,7 +336,7 @@ export const PALADINSPELLDB = {
         name: "Divine Favor",
         castTime: 0,
         cost: 0,
-        cooldown: 30,
+        cooldownData: {cooldown: 30, hasted: false}, 
         offGCD: true,
         buffType: 'special',
         buffDuration: 99,
@@ -352,7 +347,7 @@ export const PALADINSPELLDB = {
         name: "Aura Mastery",
         castTime: 0,
         cost: 0,
-        cooldown: 180,
+        cooldownData: {cooldown: 180, hasted: false}, 
         buffType: 'special',
         buffDuration: 8,
     }],
@@ -361,7 +356,7 @@ export const PALADINSPELLDB = {
         type: "function",
         cost: 1,
         castTime: 0,
-        cooldown: 45,
+        cooldownData: {cooldown: 45, hasted: false}, 
         runFunc: function (state, spell, spellDB) {
             // Activatate the next buff, then increment the buff number
             const stacker = {
@@ -463,7 +458,7 @@ export const baseTalents = {
         };
         addBuff(state, buff, "Seal of Alacrity")
 
-        spellDB['Judgment'][0].cooldown -= (0.5 * points);
+        spellDB['Judgment'][0].cooldownData.cooldown -= (0.5 * points);
     }}, 
 
     // Seal of Might (2% base mastery pp + 2% intellect)
@@ -619,7 +614,7 @@ export const baseTalents = {
 
     // Quickened Invocation - 15s off DT cooldown.
     quickenedInvocation: {points: 0, maxPoints: 1, icon: "spell_holy_pureofheart", id: 379391, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Divine Toll'][0].cooldown -= 15;
+        spellDB['Divine Toll'][0].cooldownData.cooldown -= 15;
     }}, 
 
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
@@ -646,11 +641,11 @@ export const baseTalents = {
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
     sealOfOrder: {points: 1, maxPoints: 1, icon: "spell_holy_sealofwisdom", id: 385129, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const cooldownMultiplier = 0.9; // Dusk uptime is basically 100%.
-        spellDB['Holy Shock'][0].cooldown *= cooldownMultiplier;
-        spellDB['Judgment'][0].cooldown *= cooldownMultiplier;
-        spellDB['Divine Toll'][0].cooldown *= cooldownMultiplier;
-        spellDB['Hammer of Wrath'][0].cooldown *= cooldownMultiplier;
-        spellDB['Crusader Strike'][0].cooldown *= cooldownMultiplier;
+        spellDB['Holy Shock'][0].cooldownData.cooldown *= cooldownMultiplier;
+        spellDB['Judgment'][0].cooldownData.cooldown *= cooldownMultiplier;
+        spellDB['Divine Toll'][0].cooldownData.cooldown *= cooldownMultiplier;
+        spellDB['Hammer of Wrath'][0].cooldownData.cooldown *= cooldownMultiplier;
+        spellDB['Crusader Strike'][0].cooldownData.cooldown *= cooldownMultiplier;
 
         // Seal of Order also increases the power of Dawn by 10%.
     }}, 
@@ -889,7 +884,7 @@ export const baseTalents = {
                 // Previous logic, with charges bandaid fix would have been giving 2 charges
                 //if (canProceed) holyShock[0].activeCooldown = 0;
                 // New logic, counts as giving one extra charge.
-                if (canProceed) holyShock[0].activeCooldown -= holyShock[0].cooldown / getHaste(state.currentStats)
+                if (canProceed) holyShock[0].cooldownData.activeCooldown -= holyShock[0].cooldown / getHaste(state.currentStats)
             }
         }
 

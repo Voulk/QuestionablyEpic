@@ -2,10 +2,10 @@ import { Grid, Paper, Typography, ListItem, List, Divider, ListItemText } from "
 import HelpIcon from "@mui/icons-material/Help";
 
 // The listed Information Box is one that includes introduction text and then a list of strings.
-export default function ListedInformationBox(props: { introText: string, bulletPoints: string[], color?: string, title?: string }) {
+export default function ListedInformationBox(props: { introText: string, bulletPoints: string[], color?: string, backgroundCol?: string, title?: string }) {
 
 return (
-  <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: props.color || "goldenrod" }}>
+  <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: props.color || "goldenrod", backgroundColor: props.backgroundCol || "#424242"}}>
     {props.title ? 
     <div style={{ display: "inline-flex" }}>
       <HelpIcon />

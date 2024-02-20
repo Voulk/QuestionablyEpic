@@ -4,7 +4,8 @@ import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } fr
 import { getSetting, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 export const getEmbellishmentDescription = (embellishmentName, player, additionalData) => {
-    let embData = embellishmentData.filter(emb => emb.name === embellishmentName)[0];
+    let embData = embellishmentData.filter(emb => emb.name === embellishmentName || (emb.name === "Verdant Tether" && embellishmentName.includes("Verdant Tether")))[0];
+    
     const itemLevel = 486;
     //if (trinketData === null) return null;
     switch (embellishmentName) {
@@ -14,7 +15,7 @@ export const getEmbellishmentDescription = (embellishmentName, player, additiona
             return getElementalLariat(embData, itemLevel, player, additionalData);
         case "Undulating Sporecloak":
             return getSporecloak(embData, itemLevel, player, additionalData);
-        case "Verdant Tether":
+        case "Verdant Tether (Ring)":
             return getVerdantTether(embData, itemLevel, player, additionalData);
         case "Verdant Conduit":
             return getVerdantConduit(embData, itemLevel, player, additionalData);
@@ -48,7 +49,7 @@ const getElementalLariat = (data, itemLevel, player, additionalData) => {
     const duration = 5 + parseInt(gems);
 
     const newData = {...effect, duration: duration};
-    const description = "Lariat is a safe, high uptime embellishment which generally contributes around ~0.7% healing with a decent gem count. It's solid in all content types. At max level you'll get " + processedValue(effect, itemLevel) + " secondaries while the buff is active.";
+    const description = "Lariat is a safe, high uptime embellishment which generally contributes around ~0.8% healing with a decent gem count. It's solid in all content types. At max level you'll get " + processedValue(effect, itemLevel) + " secondaries while the buff is active.";
 
     const metrics = ["Gems: " + gems,
                     "Uptime: " + (convertExpectedUptime(newData, player, false))]
@@ -74,7 +75,7 @@ const getSporecloak = (data, itemLevel, player, additionalData) => {
                 "HPS: " + Math.round(bonus_stats.hps),
                 "Versatility: " + Math.round(bonus_stats.versatility)],
         description:
-          "Sporecloak was nerfed extremely hard at the last minute and the paltry " + processedValue(data.effects[1], itemLevel) + " shield is unlikely to offer any real defensive benefit. You'll also get " + processedValue(data.effects[2], itemLevel) + " vers while healthy and a tiny ticking HoT.",
+          "Sporecloak was nerfed extremely hard at the last minute and the paltry " + processedValue(data.effects[1], itemLevel) + " shield doesn't offer any real defensive benefit. You'll also get " + processedValue(data.effects[2], itemLevel) + " vers while healthy and a tiny ticking HoT.",
       };
 }
 
@@ -83,6 +84,7 @@ const getRalliedToVictory = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
     let description = "Gives you and 4 nearby allies " + processedValue(effect, itemLevel) + " versatility while active.";
     if (player.spec.includes("Priest")) description += " This is a particularly strong effect for Priest specs since Wrists are a convenient slot to store an Embellishment."
+    else if (player.spec.includes("Evoker") || player.spec.includes("Shaman")) " This is a very strong effect for your spec if you care about buffing your team.";
     else description += " While this is an extremely strong effect, it can be difficult to fit its slot into your gear as a " + player.spec + ".";
     
     return {
@@ -141,7 +143,7 @@ const getBlueSilkenLining = (data, itemLevel, player, additionalData) => {
 const getAdaptiveDracothyst = (data, itemLevel, player, additionalData) => {
     const effect = data.effects[0];
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
-    let description = "";
+    let description = "Strong for both mail classes due to offering far more stats than any alternative options.";
 
     return {
         category: "Items",

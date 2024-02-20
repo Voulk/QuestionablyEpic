@@ -16,12 +16,39 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2.5",
+    update: 12,
+    date: "February 10",
+    changes: [ 
+      "Upgrade Finder revamped. Reports can now be shared.",
+      "New Settings: Runes, Phials and Gems.",
+      "Added a button to automatically upgrade Vault items to max level.",
+      "App-wide Visual Revamp."
+    ]},
+  {
+    version: "10.2.5",
+    update: 11,
+    date: "January 17",
+    changes: [ 
+      "Minor general 10.2.5 updates.",
+      "Updated Evoker gearing after the 10.2.5 Reversion buff.",
+      "Bugfix: Some timewalking items weren't importing correctly. They should work fine now."
+    ]},
+  {
+    version: "10.2",
+    update: 10,
+    date: "January 10",
+    changes: [ 
+      "Ulduar Timewalking: Added formulas for all trinkets.",
+      "The trinket graph filter buttons have been updated.",
+      "Added Verdant Tether to the Embellishment Deep Dive."
+    ]},
+  {
     version: "10.2",
     update: 9,
     date: "December 29",
     changes: [ 
       "Mistweaver: Added Tear of Morning playstyle.",
-
     ]},
   {
     version: "10.2",

@@ -30,9 +30,11 @@ export class Player {
     this.uniqueHash = getUnique();
     this.charImageURL = "";
     this.charAvatarURL = "";
-
+    this.gameType = gameType;
+    this.setupDefaults(specName);
+    
     if (gameType === "Retail") {
-      this.setupDefaults(specName);
+      
       this.gameType = "Retail";
       if (this.race === "Default" || this.race === "") this.race = classRaceDB[this.spec].races[0];
     }
@@ -703,6 +705,18 @@ export class Player {
       this.statWeights.DefaultWeights = true; */
     } 
     else if (spec.includes("Classic")) {
+      console.log("Setting up classic spec");
+      this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 0));
+
+      this.activeStats = {
+        intellect: 12500,
+        haste: 5200,
+        crit: 2350,
+        mastery: 4650,
+        versatility: 1450,
+        stamina: 1900,
+      }
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);

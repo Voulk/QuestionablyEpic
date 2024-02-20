@@ -256,7 +256,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 406254,
+    id: 204710, //406254,
     icon: "inv_10_skinning_craftedoptionalreagent_shadowflamearmorpatch",
     armorType: 0, // Extra
     name: {
@@ -462,8 +462,8 @@ export const embellishmentDB = [
   },
   {
     id: 205025,
-    icon: "3752753", // ??
-    armorType: 0, // Mail
+    icon: "inv_cape_armor_celestial", 
+    armorType: 0, 
     name: {
       en: "Undulating Sporecloak",
       de: "",
@@ -513,7 +513,7 @@ export const embellishmentDB = [
   },
   {
     id: 210671,
-    icon: "inv_10_tailoring_embroiderythread_color3", 
+    icon: "inv_10_tailoring_tailoringconsumable_color4", 
     armorType: 0, // All
     name: {
       en: "Verdant Tether (Ring)",
