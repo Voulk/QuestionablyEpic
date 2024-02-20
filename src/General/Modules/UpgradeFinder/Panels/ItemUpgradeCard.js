@@ -9,6 +9,10 @@ import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
@@ -53,6 +57,13 @@ export default function ItemCard(props) {
   const isTierPiece = false; // item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+
+  // We can probably merge a lot of these into a more central location.
+  const itemTooltips = {
+    207171: "Blossom of Amirdrassil holds up quite well in normal and heroic raid content but tends to fall off as the difficulty ramps up. Note that lack of intellect. Particularly rough on specs that don't enjoy Haste.",
+    207172: "Belor'relos isn't a healing trinket but it does excellent damage which makes it a competitive choice in Mythic+."
+  }
+  // Add tier set check too and report a generic message for those.
 
   const itemQuality = "#a73fee" //item.getQualityColor();
 
@@ -151,6 +162,11 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
+            {itemTooltips[itemID] ? <Tooltip title={itemTooltips[itemID]}>
+              <IconButton sx={{ color: 'goldenrod' }}>
+                <HelpOutlineIcon />
+              </IconButton>
+          </Tooltip> : ""}
           <CardContent style={{ padding: 4, width: "100%", alignSelf: "center" }}>
             <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
               <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
