@@ -6,6 +6,7 @@ import { getDifferentialByID, getItem } from "../../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
 import RaidGearContainer from "./Panels/PanelRaid";
+import CraftedGearContainer from "./Panels/PanelCrafted";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
 import SlotsContainer from "./Panels/PanelSlots";
 import "./Panels/ItemUpgrade.css";
@@ -165,10 +166,11 @@ export default function UpgradeFinderReport(props) {
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
                 {/* PVP */}
                 {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
+                <Tab className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
                 {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(2)} />
+                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(3)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
               </Tabs>
             </AppBar>
           </Grid>
@@ -211,6 +213,17 @@ export default function UpgradeFinderReport(props) {
               </div>
             </UFTabPanel>
           </Grid>*/}
+
+          {/* Crafted Gear */}
+          <Grid item xs={12}>
+            <UFTabPanel value={tabValue} index={2}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <CraftedGearContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                </Grid>
+              </div>
+            </UFTabPanel>
+          </Grid>
 
           {/* World Bosses */}
           <Grid item xs={12}>
