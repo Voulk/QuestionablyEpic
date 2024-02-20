@@ -61,7 +61,15 @@ export default function ItemCard(props) {
   // We can probably merge a lot of these into a more central location.
   const itemTooltips = {
     207171: "Blossom of Amirdrassil holds up quite well in normal and heroic raid content but tends to fall off as the difficulty ramps up. Note that lack of intellect. Particularly rough on specs that don't enjoy Haste.",
-    207172: "Belor'relos isn't a healing trinket but it does excellent damage which makes it a competitive choice in Mythic+."
+    207172: "Belor'relos isn't a healing trinket but it does excellent damage which makes it a competitive choice in Mythic+.",
+    //207170: "",
+    207168: "Pip's is a fantastic trinket on all healers. It's similar value to other stat sticks like Coagulated Genesaur Blood but the uptime is higher so its variance is lower.",
+    
+
+    208321: "Iridal comes with a free damage proc at no cost. Don't drop item level to wear it but if it's equal to your other choices then you might consider it even if it's a tiny healing downgrade.",
+    137306: "Competitive trinket for healer DPS.",
+    158320: "Niche use in high Mythic+ for countering single target debuffs",
+    110009: "Poor for throughput but competitive in high Mythic+ to help the team survive one shots.",
   }
   // Add tier set check too and report a generic message for those.
 
