@@ -52,19 +52,19 @@ export default function MythicPlusGearContainer(props) {
                 }}
                 elevation={1}
               >
-                <Tabs
+                {/*<Tabs
                   value={tabvalue}
-                  onChange={handleTabChange}
+                  onChange={handleTabChange} 
                   aria-label="simple tabs example"
                   variant="fullWidth"
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-                >
+              > */}
                   {/* ------------------------------------------ Mythic + ------------------------------------------*/}
-                  <Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} />
+                  {/*<Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} /> */}
                   {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
                   {/*<Tab className={classes.mythicHeader} label={"Dawn of the Infinite"} {...a11yProps(1)} /> */}
-                </Tabs>
+                {/*</Tabs> */}
               </AppBar>
             </Grid>
             <Grid item xs={12}>

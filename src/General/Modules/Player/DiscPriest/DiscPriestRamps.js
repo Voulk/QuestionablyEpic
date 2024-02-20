@@ -2,8 +2,9 @@
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, removeBuff, getBuffStacks, 
-            getHealth, extendBuff, addBuff, getBuffValue, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+            getHealth, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
 
