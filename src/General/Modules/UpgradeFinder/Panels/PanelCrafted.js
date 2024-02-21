@@ -16,6 +16,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
+import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
 export default function CraftedGearContainer(props) {
   const classes = dungeonStyles();
@@ -25,6 +26,9 @@ export default function CraftedGearContainer(props) {
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
   const gameType = useSelector((state) => state.gameType);
+  const craftedIntro = "You have a lot of decisions you can make when crafting items. While you can fine tune stats, you're usually quite safe just picking out a \
+                        strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. For your spec Crit / Mastery \
+                        is a reliable choice."
 
   function a11yProps(index) {
     return {
@@ -52,22 +56,15 @@ export default function CraftedGearContainer(props) {
                 }}
                 elevation={1}
               >
-                {/*<Tabs
-                  value={tabvalue}
-                  onChange={handleTabChange} 
-                  aria-label="simple tabs example"
-                  variant="fullWidth"
-                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-              > */}
-                  {/* ------------------------------------------ Mythic + ------------------------------------------*/}
-                  {/*<Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} /> */}
-                  {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
-                  {/*<Tab className={classes.mythicHeader} label={"Dawn of the Infinite"} {...a11yProps(1)} /> */}
-                {/*</Tabs> */}
+                
               </AppBar>
             </Grid>
+            <Grid>
+            <InformationBox  information={craftedIntro} variant="yellow" />
+            </Grid>
+            
             <Grid item xs={12}>
+            
               <UFTabPanel key={"panel2"} value={tabvalue} index={0}>
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
