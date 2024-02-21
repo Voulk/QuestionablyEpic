@@ -17,6 +17,13 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.5",
+    update: 12,
+    date: "Feburary 21",
+    changes: [ 
+      "Mistweaver: Fixed dungeon gems.",
+    ]},
+  {
+    version: "10.2.5",
     update: 11,
     date: "January 17",
     changes: [ 
