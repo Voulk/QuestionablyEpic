@@ -17,7 +17,7 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.5",
-    update: 12,
+    update: 13,
     date: "February 10",
     changes: [ 
       "Upgrade Finder revamped. Reports can now be shared.",
@@ -25,6 +25,13 @@ export const changeLog: entry[] = [
       "Added a button to automatically upgrade Vault items to max level.",
       "App-wide Visual Revamp."
     ]},
+    {
+      version: "10.2.5",
+      update: 12,
+      date: "February 21",
+      changes: [ 
+        "Mistweaver Gem Fix.",
+      ]},
   {
     version: "10.2.5",
     update: 11,

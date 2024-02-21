@@ -246,7 +246,7 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     }
     return gemArray;
   }
-  else if (spec === "Discipline Priest" || modelName === "Rising Mist") {
+  else if (spec === "Discipline Priest" || modelName === "Rising Mist" || (spec === "Mistweaver Monk" && contentType === "Dungeon")) {
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
       bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
