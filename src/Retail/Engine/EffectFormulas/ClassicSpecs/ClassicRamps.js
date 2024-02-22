@@ -35,15 +35,10 @@ const EVOKERCONSTANTS = {
 
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
- * @schism 25% damage buff to primary target if Schism debuff is active.
- * @sins A 3-12% damage buff depending on number of active atonements.
- * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
- * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
 const getDamMult = (state, buffs, t, spellName, talents) => {
     let mult = EVOKERCONSTANTS.auraDamageBuff;
 
-    mult *= (buffs.filter(function (buff) {return buff.name === "Energy Loop"}).length > 0 ? 1.2 : 1);
 
     return mult;
 }
@@ -136,16 +131,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
-        settings.preBuffs.forEach(buffName => {
-            if (buffName === "Echo") addBuff(state, playerSpells["Echo"][1], "Echo");
-            else if (buffName === "Temporal Compression") {
-                for (let i = 0; i < 4; i++) addBuff(state, EVOKERCONSTANTS.temporalCompressionBuff, "Temporal Compression")
-            }
-            else if (buffName === "Echo 8") {
-                for (let i = 0; i < 10; i++) addBuff(state, playerSpells["Echo"][1], "Echo");
-            }
-        })
-
     }
 
     // Extra Settings
@@ -218,7 +203,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         }
 
         // Time optimization
-        state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
+        // We'll skip this with advanced reporting on since it'll ruin our polling and time optimizations don't matter for single iterations.
+        if (!state.settings.advancedReporting) state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
 
     }
 

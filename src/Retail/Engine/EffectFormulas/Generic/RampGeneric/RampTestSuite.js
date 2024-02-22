@@ -139,7 +139,6 @@ function runSuite(playerData, profile, runCastSequence, type) {
     simData.maxTime = Math.round(1000*Math.max(...elapsedTime))/1000;
 
     simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
-    console.log(singleReport.advancedReport.length);
 
     return simData;
 }
@@ -147,8 +146,9 @@ function runSuite(playerData, profile, runCastSequence, type) {
 
 // If running on Advanced mode, buffs are polled every 1000ms.
 // We can thus calculate the uptime of each buff by counting the number of times it appears in the array of buffs and dividing by our runtime. 
-// Things it can't currently do: Tell you how many stacks of a buff you had, or how many you had out.
-// Give you a 100% precise uptime. If you need more precision then reduce buff polling time.
+// Things it can't currently do: 
+// -- Won't Tell you how many stacks of a buff you had. Will tell you how many you had out on average.
+// -- Won't give you a 100% precise uptime. If you need more precision then reduce buff polling time.
 function calculateBuffUptime(data) {
     const buffCounts = {};
     // Iterate over the advanced report array.
@@ -169,12 +169,6 @@ function calculateBuffUptime(data) {
       const uptime = Math.round((occurrences / totalEntries) * 10000)/100; // Percentage uptime
       buffUptimes[buff] = uptime;
     }
-    console.log(buffCounts)
-    console.log(totalEntries);
-    console.log(buffUptimes);
+
     return buffUptimes;
 }
-  
-  // Calculate and log buff uptimes
-  //const result = calculateBuffUptime(arrayOfData);
-  //console.log(result);
