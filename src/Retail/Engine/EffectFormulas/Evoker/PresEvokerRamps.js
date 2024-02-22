@@ -350,7 +350,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         if (state.settings.advancedReporting && (Math.floor(state.t * 100) % 100 === 0)) {
             const hps = (Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0) / state.t;
             if ('advancedReport' in state === false) state.advancedReport = [];
-            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent});
+            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent, buffs: state.activeBuffs.map(obj => obj.name)});
         }
 
         // ---- Heal over time and Damage over time effects ----
@@ -453,7 +453,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         }
 
         // Time optimization
-        state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
+        // We'll skip this with advanced reporting on since it'll ruin our polling and time optimizations don't matter for single iterations.
+        if (!state.settings.advancedReporting) state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
 
     }
 

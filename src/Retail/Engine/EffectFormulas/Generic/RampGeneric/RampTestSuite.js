@@ -101,6 +101,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         minHPS: 0,
         avgHPM: 0,
         elapsedTime: 0,
+        sampleReport: {},
     }
 
     // Handle profile talents.
@@ -120,8 +121,15 @@ function runSuite(playerData, profile, runCastSequence, type) {
         elapsedTime.push(result.elapsedTime);
 
         console.log(result.report);
-
     }
+
+    // After our iterations, complete one last run but with reporting modes on. We don't want these on for everything because it increases runtime by a lot but it's 
+    // fine for a single run. We can use this as an example report, and it'll help us identify any problems with rotation or even the sim itself.
+    let singleReport = null;
+    const adjSettings = {...playerData.settings, reporting: true, advancedReporting: true};
+    if (type === "APL") singleReport = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents, profile.apl);
+    else if (type === "Sequence") singleReport = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents);
+
 
     simData.minHPS = Math.min(...hps)
     simData.maxHPS = Math.max(...hps)
@@ -130,6 +138,43 @@ function runSuite(playerData, profile, runCastSequence, type) {
     simData.elapsedTime = Math.round(1000*elapsedTime.reduce((acc, current) => acc + current, 0) / iterations)/1000;
     simData.maxTime = Math.round(1000*Math.max(...elapsedTime))/1000;
 
+    simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
+    console.log(singleReport.advancedReport.length);
+
     return simData;
 }
 
+
+// If running on Advanced mode, buffs are polled every 1000ms.
+// We can thus calculate the uptime of each buff by counting the number of times it appears in the array of buffs and dividing by our runtime. 
+// Things it can't currently do: Tell you how many stacks of a buff you had, or how many you had out.
+// Give you a 100% precise uptime. If you need more precision then reduce buff polling time.
+function calculateBuffUptime(data) {
+    const buffCounts = {};
+    // Iterate over the advanced report array.
+    data.forEach(entry => {
+      // Iterate over buffs in each entry
+      entry.buffs.forEach(buff => {
+        // Count occurrences of each buff
+        buffCounts[buff] = (buffCounts[buff] || 0) + 1;
+      });
+    });
+  
+    // Calculate uptime for each buff given the number of times it appears.
+    const totalEntries = data.length;
+    const buffUptimes = {};
+  
+    for (const buff in buffCounts) {
+      const occurrences = buffCounts[buff];
+      const uptime = Math.round((occurrences / totalEntries) * 10000)/100; // Percentage uptime
+      buffUptimes[buff] = uptime;
+    }
+    console.log(buffCounts)
+    console.log(totalEntries);
+    console.log(buffUptimes);
+    return buffUptimes;
+}
+  
+  // Calculate and log buff uptimes
+  //const result = calculateBuffUptime(arrayOfData);
+  //console.log(result);

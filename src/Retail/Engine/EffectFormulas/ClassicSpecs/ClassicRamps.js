@@ -14,16 +14,22 @@ const EVOKERCONSTANTS = {
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 
-    defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
-    auraHealingBuff: 1.05,
-    auraDamageBuff: 1.15,
-    goldenHourHealing: 50000,
+    auraHealingBuff: 1,
+    auraDamageBuff: 1,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 
-                            'Disintegrate', 'Rewind', "Stasis", "StasisRelease"], // These are spells that do not consume or otherwise interact with our Echo buff.
-    stasisExceptionSpells: ['Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Rewind", "Stasis", "StasisRelease"], // Spells that can't be stored in Stasis. Mostly long cooldowns and offensive spells.
-    lifebindSpells: ['Spiritbloom', 'Living Flame', /*'Dream Breath', 'Dream Breath (HoT)',*/ 'Emerald Communion', 'Emerald Communion (HoT)'], // re-add dream breath when it uses dynamic targeting.
-    
+
+    manaRegenBuff: {
+        name: "ManaGen",
+        expiration: 5,
+        buffDuration: 5,
+        buffType: 'function',
+        stacks: false,
+        tickData: {tickRate: 5, canPartialTick: false, hasted: false},
+        runFunc: function (state, buff) {
+            const manaRegen = 500; //0.05 * state.currentStats.intellect * state.currentStats.spirit;
+            
+        }
+    }
 
 }
 
@@ -108,7 +114,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, spec: ""};
+                    talents: talents, reporting: true, spec: "", manaPool: 100000};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -125,19 +131,18 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, EVOKERCONSTANTS);
-    setupEchoSpells(evokerSpells); // Create Echo spells.
+    const playerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, EVOKERCONSTANTS);
 
 
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
-            if (buffName === "Echo") addBuff(state, evokerSpells["Echo"][1], "Echo");
+            if (buffName === "Echo") addBuff(state, playerSpells["Echo"][1], "Echo");
             else if (buffName === "Temporal Compression") {
                 for (let i = 0; i < 4; i++) addBuff(state, EVOKERCONSTANTS.temporalCompressionBuff, "Temporal Compression")
             }
             else if (buffName === "Echo 8") {
-                for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
+                for (let i = 0; i < 10; i++) addBuff(state, playerSpells["Echo"][1], "Echo");
             }
         })
 
@@ -152,10 +157,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
         // Advanced reporting
+        // We store our current HPS, manaSpent and the names of buffs active. 
         if (state.settings.advancedReporting && (Math.floor(state.t * 100) % 100 === 0)) {
             const hps = (Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0) / state.t;
             if ('advancedReport' in state === false) state.advancedReport = [];
-            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent});
+            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent, buffs: state.activeBuffs.map(obj => obj.name)});
         }
 
         // ---- Heal over time and Damage over time effects ----
@@ -164,7 +170,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
         // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
         // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
-        runBuffs(state, stats, evokerSpells, runHeal, runDamage);
+        runBuffs(state, stats, playerSpells, runHeal, runDamage);
 
         // Check if there is an ongoing cast and if there is, check if it's ended.
         // Check if the next spell is able to be cast, and if so, queue it.
@@ -179,7 +185,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
 
-            queueSpell(castState, seq, state, evokerSpells, seqType, apl)
+            queueSpell(castState, seq, state, playerSpells, seqType, apl)
 
         }
         if (castState.queuedSpell !== "" && state.t >= castState.spellFinish) {
@@ -193,59 +199,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             const spellName = castState.queuedSpell;
-            const fullSpell = evokerSpells[castState.queuedSpell];
+            const fullSpell = playerSpells[castState.queuedSpell];
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
             addReport(state, `Casting ${spellName}`);
             spendSpellCost(fullSpell, state);
  
 
-            runSpell(fullSpell, state, spellName, evokerSpells, triggerEssenceBurst, runHeal, runDamage);
-            if (checkBuffActive(state.activeBuffs, "Stasis") && !(EVOKERCONSTANTS.stasisExceptionSpells.includes(spellName) && !spellName.includes("Echo"))) { 
-                const buff = state.activeBuffs.filter(buff => buff.name === "Stasis")[0];
-                if (buff.special.storedSpells.length <= 3) buff.special.storedSpells.push(spellName); buff.stacks += 1;
-            }
-
-            
-
-            // Check if Echo
-            // If we have the Echo buff active, and our current cast is Echo compatible then:
-            // - Recast the echo version of the spell (created at the start of runtime).
-            // - The echo versions of spells are a weird mix of exception cases.
-            if (checkBuffActive(state.activeBuffs, "Echo") &&  !(EVOKERCONSTANTS.echoExceptionSpells.includes(spellName))) {
-                // We have at least one Echo.
-
-                // Check Echo number.
-                const echoBuffs = state.activeBuffs.filter(function (buff) {return buff.name === "Echo"});
-
-                // Our Echo buffs can be of different strengths (say, one comes from TA and one from a hard casted Echo).
-                // Because of this we'll iterate through our buffs 1 by 1 so we can use the correct Echo value.
-                for (let j = 0; j < echoBuffs.length; j++) {
-                    
-                    const echoBuff = echoBuffs[j];
-                    
-
-                    const echoSpell = JSON.parse(JSON.stringify(evokerSpells[spellName + "(Echo)"]));
-
-                    echoSpell.forEach(effect => {
-                        if ('coeff' in effect) effect.coeff = effect.coeff * echoBuff.value;
-                        if ('value' in effect) effect.value = effect.value * echoBuff.value;
-                    })
-
-                    // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
-                    // Possibly just use Lodash or something here. 
-                    if (spellName === "Reversion") {
-                        echoSpell[0].onApplication = evokerSpells["Reversion"][0].onApplication;
-                        echoSpell[0].runFunc= evokerSpells["Reversion"][0].runFunc;
-                    }
-                    runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells, triggerEssenceBurst, runHeal, runDamage)
-
-                }
-
-                // Remove all of our Echo buffs.
-
-                state.activeBuffs = removeBuff(state.activeBuffs, "Echo"); // state.activeBuffs.filter(function (buff) {return buff.name !== "Echo"})
-
-            }
+            runSpell(fullSpell, state, spellName, playerSpells, triggerEssenceBurst, runHeal, runDamage);
 
             // Cleanup
             castState.queuedSpell = "";

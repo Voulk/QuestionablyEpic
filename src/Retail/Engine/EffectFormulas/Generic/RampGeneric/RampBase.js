@@ -40,11 +40,14 @@ export const spendSpellCost = (spell, state) => {
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
             addReport(state, `Essence Burst consumed!`);
             state.manaSpent += 0;
+            
         }
         else {
             // Essence buff is not active. Spend Essence and mana.
             state.manaSpent += spell[0].cost;
+            state.manaPool = (state.manaPool || 0) - spell[0].cost;
             state.essence -= spell[0].essence;
+            
 
             // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
             // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
@@ -54,7 +57,10 @@ export const spendSpellCost = (spell, state) => {
         }
     } 
         
-    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else if ('cost' in spell[0]) {
+        state.manaSpent += spell[0].cost;
+        state.manaPool = (state.manaPool || 0) - spell[0].cost;
+    }
     else {
         // No cost. Do nothing.
     };    
