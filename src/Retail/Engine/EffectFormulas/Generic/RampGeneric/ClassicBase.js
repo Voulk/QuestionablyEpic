@@ -1,0 +1,2 @@
+// Classic sometimes works in different ways to retail. If we can use a retail function then we should, but if we need a classic version then it can be added here.
+// If it can be solved with a flag instead (like "No partial tick") then that is preferable to writing a new function.
