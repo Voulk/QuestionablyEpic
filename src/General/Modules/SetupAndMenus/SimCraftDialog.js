@@ -115,10 +115,10 @@ export default function SimCraftInput(props) {
 
         </DialogContent>
         <DialogActions>
-        <FormControlLabel
+        {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
             label="Upgrade Vault to Max Level"
-          />
+          /> : ""}
           <p id="SimCError">{errorMessage}</p>
           <Button onClick={handleClose} color="primary" variant="outlined">
             {t("Cancel")}
