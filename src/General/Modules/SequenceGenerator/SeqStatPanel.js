@@ -13,7 +13,8 @@ const StatPanel = (props) => {
 
   // Event handler for updating the state when a textbox value changes
   const handleStatChange = (statName) => (event) => {
-    setStats({ ...stats, [statName]: event.target.value });
+    const updatedStat = parseInt(event.target.value) || ''; // If parsing fails, set it to an empty string
+    setStats({ ...stats, [statName]: updatedStat });
   };
 
   // Event handler for the Save button (you can replace the console.log with your save function)
@@ -32,6 +33,7 @@ const StatPanel = (props) => {
             label="Intellect"
             variant="outlined"
             value={stats.intellect}
+            type="number"
             onChange={handleStatChange('intellect')}
           />
         </Grid>
@@ -40,6 +42,7 @@ const StatPanel = (props) => {
             label="Haste"
             variant="outlined"
             value={stats.haste}
+            type="number"
             onChange={handleStatChange('haste')}
           />
         </Grid>
@@ -48,6 +51,7 @@ const StatPanel = (props) => {
             label="Crit"
             variant="outlined"
             value={stats.crit}
+            type="number"
             onChange={handleStatChange('crit')}
           />
         </Grid>
@@ -56,6 +60,7 @@ const StatPanel = (props) => {
             label="Mastery"
             variant="outlined"
             value={stats.mastery}
+            type="number"
             onChange={handleStatChange('mastery')}
           />
         </Grid>
@@ -64,6 +69,7 @@ const StatPanel = (props) => {
             label="Versatility"
             variant="outlined"
             value={stats.versatility}
+            type="number"
             onChange={handleStatChange('versatility')}
           />
         </Grid>

@@ -376,7 +376,7 @@ export const EVOKERSPELLDB = {
     }],
     "Stasis": [
     {
-        spellData: {id: 370984, icon: "ability_evoker_green_01", cat: "cooldown"},
+        spellData: {id: 370984, icon: "ability_evoker_stasis", cat: "cooldown"},
         name: "Stasis",
         castTime: 0,
         cost: 0,
@@ -394,7 +394,7 @@ export const EVOKERSPELLDB = {
     }],
     "StasisRelease": [
         {
-            spellData: {id: 370984, icon: "ability_evoker_green_01", cat: "cooldown"},
+            spellData: {id: 370984, icon: "ability_evoker_stasis", cat: "cooldown"},
             name: "StasisRelease",
             castTime: 0,
             cost: 0,

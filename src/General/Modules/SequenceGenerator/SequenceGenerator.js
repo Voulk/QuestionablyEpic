@@ -578,7 +578,7 @@ export default function SequenceGenerator(props) {
             <StatPanel setActiveStats={setActiveStats} />
           </Grid>
           <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
-            <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={talentDB} />
+            <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
           </Grid>
         </Grid>
 
