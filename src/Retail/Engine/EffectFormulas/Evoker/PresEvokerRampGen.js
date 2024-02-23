@@ -7,11 +7,15 @@ import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/R
 
  */
 
-export const buildEvokerChartData = (stats) => {
+export const buildEvokerAPLData = (stats, talents) => {
+
+}
+
+export const buildEvokerChartData = (activeStats) => {
     //
     let results = [];
 
-    const activeStats = {
+    /*const activeStats = {
         intellect: 14000,
         haste: 1200,
         crit: 5500,
@@ -19,13 +23,13 @@ export const buildEvokerChartData = (stats) => {
         versatility: 3000,
         stamina: 29000,
         critMult: 2,
-    }
+    }*/
 
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: true, t31_2: false};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     let talents = {...evokerTalents};
 
     const sequences = [
-        /*
+        
         {cat: "Base Spells", tag: "Spiritbloom R4", seq: ["Spiritbloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Dream Breath R1", seq: ["Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: []},
@@ -35,19 +39,20 @@ export const buildEvokerChartData = (stats) => {
 
         {cat: "Base Spells", tag: "Verdant Embrace -> Dream Breath", seq: ["Verdant Embrace", "Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: []},
-
+        
         {cat: "Consumed Echo", tag: "E Spiritbloom", seq: ["Spiritbloom"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Dream Breath", seq: ["Dream Breath"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Reversion", seq: ["Reversion"], preBuffs: ["Echo"]},
+        {cat: "Consumed Echo", tag: "E Living Flame", seq: ["Living Flame"], preBuffs: ["Echo"]},
 
         {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
-        */
+
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
-        {cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
+        //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]
 
     sequences.forEach(sequence => {
@@ -70,8 +75,6 @@ export const buildEvokerChartData = (stats) => {
             const result = runAPLSuites(playerData, profile, runCastSequence)
             const oneIteration = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, reporting: true}, talents, profile.apl);
             
-
-            console.log(oneIteration);
             
             results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: result.advancedReport})
         }

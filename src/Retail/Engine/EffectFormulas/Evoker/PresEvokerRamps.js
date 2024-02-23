@@ -373,7 +373,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
-
             queueSpell(castState, seq, state, evokerSpells, seqType, apl)
 
         }
@@ -455,7 +454,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // Time optimization
         // We'll skip this with advanced reporting on since it'll ruin our polling and time optimizations don't matter for single iterations.
         if (!state.settings.advancedReporting) state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
-
+        //if (seqType === "Manual" && seq.length === 0) state.t = 9999; // This is a manual sequence so we won't bother generating anything else. End.
     }
 
     runRampTidyUp(state, settings, sequenceLength, startTime)

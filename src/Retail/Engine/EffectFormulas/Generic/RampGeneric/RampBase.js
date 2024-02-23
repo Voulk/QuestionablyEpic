@@ -160,8 +160,13 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
         }
     }
 
+    if (!castState.queuedSpell) {
+        //console.error("Can't find spell: " + castState.queuedSpell);
+        castState.queuedSpell = "Rest";
+        castState.spellFinish = state + 1.5;
+        castState.nextSpell = state + 1.5;
+    }
     const fullSpell = spellDB[castState.queuedSpell];
-    if (!castState.queuedSpell) console.error("Can't find spell: " + castState.queuedSpell);
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
     castState.spellFinish = state.t + castTime - 0.01;
     if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
-
+import StatPanel from "./SeqStatPanel";
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
@@ -82,6 +82,10 @@ const getTalentDB = (spec) => {
   if (spec === "Holy Priest") return holyPriestTalents;
 };
 
+const saveStats = (newStats) => {
+
+}
+
 const getSpecSettings = (spec) => {
   if (spec === "Preservation Evoker") {
     return { twoPc: { value: "Yes", options: ["Yes", "No"] }, includeOverheal: { value: "Yes", options: ["Yes", "No"] } };
@@ -139,6 +143,7 @@ export default function SequenceGenerator(props) {
   const [seq, setSeq] = useState([]);
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
+  const [activeStats, setActiveStats] = useState({ intellect: 14500, haste: 2000, crit: 3300, mastery: 6500, versatility: 1200, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
@@ -569,9 +574,12 @@ export default function SequenceGenerator(props) {
               </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
+            <StatPanel setActiveStats={setActiveStats} />
+          </Grid>
           <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
-          <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={talentDB} />
-        </Grid>
+            <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={talentDB} />
+          </Grid>
         </Grid>
 
         {/*<div style={{ height: 50 }}>&nbsp;</div> */}
