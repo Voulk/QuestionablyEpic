@@ -30,9 +30,9 @@ describe("Test APL", () => {
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
         //console.log(data);
 
-        const data = runAPLSuites(playerData, profile, runCastSequence);
-        console.log(data);
-        //const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
+        //const data = runAPLSuites(playerData, profile, runCastSequence);
+        //console.log(data);
+        const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
         //console.log(data);
 
         expect(true).toEqual(true);
