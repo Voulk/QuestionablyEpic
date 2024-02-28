@@ -180,7 +180,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         const ancientFlame = {
             name: "Ancient Flame",
             type: "buff",
-            stacks: false,
+            stacks: 0,
             canStack: false,
             buffDuration: 15,
             buffType: 'special',

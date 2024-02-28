@@ -251,21 +251,20 @@ export const dungeonTrinketData = [
     */
     name: "Echoing Tyrstone",
     effects: [
-      { 
+      {  // Healing effect. No longer splits to pets. Can be pre-charged but we're opting not to include this for now.
         coefficient: 283.4695, 
         table: -9,
         secondaries: ["versatility", "crit"],
-        targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
         meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
-        efficiency: 0.48, // No longer splits to pets.
+        efficiency: 0.48, // Effective Healing x Usage Rate
       },
-      { // AoE Haste effect
+      { // AoE Haste effect - Each target gets full value. No splitting.
         coefficient: 0.189052, 
         table: -7,
-        targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
+        targets: {Raid: 20, Dungeon: 5},
         cooldown: 120,
-        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.8, // Usage Rate. Could be adjustable.
         duration: 15,
       },
     ],

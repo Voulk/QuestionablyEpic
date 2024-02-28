@@ -243,13 +243,18 @@ export const addBuff = (state, spell, spellName) => {
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
         addReport(state, "Adding Buff: " + spell.name + " for " + spell.buffDuration + " seconds.");
-        
+    
+        // If unique, add if don't have it, extend otherwise.
+        // If can stack, add if don't have it, add a stack otherwise.
+        // If can't stack but not unique, add it regardless.
 
-        if (buffStacks === 0 || !spell.canStack) {
+        // If we don't have the buff already, or if they don't stack, then add it.
+        if ((buffStacks === 0 || (!spell.canStack && !spell.unique))) {
             newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack}
             state.activeBuffs.push(newBuff);
             //console.log(newBuff);
         }
+        // If we do have the buff already, then add a stack and extend duration.
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 

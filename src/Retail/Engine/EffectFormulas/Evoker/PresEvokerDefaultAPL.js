@@ -10,18 +10,19 @@ export const blossomProfile = {
         stamina: 29000,
         critMult: 2,
     },
-    talents: ['flutteringSeedlings', 'cycleOfLife', 'fontOfMagic', 'renewingBreath', 'lifeforceMender'], // These will be turned on at maximum points
+    talents: ['flutteringSeedlings', 'cycleOfLife', 'fontOfMagic', 'renewingBreath', 'timelessMagic', 'gracePeriod'], // These will be turned on at maximum points
     apl: [
-    {s: ["Dream Flight"], conditions: [{type: "afterTime", timer: 15}]},
-    {s: ["Living Flame"], conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 4}]}, 
-    {s: ["Verdant Embrace"], conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}] }, // Combo with Verdant Embrace
-    {s: ["Dream Breath"] }, // Combo with Verdant Embrace
-    {s: ["Spiritbloom"] }, // Combo with Verdant Embrace
-    {s: ["Temporal Anomaly"], conditions: [{type: "buffMissing", buffName: "Essence Burst"}]}, // Combo with Ally Living Flame
-    {s: ["Emerald Blossom"], conditions: [{type: "buff", buffName: "Essence Burst"}]},
-    {s: ["Emerald Blossom"], conditions: [{type: "resource", resourceName: "Essence", resourceCost: 3}]},
-    
-    {s: ["Living Flame O"]},
+        {s: ["Emerald Blossom"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 3}, {type: "beforeTime", timer: 2}]},
+        {s: ["Dream Flight"], conditions: [{type: "afterTime", timer: 15}]},
+        {s: ["Reversion"], conditions: [{type: "buffCountMinimum", buffName: "Echo", buffCount: 4}]}, 
+        {s: ["Verdant Embrace"], conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}] }, // Combo with Verdant Embrace
+        {s: ["Dream Breath"] }, // Combo with Verdant Embrace
+        {s: ["Spiritbloom"] }, // 
+        {s: ["Temporal Anomaly"], conditions: [{type: "buffMissing", buffName: "Essence Burst"}]}, // Combo with Reversion
+        {s: ["Emerald Blossom"], conditions: [{type: "buff", buffName: "Essence Burst"}]},
+        {s: ["Emerald Blossom"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 3}]},
+        
+        {s: ["Living Flame O"]},
 
 ]}
 

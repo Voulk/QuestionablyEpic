@@ -90,7 +90,7 @@ export function runTimeSuite(playerData, aplList, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1;
+    const iterations = 1000;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -120,7 +120,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         hpm.push(result.hpm);
         elapsedTime.push(result.elapsedTime);
 
-        console.log(result.report);
+
     }
 
     // After our iterations, complete one last run but with reporting modes on. We don't want these on for everything because it increases runtime by a lot but it's 
@@ -139,7 +139,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     simData.maxTime = Math.round(1000*Math.max(...elapsedTime))/1000;
 
     simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
-
+    simData.sampleReport = singleReport;
     return simData;
 }
 
