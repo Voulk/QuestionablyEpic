@@ -48,7 +48,7 @@ export function runStatDifferentialSuite(playerData, aplList, runCastSequence) {
     const stats = [/*'crit', 'mastery', 'haste', */'haste'];
     const baseline = runSuite(playerData, aplList, runCastSequence, "APL").avgHPS;
     let counter = 0;
-    const diffRange = Array.from({ length: 15 }, (_, index) => -700 + index * 100);
+    const diffRange = Array.from({ length: 11 }, (_, index) => -500 + index * 100);
 
     stats.forEach(stat => {
         const results = [];
@@ -90,7 +90,7 @@ export function runTimeSuite(playerData, aplList, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1000;
+    const iterations = 1200;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];

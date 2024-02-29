@@ -189,7 +189,7 @@ export const EVOKERSPELLDB = {
 
             return buff;
         },*/
-        runFunc: function (state, spell, buff) {
+        runFunc: function (state, spell, buff, partial = 1) {
             const hotHeal = { type: "heal", coeff: spell.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
 
             runHeal(state, hotHeal, spell.name)

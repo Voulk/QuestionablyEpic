@@ -26,17 +26,21 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
     // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
     // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
     // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
-    const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
+    const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType == "function" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
     expiringHots.forEach(buff => {
-
-        if (buff.buffType === "heal" || buff.buffType === "damage") {
+        if (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
             const partialTickPercentage = (buff.next - state.t) / tickRate;
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
+            console.log(partialTickPercentage + " " + getHaste(state.currentStats))
+            console.log("How far away is next: " + (buff.next - state.t) + " tick size: " + tickRate);
+
+            console.log("-----")
 
             if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-            else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
+            else if (buff.buffType === "heal") runHeal(state, spell, buff.name + "(hot)");
+            //else if (buff.buffType === "function") buff.runFunc(state, spell, buff, partialTickPercentage);
         }
         else if (buff.runEndFunc) buff.runFunc(state, buff);
     })

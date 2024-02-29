@@ -13,7 +13,7 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 16000 * 1.1,
-            haste: 2000,
+            haste: 2000 + 100,
             crit: 5400,
             mastery: 6700,
             versatility: 2000 + 300,
@@ -24,7 +24,7 @@ describe("Test APL", () => {
         const profile = blossomProfile;
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);

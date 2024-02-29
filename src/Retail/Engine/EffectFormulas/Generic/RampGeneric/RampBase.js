@@ -337,7 +337,7 @@ export const getCrit = (stats) => {
 }
 
 export const addReport = (state, entry) => {
-    if (state.settings.reporting && entry.includes("Casting")) {
+    if (state.settings.reporting /*&& entry.includes("Casting")*/) {
         state.report.push(Math.round(100*state.t)/100 + " " + entry);
             
         //state.report.push(Math.round(100*state.t)/100 + " " + entry);

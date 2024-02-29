@@ -10,7 +10,7 @@ export const blossomProfile = {
         stamina: 29000,
         critMult: 2,
     },
-    talents: ['flutteringSeedlings', 'cycleOfLife', 'fontOfMagic', 'renewingBreath', 'timelessMagic', 'gracePeriod'], // These will be turned on at maximum points
+    talents: ['flutteringSeedlings',  'fontOfMagic', 'renewingBreath', 'timelessMagic', /*'gracePeriod', 'cycleOfLife'*/], // These will be turned on at maximum points
     apl: [
         {s: ["Emerald Blossom"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 3}, {type: "beforeTime", timer: 2}]},
         {s: ["Dream Flight"], conditions: [{type: "afterTime", timer: 15}]},
