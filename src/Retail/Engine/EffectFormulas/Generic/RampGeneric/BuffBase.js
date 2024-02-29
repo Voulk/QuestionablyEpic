@@ -33,14 +33,10 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
             const partialTickPercentage = (buff.next - state.t) / tickRate;
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
-            console.log(partialTickPercentage + " " + getHaste(state.currentStats))
-            console.log("How far away is next: " + (buff.next - state.t) + " tick size: " + tickRate);
-
-            console.log("-----")
 
             if (buff.buffType === "damage") runDamage(state, spell, buff.name);
             else if (buff.buffType === "heal") runHeal(state, spell, buff.name + "(hot)");
-            //else if (buff.buffType === "function") buff.runFunc(state, spell, buff, partialTickPercentage);
+            else if (buff.buffType === "function") buff.attFunction(state, spell, buff, partialTickPercentage);
         }
         else if (buff.runEndFunc) buff.runFunc(state, buff);
     })

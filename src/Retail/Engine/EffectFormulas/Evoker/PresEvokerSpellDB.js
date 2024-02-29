@@ -190,7 +190,7 @@ export const EVOKERSPELLDB = {
             return buff;
         },*/
         runFunc: function (state, spell, buff, partial = 1) {
-            const hotHeal = { type: "heal", coeff: spell.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
+            const hotHeal = { type: "heal", coeff: spell.coeff * partial, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
 
             runHeal(state, hotHeal, spell.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
