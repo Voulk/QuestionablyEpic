@@ -176,6 +176,7 @@ export default function SequenceGenerator(props) {
   const talentList = Object.keys(talentDB).filter((talent) => talentDB[talent].select === true);
   const [talents, setTalents] = useState({ ...talentDB });
 
+  /*
   const stats = {
     intellect: 14500,
     haste: 3000,
@@ -185,14 +186,14 @@ export default function SequenceGenerator(props) {
     stamina: 16000,
 
     critMult: 1,
-  };
+  }; */
 
   const updateAllSequences = (sequences) => {
     const temp = [];
     for (let i = 0; i < sequences.length; i++) {
       temp.push(JSON.parse(JSON.stringify(sequence)));
       const simFunc = getSequence(selectedSpec);
-      const sim = simFunc(sequences[i].spells, stats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
+      const sim = simFunc(sequences[i].spells, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
       temp[i].spells = sequences[i].spells;
       temp[i].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
       // multiple state updates get bundled by react into one update
@@ -210,7 +211,7 @@ export default function SequenceGenerator(props) {
   
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
+    const sim = simFunc(sequence, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
@@ -228,7 +229,7 @@ export default function SequenceGenerator(props) {
       //const baseline = runCastSequence(sequence, activeStats, settings, talents)
 
       //const simFunc = getSequence(selectedSpec);
-      const sim = simFunc(sequence, stats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
+      const sim = simFunc(sequence, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
 
       results.totalHealing += sim.totalHealing;
       results.manaSpent += sim.manaSpent;
@@ -578,7 +579,7 @@ export default function SequenceGenerator(props) {
             <StatPanel setActiveStats={setActiveStats} />
           </Grid>
           <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
-            <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
+            {/*<SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} /> */}
           </Grid>
         </Grid>
 

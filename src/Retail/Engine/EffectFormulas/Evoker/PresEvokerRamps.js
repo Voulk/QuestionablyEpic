@@ -26,11 +26,11 @@ const EVOKERCONSTANTS = {
     essenceBuff: {
         name: "EssenceGen",
         expiration: 5,
-        buffDuration: 5,
+        buffDuration: 5.1,
         buffType: 'function',
         stacks: false,
         tickRate: 5,
-        tickData: {tickRate: 5, canPartialTick: false, hasted: false},
+        tickData: {tickRate: 5, canPartialTick: false, hasted: true, hastedDuration: true},
         hastedDuration: true,
         runFunc: function (state, buff) {
             
@@ -40,6 +40,10 @@ const EVOKERCONSTANTS = {
                 const essenceGenBuff = state.activeBuffs.filter(buff => buff.name === "EssenceGen")[0];
                 essenceGenBuff.expiration = state.t + 5 / getHaste(state.currentStats) + 0.1;
 
+            }
+            else {
+                state.activeBuffs = removeBuff(state.activeBuffs, "EssenceGen");
+            
             }
         }
     },
@@ -298,14 +302,17 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         talents[key] = value.points;
     }
 
-    // Add base Mastery bonus.
-    // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
-    stats.mastery += 180;
+
+
+    
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
                     talents: talents, reporting: true, essence: 5};
 
+    // Add base Mastery bonus.
+    // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
     let currentStats = {...stats};
+    currentStats.mastery += 180;
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);

@@ -30,7 +30,7 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
     expiringHots.forEach(buff => {
         if (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") {
             const tickRate = buff.tickRate / getHaste(state.currentStats)
-            const partialTickPercentage = (buff.next - state.t) / tickRate;
+            const partialTickPercentage = 1-((buff.next - state.t) / tickRate);
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
 
