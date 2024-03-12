@@ -15,7 +15,7 @@ const trinketCategories = {
 
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
-    const itemLevel = 489;
+    const itemLevel = 522;
     if (trinketData === null) return null;
     switch (trinketName) {
 
@@ -52,21 +52,21 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
 
         // == Season 2 Trinkets ==
         case "Neltharion's Call to Suffering":
-            return buildGenericStatStick(trinketData, 447, player, additionalData, trinketCategories.LASTTIER, 
+            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.LASTTIER, 
                                             "Fixed to proc off healing spells including HoTs. Downside IS deducted from its expected throughput, but shouldn't feel too dangerous in practice. Priest / Druid only.");
         case "Neltharion's Call to Chaos":
-            return buildGenericStatStick(trinketData, 447, player, additionalData, trinketCategories.LASTTIER, 
+            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.LASTTIER, 
                                             "Fixed to proc off healing spells. Very high variance. Damage taken increase not included in formula. Evoker / Paladin only.")
         case "Screaming Black Dragonscale":
-            return buildGenericStatStick(trinketData, 447, player, additionalData, trinketCategories.LASTTIER, 
+            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.LASTTIER, 
                                             "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.")
            
         case "Rashok's Molten Heart":
-            return rashoksMoltenHeart(trinketData, 447, player, additionalData);
+            return rashoksMoltenHeart(trinketData, itemLevel, player, additionalData);
         case "Ominous Chromatic Essence":
-            return ominousChromaticEssence(trinketData, 447, player, additionalData);
+            return ominousChromaticEssence(trinketData, itemLevel, player, additionalData);
         case "Ward of Faceless Ire":
-            return wardOfFacelessIre(trinketData, 450, player, additionalData);
+            return wardOfFacelessIre(trinketData, itemLevel, player, additionalData);
         default:
             return null;
     }

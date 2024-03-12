@@ -413,7 +413,7 @@ export const raidTrinketData = [
       // Versatility Portion
       let bonus_stats = {haste: 0, crit: 0, mastery: 0, versatility: 0};
       const buffSetting = getSetting(additionalData.settings, "chromaticEssenceBuff");
-      const includeAllies = false;// getSetting(additionalData.settings, "chromaticEssenceAllies");
+      const includeAllies = getSetting(additionalData.settings, "chromaticEssenceAllies");
       let primaryBuff = (buffSetting === "Automatic" ? player.getHighestStatWeight(additionalData.contentType) : buffSetting).toLowerCase();
       const primaryValue = processedValue(data[0], itemLevel);
       const secondaryValue = includeAllies ? processedValue(data[1], itemLevel) : 0;
@@ -549,7 +549,7 @@ export const raidTrinketData = [
       // Ally buff
       let sharedBuff = runGenericPPMTrinket(data[1], itemLevel);
       // Incarnate Allies has been removed as a setting and now defaults to own only.
-      const iconSetting = ""// getSetting(additionalData.settings, "incarnateAllies")
+      const iconSetting = getSetting(additionalData.settings, "incarnateAllies")
 
       // Check if buffs are active and if they are, add them to bonus stats.
       if (iconSetting === "Tank") bonus_stats.versatility = sharedBuff;

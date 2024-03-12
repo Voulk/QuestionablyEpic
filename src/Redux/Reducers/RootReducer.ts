@@ -27,7 +27,7 @@ const initialState : RootState = {
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
-    //incarnateAllies: { value: "Solo", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
+    incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
     idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
     //rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
     //alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
@@ -48,7 +48,7 @@ const initialState : RootState = {
     gemSettings: {value: "Simple", options: ["Simple", "Precise"], category: "topGear", type: "selector"}, // TODO: Add a "Keep current".
     runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector"},
     phialChoice: {value: "Automatic", options: ["Automatic", "Corrupting Rage", "Tepid Versatility"], category: "topGear", type: "selector"},
-    //chromaticEssenceAllies: { value: false, options: [true, false], category: "trinkets", type: "selector" },
+    chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector" },
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
 };
