@@ -21,7 +21,7 @@ describe("Test APL", () => {
             critMult: 2,
         }
 
-        const profile = blossomProfile;
+        const profile = reversionProfile;
     
         const baseSpells = EVOKERSPELLDB;
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
