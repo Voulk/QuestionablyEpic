@@ -244,6 +244,12 @@ export default function ItemBar(props) {
     "Versatility (engineering)",
   ];
 
+  /*const getCraftedMissives = (itemID) => {
+    const itemSources = getItemDB("Retail").filter((key) => key.id === itemID)[0];
+    if ()
+
+  }*/
+
   const isItemCrafted = (getItemDB("Retail")
     .filter((key) => key.id === itemID)
     .map((key) => key.crafted)[0]) || false; // Change this to crafted.
@@ -265,6 +271,12 @@ export default function ItemBar(props) {
         marginLeft: "auto",
         marginRight: "auto",
         paddingTop: 8,
+        
+        border: "1px", 
+        borderStyle: "solid",
+        borderColor: "goldenrod",
+
+        backgroundColor: "#47433B",
       }}
     >
       <Grid

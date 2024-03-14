@@ -1,7 +1,7 @@
 
 import { DISCCONSTANTS, runDamage } from "./DiscPriestRamps";
-import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampBase"
-
+//import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase"
 /**
 * This function handles all of our effects that might change our spell database before the ramps begin.
 * It includes conduits, legendaries, and some trinket effects.
@@ -69,14 +69,14 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
         // Adds Schisms former effect to Mind Blast
         discSpells['Mind Blast'].push({
             type: "buff",
-            buffDuration: 9,
+            buffDuration: 9 + 6 * talents.maliciousIntent,
             buffType: "special",
             value: 1.1,
             name: "Schism",
             canStack: false,
         });
    }
-   if (talents.maliciousIntent) discSpells['Schism'][1].buffDuration += 6;
+
    if (talents.enduringLuminescence) {
         discSpells['Power Word: Radiance'][0].atonement *= 1.1;
         discSpells['Power Word: Radiance'][0].castTime /= 1.3;
@@ -158,7 +158,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        }) 
        // TODO: Add Smite buff
    }*/
-   if (talents.harshDiscipline && settings.harshDiscipline) {
+   if (talents.harshDiscipline) {
        const hdBuff = {
         name: "Harsh Discipline",
         type: "buff",
@@ -172,8 +172,8 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        discSpells["Power Word: Radiance"].push(hdBuff);
    }
    if (talents.expiation) {
-       discSpells["Mind Blast"][0].coeff *= (1 + 0.1 * talents.expiation);
-       discSpells["Shadow Word: Death"][0].coeff *= (1 + 0.1 * talents.expiation);
+       discSpells["Mind Blast"][0].coeff *= (1 + 0.15 * talents.expiation);
+       discSpells["Shadow Word: Death"][0].coeff *= (1 + 0.15 * talents.expiation);
        // TODO: Add special function to Mindblast / SWD spell that consumes SWP
        discSpells["Mind Blast"].push(
        {
@@ -211,22 +211,24 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
    }
    if (talents.inescapableTorment) {
        // Note that this damage only fires if a Shadowfiend / Mindbender is active.
-       // We should add a "Condition" field that autoruns a quick function to see if a spell can proceed.
        const inescapableTormentDmg = {
             name: "Inescapable Torment",
+            condition: {type: "buff", buffName: talents.mindbender? "Mindbender" : "Shadowfiend"},
             type: "damage",
-            coeff: 1.9 * 0.442 * 0.6 * 1.6, // Don't get me started on the auras on this spell. The 1.6 will presumably be baked into its SP.
+            coeff: 1.9 * 1.6 * 0.6, // Horribly complicated spell. Note this coefficient is modified below by pet choice.
             aura: 1,
             targets: 1, // 5
-            atoneOverheal: 0.22,
+            atoneOverheal: 0.32,
             school: "shadow",
             secondaries: ['crit', 'vers'],
        }
        const inescapableTormentDuration = {
             type: "buffExtension",
-            buffName: "Shadowfiend",
+            buffName: talents.mindbender? "Mindbender" : "Shadowfiend",
             extension: 1,
        }
+       inescapableTormentDmg.coeff *= talents.mindbender ? 0.3 : 0.408;
+
 
        discSpells["Mind Blast"].push(inescapableTormentDmg);
        discSpells["Mind Blast"].push(inescapableTormentDuration);
@@ -237,17 +239,17 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        discSpells["Penance"].push(inescapableTormentDmg);
        discSpells["Penance"].push(inescapableTormentDuration);
    }
-
-
-   // Merged into Shadow Covenant as a modifier.
-   /*if (talents.twilightCorruption) {
-       // Shadow Covenant increases damage / healing by an extra 10%.
-       discSpells["Shadow Covenant"][1].value += 0.1;
-   } */
-   /*
-   if (talents.embraceShadow) {
-        discSpells["Shadow Covenant"][1].buffDuration += 8;
-   } */
+   if (talents.voidSummoner) {
+        // Can be mostly handled in RampGen.
+        const voidSummoner = {
+            type: "cooldownReduction",
+            cooldownReduction: talents.mindbender ? 2 : 4,
+            targetSpell: talents.mindbender ? "Mindbender" : "Shadowfiend",
+        }
+        discSpells['Smite'].push(voidSummoner);
+        discSpells['Penance'].push(voidSummoner);
+        discSpells['Mind Blast'].push(voidSummoner);
+    }
 
    // Passive Shadow Cov
    if (talents.shadowCovenant) {
@@ -255,7 +257,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
         type: "buff",
         buffDuration: 15,
         buffType: "special",
-        value: 1.25 + (0.1 * talents.twilightCorruption),
+        value: (talents.mindbender ? 1.1 : 1.25) + (0.1 * talents.twilightCorruption),
         name: "Shadow Covenant",
         canStack: false,
     }
@@ -297,7 +299,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            type: "buff",
            name: "Weal & Woe",
            buffType: 'special',
-           value: 1.12, // This is equal to 45% crit, though the stats are applied post DR. 
+           value: 1.2, // 
            buffDuration: 15,
            canStack: true,
            stacks: 1,
@@ -348,6 +350,21 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
            stacks: 1,
            maxStacks: 1,
        })
+   }
+   if (settings.T31_2) {
+    // +20% Smite / Penance damage. Smite extends the duration of one atonement by 2s.
+    discSpells["Smite"][0].coeff *= 1.2;
+    discSpells["Penance"][0].coeff *= 1.2;
+    
+   }
+   if (settings.T31_4) {
+    // Smite casts an additional time during Shadow Covenant, triggering additional CDR and atonement extension.
+    discSpells["Smite"].push({
+        type: "castSpell",
+        storedSpell: "Smite",
+        canRepeat: false,
+        condition: {type: "buff", buffName: "Shadow Covenant"},
+    })
    }
 
 
@@ -403,7 +420,7 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats)
        let spell = value[0];
 
        if (!spell.targets) spell.targets = 1;
-       if (spell.cooldown) spell.activeCooldown = 0;
+       if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = 0;
        if (spell.cost) spell.cost = spell.cost * DISCCONSTANTS.baseMana / 100;
 
        if (settings.includeOverheal === "No") {

@@ -327,7 +327,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="The list below is mostly focused on healing throughput. For M+ you might consider tech trinkets or DPS trinkets instead at high levels." color="firebrick" />
+              <InformationBox information="The list below is mostly focused on healing throughput. For M+ you might consider tech trinkets or DPS trinkets instead at high levels." variant="yellow" />
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

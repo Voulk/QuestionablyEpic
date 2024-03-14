@@ -9,6 +9,10 @@ import { encounterDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
@@ -48,20 +52,28 @@ export default function ItemCard(props) {
   const item = props.item;
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const isLegendary = false; // "effect" in item && item.effect.type === "spec legendary";
-  const itemDifferential = props.itemDifferential;
-  const hasDom = item.isTierPiece();
+  const isLegendary = false; // Legendaries are currently so rare that we can just ID them when necessary. 
+  const itemDifferential = item.score;
+  const isTierPiece = false; // item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
 
-  /*
-  const itemQuality = (itemLevel) => {
-    if (isLegendary) return "#ff8000";
-    else if (itemLevel >= 183) return "#a73fee";
-    else if (itemLevel >= 120) return "#328CE3";
-    else return "#1eff00";
-  }; */
-  const itemQuality = item.getQualityColor();
+  // We can probably merge a lot of these into a more central location.
+  const itemTooltips = {
+    207171: "Blossom of Amirdrassil holds up quite well in normal and heroic raid content but tends to fall off as the difficulty ramps up. Note that lack of intellect. Particularly rough on specs that don't enjoy Haste.",
+    207172: "Belor'relos isn't a healing trinket but it does excellent damage which makes it a competitive choice in Mythic+.",
+    //207170: "",
+    207168: "Pip's is a fantastic trinket on all healers. It's similar value to other stat sticks like Coagulated Genesaur Blood but the uptime is higher so its variance is lower.",
+    
+
+    208321: "Iridal comes with a free damage proc at no cost. Don't drop item level to wear it but if it's equal to your other choices then you might consider it even if it's a tiny healing downgrade.",
+    137306: "Competitive trinket for healer DPS.",
+    158320: "Niche use in high Mythic+ for countering single target debuffs",
+    110009: "Poor for throughput but competitive in high Mythic+ to help the team survive one shots.",
+  }
+  // Add tier set check too and report a generic message for those.
+
+  const itemQuality = "#a73fee" //item.getQualityColor();
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -71,14 +83,9 @@ export default function ItemCard(props) {
     }
   };
 
-  let itemName = "";
-
-  if (item.offhandID > 0) {
-    itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
-  } else {
-    if (isLegendary) itemName = item.effect.name;
-    else itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType);
-  }
+  const itemID = item.item;
+  const itemName = getTranslatedItemName(itemID, currentLanguage, "", gameType);
+  
 
   const sourceName = (item) => {
     /* ------------------------------ Dungeon Name ------------------------------ */
@@ -134,7 +141,7 @@ export default function ItemCard(props) {
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
-      <Card className={itemDifferential == 0 ? classes.downgrade : hasDom ? classes.dom : classes.root} variant="outlined">
+      <Card className={itemDifferential == 0 ? classes.downgrade : isTierPiece ? classes.dom : classes.root} variant="outlined">
         <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
           <Grid item xs="auto">
             <CardContent
@@ -143,13 +150,13 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
+              <WowheadTooltip type="item" id={itemID} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"
                     width={props.slotPanel ? 42 : 28}
                     height={props.slotPanel ? 42 : 28}
-                    src={getItemIcon(item.id, gameType)}
+                    src={getItemIcon(itemID, gameType)}
                     style={{
                       borderRadius: 4,
                       borderWidth: "1px",
@@ -163,6 +170,11 @@ export default function ItemCard(props) {
             </CardContent>
           </Grid>
           <Divider orientation="vertical" flexItem />
+            {itemTooltips[itemID] ? <Tooltip title={itemTooltips[itemID]}>
+              <IconButton sx={{ color: 'goldenrod' }}>
+                <HelpOutlineIcon />
+              </IconButton>
+          </Tooltip> : ""}
           <CardContent style={{ padding: 4, width: "100%", alignSelf: "center" }}>
             <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
               <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>

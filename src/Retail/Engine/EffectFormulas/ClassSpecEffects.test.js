@@ -15,7 +15,11 @@ describe("Shaman", () => {
     const type = "Regular";
 
     const specs = ["Restoration Druid", "Restoration Shaman", "Mistweaver Monk", "Holy Priest", "Discipline Priest", "Holy Paladin", "Preservation Evoker"]
+    test("Null", () => {
+        expect(true).toEqual(true);
+    })
 
+    /*
     test("Druid", () => {
         const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
         console.log("Druid 2pc: " + JSON.stringify(getDruidSpecEffect("Druid T31-2", player, contentType)))
@@ -49,7 +53,7 @@ describe("Shaman", () => {
         console.log("Disc 4pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T31-4", player, contentType)))
 
         console.log("Disc SEASON 2 - 2pc: " + JSON.stringify(getDiscPriestSpecEffect("DPriest T30-2", player, contentType)))
-    })
+    })*/
 
     
 

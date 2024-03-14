@@ -101,10 +101,9 @@ export function buildNewWepCombosUF(player, itemList) {
 
 export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
-
   const completedItemList = [];
 
-
+  console.log(playerSettings);
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   //const wepList = buildWepCombosUF(player, baseItemList);
@@ -124,6 +123,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);
+  result.new = true;
   // console.log("=== Upgrade Finder Finished ===");
   apiSendUpgradeFinder(player, contentType);
 

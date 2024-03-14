@@ -35,10 +35,10 @@ export default function SlotsContainer(props) {
   const classes = rootStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  let itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
+  const spec = props.spec;
 
-  itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+  itemDifferentials.sort((a, b) => (a.score < b.score ? 1 : -1));
 
   const slotList = [
     { slot: "Head", label: "head" },
@@ -83,15 +83,15 @@ export default function SlotsContainer(props) {
     return slotList.map((key, i) => (
       <UFAccordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-          <img src={iconReturn(key.slot, props.player.spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+          <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
-            {[...filterItemListBySlot(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
+            {[...filterItemListBySlot(itemDifferentials, key.slot)].filter((item) => item.score > 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
-            {[...filterItemListBySlot(itemList, key.slot)].map((item, index) => (
+            {[...filterItemListBySlot(itemDifferentials, key.slot)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={true} />
             ))}
           </Grid>

@@ -17,6 +17,7 @@ import QEFooter from "./Footer/QEFooter";
 import Player from "../Player/Player";
 import { RootState } from "Redux/Reducers/RootReducer";
 import { styled } from "@mui/system";
+import GameTypeSwitch from "./GameTypeToggle";
 
 const Root = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -193,7 +194,7 @@ export default function QEMainMenu(props: Props) {
         <Grid container spacing={2}>
           {/*<Grid item xs={12} style={{ textAlign: "center" }}>
             <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
-            </Grid> */}
+          </Grid>*/}
           <Grid item xs={12}>
             <Button
               key={321}
@@ -208,7 +209,8 @@ export default function QEMainMenu(props: Props) {
                 justifyContent: "center",
                 textTransform: "none",
                 paddingLeft: "32px",
-                color: "#F2BF59",
+                color: "#F2C160",
+                backgroundColor: "#7F6738",
               }}
             >
               {patron ? t("MainMenu.PatronThanks") : t("MainMenu.PatronInvite")}

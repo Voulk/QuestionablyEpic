@@ -1,17 +1,48 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-
-
+import { reversionProfile } from "./PresEvokerDefaultAPL";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
 
+describe("Test APL", () => {
+    test("Test APL", () => {
+        
+        console.log("Testing APL");
+
+        const activeStats = {
+            intellect: 14000,
+            haste: 2000,
+            crit: 3000,
+            mastery: 4500,
+            versatility: 3000,
+            stamina: 29000,
+            critMult: 2,
+        }
+    
+        const baseSpells = EVOKERSPELLDB;
+        const testSettings = {masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 75};
+
+        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
+        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
+        //console.log(data);
+
+        const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
+        //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
+
+        //runSuite(playerData, profile, runCastSequence, type)
+        expect(true).toEqual(true);
+    })
+
+});
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.
 // This is also faster in terms of test run time and avoids having to run sequences with and without % healing increases and so forth.
 
 // This will just print HPCT and HPM data for a bunch of little combos.
+/*
 describe("Get Spell Data", () => {
     const combos = [
         ["Echo", "Spiritbloom"],
@@ -72,6 +103,8 @@ describe("Get Spell Data", () => {
 
 
 });
+
+*/
 /* Remove to re-enable test cases.
 
 

@@ -189,12 +189,20 @@ class CastModel {
     // Burning Crusade Profiles
     else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Priest Classic") {
       spellList = this.getClassicPriest();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
+    } 
+    else if (spec === "Discipline Priest Classic") {
+      spellList = this.getClassicPriest();
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else {
       spellList = {};
       specialQueries = {};
@@ -213,8 +221,7 @@ class CastModel {
   };
 
   setRampInfo = (stats, trinkets) => {
-    this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
-    //this.baseStatWeights = genStatWeights(stats);
+    //this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
 
   }
 

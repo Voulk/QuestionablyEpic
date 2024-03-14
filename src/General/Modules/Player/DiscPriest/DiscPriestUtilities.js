@@ -7,9 +7,9 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const rampTime = 180;
 
     // Baselines
-    const discBaseline = allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
-    const disc2pc = 15500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
-    const disc4pc = 25500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const discBaseline = 0//allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const disc2pc = 14500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    const disc4pc = 22500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
 
     //console.log("DISC BASELINE: " + discBaseline);
     /*

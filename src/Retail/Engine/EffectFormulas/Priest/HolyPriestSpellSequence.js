@@ -2,8 +2,8 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { HOLYPRIESTSPELLDB as SPELLDB } from "./HolyPriestSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { addReport, checkBuffActive, removeBuffStack, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getBuffStacks, getHealth, getCrit, addBuff } from "../Generic/RampBase";
-
+import { addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, getHealth, getCrit } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/RampGeneric/BuffBase";
 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.

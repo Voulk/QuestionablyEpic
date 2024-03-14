@@ -10,6 +10,17 @@ declare type Stats = {
     dps?: number;
     mana?: number;
     allyStats?: number;
+} |
+{   // Classic
+    [key: string]: number;
+    intellect?: number;
+    spellpower?: number;
+    haste?: number;
+    crit?: number;
+    mastery?: number;
+    spirit?: number;
+    hps?: number;
+    mana?: number;
 }
 
 declare type ItemEffect = {
@@ -54,6 +65,9 @@ interface PlayerSettings {
     healingDartsOverheal: { value: number; options: any[]; category: string; type: string };
     lariatGems: { value: number; options: any[]; category: string; type: string };
     chromaticEssenceBuff: { value: string; options: string[]; category: string; type: string };
+    gemSettings: {value: string; options: string[]; category: string; type: string};
+    phialChoice: {value: string; options: string[]; category: string; type: string};
+    runeChoice: {value: string; options: string[]; category: string; type: string};
     //chromaticEssenceAllies: { value: boolean; options: boolean[]; category: string; type: string };
   }
 
