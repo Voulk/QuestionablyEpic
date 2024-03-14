@@ -18,7 +18,7 @@ export const changeLog: entry[] = [
   {
     version: "10.2.5",
     update: 13,
-    date: "February 10",
+    date: "March 14",
     changes: [ 
       "Upgrade Finder revamped. Reports can now be shared.",
       "New Settings: Runes, Phials and Gems.",
