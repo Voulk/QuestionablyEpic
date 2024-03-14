@@ -165,7 +165,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     // Create sets for each gem type.
     const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (getSetting(userSettings, 'gemSettings') === "Precise") { // Add setting here.
+    if (getSetting(userSettings, 'gemSettings').includes("Precise")) { // Add setting here.
       if (gemPoss.length > 0) {
         console.log(gemPoss);
         gemPoss.forEach(gem => {
@@ -638,7 +638,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
-  if (getSetting(userSettings, "gemSettings") === "Precise") {
+  if (getSetting(userSettings, "gemSettings").includes("Precise")) {
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
   }
   else {
