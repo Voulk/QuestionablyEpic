@@ -10,6 +10,7 @@ export const blossomProfile = {
         stamina: 29000,
         critMult: 2,
     },
+    heroTree: "N/A", // N/A disables the hero profile.
     talents: ['flutteringSeedlings',  'fontOfMagic', 'renewingBreath', 'timelessMagic', 'gracePeriod', /*'cycleOfLife'*/], // These will be turned on at maximum points
     apl: [
         {s: ["Emerald Blossom"], conditions: [{type: "resource", resourceName: "essence", resourceCost: 3}, {type: "beforeTime", timer: 2}]},
@@ -35,9 +36,7 @@ export const blossomProfile = {
         stamina: 44000,
         critMult: 2,
         */
-// 1k mastery -> 1k crit = -1.6k
-// 1k crit -> 1k mastery = +800 
-// 1k mast -> 1k vers = -2k
+
 export const reversionProfile = {
     defaultStats: { // 144,197.241
         intellect: 16700,
@@ -49,6 +48,7 @@ export const reversionProfile = {
         critMult: 2,
     },
     talents: ['gracePeriod', 'timelessMagic', 'goldenHour'], // These will be turned on at maximum points
+    heroTree: "N/A", // N/A disables the hero profile.
     apl: [
     {s: ["Verdant Embrace"], conditions: [{type: "cooldownAvailable", spellName: "Dream Breath"}, {type: "buffMissing", buffName: "Echo"}] }, // Combo with Verdant Embrace
     {s: ["Stasis"], conditions: [{type: "cooldownClose", nearTime: 3, spellName: "Dream Breath"}, {type: "cooldownClose", nearTime: 3, spellName: "Spiritbloom"}]},

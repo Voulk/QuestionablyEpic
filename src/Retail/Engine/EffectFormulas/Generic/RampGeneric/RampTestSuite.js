@@ -89,6 +89,17 @@ export function runTimeSuite(playerData, aplList, runCastSequence) {
     
 }
 
+// Runs suite over multiple profiles and prints the performance of each.
+function runComparisonSuites(playerData, profiles, runCastSequence) {
+
+    profiles.forEach(profile => {
+        const newPlayerData = {...playerData};
+
+        const result = runSuite(newPlayerData, profile, runCastSequence, "APL").elapsedTime;
+        console.log(profile.tag + " hps: " + result.avgHPS + "ms");
+    })
+}
+
 function runSuite(playerData, profile, runCastSequence, type) {
     const iterations = 2600;
     let hps = []; 

@@ -308,3 +308,32 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
 
     return evokerSpells;
 }
+
+// Apply Chronowarden talents
+export const applyChronowarden = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
+
+    // Chronoflame
+
+    // Temporal Burst
+
+    // Reverberations
+
+    // Primacy
+
+    //--
+    // Careful Contemplation
+
+    // Time Convergence
+
+    // Master of Destiny
+
+    // Golden Opportunity
+
+    // Instability Matrix
+
+    // Afterimage
+}
+
+export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
+
+}

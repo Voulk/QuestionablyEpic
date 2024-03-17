@@ -290,7 +290,7 @@ const setupEchoSpells = (evokerSpells) => {
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => {
+export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => { // TODO: Swap a lot of these out for a "profile".
     //console.log("Running cast sequence");
     const startTime = performance.now();
     // Flatten talents
@@ -302,12 +302,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         talents[key] = value.points;
     }
 
-
-
-    
-
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, essence: 5};
+                    talents: talents, reporting: true, essence: 5, heroSpec: "Chronowarden"};
 
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
