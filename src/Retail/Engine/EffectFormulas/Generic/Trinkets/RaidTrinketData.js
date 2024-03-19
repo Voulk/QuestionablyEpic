@@ -155,27 +155,27 @@ export const raidTrinketData = [
     name: "Blossom of Amirdrassil",
     effects: [
       {  // HoT effect
-        coefficient: 40.9063, // This is probably 1 HoT tick.
+        coefficient: 44.99676, // 40.9063, // This is probably 1 HoT tick.
         table: -9,
         secondaries: ['versatility', 'crit'], // Crit added post-release.
-        efficiency: {Raid: 0.69, Dungeon: 0.64}, 
+        efficiency: {Raid: 0.65, Dungeon: 0.6}, 
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
         ticks: 6,
       },
       {  // Spread HoT effect
-        coefficient: 20.45229, // 46.75641,
+        coefficient: 22.49753, // 20.45229, // 46.75641,
         table: -9,
         targets: 3, // 
         secondaries: ['versatility', 'crit'],
-        efficiency: {Raid: 0.53, Dungeon: 0.5}, 
+        efficiency: {Raid: 0.49, Dungeon: 0.4}, 
         percentProc: 0.82,
         ticks: 6,
       },
       {  // Shield effect
-        coefficient: 368.1498,
+        coefficient: 404.9657, // 368.1498,
         table: -9,
         secondaries: ['versatility'],
-        efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
+        efficiency: {Raid: 0.95, Dungeon: 0.8}, // This is an absorb so you won't lose much value.
         percentProc: 0.18,
       },
     ],
@@ -282,11 +282,11 @@ export const raidTrinketData = [
     name: "Ward of Faceless Ire",
     effects: [
       {  // Heal effect
-        coefficient: 371.7325,
+        coefficient: 240.4646, // 371.7325,
         table: -9,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.62, Dungeon: 0.74}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
-        cooldown: 120, 
+        cooldown: 60, 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -404,7 +404,7 @@ export const raidTrinketData = [
         table: -7,
       },
       { // This is for the proc if you have Earth and Frost in party.
-        coefficient: 0.054011,
+        coefficient: 0.046006, //0.054011,
         table: -7,
         num: 3,
       },
@@ -500,7 +500,7 @@ export const raidTrinketData = [
         secondaries: ["crit", "versatility"],
       },
       { // Mana portion
-        coefficient: 30.13977,
+        coefficient: 9.0419, //30.13977,
         table: -9, 
         percentUsed: 0.7,
         cooldown: 60,
@@ -535,7 +535,7 @@ export const raidTrinketData = [
         table: -1,
       },
       { // This is for the proc if you have Earth and Frost in party.
-        coefficient: 0.250517,
+        coefficient: 0.137528, // 0.250517,
         table: -7,
         ppm: 2,
         duration: 12,

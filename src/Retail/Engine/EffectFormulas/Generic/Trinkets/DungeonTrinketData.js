@@ -9,10 +9,10 @@ export const dungeonTrinketData = [
     */
     name: "Amalgam's Seventh Spine",
     effects: [
-      { // Mastery portion
+      { // Be cautious using log values for some of these. Resto Druid for example is broken. 
         coefficient: 0.666804,
         table: -7,
-        ppm: {"Restoration Druid": 29, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+        ppm: {"Restoration Druid": 29.8, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
               "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
       },
     ],
@@ -263,9 +263,9 @@ export const dungeonTrinketData = [
       { // AoE Haste effect
         coefficient: 0.189052, 
         table: -7,
-        targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
+        targets: {Raid: 18, Dungeon: 5}, // This can hit all 20 people, but in practice you often miss a few on most late game fights.
         cooldown: 120,
-        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.75, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
@@ -347,19 +347,31 @@ export const dungeonTrinketData = [
     */
     name: "Water's Beating Heart",
     effects: [
-      { 
-        coefficient: 39.11369, // Note that this coefficient is for when the target is below 20% health.
+      { // Negative Vers portion - When you have debuff.
+        coefficient: -0.299875, 
+        table: -7,
+        uptime: 2 / 45, // This is the amount of time the debuff stays on you until you refresh it.
+      },
+      { // Positive vers portion
+        coefficient: 1.260259, 
         table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ticks: 4, // Haste adds ticks / partial ticks. 
-        cooldown: 120,
-        mult: 0.7, // Mult = 1 is the target being sub 20% health for it's duration. Mult = 0.5 would be a full health target.
+        duration: 15,
+        cooldown: 46,
+      },
+      { 
+        coefficient: 25.77058, // This is the shield portion applied to allies.
+        table: -9,
+        secondaries: ['versatility'],
+        efficiency: 0.98,
+        targets: 5, 
+        cooldown: 46,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult) * player.getStatMults(data[0].secondaries) * data[0].ticks / data[0].cooldown;
+      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown)- (processedValue(data[0], itemLevel) * data[0].uptime);
+      bonus_stats.hps = runGenericFlatProc(data[2], itemLevel, player, additionalData.contentType || "Raid") // processedValue(data[2], itemLevel, data[2].efficiency) * data[2].targets / data[2].cooldown;
 
       return bonus_stats;
     }
@@ -582,7 +594,7 @@ export const dungeonTrinketData = [
     name: "Miniature Singing Stone",
     effects: [
       { 
-        coefficient: 89.95994, 
+        coefficient: 101.9246, // 89.95994, 
         table: -9,
         secondaries: ['versatility'],
         cooldown: 120,
