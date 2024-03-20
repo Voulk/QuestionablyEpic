@@ -125,9 +125,8 @@ export default function UpgradeFinderReport(props) {
 
     const itemList = result.itemSet;
     const itemDifferentials = addItemSources(result.results);
-    
     //itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
-    itemDifferentials.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
+    itemDifferentials.sort((a, b) => a.rawDiff < b.rawDiff ? 1 : -1);
     return (
       <div className={classes.header}>
         <div style={{ height: 96 }} />
