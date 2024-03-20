@@ -223,7 +223,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.dropLoc = "Mythic+";
-          item.dropDifficulty = "";
+          item.dropDifficulty = playerSettings.dungeon;
           item.dropDifficultyTxt = "";
           item.quality = 4;
           itemPoss.push(item);
