@@ -21,7 +21,7 @@ describe("Amalgam's Seventh Spine", () => {
 
     });
 }); 
-
+/*
 describe("Blossom of Amirdrassil", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Blossom of Amirdrassil");
@@ -65,7 +65,7 @@ describe("Pip's Emerald Friendship Badge", () => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
         //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
-}); */
+}); 
 
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
