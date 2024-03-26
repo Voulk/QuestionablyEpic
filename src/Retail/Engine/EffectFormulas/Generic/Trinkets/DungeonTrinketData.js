@@ -355,15 +355,15 @@ export const dungeonTrinketData = [
         coefficient: 1.260259, 
         table: -9,
         duration: 15,
-        cooldown: 46,
+        cooldown: 47,
       },
       { 
         coefficient: 25.77058, // This is the shield portion applied to allies.
         table: -9,
         secondaries: ['versatility'],
         efficiency: 0.98,
-        targets: 5, 
-        cooldown: 46,
+        targets: 14, 
+        cooldown: 47,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {

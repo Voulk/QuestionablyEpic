@@ -11,6 +11,47 @@ export const buildEvokerAPLData = (stats, talents) => {
 
 }
 
+// newSeq = sequence.seq;
+// Filter = return only X.
+export const buildChartSegment = (sequence, spellData, newSeq, activeStats, testSettings, talents, filter) => {
+    const iterations = sequence.iterations ? sequence.iterations : 1; // Spells that require more RNG can set their own iteration count like Reversion.
+    let data = {
+        healingDone: 0,
+        damageDone: 0,
+        manaSpent: 0,
+        spellValues: {
+
+        }
+    }
+
+    // Run sequence X times.
+    // For each time run, save the healing breakdown. We will use it at the end.
+
+    for (let i = 0; i < iterations; i++) {
+        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
+        const spellBreakdown = result.healingDone;
+        data.healingDone += result.totalHealing;
+        data.damageDone += result.totalDamage;
+        data.manaSpent += result.manaSpent;
+
+        for (const [key, value] of Object.entries(spellBreakdown)) {
+            if (!data.spellValues[key]) data.spellValues[key] = 0;
+            data.spellValues[key] += value;
+        }
+    }
+
+    // After the sequence has run, check for a filter function.
+    // - If no filter, return result.
+    // - If filter, filter the healing first, then return. 
+
+
+
+
+    // return result
+    console.log(data);
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: {}}
+}
+
 export const buildEvokerChartData = (activeStats) => {
     //
     let results = [];
@@ -33,8 +74,8 @@ export const buildEvokerChartData = (activeStats) => {
         {cat: "Base Spells", tag: "Dream Breath R1", seq: ["Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: []},
-        {cat: "Base Spells", tag: "Temporal Anomaly", seq: ["Temporal Anomaly"], preBuffs: []},
-        {cat: "Base Spells", tag: "Reversion", seq: ["Reversion"], preBuffs: []},
+        {cat: "Base Spells", tag: "Temporal Anomaly", seq: ["Temporal Anomaly"], preBuffs: []}, 
+        {cat: "Base Spells", tag: "Reversion", seq: ["Reversion"], preBuffs: [], iterations: 2000},
 
         {cat: "Base Spells", tag: "Verdant Embrace -> Dream Breath", seq: ["Verdant Embrace", "Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: []},
@@ -99,7 +140,8 @@ export const buildEvokerChartData = (activeStats) => {
                 results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
             }
             else {
-                results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})
+                results.push(buildChartSegment(sequence, spellData, newSeq, activeStats, testSettings, talents, null));
+                //results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})
     
             }
         };  
