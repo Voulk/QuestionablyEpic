@@ -9,7 +9,19 @@ export const instanceDB = {
   "1200": "Vault of the Incarnates",
   "1208": "Aberrus, the Shadowed Crucible",
   "1207": "Amirdrassil, The Dream's Hope",
+
+  "-4": "Crafted",
 };
+
+export const craftedDB = {
+  1: "Tailoring",
+  2: "Leatherworking",
+  3: "Blacksmithing",
+  4: "Engineering",
+  5: "Inscription",
+  6: "Alchemy",
+  7: "Jewelcrafting",
+}
 
 export const encounterDB = {
   /* ---------------------------------------------------------------------------------------------- */
