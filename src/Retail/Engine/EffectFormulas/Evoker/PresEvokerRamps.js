@@ -3,8 +3,8 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, deepCopyFunction } from "../Generic/RampGeneric/RampBase";
-import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff } from "../Generic/RampGeneric/BuffBase";
+            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampGeneric/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 
@@ -19,17 +19,18 @@ const EVOKERCONSTANTS = {
     auraDamageBuff: 1.15,
     goldenHourHealing: 50000,
     enemyTargets: 1, 
-    echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 'Disintegrate', 'Rewind'], // These are spells that do not consume or otherwise interact with our Echo buff.
-    stasisExceptionSpells: ['Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", "Rewind"], // Spells that can't be stored in Stasis. Mostly long cooldowns and offensive spells.
-    lifebindSpells: ['Spiritbloom', 'Living Flame', 'Dream Breath', 'Dream Breath (HoT)', 'Emerald Communion', 'Emerald Communion (HoT)'],
+    echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 
+                            'Disintegrate', 'Rewind', "Stasis", "StasisRelease"], // These are spells that do not consume or otherwise interact with our Echo buff.
+    stasisExceptionSpells: ['Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Rewind", "Stasis", "StasisRelease"], // Spells that can't be stored in Stasis. Mostly long cooldowns and offensive spells.
+    lifebindSpells: ['Spiritbloom', 'Living Flame', /*'Dream Breath', 'Dream Breath (HoT)',*/ 'Emerald Communion', 'Emerald Communion (HoT)'], // re-add dream breath when it uses dynamic targeting.
     essenceBuff: {
         name: "EssenceGen",
         expiration: 5,
-        buffDuration: 5,
+        buffDuration: 5.1,
         buffType: 'function',
         stacks: false,
         tickRate: 5,
-        tickData: {tickRate: 5, canPartialTick: false, hasted: false},
+        tickData: {tickRate: 5, canPartialTick: false, hasted: true, hastedDuration: true},
         hastedDuration: true,
         runFunc: function (state, buff) {
             
@@ -39,6 +40,10 @@ const EVOKERCONSTANTS = {
                 const essenceGenBuff = state.activeBuffs.filter(buff => buff.name === "EssenceGen")[0];
                 essenceGenBuff.expiration = state.t + 5 / getHaste(state.currentStats) + 0.1;
 
+            }
+            else {
+                state.activeBuffs = removeBuff(state.activeBuffs, "EssenceGen");
+            
             }
         }
     },
@@ -225,143 +230,9 @@ export const runDamage = (state, spell, spellName, compile = true) => {
 }
 
 
-const runSpell = (fullSpell, state, spellName, evokerSpells) => {
-
-    fullSpell.forEach(spell => {
-
-        let canProceed = false
-
-        if (spell.chance) {
-            const roll = Math.random();
-            canProceed = roll <= spell.chance;
-        }
-        else canProceed = true;
-
-        if (canProceed) {
-            // The spell casts a different spell. 
-            if (spell.type === 'castSpell') {
-                addReport(state, `Spell Proc: ${spellName}`)
-                const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
-                if (spell.powerMod) {
-                    newSpell[0].coeff = newSpell[0].coeff * spell.powerMod; // Increases or reduces the power of the free spell.
-                    newSpell[0].flatHeal = (newSpell[0].flatHeal * spell.powerMod) || 0;
-                    newSpell[0].flatDamage = (newSpell[0].flatDamage * spell.powerMod) || 0;
-                }
-                if (spell.targetMod) {
-                    for (let i = 0; i < spell.targetMod; i++) {
-                        runSpell(newSpell, state, spell.storedSpell, evokerSpells);
-                    }
-                }
-                else {
-                    runSpell(newSpell, state, spell.storedSpell, evokerSpells);
-                }
-
-                
-            }
-            // The spell has a healing component. Add it's effective healing.
-            // Absorbs are also treated as heals.
-            else if (spell.type === 'heal') {
-                runHeal(state, spell, spellName)
-            }
-            
-            
-            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-            else if (spell.type === 'damage') {
-                runDamage(state, spell, spellName)
-            }
-            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-            else if (spell.type === 'function') {
-                spell.runFunc(state, spell);
-            }
-
-            // The spell adds a buff to our player.
-            // We'll track what kind of buff, and when it expires.
-            else if (spell.type === "buff") {
-                if (spell.name === "Essence Burst") {
-                    // Special code for essence burst.
-                    triggerEssenceBurst(state);
-                }
-                else {
-                    addBuff(state, spell, spellName);
-                }
-                
-            } 
-
-            // These are special exceptions where we need to write something special that can't be as easily generalized.
-            if ('cooldownData' in spell && spell.cooldownData.cooldown) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
-        
-            }
 
 
- 
-        // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
-    }); 
-
-    // Any post-spell code.
-    if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
-    //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
-
-}
-
-
-
-/**
- * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
- * talent configurations and more. Any effects missing can be easily included where necessary or desired.
- * @param {} sequence A sequence of spells representing a ramp. Note that in two ramp cycles like alternating Fiend / Boon this function will cover one of the two (and can be run a second
- * time for the other).
- * @param {*} stats A players base stats that are found on their gear. This doesn't include any effects which we'll apply in this function.
- * @param {*} settings Any special settings. We can include soulbinds, legendaries and more here. Trinkets should be included in the cast sequence itself and conduits are handled below.
- * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
- * @returns The expected healing of the full ramp.
- */
-export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => {
-    //console.log("Running cast sequence");
-    const startTime = performance.now();
-    // Flatten talents
-    // Talents come with a lot of extra data we don't need like icons, max points and such.
-    // This quick bit of code flattens it out by creating key / value pairs for name: points.
-    // Can be removed to RampGeneral.
-    const talents = {};
-    for (const [key, value] of Object.entries(incTalents)) {
-        talents[key] = value.points;
-    }
-
-    // Add base Mastery bonus.
-    // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
-    stats.mastery += 180;
-
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, essence: 5};
-
-    let currentStats = {...stats};
-    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-    
-
-    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    const sequenceLength = ('seqLength' in settings ? settings.seqLength : 120) * (1 + (Math.random() - 0.5) * 0.2); // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-    let nextSpell = 0; // The time when the next spell cast can begin.
-    let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
-    let queuedSpell = "";
-    // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
-    // Ideally we'll cover as much as we can in here.
-
-    const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, EVOKERCONSTANTS);
-
-    if (settings.preBuffs) {
-        // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
-        settings.preBuffs.forEach(buffName => {
-            if (buffName === "Echo") addBuff(state, evokerSpells["Echo"][1], "Echo");
-            else if (buffName === "Temporal Compression") {
-                for (let i = 0; i < 4; i++) addBuff(state, EVOKERCONSTANTS.temporalCompressionBuff, "Temporal Compression")
-            }
-            else if (buffName === "Echo 8") {
-                for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
-            }
-        })
-        //addBuff(state, EVOKERCONSTANTS.exhilBurstBuff, "Exhilarating Burst");
-    }
-
+const setupEchoSpells = (evokerSpells) => {
     // Create Echo clones of each valid spell that can be Echo'd.
     // and add them to the valid spell list
     for (const [spellName, spellData] of Object.entries(evokerSpells)) {
@@ -393,6 +264,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
                 echoSpell[0].runFunc = spellData[0].runFunc;
+                if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Temporal Compression") echoSpell.pop();
+                // TODO: Remove Temporal Compression.
             }
             if (spellName === "Verdant Embrace") {
                 if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Call of Ysera") echoSpell.pop();
@@ -403,19 +276,84 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
         }
     }
+}
+
+
+
+/**
+ * Run a full cast sequence. This is where most of the work happens. It runs through a short ramp cycle in order to compare the impact of different trinkets, soulbinds, stat loadouts,
+ * talent configurations and more. Any effects missing can be easily included where necessary or desired.
+ * @param {} sequence A sequence of spells representing a ramp. Note that in two ramp cycles like alternating Fiend / Boon this function will cover one of the two (and can be run a second
+ * time for the other).
+ * @param {*} stats A players base stats that are found on their gear. This doesn't include any effects which we'll apply in this function.
+ * @param {*} settings Any special settings. We can include soulbinds, legendaries and more here. Trinkets should be included in the cast sequence itself and conduits are handled below.
+ * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
+ * @returns The expected healing of the full ramp.
+ */
+export const runCastSequence = (sequence, stats, settings = {}, incTalents = {}, apl = []) => { // TODO: Swap a lot of these out for a "profile".
+    //console.log("Running cast sequence");
+    const startTime = performance.now();
+    // Flatten talents
+    // Talents come with a lot of extra data we don't need like icons, max points and such.
+    // This quick bit of code flattens it out by creating key / value pairs for name: points.
+    // Can be removed to RampGeneral.
+    const talents = {};
+    for (const [key, value] of Object.entries(incTalents)) {
+        talents[key] = value.points;
+    }
+
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
+                    talents: talents, reporting: true, essence: 5, heroSpec: "Chronowarden"};
+
+    // Add base Mastery bonus.
+    // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
+    let currentStats = {...stats};
+    currentStats.mastery += 180;
+    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
+    
+    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    const sequenceLength = ('seqLength' in settings ? settings.seqLength : 120) * (1 + (Math.random() - 0.5) * 0.2); // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
+
+    let castState = {
+        nextSpell: 0, // The time when the next spell cast can begin.
+        spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
+        queuedSpell: "",
+    }
+
+    // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
+    // Ideally we'll cover as much as we can in here.
+    const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, EVOKERCONSTANTS);
+    setupEchoSpells(evokerSpells); // Create Echo spells.
+
+
+    if (settings.preBuffs) {
+        // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            if (buffName === "Echo") addBuff(state, evokerSpells["Echo"][1], "Echo");
+            else if (buffName === "Temporal Compression") {
+                for (let i = 0; i < 4; i++) addBuff(state, EVOKERCONSTANTS.temporalCompressionBuff, "Temporal Compression")
+            }
+            else if (buffName === "Echo 8") {
+                for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
+            }
+        })
+
+    }
 
     // Extra Settings
     if (settings.masteryEfficiency) EVOKERCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
 
     let seq = [...sequence];
 
+    // Note that while we'll run in 10ms batches here, we also have some optimization to remove dead space.
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
 
         // Advanced reporting
         if (state.settings.advancedReporting && (Math.floor(state.t * 100) % 100 === 0)) {
             const hps = (Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0) / state.t;
             if ('advancedReport' in state === false) state.advancedReport = [];
-            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent});
+            state.advancedReport.push({t: Math.floor(state.t*100)/100, hps: hps, manaSpent: state.manaSpent, buffs: state.activeBuffs.map(obj => obj.name)});
         }
 
         // ---- Heal over time and Damage over time effects ----
@@ -424,71 +362,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         // Note that while we refer to DoTs and HoTs, this can be used to map any spell that's effect happens over a period of time. 
         // This includes stuff like Shadow Fiend which effectively *acts* like a DoT even though it is technically not one.
         // You can also call a function from the buff if you'd like to do something particularly special. You can define the function in the specs SpellDB.
-        const healBuffs = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") && state.t >= buff.next})
-        if (healBuffs.length > 0) {
-            healBuffs.forEach((buff) => {
-               
-                let currentStats = {...stats};
-                state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-
-                if (buff.buffType === "heal") {
-                    const spell = buff.attSpell;
-                    runHeal(state, spell, buff.name + " (HoT)")
-                }
-                else if (buff.buffType === "damage") {
-                    const spell = buff.attSpell;
-                    runDamage(state, spell, buff.name)
-                }
-                else if (buff.buffType === "function") {
-                    const func = buff.attFunction;
-                    const spell = buff.attSpell;
-                    func(state, spell, buff);
-                }
-
-                if (buff.hasted || buff.hasted === undefined) buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
-                else buff.next = buff.next + (buff.tickRate);
-            });  
-        }
-
-        // -- Partial Ticks --
-        // When DoTs / HoTs expire, they usually have a partial tick. The size of this depends on how close you are to your next full tick.
-        // If your Shadow Word: Pain ticks every 1.5 seconds and it expires 0.75s away from it's next tick then you will get a partial tick at 50% of the size of a full tick.
-        // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
-        const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "function" || buff.buffType === "damage" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
-        expiringHots.forEach(buff => {
-
-            if (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") {
-                const tickRate = buff.tickRate / getHaste(state.currentStats)
-                const partialTickPercentage = (buff.next - state.t) / tickRate;
-                const spell = buff.attSpell;
-                spell.coeff = spell.coeff * partialTickPercentage;
-
-                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-                else if (buff.buffType === "healing") runHeal(state, spell, buff.name + "(hot)");
-                else if (buff.buffType === "function") {
-                    const func = buff.attFunction;
-                    const spell = buff.attSpell;
-                    func(state, spell, buff);
-                }
-            }
-            else if (buff.runEndFunc) buff.runFunc(state, buff);
-        })
-
-        // Remove any buffs that have expired. Note that we call this after we handle partial ticks. 
-        state.activeBuffs = state.activeBuffs.filter(function (buff) {return buff.expiration > state.t});
-
-        // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
-        // It'll also auto-cast Ascended Eruption if Boon expired.
-
+        runBuffs(state, stats, evokerSpells, runHeal, runDamage);
 
         // Check if there is an ongoing cast and if there is, check if it's ended.
         // Check if the next spell is able to be cast, and if so, queue it.
-
-        // If instant and on GCD: spellFinish = state.t, nextSpell = gcd / haste
-        // If instant and off GCD: spellFinish = state.t, nextSpell = state.t + 0.01
-        // If casted: spellFinish = state.t + castTime, nextSpell = state.t + 0.01
-
-        if ((state.t > nextSpell)) {
+        if ((state.t > castState.nextSpell)) {
             // We don't have a spell queued. Queue one.
 
             // Update current stats for this combat tick.
@@ -498,31 +376,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
-
-            if (seqType === "Manual") queuedSpell = seq.shift();
-            // if its is "Auto", use genSpell to auto generate a cast sequence
-            else {
-                // If we're creating our sequence via APL then we'll 
-                if (seq.length > 0) queuedSpell = seq.shift();
-                else {
-                    seq = genSpell(state, evokerSpells, apl);
-                    queuedSpell = seq.shift();
-                    
-                }
-                
-            }
-
-            const fullSpell = evokerSpells[queuedSpell];
-            if (queuedSpell === undefined) console.error("Can't find spell: " + queuedSpell);
-            const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
-            spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
-            else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
-            else nextSpell = state.t + castTime;
-
+            queueSpell(castState, seq, state, evokerSpells, seqType, apl)
 
         }
-        if (queuedSpell !== "" && state.t >= spellFinish) {
+        if (castState.queuedSpell !== "" && state.t >= castState.spellFinish) {
             // We have a queued spell, check if it's finished.
             // Instant spells should proc this immediately.
 
@@ -532,13 +389,20 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            const spellName = queuedSpell;
-            const fullSpell = evokerSpells[queuedSpell];
+            const spellName = castState.queuedSpell;
+            const fullSpell = evokerSpells[castState.queuedSpell];
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
             addReport(state, `Casting ${spellName}`);
             spendSpellCost(fullSpell, state);
+ 
 
-            runSpell(fullSpell, state, spellName, evokerSpells);
+            runSpell(fullSpell, state, spellName, evokerSpells, triggerEssenceBurst, runHeal, runDamage);
+            if (checkBuffActive(state.activeBuffs, "Stasis") && !(EVOKERCONSTANTS.stasisExceptionSpells.includes(spellName) && !spellName.includes("Echo"))) { 
+                const buff = state.activeBuffs.filter(buff => buff.name === "Stasis")[0];
+                if (buff.special.storedSpells.length <= 3) buff.special.storedSpells.push(spellName); buff.stacks += 1;
+            }
+
+            
 
             // Check if Echo
             // If we have the Echo buff active, and our current cast is Echo compatible then:
@@ -570,7 +434,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                         echoSpell[0].onApplication = evokerSpells["Reversion"][0].onApplication;
                         echoSpell[0].runFunc= evokerSpells["Reversion"][0].runFunc;
                     }
-                    runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells)
+                    runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells, triggerEssenceBurst, runHeal, runDamage)
 
                 }
 
@@ -581,18 +445,19 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             }
 
             // Cleanup
-            queuedSpell = "";
-            spellFinish = 0;
+            castState.queuedSpell = "";
+            castState.spellFinish = 0;
         }
 
-        if (seq.length === 0 && queuedSpell === "" && healBuffs.length === 0) {
+        if (seq.length === 0 && castState.queuedSpell === "") {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             //state.t = 999;
         }
 
         // Time optimization
-        state.t = advanceTime(state.t, nextSpell, spellFinish, state.activeBuffs);
-
+        // We'll skip this with advanced reporting on since it'll ruin our polling and time optimizations don't matter for single iterations.
+        if (!state.settings.advancedReporting) state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
+        //if (seqType === "Manual" && seq.length === 0) state.t = 9999; // This is a manual sequence so we won't bother generating anything else. End.
     }
 
     runRampTidyUp(state, settings, sequenceLength, startTime)
@@ -600,6 +465,3 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     return state;
 
 }
-
-
-

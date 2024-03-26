@@ -73,10 +73,11 @@ const specImages: { [key: string]: string } = {
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin Classic": require("Images/classicon_paladin.jpg"),
+  "Holy Paladin Classic": require("Images/PaladinSmall.png"),
   "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
+  "Discipline Priest Classic": require("Images/DiscSmall.jpg"),
 };
 
 export default function CharacterPanel(props: Props) {
@@ -97,12 +98,7 @@ export default function CharacterPanel(props: Props) {
 
   useEffect(() => {
     async function setImg() {
-      let img = "";
-      if (gameType === "Retail") {
-        img = currentCharacter.charAvatarURL === "" ? specImages[currentCharacter.spec] : currentCharacter.charAvatarURL;
-      } else {
-        img = `url(${specImages[currentCharacter.spec]})`;
-      }
+      const img = currentCharacter.charAvatarURL === "" ? specImages[currentCharacter.spec] : currentCharacter.charAvatarURL;
 
       setBackgroundImage(img);
     }
@@ -147,7 +143,6 @@ export default function CharacterPanel(props: Props) {
           ) : (
             <Grid id="charPanelAvatarGridItem" item xs="auto" sm="auto">
               <div style={{ position: "relative", textAlign: "center", color: "white" }}>
-                {gameType === "Retail" ? (
                   <div
                     id="charPanelAvatarImage"
                     style={{
@@ -155,38 +150,18 @@ export default function CharacterPanel(props: Props) {
                       ...imageStyle,
                     }}
                   />
-                ) : (
-                  <div
-                    id="charPanelAvatarImage"
-                    style={{
-                      backgroundImage: backgroundImage,
-                      ...imageStyle,
-                    }}
-                  />
-                )}
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
                   <Tooltip title={getTranslatedClassName(currentCharacter.spec, currentLanguage)} placement="left" arrow>
                     {classIcons(
                       currentCharacter.spec,
-                      gameType === "Retail"
-                        ? {
-                            height: 22,
-                            width: 22,
-                            margin: "0px 2px 0px 0px",
-                            verticalAlign: "middle",
-                            borderRadius: "0px 0px 0px 4px",
-                            borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
-                            borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
-                          }
-                        : {
-                            height: 26,
-                            width: 26,
-                            margin: "0px 2px 0px 0px",
-                            verticalAlign: "middle",
-                            borderRadius: "0px 4px 0px 4px",
-                            borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
-                            borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
-                          },
+                      {height: 22,
+                      width: 22,
+                      margin: "0px 2px 0px 0px",
+                      verticalAlign: "middle",
+                      borderRadius: "0px 0px 0px 4px",
+                      borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
+                      borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
+                      }
                     ) || <></>}
                   </Tooltip>
                 </div>
@@ -244,7 +219,8 @@ export default function CharacterPanel(props: Props) {
                     </Grid>
                     {
                       /* --------------------------------------- Character Stats --------------------------------------  */
-                      // The characters current stat totals are mapped with verticle dividers between them
+                      // The characters current stat totals are mapped with verticle dividers between them.
+                      // We can definitely create a version of this for Classic but TODO for now.
                     }
                     {gameType === "Retail" ? (
                       <Grid container spacing={1}>

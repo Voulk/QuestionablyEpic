@@ -590,7 +590,6 @@ export class Player {
       Raid: new CastModel(spec, "Raid"),
       Dungeon: new CastModel(spec, "Dungeon"),
     };
-
     //console.log(this.castModels);
 
     if (spec === SPEC.RESTODRUID) {
