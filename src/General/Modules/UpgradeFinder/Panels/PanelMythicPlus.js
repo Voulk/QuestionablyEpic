@@ -102,7 +102,7 @@ export default function MythicPlusGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB["-1"][key].name[currentLanguage]} -{" "}
                               {
-                                getNumUpgrades(itemDifferentials, "-1", key, itemLevels.dungeon[difficulty])
+                                getNumUpgrades(itemDifferentials, -1, key, difficulty)
                               }{" "}
                               Upgrades
                             </Typography>

@@ -65,8 +65,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 225000,
-      rawhps: 250000,
+      hps: 350000,
+      rawhps: 475000,
       dps: 12000,
       fightLength: 400,
       reportID: "Default",
@@ -221,7 +221,7 @@ class CastModel {
   };
 
   setRampInfo = (stats, trinkets) => {
-    //this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
+    this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
 
   }
 
