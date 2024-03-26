@@ -25,7 +25,7 @@ export const buildEvokerChartData = (stats) => {
     let talents = {...evokerTalents};
 
     const sequences = [
-        /*
+
         {cat: "Base Spells", tag: "Spiritbloom R4", seq: ["Spiritbloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Dream Breath R1", seq: ["Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: []},
@@ -45,7 +45,7 @@ export const buildEvokerChartData = (stats) => {
         {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
         {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
         {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
-        */
+
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
         {cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]
