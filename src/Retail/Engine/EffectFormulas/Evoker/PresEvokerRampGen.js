@@ -13,7 +13,7 @@ export const buildEvokerAPLData = (stats, talents) => {
 
 // newSeq = sequence.seq;
 // Filter = return only X.
-export const buildChartSegment = (sequence, spellData, newSeq, activeStats, testSettings, talents, filter) => {
+export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell) => {
     const iterations = sequence.iterations ? sequence.iterations : 1; // Spells that require more RNG can set their own iteration count like Reversion.
     let data = {
         healingDone: 0,
@@ -43,13 +43,18 @@ export const buildChartSegment = (sequence, spellData, newSeq, activeStats, test
     // After the sequence has run, check for a filter function.
     // - If no filter, return result.
     // - If filter, filter the healing first, then return. 
-
+    if (filterSpell) {
+        data.healingDone = Object.entries(data.spellValues)
+            .filter(([key]) => key.includes(filterSpell))
+            .reduce((sum, [, value]) => sum + value, 0); 
+        
+    }
 
 
 
     // return result
     console.log(data);
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: {}}
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: filterSpell ? "-" : Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: {}}
 }
 
 export const buildEvokerChartData = (activeStats) => {
@@ -130,17 +135,19 @@ export const buildEvokerChartData = (activeStats) => {
                                         .filter(([key]) => key.includes("(Echo)") || key.includes("(HoT - Echo)"))
                                         .reduce((sum, [, value]) => sum + value, 0);
                 //console.log(result);
-                results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+                //results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+                results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, "Echo)"));
             }
             else if (sequence.cat === "Lifebind Ramps") {
                 const healingDone = Object.entries(result.healingDone)
                                         .filter(([key]) => key.includes("Lifebind"))
                                         .reduce((sum, [, value]) => sum + value, 0);
     
-                results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+                //results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
+                results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, "Lifebind"));
             }
             else {
-                results.push(buildChartSegment(sequence, spellData, newSeq, activeStats, testSettings, talents, null));
+                results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, null));
                 //results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})
     
             }
