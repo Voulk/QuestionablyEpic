@@ -721,7 +721,7 @@ export const dungeonTrinketData = [
       const critPerStack = processedValue(data[1], itemLevel)
       const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
 
-      if (additionalData.player.getSpec() === "Discipline Priest") {
+      if (additionalData.player.getSpec() === "Discipline Priest Ramp") {
 
         bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
       }
