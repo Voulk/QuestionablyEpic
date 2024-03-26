@@ -1,7 +1,7 @@
 import { runHeal } from "./RestoDruidRamps";
 
 // Add onTick, onExpiry functions to spells.
-export const DRUIDSPELLDB = {
+export const CLASSICDRUIDSPELLDB = {
     "Rejuvenation": [
         {
         // Rejuv is split into two spell effects. The direct heal, and the HoT. The direct heal is the same amount of healing as one tick, but doesn't scale with Haste.
@@ -11,7 +11,7 @@ export const DRUIDSPELLDB = {
         cost: 2.2, // 5500
         type: "buff",
         buffType: "heal",
-        tickData: {tickRate: 3, canPartialTick: true, tickOnCast: true}, 
+        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         buffDuration: 12,
         coeff: 0.2465,
         expectedOverheal: 0.2,
@@ -93,6 +93,7 @@ export const DRUIDSPELLDB = {
 
 }
 
+// Talents that aren't in the resto portion of the tree (Feral / Balance)
 const classTalents = {
     improvedRejuvenation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].buffDuration += 3;
@@ -100,19 +101,12 @@ const classTalents = {
 
 }
 
+// Resto talents
 const specTalents = {
 
 
     luxuriantSoil: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB["Rejuvenation"][0].tickData.onTick = function (state, buff, runSpell, druidSpells) {
-            const roll = Math.random();
-            const canProceed = (roll < (0.01 * state.talents.luxuriantSoil.points));
 
-            if (canProceed) {
-                // Create a new rejuvenation.
-                runSpell(druidSpells["Rejuvenation"], state, "Rejuvenation", druidSpells)
-            }
-        };
     }}, 
 
     // This occurs in 3 2 second ticks. We'll watch this one closely on logs but functionally it usually represents a full 6s extension. 
