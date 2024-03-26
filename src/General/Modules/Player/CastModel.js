@@ -221,7 +221,7 @@ class CastModel {
   };
 
   setRampInfo = (stats, trinkets) => {
-    //this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
+    this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
 
   }
 
