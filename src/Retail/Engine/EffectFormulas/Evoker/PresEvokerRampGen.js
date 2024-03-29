@@ -53,7 +53,7 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
 
 
     // return result
-    console.log(data);
+
     return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: filterSpell ? "-" : Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: {}}
 }
 
@@ -89,7 +89,7 @@ export const buildEvokerChartData = (activeStats) => {
         {cat: "Consumed Echo", tag: "E Dream Breath", seq: ["Dream Breath"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: ["Echo"]},
         {cat: "Consumed Echo", tag: "E Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: ["Echo"]},
-        {cat: "Consumed Echo", tag: "E Reversion", seq: ["Reversion"], preBuffs: ["Echo"]},
+        {cat: "Consumed Echo", tag: "E Reversion", seq: ["Reversion"], preBuffs: ["Echo"], iterations: 2000},
         {cat: "Consumed Echo", tag: "E Living Flame", seq: ["Living Flame"], preBuffs: ["Echo"]},
 
         {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
@@ -125,32 +125,12 @@ export const buildEvokerChartData = (activeStats) => {
         }
         else {
             // All sequence based.
+            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
             if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
-            const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell));
 
-    
-            if (sequence.cat === "Consumed Echo") {
-                // These are awkward since we only want to grab the Echo bit.
-                const healingDone = Object.entries(result.healingDone)
-                                        .filter(([key]) => key.includes("(Echo)") || key.includes("(HoT - Echo)"))
-                                        .reduce((sum, [, value]) => sum + value, 0);
-                //console.log(result);
-                //results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
-                results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, "Echo)"));
-            }
-            else if (sequence.cat === "Lifebind Ramps") {
-                const healingDone = Object.entries(result.healingDone)
-                                        .filter(([key]) => key.includes("Lifebind"))
-                                        .reduce((sum, [, value]) => sum + value, 0);
-    
-                //results.push({cat: sequence.cat, tag: tag, hps: Math.round(healingDone), hpm: "-", dps: Math.round(result.totalDamage) || "-", spell: spellData})
-                results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, "Lifebind"));
-            }
-            else {
-                results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, null));
-                //results.push({cat: sequence.cat, tag: tag, hps: result.totalHealing, hpm: Math.round(100*result.hpm)/100, dps: Math.round(result.totalDamage) || "-", spell: spellData})
-    
-            }
+            
+
         };  
     }); 
         
