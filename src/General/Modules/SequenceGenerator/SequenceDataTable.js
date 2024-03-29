@@ -13,6 +13,7 @@ import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
+import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRampGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
@@ -26,6 +27,9 @@ function buildChartData(spec, stats, talents) {
   } else if (spec === "Preservation Evoker") {
     return buildEvokerChartData(stats, talents);
   }
+  else if (spec === "Restoration Druid Classic") {
+    return buildClassicChartData(stats, "Restoration Druid")
+  }
   else {
     return [];
   }
@@ -37,6 +41,7 @@ export default function SequenceDataTable(props) {
   const darkColor = "#474747"; // Example dark color
 
   const data = buildChartData(props.spec, props.stats, props.talents);//buildEvokerChartData(); //props.data;
+  console.log(data);
   
   const rows = data;
   const cats = [...new Set(data.map(item => item.cat))];

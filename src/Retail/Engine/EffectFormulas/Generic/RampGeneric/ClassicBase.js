@@ -1,2 +1,59 @@
 // Classic sometimes works in different ways to retail. If we can use a retail function then we should, but if we need a classic version then it can be added here.
 // If it can be solved with a flag instead (like "No partial tick") then that is preferable to writing a new function.
+
+const GLOBALCONST = {
+    rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
+    statPoints: {
+        crit: 179.279998779296875,
+        mastery: 179.279998779296875,
+        haste: 128.057006835937500,
+
+        critInt: 648.91,
+    },
+
+    baseCrit: {
+        "Restoration Druid": 0.018515,
+        "Discipline Priest": 0.012375, 
+        "Holy Paladin": 0.033355,
+        "Holy Priest": 0.012375,
+        "Restoration Shaman": 0.02201, 
+        "Mistweaver Monk": 1, // Soon :)
+    }
+
+}
+
+const getSpellFlat = (spell, flatBonus = 0) => {
+    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0) + flatBonus)
+}
+
+/**
+ * Get a spells raw damage or healing. This is made up of it's coefficient, our intellect, and any secondary stats it scales with.
+ * We'll take care of multipliers like Schism and Sins in another function.
+ * @param {object} spell The spell being cast. Spell data is pulled from DiscSpellDB. 
+ * @param {object} currentStats A players current stats, including any buffs.
+ * @returns The raw damage or healing of the spell.
+ */
+export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0, masteryFlag = false) => {
+    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants, masteryFlag); // Multiply our spell coefficient by int and secondaries.
+}
+
+/**
+ * Returns a spells stat multiplier based on which stats it scales with.
+ * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
+ * @param {*} statArray A characters current stats including any active buffs.
+ * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
+ * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
+ */
+export const getStatMult = (currentStats, stats, statMods, specConstants, masteryFlag) => {
+    let mult = 1;
+    const baseMastery = specConstants.masteryMod / 100 * 8; // Every spec owns 8 mastery points baseline
+
+    const critChance = /*specConstants.baseCrit*/ 0 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
+    const critMult = (currentStats['critMult'] || 1.5) + (statMods['critEffect'] || 0);
+
+    if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
+    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
+    if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
+
+    return mult;
+}

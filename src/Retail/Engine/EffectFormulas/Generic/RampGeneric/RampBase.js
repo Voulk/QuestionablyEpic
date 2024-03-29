@@ -68,6 +68,18 @@ export const spendSpellCost = (spell, state) => {
     // TODO: Add cost discounts here like Infusion of Light.
 }
 
+// Runs a classic era periodic spell.
+const runPeriodic = (state, spell, spellName, runHeal) => {
+    // Calculate tick count
+    const tickCount = Math.floor(spell.buffDuration / spell.tickData.tickRate);
+
+    // Run heal
+    for (let i = 0; i < tickCount; i++) {
+        runHeal(state, spell, spellName);
+    }
+    console.log("Ran periodic spell: " + spellName + " for " + tickCount + " ticks.");
+}
+
 // Ideally remove triggerSpecial eventually.
 // flags: "ignoreCD"
 export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flags = {}) => {
@@ -106,7 +118,11 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             else if (spell.type === 'heal') {
                 runHeal(state, spell, spellName)
             }
-            
+
+            // In classic we don't need to worry about hots and dots changing 
+            else if (spell.type === "classic periodic") {
+                runPeriodic(state, spell, spellName, runHeal);
+            }
             
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
             else if (spell.type === 'damage') {

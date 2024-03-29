@@ -1,43 +1,69 @@
-import { runHeal } from "./RestoDruidRamps";
+import { runHeal } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 // Add onTick, onExpiry functions to spells.
 export const CLASSICDRUIDSPELLDB = {
+    "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
+        type: "",
+        castTime: 1.5,
+        cost: 0,
+    }],
     "Rejuvenation": [
         {
         // Rejuv is split into two spell effects. The direct heal, and the HoT. The direct heal is the same amount of healing as one tick, but doesn't scale with Haste.
         // The number of rejuv ticks is (5 x haste) + 1.
-        spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "heal"},
+        spellData: {id: 361469, icon: "spell_nature_rejuvenation", cat: "heal"},
         castTime: 0,
-        cost: 2.2, // 5500
-        type: "buff",
+        cost: 20, // 699
+        type: "classic periodic",
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         buffDuration: 12,
-        coeff: 0.2465,
+        coeff: 0.134,
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+        secondaries: ['crit'] // Rejuv also scales with haste, but this is handled elsewhere.
+    }],
+    "Nourish": [{
+        // Regrowth direct heal portion
+        spellData: {id: 0, icon: "ability_druid_nourish", cat: "heal"},
+        type: "heal",
+        castTime: 1.5, // Check
+        cost: 10, 
+        coeff: 0.266, 
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'mastery'] 
     }],
     "Regrowth": [{
         // Regrowth direct heal portion
-        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "heal"},
+        spellData: {id: 0, icon: "spell_nature_resistnature", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
-        cost: 3.4, 
-        coeff: 0.29, 
+        cost: 35, 
+        coeff: 0.2936, 
         expectedOverheal: 0.2,
-        secondaries: ['crit', 'vers', 'mastery'] 
+        secondaries: ['crit'] 
     },
     {
         // Regrowth HoT portion
-        type: "buff",
+        type: "classic periodic",
         buffType: "heal",
         buffDuration: 12,
-        coeff: 0.0864, // The coefficient for a single regrowth tick.
-        tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
+        coeff: 0.0296, // The coefficient for a single regrowth tick.
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit']
     }],
+    "Healing Touch": [{
+        // Regrowth direct heal portion
+        spellData: {id: 0, icon: "spell_nature_healingtouch", cat: "heal"},
+        type: "heal",
+        castTime: 2, 
+        cost: 35, 
+        coeff: 0.806, 
+        expectedOverheal: 0.3,
+        secondaries: ['crit'] 
+    },],
     "Wild Growth": [
         {
         // HoT portion - Note the free tick on cast.
