@@ -13,7 +13,7 @@ import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
-import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRampGen";
+import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicChartGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };

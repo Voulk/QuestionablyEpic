@@ -29,10 +29,23 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false};
 
     const sequences = [
-        {cat: "Base Spells", tag: "Nourish", seq: ["Nourish"], preBuffs: []},
+        
         {cat: "Base Spells", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: []},
+        {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
+        {cat: "Base Spells", tag: "Lifebloom (1 stack)", seq: ["Lifebloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
+        {cat: "Base Spells", tag: "Nourish", seq: ["Nourish"], preBuffs: []},
         {cat: "Base Spells", tag: "Healing Touch", seq: ["Healing Touch"], preBuffs: []},
+        {cat: "Base Spells", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
+
+
+        {cat: "Package", tag: "Swiftmend, WG, Lifebloom, Rejuv filler", seq: [], preBuffs: [], details: {
+            "Swiftmend": 4,
+            "Lifebloom": 6,
+            "Regrowth": 6,
+            "Rejuvenation": 15,
+            "Wild Growth": 5,
+        }}
         //{cat: "Base Spells", tag: "Dream Breath R1", seq: ["Dream Breath"], preBuffs: []},
 
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
@@ -42,26 +55,19 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
-        const spellData = {id: 0, icon: CLASSICDRUIDSPELLDB[newSeq[0]][0].spellData.icon || ""};
+        const spellData = {id: 0, icon: CLASSICDRUIDSPELLDB[newSeq[0]] ? CLASSICDRUIDSPELLDB[newSeq[0]][0].spellData.icon : ""};
         const cat = sequence.cat;
 
-        if (cat === "APLs") {
+        if (cat === "Package") {
             // All auto based.
-            const profile = sequence.tag.includes("Blossom Auto") ? blossomProfile : sequence.tag === "Reversion Auto" ? reversionProfile : {};
-            const newTalents = JSON.parse(JSON.stringify(baseTalents));
-            profile.talents.forEach(talentName => {
-                newTalents[talentName].points = newTalents[talentName].maxPoints;
+            Object.keys(sequence.details).forEach(spellName => {
+                const value = sequence.details[spellName];
+                for (let i = 0; i < value; i++) {
+                    newSeq.push(spellName);
+                }
             })
-
-            const playerData = { spec: "Preservation Evoker", baseSpells: [], settings: testSettings, talents: newTalents, stats: profile.defaultStats }
-
             
-            const result = runAPLSuites(playerData, profile, runCastSequence)
-            const oneIteration = runCastSequence(newSeq, JSON.parse(JSON.stringify(profile.defaultStats)), {...testSettings, reporting: true}, baseTalents, profile.apl);
-            
-            
-            results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: result.advancedReport})
-        }
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        }
         else {
             // All sequence based.
             const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;

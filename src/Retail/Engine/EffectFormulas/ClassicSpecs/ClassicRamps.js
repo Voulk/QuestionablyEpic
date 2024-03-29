@@ -3,9 +3,9 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampGeneric/RampBase";
+            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
-import { getSpellRaw } from "../Generic/RampGeneric/ClassicBase"
+import { getSpellRaw,  } from "../Generic/RampGeneric/ClassicBase"
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./ClassicUtilities";
 
@@ -127,11 +127,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // Can be removed to RampGeneral.
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
-        talents[key] = value.points;
+        //talents[key] = value.points;
+        talents[key] = value
     }
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, spec: "Restoration Druid", manaPool: 100000};
+                    talents: talents, reporting: true, spec: "Restoration Druid", manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff["Restoration Druid"]};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -150,7 +151,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // Ideally we'll cover as much as we can in here.
     //const playerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, CLASSICCONSTANTS);
     const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
-
+    applyTalents(state, playerSpells, stats)
+    
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
     }

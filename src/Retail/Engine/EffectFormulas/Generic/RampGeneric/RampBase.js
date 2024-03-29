@@ -17,9 +17,7 @@ const GLOBALCONST = {
 
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
-        
         const talent = state.talents[talentName];
-
         if (talent.points > 0) {
             talent.runFunc(state, spellDB, talent.points, stats)
         }
@@ -77,7 +75,6 @@ const runPeriodic = (state, spell, spellName, runHeal) => {
     for (let i = 0; i < tickCount; i++) {
         runHeal(state, spell, spellName);
     }
-    console.log("Ran periodic spell: " + spellName + " for " + tickCount + " ticks.");
 }
 
 // Ideally remove triggerSpecial eventually.
@@ -415,3 +412,4 @@ export const deepCopyFunction = (inObject) => {
   
     return outObject;
   };
+

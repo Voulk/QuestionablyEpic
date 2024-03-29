@@ -57,3 +57,10 @@ export const getStatMult = (currentStats, stats, statMods, specConstants, master
 
     return mult;
 }
+
+export const buffSpell = (fullSpell, buffPerc) => {
+    fullSpell.forEach(slice => {
+        if ('coeff' in slice) slice.coeff *= buffPerc;
+    })
+}
+
