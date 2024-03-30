@@ -13,6 +13,7 @@ import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/D
 import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
 
+// Classic
 import { runCastSequence as classicSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
@@ -27,6 +28,7 @@ import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerR
 
 // Classic
 import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
@@ -76,6 +78,7 @@ const getSpellDB = (spec) => {
   if (spec === "Mistweaver Monk") return MONKSPELLS;
   if (spec === "Holy Priest") return HOLYPRIESTSPELLDB;
   if (spec === "Restoration Druid Classic") return CLASSICDRUIDSPELLDB;
+  if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
 };
 
 const getTalentDB = (spec) => {
@@ -87,6 +90,7 @@ const getTalentDB = (spec) => {
   if (spec === "Mistweaver Monk") return monkTalents;
   if (spec === "Holy Priest") return holyPriestTalents;
   if (spec === "Restoration Druid Classic") return classicDruidTalents;
+  if (spec === "Holy Paladin Classic") return classicPaladinTalents;
 };
 
 const saveStats = (newStats) => {
@@ -118,13 +122,15 @@ const compressSettings = (settings) => {
 
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
-  if (spec === "Discipline Priest") return discSequence;
-  if (spec === "Restoration Shaman") return shamanSequence;
-  if (spec === "Holy Paladin") return paladinSequence;
-  if (spec === "Restoration Druid") return druidSequence;
-  if (spec === "Mistweaver Monk") return monkSequence;
-  if (spec === "Holy Priest") return holyPriestSequence;
-  if (spec === "Restoration Druid Classic") return classicSequence;
+  else if (spec === "Discipline Priest") return discSequence;
+  else if (spec === "Restoration Shaman") return shamanSequence;
+  else if (spec === "Holy Paladin") return paladinSequence;
+  else if (spec === "Restoration Druid") return druidSequence;
+  else if (spec === "Mistweaver Monk") return monkSequence;
+  else if (spec === "Holy Priest") return holyPriestSequence;
+  else if (spec.includes("Classic")) return classicSequence;
+  else console.error("Invalid Spec");
+
 };
 
 const setupSequences = (len = 2) => {

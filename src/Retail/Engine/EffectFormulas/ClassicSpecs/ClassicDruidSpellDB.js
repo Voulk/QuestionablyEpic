@@ -208,9 +208,9 @@ const specTalents = {
             buffDuration: 7,
             coeff: spellDB["Swiftmend"][0].coeff * 0.12, // The coefficient for a single regrowth tick.
             tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
-            expectedOverheal: 0.3,
+            expectedOverheal: 0.4,
             targets: 3,
-            secondaries: ['crit', 'mastery'] // Efflo just scales with the same thing the Swiftmend scaled with.
+            secondaries: ['crit', 'mastery'] // Efflo just scales with the same thing the Swiftmend scaled with. Note that it doesn't double dip.
         }
         spellDB["Swiftmend"].push(efflo);
     }}, 

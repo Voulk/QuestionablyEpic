@@ -30,6 +30,9 @@ function buildChartData(spec, stats, talents) {
   else if (spec === "Restoration Druid Classic") {
     return buildClassicChartData(stats, "Restoration Druid")
   }
+  else if (spec === "Holy Paladin Classic") {
+    return buildClassicChartData(stats, "Holy Paladin")
+  }
   else {
     return [];
   }

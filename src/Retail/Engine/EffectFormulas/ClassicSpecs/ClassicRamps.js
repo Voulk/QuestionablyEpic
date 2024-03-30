@@ -1,6 +1,7 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
@@ -52,6 +53,7 @@ const CLASSICCONSTANTS = {
 
 const getSpellDB = (spec) => {
     if (spec === "Restoration Druid") return CLASSICDRUIDSPELLDB;
+    else if (spec === "Holy Paladin") return CLASSICPALADINSPELLDB;
 }
 
 
@@ -132,7 +134,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, spec: "Restoration Druid", manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff["Restoration Druid"]};
+                    talents: talents, reporting: true, spec: settings.spec, manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec]};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -153,7 +155,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
     applyTalents(state, playerSpells, stats)
     applyRaidBuffs(state);
-    
+    console.log(playerSpells);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
     }
