@@ -64,3 +64,23 @@ export const buffSpell = (fullSpell, buffPerc) => {
     })
 }
 
+export const applyRaidBuffs = (state) => {
+    // Crit
+    state.currentStats.crit += 5 * 179;
+
+    // 5% spell haste
+    state.currentStats.haste += 5 * 128;
+
+    // 10% spell power
+    state.currentStats.spellPower *= 1.1;
+
+    // 5% base stats - The added intellect also becomes spell power.
+    state.currentStats.intellect *= 1.05;
+    state.currentStats.spirit *= 1.05;
+    
+    // Max mana
+    state.manaPool *= 1.06;
+
+    // Mana Spring etc
+
+}

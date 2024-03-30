@@ -170,8 +170,20 @@ export const CLASSICDRUIDSPELLDB = {
 // Talents that aren't in the resto portion of the tree (Feral / Balance)
 const offspecTalents = {
     furor: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofstamina", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        //spellDB["Rejuvenation"][0].buffDuration += 3;
+        state.manaPool *= (1 + 0.05 * points);
     }}, 
+    naturesMajesty: {points: 2, maxPoints: 2, icon: "inv_staff_01", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        state.crit += (180 * 2 * points);
+    }},
+    genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        const buffValue = 1 + 0.02 * points;
+        // TODO: Assumed Efflo doesn't count which is why Swiftmend is on the node.
+        buffSpell(spellDB["Rejuvenation"], buffValue);
+        buffSpell(spellDB["Swiftmend"], buffValue);
+        buffSpell(spellDB["Wild Growth"], buffValue);
+        spellDB["Regrowth"][1].coeff *= buffValue;
+
+    }},
 
 }
 

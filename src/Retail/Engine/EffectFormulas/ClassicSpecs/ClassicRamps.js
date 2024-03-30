@@ -5,7 +5,7 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
-import { getSpellRaw,  } from "../Generic/RampGeneric/ClassicBase"
+import { getSpellRaw, applyRaidBuffs  } from "../Generic/RampGeneric/ClassicBase"
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./ClassicUtilities";
 
@@ -152,6 +152,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     //const playerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, CLASSICCONSTANTS);
     const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
     applyTalents(state, playerSpells, stats)
+    applyRaidBuffs(state);
     
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
@@ -221,9 +222,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             castState.spellFinish = 0;
         }
 
-        if (seq.length === 0 && castState.queuedSpell === "") {
+        if (seqType === "Manual" && seq.length === 0) {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
-            //state.t = 999;
+            state.t = 999;
         }
 
         // Time optimization
