@@ -135,7 +135,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
-  if (instanceID === 1207) {
+  if ([1200, 1208, 1207, -22].includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -208,7 +208,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
       const encounter = itemSources[0].encounterId;
-      const isRaid = primarySource === 1207 || primarySource === -22;
+      const isRaid = [1200, 1208, 1207, -22].includes(primarySource);
 
       if (isRaid && encounter > 0) {
         // 

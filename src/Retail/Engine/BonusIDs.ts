@@ -33225,7 +33225,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7448": {
     "id": 7448,
-    "item_limit_category": 347
+    "tag": "5 Corruption"
   },
   "7452": {
     "id": 7452,
@@ -40386,6 +40386,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 56366,
     "tag": "Timewarped"
   },
+  "8173": {
+    "id": 8173,
+    "quality": 5
+  },
   "8174": {
     "id": 8174,
     "effect": {
@@ -43758,6 +43762,1011 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 33800,
     "tag": "Timewarped"
   },
+  "8404": {
+    "id": 8404,
+    "quality": 2,
+    "effect": {
+      "id": 147904,
+      "index": 0,
+      "spell": {
+        "id": 397315,
+        "name": "Alter Time",
+        "icon": "spell_mage_altertime"
+      }
+    }
+  },
+  "8405": {
+    "id": 8405,
+    "quality": 3,
+    "effect": {
+      "id": 172434,
+      "index": 0,
+      "spell": {
+        "id": 397316,
+        "name": "Alter Time",
+        "icon": "spell_mage_altertime"
+      }
+    }
+  },
+  "8406": {
+    "id": 8406,
+    "quality": 4,
+    "effect": {
+      "id": 172435,
+      "index": 0,
+      "spell": {
+        "id": 397317,
+        "name": "Alter Time",
+        "icon": "spell_mage_altertime"
+      }
+    }
+  },
+  "8408": {
+    "id": 8408,
+    "quality": 2,
+    "effect": {
+      "id": 147788,
+      "index": 0,
+      "spell": {
+        "id": 397272,
+        "name": "Anti-Magic Shell",
+        "icon": "spell_shadow_antimagicshell"
+      }
+    }
+  },
+  "8409": {
+    "id": 8409,
+    "quality": 3,
+    "effect": {
+      "id": 172413,
+      "index": 0,
+      "spell": {
+        "id": 397273,
+        "name": "Anti-Magic Shell",
+        "icon": "spell_shadow_antimagicshell"
+      }
+    }
+  },
+  "8410": {
+    "id": 8410,
+    "quality": 4,
+    "effect": {
+      "id": 172414,
+      "index": 0,
+      "spell": {
+        "id": 397274,
+        "name": "Anti-Magic Shell",
+        "icon": "spell_shadow_antimagicshell"
+      }
+    }
+  },
+  "8412": {
+    "id": 8412,
+    "quality": 2,
+    "effect": {
+      "id": 139642,
+      "index": 0,
+      "spell": {
+        "id": 397306,
+        "name": "Anti-Magic Zone",
+        "icon": "spell_deathknight_antimagiczone"
+      }
+    }
+  },
+  "8413": {
+    "id": 8413,
+    "quality": 3,
+    "effect": {
+      "id": 172428,
+      "index": 0,
+      "spell": {
+        "id": 397307,
+        "name": "Anti-Magic Zone",
+        "icon": "spell_deathknight_antimagiczone"
+      }
+    }
+  },
+  "8414": {
+    "id": 8414,
+    "quality": 4,
+    "effect": {
+      "id": 172429,
+      "index": 0,
+      "spell": {
+        "id": 397308,
+        "name": "Anti-Magic Zone",
+        "icon": "spell_deathknight_antimagiczone"
+      }
+    }
+  },
+  "8424": {
+    "id": 8424,
+    "quality": 2,
+    "effect": {
+      "id": 140596,
+      "index": 0,
+      "spell": {
+        "id": 397622,
+        "name": "Arcanosphere",
+        "icon": "ability_mage_arcanosphere"
+      }
+    }
+  },
+  "8425": {
+    "id": 8425,
+    "quality": 3,
+    "effect": {
+      "id": 172452,
+      "index": 0,
+      "spell": {
+        "id": 397623,
+        "name": "Arcanosphere",
+        "icon": "ability_mage_arcanosphere"
+      }
+    }
+  },
+  "8426": {
+    "id": 8426,
+    "quality": 4,
+    "effect": {
+      "id": 172453,
+      "index": 0,
+      "spell": {
+        "id": 397624,
+        "name": "Arcanosphere",
+        "icon": "ability_mage_arcanosphere"
+      }
+    }
+  },
+  "8436": {
+    "id": 8436,
+    "quality": 2,
+    "effect": {
+      "id": 139733,
+      "index": 0,
+      "spell": {
+        "id": 397661,
+        "name": "Blessed Hammer",
+        "icon": "paladin_retribution"
+      }
+    }
+  },
+  "8437": {
+    "id": 8437,
+    "quality": 3,
+    "effect": {
+      "id": 172465,
+      "index": 0,
+      "spell": {
+        "id": 397663,
+        "name": "Blessed Hammer",
+        "icon": "paladin_retribution"
+      }
+    }
+  },
+  "8438": {
+    "id": 8438,
+    "quality": 4,
+    "effect": {
+      "id": 172464,
+      "index": 0,
+      "spell": {
+        "id": 397665,
+        "name": "Blessed Hammer",
+        "icon": "paladin_retribution"
+      }
+    }
+  },
+  "8452": {
+    "id": 8452,
+    "quality": 2,
+    "effect": {
+      "id": 139739,
+      "index": 0,
+      "spell": {
+        "id": 397230,
+        "name": "Capacitor Totem",
+        "icon": "spell_nature_brilliance"
+      }
+    }
+  },
+  "8453": {
+    "id": 8453,
+    "quality": 3,
+    "effect": {
+      "id": 172394,
+      "index": 0,
+      "spell": {
+        "id": 397231,
+        "name": "Capacitor Totem",
+        "icon": "spell_nature_brilliance"
+      }
+    }
+  },
+  "8454": {
+    "id": 8454,
+    "quality": 4,
+    "effect": {
+      "id": 172395,
+      "index": 0,
+      "spell": {
+        "id": 397232,
+        "name": "Capacitor Totem",
+        "icon": "spell_nature_brilliance"
+      }
+    }
+  },
+  "8476": {
+    "id": 8476,
+    "quality": 2,
+    "effect": {
+      "id": 139641,
+      "index": 0,
+      "spell": {
+        "id": 397309,
+        "name": "Darkness",
+        "icon": "ability_demonhunter_darkness"
+      }
+    }
+  },
+  "8477": {
+    "id": 8477,
+    "quality": 3,
+    "effect": {
+      "id": 172430,
+      "index": 0,
+      "spell": {
+        "id": 397310,
+        "name": "Darkness",
+        "icon": "ability_demonhunter_darkness"
+      }
+    }
+  },
+  "8478": {
+    "id": 8478,
+    "quality": 4,
+    "effect": {
+      "id": 172431,
+      "index": 0,
+      "spell": {
+        "id": 397311,
+        "name": "Darkness",
+        "icon": "ability_demonhunter_darkness"
+      }
+    }
+  },
+  "8480": {
+    "id": 8480,
+    "quality": 2,
+    "effect": {
+      "id": 139540,
+      "index": 0,
+      "spell": {
+        "id": 397224,
+        "name": "Death Grip",
+        "icon": "spell_deathknight_strangulate"
+      }
+    }
+  },
+  "8481": {
+    "id": 8481,
+    "quality": 3,
+    "effect": {
+      "id": 172392,
+      "index": 0,
+      "spell": {
+        "id": 397225,
+        "name": "Death Grip",
+        "icon": "spell_deathknight_strangulate"
+      }
+    }
+  },
+  "8482": {
+    "id": 8482,
+    "quality": 4,
+    "effect": {
+      "id": 172393,
+      "index": 0,
+      "spell": {
+        "id": 397226,
+        "name": "Death Grip",
+        "icon": "spell_deathknight_strangulate"
+      }
+    }
+  },
+  "8492": {
+    "id": 8492,
+    "quality": 2,
+    "effect": {
+      "id": 147890,
+      "index": 0,
+      "spell": {
+        "id": 397275,
+        "name": "Dispersion",
+        "icon": "spell_shadow_dispersion"
+      }
+    }
+  },
+  "8493": {
+    "id": 8493,
+    "quality": 3,
+    "effect": {
+      "id": 172418,
+      "index": 0,
+      "spell": {
+        "id": 397276,
+        "name": "Dispersion",
+        "icon": "spell_shadow_dispersion"
+      }
+    }
+  },
+  "8494": {
+    "id": 8494,
+    "quality": 4,
+    "effect": {
+      "id": 172419,
+      "index": 0,
+      "spell": {
+        "id": 397278,
+        "name": "Dispersion",
+        "icon": "spell_shadow_dispersion"
+      }
+    }
+  },
+  "8496": {
+    "id": 8496,
+    "quality": 2,
+    "effect": {
+      "id": 140613,
+      "index": 0,
+      "spell": {
+        "id": 397632,
+        "name": "Dark Star",
+        "icon": "spell_priest_divinestar_shadow"
+      }
+    }
+  },
+  "8497": {
+    "id": 8497,
+    "quality": 3,
+    "effect": {
+      "id": 172454,
+      "index": 0,
+      "spell": {
+        "id": 397634,
+        "name": "Dark Star",
+        "icon": "spell_priest_divinestar_shadow"
+      }
+    }
+  },
+  "8498": {
+    "id": 8498,
+    "quality": 4,
+    "effect": {
+      "id": 172455,
+      "index": 0,
+      "spell": {
+        "id": 397636,
+        "name": "Dark Star",
+        "icon": "spell_priest_divinestar_shadow"
+      }
+    }
+  },
+  "8504": {
+    "id": 8504,
+    "quality": 2,
+    "effect": {
+      "id": 147782,
+      "index": 0,
+      "spell": {
+        "id": 397233,
+        "name": "Dragon's Breath",
+        "icon": "inv_misc_head_dragon_01"
+      }
+    }
+  },
+  "8505": {
+    "id": 8505,
+    "quality": 3,
+    "effect": {
+      "id": 172396,
+      "index": 0,
+      "spell": {
+        "id": 397234,
+        "name": "Dragon's Breath",
+        "icon": "inv_misc_head_dragon_01"
+      }
+    }
+  },
+  "8506": {
+    "id": 8506,
+    "quality": 4,
+    "effect": {
+      "id": 172397,
+      "index": 0,
+      "spell": {
+        "id": 397235,
+        "name": "Dragon's Breath",
+        "icon": "inv_misc_head_dragon_01"
+      }
+    }
+  },
+  "8512": {
+    "id": 8512,
+    "quality": 2,
+    "effect": {
+      "id": 147867,
+      "index": 0,
+      "spell": {
+        "id": 397639,
+        "name": "Earthbreaker",
+        "icon": "inv_ore_blackrock_nugget"
+      }
+    }
+  },
+  "8513": {
+    "id": 8513,
+    "quality": 3,
+    "effect": {
+      "id": 172456,
+      "index": 0,
+      "spell": {
+        "id": 397641,
+        "name": "Earthbreaker",
+        "icon": "inv_ore_blackrock_nugget"
+      }
+    }
+  },
+  "8514": {
+    "id": 8514,
+    "quality": 4,
+    "effect": {
+      "id": 172457,
+      "index": 0,
+      "spell": {
+        "id": 397643,
+        "name": "Earthbreaker",
+        "icon": "inv_ore_blackrock_nugget"
+      }
+    }
+  },
+  "8524": {
+    "id": 8524,
+    "quality": 2,
+    "effect": {
+      "id": 139533,
+      "index": 0,
+      "spell": {
+        "id": 397279,
+        "name": "Feign Death",
+        "icon": "ability_rogue_feigndeath"
+      }
+    }
+  },
+  "8525": {
+    "id": 8525,
+    "quality": 3,
+    "effect": {
+      "id": 172420,
+      "index": 0,
+      "spell": {
+        "id": 397280,
+        "name": "Feign Death",
+        "icon": "ability_rogue_feigndeath"
+      }
+    }
+  },
+  "8526": {
+    "id": 8526,
+    "quality": 4,
+    "effect": {
+      "id": 172421,
+      "index": 0,
+      "spell": {
+        "id": 397281,
+        "name": "Feign Death",
+        "icon": "ability_rogue_feigndeath"
+      }
+    }
+  },
+  "8544": {
+    "id": 8544,
+    "quality": 2,
+    "effect": {
+      "id": 139840,
+      "index": 0,
+      "spell": {
+        "id": 397236,
+        "name": "Frost Nova",
+        "icon": "spell_frost_frostnova"
+      }
+    }
+  },
+  "8545": {
+    "id": 8545,
+    "quality": 3,
+    "effect": {
+      "id": 172398,
+      "index": 0,
+      "spell": {
+        "id": 397237,
+        "name": "Frost Nova",
+        "icon": "spell_frost_frostnova"
+      }
+    }
+  },
+  "8546": {
+    "id": 8546,
+    "quality": 4,
+    "effect": {
+      "id": 172399,
+      "index": 0,
+      "spell": {
+        "id": 397238,
+        "name": "Frost Nova",
+        "icon": "spell_frost_frostnova"
+      }
+    }
+  },
+  "8560": {
+    "id": 8560,
+    "quality": 2,
+    "effect": {
+      "id": 139519,
+      "index": 0,
+      "spell": {
+        "id": 397646,
+        "name": "Frozen Orb",
+        "icon": "spell_frost_frozenorb"
+      }
+    }
+  },
+  "8561": {
+    "id": 8561,
+    "quality": 3,
+    "effect": {
+      "id": 172458,
+      "index": 0,
+      "spell": {
+        "id": 397710,
+        "name": "Frozen Orb",
+        "icon": "spell_frost_frozenorb"
+      }
+    }
+  },
+  "8562": {
+    "id": 8562,
+    "quality": 4,
+    "effect": {
+      "id": 172459,
+      "index": 0,
+      "spell": {
+        "id": 397712,
+        "name": "Frozen Orb",
+        "icon": "spell_frost_frozenorb"
+      }
+    }
+  },
+  "8572": {
+    "id": 8572,
+    "quality": 2,
+    "effect": {
+      "id": 147856,
+      "index": 0,
+      "spell": {
+        "id": 397324,
+        "name": "Grounding Totem",
+        "icon": "spell_nature_groundingtotem"
+      }
+    }
+  },
+  "8573": {
+    "id": 8573,
+    "quality": 3,
+    "effect": {
+      "id": 172436,
+      "index": 0,
+      "spell": {
+        "id": 397325,
+        "name": "Grounding Totem",
+        "icon": "spell_nature_groundingtotem"
+      }
+    }
+  },
+  "8574": {
+    "id": 8574,
+    "quality": 4,
+    "effect": {
+      "id": 172437,
+      "index": 0,
+      "spell": {
+        "id": 397326,
+        "name": "Grounding Totem",
+        "icon": "spell_nature_groundingtotem"
+      }
+    }
+  },
+  "8600": {
+    "id": 8600,
+    "quality": 2,
+    "effect": {
+      "id": 139529,
+      "index": 0,
+      "spell": {
+        "id": 397291,
+        "name": "Ice Block",
+        "icon": "spell_frost_frost"
+      }
+    }
+  },
+  "8601": {
+    "id": 8601,
+    "quality": 3,
+    "effect": {
+      "id": 172422,
+      "index": 0,
+      "spell": {
+        "id": 397292,
+        "name": "Ice Block",
+        "icon": "spell_frost_frost"
+      }
+    }
+  },
+  "8602": {
+    "id": 8602,
+    "quality": 4,
+    "effect": {
+      "id": 172423,
+      "index": 0,
+      "spell": {
+        "id": 397293,
+        "name": "Ice Block",
+        "icon": "spell_frost_frost"
+      }
+    }
+  },
+  "8604": {
+    "id": 8604,
+    "quality": 2,
+    "effect": {
+      "id": 140292,
+      "index": 0,
+      "spell": {
+        "id": 397239,
+        "name": "Ice Wall",
+        "icon": "ability_mage_icewall"
+      }
+    }
+  },
+  "8605": {
+    "id": 8605,
+    "quality": 3,
+    "effect": {
+      "id": 172400,
+      "index": 0,
+      "spell": {
+        "id": 397240,
+        "name": "Ice Wall",
+        "icon": "ability_mage_icewall"
+      }
+    }
+  },
+  "8606": {
+    "id": 8606,
+    "quality": 4,
+    "effect": {
+      "id": 172401,
+      "index": 0,
+      "spell": {
+        "id": 397241,
+        "name": "Ice Wall",
+        "icon": "ability_mage_icewall"
+      }
+    }
+  },
+  "8612": {
+    "id": 8612,
+    "quality": 2,
+    "effect": {
+      "id": 147839,
+      "index": 0,
+      "spell": {
+        "id": 397242,
+        "name": "Intimidating Shout",
+        "icon": "ability_golemthunderclap"
+      }
+    }
+  },
+  "8613": {
+    "id": 8613,
+    "quality": 3,
+    "effect": {
+      "id": 172402,
+      "index": 0,
+      "spell": {
+        "id": 397243,
+        "name": "Intimidating Shout",
+        "icon": "ability_golemthunderclap"
+      }
+    }
+  },
+  "8614": {
+    "id": 8614,
+    "quality": 4,
+    "effect": {
+      "id": 172403,
+      "index": 0,
+      "spell": {
+        "id": 397244,
+        "name": "Intimidating Shout",
+        "icon": "ability_golemthunderclap"
+      }
+    }
+  },
+  "8636": {
+    "id": 8636,
+    "quality": 2,
+    "effect": {
+      "id": 139635,
+      "index": 0,
+      "spell": {
+        "id": 397248,
+        "name": "Mighty Ox Kick",
+        "icon": "ability_monk_mightyoxkick"
+      }
+    }
+  },
+  "8637": {
+    "id": 8637,
+    "quality": 3,
+    "effect": {
+      "id": 172404,
+      "index": 0,
+      "spell": {
+        "id": 397249,
+        "name": "Mighty Ox Kick",
+        "icon": "ability_monk_mightyoxkick"
+      }
+    }
+  },
+  "8638": {
+    "id": 8638,
+    "quality": 4,
+    "effect": {
+      "id": 172405,
+      "index": 0,
+      "spell": {
+        "id": 397250,
+        "name": "Mighty Ox Kick",
+        "icon": "ability_monk_mightyoxkick"
+      }
+    }
+  },
+  "8652": {
+    "id": 8652,
+    "quality": 2,
+    "effect": {
+      "id": 139538,
+      "index": 0,
+      "spell": {
+        "id": 361095,
+        "name": "Mass Polymorph",
+        "icon": "spell_nature_doublepolymorph2"
+      }
+    }
+  },
+  "8653": {
+    "id": 8653,
+    "quality": 3,
+    "effect": null
+  },
+  "8654": {
+    "id": 8654,
+    "quality": 4,
+    "effect": null
+  },
+  "8688": {
+    "id": 8688,
+    "quality": 2,
+    "effect": {
+      "id": 147840,
+      "index": 0,
+      "spell": {
+        "id": 372406,
+        "name": "Shield Wall",
+        "icon": "ability_warrior_shieldwall"
+      }
+    }
+  },
+  "8689": {
+    "id": 8689,
+    "quality": 3,
+    "effect": null
+  },
+  "8690": {
+    "id": 8690,
+    "quality": 4,
+    "effect": null
+  },
+  "8700": {
+    "id": 8700,
+    "quality": 2,
+    "effect": {
+      "id": 139555,
+      "index": 0,
+      "spell": {
+        "id": 397312,
+        "name": "Smoke Bomb",
+        "icon": "ability_rogue_smoke"
+      }
+    }
+  },
+  "8701": {
+    "id": 8701,
+    "quality": 3,
+    "effect": {
+      "id": 172432,
+      "index": 0,
+      "spell": {
+        "id": 397313,
+        "name": "Smoke Bomb",
+        "icon": "ability_rogue_smoke"
+      }
+    }
+  },
+  "8702": {
+    "id": 8702,
+    "quality": 4,
+    "effect": {
+      "id": 172433,
+      "index": 0,
+      "spell": {
+        "id": 397314,
+        "name": "Smoke Bomb",
+        "icon": "ability_rogue_smoke"
+      }
+    }
+  },
+  "8708": {
+    "id": 8708,
+    "quality": 2,
+    "effect": {
+      "id": 139532,
+      "index": 0,
+      "spell": {
+        "id": 397294,
+        "name": "Spell Reflection",
+        "icon": "ability_warrior_shieldreflection"
+      }
+    }
+  },
+  "8709": {
+    "id": 8709,
+    "quality": 3,
+    "effect": {
+      "id": 172424,
+      "index": 0,
+      "spell": {
+        "id": 397295,
+        "name": "Spell Reflection",
+        "icon": "ability_warrior_shieldreflection"
+      }
+    }
+  },
+  "8710": {
+    "id": 8710,
+    "quality": 4,
+    "effect": {
+      "id": 172425,
+      "index": 0,
+      "spell": {
+        "id": 397296,
+        "name": "Spell Reflection",
+        "icon": "ability_warrior_shieldreflection"
+      }
+    }
+  },
+  "8724": {
+    "id": 8724,
+    "quality": 2,
+    "effect": {
+      "id": 147861,
+      "index": 0,
+      "spell": {
+        "id": 397265,
+        "name": "Thunderstorm",
+        "icon": "spell_shaman_thunderstorm"
+      }
+    }
+  },
+  "8725": {
+    "id": 8725,
+    "quality": 3,
+    "effect": {
+      "id": 172408,
+      "index": 0,
+      "spell": {
+        "id": 397266,
+        "name": "Thunderstorm",
+        "icon": "spell_shaman_thunderstorm"
+      }
+    }
+  },
+  "8726": {
+    "id": 8726,
+    "quality": 4,
+    "effect": {
+      "id": 172409,
+      "index": 0,
+      "spell": {
+        "id": 397267,
+        "name": "Thunderstorm",
+        "icon": "spell_shaman_thunderstorm"
+      }
+    }
+  },
+  "8732": {
+    "id": 8732,
+    "quality": 2,
+    "effect": {
+      "id": 147775,
+      "index": 0,
+      "spell": {
+        "id": 371793,
+        "name": "Typhoon",
+        "icon": "ability_druid_typhoon"
+      }
+    }
+  },
+  "8733": {
+    "id": 8733,
+    "quality": 3,
+    "effect": null
+  },
+  "8734": {
+    "id": 8734,
+    "quality": 4,
+    "effect": null
+  },
+  "8740": {
+    "id": 8740,
+    "quality": 2,
+    "effect": {
+      "id": 139531,
+      "index": 0,
+      "spell": {
+        "id": 397209,
+        "name": "Vanish",
+        "icon": "ability_vanish"
+      }
+    }
+  },
+  "8741": {
+    "id": 8741,
+    "quality": 3,
+    "effect": {
+      "id": 172426,
+      "index": 0,
+      "spell": {
+        "id": 397301,
+        "name": "Vanish",
+        "icon": "ability_vanish"
+      }
+    }
+  },
+  "8742": {
+    "id": 8742,
+    "quality": 4,
+    "effect": {
+      "id": 172427,
+      "index": 0,
+      "spell": {
+        "id": 397302,
+        "name": "Vanish",
+        "icon": "ability_vanish"
+      }
+    }
+  },
   "8756": {
     "id": 8756,
     "tag": "Fated Raid Finder"
@@ -44245,6 +45254,224 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "8866": {
+    "id": 8866,
+    "quality": 2,
+    "effect": {
+      "id": 172514,
+      "index": 0,
+      "spell": {
+        "id": 397625,
+        "name": "Spitfire",
+        "icon": "ability_warlock_fireandbrimstone"
+      }
+    }
+  },
+  "8867": {
+    "id": 8867,
+    "quality": 3,
+    "effect": {
+      "id": 172515,
+      "index": 0,
+      "spell": {
+        "id": 397626,
+        "name": "Spitfire",
+        "icon": "ability_warlock_fireandbrimstone"
+      }
+    }
+  },
+  "8868": {
+    "id": 8868,
+    "quality": 4,
+    "effect": {
+      "id": 172516,
+      "index": 0,
+      "spell": {
+        "id": 397627,
+        "name": "Spitfire",
+        "icon": "ability_warlock_fireandbrimstone"
+      }
+    }
+  },
+  "8872": {
+    "id": 8872,
+    "quality": 2,
+    "effect": {
+      "id": 170285,
+      "index": 0,
+      "spell": {
+        "id": 397648,
+        "name": "Holy Dragon Punch",
+        "icon": "ability_monk_hurricanestrike"
+      }
+    }
+  },
+  "8873": {
+    "id": 8873,
+    "quality": 3,
+    "effect": {
+      "id": 172460,
+      "index": 0,
+      "spell": {
+        "id": 397650,
+        "name": "Holy Dragon Punch",
+        "icon": "ability_monk_hurricanestrike"
+      }
+    }
+  },
+  "8874": {
+    "id": 8874,
+    "quality": 4,
+    "effect": {
+      "id": 172461,
+      "index": 0,
+      "spell": {
+        "id": 397652,
+        "name": "Holy Dragon Punch",
+        "icon": "ability_monk_hurricanestrike"
+      }
+    }
+  },
+  "8887": {
+    "id": 8887,
+    "quality": 2,
+    "effect": {
+      "id": 171794,
+      "index": 0,
+      "spell": {
+        "id": 397654,
+        "name": "Arcane Storm",
+        "icon": "spell_druid_astralstorm"
+      }
+    }
+  },
+  "8888": {
+    "id": 8888,
+    "quality": 3,
+    "effect": {
+      "id": 172462,
+      "index": 0,
+      "spell": {
+        "id": 397656,
+        "name": "Arcane Storm",
+        "icon": "spell_druid_astralstorm"
+      }
+    }
+  },
+  "8889": {
+    "id": 8889,
+    "quality": 4,
+    "effect": {
+      "id": 172463,
+      "index": 0,
+      "spell": {
+        "id": 397658,
+        "name": "Arcane Storm",
+        "icon": "spell_druid_astralstorm"
+      }
+    }
+  },
+  "8890": {
+    "id": 8890,
+    "quality": 2,
+    "effect": {
+      "id": 170291,
+      "index": 0,
+      "spell": {
+        "id": 397258,
+        "name": "Icebind",
+        "icon": "spell_mage_frostbomb"
+      }
+    }
+  },
+  "8891": {
+    "id": 8891,
+    "quality": 3,
+    "effect": {
+      "id": 172406,
+      "index": 0,
+      "spell": {
+        "id": 397261,
+        "name": "Icebind",
+        "icon": "spell_mage_frostbomb"
+      }
+    }
+  },
+  "8892": {
+    "id": 8892,
+    "quality": 4,
+    "effect": {
+      "id": 172407,
+      "index": 0,
+      "spell": {
+        "id": 397262,
+        "name": "Icebind",
+        "icon": "spell_mage_frostbomb"
+      }
+    }
+  },
+  "8893": {
+    "id": 8893,
+    "quality": 2,
+    "effect": {
+      "id": 170293,
+      "index": 0,
+      "spell": {
+        "id": 373016,
+        "name": "Dispersion",
+        "icon": "spell_shadow_dispersion"
+      }
+    }
+  },
+  "8894": {
+    "id": 8894,
+    "quality": 3,
+    "effect": null
+  },
+  "8895": {
+    "id": 8895,
+    "quality": 4,
+    "effect": null
+  },
+  "8896": {
+    "id": 8896,
+    "quality": 2,
+    "effect": {
+      "id": 170294,
+      "index": 0,
+      "spell": {
+        "id": 397680,
+        "name": "Flying Serpent Kick",
+        "icon": "ability_monk_flyingdragonkick"
+      }
+    }
+  },
+  "8897": {
+    "id": 8897,
+    "quality": 3,
+    "effect": {
+      "id": 172475,
+      "index": 0,
+      "spell": {
+        "id": 397683,
+        "name": "Flying Serpent Kick",
+        "icon": "ability_monk_flyingdragonkick"
+      }
+    }
+  },
+  "8898": {
+    "id": 8898,
+    "quality": 4,
+    "effect": {
+      "id": 172476,
+      "index": 0,
+      "spell": {
+        "id": 397686,
+        "name": "Flying Serpent Kick",
+        "icon": "ability_monk_flyingdragonkick"
+      }
+    }
+  },
   "8903": {
     "id": 8903,
     "base_level": 1,
@@ -44271,6 +45498,101 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 415446,
         "name": "Magazine of Healing Darts",
         "icon": "inv_gizmo_runichealthinjector"
+      }
+    }
+  },
+  "8917": {
+    "id": 8917,
+    "quality": 2
+  },
+  "8918": {
+    "id": 8918,
+    "quality": 3
+  },
+  "8919": {
+    "id": 8919,
+    "quality": 4
+  },
+  "8921": {
+    "id": 8921,
+    "quality": 2,
+    "effect": {
+      "id": 172410,
+      "index": 0,
+      "spell": {
+        "id": 397268,
+        "name": "Gorefiend's Grasp",
+        "icon": "ability_deathknight_aoedeathgrip"
+      }
+    }
+  },
+  "8922": {
+    "id": 8922,
+    "quality": 3,
+    "effect": {
+      "id": 172411,
+      "index": 0,
+      "spell": {
+        "id": 397269,
+        "name": "Gorefiend's Grasp",
+        "icon": "ability_deathknight_aoedeathgrip"
+      }
+    }
+  },
+  "8923": {
+    "id": 8923,
+    "quality": 4,
+    "effect": {
+      "id": 172412,
+      "index": 0,
+      "spell": {
+        "id": 397270,
+        "name": "Gorefiend's Grasp",
+        "icon": "ability_deathknight_aoedeathgrip"
+      }
+    }
+  },
+  "8930": {
+    "id": 8930,
+    "tag": "Dragonflight Season 3",
+    "upgrade": {
+      "level": 1,
+      "max": 2,
+      "group": 273,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 4194304,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
+      "bonusId": 8930,
+      "itemLevel": 262,
+      "currency": {
+        "amount": 475,
+        "name": "Valor",
+        "id": 1191,
+        "icon": "pvecurrency-valor"
       }
     }
   },
@@ -48206,9 +49528,139 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9129,
     "quality": 3
   },
+  "9131": {
+    "id": 9131,
+    "quality": 2,
+    "effect": {
+      "id": 172472,
+      "index": 0,
+      "spell": {
+        "id": 397207,
+        "name": "Fire Whirl",
+        "icon": "spell_fire_playingwithfire"
+      }
+    }
+  },
+  "9132": {
+    "id": 9132,
+    "quality": 3,
+    "effect": {
+      "id": 172473,
+      "index": 0,
+      "spell": {
+        "id": 397715,
+        "name": "Fire Whirl",
+        "icon": "spell_fire_playingwithfire"
+      }
+    }
+  },
+  "9133": {
+    "id": 9133,
+    "quality": 4,
+    "effect": {
+      "id": 172474,
+      "index": 0,
+      "spell": {
+        "id": 397717,
+        "name": "Fire Whirl",
+        "icon": "spell_fire_playingwithfire"
+      }
+    }
+  },
+  "9134": {
+    "id": 9134,
+    "quality": 2,
+    "effect": {
+      "id": 170286,
+      "index": 0,
+      "spell": {
+        "id": 376600,
+        "name": "Arcanobomb",
+        "icon": "spell_mage_flameorb_purple"
+      }
+    }
+  },
   "9136": {
     "id": 9136,
     "quality": 4
+  },
+  "9138": {
+    "id": 9138,
+    "quality": 2,
+    "effect": {
+      "id": 172466,
+      "index": 0,
+      "spell": {
+        "id": 397667,
+        "name": "Hellfire",
+        "icon": "spell_fire_incinerate"
+      }
+    }
+  },
+  "9139": {
+    "id": 9139,
+    "quality": 3,
+    "effect": {
+      "id": 172467,
+      "index": 0,
+      "spell": {
+        "id": 397669,
+        "name": "Hellfire",
+        "icon": "spell_fire_incinerate"
+      }
+    }
+  },
+  "9140": {
+    "id": 9140,
+    "quality": 4,
+    "effect": {
+      "id": 172468,
+      "index": 0,
+      "spell": {
+        "id": 397671,
+        "name": "Hellfire",
+        "icon": "spell_fire_incinerate"
+      }
+    }
+  },
+  "9141": {
+    "id": 9141,
+    "quality": 2,
+    "effect": {
+      "id": 172469,
+      "index": 0,
+      "spell": {
+        "id": 397673,
+        "name": "Shadow Barrage",
+        "icon": "spell_fire_twilightrainoffire"
+      }
+    }
+  },
+  "9142": {
+    "id": 9142,
+    "quality": 3,
+    "effect": {
+      "id": 172470,
+      "index": 0,
+      "spell": {
+        "id": 397675,
+        "name": "Shadow Barrage",
+        "icon": "spell_fire_twilightrainoffire"
+      }
+    }
+  },
+  "9143": {
+    "id": 9143,
+    "quality": 4,
+    "effect": {
+      "id": 172471,
+      "index": 0,
+      "spell": {
+        "id": 397677,
+        "name": "Shadow Barrage",
+        "icon": "spell_fire_twilightrainoffire"
+      }
+    }
   },
   "9148": {
     "id": 9148,
@@ -48218,10 +49670,790 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9149,
     "tag": "Remarkable"
   },
+  "9152": {
+    "id": 9152,
+    "quality": 2,
+    "effect": {
+      "id": 172563,
+      "index": 0,
+      "spell": {
+        "id": 398378,
+        "name": "Fists of Earthen Fury",
+        "icon": "monk_ability_fistoffury"
+      }
+    }
+  },
+  "9153": {
+    "id": 9153,
+    "quality": 3,
+    "effect": {
+      "id": 172565,
+      "index": 0,
+      "spell": {
+        "id": 398383,
+        "name": "Fists of Earthen Fury",
+        "icon": "monk_ability_fistoffury"
+      }
+    }
+  },
+  "9154": {
+    "id": 9154,
+    "quality": 4,
+    "effect": {
+      "id": 172567,
+      "index": 0,
+      "spell": {
+        "id": 398389,
+        "name": "Fists of Earthen Fury",
+        "icon": "monk_ability_fistoffury"
+      }
+    }
+  },
+  "9155": {
+    "id": 9155,
+    "effect": {
+      "id": 172599,
+      "index": 0,
+      "spell": {
+        "id": 395758,
+        "name": "Shadow Barrage",
+        "icon": "spell_fire_twilightrainoffire"
+      }
+    },
+    "quality": 1
+  },
   "9156": {
     "id": 9156,
     "ilevel": "206 @plvl 45 - 327 @plvl 327",
     "curveId": 30724
+  },
+  "9157": {
+    "id": 9157,
+    "effect": {
+      "id": 172602,
+      "index": 0,
+      "spell": {
+        "id": 361126,
+        "name": "Death Grip",
+        "icon": "spell_deathknight_strangulate"
+      }
+    },
+    "quality": 1
+  },
+  "9159": {
+    "id": 9159,
+    "quality": 2,
+    "effect": {
+      "id": 172629,
+      "index": 0,
+      "spell": {
+        "id": 398735,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9160": {
+    "id": 9160,
+    "quality": 3,
+    "effect": {
+      "id": 172630,
+      "index": 0,
+      "spell": {
+        "id": 398737,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9161": {
+    "id": 9161,
+    "quality": 4,
+    "effect": {
+      "id": 172631,
+      "index": 0,
+      "spell": {
+        "id": 398739,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9162": {
+    "id": 9162,
+    "effect": {
+      "id": 172632,
+      "index": 0,
+      "spell": {
+        "id": 398721,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    },
+    "quality": 1
+  },
+  "9163": {
+    "id": 9163,
+    "effect": {
+      "id": 172646,
+      "index": 0,
+      "spell": {
+        "id": 373272,
+        "name": "Spitfire",
+        "icon": "ability_warlock_fireandbrimstone"
+      }
+    },
+    "quality": 1
+  },
+  "9164": {
+    "id": 9164,
+    "effect": {
+      "id": 172647,
+      "index": 0,
+      "spell": {
+        "id": 361451,
+        "name": "Fire Whirl",
+        "icon": "spell_fire_playingwithfire"
+      }
+    },
+    "quality": 1
+  },
+  "9165": {
+    "id": 9165,
+    "effect": {
+      "id": 172648,
+      "index": 0,
+      "spell": {
+        "id": 361372,
+        "name": "Frozen Orb",
+        "icon": "spell_frost_frozenorb"
+      }
+    },
+    "quality": 1
+  },
+  "9166": {
+    "id": 9166,
+    "effect": {
+      "id": 172649,
+      "index": 0,
+      "spell": {
+        "id": 361382,
+        "name": "Arcanosphere",
+        "icon": "ability_mage_arcanosphere"
+      }
+    },
+    "quality": 1
+  },
+  "9167": {
+    "id": 9167,
+    "effect": {
+      "id": 172650,
+      "index": 0,
+      "spell": {
+        "id": 362914,
+        "name": "Blessed Hammer",
+        "icon": "paladin_retribution"
+      }
+    },
+    "quality": 1
+  },
+  "9168": {
+    "id": 9168,
+    "effect": {
+      "id": 172651,
+      "index": 0,
+      "spell": {
+        "id": 369774,
+        "name": "Dark Star",
+        "icon": "spell_priest_divinestar_shadow"
+      }
+    },
+    "quality": 1
+  },
+  "9169": {
+    "id": 9169,
+    "effect": {
+      "id": 172652,
+      "index": 0,
+      "spell": {
+        "id": 361622,
+        "name": "Fists of Earthen Fury",
+        "icon": "monk_ability_fistoffury"
+      }
+    },
+    "quality": 1
+  },
+  "9170": {
+    "id": 9170,
+    "effect": {
+      "id": 172653,
+      "index": 0,
+      "spell": {
+        "id": 373231,
+        "name": "Flying Serpent Kick",
+        "icon": "ability_monk_flyingdragonkick"
+      }
+    },
+    "quality": 1
+  },
+  "9171": {
+    "id": 9171,
+    "effect": {
+      "id": 172654,
+      "index": 0,
+      "spell": {
+        "id": 373235,
+        "name": "Holy Dragon Punch",
+        "icon": "ability_monk_hurricanestrike"
+      }
+    },
+    "quality": 1
+  },
+  "9172": {
+    "id": 9172,
+    "effect": {
+      "id": 172655,
+      "index": 0,
+      "spell": {
+        "id": 375685,
+        "name": "Earthbreaker",
+        "icon": "inv_ore_blackrock_nugget"
+      }
+    },
+    "quality": 1
+  },
+  "9173": {
+    "id": 9173,
+    "effect": {
+      "id": 172656,
+      "index": 0,
+      "spell": {
+        "id": 387111,
+        "name": "Arcane Storm",
+        "icon": "spell_druid_astralstorm"
+      }
+    },
+    "quality": 1
+  },
+  "9174": {
+    "id": 9174,
+    "effect": {
+      "id": 172657,
+      "index": 0,
+      "spell": {
+        "id": 362919,
+        "name": "Capacitor Totem",
+        "icon": "spell_nature_brilliance"
+      }
+    },
+    "quality": 1
+  },
+  "9175": {
+    "id": 9175,
+    "effect": {
+      "id": 172658,
+      "index": 0,
+      "spell": {
+        "id": 371846,
+        "name": "Dragon's Breath",
+        "icon": "inv_misc_head_dragon_01"
+      }
+    },
+    "quality": 1
+  },
+  "9176": {
+    "id": 9176,
+    "effect": {
+      "id": 172659,
+      "index": 0,
+      "spell": {
+        "id": 363355,
+        "name": "Frost Nova",
+        "icon": "spell_frost_frostnova"
+      }
+    },
+    "quality": 1
+  },
+  "9177": {
+    "id": 9177,
+    "effect": {
+      "id": 172660,
+      "index": 0,
+      "spell": {
+        "id": 352278,
+        "name": "Ice Wall",
+        "icon": "ability_mage_icewall"
+      }
+    },
+    "quality": 1
+  },
+  "9178": {
+    "id": 9178,
+    "effect": {
+      "id": 172661,
+      "index": 0,
+      "spell": {
+        "id": 372405,
+        "name": "Intimidating Shout",
+        "icon": "ability_golemthunderclap"
+      }
+    },
+    "quality": 1
+  },
+  "9179": {
+    "id": 9179,
+    "effect": {
+      "id": 172662,
+      "index": 0,
+      "spell": {
+        "id": 361618,
+        "name": "Mighty Ox Kick",
+        "icon": "ability_monk_mightyoxkick"
+      }
+    },
+    "quality": 1
+  },
+  "9180": {
+    "id": 9180,
+    "effect": {
+      "id": 172663,
+      "index": 0,
+      "spell": {
+        "id": 373239,
+        "name": "Icebind",
+        "icon": "spell_mage_frostbomb"
+      }
+    },
+    "quality": 1
+  },
+  "9181": {
+    "id": 9181,
+    "effect": {
+      "id": 172664,
+      "index": 0,
+      "spell": {
+        "id": 372532,
+        "name": "Thunderstorm",
+        "icon": "spell_shaman_thunderstorm"
+      }
+    },
+    "quality": 1
+  },
+  "9182": {
+    "id": 9182,
+    "effect": {
+      "id": 172665,
+      "index": 0,
+      "spell": {
+        "id": 361147,
+        "name": "Alter Time",
+        "icon": "spell_mage_altertime"
+      }
+    },
+    "quality": 1
+  },
+  "9183": {
+    "id": 9183,
+    "effect": {
+      "id": 172666,
+      "index": 0,
+      "spell": {
+        "id": 371909,
+        "name": "Anti-Magic Shell",
+        "icon": "spell_shadow_antimagicshell"
+      }
+    },
+    "quality": 1
+  },
+  "9184": {
+    "id": 9184,
+    "effect": {
+      "id": 172667,
+      "index": 0,
+      "spell": {
+        "id": 373016,
+        "name": "Dispersion",
+        "icon": "spell_shadow_dispersion"
+      }
+    },
+    "quality": 1
+  },
+  "9185": {
+    "id": 9185,
+    "effect": {
+      "id": 172668,
+      "index": 0,
+      "spell": {
+        "id": 361063,
+        "name": "Feign Death",
+        "icon": "ability_rogue_feigndeath"
+      }
+    },
+    "quality": 1
+  },
+  "9186": {
+    "id": 9186,
+    "effect": {
+      "id": 172669,
+      "index": 0,
+      "spell": {
+        "id": 372519,
+        "name": "Grounding Totem",
+        "icon": "spell_nature_groundingtotem"
+      }
+    },
+    "quality": 1
+  },
+  "9187": {
+    "id": 9187,
+    "effect": {
+      "id": 172670,
+      "index": 0,
+      "spell": {
+        "id": 361059,
+        "name": "Ice Block",
+        "icon": "spell_frost_frost"
+      }
+    },
+    "quality": 1
+  },
+  "9188": {
+    "id": 9188,
+    "effect": {
+      "id": 172671,
+      "index": 0,
+      "spell": {
+        "id": 361062,
+        "name": "Spell Reflection",
+        "icon": "ability_warrior_shieldreflection"
+      }
+    },
+    "quality": 1
+  },
+  "9189": {
+    "id": 9189,
+    "effect": {
+      "id": 172672,
+      "index": 0,
+      "spell": {
+        "id": 361061,
+        "name": "Vanish",
+        "icon": "ability_vanish"
+      }
+    },
+    "quality": 1
+  },
+  "9190": {
+    "id": 9190,
+    "effect": {
+      "id": 172673,
+      "index": 0,
+      "spell": {
+        "id": 361629,
+        "name": "Anti-Magic Zone",
+        "icon": "spell_deathknight_antimagiczone"
+      }
+    },
+    "quality": 1
+  },
+  "9191": {
+    "id": 9191,
+    "effect": {
+      "id": 172678,
+      "index": 0,
+      "spell": {
+        "id": 374050,
+        "name": "Gorefiend's Grasp",
+        "icon": "ability_deathknight_aoedeathgrip"
+      }
+    },
+    "quality": 1
+  },
+  "9192": {
+    "id": 9192,
+    "effect": {
+      "id": 172679,
+      "index": 0,
+      "spell": {
+        "id": 361628,
+        "name": "Darkness",
+        "icon": "ability_demonhunter_darkness"
+      }
+    },
+    "quality": 1
+  },
+  "9193": {
+    "id": 9193,
+    "effect": {
+      "id": 172680,
+      "index": 0,
+      "spell": {
+        "id": 361150,
+        "name": "Smoke Bomb",
+        "icon": "ability_rogue_smoke"
+      }
+    },
+    "quality": 1
+  },
+  "9194": {
+    "id": 9194,
+    "effect": {
+      "id": 172681,
+      "index": 0,
+      "spell": {
+        "id": 395724,
+        "name": "Arclight Cannon",
+        "icon": "inv_weapon_rifle_33"
+      }
+    },
+    "quality": 1
+  },
+  "9195": {
+    "id": 9195,
+    "quality": 2,
+    "effect": {
+      "id": 172682,
+      "index": 0,
+      "spell": {
+        "id": 398735,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9196": {
+    "id": 9196,
+    "quality": 3,
+    "effect": {
+      "id": 172683,
+      "index": 0,
+      "spell": {
+        "id": 398737,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9197": {
+    "id": 9197,
+    "quality": 4,
+    "effect": {
+      "id": 172684,
+      "index": 0,
+      "spell": {
+        "id": 398739,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9198": {
+    "id": 9198,
+    "effect": {
+      "id": 172685,
+      "index": 0,
+      "spell": {
+        "id": 385804,
+        "name": "Hunting Bow",
+        "icon": "inv_weapon_bow_11"
+      }
+    },
+    "quality": 1
+  },
+  "9199": {
+    "id": 9199,
+    "quality": 2,
+    "effect": {
+      "id": 172686,
+      "index": 0,
+      "spell": {
+        "id": 398735,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9200": {
+    "id": 9200,
+    "quality": 3,
+    "effect": {
+      "id": 172687,
+      "index": 0,
+      "spell": {
+        "id": 398737,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9201": {
+    "id": 9201,
+    "quality": 4,
+    "effect": {
+      "id": 172688,
+      "index": 0,
+      "spell": {
+        "id": 398739,
+        "name": "Snowdrift",
+        "icon": "spell_fire_blueflamestrike"
+      }
+    }
+  },
+  "9202": {
+    "id": 9202,
+    "effect": {
+      "id": 172689,
+      "index": 0,
+      "spell": {
+        "id": 395014,
+        "name": "Vanguard Sword",
+        "icon": "inv_sword_1h_newplayer_a_03"
+      }
+    },
+    "quality": 1
+  },
+  "9203": {
+    "id": 9203,
+    "quality": 2,
+    "effect": {
+      "id": 172690,
+      "index": 0,
+      "spell": {
+        "id": 395014,
+        "name": "Vanguard Sword",
+        "icon": "inv_sword_1h_newplayer_a_03"
+      }
+    }
+  },
+  "9204": {
+    "id": 9204,
+    "quality": 3,
+    "effect": {
+      "id": 172691,
+      "index": 0,
+      "spell": {
+        "id": 395014,
+        "name": "Vanguard Sword",
+        "icon": "inv_sword_1h_newplayer_a_03"
+      }
+    }
+  },
+  "9205": {
+    "id": 9205,
+    "quality": 4,
+    "effect": {
+      "id": 172692,
+      "index": 0,
+      "spell": {
+        "id": 395014,
+        "name": "Vanguard Sword",
+        "icon": "inv_sword_1h_newplayer_a_03"
+      }
+    }
+  },
+  "9206": {
+    "id": 9206,
+    "effect": {
+      "id": 172693,
+      "index": 0,
+      "spell": {
+        "id": 372331,
+        "name": "Frostscythe",
+        "icon": "inv_staff_78"
+      }
+    },
+    "quality": 1
+  },
+  "9207": {
+    "id": 9207,
+    "quality": 2,
+    "effect": {
+      "id": 172694,
+      "index": 0,
+      "spell": {
+        "id": 372331,
+        "name": "Frostscythe",
+        "icon": "inv_staff_78"
+      }
+    }
+  },
+  "9208": {
+    "id": 9208,
+    "quality": 3,
+    "effect": {
+      "id": 172695,
+      "index": 0,
+      "spell": {
+        "id": 372331,
+        "name": "Frostscythe",
+        "icon": "inv_staff_78"
+      }
+    }
+  },
+  "9209": {
+    "id": 9209,
+    "quality": 4,
+    "effect": {
+      "id": 172696,
+      "index": 0,
+      "spell": {
+        "id": 372331,
+        "name": "Frostscythe",
+        "icon": "inv_staff_78"
+      }
+    }
+  },
+  "9210": {
+    "id": 9210,
+    "effect": {
+      "id": 172697,
+      "index": 0,
+      "spell": {
+        "id": 401321,
+        "name": "Blitzfire Revolver",
+        "icon": "inv_weapon_rifle_40"
+      }
+    },
+    "quality": 1
+  },
+  "9211": {
+    "id": 9211,
+    "quality": 2,
+    "effect": {
+      "id": 172698,
+      "index": 0,
+      "spell": {
+        "id": 401321,
+        "name": "Blitzfire Revolver",
+        "icon": "inv_weapon_rifle_40"
+      }
+    }
+  },
+  "9212": {
+    "id": 9212,
+    "quality": 3,
+    "effect": {
+      "id": 172699,
+      "index": 0,
+      "spell": {
+        "id": 401321,
+        "name": "Blitzfire Revolver",
+        "icon": "inv_weapon_rifle_40"
+      }
+    }
+  },
+  "9213": {
+    "id": 9213,
+    "quality": 4,
+    "effect": {
+      "id": 172700,
+      "index": 0,
+      "spell": {
+        "id": 401321,
+        "name": "Blitzfire Revolver",
+        "icon": "inv_weapon_rifle_40"
+      }
+    }
   },
   "9222": {
     "id": 9222,
@@ -48274,6 +50506,331 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 400698,
         "name": "Griftah's All-Purpose Embellishing Powder",
         "icon": "inv_misc_powder_mithril"
+      }
+    }
+  },
+  "9238": {
+    "id": 9238,
+    "quality": 1,
+    "effect": {
+      "id": 173386,
+      "index": 0,
+      "spell": {
+        "id": 361151,
+        "name": "Disengage",
+        "icon": "ability_rogue_feint"
+      }
+    }
+  },
+  "9239": {
+    "id": 9239,
+    "quality": 2,
+    "effect": {
+      "id": 173387,
+      "index": 0,
+      "spell": {
+        "id": 363344,
+        "name": "Horn of the Frostwyrm",
+        "icon": "inv_misc_horn_02"
+      }
+    }
+  },
+  "9240": {
+    "id": 9240,
+    "quality": 3,
+    "effect": {
+      "id": 173388,
+      "index": 0,
+      "spell": {
+        "id": 361151,
+        "name": "Disengage",
+        "icon": "ability_rogue_feint"
+      }
+    }
+  },
+  "9241": {
+    "id": 9241,
+    "quality": 4,
+    "effect": {
+      "id": 173389,
+      "index": 0,
+      "spell": {
+        "id": 361151,
+        "name": "Disengage",
+        "icon": "ability_rogue_feint"
+      }
+    }
+  },
+  "9242": {
+    "id": 9242,
+    "quality": 1,
+    "effect": {
+      "id": 173390,
+      "index": 0,
+      "spell": {
+        "id": 363344,
+        "name": "Horn of the Frostwyrm",
+        "icon": "inv_misc_horn_02"
+      }
+    }
+  },
+  "9243": {
+    "id": 9243,
+    "quality": 2,
+    "effect": {
+      "id": 173387,
+      "index": 0,
+      "spell": {
+        "id": 363344,
+        "name": "Horn of the Frostwyrm",
+        "icon": "inv_misc_horn_02"
+      }
+    }
+  },
+  "9244": {
+    "id": 9244,
+    "quality": 3,
+    "effect": {
+      "id": 173394,
+      "index": 0,
+      "spell": {
+        "id": 363344,
+        "name": "Horn of the Frostwyrm",
+        "icon": "inv_misc_horn_02"
+      }
+    }
+  },
+  "9245": {
+    "id": 9245,
+    "quality": 4,
+    "effect": {
+      "id": 173396,
+      "index": 0,
+      "spell": {
+        "id": 363344,
+        "name": "Horn of the Frostwyrm",
+        "icon": "inv_misc_horn_02"
+      }
+    }
+  },
+  "9246": {
+    "id": 9246,
+    "quality": 1,
+    "effect": {
+      "id": 173397,
+      "index": 0,
+      "spell": {
+        "id": 361138,
+        "name": "Roll",
+        "icon": "ability_monk_roll"
+      }
+    }
+  },
+  "9247": {
+    "id": 9247,
+    "quality": 2,
+    "effect": {
+      "id": 173398,
+      "index": 0,
+      "spell": {
+        "id": 361138,
+        "name": "Roll",
+        "icon": "ability_monk_roll"
+      }
+    }
+  },
+  "9248": {
+    "id": 9248,
+    "quality": 3,
+    "effect": {
+      "id": 173399,
+      "index": 0,
+      "spell": {
+        "id": 361138,
+        "name": "Roll",
+        "icon": "ability_monk_roll"
+      }
+    }
+  },
+  "9249": {
+    "id": 9249,
+    "quality": 4,
+    "effect": {
+      "id": 173400,
+      "index": 0,
+      "spell": {
+        "id": 361138,
+        "name": "Roll",
+        "icon": "ability_monk_roll"
+      }
+    }
+  },
+  "9250": {
+    "id": 9250,
+    "quality": 1,
+    "effect": {
+      "id": 173403,
+      "index": 0,
+      "spell": {
+        "id": 401219,
+        "name": "Arclight Spanner",
+        "icon": "inv_engineering_815_uberspanner"
+      }
+    }
+  },
+  "9251": {
+    "id": 9251,
+    "quality": 2,
+    "effect": {
+      "id": 173404,
+      "index": 0,
+      "spell": {
+        "id": 401219,
+        "name": "Arclight Spanner",
+        "icon": "inv_engineering_815_uberspanner"
+      }
+    }
+  },
+  "9252": {
+    "id": 9252,
+    "quality": 3,
+    "effect": {
+      "id": 173405,
+      "index": 0,
+      "spell": {
+        "id": 401219,
+        "name": "Arclight Spanner",
+        "icon": "inv_engineering_815_uberspanner"
+      }
+    }
+  },
+  "9253": {
+    "id": 9253,
+    "quality": 4,
+    "effect": {
+      "id": 173407,
+      "index": 0,
+      "spell": {
+        "id": 401219,
+        "name": "Arclight Spanner",
+        "icon": "inv_engineering_815_uberspanner"
+      }
+    }
+  },
+  "9254": {
+    "id": 9254,
+    "quality": 1,
+    "effect": {
+      "id": 173409,
+      "index": 0,
+      "spell": {
+        "id": 394809,
+        "name": "Shield Block",
+        "icon": "inv_shield_1h_newplayer_a_01"
+      }
+    }
+  },
+  "9255": {
+    "id": 9255,
+    "quality": 2,
+    "effect": {
+      "id": 173411,
+      "index": 0,
+      "spell": {
+        "id": 394809,
+        "name": "Shield Block",
+        "icon": "inv_shield_1h_newplayer_a_01"
+      }
+    }
+  },
+  "9256": {
+    "id": 9256,
+    "quality": 3,
+    "effect": {
+      "id": 173412,
+      "index": 0,
+      "spell": {
+        "id": 394809,
+        "name": "Shield Block",
+        "icon": "inv_shield_1h_newplayer_a_01"
+      }
+    }
+  },
+  "9257": {
+    "id": 9257,
+    "quality": 4,
+    "effect": {
+      "id": 173413,
+      "index": 0,
+      "spell": {
+        "id": 394809,
+        "name": "Shield Block",
+        "icon": "inv_shield_1h_newplayer_a_01"
+      }
+    }
+  },
+  "9258": {
+    "id": 9258,
+    "quality": 1,
+    "effect": {
+      "id": 173433,
+      "index": 0,
+      "spell": {
+        "id": 402380,
+        "name": "Molten Boulder",
+        "icon": "spell_mage_flameorb"
+      }
+    }
+  },
+  "9259": {
+    "id": 9259,
+    "quality": 2,
+    "effect": {
+      "id": 173434,
+      "index": 0,
+      "spell": {
+        "id": 402436,
+        "name": "Molten Boulder",
+        "icon": "spell_mage_flameorb"
+      }
+    }
+  },
+  "9260": {
+    "id": 9260,
+    "quality": 3,
+    "effect": {
+      "id": 173435,
+      "index": 0,
+      "spell": {
+        "id": 402442,
+        "name": "Molten Boulder",
+        "icon": "spell_mage_flameorb"
+      }
+    }
+  },
+  "9261": {
+    "id": 9261,
+    "quality": 4,
+    "effect": {
+      "id": 173436,
+      "index": 0,
+      "spell": {
+        "id": 402449,
+        "name": "Molten Boulder",
+        "icon": "spell_mage_flameorb"
+      }
+    }
+  },
+  "9262": {
+    "id": 9262,
+    "quality": 2,
+    "effect": {
+      "id": 173404,
+      "index": 0,
+      "spell": {
+        "id": 401219,
+        "name": "Arclight Spanner",
+        "icon": "inv_engineering_815_uberspanner"
       }
     }
   },
@@ -49815,6 +52372,32 @@ export const bonus_IDs: {[key: string]: any} = {
     "base_level": 408,
     "base_level_priority": 100
   },
+  "9352": {
+    "id": 9352,
+    "quality": 1,
+    "effect": {
+      "id": 173842,
+      "index": 0,
+      "spell": {
+        "id": 394019,
+        "name": "Fisticuffs",
+        "icon": "inv_relics_totemofrage"
+      }
+    }
+  },
+  "9353": {
+    "id": 9353,
+    "quality": 1,
+    "effect": {
+      "id": 173843,
+      "index": 0,
+      "spell": {
+        "id": 385212,
+        "name": "Guard",
+        "icon": "ability_warrior_shieldmastery"
+      }
+    }
+  },
   "9354": {
     "id": 9354,
     "ilevel": "14 @plvl 1 - 329 @plvl 329",
@@ -49868,6 +52451,19 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 1748,
     "quality": 4
+  },
+  "9364": {
+    "id": 9364,
+    "quality": 1,
+    "effect": {
+      "id": 173922,
+      "index": 0,
+      "spell": {
+        "id": 376361,
+        "name": "Hellfire",
+        "icon": "spell_fire_incinerate"
+      }
+    }
   },
   "9365": {
     "id": 9365,
@@ -52491,6 +55087,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "21 @plvl 1 - 385 @plvl 385",
     "curveId": 66349
   },
+  "9496": {
+    "id": 9496,
+    "effect": {
+      "id": 178629,
+      "index": 0
+    },
+    "name": "II"
+  },
   "9498": {
     "id": 9498,
     "base_level": 450,
@@ -52749,7 +55353,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9537": {
     "id": 9537,
@@ -52892,7 +55497,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9538": {
     "id": 9538,
@@ -53035,7 +55641,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9539": {
     "id": 9539,
@@ -53178,7 +55785,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9540": {
     "id": 9540,
@@ -53369,7 +55977,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9541": {
     "id": 9541,
@@ -53560,7 +56169,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9542": {
     "id": 9542,
@@ -53751,7 +56361,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9543": {
     "id": 9543,
@@ -53942,7 +56553,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9544": {
     "id": 9544,
@@ -54085,7 +56697,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 2
+    "quality": 2,
+    "tag": "Dragonflight Season 3"
   },
   "9545": {
     "id": 9545,
@@ -54228,7 +56841,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 2
+    "quality": 2,
+    "tag": "Dragonflight Season 3"
   },
   "9546": {
     "id": 9546,
@@ -54371,7 +56985,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9547": {
     "id": 9547,
@@ -54514,7 +57129,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9548": {
     "id": 9548,
@@ -54657,7 +57273,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9549": {
     "id": 9549,
@@ -54800,7 +57417,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9550": {
     "id": 9550,
@@ -54943,7 +57561,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9551": {
     "id": 9551,
@@ -55086,7 +57705,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 3
+    "quality": 3,
+    "tag": "Dragonflight Season 3"
   },
   "9552": {
     "id": 9552,
@@ -55277,7 +57897,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9553": {
     "id": 9553,
@@ -55468,7 +58089,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9554": {
     "id": 9554,
@@ -55659,7 +58281,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9555": {
     "id": 9555,
@@ -55850,7 +58473,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9556": {
     "id": 9556,
@@ -56041,7 +58665,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9557": {
     "id": 9557,
@@ -56232,7 +58857,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9558": {
     "id": 9558,
@@ -56423,7 +59049,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9559": {
     "id": 9559,
@@ -56614,7 +59241,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9560": {
     "id": 9560,
@@ -56805,7 +59433,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9561": {
     "id": 9561,
@@ -56996,7 +59625,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9562": {
     "id": 9562,
@@ -57187,7 +59817,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9563": {
     "id": 9563,
@@ -57378,7 +60009,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9564": {
     "id": 9564,
@@ -57569,7 +60201,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9565": {
     "id": 9565,
@@ -57760,7 +60393,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9566": {
     "id": 9566,
@@ -57951,7 +60585,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9567": {
     "id": 9567,
@@ -58142,7 +60777,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9568": {
     "id": 9568,
@@ -58333,7 +60969,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9569": {
     "id": 9569,
@@ -58524,7 +61161,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9570": {
     "id": 9570,
@@ -58715,7 +61353,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9571": {
     "id": 9571,
@@ -58906,7 +61545,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9572": {
     "id": 9572,
@@ -59097,7 +61737,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9573": {
     "id": 9573,
@@ -59288,7 +61929,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9574": {
     "id": 9574,
@@ -59479,7 +62121,8 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9575": {
     "id": 9575,
@@ -59670,11 +62313,11 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9576": {
     "id": 9576,
-    "quality": 4,
     "upgrade": {
       "level": 4,
       "max": 4,
@@ -59861,15 +62504,19 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "seasonId": 22
-    }
+    },
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9577": {
     "id": 9577,
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9578": {
     "id": 9578,
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9581": {
     "id": 9581,
@@ -60060,11 +62707,47 @@ export const bonus_IDs: {[key: string]: any} = {
       ],
       "seasonId": 22
     },
-    "quality": 4
+    "quality": 4,
+    "tag": "Dragonflight Season 3"
   },
   "9584": {
     "id": 9584,
     "tag": "|nShadowflame Suffused"
+  },
+  "9598": {
+    "id": 9598,
+    "ilevel": "13 @plvl 10 - 342 @plvl 342",
+    "curveId": 69884
+  },
+  "9601": {
+    "id": 9601,
+    "ilevel": "13 @plvl 10 - 342 @plvl 342",
+    "curveId": 69884
+  },
+  "9610": {
+    "id": 9610,
+    "socket": 1
+  },
+  "9611": {
+    "id": 9611,
+    "socket": 2,
+    "quality": 3
+  },
+  "9612": {
+    "id": 9612,
+    "socket": 3,
+    "quality": 4
+  },
+  "9613": {
+    "id": 9613,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 12000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [1.2000]"
   },
   "9614": {
     "id": 9614,
@@ -60078,6 +62761,61 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "9618": {
+    "id": 9618,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 12000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [1.2000]"
+  },
+  "9619": {
+    "id": 9619,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 12000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [1.2000]"
+  },
+  "9620": {
+    "id": 9620,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 24000,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [2.4000]"
+  },
+  "9621": {
+    "id": 9621,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 36000,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [3.6000]"
+  },
+  "9622": {
+    "id": 9622,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 8000,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.8000]"
+  },
   "9634": {
     "id": 9634,
     "quality": 3
@@ -60090,45 +62828,1593 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9636,
     "tag": "Heroic"
   },
+  "9638": {
+    "id": 9638,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 4802,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [0.4802]"
+  },
   "9639": {
     "id": 9639,
     "tag": "Mythic+"
   },
-  "9813": {
-    "id": 9813,
-    "tag": "Unranked"
+  "9640": {
+    "id": 9640,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 0,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "0% StrAgiInt [0.0000]"
   },
-  "9814": {
-    "id": 9814,
-    "tag": "Combatant I"
+  "9641": {
+    "id": 9641,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 9604,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [0.9604]"
   },
-  "9815": {
-    "id": 9815,
-    "tag": "Combatant II"
+  "9642": {
+    "id": 9642,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 0,
+        "name": "Sta"
+      }
+    ],
+    "stats": "0% Sta [0.0000]"
   },
-  "9816": {
-    "id": 9816,
-    "tag": "Challenger I"
+  "9643": {
+    "id": 9643,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 4802,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [0.4802]"
   },
-  "9817": {
-    "id": 9817,
-    "tag": "Challenger II"
+  "9644": {
+    "id": 9644,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 9604,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [0.9604]"
   },
-  "9818": {
-    "id": 9818,
-    "tag": "Rival I"
+  "9645": {
+    "id": 9645,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 0,
+        "name": "Crit"
+      }
+    ],
+    "stats": "0% Crit [0.0000]"
   },
-  "9819": {
-    "id": 9819,
-    "tag": "Rival II"
+  "9646": {
+    "id": 9646,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 4802,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.4802]"
   },
-  "9820": {
-    "id": 9820,
-    "tag": "Duelist"
+  "9647": {
+    "id": 9647,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 9604,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.9604]"
   },
-  "9821": {
-    "id": 9821,
-    "tag": "Elite"
+  "9648": {
+    "id": 9648,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 0,
+        "name": "Haste"
+      }
+    ],
+    "stats": "0% Haste [0.0000]"
+  },
+  "9649": {
+    "id": 9649,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 4802,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.4802]"
+  },
+  "9650": {
+    "id": 9650,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 9604,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.9604]"
+  },
+  "9651": {
+    "id": 9651,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 0,
+        "name": "Leech"
+      }
+    ],
+    "stats": "0% Leech [0.0000]"
+  },
+  "9652": {
+    "id": 9652,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 4802,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [0.4802]"
+  },
+  "9653": {
+    "id": 9653,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 9604,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [0.9604]"
+  },
+  "9654": {
+    "id": 9654,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 0,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "0% Mastery [0.0000]"
+  },
+  "9655": {
+    "id": 9655,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 4802,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.4802]"
+  },
+  "9656": {
+    "id": 9656,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 9604,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.9604]"
+  },
+  "9657": {
+    "id": 9657,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 0,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "0% HealthRegen [0.0000]"
+  },
+  "9658": {
+    "id": 9658,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 4802,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [0.4802]"
+  },
+  "9659": {
+    "id": 9659,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 9604,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [0.9604]"
+  },
+  "9660": {
+    "id": 9660,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 0,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "0% RunSpeed [0.0000]"
+  },
+  "9661": {
+    "id": 9661,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 4802,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.4802]"
+  },
+  "9662": {
+    "id": 9662,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 9604,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.9604]"
+  },
+  "9663": {
+    "id": 9663,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 0,
+        "name": "Vers"
+      }
+    ],
+    "stats": "0% Vers [0.0000]"
+  },
+  "9664": {
+    "id": 9664,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 4802,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.4802]"
+  },
+  "9665": {
+    "id": 9665,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 9604,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.9604]"
+  },
+  "9666": {
+    "id": 9666,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 14406,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [1.4406]"
+  },
+  "9667": {
+    "id": 9667,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 19208,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [1.9208]"
+  },
+  "9668": {
+    "id": 9668,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 24010,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [2.4010]"
+  },
+  "9669": {
+    "id": 9669,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 28812,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [2.8812]"
+  },
+  "9670": {
+    "id": 9670,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 33614,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [3.3614]"
+  },
+  "9671": {
+    "id": 9671,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 38416,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [3.8416]"
+  },
+  "9672": {
+    "id": 9672,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 43218,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [4.3218]"
+  },
+  "9673": {
+    "id": 9673,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 48020,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [4.8020]"
+  },
+  "9674": {
+    "id": 9674,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 52822,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [5.2822]"
+  },
+  "9675": {
+    "id": 9675,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 57624,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [5.7624]"
+  },
+  "9676": {
+    "id": 9676,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 62426,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [6.2426]"
+  },
+  "9677": {
+    "id": 9677,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 67228,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [6.7228]"
+  },
+  "9678": {
+    "id": 9678,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 72030,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [7.2030]"
+  },
+  "9679": {
+    "id": 9679,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 14406,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [1.4406]"
+  },
+  "9680": {
+    "id": 9680,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 19208,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [1.9208]"
+  },
+  "9681": {
+    "id": 9681,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 24010,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [2.4010]"
+  },
+  "9682": {
+    "id": 9682,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 28812,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [2.8812]"
+  },
+  "9683": {
+    "id": 9683,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 33614,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [3.3614]"
+  },
+  "9684": {
+    "id": 9684,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 38416,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [3.8416]"
+  },
+  "9685": {
+    "id": 9685,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 43218,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [4.3218]"
+  },
+  "9686": {
+    "id": 9686,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 48020,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [4.8020]"
+  },
+  "9687": {
+    "id": 9687,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 52822,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [5.2822]"
+  },
+  "9688": {
+    "id": 9688,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 57624,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [5.7624]"
+  },
+  "9689": {
+    "id": 9689,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 62426,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [6.2426]"
+  },
+  "9690": {
+    "id": 9690,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 67228,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [6.7228]"
+  },
+  "9691": {
+    "id": 9691,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 72030,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [7.2030]"
+  },
+  "9692": {
+    "id": 9692,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 14406,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [1.4406]"
+  },
+  "9693": {
+    "id": 9693,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 19208,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [1.9208]"
+  },
+  "9694": {
+    "id": 9694,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 24010,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [2.4010]"
+  },
+  "9695": {
+    "id": 9695,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 28812,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [2.8812]"
+  },
+  "9696": {
+    "id": 9696,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 33614,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [3.3614]"
+  },
+  "9697": {
+    "id": 9697,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 38416,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [3.8416]"
+  },
+  "9698": {
+    "id": 9698,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 43218,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [4.3218]"
+  },
+  "9699": {
+    "id": 9699,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 48020,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [4.8020]"
+  },
+  "9700": {
+    "id": 9700,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 52822,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [5.2822]"
+  },
+  "9701": {
+    "id": 9701,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 52822,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [5.2822]"
+  },
+  "9702": {
+    "id": 9702,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 62426,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [6.2426]"
+  },
+  "9703": {
+    "id": 9703,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 67228,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [6.7228]"
+  },
+  "9704": {
+    "id": 9704,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 72030,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [7.2030]"
+  },
+  "9705": {
+    "id": 9705,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 14406,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [1.4406]"
+  },
+  "9706": {
+    "id": 9706,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 19208,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [1.9208]"
+  },
+  "9707": {
+    "id": 9707,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 24010,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [2.4010]"
+  },
+  "9708": {
+    "id": 9708,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 28812,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [2.8812]"
+  },
+  "9709": {
+    "id": 9709,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 33614,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [3.3614]"
+  },
+  "9710": {
+    "id": 9710,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 38416,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [3.8416]"
+  },
+  "9711": {
+    "id": 9711,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 43218,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [4.3218]"
+  },
+  "9712": {
+    "id": 9712,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 48020,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [4.8020]"
+  },
+  "9713": {
+    "id": 9713,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 52822,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [5.2822]"
+  },
+  "9714": {
+    "id": 9714,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 57624,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [5.7624]"
+  },
+  "9715": {
+    "id": 9715,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 62426,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [6.2426]"
+  },
+  "9716": {
+    "id": 9716,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 67228,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [6.7228]"
+  },
+  "9717": {
+    "id": 9717,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 72030,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [7.2030]"
+  },
+  "9718": {
+    "id": 9718,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 14406,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [1.4406]"
+  },
+  "9719": {
+    "id": 9719,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 19208,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [1.9208]"
+  },
+  "9720": {
+    "id": 9720,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 24010,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [2.4010]"
+  },
+  "9721": {
+    "id": 9721,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 28812,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [2.8812]"
+  },
+  "9722": {
+    "id": 9722,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 33614,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [3.3614]"
+  },
+  "9723": {
+    "id": 9723,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 38416,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [3.8416]"
+  },
+  "9724": {
+    "id": 9724,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 43218,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [4.3218]"
+  },
+  "9725": {
+    "id": 9725,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 48020,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [4.8020]"
+  },
+  "9726": {
+    "id": 9726,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 52822,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [5.2822]"
+  },
+  "9727": {
+    "id": 9727,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 57624,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [5.7624]"
+  },
+  "9728": {
+    "id": 9728,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 62426,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [6.2426]"
+  },
+  "9729": {
+    "id": 9729,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 67228,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [6.7228]"
+  },
+  "9730": {
+    "id": 9730,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 72030,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [7.2030]"
+  },
+  "9731": {
+    "id": 9731,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 14406,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [1.4406]"
+  },
+  "9732": {
+    "id": 9732,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 19208,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [1.9208]"
+  },
+  "9733": {
+    "id": 9733,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 24010,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [2.4010]"
+  },
+  "9734": {
+    "id": 9734,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 28812,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [2.8812]"
+  },
+  "9735": {
+    "id": 9735,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 33614,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [3.3614]"
+  },
+  "9736": {
+    "id": 9736,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 38416,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [3.8416]"
+  },
+  "9737": {
+    "id": 9737,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 43218,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [4.3218]"
+  },
+  "9738": {
+    "id": 9738,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 48020,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [4.8020]"
+  },
+  "9739": {
+    "id": 9739,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 52822,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [5.2822]"
+  },
+  "9740": {
+    "id": 9740,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 57624,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [5.7624]"
+  },
+  "9741": {
+    "id": 9741,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 62426,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [6.2426]"
+  },
+  "9742": {
+    "id": 9742,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 67228,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [6.7228]"
+  },
+  "9743": {
+    "id": 9743,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 72030,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [7.2030]"
+  },
+  "9744": {
+    "id": 9744,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 14406,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [1.4406]"
+  },
+  "9745": {
+    "id": 9745,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 19208,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [1.9208]"
+  },
+  "9746": {
+    "id": 9746,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 24010,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [2.4010]"
+  },
+  "9747": {
+    "id": 9747,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 28812,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [2.8812]"
+  },
+  "9748": {
+    "id": 9748,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 33614,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [3.3614]"
+  },
+  "9749": {
+    "id": 9749,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 38416,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [3.8416]"
+  },
+  "9750": {
+    "id": 9750,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 43218,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [4.3218]"
+  },
+  "9751": {
+    "id": 9751,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 48020,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [4.8020]"
+  },
+  "9752": {
+    "id": 9752,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 52822,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [5.2822]"
+  },
+  "9753": {
+    "id": 9753,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 57624,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [5.7624]"
+  },
+  "9754": {
+    "id": 9754,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 62426,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [6.2426]"
+  },
+  "9755": {
+    "id": 9755,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 67228,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [6.7228]"
+  },
+  "9756": {
+    "id": 9756,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 72030,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [7.2030]"
+  },
+  "9757": {
+    "id": 9757,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 14406,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [1.4406]"
+  },
+  "9758": {
+    "id": 9758,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 19208,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [1.9208]"
+  },
+  "9759": {
+    "id": 9759,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 24010,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [2.4010]"
+  },
+  "9760": {
+    "id": 9760,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 28812,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [2.8812]"
+  },
+  "9761": {
+    "id": 9761,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 33614,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [3.3614]"
+  },
+  "9762": {
+    "id": 9762,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 38416,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [3.8416]"
+  },
+  "9763": {
+    "id": 9763,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 43218,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [4.3218]"
+  },
+  "9764": {
+    "id": 9764,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 48020,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [4.8020]"
+  },
+  "9765": {
+    "id": 9765,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 52822,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [5.2822]"
+  },
+  "9766": {
+    "id": 9766,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 57624,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [5.7624]"
+  },
+  "9767": {
+    "id": 9767,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 62426,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [6.2426]"
+  },
+  "9768": {
+    "id": 9768,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 67228,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [6.7228]"
+  },
+  "9769": {
+    "id": 9769,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 72030,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [7.2030]"
+  },
+  "9770": {
+    "id": 9770,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 14406,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [1.4406]"
+  },
+  "9771": {
+    "id": 9771,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 19208,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [1.9208]"
+  },
+  "9772": {
+    "id": 9772,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 24010,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [2.4010]"
+  },
+  "9773": {
+    "id": 9773,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 28812,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [2.8812]"
+  },
+  "9774": {
+    "id": 9774,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 33614,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [3.3614]"
+  },
+  "9775": {
+    "id": 9775,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 38416,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [3.8416]"
+  },
+  "9776": {
+    "id": 9776,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 43218,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [4.3218]"
+  },
+  "9777": {
+    "id": 9777,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 48020,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [4.8020]"
+  },
+  "9778": {
+    "id": 9778,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 52822,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [5.2822]"
+  },
+  "9779": {
+    "id": 9779,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 57624,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [5.7624]"
+  },
+  "9780": {
+    "id": 9780,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 62426,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [6.2426]"
+  },
+  "9781": {
+    "id": 9781,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 67228,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [6.7228]"
+  },
+  "9782": {
+    "id": 9782,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 72030,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [7.2030]"
   },
   "9834": {
     "id": 9834,
@@ -60474,6 +64760,586 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9922,
     "level": 455
   },
+  "9923": {
+    "id": 9923,
+    "level": 456
+  },
+  "9924": {
+    "id": 9924,
+    "level": 457
+  },
+  "9925": {
+    "id": 9925,
+    "level": 458
+  },
+  "9926": {
+    "id": 9926,
+    "level": 459
+  },
+  "9927": {
+    "id": 9927,
+    "level": 460
+  },
+  "9928": {
+    "id": 9928,
+    "level": 461
+  },
+  "9929": {
+    "id": 9929,
+    "level": 462
+  },
+  "9930": {
+    "id": 9930,
+    "level": 463
+  },
+  "9931": {
+    "id": 9931,
+    "level": 464
+  },
+  "9932": {
+    "id": 9932,
+    "level": 465
+  },
+  "9933": {
+    "id": 9933,
+    "level": 466
+  },
+  "9934": {
+    "id": 9934,
+    "level": 467
+  },
+  "9935": {
+    "id": 9935,
+    "level": 468
+  },
+  "9936": {
+    "id": 9936,
+    "level": 469
+  },
+  "9937": {
+    "id": 9937,
+    "level": 470
+  },
+  "9938": {
+    "id": 9938,
+    "level": 471
+  },
+  "9939": {
+    "id": 9939,
+    "level": 472
+  },
+  "9940": {
+    "id": 9940,
+    "level": 473
+  },
+  "9941": {
+    "id": 9941,
+    "level": 474
+  },
+  "9942": {
+    "id": 9942,
+    "level": 475
+  },
+  "9943": {
+    "id": 9943,
+    "level": 476
+  },
+  "9944": {
+    "id": 9944,
+    "level": 477
+  },
+  "9945": {
+    "id": 9945,
+    "level": 478
+  },
+  "9946": {
+    "id": 9946,
+    "level": 479
+  },
+  "9947": {
+    "id": 9947,
+    "level": 480
+  },
+  "9948": {
+    "id": 9948,
+    "level": 481
+  },
+  "9949": {
+    "id": 9949,
+    "level": 482
+  },
+  "9950": {
+    "id": 9950,
+    "level": 483
+  },
+  "9951": {
+    "id": 9951,
+    "level": 484
+  },
+  "9952": {
+    "id": 9952,
+    "level": 485
+  },
+  "9953": {
+    "id": 9953,
+    "level": 486
+  },
+  "9954": {
+    "id": 9954,
+    "level": 487
+  },
+  "9955": {
+    "id": 9955,
+    "level": 488
+  },
+  "9956": {
+    "id": 9956,
+    "level": 489
+  },
+  "9957": {
+    "id": 9957,
+    "level": 490
+  },
+  "9958": {
+    "id": 9958,
+    "level": 491
+  },
+  "9959": {
+    "id": 9959,
+    "level": 492
+  },
+  "9960": {
+    "id": 9960,
+    "level": 493
+  },
+  "9961": {
+    "id": 9961,
+    "level": 494
+  },
+  "9962": {
+    "id": 9962,
+    "level": 495
+  },
+  "9963": {
+    "id": 9963,
+    "level": 496
+  },
+  "9964": {
+    "id": 9964,
+    "level": 497
+  },
+  "9965": {
+    "id": 9965,
+    "level": 498
+  },
+  "9966": {
+    "id": 9966,
+    "level": 499
+  },
+  "9967": {
+    "id": 9967,
+    "level": 500
+  },
+  "9968": {
+    "id": 9968,
+    "level": 501
+  },
+  "9969": {
+    "id": 9969,
+    "level": 502
+  },
+  "9970": {
+    "id": 9970,
+    "level": 503
+  },
+  "9971": {
+    "id": 9971,
+    "level": 504
+  },
+  "9972": {
+    "id": 9972,
+    "level": 505
+  },
+  "9973": {
+    "id": 9973,
+    "level": 506
+  },
+  "9974": {
+    "id": 9974,
+    "level": 507
+  },
+  "9975": {
+    "id": 9975,
+    "level": 508
+  },
+  "9976": {
+    "id": 9976,
+    "level": 509
+  },
+  "9977": {
+    "id": 9977,
+    "level": 510
+  },
+  "9978": {
+    "id": 9978,
+    "level": 511
+  },
+  "9979": {
+    "id": 9979,
+    "level": 512
+  },
+  "9980": {
+    "id": 9980,
+    "level": 513
+  },
+  "9981": {
+    "id": 9981,
+    "level": 514
+  },
+  "9982": {
+    "id": 9982,
+    "level": 515
+  },
+  "9983": {
+    "id": 9983,
+    "level": 516
+  },
+  "9984": {
+    "id": 9984,
+    "level": 517
+  },
+  "9985": {
+    "id": 9985,
+    "level": 518
+  },
+  "9986": {
+    "id": 9986,
+    "level": 519
+  },
+  "9987": {
+    "id": 9987,
+    "level": 520
+  },
+  "9988": {
+    "id": 9988,
+    "level": 521
+  },
+  "9989": {
+    "id": 9989,
+    "level": 522
+  },
+  "9990": {
+    "id": 9990,
+    "level": 523
+  },
+  "9991": {
+    "id": 9991,
+    "level": 524
+  },
+  "9992": {
+    "id": 9992,
+    "level": 525
+  },
+  "9993": {
+    "id": 9993,
+    "level": 526
+  },
+  "9994": {
+    "id": 9994,
+    "level": 527
+  },
+  "9995": {
+    "id": 9995,
+    "level": 528
+  },
+  "9996": {
+    "id": 9996,
+    "level": 529
+  },
+  "9997": {
+    "id": 9997,
+    "level": 530
+  },
+  "9998": {
+    "id": 9998,
+    "level": 531
+  },
+  "9999": {
+    "id": 9999,
+    "level": 532
+  },
+  "10000": {
+    "id": 10000,
+    "level": 533
+  },
+  "10001": {
+    "id": 10001,
+    "level": 534
+  },
+  "10002": {
+    "id": 10002,
+    "level": 535
+  },
+  "10003": {
+    "id": 10003,
+    "level": 536
+  },
+  "10004": {
+    "id": 10004,
+    "level": 537
+  },
+  "10005": {
+    "id": 10005,
+    "level": 538
+  },
+  "10006": {
+    "id": 10006,
+    "level": 539
+  },
+  "10007": {
+    "id": 10007,
+    "level": 540
+  },
+  "10008": {
+    "id": 10008,
+    "level": 541
+  },
+  "10009": {
+    "id": 10009,
+    "level": 542
+  },
+  "10010": {
+    "id": 10010,
+    "level": 543
+  },
+  "10011": {
+    "id": 10011,
+    "level": 544
+  },
+  "10012": {
+    "id": 10012,
+    "level": 545
+  },
+  "10013": {
+    "id": 10013,
+    "level": 546
+  },
+  "10014": {
+    "id": 10014,
+    "level": 547
+  },
+  "10015": {
+    "id": 10015,
+    "level": 548
+  },
+  "10016": {
+    "id": 10016,
+    "level": 549
+  },
+  "10017": {
+    "id": 10017,
+    "level": 550
+  },
+  "10018": {
+    "id": 10018,
+    "level": 551
+  },
+  "10019": {
+    "id": 10019,
+    "level": 552
+  },
+  "10020": {
+    "id": 10020,
+    "level": 553
+  },
+  "10021": {
+    "id": 10021,
+    "level": 554
+  },
+  "10022": {
+    "id": 10022,
+    "level": 555
+  },
+  "10023": {
+    "id": 10023,
+    "level": 556
+  },
+  "10024": {
+    "id": 10024,
+    "level": 557
+  },
+  "10025": {
+    "id": 10025,
+    "level": 558
+  },
+  "10026": {
+    "id": 10026,
+    "level": 559
+  },
+  "10027": {
+    "id": 10027,
+    "level": 560
+  },
+  "10028": {
+    "id": 10028,
+    "level": 561
+  },
+  "10029": {
+    "id": 10029,
+    "level": 562
+  },
+  "10030": {
+    "id": 10030,
+    "level": 563
+  },
+  "10031": {
+    "id": 10031,
+    "level": 564
+  },
+  "10032": {
+    "id": 10032,
+    "level": 565
+  },
+  "10033": {
+    "id": 10033,
+    "level": 566
+  },
+  "10034": {
+    "id": 10034,
+    "level": 567
+  },
+  "10035": {
+    "id": 10035,
+    "level": 568
+  },
+  "10036": {
+    "id": 10036,
+    "level": 569
+  },
+  "10037": {
+    "id": 10037,
+    "level": 570
+  },
+  "10038": {
+    "id": 10038,
+    "level": 571
+  },
+  "10039": {
+    "id": 10039,
+    "level": 572
+  },
+  "10040": {
+    "id": 10040,
+    "level": 573
+  },
+  "10041": {
+    "id": 10041,
+    "level": 574
+  },
+  "10042": {
+    "id": 10042,
+    "level": 575
+  },
+  "10043": {
+    "id": 10043,
+    "level": 576
+  },
+  "10044": {
+    "id": 10044,
+    "level": 577
+  },
+  "10045": {
+    "id": 10045,
+    "level": 578
+  },
+  "10046": {
+    "id": 10046,
+    "level": 579
+  },
+  "10047": {
+    "id": 10047,
+    "level": 580
+  },
+  "10048": {
+    "id": 10048,
+    "level": 581
+  },
+  "10049": {
+    "id": 10049,
+    "level": 582
+  },
+  "10050": {
+    "id": 10050,
+    "level": 583
+  },
+  "10051": {
+    "id": 10051,
+    "level": 584
+  },
+  "10052": {
+    "id": 10052,
+    "level": 585
+  },
+  "10053": {
+    "id": 10053,
+    "level": 586
+  },
+  "10054": {
+    "id": 10054,
+    "level": 587
+  },
+  "10055": {
+    "id": 10055,
+    "level": 588
+  },
+  "10056": {
+    "id": 10056,
+    "level": 589
+  },
+  "10057": {
+    "id": 10057,
+    "level": 590
+  },
+  "10058": {
+    "id": 10058,
+    "level": 591
+  },
+  "10059": {
+    "id": 10059,
+    "level": 592
+  },
+  "10060": {
+    "id": 10060,
+    "level": 593
+  },
+  "10061": {
+    "id": 10061,
+    "level": 594
+  },
+  "10062": {
+    "id": 10062,
+    "level": 595
+  },
+  "10063": {
+    "id": 10063,
+    "level": 596
+  },
+  "10064": {
+    "id": 10064,
+    "level": 597
+  },
+  "10065": {
+    "id": 10065,
+    "level": 598
+  },
+  "10066": {
+    "id": 10066,
+    "level": 599
+  },
+  "10067": {
+    "id": 10067,
+    "level": 600
+  },
   "10068": {
     "id": 10068,
     "level": -451
@@ -60494,13 +65360,16216 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 10072,
     "level": -455
   },
+  "10073": {
+    "id": 10073,
+    "level": -456
+  },
+  "10074": {
+    "id": 10074,
+    "level": -457
+  },
+  "10075": {
+    "id": 10075,
+    "level": -458
+  },
+  "10076": {
+    "id": 10076,
+    "level": -459
+  },
+  "10077": {
+    "id": 10077,
+    "level": -460
+  },
+  "10078": {
+    "id": 10078,
+    "level": -461
+  },
+  "10079": {
+    "id": 10079,
+    "level": -462
+  },
+  "10080": {
+    "id": 10080,
+    "level": -463
+  },
+  "10081": {
+    "id": 10081,
+    "level": -464
+  },
+  "10082": {
+    "id": 10082,
+    "level": -465
+  },
+  "10083": {
+    "id": 10083,
+    "level": -466
+  },
+  "10084": {
+    "id": 10084,
+    "level": -467
+  },
+  "10085": {
+    "id": 10085,
+    "level": -468
+  },
+  "10086": {
+    "id": 10086,
+    "level": -469
+  },
+  "10087": {
+    "id": 10087,
+    "level": -470
+  },
+  "10088": {
+    "id": 10088,
+    "level": -471
+  },
+  "10089": {
+    "id": 10089,
+    "level": -472
+  },
+  "10090": {
+    "id": 10090,
+    "level": -473
+  },
+  "10091": {
+    "id": 10091,
+    "level": -474
+  },
+  "10092": {
+    "id": 10092,
+    "level": -475
+  },
+  "10093": {
+    "id": 10093,
+    "level": -476
+  },
+  "10094": {
+    "id": 10094,
+    "level": -477
+  },
+  "10095": {
+    "id": 10095,
+    "level": -478
+  },
+  "10096": {
+    "id": 10096,
+    "level": -479
+  },
+  "10097": {
+    "id": 10097,
+    "level": -480
+  },
+  "10098": {
+    "id": 10098,
+    "level": -481
+  },
+  "10099": {
+    "id": 10099,
+    "level": -482
+  },
+  "10100": {
+    "id": 10100,
+    "level": -483
+  },
+  "10101": {
+    "id": 10101,
+    "level": -484
+  },
+  "10102": {
+    "id": 10102,
+    "level": -485
+  },
+  "10103": {
+    "id": 10103,
+    "level": -486
+  },
+  "10104": {
+    "id": 10104,
+    "level": -487
+  },
+  "10105": {
+    "id": 10105,
+    "level": -488
+  },
+  "10106": {
+    "id": 10106,
+    "level": -489
+  },
+  "10107": {
+    "id": 10107,
+    "level": -490
+  },
+  "10108": {
+    "id": 10108,
+    "level": -491
+  },
+  "10109": {
+    "id": 10109,
+    "level": -492
+  },
+  "10110": {
+    "id": 10110,
+    "level": -493
+  },
+  "10111": {
+    "id": 10111,
+    "level": -494
+  },
+  "10112": {
+    "id": 10112,
+    "level": -495
+  },
+  "10113": {
+    "id": 10113,
+    "level": -496
+  },
+  "10114": {
+    "id": 10114,
+    "level": -497
+  },
+  "10115": {
+    "id": 10115,
+    "level": -498
+  },
+  "10116": {
+    "id": 10116,
+    "level": -499
+  },
+  "10117": {
+    "id": 10117,
+    "level": -500
+  },
+  "10118": {
+    "id": 10118,
+    "level": -501
+  },
+  "10119": {
+    "id": 10119,
+    "level": -502
+  },
+  "10120": {
+    "id": 10120,
+    "level": -503
+  },
+  "10121": {
+    "id": 10121,
+    "level": -504
+  },
+  "10122": {
+    "id": 10122,
+    "level": -505
+  },
+  "10123": {
+    "id": 10123,
+    "level": -506
+  },
+  "10124": {
+    "id": 10124,
+    "level": -507
+  },
+  "10125": {
+    "id": 10125,
+    "level": -508
+  },
+  "10126": {
+    "id": 10126,
+    "level": -509
+  },
+  "10127": {
+    "id": 10127,
+    "level": -510
+  },
+  "10128": {
+    "id": 10128,
+    "level": -511
+  },
+  "10129": {
+    "id": 10129,
+    "level": -512
+  },
+  "10130": {
+    "id": 10130,
+    "level": -513
+  },
+  "10131": {
+    "id": 10131,
+    "level": -514
+  },
+  "10132": {
+    "id": 10132,
+    "level": -515
+  },
+  "10133": {
+    "id": 10133,
+    "level": -516
+  },
+  "10134": {
+    "id": 10134,
+    "level": -517
+  },
+  "10135": {
+    "id": 10135,
+    "level": -518
+  },
+  "10136": {
+    "id": 10136,
+    "level": -519
+  },
+  "10137": {
+    "id": 10137,
+    "level": -520
+  },
+  "10138": {
+    "id": 10138,
+    "level": -521
+  },
+  "10139": {
+    "id": 10139,
+    "level": -522
+  },
+  "10140": {
+    "id": 10140,
+    "level": -523
+  },
+  "10141": {
+    "id": 10141,
+    "level": -524
+  },
+  "10142": {
+    "id": 10142,
+    "level": -525
+  },
+  "10143": {
+    "id": 10143,
+    "level": -526
+  },
+  "10144": {
+    "id": 10144,
+    "level": -527
+  },
+  "10145": {
+    "id": 10145,
+    "level": -528
+  },
+  "10146": {
+    "id": 10146,
+    "level": -529
+  },
+  "10147": {
+    "id": 10147,
+    "level": -530
+  },
+  "10148": {
+    "id": 10148,
+    "level": -531
+  },
+  "10149": {
+    "id": 10149,
+    "level": -532
+  },
+  "10150": {
+    "id": 10150,
+    "level": -533
+  },
+  "10151": {
+    "id": 10151,
+    "level": -534
+  },
+  "10152": {
+    "id": 10152,
+    "level": -535
+  },
+  "10153": {
+    "id": 10153,
+    "level": -536
+  },
+  "10154": {
+    "id": 10154,
+    "level": -537
+  },
+  "10155": {
+    "id": 10155,
+    "level": -538
+  },
+  "10156": {
+    "id": 10156,
+    "level": -539
+  },
+  "10157": {
+    "id": 10157,
+    "level": -540
+  },
+  "10158": {
+    "id": 10158,
+    "level": -541
+  },
+  "10159": {
+    "id": 10159,
+    "level": -542
+  },
+  "10160": {
+    "id": 10160,
+    "level": -543
+  },
+  "10161": {
+    "id": 10161,
+    "level": -544
+  },
+  "10162": {
+    "id": 10162,
+    "level": -545
+  },
+  "10163": {
+    "id": 10163,
+    "level": -546
+  },
+  "10164": {
+    "id": 10164,
+    "level": -547
+  },
+  "10165": {
+    "id": 10165,
+    "level": -548
+  },
+  "10166": {
+    "id": 10166,
+    "level": -549
+  },
+  "10167": {
+    "id": 10167,
+    "level": -550
+  },
+  "10168": {
+    "id": 10168,
+    "level": -551
+  },
+  "10169": {
+    "id": 10169,
+    "level": -552
+  },
+  "10170": {
+    "id": 10170,
+    "level": -553
+  },
+  "10171": {
+    "id": 10171,
+    "level": -554
+  },
+  "10172": {
+    "id": 10172,
+    "level": -555
+  },
+  "10173": {
+    "id": 10173,
+    "level": -556
+  },
+  "10174": {
+    "id": 10174,
+    "level": -557
+  },
+  "10175": {
+    "id": 10175,
+    "level": -558
+  },
+  "10176": {
+    "id": 10176,
+    "level": -559
+  },
+  "10177": {
+    "id": 10177,
+    "level": -560
+  },
+  "10178": {
+    "id": 10178,
+    "level": -561
+  },
+  "10179": {
+    "id": 10179,
+    "level": -562
+  },
+  "10180": {
+    "id": 10180,
+    "level": -563
+  },
+  "10181": {
+    "id": 10181,
+    "level": -564
+  },
+  "10182": {
+    "id": 10182,
+    "level": -565
+  },
+  "10183": {
+    "id": 10183,
+    "level": -566
+  },
+  "10184": {
+    "id": 10184,
+    "level": -567
+  },
+  "10185": {
+    "id": 10185,
+    "level": -568
+  },
+  "10186": {
+    "id": 10186,
+    "level": -569
+  },
+  "10187": {
+    "id": 10187,
+    "level": -570
+  },
+  "10188": {
+    "id": 10188,
+    "level": -571
+  },
+  "10189": {
+    "id": 10189,
+    "level": -572
+  },
+  "10190": {
+    "id": 10190,
+    "level": -573
+  },
+  "10191": {
+    "id": 10191,
+    "level": -574
+  },
+  "10192": {
+    "id": 10192,
+    "level": -575
+  },
+  "10193": {
+    "id": 10193,
+    "level": -576
+  },
+  "10194": {
+    "id": 10194,
+    "level": -577
+  },
+  "10195": {
+    "id": 10195,
+    "level": -578
+  },
+  "10196": {
+    "id": 10196,
+    "level": -579
+  },
+  "10197": {
+    "id": 10197,
+    "level": -580
+  },
+  "10198": {
+    "id": 10198,
+    "level": -581
+  },
+  "10199": {
+    "id": 10199,
+    "level": -582
+  },
+  "10200": {
+    "id": 10200,
+    "level": -583
+  },
+  "10201": {
+    "id": 10201,
+    "level": -584
+  },
+  "10202": {
+    "id": 10202,
+    "level": -585
+  },
+  "10203": {
+    "id": 10203,
+    "level": -586
+  },
+  "10204": {
+    "id": 10204,
+    "level": -587
+  },
+  "10205": {
+    "id": 10205,
+    "level": -588
+  },
+  "10206": {
+    "id": 10206,
+    "level": -589
+  },
+  "10207": {
+    "id": 10207,
+    "level": -590
+  },
+  "10208": {
+    "id": 10208,
+    "level": -591
+  },
+  "10209": {
+    "id": 10209,
+    "level": -592
+  },
+  "10210": {
+    "id": 10210,
+    "level": -593
+  },
+  "10211": {
+    "id": 10211,
+    "level": -594
+  },
+  "10212": {
+    "id": 10212,
+    "level": -595
+  },
+  "10213": {
+    "id": 10213,
+    "level": -596
+  },
+  "10214": {
+    "id": 10214,
+    "level": -597
+  },
+  "10215": {
+    "id": 10215,
+    "level": -598
+  },
+  "10216": {
+    "id": 10216,
+    "level": -599
+  },
+  "10217": {
+    "id": 10217,
+    "level": -600
+  },
+  "10218": {
+    "id": 10218,
+    "effect": {
+      "id": 181009,
+      "index": 0,
+      "spell": {
+        "id": 427030,
+        "name": "Sprint",
+        "icon": "ability_rogue_sprint"
+      }
+    }
+  },
+  "10219": {
+    "id": 10219,
+    "effect": {
+      "id": 181006,
+      "index": 0,
+      "spell": {
+        "id": 427053,
+        "name": "Blink",
+        "icon": "spell_arcane_blink"
+      }
+    }
+  },
+  "10220": {
+    "id": 10220,
+    "effect": {
+      "id": 181007,
+      "index": 0,
+      "spell": {
+        "id": 427033,
+        "name": "Heroic Leap",
+        "icon": "ability_heroicleap"
+      }
+    }
+  },
+  "10221": {
+    "id": 10221,
+    "effect": {
+      "id": 181008,
+      "index": 0,
+      "spell": {
+        "id": 427026,
+        "name": "Roll",
+        "icon": "ability_monk_roll"
+      }
+    }
+  },
+  "10223": {
+    "id": 10223,
+    "effect": {
+      "id": 181016,
+      "index": 0,
+      "spell": {
+        "id": 428644,
+        "name": "Chill",
+        "icon": "spell_frost_frostshock"
+      }
+    }
+  },
+  "10224": {
+    "id": 10224,
+    "effect": {
+      "id": 181017,
+      "index": 0,
+      "spell": {
+        "id": 428661,
+        "name": "Burn",
+        "icon": "inv_summerfest_firespirit"
+      }
+    }
+  },
+  "10225": {
+    "id": 10225,
+    "effect": {
+      "id": 181018,
+      "index": 0,
+      "spell": {
+        "id": 428685,
+        "name": "Poison",
+        "icon": "spell_nature_nullifypoison"
+      }
+    }
+  },
+  "10226": {
+    "id": 10226,
+    "effect": {
+      "id": 181019,
+      "index": 0,
+      "spell": {
+        "id": 428696,
+        "name": "Sanctify",
+        "icon": "inv_lightforgedmatrixability_lightsjudgment"
+      }
+    }
+  },
+  "10227": {
+    "id": 10227,
+    "effect": {
+      "id": 181020,
+      "index": 0,
+      "spell": {
+        "id": 428697,
+        "name": "Shock",
+        "icon": "spell_nature_lightning"
+      }
+    }
+  },
+  "10229": {
+    "id": 10229,
+    "effect": {
+      "id": 181096,
+      "index": 0,
+      "spell": {
+        "id": 429007,
+        "name": "Brilliance",
+        "icon": "inv_staff_07"
+      }
+    }
+  },
+  "10230": {
+    "id": 10230,
+    "effect": {
+      "id": 181097,
+      "index": 0,
+      "spell": {
+        "id": 428914,
+        "name": "Endurance",
+        "icon": "ability_warrior_bloodsurge"
+      }
+    }
+  },
+  "10231": {
+    "id": 10231,
+    "effect": {
+      "id": 181098,
+      "index": 0,
+      "spell": {
+        "id": 428921,
+        "name": "Unholy Vigor",
+        "icon": "spell_deathknight_unholypresence"
+      }
+    }
+  },
+  "10232": {
+    "id": 10232,
+    "effect": {
+      "id": 181093,
+      "index": 0,
+      "spell": {
+        "id": 429026,
+        "name": "Freedom",
+        "icon": "spell_holy_blessedresillience"
+      }
+    }
+  },
+  "10233": {
+    "id": 10233,
+    "effect": {
+      "id": 181094,
+      "index": 0,
+      "spell": {
+        "id": 428854,
+        "name": "Grounding",
+        "icon": "spell_nature_groundingtotem"
+      }
+    }
+  },
+  "10234": {
+    "id": 10234,
+    "effect": {
+      "id": 181095,
+      "index": 0,
+      "spell": {
+        "id": 429001,
+        "name": "Thorns",
+        "icon": "spell_nature_thorns"
+      }
+    }
+  },
+  "10235": {
+    "id": 10235,
+    "effect": {
+      "id": 181117,
+      "index": 0,
+      "spell": {
+        "id": 429389,
+        "name": "Fervor",
+        "icon": "spell_holy_greaterblessingofkings"
+      }
+    }
+  },
+  "10236": {
+    "id": 10236,
+    "effect": {
+      "id": 181118,
+      "index": 0,
+      "spell": {
+        "id": 427054,
+        "name": "Opportunist",
+        "icon": "spell_druid_savagery"
+      }
+    }
+  },
+  "10237": {
+    "id": 10237,
+    "effect": {
+      "id": 181119,
+      "index": 0,
+      "spell": {
+        "id": 429410,
+        "name": "Victory Pyre",
+        "icon": "ability_racial_fireresist"
+      }
+    }
+  },
+  "10238": {
+    "id": 10238,
+    "effect": {
+      "id": 181120,
+      "index": 0,
+      "spell": {
+        "id": 429270,
+        "name": "Arcanist's Edge",
+        "icon": "spell_arcane_arcanepotency"
+      }
+    }
+  },
+  "10239": {
+    "id": 10239,
+    "effect": {
+      "id": 181121,
+      "index": 0,
+      "spell": {
+        "id": 429373,
+        "name": "Quick Strike",
+        "icon": "ability_rogue_versatility"
+      }
+    }
+  },
+  "10240": {
+    "id": 10240,
+    "effect": {
+      "id": 181122,
+      "index": 0,
+      "spell": {
+        "id": 429378,
+        "name": "Slay",
+        "icon": "ability_physical_taunt_purple"
+      }
+    }
+  },
+  "10241": {
+    "id": 10241,
+    "effect": {
+      "id": 181123,
+      "index": 0,
+      "spell": {
+        "id": 429241,
+        "name": "Mark of Arrogance",
+        "icon": "ability_warlock_impoweredimp"
+      }
+    }
+  },
+  "10242": {
+    "id": 10242,
+    "effect": {
+      "id": 181124,
+      "index": 0,
+      "spell": {
+        "id": 429214,
+        "name": "Sunstrider's Flourish",
+        "icon": "ability_mage_firestarter"
+      }
+    }
+  },
+  "10243": {
+    "id": 10243,
+    "effect": {
+      "id": 181125,
+      "index": 0,
+      "spell": {
+        "id": 429230,
+        "name": "Tinkmaster's Shield",
+        "icon": "inv_gizmo_electrifiedether"
+      }
+    }
+  },
+  "10246": {
+    "id": 10246,
+    "effect": {
+      "id": 181147,
+      "index": 0,
+      "spell": {
+        "id": 426268,
+        "name": "Chi-ji, the Red Crane",
+        "icon": "inv_pet_cranegod"
+      }
+    }
+  },
   "10247": {
     "id": 10247,
     "tag": "Shadowflame Suffused"
+  },
+  "10249": {
+    "id": 10249,
+    "base_level": 486,
+    "base_level_priority": 70,
+    "tag": "Awakened Crafted"
+  },
+  "10250": {
+    "id": 10250,
+    "base_level": 399,
+    "base_level_priority": 100
+  },
+  "10305": {
+    "id": 10305,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10305,
+      "itemLevel": 467,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10306": {
+    "id": 10306,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10306,
+      "itemLevel": 470,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10307": {
+    "id": 10307,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10307,
+      "itemLevel": 473,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10308": {
+    "id": 10308,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10308,
+      "itemLevel": 476,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10309": {
+    "id": 10309,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10309,
+      "itemLevel": 480,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10310": {
+    "id": 10310,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10310,
+      "itemLevel": 483,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10311": {
+    "id": 10311,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10311,
+      "itemLevel": 486,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10312": {
+    "id": 10312,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 342,
+      "name": "Adventurer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10312,
+      "itemLevel": 489,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10313": {
+    "id": 10313,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10313,
+      "itemLevel": 493,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10314": {
+    "id": 10314,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10314,
+      "itemLevel": 496,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10315": {
+    "id": 10315,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10315,
+      "itemLevel": 499,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10316": {
+    "id": 10316,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10316,
+      "itemLevel": 502,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10317": {
+    "id": 10317,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10317,
+      "itemLevel": 506,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10318": {
+    "id": 10318,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10318,
+      "itemLevel": 509,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10319": {
+    "id": 10319,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10319,
+      "itemLevel": 512,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10320": {
+    "id": 10320,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 356,
+      "name": "Champion",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10320,
+      "itemLevel": 515,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10321": {
+    "id": 10321,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10321,
+      "itemLevel": 454,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 2
+  },
+  "10322": {
+    "id": 10322,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10322,
+      "itemLevel": 457,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 2
+  },
+  "10323": {
+    "id": 10323,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10323,
+      "itemLevel": 460,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10324": {
+    "id": 10324,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 25,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10324,
+      "itemLevel": 463,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10325": {
+    "id": 10325,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10325,
+      "itemLevel": 467,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10326": {
+    "id": 10326,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10326,
+      "itemLevel": 470,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10327": {
+    "id": 10327,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10327,
+      "itemLevel": 473,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10328": {
+    "id": 10328,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 354,
+      "name": "Explorer",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 40,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10328,
+      "itemLevel": 476,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 3
+  },
+  "10329": {
+    "id": 10329,
+    "upgrade": {
+      "level": 1,
+      "max": 6,
+      "group": 357,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10329,
+      "itemLevel": 506,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10330": {
+    "id": 10330,
+    "upgrade": {
+      "level": 2,
+      "max": 6,
+      "group": 357,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10330,
+      "itemLevel": 509,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10331": {
+    "id": 10331,
+    "upgrade": {
+      "level": 3,
+      "max": 6,
+      "group": 357,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10331,
+      "itemLevel": 512,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10332": {
+    "id": 10332,
+    "upgrade": {
+      "level": 4,
+      "max": 6,
+      "group": 357,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10332,
+      "itemLevel": 515,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10333": {
+    "id": 10333,
+    "upgrade": {
+      "level": 5,
+      "max": 6,
+      "group": 357,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10333,
+      "itemLevel": 519,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10334": {
+    "id": 10334,
+    "upgrade": {
+      "level": 6,
+      "max": 6,
+      "group": 357,
+      "name": "Hero",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10334,
+      "itemLevel": 522,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10335": {
+    "id": 10335,
+    "upgrade": {
+      "level": 1,
+      "max": 4,
+      "group": 358,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10335,
+      "itemLevel": 519,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10336": {
+    "id": 10336,
+    "upgrade": {
+      "level": 2,
+      "max": 4,
+      "group": 358,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10336,
+      "itemLevel": 522,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10337": {
+    "id": 10337,
+    "upgrade": {
+      "level": 3,
+      "max": 4,
+      "group": 358,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10337,
+      "itemLevel": 525,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10338": {
+    "id": 10338,
+    "upgrade": {
+      "level": 4,
+      "max": 4,
+      "group": 358,
+      "name": "Myth",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2709,
+              "amount": 15,
+              "name": "Aspect's Dreaming Crest",
+              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10338,
+      "itemLevel": 528,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10339": {
+    "id": 10339,
+    "quality": 4
+  },
+  "10340": {
+    "id": 10340,
+    "quality": 4
+  },
+  "10341": {
+    "id": 10341,
+    "upgrade": {
+      "level": 1,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10341,
+      "itemLevel": 480,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10342": {
+    "id": 10342,
+    "upgrade": {
+      "level": 2,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10342,
+      "itemLevel": 483,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10343": {
+    "id": 10343,
+    "upgrade": {
+      "level": 3,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10343,
+      "itemLevel": 486,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10344": {
+    "id": 10344,
+    "upgrade": {
+      "level": 4,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 65,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 125,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 250,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2806,
+              "amount": 15,
+              "name": "Whelpling's Awakened Crest",
+              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10344,
+      "itemLevel": 489,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10345": {
+    "id": 10345,
+    "upgrade": {
+      "level": 5,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10345,
+      "itemLevel": 493,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10346": {
+    "id": 10346,
+    "upgrade": {
+      "level": 6,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10346,
+      "itemLevel": 496,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10347": {
+    "id": 10347,
+    "upgrade": {
+      "level": 7,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10347,
+      "itemLevel": 499,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10348": {
+    "id": 10348,
+    "upgrade": {
+      "level": 8,
+      "max": 8,
+      "group": 355,
+      "name": "Veteran",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10348,
+      "itemLevel": 502,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10357": {
+    "id": 10357,
+    "base_level": 470,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "10358": {
+    "id": 10358,
+    "base_level": 499,
+    "base_level_priority": 65
+  },
+  "10359": {
+    "id": 10359,
+    "base_level": 509,
+    "base_level_priority": 65
+  },
+  "10381": {
+    "id": 10381,
+    "effect": {
+      "id": 181637,
+      "index": 0,
+      "spell": {
+        "id": 438407,
+        "name": "Health Brew",
+        "icon": "inv_drink_32_disgustingrotgut_color04"
+      }
+    },
+    "quality": 1
+  },
+  "10391": {
+    "id": 10391,
+    "quality": 1,
+    "effect": {
+      "id": 181649,
+      "index": 0,
+      "spell": {
+        "id": 431147,
+        "name": "Slash",
+        "icon": "inv_sword_1h_kultirasquest_b_01"
+      }
+    }
+  },
+  "10407": {
+    "id": 10407,
+    "upgrade": {
+      "level": 1,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10407,
+      "itemLevel": 493,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10408": {
+    "id": 10408,
+    "upgrade": {
+      "level": 2,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10408,
+      "itemLevel": 496,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10409": {
+    "id": 10409,
+    "upgrade": {
+      "level": 3,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10409,
+      "itemLevel": 499,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10410": {
+    "id": 10410,
+    "upgrade": {
+      "level": 4,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10410,
+      "itemLevel": 502,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10411": {
+    "id": 10411,
+    "upgrade": {
+      "level": 5,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10411,
+      "itemLevel": 506,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10412": {
+    "id": 10412,
+    "upgrade": {
+      "level": 6,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10412,
+      "itemLevel": 509,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10413": {
+    "id": 10413,
+    "upgrade": {
+      "level": 7,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10413,
+      "itemLevel": 512,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10414": {
+    "id": 10414,
+    "upgrade": {
+      "level": 8,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10414,
+      "itemLevel": 515,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10415": {
+    "id": 10415,
+    "upgrade": {
+      "level": 9,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10415,
+      "itemLevel": 519,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10416": {
+    "id": 10416,
+    "upgrade": {
+      "level": 10,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10416,
+      "itemLevel": 522,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10417": {
+    "id": 10417,
+    "upgrade": {
+      "level": 11,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10417,
+      "itemLevel": 525,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
+  },
+  "10418": {
+    "id": 10418,
+    "upgrade": {
+      "level": 12,
+      "max": 12,
+      "group": 360,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10418,
+      "itemLevel": 528,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "seasonId": 23
+    },
+    "quality": 4
   },
   "10426": {
     "id": 10426,
     "ilevel": "5 @plvl 1 - 441 @plvl 441",
     "curveId": 71965
+  },
+  "10427": {
+    "id": 10427,
+    "quality": 1,
+    "effect": {
+      "id": 181865,
+      "index": 0,
+      "spell": {
+        "id": 431501,
+        "name": "Mana Sphere",
+        "icon": "ability_monk_forcesphere_arcane"
+      }
+    }
+  },
+  "10428": {
+    "id": 10428,
+    "quality": 1,
+    "effect": {
+      "id": 181867,
+      "index": 0,
+      "spell": {
+        "id": 432490,
+        "name": "Searing Axe",
+        "icon": "inv_axe_1h_pvp400_c_01"
+      }
+    }
+  },
+  "10429": {
+    "id": 10429,
+    "quality": 1,
+    "effect": {
+      "id": 181897,
+      "index": 0,
+      "spell": {
+        "id": 435276,
+        "name": "Rime Arrow",
+        "icon": "spell_frost_iceshard"
+      }
+    }
+  },
+  "10430": {
+    "id": 10430,
+    "quality": 1,
+    "effect": {
+      "id": 181869,
+      "index": 0,
+      "spell": {
+        "id": 431777,
+        "name": "Fire Whirl",
+        "icon": "spell_shaman_stormearthfire"
+      }
+    }
+  },
+  "10431": {
+    "id": 10431,
+    "quality": 1,
+    "effect": {
+      "id": 181893,
+      "index": 0,
+      "spell": {
+        "id": 432547,
+        "name": "Fade to Shadow",
+        "icon": "ability_rogue_vigor"
+      }
+    }
+  },
+  "10432": {
+    "id": 10432,
+    "quality": 1,
+    "effect": {
+      "id": 181871,
+      "index": 0,
+      "spell": {
+        "id": 434598,
+        "name": "Steel Traps",
+        "icon": "ability_hunter_steeltrap"
+      }
+    }
+  },
+  "10433": {
+    "id": 10433,
+    "quality": 1,
+    "effect": {
+      "id": 181872,
+      "index": 0,
+      "spell": {
+        "id": 432594,
+        "name": "Faeform",
+        "icon": "ability_nightfae_flicker"
+      }
+    }
+  },
+  "10434": {
+    "id": 10434,
+    "quality": 1,
+    "effect": {
+      "id": 181873,
+      "index": 0,
+      "spell": {
+        "id": 432541,
+        "name": "Explosive Caltrops",
+        "icon": "inv_misc_bomb_02"
+      }
+    }
+  },
+  "10435": {
+    "id": 10435,
+    "quality": 1,
+    "effect": {
+      "id": 181874,
+      "index": 0
+    }
+  },
+  "10436": {
+    "id": 10436,
+    "quality": 2,
+    "effect": {
+      "id": 181881,
+      "index": 0,
+      "spell": {
+        "id": 432752,
+        "name": "Searing Axe",
+        "icon": "inv_axe_1h_pvp400_c_01"
+      }
+    }
+  },
+  "10437": {
+    "id": 10437,
+    "quality": 3,
+    "effect": {
+      "id": 181882,
+      "index": 0,
+      "spell": {
+        "id": 432754,
+        "name": "Searing Axe",
+        "icon": "inv_axe_1h_pvp400_c_01"
+      }
+    }
+  },
+  "10438": {
+    "id": 10438,
+    "quality": 4,
+    "effect": {
+      "id": 181883,
+      "index": 0,
+      "spell": {
+        "id": 432756,
+        "name": "Searing Axe",
+        "icon": "inv_axe_1h_pvp400_c_01"
+      }
+    }
+  },
+  "10439": {
+    "id": 10439,
+    "quality": 2,
+    "effect": {
+      "id": 181884,
+      "index": 0,
+      "spell": {
+        "id": 434679,
+        "name": "Steel Traps",
+        "icon": "ability_hunter_steeltrap"
+      }
+    }
+  },
+  "10440": {
+    "id": 10440,
+    "quality": 3,
+    "effect": {
+      "id": 181885,
+      "index": 0,
+      "spell": {
+        "id": 434681,
+        "name": "Steel Traps",
+        "icon": "ability_hunter_steeltrap"
+      }
+    }
+  },
+  "10441": {
+    "id": 10441,
+    "quality": 4,
+    "effect": {
+      "id": 181886,
+      "index": 0,
+      "spell": {
+        "id": 434684,
+        "name": "Steel Traps",
+        "icon": "ability_hunter_steeltrap"
+      }
+    }
+  },
+  "10442": {
+    "id": 10442,
+    "quality": 2,
+    "effect": {
+      "id": 181887,
+      "index": 0,
+      "spell": {
+        "id": 432730,
+        "name": "Mana Sphere",
+        "icon": "ability_monk_forcesphere_arcane"
+      }
+    }
+  },
+  "10443": {
+    "id": 10443,
+    "quality": 3,
+    "effect": {
+      "id": 181888,
+      "index": 0,
+      "spell": {
+        "id": 432737,
+        "name": "Mana Sphere",
+        "icon": "ability_monk_forcesphere_arcane"
+      }
+    }
+  },
+  "10444": {
+    "id": 10444,
+    "quality": 4,
+    "effect": {
+      "id": 181889,
+      "index": 0,
+      "spell": {
+        "id": 432744,
+        "name": "Mana Sphere",
+        "icon": "ability_monk_forcesphere_arcane"
+      }
+    }
+  },
+  "10445": {
+    "id": 10445,
+    "quality": 2,
+    "effect": {
+      "id": 181890,
+      "index": 0,
+      "spell": {
+        "id": 432768,
+        "name": "Faeform",
+        "icon": "ability_nightfae_flicker"
+      }
+    }
+  },
+  "10446": {
+    "id": 10446,
+    "quality": 3,
+    "effect": {
+      "id": 181891,
+      "index": 0,
+      "spell": {
+        "id": 432769,
+        "name": "Faeform",
+        "icon": "ability_nightfae_flicker"
+      }
+    }
+  },
+  "10447": {
+    "id": 10447,
+    "quality": 4,
+    "effect": {
+      "id": 181892,
+      "index": 0,
+      "spell": {
+        "id": 432770,
+        "name": "Faeform",
+        "icon": "ability_nightfae_flicker"
+      }
+    }
+  },
+  "10448": {
+    "id": 10448,
+    "quality": 2,
+    "effect": {
+      "id": 181894,
+      "index": 0,
+      "spell": {
+        "id": 432765,
+        "name": "Fade to Shadow",
+        "icon": "ability_rogue_vigor"
+      }
+    }
+  },
+  "10449": {
+    "id": 10449,
+    "quality": 3,
+    "effect": {
+      "id": 181895,
+      "index": 0,
+      "spell": {
+        "id": 432766,
+        "name": "Fade to Shadow",
+        "icon": "ability_rogue_vigor"
+      }
+    }
+  },
+  "10450": {
+    "id": 10450,
+    "quality": 4,
+    "effect": {
+      "id": 181896,
+      "index": 0,
+      "spell": {
+        "id": 432767,
+        "name": "Fade to Shadow",
+        "icon": "ability_rogue_vigor"
+      }
+    }
+  },
+  "10451": {
+    "id": 10451,
+    "quality": 2,
+    "effect": {
+      "id": 181898,
+      "index": 0,
+      "spell": {
+        "id": 435288,
+        "name": "Rime Arrow",
+        "icon": "spell_frost_iceshard"
+      }
+    }
+  },
+  "10452": {
+    "id": 10452,
+    "quality": 3,
+    "effect": {
+      "id": 181899,
+      "index": 0,
+      "spell": {
+        "id": 435290,
+        "name": "Rime Arrow",
+        "icon": "spell_frost_iceshard"
+      }
+    }
+  },
+  "10453": {
+    "id": 10453,
+    "quality": 4,
+    "effect": {
+      "id": 181900,
+      "index": 0,
+      "spell": {
+        "id": 435295,
+        "name": "Rime Arrow",
+        "icon": "spell_frost_iceshard"
+      }
+    }
+  },
+  "10454": {
+    "id": 10454,
+    "quality": 2,
+    "effect": {
+      "id": 181901,
+      "index": 0,
+      "spell": {
+        "id": 432746,
+        "name": "Fire Whirl",
+        "icon": "spell_shaman_stormearthfire"
+      }
+    }
+  },
+  "10455": {
+    "id": 10455,
+    "quality": 3,
+    "effect": {
+      "id": 181902,
+      "index": 0,
+      "spell": {
+        "id": 432748,
+        "name": "Fire Whirl",
+        "icon": "spell_shaman_stormearthfire"
+      }
+    }
+  },
+  "10456": {
+    "id": 10456,
+    "quality": 4,
+    "effect": {
+      "id": 181903,
+      "index": 0,
+      "spell": {
+        "id": 432750,
+        "name": "Fire Whirl",
+        "icon": "spell_shaman_stormearthfire"
+      }
+    }
+  },
+  "10457": {
+    "id": 10457,
+    "quality": 2,
+    "effect": {
+      "id": 181904,
+      "index": 0
+    }
+  },
+  "10458": {
+    "id": 10458,
+    "quality": 3,
+    "effect": {
+      "id": 181905,
+      "index": 0
+    }
+  },
+  "10459": {
+    "id": 10459,
+    "quality": 4,
+    "effect": {
+      "id": 181906,
+      "index": 0
+    }
+  },
+  "10460": {
+    "id": 10460,
+    "quality": 2,
+    "effect": {
+      "id": 181907,
+      "index": 0,
+      "spell": {
+        "id": 432759,
+        "name": "Explosive Caltrops",
+        "icon": "inv_misc_bomb_02"
+      }
+    }
+  },
+  "10461": {
+    "id": 10461,
+    "quality": 3,
+    "effect": {
+      "id": 181908,
+      "index": 0,
+      "spell": {
+        "id": 432762,
+        "name": "Explosive Caltrops",
+        "icon": "inv_misc_bomb_02"
+      }
+    }
+  },
+  "10462": {
+    "id": 10462,
+    "quality": 4,
+    "effect": {
+      "id": 181909,
+      "index": 0,
+      "spell": {
+        "id": 432764,
+        "name": "Explosive Caltrops",
+        "icon": "inv_misc_bomb_02"
+      }
+    }
+  },
+  "10465": {
+    "id": 10465,
+    "ilevel": "5 @plvl 1 - 454 @plvl 454",
+    "curveId": 72045
+  },
+  "10469": {
+    "id": 10469,
+    "quality": 1,
+    "effect": {
+      "id": 181995,
+      "index": 0,
+      "spell": {
+        "id": 433082,
+        "name": "Slicing Winds",
+        "icon": "ability_skyreach_wind_wall"
+      }
+    }
+  },
+  "10470": {
+    "id": 10470,
+    "quality": 2,
+    "effect": {
+      "id": 181996,
+      "index": 0,
+      "spell": {
+        "id": 433184,
+        "name": "Slicing Winds",
+        "icon": "ability_skyreach_wind_wall"
+      }
+    }
+  },
+  "10471": {
+    "id": 10471,
+    "quality": 3,
+    "effect": {
+      "id": 181997,
+      "index": 0,
+      "spell": {
+        "id": 433185,
+        "name": "Slicing Winds",
+        "icon": "ability_skyreach_wind_wall"
+      }
+    }
+  },
+  "10472": {
+    "id": 10472,
+    "quality": 4,
+    "effect": {
+      "id": 181998,
+      "index": 0,
+      "spell": {
+        "id": 433186,
+        "name": "Slicing Winds",
+        "icon": "ability_skyreach_wind_wall"
+      }
+    }
+  },
+  "10473": {
+    "id": 10473,
+    "quality": 1,
+    "effect": {
+      "id": 182001,
+      "index": 0,
+      "spell": {
+        "id": 435018,
+        "name": "Earthbreaker",
+        "icon": "ability_earthen_pillar"
+      }
+    }
+  },
+  "10474": {
+    "id": 10474,
+    "quality": 2,
+    "effect": {
+      "id": 182002,
+      "index": 0,
+      "spell": {
+        "id": 435021,
+        "name": "Earthbreaker",
+        "icon": "ability_earthen_pillar"
+      }
+    }
+  },
+  "10475": {
+    "id": 10475,
+    "quality": 3,
+    "effect": {
+      "id": 182003,
+      "index": 0,
+      "spell": {
+        "id": 435023,
+        "name": "Earthbreaker",
+        "icon": "ability_earthen_pillar"
+      }
+    }
+  },
+  "10476": {
+    "id": 10476,
+    "quality": 4,
+    "effect": {
+      "id": 182004,
+      "index": 0,
+      "spell": {
+        "id": 435025,
+        "name": "Earthbreaker",
+        "icon": "ability_earthen_pillar"
+      }
+    }
+  },
+  "10478": {
+    "id": 10478,
+    "quality": 1,
+    "effect": {
+      "id": 182041,
+      "index": 0,
+      "spell": {
+        "id": 433263,
+        "name": "Windstorm",
+        "icon": "ability_skyreach_four_wind"
+      }
+    }
+  },
+  "10479": {
+    "id": 10479,
+    "quality": 2,
+    "effect": {
+      "id": 182042,
+      "index": 0,
+      "spell": {
+        "id": 433256,
+        "name": "Windstorm",
+        "icon": "ability_skyreach_four_wind"
+      }
+    }
+  },
+  "10480": {
+    "id": 10480,
+    "quality": 3,
+    "effect": {
+      "id": 182043,
+      "index": 0,
+      "spell": {
+        "id": 433264,
+        "name": "Windstorm",
+        "icon": "ability_skyreach_four_wind"
+      }
+    }
+  },
+  "10481": {
+    "id": 10481,
+    "quality": 4,
+    "effect": {
+      "id": 182044,
+      "index": 0,
+      "spell": {
+        "id": 433265,
+        "name": "Windstorm",
+        "icon": "ability_skyreach_four_wind"
+      }
+    }
+  },
+  "10482": {
+    "id": 10482,
+    "quality": 1,
+    "effect": {
+      "id": 182099,
+      "index": 0,
+      "spell": {
+        "id": 433364,
+        "name": "Snowdrift",
+        "icon": "spell_frost_ring_of_frost"
+      }
+    }
+  },
+  "10483": {
+    "id": 10483,
+    "quality": 2,
+    "effect": {
+      "id": 182100,
+      "index": 0,
+      "spell": {
+        "id": 433373,
+        "name": "Snowdrift",
+        "icon": "spell_frost_ring_of_frost"
+      }
+    }
+  },
+  "10484": {
+    "id": 10484,
+    "quality": 3,
+    "effect": {
+      "id": 182101,
+      "index": 0,
+      "spell": {
+        "id": 433374,
+        "name": "Snowdrift",
+        "icon": "spell_frost_ring_of_frost"
+      }
+    }
+  },
+  "10485": {
+    "id": 10485,
+    "quality": 4,
+    "effect": {
+      "id": 182102,
+      "index": 0,
+      "spell": {
+        "id": 433375,
+        "name": "Snowdrift",
+        "icon": "spell_frost_ring_of_frost"
+      }
+    }
+  },
+  "10486": {
+    "id": 10486,
+    "quality": 1,
+    "effect": {
+      "id": 182116,
+      "index": 0,
+      "spell": {
+        "id": 433380,
+        "name": "Holy Shield",
+        "icon": "inv_shield_1h_hyrja_d_01"
+      }
+    }
+  },
+  "10487": {
+    "id": 10487,
+    "quality": 2,
+    "effect": {
+      "id": 182117,
+      "index": 0,
+      "spell": {
+        "id": 433472,
+        "name": "Holy Shield",
+        "icon": "inv_shield_1h_hyrja_d_01"
+      }
+    }
+  },
+  "10488": {
+    "id": 10488,
+    "quality": 3,
+    "effect": {
+      "id": 182118,
+      "index": 0,
+      "spell": {
+        "id": 433473,
+        "name": "Holy Shield",
+        "icon": "inv_shield_1h_hyrja_d_01"
+      }
+    }
+  },
+  "10489": {
+    "id": 10489,
+    "quality": 4,
+    "effect": {
+      "id": 182119,
+      "index": 0,
+      "spell": {
+        "id": 433474,
+        "name": "Holy Shield",
+        "icon": "inv_shield_1h_hyrja_d_01"
+      }
+    }
+  },
+  "10490": {
+    "id": 10490,
+    "upgrade": {
+      "level": 1,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10490,
+      "itemLevel": 493,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10491": {
+    "id": 10491,
+    "upgrade": {
+      "level": 2,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10491,
+      "itemLevel": 496,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10492": {
+    "id": 10492,
+    "upgrade": {
+      "level": 3,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10492,
+      "itemLevel": 499,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10493": {
+    "id": 10493,
+    "upgrade": {
+      "level": 4,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10493,
+      "itemLevel": 502,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10494": {
+    "id": 10494,
+    "upgrade": {
+      "level": 5,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10494,
+      "itemLevel": 506,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10495": {
+    "id": 10495,
+    "upgrade": {
+      "level": 6,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10495,
+      "itemLevel": 509,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10496": {
+    "id": 10496,
+    "upgrade": {
+      "level": 7,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10496,
+      "itemLevel": 512,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10497": {
+    "id": 10497,
+    "upgrade": {
+      "level": 8,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10497,
+      "itemLevel": 515,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10498": {
+    "id": 10498,
+    "upgrade": {
+      "level": 9,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10498,
+      "itemLevel": 519,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10499": {
+    "id": 10499,
+    "upgrade": {
+      "level": 10,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10499,
+      "itemLevel": 522,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10500": {
+    "id": 10500,
+    "upgrade": {
+      "level": 11,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10500,
+      "itemLevel": 525,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10501": {
+    "id": 10501,
+    "upgrade": {
+      "level": 12,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10501,
+      "itemLevel": 528,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10502": {
+    "id": 10502,
+    "upgrade": {
+      "level": 13,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10502,
+      "itemLevel": 532,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10503": {
+    "id": 10503,
+    "upgrade": {
+      "level": 14,
+      "max": 14,
+      "group": 382,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10503,
+      "itemLevel": 535,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10504": {
+    "id": 10504,
+    "quality": 1,
+    "effect": {
+      "id": 182395,
+      "index": 0,
+      "spell": {
+        "id": 434880,
+        "name": "Star Bomb",
+        "icon": "inv_cosmicvoid_nova"
+      }
+    }
+  },
+  "10505": {
+    "id": 10505,
+    "quality": 2,
+    "effect": {
+      "id": 182396,
+      "index": 0,
+      "spell": {
+        "id": 435030,
+        "name": "Star Bomb",
+        "icon": "inv_cosmicvoid_nova"
+      }
+    }
+  },
+  "10506": {
+    "id": 10506,
+    "quality": 3,
+    "effect": {
+      "id": 182397,
+      "index": 0,
+      "spell": {
+        "id": 435032,
+        "name": "Star Bomb",
+        "icon": "inv_cosmicvoid_nova"
+      }
+    }
+  },
+  "10507": {
+    "id": 10507,
+    "quality": 4,
+    "effect": {
+      "id": 182398,
+      "index": 0,
+      "spell": {
+        "id": 435034,
+        "name": "Star Bomb",
+        "icon": "inv_cosmicvoid_nova"
+      }
+    }
+  },
+  "10510": {
+    "id": 10510,
+    "quality": 1,
+    "effect": {
+      "id": 182486,
+      "index": 0,
+      "spell": {
+        "id": 435286,
+        "name": "Repel",
+        "icon": "spell_fire_twilightfireward"
+      }
+    }
+  },
+  "10511": {
+    "id": 10511,
+    "quality": 2,
+    "effect": {
+      "id": 182487,
+      "index": 0,
+      "spell": {
+        "id": 435292,
+        "name": "Repel",
+        "icon": "spell_fire_twilightfireward"
+      }
+    }
+  },
+  "10512": {
+    "id": 10512,
+    "quality": 3,
+    "effect": {
+      "id": 182488,
+      "index": 0,
+      "spell": {
+        "id": 435296,
+        "name": "Repel",
+        "icon": "spell_fire_twilightfireward"
+      }
+    }
+  },
+  "10513": {
+    "id": 10513,
+    "quality": 4,
+    "effect": {
+      "id": 182489,
+      "index": 0,
+      "spell": {
+        "id": 435298,
+        "name": "Repel",
+        "icon": "spell_fire_twilightfireward"
+      }
+    }
+  },
+  "10514": {
+    "id": 10514,
+    "quality": 1,
+    "effect": {
+      "id": 182812,
+      "index": 0,
+      "spell": {
+        "id": 435454,
+        "name": "Quaking Leap",
+        "icon": "ability_hanzandfranz_bodyslam"
+      }
+    }
+  },
+  "10515": {
+    "id": 10515,
+    "quality": 2,
+    "effect": {
+      "id": 182813,
+      "index": 0,
+      "spell": {
+        "id": 435510,
+        "name": "Quaking Leap",
+        "icon": "ability_hanzandfranz_bodyslam"
+      }
+    }
+  },
+  "10516": {
+    "id": 10516,
+    "quality": 3,
+    "effect": {
+      "id": 182814,
+      "index": 0,
+      "spell": {
+        "id": 435729,
+        "name": "Quaking Leap",
+        "icon": "ability_hanzandfranz_bodyslam"
+      }
+    }
+  },
+  "10517": {
+    "id": 10517,
+    "quality": 4,
+    "effect": {
+      "id": 182815,
+      "index": 0,
+      "spell": {
+        "id": 435757,
+        "name": "Quaking Leap",
+        "icon": "ability_hanzandfranz_bodyslam"
+      }
+    }
+  },
+  "10519": {
+    "id": 10519,
+    "quality": 1,
+    "effect": {
+      "id": 182920,
+      "index": 0,
+      "spell": {
+        "id": 436031,
+        "name": "Hunter's Chains",
+        "icon": "ability_demonhunter_infernalchains"
+      }
+    }
+  },
+  "10524": {
+    "id": 10524,
+    "quality": 2,
+    "effect": {
+      "id": 182942,
+      "index": 0,
+      "spell": {
+        "id": 436211,
+        "name": "Hunter's Chains",
+        "icon": "ability_demonhunter_infernalchains"
+      }
+    }
+  },
+  "10525": {
+    "id": 10525,
+    "quality": 3,
+    "effect": {
+      "id": 182943,
+      "index": 0,
+      "spell": {
+        "id": 436229,
+        "name": "Hunter's Chains",
+        "icon": "ability_demonhunter_infernalchains"
+      }
+    }
+  },
+  "10526": {
+    "id": 10526,
+    "quality": 4,
+    "effect": {
+      "id": 182944,
+      "index": 0,
+      "spell": {
+        "id": 436240,
+        "name": "Hunter's Chains",
+        "icon": "ability_demonhunter_infernalchains"
+      }
+    }
+  },
+  "10527": {
+    "id": 10527,
+    "quality": 1,
+    "effect": {
+      "id": 182996,
+      "index": 0,
+      "spell": {
+        "id": 436254,
+        "name": "Toxic Smackerel",
+        "icon": "inv_10_fishing_fishlava_color2"
+      }
+    }
+  },
+  "10528": {
+    "id": 10528,
+    "quality": 2,
+    "effect": {
+      "id": 182997,
+      "index": 0,
+      "spell": {
+        "id": 436308,
+        "name": "Toxic Smackerel",
+        "icon": "inv_10_fishing_fishlava_color2"
+      }
+    }
+  },
+  "10529": {
+    "id": 10529,
+    "quality": 3,
+    "effect": {
+      "id": 182998,
+      "index": 0,
+      "spell": {
+        "id": 436310,
+        "name": "Toxic Smackerel",
+        "icon": "inv_10_fishing_fishlava_color2"
+      }
+    }
+  },
+  "10530": {
+    "id": 10530,
+    "quality": 4,
+    "effect": {
+      "id": 182999,
+      "index": 0,
+      "spell": {
+        "id": 436312,
+        "name": "Toxic Smackerel",
+        "icon": "inv_10_fishing_fishlava_color2"
+      }
+    }
+  },
+  "10531": {
+    "id": 10531,
+    "socket": 1
+  },
+  "10845": {
+    "id": 10845,
+    "ilevel": "21 @plvl 1 - 450 @plvl 450",
+    "curveId": 73310,
+    "tag": "Timewarped"
+  },
+  "10861": {
+    "id": 10861,
+    "ilevel": "21 @plvl 1 - 467 @plvl 467",
+    "curveId": 73480,
+    "quality": 3
+  },
+  "10862": {
+    "id": 10862,
+    "ilevel": "21 @plvl 1 - 467 @plvl 467",
+    "curveId": 73480,
+    "quality": 3
+  },
+  "10863": {
+    "id": 10863,
+    "tag": "Mythic+"
+  },
+  "10870": {
+    "id": 10870,
+    "item_conversion": 9
+  },
+  "10871": {
+    "id": 10871,
+    "item_conversion": 9
+  },
+  "10872": {
+    "id": 10872,
+    "item_conversion": 9
+  },
+  "10873": {
+    "id": 10873,
+    "item_conversion": 9
+  },
+  "10874": {
+    "id": 10874,
+    "item_conversion": 9
+  },
+  "10882": {
+    "id": 10882,
+    "ilevel": "5 @plvl 1 - 493 @plvl 493",
+    "curveId": 73505
+  },
+  "10883": {
+    "id": 10883,
+    "ilevel": "5 @plvl 1 - 480 @plvl 480",
+    "curveId": 73506
+  },
+  "10884": {
+    "id": 10884,
+    "tag": "Awakened"
+  },
+  "10951": {
+    "id": 10951,
+    "upgrade": {
+      "level": 1,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10951,
+      "itemLevel": 493
+    }
+  },
+  "10952": {
+    "id": 10952,
+    "upgrade": {
+      "level": 2,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10952,
+      "itemLevel": 496
+    }
+  },
+  "10953": {
+    "id": 10953,
+    "upgrade": {
+      "level": 3,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10953,
+      "itemLevel": 499
+    }
+  },
+  "10954": {
+    "id": 10954,
+    "upgrade": {
+      "level": 4,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 145,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 120,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 225,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10954,
+      "itemLevel": 502
+    }
+  },
+  "10955": {
+    "id": 10955,
+    "upgrade": {
+      "level": 5,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10955,
+      "itemLevel": 506
+    }
+  },
+  "10957": {
+    "id": 10957,
+    "upgrade": {
+      "level": 7,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10957,
+      "itemLevel": 512
+    }
+  },
+  "10958": {
+    "id": 10958,
+    "upgrade": {
+      "level": 8,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 140,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 90,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 275,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 350,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10958,
+      "itemLevel": 515
+    }
+  },
+  "10959": {
+    "id": 10959,
+    "upgrade": {
+      "level": 9,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10959,
+      "itemLevel": 519
+    }
+  },
+  "10960": {
+    "id": 10960,
+    "upgrade": {
+      "level": 10,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10960,
+      "itemLevel": 522
+    }
+  },
+  "10962": {
+    "id": 10962,
+    "upgrade": {
+      "level": 12,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10962,
+      "itemLevel": 528
+    }
+  },
+  "10963": {
+    "id": 10963,
+    "upgrade": {
+      "level": 13,
+      "max": 14,
+      "group": 405,
+      "name": "Awakened",
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 160,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 300,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 400,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "bonusId": 10963,
+      "itemLevel": 532
+    }
+  },
+  "11075": {
+    "id": 11075,
+    "quality": 1,
+    "effect": {
+      "id": 183722,
+      "index": 0,
+      "spell": {
+        "id": 442371,
+        "name": "Lightning Bulwark",
+        "icon": "inv_shield_orgrimmarraid_d_02"
+      }
+    }
+  },
+  "11076": {
+    "id": 11076,
+    "quality": 2,
+    "effect": {
+      "id": 183723,
+      "index": 0,
+      "spell": {
+        "id": 442404,
+        "name": "Lightning Bulwark",
+        "icon": "inv_shield_orgrimmarraid_d_02"
+      }
+    }
+  },
+  "11077": {
+    "id": 11077,
+    "quality": 3,
+    "effect": {
+      "id": 183724,
+      "index": 0,
+      "spell": {
+        "id": 442407,
+        "name": "Lightning Bulwark",
+        "icon": "inv_shield_orgrimmarraid_d_02"
+      }
+    }
+  },
+  "11078": {
+    "id": 11078,
+    "quality": 4,
+    "effect": {
+      "id": 183725,
+      "index": 0,
+      "spell": {
+        "id": 442411,
+        "name": "Lightning Bulwark",
+        "icon": "inv_shield_orgrimmarraid_d_02"
+      }
+    }
+  },
+  "11096": {
+    "id": 11096,
+    "quality": 1,
+    "effect": {
+      "id": 183758,
+      "index": 0,
+      "spell": {
+        "id": 442445,
+        "name": "Storm Archon",
+        "icon": "spell_nature_elementalprecision_1"
+      }
+    }
+  },
+  "11097": {
+    "id": 11097,
+    "quality": 2,
+    "effect": {
+      "id": 183759,
+      "index": 0,
+      "spell": {
+        "id": 442819,
+        "name": "Storm Archon",
+        "icon": "spell_nature_elementalprecision_1"
+      }
+    }
+  },
+  "11098": {
+    "id": 11098,
+    "quality": 3,
+    "effect": {
+      "id": 183760,
+      "index": 0,
+      "spell": {
+        "id": 442840,
+        "name": "Storm Archon",
+        "icon": "spell_nature_elementalprecision_1"
+      }
+    }
+  },
+  "11099": {
+    "id": 11099,
+    "quality": 4,
+    "effect": {
+      "id": 183761,
+      "index": 0,
+      "spell": {
+        "id": 442862,
+        "name": "Storm Archon",
+        "icon": "spell_nature_elementalprecision_1"
+      }
+    }
   }
 }
