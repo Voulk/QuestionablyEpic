@@ -8,6 +8,7 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
         healingDone: 0,
         damageDone: 0,
         manaSpent: 0,
+        execTime: 0,
         spellValues: {
 
         }
@@ -22,6 +23,7 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
         data.healingDone += result.totalHealing;
         data.damageDone += result.totalDamage;
         data.manaSpent += result.manaSpent;
+        data.execTime += result.execTime;
 
         for (const [key, value] of Object.entries(spellBreakdown)) {
             if (!data.spellValues[key]) data.spellValues[key] = 0;
@@ -40,8 +42,8 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
     }
 
 
-
+    console.log(data);
     // return result
 
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: filterSpell ? "-" : Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(0) || "-", spell: spellData, advancedReport: {}}
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: filterSpell ? "-" : Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(0) || "-", spell: spellData, hpct: Math.round(100*data.healingDone / iterations / (data.execTime / iterations)) / 100, advancedReport: {}}
 }

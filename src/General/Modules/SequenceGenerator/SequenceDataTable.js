@@ -58,6 +58,7 @@ export default function SequenceDataTable(props) {
             <TableCell style={{ fontWeight: 'bold' }}>Spell Combo</TableCell>
             <TableCell align="right">Healing</TableCell>
             <TableCell align="right">HPM</TableCell>
+            <TableCell align="right">HPCT</TableCell>
             <TableCell align="right">DPS</TableCell>
           </TableRow>
         </TableHead>
@@ -88,6 +89,7 @@ export default function SequenceDataTable(props) {
                               </TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{row.hpm}</TableCell>
+                              <TableCell align="right">{row.hpct}</TableCell>
                               <TableCell align="right">{row.dps}</TableCell>
                             </TableRow>
                           );

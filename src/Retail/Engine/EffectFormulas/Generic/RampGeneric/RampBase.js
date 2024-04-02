@@ -173,18 +173,32 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
         }
     }
 
-    if (!castState.queuedSpell) {
+    if (seqType === "Manual" && !castState.queuedSpell) {
+        castState.queuedSpell = "";
+        castState.nextSpell = 999;
+        return;
+    }
+
+    if (!castState.queuedSpell && seqType === "Auto") {
         //console.error("Can't find spell: " + castState.queuedSpell);
         castState.queuedSpell = "Rest";
         castState.spellFinish = state + 1.5;
         castState.nextSpell = state + 1.5;
     }
+
     const fullSpell = spellDB[castState.queuedSpell];
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
+    const effectiveCastTime = castTime === 0 ? 1.5 / getHaste(state.currentStats) : castTime;
+    state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
+    console.log("Adding to Exec time: " + effectiveCastTime);
+    console.log("Queueing spell: " + castState.queuedSpell)
+
+    // These could be semi-replaced by effectiveCastTime. TODO.
     if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);
     else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
     else castState.nextSpell = state.t + castTime;
+
 
     //console.log("Queued: " + castState.queuedSpell + " | Next: " + castState.nextSpell + " | Finish: " + castState.spellFinish);
 }

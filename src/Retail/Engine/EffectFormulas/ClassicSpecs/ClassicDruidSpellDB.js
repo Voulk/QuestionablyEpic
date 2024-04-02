@@ -29,7 +29,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 0, icon: "ability_druid_nourish", cat: "heal"},
         type: "heal",
-        castTime: 1.5, // Check
+        castTime: 2, // Check
         cost: 10, 
         coeff: 0.266, 
         expectedOverheal: 0.2,
@@ -39,7 +39,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 0, icon: "spell_nature_resistnature", cat: "heal"},
         type: "heal",
-        castTime: 1.5, 
+        castTime: 2, 
         cost: 35, 
         coeff: 0.2936, 
         expectedOverheal: 0.2,
@@ -80,7 +80,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 0, icon: "spell_nature_healingtouch", cat: "heal"},
         type: "heal",
-        castTime: 2, 
+        castTime: 3, 
         cost: 35, 
         coeff: 0.806, 
         expectedOverheal: 0.3,

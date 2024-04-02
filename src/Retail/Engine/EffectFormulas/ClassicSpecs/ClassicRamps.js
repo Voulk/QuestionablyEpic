@@ -133,7 +133,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         talents[key] = value
     }
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, execTime: 0, manaSpent: 0, settings: settings, 
                     talents: talents, reporting: true, spec: settings.spec, manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec]};
 
     let currentStats = {...stats};
@@ -148,6 +148,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
         queuedSpell: "",
     }
+    console.log(seqType);
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
@@ -227,7 +228,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             state.t = 999;
         }
-
+        console.log(state.t);
         // Time optimization
         // We'll skip this with advanced reporting on since it'll ruin our polling and time optimizations don't matter for single iterations.
         if (!state.settings.advancedReporting) state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
