@@ -155,7 +155,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
     applyTalents(state, playerSpells, stats)
     applyRaidBuffs(state);
-    console.log(playerSpells);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
     }
