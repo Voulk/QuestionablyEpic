@@ -158,7 +158,7 @@ export default function SequenceGenerator(props) {
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
   const [activeStats, setActiveStats] = useState(selectedSpec.includes("Classic") ? 
-                                { spellpower: 5000, intellect: 5000, haste: 2000, crit: 3300, mastery: 6500, versatility: 1200, stamina: 16000 } :
+                                { spellpower: 5000, intellect: 5000, haste: 2000, crit: 3300, mastery: 6500, spirit: 1000 } :
                                 { intellect: 14500, haste: 2000, crit: 3300, mastery: 6500, versatility: 1200, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
@@ -592,7 +592,7 @@ export default function SequenceGenerator(props) {
             </Grid>
           </Grid>
           <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
-            <StatPanel setActiveStats={setActiveStats} />
+            <StatPanel setActiveStats={setActiveStats} stats={activeStats} />
           </Grid>
           <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
             <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />

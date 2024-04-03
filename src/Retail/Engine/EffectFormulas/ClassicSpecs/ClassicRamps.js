@@ -148,7 +148,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
         queuedSpell: "",
     }
-    console.log(seqType);
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.

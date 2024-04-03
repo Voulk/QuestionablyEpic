@@ -34,7 +34,7 @@ const getSpellFlat = (spell, flatBonus = 0) => {
  * @returns The raw damage or healing of the spell.
  */
 export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0, masteryFlag = false) => {
-    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants, masteryFlag); // Multiply our spell coefficient by int and secondaries.
+    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.spellpower) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants, masteryFlag); // Multiply our spell coefficient by int and secondaries.
 }
 
 /**

@@ -13,7 +13,7 @@ export const CLASSICDRUIDSPELLDB = {
         {
         // Rejuv is split into two spell effects. The direct heal, and the HoT. The direct heal is the same amount of healing as one tick, but doesn't scale with Haste.
         // The number of rejuv ticks is (5 x haste) + 1.
-        spellData: {id: 361469, icon: "spell_nature_rejuvenation", cat: "heal"},
+        spellData: {id: 774, icon: "spell_nature_rejuvenation", cat: "heal"},
         castTime: 0,
         cost: 20, // 699
         type: "classic periodic",
