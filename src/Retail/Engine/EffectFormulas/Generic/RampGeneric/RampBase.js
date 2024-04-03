@@ -191,8 +191,6 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     const effectiveCastTime = castTime === 0 ? 1.5 / getHaste(state.currentStats) : castTime;
     state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
-    console.log("Adding to Exec time: " + effectiveCastTime);
-    console.log("Queueing spell: " + castState.queuedSpell)
 
     // These could be semi-replaced by effectiveCastTime. TODO.
     if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);

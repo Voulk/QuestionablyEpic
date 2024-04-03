@@ -2,7 +2,6 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
@@ -134,7 +133,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, execTime: 0, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, spec: settings.spec, manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec]};
+                    talents: talents, reporting: true, spec: settings.spec.replace(" Classic", ""), manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec]};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -142,7 +141,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const sequenceLength = ('seqLength' in settings ? settings.seqLength : 120) * (1 + (Math.random() - 0.5) * 0.2); // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-
+    
     let castState = {
         nextSpell: 0, // The time when the next spell cast can begin.
         spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
@@ -151,8 +150,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    //const playerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, CLASSICCONSTANTS);
     const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
+
     applyTalents(state, playerSpells, stats)
     applyRaidBuffs(state);
     if (settings.preBuffs) {
@@ -227,7 +226,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             state.t = 999;
         }
-        console.log(state.t);
+
         // Time optimization
         // We'll skip this with advanced reporting on since it'll ruin our polling and time optimizations don't matter for single iterations.
         if (!state.settings.advancedReporting) state.t = advanceTime(state.t, castState.nextSpell, castState.spellFinish, state.activeBuffs);
