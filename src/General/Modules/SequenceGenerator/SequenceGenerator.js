@@ -137,7 +137,7 @@ const getSequence = (spec) => {
 
 };
 
-const setupSequences = (len = 2) => {
+const setupSequences = (len = 1) => {
   const seqArray = [];
 
   for (let i = 0; i < len; i++) {
@@ -402,8 +402,36 @@ export default function SequenceGenerator(props) {
   return (
     <div height="100%">
       <div className={classes.root}>
-        <Grid container spacing={1}>
-          <Grid item xs={6}>
+      <Grid item xs={6}>
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Paper
+                  style={{
+                    border: "1px solid rgba(255, 255, 255, 0.24)",
+                    padding: "0px 8px 8px 8px",
+                  }}
+                  elevation={0}
+                >
+                  <Grid container spacing={1}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                        {"Sequences"}
+                      </Typography>
+                    </Grid>
+
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      {sequences.map((s, i) => (
+                        <SequenceObject index={i} seq={s} data={s.data} db={spellDB} isSelected={selectedSeq===i} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
+                      ))}
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Grid>
+
+        <Grid container spacing={1} style={{paddingTop: "10px"}}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
             <Paper
               style={{
                 border: "1px solid rgba(255, 255, 255, 0.24)",
@@ -541,9 +569,7 @@ export default function SequenceGenerator(props) {
             </Paper>
           </Grid>
 
-          <Grid item xs={6}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                 <Paper
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.24)",
@@ -554,56 +580,32 @@ export default function SequenceGenerator(props) {
                   <Grid container spacing={1}>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Sequences"}
+                        {"Combat Log"}
                       </Typography>
                     </Grid>
-
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      {sequences.map((s, i) => (
-                        <SequenceObject index={i} seq={s} data={s.data} db={spellDB} isSelected={selectedSeq===i} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
-                      ))}
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Paper
-                  style={{
-                    border: "1px solid rgba(255, 255, 255, 0.24)",
-                    padding: "0px 8px 8px 8px",
-                  }}
-                  elevation={0}
-                >
-                  <Grid container spacing={1}>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Results"}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12}>
+                    {/*<Grid item xs={12}>
                       <Paper style={{ backgroundColor: "#525252", padding: 16 }} elevation={0}>
                         <p style={{ color: "whitesmoke", paddingTop: "10px" }}>
                           {"Damage: " + result.totalDamage.toLocaleString("en-US") + ". Healing: " + result.totalHealing.toLocaleString("en-US") + ". HPM: " + Math.round(100 * result.hpm) / 100}
                         </p>
                       </Paper>
-                    </Grid>
+                      </Grid> */}
                     {/* Combat Log */}
                     <Grid item xs={12}>
                       <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={8} maxRows={8} fullWidth disabled style={{ whiteSpace: "pre-line" }} />
                     </Grid>
                   </Grid>
                 </Paper>
+                <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
+                  <StatPanel setActiveStats={setActiveStats} stats={activeStats} />
+                </Grid>
               </Grid>
-            </Grid>
           </Grid>
-          <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
-            <StatPanel setActiveStats={setActiveStats} stats={activeStats} />
-          </Grid>
+
+
           <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
             <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
           </Grid>
-        </Grid>
 
         {/*<div style={{ height: 50 }}>&nbsp;</div> */}
       </div>
