@@ -204,6 +204,7 @@ export function SequenceObject(props) {
                         spell={spellDB[spell][0].spellData}
                         spec={selectedSpec}
                         iconType={"Spell"}
+                        gameType={props.gameType}
                         draggable
                         onDragStart={(e) => {
                           dragStart(e, index);

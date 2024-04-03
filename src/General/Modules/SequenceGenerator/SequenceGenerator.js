@@ -5,6 +5,10 @@ import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@m
 import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
 import StatPanel from "./SeqStatPanel";
+
+import { RootState } from "Redux/Reducers/RootReducer";
+import { useSelector } from "react-redux";
+
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
@@ -150,7 +154,7 @@ const roundN = (num, places) => {
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
-
+  const gameType = useSelector((state: RootState) => state.gameType);
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
   const classes = useStyles();
@@ -422,6 +426,7 @@ export default function SequenceGenerator(props) {
                             <SpellIcon
                               spell={spellDB[spell][0].spellData}
                               spec={selectedSpec}
+                              gameType={gameType}
                               iconType={"Spell"}
                               draggable
                               onDragStart={(e) => {
@@ -450,6 +455,7 @@ export default function SequenceGenerator(props) {
                               <SpellIcon
                                 spell={talentDB[spell]}
                                 spec={selectedSpec}
+                                gameType={gameType}
                                 iconType={"Talent"}
                                 width={25}
                                 //onDragStart={(e) => { dragStart(e, spell) }}

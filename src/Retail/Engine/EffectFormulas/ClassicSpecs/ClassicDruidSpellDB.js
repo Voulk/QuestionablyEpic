@@ -191,7 +191,7 @@ const offspecTalents = {
 const specTalents = {
 
     // Bugged in beta
-    improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 1 + 0.05 * points);
     }}, 
     blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
