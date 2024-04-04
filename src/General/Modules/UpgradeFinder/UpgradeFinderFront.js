@@ -126,21 +126,17 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 441, label: "+2" },
-  { value: 444, label: "+3" },
-  { value: 447, label: "+5" },
-  { value: 450, label: "+7" },
-  { value: 454, label: "+9" },
-  { value: 457, label: "+11" },
-  { value: 460, label: "+13" },
-  { value: 463, label: "+15" },
-  { value: 467, label: "+17" },
-  { value: 470, label: "+19/20" },
-  { value: 473, label: "" },
-  { value: 476, label: "" },
-  { value: 480, label: "" },
-  { value: 483, label: "" },
-  { value: 489, label: "" },
+  { value: 493, label: "M0" },
+  { value: 496, label: "+2" },
+  { value: 499, label: "+3/4" },
+  { value: 502, label: "+5/6" },
+  { value: 506, label: "+7/8" },
+  { value: 509, label: "+9/10" },
+  { value: 512, label: "Vault" },
+  { value: 515, label: "" },
+  { value: 519, label: "" },
+  { value: 522, label: "" },
+  { value: 528, label: "" },
 ]
 
 export default function UpgradeFinderFront(props) {
@@ -404,11 +400,11 @@ export default function UpgradeFinderFront(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={8}
+                  defaultValue={5}
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
-                  max={14}
+                  max={11}
                   change={setDungeonDifficulty}
                 />
               </div>

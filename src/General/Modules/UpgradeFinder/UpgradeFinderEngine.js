@@ -223,7 +223,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         }
       } else if (primarySource === -1 || primarySource === 1205) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
-        if ([-55, -56, 762, 740,1021, 968, 556, 65,].includes(encounter) || primarySource === 1205) {
+        if ([ 1196, 1197, 1198, 1199, 1201, 1202, 1204, 1203].includes(encounter) || primarySource === 1205) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
           item.dropLoc = "Mythic+";

@@ -1995,6 +1995,7 @@ export const encounterDB = {
       68, // The Vortex Pinnacle
       767, // Neltharion's Lair */
 
+      /*
       "-55", // Dawn of the Infinites: Galakrond's Fall
       "-56", // Dawn of the Infinites: Murozond's Rise
       762, // Darkheart Thicket
@@ -2003,6 +2004,15 @@ export const encounterDB = {
       968, // Atal'Dazar
       556, // Everbloom
       65, // Throne of the Tides
+      */
+      1196, // Brackenhide Hollow
+      1197, // Uldaman: Legacy of Tyr
+      1198, // The Nokhud Offensive
+      1199, // Neltharus
+      1201, // Alge'thar Academy
+      1202, // Ruby Life Pools
+      1204, // Halls of Infusion
+      1203, // The Azure Vault
     ],
 
     313: {
