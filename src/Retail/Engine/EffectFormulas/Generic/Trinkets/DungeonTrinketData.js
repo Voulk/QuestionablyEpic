@@ -349,20 +349,20 @@ export const dungeonTrinketData = [
       { // Negative Vers portion - When you have debuff.
         coefficient: -0.299875, 
         table: -7,
-        uptime: 2 / 45, // This is the amount of time the debuff stays on you until you refresh it.
+        uptime: 3 / 45, // This is the amount of time the debuff stays on you until you refresh it.
       },
       { // Positive vers portion
         coefficient: 1.260259, 
         table: -9,
         duration: 15,
-        cooldown: 47,
+        cooldown: 48,
       },
       { 
         coefficient: 25.77058, // This is the shield portion applied to allies.
         table: -9,
         secondaries: ['versatility'],
         efficiency: 0.98,
-        targets: 14, 
+        targets: 1.9, 
         cooldown: 47,
       },
     ],
