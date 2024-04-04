@@ -160,7 +160,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   } 
   else if (instanceID === -4) {
     // Crafted
-    itemLevel = 486; // We'll have a setting for this.
+    itemLevel = 525; // We'll have a setting for this.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
@@ -181,8 +181,25 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
+  let item = null;
+  console.log(source.instanceId);
 
-  let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
+  // Crafted
+  if (source.instanceId === -4) {
+    const missiveStats = ["crit", "mastery"]
+    let itemAllocations = getItemAllocations(itemID, missiveStats);
+    let craftedSocket = false;
+    //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
+
+    item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
+    item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+    console.log(itemAllocations);
+    console.log(item.stats);
+  }
+  else {
+    item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
+  }
+
   if (item.slot === "Neck") item.socket = 3;
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");

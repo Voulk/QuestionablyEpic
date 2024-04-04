@@ -106,7 +106,7 @@ export default function CraftedGearContainer(props) {
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemDifferentials, "-4", key, 486)].map((item, index) => (
+                              {[...filterItemListBySource(itemDifferentials, "-4", key, 525)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>
