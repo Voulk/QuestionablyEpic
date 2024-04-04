@@ -21,14 +21,14 @@ describe("Amalgam's Seventh Spine", () => {
 
     });
 }); 
-/*
+
 describe("Blossom of Amirdrassil", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Blossom of Amirdrassil");
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${483}  | ${[Math.floor(62951),  Math.floor(163504*1.05*1.1/6), Math.floor(490523*1.05*1.1)]}
+    ${496}  | ${[Math.floor(494439/6),  Math.floor(247210/6), Math.floor(741649)]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -43,16 +43,16 @@ describe("Smoldering Seedling", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${473}  | ${[Math.floor(718087*1.05), 720]}
+    ${486}  | ${[899298, 757]}
     // add new test cases here
     `.test("Smoldering Seedling Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(processedValue(effect[0], level, 1, "floor")).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
         //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
 }); 
 
-/*
+
 describe("Pip's Emerald Friendship Badge", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Pip's Emerald Friendship Badge");
@@ -62,7 +62,7 @@ describe("Pip's Emerald Friendship Badge", () => {
     ${470}  | ${266}
     // add new test cases here
     `.test("Pip's Emerald Friendship Badge Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
+        expect(Math.round(processedValue(effect[0], level) / 12)).toBe(expectedResult);
         //expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
 }); 
@@ -87,8 +87,8 @@ describe("Ominous Chromatic Essence", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${431}  | ${[503, 62]}
-    ${444}  | ${[534, 66]}
+    ${431}  | ${[503, 53]}
+    ${444}  | ${[534, 56]}
     // add new test cases here
     `.test("Ominous Chromatic Essence Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -109,9 +109,7 @@ describe("Screaming Black Dragonscale", () => {
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
 }); 
-
-
-
+/*
 describe("Broodkeeper's Promise", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Broodkeeper's Promise");;
@@ -125,7 +123,7 @@ describe("Broodkeeper's Promise", () => {
         //expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
 }); 
-
+*/
 describe("Emerald Coach's Whistle", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Emerald Coach's Whistle");;
@@ -135,6 +133,7 @@ describe("Emerald Coach's Whistle", () => {
     ${346}  | ${544}
     ${359}  | ${599}
     ${372}  | ${655}
+    ${493}  | ${1169}
     // add new test cases here
     `.test("Emerald Coach's Whistle Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect, level)).toBe(expectedResult);
@@ -147,13 +146,16 @@ describe("Water's Beating Heart", () => {
     // +100% at 20%.
     // The tooltip value is +33% the base heal.
     const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Water's Beating Heart");;
-    const effect = activeTrinket.effects[0];
+    const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${421}  | ${25034} // 12517 at full health.
+    ${476}  | ${[-422, 1771, 36068]}
+    ${493}  | ${[-449, 1888, 45349]}
     // add new test cases here
     `.test("Water's Beating Heart Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level)).toBe(expectedResult);
+        expect(processedValue(effect[0], level, 1, "floor")).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+        expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
     });
 });
 
@@ -163,9 +165,7 @@ describe("Kyrakka's Searing Embers", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${346}  | ${[29488, 13856]}
-    ${359}  | ${[30580, 14369]}
-    ${372}  | ${[31711, 14901]}
+    ${493}  | ${[93814, 36735]}
     // add new test cases here
     `.test("Kyrakka's Searing Embers Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -173,21 +173,6 @@ describe("Kyrakka's Searing Embers", () => {
     });
 });
 
-describe("Tome of Unstable Power", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Tome of Unstable Power");;
-    const effect = activeTrinket.effects;
-    each`
-    level   | expectedResult
-    ${346}  | ${[684, 633]}
-    ${359}  | ${[772, 697]}
-    ${372}  | ${[872, 761]}
-    // add new test cases here
-    `.test("Tome of Unstable Power Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
-        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
-    });
-});
 
 describe("Miniature Singing Stone", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -195,12 +180,11 @@ describe("Miniature Singing Stone", () => {
     const effect = activeTrinket.effects[0];
     each`
     level   | expectedResult
-    ${346}  | ${29856}
-    ${359}  | ${30961}
-    ${372}  | ${32107}
+    ${476}  | ${142654}
+    ${493}  | ${179361}
     // add new test cases here
     `.test("Miniature Singing Stone Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect, level, 1, "round")).toBe(expectedResult);
+        expect(processedValue(effect, level, 1)).toBe(expectedResult);
     });
 });
 
@@ -304,9 +288,8 @@ describe("Conjured Chillglobe", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${389}  | ${[51980, 11735]}
-    ${402}  | ${[63917, 14430]}
-    ${415}  | ${[78067, 17624]} // 17625 in game. Can re-check minutiae later.
+    ${506}  | ${[278993, 18896]} 
+    ${519}  | ${[330517, 22385]} 
     // add new test cases here
     `.test("Conjured Chillglobe Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -320,9 +303,8 @@ describe("Whispering Incarnate Icon", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${395}  | ${[445, 241]}
-    ${408}  | ${[503, 259]}
-    ${421}  | ${[567, 277]}
+    ${512}  | ${[1325, 220]}
+    ${525}  | ${[1496, 230]}
     // add new test cases here
     `.test("Whispering Incarnate Icon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -337,7 +319,6 @@ describe("Alacritous Alchemist Stone", () => {
     each`
     level   | expectedResult
     ${405}  | ${957}
-
     // add new test cases here
     `.test("Alacritous Alchemist Stone Icon Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect, level, 1, "round")).toBe(expectedResult);

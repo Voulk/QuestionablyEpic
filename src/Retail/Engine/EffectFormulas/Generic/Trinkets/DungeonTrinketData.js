@@ -353,7 +353,7 @@ export const dungeonTrinketData = [
       },
       { // Positive vers portion
         coefficient: 1.260259, 
-        table: -9,
+        table: -7,
         duration: 15,
         cooldown: 48,
       },
@@ -383,18 +383,18 @@ export const dungeonTrinketData = [
     name: "Kyrakka's Searing Embers",
     effects: [
       { // Healing Portion
-        coefficient: 88.852905, // 161.5508, 
+        coefficient: 53.31175, // 161.5508, 
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 2,
+        ppm: 4,
         mult: 0.55, // Our expected overhealing.
       },
       { // Damage portion
         // Damage is split, so we don't need any kind of target multiplier in here.
-        coefficient: 41.75107,
+        coefficient: 20.87553,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 2,
+        ppm: 4,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
