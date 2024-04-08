@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { Paper, Grid, Typography, Button } from "@mui/material";
+import { Paper, Grid, Typography, Button, TextField, MenuItem } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import HelpText from "../SetupAndMenus/HelpText";
 import UpgradeFinderSlider from "./Slider";
@@ -81,6 +81,24 @@ const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (M
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
+const craftedItemLevels = [
+  { value: 0, label: "496" },
+  { value: 1, label: "502" },
+  { value: 2, label: "509" },
+  { value: 3, label: "515" },
+  { value: 4, label: "522" },
+  { value: 5, label: "525" },
+]
+
+const craftedOptions = [
+  "Crit / Mastery",
+  "Crit / Haste",
+  "Crit / Versatility",
+  "Haste / Mastery",
+  "Haste / Versatility",
+  "Mastery / Versatility",
+]
+
 const PvPRating = [
   { value: 0, label: "Unranked" },
   { value: 600, label: "Combatant I" },
@@ -137,6 +155,7 @@ const mythicPlusLevels = [
   { value: 519, label: "" },
   { value: 522, label: "" },
   { value: 528, label: "" },
+  { value: 535, label: "" },
 ]
 
 export default function UpgradeFinderFront(props) {
@@ -148,7 +167,7 @@ export default function UpgradeFinderFront(props) {
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
 
-  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0 });
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0, craftedLevel: 0, craftedStats: "" });
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -164,6 +183,14 @@ export default function UpgradeFinderFront(props) {
   }
     setUFSettings({ ...ufSettings, raid: currDiff });
   };
+
+  const changeCraftedStats = (event) => {
+    setUFSettings({ ...ufSettings, craftedStats: event.target.value });
+  }
+
+  const setCraftedLevel = (event) => {
+    setUFSettings({ ...ufSettings, craftedLevel: event.target.value });
+  }
 
   const setDungeonDifficulty = (event, difficulty) => {
     if (difficulty <= 15 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
@@ -445,6 +472,54 @@ export default function UpgradeFinderFront(props) {
             </Paper>
           </Grid>
         )}
+        {/* Crafted Items */}
+<Grid item xs={12}>
+  <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
+    <div style={{ padding: 8 }}>
+      <Grid container justifyContent="center" spacing={1}>
+        <Grid item xs={12}>
+          <Typography color="primary" align="center" variant="h5">
+            {"Crafted Gear"}
+          </Typography>
+          <Grid item xs={12}>
+            <Typography align="center">{"Pick crafted stats and item level"}</Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid container justifyContent="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
+        {/* Add TextField component here */}
+        <Grid item xs={3} style={{ textAlign: "center" }}>
+          <TextField
+            select
+            label="Secondaries"
+            value={ufSettings.craftedStats} // Provide value and onChange handler as per your requirement
+            onChange={changeCraftedStats} // Provide your handleChange function
+            variant="outlined"
+            fullWidth
+          >
+            {craftedOptions.map((option => {
+              return <MenuItem key={option} value={option}>{option}</MenuItem>
+            }))}
+          </TextField>
+        </Grid>
+
+        <Grid item style={{ textAlign: "center" }} xs={8}>
+          <UpgradeFinderSlider
+            className={classes.slider}
+            style={{ color: "#af5050" }}
+            defaultValue={4}
+            step={null}
+            valueLabelDisplay="off"
+            marks={craftedItemLevels}
+            max={5}
+            change={setCraftedLevel}
+          />
+        </Grid>
+      </Grid>
+    </div>
+  </Paper>
+</Grid>
         {/* ------------------------------- PvP Section ------------------------------ */}
         {/*<Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
