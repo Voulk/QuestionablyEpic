@@ -175,26 +175,23 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
 
 
 
-function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
+function buildItem(player, contentType, rawItem, itemLevel, source, settings, upgradeFinderSettings) {
   const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
   let item = null;
-  console.log(source.instanceId);
 
   // Crafted
   if (source.instanceId === -4) {
-    const missiveStats = ["crit", "mastery"]
+    const missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     let craftedSocket = false;
     //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
 
     item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
-    console.log(itemAllocations);
-    console.log(item.stats);
   }
   else {
     item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
@@ -231,7 +228,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.quality = 4;
           item.dropLoc = "Raid";
           item.dropDifficulty = playerSettings.raid[x]; //
@@ -242,7 +239,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
         if ([ 1196, 1197, 1198, 1199, 1201, 1202, 1204, 1203].includes(encounter) || primarySource === 1205) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Mythic+";
           item.dropDifficulty = playerSettings.dungeon;
           item.dropDifficultyTxt = "";
@@ -254,7 +251,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       else if (primarySource === -4 && rawItem.quality === 4) {
         // Crafted. Note that we're excluding blue items. Those are only really good early on.
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
-        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Crafted";
         item.dropDifficulty = "";
         item.dropDifficultyTxt = "";

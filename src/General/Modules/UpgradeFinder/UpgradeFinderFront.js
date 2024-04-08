@@ -167,7 +167,7 @@ export default function UpgradeFinderFront(props) {
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
 
-  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0, craftedLevel: 0, craftedStats: "" });
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0, craftedLevel: 0, craftedStats: "Crit / Haste" });
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
