@@ -15,7 +15,7 @@ const trinketCategories = {
 
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
-    const itemLevel = 522;
+    const itemLevel = 528;
     if (trinketData === null) return null;
     switch (trinketName) {
 
