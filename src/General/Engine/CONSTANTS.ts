@@ -2,8 +2,8 @@
 
 export const CONSTANTS = {
     dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 0.55,
-    allyDPSPerPoint: 0.55 / 13000 * 135000,
+    allyStatWeight: 0.62,
+    allyDPSPerPoint: 0.62 / 14500 * 300000,
     difficulties: {
         "LFR": 0,
         "LFRMax": 1,

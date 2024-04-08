@@ -68,7 +68,8 @@ export const raidTrinketData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Smoldering Treant Seedling                                */
     /* ---------------------------------------------------------------------------------------------- */
-    /* This will need a larger revamp to properly account for the 1:1 portion at the end since it's an efficiency increase rather than added healing.
+    /* Seedlings calculation is better explained further below but this is a more difficult trinket to model than most.
+    /* 
     */
     name: "Smoldering Seedling",
     effects: [
@@ -77,10 +78,10 @@ export const raidTrinketData = [
         table: -9,
         duration: 12,
         cooldown: 120,
-        targetScaling: 1.5, // This actually heals for 2.5x the amount you feed it, but we deduct the healing spent.
-        efficiency: {Raid: 0.6, Dungeon: 0.4}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
-        specEfficiency: { "Restoration Druid": 0.8, "Holy Paladin": 0.85, "Holy Priest": 0.9, "Discipline Priest": 0.55, "Mistweaver Monk": 1.36, 
-                          "Restoration Shaman": 0.7, "Preservation Evoker": 0.75 }, // Note the comment above. This could be replaced by a proper sequence comparison.
+        targetScaling: 1, // While healing is multiplied by 1.5x, the additional healing offered is constant.
+        efficiency: {Raid: 0.9, Dungeon: 0.5}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        specEfficiency: { "Restoration Druid": 0, "Holy Paladin": 0.1, "Holy Priest": 0.25, "Discipline Priest": 0, "Mistweaver Monk": 0.45, 
+                          "Restoration Shaman": 0, "Preservation Evoker": 0 }, // This is the difference in spell efficiency. It does not apply to the bonus healing.
       },
       { // Mastery benefit. This is short and not all that useful.
         coefficient: 0.518729, 
@@ -96,9 +97,24 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) / data[0].cooldown * data[0].targetScaling
-                          * data[0].specEfficiency[player.spec];
+      // If seedling can grant X bonus healing, and we heal it for X / 2.5 then we get the full bonus value. 
+      // Note that this isn't a great investment in itself but it's a good baseline for the trinket.
+      const bonusValue = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType])
+      bonus_stats.hps = bonusValue / data[0].cooldown;
 
+      // The other, often more significant amount of Seedlings value is in the efficiency increase you can get from turning your single target healing
+      // into AoE smart healing. This is very difficult to estimate, since in most cases swapping to a single target rotation is a healing loss 
+      // compared to spending those GCDs on regular AoE healing. The only specs with a clear niche here are:
+      // - Mistweaver: who has an ultra efficient single target healing rotation.
+      // - Holy Priest with Guardian Spirit: Fine on HPS but a difficult trade on progression.
+      // Note here that the real gain is the efficiency increase from reducing the overhealing on your ST rotation, NOT all healing the Seedling radiates.
+      const expectedSingleTargetHPS = player.getHPS(additionalData.contentType) * data[0].specEfficiency[player.spec] * data[0].duration / data[0].cooldown;
+      bonus_stats.hps += expectedSingleTargetHPS;
+
+      //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) / data[0].cooldown * data[0].targetScaling
+      //                    * data[0].specEfficiency[player.spec];
+
+      // The mastery portion is a bit of a meme but it still adds a little value.
       bonus_stats.mastery = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
 
       return bonus_stats;
@@ -155,27 +171,27 @@ export const raidTrinketData = [
     name: "Blossom of Amirdrassil",
     effects: [
       {  // HoT effect
-        coefficient: 40.9063, // This is probably 1 HoT tick.
+        coefficient: 44.99676, // 40.9063, // This is probably 1 HoT tick.
         table: -9,
         secondaries: ['versatility', 'crit'], // Crit added post-release.
-        efficiency: {Raid: 0.69, Dungeon: 0.64}, 
+        efficiency: {Raid: 0.65, Dungeon: 0.6}, 
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
         ticks: 6,
       },
       {  // Spread HoT effect
-        coefficient: 20.45229, // 46.75641,
+        coefficient: 22.49753, // 20.45229, // 46.75641,
         table: -9,
         targets: 3, // 
         secondaries: ['versatility', 'crit'],
-        efficiency: {Raid: 0.53, Dungeon: 0.5}, 
+        efficiency: {Raid: 0.49, Dungeon: 0.4}, 
         percentProc: 0.82,
         ticks: 6,
       },
       {  // Shield effect
-        coefficient: 368.1498,
+        coefficient: 404.9657, // 368.1498,
         table: -9,
         secondaries: ['versatility'],
-        efficiency: {Raid: 0.97, Dungeon: 0.85}, // This is an absorb so you won't lose much value.
+        efficiency: {Raid: 0.95, Dungeon: 0.8}, // This is an absorb so you won't lose much value.
         percentProc: 0.18,
       },
     ],
@@ -282,11 +298,11 @@ export const raidTrinketData = [
     name: "Ward of Faceless Ire",
     effects: [
       {  // Heal effect
-        coefficient: 371.7325,
+        coefficient: 240.4646, // 371.7325,
         table: -9,
         secondaries: ['versatility'],
         efficiency: {Raid: 0.62, Dungeon: 0.74}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
-        cooldown: 120, 
+        cooldown: 60, 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -404,7 +420,7 @@ export const raidTrinketData = [
         table: -7,
       },
       { // This is for the proc if you have Earth and Frost in party.
-        coefficient: 0.054011,
+        coefficient: 0.046006, //0.054011,
         table: -7,
         num: 3,
       },
@@ -413,7 +429,7 @@ export const raidTrinketData = [
       // Versatility Portion
       let bonus_stats = {haste: 0, crit: 0, mastery: 0, versatility: 0};
       const buffSetting = getSetting(additionalData.settings, "chromaticEssenceBuff");
-      const includeAllies = false;// getSetting(additionalData.settings, "chromaticEssenceAllies");
+      const includeAllies = getSetting(additionalData.settings, "chromaticEssenceAllies");
       let primaryBuff = (buffSetting === "Automatic" ? player.getHighestStatWeight(additionalData.contentType) : buffSetting).toLowerCase();
       const primaryValue = processedValue(data[0], itemLevel);
       const secondaryValue = includeAllies ? processedValue(data[1], itemLevel) : 0;
@@ -500,7 +516,7 @@ export const raidTrinketData = [
         secondaries: ["crit", "versatility"],
       },
       { // Mana portion
-        coefficient: 30.13977,
+        coefficient: 9.0419, //30.13977,
         table: -9, 
         percentUsed: 0.7,
         cooldown: 60,
@@ -535,7 +551,7 @@ export const raidTrinketData = [
         table: -1,
       },
       { // This is for the proc if you have Earth and Frost in party.
-        coefficient: 0.250517,
+        coefficient: 0.137528, // 0.250517,
         table: -7,
         ppm: 2,
         duration: 12,
@@ -549,7 +565,7 @@ export const raidTrinketData = [
       // Ally buff
       let sharedBuff = runGenericPPMTrinket(data[1], itemLevel);
       // Incarnate Allies has been removed as a setting and now defaults to own only.
-      const iconSetting = ""// getSetting(additionalData.settings, "incarnateAllies")
+      const iconSetting = getSetting(additionalData.settings, "incarnateAllies")
 
       // Check if buffs are active and if they are, add them to bonus stats.
       if (iconSetting === "Tank") bonus_stats.versatility = sharedBuff;

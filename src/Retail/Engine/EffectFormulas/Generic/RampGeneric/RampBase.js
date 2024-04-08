@@ -1,6 +1,7 @@
 // 
 import { checkBuffActive, removeBuffStack, addBuff, getBuffStacks } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
+import { genSpell } from "./APLBase";
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
@@ -39,11 +40,14 @@ export const spendSpellCost = (spell, state) => {
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
             addReport(state, `Essence Burst consumed!`);
             state.manaSpent += 0;
+            
         }
         else {
             // Essence buff is not active. Spend Essence and mana.
             state.manaSpent += spell[0].cost;
+            state.manaPool = (state.manaPool || 0) - spell[0].cost;
             state.essence -= spell[0].essence;
+            
 
             // Check if we need to begin Essence Recharge. We don't actually need to check if we're below
             // 6 Essence, since we'll never be able to cast a spell that costs Essence if we're at 6.
@@ -53,7 +57,10 @@ export const spendSpellCost = (spell, state) => {
         }
     } 
         
-    else if ('cost' in spell[0]) state.manaSpent += spell[0].cost;
+    else if ('cost' in spell[0]) {
+        state.manaSpent += spell[0].cost;
+        state.manaPool = (state.manaPool || 0) - spell[0].cost;
+    }
     else {
         // No cost. Do nothing.
     };    
@@ -61,6 +68,113 @@ export const spendSpellCost = (spell, state) => {
     // TODO: Add cost discounts here like Infusion of Light.
 }
 
+// Ideally remove triggerSpecial eventually.
+// flags: "ignoreCD"
+export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flags = {}) => {
+    fullSpell.forEach(spell => {
+        let canProceed = false
+
+        if (spell.chance) {
+            const roll = Math.random();
+            canProceed = roll <= spell.chance;
+        }
+        else canProceed = true;
+
+        if (canProceed) {
+            // The spell casts a different spell. 
+            if (spell.type === 'castSpell') {
+                addReport(state, `Spell Proc: ${spellName}`)
+                const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
+                if (spell.powerMod) {
+                    newSpell[0].coeff = newSpell[0].coeff * spell.powerMod; // Increases or reduces the power of the free spell.
+                    newSpell[0].flatHeal = (newSpell[0].flatHeal * spell.powerMod) || 0;
+                    newSpell[0].flatDamage = (newSpell[0].flatDamage * spell.powerMod) || 0;
+                }
+                if (spell.targetMod) {
+                    for (let i = 0; i < spell.targetMod; i++) {
+                        runSpell(newSpell, state, spell.storedSpell, evokerSpells, triggerSpecial, runHeal, runDamage);
+                    }
+                }
+                else {
+                    runSpell(newSpell, state, spell.storedSpell, evokerSpells, triggerSpecial, runHeal, runDamage);
+                }
+
+                
+            }
+            // The spell has a healing component. Add it's effective healing.
+            // Absorbs are also treated as heals.
+            else if (spell.type === 'heal') {
+                runHeal(state, spell, spellName)
+            }
+            
+            
+            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            else if (spell.type === 'damage') {
+                runDamage(state, spell, spellName)
+            }
+            // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
+            else if (spell.type === 'function') {
+                spell.runFunc(state, spell, evokerSpells, triggerSpecial, runHeal, runDamage);
+            }
+
+            // The spell adds a buff to our player.
+            // We'll track what kind of buff, and when it expires.
+            else if (spell.type === "buff") {
+                if (spell.name === "Essence Burst") {
+                    // Special code for essence burst.
+                    triggerSpecial(state);
+                }
+                else {
+                    addBuff(state, spell, spellName);
+                }
+                
+            } 
+
+            // These are special exceptions where we need to write something special that can't be as easily generalized.
+            if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
+        
+            }
+
+
+ 
+        // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
+    }); 
+
+    // Any post-spell code.
+    if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+    //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
+
+}
+
+export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
+
+
+    if (seqType === "Manual") castState.queuedSpell = seq.shift();
+    // if its is "Auto", use genSpell to auto generate a cast sequence
+    else {
+        // If we're creating our sequence via APL then we'll 
+        if (seq.length > 0) castState.queuedSpell = seq.shift();
+        else {
+            seq = genSpell(state, spellDB, apl);
+            castState.queuedSpell = seq.shift();
+        }
+    }
+
+    if (!castState.queuedSpell) {
+        //console.error("Can't find spell: " + castState.queuedSpell);
+        castState.queuedSpell = "Rest";
+        castState.spellFinish = state + 1.5;
+        castState.nextSpell = state + 1.5;
+    }
+    const fullSpell = spellDB[castState.queuedSpell];
+    const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
+    castState.spellFinish = state.t + castTime - 0.01;
+    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);
+    else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
+    else castState.nextSpell = state.t + castTime;
+
+    //console.log("Queued: " + castState.queuedSpell + " | Next: " + castState.nextSpell + " | Finish: " + castState.spellFinish);
+}
 
 
 
@@ -88,6 +202,7 @@ export const runRampTidyUp = (state, settings, sequenceLength, startTime) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     // Add up our healing values and return them.
     state.activeBuffs = [];
+    
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.talents = {};
@@ -177,7 +292,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
     
-    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100);
+    if (stats.includes("vers")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
@@ -222,7 +337,7 @@ export const getCrit = (stats) => {
 }
 
 export const addReport = (state, entry) => {
-    if (state.settings.reporting) {
+    if (state.settings.reporting /*&& entry.includes("Casting")*/) {
         state.report.push(Math.round(100*state.t)/100 + " " + entry);
             
         //state.report.push(Math.round(100*state.t)/100 + " " + entry);

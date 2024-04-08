@@ -9,10 +9,10 @@ export const dungeonTrinketData = [
     */
     name: "Amalgam's Seventh Spine",
     effects: [
-      { // Mastery portion
+      { // Be cautious using log values for some of these. Resto Druid for example is broken. 
         coefficient: 0.666804,
         table: -7,
-        ppm: {"Restoration Druid": 29, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+        ppm: {"Restoration Druid": 29.8, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
               "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
       },
     ],
@@ -251,21 +251,20 @@ export const dungeonTrinketData = [
     */
     name: "Echoing Tyrstone",
     effects: [
-      { 
+      {  // Healing effect. No longer splits to pets. Can be pre-charged but we're opting not to include this for now.
         coefficient: 283.4695, 
         table: -9,
         secondaries: ["versatility", "crit"],
-        targets: {Raid: 1, Dungeon: 1},
         cooldown: 120,
         meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
-        efficiency: 0.48, // No longer splits to pets.
+        efficiency: 0.48, // Effective Healing x Usage Rate
       },
-      { // AoE Haste effect
+      { // AoE Haste effect - Each target gets full value. No splitting.
         coefficient: 0.189052, 
         table: -7,
-        targets: {Raid: 20, Dungeon: 5}, // TODO: Test that this isn't split too.
+        targets: {Raid: 18, Dungeon: 5}, // This can hit all 20 people, but in practice you often miss a few on most late game fights.
         cooldown: 120,
-        efficiency: 0.8, // No overhealing, but we're still expecting a little wastage here.
+        efficiency: 0.75, // No overhealing, but we're still expecting a little wastage here.
         duration: 15,
       },
     ],
@@ -347,19 +346,31 @@ export const dungeonTrinketData = [
     */
     name: "Water's Beating Heart",
     effects: [
+      { // Negative Vers portion - When you have debuff.
+        coefficient: -0.299875, 
+        table: -7,
+        uptime: 3 / 45, // This is the amount of time the debuff stays on you until you refresh it.
+      },
+      { // Positive vers portion
+        coefficient: 1.260259, 
+        table: -7,
+        duration: 15,
+        cooldown: 48,
+      },
       { 
-        coefficient: 39.11369, // Note that this coefficient is for when the target is below 20% health.
+        coefficient: 25.77058, // This is the shield portion applied to allies.
         table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ticks: 4, // Haste adds ticks / partial ticks. 
-        cooldown: 120,
-        mult: 0.7, // Mult = 1 is the target being sub 20% health for it's duration. Mult = 0.5 would be a full health target.
+        secondaries: ['versatility'],
+        efficiency: 0.98,
+        targets: 1.9, 
+        cooldown: 47,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult) * player.getStatMults(data[0].secondaries) * data[0].ticks / data[0].cooldown;
+      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown)- (processedValue(data[0], itemLevel) * data[0].uptime);
+      bonus_stats.hps = runGenericFlatProc(data[2], itemLevel, player, additionalData.contentType || "Raid") // processedValue(data[2], itemLevel, data[2].efficiency) * data[2].targets / data[2].cooldown;
 
       return bonus_stats;
     }
@@ -372,18 +383,18 @@ export const dungeonTrinketData = [
     name: "Kyrakka's Searing Embers",
     effects: [
       { // Healing Portion
-        coefficient: 88.852905, // 161.5508, 
+        coefficient: 53.31175, // 161.5508, 
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 2,
+        ppm: 4,
         mult: 0.55, // Our expected overhealing.
       },
       { // Damage portion
         // Damage is split, so we don't need any kind of target multiplier in here.
-        coefficient: 41.75107,
+        coefficient: 20.87553,
         table: -9,
         secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 2,
+        ppm: 4,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -582,7 +593,7 @@ export const dungeonTrinketData = [
     name: "Miniature Singing Stone",
     effects: [
       { 
-        coefficient: 89.95994, 
+        coefficient: 101.9246, // 89.95994, 
         table: -9,
         secondaries: ['versatility'],
         cooldown: 120,
@@ -709,7 +720,7 @@ export const dungeonTrinketData = [
       const critPerStack = processedValue(data[1], itemLevel)
       const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
 
-      if (additionalData.player.getSpec() === "Discipline Priest") {
+      if (additionalData.player.getSpec() === "Discipline Priest Ramp") {
 
         bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
       }

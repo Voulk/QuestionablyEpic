@@ -16,15 +16,30 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2.6",
+    update: 14,
+    date: "March 18",
+    changes: [ 
+      "Upgrade Finder: Items are once again sorted by upgrade percentage.",
+      "Upgrade Finder: Fixed dungeon headers not reporting upgrade count.",
+    ]},
+  {
     version: "10.2.5",
-    update: 12,
-    date: "February 10",
+    update: 13,
+    date: "March 14",
     changes: [ 
       "Upgrade Finder revamped. Reports can now be shared.",
       "New Settings: Runes, Phials and Gems.",
       "Added a button to automatically upgrade Vault items to max level.",
       "App-wide Visual Revamp."
     ]},
+    {
+      version: "10.2.5",
+      update: 12,
+      date: "February 21",
+      changes: [ 
+        "Mistweaver Gem Fix.",
+      ]},
   {
     version: "10.2.5",
     update: 11,

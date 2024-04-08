@@ -590,7 +590,6 @@ export class Player {
       Raid: new CastModel(spec, "Raid"),
       Dungeon: new CastModel(spec, "Dungeon"),
     };
-
     //console.log(this.castModels);
 
     if (spec === SPEC.RESTODRUID) {
@@ -705,7 +704,7 @@ export class Player {
       this.statWeights.DefaultWeights = true; */
     } 
     else if (spec.includes("Classic")) {
-      console.log("Setting up classic spec");
+      //console.log("Setting up classic spec");
       this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 0));
 

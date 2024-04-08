@@ -135,7 +135,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
-  if (instanceID === 1207) {
+  if ([1200, 1208, 1207, -22].includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -158,6 +158,10 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } 
+  else if (instanceID === -4) {
+    // Crafted
+    itemLevel = 525; // We'll have a setting for this.
+  }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
@@ -171,14 +175,28 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
 
 
 
-function buildItem(player, contentType, rawItem, itemLevel, source, settings) {
+function buildItem(player, contentType, rawItem, itemLevel, source, settings, upgradeFinderSettings) {
   const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
   const bonusIDs = settings.upFinderLeech ? "41" : "";
+  let item = null;
 
-  let item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
+  // Crafted
+  if (source.instanceId === -4) {
+    const missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
+    let itemAllocations = getItemAllocations(itemID, missiveStats);
+    let craftedSocket = false;
+    //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
+
+    item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
+    item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+  }
+  else {
+    item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
+  }
+
   if (item.slot === "Neck") item.socket = 3;
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
@@ -204,13 +222,13 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
       const encounter = itemSources[0].encounterId;
-      const isRaid = primarySource === 1207 || primarySource === -22;
+      const isRaid = [1200, 1208, 1207, -22].includes(primarySource);
 
       if (isRaid && encounter > 0) {
         // 
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.quality = 4;
           item.dropLoc = "Raid";
           item.dropDifficulty = playerSettings.raid[x]; //
@@ -219,16 +237,26 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         }
       } else if (primarySource === -1 || primarySource === 1205) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
-        if ([-55, -56, 762, 740,1021, 968, 556, 65,].includes(encounter) || primarySource === 1205) {
+        if ([ 1196, 1197, 1198, 1199, 1201, 1202, 1204, 1203].includes(encounter) || primarySource === 1205) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
+          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Mythic+";
-          item.dropDifficulty = "";
+          item.dropDifficulty = playerSettings.dungeon;
           item.dropDifficultyTxt = "";
           item.quality = 4;
           itemPoss.push(item);
         }
 
+      }
+      else if (primarySource === -4 && rawItem.quality === 4) {
+        // Crafted. Note that we're excluding blue items. Those are only really good early on.
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
+        item.dropLoc = "Crafted";
+        item.dropDifficulty = "";
+        item.dropDifficultyTxt = "";
+        item.quality = 4;
+        itemPoss.push(item);
       } 
       /*else if (primarySource !== -18) {
         /*

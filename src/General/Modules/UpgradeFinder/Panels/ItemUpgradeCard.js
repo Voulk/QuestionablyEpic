@@ -71,7 +71,7 @@ export default function ItemCard(props) {
     158320: "Niche use in high Mythic+ for countering single target debuffs",
     110009: "Poor for throughput but competitive in high Mythic+ to help the team survive one shots.",
   }
-  // Add tier set check too and report a generic message for those.
+  // Add tier set check too and report a generic message for those. 
 
   const itemQuality = "#a73fee" //item.getQualityColor();
 
