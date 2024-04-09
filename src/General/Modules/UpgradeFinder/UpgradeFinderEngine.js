@@ -134,7 +134,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-
+  console.log(playerSettings);
   if ([1200, 1208, 1207, -22].includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
@@ -146,7 +146,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
-
+  
   // World Bosses
   else if (instanceID === 1205) {
     if (bossID === 2531) itemLevel = 415;
@@ -160,7 +160,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   } 
   else if (instanceID === -4) {
     // Crafted
-    itemLevel = 525; // We'll have a setting for this.
+    itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
