@@ -78,4 +78,6 @@ export const itemLevels = {
     // Slider Value = 8
     408,
   ],
+  crafted:
+    [496, 502, 509, 515, 522, 525]
 };

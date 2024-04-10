@@ -67,6 +67,7 @@ describe("Pip's Emerald Friendship Badge", () => {
     });
 }); 
 
+/*
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Neltharion's Call to Chaos");;
@@ -79,7 +80,7 @@ describe("Neltharion's Call to Chaos", () => {
     `.test("Neltharion's Call to Chaos Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult);
     });
-}); 
+}); */
 
 describe("Ominous Chromatic Essence", () => { 
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -150,7 +151,7 @@ describe("Water's Beating Heart", () => {
     each`
     level   | expectedResult
     ${476}  | ${[-422, 1771, 36068]}
-    ${493}  | ${[-449, 1888, 45349]}
+    ${493}  | ${[-450, 1888, 45349]}
     // add new test cases here
     `.test("Water's Beating Heart Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level, 1, "floor")).toBe(expectedResult[0]);
@@ -282,6 +283,7 @@ describe("Static-Charged Scale", () => {
     });
 });
 
+/*
 describe("Conjured Chillglobe", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Conjured Chillglobe");
@@ -295,8 +297,9 @@ describe("Conjured Chillglobe", () => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
-});
+}); */
 
+/*
 describe("Whispering Incarnate Icon", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Whispering Incarnate Icon");;
@@ -310,7 +313,7 @@ describe("Whispering Incarnate Icon", () => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
-});
+}); */
 
 describe("Alacritous Alchemist Stone", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.

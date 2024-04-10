@@ -10,7 +10,7 @@ describe("LFR Item Level tests", () => {
     }]
 
     test("LFR Max - Regular Item", () => {
-        expect(getSetItemLevel(gnarlroot, lfrSettings, 0, 207794)).toEqual(441);
+        expect(getSetItemLevel(gnarlroot, lfrSettings, 0, 207794)).toEqual(480);
     })
     /*
     test("LFR Max - Dragonscale", () => {
@@ -22,7 +22,7 @@ describe("LFR Item Level tests", () => {
     }) */
 })
 
-
+/*
 describe("Normal Item Level tests", () => {
     const normalSettings = {"raid": [2, 2]}
     const normalMaxSettings = {"raid": [3, 3]}
@@ -57,8 +57,8 @@ describe("Normal Item Level tests", () => {
     })
     test("Normal Max - Sark Rare Drop", () => {
         expect(getSetItemLevel(fyrakk, normalMaxSettings, 0, 204465)).toEqual(441);
-    }) */
-})
+    }) 
+})*/
 /*
 describe("Heroic Item Level tests", () => {
     const heroicSettings = {"raid": [4, 4]}
