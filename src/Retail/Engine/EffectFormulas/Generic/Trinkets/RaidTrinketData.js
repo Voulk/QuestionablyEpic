@@ -248,7 +248,7 @@ export const raidTrinketData = [
     name: "Neltharion's Call to Dominance",
     effects: [
       { // Int portion
-        coefficient: 0.442388,
+        coefficient: 0.442388 * 0.85,
         table: -1,
         stat: "intellect",
         duration: 20,
@@ -274,7 +274,7 @@ export const raidTrinketData = [
     name: "Neltharion's Call to Chaos",
     effects: [
       { // Int portion
-        coefficient: 1.844795 * 1.1,
+        coefficient: 1.844795 * 1.1 * 0.936,
         table: -1,
         stat: "intellect",
         duration: 18,
@@ -327,8 +327,8 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.244196, // 1.506561 * 0.7, 
-        table: -9,
+        coefficient: 0.133174, // 0.244196, // 1.506561 * 0.7, 
+        table: -7,
         ppm: 2,
         ticks: 10,
         secondaries: []
@@ -342,7 +342,7 @@ export const raidTrinketData = [
         secondaries: ["versatility"], 
       },
       { // Gifted Versatility portion
-        coefficient: 0.386485, //0.483271,
+        coefficient: 0.347837, // 0.386485, //0.483271,
         table: -7, 
         targets: {"Raid": 8, "Dungeon": 5},
         duration: 12,
@@ -516,8 +516,8 @@ export const raidTrinketData = [
         secondaries: ["crit", "versatility"],
       },
       { // Mana portion
-        coefficient: 9.0419, //30.13977,
-        table: -9, 
+        coefficient: 4.92373, // 9.0419, //30.13977,
+        table: -7, 
         percentUsed: 0.7,
         cooldown: 60,
       },
@@ -547,8 +547,8 @@ export const raidTrinketData = [
     name: "Whispering Incarnate Icon",
     effects: [
       { // 100% uptime. Probably add a setting for the rest?
-        coefficient: 0.599658,
-        table: -1,
+        coefficient: 0.500103, //0.599658,
+        table: -7,
       },
       { // This is for the proc if you have Earth and Frost in party.
         coefficient: 0.137528, // 0.250517,

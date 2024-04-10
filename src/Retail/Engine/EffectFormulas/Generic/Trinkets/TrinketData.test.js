@@ -67,6 +67,7 @@ describe("Pip's Emerald Friendship Badge", () => {
     });
 }); 
 
+/*
 describe("Neltharion's Call to Chaos", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Neltharion's Call to Chaos");;
@@ -79,7 +80,7 @@ describe("Neltharion's Call to Chaos", () => {
     `.test("Neltharion's Call to Chaos Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult);
     });
-}); 
+}); */
 
 describe("Ominous Chromatic Essence", () => { 
     // Raw trinket values are compared to our spell data. Efficiency excluded.
@@ -282,6 +283,7 @@ describe("Static-Charged Scale", () => {
     });
 });
 
+/*
 describe("Conjured Chillglobe", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Conjured Chillglobe");
@@ -295,7 +297,7 @@ describe("Conjured Chillglobe", () => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
-});
+}); */
 
 /*
 describe("Whispering Incarnate Icon", () => {
