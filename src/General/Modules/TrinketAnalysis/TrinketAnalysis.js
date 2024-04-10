@@ -253,7 +253,7 @@ export default function TrinketAnalysis(props) {
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
-      key.slot === "Trinket" && key.levelRange.length > 0);
+      key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
 
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
