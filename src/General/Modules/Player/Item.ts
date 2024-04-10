@@ -54,7 +54,8 @@ export class Item {
     this.tertiary = tertiary === "Leech" || tertiary === "Avoidance" ? tertiary : "";
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
-    this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id), tertiary);
+    console.log(getItemAllocations(id, [], gameType));
+    this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);
     this.effect = getItemProp(id, "effect", gameType);
     this.setID = getItemProp(id, "itemSetId", gameType);
     this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();

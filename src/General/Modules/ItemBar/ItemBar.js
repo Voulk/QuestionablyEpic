@@ -74,7 +74,6 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     item.guessItemQuality();
   } else {
     item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "", gameType);
-    //if (item.slot === "Neck" && itemSocket) item.socket = 3;
     //item.guessItemQuality();
     item.quality = getItemProp(itemID, "quality", gameType);
   }
@@ -259,8 +258,8 @@ export default function ItemBar(props) {
   const availableFields = {
     name: true,
     itemLevel: true,
-    socket: true,
-    tertiaries: !(isItemCrafted),
+    socket: gameType === "Retail",
+    tertiaries: !(isItemCrafted) && gameType === "Retail",
     missives: isItemCrafted,
   }
 
@@ -352,7 +351,7 @@ export default function ItemBar(props) {
                 onChange={(e) => itemLevelChanged(e.target.value)}
                 value={itemLevel}
                 label={t("QuickCompare.ItemLevel")}
-                disabled={itemID === "" || gameType !== "Retail" ? true : false}
+                disabled={itemID === "" ? true : false}
                 onInput={(e) => {
                   e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                 }}

@@ -592,8 +592,8 @@ export function checkDefaultSocket(id: number) {
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemAllocations(id: number, missiveStats: any[] = []) {
-  const item = getItem(id);
+export function getItemAllocations(id: number, missiveStats: any[] = [], gameType: gameTypes = "Retail") {
+  const item = getItem(id, gameType);
 
   let statArray: Stats = {};
   if (item) {
@@ -766,7 +766,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility"].includes(key) && allocation > 0) {
+    if (["haste", "crit", "mastery", "versatility", "spirit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } 
