@@ -1,4 +1,4 @@
-import { ClassicItemDB} from "../../../Databases/ClassicItemDB";
+import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import ClassicItem from "../../../General/Modules/Player/ClassicItem";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";

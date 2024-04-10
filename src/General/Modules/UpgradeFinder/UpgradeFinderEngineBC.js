@@ -1,4 +1,4 @@
-import { ClassicItemDB} from "../../../Databases/ClassicItemDB";
+import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import ClassicItem from "../Player/ClassicItem";
 import { runTopGearBC } from "../TopGear/Engine/TopGearEngineBC";
 import {
@@ -130,8 +130,8 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
   const dungeonDifficulty = playerSettings.dungeon = 6 ? 1 : playerSettings.dungeon;
   // Grab items.
-  for (var i = 0; i < ClassicItemDB.length; i++) {
-    const rawItem = ClassicItemDB[i];
+  for (var i = 0; i < classicItemDB.length; i++) {
+    const rawItem = classicItemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
         if (rawItem.sources[0].instanceId === -1) {
           if (rawItem.sources[0].difficultyId === dungeonDifficulty) {

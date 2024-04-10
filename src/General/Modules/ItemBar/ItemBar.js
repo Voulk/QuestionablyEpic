@@ -47,13 +47,13 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 // Create and return an item. Could maybe be merged with the SimC createItem function?
-export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary, missives = "") => {
+export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary, missives = "", gameType) => {
 
   //let player = props.player;
   let item = "";
 
-  const itemSlot = getItemProp(itemID, "slot");
-  const isCrafted = getItemProp(itemID, "crafted");
+  const itemSlot = getItemProp(itemID, "slot", gameType);
+  const isCrafted = getItemProp(itemID, "crafted", gameType);
 
   if (isCrafted) {
     // Item is a legendary and gets special handling.
@@ -73,9 +73,10 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     item.bonusIDS = bonusString;
     item.guessItemQuality();
   } else {
-    item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
-    if (item.slot === "Neck" && itemSocket) item.socket = 3;
-    item.guessItemQuality();
+    item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "", gameType);
+    //if (item.slot === "Neck" && itemSocket) item.socket = 3;
+    //item.guessItemQuality();
+    item.quality = getItemProp(itemID, "quality", gameType);
   }
   //item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
 
@@ -98,6 +99,7 @@ export default function ItemBar(props) {
   const fillItems = (slotName, spec) => {
     const acceptableArmorTypes = getValidArmorTypes(spec);
     const acceptableWeaponTypes = getValidWeaponTypesBySpec(spec);
+
     let newItemList = [];
     const db = getItemDB(gameType);
 
@@ -111,7 +113,7 @@ export default function ItemBar(props) {
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
           (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
-    ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}) }));
+          ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}, gameType) }));
 
     newItemList = newItemList.reduce((unique, o) => {
       if (!unique.some((obj) => obj.label === o.label)) {
@@ -121,7 +123,6 @@ export default function ItemBar(props) {
     }, []);
 
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
-
     return newItemList;
   };
 
@@ -166,8 +167,8 @@ export default function ItemBar(props) {
     let player = props.player;
     //let item = "";
 
-    if (gameType === "Retail") {
-      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary, missives)
+    if (true) { // Formerly Retail check. TODO.
+      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary, missives, gameType);
 
       if (item) {
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
@@ -182,7 +183,8 @@ export default function ItemBar(props) {
         setItemTertiary("");
       }
           
-
+      console.log(item);
+      console.log(player.getActiveItems(activeSlot));
     };
 
   };

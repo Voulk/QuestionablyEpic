@@ -1,7 +1,7 @@
 import { itemDB } from "Databases/ItemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
-import { ClassicItemDB } from "Databases/ClassicItemDB";
+import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
@@ -449,7 +449,7 @@ function sortItems(container: any[]) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  return gameType === "Retail" ? itemDB : ClassicItemDB;
+  return gameType === "Retail" ? itemDB : classicItemDB;
 }
 
 export function getDifferentialByID(diffList: any, id: number, level: number) {
@@ -481,8 +481,8 @@ export function getTranslatedItemName(id: number, lang: string, effect: any, gam
   } */
   //else {
     // @ts-ignore
-
-  if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
+  if (gameType === "Classic") return classicItemDB.filter((item) => item.id === id)[0].names[lang];
+  else if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
   else return "Unknown Item";
 }
 
@@ -757,7 +757,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
   }; */
   let stats: Stats = {}; // TODO: Try and remove leech here.
 
-  
+  console.log(slot);
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
