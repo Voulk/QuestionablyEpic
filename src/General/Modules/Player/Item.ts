@@ -6,6 +6,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 // We'll create them when we import a SimC string, or when an item is added manually.
 // Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
 export class Item {
+  gameType: gameTypes = "retail"; 
   id: number; // The items ID
   level: number; // The items ilvl
   name: string; // Consider how to store this in a localised form.
