@@ -42,5 +42,5 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
     }
     // return result
 
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: filterSpell ? "-" : Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(data.damageDone / iterations / (data.execTime / iterations)) || "-", spell: spellData, hpct: Math.round(data.healingDone / iterations / (data.execTime / iterations)), advancedReport: {}}
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, dps: Math.round(data.damageDone / iterations / (data.execTime / iterations)) || "-", spell: spellData, hpct: Math.round(data.healingDone / iterations / (data.execTime / iterations)), advancedReport: {}}
 }

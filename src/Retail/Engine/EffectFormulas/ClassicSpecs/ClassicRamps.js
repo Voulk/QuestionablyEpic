@@ -90,7 +90,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
-    if (spellName === "Wild Growth" && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
+    if (spellName.includes("Wild Growth") && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
 
     const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 

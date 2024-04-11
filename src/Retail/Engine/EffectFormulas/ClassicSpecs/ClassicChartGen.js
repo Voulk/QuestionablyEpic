@@ -91,6 +91,7 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
         {cat: "Base Spells", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: []},
         {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
         {cat: "Base Spells", tag: "Lifebloom (1 stack)", seq: ["Lifebloom"], preBuffs: []},
+        {cat: "Base Spells", tag: "Lifebloom (3 stack rolling)", seq: ["Lifebloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
         {cat: "Base Spells", tag: "Nourish", seq: ["Nourish"], preBuffs: []},
         {cat: "Base Spells", tag: "Healing Touch", seq: ["Healing Touch"], preBuffs: []},
@@ -131,8 +132,15 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
             results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        }
         else {
             // All sequence based.
-            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
-            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
+            const filterSpell = sequence.tag === "Lifebloom (3 stack rolling)" ? "Lifebloom (HoT)" : null;
+            const result = buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence);
+
+            if (sequence.tag === "Lifebloom (3 stack rolling)") {
+                result.hps *= 3; 
+                result.hpm *= 3;
+                result.hpct *= 3;
+            }
+            results.push(result);
 
             
 

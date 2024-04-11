@@ -73,7 +73,7 @@ const runPeriodic = (state, spell, spellName, runHeal) => {
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
-        runHeal(state, spell, spellName);
+        runHeal(state, spell, spellName + " (HoT)");
     }
 }
 
