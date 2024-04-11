@@ -13,6 +13,7 @@ export class Item {
   slot: string;
   softScore: number;
   socket: number; // This is an int since items can have more than one socket (neck).
+  classicSockets?: number[] = []; // Classic sockets have specific colors.
   tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
   stats: Stats = {}; // The stats on a given item.
 
@@ -64,6 +65,10 @@ export class Item {
     if (slot === "Neck" && this.gameType === "Retail") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
     if (getItemProp(id, "offspecWeapon", gameType)) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
+
+    if (gameType === "Classic") {
+      this.classicSockets = getItemProp(id, "sockets", gameType).gems;
+    }
 
   }
 

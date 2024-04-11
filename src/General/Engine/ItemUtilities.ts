@@ -40,11 +40,11 @@ export function getValidArmorTypes(spec: string) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
-      return [0, 1, 2, 3, 4, 6, 7]; // Misc + Plate + Shields
+      return [0, 4, 6, 7]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 1, 2, 8]; // Misc + Plate + Shields
+      return [0, 2, 8]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
-      return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
+      return [0, 3, 6, 9]; // Misc + Plate + Shields
     case "Holy Priest Classic":
       return [0, 1]; // Misc + Plate + Shields
     default:
