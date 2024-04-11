@@ -96,6 +96,12 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
         {cat: "Base Spells", tag: "Healing Touch", seq: ["Healing Touch"], preBuffs: []},
         {cat: "Base Spells", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
 
+        {cat: "In Tree of Life", tag: "Lifebloom", seq: ["Lifebloom"], preBuffs: ["Tree of Life"]},
+        {cat: "In Tree of Life", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: ["Tree of Life"]},
+        {cat: "In Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Tree of Life"]},
+
+        {cat: "DPS Spells", tag: "Wrath", seq: ["Wrath"], preBuffs: []},
+
 
         {cat: "Package", tag: "Swiftmend, WG, Lifebloom, Rejuv filler", seq: [], preBuffs: [], details: {
             "Swiftmend": 4,

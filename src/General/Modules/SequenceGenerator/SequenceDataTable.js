@@ -89,7 +89,7 @@ export default function SequenceDataTable(props) {
                               </TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{row.hpm}</TableCell>
-                              <TableCell align="right">{row.hpct}</TableCell>
+                              <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>
                               <TableCell align="right">{row.dps}</TableCell>
                             </TableRow>
                           );

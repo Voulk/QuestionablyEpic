@@ -80,8 +80,8 @@ export class Item {
           else itemAllocations[stat] -= (25 * sockets.gems.length);
         });
       } */
-
-      this.stats = calcStatsAtLevelClassic(this.level - sockets.gems.length, getItemProp(id, "slot", gameType), itemAllocations);
+      // NYI: Spirit appears to count one socket fewer when calculating stats. 
+      this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
     }
     else if (gameType === "Retail") {
       this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);

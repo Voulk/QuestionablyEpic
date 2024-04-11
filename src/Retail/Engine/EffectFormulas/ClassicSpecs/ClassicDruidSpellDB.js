@@ -27,7 +27,7 @@ export const CLASSICDRUIDSPELLDB = {
     }],
     "Nourish": [{
         // Regrowth direct heal portion
-        spellData: {id: 0, icon: "ability_druid_nourish", cat: "heal"},
+        spellData: {id: 50464, icon: "ability_druid_nourish", cat: "heal"},
         type: "heal",
         castTime: 2, // Check
         cost: 10, 
@@ -37,7 +37,7 @@ export const CLASSICDRUIDSPELLDB = {
     }],
     "Regrowth": [{
         // Regrowth direct heal portion
-        spellData: {id: 0, icon: "spell_nature_resistnature", cat: "heal"},
+        spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
         type: "heal",
         castTime: 2, 
         cost: 35, 
@@ -57,7 +57,7 @@ export const CLASSICDRUIDSPELLDB = {
     }],
     "Lifebloom": [{
         // 
-        spellData: {id: 0, icon: "inv_misc_herb_felblossom", cat: "heal"},
+        spellData: {id: 33763, icon: "inv_misc_herb_felblossom", cat: "heal"},
         castTime: 0, 
         type: "classic periodic",
         buffType: "heal",
@@ -78,7 +78,7 @@ export const CLASSICDRUIDSPELLDB = {
 ],
     "Healing Touch": [{
         // Regrowth direct heal portion
-        spellData: {id: 0, icon: "spell_nature_healingtouch", cat: "heal"},
+        spellData: {id: 5185, icon: "spell_nature_healingtouch", cat: "heal"},
         type: "heal",
         castTime: 3, 
         cost: 35, 
@@ -88,7 +88,7 @@ export const CLASSICDRUIDSPELLDB = {
     }],
     "Swiftmend": [{
         // Regrowth direct heal portion
-        spellData: {id: 0, icon: "inv_relics_idolofrejuvenation", cat: "heal"},
+        spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "heal"},
         type: "heal",
         castTime: 2, 
         cost: 10, 
@@ -99,7 +99,7 @@ export const CLASSICDRUIDSPELLDB = {
     "Wild Growth": [
     {
         // Simple version of WG that matches Cata Beta
-        spellData: {id: 361469, icon: "ability_druid_flourish", cat: "heal"},
+        spellData: {id: 48438, icon: "ability_druid_flourish", cat: "heal"},
         castTime: 1.5,
         cost: 27, // 699
         type: "classic periodic",
@@ -148,9 +148,9 @@ export const CLASSICDRUIDSPELLDB = {
         flags: {targeted: true},
         secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }], */
-    "Flourish": [{
+    "Tree of Life": [{
         // Two portions: extends active HoTs, and then increases tick rate.
-        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "heal"},
+        spellData: {id: 33891, icon: "ability_druid_treeoflife", cat: "cooldown"},
         type: "extension",
         castTime: 0, 
         cost: 0, 
@@ -164,6 +164,15 @@ export const CLASSICDRUIDSPELLDB = {
         value: 1.25,
     }],
 
+    "Wrath": [{
+        // Regrowth direct heal portion
+        spellData: {id: 5176, icon: "spell_nature_wrathv2", cat: "damage"},
+        type: "damage",
+        castTime: 1.5, 
+        cost: 9, 
+        coeff: 0.879, 
+        secondaries: ['crit'] 
+    }],
 
 }
 

@@ -71,6 +71,8 @@ const getDamMult = (state, buffs, t, spellName, talents) => {
  */
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = CLASSICCONSTANTS.auraHealingBuff[state.spec];
+
+    if (checkBuffActive(state.activeBuffs, "Tree of Life")) mult *= 1.15;
     
     return mult;
 }
@@ -83,11 +85,14 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const masteryFlag = true;
 
     const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
-    const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
-    const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
+    let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
+    
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
+    if (spellName === "Wild Growth" && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
+
+    const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);
@@ -156,7 +161,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyRaidBuffs(state);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            addBuff(state, playerSpells["Tree of Life"][1], buffName);
+        })
     }
+
 
     // Extra Settings
     if (settings.masteryEfficiency) CLASSICCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
