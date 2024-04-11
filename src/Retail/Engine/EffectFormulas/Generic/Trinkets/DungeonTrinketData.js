@@ -544,7 +544,7 @@ export const dungeonTrinketData = [
       let bonus_stats = {};
       
 
-      if (additionalData.player.getSpec() === "Discipline Priest") {
+      if (additionalData.player.getSpec() === "Discipline Priest" && false) {
         // This is a naive implementation and should be updated.
           const buffValue = processedValue(data[0], itemLevel);
           bonus_stats.hps = runDiscOnUseTrinket("Time-Breaching Talon", buffValue, additionalData.setStats, additionalData.castModel, additionalData.player);
