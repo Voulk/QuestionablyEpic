@@ -3,6 +3,7 @@ import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
 import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
+import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "./SPECS";
@@ -737,27 +738,45 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
   return wep_list.slice(0, 9);
 } */
 
+export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAllocations: any) {
+  let combat_mult = 0;
+
+  let stats: Stats = {}; 
+
+  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
+  //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
+  combat_mult = 1;
+
+  console.log(itemLevel + " " + rand_prop);
+
+
+  // These stats should be precise, and never off by one.
+  for (var key in statAllocations) {
+    let allocation = statAllocations[key];
+
+    if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
+      //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+    } 
+    else if (key === "intellect") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
+    } else if (key === "stamina") {
+      // todo
+    }
+  }
+
+  return stats;
+}
+
 // Calculates the intellect and secondary stats an item should have at a given item level.
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocations: any, tertiary: string) {
   let combat_mult = 0;
 
-  /*let stats = {
-    intellect: 0,
-    stamina: 0,
-    haste: 0,
-    mastery: 0,
-    versatility: 0,
-    crit: 0,
-    leech: 0,
-    hps: 0,
-    dps: 0,
-    bonus_stats: {},
-  }; */
-  let stats: Stats = {}; // TODO: Try and remove leech here.
+  let stats: Stats = {}; 
 
-  console.log(slot);
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
