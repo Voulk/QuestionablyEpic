@@ -67,7 +67,8 @@ export class Item {
     this.bonusIDS = bonusIDS || "";
 
     if (gameType === "Classic") {
-      this.classicSockets = getItemProp(id, "sockets", gameType).gems;
+      const sockets = getItemProp(id, "sockets", gameType);
+      this.classicSockets = sockets? sockets.gems : [];
     }
 
   }
