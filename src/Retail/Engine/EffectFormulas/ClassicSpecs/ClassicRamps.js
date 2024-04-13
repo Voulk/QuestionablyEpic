@@ -35,6 +35,8 @@ const CLASSICCONSTANTS = {
     auraDamageBuff: 1,
     enemyTargets: 1, 
 
+    druidMastList: ["Healing Touch", "Regrowth", "Swiftmend", "Nourish"],
+
     manaRegenBuff: {
         name: "ManaGen",
         expiration: 5,
@@ -82,17 +84,22 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
-    const masteryFlag = true;
+    let masteryFlag = true;
 
     const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     
-    
+    // Mastery special checks
+    if (state.spec === "Restoration Druid") {
+        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName)) masteryFlag = true;
+        else masteryFlag = false;
+    }
+
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
     if (spellName.includes("Wild Growth") && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
 
-    const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
+    const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, 0, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);
@@ -162,7 +169,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
-            addBuff(state, playerSpells["Tree of Life"][1], buffName);
+            if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][1], buffName);
+            else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
+            else addBuff(state, null, buffName);
         })
     }
 

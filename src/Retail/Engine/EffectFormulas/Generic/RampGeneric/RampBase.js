@@ -386,8 +386,9 @@ export const getSqrt = (targets, sqrtMin) => {
     //return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
 }
 
+// Use flat if possible from now on. flatHeal and flatDamage are an old standard.
 const getSpellFlat = (spell, flatBonus = 0) => {
-    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0) + flatBonus)
+    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0) + (spell.flat || 0) + flatBonus)
 }
 
 /**

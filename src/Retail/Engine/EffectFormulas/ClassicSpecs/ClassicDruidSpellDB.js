@@ -21,9 +21,10 @@ export const CLASSICDRUIDSPELLDB = {
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         buffDuration: 12,
         coeff: 0.134,
+        flat: 1307,
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: ['crit'] // Rejuv also scales with haste, but this is handled elsewhere.
+        secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
     "Nourish": [{
         // Regrowth direct heal portion
@@ -32,6 +33,7 @@ export const CLASSICDRUIDSPELLDB = {
         castTime: 2, // Check
         cost: 10, 
         coeff: 0.266, 
+        flat: 2598,
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'] 
     }],
@@ -41,9 +43,10 @@ export const CLASSICDRUIDSPELLDB = {
         type: "heal",
         castTime: 2, 
         cost: 35, 
+        flat: 3579,
         coeff: 0.2936, 
         expectedOverheal: 0.2,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     },
     {
         // Regrowth HoT portion
@@ -51,9 +54,10 @@ export const CLASSICDRUIDSPELLDB = {
         buffType: "heal",
         buffDuration: 12,
         coeff: 0.0296, // The coefficient for a single regrowth tick.
+        flat: 361,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
-        secondaries: ['crit']
+        secondaries: ['crit', 'mastery']
     }],
     "Lifebloom": [{
         // 
@@ -64,16 +68,18 @@ export const CLASSICDRUIDSPELLDB = {
         buffDuration: 10,
         cost: 7, 
         coeff: 0.0234, // The coefficient for a single regrowth tick.
+        flat: 228,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
-        secondaries: ['crit']
+        secondaries: ['crit', 'mastery']
     },
     {
         // Expiration portion
         type: "heal",
         coeff: 0.284, 
+        flat: 1848,
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     },
 ],
     "Healing Touch": [{
@@ -81,10 +87,11 @@ export const CLASSICDRUIDSPELLDB = {
         spellData: {id: 5185, icon: "spell_nature_healingtouch", cat: "heal"},
         type: "heal",
         castTime: 3, 
-        cost: 35, 
+        cost: 30, 
         coeff: 0.806, 
+        flat: 7863,
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     }],
     "Swiftmend": [{
         // Regrowth direct heal portion
@@ -93,8 +100,9 @@ export const CLASSICDRUIDSPELLDB = {
         castTime: 2, 
         cost: 10, 
         coeff: 0.536, 
+        flat: 5229,
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     }],
     "Wild Growth": [
     {
@@ -105,11 +113,13 @@ export const CLASSICDRUIDSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+        cooldownData: {cooldown: 8},
         buffDuration: 7,
         targets: 5,
         coeff: 0.0437,
+        flat: 425,
         expectedOverheal: 0.2,
-        secondaries: ['crit']
+        secondaries: ['crit', 'mastery']
     }],
     // Wild Growth is bugged on Beta. This is the retail version. The Cata live version will likely be some combination of the two.
     /*"Wild Growth": [
@@ -172,6 +182,15 @@ export const CLASSICDRUIDSPELLDB = {
         cost: 9, 
         coeff: 0.879, 
         secondaries: ['crit'] 
+    }],
+
+    "Harmony": [{
+        // Regrowth direct heal portion
+        spellData: {id: 0, icon: "", cat: "Ghost"},
+        type: "buff",
+        buffType: "special",
+        buffDuration: 6,
+        value: 1.25,
     }],
 
 }
