@@ -5,7 +5,7 @@ import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Divider } from "@mui/mater
 
 export default function TrinketDeepDive(props) {
     const itemCardData = props.itemCardData;
-    const categories = ["Raid Drops", "Dungeon Drops", "Other", "DPS Trinkets", "Last Season Trinkets"]
+    const categories = ["Vault Drops", "Aberrus Drops", "Amirdrassil Drops", "Dungeon Drops", "Other", "DPS Trinkets", "Last Season Trinkets"]
 
     return (
         <Grid container spacing={1} sx={{ marginTop: "16px" }}>
