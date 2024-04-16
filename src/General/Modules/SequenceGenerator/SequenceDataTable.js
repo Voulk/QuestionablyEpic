@@ -44,7 +44,6 @@ export default function SequenceDataTable(props) {
   const darkColor = "#474747"; // Example dark color
 
   const data = buildChartData(props.spec, props.stats, props.talents);//buildEvokerChartData(); //props.data;
-  console.log(data);
   
   const rows = data;
   const cats = [...new Set(data.map(item => item.cat))];
