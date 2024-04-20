@@ -110,21 +110,22 @@ describe("Screaming Black Dragonscale", () => {
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
 }); 
-/*
+
 describe("Broodkeeper's Promise", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Broodkeeper's Promise");;
     const effect = activeTrinket.effects;
+
     each`
     level   | expectedResult
-    ${398}  | ${[95, 2188]}
+    ${528}  | ${[131, 3309]}
     // add new test cases here
     `.test("Broodkeeper's Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
-        //expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+        expect(Math.ceil(processedValue(effect[0], level, 1, "ceil"))).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
 }); 
-*/
+
 describe("Emerald Coach's Whistle", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
     const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Emerald Coach's Whistle");;

@@ -500,10 +500,14 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
 
 export function getEmbellishmentIcon(id: number) {
   const embel = embellishmentDB.filter((embel) => embel.id === id);
+  console.log(embel[0].icon)
 
   if (embel[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
-  } else {
+  } 
+  else if (embel[0].icon === "inv_cape_armor_celestial")
+    return "https://wow.zamimg.com/images/wow/icons/large/3752753.jpg";
+  else {
     return "https://wow.zamimg.com/images/wow/icons/large/" + embel[0].icon + ".jpg";
   }
 }
