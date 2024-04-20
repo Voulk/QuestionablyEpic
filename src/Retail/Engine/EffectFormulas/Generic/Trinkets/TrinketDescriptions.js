@@ -232,7 +232,7 @@ const wardOfFacelessIre = (data, itemLevel, player, additionalData) => {
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
                 "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
         description:
-          "A niche, but situationally powerful single target shield. The DPS portion is abysmal but having access to a big two minute defensive is quite powerful to have in your back pocket. Overall HPS is middling to poor.",
+          "A situationally powerful single target shield. While its overall HPS isn't very good, you could bring this to Mythic+ in the role of an extra defensive for you or a DPS.",
       };
 }
 

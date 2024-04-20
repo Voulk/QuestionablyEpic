@@ -470,18 +470,18 @@ export const raidTrinketData = [
     name: "Broodkeeper's Promise",
     effects: [
       { // Versatility Portion. 100% uptime.
-        coefficient: 0.096854,
+        coefficient: 0.096854 * 0.8,
         table: -7,
         stat: "versatility",
         percentBoosted: 0.7,
         boostValue: 1.5,
       },
       { // Heal over time portion. Remember this is on both yourself and your bonded target.
-        coefficient: 1.98,
+        coefficient: 1.983667 * 0.6,
         table: -9, 
         percentBoosted: 0.7,
         boostValue: 2.33,
-        efficiency: 0.65,
+        efficiency: 0.7,
         secondaries: ["versatility"], // Currently cannot Crit and doesn't scale with Haste.
       },
     ],
