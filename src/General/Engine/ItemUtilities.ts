@@ -765,7 +765,6 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
   }; */
   let stats: Stats = {}; // TODO: Try and remove leech here.
 
-  
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];

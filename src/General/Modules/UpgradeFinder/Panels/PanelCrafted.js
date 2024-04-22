@@ -28,7 +28,9 @@ export default function CraftedGearContainer(props) {
   const gameType = useSelector((state) => state.gameType);
   const craftedIntro = "You have a lot of decisions you can make when crafting items. While you can fine tune stats, you're usually quite safe just picking out a \
                         strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. For your spec X \
-                        is a reliable choice."
+                        is a reliable choice. \
+                        \n\n \
+                        \n S Text here"
 
   function a11yProps(index) {
     return {
