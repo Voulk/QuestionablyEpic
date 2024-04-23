@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.6",
+    update: 15,
+    date: "April 23",
+    changes: [ 
+      "QE Live now supports Season 4.",
+      "Upgrade Finder: Added a Crafted items tab.",
+    ]},
+  {
+    version: "10.2.6",
     update: 14,
     date: "March 18",
     changes: [ 

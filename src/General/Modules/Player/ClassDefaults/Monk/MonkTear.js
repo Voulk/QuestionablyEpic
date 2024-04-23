@@ -58,12 +58,12 @@ export const monkTearSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 6.8,
       cooldownMult: {
-        c60: 1.38,
+        c60: 1.44,
         c90: 1,
         c120: 1.115,
         c180: 1,
 
-        oneMinute: 1.42,
+        oneMinute: 1.48,
         ninetySeconds: 1,
         twoMinutes: 1.15,
         twoMinutesOrb: 1.11,
