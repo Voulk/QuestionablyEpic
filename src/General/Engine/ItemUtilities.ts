@@ -355,7 +355,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
 export function getItemLevelBoost(bossID: number, difficulty: number) {
   // Handle max difficulties
   if (difficulty === CONSTANTS.difficulties.mythicMax) {
-    if (bossID === 2523 || bossID === 2520) return 3;
+    if (bossID === 2523 || bossID === 2520) return 0;
     else return 0;
   } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
   else if (isMaxxed(difficulty)) return 0;
@@ -378,13 +378,13 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [208616, 210214, 207171];
+  const boostedItems = [208616, 210214, 207171, 195526, 204201, 204202, 204211, 204465];
 
   if (boostedItems.includes(itemID)) {
     // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
     if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
     else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
-    else if (bossID === 2519) return 7;
+    else if (bossID === 2519 || bossID === 2493 || bossID === 2523 || bossID === 2520) return 7;
     else if (bossID === 2556) return 0; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;

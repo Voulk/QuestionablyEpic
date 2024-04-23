@@ -30,7 +30,7 @@ export default function CraftedGearContainer(props) {
                         strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. For your spec X \
                         is a reliable choice. \
                         \n\n \
-                        \n S Text here"
+                        Note that this section isn't ideal for handling embellishments. You can do that via Top Gear."
 
   function a11yProps(index) {
     return {
