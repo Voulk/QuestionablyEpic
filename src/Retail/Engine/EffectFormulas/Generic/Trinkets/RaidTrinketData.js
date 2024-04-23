@@ -80,7 +80,7 @@ export const raidTrinketData = [
         cooldown: 120,
         targetScaling: 1, // While healing is multiplied by 1.5x, the additional healing offered is constant.
         efficiency: {Raid: 0.9, Dungeon: 0.5}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
-        specEfficiency: { "Restoration Druid": 0, "Holy Paladin": 0.1, "Holy Priest": 0.25, "Discipline Priest": 0, "Mistweaver Monk": 0.45, 
+        specEfficiency: { "Restoration Druid": 0, "Holy Paladin": 0.1, "Holy Priest": 0.1, "Discipline Priest": 0, "Mistweaver Monk": 0.45, 
                           "Restoration Shaman": 0, "Preservation Evoker": 0 }, // This is the difference in spell efficiency. It does not apply to the bonus healing.
       },
       { // Mastery benefit. This is short and not all that useful.
@@ -220,13 +220,13 @@ export const raidTrinketData = [
         table: -1,
         stat: "intellect",
         duration: 12,
-        ppm: 1,
+        ppm: 1 * 0.8, // Call to Suffering is high variance, and also just procs a bit less than expected. 
       },
       { // Self-damage portion
         coefficient: -16.71962,
         table: -8,
         ticks: 6,
-        ppm: 1,
+        ppm: 1 * 0.8,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -327,7 +327,7 @@ export const raidTrinketData = [
     name: "Rashok's Molten Heart",
     effects: [
       { // Mana Portion
-        coefficient: 0.133174, // 0.244196, // 1.506561 * 0.7, 
+        coefficient: 0.133174,
         table: -7,
         ppm: 2,
         ticks: 10,
@@ -336,7 +336,7 @@ export const raidTrinketData = [
       { // Heal over time portion.
         coefficient: 2.221365, //4.441092, //3.86182,
         table: -9, 
-        targets: {"Raid": 8, "Dungeon": 5},
+        targets: {"Raid": 7.5, "Dungeon": 5},
         efficiency: 0.74,
         ticks: 10,
         secondaries: ["versatility"], 
@@ -344,13 +344,13 @@ export const raidTrinketData = [
       { // Gifted Versatility portion
         coefficient: 0.347837, // 0.386485, //0.483271,
         table: -7, 
-        targets: {"Raid": 8, "Dungeon": 5},
+        targets: {"Raid": 7.5, "Dungeon": 5}, // Average. The maximum is 10. 
         duration: 12,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       // This can probably be rewritten in a much easier way now that it doesn't have weird haste scaling.
-      const BLP = 1.13;
+      const BLP = 1; //1.13;
       const effectivePPM = data[0].ppm * BLP;
       let bonus_stats = {};
       const contentType = additionalData.contentType || "Raid";

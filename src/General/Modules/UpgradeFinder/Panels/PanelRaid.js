@@ -103,11 +103,11 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1200)} {...a11yProps(0)} />
+                  <Tab className={classes.vaultHeader} label={getTranslatedRaidName(1200)} {...a11yProps(0)} />
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />
+                  <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />
+                  <Tab className={classes.amirdrassilHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />
                 </Tabs>
               </AppBar>
             </Grid>

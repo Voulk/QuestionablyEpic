@@ -103,7 +103,6 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   // TEMP VARIABLES
   const completedItemList = [];
 
-  console.log(playerSettings);
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   //const wepList = buildWepCombosUF(player, baseItemList);
@@ -134,7 +133,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
-  console.log(playerSettings);
+
   if ([1200, 1208, 1207, -22].includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
@@ -155,12 +154,13 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   }
   
   else if (instanceID === -1) {
-    if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
-    else itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+    //if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
+    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
   } 
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
+    console.log(itemLevel);
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
@@ -192,6 +192,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
 
     item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+
   }
   else {
     item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);

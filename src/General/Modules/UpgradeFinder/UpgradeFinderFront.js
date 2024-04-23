@@ -155,7 +155,6 @@ const mythicPlusLevels = [
   { value: 519, label: "" },
   { value: 522, label: "" },
   { value: 528, label: "" },
-  { value: 535, label: "" },
 ]
 
 export default function UpgradeFinderFront(props) {
@@ -431,7 +430,7 @@ export default function UpgradeFinderFront(props) {
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
-                  max={11}
+                  max={10}
                   change={setDungeonDifficulty}
                 />
               </div>
