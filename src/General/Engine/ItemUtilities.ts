@@ -1011,7 +1011,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 
 // Returns an intellect value.
 export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player) => { // Maybe add PlayerSettings
-  const dpsValue = statValue * CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.activeStats.intellect;
+  const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
   return dpsValue * 0.75 + healerValue * 0.25;
 }

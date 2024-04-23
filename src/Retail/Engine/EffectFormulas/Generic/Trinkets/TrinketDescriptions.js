@@ -36,10 +36,10 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
         // == Season 2 Trinkets ==
         case "Neltharion's Call to Suffering":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.ABERRUS, 
-                                            "Fixed to proc off healing spells including HoTs. Downside IS deducted from its expected throughput, but shouldn't feel too dangerous in practice. Priest / Druid only.");
+                                            "1ppm. Very high variance. Downside IS deducted from its expected throughput, but shouldn't feel too dangerous in practice. Priest / Druid only.");
         case "Neltharion's Call to Chaos":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.ABERRUS, 
-                                            "Fixed to proc off healing spells. Very high variance. Damage taken increase not included in formula. Evoker / Paladin only.")
+                                            "Very high variance. Damage taken increase not included in formula. Evoker / Paladin only.")
         case "Screaming Black Dragonscale":
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.ABERRUS, 
                                             "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.")
@@ -160,7 +160,7 @@ const pipsEmeraldFriendshipBadge = (data, itemLevel, player, additionalData) => 
                 "Crit: " + Math.round(bonus_stats.crit),
                 "Versatility: " + Math.round(bonus_stats.versatility)],
         description:
-          "Pip's competes well with the top stat sticks this tier while also being much more consistent. A fantastic choice for all healing specs.",
+          "A solid choice, though sees tougher competition from the other stat sticks in Season 4. Not worth a bullion but not a bad drop to get.",
       };
 }
 
@@ -172,9 +172,9 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
         category: trinketCategories.ABERRUS,
         metrics: ["Mana / Min: " + Math.round(bonus_stats.mana * 60), 
                 "HPS: " + Math.round(bonus_stats.hps),
-                "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
+                "Ally Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "A massive package of mana, healing and versatility. Holds up ok in season 3 but it's become mostly useful for its vers buff and you'll replace it when you have ~470+ alternatives.",
+          "A massive package of mana, healing and versatility. Most of Rashoks power now comes from the versatility buff it provides to allies. Pick it up if you're interested in that, or pick something else if you'd rather personal throughput.",
       };
 
 }
@@ -282,7 +282,7 @@ const broodkeepersPromise = (data, itemLevel, player, additionalData) => {
                     "Vers: " + Math.round(vers),
                     "Ally Vers: " + Math.round(vers)],
         description:
-          "BaseHealValue: ." + healValue,
+          "Broodkeeper's Promise competes well on HPS while allowing you to heal a priority target for a lot. The heal is 2.33x stronger (and the vers 1.5x stronger) when you are close to your bonded ally so make sure you pick someone that will be in a similar position.",
       };
 }
 
