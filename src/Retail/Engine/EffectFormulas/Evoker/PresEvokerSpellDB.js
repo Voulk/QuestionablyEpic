@@ -1,6 +1,6 @@
 
 import { runHeal, runDamage } from "./PresEvokerRamps";
-import { addReport, getCrit, getHaste } from "../Generic/RampGeneric/RampBase";
+import { addReport, getCrit, getHaste, runSpell } from "../Generic/RampGeneric/RampBase";
 
 
 // This is the Evoker spell database. 
@@ -189,8 +189,8 @@ export const EVOKERSPELLDB = {
 
             return buff;
         },*/
-        runFunc: function (state, spell, buff) {
-            const hotHeal = { type: "heal", coeff: spell.coeff, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
+        runFunc: function (state, spell, buff, partial = 1) {
+            const hotHeal = { type: "heal", coeff: spell.coeff * partial, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
 
             runHeal(state, hotHeal, spell.name)
             // Roll dice and extend. If RNG is turned off then we can instead calculate expected duration on buff application instead.
@@ -239,7 +239,6 @@ export const EVOKERSPELLDB = {
     { 
         type: "function",
         runFunc: function (state, spell) {
-
             if (state.talents.resonatingSphere) {
                 const echoBuffs = 5;
                 const buff = {name: "Echo", expiration: state.t  + 20, buffType: "special", 
@@ -375,6 +374,48 @@ export const EVOKERSPELLDB = {
         expectedOverheal: 0.4,
         secondaries: [],
     }],
+    "Stasis": [
+    {
+        spellData: {id: 370984, icon: "ability_evoker_stasis", cat: "cooldown"},
+        name: "Stasis",
+        castTime: 0,
+        cost: 0,
+        onGCD: false,
+        canStack: false,
+        type: "buff",
+        buffType: "special",
+        stacks: 0,
+        canStack: false,
+        cooldownData: {cooldown: 90, hasted: false}, 
+        buffDuration: 90, //30
+        special: {
+            storedSpells: [],
+        }
+    }],
+    "StasisRelease": [
+        {
+            spellData: {id: 370984, icon: "ability_evoker_stasis", cat: "cooldown"},
+            name: "StasisRelease",
+            castTime: 0,
+            cost: 0,
+            onGCD: false,
+            canStack: false,
+            type: "function",
+            runFunc: function (state, spell, evokerSpells, triggerSpecial, runHeal, runDamage) {
+                // Get stored spells.
+                const storedSpells = state.activeBuffs.filter(buff => buff.name === "Stasis")[0].special.storedSpells;
+                const flag = {ignoreCD: true};
+                // Cast stored spells.
+                storedSpells.forEach(spellName => {
+                    const fullSpell = evokerSpells[spellName];
+                    runSpell(fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flag)
+                });
+
+                // Remove Stasis.
+                state.activeBuffs = state.activeBuffs.filter(buff => buff.name !== "Stasis");
+            
+            }
+        }],
 }
 
 
@@ -408,20 +449,20 @@ export const evokerTalents = {
     timeLord: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 372527, select: true, tier: 2}, // Echo replicates an additional 25/50% healing (2 points).
     nozdormusTeachings: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Temporal Anomaly shields one additional target.
     resonatingSphere: {points: 1, maxPoints: 1, icon: "ability_evoker_bronze_01", id: 376236, select: true, tier: 2}, // Temporal Anomaly adds an Echo to allies hit.
-    lifebind: {points: 0, maxPoints: 1, icon: "ability_evoker_hoverred", id: 373270, select: true, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
+    lifebind: {points: 1, maxPoints: 1, icon: "ability_evoker_hoverred", id: 373270, select: true, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 1, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
 
     ancientFlame: {points: 1, maxPoints: 1, icon: "ability_evoker_rescue", id: 99998, select: false},
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Needs testing.
     sacralEmpowerment: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
-    exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
+    exhilaratingBurst: {points: 1, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
     fontOfMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", id: 375783, select: true, tier: 3}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "inv_elemental_mote_mana", id: 372233, select: true, tier: 3}, // makes Disintegrate deals more damage and grants mana over it's duration.
     renewingBreath: {points: 2, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
     gracePeriod: {points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
     timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
-    dreamFlight: {points: 0, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 
-    stasis: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3},
+    dreamFlight: {points: 1, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 
+    stasis: {points: 1, maxPoints: 1, icon: "", id: 0, select: false, tier: 3},
     cycleOfLife: {points: 0, maxPoints: 1, icon: "spell_lifegivingseed", id: 371871, select: true, tier: 3}, // Emerald Blossom leaves behind a sprout that absorbs 10% of healing over 15 seconds.
 
     rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},

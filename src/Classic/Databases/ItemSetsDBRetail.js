@@ -21,7 +21,7 @@ export const itemSets = [
     /*                                (Druid T31)                                     */
     /* ---------------------------------------------------------------------------------------------- */
     // 
-    id: [1559],
+    id: [1559, 1597],
     class: "Restoration Druid",
     setBonuses: {
       2: "Druid T31-2", // 
@@ -45,7 +45,7 @@ export const itemSets = [
     /*                                    Mistweaver T31                                               */
     /* ---------------------------------------------------------------------------------------------- */
     // 
-    id: [1563],
+    id: [1563, 1596],
     class: "Mistweaver Monk",
     setBonuses: {
       2: "Monk T31-2", // 
@@ -153,7 +153,7 @@ export const itemSets = [
     /*                               Lost Landcaller's (Priest T30)                                     */
     /* ---------------------------------------------------------------------------------------------- */
     // 
-    id: [1547],
+    id: [1547, 1598],
     class: "Holy Paladin",
     setBonuses: {
       2: "Paladin T30-2", // 
@@ -249,7 +249,7 @@ export const itemSets = [
     /*                                 The Awakened - Evoker T29                                       */
     /* ---------------------------------------------------------------------------------------------- */
     // 
-    id: [1530],
+    id: [1530, 1594],
     class: "Preservation Evoker",
     setBonuses: {
       2: "Evoker T29-2", // 
@@ -261,7 +261,7 @@ export const itemSets = [
     /*                               Infused Earth - Shaman T29                                       */
     /* ---------------------------------------------------------------------------------------------- */
     // 
-    id: [1536],
+    id: [1536, 1606],
     class: "Restoration Shaman",
     setBonuses: {
       2: "Shaman T29-2", // 

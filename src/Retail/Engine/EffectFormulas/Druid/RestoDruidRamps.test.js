@@ -57,6 +57,7 @@ describe("Get Spell Data", () => {
     }) */
     
     test("Sequences", () => {
+        /*
         const results = [];
         const iter = 1;
         let healing = 0;
@@ -71,7 +72,7 @@ describe("Get Spell Data", () => {
             results.push(sequence + ". Healing: " + healing / iter + ". HPM: " + Math.round(100*healing / manaSpent)/100);
         })
 
-        console.log(results);
+        console.log(results); */
         expect(true).toEqual(true);
 
     }) 

@@ -81,7 +81,8 @@ export default function classIcons(props, style) {
     // iconName === "ShadowPriest" ||
     // iconName === "Shadow Priest" ||
     // iconName === "Priest-Shadow"
-    iconName === "holy priest classic"
+    iconName === "holy priest classic" 
+    
   ) {
     src = HolyPriestIcon;
     alt = "Holy Priest";
@@ -94,7 +95,7 @@ export default function classIcons(props, style) {
   }
 
   // Discipline Priest
-  if (iconName === "disciplinepriest" || iconName === "discipline priest" || iconName === "priest-discipline") {
+  if (iconName === "disciplinepriest" || iconName === "discipline priest" || iconName === "priest-discipline" || iconName === "discipline priest classic") {
     src = DiscPriestIcon;
     alt = "Discipline Priest";
   }
@@ -108,7 +109,8 @@ export default function classIcons(props, style) {
     iconName === "Restoration Shaman Classic" ||
     iconName === "RestorationShaman" ||
     iconName === "Restoration Shaman" ||
-    iconName === "restoration shaman"
+    iconName === "restoration shaman" ||
+    iconName === "restoration shaman classic"
   ) {
     src = RestorationShamanIcon;
     alt = "Restoration Shaman";

@@ -66,6 +66,7 @@ const specImages = {
   "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
+  "Discipline Priest Classic": require("Images/classicon_priest.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -352,13 +353,7 @@ export default function CharCards(props) {
               <SettingsIcon fontSize="small" />
             </IconButton>
           </Tooltip>
-        ) : (
-          <Tooltip title={t("Delete")}>
-            <IconButton style={{ position: "absolute", right: 0, top: 5, zIndex: 1, color: "red" }} onClick={(e) => handleDelete(e)} aria-label="settings" size="small">
-              <ClearIcon fontSize="small" />
-            </IconButton>
-          </Tooltip>
-        )}
+        ) : ""}
 
         <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
           <Card className={rootClassName} variant="outlined">
