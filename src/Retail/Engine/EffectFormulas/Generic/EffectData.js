@@ -223,8 +223,8 @@ export const effectData = [
       // TODO
 
       const totalStatGain = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60
-      bonus_stats.intellect = totalStatGain * 0.5; // We'll assume we get about half the uptime, and our allies get about half the uptime. 
-      bonus_stats.allyStats = totalStatGain * 0.5;
+      bonus_stats.intellect = totalStatGain * 0.7; // We'll assume we get about half the uptime, and our allies get about half the uptime. 
+      bonus_stats.allyStats = totalStatGain * 0.3;
 
       return bonus_stats;
     }
