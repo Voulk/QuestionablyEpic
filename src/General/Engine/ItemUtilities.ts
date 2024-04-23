@@ -980,7 +980,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) * 1.3 / 15000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) / 15000 * player.getHPS(contentType);
     }
   }
 

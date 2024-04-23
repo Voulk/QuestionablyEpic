@@ -106,11 +106,11 @@ export const monkTearStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.552,
-    crit: 0.639,
-    mastery: 0.34,
-    versatility: 0.602,
-    leech: 0.46,
+    haste: 0.71,
+    crit: 0.83,
+    mastery: 0.42,
+    versatility: 0.78,
+    leech: 0.49,
   };
   statWeights.Dungeon = { // Invalid choice
     intellect: 1,
