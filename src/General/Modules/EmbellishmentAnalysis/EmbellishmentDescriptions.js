@@ -6,7 +6,7 @@ import { getSetting, processedValue } from "Retail/Engine/EffectFormulas/EffectU
 export const getEmbellishmentDescription = (embellishmentName, player, additionalData) => {
     let embData = embellishmentData.filter(emb => emb.name === embellishmentName || (emb.name === "Verdant Tether" && embellishmentName.includes("Verdant Tether")))[0];
     
-    const itemLevel = 486;
+    const itemLevel = 525;
     //if (trinketData === null) return null;
     switch (embellishmentName) {
 

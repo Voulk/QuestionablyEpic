@@ -248,7 +248,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [441, 444, 447, 450, 457, 460, 463, 470, 473, 476, 483, 486, 489];
+  const itemLevels = [476, 483, 486, 489, 496, 502, 509, 515, 519, 522, 528, 535];
 
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -327,7 +327,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="The list below is mostly focused on healing throughput. For M+ you might consider tech trinkets or DPS trinkets instead at high levels." variant="yellow" />
+              <InformationBox information="Ominous Chromatic Essence and Whispering Incarnate Icon assume others in your group are wearing them too. Rashok's is still quite good, but most of its power is in buffing allies now. There are much stronger trinkets for personal throughput. There are settings for all of the above in the settings panel beneath your character. " variant="yellow" />
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

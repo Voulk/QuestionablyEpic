@@ -60,18 +60,27 @@ export default function ItemCard(props) {
 
   // We can probably merge a lot of these into a more central location.
   const itemTooltips = {
-    207171: "Blossom of Amirdrassil holds up quite well in normal and heroic raid content but tends to fall off as the difficulty ramps up. Note that lack of intellect. Particularly rough on specs that don't enjoy Haste.",
+    207171: "There are much better trinkets than Blossom of Amidrassil in season 4. Note that lack of intellect too.",
     207172: "Belor'relos isn't a healing trinket but it does excellent damage which makes it a competitive choice in Mythic+.",
     //207170: "",
-    207168: "Pip's is a fantastic trinket on all healers. It's similar value to other stat sticks like Coagulated Genesaur Blood but the uptime is higher so its variance is lower.",
+    207168: "Pip's is still good in season 4, but falls behind some of the really top shelf stat sticks like Ominous Chromatic Essence.",
     
 
     208321: "Iridal comes with a free damage proc at no cost. Don't drop item level to wear it but if it's equal to your other choices then you might consider it even if it's a tiny healing downgrade.",
     137306: "Competitive trinket for healer DPS.",
     158320: "Niche use in high Mythic+ for countering single target debuffs",
     110009: "Poor for throughput but competitive in high Mythic+ to help the team survive one shots.",
+
+    195480: "Also offers a nice DPS bonus if you have access to Fire damage (Disc Priest, Pres Evoker, Resto Shaman). Not included in the result.",
+    195519: "Heavily beaten by Nasz'uro, the legendary Evoker weapon. If you don't have that yet, consider this a temporary fill in.",
+    195526: "Exceptional if you have access to Fire damage (Disc Priest, Pres Evoker, Resto Shaman)",
+    202614: "Rashoks is still good in Season 4, but it's mostly an ally buff trinket now. There are stronger for personal throughput.",
+    204201: "Terribly high variance and the downside can be really harmful. Consider it a temporary fill in only.",
+    204465: "Small value proc at the cost of a lot of stamina. I'd recommend this for farm content only.",
+    203963: "Beacon isn't as good as it used to be and faces tough competition from other damage trinkets. Not one you're likely to use.",
+    203714: "Niche use in high Mythic+ for countering single target burst damage.",
   }
-  // Add tier set check too and report a generic message for those.
+  // Add tier set check too and report a generic message for those. 
 
   const itemQuality = "#a73fee" //item.getQualityColor();
 

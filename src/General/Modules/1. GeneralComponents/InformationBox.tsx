@@ -5,6 +5,7 @@ export default function InformationBox(props: { information: string, variant?: s
   //prettier-ignore
   let boxColor = "goldenrod"
   let backgroundColor = "#424242"
+  const paragraphs = props.information.split('\n\n');
 
   // Variants
   if (props.variant === "brick") {
@@ -18,13 +19,15 @@ export default function InformationBox(props: { information: string, variant?: s
 
 
   return (
-    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: boxColor, backgroundColor: backgroundColor, width: "100%" }}>
+    <Paper elevation={0} style={{ border: "1px solid", padding: 15, borderColor: boxColor, backgroundColor: backgroundColor, width: "100%" }}>
       <Grid container spacing={1}>
-          <Grid item xs={12}>
-            <Typography style={{ lineHeight: "17px" }} align="left" variant="body1">
-              {props.information}
+        {paragraphs.map((paragraph, index) => (
+          <Grid item xs={12} key={index}>
+            <Typography style={{ lineHeight: "18px" }} align="left" variant="body1">
+              {paragraph}
             </Typography>
           </Grid>
+        ))}
       </Grid>
     </Paper>
   );

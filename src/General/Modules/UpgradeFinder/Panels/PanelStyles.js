@@ -97,6 +97,18 @@ export const raidStyles = makeStyles((theme) => {
       backgroundImage: `url(${require("Images/Bosses/SanctumOfDomination/SanctumArt.png")})`,
       ...commonStyles,
     },
+    vaultHeader: {
+      backgroundImage: `url(${require("Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnates.png")})`,
+      ...commonStyles,
+    },
+    aberrusHeader: {
+      backgroundImage: `url(${require("Images/Bosses/Aberrus/AberrusRaid.png")})`,
+      ...commonStyles,
+    },
+    amirdrassilHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/Amirdrassil/AmirdrassilRaid.png")})`,
+      ...commonStyles,
+    },
   };
 });
 

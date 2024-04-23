@@ -180,7 +180,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         const ancientFlame = {
             name: "Ancient Flame",
             type: "buff",
-            stacks: false,
+            stacks: 0,
             canStack: false,
             buffDuration: 15,
             buffType: 'special',
@@ -266,6 +266,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     
     // Remember, if it adds an entire ability then it shouldn't be in this section. Add it to ramp generators in DiscRampGen.
     if (settings.t31_2) {
+        /*
         const bonus = {
             type: "castSpell",
             storedSpell: "Living Flame",
@@ -284,6 +285,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         evokerSpells['Spiritbloom'].push(bonus);
         evokerSpells['Dream Breath'].push(bonus);
         evokerSpells['Fire Breath'].push(offensiveBonus);
+        */
     }
     if (settings.t31_4) {
         const echoBuff = {
@@ -305,4 +307,33 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     // ==== Tier Sets ====
 
     return evokerSpells;
+}
+
+// Apply Chronowarden talents
+export const applyChronowarden = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
+
+    // Chronoflame
+
+    // Temporal Burst
+
+    // Reverberations
+
+    // Primacy
+
+    //--
+    // Careful Contemplation
+
+    // Time Convergence
+
+    // Master of Destiny
+
+    // Golden Opportunity
+
+    // Instability Matrix
+
+    // Afterimage
+}
+
+export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
+
 }

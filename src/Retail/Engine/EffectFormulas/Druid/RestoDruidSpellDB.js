@@ -4,7 +4,8 @@ import { runHeal } from "./RestoDruidRamps";
 export const DRUIDSPELLDB = {
     "Rejuvenation": [
         {
-        // HoT portion - Note the free tick on cast.
+        // Rejuv is split into two spell effects. The direct heal, and the HoT. The direct heal is the same amount of healing as one tick, but doesn't scale with Haste.
+        // The number of rejuv ticks is (5 x haste) + 1.
         spellData: {id: 361469, icon: "ability_evoker_livingflame", cat: "heal"},
         castTime: 0,
         cost: 2.2, // 5500

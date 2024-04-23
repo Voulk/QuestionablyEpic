@@ -32,8 +32,9 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
         secondaryResourceReq = (spell.holyPower + state.holyPower >= 0 ) || !spell.holyPower || checkBuffActive(state.activeBuffs, "Divine Purpose");
         // Added workaround CDR/Stacks pending rework
 
-        if (spell.cooldownData) {
+        if (spell.cooldownData && cooldownReq) { // Once a cooldown check fails, the subsequence itself fails.
             cooldownReq = (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
+            
         }
         
     })
@@ -70,6 +71,7 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
             // type: cooldownClose. Returns yes if spell is close to being available to cast.
             else if (condition.type === "cooldownAvailable") aplReq = isSpellAvailable(state, spellDB, condition.spellName);
             else if (condition.type === "cooldownClose") aplReq = getSpellCooldown(state, spellDB, condition.spellName) <= condition.nearTime;
+            else if (condition.type === "cooldownFar") aplReq = getSpellCooldown(state, spellDB, condition.spellName) >= condition.farTime;
 
             // Time related conditions
             // type: afterTime. Returns yes if a certain amount of time has elapsed. 

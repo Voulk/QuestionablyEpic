@@ -58,12 +58,12 @@ export const monkTearSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 6.8,
       cooldownMult: {
-        c60: 1.38,
+        c60: 1.44,
         c90: 1,
         c120: 1.115,
         c180: 1,
 
-        oneMinute: 1.42,
+        oneMinute: 1.48,
         ninetySeconds: 1,
         twoMinutes: 1.15,
         twoMinutesOrb: 1.11,
@@ -106,11 +106,11 @@ export const monkTearStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.552,
-    crit: 0.639,
-    mastery: 0.34,
-    versatility: 0.602,
-    leech: 0.46,
+    haste: 0.71,
+    crit: 0.83,
+    mastery: 0.42,
+    versatility: 0.78,
+    leech: 0.49,
   };
   statWeights.Dungeon = { // Invalid choice
     intellect: 1,

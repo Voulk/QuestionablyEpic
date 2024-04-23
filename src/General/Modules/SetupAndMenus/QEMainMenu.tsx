@@ -101,9 +101,8 @@ export default function QEMainMenu(props: Props) {
         ]
       : [
           // Gearing
-          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: false },
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
           { route: "/UpgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
-          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare", glow: false },
           { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 3, localization: "MainMenu.TierSets", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 4, localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare", glow: false },
@@ -194,7 +193,7 @@ export default function QEMainMenu(props: Props) {
         <Grid container spacing={2}>
           {/*<Grid item xs={12} style={{ textAlign: "center" }}>
             <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
-          </Grid>*/}
+  </Grid> */}
           <Grid item xs={12}>
             <Button
               key={321}

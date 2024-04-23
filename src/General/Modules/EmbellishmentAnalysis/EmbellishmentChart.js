@@ -52,15 +52,15 @@ export default class EmbelChart extends PureComponent {
       .map((key) => key[1])
       .map((map2) => {
         arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
+          // 486, 493, 499, 506, 513, 519, 522
           name: map2.id,
-          447: map2.r447,
-          460: getRankDiff(460, map2, 447),
-          470: getRankDiff(470, map2, 460),
-          473: getRankDiff(473, map2, 470),
-          477: getRankDiff(477, map2, 473),
-          480: getRankDiff(480, map2, 477),
-          483: getRankDiff(483, map2, 480),
-          486: getRankDiff(486, map2, 483),
+          486: map2.r486,
+          493: getRankDiff(493, map2, 486),
+          499: getRankDiff(499, map2, 493),
+          506: getRankDiff(506, map2, 499),
+          513: getRankDiff(513, map2, 506),
+          519: getRankDiff(519, map2, 513),
+          522: getRankDiff(522, map2, 519),
         });
       });
 
@@ -75,7 +75,7 @@ export default class EmbelChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
-            <WowheadTooltip type="item" id={payload.value} domain={currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={522} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
           </foreignObject>
@@ -125,7 +125,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[447, 460, 470, 473, 477, 480, 483, 486].map((key, i) => (
+          {[486, 493, 499, 506, 513, 519, 522].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

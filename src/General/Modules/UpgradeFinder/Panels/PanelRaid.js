@@ -74,7 +74,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const raidList = [1207]; // This is an array because there are sometimes multiple raids at a time (fated etc);
+    const raidList = [1200, 1208, 1207]; // This is an array because there are sometimes multiple raids at a time (fated etc);
     const difficulties = props.playerSettings.raid;
 
     difficulties.sort().reverse();
@@ -103,11 +103,11 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.nathriaHeader} label={getTranslatedRaidName(1207)} {...a11yProps(0)} />
-                  {/* ---------------------------------------- Gruul's Lair ----------------------------------------
-                  <Tab className={classes.sanctumHeader} label={getTranslatedRaidName(1193)} {...a11yProps(1)} />
-                  {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  {/* <Tab className={classes.sepulcherHeader} label={getTranslatedRaidName(1195)} {...a11yProps(2)} />  */}
+                  <Tab className={classes.vaultHeader} label={getTranslatedRaidName(1200)} {...a11yProps(0)} />
+                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+                  <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />
+                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+                  <Tab className={classes.amirdrassilHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />
                 </Tabs>
               </AppBar>
             </Grid>
