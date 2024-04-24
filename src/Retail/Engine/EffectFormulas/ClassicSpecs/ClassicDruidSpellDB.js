@@ -255,6 +255,7 @@ const specTalents = {
             spellData: {id: 0, icon: "spell_nature_resistnature", cat: "heal"},
             type: "heal",
             coeff: spellDB["Rejuvenation"][0].coeff * (points * 0.05) * (Math.floor(spellDB["Rejuvenation"][0].buffDuration / spellDB["Rejuvenation"][0].tickData.tickRate)), 
+            flat: spellDB["Rejuvenation"][0].flat * (points * 0.05) * (Math.floor(spellDB["Rejuvenation"][0].buffDuration / spellDB["Rejuvenation"][0].tickData.tickRate)),
             expectedOverheal: 0.2,
             secondaries: ['crit'] 
         }

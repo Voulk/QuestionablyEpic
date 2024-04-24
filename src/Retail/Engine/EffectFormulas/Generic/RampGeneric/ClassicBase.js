@@ -63,7 +63,7 @@ export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) =>
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
-    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
+    //if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100) * 1/*specConstants.masteryEfficiency*/);
 
     return mult;
@@ -72,6 +72,7 @@ export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) =>
 export const buffSpell = (fullSpell, buffPerc) => {
     fullSpell.forEach(slice => {
         if ('coeff' in slice) slice.coeff *= buffPerc;
+        if ('flat' in slice) slice.flat *= buffPerc;
     })
 }
 
