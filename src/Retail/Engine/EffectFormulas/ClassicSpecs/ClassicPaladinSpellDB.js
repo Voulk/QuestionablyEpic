@@ -40,6 +40,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 2666,
         coeff: 0.259, 
         expectedOverheal: 0.2,
+        targets: 6,
         secondaries: ['crit'] 
     },
     {
@@ -75,6 +76,17 @@ export const CLASSICPALADINSPELLDB = {
         expectedOverheal: 0.3,
         secondaries: ['crit'] 
     }],
+    "Judgement": [{
+        // Regrowth direct heal portion
+        spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
+        type: "damage",
+        castTime: 0, 
+        cost: 5, 
+        flat: 0,
+        coeff: 0, // Adjust this per Holy Power. 
+        cooldownData: {cooldown: 6, activeCooldown: 0},
+        secondaries: ['crit'] 
+    }],
 
 }
 
@@ -86,6 +98,10 @@ const offspecTalents = {
 
 // Holy Paladin talents
 const specTalents = {
+    arbiterOfTheLight: {points: 2, maxPoints: 2, icon: "spell_holy_healingaura", id: 20359, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
     protectorOfTheInnocent: {points: 3, maxPoints: 3, icon: "ability_druid_empoweredrejuvination", id: 33886, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         const newSpell = {
             flat: 895 * points,
@@ -94,13 +110,76 @@ const specTalents = {
             secondaries: ['crit'] 
         }
 
-        spellDB["Rejuvenation"][0].push(newSpell);
+        spellDB["Holy Light"].push(newSpell);
     }},
+
+    judgementsOfThePure: {points: 3, maxPoints: 3, icon: "ability_paladin_judgementofthepure", id: 53671, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    clarityOfPurpose: {points: 3, maxPoints: 3, icon: "spell_paladin_clarityofpurpose", id: 85462, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    lastWord: {points: 3, maxPoints: 3, icon: "spell_holy_holyguidance", id: 20234, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    blazingLight: {points: 2, maxPoints: 2, icon: "spell_holy_holybolt", id: 20237, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    infusionOfLight: {points: 2, maxPoints: 2, icon: "ability_paladin_infusionoflight", id: 53569, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    daybreak: {points: 2, maxPoints: 2, icon: "inv_qirajidol_sun", id: 88820, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    enlightenedJudgements: {points: 2, maxPoints: 2, icon: "ability_paladin_enlightenedjudgements", id: 53556, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    speedOfLight: {points: 2, maxPoints: 2, icon: "paladin_icon_speedoflight", id: 85495, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    conviction: {points: 3, maxPoints: 3, icon: "ability_paladin_conviction", id: 20049, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    paragonOfVirtue: {points: 2, maxPoints: 2, icon: "spell_holy_avenginewrath", id: 93418, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    towerOfRadiance: {points: 3, maxPoints: 3, icon: "achievement_bg_winsoa", id: 84800, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    blessedLife: {points: 2, maxPoints: 2, icon: "spell_holy_blessedlife", id: 31828, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+
 
 }
 
 const glyphs = {
+    glyphOfHolyShock: {points: 1, maxPoints: 1, icon: "spell_holy_searinglight", id: 63224, select: true, tier: 1, runFunc: function (state, spellDB, points) {
 
+    }},
+
+    glyphOfDivineFavor: {points: 1, maxPoints: 1, icon: "spell_holy_divineillumination", id: 54937, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+
+    glyphOfSealOfInsight: {points: 1, maxPoints: 1, icon: "spell_holy_healingaura", id: 54943, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
+    glyphOfWordOfGlory: {points: 1, maxPoints: 1, icon: "inv_helmet_96", id: 54936, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+    }},
 
 }
 
