@@ -187,7 +187,7 @@ export const effectData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                 Primal Storms 2pc                                              */
     /* ---------------------------------------------------------------------------------------------- */
-    /* Increase your highest secondary by X. Need to find out what X is.
+    /* 
     */
     name: "Primal Storms 2pc",
     effects: [
@@ -207,19 +207,24 @@ export const effectData = [
     /* ---------------------------------------------------------------------------------------------- */
     /*                                 Nasz'uro, the Unbound Legacy                                              */
     /* ---------------------------------------------------------------------------------------------- */
-    /* Increase your highest secondary by X. Need to find out what X is.
+    /* 
     */
     name: "Nasz'uro, the Unbound Legacy",
     effects: [
-
+      { 
+        coefficient: 0.377525,
+        table: -1,
+        duration: 10,
+        ppm: 6.5,
+      },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       // TODO
-      const ppm = 6.5; // We get 2 Dream Breaths, 2 Fire Breaths and 2-3 Spiritblooms per minute. 
-      const duration = 10;
-      bonus_stats.intellect = 500 * duration * ppm / 60 * 0.5; // We'll assume we get about half the uptime, and our allies get about half the uptime. 
-      bonus_stats.allyStats = 500 * duration * ppm / 60 * 0.5;
+
+      const totalStatGain = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60
+      bonus_stats.intellect = totalStatGain * 0.7; // We'll assume we get about half the uptime, and our allies get about half the uptime. 
+      bonus_stats.allyStats = totalStatGain * 0.3;
 
       return bonus_stats;
     }

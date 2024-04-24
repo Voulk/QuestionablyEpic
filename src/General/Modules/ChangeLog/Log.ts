@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.6",
+    update: 16,
+    date: "April 23",
+    changes: [ 
+      "Added WQ trinkets to trinket chart.",
+      "Fixed bug with upgrading Explorer / Adventurer items.",
+    ]},
+  {
+    version: "10.2.6",
     update: 15,
     date: "April 23",
     changes: [ 
