@@ -1,22 +1,41 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { CLASSICDRUIDSPELLDB } from "./PresEvokerSpellDB";
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampGeneric/RampBase";
+import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
+import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
+            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
+import { getSpellRaw, applyRaidBuffs  } from "../Generic/RampGeneric/ClassicBase"
 import { genSpell } from "../Generic/RampGeneric/APLBase";
-import { applyLoadoutEffects } from "./PresEvokerTalents";
+import { applyLoadoutEffects } from "./ClassicUtilities";
 
-const EVOKERCONSTANTS = {
+
+const CLASSICCONSTANTS = {
     
     masteryMod: 1.8, 
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 
-    auraHealingBuff: 1,
+    auraHealingBuff: {
+        "Restoration Druid": 1.25,
+        "Discipline Priest": 1, // Gets 15% intellect instead.
+        "Holy Paladin": 1.1,
+        "Holy Priest": 1.25,
+        "Restoration Shaman": 1.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Mistweaver Monk": 1, // Soon :)
+    },
+    baseMana: {
+        "Restoration Druid": 18635,
+        "Discipline Priest": 20590, 
+        "Holy Paladin": 23422,
+        "Holy Priest": 20590,
+        "Restoration Shaman": 23430, 
+        "Mistweaver Monk": 0, // Soon :)
+    },
     auraDamageBuff: 1,
     enemyTargets: 1, 
+
+    druidMastList: ["Healing Touch", "Regrowth", "Swiftmend", "Nourish"],
 
     manaRegenBuff: {
         name: "ManaGen",
@@ -33,11 +52,16 @@ const EVOKERCONSTANTS = {
 
 }
 
+const getSpellDB = (spec) => {
+    if (spec === "Restoration Druid") return CLASSICDRUIDSPELLDB;
+    else if (spec === "Holy Paladin") return CLASSICPALADINSPELLDB;
+}
+
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  */
 const getDamMult = (state, buffs, t, spellName, talents) => {
-    let mult = EVOKERCONSTANTS.auraDamageBuff;
+    let mult = CLASSICCONSTANTS.auraDamageBuff;
 
 
     return mult;
@@ -48,7 +72,9 @@ const getDamMult = (state, buffs, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (state, t, spellName, talents) => {
-    let mult = EVOKERCONSTANTS.auraHealingBuff;
+    let mult = CLASSICCONSTANTS.auraHealingBuff[state.spec];
+
+    if (checkBuffActive(state.activeBuffs, "Tree of Life")) mult *= 1.15;
     
     return mult;
 }
@@ -58,13 +84,22 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
+    let masteryFlag = true;
 
     const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
-    const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
-    const healingVal = getSpellRaw(spell, currentStats, EVOKERCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
+    let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     
+    // Mastery special checks
+    if (state.spec === "Restoration Druid") {
+        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName)) masteryFlag = true;
+        else masteryFlag = false;
+    }
+
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
+    if (spellName.includes("Wild Growth") && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
+
+    const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, 0, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);
@@ -77,7 +112,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 export const runDamage = (state, spell, spellName, compile = true) => {
 
     const damMultiplier = getDamMult(state, state.activeBuffs, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    const damageVal = getSpellRaw(spell, state.currentStats, EVOKERCONSTANTS) * damMultiplier;
+    const damageVal = getSpellRaw(spell, state.currentStats, CLASSICCONSTANTS) * damMultiplier;
     
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
@@ -105,11 +140,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // Can be removed to RampGeneral.
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
-        talents[key] = value.points;
+        //talents[key] = value.points;
+        talents[key] = value
     }
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, spec: "", manaPool: 100000};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, execTime: 0, manaSpent: 0, settings: settings, 
+                    talents: talents, reporting: true, spec: settings.spec.replace(" Classic", ""), manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec]};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -117,7 +153,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const sequenceLength = ('seqLength' in settings ? settings.seqLength : 120) * (1 + (Math.random() - 0.5) * 0.2); // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-
+    
     let castState = {
         nextSpell: 0, // The time when the next spell cast can begin.
         spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
@@ -126,15 +162,22 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const playerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), settings, talents, state, stats, EVOKERCONSTANTS);
+    const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
 
-
+    applyTalents(state, playerSpells, stats)
+    applyRaidBuffs(state);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][1], buffName);
+            else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
+            else addBuff(state, null, buffName);
+        })
     }
 
+
     // Extra Settings
-    if (settings.masteryEfficiency) EVOKERCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
+    if (settings.masteryEfficiency) CLASSICCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
 
     let seq = [...sequence];
 
@@ -190,16 +233,16 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             spendSpellCost(fullSpell, state);
  
 
-            runSpell(fullSpell, state, spellName, playerSpells, triggerEssenceBurst, runHeal, runDamage);
+            runSpell(fullSpell, state, spellName, playerSpells, null, runHeal, runDamage);
 
             // Cleanup
             castState.queuedSpell = "";
             castState.spellFinish = 0;
         }
 
-        if (seq.length === 0 && castState.queuedSpell === "") {
+        if (seqType === "Manual" && seq.length === 0) {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
-            //state.t = 999;
+            state.t = 999;
         }
 
         // Time optimization

@@ -66246,13 +66246,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10249": {
     "id": 10249,
-    "base_level": 486,
+    "base_level": 489,
     "base_level_priority": 70,
     "tag": "Awakened Crafted"
   },
   "10250": {
     "id": 10250,
-    "base_level": 399,
+    "base_level": 438,
     "base_level_priority": 100
   },
   "10305": {
@@ -73711,18 +73711,18 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10357": {
     "id": 10357,
-    "base_level": 470,
+    "base_level": 473,
     "base_level_priority": 1,
     "quality": 4
   },
   "10358": {
     "id": 10358,
-    "base_level": 499,
+    "base_level": 502,
     "base_level_priority": 65
   },
   "10359": {
     "id": 10359,
-    "base_level": 509,
+    "base_level": 512,
     "base_level_priority": 65
   },
   "10381": {

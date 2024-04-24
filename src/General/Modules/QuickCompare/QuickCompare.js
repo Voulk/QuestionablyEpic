@@ -206,7 +206,6 @@ export default function QuickCompare(props) {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Settings Functions                                       */
   /* ---------------------------------------------------------------------------------------------- */
-
   // TODO. Calculate the score for a given item.
   // Score is calculated by multiplying out stat weights and then adding any special effects.
   // const calculateScore = (item) => {};

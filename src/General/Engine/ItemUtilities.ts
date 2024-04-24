@@ -1,8 +1,9 @@
 import { itemDB } from "Databases/ItemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
-import { ClassicItemDB } from "Databases/ClassicItemDB";
+import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
+import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "./SPECS";
@@ -40,11 +41,11 @@ export function getValidArmorTypes(spec: string) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
-      return [0, 1, 2, 3, 4, 6, 7]; // Misc + Plate + Shields
+      return [0, 4, 6, 7]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 1, 2, 8]; // Misc + Plate + Shields
+      return [0, 2, 8]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
-      return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
+      return [0, 3, 6, 9]; // Misc + Plate + Shields
     case "Holy Priest Classic":
       return [0, 1]; // Misc + Plate + Shields
     default:
@@ -449,7 +450,7 @@ function sortItems(container: any[]) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  return gameType === "Retail" ? itemDB : ClassicItemDB;
+  return gameType === "Retail" ? itemDB : classicItemDB;
 }
 
 export function getDifferentialByID(diffList: any, id: number, level: number) {
@@ -485,8 +486,8 @@ export function getTranslatedItemName(id: number, lang: string, effect: any, gam
   } */
   //else {
     // @ts-ignore
-
-  if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
+  if (gameType === "Classic") return classicItemDB.filter((item) => item.id === id)[0].names[lang];
+  else if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
   else return "Unknown Item";
 }
 
@@ -600,8 +601,8 @@ export function checkDefaultSocket(id: number) {
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemAllocations(id: number, missiveStats: any[] = []) {
-  const item = getItem(id);
+export function getItemAllocations(id: number, missiveStats: any[] = [], gameType: gameTypes = "Retail") {
+  const item = getItem(id, gameType);
 
   let statArray: Stats = {};
   if (item) {
@@ -745,25 +746,44 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
   return wep_list.slice(0, 9);
 } */
 
+export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAllocations: any) {
+  let combat_mult = 0;
+
+  let stats: Stats = {}; 
+
+  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
+  //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
+  combat_mult = 1;
+
+  console.log(itemLevel + " " + rand_prop);
+
+
+  // These stats should be precise, and never off by one.
+  for (var key in statAllocations) {
+    let allocation = statAllocations[key];
+
+    if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
+      //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+    } 
+    else if (key === "intellect") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
+    } else if (key === "stamina") {
+      // todo
+    }
+  }
+
+  return stats;
+}
+
 // Calculates the intellect and secondary stats an item should have at a given item level.
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocations: any, tertiary: string) {
   let combat_mult = 0;
 
-  /*let stats = {
-    intellect: 0,
-    stamina: 0,
-    haste: 0,
-    mastery: 0,
-    versatility: 0,
-    crit: 0,
-    leech: 0,
-    hps: 0,
-    dps: 0,
-    bonus_stats: {},
-  }; */
-  let stats: Stats = {}; // TODO: Try and remove leech here.
+  let stats: Stats = {}; 
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -773,7 +793,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility"].includes(key) && allocation > 0) {
+    if (["haste", "crit", "mastery", "versatility", "spirit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } 
@@ -980,7 +1000,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) * 1.3 / 15000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) / 15000 * player.getHPS(contentType);
     }
   }
 

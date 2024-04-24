@@ -3,6 +3,9 @@ import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 import Item from "./Item";
 
 // Based on, but not inheriting from Item. Ideally both should use an Interface, or both RetailItem and ClassicItem should inherit from a higher Item parent.
+/** 
+ * @deprecated
+*/
 class ClassicItem {
   constructor(id, name, slot, bonusIDS) {
     this.id = id;

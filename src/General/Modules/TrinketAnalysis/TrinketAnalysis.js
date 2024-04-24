@@ -111,12 +111,12 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 
   console.log(itemDifficulties); */
 
-  return getBCTrinketScore(id, player, difficulty);
+  return getClassicTrinketScore(id, player, difficulty);
 
   //return item.softScore;
 };
 
-const getBCTrinketScore = (id, player) => {
+const getClassicTrinketScore = (id, player) => {
   let item = new ClassicItem(id, "", "Trinket", "");
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
@@ -253,16 +253,14 @@ export default function TrinketAnalysis(props) {
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
-      key.slot === "Trinket" &&
-      ((gameType === "Classic" && "phase" in key && key.phase === 1 && (!("class" in key) || props.player.getSpec().includes(key.class))) || (gameType === "Retail" && key.levelRange.length > 0)),
-  );
+      key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
 
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
-    "The graph is generic to your spec and content type. You can get results accurate to your character in the Top Gear module.",
+    "The graph is generic to your spec and content type. Use it as general guidance. You can get results accurate to your character in the Top Gear module.",
     "This is a sampling of available trinkets only. You can add ones that aren't on the list in Top Gear.",
   ];
   const classes = useStyles();
@@ -283,7 +281,7 @@ export default function TrinketAnalysis(props) {
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
-      trinketAtLevels["i100"] = getBCTrinketScore(trinket.id, props.player);
+      trinketAtLevels["i100"] = getClassicTrinketScore(trinket.id, props.player);
       activeTrinkets.push(trinketAtLevels);
     } else {
       for (var x = 0; x < itemLevels.length; x++) {

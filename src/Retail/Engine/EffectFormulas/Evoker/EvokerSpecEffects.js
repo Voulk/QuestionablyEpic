@@ -71,21 +71,21 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Evoker T29-2") {
     // This needs a much more comprehensive formula.
-    const reversionPercent = contentType === "Raid" ? 0.05 : 0.15;
-    const critIncrease = 25;
+    const reversionPercent = contentType === "Raid" ? 0.3 : 0.15;
+    const healingIncrease = 0.25;
     const uptime = 0.55;
-    bonus_stats.crit = reversionPercent * critIncrease * 170 * uptime;
+    bonus_stats.crit = reversionPercent * healingIncrease * uptime * player.getHPS();
 
 
   }
   else if (effectName === "Evoker T29-4") {
-    // The Evoker 4pc increases our Living Flame damage by 20% per stack, and also makes it instant.
+    // The Evoker 4pc increases our Living Flame damage by 50% per stack, and also makes it instant.
     // It procs frequently and we can rely on it being active for most of our Living Flame casts.
     // The damage advantage is obvious, but the healing is a little more difficult.
 
     // Number of Essence Burst procs per minute.
     // Some of these would just be regular Living Flame casts. These could be excluded.
-    const livingFlameCPM = 3.5;
+    const livingFlameCPM = 4.5;
     const essenceBurstsPerMinute = livingFlameCPM * 0.2;
 
     const reversionTicks = 6 * 1.3 / (1 - (player.getStatPerc("crit") - 1))

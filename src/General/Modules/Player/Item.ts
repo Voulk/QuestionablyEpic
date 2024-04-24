@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
+import { calcStatsAtLevel, calcStatsAtLevelClassic, getItemAllocations, getItemProp } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../../Engine/CONSTRAINTS";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
@@ -6,12 +6,14 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 // We'll create them when we import a SimC string, or when an item is added manually.
 // Items are stored in the players character. They are not currently stored in local storage but that is a likely addition soon after release.
 export class Item {
+  gameType: gameTypes = "Retail"; 
   id: number; // The items ID
   level: number; // The items ilvl
   name: string; // Consider how to store this in a localised form.
   slot: string;
   softScore: number;
   socket: number; // This is an int since items can have more than one socket (neck).
+  classicSockets?: number[] = []; // Classic sockets have specific colors.
   tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
   stats: Stats = {}; // The stats on a given item.
 
@@ -43,24 +45,47 @@ export class Item {
   gemString?: string;
   flags: string[] = []; // Flags: reforged, offspecWeapon. 
 
-  constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string) {
+  constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string, gameType: gameTypes = "Retail") {
     this.id = id;
     this.name = name;
     this.level = setBounds(level, CONSTRAINTS.Retail.minItemLevel, CONSTRAINTS.Retail.maxItemLevel); //Math.max(1, Math.min(300, level));
     this.slot = slot;
     this.socket = socket;
+    this.gameType = gameType || "Retail";
     this.tertiary = tertiary === "Leech" || tertiary === "Avoidance" ? tertiary : "";
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
-    this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot"), getItemAllocations(id), tertiary);
-    this.effect = getItemProp(id, "effect");
-    this.setID = getItemProp(id, "itemSetId");
+
+   
+    this.effect = getItemProp(id, "effect", gameType);
+    this.setID = getItemProp(id, "itemSetId", gameType);
     this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();
-    this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket") === true);
+    this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket", gameType) === true);
     if (this.onUse && this.effect) this.effect['onUse'] = true;
-    if (slot === "Neck") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
-    if (getItemProp(id, "offspecWeapon")) this.flags.push("offspecWeapon");
+    if (slot === "Neck" && this.gameType === "Retail") this.socket = 3; // This is an override to apply 3 sockets to every neck. It makes the app easier to use.
+    if (getItemProp(id, "offspecWeapon", gameType)) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
+
+    if (gameType === "Classic") {
+      const sockets = getItemProp(id, "sockets", gameType);
+      this.classicSockets = sockets? sockets.gems : [];
+
+      // Adjust allocations for sockets.
+      const itemAllocations = getItemAllocations(id, [], gameType);
+
+      /* Sockets = -ItemAllocation
+      if (sockets) {
+        Object.keys(itemAllocations).forEach((stat) => {
+          if (stat === 'intellect') itemAllocations[stat] = itemAllocations[stat] - (50 * sockets.gems.length);
+          else itemAllocations[stat] -= (25 * sockets.gems.length);
+        });
+      } */
+      // NYI: Spirit appears to count one socket fewer when calculating stats. 
+      this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
+    }
+    else if (gameType === "Retail") {
+      this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);
+    }
 
   }
 
@@ -106,7 +131,7 @@ export class Item {
 
   updateLevel(level: number) {
     this.level = level;
-    this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot"), getItemAllocations(this.id), this.tertiary);
+    this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id), this.tertiary);
   }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and

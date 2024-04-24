@@ -17,9 +17,7 @@ const GLOBALCONST = {
 
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
-        
         const talent = state.talents[talentName];
-
         if (talent.points > 0) {
             talent.runFunc(state, spellDB, talent.points, stats)
         }
@@ -68,6 +66,17 @@ export const spendSpellCost = (spell, state) => {
     // TODO: Add cost discounts here like Infusion of Light.
 }
 
+// Runs a classic era periodic spell.
+const runPeriodic = (state, spell, spellName, runHeal) => {
+    // Calculate tick count
+    const tickCount = Math.floor(spell.buffDuration / spell.tickData.tickRate);
+
+    // Run heal
+    for (let i = 0; i < tickCount; i++) {
+        runHeal(state, spell, spellName + " (HoT)");
+    }
+}
+
 // Ideally remove triggerSpecial eventually.
 // flags: "ignoreCD"
 export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flags = {}) => {
@@ -106,7 +115,11 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             else if (spell.type === 'heal') {
                 runHeal(state, spell, spellName)
             }
-            
+
+            // In classic we don't need to worry about hots and dots changing 
+            else if (spell.type === "classic periodic") {
+                runPeriodic(state, spell, spellName, runHeal);
+            }
             
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
             else if (spell.type === 'damage') {
@@ -160,18 +173,30 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
         }
     }
 
-    if (!castState.queuedSpell) {
+    if (seqType === "Manual" && !castState.queuedSpell) {
+        castState.queuedSpell = "";
+        castState.nextSpell = 999;
+        return;
+    }
+
+    if (!castState.queuedSpell && seqType === "Auto") {
         //console.error("Can't find spell: " + castState.queuedSpell);
         castState.queuedSpell = "Rest";
         castState.spellFinish = state + 1.5;
         castState.nextSpell = state + 1.5;
     }
+
     const fullSpell = spellDB[castState.queuedSpell];
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
+    const effectiveCastTime = castTime === 0 ? 1.5 / getHaste(state.currentStats) : castTime;
+    state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
+
+    // These could be semi-replaced by effectiveCastTime. TODO.
     if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);
     else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
     else castState.nextSpell = state.t + castTime;
+
 
     //console.log("Queued: " + castState.queuedSpell + " | Next: " + castState.nextSpell + " | Finish: " + castState.spellFinish);
 }
@@ -361,8 +386,9 @@ export const getSqrt = (targets, sqrtMin) => {
     //return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
 }
 
+// Use flat if possible from now on. flatHeal and flatDamage are an old standard.
 const getSpellFlat = (spell, flatBonus = 0) => {
-    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0) + flatBonus)
+    return ((spell.flatHeal) || 0 + (spell.flatDamage || 0) + (spell.flat || 0) + flatBonus)
 }
 
 /**
@@ -399,3 +425,4 @@ export const deepCopyFunction = (inObject) => {
   
     return outObject;
   };
+
