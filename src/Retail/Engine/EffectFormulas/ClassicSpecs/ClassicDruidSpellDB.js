@@ -30,7 +30,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 50464, icon: "ability_druid_nourish", cat: "heal"},
         type: "heal",
-        castTime: 2, // Check
+        castTime: 3, // Check
         cost: 10, 
         coeff: 0.266, 
         flat: 2598,
@@ -41,7 +41,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
         type: "heal",
-        castTime: 2, 
+        castTime: 1.5, 
         cost: 35, 
         flat: 3579,
         coeff: 0.2936, 
@@ -97,7 +97,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "heal"},
         type: "heal",
-        castTime: 2, 
+        castTime: 0, 
         cost: 10, 
         coeff: 0.536, 
         flat: 5229,
@@ -219,6 +219,11 @@ const offspecTalents = {
 const specTalents = {
 
     // Bugged in beta
+    naturalist: {points: 2, maxPoints: 2, icon: "spell_nature_healingtouch", id: 17070, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Healing Touch"][0].castTime -= (0.25 * points);
+        spellDB["Nourish"][0].castTime -= (0.25 * points);
+    }}, 
+
     improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 1 + 0.05 * points);
     }}, 
