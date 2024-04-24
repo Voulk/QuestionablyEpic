@@ -69,7 +69,9 @@ export const spendSpellCost = (spell, state) => {
 // Runs a classic era periodic spell.
 const runPeriodic = (state, spell, spellName, runHeal) => {
     // Calculate tick count
-    const tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
+    let tickCount = 0;
+    if ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate));
+    else tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {

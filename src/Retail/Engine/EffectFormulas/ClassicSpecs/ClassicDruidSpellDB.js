@@ -239,11 +239,12 @@ const specTalents = {
             type: "classic periodic",
             buffType: "heal",
             buffDuration: 7,
-            coeff: spellDB["Swiftmend"][0].coeff * 0.12, // The coefficient for a single regrowth tick.
-            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+            coeff: spellDB["Swiftmend"][0].coeff * 0.12, //
+            flat: spellDB["Swiftmend"][0].flat * 0.12, //
+            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
             expectedOverheal: 0.4,
             targets: 3,
-            secondaries: ['crit', 'mastery'] // Efflo just scales with the same thing the Swiftmend scaled with. Note that it doesn't double dip.
+            secondaries: ['crit', 'mastery'] // Efflo just scales with the same thing the Swiftmend scaled with.
         }
         spellDB["Swiftmend"].push(efflo);
     }}, 

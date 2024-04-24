@@ -60,7 +60,7 @@ export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) =>
     const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
 
     const critChance = /*specConstants.baseCrit*/ 0 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
-    const critMult = (currentStats['critMult'] || 1.5) + (statMods['critEffect'] || 0);
+    const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);

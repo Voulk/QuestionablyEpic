@@ -166,9 +166,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
-    const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
-
+    const playerSpells = deepCopyFunction(getSpellDB(state.spec));
     applyTalents(state, playerSpells, stats)
+    applyLoadoutEffects(playerSpells, settings, talents, state, stats, CLASSICCONSTANTS);
+    //const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
+
+    //applyTalents(state, playerSpells, stats)
     applyRaidBuffs(state);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
