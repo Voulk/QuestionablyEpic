@@ -69,7 +69,7 @@ export const spendSpellCost = (spell, state) => {
 // Runs a classic era periodic spell.
 const runPeriodic = (state, spell, spellName, runHeal) => {
     // Calculate tick count
-    const tickCount = Math.floor(spell.buffDuration / spell.tickData.tickRate);
+    const tickCount = Math.floor(spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
@@ -180,20 +180,25 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     }
 
     if (!castState.queuedSpell && seqType === "Auto") {
+        
         //console.error("Can't find spell: " + castState.queuedSpell);
         castState.queuedSpell = "Rest";
         castState.spellFinish = state + 1.5;
         castState.nextSpell = state + 1.5;
     }
-
+    
     const fullSpell = spellDB[castState.queuedSpell];
+
+    // Check if the spell has a custom GCD. 
+    const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
+    const GCD = fullSpell[0].customGCD || 1.5;
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
-    const effectiveCastTime = castTime === 0 ? 1.5 / getHaste(state.currentStats) : castTime;
+    const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats), GCDCap) : castTime;
     state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
 
     // These could be semi-replaced by effectiveCastTime. TODO.
-    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);
+    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + effectiveCastTime;
     else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
     else castState.nextSpell = state.t + castTime;
 

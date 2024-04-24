@@ -145,7 +145,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, execTime: 0, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, spec: settings.spec.replace(" Classic", ""), manaPool: 100000, healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec]};
+                    talents: talents, reporting: true, spec: settings.spec.replace(" Classic", ""), manaPool: 100000, 
+                    healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec], gameType: "Classic"};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
