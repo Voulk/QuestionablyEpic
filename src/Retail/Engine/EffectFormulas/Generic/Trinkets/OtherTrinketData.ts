@@ -377,7 +377,7 @@ export const otherTrinketData = [
       { // Mana Unleash
         coefficient: 24.62098,
         table: -7,
-        ppf: 1.5,
+        ppm: 1.5,
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {

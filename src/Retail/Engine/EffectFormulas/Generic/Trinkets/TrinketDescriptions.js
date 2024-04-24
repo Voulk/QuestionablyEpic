@@ -6,16 +6,21 @@ import { correctCasing } from "General/Engine/ItemUtilities";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 
 const trinketCategories = {
-    RAIDDROPS: "Raid Drops",
+    //RAIDDROPS: "Raid Drops",
+    VAULT: "Vault Drops",
+    ABERRUS: "Aberrus Drops",
+    AMIRDRASSIL: "Amirdrassil Drops",
     DUNGEONDROPS: "Dungeon Drops",
     OTHER: "Other",
     DPS: "DPS Trinkets",
-    LASTTIER: "Last Season Trinkets"
+    LASTTIER: "Last Season Trinkets",
+
+
 }
 
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
-    const itemLevel = 522;
+    const itemLevel = 528;
     if (trinketData === null) return null;
     switch (trinketName) {
 
@@ -26,6 +31,30 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
             return smolderingSeedling(trinketData, itemLevel, player, additionalData);
         case "Pip's Emerald Friendship Badge":
             return pipsEmeraldFriendshipBadge(trinketData, itemLevel, player, additionalData);   
+
+
+        // == Season 2 Trinkets ==
+        case "Neltharion's Call to Suffering":
+            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.ABERRUS, 
+                                            "1ppm. Very high variance. Downside IS deducted from its expected throughput, but shouldn't feel too dangerous in practice. Priest / Druid only.");
+        case "Neltharion's Call to Chaos":
+            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.ABERRUS, 
+                                            "Very high variance. Damage taken increase not included in formula. Evoker / Paladin only.")
+        case "Screaming Black Dragonscale":
+            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.ABERRUS, 
+                                            "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.")
+           
+        case "Rashok's Molten Heart":
+            return rashoksMoltenHeart(trinketData, itemLevel, player, additionalData);
+        case "Ominous Chromatic Essence":
+            return ominousChromaticEssence(trinketData, itemLevel, player, additionalData);
+        case "Ward of Faceless Ire":
+            return wardOfFacelessIre(trinketData, itemLevel, player, additionalData);
+
+        case "Whispering Incarnate Icon":
+            return whisperingIncarnateIcon(trinketData, itemLevel, player, additionalData);
+        case "Broodkeeper's Promise":
+            return broodkeepersPromise(trinketData, itemLevel, player, additionalData);
 
         // -- Season 3 Dungeons --
         case "Echoing Tyrstone":
@@ -50,23 +79,7 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
             return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.DUNGEONDROPS, 
                                             "A low uptime stat stick with moderate average performance.");
 
-        // == Season 2 Trinkets ==
-        case "Neltharion's Call to Suffering":
-            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.LASTTIER, 
-                                            "Fixed to proc off healing spells including HoTs. Downside IS deducted from its expected throughput, but shouldn't feel too dangerous in practice. Priest / Druid only.");
-        case "Neltharion's Call to Chaos":
-            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.LASTTIER, 
-                                            "Fixed to proc off healing spells. Very high variance. Damage taken increase not included in formula. Evoker / Paladin only.")
-        case "Screaming Black Dragonscale":
-            return buildGenericStatStick(trinketData, itemLevel, player, additionalData, trinketCategories.LASTTIER, 
-                                            "A very high uptime stat stick that is solid for every healing spec - regardless of precisely where crit falls for you. Very Rare drop.")
-           
-        case "Rashok's Molten Heart":
-            return rashoksMoltenHeart(trinketData, itemLevel, player, additionalData);
-        case "Ominous Chromatic Essence":
-            return ominousChromaticEssence(trinketData, itemLevel, player, additionalData);
-        case "Ward of Faceless Ire":
-            return wardOfFacelessIre(trinketData, itemLevel, player, additionalData);
+
         default:
             return null;
     }
@@ -88,7 +101,7 @@ const neltharionsCallToSuffering = (data, itemLevel, player) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, {})
 
     return {
-        category: trinketCategories.LASTTIER,
+        category: trinketCategories.ABERRUS,
         metrics: ["Expected Uptime: " + convertExpectedUptime(effect, player, false), 
                 "Average Int: " + Math.round(bonus_stats.intellect)],
         description:
@@ -116,7 +129,7 @@ const blossomOfAmirdrassil = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.AMIRDRASSIL,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps)],
         description:
           "Expect Blossom to look quite good on your healing meter but the lack of intellect hurts it overall and prevents it from being better than top 5 - and that's if your spec likes haste. Falls off further as you approach late mythic.",
@@ -129,7 +142,7 @@ const smolderingSeedling = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.AMIRDRASSIL,
         metrics: [ "HPS: " + Math.round(bonus_stats.hps),
                 "Mastery: " + Math.round(bonus_stats.mastery)],
         description:
@@ -142,12 +155,12 @@ const pipsEmeraldFriendshipBadge = (data, itemLevel, player, additionalData) => 
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.RAIDDROPS,
+        category: trinketCategories.AMIRDRASSIL,
         metrics: [ "Mastery: " + Math.round(bonus_stats.mastery),
                 "Crit: " + Math.round(bonus_stats.crit),
                 "Versatility: " + Math.round(bonus_stats.versatility)],
         description:
-          "Pip's competes well with the top stat sticks this tier while also being much more consistent. A fantastic choice for all healing specs.",
+          "A solid choice, though sees tougher competition from the other stat sticks in Season 4. Not worth a bullion but not a bad drop to get.",
       };
 }
 
@@ -156,12 +169,12 @@ const rashoksMoltenHeart = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.LASTTIER,
+        category: trinketCategories.ABERRUS,
         metrics: ["Mana / Min: " + Math.round(bonus_stats.mana * 60), 
                 "HPS: " + Math.round(bonus_stats.hps),
-                "Equiv Vers: " + Math.round(bonus_stats.allyStats)],
+                "Ally Vers: " + Math.round(bonus_stats.allyStats)],
         description:
-          "A massive package of mana, healing and versatility. Holds up ok in season 3 but it's become mostly useful for its vers buff and you'll replace it when you have ~470+ alternatives.",
+          "A massive package of mana, healing and versatility. Most of Rashoks power now comes from the versatility buff it provides to allies. Pick it up if you're interested in that, or pick something else if you'd rather personal throughput.",
       };
 
 }
@@ -215,11 +228,11 @@ const wardOfFacelessIre = (data, itemLevel, player, additionalData) => {
     const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
 
     return {
-        category: trinketCategories.LASTTIER,
+        category: trinketCategories.ABERRUS,
         metrics: ["HPS: " + Math.round(bonus_stats.hps),
                 "Expected Efficiency: " + (effect.efficiency[additionalData.contentType]) * 100 + "%"],
         description:
-          "A niche, but situationally powerful single target shield. The DPS portion is abysmal but having access to a big two minute defensive is quite powerful to have in your back pocket. Overall HPS is middling to poor.",
+          "A situationally powerful single target shield. While its overall HPS isn't very good, you could bring this to Mythic+ in the role of an extra defensive for you or a DPS.",
       };
 }
 
@@ -231,11 +244,45 @@ const ominousChromaticEssence = (data, itemLevel, player, additionalData) => {
     const playerBestStat = player.getHighestStatWeight(additionalData.contentType);
 
     return {
-        category: trinketCategories.LASTTIER,
+        category: trinketCategories.ABERRUS,
         metrics: ["Chosen Stat: " + Math.round(primary + secondary * 0.25),
                     "Other Secondaries: " + Math.round(secondary * 1.25)],
         description:
           "Great passive stat trinket. If your raid needs a specific buff it's ok to use it even if it's slightly worse for you. If you get to choose, then " + playerBestStat + " is likely to be your best option. You can toggle whether you are getting buffs from allies in the settings panel.",
+      };
+}
+
+const whisperingIncarnateIcon = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    const primary = processedValue(data.effects[0], itemLevel);
+    const secondary = data.runFunc(data.effects, player, itemLevel, additionalData).crit
+
+    return {
+        category: trinketCategories.VAULT,
+        metrics: ["Haste: " + Math.round(primary),
+                    "Crit / Vers: " + Math.round(secondary)],
+        description:
+          "Strong stat trinket if your spec likes haste. You might wear it either way if your group has a few and needs a healer running it to buff them.",
+      };
+}
+
+const broodkeepersPromise = (data, itemLevel, player, additionalData) => {
+    const effect = data.effects[0];
+
+    const healValue = processedValue(data.effects[1], itemLevel);
+
+    const bonus_stats = data.runFunc(data.effects, player, itemLevel, additionalData)
+    const hps = bonus_stats.hps;
+    const vers = bonus_stats.versatility;
+
+    return {
+        category: trinketCategories.VAULT,
+        metrics: ["HPS: " + Math.round(hps),
+                    "Vers: " + Math.round(vers),
+                    "Ally Vers: " + Math.round(vers)],
+        description:
+          "Broodkeeper's Promise competes well on HPS while allowing you to heal a priority target for a lot. The heal is 2.33x stronger (and the vers 1.5x stronger) when you are close to your bonded ally so make sure you pick someone that will be in a similar position.",
       };
 }
 

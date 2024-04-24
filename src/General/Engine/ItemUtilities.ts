@@ -356,7 +356,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
 export function getItemLevelBoost(bossID: number, difficulty: number) {
   // Handle max difficulties
   if (difficulty === CONSTANTS.difficulties.mythicMax) {
-    if (bossID === 2523 || bossID === 2520) return 3;
+    if (bossID === 2523 || bossID === 2520) return 0;
     else return 0;
   } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
   else if (isMaxxed(difficulty)) return 0;
@@ -379,13 +379,13 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [208616, 210214, 207171];
+  const boostedItems = [208616, 210214, 207171, 195526, 204201, 204202, 204211, 204465];
 
   if (boostedItems.includes(itemID)) {
     // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
     if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
     else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
-    else if (bossID === 2519) return 7;
+    else if (bossID === 2519 || bossID === 2493 || bossID === 2523 || bossID === 2520) return 7;
     else if (bossID === 2556) return 0; // ???
     else if (!isMaxxed(difficulty)) return 6;
     else return 0;
@@ -463,8 +463,12 @@ export function getDifferentialByID(diffList: any, id: number, level: number) {
 }
 
 // Returns the number of upgrades (score > 0) for a given section.
-export const getNumUpgrades = (items: any[], raidID : number, bossID : number, difficultyID : number) => {
-  return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
+export const getNumUpgrades = (items: any[], raidID : number, bossID : number, difficultyID? : number) => {
+  if (difficultyID) return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
+  else {
+    return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.score > 0).length;
+
+  }
 }
 
 // Returns true or false based on whether an ID exists in our item database.
@@ -501,10 +505,14 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
 
 export function getEmbellishmentIcon(id: number) {
   const embel = embellishmentDB.filter((embel) => embel.id === id);
+  console.log(embel[0].icon)
 
   if (embel[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
-  } else {
+  } 
+  else if (embel[0].icon === "inv_cape_armor_celestial")
+    return "https://wow.zamimg.com/images/wow/icons/large/3752753.jpg";
+  else {
     return "https://wow.zamimg.com/images/wow/icons/large/" + embel[0].icon + ".jpg";
   }
 }
@@ -992,7 +1000,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) * 1.3 / 15000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) / 15000 * player.getHPS(contentType);
     }
   }
 
@@ -1023,7 +1031,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 
 // Returns an intellect value.
 export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player) => { // Maybe add PlayerSettings
-  const dpsValue = statValue * CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.activeStats.intellect;
+  const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
   return dpsValue * 0.75 + healerValue * 0.25;
 }

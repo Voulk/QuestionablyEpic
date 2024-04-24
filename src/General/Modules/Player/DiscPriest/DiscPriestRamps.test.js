@@ -29,8 +29,7 @@ describe("Test APL", () => {
         const testSettings = {includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
 
         const playerData = { spec: "Discipline Priest", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
-        const data = runAPLSuites(playerData, shadowFiendProfile, runCastSequence);
-        console.log(data);
+        //const data = runAPLSuites(playerData, shadowFiendProfile, runCastSequence);
 
         //const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
     

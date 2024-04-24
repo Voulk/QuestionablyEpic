@@ -32,7 +32,7 @@ describe("Test APL", () => {
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
         //console.log(data);
-        const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
+        //const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
         //console.log(data);
 
         expect(true).toEqual(true);

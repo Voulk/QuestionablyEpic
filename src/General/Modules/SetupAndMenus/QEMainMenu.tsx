@@ -193,9 +193,9 @@ export default function QEMainMenu(props: Props) {
       <Root>
         <div style={{ height: 96 }} />
         <Grid container spacing={2}>
-          <Grid item xs={12} style={{ textAlign: "center" }}>
+          {/*<Grid item xs={12} style={{ textAlign: "center" }}>
             <GameTypeSwitch charUpdate={props.charUpdate} allChars={props.allChars} />
-          </Grid>
+  </Grid> */}
           <Grid item xs={12}>
             <Button
               key={321}

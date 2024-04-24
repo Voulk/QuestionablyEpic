@@ -24,11 +24,13 @@ export default function CraftedGearContainer(props) {
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
-  const difficulty = props.playerSettings.dungeon;
+  const difficulty = props.playerSettings.craftedLevel;
   const gameType = useSelector((state) => state.gameType);
   const craftedIntro = "You have a lot of decisions you can make when crafting items. While you can fine tune stats, you're usually quite safe just picking out a \
-                        strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. For your spec Crit / Mastery \
-                        is a reliable choice."
+                        strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. For your spec X \
+                        is a reliable choice. \
+                        \n\n \
+                        Note that this section isn't ideal for handling embellishments. You can do that via Top Gear."
 
   function a11yProps(index) {
     return {
@@ -99,14 +101,14 @@ export default function CraftedGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {craftedDB[key]} -{" "}
                               {
-                                getNumUpgrades(itemDifferentials, "-4", key, itemLevels.dungeon[difficulty])
+                                [...filterItemListBySource(itemDifferentials, "-4", key, itemLevels.crafted[difficulty])].length
                               }{" "}
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemDifferentials, "-4", key, 486)].map((item, index) => (
+                              {[...filterItemListBySource(itemDifferentials, "-4", key, itemLevels.crafted[difficulty])].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>
