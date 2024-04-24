@@ -30,8 +30,11 @@ const CLASSICCONSTANTS = {
         "Holy Paladin": 23422,
         "Holy Priest": 20590,
         "Restoration Shaman": 23430, 
-        "Mistweaver Monk": 0, // Soon :)
+        "Mistweaver Monk": 0, 
     },
+
+
+
     auraDamageBuff: 1,
     enemyTargets: 1, 
 
@@ -99,7 +102,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     if ('specialMult' in spell) healingVal *= spell.specialMult;
     if (spellName.includes("Wild Growth") && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
 
-    const healingVal = getSpellRaw(spell, currentStats, CLASSICCONSTANTS, 0, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
+    const healingVal = getSpellRaw(spell, currentStats, state.spec, 0, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);

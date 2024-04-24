@@ -18,7 +18,18 @@ const GLOBALCONST = {
         "Holy Priest": 0.012375,
         "Restoration Shaman": 0.02201, 
         "Mistweaver Monk": 1, // Soon :)
-    }
+    },
+
+    masteryMod: {
+        "Restoration Druid": 1.25,
+        "Discipline Priest": 1, 
+        "Holy Paladin": 1,
+        "Holy Priest": 1,
+        "Restoration Shaman": 1, 
+        "Mistweaver Monk": 0, 
+    },
+
+
 
 }
 
@@ -33,8 +44,8 @@ const getSpellFlat = (spell, flatBonus = 0) => {
  * @param {object} currentStats A players current stats, including any buffs.
  * @returns The raw damage or healing of the spell.
  */
-export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0, masteryFlag = false) => {
-    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.spellpower) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants, masteryFlag); // Multiply our spell coefficient by int and secondaries.
+export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFlag = false) => {
+    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.spellpower) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, masteryFlag); // Multiply our spell coefficient by int and secondaries.
 }
 
 /**
@@ -44,16 +55,16 @@ export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0, m
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
  * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
  */
-export const getStatMult = (currentStats, stats, statMods, specConstants, masteryFlag) => {
+export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) => {
     let mult = 1;
-    const baseMastery = specConstants.masteryMod / 100 * 8; // Every spec owns 8 mastery points baseline
+    const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
 
     const critChance = /*specConstants.baseCrit*/ 0 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 1.5) + (statMods['critEffect'] || 0);
     
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
-    if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
+    if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100) * 1/*specConstants.masteryEfficiency*/);
 
     return mult;
 }
