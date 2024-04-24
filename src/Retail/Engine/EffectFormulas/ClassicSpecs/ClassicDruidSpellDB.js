@@ -197,13 +197,13 @@ export const CLASSICDRUIDSPELLDB = {
 
 // Talents that aren't in the resto portion of the tree (Feral / Balance)
 const offspecTalents = {
-    furor: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofstamina", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+    furor: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.manaPool *= (1 + 0.05 * points);
     }}, 
-    naturesMajesty: {points: 2, maxPoints: 2, icon: "inv_staff_01", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+    naturesMajesty: {points: 2, maxPoints: 2, icon: "inv_staff_01", id: 35363, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.crit += (180 * 2 * points);
     }},
-    genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+    genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 57810, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         const buffValue = 1 + 0.02 * points;
         // TODO: Assumed Efflo doesn't count which is why Swiftmend is on the node.
         buffSpell(spellDB["Rejuvenation"], buffValue); 
@@ -227,14 +227,17 @@ const specTalents = {
     improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 1 + 0.05 * points);
     }}, 
-    blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 1 + 0.02 * points);
     }}, 
-    naturesBounty: {points: 3, maxPoints: 3, icon: "spell_nature_resistnature", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    masterShapeshifter: {points: 1, maxPoints: 1, icon: "ability_druid_mastershapeshifter", id: 48411, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        state.healingAura *= 1.04;
+    }},
+    naturesBounty: {points: 3, maxPoints: 3, icon: "spell_nature_resistnature", id: 17074, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Regrowth"][0].statMods = {'crit': 0.6}
         spellDB["Regrowth"][1].statMods = {'crit': 0.6}
     }}, 
-    efflorescence: {points: 3, maxPoints: 3, icon: "inv_misc_herb_talandrasrose", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    efflorescence: {points: 3, maxPoints: 3, icon: "inv_misc_herb_talandrasrose", id: 34151, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         const efflo = {
             type: "classic periodic",
             buffType: "heal",
@@ -248,7 +251,7 @@ const specTalents = {
         }
         spellDB["Swiftmend"].push(efflo);
     }}, 
-    giftOfTheEarthmother: {points: 3, maxPoints: 3, icon: "ability_druid_manatree", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    giftOfTheEarthmother: {points: 3, maxPoints: 3, icon: "ability_druid_manatree", id: 51179, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Lifebloom"][1].coeff *= (1 + points * 0.05);
         
         const rejuvInitial = {
@@ -261,9 +264,7 @@ const specTalents = {
         }
         spellDB["Rejuvenation"].push(rejuvInitial);
     }}, 
-    masterShapeshifter: {points: 1, maxPoints: 1, icon: "ability_druid_mastershapeshifter", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        state.healingAura *= 1.04;
-    }},
+
 
     swiftRejuvenation: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 33886, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].customGCD = 1;
@@ -272,16 +273,16 @@ const specTalents = {
 }
 
 const glyphs = {
-    glyphOfRejuvenation: {points: 1, maxPoints: 1, icon: "spell_nature_rejuvenation", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    glyphOfRejuvenation: {points: 1, maxPoints: 1, icon: "spell_nature_rejuvenation", id: 54754, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 1.1);
     }}, 
-    glyphOfLifebloom: {points: 1, maxPoints: 1, icon: "inv_misc_herb_felblossom", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    glyphOfLifebloom: {points: 1, maxPoints: 1, icon: "inv_misc_herb_felblossom", id: 54826, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         spellDB["Lifebloom"][0].statMods = {'crit': 0.1}
         spellDB["Lifebloom"][1].statMods = {'crit': 0.1}
     }}, 
 
     // Majors
-    glyphOfWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    glyphOfWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 62970, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         spellDB["Wild Growth"][0].targets += 1
         spellDB["Wild Growth"][0].cooldown += 2
     }}, 
