@@ -263,7 +263,7 @@ const specTalents = {
         state.healingAura *= 1.04;
     }},
 
-    swiftRejuvenation: {points: 1, maxPoints: 1, icon: "ability_druid_mastershapeshifter", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    swiftRejuvenation: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 33886, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].customGCD = 1;
     }},
 

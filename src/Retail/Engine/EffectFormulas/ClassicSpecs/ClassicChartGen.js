@@ -137,7 +137,7 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
 
             if (sequence.tag === "Lifebloom (3 stack rolling)") {
                 result.hps *= 3; 
-                result.hpm *= 3;
+                result.hpm = Math.round(result.hpm * 3);
                 result.hpct *= 3;
             }
             results.push(result);
