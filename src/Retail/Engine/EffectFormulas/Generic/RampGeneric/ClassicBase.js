@@ -23,7 +23,7 @@ const GLOBALCONST = {
     masteryMod: {
         "Restoration Druid": 1.25,
         "Discipline Priest": 1, 
-        "Holy Paladin": 1,
+        "Holy Paladin": 1.5,
         "Holy Priest": 1,
         "Restoration Shaman": 1, 
         "Mistweaver Monk": 0, 
@@ -31,6 +31,11 @@ const GLOBALCONST = {
 
 
 
+}
+
+export const getMastery = (currentStats, spec) => {
+    const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
+    return 1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100)
 }
 
 const getSpellFlat = (spell, flatBonus = 0) => {

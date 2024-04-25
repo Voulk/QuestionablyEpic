@@ -18,7 +18,18 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.432, 
         flat: 4400,
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
+    }],
+    "Holy Shock": [{
+        // Regrowth direct heal portion
+        spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 7, 
+        coeff: 0.2689999938, 
+        flat: 2738,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'mastery'] 
     }],
     "Flash of Light": [{
         // Regrowth direct heal portion
@@ -29,7 +40,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 7329,
         coeff: 0.863, 
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     }],
     "Holy Radiance": [{
         // Regrowth direct heal portion
@@ -41,7 +52,7 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.259, 
         expectedOverheal: 0.2,
         targets: 6,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     },
     {
         type: "classic periodic",
@@ -63,7 +74,7 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.132 * 5, // Adjust this per Holy Power. 
         targets: 6,
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     }],
     "Word of Glory": [{
         // Regrowth direct heal portion
@@ -74,7 +85,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 2133 * 5,
         coeff: 0.209 * 5, // Adjust this per Holy Power. 
         expectedOverheal: 0.3,
-        secondaries: ['crit'] 
+        secondaries: ['crit', 'mastery'] 
     }],
     "Judgement": [{
         // Regrowth direct heal portion
@@ -102,8 +113,9 @@ const specTalents = {
 
     }},
 
-    protectorOfTheInnocent: {points: 3, maxPoints: 3, icon: "ability_druid_empoweredrejuvination", id: 33886, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    protectorOfTheInnocent: {points: 3, maxPoints: 3, icon: "ability_paladin_protectoroftheinnocent", id: 20138, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         const newSpell = {
+            name: "Protector of the Innocent",
             flat: 895 * points,
             coeff: 0,
             expectedOverheal: 0.3,
@@ -111,6 +123,10 @@ const specTalents = {
         }
 
         spellDB["Holy Light"].push(newSpell);
+        spellDB["Flash of Light"].push(newSpell);
+        spellDB["Holy Shock"].push(newSpell);
+        //spellDB["Divine Light"].push(newSpell);
+        
     }},
 
     judgementsOfThePure: {points: 3, maxPoints: 3, icon: "ability_paladin_judgementofthepure", id: 53671, select: true, tier: 1, runFunc: function (state, spellDB, points) {

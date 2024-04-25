@@ -33,7 +33,7 @@ export const buildClassicPaladinChartData = (activeStats, baseTalents) => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Holy Paladin"};
 
     const sequences = [
-        
+        {cat: "Base Spells", tag: "Holy Shock", seq: ["Holy Shock"], preBuffs: []},
         {cat: "Base Spells", tag: "Holy Light", seq: ["Holy Light"], preBuffs: []},
         {cat: "Base Spells", tag: "Flash of Light", seq: ["Flash of Light"], preBuffs: []},
         {cat: "Base Spells", tag: "Holy Radiance", seq: ["Holy Radiance"], preBuffs: []},

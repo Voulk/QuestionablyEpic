@@ -5,7 +5,7 @@ import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
-import { getSpellRaw, applyRaidBuffs  } from "../Generic/RampGeneric/ClassicBase"
+import { getSpellRaw, applyRaidBuffs, getMastery  } from "../Generic/RampGeneric/ClassicBase"
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./ClassicUtilities";
 
@@ -15,6 +15,8 @@ const CLASSICCONSTANTS = {
     masteryMod: 1.8, 
     masteryEfficiency: 0.82, 
     baseMana: 250000,
+
+    beaconOverhealing: 0.2,
 
     auraHealingBuff: {
         "Restoration Druid": 1.25,
@@ -97,6 +99,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
         if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName)) masteryFlag = true;
         else masteryFlag = false;
     }
+    else if (state.spec === "Holy Paladin") masteryFlag = false; // We'll handle this separately.
 
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
@@ -104,10 +107,33 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
     const healingVal = getSpellRaw(spell, currentStats, state.spec, 0, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 
+
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+
+    // Beacon
+    if (state.spec === "Holy Paladin") {
+        let beaconHealing = 0;
+        let beaconMult = 1;
+        if (spellName === "Holy Light") beaconMult = 1;
+        else if (["Flash of Light", "Divine Light", "Light of Dawn", "Holy Shock", "Word of Glory"]) beaconMult = 0.5;
+    
+        beaconHealing = healingVal * (1 - CLASSICCONSTANTS.beaconOverhealing) * beaconMult;
+
+        state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
+        addReport(state, `Beacon of Light healed for ${Math.round(beaconHealing)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+
+        // Illuminated Healing
+        if (spell.secondaries.includes("mastery")) {
+            const absorbVal = healingVal / (1 - spell.expectedOverheal) * (getMastery(state.currentStats, state.spec) - 1);
+            state.healingDone["Illuminated Healing"] = (state.healingDone["Illuminated Healing"] || 0) + absorbVal;
+            addReport(state, `Illuminated Healing absorbed ${Math.round(absorbVal)} (Exp OH: 0%)`)
+        }
+    }
+
+    
 
     return healingVal;
 }
