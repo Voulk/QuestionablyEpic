@@ -248,7 +248,7 @@ export class Player {
     });
 
     if (temp.length > 0) {
-      const match = temp[-1];
+      const match = temp[temp.length - 1];
       const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
       Object.assign(newItem, { isCatalystItem: true });
       newItem.active = true;
