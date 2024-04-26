@@ -160,7 +160,6 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
-    console.log(itemLevel);
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.

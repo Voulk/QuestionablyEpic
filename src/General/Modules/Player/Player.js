@@ -234,13 +234,13 @@ export class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "of Lunar Communion",
-      "Discipline Priest": "of Lunar Communion",
-      "Restoration Druid": "Benevolent Embersage's",
+      "Holy Priest": "of the Furnace Seraph",
+      "Discipline Priest": "of the Furnace Seraph",
+      "Restoration Druid": "of the Autumn Blaze",
       "Restoration Shaman": "Greatwolf Outcast's",
-      "Mistweaver Monk": "Mystic Heron's",
-      "Holy Paladin": "Zealous Pyreknight's",
-      "Preservation Evoker": "Weyrnkeeper's Timeless",
+      "Mistweaver Monk": "of the Waking Fist",
+      "Holy Paladin": "Heartfire Sentinel's",
+      "Preservation Evoker": "of the Awakened",
     };
 
     const temp = itemDB.filter(function (item) {
@@ -248,7 +248,7 @@ export class Player {
     });
 
     if (temp.length > 0) {
-      const match = temp[0];
+      const match = temp[temp.length - 1];
       const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
       Object.assign(newItem, { isCatalystItem: true });
       newItem.active = true;
