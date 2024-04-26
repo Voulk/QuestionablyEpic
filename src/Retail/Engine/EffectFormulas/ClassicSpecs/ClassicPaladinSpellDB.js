@@ -29,7 +29,21 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.2689999938, 
         flat: 2738,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        holyPower: 1,
+        secondaries: ['crit', 'mastery'],
+        statMods: {'crit': 0, critEffect: 0},
+    }],
+    "Holy Shock O": [{
+        // Regrowth direct heal portion
+        spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
+        type: "damage",
+        castTime: 0, 
+        cost: 7, 
+        coeff: 0.2689999938, // TODO
+        flat: 2738, // TODO
+        holyPower: 1,
+        secondaries: ['crit'],
+        statMods: {'crit': 0, critEffect: 0},
     }],
     "Flash of Light": [{
         // Regrowth direct heal portion
@@ -39,6 +53,17 @@ export const CLASSICPALADINSPELLDB = {
         cost: 31, 
         flat: 7329,
         coeff: 0.863, 
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'mastery'] 
+    }],
+    "Divine Light": [{ // NYI
+        // Regrowth direct heal portion
+        spellData: {id: 635, icon: "spell_holy_holybolt", cat: "heal"},
+        type: "heal",
+        castTime: 2, 
+        cost: 12, 
+        coeff: 0.432, 
+        flat: 4400,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'] 
     }],
@@ -98,6 +123,18 @@ export const CLASSICPALADINSPELLDB = {
         cooldownData: {cooldown: 6, activeCooldown: 0},
         secondaries: ['crit'] 
     }],
+    "Avenging Wrath": [{
+        spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
+        type: "buff",
+        name: "Avenging Wrath",
+        castTime: 0,
+        offGCD: true,
+        cost: 8.0,
+        cooldownData: {cooldown: 180, hasted: false},
+        buffType: 'allIncrease',
+        value: 1.2, // For handling Avenging Wrath: Might
+        buffDuration: 20
+    }],
 
 }
 
@@ -134,7 +171,10 @@ const specTalents = {
     }},
 
     clarityOfPurpose: {points: 3, maxPoints: 3, icon: "spell_paladin_clarityofpurpose", id: 85462, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+        const reduction = points === 3 ? 0.5 : points * 0.15;
+        spellDB["Holy Light"][0].castTime -= reduction;
+        spellDB["Divine Light"][0].castTime -= reduction;
+        spellDB["Holy Radiance"][0].castTime -= reduction;
     }},
 
     lastWord: {points: 3, maxPoints: 3, icon: "spell_holy_holyguidance", id: 20234, select: true, tier: 1, runFunc: function (state, spellDB, points) {
@@ -142,15 +182,42 @@ const specTalents = {
     }},
 
     blazingLight: {points: 2, maxPoints: 2, icon: "spell_holy_holybolt", id: 20237, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+        buffSpell(spellDB["Holy Shock O"], 1 + 0.05 * points);
     }},
 
     infusionOfLight: {points: 2, maxPoints: 2, icon: "ability_paladin_infusionoflight", id: 53569, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Holy Shock"][0].statMods.crit += 0.05 * points;
+        spellDB["Holy Shock O"][0].statMods.crit += 0.05 * points;
 
+        const infusion = { // Infusion of Light
+            type: "buff",
+            onCrit: true,
+            name: "Infusion of Light",
+            buffType: 'special',
+            canStack: false,
+            stacks: 1,
+            maxStacks: 1,
+            buffDuration: 30,
+        }
+        spellDB["Holy Shock"].push(infusion);
+        spellDB["Holy Shock O"].push(infusion);
     }},
 
     daybreak: {points: 2, maxPoints: 2, icon: "inv_qirajidol_sun", id: 88820, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        const daybreak = { // Infusion of Light
+            type: "buff",
+            chance: 0.1 * points,
+            name: "Daybreak",
+            buffType: 'special',
+            canStack: false,
+            stacks: 1,
+            maxStacks: 1,
+            buffDuration: 30,
+        }
 
+        spellDB["Flash of Light"].push(daybreak);
+        spellDB["Holy Light"].push(daybreak);
+        spellDB["Divine Light"].push(daybreak);
     }},
 
     enlightenedJudgements: {points: 2, maxPoints: 2, icon: "ability_paladin_enlightenedjudgements", id: 53556, select: true, tier: 1, runFunc: function (state, spellDB, points) {
@@ -158,19 +225,29 @@ const specTalents = {
     }},
 
     speedOfLight: {points: 2, maxPoints: 2, icon: "paladin_icon_speedoflight", id: 85495, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+        state.currentStats.haste += 128 * points;
     }},
 
+    // NYI
     conviction: {points: 3, maxPoints: 3, icon: "ability_paladin_conviction", id: 20049, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+        const conviction = {
+            type: "buff",
+            onCrit: true,
+            name: "Conviction",
+            buffType: 'special',
+            canStack: false,
+            stacks: 1,
+            maxStacks: 1,
+            buffDuration: 30,
+        }
     }},
 
     paragonOfVirtue: {points: 2, maxPoints: 2, icon: "spell_holy_avenginewrath", id: 93418, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+        spellDB["Avenging Wrath"][0].cooldownData.cooldown -= 30 * points;
     }},
 
     towerOfRadiance: {points: 3, maxPoints: 3, icon: "achievement_bg_winsoa", id: 84800, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+        spellDB["Holy Radiance"][0].holyPower = 1;
     }},
 
     blessedLife: {points: 2, maxPoints: 2, icon: "spell_holy_blessedlife", id: 31828, select: true, tier: 1, runFunc: function (state, spellDB, points) {
