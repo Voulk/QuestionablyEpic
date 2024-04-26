@@ -20,7 +20,7 @@ export const changeLog: entry[] = [
     update: 17,
     date: "April 25",
     changes: [ 
-      "Re-enabled Catalyt conversions.",
+      "Re-enabled Catalyst conversions.",
       "Wearing 2pc season 3 and 2pc season 4 sets will no longer grant double the set bonus.",
       "Evoker: Fixed a bug where the new 2pc could be overvalued (it's still great).",
       "Adventurer items can now be upgraded to 489.",

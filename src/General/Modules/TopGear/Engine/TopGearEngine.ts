@@ -679,7 +679,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       const itemSet: ItemEffect[] = getItemSet(set, setBonuses[set], player.getSpec())
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
-          effectList = effectList.concat(itemSet);
+          effectList = effectList.concat(setBonus);
           usedSets.push(setBonus.name);
         }
       })
