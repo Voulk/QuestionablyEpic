@@ -101,7 +101,7 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
     const livingFlameSize = 2.76 * 1.5 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]);
 
     const lifebindHealing = lifebindAvgMult * livingFlameSize * 16 * 0.7; // 
-    console.log(lifebindHealing)
+
     bonus_stats.hps = bonus_stats.hps + lifebindHealing / 60;
 
   }
