@@ -29,7 +29,7 @@ const initialState : RootState = {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
     incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
     idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
-    //rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
+    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
     //alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
     catalystLimit: { value: 1, options: [1, 2, 3, 4], category: "topGear", type: "selector" },

@@ -68,6 +68,8 @@ interface PlayerSettings {
     gemSettings: {value: string; options: string[]; category: string; type: string};
     phialChoice: {value: string; options: string[]; category: string; type: string};
     runeChoice: {value: string; options: string[]; category: string; type: string};
+    rubyWhelpShell: { value: string, options: string[], category: string, type: string }, // "ST Damage", "AoE Damage",
+
     //chromaticEssenceAllies: { value: boolean; options: boolean[]; category: string; type: string };
   }
 
