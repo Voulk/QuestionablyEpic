@@ -71,10 +71,11 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Evoker T29-2") {
     // This needs a much more comprehensive formula.
-    const reversionPercent = contentType === "Raid" ? 0.3 : 0.15;
-    const healingIncrease = 0.25;
-    const uptime = 0.55;
-    bonus_stats.crit = reversionPercent * healingIncrease * uptime * player.getHPS();
+    const reversionPercent = contentType === "Raid" ? 0.3 : 0.2;
+    const healingIncrease = 0.5;
+    const uptime = 0.65;
+    const extraOverheal = 0.9;
+    bonus_stats.hps = reversionPercent * healingIncrease * uptime * player.getHPS() * extraOverheal;
 
 
   }
@@ -94,6 +95,14 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
 
     const essenceBurstHealing = oneEcho + oneReversion;
     bonus_stats.hps = essenceBurstHealing * essenceBurstsPerMinute / 60;
+
+    // Extra Lifebind healing
+    const lifebindAvgMult = (0.18 * 10 + 0.42 * 6) / 16;
+    const livingFlameSize = 2.76 * 1.5 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]);
+
+    const lifebindHealing = lifebindAvgMult * livingFlameSize * 16 * 0.7; // 
+
+    bonus_stats.hps = bonus_stats.hps + lifebindHealing / 60;
 
   }
 

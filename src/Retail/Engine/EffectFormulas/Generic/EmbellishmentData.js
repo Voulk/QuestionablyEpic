@@ -73,7 +73,7 @@ export const embellishmentData = [
       // TODO Add top gear support for auto-generating gems.
       const versAvg = runGenericPPMTrinket(data[0], itemLevel) * data[0].multiplier;
       bonus_stats.versatility = versAvg;
-      if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versAvg;
+      bonus_stats.allyStats = versAvg;
 
       return bonus_stats;
     }
@@ -442,7 +442,7 @@ export const embellishmentData = [
           const allyVers = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm / 60 * 1.13;
           bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel);
 
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = allyVers * 4;
+          bonus_stats.allyStats = allyVers * 4;
           return bonus_stats;
         }
       },
@@ -746,7 +746,7 @@ export const embellishmentData = [
           let bonus_stats = {};
           // 
           const versEffect = runGenericPPMTrinket(data[0], itemLevel);
-          if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = versEffect;
+          bonus_stats.allyStats = versEffect;
 
           // Damage effect
           const ppm = data[0].ppm;

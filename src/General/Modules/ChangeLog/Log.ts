@@ -17,6 +17,20 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.6",
+    update: 17,
+    date: "April 25",
+    changes: [ 
+      "Re-enabled Catalyst conversions.",
+      "Wearing 2pc season 3 and 2pc season 4 sets will no longer grant double the set bonus.",
+      "Evoker: Fixed a bug where the new 2pc could be overvalued (it's still great).",
+      "Adventurer items can now be upgraded to 489.",
+      "New Setting: Ruby Whelp Shell training mode.",
+      "Fixed a bug where running upgrade finder without changing any sliders would set M+ items to 519 ilvl.",
+      "Added more trinkets to the trinket chart.",
+      "The Embellishment chart now obeys your 'Include Ally Stats' setting.",
+    ]},
+  {
+    version: "10.2.6",
     update: 16,
     date: "April 23",
     changes: [ 

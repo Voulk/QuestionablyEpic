@@ -504,7 +504,6 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
 
 export function getEmbellishmentIcon(id: number) {
   const embel = embellishmentDB.filter((embel) => embel.id === id);
-  console.log(embel[0].icon)
 
   if (embel[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
