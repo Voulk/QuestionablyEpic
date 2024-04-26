@@ -13,7 +13,7 @@ export const CLASSICPALADINSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 635, icon: "spell_holy_holybolt", cat: "heal"},
         type: "heal",
-        castTime: 2, 
+        castTime: 3, 
         cost: 12, 
         coeff: 0.432, 
         flat: 4400,
@@ -96,7 +96,7 @@ export const CLASSICPALADINSPELLDB = {
         castTime: 0, 
         cost: 0, 
         flat: 640,
-        coeff: 0.132 * 5, // Adjust this per Holy Power. 
+        coeff: 0.132, // Adjust this per Holy Power. 
         targets: 6,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'] 
@@ -107,8 +107,8 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 0, 
-        flat: 2133 * 5,
-        coeff: 0.209 * 5, // Adjust this per Holy Power. 
+        flat: 2133,
+        coeff: 0.209, // Adjust this per Holy Power. 
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'] 
     }],

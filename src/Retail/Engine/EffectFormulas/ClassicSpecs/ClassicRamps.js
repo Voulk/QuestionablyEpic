@@ -80,6 +80,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     let mult = CLASSICCONSTANTS.auraHealingBuff[state.spec];
 
     if (checkBuffActive(state.activeBuffs, "Tree of Life")) mult *= 1.15;
+
+    if (state.spec === "Holy Paladin") {
+        if (["Light of Dawn", "Word of Glory"].includes(spellName)) mult *= state.holyPower;
+    }
     
     return mult;
 }
