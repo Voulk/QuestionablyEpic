@@ -217,7 +217,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         })
     }
 
-    console.log(state.activeBuffs);
     // Extra Settings
     if (settings.masteryEfficiency) CLASSICCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
 
@@ -254,7 +253,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
-            console.log("Queueing spell");
             queueSpell(castState, seq, state, playerSpells, seqType, apl)
 
         }
@@ -280,6 +278,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // Cleanup
             castState.queuedSpell = "";
             castState.spellFinish = 0;
+
+            // Cleanup Holy Power.
+            if (fullSpell[0].holyPower > 0) state.holyPower = Math.min(3, state.holyPower + fullSpell[0].holyPower);
+            if ('tags' in fullSpell[0] && fullSpell[0].tags.includes("Holy Power Spender")) state.holyPower = 0;
         }
 
         if (seqType === "Manual" && (!castState.queuedSpell || castState.queuedSpell === "Rest") && seq.length === 0) {

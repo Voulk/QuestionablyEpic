@@ -1,6 +1,9 @@
 
 
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
+import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
+import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -11,21 +14,22 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 16000 * 1.1,
+            intellect: 3500,
+            spirit: 1400,
+            spellpower: 5000,
             haste: 2000,
-            crit: 5400,
-            mastery: 6700,
-            versatility: 2000 + 300,
+            crit: 1000,
+            mastery: 1200,
             stamina: 29000,
             critMult: 2,
         }
     
         //const baseSpells = EVOKERSPELLDB;
-        //const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+        const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
 
-        //const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
-        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
-        //console.log(data);
+        const playerData = { spec: "Holy Paladin", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
+        const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
+        console.log(data);
 
         //const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
         //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)

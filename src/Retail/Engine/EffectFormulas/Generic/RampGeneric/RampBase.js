@@ -285,7 +285,7 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 }
 
 const hasCastTimeBuff = (buffs, spellName) => {
-    const buff = buffs.filter( buff => buff.buffType === "spellSpeed" && buff.buffSpell === spellName);
+    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell === spellName);
     if (buff.length > 0) return buff[0].spellSpeed;
     else return 0
 }

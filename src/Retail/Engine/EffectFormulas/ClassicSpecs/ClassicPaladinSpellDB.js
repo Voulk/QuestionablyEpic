@@ -32,6 +32,7 @@ export const CLASSICPALADINSPELLDB = {
         expectedOverheal: 0.3,
         holyPower: 1,
         secondaries: ['crit', 'mastery'],
+        cooldownData: {cooldown: 8},
         statMods: {'crit': 0, critEffect: 0},
     }],
     "Holy Shock O": [{
@@ -59,9 +60,9 @@ export const CLASSICPALADINSPELLDB = {
     }],
     "Divine Light": [{ // NYI
         // Regrowth direct heal portion
-        spellData: {id: 635, icon: "spell_holy_holybolt", cat: "heal"},
+        spellData: {id: 82326, icon: "spell_holy_surgeoflight", cat: "heal"},
         type: "heal",
-        castTime: 2, 
+        castTime: 3, 
         cost: 12, 
         coeff: 0.432, 
         flat: 4400,
@@ -100,7 +101,8 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.132, // Adjust this per Holy Power. 
         targets: 6,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        tags: ['Holy Power Spender'],
     }],
     "Word of Glory": [{
         // Regrowth direct heal portion
@@ -111,7 +113,8 @@ export const CLASSICPALADINSPELLDB = {
         flat: 2133,
         coeff: 0.209, // Adjust this per Holy Power. 
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        tags: ['Holy Power Spender'],
     }],
     "Judgement": [{
         // Regrowth direct heal portion
@@ -119,8 +122,8 @@ export const CLASSICPALADINSPELLDB = {
         type: "damage",
         castTime: 0, 
         cost: 5, 
-        flat: 0,
-        coeff: 0, // Adjust this per Holy Power. 
+        flat: 1,
+        coeff: 1, // Adjust this per Holy Power. 
         cooldownData: {cooldown: 6, activeCooldown: 0},
         secondaries: ['crit'] 
     }],
@@ -162,6 +165,7 @@ const specTalents = {
 
     }},
 
+    // Doesn't Beacon transfer.
     protectorOfTheInnocent: {points: 3, maxPoints: 3, icon: "ability_paladin_protectoroftheinnocent", id: 20138, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         const newSpell = {
             name: "Protector of the Innocent",
@@ -203,14 +207,15 @@ const specTalents = {
         spellDB["Holy Shock O"][0].statMods.crit += 0.05 * points;
 
         const infusion = { // Infusion of Light
-            type: "buff",
-            onCrit: true,
             name: "Infusion of Light",
-            buffType: 'special',
+            type: "buff",
+            stacks: 0,
             canStack: false,
-            stacks: 1,
-            maxStacks: 1,
-            buffDuration: 30,
+            buffDuration: 15,
+            buffType: 'SpellSpeedFlat',
+            buffSpell: ["Flash of Light", "Holy Light", "Holy Radiance", "Divine Light"],
+            unique: true,
+            spellSpeed: 1.5,
         }
         spellDB["Holy Shock"].push(infusion);
         spellDB["Holy Shock O"].push(infusion);
