@@ -75,7 +75,7 @@ const runPeriodic = (state, spell, spellName, runHeal) => {
     // Calculate tick count
     let tickCount = 0;
     if ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate));
-    else tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
+    else tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats, "Classic")));
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
@@ -199,7 +199,7 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
     const GCD = fullSpell[0].customGCD || 1.5;
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
-    const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats), GCDCap) : castTime;
+    const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats, state.gameType), GCDCap) : castTime;
 
     state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
@@ -286,9 +286,14 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 
 const hasCastTimeBuff = (buffs, spellName) => {
     const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell === spellName);
-    if (buff.length > 0) return buff[0].spellSpeed;
+    if (buff.length > 0) {
+        if (buff[0].buffType === "spellSpeed") return castTime / buff[0].spellSpeed;
+        else if (buff[0].buffType === "spellSpeedFlat") return castTime - buff[0].spellSpeed
+        
+    }
     else return 0
 }
+
 
 // TODO: Remove empowered section and turn Temporal Compression into a type of cast speed buff.
 export const getSpellCastTime = (spell, state, currentStats) => {
@@ -301,13 +306,13 @@ export const getSpellCastTime = (spell, state, currentStats) => {
                 castTime *= (1 - 0.05 * buffStacks)
                 if (buffStacks === 4) triggerTemporal(state);
             }
-            castTime = castTime / getHaste(currentStats); // Empowered spells do scale with haste.
+            castTime = castTime / getHaste(currentStats, "Retail"); // Empowered spells do scale with haste.
         } 
 
         else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
-        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = castTime / getHaste(currentStats) / hasCastTimeBuff(state.activeBuffs, spell.name);
+        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name) / getHaste(currentStats, state.gameType);
         //else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
-        else castTime = castTime / getHaste(currentStats);
+        else castTime = castTime / getHaste(currentStats, state.gameType);
 
         return castTime;
     }
@@ -365,8 +370,9 @@ export const getCurrentStats = (statArray, buffs) => {
 }
 
 // Returns the players current haste percentage. 
-export const getHaste = (stats) => {
-    return 1 + stats.haste / 170 / 100;
+export const getHaste = (stats, gameType = "Retail") => {
+    if (gameType === "Retail") return 1 + stats.haste / 170 / 100;
+    else return 1 + stats.haste / 128 / 100;
 }
 
 export const getCrit = (stats) => {
