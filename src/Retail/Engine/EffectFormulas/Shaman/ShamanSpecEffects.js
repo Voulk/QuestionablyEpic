@@ -48,12 +48,12 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   }
   if (effectName === "Shaman T29-2") {
     // +8% crit to almost everything that matters.
-    const uptime = 0.35; // TODO: Auto-calc this.
-    bonusStats.crit = 10 * uptime * 170;
+    const uptime = 0.45; // The percentage of your healing while the bonus is active.
+    bonusStats.crit = 15 * uptime * 170;
 
   }
   if (effectName === "Shaman T29-4") {
-    const effectIncrease = 2.15;
+    const effectIncrease = 2.2;
     const crit = player.getStatPerc("crit") - 1;
     const healingInc = ((effectIncrease * crit + (1-crit)) / (2 * crit + (1-crit))) - 1;
 
