@@ -19,7 +19,8 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.432, 
         flat: 4400,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     }],
     "Holy Shock": [{
         // Regrowth direct heal portion
@@ -56,7 +57,8 @@ export const CLASSICPALADINSPELLDB = {
         flat: 7329,
         coeff: 0.863, 
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     }],
     "Divine Light": [{ // NYI
         // Regrowth direct heal portion
@@ -67,7 +69,8 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.432, 
         flat: 4400,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     }],
     "Holy Radiance": [{
         // Regrowth direct heal portion
@@ -79,7 +82,8 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.259, 
         expectedOverheal: 0.2,
         targets: 6,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     },
     {
         type: "classic periodic",
@@ -209,14 +213,16 @@ const specTalents = {
         const infusion = { // Infusion of Light
             name: "Infusion of Light",
             type: "buff",
-            stacks: 0,
+            stacks: 1,
+            onCrit: true,
             canStack: false,
             buffDuration: 15,
-            buffType: 'SpellSpeedFlat',
+            buffType: 'spellSpeedFlat',
             buffSpell: ["Flash of Light", "Holy Light", "Holy Radiance", "Divine Light"],
             unique: true,
-            spellSpeed: 1.5,
+            buffSpeed: 1.5,
         }
+
         spellDB["Holy Shock"].push(infusion);
         spellDB["Holy Shock O"].push(infusion);
     }},

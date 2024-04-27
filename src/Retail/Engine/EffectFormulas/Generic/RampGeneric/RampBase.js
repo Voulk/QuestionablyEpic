@@ -1,5 +1,5 @@
 // 
-import { checkBuffActive, removeBuffStack, addBuff, getBuffStacks } from "./BuffBase";
+import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
 
@@ -93,6 +93,11 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             const roll = Math.random();
             canProceed = roll <= spell.chance;
         }
+        else if (spell.onCrit) {
+            // Spell does something unique on crit.
+            const roll = Math.random();
+            canProceed = roll <= (getCrit(state.currentStats) - 1 + ('statMods' in fullSpell[0] ? fullSpell[0].statMods.crit : 0));
+        }
         else canProceed = true;
 
         if (canProceed) {
@@ -160,6 +165,13 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
     }); 
 
     // Any post-spell code.
+    if (fullSpell[0].onCastEnd) {
+        fullSpell[0].onCastEnd.forEach(effect => {
+            if (effect.type === "Remove Buff") state.activeBuffs = removeBuff(state.activeBuffs, effect.buffName);
+        })
+    }
+
+    // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
 
@@ -284,8 +296,10 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 
 }
 
+
+// TODO: Add support to have more than one effect a spell.
 const hasCastTimeBuff = (buffs, spellName) => {
-    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell === spellName);
+    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell.includes(spellName));
     if (buff.length > 0) {
         if (buff[0].buffType === "spellSpeed") return castTime / buff[0].spellSpeed;
         else if (buff[0].buffType === "spellSpeedFlat") return castTime - buff[0].spellSpeed
