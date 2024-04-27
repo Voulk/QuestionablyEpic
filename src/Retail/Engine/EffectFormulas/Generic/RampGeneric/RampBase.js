@@ -15,6 +15,10 @@ const GLOBALCONST = {
 
 }
 
+export const getTalentPoints = (talents, talentName) => {
+    return talents[talentName] ? talents[talentName].points : 0;
+}
+
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
         const talent = state.talents[talentName];
@@ -196,6 +200,7 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     const GCD = fullSpell[0].customGCD || 1.5;
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
     const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats), GCDCap) : castTime;
+
     state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
 

@@ -63,7 +63,7 @@ export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFla
 export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) => {
     let mult = 1;
     const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
-
+    
     const critChance = /*specConstants.baseCrit*/ 0 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
@@ -99,5 +99,31 @@ export const applyRaidBuffs = (state) => {
     state.manaPool *= 1.06;
 
     // Mana Spring etc
+}
 
+/**
+ * Get our players active stats. This is made up of our base stats + any buffs. 
+ * Diminishing returns is not in play in this function.
+ * @param {} statArray Our active stats.
+ * @param {*} buffs Our active buffs.
+ * @returns 
+ */
+export const getCurrentStats = (statArray, buffs) => {
+    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
+    statBuffs.forEach(buff => {
+        statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+    });
+
+    //statArray = applyDiminishingReturns(statArray); // TODO: Update Diminishing Returns
+
+    // Check for percentage stat increases which are applied post-DR.
+    // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
+    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
+    multBuffs.forEach(buff => {
+        // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / GLOBALCONST.statPoints.haste / 100 + 1) * buff.value)-1) * GLOBALCONST.statPoints.haste * 100;
+        else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+    });
+
+    return statArray;
 }

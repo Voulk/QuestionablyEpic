@@ -2,10 +2,10 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
-import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
+import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
+            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
-import { getSpellRaw, applyRaidBuffs, getMastery  } from "../Generic/RampGeneric/ClassicBase"
+import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats,  } from "../Generic/RampGeneric/ClassicBase"
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./ClassicUtilities";
 
@@ -199,20 +199,25 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     const playerSpells = deepCopyFunction(getSpellDB(state.spec));
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, talents, state, stats, CLASSICCONSTANTS);
-    //const playerSpells = applyLoadoutEffects(deepCopyFunction(getSpellDB(state.spec)), settings, talents, state, stats, CLASSICCONSTANTS);
 
-    //applyTalents(state, playerSpells, stats)
+
+
     applyRaidBuffs(state);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
+
             if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][1], buffName);
             else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
+            else if (buffName === "Judgements of the Pure") {
+
+                if (getTalentPoints(state.talents, "judgementsOfThePure")) addBuff(state, playerSpells["Judgements of the Pure"][0], buffName);
+            } 
             else addBuff(state, null, buffName);
         })
     }
 
-
+    console.log(state.activeBuffs);
     // Extra Settings
     if (settings.masteryEfficiency) CLASSICCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
 
@@ -249,7 +254,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
-
+            console.log("Queueing spell");
             queueSpell(castState, seq, state, playerSpells, seqType, apl)
 
         }
@@ -277,7 +282,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             castState.spellFinish = 0;
         }
 
-        if (seqType === "Manual" && seq.length === 0) {
+        if (seqType === "Manual" && (!castState.queuedSpell || castState.queuedSpell === "Rest") && seq.length === 0) {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             state.t = 999;
         }

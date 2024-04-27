@@ -247,7 +247,7 @@ export default function SequenceGenerator(props) {
   }; 
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 500;
+    const iter = 1;
     const results = { totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0 };
     let finalReport = [];
 

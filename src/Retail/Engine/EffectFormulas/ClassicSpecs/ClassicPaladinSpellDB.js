@@ -1,5 +1,6 @@
 import { runHeal } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { buffSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
+import { addBuff } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase";
 
 // Add onTick, onExpiry functions to spells.
 export const CLASSICPALADINSPELLDB = {
@@ -136,6 +137,17 @@ export const CLASSICPALADINSPELLDB = {
         buffDuration: 20
     }],
 
+
+    "Judgements of the Pure": [{
+        spellData: {id: 0, icon: "", cat: "N/A"},
+        type: "buff",
+        name: "Judgements of the Pure",
+        buffType: 'statsMult',
+        stat: 'haste',
+        value: 1.09,
+        buffDuration: 60
+    }]
+
 }
 
 // Talents that aren't in the resto portion of the tree (Feral / Balance)
@@ -167,6 +179,7 @@ const specTalents = {
     }},
 
     judgementsOfThePure: {points: 3, maxPoints: 3, icon: "ability_paladin_judgementofthepure", id: 53671, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB['Judgement'].push(spellDB["Judgements of the Pure"][0]);
 
     }},
 
@@ -224,8 +237,17 @@ const specTalents = {
 
     }},
 
-    speedOfLight: {points: 2, maxPoints: 2, icon: "paladin_icon_speedoflight", id: 85495, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        state.currentStats.haste += 128 * points;
+    speedOfLight: {points: 3, maxPoints: 3, icon: "paladin_icon_speedoflight", id: 85495, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        const buff = {
+            type: "buff",
+            name: "Speed of Light Passive",
+            buffType: 'statsMult',
+            stat: 'haste',
+            value: 1 + 0.01 * points,
+            buffDuration: 9999
+        }
+
+        addBuff(state, buff, "Passive: Speed of Light");
     }},
 
     // NYI
