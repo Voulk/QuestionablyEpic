@@ -80,6 +80,8 @@ function getSockets(item, gameType)  {
         if (color === "blue") sock = blueSocket;
         else if (color === "red") sock = redSocket;
         else if (color === "yellow") sock = yellowSocket;
+        else if (color === "meta") sock = socketImage;
+        else if (color === "prismatic") sock = socketImage;
         socket.push(
           <div style={{ marginRight: 4, display: "inline" }}>
             <img src={sock} width={15} height={15} alt="Socket" />
