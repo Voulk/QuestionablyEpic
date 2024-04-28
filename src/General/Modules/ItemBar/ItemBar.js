@@ -112,15 +112,15 @@ export default function ItemBar(props) {
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
           (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
-          ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}, gameType) }));
-
-    newItemList = newItemList.reduce((unique, o) => {
-      if (!unique.some((obj) => obj.label === o.label)) {
-        unique.push(o);
-      }
-      return unique;
-    }, []);
-
+          ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}, gameType) + (gameType === "Classic" ? " (" + key.itemLevel + ")" : "")}));
+    
+      
+      newItemList = newItemList.reduce((unique, o) => {
+        if (!unique.some((obj) => obj.label === o.label)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
     return newItemList;
   };
@@ -142,9 +142,6 @@ export default function ItemBar(props) {
   /* ----------------------------- Snackbar State ----------------------------- */
   const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-
-
-
 
   const handleClosePop = () => {
     setAnchorEl(null);
@@ -351,7 +348,7 @@ export default function ItemBar(props) {
                 onChange={(e) => itemLevelChanged(e.target.value)}
                 value={itemLevel}
                 label={t("QuickCompare.ItemLevel")}
-                disabled={itemID === "" ? true : false}
+                disabled={(itemID === "" || gameType === "Classic") ? true : false}
                 onInput={(e) => {
                   e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                 }}
