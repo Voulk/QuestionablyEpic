@@ -41,8 +41,8 @@ export default class BCChart extends PureComponent {
         arr.push({
           name: map2.id,
           //i161: map2.i161,
-          "Normal": map2.i100,
-          "Heroic": (map2.i200 - map2.i100) || 0,
+          "Normal": map2.normal,
+          "Heroic": (map2.heroic - map2.normal) || 0,
         });
       });
 
@@ -94,7 +94,7 @@ export default class BCChart extends PureComponent {
                   return [
                     data
                       .filter((filter) => filter.id === props["payload"].name)
-                      .map((key) => key[name])
+                      .map((key) => key[name.toLowerCase()])
                       .toString(),
                     name,
                   ];

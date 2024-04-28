@@ -45,6 +45,14 @@ export function getTrinketEffectClassic(effectName: string, player: Player, item
 
 }
 
+const getGenericTrinket = (data: EffectData, itemLevel: number): Stats => {
+  const trinketValue = data.duration * data.value[itemLevel] * data.ppm / 60
+  const statType = data.stat;
+  const bonus_stats: Stats = {};
+  bonus_stats[statType] = trinketValue;
+  return bonus_stats;
+}
+
 /*
 Phase One: Bell of Enraging Resonance, Jar of Ancient Remedies, Fall of Mortality, Theralion's Mana, 
 Phase Two: 
@@ -74,12 +82,50 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  {
+    name: "Fall of Mortality",
+    effects: [
+      { // 
+        value: {372: 2178, 359: 1926}, 
+        stat: "spirit",
+        ppm: getEffectPPM(0.1, 85, 1.5),
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
+      return getGenericTrinket(data[0], itemLevel);
+      
+     // return bonus_stats;
+    }
+  },
 
 
 ]
 
 const dungeonTrinketData: Effect[] = [
-
+  {
+    name: "Tendrils of Burrowing Dark",
+    effects: [
+      { // 
+        value: {346: 1710, 316: 1290}, 
+        table: -1,
+        ppm: getEffectPPM(0.1, 85, 1.5),
+        stat: "spellpower",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      console.log("Setting up trinket");
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      return getGenericTrinket(data[0], itemLevel);
+      
+      return bonus_stats;
+    }
+  },
 ]
 
 // Any trinket that doesn't drop from a raid or dungeon.

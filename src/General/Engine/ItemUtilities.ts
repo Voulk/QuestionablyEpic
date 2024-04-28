@@ -756,9 +756,6 @@ export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAll
   //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
   combat_mult = 1;
 
-  console.log(itemLevel + " " + rand_prop);
-
-
   // These stats should be precise, and never off by one.
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
@@ -905,7 +902,9 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
-  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
+  let bonus_stats: Stats = gameType === "Retail" ? {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0} :
+                                                    {mastery: 0, crit: 0, spellpower: 0, intellect: 0, haste: 0, hps: 0, mana: 0, spirit: 0};
+
   let item_stats = { ...item.stats };
   // Calculate Effect.
   if (item.effect) {
@@ -937,7 +936,6 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   // Multiply the item's stats by our stat weights.
   let sumStats = compileStats(item_stats, bonus_stats);
   //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
-
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];

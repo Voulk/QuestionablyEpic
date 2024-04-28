@@ -286,10 +286,10 @@ export default function TrinketAnalysis(props) {
       const trinketScore = getClassicTrinketScore(trinket.id, props.player);
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
         // Trinket already exists
-        activeTrinkets.filter((key) => key.name === trinketName)[0]["i200"] = trinketScore + 200;
+        activeTrinkets.filter((key) => key.name === trinketName)[0]["heroic"] = trinketScore + 200;
       }
       else {
-        trinketAtLevels["i100"] = trinketScore;
+        trinketAtLevels["normal"] = trinketScore;
         activeTrinkets.push(trinketAtLevels);
       }
 
@@ -303,7 +303,7 @@ export default function TrinketAnalysis(props) {
 
   if (gameType === "Classic") {
     // Sort. We'll need to use the retail "highest level" code here.
-    const getHighestClassicScore = (trinket) => {return trinket.i200 | trinket.i100 | 0}
+    const getHighestClassicScore = (trinket) => {return trinket.heroic || trinket.normal || 0}
     activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));

@@ -198,7 +198,14 @@ class CastModel {
       this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      console.log("LOADING PALADIN")
+      this.baseStatWeights = {
+        spellpower: 1,
+        intellect: 1.4,
+        spirit: 0.5,
+        mastery: 0.55,
+        crit: 0.49,
+      };
     } 
     else if (spec === "Discipline Priest Classic") {
       spellList = this.getClassicPriest();
