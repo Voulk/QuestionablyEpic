@@ -80,7 +80,7 @@ function setupPlayer(player, contentType, castModel) {
 }
 
 export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
-    //console.log("TOP GEAR Classic");
+    console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
@@ -88,13 +88,13 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
     const newPlayer = setupPlayer(player, contentType, castModel);
     let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
-    itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
+    //itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
 
     let itemSets = createSets(itemList, wepCombos);
 
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
-
+  console.log("Preparing to evaluate set");
   for (var i = 0; i < itemSets.length; i++) {
     itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
   }
@@ -113,7 +113,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
   for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
     differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
   }
-
+  console.log("Finished differentials");
   //itemSets[0].printSet()
 
   if (itemSets.length === 0) {
@@ -130,7 +130,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
 
 // A true evaluation function on a set.
-// THIS IS BURNING CRUSADE CODE AND IS NOT COMPATIBLE WITH RETAIL.
+// THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
@@ -138,7 +138,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
-  
+    
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
@@ -151,6 +151,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     let bonus_stats = {
         intellect: 0,
         spellpower: 0,
+        mastery: 0,
         spirit: 0,
         crit: 0,
         stamina: 0,
@@ -164,6 +165,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       spirit: 0,
       crit: 0,
       stamina: 0,
+      mastery: 0,
       mp5: 0,
       haste: 0,
     };
@@ -176,6 +178,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       haste: 0,
       crit: 0,
       stamina: 0,
+      mastery: 0,
       mp5: 0,
     }
   
@@ -203,7 +206,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
   
     // Apply consumables if ticked.
-  
+    
     // -- ENCHANTS --
 
     if (userSettings.autoEnchant) {
@@ -246,6 +249,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     }
 
     // ----- SOCKETS -----
+    /*
     if (userSettings.gemRarity !== "none") {
       var s0 = performance.now();
       const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
@@ -256,8 +260,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       builtSet.socketInformation = optimalGems;
       var s1 = performance.now();
     }
-
-
+    */
+    console.log("Early midd");
     
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
@@ -265,18 +269,20 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     
     compileStats(setStats, enchant_stats);
     //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-    addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+    //addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     
     
 
     // Talents & Racials
 
     // Human
-    if (player.race.includes("Human")) {
+    /*if (player.race.includes("Human")) {
       talent_stats.spirit = (setStats.spirit) * 0.03;
-    }
+    } */
 
     // This can be properly formalized.
+
+    /*
     if (player.getSpec() === "Holy Paladin Classic") {
       talent_stats.intellect = setStats.intellect * 0.1;
       talent_stats.spellpower = (setStats.intellect + talent_stats.intellect) * 0.2;
@@ -304,10 +310,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       talent_stats.spirit = setStats.spirit * 0.06;
       talent_stats.haste = 32.79 * 3;
       //talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
-    }
+    } */
 
-    compileStats(setStats, talent_stats);
-
+   // compileStats(setStats, talent_stats);
     // -- Effects --
     let effectStats = [];
     effectStats.push(bonus_stats);
@@ -490,9 +495,10 @@ function createSets(itemList, rawWepCombos) {
                                           splitItems.Finger[finger2],
                                           splitItems.Trinket[trinket],
                                           splitItems.Trinket[trinket2],
-                                          wepCombos[weapon],
+                                          wepCombos[weapon][0],
                                           splitItems['Relics & Wands'][relics],
                                         ];
+                                        if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
                                         let sumSoft = sumScore(softScore);
                                         itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "Classic"));
                                         setCount++;

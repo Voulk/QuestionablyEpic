@@ -155,7 +155,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let itemList = {};
   let statList = {};
   
-
+  
 
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -176,10 +176,10 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     
     // Setup Slots / Set IDs.
     itemList.forEach(item => {
-      item.slot = getItemProp(item.id, "slot")
-      item.setID = getItemProp(item.id, "itemSetId")
+      item.slot = getItemProp(item.id, "slot", gameType)
+      item.setID = getItemProp(item.id, "itemSetId", gameType)
     })
-
+    console.log(itemList);
 
     // Build Vault items
     // Take the top set, and every differential, and if it contains a vault item we haven't included yet, include it with the score differential compared to our *current* set.

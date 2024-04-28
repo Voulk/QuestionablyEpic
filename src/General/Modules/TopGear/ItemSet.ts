@@ -100,18 +100,7 @@ class ItemSet {
   // }
 
   getStartingStats(gameType: gameTypes): Stats {
-      const stats: Stats = {
-        intellect: 2091,
-        haste: 0,
-        crit: 0,
-        mastery: 0,
-        versatility: 0,
-        leech: 0,
-        hps: 0,
-        dps: 0,
-        mana: 0, // Evoker 2091
-        allyStats: 0,
-      }
+      const stats: Stats = {}
       if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 2091;
       else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 2087;
       else if (this.spec === "Mistweaver Monk") stats.intellect = 2086;
@@ -127,6 +116,7 @@ class ItemSet {
 
     for (let i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
+
       for (const [stat, value] of Object.entries(item.stats)) {
         if (stat in setStats) {
           //setStats[stat as keyof Stats] += value || 0;
@@ -135,12 +125,12 @@ class ItemSet {
           //if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat]; // Disabled for now since we handle effects separately. 
         }
       }
-
+      
       if (item.socket) {
         if (this.firstSocket === "") {this.firstSocket = item.slot;}
         setSockets += item.socket;
       }
-
+      
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
       if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1
 
@@ -150,8 +140,8 @@ class ItemSet {
       }
       if (item.onUse) this.onUseTrinkets.push({name: item.effect.name, level: item.level});
         
-
       
+  
       if (item.effect) {
         let effect = item.effect;
         effect.level = item.level;
@@ -163,6 +153,7 @@ class ItemSet {
     this.setStats = setStats;
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
+    
     return this;
   }
 

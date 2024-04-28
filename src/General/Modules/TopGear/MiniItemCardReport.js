@@ -47,7 +47,7 @@ export default function ItemCardReport(props) {
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
-  const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
+  const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;

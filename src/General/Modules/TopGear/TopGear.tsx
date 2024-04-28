@@ -448,15 +448,22 @@ export default function TopGear(props: any) {
           setBtnActive(true);
         });
     } else if (gameType === "Classic") {
+      console.log("Initiating Top Gear Classic");
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
         .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-        .then((result: TopGearResult) => {
+        .then((result: TopGearResult | null) => {
+          if (result) {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          props.setTopResult(result);
+          const shortResult = shortenReport(result, props.player);
+          if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
+          props.setTopResult(shortResult);
+
           instance.terminate();
           history.push("/report/");
+          }
+
         })
         .catch((err: Error) => {
           // If top gear crashes for any reason, log the error and then terminate the worker.
