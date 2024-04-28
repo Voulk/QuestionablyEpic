@@ -41,7 +41,8 @@ export default class BCChart extends PureComponent {
         arr.push({
           name: map2.id,
           //i161: map2.i161,
-          100: map2.i100,
+          "Normal": map2.i100,
+          "Heroic": (map2.i200 - map2.i100) || 0,
         });
       });
 
@@ -108,7 +109,9 @@ export default class BCChart extends PureComponent {
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
-          <Bar dataKey={100} fill={"#e6bc53"} stackId="a" />
+          <Bar dataKey={"Normal"} fill={"#1f78b4"} stackId="a" /> 
+          <Bar dataKey={"Heroic"} fill={"#33a02c"} stackId="a" />   
+  ,
           {/*[""].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))*/}
