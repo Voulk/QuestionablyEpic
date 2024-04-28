@@ -1,5 +1,9 @@
 import React, { PureComponent } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid,  } from "recharts";
+
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import HelpIcon from '@mui/icons-material/Help';
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
@@ -57,13 +61,26 @@ export default class BCChart extends PureComponent {
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'right',
+            justifyContent: "flex-end",
+            flexWrap: 'wrap',
+        }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)}
             </text>
             <WowheadTooltip type="item" id={payload.value} domain={"cata"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
+            {/*<Tooltip title={"Hello There"} style={{ display: "inline-block", lineHeight: "0px" }}>
+              <IconButton sx={{ color: 'goldenrod' }} size="small">
+                <HelpIcon fontSize="inherit" />
+              </IconButton>
+      </Tooltip> */}
+          </div>
           </foreignObject>
+          
         </g>
       );
     };
