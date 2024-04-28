@@ -1,6 +1,6 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
-import ClassicItem from "../../../General/Modules/Player/ClassicItem";
+import Item from "General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
@@ -61,7 +61,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   }
 
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
-  if (!checks.level) errorMessage += "QE Live WotLK is best used on level 60+ characters.";
+  if (!checks.level) errorMessage += "QE Live Cataclysm is best used on level 80-85 characters.";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
 
   setErrorMessage(errorMessage);
@@ -138,7 +138,7 @@ function processItem(line, player, contentType, type) {
   // Add the new item to our characters item collection.
   if (itemID !== 0 && itemSlot !== "") {
 
-    let item = new ClassicItem(itemID, "", itemSlot, bonusIDS);
+    let item = new Item(itemID, "", itemSlot, 0, "", 0, itemLevel, bonusIDS, "Classic");
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;
     item.stats = compileStats(item.stats, itemBonusStats);
