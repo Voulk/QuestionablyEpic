@@ -43,6 +43,8 @@ export default class BCChart extends PureComponent {
           //i161: map2.i161,
           "Normal": map2.normal,
           "Heroic": (map2.heroic - map2.normal) || 0,
+          "normalilvl": map2.normalilvl || "",
+          "heroicilvl": map2.heroicilvl || "",
         });
       });
 
@@ -96,7 +98,7 @@ export default class BCChart extends PureComponent {
                       .filter((filter) => filter.id === props["payload"].name)
                       .map((key) => key[name.toLowerCase()])
                       .toString(),
-                    name,
+                    name + " \t(" + props.payload[name.toLowerCase() + "ilvl"] + ")",
                   ];
                 } else {
                   return ["Unobtainable", name];

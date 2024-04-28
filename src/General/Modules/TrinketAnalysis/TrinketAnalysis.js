@@ -5,7 +5,7 @@ import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
-import BCChart from "./Charts/BCChart";
+import BCChart from "./Charts/ClassicTrinketChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
@@ -286,10 +286,13 @@ export default function TrinketAnalysis(props) {
       const trinketScore = getClassicTrinketScore(trinket.id, props.player);
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
         // Trinket already exists
-        activeTrinkets.filter((key) => key.name === trinketName)[0]["heroic"] = trinketScore + 200;
+        const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
+        existingTrinket["heroic"] = trinketScore;
+        existingTrinket["heroicilvl"] = trinket.itemLevel;
       }
       else {
         trinketAtLevels["normal"] = trinketScore;
+        trinketAtLevels["normalilvl"] = trinket.itemLevel;
         activeTrinkets.push(trinketAtLevels);
       }
 
