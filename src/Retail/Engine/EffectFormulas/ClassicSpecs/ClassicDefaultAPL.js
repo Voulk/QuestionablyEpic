@@ -15,10 +15,10 @@ export const paladinShockProfile = {
     talents: [/*'flutteringSeedlings',  'fontOfMagic', 'renewingBreath', 'timelessMagic', 'gracePeriod', 'cycleOfLife'*/], // These will be turned on at maximum points
     apl: [
         {s: ["Judgement"], conditions: [{type: "buffMissing", buffName: "Judgements of the Pure"}]},
-        {s: ["Holy Light"], conditions: [{type: "buff", buffName: "Infusion of Light"}]},
+        {s: ["Holy Radiance"], conditions: [{type: "buff", buffName: "Infusion of Light"}]},
         {s: ["Light of Dawn"], conditions: [{type: "resource", resourceName: "holyPower", resourceCost: 3}]},
         {s: ["Holy Shock"]},
-        {s: ["Holy Light"]},
+        {s: ["Holy Radiance"]},
 
 ]}
 

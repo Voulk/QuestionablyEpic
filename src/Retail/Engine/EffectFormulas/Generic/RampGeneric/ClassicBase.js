@@ -64,11 +64,11 @@ export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) =>
     let mult = 1;
     const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
     
-    const critChance = /*specConstants.baseCrit*/ 0 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
+    const critChance = GLOBALCONST.baseCrit[spec] + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
-    //if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
+    if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100) * 1/*specConstants.masteryEfficiency*/);
 
     return mult;
@@ -81,24 +81,48 @@ export const buffSpell = (fullSpell, buffPerc) => {
     })
 }
 
-export const applyRaidBuffs = (state) => {
+export const applyRaidBuffs = (state, stats) => {
     // Crit
-    state.currentStats.crit += 5 * 179;
+    stats.crit += 5 * 179;
 
     // 5% spell haste
-    state.currentStats.haste += 5 * 128;
+    stats.haste += 5 * 128;
 
-    // 10% spell power
-    state.currentStats.spellPower *= 1.1;
+
 
     // 5% base stats - The added intellect also becomes spell power.
-    state.currentStats.intellect *= 1.05;
-    state.currentStats.spirit *= 1.05;
+    stats.intellect *= 1.05;
+    stats.spirit *= 1.05;
     
     // Max mana
     state.manaPool *= 1.06;
 
+    // Armor bonus
+    stats.intellect *= 1.05;
+
     // Mana Spring etc
+
+    // Add Int to spell power.
+    stats.spellpower +=  stats.intellect;
+    // 10% spell power
+    stats.spellpower *= 1.1;
+
+    return stats;
+
+    //console.log(state.currentStats);
+}
+
+
+// Returns MP5.
+export const getManaRegen = (currentStats, spec) => {
+    const inCombatRegen = {
+        "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
+    }
+    return (1171 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
+}
+
+export const getManaPool = (currentStats, spec) => {
+    return (24777 + currentStats.intellect * 15);
 }
 
 /**

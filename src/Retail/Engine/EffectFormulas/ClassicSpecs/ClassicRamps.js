@@ -120,14 +120,15 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     // Beacon
     if (state.spec === "Holy Paladin") {
         let beaconHealing = 0;
-        let beaconMult = 1;
+        let beaconMult = 0;
         if (spellName === "Holy Light") beaconMult = 1;
-        else if (["Flash of Light", "Divine Light", "Light of Dawn", "Holy Shock", "Word of Glory"]) beaconMult = 0.5;
-    
+        else if (["Flash of Light", "Divine Light", "Light of Dawn", "Holy Shock", "Word of Glory"].includes(spellName)) beaconMult = 0.5;
+        else beaconMult = 0;
+
         beaconHealing = healingVal * (1 - CLASSICCONSTANTS.beaconOverhealing) * beaconMult;
 
         state.healingDone["Beacon of Light"] = (state.healingDone["Beacon of Light"] || 0) + beaconHealing;
-        addReport(state, `Beacon of Light healed for ${Math.round(beaconHealing)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+        if (beaconHealing > 0) addReport(state, `Beacon of Light healed for ${Math.round(beaconHealing)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
         // Illuminated Healing
         if (spell.secondaries.includes("mastery")) {
@@ -200,9 +201,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, talents, state, stats, CLASSICCONSTANTS);
 
-
-
-    applyRaidBuffs(state);
+    const baseStats = applyRaidBuffs(state, stats);
+    
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
@@ -248,8 +248,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
-            let currentStats = {...stats};
+            let currentStats = {...baseStats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
+           // console.log(state.currentStats);
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
@@ -263,7 +264,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
-            let currentStats = {...stats};
+            let currentStats = {...baseStats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             const spellName = castState.queuedSpell;

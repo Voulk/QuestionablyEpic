@@ -1,4 +1,4 @@
-
+import { getManaPool, getManaRegen } from './ClassicBase';
 
 // Run Spell Combos
 // playerData = { spec, baseSpells, baseSettings, baseTalents, stats }
@@ -40,6 +40,46 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 
         console.log(weights); 
         return weights;
+}
+
+export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteType) {
+    // Weights
+    const stats = ['spellpower', 'intellect', 'crit', 'mastery', 'haste'];
+
+    const baseline = suiteType === "APL" ? runSuite(playerData, aplList, runCastSequence, "APL") : runCastProfileSuite(playerData, aplList, runCastSequence);
+    const baselineHPS = baseline.avgHPS;
+    const baselineHPM = baseline.avgHPM;
+
+    const baselineMana = getManaRegen(playerData.stats, playerData.spec) * 12 * 5;
+    const baselinePool = getManaPool(playerData.stats, playerData.spec);
+
+    const results = {};
+    stats.forEach(stat => {
+        let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+        playerStats[stat] = playerStats[stat] + 400;
+        const newPlayerData = {...playerData, stats: playerStats};
+        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).avgHPS;
+        results[stat] = result;
+    });
+    const weights = {}
+
+    stats.forEach(stat => {
+
+        weights[stat] = Math.round(1000*(results[stat] - baselineHPS) / (results['spellpower'] - baselineHPS))/1000;
+    });
+
+    const intRegen = getManaRegen({...playerData.stats, 'intellect': playerData.stats['intellect'] + 400}, playerData.spec) * 12 * 5;
+    const intManaPool = getManaPool({...playerData.stats, 'intellect': playerData.stats['intellect'] + 400}, playerData.spec) - baselinePool;
+    weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / 300 / (results['spellpower'] - baselineHPS))/1000;
+
+    // Compute Mana averages
+
+    const spiritRegen = getManaRegen({...playerData.stats, 'spirit': playerData.stats['spirit'] + 400}, playerData.spec) * 12 * 5;
+    weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / 300 / (results['spellpower'] - baselineHPS))/1000;
+    
+
+    console.log(weights); 
+    return weights;
 }
 
 // The stat differential suite takes the stat profile stored on the APL and varies them by +-1000 and then stores the result. 
@@ -101,7 +141,7 @@ function runComparisonSuites(playerData, profiles, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 2600;
+    const iterations = 1500; //2600;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -141,7 +181,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     if (type === "APL") singleReport = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents, profile.apl);
     else if (type === "Sequence") singleReport = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents);
 
-
+    
     simData.minHPS = Math.min(...hps)
     simData.maxHPS = Math.max(...hps)
     simData.avgHPS = hps.reduce((acc, current) => acc + current, 0) / iterations;
@@ -149,7 +189,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     simData.elapsedTime = Math.round(1000*elapsedTime.reduce((acc, current) => acc + current, 0) / iterations)/1000;
     simData.maxTime = Math.round(1000*Math.max(...elapsedTime))/1000;
 
-    simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
+    if (singleReport.advancedReport) simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
     simData.sampleReport = singleReport;
     return simData;
 }
@@ -182,4 +222,25 @@ function calculateBuffUptime(data) {
     }
 
     return buffUptimes;
+}
+
+export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence) => {
+    const castProfile = JSON.parse(JSON.stringify(incCastProfile));
+    castProfile.forEach(cast => {
+        const data = runSpellComboSuite(playerData, {seq: [cast.spell], talents: {}}, runCastSequence)
+        cast.cpm = cast.cpm * (playerData.stats.haste / 128 / 100 + 1);
+        console.log(cast.cpm);
+        cast.hpc = data.sampleReport.totalHealing;
+        cast.cost = data.sampleReport.manaSpent;
+        cast.healing = cast.hpc * cast.cpm;
+    });
+
+    const totalCost = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+    const totalHealing = castProfile.reduce((acc, spell) => acc + spell.healing, 0);
+
+
+    return {
+        avgHPS: totalHealing / 60,
+        avgHPM: totalHealing / totalCost,
+    }
 }

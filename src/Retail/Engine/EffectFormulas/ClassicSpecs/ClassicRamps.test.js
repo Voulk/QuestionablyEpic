@@ -1,6 +1,6 @@
 
 
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
 import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
@@ -14,26 +14,41 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 3500,
+            intellect: 3200,
             spirit: 1400,
-            spellpower: 5000,
+            spellpower: 1800,
             haste: 2000,
             crit: 1000,
             mastery: 1200,
-            stamina: 29000,
+            stamina: 5000,
             critMult: 2,
         }
+
+        const castProfile = [
+            //{spell: "Judgement", cpm: 1, hpc: 0},
+            {spell: "Holy Light", cpm: 11, hpc: 0, cost: 0, healing: 0},
+            {spell: "Holy Shock", cpm: 9.5, hpc: 0, cost: 0, healing: 0},
+            {spell: "Holy Radiance", cpm: 4.5, hpc: 0, cost: 0, healing: 0},
+            {spell: "Light of Dawn", cpm: 9.5 + 4.5, hpc: 0, cost: 0, healing: 0},
+        ]
     
         //const baseSpells = EVOKERSPELLDB;
+        const testSuite = "CastProfile"
         const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
-
         const playerData = { spec: "Holy Paladin", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
-        const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
-        console.log(data);
 
-        //const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
-        //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
-        //console.log(data);
+        if (testSuite === "APL") {
+            const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
+            console.log(data);
+        }
+        else if (testSuite === "Stat") {
+            const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
+            console.log(data);
+        }
+        else if (testSuite === "CastProfile") {
+            runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile");
+        }
+
 
         expect(true).toEqual(true);
     })
