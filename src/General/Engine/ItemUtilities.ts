@@ -564,6 +564,7 @@ export function getItemProp(id: number, prop: string, gameType: gameTypes = "Ret
 // Add some support for missing icons.
 export function getItemIcon(id: number, gameType = "Retail") {
   const item = getItem(id, gameType);
+
   if (gameType === "Classic" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
