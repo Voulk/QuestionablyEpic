@@ -117,7 +117,8 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 };
 
 const getClassicTrinketScore = (id, player) => {
-  let item = new ClassicItem(id, "", "Trinket", "");
+  const itemLevel = getItemProp(id, "itemLevel", "Classic");
+  let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
@@ -302,7 +303,8 @@ export default function TrinketAnalysis(props) {
 
   if (gameType === "Classic") {
     // Sort. We'll need to use the retail "highest level" code here.
-    activeTrinkets.sort((a, b) => (a.i100 < b.i100 ? 1 : -1));
+    const getHighestClassicScore = (trinket) => {return trinket.i200 | trinket.i100 | 0}
+    activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }

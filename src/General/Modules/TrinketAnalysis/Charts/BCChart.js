@@ -94,7 +94,7 @@ export default class BCChart extends PureComponent {
                   return [
                     data
                       .filter((filter) => filter.id === props["payload"].name)
-                      .map((key) => key["i" + name])
+                      .map((key) => key[name])
                       .toString(),
                     name,
                   ];
