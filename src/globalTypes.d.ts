@@ -54,6 +54,18 @@ interface PlayerChars {
     delSpecificChar(unique: string): void;
 }
 
+interface SettingValue {
+    value: any;
+    options: any[];
+    category: string;
+    type: string;
+  }
+
+interface PlayerSettings {
+    [key: string]: { value: any; options: any[]; category: string; type: string };
+}
+
+/*
 interface PlayerSettings {
     includeGroupBenefits: { value: boolean; options: boolean[]; category: string; type: string };
     idolGems: { value: number; options: number[]; category: string; type: string };
@@ -71,7 +83,7 @@ interface PlayerSettings {
     rubyWhelpShell: { value: string, options: string[], category: string, type: string }, // "ST Damage", "AoE Damage",
 
     //chromaticEssenceAllies: { value: boolean; options: boolean[]; category: string; type: string };
-  }
+  } */
 
 declare interface effectData  {
     coefficient: number;

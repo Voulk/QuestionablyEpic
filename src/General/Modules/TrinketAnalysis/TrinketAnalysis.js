@@ -327,7 +327,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Ominous Chromatic Essence and Whispering Incarnate Icon assume others in your group are wearing them too. Rashok's is still quite good, but most of its power is in buffing allies now. There are much stronger trinkets for personal throughput. There are settings for all of the above in the settings panel beneath your character. " variant="yellow" />
+              <InformationBox information="Rashok's is still quite good, but most of its power is in buffing allies now. There are much stronger trinkets for personal throughput.Ominous Chromatic Essence and Whispering Incarnate Icon assume others in your group are wearing them too. There are settings for all of the above in the settings panel beneath your character. " variant="yellow" />
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

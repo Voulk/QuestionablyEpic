@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.6",
+    update: 18,
+    date: "April 28",
+    changes: [ 
+      "Added Engraved Spearhead..",
+      "Removed 535 version of Broodkeeper's Promise from the chart (it doesn't exist).",
+    ]},
+  {
+    version: "10.2.6",
     update: 17,
     date: "April 25",
     changes: [ 
