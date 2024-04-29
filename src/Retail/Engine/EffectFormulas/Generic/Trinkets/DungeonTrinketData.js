@@ -349,27 +349,27 @@ export const dungeonTrinketData = [
       { // Negative Vers portion - When you have debuff.
         coefficient: -0.299875, 
         table: -7,
-        uptime: 3 / 45, // This is the amount of time the debuff stays on you until you refresh it.
+        uptime: 8 / 45, // This is the amount of time the debuff stays on you until you refresh it.
       },
       { // Positive vers portion
         coefficient: 1.260259, 
         table: -7,
         duration: 15,
-        cooldown: 48,
+        cooldown: 53,
       },
       { 
         coefficient: 25.77058, // This is the shield portion applied to allies.
         table: -9,
         secondaries: ['versatility'],
-        efficiency: 0.98,
+        efficiency: 0.92,
         targets: 1.9, 
-        cooldown: 47,
+        cooldown: 53,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown)- (processedValue(data[0], itemLevel) * data[0].uptime);
+      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown) - (processedValue(data[0], itemLevel) * data[0].uptime);
       bonus_stats.hps = runGenericFlatProc(data[2], itemLevel, player, additionalData.contentType || "Raid") // processedValue(data[2], itemLevel, data[2].efficiency) * data[2].targets / data[2].cooldown;
 
       return bonus_stats;
