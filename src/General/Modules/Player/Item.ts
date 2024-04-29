@@ -13,7 +13,7 @@ export class Item {
   slot: string;
   softScore: number;
   socket: number; // This is an int since items can have more than one socket (neck).
-  classicSockets?: number[] = []; // Classic sockets have specific colors.
+  classicSockets?: string[] = []; // Classic sockets have specific colors.
   tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
   stats: Stats = {}; // The stats on a given item.
 
