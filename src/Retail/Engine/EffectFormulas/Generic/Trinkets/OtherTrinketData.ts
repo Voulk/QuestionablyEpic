@@ -685,10 +685,8 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
       const effect = data[0];
-      const a = effect.ppm * effect.duration / 60;
+      const a = effect.ppm! * effect.duration! / 60;
       const averageStacks = 1.13*(Math.exp(a)-1)*(1-Math.pow((1-Math.exp(-a)), effect.maxStacks))
-
-      console.log(averageStacks);
 
       bonus_stats.crit = averageStacks * processedValue(data[0], itemLevel);
 
