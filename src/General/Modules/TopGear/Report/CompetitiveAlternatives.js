@@ -96,7 +96,6 @@ function CompetitiveAlternatives(props) {
                           let itemArray = [];
                           // 
                           itemArray = [gem];
-                          console.log(itemArray);
                           return itemArray.map((item) => (
                             <Grid item key={i}>
                               <WowheadTooltip type="item" id={gem} domain={wowheadDom}>
@@ -148,7 +147,7 @@ function CompetitiveAlternatives(props) {
                               fontSize: 14,
                             }}
                           >
-                            {gameType === "Retail" ? key.rawDifference + " HPS (" + Math.abs(roundTo(key.scoreDifference, 2)) + "%)" : ""}
+                            {key.rawDifference + " HPS (" + Math.abs(roundTo(key.scoreDifference, 2)) + "%)"}
                           </Typography>
                         </Grid>
                       </Grid>

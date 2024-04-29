@@ -173,7 +173,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-    
+    console.log(differentials);
     // Setup Slots / Set IDs.
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)

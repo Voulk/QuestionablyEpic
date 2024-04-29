@@ -118,12 +118,11 @@ class ItemSet {
       let item = this.itemList[i];
 
       for (const [stat, value] of Object.entries(item.stats)) {
-        if (stat in setStats) {
+        //if (stat in setStats) {
           //setStats[stat as keyof Stats] += value || 0;
           setStats[stat as keyof Stats] = (setStats[stat as keyof Stats] || 0) + value;
-          
-          //if (stat in item.stats["bonus_stats"]) setStats[stat] += item.stats["bonus_stats"][stat]; // Disabled for now since we handle effects separately. 
-        }
+        //}
+
       }
       
       if (item.socket) {

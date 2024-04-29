@@ -27,30 +27,49 @@ export const generateReportCode = () => {
     return result;
   }
 
-export function buildDifferential(itemSet, primeSet, player, contentType) {
+  export function buildDifferential(itemSet, primeSet, player, contentType) {
     let doubleSlot = {};
     const primeList = primeSet.itemList;
     const diffList = itemSet.itemList;
     let differentials = {
-        items: [],
-        scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-        rawDifference: Math.round((itemSet.hardScore - primeSet.hardScore) / player.getInt(contentType) * player.getHPS(contentType)),
+      items: [],
+      gems: [],
+      scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
+      rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
     };
-
+  
     for (var x = 0; x < primeList.length; x++) {
-        if (primeList[x].uniqueHash !== diffList[x].uniqueHash) {    
+      // Check if the other set has the corresponding slot.
+      if ((primeList[x].slot === "Offhand" && !diffList[x])) {
+        // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
+        continue;
+      }
+      if (diffList[x] && primeList[x].uniqueHash !== diffList[x].uniqueHash) {
         differentials.items.push(diffList[x]);
         doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
-
+  
+        // Trinkets and Rings
         if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
-            differentials.items.push(diffList[x-1]);
+          differentials.items.push(diffList[x - 1]);
         }
-        
-        }
+      }
     }
-    //console.log("D:" + JSON.stringify(differentials));
+  
+    // Check for gem differences
+    if (primeSet.enchantBreakdown["Gems"] !== itemSet.enchantBreakdown["Gems"]) {
+      itemSet.enchantBreakdown["Gems"].forEach(gem => {
+        if (!(primeSet.enchantBreakdown["Gems"].includes(gem))) {
+          differentials.gems.push(gem);
+        }
+      });
+    }
+  
+    if (diffList.length > primeList.length) {
+      differentials.items.push(diffList[diffList.length - 1]);
+    }
+  
     return differentials;
-}
+  }
   
 export function pruneItems(itemSets) {
 let temp = itemSets.filter(function (set) {

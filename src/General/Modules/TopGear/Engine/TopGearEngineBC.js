@@ -89,52 +89,49 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     const newPlayer = setupPlayer(player, contentType, castModel);
     let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
     //itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
-
     let itemSets = createSets(itemList, wepCombos);
 
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
-  console.log("Preparing to evaluate set");
-  for (var i = 0; i < itemSets.length; i++) {
-    itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings);
-  }
-  itemSets = pruneItems(itemSets);
+    for (var i = 0; i < itemSets.length; i++) {
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel);
+    }
+    itemSets = pruneItems(itemSets);
 
-  itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
+    itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
-  // ----
+    // Build Differentials
+    let differentials = [];
+    let primeSet = itemSets[0];
+    for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
+      differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
+    }
+    console.log("Finished differentials");
+    //itemSets[0].printSet()
 
-  var t1 = performance.now();
-  //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds with count ")
+    var t1 = performance.now();
+    console.log("Total execution time: " + (t1 - t0) + " milliseconds for " + count + " sets. Per set: " + (t1 - t0) / count + " ms.");
 
-  // Build Differentials
-  let differentials = [];
-  let primeSet = itemSets[0];
-  for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
-    differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
-  }
-  console.log("Finished differentials");
-  //itemSets[0].printSet()
-
-  if (itemSets.length === 0) {
-    let result = new TopGearResult([], []);
-    result.itemsCompared = count;
-    return result;
-  } else {
-    let result = new TopGearResult(itemSets[0], differentials);
-    result.itemsCompared = count;
-    return result;
-  }
+    if (itemSets.length === 0) {
+      let result = new TopGearResult([], []);
+      result.itemsCompared = count;
+      return result;
+    } else {
+      let result = new TopGearResult(itemSets[0], differentials);
+      result.itemsCompared = count;
+      return result;
+    }
 }
 
 
 
 // A true evaluation function on a set.
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
-function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
+    console.log(setStats);
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
@@ -192,15 +189,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       leech: player.statWeights[contentType]["leech"],
     };
     */
-   let adjusted_weights = {...player.statWeights["Raid"]}
+
+   let adjusted_weights = {...castModel.baseStatWeights["Raid"]}
     // Mana Profiles
+
     if (userSettings.manaProfile === "Conservative") {
-      adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
+      //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 1.16;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 1.2;
     }
     else if (userSettings.manaProfile === "Max Healing") {
-      adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
+      //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
     }
@@ -261,7 +260,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
       var s1 = performance.now();
     }
     */
-    console.log("Early midd");
     
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
@@ -329,9 +327,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
         //console.log("Adding HPS score of " + setStats[stat]);
       } else if (stat === "dps") {
         continue;
-      } else {
-        hardScore += setStats[stat] * adjusted_weights[stat];
-        //console.log("Adding " + (setStats[stat] * player.statWeights["Raid"][stat]) + " to hardscore for stat " + stat + " with stat weight: " + player.statWeights["Raid"][stat]);
+      } else if (stat !== "stamina") {
+        hardScore += (setStats[stat] * adjusted_weights[stat]) || 0;
+        //console.log("Adding " + (setStats[stat] * adjusted_weights[stat]) + " to hardscore for stat " + stat + " with stat weight: " + adjusted_weights[stat]);
       }
     }
   
@@ -341,6 +339,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
+    console.log(builtSet.hardScore);
     return builtSet; // Temp
   }
 
@@ -355,13 +354,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings) {
   export function mergeBonusStats(stats) {
     const val = {
         intellect: mergeStat(stats, 'intellect'),
-        bonushealing: mergeStat(stats, 'bonushealing'),
-        spelldamage: mergeStat(stats, 'spelldamage'),
+        spellpower: mergeStat(stats, 'spellpower'),
         spirit: mergeStat(stats, 'spirit'),
-        spellcrit: mergeStat(stats, 'spellcrit'),
+        crit: mergeStat(stats, 'crit'),
+        mastery: mergeStat(stats, 'mastery'),
         stamina: mergeStat(stats, 'stamina'),
         mp5: mergeStat(stats, 'mp5'),
-        spellhaste: mergeStat(stats, 'spellhaste'),
+        haste: mergeStat(stats, 'haste'),
       }
   
     return val;

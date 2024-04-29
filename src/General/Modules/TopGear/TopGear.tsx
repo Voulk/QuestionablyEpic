@@ -227,8 +227,56 @@ export default function TopGear(props: any) {
     return topgearOk;
   };
 
+  const getCombinations = (): number => {
+    let itemList = props.player.getSelectedItems();
+    let missingSlots = [];
+    let errorMessage = "";
+    let slotLengths: { [key: string]: number } = {
+      Head: 0,
+      Neck: 0,
+      Shoulder: 0,
+      Back: 0,
+      Chest: 0,
+      Wrist: 0,
+      Hands: 0,
+      Waist: 0,
+      Legs: 0,
+      Feet: 0,
+      Finger: 0,
+      Trinket: 0,
+      "2H Weapon" : 0,
+      "1H Weapon" : 0,
+      "Offhand" : 0,
+    };
+
+    for (var i = 0; i < itemList.length; i++) {
+      let slot = itemList[i].slot;
+      if (slot in slotLengths || slot === "Shield") {
+        if (!itemList[i].vaultItem) {
+           if (slot === "Shield") slotLengths["Offhand"] += 1;
+           else slotLengths[slot] += 1;
+        }
+      }
+    }
+
+    let iterations = 1;
+    // Count iterations
+    for (const key in slotLengths) {
+      if (Object.prototype.hasOwnProperty.call(slotLengths, key)) {
+        if (key === "Finger" || key === "Trinket") iterations *= (slotLengths[key] * (slotLengths[key] -1) / 2);
+        else iterations *= (slotLengths[key] > 0? slotLengths[key] : 1);
+      }
+    }
+    console.log(iterations);
+    return iterations;
+    
+
+
+  }
+
   const checkSlots = (): string[] => {
        /* ------------------ Check that the player has selected an item in every slot. ----------------- */
+       getCombinations();
        let itemList = props.player.getSelectedItems();
        let missingSlots = [];
        let errorMessage = "";
