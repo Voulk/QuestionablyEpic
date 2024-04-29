@@ -803,7 +803,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     else if (stat === "allyStats" && evalStats.allyStats) {
       if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
         //hardScore += evalStats.allyStats * CONSTANTS.allyStatWeight;
-        hardScore += getAllyStatsValue(contentType, evalStats.allyStats, player) || 0
+        hardScore += getAllyStatsValue(contentType, evalStats.allyStats, player, userSettings) || 0
       }
     }
     // This covers all other stats, which are invariably our secondaries + leech.

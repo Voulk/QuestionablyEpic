@@ -1,4 +1,5 @@
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket } from "../../EffectUtilities";
+import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
@@ -79,8 +80,8 @@ export const raidTrinketData = [
         duration: 12,
         cooldown: 120,
         targetScaling: 1, // While healing is multiplied by 1.5x, the additional healing offered is constant.
-        efficiency: {Raid: 0.9, Dungeon: 0.4}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
-        specEfficiency: { "Restoration Druid": 0, "Holy Paladin": 0.1, "Holy Priest": 0.1, "Discipline Priest": 0, "Mistweaver Monk": 0.32, 
+        efficiency: {Raid: 0.75, Dungeon: 0.4}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        specEfficiency: { "Restoration Druid": 0, "Holy Paladin": 0.07, "Holy Priest": 0.07, "Discipline Priest": 0, "Mistweaver Monk": 0.32, 
                           "Restoration Shaman": 0, "Preservation Evoker": 0 }, // This is the difference in spell efficiency. It does not apply to the bonus healing.
       },
       { // Mastery benefit. This is short and not all that useful.
@@ -174,7 +175,7 @@ export const raidTrinketData = [
         coefficient: 44.99676, // 40.9063, // This is probably 1 HoT tick.
         table: -9,
         secondaries: ['versatility', 'crit'], // Crit added post-release.
-        efficiency: {Raid: 0.65, Dungeon: 0.6}, 
+        efficiency: {Raid: 0.5, Dungeon: 0.4}, 
         ppm: 60/65, // 1 min hard CD. ~5s to heal someone below 85%.
         ticks: 6,
       },
@@ -183,7 +184,7 @@ export const raidTrinketData = [
         table: -9,
         targets: 3, // 
         secondaries: ['versatility', 'crit'],
-        efficiency: {Raid: 0.49, Dungeon: 0.4}, 
+        efficiency: {Raid: 0.46, Dungeon: 0.4}, 
         percentProc: 0.82,
         ticks: 6,
       },
@@ -191,7 +192,7 @@ export const raidTrinketData = [
         coefficient: 404.9657, // 368.1498,
         table: -9,
         secondaries: ['versatility'],
-        efficiency: {Raid: 0.95, Dungeon: 0.8}, // This is an absorb so you won't lose much value.
+        efficiency: {Raid: 0.93, Dungeon: 0.8}, // This is an absorb so you won't lose much value.
         percentProc: 0.18,
       },
     ],
@@ -279,7 +280,7 @@ export const raidTrinketData = [
         stat: "intellect",
         duration: 18,
         classMod: {"Preservation Evoker": 1, "Holy Paladin": 1},
-        ppm: 1 * 0.775, // Ultimately neither spec generates enough AoE events to get close to the advertised PPM.
+        ppm: 1 * 0.7, // Ultimately neither spec generates enough AoE events to get close to the advertised PPM.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -337,7 +338,7 @@ export const raidTrinketData = [
         coefficient: 2.221365, //4.441092, //3.86182,
         table: -9, 
         targets: {"Raid": 7.5, "Dungeon": 5},
-        efficiency: 0.74,
+        efficiency: 0.5,
         ticks: 10,
         secondaries: ["versatility"], 
       },
@@ -360,7 +361,7 @@ export const raidTrinketData = [
       bonus_stats.hps = oneHoT * data[1].targets[contentType] * data[0].ppm / 60 * BLP;
 
       // Mana Portion
-      bonus_stats.mana = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[1].ticks * data[0].ppm / 60 * BLP;
+      bonus_stats.mana = processedValue(data[0], itemLevel) * data[1].ticks * data[0].ppm / 60 * BLP;
 
       // Versatility Portion
       const versEfficiency = 1 - data[1].efficiency; // The strength of the vers portion is inverse to the strength of the HoT portion.
@@ -488,14 +489,17 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       // Versatility Portion
       let bonus_stats = {};
-      const versBoost = data[0].percentBoosted * data[0].boostValue + (1-data[0].percentBoosted)
+      let percentBoosted = data[0].percentBoosted;
+      if (additionalData.settings.broodkeeperCloseTime) percentBoosted = setBounds(getSetting(additionalData.settings, "broodkeeperCloseTime") / 100, 0, 1);
+
+      const versBoost = percentBoosted * data[0].boostValue + (1-percentBoosted)
       bonus_stats.versatility = processedValue(data[0], itemLevel, versBoost);
 
       if (additionalData.settings.includeGroupBenefits) bonus_stats.allyStats = processedValue(data[0], itemLevel, versBoost);
 
       // Healing Portion
       let healing = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * 2;
-      bonus_stats.hps = healing * data[1].efficiency * ( data[0].percentBoosted * data[1].boostValue + (1-data[1].percentBoosted));
+      bonus_stats.hps = healing * data[1].efficiency * ( percentBoosted * data[1].boostValue + (1-percentBoosted));
 
       return bonus_stats;
     }
