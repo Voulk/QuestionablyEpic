@@ -91,6 +91,9 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     //itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
     let itemSets = createSets(itemList, wepCombos);
 
+    // == Handle Reforging ==
+    
+
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
