@@ -13,7 +13,8 @@ export class Item {
   slot: string;
   softScore: number;
   socket: number; // This is an int since items can have more than one socket (neck).
-  classicSockets?: string[] = []; // Classic sockets have specific colors.
+  classicSockets?: any = {sockets: [], bonus: {}}; // Classic sockets have specific colors.
+  socketedGems: number[] = []; // The gems in the item.
   tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
   stats: Stats = {}; // The stats on a given item.
 
@@ -68,7 +69,8 @@ export class Item {
 
     if (gameType === "Classic") {
       const sockets = getItemProp(id, "sockets", gameType);
-      this.classicSockets = sockets? sockets.gems : [];
+      this.classicSockets.sockets = sockets? sockets.gems : [];
+      this.classicSockets.bonus = sockets ? sockets.bonus : {};
 
       // Adjust allocations for sockets.
       const itemAllocations = getItemAllocations(id, [], gameType);

@@ -88,10 +88,46 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
     const newPlayer = setupPlayer(player, contentType, castModel);
     let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
-    //itemList = userSettings.autoSocket ? autoSocketItems(itemList) : itemList;
-    let itemSets = createSets(itemList, wepCombos);
+   
 
     // == Handle Reforging ==
+    // The comprehensive way to Reforge is to test every variation. There are five for each item, ignoring DPS-centric stats.
+    // You can't reforge to a stat already on an item. So your combinations are:
+    // - Stat A -> Stat C or Stat D
+    // - Stat B -> Stat C or stat D
+    // - No reforge at all.
+    const reforgeEnabled = false;
+    let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
+    const reforgeOptions = ["haste", "spirit"];
+    if (reforgeEnabled) {
+      itemList.forEach(item => {
+        const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+        const itemReforgeOptions = reforgeOptions.filter(stat => !itemStats.includes(stat));
+        //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
+        itemStats.forEach(fromStat => {
+          // for each stat, add one version that trades a portion of it for another.
+          itemReforgeOptions.forEach(targetStat => {
+            const newItem = JSON.parse(JSON.stringify(item));
+           // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+            newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
+            newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+            
+            //console.log(JSON.stringify(newItem));
+            //newItem.flags.push("Reforged");
+            newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+            reforgedItems.push(newItem);
+          })
+
+        })
+    })
+    
+    itemList = itemList.concat(reforgedItems);
+    }
+
+    let itemSets = createSets(itemList, wepCombos);
+
+
+    console.log("Sets: " + itemSets.length);
     
 
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
@@ -134,7 +170,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
-    console.log(setStats);
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
@@ -211,31 +246,31 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     
     // -- ENCHANTS --
 
-    if (userSettings.autoEnchant) {
+    if (true) {
       enchant_stats.spellpower += 30;
       enchant_stats.mp5 += 10;
-      enchants['Head'] = "Arcanum of Blissful Mending" // Crit version also available.
+      enchants['Head'] = "Arcanum of Hyjal" // Crit version also available.
   
       enchant_stats.spellpower += 24;
       enchant_stats.mp5 += 8;
-      enchants['Shoulder'] = "Greater Inscription of the Crag" // Lesser version + crit versions available.
+      enchants['Shoulder'] = "Greater Inscription of Charged Lodestone" // Lesser version + crit versions available.
   
       enchant_stats.intellect += 10;
       enchant_stats.spirit += 10;
       enchants['Chest'] = "Powerful Stats" // TODO
   
       enchant_stats.haste += 30;
-      enchants['Back'] = "Greater Speed" // Tailoring version available.
+      enchants['Back'] = "Greater Intellect" // Tailoring version available.
 
       enchant_stats.spellpower += 30;
       enchants['Wrist'] = "Superior Spellpower"
   
-      enchant_stats.spellpower += 28;
-      enchants['Hands'] = "Exceptional Spellpower"
+      enchant_stats.mastery += 65;
+      enchants['Hands'] = "Greater Mastery"
   
       enchant_stats.spellpower += 50;
       enchant_stats.spirit += 20
-      enchants['Legs'] = "Brilliant Spellthread"
+      enchants['Legs'] = "Powerful Ghostly Spellthread"
   
       enchant_stats.stamina += 15;
       enchants['Feet'] = "Tuskarr's Vitality" // Spirit version available but not great.
@@ -247,7 +282,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
       }
   
       enchant_stats.spellpower += 63;
-      enchants['CombinedWeapon'] = "Mighty Spellpower"
+      enchants['CombinedWeapon'] = "Power Torrent"
     }
 
     // ----- SOCKETS -----
@@ -263,6 +298,54 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
       var s1 = performance.now();
     }
     */
+
+    // Handle sockets
+    // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
+    
+    // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
+    // Add to "Mandatory yellows" for the next step.
+    const mandatoryYellows = 2;
+    const yellowGemID = 0; // TODO: Autocalc this based on which would be best. 
+
+    // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
+    // If running either: cycle through any mandatory yellows from Haste breakpoints.
+
+      // We will optimize yellow gems in three steps:
+      // - Cycle through gear and check if there are red / yellow, yellow / yellow or pure yellow sockets. If we've found enough to fulfill our quota, stop. Else:
+      // - Place them in red sockets. If we've found enough to fulfill our quota, stop. Else:
+      // - Place them anywhere. Your gear sucks, unlucky.
+      const gemResults = [];
+      const redGemResults = []
+      builtSet.itemList.forEach((item, index) => {
+        // { score: 0, itemIDs: []}
+        if (item.classicSockets.sockets.length > 0) {
+          
+          const itemSockets = item.classicSockets.sockets;
+          console.log(itemSockets);
+          const bonus = item.classicSockets.socketBonus;
+          if (itemSockets.includes("yellow")) {
+            const score = 0; // Score of placing a yellow socket in this item.
+            const result = {itemIndex: index, score: score, socketsPlaced: itemSockets.filter(socket => socket === "yellow").length};
+            gemResults.push(result);
+            console.log(result);
+          };
+        }
+      });
+      // Socket our best yellow pieces.
+      gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
+      gemResults.forEach(result => {
+        builtSet.itemList[result.itemIndex].socketedGems.push(yellowGemID)
+        console.log("Socketed a yellow into " + builtSet.itemList[result.itemIndex].id);
+      })
+      // If we placed two yellow gems in yellow sockets, we can end optimization here. If not, run round 2 and check red sockets.
+
+
+
+      // Once we've fulfilled our quota, we'll sort our collection by strength gained. Select from the start of the array until our yellow quota is filled.
+
+    // Cycle through each item. Do a basic stat comparison to see if socket bonus is worth it. 
+    // Place each remaining gem.
+
     
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
@@ -342,7 +425,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
-    console.log(builtSet.hardScore);
     return builtSet; // Temp
   }
 

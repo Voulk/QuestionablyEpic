@@ -57,7 +57,7 @@ export default function ItemCardReport(props) {
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-
+  const reforgeText = /*gameType === "Classic" && item.flags && item.flags.includes("reforge") ?*/ <div style={{ fontSize: 12, color: "orange" }}>{item.flags.filter(flag => flag.includes("Reforge"))[0]}</div> /*: null;*/
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
@@ -193,13 +193,22 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
-                  <Grid item>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {statString} {socket}
-                    </Typography>
+                <Grid container spacing={0}>
+                  <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
+                    <Grid item>
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
+                        {statString} {socket}
+                      </Typography>
+                    </Grid>
+                    <Grid item>{enchantCheck(item)}</Grid> 
                   </Grid>
-                  <Grid item>{enchantCheck(item)}</Grid>
+                  <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
+                    <Grid item>
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
+                        {reforgeText}
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
             </CardContent>
