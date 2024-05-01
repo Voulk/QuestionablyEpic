@@ -414,6 +414,7 @@ export default function TopGear(props: any) {
         let newItem: ReportItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
         if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
         if (item.socket) newItem.socket = item.socket;
+        if (item.socketedGems) newItem.socketedGems = item.socketedGems;
         if (item.vaultItem) newItem.vaultItem = item.vaultItem;
         if (item.quality) newItem.quality = item.quality;
         if (item.effect) newItem.effect = item.effect;

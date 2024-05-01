@@ -50,7 +50,7 @@ export default function ItemCardReport(props) {
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage) ;
   let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
   const socketImage = getGemIcon(enchants["Gems"]);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
@@ -85,7 +85,8 @@ export default function ItemCardReport(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     gemString = gemData.string;
-  } else if (item.socket) {
+  } 
+  else if (item.socket) {
     let socketCount = item.socket;
 
     if (props.firstSlot) {
@@ -109,6 +110,16 @@ export default function ItemCardReport(props) {
       );
     }
     socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
+  }
+  else if (item.socketedGems) {
+    item.socketedGems.forEach(gem => {
+      socket.push(
+      <div style={{ display: "inline", marginRight: "5px" }}>
+        <Tooltip title={capitalizeFirstLetter(getGemProp(gem, "name"))} arrow>
+          <img src={getGemIcon(gem)} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+        </Tooltip>
+    </div>);
+    })
   }
   /*
   const socket = item.socket ? (
@@ -143,7 +154,7 @@ export default function ItemCardReport(props) {
       <Card
         className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.27)" }} // 52
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -163,17 +174,17 @@ export default function ItemCardReport(props) {
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
-                        borderWidth: "1px",
+                        borderWidth: "2px",
                         borderStyle: "solid",
                         borderColor: itemQuality(itemLevel, item.id),
                       }}
                     />
                   </WowheadTooltip>
-                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
+                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "14px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
-            <Divider orientation="vertical" flexItem />
+            {/*<Divider orientation="vertical" flexItem /> */}
             <CardContent style={{ padding: 2, width: "100%" }}>
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
@@ -197,7 +208,7 @@ export default function ItemCardReport(props) {
                   <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                     <Grid item>
                       <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                        {statString} {socket}
+                      {socket} 
                       </Typography>
                     </Grid>
                     <Grid item>{enchantCheck(item)}</Grid> 
@@ -205,7 +216,7 @@ export default function ItemCardReport(props) {
                   <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                     <Grid item>
                       <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                        {reforgeText}
+                         {reforgeText} 
                       </Typography>
                     </Grid>
                   </Grid>

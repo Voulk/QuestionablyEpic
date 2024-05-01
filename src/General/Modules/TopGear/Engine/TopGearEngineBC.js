@@ -304,9 +304,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     
     // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
     // Add to "Mandatory yellows" for the next step.
-    const mandatoryYellows = 2;
-    const yellowGemID = 0; // TODO: Autocalc this based on which would be best. 
-
+    let mandatoryYellows = 2;
+    const yellowGemID = 52208; // TODO: Autocalc this based on which would be best. 
+    const metaGemID = 52296;
+    const redGemID = 52207;
+    const blueGemID = 52236;
+    const socketScores = {red: 40, blue: 30, yellow: 30}
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
 
@@ -315,29 +318,81 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
       // - Place them in red sockets. If we've found enough to fulfill our quota, stop. Else:
       // - Place them anywhere. Your gear sucks, unlucky.
       const gemResults = [];
-      const redGemResults = []
+      const redGemItemIndex = [];
       builtSet.itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
         if (item.classicSockets.sockets.length > 0) {
-          
+
           const itemSockets = item.classicSockets.sockets;
-          console.log(itemSockets);
+          if (item.slot === "Head" && itemSockets.includes("meta")) item.socketedGems.push(metaGemID);
+
           const bonus = item.classicSockets.socketBonus;
-          if (itemSockets.includes("yellow")) {
+          const sockets = {red: itemSockets.filter(socket => socket === "red").length, 
+                          yellow: itemSockets.filter(socket => socket === "yellow").length, 
+                          blue: itemSockets.filter(socket => socket === "blue").length};
+          if (sockets.yellow >= 1 && sockets.blue === 0) {
             const score = 0; // Score of placing a yellow socket in this item.
             const result = {itemIndex: index, score: score, socketsPlaced: itemSockets.filter(socket => socket === "yellow").length};
             gemResults.push(result);
             console.log(result);
           };
+          if (sockets.red >= 1) redGemItemIndex.push(index);
+
         }
       });
       // Socket our best yellow pieces.
       gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
       gemResults.forEach(result => {
         builtSet.itemList[result.itemIndex].socketedGems.push(yellowGemID)
+        mandatoryYellows -= result.socketsPlaced;
         console.log("Socketed a yellow into " + builtSet.itemList[result.itemIndex].id);
+        if (mandatoryYellows <= 0) return;
+        
       })
-      // If we placed two yellow gems in yellow sockets, we can end optimization here. If not, run round 2 and check red sockets.
+      // We still have some yellow gems to socket. We'll put them in any random red sockets. 
+      if (mandatoryYellows > 0) {
+        // Cycle through red sockets.
+        redGemItemIndex.forEach(index => {
+          if (mandatoryYellows > 0) {
+            const item = builtSet.itemList[index]
+            const firstRed = item.classicSockets.sockets.findIndex(socket => socket === "red");
+            builtSet.itemList[index].socketedGems.push(yellowGemID);
+            mandatoryYellows -= 1;
+            console.log("Socketed an orange into " + builtSet.itemList[index].id);
+          }
+        })
+      }
+
+      // Annoying gems are done. Now we'll cycle through our other items and see if it's worth gemming them.
+      
+      builtSet.itemList.forEach((item, index) => {
+        // { score: 0, itemIDs: []}
+        if (item.classicSockets.sockets.length > 0) {
+          let gemsToSocket = item.classicSockets.sockets - (item.socketedGems.length || 0); // Check for any already socketed gems.
+          
+          // TODO: Scoring function is working, but it won't check for gems we placed earlier.
+          const socketBonus = 5;
+          const pureReds = gemsToSocket * socketScores.red;
+          const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket], 0) + socketBonus;
+
+          if (pureReds > pairedStrat) {
+            item.socketedGems = Array(gemsToSocket).fill(redGemID);
+          } 
+          else {
+            item.classicSockets.sockets.forEach(socket => {
+              if (socket === "red") item.socketedGems.push(redGemID);
+              else if (socket === "yellow") item.socketedGems.push(yellowGemID);
+              else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
+            })
+          }
+
+        }
+      });
+
+      // 
+
+      // If we placed two yellow gems in yellow sockets, we can end optimization here. If not, run round 2 and stop when we find an item with a red socket.
+
 
 
 
