@@ -122,7 +122,32 @@ export const getManaRegen = (currentStats, spec) => {
 }
 
 export const getManaPool = (currentStats, spec) => {
-    return (24777 + currentStats.intellect * 15);
+    return (24777 + currentStats.intellect * 15) * 1.02;
+}
+
+
+
+// Returns the equivalent MP5 from external mana effects.
+// Innervate currently only works for druid but we could add a setting.
+export const getAdditionalManaEffects = (currentStats, spec) => {
+    let additionalManaPerSecond = 0;
+    const manaSources = {additionalMP5: 0};
+    const pool = getManaPool(currentStats, spec);
+
+
+    const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
+    manaSources["Replenishment"] = replenishment;
+    additionalManaPerSecond += replenishment;
+
+    if (spec.includes("Holy Paladin")) {
+        // Divine Plea
+        additionalManaPerSecond += (pool * 0.12 / 120 * 5);
+        manaSources["Divine Plea"] = (pool * 0.12 / 120 * 5);
+    }
+
+    manaSources.additionalMP5 = additionalManaPerSecond;
+
+    return manaSources;
 }
 
 /**

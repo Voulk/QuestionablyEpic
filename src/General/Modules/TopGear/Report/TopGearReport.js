@@ -18,6 +18,8 @@ import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
 
+import { getManaRegen, getManaPool, getAdditionalManaEffects } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase"
+
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
   /*const requestOptions = {
@@ -180,6 +182,19 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       item.setID = getItemProp(item.id, "itemSetId", gameType)
     })
     console.log(itemList);
+
+    if (gameType === "Classic") {
+      console.log(statList);
+      const manaSources = {}
+      
+      manaSources.pool = getManaPool(statList, player.spec);
+      manaSources.regen = (getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12;
+      manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
+      //console.log("Total mana spend: " + (regen + pool))
+      console.log(manaSources);
+      const totalMana = manaSources.pool + (manaSources.regen) + manaSources.additional.additionalMP5 * 12 * 7;
+      console.log(totalMana);
+    }
 
     // Build Vault items
     // Take the top set, and every differential, and if it contains a vault item we haven't included yet, include it with the score differential compared to our *current* set.
