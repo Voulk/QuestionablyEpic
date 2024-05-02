@@ -51,7 +51,7 @@ export default function ItemCardReport(props) {
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage) ;
-  let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
+  let gemString = gameType === "Classic" ? "&gems=" + item.socketedGems.join(':') : "&gems=" + item.gemString;
   const socketImage = getGemIcon(enchants["Gems"]);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
@@ -166,7 +166,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} gems={gemString}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} forg={113} domain={wowheadDom} gems={gemString}>
                     <img
                       alt="img"
                       width={44}

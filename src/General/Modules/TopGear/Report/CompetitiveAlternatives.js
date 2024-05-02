@@ -33,10 +33,11 @@ function CompetitiveAlternatives(props) {
 
   /* -------------------------------------- Rounding Function ------------------------------------- */
   const roundTo = (value, places) => {
+    if (value === 0) return "<0.01";
     let power = Math.pow(10, places);
     let diff = (Math.round(value * power) / power) * -1;
     if (Math.abs(diff) < 0.01) return "<0.01";
-    return diff;
+    return Math.abs(diff);
   };
 
   return (
@@ -141,13 +142,13 @@ function CompetitiveAlternatives(props) {
                             display="inline"
                             align="right"
                             style={{
-                              color: "#f20d0d",
+                              color: "#F58114",
                               whiteSpace: "nowrap",
                               float: "right",
                               fontSize: 14,
                             }}
                           >
-                            {key.rawDifference + " HPS (" + Math.abs(roundTo(key.scoreDifference, 2)) + "%)"}
+                            {key.rawDifference + " HPS (" + roundTo(key.scoreDifference, 2) + "%)"}
                           </Typography>
                         </Grid>
                       </Grid>

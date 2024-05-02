@@ -96,7 +96,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     // - Stat A -> Stat C or Stat D
     // - Stat B -> Stat C or stat D
     // - No reforge at all.
-    const reforgeEnabled = false;
+    const reforgeEnabled = true;
     let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
     const reforgeOptions = ["haste", "spirit"];
     if (reforgeEnabled) {
@@ -334,7 +334,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
         let score = 0;
         Object.entries(bonus).forEach(([key, value]) => {
           score =  adjusted_weights[key] * value
-          console.log(key + " " + value + " " + adjusted_weights[key] * value)
         });
         return score;
       }
@@ -344,6 +343,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
         // { score: 0, itemIDs: []}
         if (item.classicSockets.sockets.length > 0) {
           let gemsToSocket = item.classicSockets.sockets.filter(gem => gem !== "meta").length; // Check for any already socketed gems.
+          item.socketedGems = [];
           if (item.slot === "Head") item.socketedGems.push(metaGemID);
           // TODO: Scoring function is working, but it won't check for gems we placed earlier.
           const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
@@ -393,7 +393,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
             const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index]);
             if (socketBonus && item.classicSockets.bonus) {
               score += scoreSocketBonus(item.classicSockets.bonus);
-              console.log("Giving socket bonus" + scoreSocketBonus(item.classicSockets.bonus));
             }
 
             
@@ -405,7 +404,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
         
       });
       gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
-      console.log(JSON.stringify(gemResults));
+
       for (let i = 0; i < mandatoryYellows; i++) {
         builtSet.itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
       } 
