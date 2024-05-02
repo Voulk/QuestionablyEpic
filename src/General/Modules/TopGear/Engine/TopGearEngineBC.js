@@ -319,12 +319,69 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
       // - Place them anywhere. Your gear sucks, unlucky.
       const gemResults = [];
       const redGemItemIndex = [];
+      const gemScores = [];
+
+      // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
+      builtSet.itemList.forEach((item, index) => {
+        // { score: 0, itemIDs: []}
+        if (item.classicSockets.sockets.length > 0) {
+          let gemsToSocket = item.classicSockets.sockets.filter(gem => gem !== "meta").length; // Check for any already socketed gems.
+          if (item.slot === "Head") item.socketedGems.push(metaGemID);
+          // TODO: Scoring function is working, but it won't check for gems we placed earlier.
+          const socketBonus = 5;
+          const pureReds = gemsToSocket * socketScores.red;
+          const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0) + socketBonus;
+          console.log("Item " + index + " has a score of " + pairedStrat + " / " + pureReds + " with " + gemsToSocket + " sockets.")
+          if (pureReds > pairedStrat) {
+            item.socketedGems.push(...Array(gemsToSocket).fill(redGemID));
+            gemScores.push(pureReds);
+          } 
+          else {
+            item.classicSockets.sockets.forEach(socket => {
+              //if (socket === "meta") item.socketedGems.push(metaGemID);
+              if (socket === "red") item.socketedGems.push(redGemID);
+              else if (socket === "yellow") item.socketedGems.push(yellowGemID);
+              else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
+            })
+            gemScores.push(pairedStrat);
+          }
+
+        }
+      });
+
+      // We're going to go through each socket, and test how expensive it is to replace it.
+      builtSet.itemList.forEach((item, index) => {
+        const sockets = item.classicSockets.sockets;
+        let itemIndex = 0;
+        sockets.forEach((socket, socketIndex) => {
+          if (item.socketedGems[socketIndex] === "yellow" || item.socketedGems[socketIndex] === "meta") {}// do nothing
+          else {
+            let score = 0;
+            // The socket isn't yellow, try and make it orange.
+            const originalScore = gemScores[itemIndex];
+            const newSockets = [...sockets];
+            newSockets[socketIndex] = "yellow";
+
+            // We've made the socket yellow. Let's score it.
+            score = originalScore - newSockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0) ;
+            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score});
+            itemIndex++;
+          }
+        })
+        
+      });
+      gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
+      for (let i = 0; i < mandatoryYellows; i++) {
+        builtSet.itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
+      }
+
+/*
       builtSet.itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
         if (item.classicSockets.sockets.length > 0) {
 
           const itemSockets = item.classicSockets.sockets;
-          if (item.slot === "Head" && itemSockets.includes("meta")) item.socketedGems.push(metaGemID);
+          
 
           const bonus = item.classicSockets.socketBonus;
           const sockets = {red: itemSockets.filter(socket => socket === "red").length, 
@@ -340,6 +397,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
 
         }
       });
+
+
       // Socket our best yellow pieces.
       gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
       gemResults.forEach(result => {
@@ -348,46 +407,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
         console.log("Socketed a yellow into " + builtSet.itemList[result.itemIndex].id);
         if (mandatoryYellows <= 0) return;
         
-      })
-      // We still have some yellow gems to socket. We'll put them in any random red sockets. 
-      if (mandatoryYellows > 0) {
-        // Cycle through red sockets.
-        redGemItemIndex.forEach(index => {
-          if (mandatoryYellows > 0) {
-            const item = builtSet.itemList[index]
-            const firstRed = item.classicSockets.sockets.findIndex(socket => socket === "red");
-            builtSet.itemList[index].socketedGems.push(yellowGemID);
-            mandatoryYellows -= 1;
-            console.log("Socketed an orange into " + builtSet.itemList[index].id);
-          }
-        })
-      }
-
-      // Annoying gems are done. Now we'll cycle through our other items and see if it's worth gemming them.
-      
-      builtSet.itemList.forEach((item, index) => {
-        // { score: 0, itemIDs: []}
-        if (item.classicSockets.sockets.length > 0) {
-          let gemsToSocket = item.classicSockets.sockets - (item.socketedGems.length || 0); // Check for any already socketed gems.
-          
-          // TODO: Scoring function is working, but it won't check for gems we placed earlier.
-          const socketBonus = 5;
-          const pureReds = gemsToSocket * socketScores.red;
-          const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket], 0) + socketBonus;
-
-          if (pureReds > pairedStrat) {
-            item.socketedGems = Array(gemsToSocket).fill(redGemID);
-          } 
-          else {
-            item.classicSockets.sockets.forEach(socket => {
-              if (socket === "red") item.socketedGems.push(redGemID);
-              else if (socket === "yellow") item.socketedGems.push(yellowGemID);
-              else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
-            })
-          }
-
-        }
-      });
+      });*/
 
       // 
 
