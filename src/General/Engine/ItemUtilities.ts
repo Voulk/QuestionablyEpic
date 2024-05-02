@@ -935,12 +935,15 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Multiply the item's stats by our stat weights.
+  
   let sumStats = compileStats(item_stats, bonus_stats);
   //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];
       score += statSum * player.getStatWeight(contentType, stat);
+
+      
     }
   }
 
