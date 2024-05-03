@@ -18,9 +18,16 @@ export const changeLog: entry[] = [
   {
     version: "10.2.6",
     update: 18,
+    date: "May 3",
+    changes: [ 
+      "Fixed a bug with the season 4 Paladin 4pc bonus.",
+    ]},
+  {
+    version: "10.2.6",
+    update: 18,
     date: "April 28",
     changes: [ 
-      "Added Engraved Spearhead..",
+      "Added Engraved Spearhead.",
       "Removed 535 version of Broodkeeper's Promise from the chart (it doesn't exist).",
     ]},
   {

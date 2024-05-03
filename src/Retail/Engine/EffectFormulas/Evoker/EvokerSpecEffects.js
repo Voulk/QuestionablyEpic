@@ -26,7 +26,7 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
     const livingFlamesPerEmpower = 3;
     const averageEssenceBursts = livingFlamesPerEmpower * 0.2;
     const livingFlameData = EVOKERSPELLDB["Living Flame"][0];
-    const oneLivingFlame = (livingFlameData.coeff * player.getInt() * player.getStatMults(livingFlameData.secondaries) + player.getHealth() * 0.02)* 0.5;
+    const oneLivingFlame = (livingFlameData.coeff * player.getInt() * player.getStatMults(livingFlameData.secondaries))* 0.5;
 
     bonus_stats.hps = ((empowersCPM * averageEssenceBursts * essenceBurst) + (empowersCPM * oneLivingFlame * 3)) / 60 * healingBonus;
 
@@ -56,9 +56,9 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
 
   else if (effectName === "Evoker T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
-    const spiritbloomCPM = 2.5;
+    const spiritbloomCPM = 2.4;
     const spiritbloomData = EVOKERSPELLDB["Spiritbloom"][0];
-    const oneSpiritbloom = spiritbloomData.coeff * 4 * player.getInt() *player.getStatMults(spiritbloomData.secondaries) * 0.4 * 1.1 * healingBonus; // Lush Growth
+    const oneSpiritbloom = spiritbloomData.coeff * 4 * player.getInt() * player.getStatMults(spiritbloomData.secondaries) * 0.4 * 1.1 * healingBonus; // Lush Growth
 
     bonus_stats.hps = oneSpiritbloom * spiritbloomCPM / 60;
 
@@ -90,7 +90,7 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
     const essenceBurstsPerMinute = livingFlameCPM * 0.2;
 
     const reversionTicks = 6 * 1.3 / (1 - (player.getStatPerc("crit") - 1))
-    const oneReversion = 0.342 * reversionTicks * player.getStatMults(["intellect", "haste", "versatility", "crit", "mastery"]); // The extra healing from 2 additional WG targets a minute.
+    const oneReversion = 0.342 * reversionTicks * player.getStatMults(["intellect", "haste", "versatility", "crit", "mastery"]) * 1.15; // The extra healing from 2 additional WG targets a minute.
     const oneEcho = 1 * player.getStatMults(["intellect", "haste", "versatility", "crit", "mastery"])
 
     const essenceBurstHealing = oneEcho + oneReversion;
