@@ -35,11 +35,18 @@ describe("Test APL", () => {
         ]
 
         const druidCastProfile = [
-            {spell: "Swiftmend", cpm: 3.4, hpc: 0},
+            //{spell: "Tranquility", cpm: 0.3},
+            {spell: "Swiftmend", cpm: 3.4},
             {spell: "Wild Growth", cpm: 3.5},
-            {spell: "Rejuvenation", cpm: 12, fillerSpell: true},
-            {spell: "Nourish", cpm: 9},
-            {spell: "Regrowth", cpm: 1.8},
+            {spell: "Rejuvenation", cpm: 12 * (144 / 180), fillerSpell: true, castOverride: 1.0},
+            {spell: "Nourish", cpm: 8.5},
+            {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
+            {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
+            {spell: "Rolling Lifebloom", cpm: 6, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
+
+            // Tree of Life casts
+            {spell: "Lifebloom", cpm: 13 * (36 / 180)}, // Tree of Life - Single stacks
+            {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true} // Tree of Life OOC Regrowths
         ]
         
         druidCastProfile.forEach(spell => {

@@ -81,7 +81,21 @@ export const CLASSICDRUIDSPELLDB = {
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'] 
     },
-],
+    ],
+    "Rolling Lifebloom": [{
+        // This is a fake spell. We can use it as part of profiles for ease of use. It won't appear as a simulator option.
+        spellData: {id: 33763, icon: "inv_misc_herb_felblossom", cat: "n/a"},
+        castTime: 0, 
+        type: "classic periodic",
+        buffType: "heal",
+        buffDuration: 10,
+        cost: 7, // We'll preserve the cost since refreshing with Lifebloom is acceptable. 
+        coeff: 0.0234 * 3,
+        flat: 228 * 3,
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'mastery']
+    }],
     "Healing Touch": [{
         // Regrowth direct heal portion
         spellData: {id: 5185, icon: "spell_nature_healingtouch", cat: "heal"},

@@ -230,15 +230,15 @@ function calculateBuffUptime(data) {
 
 export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence) => {
     const castProfile = JSON.parse(JSON.stringify(incCastProfile));
-    const totalCastTime = castProfile.reduce((acc, spell) => acc + Math.max(spell.castTime, 1.5) * spell.cpm, 0);
+    const totalCastTime = castProfile.reduce((acc, spell) => acc + (spell.castOverride ? spell.castOverride : Math.max(spell.castTime, 1.5)) * spell.cpm, 0);
     let fillerHPM = 0;
     castProfile.forEach(cast => {
         const data = runSpellComboSuite(playerData, {seq: [cast.spell], talents: {}}, runCastSequence)
         cast.cpm = cast.cpm /** (playerData.stats.haste / 128 / 100 + 1)*/;
         cast.hpc = data.sampleReport.totalHealing;
-        cast.cost = data.sampleReport.manaSpent;
+        cast.cost = cast.freeCast ? 0 : data.sampleReport.manaSpent;
         cast.healing = cast.hpc * cast.cpm;
-        console.log("Time spent casting: " + cast.spell + " " + Math.max(cast.castTime, 1.5) * cast.cpm);
+        console.log("Spell: " + cast.spell + " Cost: " + cast.cost);
 
         if (cast.fillerSpell) fillerHPM = cast.hpc / cast.cost;
     });
