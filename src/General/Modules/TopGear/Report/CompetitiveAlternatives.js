@@ -11,7 +11,6 @@ function CompetitiveAlternatives(props) {
 
   // const item = props.item
   const differentials = props.differentials;
-  console.log(differentials);
   const gameType = useSelector((state) => state.gameType);
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const itemQuality = (item, gameType) => {
@@ -96,7 +95,7 @@ function CompetitiveAlternatives(props) {
                           let itemArray = [];
                           // 
                           itemArray = [gem];
-                          console.log(itemArray);
+
                           return itemArray.map((item) => (
                             <Grid item key={i}>
                               <WowheadTooltip type="item" id={gem} domain={wowheadDom}>

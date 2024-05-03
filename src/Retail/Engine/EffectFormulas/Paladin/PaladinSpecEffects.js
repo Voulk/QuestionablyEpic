@@ -14,9 +14,9 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
   if (effectName === "Paladin T31-2") {
     // 
-    const holyShockCPM = 15 + (5 + 4) * 60/45; // Holy Shock raw + Divine Toll / Rising Sunlight
-    const oneReverb = 1.08 * player.getStatMults(["intellect", "versatility", "crit", "mastery"])
-
+    const holyShockCPM = 15 + (5 + 4) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
+    const oneReverb = 1.08 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]) * 0.65
+    console.log(holyShockCPM * oneReverb / 60)
     bonus_stats.hps = holyShockCPM * oneReverb / 60;
 
   }
@@ -25,7 +25,6 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
     const daybreakData = 0;
     const oneDaybreak = 0;
     
-
     bonus_stats.hps = 9200;
     bonus_stats.haste = 0;
 
@@ -33,12 +32,22 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
   else if (effectName === "Paladin T30-2") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 9000;
+    const holyShockCPM = 15 + (5 + 4) * 60/45; // Holy Shock raw + Divine Toll / Rising Sunlight
+    const critChance = player.getStatPerc("Crit") + 0.075 - 1; // HS crit bonus
+    const relativeHPSIncrease = (critChance * 2.8 + (1-critChance))  / (critChance * 2 + (1-critChance));
+    const oneHolyShock = 1.53 * player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.5;
+    bonus_stats.hps = oneHolyShock * (relativeHPSIncrease - 1) * holyShockCPM / 60;
+    //bonus_stats.hps = 9000;
 
   }
   else if (effectName === "Paladin T30-4") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 8700;
+    const lightsHammerCPM = 2;
+    const oneLightsHammer = 0.48 * 6 * 7 * player.getStatMultiplier("ALL") * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.7;
+    const healingIncrease = 1; // Adds an amount equal to the original LH.
+
+    bonus_stats.hps = oneLightsHammer * lightsHammerCPM * healingIncrease / 60;
+
 
   }
 
