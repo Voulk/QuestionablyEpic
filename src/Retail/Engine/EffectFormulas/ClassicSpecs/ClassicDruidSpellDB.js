@@ -197,6 +197,7 @@ export const CLASSICDRUIDSPELLDB = {
 
 // Talents that aren't in the resto portion of the tree (Feral / Balance)
 const offspecTalents = {
+
     furor: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.manaPool *= (1 + 0.05 * points);
     }}, 

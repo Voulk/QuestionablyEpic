@@ -3,6 +3,7 @@
 import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
 import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -15,7 +16,7 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 3200,
-            spirit: 1400,
+            spirit: 1800,
             spellpower: 1800,
             haste: 2000,
             crit: 1000,
@@ -25,28 +26,46 @@ describe("Test APL", () => {
         }
 
         const castProfile = [
-            //{spell: "Judgement", cpm: 1, hpc: 0},
-            {spell: "Holy Light", cpm: 11, hpc: 0, cost: 0, healing: 0},
-            {spell: "Holy Shock", cpm: 9.5, hpc: 0, cost: 0, healing: 0},
-            {spell: "Holy Radiance", cpm: 4.5, hpc: 0, cost: 0, healing: 0},
-            {spell: "Light of Dawn", cpm: 9.5 + 4.5, hpc: 0, cost: 0, healing: 0},
+            {spell: "Judgement", cpm: 1, hpc: 0},
+            {spell: "Holy Light", cpm: 14, fillerSpell: true},
+            {spell: "Flash of Light", cpm: 2.2},
+            {spell: "Holy Shock", cpm: 9.5},
+            {spell: "Holy Radiance", cpm: 4.5},
+            {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3},
         ]
-    
+
+        const druidCastProfile = [
+            {spell: "Swiftmend", cpm: 3.4, hpc: 0},
+            {spell: "Wild Growth", cpm: 3.5},
+            {spell: "Rejuvenation", cpm: 12, fillerSpell: true},
+            {spell: "Nourish", cpm: 9},
+            {spell: "Regrowth", cpm: 1.8},
+        ]
+        
+        druidCastProfile.forEach(spell => {
+            spell.castTime = druidSpells[spell.spell][0].castTime;
+            spell.hpc = 0;
+            spell.cost = 0;
+            spell.healing = 0;
+        })
+
         //const baseSpells = EVOKERSPELLDB;
         const testSuite = "CastProfile"
-        const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
-        const playerData = { spec: "Holy Paladin", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
+        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+        const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
             console.log(data);
         }
         else if (testSuite === "Stat") {
-            const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
+            //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
+            const data = runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile")
             console.log(data);
         }
         else if (testSuite === "CastProfile") {
-            runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile");
+            //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+            runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
 
 

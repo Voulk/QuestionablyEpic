@@ -65,9 +65,9 @@ export const CLASSICPALADINSPELLDB = {
         spellData: {id: 82326, icon: "spell_holy_surgeoflight", cat: "heal"},
         type: "heal",
         castTime: 3, 
-        cost: 12, 
-        coeff: 0.432, 
-        flat: 4400,
+        cost: 35, 
+        coeff: 1.15299, 
+        flat: 11733,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]

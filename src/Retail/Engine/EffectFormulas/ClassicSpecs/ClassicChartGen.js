@@ -35,6 +35,7 @@ export const buildClassicPaladinChartData = (activeStats, baseTalents) => {
     const sequences = [
         {cat: "Base Spells", tag: "Holy Shock", seq: ["Holy Shock"], preBuffs: ["Judgements of the Pure"]},
         {cat: "Base Spells", tag: "Holy Light", seq: ["Holy Light"], preBuffs: ["Judgements of the Pure"]},
+        {cat: "Base Spells", tag: "Divine Light", seq: ["Divine Light"], preBuffs: ["Judgements of the Pure"]},
         {cat: "Base Spells", tag: "Flash of Light", seq: ["Flash of Light"], preBuffs: ["Judgements of the Pure"]},
         {cat: "Base Spells", tag: "Holy Radiance", seq: ["Holy Radiance"], preBuffs: ["Judgements of the Pure"]},
 

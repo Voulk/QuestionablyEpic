@@ -117,12 +117,14 @@ export const applyRaidBuffs = (state, stats) => {
 export const getManaRegen = (currentStats, spec) => {
     const inCombatRegen = {
         "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
+        "Restoration Druid": 0.5,
     }
     return (1171 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
 }
 
 export const getManaPool = (currentStats, spec) => {
-    return (24777 + currentStats.intellect * 15) * 1.02;
+    if (spec.includes("Restoration Druid")) return (24777 + currentStats.intellect * 15) * 1.02 * 1.15; // Furor
+    else return (24777 + currentStats.intellect * 15) * 1.02;
 }
 
 
@@ -143,6 +145,14 @@ export const getAdditionalManaEffects = (currentStats, spec) => {
         // Divine Plea
         additionalManaPerSecond += (pool * 0.12 / 120 * 5);
         manaSources["Divine Plea"] = (pool * 0.12 / 120 * 5);
+    }
+    else if (spec.includes("Restoration Druid")) {
+        // Innervate
+        additionalManaPerSecond += (pool * 0.2 / 180 * 5);
+        manaSources["Innervate"] = (pool * 0.2 / 180 * 5);
+
+        // Revitalize
+        additionalManaPerSecond += (pool * 0.01 * 5 / 60 * 5); // 15 mana, 5 times per minute
     }
 
     manaSources.additionalMP5 = additionalManaPerSecond;
