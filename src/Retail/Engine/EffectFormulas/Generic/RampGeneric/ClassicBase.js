@@ -74,11 +74,17 @@ export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) =>
     return mult;
 }
 
-export const buffSpell = (fullSpell, buffPerc) => {
-    fullSpell.forEach(slice => {
-        if ('coeff' in slice) slice.coeff *= buffPerc;
-        if ('flat' in slice) slice.flat *= buffPerc;
-    })
+export const buffSpell = (fullSpell, buffPerc, type = "Additive") => {
+    if (type === "Multi") fullSpell[0].multScaling += buffPerc;
+    else fullSpell[0].multScaling += buffPerc;
+    /*
+    else {
+        fullSpell.forEach(slice => {
+            if ('coeff' in slice) slice.coeff *= buffPerc;
+            if ('flat' in slice) slice.flat *= buffPerc;
+        })
+    }*/
+
 }
 
 export const applyRaidBuffs = (state, stats) => {
@@ -86,7 +92,7 @@ export const applyRaidBuffs = (state, stats) => {
     stats.crit += 5 * 179;
 
     // 5% spell haste
-    stats.haste += 5 * 128;
+    //stats.haste += 5 * 128;
 
 
 

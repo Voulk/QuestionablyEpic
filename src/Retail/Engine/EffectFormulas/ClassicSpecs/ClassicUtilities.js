@@ -12,7 +12,14 @@ import { getHealth } from "../Generic/RampGeneric/RampBase";
  * @returns An updated spell database with any of the above changes made.
  */
 export const applyLoadoutEffects = (classicSpells, settings, talents, state, stats, CONSTANTS) => {
-
+    const auraHealingBuff = { // THIS IS ADDITIVE WITH OTHER INCREASES
+        "Restoration Druid": 0.25,
+        "Discipline Priest": 0, // Gets 15% intellect instead.
+        "Holy Paladin": 0.1,
+        "Holy Priest": 0.25,
+        "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Mistweaver Monk": 0, // Soon :)
+    }
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
@@ -44,6 +51,13 @@ export const applyLoadoutEffects = (classicSpells, settings, talents, state, sta
             })
  
         }
+        // Per Slice scaling
+        value.forEach(slice => {
+            if (spellInfo.additiveScaling) {
+                slice.coeff *= (1 + spellInfo.additiveScaling + auraHealingBuff[state.spec]);
+                slice.flat *= (1 + spellInfo.additiveScaling + auraHealingBuff[state.spec]);
+            }
+        });
     }
 
     if (state.spec === "Holy Paladin") state.holyPower = 1;

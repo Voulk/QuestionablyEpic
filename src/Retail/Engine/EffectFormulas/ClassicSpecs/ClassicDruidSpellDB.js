@@ -221,10 +221,10 @@ const offspecTalents = {
     genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 57810, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         const buffValue = 1 + 0.02 * points;
         // TODO: Assumed Efflo doesn't count which is why Swiftmend is on the node.
-        buffSpell(spellDB["Rejuvenation"], buffValue); 
-        buffSpell(spellDB["Swiftmend"], buffValue);
-        buffSpell(spellDB["Wild Growth"], buffValue);
-        spellDB["Regrowth"][1].coeff *= buffValue;
+        buffSpell(spellDB["Rejuvenation"], buffValue, "additive"); 
+        buffSpell(spellDB["Swiftmend"], buffValue, "additive");
+        buffSpell(spellDB["Wild Growth"], buffValue, "additive");
+        //buffSpell(spellDB["Regrowth"], buffValue, "additive", 1);
 
     }},
 
@@ -240,10 +240,10 @@ const specTalents = {
     }}, 
 
     improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Rejuvenation"], 1 + 0.05 * points);
+        buffSpell(spellDB["Rejuvenation"], 0.05 * points, "additive");
     }}, 
     blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Rejuvenation"], 1 + 0.02 * points);
+        buffSpell(spellDB["Rejuvenation"], 0.02 * points, "additive");
     }}, 
     masterShapeshifter: {points: 1, maxPoints: 1, icon: "ability_druid_mastershapeshifter", id: 48411, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         state.healingAura *= 1.04;
@@ -259,7 +259,7 @@ const specTalents = {
             buffDuration: 7,
             coeff: spellDB["Swiftmend"][0].coeff * 0.12, //
             flat: spellDB["Swiftmend"][0].flat * 0.12, //
-            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
+            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, hasteScaling: true}, 
             expectedOverheal: 0.4,
             targets: 3,
             secondaries: ['crit', 'mastery'] // Efflo just scales with the same thing the Swiftmend scaled with.
@@ -289,7 +289,7 @@ const specTalents = {
 
 const glyphs = {
     glyphOfRejuvenation: {points: 1, maxPoints: 1, icon: "spell_nature_rejuvenation", id: 54754, select: true, tier: 3, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Rejuvenation"], 1.1);
+        buffSpell(spellDB["Rejuvenation"], 0.1, "additive");
     }}, 
     glyphOfLifebloom: {points: 1, maxPoints: 1, icon: "inv_misc_herb_felblossom", id: 54826, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         spellDB["Lifebloom"][0].statMods = {'crit': 0.1}

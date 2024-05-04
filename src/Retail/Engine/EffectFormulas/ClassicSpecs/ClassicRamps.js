@@ -18,12 +18,12 @@ const CLASSICCONSTANTS = {
 
     beaconOverhealing: 0.2,
 
-    auraHealingBuff: {
-        "Restoration Druid": 1.25,
+    auraHealingBuff: { // THIS IS FOR MULTIPLICATIVE BONUSES ONLY. The healing increases offered by each spec are additive for some reason.
+        "Restoration Druid": 1,
         "Discipline Priest": 1, // Gets 15% intellect instead.
-        "Holy Paladin": 1.1,
-        "Holy Priest": 1.25,
-        "Restoration Shaman": 1.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Holy Paladin": 1,
+        "Holy Priest": 1,
+        "Restoration Shaman": 1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 1, // Soon :)
     },
     baseMana: {

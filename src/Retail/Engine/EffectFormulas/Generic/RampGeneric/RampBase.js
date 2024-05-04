@@ -74,8 +74,10 @@ export const spendSpellCost = (spell, state) => {
 const runPeriodic = (state, spell, spellName, runHeal) => {
     // Calculate tick count
     let tickCount = 0;
-    if ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate));
-    else tickCount = Math.round(spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats, "Classic")));
+    const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(state.currentStats, "Classic");
+    const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+    
+    tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
@@ -386,7 +388,10 @@ export const getCurrentStats = (statArray, buffs) => {
 // Returns the players current haste percentage. 
 export const getHaste = (stats, gameType = "Retail") => {
     if (gameType === "Retail") return 1 + stats.haste / 170 / 100;
-    else return 1 + stats.haste / 128 / 100;
+    else {
+        return (1 + stats.haste / 128.057006835937500 / 100) * 1.05; // Haste buff. TODO: Add setting for the 5% buff but it's very common.
+        
+    }
 }
 
 export const getCrit = (stats) => {

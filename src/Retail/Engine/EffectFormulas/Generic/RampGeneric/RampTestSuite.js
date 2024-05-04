@@ -238,7 +238,6 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence)
         cast.hpc = data.sampleReport.totalHealing;
         cast.cost = cast.freeCast ? 0 : data.sampleReport.manaSpent;
         cast.healing = cast.hpc * cast.cpm;
-        console.log("Spell: " + cast.spell + " Cost: " + cast.cost);
 
         if (cast.fillerSpell) fillerHPM = cast.hpc / cast.cost;
     });
@@ -260,7 +259,13 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence)
     console.log("Time to oom: " + Math.round(manaPool / (usagePer5 - regenPer5) * 5) + "s");
     console.log("Profile HPS: " + totalHealing / 60);
     console.log("Time spent casting" + totalCastTime);
+    console.log("Total Healing" + totalHealing);
 
+    const healingBreakdown = {}
+    castProfile.forEach(spell => {
+        healingBreakdown[spell.spell] = (healingBreakdown[spell.spell] || 0) + Math.round(spell.healing / totalHealing * 10000) / 100;
+    })
+    console.log(healingBreakdown);
     return {
         avgHPS: totalHealing / totalCastTime,
         avgHPM: totalHealing / costPerMinute,

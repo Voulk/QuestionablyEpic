@@ -18,7 +18,7 @@ describe("Test APL", () => {
             intellect: 3200,
             spirit: 1800,
             spellpower: 1800,
-            haste: 2000,
+            haste: 2005,
             crit: 1000,
             mastery: 1200,
             stamina: 5000,
