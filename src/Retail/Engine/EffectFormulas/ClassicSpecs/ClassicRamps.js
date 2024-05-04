@@ -202,13 +202,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, talents, state, stats, CLASSICCONSTANTS);
 
-    const baseStats = applyRaidBuffs(state, stats);
-    
+    const baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
+    console.log(baseStats);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
 
-            if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][1], buffName);
+            if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][0], buffName);
             else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
             else if (buffName === "Judgements of the Pure") {
 

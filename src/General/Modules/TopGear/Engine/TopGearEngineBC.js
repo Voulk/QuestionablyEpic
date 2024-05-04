@@ -13,6 +13,9 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
+import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -160,6 +163,42 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
       result.itemsCompared = count;
       return result;
     }
+}
+
+// We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
+// We want to run a CastProfile for each spell but we can optimize that slightly.
+// Instead we'll run a simulated CastProfile baseline.
+// Rejuv is our baseline spell
+function scoreDruidSet(baselineHealing, statProfile, player, userSettings) {
+  const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+  const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: statProfile }
+
+  const druidCastProfile = [
+    //{spell: "Tranquility", cpm: 0.3},
+    {spell: "Swiftmend", cpm: 3.4},
+    {spell: "Wild Growth", cpm: 3.5},
+    {spell: "Rejuvenation", cpm: 12 * (144 / 180), fillerSpell: true, castOverride: 1.0},
+    {spell: "Nourish", cpm: 8.5},
+    {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
+    {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
+    {spell: "Rolling Lifebloom", cpm: 6, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
+
+    // Tree of Life casts
+    {spell: "Lifebloom", cpm: 13 * (36 / 180)}, // Tree of Life - Single stacks
+    {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true} // Tree of Life OOC Regrowths
+  ]
+
+  druidCastProfile.forEach(spell => {
+      spell.castTime = druidSpells[spell.spell][0].castTime;
+      spell.hpc = 0;
+      spell.cost = 0;
+      spell.healing = 0;
+  })
+  const result = runCastProfileSuite(playerData, incCastProfile, runCastSequence, reporting = false);
+
+  // Deal with mana
+
+  return result.totalHealing / 60;
 }
 
 
@@ -476,17 +515,23 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     }
     bonus_stats = mergeBonusStats(effectStats);
 
-    for (var stat in setStats) {
-      if (stat === "hps") {
-        hardScore += setStats[stat];
-        //console.log("Adding HPS score of " + setStats[stat]);
-      } else if (stat === "dps") {
-        continue;
-      } else if (stat !== "stamina") {
-        hardScore += (setStats[stat] * adjusted_weights[stat]) || 0;
-        //console.log("Adding " + (setStats[stat] * adjusted_weights[stat]) + " to hardscore for stat " + stat + " with stat weight: " + adjusted_weights[stat]);
+    if (player.spec === "Restoration Druid Classic") {
+      hardScore = scoreDruidSet(baseHPS, setStats, player, userSettings);
+    }
+    else {
+      for (var stat in setStats) {
+        if (stat === "hps") {
+          hardScore += setStats[stat];
+          //console.log("Adding HPS score of " + setStats[stat]);
+        } else if (stat === "dps") {
+          continue;
+        } else if (stat !== "stamina") {
+          hardScore += (setStats[stat] * adjusted_weights[stat]) || 0;
+          //console.log("Adding " + (setStats[stat] * adjusted_weights[stat]) + " to hardscore for stat " + stat + " with stat weight: " + adjusted_weights[stat]);
+        }
       }
     }
+
   
     //console.log(JSON.stringify(setStats));
     //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);

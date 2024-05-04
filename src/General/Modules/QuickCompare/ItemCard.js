@@ -118,7 +118,7 @@ export default function ItemCard(props) {
   let socket = getSockets(item, gameType);
 
   const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && isVault ? 'selectedVault' : item.isEquipped ? 'selected' : isVault ? 'vault' : 'root';
-  console.log(item);
+
   /*
   const socket = item.socket ? (
     <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>

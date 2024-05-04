@@ -74,9 +74,9 @@ export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) =>
     return mult;
 }
 
-export const buffSpell = (fullSpell, buffPerc, type = "Additive") => {
-    if (type === "Multi") fullSpell[0].multScaling += buffPerc;
-    else fullSpell[0].multScaling += buffPerc;
+export const buffSpell = (fullSpell, buffPerc, type = "additive") => {
+    if (type === "multi") fullSpell[0].multScaling = fullSpell[0].multScaling * buffPerc;
+    else fullSpell[0].additiveScaling = (fullSpell[0].additiveScaling || 0) + buffPerc;
     /*
     else {
         fullSpell.forEach(slice => {

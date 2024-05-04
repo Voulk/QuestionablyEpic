@@ -179,8 +179,6 @@ export default function ItemBar(props) {
         setItemTertiary("");
       }
           
-      console.log(item);
-      console.log(player.getActiveItems(activeSlot));
     };
 
   };

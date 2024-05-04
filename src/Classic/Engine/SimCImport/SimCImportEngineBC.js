@@ -1,5 +1,5 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
-import { calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
+import { autoAddItems, calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "General/Modules/Player/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { suffixDB } from "Classic/Databases/SuffixDB";
@@ -9,7 +9,7 @@ export function runBCSimC(simCInput, player, contentType, setErrorMessage, snack
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
-  if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
+  if (true) {//checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
     player.clearActiveItems();
 
     /*  Loop through our SimC string. 
@@ -31,6 +31,7 @@ export function runBCSimC(simCInput, player, contentType, setErrorMessage, snack
         processItem(line, player, contentType);
       }
     }
+    autoAddItems(player, "Raid", "Classic");
     //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
     snackHandler();
     closeDialog();

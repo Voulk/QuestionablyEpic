@@ -228,7 +228,7 @@ function calculateBuffUptime(data) {
     return buffUptimes;
 }
 
-export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence) => {
+export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence, reporting = false) => {
     const castProfile = JSON.parse(JSON.stringify(incCastProfile));
     const totalCastTime = castProfile.reduce((acc, spell) => acc + (spell.castOverride ? spell.castOverride : Math.max(spell.castTime, 1.5)) * spell.cpm, 0);
     let fillerHPM = 0;
@@ -242,10 +242,12 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence)
         if (cast.fillerSpell) fillerHPM = cast.hpc / cast.cost;
     });
 
-    console.log(castProfile);
+
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
     const totalHealing = castProfile.reduce((acc, spell) => acc + spell.healing, 0);
 
+    // We don't want to run this every iteration since it adds expense.
+    if (reporting) {
     // Over a fight
     const fightLength = 420;
     // Our stats are already buffed in the main profile, but that doesn't help us here where we're independently calculating our mana so we'll apply them again.
@@ -266,7 +268,11 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence)
         healingBreakdown[spell.spell] = (healingBreakdown[spell.spell] || 0) + Math.round(spell.healing / totalHealing * 10000) / 100;
     })
     console.log(healingBreakdown);
+    }
+
+
     return {
+        totalHealing: totalHealing,
         avgHPS: totalHealing / totalCastTime,
         avgHPM: totalHealing / costPerMinute,
         manaSpend: costPerMinute,

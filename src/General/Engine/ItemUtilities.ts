@@ -896,6 +896,40 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
   return stats;
 }
 
+// It is useful to have some items to work with.
+export function autoAddItems(player: Player, contentType: contentTypes, gameType: gameTypes) {
+  let itemDB = getItemDB(gameType);
+
+  const acceptableArmorTypes = getValidArmorTypes(player.spec);
+  const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+
+
+  itemDB = itemDB.filter(
+    (key: any) =>
+      (!("classReq" in key) || key.classReq.includes(player.spec)) &&
+      (key.itemLevel === 359) && 
+      (key.slot === "Back" ||
+        (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
+        key.slot === "Holdable" ||
+        key.slot === "Offhand" ||
+        key.slot === "Shield" ||
+        (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
+        (key.itemClass === 2 && player.spec === "Holy Priest Classic")), // Wands
+        );
+  
+  console.log(itemDB.length);
+  itemDB.forEach((item: any) => {
+    const slot = getItemProp(item.id, "slot", gameType);
+    if ((slot === 'Trinket' && item.levelRange) || 
+        (slot !== 'Trinket' && item.stats.intellect)) {
+      const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
+      player.activeItems.push(newItem);
+    }
+
+  })
+
+  
+}
 
 
 // Return an item score.

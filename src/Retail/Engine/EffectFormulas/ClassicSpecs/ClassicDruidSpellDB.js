@@ -35,7 +35,8 @@ export const CLASSICDRUIDSPELLDB = {
         coeff: 0.266, 
         flat: 2598,
         expectedOverheal: 0.2,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 2}
     }],
     "Regrowth": [{
         // Regrowth direct heal portion
@@ -46,7 +47,8 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 3579,
         coeff: 0.2936, 
         expectedOverheal: 0.2,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 2}
     },
     {
         // Regrowth HoT portion
@@ -57,7 +59,8 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 361,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
-        secondaries: ['crit', 'mastery']
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 2}
     }],
     "Lifebloom": [{
         // 
@@ -105,7 +108,8 @@ export const CLASSICDRUIDSPELLDB = {
         coeff: 0.806, 
         flat: 7863,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 2},
     }],
     "Swiftmend": [{
         // Regrowth direct heal portion
@@ -116,7 +120,8 @@ export const CLASSICDRUIDSPELLDB = {
         coeff: 0.536, 
         flat: 5229,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'] 
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 2},
     }],
     "Wild Growth": [
     {
@@ -178,14 +183,7 @@ export const CLASSICDRUIDSPELLDB = {
         type: "extension",
         castTime: 0, 
         cost: 0, 
-        extensionList: ["Rejuvenation", "Regrowth", "Wild Growth", "Cenarion Ward", "Spring Blossoms", "Adaptive Swarm", "Lifebloom"],
-        extensionDuration: 6,
-    },
-    {
-        type: "buff",
-        buffType: "periodicSpeed",
-        buffDuration: 6,
-        value: 1.25,
+        buffDuration: 25,
     }],
 
     "Wrath": [{
@@ -214,15 +212,17 @@ const offspecTalents = {
 
     furor: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.manaPool *= (1 + 0.05 * points);
-    }}, 
+    }},
+
     naturesMajesty: {points: 2, maxPoints: 2, icon: "inv_staff_01", id: 35363, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.crit += (180 * 2 * points);
     }},
     genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 57810, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        const buffValue = 1 + 0.02 * points;
+        const buffValue = 0.02 * points;
         // TODO: Assumed Efflo doesn't count which is why Swiftmend is on the node.
         buffSpell(spellDB["Rejuvenation"], buffValue, "additive"); 
         buffSpell(spellDB["Swiftmend"], buffValue, "additive");
+        buffSpell(spellDB["Lifebloom"], buffValue, "additive"); // TODO: Change to HoT only.
         buffSpell(spellDB["Wild Growth"], buffValue, "additive");
         //buffSpell(spellDB["Regrowth"], buffValue, "additive", 1);
 
@@ -232,26 +232,55 @@ const offspecTalents = {
 
 // Resto talents
 const specTalents = {
+    blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        buffSpell(spellDB["Rejuvenation"], 0.02 * points, "additive");
+    }}, 
 
-    // Bugged in beta
+    naturalShapeshifter: {points: 2, maxPoints: 2, icon: "spell_nature_wispsplode", id: 17003, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Tree of Life"][0].buffDuration += 6;
+        spellDB["Tree of Life"][0].cost *= (1 - 0.1 * points);
+        // Not included: Making Cat cheaper.
+    }}, 
+
+
     naturalist: {points: 2, maxPoints: 2, icon: "spell_nature_healingtouch", id: 17070, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Healing Touch"][0].castTime -= (0.25 * points);
         spellDB["Nourish"][0].castTime -= (0.25 * points);
     }}, 
 
-    improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Rejuvenation"], 0.05 * points, "additive");
+    heartOfTheWild: {points: 3, maxPoints: 3, icon: "spell_holy_blessingofagility", id: 17003, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        state.intellect *= (0.02 * points + 1);
     }}, 
-    blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Rejuvenation"], 0.02 * points, "additive");
-    }}, 
+
     masterShapeshifter: {points: 1, maxPoints: 1, icon: "ability_druid_mastershapeshifter", id: 48411, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         state.healingAura *= 1.04;
     }},
-    naturesBounty: {points: 3, maxPoints: 3, icon: "spell_nature_resistnature", id: 17074, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Regrowth"][0].statMods = {'crit': 0.6}
-        spellDB["Regrowth"][1].statMods = {'crit': 0.6}
+
+    improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        buffSpell(spellDB["Rejuvenation"], 0.05 * points, "additive");
     }}, 
+    livingSeed: {points: 3, maxPoints: 3, icon: "ability_druid_giftoftheearthmother", id: 48496, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Regrowth"][0].statMods.critEffect = 2.6;
+        spellDB["Regrowth"][1].statMods.critEffect = 2.6;
+        spellDB["Swiftmend"][0].statMods.critEffect = 2.6;
+        spellDB["Healing Touch"][0].statMods.critEffect = 2.6;
+        spellDB["Nourish"][0].statMods.critEffect = 2.6;
+    }}, 
+
+
+
+    naturesBounty: {points: 3, maxPoints: 3, icon: "spell_nature_resistnature", id: 17074, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Regrowth"][0].statMods.crit = 0.6;
+        spellDB["Regrowth"][1].statMods.crit = 0.6;
+    }}, 
+
+    empoweredTouch: {points: 2, maxPoints: 2, icon: "ability_druid_empoweredtouch", id: 33879, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // TODO: Model Lifebloom refresh properly.
+        buffSpell(spellDB["Healing Touch"], 0.05 * points, "additive");
+        //buffSpell(spellDB["Regrowth"], 0.05 * points, "additive");
+        buffSpell(spellDB["Nourish"], 0.05 * points, "additive");
+    }}, 
+
     efflorescence: {points: 3, maxPoints: 3, icon: "inv_misc_herb_talandrasrose", id: 34151, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         const efflo = {
             type: "classic periodic",
