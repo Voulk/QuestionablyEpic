@@ -14,9 +14,8 @@ import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
-import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
-import { runCastProfileSuite, runClassicStatSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
-
+import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
+import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -202,9 +201,10 @@ function initializeDruidSet() {
     spell.healing = 0;
   })
   const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
-  const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
-
-  return suite;
+  //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+  const adjSpells = getTalentedSpellDB("Restoration Druid");
+  //console.log(JSON.stringify(adjSpells));
+  return { castProfile: druidCastProfile, spellDB: adjSpells };
 }
 
 // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
@@ -213,6 +213,7 @@ function initializeDruidSet() {
 // Rejuv is our baseline spell
 function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
   let score = 0;
+  const critPercentage = statProfile.crit / 179 / 100 + 1;
   // Evaluate Stats
   // Spellpower
   /*score = (totalHealing + statProfile.spellPower * druidBaseline.weights.spellPower) * 
@@ -220,13 +221,34 @@ function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
               (1.25 * statProfile.mastery / 178 / 100 + 1);
   */
 
-  druidBaseline.baseline.sampleProfile.forEach(spell => {
-    let spellHealing = (spell.healing + statProfile.spellpower * druidBaseline.weights.spellpower) * // TODO: Swap to a spell specificl spellpower weight.
-                        (statProfile.crit / 178 / 100 + 1) * // Add base crit
-                        (1.25 * statProfile.mastery / 178 / 100 + 1.08);
+  druidBaseline.castProfile.forEach(spellProfile => {
+    const fullSpell = druidBaseline.spellDB[spellProfile.spell];
 
-    score += spellHealing;
-    console.log("Spell: " + spell.spell + " Healing: " + spellHealing);
+    fullSpell.forEach(spell => {
+      const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? critPercentage : 1;
+      const additiveScaling = (spell.additiveScaling || 0) + 1
+      const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;
+      let spellHealing = (spell.flat + spell.coeff * statProfile.spellpower) * // TODO: Swap to a spell specificl spellpower weight.
+                          (critMult) * // Add base crit
+                          (masteryMult);
+      
+      // Handle HoT
+      if (spell.type === "classic periodic") {
+        const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(statProfile, "Classic");
+        const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+        
+        const tickCount = Math.round(spell.buffDuration / (adjTickRate));
+        spellHealing = spellHealing * tickCount;
+      }
+      
+      if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
+
+      score += (spellHealing * spellProfile.cpm);
+      //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
+    })
+
+
+
 
     // Haste
 
@@ -236,7 +258,7 @@ function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
   
   //console.log(score);
   // Deal with mana
-
+  //console.log("SCORE: " + score/60)
   return score;
 }
 

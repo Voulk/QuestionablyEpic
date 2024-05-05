@@ -26,16 +26,6 @@ const CLASSICCONSTANTS = {
         "Restoration Shaman": 1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 1, // Soon :)
     },
-    baseMana: {
-        "Restoration Druid": 18635,
-        "Discipline Priest": 20590, 
-        "Holy Paladin": 23422,
-        "Holy Priest": 20590,
-        "Restoration Shaman": 23430, 
-        "Mistweaver Monk": 0, 
-    },
-
-
 
     auraDamageBuff: 1,
     enemyTargets: 1, 

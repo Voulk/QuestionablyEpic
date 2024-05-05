@@ -1,6 +1,8 @@
 
 
 import { getHealth } from "../Generic/RampGeneric/RampBase";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./ClassicDruidSpellDB";
+import { applyTalents, deepCopyFunction } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -11,7 +13,7 @@ import { getHealth } from "../Generic/RampGeneric/RampBase";
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
-export const applyLoadoutEffects = (classicSpells, settings, talents, state, stats, CONSTANTS) => {
+export const applyLoadoutEffects = (classicSpells, settings, state) => {
     const auraHealingBuff = { // THIS IS ADDITIVE WITH OTHER INCREASES
         "Restoration Druid": 0.25,
         "Discipline Priest": 0, // Gets 15% intellect instead.
@@ -19,7 +21,17 @@ export const applyLoadoutEffects = (classicSpells, settings, talents, state, sta
         "Holy Priest": 0.25,
         "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 0, // Soon :)
-    }
+    };
+
+    const baseMana = {
+        "Restoration Druid": 18635,
+        "Discipline Priest": 20590, 
+        "Holy Paladin": 23422,
+        "Holy Priest": 20590,
+        "Restoration Shaman": 23430, 
+        "Mistweaver Monk": 0, 
+    };
+
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
     // since if we compare trinkets like Bell against an empty loadout it would be very undervalued. This gives a fair appraisal when
@@ -42,7 +54,7 @@ export const applyLoadoutEffects = (classicSpells, settings, talents, state, sta
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
         if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
-        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * CONSTANTS.baseMana[state.spec] / 100;
+        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * baseMana[state.spec] / 100;
 
         if (settings.includeOverheal === "No") {
             value.forEach(spellSlice => {
@@ -64,5 +76,17 @@ export const applyLoadoutEffects = (classicSpells, settings, talents, state, sta
 
 
     return classicSpells;
+}
+
+export const getTalentedSpellDB = (spec) => {
+    const spellDB = druidSpells;
+    const playerSpells = deepCopyFunction(spellDB);
+    console.log("Grabbed playerDB");
+    applyTalents({stats: {intellect: 0, crit: 0}, talents: druidTalents}, playerSpells, {intellect: 0, crit: 0})
+    console.log("Talents applied");
+    applyLoadoutEffects(playerSpells, {}, {spec: spec});
+
+    console.log("Loadout effects applied");
+    return playerSpells;
 }
 

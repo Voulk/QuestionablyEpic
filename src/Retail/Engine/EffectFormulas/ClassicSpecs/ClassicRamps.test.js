@@ -5,6 +5,7 @@ import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/C
 import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -66,9 +67,10 @@ describe("Test APL", () => {
             console.log(data);
         }
         else if (testSuite === "Stat") {
+            console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
-            console.log(data);
+            //const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            //console.log(data);
         }
         else if (testSuite === "CastProfile") {
             //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
