@@ -15,12 +15,12 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 3200,
-            spirit: 1800,
-            spellpower: 1800,
-            haste: 2005,
-            crit: 1000,
-            mastery: 1200,
+            intellect: 100,
+            spirit: 1,
+            spellpower: 100,
+            haste: 1,
+            crit: 1,
+            mastery: 1,
             stamina: 5000,
             critMult: 2,
         }
@@ -57,8 +57,8 @@ describe("Test APL", () => {
         })
 
         //const baseSpells = EVOKERSPELLDB;
-        const testSuite = "CastProfile"
-        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+        const testSuite = "Stat"
+        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
         const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
@@ -67,7 +67,7 @@ describe("Test APL", () => {
         }
         else if (testSuite === "Stat") {
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile")
+            const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
             console.log(data);
         }
         else if (testSuite === "CastProfile") {

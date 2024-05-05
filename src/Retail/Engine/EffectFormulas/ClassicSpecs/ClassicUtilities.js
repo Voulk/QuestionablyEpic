@@ -54,7 +54,6 @@ export const applyLoadoutEffects = (classicSpells, settings, talents, state, sta
         // Per Slice scaling
         value.forEach(slice => {
             if (spellInfo.additiveScaling) {
-                console.log("Spell " + key + " has additive scaling of " + spellInfo.additiveScaling + " and auras are " + auraHealingBuff[state.spec])
                 slice.coeff *= (1 + spellInfo.additiveScaling + auraHealingBuff[state.spec]);
                 slice.flat *= (1 + spellInfo.additiveScaling + auraHealingBuff[state.spec]);
             }

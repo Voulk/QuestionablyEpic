@@ -31,8 +31,7 @@ export function runBCSimC(simCInput, player, contentType, setErrorMessage, snack
         processItem(line, player, contentType);
       }
     }
-    autoAddItems(player, "Raid", "Classic");
-    //if (player.getSpec() === "Discipline Priest") adjustStatWeights(player, contentType); // Holding off for now.
+    //autoAddItems(player, "Raid", "Classic");
     snackHandler();
     closeDialog();
     clearSimCInput("");

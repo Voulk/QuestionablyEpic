@@ -917,7 +917,6 @@ export function autoAddItems(player: Player, contentType: contentTypes, gameType
         (key.itemClass === 2 && player.spec === "Holy Priest Classic")), // Wands
         );
   
-  console.log(itemDB.length);
   itemDB.forEach((item: any) => {
     const slot = getItemProp(item.id, "slot", gameType);
     if ((slot === 'Trinket' && item.levelRange) || 

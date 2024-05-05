@@ -15,6 +15,7 @@ import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { runCastProfileSuite, runClassicStatSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -101,7 +102,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     // - No reforge at all.
     const reforgeEnabled = true;
     let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
-    const reforgeOptions = ["haste", "spirit"];
+    const reforgeOptions = ["haste"];
     if (reforgeEnabled) {
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
@@ -130,13 +131,14 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     let itemSets = createSets(itemList, wepCombos);
 
 
-    console.log("Sets: " + itemSets.length);
+    console.log("Sets (Post-Reforge): " + itemSets.length);
     
+    const baseline = initializeDruidSet();
 
     itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
-      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel);
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel, baseline);
     }
     itemSets = pruneItems(itemSets);
 
@@ -148,7 +150,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
       differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
     }
-    console.log("Finished differentials");
     //itemSets[0].printSet()
 
     var t1 = performance.now();
@@ -165,14 +166,20 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     }
 }
 
-// We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
-// We want to run a CastProfile for each spell but we can optimize that slightly.
-// Instead we'll run a simulated CastProfile baseline.
-// Rejuv is our baseline spell
-function scoreDruidSet(baselineHealing, statProfile, player, userSettings) {
-  const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
-  const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: statProfile }
+function initializeDruidSet() {
+  const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
 
+
+  const activeStats = {
+    intellect: 100,
+    spirit: 1,
+    spellpower: 100,
+    haste: 1,
+    crit: 1,
+    mastery: 1,
+    stamina: 5000,
+    critMult: 2,
+}
   const druidCastProfile = [
     //{spell: "Tranquility", cpm: 0.3},
     {spell: "Swiftmend", cpm: 3.4},
@@ -189,23 +196,55 @@ function scoreDruidSet(baselineHealing, statProfile, player, userSettings) {
   ]
 
   druidCastProfile.forEach(spell => {
-      spell.castTime = druidSpells[spell.spell][0].castTime;
-      spell.hpc = 0;
-      spell.cost = 0;
-      spell.healing = 0;
+    spell.castTime = druidSpells[spell.spell][0].castTime;
+    spell.hpc = 0;
+    spell.cost = 0;
+    spell.healing = 0;
   })
-  const result = runCastProfileSuite(playerData, incCastProfile, runCastSequence, reporting = false);
+  const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
+  const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
 
+  return suite;
+}
+
+// We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
+// We want to run a CastProfile for each spell but we can optimize that slightly.
+// Instead we'll run a simulated CastProfile baseline.
+// Rejuv is our baseline spell
+function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
+  let score = 0;
+  // Evaluate Stats
+  // Spellpower
+  /*score = (totalHealing + statProfile.spellPower * druidBaseline.weights.spellPower) * 
+              (statProfile.crit / 178 / 100 + 1) *
+              (1.25 * statProfile.mastery / 178 / 100 + 1);
+  */
+
+  druidBaseline.baseline.sampleProfile.forEach(spell => {
+    let spellHealing = (spell.healing + statProfile.spellpower * druidBaseline.weights.spellpower) * // TODO: Swap to a spell specificl spellpower weight.
+                        (statProfile.crit / 178 / 100 + 1) * // Add base crit
+                        (1.25 * statProfile.mastery / 178 / 100 + 1.08);
+
+    score += spellHealing;
+    console.log("Spell: " + spell.spell + " Healing: " + spellHealing);
+
+    // Haste
+
+    // Filler mana
+  })
+
+  
+  //console.log(score);
   // Deal with mana
 
-  return result.totalHealing / 60;
+  return score;
 }
 
 
 
 // A true evaluation function on a set.
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
-function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel) {
+function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel, baseline) {
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
@@ -516,7 +555,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     bonus_stats = mergeBonusStats(effectStats);
 
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseHPS, setStats, player, userSettings);
+      hardScore = scoreDruidSet(baseline, setStats, player, userSettings, baseline);
     }
     else {
       for (var stat in setStats) {
@@ -536,6 +575,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel)
     //console.log(JSON.stringify(setStats));
     //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
     //console.log("Enchants: " + JSON.stringify(enchants));
+
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;

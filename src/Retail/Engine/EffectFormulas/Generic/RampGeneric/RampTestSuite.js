@@ -49,7 +49,9 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
     const fightLength = 420;
 
     const baseline = suiteType === "APL" ? runSuite(playerData, aplList, runCastSequence, "APL") : runCastProfileSuite(playerData, aplList, runCastSequence);
+
     const baselineHPS = baseline.avgHPS;
+    const baselineHealing = baseline.totalHealing;
     const baselineHPM = baseline.fillerHPM; // baseline.avgHPM; // Change to only use filler spells.
 
     const baselineMana = getManaRegen(playerData.stats, playerData.spec) * 12 * 5;
@@ -59,31 +61,36 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
     stats.forEach(stat => {
         // Change result to be casts agnostic.
         let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-        playerStats[stat] = playerStats[stat] + 400;
+        playerStats[stat] = playerStats[stat] + 10;
         const newPlayerData = {...playerData, stats: playerStats};
-        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).avgHPS;
+        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).totalHealing;
         results[stat] = result;
     });
     const weights = {}
 
     stats.forEach(stat => {
 
-        weights[stat] = Math.round(1000*(results[stat] - baselineHPS) / (results['spellpower'] - baselineHPS))/1000;
+        weights[stat] = Math.round(100*(results[stat] - baselineHealing) / 10)/100; //(results['spellpower'] - baselineHPS))/1000;
     });
 
     const intRegen = getManaRegen({...playerData.stats, 'intellect': playerData.stats['intellect'] + 400}, playerData.spec) * 12 * 5;
     const intManaPool = getManaPool({...playerData.stats, 'intellect': playerData.stats['intellect'] + 400}, playerData.spec) - baselinePool;
-    weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
+    //weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
 
 
     // Compute Mana averages
 
     const spiritRegen = getManaRegen({...playerData.stats, 'spirit': playerData.stats['spirit'] + 400}, playerData.spec) * 12 * 5;
-    weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
-    
+    //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
+    //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / 10)/1000;
 
-    console.log(weights); 
-    return weights;
+    // To return:
+    // A baseline profile (to use for haste weights and mana)
+    // Weights for Crit, Mastery and spellpower.
+    // To form a set score we'll do the following:
+    // - Filler HPM: Filler Spell + (SP x SP weight) + (...crit / mast x crit / mast weight) / fillerCost
+    // - Crit / mast / sp valuation is just a simple effective HPW x stat
+    return {weights: weights, baseline: baseline};
 }
 
 // The stat differential suite takes the stat profile stored on the APL and varies them by +-1000 and then stores the result. 
@@ -145,7 +152,7 @@ function runComparisonSuites(playerData, profiles, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1500; //2600;
+    const iterations = 1000; //2600;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -277,5 +284,6 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence,
         avgHPM: totalHealing / costPerMinute,
         manaSpend: costPerMinute,
         fillerHPM: fillerHPM,
+        sampleProfile: castProfile,
     }
 }

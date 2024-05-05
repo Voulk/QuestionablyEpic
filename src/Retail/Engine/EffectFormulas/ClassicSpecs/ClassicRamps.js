@@ -100,7 +100,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     
     // Mastery special checks
     if (state.spec === "Restoration Druid") {
-        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName)) masteryFlag = true;
+        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName) || state.settings.alwaysMastery) masteryFlag = true;
         else masteryFlag = false;
     }
     else if (state.spec === "Holy Paladin") masteryFlag = false; // We'll handle this separately.
@@ -203,7 +203,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyLoadoutEffects(playerSpells, settings, talents, state, stats, CLASSICCONSTANTS);
 
     const baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
-    console.log(baseStats);
+    //console.log(baseStats);
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {

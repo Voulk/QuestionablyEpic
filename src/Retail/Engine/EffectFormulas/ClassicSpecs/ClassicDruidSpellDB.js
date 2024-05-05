@@ -259,7 +259,7 @@ const specTalents = {
     improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 0.05 * points, "additive");
     }}, 
-    livingSeed: {points: 3, maxPoints: 3, icon: "ability_druid_giftoftheearthmother", id: 48496, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    livingSeed: {points: 0, maxPoints: 3, icon: "ability_druid_giftoftheearthmother", id: 48496, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Regrowth"][0].statMods.critEffect = 2.6;
         spellDB["Regrowth"][1].statMods.critEffect = 2.6;
         spellDB["Swiftmend"][0].statMods.critEffect = 2.6;
@@ -304,7 +304,7 @@ const specTalents = {
             coeff: spellDB["Rejuvenation"][0].coeff * (points * 0.05) * (Math.floor(spellDB["Rejuvenation"][0].buffDuration / spellDB["Rejuvenation"][0].tickData.tickRate)), 
             flat: spellDB["Rejuvenation"][0].flat * (points * 0.05) * (Math.floor(spellDB["Rejuvenation"][0].buffDuration / spellDB["Rejuvenation"][0].tickData.tickRate)),
             expectedOverheal: 0.2,
-            secondaries: ['crit'] 
+            secondaries: ['crit', 'mastery'] 
         }
         spellDB["Rejuvenation"].push(rejuvInitial);
     }}, 
