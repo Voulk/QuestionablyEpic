@@ -12,7 +12,6 @@ function CompetitiveAlternatives(props) {
 
   // const item = props.item
   const differentials = props.differentials;
-  console.log(differentials);
   const gameType = useSelector((state) => state.gameType);
   const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
   const itemQuality = (item, gameType) => {
@@ -31,7 +30,9 @@ function CompetitiveAlternatives(props) {
       else return "#ffffff";
     }
   };
-
+  const getGemString = (item) => {
+    return gameType === "Classic" ? "&gems=" + item.socketedGems.join(':') : "&gems=" + item.gemString;
+  } 
   // TODO: Gems
 
   // Reforges
@@ -90,7 +91,7 @@ function CompetitiveAlternatives(props) {
                           itemArray = [item];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
-                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} forg={getReforgeID(item)}>
+                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} gems={getGemString(item)} forg={getReforgeID(item)}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"

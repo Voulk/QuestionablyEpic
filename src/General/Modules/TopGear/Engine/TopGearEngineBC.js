@@ -138,15 +138,14 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     
     const baseline = initializeDruidSet();
 
-    itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel, baseline);
     }
-    //itemSets = pruneItems(itemSets);
+    
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
-
+    itemSets = pruneItems(itemSets);
     // Build Differentials
     let differentials = [];
     let primeSet = itemSets[0];
