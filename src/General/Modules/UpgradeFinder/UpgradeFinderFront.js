@@ -305,7 +305,7 @@ export default function UpgradeFinderFront(props) {
       const ufSettings = props.playerSettings;
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
       const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
-
+      console.log(result);
       result.id = shortReport.id;
       //sendReport(shortReport);
       shortReport.new = true;

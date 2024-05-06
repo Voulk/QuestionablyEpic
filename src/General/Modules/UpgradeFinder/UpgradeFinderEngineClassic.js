@@ -1,8 +1,7 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
-import ClassicItem from "../Player/ClassicItem";
+import Item from "../Player/Item";
 import { runTopGearBC } from "../TopGear/Engine/TopGearEngineBC";
 import {
-  buildWepCombos,
   calcStatsAtLevel,
   getItemAllocations,
   scoreItem,
@@ -10,6 +9,7 @@ import {
   getValidWeaponTypes,
   getItem,
   filterItemListByType,
+  getItemProp,
 } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
@@ -29,6 +29,9 @@ The core Upgrade Finder loop is as follows:
 
 // This is a copy paste from buildWepCombos.
 // TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it.
+/**
+ * @deprecated
+ */
 export function buildWepCombosUF(player, itemList) {
   let wep_list = [];
   let main_hands = filterItemListByType(itemList, "1H Weapon");
@@ -49,7 +52,7 @@ export function buildWepCombosUF(player, itemList) {
         // If both main hand and off hand are vault items, then we can't make a combination out of them.
         continue;
       } else {
-        let item = new ClassicItem(
+        let item = new Item(
           main_hand.id,
           "Combined Weapon", // TODO
           "CombinedWeapon",
@@ -80,6 +83,38 @@ export function buildWepCombosUF(player, itemList) {
   return wep_list.slice(0, 9);
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
+export function buildNewWepCombosUF(player, itemList) {
+  let wep_list = [];
+  let main_hands = filterItemListByType(itemList, "1H Weapon");
+  let off_hands = filterItemListByType(itemList, "Offhands");
+  let two_handers = filterItemListByType(itemList, "2H Weapon");
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push([two_handers[j]]);
+  }
+
+  return combos
+}
+
 export function runUpgradeFinderBC(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
   //const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
@@ -89,16 +124,17 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
 
   console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
-  const wepList = buildWepCombosUF(player, baseItemList);
+  const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.castModel[contentType];
 
 
   const baseHPS = player.getHPS(contentType);
   //const baseSet = runTopGearBC(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
-  const baseScore = 1000; baseSet.itemSet.hardScore;
+  const baseScore = 1000; //baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
-
+  //console.log(baseSet);
+  console.log(itemPoss)
   for (var x = 0; x < itemPoss.length; x++) {
     completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
   }
@@ -115,12 +151,13 @@ function buildItem(player, rawItem, source) {
   const itemSource = source; //rawItem.sources[0];
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
+  const itemLevel = getItemProp(itemID, "itemLevel", "Classic");
 
-  let item = new ClassicItem(itemID, "", itemSlot);
+  let item = new Item(itemID, "", itemSlot, 0, "", 0, itemLevel, "", "Classic");
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;
-  item.softScore = scoreItem(item, player, "Raid", "Classic");
+  //item.softScore = scoreItem(item, player, "Raid", "Classic");
   item.source = itemSource;
 
   return item;
@@ -128,18 +165,19 @@ function buildItem(player, rawItem, source) {
 
 function buildItemPossibilities(player, contentType, playerSettings) {
   let itemPoss = [];
-  const dungeonDifficulty = playerSettings.dungeon = 6 ? 1 : playerSettings.dungeon;
+  const dungeonDifficulty = 0//playerSettings.dungeon = 6 ? 1 : playerSettings.dungeon;
   // Grab items.
   for (var i = 0; i < classicItemDB.length; i++) {
     const rawItem = classicItemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {
         if (rawItem.sources[0].instanceId === -1) {
-          if (rawItem.sources[0].difficultyId === dungeonDifficulty) {
+          if (true/*rawItem.sources[0].difficultyId === dungeonDifficulty*/) {
             
             const itemSource = rawItem.sources[0];
             //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
             const item = buildItem(player, rawItem, rawItem.sources[0]);
-    
+            item.dropLoc = "Dungeon";
+            item.dropDifficulty = 0; //
             itemPoss.push(item);
           }
         }
@@ -147,6 +185,9 @@ function buildItemPossibilities(player, contentType, playerSettings) {
           const itemSource = rawItem.sources[0];
           //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
           const item = buildItem(player, rawItem, rawItem.sources[0]);
+
+          item.dropLoc = "Raid";
+          item.dropDifficulty = 0; //
   
           itemPoss.push(item);
         }
@@ -195,15 +236,17 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
   let newItemList = [...baseItemList];
   newItemList.push(item);
+
   //console.log(player);
-  const wepList = buildWepCombosUF(player, newItemList);
-  const newTGSet = runTopGearBC(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
+  const wepList = buildNewWepCombosUF(player, newItemList);
+  
+  const newTGSet = runTopGearBC(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
 
-  return { item: item.id, level: item.level, score: differential };
+  return { item: item.id, level: item.level, score: differential, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, };
 }
 
 function checkItemViable(rawItem, player) {

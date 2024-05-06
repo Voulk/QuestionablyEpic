@@ -60,10 +60,11 @@ const returnToSetup = () => {
 };
 
 // Our short report only contains differential information which means we have to set up a few things ourselves.
-const addItemSources = (diffList) => {
+const addItemSources = (diffList, gameType) => {
+
   diffList.forEach((item) => {
-    item.source = getItem(item.item).sources[0];
-    item.slot = getItem(item.item).slot;
+    item.source = getItem(item.item, gameType).sources[0];
+    item.slot = getItem(item.item, gameType).slot;
   });
   
   return diffList;
@@ -103,7 +104,7 @@ export default function UpgradeFinderReport(props) {
 
     if (result !== null/* && checkResult(result)*/) {
 
-      upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes);
+      upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes, gameType);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -113,19 +114,19 @@ export default function UpgradeFinderReport(props) {
     }, []);
 
     if (result !== null) {
-      return upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes);
+      return upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes, gameType);
     }
   
   } //
 
-  function upgradeFinderResultsRetail(result, t, player, tabValue, handleTabChange, classes) {
+  function upgradeFinderResultsRetail(result, t, player, tabValue, handleTabChange, classes, gameType) {
     const ufSettings = result.ufSettings;
     //const report = props.report;
     
 
 
     const itemList = result.itemSet;
-    const itemDifferentials = addItemSources(result.results);
+    const itemDifferentials = addItemSources(result.results, gameType);
     //itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
     itemDifferentials.sort((a, b) => a.rawDiff < b.rawDiff ? 1 : -1);
     return (
@@ -214,7 +215,7 @@ export default function UpgradeFinderReport(props) {
           </Grid>*/}
 
           {/* Crafted Gear */}
-          <Grid item xs={12}>
+          {gameType === "Retail" ? <Grid item xs={12}>
             <UFTabPanel value={tabValue} index={2}>
               <div className={classes.panel}>
                 <Grid container>
@@ -222,10 +223,10 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid> : null}
 
           {/* World Bosses */}
-          <Grid item xs={12}>
+          {gameType === "Retail" ? <Grid item xs={12}>
             <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
@@ -233,7 +234,7 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid>
+          </Grid> : null}
 
           {/* Slots */}
           <Grid item xs={12}>

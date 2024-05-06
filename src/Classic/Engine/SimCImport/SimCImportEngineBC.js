@@ -31,7 +31,7 @@ export function runBCSimC(simCInput, player, contentType, setErrorMessage, snack
         processItem(line, player, contentType);
       }
     }
-    autoAddItems(player, "Raid", "Classic");
+    //autoAddItems(player, "Raid", "Classic");
     snackHandler();
     closeDialog();
     clearSimCInput("");

@@ -28,6 +28,71 @@ export const encounterDB = {
   /*                                         Burning Crusade                                        */
   /* ---------------------------------------------------------------------------------------------- */
 
+  72: {
+    name: {
+      en: "Bastion of Twilight"
+    },
+    bossOrder:
+      [156, 157, 158, 167, 168],
+    bosses: {
+      156: {
+        en: "Halfus Wyrmbreaker",
+      },
+      157: {
+        en: "Valiona and Theralion",
+      },
+      158: {
+        en: "Ascendant Council",
+      },
+      167: {
+        en: "Cho'gall",
+      },
+      168: {
+        en: "Sinestra",
+      }
+    }
+  },
+  73: {
+    name: {
+      en: "Blackwing Descent"
+    },
+    bossOrder: [],
+    bosses: {
+      169: {
+        en: "Omnotron Defense System",
+      },
+      170: {
+        en: "Magmaw",
+      },
+      171: {
+        en: "Atramedes",
+      },
+      172: {
+        en: "Chimaeron",
+      },
+      173: {
+        en: "Maloriak",
+      },
+      174: {
+        en: "Nefarian",
+      }
+    }
+  },
+  74: {
+    name: {
+      en: "Throne of the Four Winds"
+    },
+    bossOrder: [],
+    bosses: {
+      154: {
+        en: "Conclave of Wind",
+      },
+      155: {
+        en: "Al'Akir",
+      }
+    }
+  },
+
   /* ------------------------------------------ Karazhan ------------------------------------------ */
   754: {
     name: {

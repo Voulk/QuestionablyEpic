@@ -128,10 +128,10 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     
     itemList = itemList.concat(reforgedItems);
     }
-    console.log("DD:" + JSON.stringify(itemList.filter(item => item.name === "Dorian's Lost Necklace")))
+
     let itemSets = createSets(itemList, wepCombos);
 
-
+    console.log("Item Count: " + itemList.length);
     console.log("Sets (Post-Reforge): " + itemSets.length);
     
     const baseline = initializeDruidSet();
