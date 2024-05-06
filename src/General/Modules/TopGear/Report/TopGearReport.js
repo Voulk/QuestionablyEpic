@@ -193,6 +193,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       //console.log("Total mana spend: " + (regen + pool))
 
       const totalMana = manaSources.pool + (manaSources.regen) + manaSources.additional.additionalMP5 * 12 * 7;
+      console.log("Total Mana" + totalMana)
 
     }
 

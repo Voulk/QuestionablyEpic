@@ -198,14 +198,16 @@ function initializeDruidSet() {
   druidCastProfile.forEach(spell => {
     spell.castTime = druidSpells[spell.spell][0].castTime;
     spell.hpc = 0;
-    spell.cost = 0;
+    spell.cost = spell.freeCast ? 0 : druidSpells[spell.spell][0].cost * 18635 / 100;
     spell.healing = 0;
   })
+  const costPerMinute = druidCastProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+  console.log("Cost per minute: " + costPerMinute);
   const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
   //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
   const adjSpells = getTalentedSpellDB("Restoration Druid");
   //console.log(JSON.stringify(adjSpells));
-  return { castProfile: druidCastProfile, spellDB: adjSpells };
+  return { castProfile: druidCastProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
 }
 
 // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
@@ -260,13 +262,14 @@ function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
     // Haste
 
     // Filler mana
+    
   })
 
   
   //console.log(score);
   // Deal with mana
   //console.log(JSON.stringify(healingBreakdown));
-  console.log("HPS SCORE: " + score/60)
+  //console.log("HPS SCORE: " + score/60)
   return score;
 }
 
@@ -570,12 +573,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     let effectStats = [];
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
-      //console.log(effectList[x]);
+
       effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "Classic", setStats));
   
     }
     bonus_stats = mergeBonusStats(effectStats);
-    console.log(setStats.spellpower);
+
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
       // 
