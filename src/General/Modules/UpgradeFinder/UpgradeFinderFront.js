@@ -7,7 +7,7 @@ import UpgradeFinderSlider from "./Slider";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { runUpgradeFinder } from "./UpgradeFinderEngine";
-import { runUpgradeFinderBC } from "./UpgradeFinderEngineBC";
+import { runUpgradeFinderBC } from "./UpgradeFinderEngineClassic";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
@@ -304,6 +304,14 @@ export default function UpgradeFinderFront(props) {
     } else if (gameType === "Classic") {
       const ufSettings = props.playerSettings;
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
+      const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
+
+      result.id = shortReport.id;
+      //sendReport(shortReport);
+      shortReport.new = true;
+      props.setUFResult(shortReport);
+      //props.setShowReport(true);
+      history.push("/upgradereport/");
     }
 
   };

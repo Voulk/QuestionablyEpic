@@ -14,6 +14,7 @@ import {
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
+
 /*
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
@@ -23,6 +24,8 @@ The core Upgrade Finder loop is as follows:
 - Print the items in the correct place along with their score differential. 
 - (Extra Feature) Include a summary page that lists the largest score upgrades and where they come from. 
 */
+
+// This entire file could one day be merged into UpgradeFinderEngine. There is quite a bit of overlap.
 
 // This is a copy paste from buildWepCombos.
 // TODO: Make buildWepCombos accept a generic list of items instead of auto-using the players set. Then fold this function into it.
@@ -84,18 +87,15 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
 
   const completedItemList = [];
 
-  // console.log("Running Upgrade Finder. Strap in.");
+  console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildWepCombosUF(player, baseItemList);
   const castModel = player.castModel[contentType];
-  //buildWepCombos(player, false, false); // TODO: DEL
+
 
   const baseHPS = player.getHPS(contentType);
-  const baseSet = runTopGearBC(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel);
-  const baseScore = baseSet.itemSet.hardScore;
-
-  //console.log(wepList);
-  //console.log(baseItemList);
+  //const baseSet = runTopGearBC(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
+  const baseScore = 1000; baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
 

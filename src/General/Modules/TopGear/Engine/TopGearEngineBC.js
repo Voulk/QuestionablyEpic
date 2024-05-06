@@ -83,7 +83,7 @@ function setupPlayer(player, contentType, castModel) {
   return newPlayer;
 }
 
-export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
+export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reforgingOn = true) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -100,13 +100,11 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     // - Stat A -> Stat C or Stat D
     // - Stat B -> Stat C or stat D
     // - No reforge at all.
-    const reforgeEnabled = true;
     let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
     const reforgeFromOptions = ["crit", "mastery", ];
     const reforgeOptions = ["haste", "spirit"];
     
-    console.log("Item List length: " + itemList.length);
-    if (reforgeEnabled) {
+    if (reforgingOn) {
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
         const itemReforgeOptions = reforgeOptions.filter(stat => !itemStats.includes(stat));
