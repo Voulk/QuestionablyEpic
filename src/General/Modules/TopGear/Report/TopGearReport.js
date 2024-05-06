@@ -177,7 +177,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     statList = topSet.setStats;
 
     // Setup Slots / Set IDs.
-    itemList.forEach(item => {
+  itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
     })
@@ -187,12 +187,12 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       console.log(statList);
       const manaSources = {}
       
-      manaSources.pool = getManaPool(statList, player.spec);
+      manaSources.pool = getManaPool(statList, player.spec) + 22000; // Mana pot
       manaSources.regen = (getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12;
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
       //console.log("Total mana spend: " + (regen + pool))
 
-      const totalMana = manaSources.pool + (manaSources.regen) + manaSources.additional.additionalMP5 * 12 * 7;
+      const totalMana = manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7;
       console.log("Total Mana" + totalMana)
 
     }

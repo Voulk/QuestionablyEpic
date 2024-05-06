@@ -138,7 +138,7 @@ export const getManaPool = (currentStats, spec) => {
 // Returns the equivalent MP5 from external mana effects.
 // Innervate currently only works for druid but we could add a setting.
 export const getAdditionalManaEffects = (currentStats, spec) => {
-    let additionalManaPerSecond = 0;
+    let additionalManaPerSecond = 24777 * 0.05;
     const manaSources = {additionalMP5: 0};
     const pool = getManaPool(currentStats, spec);
 
