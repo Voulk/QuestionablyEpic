@@ -41,11 +41,11 @@ export function getValidArmorTypes(spec: string) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
-      return [0, 4, 6, 7]; // Misc + Plate + Shields
+      return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 2, 8]; // Misc + Plate + Shields
+      return [0, 2, 8, 11]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
-      return [0, 3, 6, 9]; // Misc + Plate + Shields
+      return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
     case "Holy Priest Classic":
       return [0, 1]; // Misc + Plate + Shields
     default:
@@ -97,21 +97,21 @@ export function getValidWeaponTypes(spec: string, slot: string) {
         case SPEC.MISTWEAVERMONK:
           return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
-          return [0, 1, 4, 5, 6, 7, 8];
+          return [0, 1, 4, 5, 6, 7, 8, 11];
         case SPEC.PRESEVOKER:
           return [0, 4, 5, 7, 10, 13, 15];
         case SPEC.RESTOSHAMAN:
-          return [0, 1, 4, 5, 10, 13, 15];
+          return [0, 1, 4, 5, 10,  13, 15];
         case SPEC.HOLYPRIEST:
           return [4, 10, 15, 19];
         case SPEC.DISCPRIEST:
           return [4, 10, 15, 19];
         case "Holy Paladin Classic":
-          return [0, 1, 4, 5, 6, 7, 8];
+          return [0, 1, 4, 5, 6, 7, 8, 11];
         case "Restoration Druid Classic":
-          return [4, 5, 6, 10, 13, 15];
+          return [4, 5, 6, 10, 11, 13, 15];
         case "Restoration Shaman Classic":
-          return [0, 1, 4, 5, 10, 13, 15];
+          return [0, 1, 4, 5, 10, 11, 13, 15];
         case "Holy Priest Classic":
           return [4, 10, 15, 19];
         default:
@@ -340,11 +340,11 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.DISCPRIEST:
       return [4, 10, 15, 19];
     case "Holy Paladin Classic":
-      return [0, 1, 4, 5, 6, 7, 8];
+      return [0, 1, 4, 5, 6, 7, 8, 11];
     case "Restoration Druid Classic":
-      return [4, 5, 6, 10, 13, 15];
+      return [4, 5, 6, 10, 11, 13, 15];
     case "Restoration Shaman Classic":
-      return [0, 1, 4, 5, 6, 10, 13, 15];
+      return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
       return [4, 10, 15, 19];
     default:

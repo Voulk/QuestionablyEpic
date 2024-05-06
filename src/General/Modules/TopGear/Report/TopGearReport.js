@@ -175,13 +175,13 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-    console.log(differentials);
+
     // Setup Slots / Set IDs.
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
     })
-    console.log(itemList);
+
 
     if (gameType === "Classic") {
       console.log(statList);
@@ -191,9 +191,9 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       manaSources.regen = (getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12;
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
       //console.log("Total mana spend: " + (regen + pool))
-      console.log(manaSources);
+
       const totalMana = manaSources.pool + (manaSources.regen) + manaSources.additional.additionalMP5 * 12 * 7;
-      console.log(totalMana);
+
     }
 
     // Build Vault items

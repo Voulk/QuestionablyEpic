@@ -16,6 +16,8 @@ import { getItemSet } from "Classic/Databases/ItemSetsDB"
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+import { gemDB } from "Databases/GemDB";
+import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -168,7 +170,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 function initializeDruidSet() {
   const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
 
-
   const activeStats = {
     intellect: 100,
     spirit: 1,
@@ -190,8 +191,8 @@ function initializeDruidSet() {
     {spell: "Rolling Lifebloom", cpm: 6, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
 
     // Tree of Life casts
-    {spell: "Lifebloom", cpm: 13 * (36 / 180)}, // Tree of Life - Single stacks
-    {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true} // Tree of Life OOC Regrowths
+    {spell: "Lifebloom", cpm: 13 * (36 / 180), bonus: 1.15}, // Tree of Life - Single stacks
+    {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true, bonus: 1.15} // Tree of Life OOC Regrowths
   ]
 
   druidCastProfile.forEach(spell => {
@@ -213,6 +214,9 @@ function initializeDruidSet() {
 // Rejuv is our baseline spell
 function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
   let score = 0;
+  const healingBreakdown = {};
+
+  const spellpower = statProfile.intellect + statProfile.spellpower;
   const critPercentage = statProfile.crit / 179 / 100 + 1;
   // Evaluate Stats
   // Spellpower
@@ -225,12 +229,14 @@ function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
     const fullSpell = druidBaseline.spellDB[spellProfile.spell];
 
     fullSpell.forEach(spell => {
+      const genericMult = 1.04 * (spellProfile.bonus ? spellProfile.bonus : 1);
       const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? critPercentage : 1;
       const additiveScaling = (spell.additiveScaling || 0) + 1
       const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;
-      let spellHealing = (spell.flat + spell.coeff * statProfile.spellpower) * // TODO: Swap to a spell specificl spellpower weight.
+      let spellHealing = (spell.flat + spell.coeff * spellpower) * // TODO: Swap to a spell specificl spellpower weight.
                           (critMult) * // Add base crit
-                          (masteryMult);
+                          (masteryMult) *
+                          genericMult;
       
       // Handle HoT
       if (spell.type === "classic periodic") {
@@ -241,9 +247,10 @@ function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
         spellHealing = spellHealing * tickCount;
       }
       
-      if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
-
+      //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
+      healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + spellHealing;
       score += (spellHealing * spellProfile.cpm);
+
       //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
     })
 
@@ -258,7 +265,8 @@ function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
   
   //console.log(score);
   // Deal with mana
-  //console.log("SCORE: " + score/60)
+  //console.log(JSON.stringify(healingBreakdown));
+  console.log("HPS SCORE: " + score/60)
   return score;
 }
 
@@ -273,14 +281,13 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
-    
+
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
         effectList = effectList.concat(getItemSet(set, setBonuses[set]));
       }
     }
-
     let enchants = {};
   
     let bonus_stats = {
@@ -306,7 +313,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     };
 
     // Talents
-    let talent_stats = {
+    let gemStats = {
       intellect: 0,
       spellpower: 0,
       spirit: 0,
@@ -385,19 +392,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       enchants['CombinedWeapon'] = "Power Torrent"
     }
 
-    // ----- SOCKETS -----
-    /*
-    if (userSettings.gemRarity !== "none") {
-      var s0 = performance.now();
-      const optimalGems = gemGear(builtSet.itemList, adjusted_weights, userSettings)
-      //hardScore += optimalGems.score;
-      builtSet.bcSockets = optimalGems;
-      const gemStats = getGemStatLoadout(optimalGems.socketsAvailable, optimalGems.socketedPieces, optimalGems.socketedColors);
-      compileStats(setStats, gemStats); //TODO
-      builtSet.socketInformation = optimalGems;
-      var s1 = performance.now();
-    }
-    */
 
     // Handle sockets
     // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
@@ -420,7 +414,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
                           yellow: adjusted_weights.intellect * 20 + adjusted_weights.haste * 20}
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
-
+    
       // We will optimize yellow gems in three steps:
       // - Cycle through gear and check if there are red / yellow, yellow / yellow or pure yellow sockets. If we've found enough to fulfill our quota, stop. Else:
       // - Place them in red sockets. If we've found enough to fulfill our quota, stop. Else:
@@ -467,12 +461,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
             })
             gemScores.push(pairedStrat);
           }
-          
-
         }
       });
 
-      
       // == Check yellow replacements ==
       builtSet.itemList.forEach((item, index) => {
         const sockets = item.classicSockets.sockets;
@@ -495,8 +486,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
               score += scoreSocketBonus(item.classicSockets.bonus);
             }
 
-            
-            //console.log(item.socketedGems);
+
             gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score});
             itemIndex++;
           }
@@ -509,13 +499,25 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
         builtSet.itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
       } 
 
+    // Lastly, we need to actually add the stats from socketed gems.
+    const socketedGemStats = [];
+    builtSet.itemList.forEach(item => {
+      item.socketedGems.forEach(gemID => {
+        socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
+      });
 
-      // Once we've fulfilled our quota, we'll sort our collection by strength gained. Select from the start of the array until our yellow quota is filled.
+      // Check bonus. We can maybe do this doing the prior step and just flag it.
+    });
+    const compiledGems = socketedGemStats.reduce((acc, obj) => {
+      for (const [key, value] of Object.entries(obj)) {
+          acc[key] = (acc[key] || 0) + value;
+      }
+      return acc;
+    }, {});
 
-    // Cycle through each item. Do a basic stat comparison to see if socket bonus is worth it. 
-    // Place each remaining gem.
+    compileStats(setStats, compiledGems);
 
-    
+
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
@@ -535,6 +537,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
 
     // This can be properly formalized.
 
+
     /*
     if (player.getSpec() === "Holy Paladin Classic") {
       talent_stats.intellect = setStats.intellect * 0.1;
@@ -546,10 +549,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       talent_stats.spellpower = (setStats.intellect + talent_stats.intellect) * 0.15;
       talent_stats.crit = 4 * 35; // Blessing of the Eternals
     }
-    else if (player.getSpec() === "Restoration Druid Classic") {
-      // Also gets 30% of spirit MP5 as MP5
-      talent_stats.spirit = (setStats.spirit) * 0.15;
-    }
+
     else if (player.getSpec() === "Holy Priest Classic") {
       // Also gets 30% of spirit MP5 as MP5
       //talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
@@ -575,6 +575,14 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
   
     }
     bonus_stats = mergeBonusStats(effectStats);
+    console.log(setStats.spellpower);
+    applyRaidBuffs({}, setStats);
+    if (player.getSpec() === "Restoration Druid Classic") {
+      // 
+      setStats.intellect *= 1.06;
+      // mana Pool
+      setStats.crit += 4 * 179;
+    }
 
     if (player.spec === "Restoration Druid Classic") {
       hardScore = scoreDruidSet(baseline, setStats, player, userSettings, baseline);
@@ -592,11 +600,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
         }
       }
     }
-
-  
-    //console.log(JSON.stringify(setStats));
-    //console.log("Soft Score: " + builtSet.sumSoftScore + ". Hard Score: " + hardScore);
-    //console.log("Enchants: " + JSON.stringify(enchants));
 
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
