@@ -3,6 +3,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
+import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -57,8 +58,16 @@ export default function ItemCardReport(props) {
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-  const reforgeText = /*gameType === "Classic" && item.flags && item.flags.includes("reforge") ?*/ <div style={{ fontSize: 12, color: "orange" }}>{item.flags.filter(flag => flag.includes("Reforge"))[0]}</div> /*: null;*/
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  
+  let reforgeText = null;
+  let reforgeID = null;
+  if (gameType === "Classic" && item.flags.filter(flag => flag.includes("Reforged")).length > 0) {
+    const reforge = item.flags.filter(flag => flag.includes("Reforged"))[0];
+
+    reforgeText = /*gameType === "Classic" && item.flags && item.flags.includes("reforge") ?*/ <div style={{ fontSize: 12, color: "orange" }}>{item.flags.filter(flag => flag.includes("Reforged"))[0]}</div> /*: null;*/
+    reforgeID = reforgeIDs[reforge];
+  }
 
   
 
@@ -169,7 +178,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} forg={113} domain={wowheadDom} gems={gemString}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} forg={reforgeID ? reforgeID : 0} domain={wowheadDom} gems={gemString}>
                     <img
                       alt="img"
                       width={44}

@@ -4,6 +4,7 @@ import { Paper, Typography, Divider, Grid } from "@mui/material";
 import { getGemIcon, getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import { reforgeIDs } from "Databases/ReforgeDB";
 
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
@@ -13,7 +14,7 @@ function CompetitiveAlternatives(props) {
   const differentials = props.differentials;
   console.log(differentials);
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
       const isLegendary = false; // item.effect.type === "spec legendary";
@@ -30,6 +31,22 @@ function CompetitiveAlternatives(props) {
       else return "#ffffff";
     }
   };
+
+  // TODO: Gems
+
+  // Reforges
+  //let reforgeText = null;
+  const getReforgeID = (item) => {
+    if (gameType === "Classic" && item.flags.filter(flag => flag.includes("Reforged")).length > 0) {
+      const reforge = item.flags.filter(flag => flag.includes("Reforged"))[0];
+  
+      //reforgeText = /*gameType === "Classic" && item.flags && item.flags.includes("reforge") ?*/ <div style={{ fontSize: 12, color: "orange" }}>{item.flags.filter(flag => flag.includes("Reforged"))[0]}</div> /*: null;*/
+      console.log(reforgeIDs[reforge])
+      return reforgeIDs[reforge];
+    }
+    else return 0;
+  }
+
 
   /* -------------------------------------- Rounding Function ------------------------------------- */
   const roundTo = (value, places) => {
@@ -73,7 +90,7 @@ function CompetitiveAlternatives(props) {
                           itemArray = [item];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
-                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom}>
+                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} forg={getReforgeID(item)}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"

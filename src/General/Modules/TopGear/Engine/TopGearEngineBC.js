@@ -113,13 +113,13 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
         itemStats.forEach(fromStat => {
           // for each stat, add one version that trades a portion of it for another.
-          if (reforgeFromOptions.includes(fromStat)) {
+          if (reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
             itemReforgeOptions.forEach(targetStat => {
               const newItem = JSON.parse(JSON.stringify(item));
              // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
               newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
               newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
-              
+              newItem.uniqueHash = Math.random().toString(36).substring(7);
               //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
               newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
               reforgedItems.push(newItem);
@@ -130,7 +130,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     
     itemList = itemList.concat(reforgedItems);
     }
-
+    console.log("DD:" + JSON.stringify(itemList.filter(item => item.name === "Dorian's Lost Necklace")))
     let itemSets = createSets(itemList, wepCombos);
 
 
@@ -143,7 +143,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     for (var i = 0; i < itemSets.length; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel, baseline);
     }
-    itemSets = pruneItems(itemSets);
+    //itemSets = pruneItems(itemSets);
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
 
@@ -489,6 +489,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       hardScore = scoreDruidSet(baseline, setStats, player, userSettings, baseline);
     }
     else {
+      console.log("DOING OLD SCORING");
       for (var stat in setStats) {
         if (stat === "hps") {
           hardScore += setStats[stat];
@@ -501,7 +502,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
         }
       }
     }
-
+    //console.log("END SCORE: " + hardScore);
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
