@@ -18,8 +18,24 @@ const GLOBALCONST = {
         "Holy Priest": 0.012375,
         "Restoration Shaman": 0.02201, 
         "Mistweaver Monk": 1, // Soon :)
-    }
+    },
 
+    masteryMod: {
+        "Restoration Druid": 1.25,
+        "Discipline Priest": 1, 
+        "Holy Paladin": 1.5,
+        "Holy Priest": 1,
+        "Restoration Shaman": 1, 
+        "Mistweaver Monk": 0, 
+    },
+
+
+
+}
+
+export const getMastery = (currentStats, spec) => {
+    const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
+    return 1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100)
 }
 
 const getSpellFlat = (spell, flatBonus = 0) => {
@@ -33,8 +49,8 @@ const getSpellFlat = (spell, flatBonus = 0) => {
  * @param {object} currentStats A players current stats, including any buffs.
  * @returns The raw damage or healing of the spell.
  */
-export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0, masteryFlag = false) => {
-    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.spellpower) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants, masteryFlag); // Multiply our spell coefficient by int and secondaries.
+export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFlag = false) => {
+    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.spellpower) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, masteryFlag); // Multiply our spell coefficient by int and secondaries.
 }
 
 /**
@@ -44,43 +60,135 @@ export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0, m
  * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
  * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
  */
-export const getStatMult = (currentStats, stats, statMods, specConstants, masteryFlag) => {
+export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) => {
     let mult = 1;
-    const baseMastery = specConstants.masteryMod / 100 * 8; // Every spec owns 8 mastery points baseline
-
-    const critChance = /*specConstants.baseCrit*/ 0 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
-    const critMult = (currentStats['critMult'] || 1.5) + (statMods['critEffect'] || 0);
+    const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
+    
+    const critChance = GLOBALCONST.baseCrit[spec] + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
+    const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
-    if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
+    if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100) * 1/*specConstants.masteryEfficiency*/);
 
     return mult;
 }
 
-export const buffSpell = (fullSpell, buffPerc) => {
-    fullSpell.forEach(slice => {
-        if ('coeff' in slice) slice.coeff *= buffPerc;
-    })
+export const buffSpell = (fullSpell, buffPerc, type = "additive") => {
+    if (type === "multi") fullSpell[0].multScaling = fullSpell[0].multScaling * buffPerc;
+    else fullSpell[0].additiveScaling = (fullSpell[0].additiveScaling || 0) + buffPerc;
+    /*
+    else {
+        fullSpell.forEach(slice => {
+            if ('coeff' in slice) slice.coeff *= buffPerc;
+            if ('flat' in slice) slice.flat *= buffPerc;
+        })
+    }*/
+
 }
 
-export const applyRaidBuffs = (state) => {
+export const applyRaidBuffs = (state, stats) => {
     // Crit
-    state.currentStats.crit += 5 * 179;
+    stats.crit += 5 * 179;
 
     // 5% spell haste
-    state.currentStats.haste += 5 * 128;
+    //stats.haste += 5 * 128;
 
-    // 10% spell power
-    state.currentStats.spellPower *= 1.1;
+
 
     // 5% base stats - The added intellect also becomes spell power.
-    state.currentStats.intellect *= 1.05;
-    state.currentStats.spirit *= 1.05;
+    stats.intellect *= 1.05;
+    stats.spirit *= 1.05;
     
     // Max mana
     state.manaPool *= 1.06;
 
+    // Armor bonus
+    stats.intellect *= 1.05;
+
     // Mana Spring etc
 
+    // Add Int to spell power.
+    stats.spellpower +=  stats.intellect;
+    // 10% spell power
+    stats.spellpower *= 1.1;
+
+    return stats;
+
+    //console.log(state.currentStats);
+}
+
+
+// Returns MP5.
+export const getManaRegen = (currentStats, spec) => {
+    const inCombatRegen = {
+        "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
+        "Restoration Druid": 0.5,
+    }
+    return (1171 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
+}
+
+export const getManaPool = (currentStats, spec) => {
+    if (spec.includes("Restoration Druid")) return (24777 + currentStats.intellect * 15) * 1.02 * 1.15; // Furor
+    else return (24777 + currentStats.intellect * 15) * 1.02;
+}
+
+
+
+// Returns the equivalent MP5 from external mana effects.
+// Innervate currently only works for druid but we could add a setting.
+export const getAdditionalManaEffects = (currentStats, spec) => {
+    let additionalManaPerSecond = 24777 * 0.05;
+    const manaSources = {additionalMP5: 0};
+    const pool = getManaPool(currentStats, spec);
+
+
+    const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
+    manaSources["Replenishment"] = replenishment;
+    additionalManaPerSecond += replenishment;
+
+    if (spec.includes("Holy Paladin")) {
+        // Divine Plea
+        additionalManaPerSecond += (pool * 0.12 / 120 * 5);
+        manaSources["Divine Plea"] = (pool * 0.12 / 120 * 5);
+    }
+    else if (spec.includes("Restoration Druid")) {
+        // Innervate
+        additionalManaPerSecond += (pool * 0.2 / 180 * 5);
+        manaSources["Innervate"] = (pool * 0.2 / 180 * 5);
+
+        // Revitalize
+        additionalManaPerSecond += (pool * 0.01 * 5 / 60 * 5); // 15 mana, 5 times per minute
+    }
+
+    manaSources.additionalMP5 = additionalManaPerSecond;
+
+    return manaSources;
+}
+
+/**
+ * Get our players active stats. This is made up of our base stats + any buffs. 
+ * Diminishing returns is not in play in this function.
+ * @param {} statArray Our active stats.
+ * @param {*} buffs Our active buffs.
+ * @returns 
+ */
+export const getCurrentStats = (statArray, buffs) => {
+    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
+    statBuffs.forEach(buff => {
+        statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+    });
+
+    //statArray = applyDiminishingReturns(statArray); // TODO: Update Diminishing Returns
+
+    // Check for percentage stat increases which are applied post-DR.
+    // Examples include Power Infusion and the crit portion of Shadow Word: Manipulation.
+    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
+    multBuffs.forEach(buff => {
+        // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / GLOBALCONST.statPoints.haste / 100 + 1) * buff.value)-1) * GLOBALCONST.statPoints.haste * 100;
+        else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
+    });
+
+    return statArray;
 }

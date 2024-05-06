@@ -227,8 +227,56 @@ export default function TopGear(props: any) {
     return topgearOk;
   };
 
+  const getCombinations = (): number => {
+    let itemList = props.player.getSelectedItems();
+    let missingSlots = [];
+    let errorMessage = "";
+    let slotLengths: { [key: string]: number } = {
+      Head: 0,
+      Neck: 0,
+      Shoulder: 0,
+      Back: 0,
+      Chest: 0,
+      Wrist: 0,
+      Hands: 0,
+      Waist: 0,
+      Legs: 0,
+      Feet: 0,
+      Finger: 0,
+      Trinket: 0,
+      "2H Weapon" : 0,
+      "1H Weapon" : 0,
+      "Offhand" : 0,
+    };
+
+    for (var i = 0; i < itemList.length; i++) {
+      let slot = itemList[i].slot;
+      if (slot in slotLengths || slot === "Shield") {
+        if (!itemList[i].vaultItem) {
+           if (slot === "Shield") slotLengths["Offhand"] += 1;
+           else slotLengths[slot] += 1;
+        }
+      }
+    }
+
+    let iterations = 1;
+    // Count iterations
+    for (const key in slotLengths) {
+      if (Object.prototype.hasOwnProperty.call(slotLengths, key)) {
+        if (key === "Finger" || key === "Trinket") iterations *= (slotLengths[key] * (slotLengths[key] -1) / 2);
+        else iterations *= (slotLengths[key] > 0? slotLengths[key] : 1);
+      }
+    }
+    console.log(iterations);
+    return iterations;
+    
+
+
+  }
+
   const checkSlots = (): string[] => {
        /* ------------------ Check that the player has selected an item in every slot. ----------------- */
+       getCombinations();
        let itemList = props.player.getSelectedItems();
        let missingSlots = [];
        let errorMessage = "";
@@ -366,9 +414,11 @@ export default function TopGear(props: any) {
         let newItem: ReportItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
         if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
         if (item.socket) newItem.socket = item.socket;
+        if (item.socketedGems) newItem.socketedGems = item.socketedGems;
         if (item.vaultItem) newItem.vaultItem = item.vaultItem;
         if (item.quality) newItem.quality = item.quality;
         if (item.effect) newItem.effect = item.effect;
+        if (item.flags) newItem.flags = item.flags;
   
         shortReport.itemSet.itemList.push(newItem)
         }
@@ -448,15 +498,22 @@ export default function TopGear(props: any) {
           setBtnActive(true);
         });
     } else if (gameType === "Classic") {
+      console.log("Initiating Top Gear Classic");
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
         .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-        .then((result: TopGearResult) => {
+        .then((result: TopGearResult | null) => {
+          if (result) {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          props.setTopResult(result);
+          const shortResult = shortenReport(result, props.player);
+          if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
+          props.setTopResult(shortResult);
+
           instance.terminate();
           history.push("/report/");
+          }
+
         })
         .catch((err: Error) => {
           // If top gear crashes for any reason, log the error and then terminate the worker.

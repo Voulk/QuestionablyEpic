@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx"
+import { getItemIcon} from "General/Engine/ItemUtilities";
 // import { legendaryImages } from "./LegendaryIcons";
 
 const useStyles = makeStyles({
@@ -78,7 +79,7 @@ export default function TierObject(props) {
                         <img
                           height={40}
                           width={40}
-                          src={set.slots[key].icon}
+                          src={getItemIcon(set.slots[key].id, "Classic")}
                           alt={set.slots[key].id}
                           style={{
                             borderRadius: 4,

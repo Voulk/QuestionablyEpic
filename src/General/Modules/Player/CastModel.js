@@ -189,7 +189,14 @@ class CastModel {
     // Burning Crusade Profiles
     else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.baseStatWeights = {
+        spellpower: 1,
+        intellect: 1.4,
+        spirit: 0.5,
+        mastery: 0.55,
+        crit: 0.49,
+        haste: 0.72,
+      };
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
       this.baseStatWeights = druidDefaultStatWeights(contentType);
@@ -198,7 +205,14 @@ class CastModel {
       this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.baseStatWeights = {
+        spellpower: 1,
+        intellect: 1.4,
+        spirit: 0.5,
+        mastery: 0.55,
+        crit: 0.49,
+        haste: 0.72,
+      };
     } 
     else if (spec === "Discipline Priest Classic") {
       spellList = this.getClassicPriest();

@@ -1,6 +1,11 @@
 
 
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
+import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
+import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -11,25 +16,67 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 16000 * 1.1,
-            haste: 2000,
-            crit: 5400,
-            mastery: 6700,
-            versatility: 2000 + 300,
-            stamina: 29000,
+            intellect: 100,
+            spirit: 1,
+            spellpower: 100,
+            haste: 1,
+            crit: 1,
+            mastery: 1,
+            stamina: 5000,
             critMult: 2,
         }
-    
+
+        const castProfile = [
+            {spell: "Judgement", cpm: 1, hpc: 0},
+            {spell: "Holy Light", cpm: 14, fillerSpell: true},
+            {spell: "Flash of Light", cpm: 2.2},
+            {spell: "Holy Shock", cpm: 9.5},
+            {spell: "Holy Radiance", cpm: 4.5},
+            {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3},
+        ]
+
+        const druidCastProfile = [
+            //{spell: "Tranquility", cpm: 0.3},
+            {spell: "Swiftmend", cpm: 3.4},
+            {spell: "Wild Growth", cpm: 3.5},
+            {spell: "Rejuvenation", cpm: 12 * (144 / 180), fillerSpell: true, castOverride: 1.0},
+            {spell: "Nourish", cpm: 8.5},
+            {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
+            {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
+            {spell: "Rolling Lifebloom", cpm: 6, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
+
+            // Tree of Life casts
+            {spell: "Lifebloom", cpm: 13 * (36 / 180)}, // Tree of Life - Single stacks
+            {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true} // Tree of Life OOC Regrowths
+        ]
+        
+        druidCastProfile.forEach(spell => {
+            spell.castTime = druidSpells[spell.spell][0].castTime;
+            spell.hpc = 0;
+            spell.cost = 0;
+            spell.healing = 0;
+        })
+
         //const baseSpells = EVOKERSPELLDB;
-        //const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+        const testSuite = "Stat"
+        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+        const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
-        //const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
-        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
-        //console.log(data);
+        if (testSuite === "APL") {
+            const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
+            console.log(data);
+        }
+        else if (testSuite === "Stat") {
+            console.log(getTalentedSpellDB("Restoration Druid"));
+            //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
+            //const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            //console.log(data);
+        }
+        else if (testSuite === "CastProfile") {
+            //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+            runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+        }
 
-        //const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
-        //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
-        //console.log(data);
 
         expect(true).toEqual(true);
     })

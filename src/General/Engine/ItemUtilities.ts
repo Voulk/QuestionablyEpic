@@ -41,11 +41,11 @@ export function getValidArmorTypes(spec: string) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
-      return [0, 4, 6, 7]; // Misc + Plate + Shields
+      return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 2, 8]; // Misc + Plate + Shields
+      return [0, 2, 8, 11]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
-      return [0, 3, 6, 9]; // Misc + Plate + Shields
+      return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
     case "Holy Priest Classic":
       return [0, 1]; // Misc + Plate + Shields
     default:
@@ -97,21 +97,21 @@ export function getValidWeaponTypes(spec: string, slot: string) {
         case SPEC.MISTWEAVERMONK:
           return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
-          return [0, 1, 4, 5, 6, 7, 8];
+          return [0, 1, 4, 5, 6, 7, 8, 11];
         case SPEC.PRESEVOKER:
           return [0, 4, 5, 7, 10, 13, 15];
         case SPEC.RESTOSHAMAN:
-          return [0, 1, 4, 5, 10, 13, 15];
+          return [0, 1, 4, 5, 10,  13, 15];
         case SPEC.HOLYPRIEST:
           return [4, 10, 15, 19];
         case SPEC.DISCPRIEST:
           return [4, 10, 15, 19];
         case "Holy Paladin Classic":
-          return [0, 1, 4, 5, 6, 7, 8];
+          return [0, 1, 4, 5, 6, 7, 8, 11];
         case "Restoration Druid Classic":
-          return [4, 5, 6, 10, 13, 15];
+          return [4, 5, 6, 10, 11, 13, 15];
         case "Restoration Shaman Classic":
-          return [0, 1, 4, 5, 10, 13, 15];
+          return [0, 1, 4, 5, 10, 11, 13, 15];
         case "Holy Priest Classic":
           return [4, 10, 15, 19];
         default:
@@ -340,11 +340,11 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.DISCPRIEST:
       return [4, 10, 15, 19];
     case "Holy Paladin Classic":
-      return [0, 1, 4, 5, 6, 7, 8];
+      return [0, 1, 4, 5, 6, 7, 8, 11];
     case "Restoration Druid Classic":
-      return [4, 5, 6, 10, 13, 15];
+      return [4, 5, 6, 10, 11, 13, 15];
     case "Restoration Shaman Classic":
-      return [0, 1, 4, 5, 6, 10, 13, 15];
+      return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
       return [4, 10, 15, 19];
     default:
@@ -564,8 +564,9 @@ export function getItemProp(id: number, prop: string, gameType: gameTypes = "Ret
 // Add some support for missing icons.
 export function getItemIcon(id: number, gameType = "Retail") {
   const item = getItem(id, gameType);
+
   if (gameType === "Classic" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
-  else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
+  if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
@@ -756,9 +757,6 @@ export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAll
   //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
   combat_mult = 1;
 
-  console.log(itemLevel + " " + rand_prop);
-
-
   // These stats should be precise, and never off by one.
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
@@ -898,6 +896,39 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
   return stats;
 }
 
+// It is useful to have some items to work with.
+export function autoAddItems(player: Player, contentType: contentTypes, gameType: gameTypes) {
+  let itemDB = getItemDB(gameType);
+
+  const acceptableArmorTypes = getValidArmorTypes(player.spec);
+  const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+
+
+  itemDB = itemDB.filter(
+    (key: any) =>
+      (!("classReq" in key) || key.classReq.includes(player.spec)) &&
+      (key.itemLevel === 359) && 
+      (key.slot === "Back" ||
+        (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
+        key.slot === "Holdable" ||
+        key.slot === "Offhand" ||
+        key.slot === "Shield" ||
+        (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
+        (key.itemClass === 2 && player.spec === "Holy Priest Classic")), // Wands
+        );
+  
+  itemDB.forEach((item: any) => {
+    const slot = getItemProp(item.id, "slot", gameType);
+    if ((slot === 'Trinket' && item.levelRange) || 
+        (slot !== 'Trinket' && item.stats.intellect)) {
+      const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
+      player.activeItems.push(newItem);
+    }
+
+  })
+
+  
+}
 
 
 // Return an item score.
@@ -905,7 +936,9 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
-  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
+  let bonus_stats: Stats = gameType === "Retail" ? {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0} :
+                                                    {mastery: 0, crit: 0, spellpower: 0, intellect: 0, haste: 0, hps: 0, mana: 0, spirit: 0};
+
   let item_stats = { ...item.stats };
   // Calculate Effect.
   if (item.effect) {
@@ -935,13 +968,15 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Multiply the item's stats by our stat weights.
+  
   let sumStats = compileStats(item_stats, bonus_stats);
   //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
-
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];
       score += statSum * player.getStatWeight(contentType, stat);
+
+      
     }
   }
 

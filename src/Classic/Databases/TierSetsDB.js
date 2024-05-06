@@ -372,24 +372,24 @@ export const tierSets = [
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                       Holy Paladin Tier 7                                      */
+  /*                                       Holy Paladin Tier 11                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Heroes' Redemption Regalia", de: "Heroes' Redemption Regalia", fr: "Heroes' Redemption Regalia", ru: "Heroes' Redemption Regalia", ch: "Heroes' Redemption Regalia" },
+    name: { en: "Reinforced Sapphirium Regalia", de: "Heroes' Redemption Regalia", fr: "Heroes' Redemption Regalia", ru: "Heroes' Redemption Regalia", ch: "Heroes' Redemption Regalia" },
     spec: "Holy Paladin",
     slots: {
-      head: { id: 29061, icon: require("Images/Classic/TierSetIcons/inv_helmet_77.jpg").default },
-      shoulder: { id: 29064, icon: require("Images/Classic/TierSetIcons/inv_shoulder_40.jpg").default },
-      chest: { id: 29062, icon: require("Images/Classic/TierSetIcons/inv_chest_plate18.jpg").default },
+      head: { id: 60359, icon: require("Images/Classic/TierSetIcons/inv_helmet_77.jpg") },
+      shoulder: { id: 60362, icon: require("Images/Classic/TierSetIcons/inv_shoulder_40.jpg") },
+      chest: { id: 60360, icon: require("Images/Classic/TierSetIcons/inv_chest_plate18.jpg") },
       wrist: { id: -1, icon: -1 },
-      hands: { id: 29065, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_40.jpg").default },
+      hands: { id: 60363, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_40.jpg") },
       waist: { id: -1, icon: -1 },
-      legs: { id: 29063, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_22.jpg").default },
+      legs: { id: 60361, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_22.jpg") },
       boots: { id: -1, icon: -1 },
     },
     twoSet: {
       effect: {
-        en: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
+        en: "(2) Increases the crit chance of your Holy Light by 5%.",
         de: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
         fr: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
         ru: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
@@ -399,7 +399,7 @@ export const tierSets = [
     },
     fourSet: {
       effect: {
-        en: "(4) The cost of your Holy Light is reduced by 5%.",
+        en: "(4) Grants 540 Spirit for 6s after you cast Holy Shock.",
         de: "(4) The cost of your Holy Light is reduced by 5%.",
         fr: "(4) The cost of your Holy Light is reduced by 5%.",
         ru: "(4) The cost of your Holy Light is reduced by 5%.",

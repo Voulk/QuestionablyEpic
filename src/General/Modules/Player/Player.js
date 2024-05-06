@@ -94,6 +94,7 @@ export class Player {
   getStatWeight = (contentType, stat) => {
     const lcStat = stat.toLowerCase();
     const weights = this.getActiveModel(contentType).getBaseStatWeights();
+
     if (!weights) {
       reportError(this, "Player", "Invalid Stat Weight", stat);
       return 0;

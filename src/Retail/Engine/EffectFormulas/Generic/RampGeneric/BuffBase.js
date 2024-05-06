@@ -266,14 +266,18 @@ export const addBuff = (state, spell, spellName) => {
 
     }
     // This category is for buffs that increase the cast speed of our next cast of X spell. 
-    // Example: Ancient Flame
-    else if (spell.buffType === "spellSpeed") {
-        buff.buffSpell = spell.buffSpell;
-        buff.buffSpeed = spell.buffSpeed;
+    // Example: Ancient Flame, Classic Infusion of Light
+    else if (spell.buffType === "spellSpeed" || spell.buffType === "spellSpeedFlat") {
+        newBuff.buffSpell = spell.buffSpell;
+        newBuff.buffSpeed = spell.buffSpeed;
 
+        const buffExists = state.activeBuffs.filter(function (buff) {return buff.name === spell.name});
+        if (buffExists.length > 0) buffExists[0].expiration = state.t + spell.buffDuration;
+        else state.activeBuffs.push(newBuff);
+        //console.log(buffExists.length);
     }
     else {
-        addReport(state, "Adding Buff with INVALID category: " + spellName);
+        addReport(state, "Adding Buff with INVALID category: " + spellName + " " + spell.buffType);
         state.activeBuffs.push({name: spellName, expiration: state.t + spell.castTime + spell.buffDuration});
     }
     return newBuff; // Note that we are adding to our state directly. This can just be useful for other functions like TickOnCast.

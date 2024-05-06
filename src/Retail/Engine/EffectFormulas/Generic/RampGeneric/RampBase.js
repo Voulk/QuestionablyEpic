@@ -1,5 +1,5 @@
 // 
-import { checkBuffActive, removeBuffStack, addBuff, getBuffStacks } from "./BuffBase";
+import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
 
@@ -13,6 +13,10 @@ const GLOBALCONST = {
         leech: 110,
     }
 
+}
+
+export const getTalentPoints = (talents, talentName) => {
+    return talents[talentName] ? talents[talentName].points : 0;
 }
 
 export const applyTalents = (state, spellDB, stats) => {
@@ -69,7 +73,11 @@ export const spendSpellCost = (spell, state) => {
 // Runs a classic era periodic spell.
 const runPeriodic = (state, spell, spellName, runHeal) => {
     // Calculate tick count
-    const tickCount = Math.floor(spell.buffDuration / spell.tickData.tickRate);
+    let tickCount = 0;
+    const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(state.currentStats, "Classic");
+    const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+    
+    tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
@@ -86,6 +94,11 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
         if (spell.chance) {
             const roll = Math.random();
             canProceed = roll <= spell.chance;
+        }
+        else if (spell.onCrit) {
+            // Spell does something unique on crit.
+            const roll = Math.random();
+            canProceed = roll <= (getCrit(state.currentStats) - 1 + ('statMods' in fullSpell[0] ? fullSpell[0].statMods.crit : 0));
         }
         else canProceed = true;
 
@@ -154,6 +167,13 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
     }); 
 
     // Any post-spell code.
+    if (fullSpell[0].onCastEnd) {
+        fullSpell[0].onCastEnd.forEach(effect => {
+            if (effect.type === "Remove Buff") state.activeBuffs = removeBuff(state.activeBuffs, effect.buffName);
+        })
+    }
+
+    // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
 
@@ -180,20 +200,26 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     }
 
     if (!castState.queuedSpell && seqType === "Auto") {
+        
         //console.error("Can't find spell: " + castState.queuedSpell);
         castState.queuedSpell = "Rest";
         castState.spellFinish = state + 1.5;
         castState.nextSpell = state + 1.5;
     }
-
+    
     const fullSpell = spellDB[castState.queuedSpell];
+
+    // Check if the spell has a custom GCD. 
+    const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
+    const GCD = fullSpell[0].customGCD || 1.5;
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
-    const effectiveCastTime = castTime === 0 ? 1.5 / getHaste(state.currentStats) : castTime;
+    const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats, state.gameType), GCDCap) : castTime;
+
     state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
 
     // These could be semi-replaced by effectiveCastTime. TODO.
-    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + 1.5 / getHaste(state.currentStats);
+    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + effectiveCastTime;
     else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
     else castState.nextSpell = state.t + castTime;
 
@@ -272,11 +298,18 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 
 }
 
+
+// TODO: Add support to have more than one effect a spell.
 const hasCastTimeBuff = (buffs, spellName) => {
-    const buff = buffs.filter( buff => buff.buffType === "spellSpeed" && buff.buffSpell === spellName);
-    if (buff.length > 0) return buff[0].spellSpeed;
+    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell.includes(spellName));
+    if (buff.length > 0) {
+        if (buff[0].buffType === "spellSpeed") return castTime / buff[0].spellSpeed;
+        else if (buff[0].buffType === "spellSpeedFlat") return castTime - buff[0].spellSpeed
+        
+    }
     else return 0
 }
+
 
 // TODO: Remove empowered section and turn Temporal Compression into a type of cast speed buff.
 export const getSpellCastTime = (spell, state, currentStats) => {
@@ -289,13 +322,13 @@ export const getSpellCastTime = (spell, state, currentStats) => {
                 castTime *= (1 - 0.05 * buffStacks)
                 if (buffStacks === 4) triggerTemporal(state);
             }
-            castTime = castTime / getHaste(currentStats); // Empowered spells do scale with haste.
+            castTime = castTime / getHaste(currentStats, "Retail"); // Empowered spells do scale with haste.
         } 
 
         else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
-        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = castTime / getHaste(currentStats) / hasCastTimeBuff(state.activeBuffs, spell.name);
+        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name) / getHaste(currentStats, state.gameType);
         //else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
-        else castTime = castTime / getHaste(currentStats);
+        else castTime = castTime / getHaste(currentStats, state.gameType);
 
         return castTime;
     }
@@ -353,8 +386,12 @@ export const getCurrentStats = (statArray, buffs) => {
 }
 
 // Returns the players current haste percentage. 
-export const getHaste = (stats) => {
-    return 1 + stats.haste / 170 / 100;
+export const getHaste = (stats, gameType = "Retail") => {
+    if (gameType === "Retail") return 1 + stats.haste / 170 / 100;
+    else {
+        return (1 + stats.haste / 128.057006835937500 / 100) * 1.05; // Haste buff. TODO: Add setting for the 5% buff but it's very common.
+        
+    }
 }
 
 export const getCrit = (stats) => {

@@ -5,7 +5,7 @@ import Item from "../Player/Item";
 import ClassicItem from "../Player/ClassicItem";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
-import BCChart from "./Charts/BCChart";
+import BCChart from "./Charts/ClassicTrinketChart";
 import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
@@ -117,7 +117,9 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 };
 
 const getClassicTrinketScore = (id, player) => {
-  let item = new ClassicItem(id, "", "Trinket", "");
+  const itemLevel = getItemProp(id, "itemLevel", "Classic");
+  let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
+  
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
@@ -271,9 +273,10 @@ export default function TrinketAnalysis(props) {
 
   for (var i = 0; i < finalDB.length; i++) {
     const trinket = finalDB[i];
+    const trinketName = getItemProp(trinket.id, "name", "Classic");
     let trinketAtLevels = {
       id: trinket.id,
-      name: getTranslatedItemName(trinket.id, "en"),
+      name: trinketName,
     };
 
     if (gameType === "Classic") {
@@ -281,8 +284,19 @@ export default function TrinketAnalysis(props) {
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
-      trinketAtLevels["i100"] = getClassicTrinketScore(trinket.id, props.player);
-      activeTrinkets.push(trinketAtLevels);
+      const trinketScore = getClassicTrinketScore(trinket.id, props.player);
+      if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
+        // Trinket already exists
+        const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
+        existingTrinket["heroic"] = trinketScore;
+        existingTrinket["heroicilvl"] = trinket.itemLevel;
+      }
+      else {
+        trinketAtLevels["normal"] = trinketScore;
+        trinketAtLevels["normalilvl"] = trinket.itemLevel;
+        activeTrinkets.push(trinketAtLevels);
+      }
+
     } else {
       for (var x = 0; x < itemLevels.length; x++) {
         trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
@@ -292,10 +306,15 @@ export default function TrinketAnalysis(props) {
   }
 
   if (gameType === "Classic") {
-    activeTrinkets.sort((a, b) => (a.i100 < b.i100 ? 1 : -1));
+    // Sort. We'll need to use the retail "highest level" code here.
+    const getHighestClassicScore = (trinket) => {return trinket.heroic || trinket.normal || 0}
+    activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
+
+  const trinketText = gameType === "Retail" ? "Ominous Chromatic Essence and Whispering Incarnate Icon assume others in your group are wearing them too. Rashok's is still quite good, but most of its power is in buffing allies now. There are much stronger trinkets for personal throughput. There are settings for all of the above in the settings panel beneath your character."  :
+                                              "";
 
   return (
     <div className={classes.root}>
@@ -325,7 +344,7 @@ export default function TrinketAnalysis(props) {
 
           <TabPanel value={tabIndex} index={0}>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-              <InformationBox information="Ominous Chromatic Essence and Whispering Incarnate Icon assume others in your group are wearing them too. Rashok's is still quite good, but most of its power is in buffing allies now. There are much stronger trinkets for personal throughput. There are settings for all of the above in the settings panel beneath your character. " variant="yellow" />
+              <InformationBox information={trinketText} variant="yellow" />
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">

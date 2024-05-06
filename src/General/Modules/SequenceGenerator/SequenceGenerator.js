@@ -102,17 +102,23 @@ const saveStats = (newStats) => {
 }
 
 const getSpecSettings = (spec) => {
+  const baseSettings = {
+    includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+  }
   if (spec === "Preservation Evoker") {
-    return { twoPc: { value: "Yes", options: ["Yes", "No"] }, includeOverheal: { value: "Yes", options: ["Yes", "No"] } };
-  } else if (spec === "Discipline Priest") {
-    return {
-      includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
-      openWithDoT: { title: "Open with DoT active", value: "Yes", options: ["Yes", "No"] },
-      numEnemyTargets: { title: "Num Enemy Targets", value: 1, options: [1, 2, 3, 4, 5] },
-      execute: { title: "Execute", value: "Ignore", options: ["Ignore", "20% of the time", "Always"] },
-    };
-  } else {
-    return {};
+    return baseSettings;
+  } 
+  else if (spec === "Discipline Priest") {
+      return {
+        ...baseSettings, 
+          includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+          openWithDoT: { title: "Open with DoT active", value: "Yes", options: ["Yes", "No"] },
+          numEnemyTargets: { title: "Num Enemy Targets", value: 1, options: [1, 2, 3, 4, 5] },
+          execute: { title: "Execute", value: "Ignore", options: ["Ignore", "20% of the time", "Always"] },
+        };
+      }
+  else {
+    return baseSettings;
   }
 };
 
@@ -154,7 +160,7 @@ const roundN = (num, places) => {
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
-  const gameType = useSelector((state: RootState) => state.gameType);
+  const gameType = useSelector((state) => state.gameType);
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
   const classes = useStyles();
@@ -162,7 +168,7 @@ export default function SequenceGenerator(props) {
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
   const [activeStats, setActiveStats] = useState(selectedSpec.includes("Classic") ? 
-                                { spellpower: 5000, intellect: 5000, haste: 2000, crit: 3300, mastery: 6500, spirit: 1000 } :
+                                { spellpower: 1700, intellect: 3500, haste: 2000, crit: 3300, mastery: 3000, spirit: 1000 } :
                                 { intellect: 14500, haste: 2000, crit: 3300, mastery: 6500, versatility: 1200, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
@@ -241,7 +247,7 @@ export default function SequenceGenerator(props) {
   }; 
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 500;
+    const iter = 1;
     const results = { totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0 };
     let finalReport = [];
 

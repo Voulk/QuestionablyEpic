@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } fro
 import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
-import socketImage from "Images/Resources/EmptySocket.png";
+
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
@@ -13,6 +13,11 @@ import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 import Item from "../Player/Item";
+
+import socketImage from "Images/Resources/EmptySocket.png";
+import blueSocket from "../../../Images/Resources/socketBlue.png"
+import redSocket from "../../../Images/Resources/socketRed.png"
+import yellowSocket from "../../../Images/Resources/socketYellow.png"
 
 
 const useStyles = makeStyles({
@@ -71,7 +76,7 @@ const GetItemTags: React.FC<{ showTags: any; isVault: boolean, t: any }> = ({ sh
   )
 }
 
-const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
+/*const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
   if (!item.socket) {
     return null; // No sockets, return null or another default content
   }
@@ -85,7 +90,44 @@ const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
       ))}
     </div>
   );
-};
+}; */
+
+const GetSockets: React.FC<{ item: Item }> = ({ item, gameType }) => {
+  let socket = [];
+  // Retail sockets: 1-3 Prismatic gems
+  if (gameType === "Retail") {
+    return (
+      <div style={{ verticalAlign: "middle" }}>
+        {Array.from({ length: item.socket }).map((_, index) => (
+          <div key={index} style={{ marginRight: 4, display: "inline" }}>
+            <img src={socketImage} width={15} height={15} alt={`Socket ${index + 1}`} />
+          </div>
+        ))}
+      </div>
+    );
+  }
+  else if (gameType === "Classic") {
+    // We probably want some way to tell them what we actually socketed but maybe we'll use tooltip for that.
+    if (item.classicSockets) {
+      for (let i = 0; i < item.classicSockets.length; i++) {
+        const color: string = item.classicSockets[i];
+        let sock = null;
+        if (color === "blue") sock = blueSocket;
+        else if (color === "red") sock = redSocket;
+        else if (color === "yellow") sock = yellowSocket;
+        else if (color === "meta") sock = socketImage;
+        else if (color === "prismatic") sock = socketImage;
+        socket.push(
+          <div style={{ marginRight: 4, display: "inline" }}>
+            <img src={sock} width={15} height={15} alt="Socket" />
+          </div>,
+        );
+      }
+    }
+  }
+
+  return <div style={{ verticalAlign: "middle" }}>{socket}</div>;
+}
 
 interface ItemCardProps {
   // Define your prop types here
@@ -197,7 +239,7 @@ export default function ItemCard(props: ItemCardProps) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <WowheadTooltip type={item.slot === "Trinket" ? "item" : "none"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={currentLanguage}>
+                    <WowheadTooltip type={item.slot === "Trinket" ? "item" : "none"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={gameType === "Retail" ? currentLanguage : "cata"}>
                       <img
                         alt="img"
                         width={44}
@@ -259,7 +301,7 @@ export default function ItemCard(props: ItemCardProps) {
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                     <Grid item xs={11}>
                       <div style={{ display: "inline-flex", marginLeft: 4, height: 15, verticalAlign: "middle" }}>
-                        <GetSockets item={item} />
+                        <GetSockets item={item} gameType={gameType} />
                         <Typography variant="subtitle2" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
                           {statString}
                         </Typography>

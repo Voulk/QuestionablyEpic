@@ -80,6 +80,8 @@ function getSockets(item, gameType)  {
         if (color === "blue") sock = blueSocket;
         else if (color === "red") sock = redSocket;
         else if (color === "yellow") sock = yellowSocket;
+        else if (color === "meta") sock = socketImage;
+        else if (color === "prismatic") sock = socketImage;
         socket.push(
           <div style={{ marginRight: 4, display: "inline" }}>
             <img src={sock} width={15} height={15} alt="Socket" />
@@ -108,7 +110,7 @@ export default function ItemCard(props) {
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
-  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
   let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
@@ -116,7 +118,7 @@ export default function ItemCard(props) {
   let socket = getSockets(item, gameType);
 
   const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && isVault ? 'selectedVault' : item.isEquipped ? 'selected' : isVault ? 'vault' : 'root';
-  console.log(item);
+
   /*
   const socket = item.socket ? (
     <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>

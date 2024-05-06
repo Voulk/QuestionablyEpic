@@ -220,6 +220,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
  */
 function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
   const wepCombos = deepCopyFunction(rawWepCombos);
+ 
   let setCount = 0;
   let itemSets = [];
   let slotLengths: {[key: string]: number} = {
