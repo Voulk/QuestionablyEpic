@@ -56,7 +56,7 @@ export const encounterDB = {
     name: {
       en: "Blackwing Descent"
     },
-    bossOrder: [],
+    bossOrder: [169, 170, 171, 172, 173, 174],
     bosses: {
       169: {
         en: "Omnotron Defense System",
@@ -82,7 +82,7 @@ export const encounterDB = {
     name: {
       en: "Throne of the Four Winds"
     },
-    bossOrder: [],
+    bossOrder: [154, 155],
     bosses: {
       154: {
         en: "Conclave of Wind",

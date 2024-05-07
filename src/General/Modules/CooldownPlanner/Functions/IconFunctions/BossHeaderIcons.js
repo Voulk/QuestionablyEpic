@@ -5,9 +5,22 @@ export default function bossHeaders(props, style, QEmodule) {
 
   // temp fix for Upgrade Finder, will need to redo boss ids
   if (QEmodule === "UpgradeFinder") {
-    if (props === 156) {
-      source = require("Images/Classic/Raid/Tier11/bossHalfusWyrmbreaker.png")
-    }
+    if (props === 156) { source = require("Images/Classic/Raid/Tier11/bossHalfusWyrmbreaker.png")}
+    if (props === 157) { source = require("Images/Classic/Raid/Tier11/bossValiona.png")}
+    if (props === 158) { source = require("Images/Classic/Raid/Tier11/bossAscendentCouncil.png")}
+    if (props === 167) { source = require("Images/Classic/Raid/Tier11/bossChogall.png")}
+    if (props === 168) { source = require("Images/Classic/Raid/Tier11/bossSinestra.png")}
+
+    if (props === 169) { source = require("Images/Classic/Raid/Tier11/bossOmnotron.png")}
+    if (props === 170) { source = require("Images/Classic/Raid/Tier11/bossMagmaw.png")}
+    if (props === 171) { source = require("Images/Classic/Raid/Tier11/bossAtramedes.png")}
+    if (props === 172) { source = require("Images/Classic/Raid/Tier11/bossChimaeron.png")}
+    if (props === 173) { source = require("Images/Classic/Raid/Tier11/bossMaloriak.png")}
+    if (props === 174) { source = require("Images/Classic/Raid/Tier11/bossNefarian.png")}
+
+    if (props === 154) { source = require("Images/Classic/Raid/Tier11/bossNezir.png")}
+    if (props === 155) { source = require("Images/Classic/Raid/Tier11/bossAlakir.png")}
+
     if (props === 2468) {
       source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-Antros.png");
     }
