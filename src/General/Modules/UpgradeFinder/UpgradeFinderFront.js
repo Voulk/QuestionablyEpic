@@ -166,7 +166,8 @@ export default function UpgradeFinderFront(props) {
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
 
-  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: 8, pvp: 0, craftedLevel: 4, craftedStats: "Crit / Haste" });
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: gameType === "Retail" ? 8 : 1, pvp: 0, craftedLevel: 4, craftedStats: "Crit / Haste" });
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -277,11 +278,13 @@ export default function UpgradeFinderFront(props) {
   });
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
+  console.log(dungeonBC);
 
   const handleContent = (event, content) => {
     if (content !== null) {
       setDungeonBC(content);
       setBCDungeonDifficulty(event, content);
+      //setUFSettings({ ...ufSettings, dungeon: parseInt(content)})
     }
   };
 
@@ -301,11 +304,12 @@ export default function UpgradeFinderFront(props) {
       props.setUFResult(shortReport);
       //props.setShowReport(true);
       history.push("/upgradereport/");
-    } else if (gameType === "Classic") {
-      const ufSettings = props.playerSettings;
+    } 
+    
+    else if (gameType === "Classic") {
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
       const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
-      console.log(result);
+      console.log(ufSettings);
       result.id = shortReport.id;
       //sendReport(shortReport);
       shortReport.new = true;

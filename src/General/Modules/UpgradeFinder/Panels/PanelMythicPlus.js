@@ -6,7 +6,7 @@ import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/Du
 import bossHeaders from "../../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, getDifferentialByID, getNumUpgrades, filterItemListByDropLoc } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { itemLevels } from "../../../../Databases/itemLevelsDB";
@@ -22,6 +22,7 @@ export default function MythicPlusGearContainer(props) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
+
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
   const gameType = useSelector((state) => state.gameType);
@@ -37,8 +38,9 @@ export default function MythicPlusGearContainer(props) {
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
+  console.log(itemDifferentials);
 
-  const contentGenerator = () => {
+  const contentGenerator = (gameType) => {
     return (
       <Grid item xs={12}>
         <div className={classes.header}>
@@ -72,9 +74,9 @@ export default function MythicPlusGearContainer(props) {
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
-                      {encounterDB["-1"].bossOrderMythicPlus.map((key, i) => (
+                      {encounterDB["-1"][gameType].bossOrderMythicPlus.map((key, i) => (
                         <UFAccordion
-                          key={encounterDB["-1"][key].name[currentLanguage] + "-accordian" + i}
+                          key={encounterDB["-1"][gameType][key].name[currentLanguage] + "-accordian" + i}
                           elevation={0}
                           style={{
                             backgroundColor: "rgba(255, 255, 255, 0.12)",
@@ -98,9 +100,9 @@ export default function MythicPlusGearContainer(props) {
                                 display: "flex",
                               }}
                             >
-                              <img style={{ height: 36, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][key].name[currentLanguage]} />
+                              <img style={{ height: 36, width: 72, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key].name[currentLanguage]} />
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                              {encounterDB["-1"][key].name[currentLanguage]} -{" "}
+                              {encounterDB["-1"][gameType][key].name[currentLanguage]} -{" "}
                               {
                                 getNumUpgrades(itemDifferentials, -1, key, difficulty)
                               }{" "}
@@ -109,7 +111,7 @@ export default function MythicPlusGearContainer(props) {
                           </UFAccordionSummary>
                           <AccordionDetails style={{ backgroundColor: "#191c23" }}>
                             <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemDifferentials, "-1", key, itemLevels.dungeon[difficulty])].map((item, index) => (
+                              {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                               ))}
                             </Grid>
@@ -121,7 +123,7 @@ export default function MythicPlusGearContainer(props) {
                 </div>
               </UFTabPanel>
 
-              <UFTabPanel key={"panel1"} value={tabvalue} index={1}>
+              {/*<UFTabPanel key={"panel1"} value={tabvalue} index={1}>
                 <div className={classes.panel}>
                   <Grid container spacing={1}>
                     <Grid item xs={12}>
@@ -170,7 +172,7 @@ export default function MythicPlusGearContainer(props) {
                     </Grid>
                   </Grid>
                 </div>
-              </UFTabPanel>
+                    </UFTabPanel> */}
             </Grid>
           </Grid>
         </div>
@@ -179,9 +181,9 @@ export default function MythicPlusGearContainer(props) {
   };
 
   const contentGeneratorBC = () => {
-    return encounterDB[123].bossOrder.map((key, i) => (
+    return encounterDB[-1].bossOrder.map((key, i) => (
       <UFAccordion
-        key={encounterDB[123][key].name[currentLanguage] + "-accordian" + i}
+        key={encounterDB[-1][key].name[currentLanguage] + "-accordian" + i}
         elevation={0}
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.12)",
@@ -225,7 +227,7 @@ export default function MythicPlusGearContainer(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          {gameType === "Retail" ? contentGenerator() : contentGeneratorBC()}
+          {true ? contentGenerator(gameType) : contentGeneratorBC()}
         </Grid>
       </Grid>
     </div>

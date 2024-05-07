@@ -2030,283 +2030,187 @@ export const encounterDB = {
   /* ---------------------------------------------------------------------------------------------- */
   // temp key until DF
   "-1": {
-    bossOrder: [
-      1196, // Brackenhide Hollow
-      1197, // Uldaman: Legacy of Tyr
-      1198, // The Nokhud Offensive
-      1199, // Neltharus
-      1201, // Alge'thar Academy
-      1202, // Ruby Life Pools
-      1204, // Halls of Infusion
-      1203, // The Azure Vault
-    ],
-    bossOrderMythicPlus: [
-      /*
-      // 313, // Temple of the Jade Serpent
-      // 537, // Shadowmoon Burial Grounds
-      // 721, // Halls of Valor
-      // 800, // Court of Stars
-      1196, // Brackenhide Hollow
-      1197, // Uldaman: Legacy of Tyr
-      // 1198, // The Nokhud Offensive
-      1199, // Neltharus
-      // 1201, // Alge'thar Academy
-      // 1202, // Ruby Life Pools
-      // 1203, // The Azure Vault
-      1204, // Halls of Infusion
-
-      1001, // Freehold
-      1022, // The Underrot
-      68, // The Vortex Pinnacle
-      767, // Neltharion's Lair */
-
-      /*
-      "-55", // Dawn of the Infinites: Galakrond's Fall
-      "-56", // Dawn of the Infinites: Murozond's Rise
-      762, // Darkheart Thicket
-      740, // Black Rook Hold
-      1021, // Waycrest Manor
-      968, // Atal'Dazar
-      556, // Everbloom
-      65, // Throne of the Tides
-      */
-      1196, // Brackenhide Hollow
-      1197, // Uldaman: Legacy of Tyr
-      1198, // The Nokhud Offensive
-      1199, // Neltharus
-      1201, // Alge'thar Academy
-      1202, // Ruby Life Pools
-      1204, // Halls of Infusion
-      1203, // The Azure Vault
-    ],
-
-    313: {
-      name: {
-        en: "Temple of the Jade Serpent",
-        fr: "Temple du Serpent de jade",
-        de: "Tempel der Jadeschlange",
-        ru: "Храм Нефритовой Змеи",
-        ch: "青龙寺",
+    "Retail": {
+      bossOrder: [
+        1196, // Brackenhide Hollow
+        1197, // Uldaman: Legacy of Tyr
+        1198, // The Nokhud Offensive
+        1199, // Neltharus
+        1201, // Alge'thar Academy
+        1202, // Ruby Life Pools
+        1204, // Halls of Infusion
+        1203, // The Azure Vault
+      ],
+      bossOrderMythicPlus: [
+        1196, // Brackenhide Hollow
+        1197, // Uldaman: Legacy of Tyr
+        1198, // The Nokhud Offensive
+        1199, // Neltharus
+        1201, // Alge'thar Academy
+        1202, // Ruby Life Pools
+        1204, // Halls of Infusion
+        1203, // The Azure Vault
+      ],
+  
+      313: {
+        name: {
+          en: "Temple of the Jade Serpent",
+          fr: "Temple du Serpent de jade",
+          de: "Tempel der Jadeschlange",
+          ru: "Храм Нефритовой Змеи",
+          ch: "青龙寺",
+        },
+      },
+      537: {
+        name: {
+          en: "Shadowmoon Burial Grounds",
+          fr: "Terres sacrées d’Ombrelune",
+          de: "Schattenmondgrabstätte",
+          ru: "Некрополь Призрачной Луны",
+          ch: "影月墓地",
+        },
+      },
+      800: {
+        name: {
+          en: "Court of Stars",
+          fr: "Cour des Étoiles",
+          de: "Der Hof der Sterne",
+          ru: "Квартал Звезд",
+          ch: "群星庭院",
+        },
+      },
+      721: {
+        name: {
+          en: "Halls of Valor",
+          fr: "Salles des Valeureux",
+          de: "Die Hallen der Tapferkeit",
+          ru: "Чертоги Доблести",
+          ch: "英灵殿",
+        },
+      },
+      1197: {
+        name: {
+          en: "Uldaman: Legacy of Tyr",
+          fr: "Uldaman : l’héritage de Tyr",
+          de: "Uldaman: Vermächtnis von Tyr",
+          ru: "Ульдаман: наследие Тира",
+          ch: "奥达曼：提尔的遗产",
+        },
+      },
+      1201: {
+        name: {
+          en: "Algeth'ar Academy",
+          fr: "Académie de Taz’algeth",
+          de: "Akademie von Taz'algeth",
+          ru: "Академия Таз'алгет",
+          ch: "塔兹艾杰斯学院",
+        },
+      },
+      1202: {
+        name: {
+          en: "Ruby Life Pools",
+          fr: "Bassins de l’Essence rubis",
+          de: "Rubinlebensbecken",
+          ru: "Рубиновые Омуты Жизни",
+          ch: "红玉新生法池",
+        },
+      },
+      1204: {
+        name: {
+          en: "Halls of Infusion",
+          fr: "Salles de l’Imprégnation",
+          de: "Hallen der Infusion",
+          ru: "Чертоги Насыщения",
+          ch: "注能大厅",
+        },
+      },
+      1203: {
+        name: {
+          en: "The Azure Vault",
+          fr: "Caveau d’Azur",
+          de: "Das Azurblaue Gewölbe",
+          ru: "Лазурное хранилище",
+          ch: "碧蓝魔馆",
+        },
+      },
+      1199: {
+        name: {
+          en: "Neltharus",
+          fr: "Neltharus",
+          de: "Neltharus",
+          ru: "Нелтарий",
+          ch: "奈萨鲁斯	",
+        },
+      },
+      1198: {
+        name: {
+          en: "The Nokhud Offensive",
+          fr: "L’offensive nokhud",
+          de: "Der Angriff der Nokhud",
+          ru: "Наступление клана Нокхуд",
+          ch: "诺库德阻击战",
+        },
+      },
+      1196: {
+        name: {
+          en: "Brackenhide Hollow",
+          fr: "Creux des Fougerobes",
+          de: "Brackenfellhöhle",
+          ru: "Пещера Бурошкуров",
+          ch: "蕨皮山谷",
+        },
       },
     },
-    537: {
-      name: {
-        en: "Shadowmoon Burial Grounds",
-        fr: "Terres sacrées d’Ombrelune",
-        de: "Schattenmondgrabstätte",
-        ru: "Некрополь Призрачной Луны",
-        ch: "影月墓地",
+    "Classic": {
+      bossOrderMythicPlus: [66, 63, 71, 70, 69, 64, 67, 68, 65], // Dungeon Order
+      66: {
+        name: {
+          en: "Blackrock Caverns"
+        }
       },
-    },
-    800: {
-      name: {
-        en: "Court of Stars",
-        fr: "Cour des Étoiles",
-        de: "Der Hof der Sterne",
-        ru: "Квартал Звезд",
-        ch: "群星庭院",
+      63: {
+        name: {
+          en: "Deadmines"
+        }
       },
-    },
-    721: {
-      name: {
-        en: "Halls of Valor",
-        fr: "Salles des Valeureux",
-        de: "Die Hallen der Tapferkeit",
-        ru: "Чертоги Доблести",
-        ch: "英灵殿",
+      71: {
+        name: {
+          en: "Grim Batol"
+        }
       },
-    },
-    1197: {
-      name: {
-        en: "Uldaman: Legacy of Tyr",
-        fr: "Uldaman : l’héritage de Tyr",
-        de: "Uldaman: Vermächtnis von Tyr",
-        ru: "Ульдаман: наследие Тира",
-        ch: "奥达曼：提尔的遗产",
+      70: {
+        name: {
+          en: "Halls of Reorigination"
+        }
       },
-    },
-    1201: {
-      name: {
-        en: "Algeth'ar Academy",
-        fr: "Académie de Taz’algeth",
-        de: "Akademie von Taz'algeth",
-        ru: "Академия Таз'алгет",
-        ch: "塔兹艾杰斯学院",
+      69: {
+        name: {
+          en: "Lost City of the Tol'vir"
+        }
       },
-    },
-    1202: {
-      name: {
-        en: "Ruby Life Pools",
-        fr: "Bassins de l’Essence rubis",
-        de: "Rubinlebensbecken",
-        ru: "Рубиновые Омуты Жизни",
-        ch: "红玉新生法池",
+      64: {
+        name: {
+          en: "Shadowfang Keep"
+        }
       },
-    },
-    1204: {
-      name: {
-        en: "Halls of Infusion",
-        fr: "Salles de l’Imprégnation",
-        de: "Hallen der Infusion",
-        ru: "Чертоги Насыщения",
-        ch: "注能大厅",
+      67: {
+        name: {
+          en: "The Stonecore"
+        }
       },
-    },
-    1203: {
-      name: {
-        en: "The Azure Vault",
-        fr: "Caveau d’Azur",
-        de: "Das Azurblaue Gewölbe",
-        ru: "Лазурное хранилище",
-        ch: "碧蓝魔馆",
+      68: {
+        name: {
+          en: "The Vortex Pinnacle"
+        }
       },
-    },
-    1199: {
-      name: {
-        en: "Neltharus",
-        fr: "Neltharus",
-        de: "Neltharus",
-        ru: "Нелтарий",
-        ch: "奈萨鲁斯	",
+      65: {
+        name: {
+          en: "Throne of the Tides"
+        }
       },
-    },
-    1198: {
-      name: {
-        en: "The Nokhud Offensive",
-        fr: "L’offensive nokhud",
-        de: "Der Angriff der Nokhud",
-        ru: "Наступление клана Нокхуд",
-        ch: "诺库德阻击战",
-      },
-    },
-    1196: {
-      name: {
-        en: "Brackenhide Hollow",
-        fr: "Creux des Fougerobes",
-        de: "Brackenfellhöhle",
-        ru: "Пещера Бурошкуров",
-        ch: "蕨皮山谷",
-      },
-    },
-    68: {
-      name: {
-        en: "The Vortex Pinnacle",
-        fr: "La cime du Vortex",
-        ru: "Вершина Смерча",
-        de: "Der Vortexgipfel",
-        ch: "旋云之巅",
-      },
-    },
-    767: {
-      name: {
-        en: "Neltharion's Lair",
-        fr: "Repaire de Neltharion",
-        ru: "Логово Нелтариона",
-        de: "Neltharions Hort",
-        ch: "奈萨里奥的巢穴",
-      },
-    },
-    1001: {
-      name: {
-        en: "Freehold",
-        fr: "Port-Liberté",
-        ru: "Вольная Гавань",
-        de: "Freihafen",
-        ch: "自由镇",
-      },
-    },
-    1022: {
-      name: {
-        en: "The Underrot",
-        fr: "Les tréfonds Putrides",
-        ru: "Подгнилье",
-        de: "Der Tiefenpfuhl",
-        ch: "地渊孢林",
-      },
-    },
-    "-55": {
-      name: {
-        en: "Dawn of the Infinites: Galakrond's Fall",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-    "-56": {
-      name: {
-        en: "Dawn of the Infinites: Murozond's Rise",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-    762: {
-      name: {
-        en: "Darkheart Thicket",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-    740: {
-      name: {
-        en: "Black Rook Hold",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-    1021: {
-      name: {
-        en: "Waycrest Manor",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-    968: {
-      name: {
-        en: "Atal'Dazar",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },/*
-    537: {
-      name: {
-        en: "Everbloom",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },*/
-    556: {
-      name: {
-        en: "Everbloom",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-    65: {
-      name: {
-        en: "Throne of the Tides",
-        fr: "",
-        ru: "",
-        de: "",
-        ch: "",
-      },
-    },
-
+    }
   },
+
 
   // Dawn of the Infinite
   1209: { // mapId 2579
