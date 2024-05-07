@@ -181,9 +181,8 @@ function buildItemPossibilities(player, contentType, playerSettings) {
             itemPoss.push(item);
           }
         }
-        else {
+        else  if ([72, 73, 74].includes(rawItem.sources[0].instanceId)) { // Raid
           const itemSource = rawItem.sources[0];
-          //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
           const item = buildItem(player, rawItem, rawItem.sources[0]);
 
           item.dropLoc = "Raid";

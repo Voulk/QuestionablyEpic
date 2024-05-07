@@ -56,7 +56,7 @@ export default function ItemCard(props) {
   const itemDifferential = item.score;
   const isTierPiece = false; // item.isTierPiece();
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDomain = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDomain = (gameType === "Classic" ? "cata" : currentLanguage);
 
   // We can probably merge a lot of these into a more central location.
   const itemTooltips = {
@@ -99,7 +99,7 @@ export default function ItemCard(props) {
   const sourceName = (item) => {
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
-      let dungeons = { ...encounterDB["-1"] };
+      let dungeons = { ...encounterDB["-1"][gameType] };
       dungeons = Object.assign(dungeons, encounterDB[123]);
 
       return dungeons[item.source.encounterId].name[currentLanguage];
