@@ -15,25 +15,37 @@ import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
 
-const getDifficultyName = (difficulty) => {
-  switch (difficulty) {
-    case 0:
-      return "LFR";
-    case 1:
-      return "LFR (Max)";
-    case 2:
-      return "Normal";
-    case 3:
-      return "Normal (Max)";
-    case 4:
-      return "Heroic";
-    case 5:
-      return "Heroic (Max)";
-    case 6:
-      return "Mythic";
-    case 7:
-      return "Mythic (Max)";
+const getDifficultyName = (difficulty, gameType = "Retail") => {
+  if (gameType === "Retail") {
+    switch (difficulty) {
+      case 0:
+        return "LFR";
+      case 1:
+        return "LFR (Max)";
+      case 2:
+        return "Normal";
+      case 3:
+        return "Normal (Max)";
+      case 4:
+        return "Heroic";
+      case 5:
+        return "Heroic (Max)";
+      case 6:
+        return "Mythic";
+      case 7:
+        return "Mythic (Max)";
+    }
   }
+  else {
+    switch (difficulty) {
+      case 0:
+        return "Normal";
+      case 1:
+        return "Heroic";
+    }
+  
+  }
+
 };
 
 
@@ -121,7 +133,7 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
                               <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
@@ -230,8 +242,8 @@ export default function RaidGearContainer(props) {
 
 
     ];
-    const firstDifficulty = 0;
-    const secondDifficulty = 1;
+    const firstDifficulty = 1;
+    const secondDifficulty = 0;
     // const firstDifficulty = difficulties[0];
     // const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
@@ -256,12 +268,12 @@ export default function RaidGearContainer(props) {
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.naxxramasHeaderStyle} label={encounterDB[72].name[currentLanguage]} {...a11yProps(0)} />
-                  {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-                  <Tab className={classes.malygosHeaderStyle} label={encounterDB[73].name[currentLanguage]} {...a11yProps(1)} />
-                  {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  <Tab className={classes.ulduarHeaderStyle} label={encounterDB[74].name[currentLanguage]} {...a11yProps(2)} />
+                  {/* ------------------------------------------ Bastion of Twilight ------------------------------------------ */}
+                  <Tab className={classes.bastionHeaderStyle} label={encounterDB[72].name[currentLanguage]} {...a11yProps(0)} />
+                  {/* ---------------------------------------- BWD ---------------------------------------- */}
+                  <Tab className={classes.blackwingDescentHeaderStyle} label={encounterDB[73].name[currentLanguage]} {...a11yProps(1)} />
+                  {/* ------------------------------------ Throne of Four Winds ------------------------------------ */}
+                  <Tab className={classes.throneOfFourWindsHeaderStyle} label={encounterDB[74].name[currentLanguage]} {...a11yProps(2)} />
   
                 </Tabs>
               </AppBar>
@@ -276,7 +288,7 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key][currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key][currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
                               <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
@@ -312,7 +324,7 @@ export default function RaidGearContainer(props) {
                                         }}
                                       >
                                         <div style={{ marginLeft: 8 }}>
-                                          {getDifficultyName(firstDifficulty)} -{" "}
+                                          {getDifficultyName(firstDifficulty, "Classic")} -{" "}
                                           {
                                             getNumUpgrades(itemDifferentials, raidID, key, 0)
                                           }{" "}
@@ -321,7 +333,7 @@ export default function RaidGearContainer(props) {
                                       </Typography>
                                     </Grid>
 
-                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", 0)].map((item, index) => (
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
@@ -339,7 +351,7 @@ export default function RaidGearContainer(props) {
                                           }}
                                         >
                                           <div style={{ marginLeft: 8 }}>
-                                            {getDifficultyName(secondDifficulty)} -{" "}
+                                            {getDifficultyName(secondDifficulty, "Classic")} -{" "}
                                             {
                                               getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
                                             }{" "}

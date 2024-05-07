@@ -161,11 +161,12 @@ export default function UpgradeFinderReport(props) {
                 TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
               >
                 {/* Raid */}
-                <Tab className={classes.raidHeaderStyle} label={t("Raid")} {...a11yProps(0)} />
+                <Tab className={gameType === "Retail" ? classes.raidHeaderStyle : classes.classicRaidHeaderStyle} label={t("Raid")} {...a11yProps(0)} />
                 {/* Mythic Plus */}
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
                 {/* PVP */}
                 {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
+                {/* Crafted Gear */}
                 <Tab className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
                 {/* World Bosses */}
                 <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />

@@ -49,6 +49,18 @@ export const raidStyles = makeStyles((theme) => {
         maxWidth: "100%",
       },
     },
+    throneOfFourWindsHeaderStyle: {
+      ...commonStyles,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidThroneOfFourWinds.jpg")})`,
+    },
+    blackwingDescentHeaderStyle: {
+      ...commonStyles,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidBlackwingDescent.jpg")})`,
+    },
+    bastionHeaderStyle: {
+      ...commonStyles,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidBastionOfTwilight.png")})`,
+    },
     naxxramasHeaderStyle: {
       ...commonStyles,
       backgroundImage: `url(${require("../../../../Images/Classic/Raid/Naxxramas.jpg")})`,

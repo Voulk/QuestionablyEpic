@@ -129,8 +129,8 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
 
 
   const baseHPS = player.getHPS(contentType);
-  //const baseSet = runTopGearBC(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
-  const baseScore = 1000; //baseSet.itemSet.hardScore;
+  const baseSet = runTopGearBC(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
+  const baseScore = baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
   //console.log(baseSet);
@@ -177,7 +177,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
             //const itemLevel = getSetItemLevel(itemSource, playerSettings, 0, rawItem.slot);
             const item = buildItem(player, rawItem, rawItem.sources[0]);
             item.dropLoc = "Dungeon";
-            item.dropDifficulty = 0; //
+            item.dropDifficulty = itemSource.difficulty || 0; //
             itemPoss.push(item);
           }
         }
@@ -187,7 +187,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
           const item = buildItem(player, rawItem, rawItem.sources[0]);
 
           item.dropLoc = "Raid";
-          item.dropDifficulty = 0; //
+          item.dropDifficulty = itemSource.difficulty || 0; //
   
           itemPoss.push(item);
         }
@@ -244,7 +244,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
 
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
-  const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100;
+  const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100 / 60;
 
   return { item: item.id, level: item.level, score: differential, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, };
 }

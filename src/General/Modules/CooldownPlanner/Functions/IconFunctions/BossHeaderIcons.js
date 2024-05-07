@@ -5,6 +5,9 @@ export default function bossHeaders(props, style, QEmodule) {
 
   // temp fix for Upgrade Finder, will need to redo boss ids
   if (QEmodule === "UpgradeFinder") {
+    if (props === 156) {
+      source = require("Images/Classic/Raid/Tier11/bossHalfusWyrmbreaker.png")
+    }
     if (props === 2468) {
       source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-Antros.png");
     }
