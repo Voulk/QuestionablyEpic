@@ -14,7 +14,6 @@ const getTrinketData = (trinketName) => {
 }
 
 export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
-    console.log(trinketName);
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     trinketDescription.push("")
     const trinketData = getTrinketData(trinketName);

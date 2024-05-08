@@ -233,7 +233,7 @@ const dungeonTrinketData: Effect[] = [
       { // 
         value: {333: 15}, 
         stacks: 20,
-        stat: "spellpower", // Change to ProcIntellect
+        stat: "spellpower", 
         duration: 15,
       },
     ],

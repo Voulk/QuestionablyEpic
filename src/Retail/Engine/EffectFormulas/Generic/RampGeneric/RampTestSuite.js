@@ -49,12 +49,12 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
     const fightLength = 420;
 
     const baseline = suiteType === "APL" ? runSuite(playerData, aplList, runCastSequence, "APL") : runCastProfileSuite(playerData, aplList, runCastSequence);
-
+    
     const baselineHPS = baseline.avgHPS;
     const baselineHealing = baseline.totalHealing;
     const baselineHPM = baseline.fillerHPM; // baseline.avgHPM; // Change to only use filler spells.
 
-    const baselineMana = getManaRegen(playerData.stats, playerData.spec) * 12 * 5;
+    const baselineMana = getManaRegen(playerData.stats, playerData.spec) * 12 * 7;
     const baselinePool = getManaPool(playerData.stats, playerData.spec);
 
     const results = {};
@@ -62,26 +62,28 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
         // Change result to be casts agnostic.
         let playerStats = JSON.parse(JSON.stringify(playerData.stats));
         playerStats[stat] = playerStats[stat] + 10;
+        console.log(playerStats)
         const newPlayerData = {...playerData, stats: playerStats};
-        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).totalHealing;
+        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).avgHPS;
         results[stat] = result;
     });
     const weights = {}
 
     stats.forEach(stat => {
 
-        weights[stat] = Math.round(100*(results[stat] - baselineHealing) / 10)/100; //(results['spellpower'] - baselineHPS))/1000;
+        weights[stat] = Math.round(1000*(results[stat] - baselineHPS)/(results['spellpower'] - baselineHPS))/1000;
     });
 
-    const intRegen = getManaRegen({...playerData.stats, 'intellect': playerData.stats['intellect'] + 400}, playerData.spec) * 12 * 5;
-    const intManaPool = getManaPool({...playerData.stats, 'intellect': playerData.stats['intellect'] + 400}, playerData.spec) - baselinePool;
-    //weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
+    const intRegen = getManaRegen({...playerData.stats, 'intellect': playerData.stats['intellect'] + 10}, playerData.spec) * 12 * 7;
+    const intManaPool = getManaPool({...playerData.stats, 'intellect': playerData.stats['intellect'] + 10}, playerData.spec) - baselinePool;
+    weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
 
 
     // Compute Mana averages
 
-    const spiritRegen = getManaRegen({...playerData.stats, 'spirit': playerData.stats['spirit'] + 400}, playerData.spec) * 12 * 5;
-    //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
+    const spiritRegen = getManaRegen({...playerData.stats, 'spirit': playerData.stats['spirit'] + 10}, playerData.spec) * 12 * 7;
+    console.log("Gained X mana from spirit" + (spiritRegen - baselineMana) + " and 1 mana = " + baselineHPM + " healing");
+    weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
     //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / 10)/1000;
 
     // To return:
