@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid,  } from "recharts";
-
+import { styled } from "@mui/material/styles";
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
@@ -21,6 +21,29 @@ const cleanZerosFromArray = (obj) => {
     }, {});
 };
 
+const getTooltip = (data, id) => {
+  const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
+  return tooltip;
+}
+
+const StyledTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  zIndex: theme.zIndex.tooltip + 1,
+  //margin: 4,
+  [`& .MuiTooltip-tooltip`]: {
+    //maxWidth: 150,
+    //height: 100,
+    //fontFamily: "'Grape Nuts', Helvetica",
+    backgroundColor: "rgba(0,0,25,0.9)",
+    //color: "deepskyblue", see sx value
+    margin: 4,
+    padding: 8,
+    whiteSpace: "pre-line"
+    //border: "solid yellow 1px"
+  }
+}));
+
 const truncateString = (str, num) => {
   if (str.length <= num) {
     return str;
@@ -31,6 +54,8 @@ export default class BCChart extends PureComponent {
   constructor() {
     super();
   }
+
+
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
@@ -73,11 +98,23 @@ export default class BCChart extends PureComponent {
             <WowheadTooltip type="item" id={payload.value} domain={"cata"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
-            {/*<Tooltip title={"Hello There"} style={{ display: "inline-block", lineHeight: "0px" }}>
+            <StyledTooltip title={
+              <div>
+                {getTooltip(data, payload.value).map((key) => {
+                  return (
+                    <span key={key}/* style={{ fontWeight: "bold" }}*/>
+                      {key}
+                      <br />
+                    </span>
+                  );
+                })}
+              </div>
+            }
+            style={{ display: "inline-block", lineHeight: "0px" }}>
               <IconButton sx={{ color: 'goldenrod' }} size="small">
                 <HelpIcon fontSize="inherit" />
               </IconButton>
-      </Tooltip> */}
+            </StyledTooltip>
           </div>
           </foreignObject>
           
