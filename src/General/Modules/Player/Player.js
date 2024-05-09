@@ -259,7 +259,6 @@ export class Player {
       newItem.quality = 4;
       newItem.upgradeTrack = item.upgradeTrack;
       newItem.upgradeRank = item.upgradeRank;
-      console.log(newItem);
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.
