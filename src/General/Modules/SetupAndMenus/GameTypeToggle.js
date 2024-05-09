@@ -94,7 +94,7 @@ export default function GameTypeSwitch(props) {
       {/* ---------------------------------------------------------------------------------------------- */
       /*                            Cataclysm: Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
-      <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel">
+      <ToggleButton disabled className={classes.root} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={ClassicLogo} alt={t("Wrath of the Lich King")} />

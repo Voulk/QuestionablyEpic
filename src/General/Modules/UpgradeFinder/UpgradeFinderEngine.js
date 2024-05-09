@@ -184,7 +184,8 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
 
   // Crafted
   if (source.instanceId === -4) {
-    const missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
+    let missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
+    if (source.encounterId === 4) missiveStats = missiveStats[0]; // For engineering we'll just use the first stat in their selection. 
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     let craftedSocket = false;
     //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
