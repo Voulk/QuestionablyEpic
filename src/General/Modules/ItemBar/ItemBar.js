@@ -76,6 +76,7 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
     if (item.slot === "Neck" && itemSocket) item.socket = 3;
     item.guessItemQuality();
+    console.log(item);
   }
   //item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
 
@@ -113,7 +114,7 @@ export default function ItemBar(props) {
           (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
     ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}) }));
 
-    newItemList = newItemList.reduce((unique, o) => {
+    newItemList = newItemList.reduceRight((unique, o) => {
       if (!unique.some((obj) => obj.label === o.label)) {
         unique.push(o);
       }

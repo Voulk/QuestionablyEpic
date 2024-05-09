@@ -27,7 +27,7 @@ import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00297669230769231; // 0.00497669230769231;
+const DR_CONST = 0.00327669230769231; // 0.00497669230769231;
 const DR_CONSTLEECH = 0.04922569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -704,12 +704,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Special 10.0.7 Ring
-  // Ultimately this ring has mostly been outscaled now. We'll leave it in for completeness but it would only see use on very undergeared players.
-  // We pray they do not bring it back in Fated.
-
-  // Check if ring in set.
+  // No longer necessary in season 4.
+  /*
   if (builtSet.checkHasItem(203460)) {
     // Auto gen best gems.
+    
     const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 424;
 
     const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
@@ -720,7 +719,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     builtSet.primGems = combo; 
     effectStats.push(annuletStats);
- }
+ } */
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 
