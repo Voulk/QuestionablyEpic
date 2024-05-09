@@ -80,7 +80,7 @@ export const raidTrinketData = [
         duration: 12,
         cooldown: 120,
         targetScaling: 1, // While healing is multiplied by 1.5x, the additional healing offered is constant.
-        efficiency: {Raid: 0.75, Dungeon: 0.4}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
+        efficiency: {Raid: 0.75, Dungeon: 0.38}, // The tree does pulse smart healing but it's also very inefficient to pushing healing into a tree instead of the raid.
         specEfficiency: { "Restoration Druid": 0, "Holy Paladin": 0.07, "Holy Priest": 0.07, "Discipline Priest": 0, "Mistweaver Monk": 0.32, 
                           "Restoration Shaman": 0, "Preservation Evoker": 0 }, // This is the difference in spell efficiency. It does not apply to the bonus healing.
       },
