@@ -3,6 +3,12 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+import { runHeal } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+
+
+
+const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+
 
 export function initializeDruidSet() {
     const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
@@ -115,7 +121,7 @@ export function initializePaladinSet() {
     critMult: 2,
 }
   const castProfile = [
-    {spell: "Judgement", cpm: 1, hpc: 0},
+    //{spell: "Judgement", cpm: 1, hpc: 0},
     {spell: "Holy Light", cpm: 14, fillerSpell: true},
     {spell: "Flash of Light", cpm: 2.2},
     {spell: "Holy Shock", cpm: 9.5},
@@ -145,7 +151,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings) {
   const healingBreakdown = {};
   console.log("Trying to score Paladin Set")
   console.log(statProfile);
-  const state = {spec: "Holy Paladin", currentStats: statProfile, healingDone: {}, activeBuffs: [],  healingAura: 1};
+  const state = {t: 0, holyPower: 3, spec: "Holy Paladin", currentStats: statProfile, healingDone: {}, activeBuffs: [],  healingAura: 1, settings: {reporting: false}};
   const spellpower = statProfile.intellect + statProfile.spellpower;
   const critPercentage = statProfile.crit / 179 / 100 + 1;
   // Evaluate Stats
@@ -155,8 +161,8 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings) {
       const fullSpell = baseline.spellDB[spellProfile.spell];
 
       fullSpell.forEach(spell => {
-        runHeal(state, spell, spellProfile.spell)
-
+        if (spell.type === "heal") runHeal(state, spell, spellProfile.spell)
+        
 
         //const genericMult = 1.09 * (spellProfile.bonus ? spellProfile.bonus : 1); // Conviction
         //const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? critPercentage : 1;
@@ -177,7 +183,9 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings) {
         } */
 
         //healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + spellHealing;
+        
         const spellHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
+        console.log(state.healingDone);
         score += (spellHealing * spellProfile.cpm);
         state.healingDone = {};
 

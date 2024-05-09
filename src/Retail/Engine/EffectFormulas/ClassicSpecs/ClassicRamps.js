@@ -84,7 +84,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     // Pre-heal processing
     const currentStats = state.currentStats;
     let masteryFlag = true;
-
+    
     let healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     
@@ -103,7 +103,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
     if (spellName.includes("Wild Growth") && checkBuffActive(state.activeBuffs, "Tree of Life")) targetMult += 2;
-
+    console.log(healingMult, targetMult, spellName)
     const healingVal = getSpellRaw(spell, currentStats, state.spec, 0, masteryFlag) * (1 - spell.expectedOverheal) * healingMult * targetMult;
 
 

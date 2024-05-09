@@ -6,7 +6,7 @@ import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } fr
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
-import { initializePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -71,6 +71,7 @@ describe("Test APL", () => {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
             const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            
             console.log(data.weights);
 
         }
@@ -80,6 +81,7 @@ describe("Test APL", () => {
         }
         else if (testSuite === "Top Gear Scoring Function") {
             const baseline = initializePaladinSet();
+            console.log(scorePaladinSet(baseline, activeStats, {}, testSettings))
         }
 
 
