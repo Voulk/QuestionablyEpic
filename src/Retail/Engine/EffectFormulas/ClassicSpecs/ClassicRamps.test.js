@@ -16,12 +16,12 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 100,
-            spirit: 1,
-            spellpower: 100,
-            haste: 1,
-            crit: 1,
-            mastery: 1,
+            intellect: 4200,
+            spirit: 2000,
+            spellpower: 2000,
+            haste: 1000,
+            crit: 1000,
+            mastery: 1000,
             stamina: 5000,
             critMult: 2,
         }
@@ -64,13 +64,14 @@ describe("Test APL", () => {
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
-            console.log(data);
+            
         }
         else if (testSuite === "Stat") {
-            console.log(getTalentedSpellDB("Restoration Druid"));
+            //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            //const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
-            //console.log(data);
+            const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            console.log(data.weights);
+
         }
         else if (testSuite === "CastProfile") {
             //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");

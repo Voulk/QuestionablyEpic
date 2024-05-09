@@ -20,8 +20,13 @@ type Effect = {
 // Calculates an effects expected ppm given its ICD, proc chance, and our GCD or cast time.
 export function getEffectPPM(procChance: number, internalCooldown: number, gcd: number): number {
 
-  return 60 / (internalCooldown + 1/procChance*gcd)
+  //return 60 / (internalCooldown + 1/procChance*gcd)
+  return 60 / (internalCooldown + 2.5)
 
+}
+
+export function getAllTrinketDataClassic() {
+  return raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
 }
 
 // TODO: Write proper comments.
@@ -97,7 +102,7 @@ const raidTrinketData: Effect[] = [
       { // 
         value: {372: 2178, 359: 1926}, 
         stat: "spirit",
-        ppm: getEffectPPM(0.1, 85, 1.5),
+        ppm: getEffectPPM(0.1, 75, 1.5),
         duration: 15,
       },
     ],
@@ -108,6 +113,46 @@ const raidTrinketData: Effect[] = [
       return getGenericTrinket(data[0], itemLevel);
       
      // return bonus_stats;
+    }
+  },
+  {
+    name: "Shard of Woe",
+    effects: [
+      { 
+        value: {379: 410}, // TODO: Check it's not 205 for Nat / Holy spells.
+      },
+      {
+        value: {379: 1935},
+        duration: 10,
+        cooldown: 60,
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      const cpm = 22; // TODO: Pull from castmodel.
+      bonus_stats.mp5 = data[0].value[itemLevel] * cpm / 12;
+      bonus_stats.haste = data[1].value[itemLevel] * data[1].duration / data[1].cooldown;
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Jar of Ancient Remedies",
+    effects: [
+      { 
+        value: {359: 103}, // Spirit effect
+        stacks: 5,
+        uptime: 0.75,
+      },
+      {
+        value: {359: 6420}, // Instant mana effect
+        cooldown: 120,
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      bonus_stats.mp5 = data[1].value[itemLevel] / data[1].cooldown * 5;
+      bonus_stats.spirit = data[0].value[itemLevel] * data[0].stacks * data[0].uptime;
+      return bonus_stats;
     }
   },
 
@@ -121,7 +166,7 @@ const dungeonTrinketData: Effect[] = [
       { // 
         value: {346: 1710, 316: 1290}, 
         table: -1,
-        ppm: getEffectPPM(0.1, 85, 1.5),
+        ppm: getEffectPPM(0.1, 75, 1.5),
         stat: "spellpower",
         duration: 15,
       },
@@ -132,6 +177,74 @@ const dungeonTrinketData: Effect[] = [
       
     }
   },
+  {
+    name: "Tear of Blood",
+    effects: [
+      { // 
+        value: {316: 1290, 346: 1710}, 
+        ppm: getEffectPPM(0.35, 75 + 3, 1.5),
+        stat: "spirit",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericTrinket(data[0], itemLevel);
+      
+    }
+  },
+  {
+    name: "Witching Hourglass",
+    effects: [
+      { // 
+        value: {308: 918, 346: 1710}, 
+        ppm: getEffectPPM(0.1, 75, 1.5),
+        stat: "haste", // Change to ProcIntellect
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return getGenericTrinket(data[0], itemLevel);
+      
+    }
+  },
+  {
+    name: "Blood of Isiset",
+    effects: [
+      { // 
+        value: {333: 1512, 346: 1710}, 
+        ppm: getEffectPPM(0.1, 100, 1.5),
+        stat: "spirit", // Change to ProcIntellect
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return getGenericTrinket(data[0], itemLevel);
+      
+    }
+  },
+  {
+    name: "Gale of Shadows",
+    effects: [
+      { // 
+        value: {333: 15}, 
+        stacks: 20,
+        stat: "spellpower", 
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      bonus_stats["spellpower"] = data[0].value[itemLevel] * data[0].stacks;
+      return bonus_stats;
+      
+    }
+  },
+
 ]
 
 // Any trinket that doesn't drop from a raid or dungeon.
@@ -154,6 +267,40 @@ const otherTrinketData: Effect[] = [
     }
   },
   {
+    name: "Mandala of Stirring Patterns",
+    effects: [
+      { // 
+        value: {359: 1926}, 
+        ppm: getEffectPPM(0.1, 50+5, 1.5),
+        stat: "Intellect", // Change to ProcIntellect
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return getGenericTrinket(data[0], itemLevel);
+      
+    }
+  },
+  {
+    name: "Talisman of Sinister Order",
+    effects: [
+      { // 
+        value: {325: 918}, 
+        ppm: getEffectPPM(0.1, 100, 1.5),
+        stat: "mastery", // Change to ProcIntellect
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return getGenericTrinket(data[0], itemLevel);
+      
+    }
+  },
+  {
     name: "Darkmoon Card: Tsunami",
     effects: [
       { // 
@@ -170,6 +317,34 @@ const otherTrinketData: Effect[] = [
 
     }
   },
+  {
+    name: "Tyrande's Favorite Doll",
+    effects: [
+      { // 
+        value: {359: 4200}, 
+        stat: "mp5",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      bonus_stats.mp5 = data[0].value[itemLevel] / 12;
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Vibrant Alchemist Stone",
+    effects: [
+      { 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      const manaPotion = 22000; // This is a sleepy potion.
+      bonus_stats.mp5 = manaPotion * 0.4 / 360 * 5;
+      return bonus_stats;
+    }
+  },
+
 ]
 
 

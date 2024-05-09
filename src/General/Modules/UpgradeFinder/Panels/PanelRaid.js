@@ -7,7 +7,6 @@ import { encounterDB } from "../../../../Databases/InstanceDB";
 import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
-import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -16,25 +15,37 @@ import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
 
-const getDifficultyName = (difficulty) => {
-  switch (difficulty) {
-    case 0:
-      return "LFR";
-    case 1:
-      return "LFR (Max)";
-    case 2:
-      return "Normal";
-    case 3:
-      return "Normal (Max)";
-    case 4:
-      return "Heroic";
-    case 5:
-      return "Heroic (Max)";
-    case 6:
-      return "Mythic";
-    case 7:
-      return "Mythic (Max)";
+const getDifficultyName = (difficulty, gameType = "Retail") => {
+  if (gameType === "Retail") {
+    switch (difficulty) {
+      case 0:
+        return "LFR";
+      case 1:
+        return "LFR (Max)";
+      case 2:
+        return "Normal";
+      case 3:
+        return "Normal (Max)";
+      case 4:
+        return "Heroic";
+      case 5:
+        return "Heroic (Max)";
+      case 6:
+        return "Mythic";
+      case 7:
+        return "Mythic (Max)";
+    }
   }
+  else {
+    switch (difficulty) {
+      case 0:
+        return "Normal";
+      case 1:
+        return "Heroic";
+    }
+  
+  }
+
 };
 
 
@@ -44,6 +55,7 @@ export default function RaidGearContainer(props) {
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
+
   const gameType = useSelector((state) => state.gameType);
 
   function a11yProps(index) {
@@ -102,15 +114,16 @@ export default function RaidGearContainer(props) {
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+                  {/* ------------------------------------------  ------------------------------------------ */}
                   <Tab className={classes.vaultHeader} label={getTranslatedRaidName(1200)} {...a11yProps(0)} />
-                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+                  {/* ------------------------------------------  ------------------------------------------ */}
                   <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />
-                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
+                  {/* ------------------------------------------  ------------------------------------------ */}
                   <Tab className={classes.amirdrassilHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />
                 </Tabs>
               </AppBar>
             </Grid>
+
             <Grid item xs={12}>
               {raidList.map((raidID, index) => (
                 <UFTabPanel key={"panel" + index} value={tabvalue} index={index}>
@@ -120,7 +133,7 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
                               <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
@@ -222,17 +235,15 @@ export default function RaidGearContainer(props) {
   const contentGeneratorBC = () => {
     // Raid Panel
 
-    const burningCrusadeList = [
-      754, // Naxxramas
-      756, // The Eye of Eternity
-      759, // Ulduar
-      753, // Vault of Archavon
-      755, // The Obsidian Sanctum
-      760, // Onyxia's Lair
-      757, // Trial of the Crusader
-      758, // Icecrown Citadel
-    ];
+    const raidList = [
+      72, // Bastion
+      73, // Blackwing Descent
+      74, // Throne of Four Winds
 
+
+    ];
+    const firstDifficulty = 1;
+    const secondDifficulty = 0;
     // const firstDifficulty = difficulties[0];
     // const secondDifficulty = difficulties.length === 2 ? difficulties[1] : -1;
 
@@ -257,73 +268,114 @@ export default function RaidGearContainer(props) {
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------ Karazhan ------------------------------------------ */}
-                  <Tab className={classes.naxxramasHeaderStyle} label={encounterDB[754].name[currentLanguage]} {...a11yProps(0)} />
-                  {/* ---------------------------------------- Gruul's Lair ---------------------------------------- */}
-                  <Tab className={classes.malygosHeaderStyle} label={encounterDB[756].name[currentLanguage]} {...a11yProps(1)} />
-                  {/* ------------------------------------ Serpentshrine Cavern ------------------------------------ */}
-                  <Tab className={classes.ulduarHeaderStyle} label={encounterDB[759].name[currentLanguage]} {...a11yProps(2)} />
-                  {/* ---------------------------------------- Tempest Keep ---------------------------------------- */}
-                  <Tab className={classes.vaultOfArchavonHeaderStyle} label={encounterDB[753].name[currentLanguage]} {...a11yProps(3)} />
-                  {/* --------------------------------- The Battle for Mount Hyjal --------------------------------- */}
-                  <Tab className={classes.obsidianSanctumHeaderStyle} label={encounterDB[755].name[currentLanguage]} {...a11yProps(4)} />
-                  {/* ---------------------------------------- Black Temple ---------------------------------------- */}
-                  <Tab className={classes.onyxiaLairHeaderStyle} label={encounterDB[760].name[currentLanguage]} {...a11yProps(5)} />
-                  {/* ------------------------------------------ Zul'Aman ------------------------------------------ */}
-                  <Tab className={classes.argentRaidHeaderStyle} label={encounterDB[757].name[currentLanguage]} {...a11yProps(6)} />
-                  {/* --------------------------------------- Sunwell Plateau -------------------------------------- */}
-                  <Tab className={classes.icecrownCitadelHeaderStyle} label={encounterDB[758].name[currentLanguage]} {...a11yProps(7)} />
+                  {/* ------------------------------------------ Bastion of Twilight ------------------------------------------ */}
+                  <Tab className={classes.bastionHeaderStyle} label={encounterDB[72].name[currentLanguage]} {...a11yProps(0)} />
+                  {/* ---------------------------------------- BWD ---------------------------------------- */}
+                  <Tab className={classes.blackwingDescentHeaderStyle} label={encounterDB[73].name[currentLanguage]} {...a11yProps(1)} />
+                  {/* ------------------------------------ Throne of Four Winds ------------------------------------ */}
+                  <Tab className={classes.throneOfFourWindsHeaderStyle} label={encounterDB[74].name[currentLanguage]} {...a11yProps(2)} />
+  
                 </Tabs>
               </AppBar>
             </Grid>
 
             <Grid item xs={12}>
-              <Grid container spacing={1}>
-                <Grid item xs={12}>
-                  {burningCrusadeList.map((raidID, index) => (
-                    <TabPanel key={"panel" + index} value={tabvalue} index={index}>
-                      <div className={classes.panel}>
-                        <Grid container spacing={1}>
-                          <Grid item xs={12}>
-                            {encounterDB[raidID].bossOrder.map((key, i) => (
-                              <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-                                <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-                                  <Typography
-                                    variant="h6"
-                                    color="primary"
-                                    align="left"
-                                    style={{
-                                      // backgroundColor: "#35383e",
-                                      borderRadius: "4px 4px 0px 0px",
-                                      display: "flex",
-                                    }}
-                                  >
-                                    {bossHeaders(key, { height: 36, verticalAlign: "middle" })}
-                                    <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                    {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
-                                    {
-                                      [...filterClassicItemListBySource(itemList, key.slot)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0)
-                                        .length
-                                    }{" "}
-                                    Upgrades
-                                  </Typography>
-                                </UFAccordionSummary>
-                                <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-                                  <Grid xs={12} container spacing={1}>
-                                    {[...filterClassicItemListBySource(itemList, raidID, parseInt(key))].map((item, index) => (
+              {raidList.map((raidID, index) => (
+                <UFTabPanel key={"panel" + index} value={tabvalue} index={index}>
+                  <div className={classes.panel}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={12}>
+                        {encounterDB[raidID].bossOrder
+                          //.filter((key) => key === raidID)
+                          .map((key, i) => (
+                            <UFAccordion key={encounterDB[raidID].bosses[key][currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                              <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+                                <Typography
+                                  variant="h6"
+                                  color="primary"
+                                  align="left"
+                                  style={{
+                                    // backgroundColor: "#35383e",
+                                    borderRadius: "4px 4px 0px 0px",
+                                    display: "flex",
+                                  }}
+                                >
+                                  {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
+                                  <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+                                  {encounterDB[raidID].bosses[key][currentLanguage]} -{" "}
+                                  {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
+                                    (secondDifficulty !== -1
+                                      ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
+                                      : 0)}{" "}
+                                  Upgrades
+                                </Typography>
+                              </UFAccordionSummary>
+                              <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                                <Grid item xs={12} sm container direction="row" spacing={1}>
+                                  <Grid item xs={12} container spacing={1}>
+                                    <Grid item xs={12}>
+                                      <Typography
+                                        variant="h6"
+                                        color="primary"
+                                        align="left"
+                                        style={{
+                                          backgroundColor: "#35383e",
+                                          borderRadius: 4,
+                                        }}
+                                      >
+                                        <div style={{ marginLeft: 8 }}>
+                                          {getDifficultyName(firstDifficulty, "Classic")} -{" "}
+                                          {
+                                            getNumUpgrades(itemDifferentials, raidID, key, 0)
+                                          }{" "}
+                                          Upgrades
+                                        </div>
+                                      </Typography>
+                                    </Grid>
+
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
-                                </AccordionDetails>
-                              </UFAccordion>
-                            ))}
-                          </Grid>
-                        </Grid>
-                      </div>
-                    </TabPanel>
-                  ))}
-                </Grid>
-              </Grid>
+
+                                  {secondDifficulty !== -1 ? (
+                                    <Grid item xs={12} container spacing={1}>
+                                      <Grid item xs={12}>
+                                        <Typography
+                                          variant="h6"
+                                          color="primary"
+                                          align="left"
+                                          style={{
+                                            backgroundColor: "#35383e",
+                                            borderRadius: 4,
+                                          }}
+                                        >
+                                          <div style={{ marginLeft: 8 }}>
+                                            {getDifficultyName(secondDifficulty, "Classic")} -{" "}
+                                            {
+                                              getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
+                                            }{" "}
+                                            Upgrades
+                                          </div>
+                                        </Typography>
+                                      </Grid>
+
+                                      {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", secondDifficulty)].map((item, index) => (
+                                        <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                                      ))}
+                                    </Grid>
+                                  ) : (
+                                    ""
+                                  )}
+                                </Grid>
+                              </AccordionDetails>
+                            </UFAccordion>
+                          ))}
+                      </Grid>
+                    </Grid>
+                  </div>
+                </UFTabPanel>
+              ))}
             </Grid>
           </Grid>
         </div>

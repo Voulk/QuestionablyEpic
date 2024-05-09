@@ -56,12 +56,19 @@ import TheUnderrot from "../../../../../Images/MythicPlus/TheUnderrot.png";
 import TheVortexPinnacle from "../../../../../Images/MythicPlus/TheVortexPinnacle.png";
 import NL from "../../../../../Images/MythicPlus/NeltharionsLair.png";
 
-
 import Ataldazar from "../../../../../Images/MythicPlus/Ataldazar.png";
 import WaycrestManor from "../../../../../Images/MythicPlus/WaycrestManor.png";
+import DawnOfTheInfinites from "../../../../../Images/MythicPlus/DawnOfTheInfinites.png";
+
 import ThroneOfTheTides from "../../../../../Images/MythicPlus/ThroneOfTheTides.png";
 import Everbloom from "../../../../../Images/MythicPlus/Everbloom.png";
-import DawnOfTheInfinites from "../../../../../Images/MythicPlus/DawnOfTheInfinites.png";
+import Stonecore from "Images/Classic/Dungeons/Stonecore.jpg";
+import BlackrockCavern from "Images/Classic/Dungeons/BlackrockCavern.jpg";
+import Deadmines from "Images/Classic/Dungeons/Deadmines.jpg";
+import LostCityOfTolvir from "Images/Classic/Dungeons/LostCityOfTolvir.jpg";
+import ShadowfangKeep from "Images/Classic/Dungeons/ShadowfangKeep.jpg";
+import GrimBatol from "Images/Classic/Dungeons/GrimBatol.jpg";
+import HallsOfReorigination from "Images/Classic/Dungeons/HallsOfReorigination.jpg";
 
 export default function DungeonHeaderIcons(props) {
   let source = "";
@@ -69,6 +76,13 @@ export default function DungeonHeaderIcons(props) {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Shadowlands                                          */
   /* ---------------------------------------------------------------------------------------------- */
+  if (props === 67) source = Stonecore;
+  if (props === 66) source = BlackrockCavern;
+  if (props === 63) source = Deadmines;
+  if (props === 71) source = GrimBatol;
+  if (props === 70) source = HallsOfReorigination;
+  if (props === 69) source = LostCityOfTolvir;
+  if (props === 64) source = ShadowfangKeep;
 
   /* ------------------------------------- Halls of Atonement ------------------------------------- */
   if (props === 12831 || props === 1185) {

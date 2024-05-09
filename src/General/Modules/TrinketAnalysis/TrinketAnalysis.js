@@ -17,6 +17,8 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
+import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
+
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
@@ -290,18 +292,20 @@ export default function TrinketAnalysis(props) {
         const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
         existingTrinket["heroic"] = trinketScore;
         existingTrinket["heroicilvl"] = trinket.itemLevel;
+        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
       }
       else {
         trinketAtLevels["normal"] = trinketScore;
         trinketAtLevels["normalilvl"] = trinket.itemLevel;
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
         activeTrinkets.push(trinketAtLevels);
       }
 
     } else {
-      for (var x = 0; x < itemLevels.length; x++) {
-        trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
-      }
-      activeTrinkets.push(trinketAtLevels);
+        for (var x = 0; x < itemLevels.length; x++) {
+          trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
+        }
+        activeTrinkets.push(trinketAtLevels);
     }
   }
 

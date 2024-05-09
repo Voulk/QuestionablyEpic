@@ -81,9 +81,9 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
 export const getTalentedSpellDB = (spec) => {
     const spellDB = druidSpells;
     const playerSpells = deepCopyFunction(spellDB);
-    console.log("Grabbed playerDB");
+
     applyTalents({stats: {intellect: 0, crit: 0}, talents: druidTalents}, playerSpells, {intellect: 0, crit: 0})
-    console.log("Talents applied");
+
     applyLoadoutEffects(playerSpells, {}, {spec: spec});
 
     console.log("Loadout effects applied");
