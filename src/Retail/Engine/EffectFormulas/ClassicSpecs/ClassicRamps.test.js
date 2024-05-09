@@ -6,6 +6,7 @@ import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } fr
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
+import { initializePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -17,9 +18,9 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 4200,
-            spirit: 2000,
-            spellpower: 2000,
-            haste: 1000,
+            spirit: 1800,
+            spellpower: 1800,
+            haste: 1400,
             crit: 1000,
             mastery: 1000,
             stamina: 5000,
@@ -58,8 +59,8 @@ describe("Test APL", () => {
         })
 
         //const baseSpells = EVOKERSPELLDB;
-        const testSuite = "Stat"
-        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+        const testSuite = "Top Gear Scoring Function";
+        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
         const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
@@ -76,6 +77,9 @@ describe("Test APL", () => {
         else if (testSuite === "CastProfile") {
             //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+        }
+        else if (testSuite === "Top Gear Scoring Function") {
+            const baseline = initializePaladinSet();
         }
 
 

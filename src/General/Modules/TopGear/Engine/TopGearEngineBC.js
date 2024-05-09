@@ -13,7 +13,7 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
-import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
 import { gemDB } from "Databases/GemDB";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
@@ -134,7 +134,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     console.log("Item Count: " + itemList.length);
     console.log("Sets (Post-Reforge): " + itemSets.length);
     
-    const baseline = initializeDruidSet();
+    const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
 
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
@@ -483,7 +483,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
 
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseline, setStats, player, userSettings, baseline);
+      hardScore = scoreDruidSet(baseline, setStats, player, userSettings);
+    }
+    else if (player.spec === "Holy Paladin Classic") {
+      hardScore = scorePaladinSet(baseline, setStats, player, userSettings);
     }
     else {
       console.log("DOING OLD SCORING");

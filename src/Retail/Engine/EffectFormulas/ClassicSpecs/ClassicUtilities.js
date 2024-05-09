@@ -2,6 +2,7 @@
 
 import { getHealth } from "../Generic/RampGeneric/RampBase";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./ClassicPaladinSpellDB";
 import { applyTalents, deepCopyFunction } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 
 /**
@@ -78,13 +79,14 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
     return classicSpells;
 }
 
-export const getTalentedSpellDB = (spec) => {
-    const spellDB = druidSpells;
+export const getTalentedSpellDB = (spec, state) => {
+    const spellDB = spec.includes("Holy Paladin") ? paladinSpells : druidSpells;
+    const talents = spec.includes("Holy Paladin") ? paladinTalents : druidTalents;
     const playerSpells = deepCopyFunction(spellDB);
 
-    applyTalents({stats: {intellect: 0, crit: 0}, talents: druidTalents}, playerSpells, {intellect: 0, crit: 0})
+    applyTalents(state, playerSpells, {intellect: 0, crit: 0})
 
-    applyLoadoutEffects(playerSpells, {}, {spec: spec});
+    applyLoadoutEffects(playerSpells, state.settings, {spec: spec});
 
     console.log("Loadout effects applied");
     return playerSpells;

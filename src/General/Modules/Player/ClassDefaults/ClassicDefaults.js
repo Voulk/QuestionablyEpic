@@ -1,5 +1,6 @@
 
-import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 
@@ -38,7 +39,6 @@ export function initializeDruidSet() {
       spell.healing = 0;
     })
     const costPerMinute = druidCastProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
-    console.log("Cost per minute: " + costPerMinute);
     const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
     //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
     const adjSpells = getTalentedSpellDB("Restoration Druid");
@@ -96,10 +96,97 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings) 
         
     })
 
-
-    //console.log(score);
-    // Deal with mana
-    //console.log(JSON.stringify(healingBreakdown));
-    //console.log("HPS SCORE: " + score/60)
     return score;
+}
+
+
+export function initializePaladinSet() {
+  console.log("Initializing Paladin Set")
+  const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
+
+  const activeStats = {
+    intellect: 100,
+    spirit: 1,
+    spellpower: 100,
+    haste: 1,
+    crit: 1,
+    mastery: 1,
+    stamina: 5000,
+    critMult: 2,
+}
+  const castProfile = [
+    {spell: "Judgement", cpm: 1, hpc: 0},
+    {spell: "Holy Light", cpm: 14, fillerSpell: true},
+    {spell: "Flash of Light", cpm: 2.2},
+    {spell: "Holy Shock", cpm: 9.5},
+    {spell: "Holy Radiance", cpm: 4.5},
+    {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3},
+  ]
+
+  castProfile.forEach(spell => {
+    spell.castTime = paladinSpells[spell.spell][0].castTime;
+    spell.hpc = 0;
+    spell.cost = spell.freeCast ? 0 : paladinSpells[spell.spell][0].cost * 18635 / 100;
+    spell.healing = 0;
+  })
+  const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+  const playerData = { spec: "Holy Paladin", spells: paladinSpells, settings: testSettings, talents: {...paladinTalents}, stats: activeStats }
+  //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+  const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
+  //console.log(JSON.stringify(adjSpells));
+  console.log("Initialized Paladin Set")
+  console.log({ castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute })
+  return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
+}
+
+
+export function scorePaladinSet(baseline, statProfile, player, userSettings) {
+  let score = 0;
+  const healingBreakdown = {};
+  console.log("Trying to score Paladin Set")
+  console.log(statProfile);
+  const state = {spec: "Holy Paladin", currentStats: statProfile, healingDone: {}, activeBuffs: [],  healingAura: 1};
+  const spellpower = statProfile.intellect + statProfile.spellpower;
+  const critPercentage = statProfile.crit / 179 / 100 + 1;
+  // Evaluate Stats
+  // Spellpower
+
+  baseline.castProfile.forEach(spellProfile => {
+      const fullSpell = baseline.spellDB[spellProfile.spell];
+
+      fullSpell.forEach(spell => {
+        runHeal(state, spell, spellProfile.spell)
+
+
+        //const genericMult = 1.09 * (spellProfile.bonus ? spellProfile.bonus : 1); // Conviction
+        //const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? critPercentage : 1;
+        //const additiveScaling = (spell.additiveScaling || 0) + 1
+        //const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;
+        /*let spellHealing = (spell.flat + spell.coeff * spellpower) * // TODO: Swap to a spell specificl spellpower weight.
+                            (critMult) * // Add base crit
+                            (masteryMult) *
+                            genericMult;
+        
+        // Handle HoT
+        if (spell.type === "classic periodic") {
+            const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(statProfile, "Classic");
+            const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+            
+            const tickCount = Math.round(spell.buffDuration / (adjTickRate));
+            spellHealing = spellHealing * tickCount;
+        } */
+
+        //healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + spellHealing;
+        const spellHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
+        score += (spellHealing * spellProfile.cpm);
+        state.healingDone = {};
+
+
+      })
+
+      // Filler mana
+      
+  })
+
+  return score;
 }

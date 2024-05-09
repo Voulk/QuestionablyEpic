@@ -85,13 +85,18 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     const currentStats = state.currentStats;
     let masteryFlag = true;
 
-    const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
+    let healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     
     // Mastery special checks
     if (state.spec === "Restoration Druid") {
-        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName) || state.settings.alwaysMastery) masteryFlag = true;
-        else masteryFlag = false;
+        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName) || state.settings.alwaysMastery) {
+            //masteryFlag = true;
+            const additiveScaling = (spell.additiveScaling || 0) + 1;
+            healingMult *= (additiveScaling + (currentStats.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling;
+        }
+        masteryFlag = false;
+
     }
     else if (state.spec === "Holy Paladin") masteryFlag = false; // We'll handle this separately.
 
