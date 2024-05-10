@@ -168,7 +168,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = patronCaps[patronStatus] ? patronCaps[patronStatus] : 30; // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 8 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -265,6 +265,7 @@ export default function TopGear(props: any) {
           if (itemList[i].stats[reforgeFrom] > 0) {
             // Get possible reforge to options
             const options = 2 - Object.keys(itemList[i].stats).filter((stat: any) => reforgeToList.includes(stat)).length;
+            //console.log("Item has stats: " + JSON.stringify(itemList[i].stats) + " and thus has: " + reforgeFrom + ". Added: " + options +" versions");
             slotLengths[slot] += options;
           }
       })
@@ -279,6 +280,7 @@ export default function TopGear(props: any) {
         else iterations *= (slotLengths[key] > 0? slotLengths[key] : 1);
       }
     }
+    console.log("Item count TG" + Object.values(slotLengths).reduce((total, value) => total + value, 0));
     console.log(iterations);
     return iterations;
     
@@ -514,7 +516,7 @@ export default function TopGear(props: any) {
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, true, reforgeFromList, reforgeToList)
         .then((result: TopGearResult | null) => {
           if (result) {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);

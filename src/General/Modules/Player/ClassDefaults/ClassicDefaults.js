@@ -47,7 +47,7 @@ export function initializeDruidSet() {
     const costPerMinute = druidCastProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
     const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
     //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
-    const adjSpells = getTalentedSpellDB("Restoration Druid");
+    const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: druidTalents, spec: "Restoration Druid"});
     //console.log(JSON.stringify(adjSpells));
     return { castProfile: druidCastProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }
