@@ -25,6 +25,7 @@ import { Item } from "General/Modules/Player/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
+import TopGearReforgePanel from "./TopGearReforgePanel";
 
 type ShortReport = {
   id: string;
@@ -149,6 +150,9 @@ export default function TopGear(props: any) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
+  const reforgeFromList = ["haste", "crit"]
+  const reforgeToList = ["mastery", "spirit"]
+
   const contentType = useSelector((state: RootState) => state.contentType);
   const gameType = useSelector((state: RootState) => state.gameType);
   const playerSettings = useSelector((state: RootState) => state.playerSettings);
@@ -256,6 +260,14 @@ export default function TopGear(props: any) {
            if (slot === "Shield") slotLengths["Offhand"] += 1;
            else slotLengths[slot] += 1;
         }
+
+        reforgeFromList.forEach((reforgeFrom) => {
+          if (itemList[i].stats[reforgeFrom] > 0) {
+            // Get possible reforge to options
+            const options = 2 - Object.keys(itemList[i].stats).filter((stat: any) => reforgeToList.includes(stat)).length;
+            slotLengths[slot] += options;
+          }
+      })
       }
     }
 
@@ -270,11 +282,9 @@ export default function TopGear(props: any) {
     console.log(iterations);
     return iterations;
     
-
-
   }
 
-  const checkSlots = (): string[] => {
+  const checkSlots = (gameType: gameTypes): string[] => {
        /* ------------------ Check that the player has selected an item in every slot. ----------------- */
        getCombinations();
        let itemList = props.player.getSelectedItems();
@@ -297,7 +307,9 @@ export default function TopGear(props: any) {
          "1H Weapon" : 0,
          "Offhand" : 0,
        };
-   
+       if (gameType === "Classic") {
+         slotLengths["Relics & Wands"] = 0;
+       }
        for (var i = 0; i < itemList.length; i++) {
          let slot = itemList[i].slot;
          if (slot in slotLengths || slot === "Shield") {
@@ -336,22 +348,22 @@ export default function TopGear(props: any) {
   }
 
   const getErrorMessage = () => {
-    const missingSlots = checkSlots();
+    const missingSlots = checkSlots(gameType);
 
     let errorMessage = "Add ";
     if (missingSlots.length > 10) {
-      return "Add SimC String"
+      return "Add Import String"
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield"].includes(slot))) errorMessage += slot + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += slot + ", ";
         
       })
 
       if ((missingSlots.includes("2H Weapon") && (missingSlots.includes("1H Weapon") || (missingSlots.includes("Offhand") || missingSlots.includes("Shield"))))) {
-
         errorMessage += " Weapon, " 
       }
+      if (missingSlots.includes("Relics & Wands")) errorMessage += " Relic or Wand, ";
 
       return errorMessage.slice(0, -2);
     }
@@ -607,7 +619,11 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-
+        {gameType === "Classic" ? 
+        <Grid item xs={12}>
+          <TopGearReforgePanel />
+        </Grid>
+        : null}
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
             return (
@@ -670,7 +686,7 @@ export default function TopGear(props: any) {
               variant="contained" 
               color="primary" 
               style={{ height: "64%", width: "180px" }} 
-              disabled={checkSlots().length > 0 || !btnActive}  //
+              disabled={checkSlots(gameType).length > 0 || !btnActive}  //
               onClick={unleashTopGear}> 
               {t("TopGear.GoMsg")}
             </Button>
