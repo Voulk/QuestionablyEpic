@@ -1,4 +1,4 @@
-import { Button, Paper, Typography  } from "@mui/material";
+import { ToggleButton, Paper, Typography  } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,34 +31,35 @@ const useStyles = makeStyles((theme) => ({
     pos: { marginBottom: 12 },
     text: {
         marginRight: theme.spacing(2),
-        alignSelf: 'flex-start',
+
       },
   }));
 
-const ReforgePanel = () => {
+const ReforgePanel = ({ reforgeFrom, reforgeTo, changeReforgeFrom, changeReforgeTo }) => {
     const classes = useStyles();
-  
+    const forgeOptions = ["haste", "spirit", "crit", "mastery"];
     return (
         <Paper className={classes.root} elevation={3}>
         <Typography variant="h6" gutterBottom>Reforger</Typography>
         <Typography variant="body2" gutterBottom>To keep iteration count from exploding, pick 1-2 stats to reforge from and 1-2 stats to reforge to.</Typography>
         <div className={classes.buttonGroupContainer}>
-        <Typography variant="body1" className={classes.text}>From</Typography>
+        
           <div className={classes.buttonGroup}>
-            <Button variant="contained" color="primary">Haste</Button>
-            <Button variant="contained" color="primary">Spirit</Button>
-            <Button variant="contained" color="primary">Crit</Button>
-            <Button variant="contained" color="primary">Mastery</Button>
+            {forgeOptions.map((option => {
+                return <ToggleButton onChange={() => {changeReforgeFrom(option)}} selected={reforgeFrom.includes(option)} variant="contained" color="primary">{option.toUpperCase()}</ToggleButton>
+            }))}
+            
+            {/*<ToggleButton selected={reforgeFrom.includes("spirit")} variant="contained" color="primary">Spirit</ToggleButton>
+            <ToggleButton selected={reforgeFrom.includes("crit")} variant="contained" color="primary">Crit</ToggleButton>
+        <ToggleButton selected={reforgeFrom.includes("mastery")} variant="contained" color="primary">Mastery</ToggleButton> */}
           </div>
         </div>
-
-        <div className={classes.buttonGroupContainer}>
         <Typography variant="body1" className={classes.text}>To</Typography>
+        <div className={classes.buttonGroupContainer}>
           <div className={classes.buttonGroup}>
-            <Button variant="contained" color="primary">Haste</Button>
-            <Button variant="contained" color="primary">Spirit</Button>
-            <Button variant="contained" color="primary">Crit</Button>
-            <Button variant="contained" color="primary">Mastery</Button>
+          {forgeOptions.map((option => {
+                return <ToggleButton onChange={() => {changeReforgeTo(option)}} selected={reforgeTo.includes(option)} variant="contained" color="primary">{option.toUpperCase()}</ToggleButton>
+            }))}
           </div>
         </div>
       </Paper>

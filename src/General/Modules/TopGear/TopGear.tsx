@@ -150,8 +150,8 @@ export default function TopGear(props: any) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
-  const reforgeFromList = ["haste", "crit"]
-  const reforgeToList = ["mastery", "spirit"]
+  const [reforgeFromList, setReforgeFromList] = useState(["haste", "crit"]);
+  const [reforgeToList, setReforgeToList] = useState(["mastery", "spirit"]);
 
   const contentType = useSelector((state: RootState) => state.contentType);
   const gameType = useSelector((state: RootState) => state.gameType);
@@ -556,6 +556,35 @@ export default function TopGear(props: any) {
     }
   };
 
+  const changeReforgeFrom = (buttonClicked: "string") => {
+    if (reforgeFromList.includes(buttonClicked)) {
+      reforgeFromList.splice(reforgeFromList.indexOf(buttonClicked), 1);
+      setReforgeFromList([...reforgeFromList]);
+
+    } 
+    else {
+      if (reforgeFromList.length < 2) {
+        reforgeFromList.push(buttonClicked);
+        setReforgeFromList([...reforgeFromList]);
+      }
+    }
+  }
+
+  const changeReforgeTo = (buttonClicked: "string") => {
+    if (reforgeToList.includes(buttonClicked)) {
+      console.log("Button is in array, removing");
+      reforgeToList.splice(reforgeToList.indexOf(buttonClicked), 1);
+      setReforgeToList([...reforgeToList]);
+
+    } 
+    else {
+      if (reforgeToList.length < 2) {
+        reforgeToList.push(buttonClicked);
+        setReforgeToList([...reforgeToList]);
+      }
+    }
+  }
+
   const selectedItemCount = props.player.getSelectedItems().length || 0;
 
   const helpBlurb = t("TopGear.HelpText" + gameType);
@@ -621,7 +650,7 @@ export default function TopGear(props: any) {
         </Grid>
         {gameType === "Classic" ? 
         <Grid item xs={12}>
-          <TopGearReforgePanel />
+          <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
         </Grid>
         : null}
         {props.player.activeItems.length > 0 ? (
