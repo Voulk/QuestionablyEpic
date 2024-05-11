@@ -63,9 +63,7 @@ export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFla
 export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) => {
     let mult = 1;
     const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
-    const critChance = (GLOBALCONST.baseCrit[spec] + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100) +
-                        (currentStats['intellect'] / GLOBALCONST.statPoints.critInt / 100) + 
-                        (statMods['crit'] || 0 );
+    const critChance = getCritPercentage(spec, currentStats) + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
@@ -119,6 +117,10 @@ export const applyRaidBuffs = (state, stats) => {
     //console.log(state.currentStats);
 }
 
+export const getCritPercentage = (currentStats, spec) => {
+    return (GLOBALCONST.baseCrit[spec] + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100) +
+                        (currentStats['intellect'] / GLOBALCONST.statPoints.critInt / 100);
+}
 
 // Returns MP5.
 export const getManaRegen = (currentStats, spec) => {
@@ -126,6 +128,7 @@ export const getManaRegen = (currentStats, spec) => {
         "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
         "Restoration Druid": 0.5,
     }
+    console.log(inCombatRegen[spec]);
     return (/*1171*/0.001 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
 }
 

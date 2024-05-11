@@ -20,7 +20,7 @@ describe("Test APL", () => {
             intellect: 4200,
             spirit: 1800,
             spellpower: 1800,
-            haste: 1400,
+            haste: 1000,
             crit: 1000,
             mastery: 1000,
             stamina: 5000,
@@ -81,7 +81,12 @@ describe("Test APL", () => {
         }
         else if (testSuite === "Top Gear Scoring Function") {
             const baseline = initializeDruidSet();
-            console.log(scoreDruidSet(baseline, activeStats, {}, testSettings))
+            const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
+            console.log(scoredSet + "(" + scoredSet / 60 + ")")
+
+            const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
+            console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
+            //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
         }
 
 
