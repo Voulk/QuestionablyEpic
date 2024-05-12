@@ -128,12 +128,11 @@ export const getManaRegen = (currentStats, spec) => {
         "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
         "Restoration Druid": 0.5,
     }
-    console.log(inCombatRegen[spec]);
     return (/*1171*/0.001 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
 }
 
 export const getManaPool = (currentStats, spec) => {
-    if (spec.includes("Restoration Druid")) return (24777 + currentStats.intellect * 15) * 1.02 * 1.15; // Furor
+    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02 * 1.15; // Meta + Furor 18635 - 280
     else return (24777 + currentStats.intellect * 15) * 1.02;
 }
 

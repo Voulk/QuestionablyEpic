@@ -87,6 +87,8 @@ describe("Test APL", () => {
             const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
             console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
             //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
+
+            buildStatChart(baseline, activeStats, testSettings);
         }
 
 
@@ -94,6 +96,15 @@ describe("Test APL", () => {
     })
 
 });
+
+const buildStatChart = (baseline, activeStats, testSettings) => {
+    const results = [];
+    for (let i = 0; i < 2100; i += 10) {
+        const score = scoreDruidSet(baseline, {...activeStats, mastery: i}, {}, testSettings);
+        results.push(Math.round(score));
+    }
+    console.log(JSON.stringify(results));
+}
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.

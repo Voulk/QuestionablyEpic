@@ -39,17 +39,20 @@ export function initializeDruidSet() {
       {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true, bonus: 1.15}, // Tree of Life OOC Regrowths
       {spell: "Wild Growth", cpm: 3.5 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
     ]
+
+    const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: druidTalents, spec: "Restoration Druid"});
   
     druidCastProfile.forEach(spell => {
+      console.log("Spell cost: " + spell.spell + " "  + adjSpells[spell.spell][0].cost)
       spell.castTime = druidSpells[spell.spell][0].castTime;
       spell.hpc = 0;
-      spell.cost = spell.freeCast ? 0 : druidSpells[spell.spell][0].cost * 18635 / 100;
+      spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;
       spell.healing = 0;
     })
     const costPerMinute = druidCastProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
     const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
     //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
-    const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: druidTalents, spec: "Restoration Druid"});
+
     //console.log(JSON.stringify(adjSpells));
     return { castProfile: druidCastProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }
