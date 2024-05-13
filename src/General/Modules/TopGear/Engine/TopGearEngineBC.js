@@ -468,18 +468,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     let effectStats = [];
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
-
       effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "Classic", setStats));
-  
     }
-    bonus_stats = mergeBonusStats(effectStats);
+    //setStats = mergeBonusStats(effectStats);
+    compileStats(setStats, effectStats);
 
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
       // 
       setStats.intellect *= 1.06;
       // mana Pool
-      setStats.crit += 4 * 179;
+      //setStats.crit += 4 * 179;
     }
 
     if (player.spec === "Restoration Druid Classic") {
