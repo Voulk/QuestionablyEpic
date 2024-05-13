@@ -150,8 +150,8 @@ export default function TopGear(props: any) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
-  const [reforgeFromList, setReforgeFromList] = useState(["haste", "crit"]);
-  const [reforgeToList, setReforgeToList] = useState(["mastery", "spirit"]);
+  const [reforgeFromList, setReforgeFromList] = useState([]);
+  const [reforgeToList, setReforgeToList] = useState([]);
 
   const contentType = useSelector((state: RootState) => state.contentType);
   const gameType = useSelector((state: RootState) => state.gameType);
@@ -658,7 +658,7 @@ export default function TopGear(props: any) {
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
             return (
-              <Grid item xs={12} key={index}>
+              <Grid item lg={12} xl={12} xs={12} key={index}>
                 <Typography color="primary" variant="h5">
                   {key.label}
                 </Typography>

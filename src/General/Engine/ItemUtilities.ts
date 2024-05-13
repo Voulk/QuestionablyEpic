@@ -823,7 +823,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
 export function buildStatString(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -844,6 +844,40 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
         ? statsList[ind]["val"] +
           " " +
           statName +
+          " / " 
+        : "";
+  }
+
+  // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
+  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  
+
+  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+}
+
+export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: string = "en") {
+  let statString = "";
+  let statsList = [];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
+  for (const [statkey, statvalue] of Object.entries(stats)) {
+    if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
+  }
+
+  statsList = statsList.sort(function (a: any, b: any) {
+    return b.val - a.val;
+  });
+
+  //if (stats.intellect) statString = stats.intellect + " Int / ";
+
+  for (var ind in statsList) {
+    const statKey: string = statsList[ind]["key"];
+    // @ts-ignore
+    const statName: string = statKey in translatedStat ? translatedStat[statKey][lang] : "";
+
+    statString +=
+      statsList[ind]["val"] > 0
+        ? statName +
           " / " 
         : "";
   }
@@ -901,6 +935,7 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 // It is useful to have some items to work with.
 export function autoAddItems(player: Player, contentType: contentTypes, gameType: gameTypes) {
   let itemDB = getItemDB(gameType);
+  player.clearActiveItems();
 
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
   const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
@@ -909,7 +944,7 @@ export function autoAddItems(player: Player, contentType: contentTypes, gameType
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
-      (key.itemLevel === 359) && 
+      (key.itemLevel === 359 || key.itemLevel === 372 || key.itemLevel === 346) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -922,7 +957,7 @@ export function autoAddItems(player: Player, contentType: contentTypes, gameType
   itemDB.forEach((item: any) => {
     const slot = getItemProp(item.id, "slot", gameType);
     if ((slot === 'Trinket' && item.levelRange) || 
-        (slot !== 'Trinket' && item.stats.intellect)) {
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit)) {
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
       player.activeItems.push(newItem);
     }
