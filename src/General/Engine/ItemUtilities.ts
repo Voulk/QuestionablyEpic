@@ -823,7 +823,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
 export function buildStatString(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -859,7 +859,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -935,6 +935,7 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 // It is useful to have some items to work with.
 export function autoAddItems(player: Player, contentType: contentTypes, gameType: gameTypes) {
   let itemDB = getItemDB(gameType);
+  player.clearActiveItems();
 
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
   const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
@@ -956,7 +957,7 @@ export function autoAddItems(player: Player, contentType: contentTypes, gameType
   itemDB.forEach((item: any) => {
     const slot = getItemProp(item.id, "slot", gameType);
     if ((slot === 'Trinket' && item.levelRange) || 
-        (slot !== 'Trinket' && item.stats.intellect)) {
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit)) {
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
       player.activeItems.push(newItem);
     }
