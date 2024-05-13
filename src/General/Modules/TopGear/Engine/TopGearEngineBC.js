@@ -13,7 +13,7 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
-import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
 import { gemDB } from "Databases/GemDB";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
@@ -83,7 +83,7 @@ function setupPlayer(player, contentType, castModel) {
   return newPlayer;
 }
 
-export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reforgingOn = true) {
+export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = []) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -101,13 +101,13 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     // - Stat B -> Stat C or stat D
     // - No reforge at all.
     let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
-    const reforgeFromOptions = ["crit", "mastery", ];
-    const reforgeOptions = ["haste", "spirit"];
+    //const reforgeFromOptions = ["crit", "mastery", ];
+    //const reforgeOptions = ["haste", "spirit"];
     
     if (reforgingOn) {
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
-        const itemReforgeOptions = reforgeOptions.filter(stat => !itemStats.includes(stat));
+        const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
         itemStats.forEach(fromStat => {
           // for each stat, add one version that trades a portion of it for another.
@@ -134,7 +134,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     console.log("Item Count: " + itemList.length);
     console.log("Sets (Post-Reforge): " + itemSets.length);
     
-    const baseline = initializeDruidSet();
+    const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
 
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
@@ -468,22 +468,24 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     let effectStats = [];
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
-
       effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "Classic", setStats));
-  
     }
-    bonus_stats = mergeBonusStats(effectStats);
+    //setStats = mergeBonusStats(effectStats);
+    compileStats(setStats, effectStats);
 
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
       // 
       setStats.intellect *= 1.06;
       // mana Pool
-      setStats.crit += 4 * 179;
+      //setStats.crit += 4 * 179;
     }
 
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseline, setStats, player, userSettings, baseline);
+      hardScore = scoreDruidSet(baseline, setStats, player, userSettings);
+    }
+    else if (player.spec === "Holy Paladin Classic") {
+      hardScore = scorePaladinSet(baseline, setStats, player, userSettings);
     }
     else {
       console.log("DOING OLD SCORING");

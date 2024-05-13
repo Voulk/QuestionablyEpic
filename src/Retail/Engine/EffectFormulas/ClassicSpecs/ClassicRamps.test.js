@@ -6,6 +6,7 @@ import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } fr
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
+import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -17,8 +18,8 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 4200,
-            spirit: 2000,
-            spellpower: 2000,
+            spirit: 1800,
+            spellpower: 1800,
             haste: 1000,
             crit: 1000,
             mastery: 1000,
@@ -58,8 +59,8 @@ describe("Test APL", () => {
         })
 
         //const baseSpells = EVOKERSPELLDB;
-        const testSuite = "Stat"
-        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+        const testSuite = "Top Gear Scoring Function";
+        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
         const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
@@ -70,6 +71,7 @@ describe("Test APL", () => {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
             const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            
             console.log(data.weights);
 
         }
@@ -77,12 +79,32 @@ describe("Test APL", () => {
             //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
+        else if (testSuite === "Top Gear Scoring Function") {
+            const baseline = initializeDruidSet();
+            const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
+            console.log(scoredSet + "(" + scoredSet / 60 + ")")
+
+            const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
+            console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
+            //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
+
+            buildStatChart(baseline, activeStats, testSettings);
+        }
 
 
         expect(true).toEqual(true);
     })
 
 });
+
+const buildStatChart = (baseline, activeStats, testSettings) => {
+    const results = [];
+    for (let i = 0; i < 2100; i += 10) {
+        const score = scoreDruidSet(baseline, {...activeStats, mastery: i}, {}, testSettings);
+        results.push(Math.round(score));
+    }
+    console.log(JSON.stringify(results));
+}
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.

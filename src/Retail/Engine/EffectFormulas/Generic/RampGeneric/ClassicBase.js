@@ -63,10 +63,9 @@ export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFla
 export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) => {
     let mult = 1;
     const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
-    
-    const critChance = GLOBALCONST.baseCrit[spec] + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
+    const critChance = getCritPercentage(spec, currentStats) + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
-    
+
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery") && masteryFlag) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * GLOBALCONST.masteryMod[spec] / 100) * 1/*specConstants.masteryEfficiency*/);
@@ -118,6 +117,10 @@ export const applyRaidBuffs = (state, stats) => {
     //console.log(state.currentStats);
 }
 
+export const getCritPercentage = (currentStats, spec) => {
+    return (GLOBALCONST.baseCrit[spec] + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100) +
+                        (currentStats['intellect'] / GLOBALCONST.statPoints.critInt / 100);
+}
 
 // Returns MP5.
 export const getManaRegen = (currentStats, spec) => {
@@ -129,7 +132,7 @@ export const getManaRegen = (currentStats, spec) => {
 }
 
 export const getManaPool = (currentStats, spec) => {
-    if (spec.includes("Restoration Druid")) return (24777 + currentStats.intellect * 15) * 1.02 * 1.15; // Furor
+    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02 * 1.15; // Meta + Furor 18635 - 280
     else return (24777 + currentStats.intellect * 15) * 1.02;
 }
 

@@ -36,7 +36,7 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 2598,
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
-        statMods: {crit: 0, critEffect: 2}
+        statMods: {crit: 0, critEffect: 0}
     }],
     "Regrowth": [{
         // Regrowth direct heal portion
@@ -48,7 +48,7 @@ export const CLASSICDRUIDSPELLDB = {
         coeff: 0.2936, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
-        statMods: {crit: 0, critEffect: 2}
+        statMods: {crit: 0, critEffect: 0}
     },
     {
         // Regrowth HoT portion
@@ -60,7 +60,7 @@ export const CLASSICDRUIDSPELLDB = {
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
-        statMods: {crit: 0, critEffect: 2}
+        statMods: {crit: 0, critEffect: 0}
     }],
     "Lifebloom": [{
         // 
@@ -109,7 +109,7 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 7863,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
-        statMods: {crit: 0, critEffect: 2},
+        statMods: {crit: 0, critEffect: 0},
     }],
     "Swiftmend": [{
         // Regrowth direct heal portion
@@ -121,7 +121,7 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 5229,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
-        statMods: {crit: 0, critEffect: 2},
+        statMods: {crit: 0, critEffect: 0},
     }],
     "Wild Growth": [
     {
@@ -215,8 +215,16 @@ const offspecTalents = {
     }},
 
     naturesMajesty: {points: 2, maxPoints: 2, icon: "inv_staff_01", id: 35363, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        state.currentStats.crit += (180 * 2 * points);
+        state.currentStats.crit += (179 * 2 * points);
     }},
+
+    moonglow: {points: 3, maxPoints: 3, icon: "spell_nature_sentinal", id: 16847, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        Object.keys(spellDB).forEach(spellName => {
+            if (spellDB[spellName][0].cost) spellDB[spellName][0].cost *= (1 - 0.03 * points);
+
+        })
+    }},
+
     genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 57810, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         const buffValue = 0.02 * points;
         // TODO: Assumed Efflo doesn't count which is why Swiftmend is on the node.

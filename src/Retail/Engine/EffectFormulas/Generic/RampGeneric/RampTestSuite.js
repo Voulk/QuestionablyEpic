@@ -45,7 +45,7 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 
 export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteType) {
     // Weights
-    const stats = ['spellpower', 'intellect', 'crit', 'mastery', 'haste'];
+    const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste'];
     const fightLength = 420;
 
     const baseline = suiteType === "APL" ? runSuite(playerData, aplList, runCastSequence, "APL") : runCastProfileSuite(playerData, aplList, runCastSequence);
@@ -85,6 +85,7 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
     console.log("Gained X mana from spirit" + (spiritRegen - baselineMana) + " and 1 mana = " + baselineHPM + " healing");
     weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
     //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / 10)/1000;
+    weights['mp5'] = Math.round(1000*(10 * baselineHPM / 5) / (results['spellpower'] - baselineHPS))/1000;
 
     // To return:
     // A baseline profile (to use for haste weights and mana)

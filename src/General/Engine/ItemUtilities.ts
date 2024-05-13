@@ -1005,11 +1005,11 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Classic specific sockets
-  /*
-  if (item.sockets) {
-    socketItem(item, player.statWeights["Raid"]);
-    score += item.socketedGems["score"];
-  } */
+
+  if (gameType === "Classic" && item.classicSockets.sockets.length > 0) {
+    //socketItem(item, player.statWeights["Raid"]);
+    score += (item.classicSockets.sockets.length * player.getStatWeight('raid', 'intellect') * 40);
+  } 
 
   return Math.round(100 * score) / 100;
 }
