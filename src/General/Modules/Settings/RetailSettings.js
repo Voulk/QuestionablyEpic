@@ -71,7 +71,6 @@ export default function RetailSettings(props) {
       }
 
       // Push the current key into the array corresponding to its category in the result object
-      console.log(data[key].gameType, gameType)
       if (data[key].gameType === gameType) result[category].push(key);
       
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, buildStatStringSlim,  getItemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
 
@@ -149,7 +149,7 @@ export default function ItemCard(props: ItemCardProps) {
   const itemKey: number = props.itemKey;
   const item: Item = props.item;
   const itemLevel: number = item.level;
-  const statString: string = buildStatString(item.stats, item.effect, currentLanguage);
+  const statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
@@ -206,7 +206,7 @@ export default function ItemCard(props: ItemCardProps) {
   }
 
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+    <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
       <div style={{ position: "relative" }}>
         <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
@@ -253,7 +253,7 @@ export default function ItemCard(props: ItemCardProps) {
                         }}
                       />
                     </WowheadTooltip>
-                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {itemLevel} </div>
+                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "14px", textShadow: "1px 1px 20px black" }}> {itemLevel} </div>
                   </div>
                 </CardContent>
               </Grid>
@@ -267,6 +267,7 @@ export default function ItemCard(props: ItemCardProps) {
                           style={{
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
+                            fontSize: itemName.length > 30 ? "13px" : "14px",
                           }}
                         >
                           {itemName}

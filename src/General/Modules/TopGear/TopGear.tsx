@@ -658,7 +658,7 @@ export default function TopGear(props: any) {
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
             return (
-              <Grid item xs={12} key={index}>
+              <Grid item lg={12} xl={12} xs={12} key={index}>
                 <Typography color="primary" variant="h5">
                   {key.label}
                 </Typography>

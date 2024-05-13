@@ -62,7 +62,7 @@ export function createPlayerChars(): PlayerChars {
         if (!(specsAdded.includes(spec))) {
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
-          
+          autoAddItems(newChar, "Raid", "Classic");
           charArray.push(newChar);
         }
     })

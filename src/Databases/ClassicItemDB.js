@@ -98221,7 +98221,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_staffofsorcerer_than thaurissan",
+        "icon": "trade_archaeology_staffofsorcerer_than-thaurissan",
         "itemClass": 2,
         "itemSubClass": 10,
         "slot": "2H Weapon",
@@ -101556,7 +101556,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_staff of ammunrae",
+        "icon": "trade_archaeology_staff-of-ammunrae",
         "itemClass": 2,
         "itemSubClass": 10,
         "slot": "2H Weapon",
@@ -101581,7 +101581,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_ring of the boyemperor",
+        "icon": "trade_archaeology_ring-of-the-boyemperor",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Finger",
