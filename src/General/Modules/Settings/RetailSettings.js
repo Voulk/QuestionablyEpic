@@ -32,7 +32,7 @@ export default function RetailSettings(props) {
 
   const dispatch = useDispatch();
 
-  const categories = ["trinkets", "embellishments", "topGear", "upgradeFinder"];
+  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear"];
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
   /* ---------------------------------------------------------------------------------------------- */

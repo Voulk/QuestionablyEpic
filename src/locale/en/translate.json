@@ -287,30 +287,13 @@
         "upgradeFinder": "Upgrade Finder",
         "embellishments": "Embellishments",
 
-        "Setting0TextFieldLabel": "",
-        "Setting0Title": "Enchant Items",
-        "Setting0Tooltip": "Pick whether you'd like QE Live to enchant your items for you.",
-        "Setting1Title": "Ally Buffs",
-        "Setting1Tooltip": "Some items give buffs to allies. If you check this it'll include an estimate of that benefit in an items score.",
-        "Setting3Title": "Add Sockets",
-        "Setting3Tooltip": "This will automatically add a socket to items that don't have them in compatible slots.",
-        "Setting4TextFieldLabel": "Upgrade Finder: Display",
-        "Setting4Title": "UF: Result Display",
-        "Setting4Tooltip": "You can show Upgrade Finder results as either a % upgrade, or in effective HPS.",
-        "Setting5TextFieldLabel": "Playstyle",
-        "Setting5Title": "Playstyle",
-        "Setting5Tooltip": "Choose your playstyle",
-        "Setting6TextFieldLabel": "Limit",
-        "Setting6Title": "Catalyst Limit",
-        "Setting6Tooltip": "Select how many Catalyst charges you have. This determines how many Catalyst items Top Gear will be restricted to.",
-        "Setting7TextFieldLabel": "Leech",
-        "Setting7Title": "UF: Leech",
-        "Setting7Tooltip": "Turning this on will automatically add Leech to all Upgrade Finder choices.",
-
         "enchantItems": {
           "title": "Enchant Items",
           "tooltip": ""
         },
+
+        "Setting5Title": "Playstyle",
+        "Setting5Tooltip": "Choose your playstyle",
 
         "includeGroupBenefits": {
           "title": "Ally Buffs",
@@ -376,6 +359,20 @@
         "gemSettings": {
           "title": "Gem Settings",
           "tooltip": "Simple will use a strong default choice for your spec. Precise will run separate sets for each gem combination."
+        },
+
+        "manaProfile": {
+          "title": "Mana Profile",
+          "tooltip": "Pick a more or less aggressive mana profile."
+        },
+
+        "numManaTides": {
+          "title": "Mana Tide #",
+          "tooltip": "Select the number of Resto Shamans in your raid, not the number of times they'll drop the totem."
+        },
+        "metaGem": {
+          "title": "Meta Gem",
+          "tooltip": "More options coming soon!"
         }
 
         

@@ -150,8 +150,8 @@ export default function TopGear(props: any) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
-  const [reforgeFromList, setReforgeFromList] = useState(["haste", "crit"]);
-  const [reforgeToList, setReforgeToList] = useState(["mastery", "spirit"]);
+  const [reforgeFromList, setReforgeFromList] = useState([]);
+  const [reforgeToList, setReforgeToList] = useState([]);
 
   const contentType = useSelector((state: RootState) => state.contentType);
   const gameType = useSelector((state: RootState) => state.gameType);
