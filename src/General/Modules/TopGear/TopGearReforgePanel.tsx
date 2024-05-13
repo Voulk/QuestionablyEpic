@@ -40,8 +40,8 @@ const ReforgePanel = ({ reforgeFrom, reforgeTo, changeReforgeFrom, changeReforge
     const forgeOptions = ["haste", "spirit", "crit", "mastery"];
     return (
         <Paper className={classes.root} elevation={3}>
-        <Typography variant="h6" gutterBottom>Reforger</Typography>
-        <Typography variant="body2" gutterBottom>To keep iteration count from exploding, pick 1-2 stats to reforge from and 1-2 stats to reforge to.</Typography>
+        <Typography variant="h6" gutterBottom>Auto-Reforger</Typography>
+        <Typography variant="body2" gutterBottom>To keep iteration count from exploding, pick 1-2 stats to reforge from and 1-2 stats to reforge to. You can also set up reforges on items manually if you'd like to build very specific sets.</Typography>
         <div className={classes.buttonGroupContainer}>
         
           <div className={classes.buttonGroup}>

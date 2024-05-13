@@ -28,13 +28,13 @@ export default function RetailSettings(props) {
   const classes = useStyles();
 
   const playerSettings = useSelector((state) => state.playerSettings);
+  const gameType = useSelector((state) => state.gameType);
 
   const dispatch = useDispatch();
 
   const categories = ["trinkets", "embellishments", "topGear", "upgradeFinder"];
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
-
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             States                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -56,7 +56,7 @@ export default function RetailSettings(props) {
     props.singleUpdate(props.player);
   };
 
-  const mapByCategory = (data) => {
+  const mapByCategory = (data, gameType) => {
     // Initialize an empty object to store the result
     const result = {};
 
@@ -71,7 +71,9 @@ export default function RetailSettings(props) {
       }
 
       // Push the current key into the array corresponding to its category in the result object
-      result[category].push(key);
+      console.log(data[key].gameType, gameType)
+      if (data[key].gameType === gameType) result[category].push(key);
+      
     }
 
     // Return the result object with keys grouped by category
@@ -79,7 +81,7 @@ export default function RetailSettings(props) {
   };
 
   // map the playerSettings into categories for mapping
-  const mappedKeys = mapByCategory(playerSettings);
+  const mappedKeys = mapByCategory(playerSettings, gameType);
 
   return (
     <Grid container spacing={1} direction="row">

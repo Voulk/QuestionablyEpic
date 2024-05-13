@@ -252,42 +252,44 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     // -- ENCHANTS --
 
     if (true) {
-      enchant_stats.spellpower += 30;
-      enchant_stats.mp5 += 10;
-      enchants['Head'] = "Arcanum of Hyjal" // Crit version also available.
+      enchant_stats.intellect += 60;
+      enchant_stats.crit += 35;
+      enchants['Head'] = "Arcanum of Hyjal"
   
       enchant_stats.spellpower += 24;
-      enchant_stats.mp5 += 8;
+      enchant_stats.haste += 25;
       enchants['Shoulder'] = "Greater Inscription of Charged Lodestone" // Lesser version + crit versions available.
   
-      enchant_stats.intellect += 10;
-      enchant_stats.spirit += 10;
-      enchants['Chest'] = "Powerful Stats" // TODO
+      enchant_stats.intellect += 20;
+      enchant_stats.spirit += 20;
+      enchants['Chest'] = "Peerless Stats" // TODO
   
-      enchant_stats.haste += 30;
+      enchant_stats.intellect += 50;
       enchants['Back'] = "Greater Intellect" // Tailoring version available.
 
       enchant_stats.spellpower += 30;
       enchants['Wrist'] = "Superior Spellpower"
   
-      enchant_stats.mastery += 65;
-      enchants['Hands'] = "Greater Mastery"
+      enchant_stats.mastery += 50;
+      enchants['Hands'] = "Mastery"
   
-      enchant_stats.spellpower += 50;
-      enchant_stats.spirit += 20
+      enchant_stats.spellpower += 95;
+      enchant_stats.spirit += 55;
       enchants['Legs'] = "Powerful Ghostly Spellthread"
   
-      enchant_stats.stamina += 15;
-      enchants['Feet'] = "Tuskarr's Vitality" // Spirit version available but not great.
+      enchant_stats.mastery += 35;
+      enchants['Feet'] = "Lavawalker" // Spirit version available but not great.
   
       if ("profession" === "Enchanting") // todo 
       {
-        enchant_stats.spellpower += (23 * 2); // Two finger slots.
-        enchants['Finger'] = "Greater Spellpower"
+        enchant_stats.intellect += (40 * 2); // Two finger slots.
+        enchants['Finger'] = "Intellect"
       }
   
       enchant_stats.spellpower += 63;
       enchants['CombinedWeapon'] = "Power Torrent"
+      enchants['1H Weapon'] = "Power Torrent"
+      enchants['2H Weapon'] = "Power Torrent"
     }
 
 
