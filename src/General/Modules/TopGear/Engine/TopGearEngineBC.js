@@ -108,7 +108,6 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
       reforgeFromOptions = [ "haste"];
       reforgeToOptions = ["crit", "mastery", "spirit"];
     } */
-    console.log(JSON.stringify(itemList.map(item => item.id)));
 
     if (reforgingOn) {
       itemList.forEach(item => {
@@ -316,7 +315,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.intellect += 50;
       enchants['Wrist'] = "Mighty Intellect";
   
-      if (true) {//player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
+      if (player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
         enchant_stats.haste += 50;
         enchants['Hands'] = "Haste"
       }
