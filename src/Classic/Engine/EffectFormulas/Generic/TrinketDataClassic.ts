@@ -159,6 +159,9 @@ const raidTrinketData: Effect[] = [
 
 ]
 
+/**
+ * DUNGEON TRINKETS
+ */
 const dungeonTrinketData: Effect[] = [
   {
     name: "Tendrils of Burrowing Dark",
@@ -191,6 +194,37 @@ const dungeonTrinketData: Effect[] = [
       let bonus_stats: Stats = {};
       return getGenericTrinket(data[0], itemLevel);
       
+    }
+  },
+  {
+    name: "Sea Star",
+    effects: [
+      { // 
+        value: {308: 765, 346: 1425}, 
+        cooldown: 120,
+        stat: "spellpower",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericOnUseTrinket(data[0], itemLevel);
+      
+    }
+  },
+  {
+    name: "Rainsong",
+    effects: [
+      { // 
+        value: {316: 1290, 346: 1710}, 
+        ppm: getEffectPPM(0.1, 75, 1.5),
+        stat: "haste",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericTrinket(data[0], itemLevel);
     }
   },
   {
@@ -231,7 +265,7 @@ const dungeonTrinketData: Effect[] = [
     name: "Gale of Shadows",
     effects: [
       { // 
-        value: {333: 15}, 
+        value: {333: 15, 346: 17}, 
         stacks: 20,
         stat: "spellpower", 
         duration: 15,

@@ -42,7 +42,6 @@ function CompetitiveAlternatives(props) {
       const reforge = item.flags.filter(flag => flag.includes("Reforged"))[0];
   
       //reforgeText = /*gameType === "Classic" && item.flags && item.flags.includes("reforge") ?*/ <div style={{ fontSize: 12, color: "orange" }}>{item.flags.filter(flag => flag.includes("Reforged"))[0]}</div> /*: null;*/
-      console.log(reforgeIDs[reforge])
       return reforgeIDs[reforge];
     }
     else return 0;

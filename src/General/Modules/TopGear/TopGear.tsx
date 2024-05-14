@@ -26,6 +26,7 @@ import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import TopGearReforgePanel from "./TopGearReforgePanel";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 type ShortReport = {
   id: string;
@@ -417,7 +418,8 @@ export default function TopGear(props: any) {
                   setStats: report.itemSet.setStats,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
-                  firstSocket: report.itemSet.firstSocket
+                  firstSocket: report.itemSet.firstSocket,
+                  hardScore: report.itemSet.hardScore,
                 },
         player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName}
       
@@ -516,7 +518,7 @@ export default function TopGear(props: any) {
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, true, reforgeFromList, reforgeToList)
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, false, reforgeFromList, reforgeToList)
         .then((result: TopGearResult | null) => {
           if (result) {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
@@ -650,7 +652,7 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Classic" ? 
+        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Thorough"? 
         <Grid item xs={12}>
           <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
         </Grid>

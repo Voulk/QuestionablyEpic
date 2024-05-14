@@ -75,14 +75,8 @@ export class Item {
       // Adjust allocations for sockets.
       const itemAllocations = getItemAllocations(id, [], gameType);
 
-      /* Sockets = -ItemAllocation
-      if (sockets) {
-        Object.keys(itemAllocations).forEach((stat) => {
-          if (stat === 'intellect') itemAllocations[stat] = itemAllocations[stat] - (50 * sockets.gems.length);
-          else itemAllocations[stat] -= (25 * sockets.gems.length);
-        });
-      } */
-      // NYI: Spirit appears to count one socket fewer when calculating stats. 
+      if (slot === "Waist") this.classicSockets.sockets = [...sockets.gems, 'prismatic'];
+ 
       this.stats = getItemProp(id, "stats", "Classic");
       //this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
     }

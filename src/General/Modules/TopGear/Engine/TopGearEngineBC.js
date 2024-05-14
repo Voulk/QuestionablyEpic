@@ -5,12 +5,12 @@ import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
-import { gemGear, getGemStatLoadout } from "../Utilities/GemUtilities";
-import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+
+import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import ClassicPlayer from "../../Player/ClassicPlayer";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
-import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction } from "./TopGearEngineShared"
+import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction, setupGems } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
@@ -83,7 +83,7 @@ function setupPlayer(player, contentType, castModel) {
   return newPlayer;
 }
 
-export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = []) {
+export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, playerSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = []) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -101,9 +101,14 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     // - Stat B -> Stat C or stat D
     // - No reforge at all.
     let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
+    const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
     //const reforgeFromOptions = ["crit", "mastery", ];
     //const reforgeOptions = ["haste", "spirit"];
-    
+    /*if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
+      reforgeFromOptions = [ "haste"];
+      reforgeToOptions = ["crit", "mastery", "spirit"];
+    } */
+
     if (reforgingOn) {
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
@@ -111,7 +116,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
         itemStats.forEach(fromStat => {
           // for each stat, add one version that trades a portion of it for another.
-          if (reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
+          if (reforgeSetting === "Thorough" && reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
             itemReforgeOptions.forEach(targetStat => {
               const newItem = JSON.parse(JSON.stringify(item));
              // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
@@ -120,10 +125,47 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
               newItem.uniqueHash = Math.random().toString(36).substring(7);
               //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
               newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+
               reforgedItems.push(newItem);
             })
           }
-        })
+
+        });
+        
+        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
+        if (reforgeSetting === "Smart") {
+
+          const secondaryRank = ["spirit", "mastery", "crit"]
+          // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
+          if (itemStats.includes("haste")) {
+            const targetStat = secondaryRank.find(value => !itemStats.includes(value));
+            const newItem = JSON.parse(JSON.stringify(item));
+            // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+              newItem.stats[targetStat] = Math.round(item.stats['haste'] * 0.4);
+              newItem.stats['haste'] = Math.round(item.stats['haste'] * 0.6);
+              newItem.uniqueHash = Math.random().toString(36).substring(7);
+              //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+              newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+              reforgedItems.push(newItem);
+              //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
+
+          }
+          else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
+            // Check the lowest value of the set and reforge that.
+            const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+            
+            const newItem = JSON.parse(JSON.stringify(item));
+            // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+            newItem.stats['haste'] = Math.round(item.stats[fromStat] * 0.4);
+            newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+            newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
+            reforgedItems.push(newItem);
+            //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
+          }
+        }
+        
     })
     
     itemList = itemList.concat(reforgedItems);
@@ -138,7 +180,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
-      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel, baseline);
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline);
     }
     
 
@@ -172,7 +214,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
 // A true evaluation function on a set.
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
-function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel, baseline) {
+function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline) {
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
@@ -236,12 +278,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
    let adjusted_weights = {...castModel.baseStatWeights}
     // Mana Profiles
 
-    if (userSettings.manaProfile === "Conservative") {
+    if (playerSettings.manaProfile === "Conservative") {
       //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 1.16;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 1.2;
     }
-    else if (userSettings.manaProfile === "Max Healing") {
+    else if (playerSettings.manaProfile === "Max Healing") {
       //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
@@ -250,6 +292,9 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     // Apply consumables if ticked.
     
     // -- ENCHANTS --
+
+    const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
+    compileStats(setStats, compiledGems);
 
     if (true) {
       enchant_stats.intellect += 60;
@@ -265,14 +310,20 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       enchants['Chest'] = "Peerless Stats" // TODO
   
       enchant_stats.intellect += 50;
-      enchants['Back'] = "Greater Intellect" // Tailoring version available.
+      enchants['Back'] = "Greater Intellect"; // Tailoring version available.
 
-      enchant_stats.spellpower += 30;
-      enchants['Wrist'] = "Superior Spellpower"
+      enchant_stats.intellect += 50;
+      enchants['Wrist'] = "Mighty Intellect";
   
-      enchant_stats.mastery += 50;
-      enchants['Hands'] = "Mastery"
-  
+      if (player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
+        enchant_stats.haste += 50;
+        enchants['Hands'] = "Haste"
+      }
+      else {
+        enchant_stats.mastery += 50;
+        enchants['Hands'] = "Mastery"
+      }
+
       enchant_stats.spellpower += 95;
       enchant_stats.spirit += 55;
       enchants['Legs'] = "Powerful Ghostly Spellthread"
@@ -291,132 +342,6 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       enchants['1H Weapon'] = "Power Torrent"
       enchants['2H Weapon'] = "Power Torrent"
     }
-
-
-    // Handle sockets
-    // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
-    
-    // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
-    // Add to "Mandatory yellows" for the next step.
-    let mandatoryYellows = 2;
-    const gemIDS = {
-      52208: 'yellow',
-      52207: 'red',
-      52236: 'blue'
-
-    }
-    const yellowGemID = 52208; // TODO: Autocalc this based on which would be best. 
-    const metaGemID = 52296;
-    const redGemID = 52207;
-    const blueGemID = 52236;
-    const socketScores = {red: adjusted_weights.intellect * 40, 
-                          blue: adjusted_weights.intellect * 20 + adjusted_weights.spirit * 20, 
-                          yellow: adjusted_weights.intellect * 20 + adjusted_weights.haste * 20}
-    // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
-    // If running either: cycle through any mandatory yellows from Haste breakpoints.
-    
-      // We will optimize yellow gems in three steps:
-      // - Cycle through gear and check if there are red / yellow, yellow / yellow or pure yellow sockets. If we've found enough to fulfill our quota, stop. Else:
-      // - Place them in red sockets. If we've found enough to fulfill our quota, stop. Else:
-      // - Place them anywhere. Your gear sucks, unlucky.
-      const gemResults = [];
-      const redGemItemIndex = [];
-      const gemScores = [];
-
-      const scoreSocketBonus = (bonus) => {
-
-        let score = 0;
-        Object.entries(bonus).forEach(([key, value]) => {
-          score =  adjusted_weights[key] * value
-        });
-        return score;
-      }
-
-      // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
-      builtSet.itemList.forEach((item, index) => {
-        // { score: 0, itemIDs: []}
-        if (item.classicSockets.sockets.length > 0) {
-          let gemsToSocket = item.classicSockets.sockets.filter(gem => gem !== "meta").length; // Check for any already socketed gems.
-          item.socketedGems = [];
-          if (item.slot === "Head") item.socketedGems.push(metaGemID);
-          // TODO: Scoring function is working, but it won't check for gems we placed earlier.
-          const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
-
-          const pureReds = gemsToSocket * socketScores.red;
-          const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0) + socketBonus;
-
-          if (pureReds > pairedStrat) {
-            item.socketedGems.push(...Array(gemsToSocket).fill(redGemID));
-            gemScores.push(pureReds);
-          } 
-          else {
-            item.classicSockets.sockets.forEach(socket => {
-              //if (socket === "meta") item.socketedGems.push(metaGemID);
-              if (socket === "red") item.socketedGems.push(redGemID);
-              else if (socket === "yellow") { 
-                item.socketedGems.push(yellowGemID);
-                mandatoryYellows -= 1;
-              }
-              else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
-            })
-            gemScores.push(pairedStrat);
-          }
-        }
-      });
-
-      // == Check yellow replacements ==
-      builtSet.itemList.forEach((item, index) => {
-        const sockets = item.classicSockets.sockets;
-        let itemIndex = 0;
-        sockets.forEach((socket, socketIndex) => {
-          if (item.socketedGems[socketIndex] === "yellow" || item.socketedGems[socketIndex] === "meta") {}// do nothing
-          else {
-            let score = 0;
-            // The socket isn't yellow, try and make it orange.
-            const originalScore = gemScores[itemIndex];
-            const newSockets = [...item.socketedGems];
-            newSockets[socketIndex] = yellowGemID;
-
-            // We've made the socket yellow. Let's score it.
-            score = originalScore - newSockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0);
-            
-            // Check if adding the yellow socket gives us a bonus.
-            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index]);
-            if (socketBonus && item.classicSockets.bonus) {
-              score += scoreSocketBonus(item.classicSockets.bonus);
-            }
-
-
-            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score});
-            itemIndex++;
-          }
-        })
-        
-      });
-      gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
-
-      for (let i = 0; i < mandatoryYellows; i++) {
-        builtSet.itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
-      } 
-
-    // Lastly, we need to actually add the stats from socketed gems.
-    const socketedGemStats = [];
-    builtSet.itemList.forEach(item => {
-      item.socketedGems.forEach(gemID => {
-        socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
-      });
-
-      // Check bonus. We can maybe do this doing the prior step and just flag it.
-    });
-    const compiledGems = socketedGemStats.reduce((acc, obj) => {
-      for (const [key, value] of Object.entries(obj)) {
-          acc[key] = (acc[key] || 0) + value;
-      }
-      return acc;
-    }, {});
-
-    compileStats(setStats, compiledGems);
-
 
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
@@ -470,10 +395,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     let effectStats = [];
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
-      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "Classic", setStats));
+      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, playerSettings, "Classic", setStats));
     }
+    const compiledEffects = effectStats.reduce((acc, obj) => {
+      for (const [key, value] of Object.entries(obj)) {
+          acc[key] = (acc[key] || 0) + value;
+      }
+      return acc;
+    }, {});
+
     //setStats = mergeBonusStats(effectStats);
-    compileStats(setStats, effectStats);
+    compileStats(setStats, compiledEffects);
 
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
@@ -484,10 +416,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
 
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseline, setStats, player, userSettings);
+      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings);
     }
     else if (player.spec === "Holy Paladin Classic") {
-      hardScore = scorePaladinSet(baseline, setStats, player, userSettings);
+      hardScore = scorePaladinSet(baseline, setStats, player, playerSettings);
     }
     else {
       console.log("DOING OLD SCORING");

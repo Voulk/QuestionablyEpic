@@ -1,5 +1,6 @@
 
 const softSlice = 3000;
+import { gemDB } from "Databases/GemDB";
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 export function compileStats(stats, bonus_stats) {
@@ -159,3 +160,143 @@ export const deepCopyFunction = (inObject) => {
 
     return outObject;
 };
+
+export const setupGems = (itemList, adjusted_weights) => {
+
+      // Handle sockets
+    // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
+    
+    // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
+    // Add to "Mandatory yellows" for the next step.
+    let mandatoryYellows = 2;
+    const gemIDS = {
+      52208: 'yellow',
+      52207: 'red',
+      52236: 'blue'
+
+    }
+    const yellowGemID = 52208; // TODO: Autocalc this based on which would be best. 
+    const metaGemID = 52296;
+    const redGemID = 52207;
+    const blueGemID = 52236;
+    const socketScores = {red: adjusted_weights.intellect * 40, 
+                          blue: adjusted_weights.intellect * 20 + adjusted_weights.spirit * 20, 
+                          yellow: adjusted_weights.intellect * 20 + adjusted_weights.haste * 20}
+
+    // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
+    // If running either: cycle through any mandatory yellows from Haste breakpoints.
+
+
+      // We will optimize yellow gems in three steps:
+      // - Cycle through gear and check if there are red / yellow, yellow / yellow or pure yellow sockets. If we've found enough to fulfill our quota, stop. Else:
+      // - Place them in red sockets. If we've found enough to fulfill our quota, stop. Else:
+      // - Place them anywhere. Your gear sucks, unlucky.
+      const gemResults = [];
+      const redGemItemIndex = [];
+      const gemScores = [];
+
+      const scoreSocketBonus = (bonus) => {
+        let score = 0;
+        Object.entries(bonus).forEach(([key, value]) => {
+          score = adjusted_weights[key] * value
+        });
+        return score;
+      }
+
+      // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
+      itemList.forEach((item, index) => {
+        // { score: 0, itemIDs: []}
+        if (item.classicSockets.sockets.length > 0) {
+          let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel")).length; // Check for any already socketed gems.
+          item.socketedGems = [];
+          if (item.slot === "Head") item.socketedGems.push(metaGemID);
+
+          // TODO: Scoring function is working, but it won't check for gems we placed earlier.
+          const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
+          
+
+          const pureReds = gemsToSocket * socketScores.red;
+          const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0) + socketBonus;
+
+          if (pureReds >= pairedStrat) {
+            item.socketedGems.push(...Array(gemsToSocket).fill(redGemID));
+            gemScores.push(pureReds);
+          } 
+          else {
+            
+            item.classicSockets.sockets.forEach(socket => {
+              //if (socket === "meta") item.socketedGems.push(metaGemID);
+              if (socket === "red") item.socketedGems.push(redGemID);
+              else if (socket === "yellow") { 
+                item.socketedGems.push(yellowGemID);
+                mandatoryYellows -= 1;
+              }
+              else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
+            })
+            gemScores.push(pairedStrat);
+          }
+        }
+      });
+
+      // == Check yellow replacements ==
+      itemList.forEach((item, index) => {
+        const sockets = item.classicSockets.sockets;
+        let itemIndex = 0;
+        sockets.forEach((socket, socketIndex) => {
+          if (/*sockets[socketIndex] === "yellow" ||*/ sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
+          else {
+            let score = 0;
+            // The socket isn't yellow, try and make it orange.
+            const originalScore = gemScores[itemIndex];
+            const newSockets = [...item.socketedGems];
+            newSockets[socketIndex] = yellowGemID;
+            
+            // We've made the socket yellow. Let's score it.
+            let newScore = newSockets.reduce((accumulator, socket) => accumulator + socketScores[gemIDS[socket]] || 0, 0);
+
+            // Check if adding the yellow socket gives us a bonus.
+            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index]);
+
+            if (socketBonus && item.classicSockets.bonus) {
+              newScore += scoreSocketBonus(item.classicSockets.bonus);
+              console.log("Bonus" + scoreSocketBonus(item.classicSockets.bonus))
+            }
+
+            score = originalScore - newScore;
+
+            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score, itemName: item.name, originalScore: originalScore, newScore: newScore});
+            itemIndex++;
+          }
+        })
+        
+      });
+      gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
+
+      for (let i = 0; i < mandatoryYellows; i++) {
+        //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
+        itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
+      } 
+
+    // Lastly, we need to actually add the stats from socketed gems.
+    const socketedGemStats = [];
+    itemList.forEach(item => {
+      item.socketedGems.forEach(gemID => {
+        socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
+      });
+      if (item.classicSockets.sockets.includes("cogwheel")) {
+        // Eng gems
+        socketedGemStats.push({haste: 208});
+        socketedGemStats.push({spirit: 208});
+      }
+
+      // Check bonus. We can maybe do this doing the prior step and just flag it.
+    });
+    const compiledGems = socketedGemStats.reduce((acc, obj) => {
+      for (const [key, value] of Object.entries(obj)) {
+          acc[key] = (acc[key] || 0) + value;
+      }
+      return acc;
+    }, {});
+
+    return compiledGems
+}
