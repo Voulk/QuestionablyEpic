@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
-import { gemGear, getGemStatLoadout } from "../Utilities/GemUtilities";
-import { convertPPMToUptime } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+
+import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import ClassicPlayer from "../../Player/ClassicPlayer";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
@@ -83,7 +83,7 @@ function setupPlayer(player, contentType, castModel) {
   return newPlayer;
 }
 
-export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, userSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = []) {
+export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, playerSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = []) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -101,9 +101,14 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     // - Stat B -> Stat C or stat D
     // - No reforge at all.
     let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
+    const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
     //const reforgeFromOptions = ["crit", "mastery", ];
     //const reforgeOptions = ["haste", "spirit"];
-    
+    /*if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
+      reforgeFromOptions = [ "haste"];
+      reforgeToOptions = ["crit", "mastery", "spirit"];
+    } */
+
     if (reforgingOn) {
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
@@ -111,7 +116,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
         itemStats.forEach(fromStat => {
           // for each stat, add one version that trades a portion of it for another.
-          if (reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
+          if (reforgeSetting === "Thorough" && reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
             itemReforgeOptions.forEach(targetStat => {
               const newItem = JSON.parse(JSON.stringify(item));
              // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
@@ -120,10 +125,47 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
               newItem.uniqueHash = Math.random().toString(36).substring(7);
               //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
               newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+              console.log("Adding ITEMS!")
               reforgedItems.push(newItem);
             })
           }
-        })
+
+        });
+        
+        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
+        if (reforgeSetting === "Smart") {
+          console.log(item.id);
+          const secondaryRank = ["spirit", "mastery", "crit"]
+          // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
+          if (itemStats.includes("haste")) {
+            const targetStat = secondaryRank.find(value => !itemStats.includes(value));
+            const newItem = JSON.parse(JSON.stringify(item));
+            // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+              newItem.stats[targetStat] = Math.round(item.stats['haste'] * 0.4);
+              newItem.stats['haste'] = Math.round(item.stats['haste'] * 0.6);
+              newItem.uniqueHash = Math.random().toString(36).substring(7);
+              //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+              newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+              reforgedItems.push(newItem);
+              //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
+
+          }
+          else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
+            // Check the lowest value of the set and reforge that.
+            const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+            
+            const newItem = JSON.parse(JSON.stringify(item));
+            // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+            newItem.stats['haste'] = Math.round(item.stats[fromStat] * 0.4);
+            newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+            newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
+            reforgedItems.push(newItem);
+            //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
+          }
+        }
+        
     })
     
     itemList = itemList.concat(reforgedItems);
@@ -138,7 +180,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
-      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, castModel, baseline);
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline);
     }
     
 
@@ -172,7 +214,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
 // A true evaluation function on a set.
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
-function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel, baseline) {
+function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline) {
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
@@ -236,12 +278,12 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
    let adjusted_weights = {...castModel.baseStatWeights}
     // Mana Profiles
 
-    if (userSettings.manaProfile === "Conservative") {
+    if (playerSettings.manaProfile === "Conservative") {
       //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 1.16;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 1.2;
     }
-    else if (userSettings.manaProfile === "Max Healing") {
+    else if (playerSettings.manaProfile === "Max Healing") {
       //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
       adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
       adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
@@ -270,8 +312,8 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       enchant_stats.spellpower += 30;
       enchants['Wrist'] = "Superior Spellpower"
   
-      enchant_stats.mastery += 50;
-      enchants['Hands'] = "Mastery"
+      enchant_stats.haste += 50;
+      enchants['Hands'] = "Haste"
   
       enchant_stats.spellpower += 95;
       enchant_stats.spirit += 55;
@@ -336,9 +378,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       builtSet.itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
         if (item.classicSockets.sockets.length > 0) {
-          let gemsToSocket = item.classicSockets.sockets.filter(gem => gem !== "meta").length; // Check for any already socketed gems.
+          let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel")).length; // Check for any already socketed gems.
           item.socketedGems = [];
           if (item.slot === "Head") item.socketedGems.push(metaGemID);
+
           // TODO: Scoring function is working, but it won't check for gems we placed earlier.
           const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
 
@@ -369,7 +412,7 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
         const sockets = item.classicSockets.sockets;
         let itemIndex = 0;
         sockets.forEach((socket, socketIndex) => {
-          if (item.socketedGems[socketIndex] === "yellow" || item.socketedGems[socketIndex] === "meta") {}// do nothing
+          if (item.socketedGems[socketIndex] === "yellow" || item.socketedGems[socketIndex] === "meta"|| item.socketedGems[socketIndex] === "cogwheel") {}// do nothing
           else {
             let score = 0;
             // The socket isn't yellow, try and make it orange.
@@ -405,6 +448,11 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
       item.socketedGems.forEach(gemID => {
         socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
       });
+      if (item.classicSockets.sockets.includes("cogwheel")) {
+        // Eng gems
+        socketedGemStats.push({haste: 208});
+        socketedGemStats.push({spirit: 208});
+      }
 
       // Check bonus. We can maybe do this doing the prior step and just flag it.
     });
@@ -470,10 +518,17 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     let effectStats = [];
     effectStats.push(bonus_stats);
     for (var x = 0; x < effectList.length; x++) {
-      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, userSettings, "Classic", setStats));
+      effectStats.push(getEffectValue(effectList[x], player, "", contentType, effectList[x].level, playerSettings, "Classic", setStats));
     }
+    const compiledEffects = effectStats.reduce((acc, obj) => {
+      for (const [key, value] of Object.entries(obj)) {
+          acc[key] = (acc[key] || 0) + value;
+      }
+      return acc;
+    }, {});
+
     //setStats = mergeBonusStats(effectStats);
-    compileStats(setStats, effectStats);
+    compileStats(setStats, compiledEffects);
 
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
@@ -484,10 +539,10 @@ function evalSet(itemSet, player, contentType, baseHPS, userSettings, castModel,
     }
 
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseline, setStats, player, userSettings);
+      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings);
     }
     else if (player.spec === "Holy Paladin Classic") {
-      hardScore = scorePaladinSet(baseline, setStats, player, userSettings);
+      hardScore = scorePaladinSet(baseline, setStats, player, playerSettings);
     }
     else {
       console.log("DOING OLD SCORING");

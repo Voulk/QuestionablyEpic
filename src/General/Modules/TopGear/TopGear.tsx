@@ -26,6 +26,7 @@ import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import TopGearReforgePanel from "./TopGearReforgePanel";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 type ShortReport = {
   id: string;
@@ -650,7 +651,7 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Classic" ? 
+        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Thorough"? 
         <Grid item xs={12}>
           <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
         </Grid>

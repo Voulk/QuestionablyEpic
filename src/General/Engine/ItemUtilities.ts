@@ -944,7 +944,7 @@ export function autoAddItems(player: Player, contentType: contentTypes, gameType
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
-      (key.itemLevel === 359 || key.itemLevel === 372 || key.itemLevel === 346) && 
+      (key.itemLevel === 359 || key.itemLevel === 346) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||

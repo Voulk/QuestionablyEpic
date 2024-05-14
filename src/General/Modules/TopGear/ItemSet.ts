@@ -108,6 +108,7 @@ class ItemSet {
         stats.spellpower = 0;
         stats.intellect = 156; // Technically changes per race.
         stats.spirit = 173; // Technically changes per race.
+        stats.mp5 = 0;
       }
       return stats
   }
