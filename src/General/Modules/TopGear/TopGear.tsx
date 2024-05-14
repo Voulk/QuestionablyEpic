@@ -418,7 +418,8 @@ export default function TopGear(props: any) {
                   setStats: report.itemSet.setStats,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
-                  firstSocket: report.itemSet.firstSocket
+                  firstSocket: report.itemSet.firstSocket,
+                  hardScore: report.itemSet.hardScore,
                 },
         player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName}
       

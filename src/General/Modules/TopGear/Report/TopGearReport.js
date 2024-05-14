@@ -185,6 +185,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
 
     if (gameType === "Classic") {
       console.log(statList);
+      console.log(topSet.hardScore);
       const manaSources = {}
       
       manaSources.pool = getManaPool(statList, player.spec) + 22000; // Mana pot
