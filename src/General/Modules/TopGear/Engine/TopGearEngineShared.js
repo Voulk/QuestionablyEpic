@@ -182,6 +182,7 @@ export const setupGems = (itemList, adjusted_weights) => {
     const socketScores = {red: adjusted_weights.intellect * 40, 
                           blue: adjusted_weights.intellect * 20 + adjusted_weights.spirit * 20, 
                           yellow: adjusted_weights.intellect * 20 + adjusted_weights.haste * 20}
+
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
 
@@ -197,7 +198,7 @@ export const setupGems = (itemList, adjusted_weights) => {
       const scoreSocketBonus = (bonus) => {
         let score = 0;
         Object.entries(bonus).forEach(([key, value]) => {
-          score =  adjusted_weights[key] * value
+          score = adjusted_weights[key] * value
         });
         return score;
       }
@@ -249,25 +250,30 @@ export const setupGems = (itemList, adjusted_weights) => {
             const originalScore = gemScores[itemIndex];
             const newSockets = [...item.socketedGems];
             newSockets[socketIndex] = yellowGemID;
-
-            // We've made the socket yellow. Let's score it.
-            score = originalScore - newSockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0);
             
+            // We've made the socket yellow. Let's score it.
+            let newScore = newSockets.reduce((accumulator, socket) => accumulator + socketScores[gemIDS[socket]] || 0, 0);
+
             // Check if adding the yellow socket gives us a bonus.
             const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index]);
+
             if (socketBonus && item.classicSockets.bonus) {
-              score += scoreSocketBonus(item.classicSockets.bonus);
+              newScore += scoreSocketBonus(item.classicSockets.bonus);
+              console.log("Bonus" + scoreSocketBonus(item.classicSockets.bonus))
             }
 
-            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score});
+            score = originalScore - newScore;
+
+            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score, itemName: item.name, originalScore: originalScore, newScore: newScore});
             itemIndex++;
           }
         })
         
       });
-      gemResults.sort((a, b) => (a.score < b.score ? 1 : -1));
+      gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
 
       for (let i = 0; i < mandatoryYellows; i++) {
+        //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
         itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
       } 
 

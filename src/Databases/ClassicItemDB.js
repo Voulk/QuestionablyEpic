@@ -101154,7 +101154,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_ring of the boyemperor",
+        "icon": "trade_archaeology_ring-of-the-boyemperor",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Finger",

@@ -231,7 +231,7 @@ const dungeonTrinketData: Effect[] = [
     name: "Gale of Shadows",
     effects: [
       { // 
-        value: {333: 15}, 
+        value: {333: 15, 346: 17}, 
         stacks: 20,
         stat: "spellpower", 
         duration: 15,

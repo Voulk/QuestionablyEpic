@@ -31,8 +31,8 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderRadius: 3,
     borderColor: "Goldenrod",
-    backgroundColor: "#494a3d",
-    borderWidth: "2px",
+    backgroundColor: "#515144",
+    borderWidth: "3px",
   },
   catalyst: {
     borderColor: "plum",
@@ -73,7 +73,7 @@ const GetItemTags: React.FC<{ showTags: any; isVault: boolean, t: any }> = ({ sh
       {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
       {showTags.catalyst ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null}
     
-      
+
   </div>
   )
 }

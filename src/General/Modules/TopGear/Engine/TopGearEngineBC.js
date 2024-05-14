@@ -108,6 +108,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
       reforgeFromOptions = [ "haste"];
       reforgeToOptions = ["crit", "mastery", "spirit"];
     } */
+    console.log(JSON.stringify(itemList.map(item => item.id)));
 
     if (reforgingOn) {
       itemList.forEach(item => {
@@ -125,7 +126,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
               newItem.uniqueHash = Math.random().toString(36).substring(7);
               //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
               newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
-              console.log("Adding ITEMS!")
+
               reforgedItems.push(newItem);
             })
           }
@@ -134,7 +135,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
         
         // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
         if (reforgeSetting === "Smart") {
-          console.log(item.id);
+
           const secondaryRank = ["spirit", "mastery", "crit"]
           // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
           if (itemStats.includes("haste")) {
@@ -293,6 +294,9 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     // -- ENCHANTS --
 
+    const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
+    compileStats(setStats, compiledGems);
+
     if (true) {
       enchant_stats.intellect += 60;
       enchant_stats.crit += 35;
@@ -307,14 +311,20 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchants['Chest'] = "Peerless Stats" // TODO
   
       enchant_stats.intellect += 50;
-      enchants['Back'] = "Greater Intellect" // Tailoring version available.
+      enchants['Back'] = "Greater Intellect"; // Tailoring version available.
 
-      enchant_stats.spellpower += 30;
-      enchants['Wrist'] = "Superior Spellpower"
+      enchant_stats.intellect += 50;
+      enchants['Wrist'] = "Mighty Intellect";
   
-      enchant_stats.haste += 50;
-      enchants['Hands'] = "Haste"
-  
+      if (true) {//player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
+        enchant_stats.haste += 50;
+        enchants['Hands'] = "Haste"
+      }
+      else {
+        enchant_stats.mastery += 50;
+        enchants['Hands'] = "Mastery"
+      }
+
       enchant_stats.spellpower += 95;
       enchant_stats.spirit += 55;
       enchants['Legs'] = "Powerful Ghostly Spellthread"
@@ -333,10 +343,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchants['1H Weapon'] = "Power Torrent"
       enchants['2H Weapon'] = "Power Torrent"
     }
-
-    const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
-    compileStats(setStats, compiledGems);
-
 
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
