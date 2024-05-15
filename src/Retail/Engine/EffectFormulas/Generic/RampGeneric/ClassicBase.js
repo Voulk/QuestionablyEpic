@@ -132,7 +132,7 @@ export const getManaRegen = (currentStats, spec) => {
 }
 
 export const getManaPool = (currentStats, spec) => {
-    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02 * 1.15; // Meta + Furor 18635 - 280
+    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02; // Meta + Furor 18635 - 280
     else return (24777 + currentStats.intellect * 15) * 1.02;
 }
 
