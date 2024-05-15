@@ -175,46 +175,6 @@ export default function bossHeaders(props, style, QEmodule) {
       source = require("Images/Bosses/CastleNathria/SunKingsSalvation/SunKingsSalvationEJ.png");
     }
 
-    if (props === 2423) {
-      source = require("Images/Bosses/SanctumOfDomination/TheTarragrue/UI-EJ-BOSS-Tarragrue.png");
-    }
-
-    if (props === 2433) {
-      source = require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/UI-EJ-BOSS-EyeoftheJailer.png");
-    }
-
-    if (props === 2429) {
-      source = require("Images/Bosses/SanctumOfDomination/TheNine/UI-EJ-BOSS-TheNine.png");
-    }
-
-    if (props === 2432) {
-      source = require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/UI-EJ-BOSS-RemnantofNerzhul.png");
-    }
-
-    if (props === 2434) {
-      source = require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/UI-EJ-BOSS-SoulrenderDormazain.png");
-    }
-
-    if (props === 2430) {
-      source = require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/UI-EJ-BOSS-PainsmithRaznal.png");
-    }
-
-    if (props === 2436) {
-      source = require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/UI-EJ-BOSS-GuardianoftheFirstOnes.png");
-    }
-
-    if (props === 2431) {
-      source = require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/UI-EJ-BOSS-FatescribeRoh-Talo.png");
-    }
-
-    if (props === 2422) {
-      source = require("Images/Bosses/SanctumOfDomination/Kelthuzad/UI-EJ-BOSS-KelThuzadShadowlands.png");
-    }
-
-    if (props === 2435) {
-      source = require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusEJ.png");
-    }
-
     // Vigilant Guardian
     if (props === 2512) {
       source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-VigilantGuardian.png");

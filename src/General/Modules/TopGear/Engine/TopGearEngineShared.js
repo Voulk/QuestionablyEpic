@@ -193,7 +193,7 @@ export const setupGems = (itemList, adjusted_weights) => {
       // - Place them anywhere. Your gear sucks, unlucky.
       const gemResults = [];
       const redGemItemIndex = [];
-      const gemScores = [];
+      const gemScores = {};
 
       const scoreSocketBonus = (bonus) => {
         let score = 0;
@@ -214,13 +214,12 @@ export const setupGems = (itemList, adjusted_weights) => {
           // TODO: Scoring function is working, but it won't check for gems we placed earlier.
           const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
           
-
           const pureReds = gemsToSocket * socketScores.red;
           const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0) + socketBonus;
 
           if (pureReds >= pairedStrat) {
             item.socketedGems.push(...Array(gemsToSocket).fill(redGemID));
-            gemScores.push(pureReds);
+            gemScores[index] = pureReds;
           } 
           else {
             
@@ -233,11 +232,10 @@ export const setupGems = (itemList, adjusted_weights) => {
               }
               else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
             })
-            gemScores.push(pairedStrat);
+            gemScores[index] = pairedStrat;
           }
         }
       });
-
       // == Check yellow replacements ==
       itemList.forEach((item, index) => {
         const sockets = item.classicSockets.sockets;
@@ -247,7 +245,7 @@ export const setupGems = (itemList, adjusted_weights) => {
           else {
             let score = 0;
             // The socket isn't yellow, try and make it orange.
-            const originalScore = gemScores[itemIndex];
+            const originalScore = gemScores[index];
             const newSockets = [...item.socketedGems];
             newSockets[socketIndex] = yellowGemID;
             
@@ -270,7 +268,7 @@ export const setupGems = (itemList, adjusted_weights) => {
         
       });
       gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
-
+      console.log(JSON.stringify(gemResults));
       for (let i = 0; i < mandatoryYellows; i++) {
         //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
         itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;

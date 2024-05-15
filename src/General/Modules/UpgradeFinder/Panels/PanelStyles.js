@@ -105,10 +105,6 @@ export const raidStyles = makeStyles((theme) => {
       backgroundImage: `url(${require("Images/Bosses/SepulcherOfTheFirstOnes/SepulcherOfTheFirstOnesHeader.png")})`,
       ...commonStyles,
     },
-    sanctumHeader: {
-      backgroundImage: `url(${require("Images/Bosses/SanctumOfDomination/SanctumArt.png")})`,
-      ...commonStyles,
-    },
     vaultHeader: {
       backgroundImage: `url(${require("Images/Bosses/VaultOfTheIncarnates/VaultOfTheIncarnates.png")})`,
       ...commonStyles,

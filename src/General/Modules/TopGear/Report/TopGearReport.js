@@ -107,8 +107,8 @@ function TopGearReport(props) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
-      else if (process.env.PUBLIC_URL.includes("dev")) {
-        window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
+      else if (process.env.PUBLIC_URL.includes("ptr")) {
+        window.history.pushState('QE Live Report', 'Title', 'dev/ptr/' + result.id);
       }
       else {
         // Call Error
@@ -142,8 +142,6 @@ function TopGearReport(props) {
     )
     //return fetchReport("pbnzfwyv");
   }
-
-
 }
 
 function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
@@ -168,7 +166,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
 
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-    const advice = getDynamicAdvice(result, player, result.contentType);
+    const advice = getDynamicAdvice(result, player, result.contentType, gameType);
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
@@ -186,10 +184,6 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
 
 
     if (gameType === "Classic") {
-      console.log(statList);
-      console.log(topSet.hardScore);
-      
-      
       manaSources.pool = Math.round(getManaPool(statList, player.spec) + 22000); // Mana pot
       manaSources.regen = Math.round((getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12);
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
