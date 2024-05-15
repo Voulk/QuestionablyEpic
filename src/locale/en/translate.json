@@ -381,6 +381,18 @@
         "metaGem": {
           "title": "Meta Gem",
           "tooltip": "More options coming soon!"
+        },
+        "professionOne": {
+          "title": "First Profession",
+          "tooltip": "Select which profession you have levelled if you'd like them included in the results."
+        },
+        "professionTwo": {
+          "title": "Second Profession",
+          "tooltip": "Select which profession you have levelled if you'd like them included in the results."
+        },
+        "reforgeSetting": {
+          "title": "Reforge Setting",
+          "tooltip": "Select how you'd like Reforges handled."
         }
 
         
