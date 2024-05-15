@@ -507,7 +507,6 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
 
 export function getEmbellishmentIcon(id: number) {
   const embel = embellishmentDB.filter((embel) => embel.id === id);
-  console.log(embel[0].icon)
 
   if (embel[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
@@ -1036,7 +1035,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
   if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
     //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
-    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player);
+    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player, playerSettings);
   }
 
   // Classic specific sockets
@@ -1095,17 +1094,19 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
   // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
   if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
     //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
-    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player) / player.getInt() * player.getHPS(contentType);
+    score += getAllyStatsValue(contentType, bonus_stats.allyStats, player, playerSettings) / player.getInt() * player.getHPS(contentType);
   }
 
   return Math.round(100 * score) / 100;
 }
 
 // Returns an intellect value.
-export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player) => { // Maybe add PlayerSettings
+export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player, playerSettings: PlayerSettings) => { // Maybe add PlayerSettings
   const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
-  return dpsValue * 0.75 + healerValue * 0.25;
+
+  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "Half") return (dpsValue * 0.75 + healerValue * 0.25) / 2;
+  else return dpsValue * 0.75 + healerValue * 0.25;
 }
 
 /*

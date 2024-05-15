@@ -15,11 +15,11 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   if (effectName === "Monk T31-2") {
     // Placeholder pulled from sheet. Replace very soon.
     const expectedPPM = 10 * 0.5;
-    bonus_stats.hps = 9500;
+    bonus_stats.hps = 14500;
   }
   else if (effectName === "Monk T31-4") {
     // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 8750;
+    bonus_stats.hps = 16000;
   }
 
   else if (effectName === "Monk T30-2") {
@@ -34,14 +34,12 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   }
   // Tier Sets
   else if (effectName === "Mistweaver T29-2") {
-    // This is a very raw formula that will be replaced almost immediately.
     const uptime = 0.55; // TODO: Auto-calc this.
     const spellsHit = 0.35;
     bonus_stats.hps = uptime * spellsHit * 0.1 * player.getHPS(contentType);
 
   }
   else if (effectName === "Mistweaver T29-4") {
-    // This is a very raw formula that will be replaced almost immediately.
 
     // TODO: Dancing Mist
     // Upwelling, Misty Peaks included.

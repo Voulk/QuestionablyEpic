@@ -15,7 +15,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     const serenityHPS = serenityCPM * renewHPS * 14;
     const sancHPS = sancCPM * renewHPS * 4 * 5; // Refactor to use Sanc target count instead of a magic number. 
 
-    bonus_stats.hps = 12500;
+    bonus_stats.hps = 15000;
   }
   else if (effectName === "HPriest T31-4") {
     // Placeholder from sheet. Replace very soon.
@@ -28,7 +28,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     const effectiveSalvCD = 0;
 
     //bonus_stats.hps = oneSanc * effectivePPM;
-    bonus_stats.hps = 14250;
+    bonus_stats.hps = 17600;
   }
 
   else if (effectName === "HPriest T30-2") {

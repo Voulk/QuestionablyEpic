@@ -61,10 +61,10 @@ export const druidBalancedSpecialQueries = (contentType) => {
       OneManaHealing: 9.55,
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
-        c60: 1.2,
-        c90: 1.29,
-        c120: 1.17,
-        c180: 1.05,
+        c60: 1.1,
+        c90: 1,
+        c120: 1.05,
+        c180: 1,
 
         oneMinute: 1.4, // 1.7 once 4pc,
         ninetySeconds: 1.12,

@@ -509,7 +509,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 437, Adventurer: 450, Veteran: 463, Champion: 476, Hero: 483, Myth: 489 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 476, Adventurer: 489, Veteran: 502, Champion: 515, Hero: 522, Myth: 528 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
 
   }

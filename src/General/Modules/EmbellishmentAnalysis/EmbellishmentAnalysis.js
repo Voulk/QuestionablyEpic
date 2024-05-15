@@ -86,7 +86,7 @@ const editSettings = (setting, newValue) => {
 };
 
 /* ------------ Converts a bonus_stats dictionary to a singular estimated HPS number. ----------- */
-function getEstimatedHPS(bonus_stats, player, contentType) {
+function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
   let estHPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
@@ -100,7 +100,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
     else if (key === "hps") {
       estHPS += value;
     }
-    else if (key === "allyStats") {
+    else if (key === "allyStats" && playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
@@ -110,7 +110,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
   return Math.round(100 * estHPS) / 100;
 }
 
-function getEstimatedDPS(bonus_stats, player, contentType) {
+function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
   let estDPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "crit", "versatility"].includes(key)) {
@@ -124,7 +124,7 @@ function getEstimatedDPS(bonus_stats, player, contentType) {
     else if (key === "mastery") {
       estDPS += 0;
     }
-    else if (key === "allyStats") {
+    else if (key === "allyStats" && playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
@@ -142,12 +142,12 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
   let score = 0;
   if (metric === "hps") {
-    score =  getEstimatedHPS(effect, player, contentType) || 0;
+    score =  getEstimatedHPS(effect, player, contentType, playerSettings) || 0;
   } else if (metric === "dps") {
-    score = getEstimatedDPS(effect, player, contentType) || 0;
+    score = getEstimatedDPS(effect, player, contentType, playerSettings) || 0;
   }
   else if (metric === "both") {
-    score = getEstimatedHPS(effect, player, contentType) + getEstimatedDPS(effect, player, contentType);
+    score = getEstimatedHPS(effect, player, contentType, playerSettings) + getEstimatedDPS(effect, player, contentType, playerSettings);
   }
 
   if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);

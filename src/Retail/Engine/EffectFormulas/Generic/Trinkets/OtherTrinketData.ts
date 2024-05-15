@@ -665,5 +665,33 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                       Engraved Spearhead                                       */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* 
+    */
+    name: "Engraved Spearhead",
+    effects: [
+      { 
+        coefficient: 0.526455,
+        table: -7,
+        stat: "crit",
+        duration: 10,
+        ppm: 4,
+        maxStacks: 3,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+      const effect = data[0];
+      const a = effect.ppm! * effect.duration! / 60;
+      const averageStacks = 1.13*(Math.exp(a)-1)*(1-Math.pow((1-Math.exp(-a)), effect.maxStacks))
+
+      bonus_stats.crit = averageStacks * processedValue(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
 
 ]
