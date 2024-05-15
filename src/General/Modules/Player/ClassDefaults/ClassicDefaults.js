@@ -72,9 +72,7 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     // Spellpower
 
     // Take care of any extras.
-    console.log(JSON.stringify(tierSets));
     if (tierSets.includes("Druid T11-4")) {
-      console.log("DRUID TIER SET");
       statProfile.spirit += 540;
     }
 
@@ -96,7 +94,8 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
 
         fullSpell.forEach(spell => {
           const genericMult = 1.04 * (spellProfile.bonus ? spellProfile.bonus : 1);
-          const critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
+          let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
+          if (tierSets.includes("Druid T11-2") && spellProfile.spell === "Lifebloom") critBonus += 0.05;
           const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (critPercentage + critBonus) : 1;
           const additiveScaling = (spell.additiveScaling || 0) + 1
           const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;

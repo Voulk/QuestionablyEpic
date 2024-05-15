@@ -50,7 +50,7 @@ const initialState : RootState = {
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
-    reforgeSetting: {value: "Smart", options: ["Smart", "Thorough"], category: "topGear", type: "selector", gameType: "Classic"},
+    reforgeSetting: {value: "Smart", options: ["Smart", "Thorough", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
     numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
     metaGem: {value: "Ember Shadowspirit Diamond", options: ["Ember Shadowspirit Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting", "Leatherworking", "Mining", "Skinning", "Tailoring"], category: "topGear", type: "selector", gameType: "Classic"},
