@@ -61,7 +61,7 @@ export function initializeDruidSet() {
 // We want to run a CastProfile for each spell but we can optimize that slightly.
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
-export function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
+export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, tierSets = []) {
     let score = 0;
     const healingBreakdown = {};
     const fightLength = 6;
@@ -70,10 +70,14 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings) 
     const critPercentage = 1.04 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
     // Evaluate Stats
     // Spellpower
-    /*score = (totalHealing + statProfile.spellPower * druidBaseline.weights.spellPower) * 
-                (statProfile.crit / 178 / 100 + 1) *
-                (1.25 * statProfile.mastery / 178 / 100 + 1);
-    */
+
+    // Take care of any extras.
+    console.log(JSON.stringify(tierSets));
+    if (tierSets.includes("Druid T11-4")) {
+      console.log("DRUID TIER SET");
+      statProfile.spirit += 540;
+    }
+
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");

@@ -259,7 +259,6 @@ export const setupGems = (itemList, adjusted_weights) => {
 
             if (socketBonus && item.classicSockets.bonus) {
               newScore += scoreSocketBonus(item.classicSockets.bonus);
-              console.log("Bonus" + scoreSocketBonus(item.classicSockets.bonus))
             }
 
             score = originalScore - newScore;

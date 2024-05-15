@@ -518,7 +518,7 @@ export default function TopGear(props: any) {
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
       let instance = new worker();
       instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, false, reforgeFromList, reforgeToList)
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, true, reforgeFromList, reforgeToList)
         .then((result: TopGearResult | null) => {
           if (result) {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);

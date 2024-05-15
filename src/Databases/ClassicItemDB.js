@@ -73623,30 +73623,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Oasis Bracers",
-        "id": 56405,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Oasis Bracers",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_16",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Wrist",
-        "itemLevel": 346,
-        "stats": {
-            "intellect": 168,
-            "stamina": 252,
-            "spirit": 120,
-            "mastery": 98
-        }
-    },
-    {
         "name": "Impetuous Query",
         "id": 56406,
         "quality": 3,

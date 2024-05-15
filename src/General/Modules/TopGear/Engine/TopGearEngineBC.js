@@ -220,13 +220,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
+    let tierList = [];
 
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
-        effectList = effectList.concat(getItemSet(set, setBonuses[set]));
+        tierList = getItemSet(set, setBonuses[set]);
       }
     }
+
     let enchants = {};
   
     let bonus_stats = {
@@ -436,9 +438,9 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       // mana Pool
       //setStats.crit += 4 * 179;
     }
-
+    
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings);
+      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList);
     }
     else if (player.spec === "Holy Paladin Classic") {
       hardScore = scorePaladinSet(baseline, setStats, player, playerSettings);
