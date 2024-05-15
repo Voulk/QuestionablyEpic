@@ -175,12 +175,11 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
     console.log("Item Count: " + itemList.length);
     console.log("Sets (Post-Reforge): " + itemSets.length);
-    
+    const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
     const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
-
     count = itemSets.length;
     for (var i = 0; i < itemSets.length; i++) {
-      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline);
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
     }
     
 
@@ -214,7 +213,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 
 // A true evaluation function on a set.
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
-function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline) {
+function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline, professions) {
     // Get Base Stats
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
@@ -291,8 +290,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
   
     // Apply consumables if ticked.
     
-    // -- ENCHANTS --
-
+    // -- GEMS & ENCHANTS --
+    // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
     compileStats(setStats, compiledGems);
 
@@ -301,10 +300,17 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.crit += 35;
       enchants['Head'] = "Arcanum of Hyjal"
   
-      enchant_stats.spellpower += 24;
-      enchant_stats.haste += 25;
-      enchants['Shoulder'] = "Greater Inscription of Charged Lodestone" // Lesser version + crit versions available.
-  
+      if (professions.includes("Inscription")) {
+        enchant_stats.intellect += 130;
+        enchant_stats.haste += 25;
+        enchants['Shoulder'] = "Felfire Inscription"
+      }
+      else {
+        enchant_stats.intellect += 50;
+        enchant_stats.haste += 25;
+        enchants['Shoulder'] = "Greater Inscription of Charged Lodestone" // Lesser version available.
+      }
+
       enchant_stats.intellect += 20;
       enchant_stats.spirit += 20;
       enchants['Chest'] = "Peerless Stats" // TODO
@@ -312,8 +318,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.intellect += 50;
       enchants['Back'] = "Greater Intellect"; // Tailoring version available.
 
-      enchant_stats.intellect += 50;
-      enchants['Wrist'] = "Mighty Intellect";
+      if (professions.includes("Inscription")) {
+        enchant_stats.intellect += 130;
+        enchants['Wrist'] = "Draconic Embossment";
+      }
+      else {
+        enchant_stats.intellect += 50;
+        enchants['Wrist'] = "Mighty Intellect";
+      }
+
   
       if (player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
         enchant_stats.haste += 50;
@@ -342,7 +355,16 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchants['1H Weapon'] = "Power Torrent"
       enchants['2H Weapon'] = "Power Torrent"
     }
+    // Flasks and profession stuff.
+    enchant_stats.intellect += 300;
+    if (professions.includes("Skinning")) {
+      enchant_stats.crit += 80;
+    }
+    else if (professions.includes("Alchemy")) {
+      enchant_stats.intellect += 80;
+    }
 
+    
     //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
     // ----------------------
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.

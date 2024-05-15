@@ -45,7 +45,7 @@ const StyledTooltip = styled(({ className, ...props }) => (
 }));
 
 const truncateString = (str, num) => {
-  if (str.length <= num) {
+  if (str.length <= num || window.innerWidth >= 1025) {
     return str;
   }
   return str.slice(0, num) + "...";
@@ -55,8 +55,13 @@ export default class BCChart extends PureComponent {
     super();
   }
 
+  getShortenedItemName = (name) => {
+    return name.slice(0, 10) + '...';
+  }
+
 
   render() {
+    const isMobile = window.innerWidth < 1025;
     const currentLanguage = i18n.language;
     const data = this.props.data;
 
@@ -93,7 +98,7 @@ export default class BCChart extends PureComponent {
             flexWrap: 'wrap',
         }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)}
+              {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 10)}
             </text>
             <WowheadTooltip type="item" id={payload.value} domain={"cata"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
@@ -123,17 +128,17 @@ export default class BCChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.6}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={800}>
         <BarChart
-          barCategoryGap="15%"
+          barCategoryGap="10%"
           data={cleanedArray}
           layout="vertical"
           margin={{
             top: 20,
-            right: 40,
+            right: 20,
             bottom: 20,
-            left: 250,
-          }}
+            left: isMobile ? 140 : 250,
+          }} 
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
@@ -143,7 +148,7 @@ export default class BCChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
-            labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage, "", "Classic")}
+            labelFormatter={(timeStr) => getShortenedItemName(timestr)} //getTranslatedItemName(timeStr, currentLanguage, "", "Classic")}
             formatter={(value, name, props) => {
               {
                 if (value > 0) {
@@ -162,7 +167,7 @@ export default class BCChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
           {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
           <Bar dataKey={"Normal"} fill={"#1f78b4"} stackId="a" /> 
