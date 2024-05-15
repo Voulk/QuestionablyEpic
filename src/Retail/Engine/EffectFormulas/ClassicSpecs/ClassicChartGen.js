@@ -120,7 +120,6 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
         const spellData = {id: 0, icon: CLASSICDRUIDSPELLDB[newSeq[0]] ? CLASSICDRUIDSPELLDB[newSeq[0]][0].spellData.icon : ""};
         const cat = sequence.cat;
-
         if (cat === "Package") {
             // All auto based.
             Object.keys(sequence.details).forEach(spellName => {

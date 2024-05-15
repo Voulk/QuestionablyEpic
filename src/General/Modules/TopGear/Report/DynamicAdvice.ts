@@ -20,7 +20,7 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
         by clicking on them in the top gear item select screen.")
     }
     if (gameType === "Classic") {
-        advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.5) + " - " + Math.round(topSet.hardScore / 60 * 0.8))
+        advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.62) + " - " + Math.round(topSet.hardScore / 60 * 0.82))
     }
     if (topSet.enchantBreakdown["phial"]) {
         advice.push("Recommended Phial: " + topSet.enchantBreakdown["phial"] + ".");

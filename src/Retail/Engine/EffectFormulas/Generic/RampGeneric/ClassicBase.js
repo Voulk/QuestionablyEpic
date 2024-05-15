@@ -63,7 +63,7 @@ export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFla
 export const getStatMult = (currentStats, stats, statMods, spec, masteryFlag) => {
     let mult = 1;
     const baseMastery = GLOBALCONST.masteryMod[spec] / 100 * 8; // Every spec owns 8 mastery points baseline
-    const critChance = getCritPercentage(spec, currentStats) + (statMods['crit'] || 0 );
+    const critChance = getCritPercentage(currentStats, spec) + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
