@@ -349,27 +349,27 @@ export const dungeonTrinketData = [
       { // Negative Vers portion - When you have debuff.
         coefficient: -0.299875, 
         table: -7,
-        uptime: 3 / 45, // This is the amount of time the debuff stays on you until you refresh it.
+        uptime: 8 / 45, // This is the amount of time the debuff stays on you until you refresh it.
       },
       { // Positive vers portion
         coefficient: 1.260259, 
         table: -7,
         duration: 15,
-        cooldown: 48,
+        cooldown: 53,
       },
       { 
         coefficient: 25.77058, // This is the shield portion applied to allies.
         table: -9,
         secondaries: ['versatility'],
-        efficiency: 0.98,
+        efficiency: 0.92,
         targets: 1.9, 
-        cooldown: 47,
+        cooldown: 53,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown)- (processedValue(data[0], itemLevel) * data[0].uptime);
+      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown) - (processedValue(data[0], itemLevel) * data[0].uptime);
       bonus_stats.hps = runGenericFlatProc(data[2], itemLevel, player, additionalData.contentType || "Raid") // processedValue(data[2], itemLevel, data[2].efficiency) * data[2].targets / data[2].cooldown;
 
       return bonus_stats;
@@ -465,7 +465,7 @@ export const dungeonTrinketData = [
       const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
       // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      const whelpSetting = "Crit Buff"; // getSetting(additionalData.settings, "rubyWhelpShell");
+      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
       if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
       else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = bigProc; procRates["HasteProc"] = smallProc; }

@@ -26,24 +26,21 @@ const initialState : RootState = {
   gameType: ls.get<string>("gameType") || "Retail",
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
-    includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
-    incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector", gameType: "Retail" },
-    idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
-    //rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
-    //alchStonePotions: { value: 1, options: [0, 1, 2], category: "trinkets", type: "selector" },
+    includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector" },
+    groupBuffValuation: {value: "Half", options: ["Half", "Full"], category: "trinkets", type: "selector"},
+    incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector" },
+    broodkeeperCloseTime: {value: 70, options: [], category: "trinkets", type: "Entry"},
+    idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input" },
+    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector" }, // "ST Damage", "AoE Damage",
+    
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
-    catalystLimit: { value: 1, options: [1, 2, 3, 4], category: "topGear", type: "selector", gameType: "Retail" },
-    upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector", gameType: "Retail" },
-    /*primordialGems: {
-      value: "Automatic",
-      options: ["Automatic", "Wild Spirit, Exuding Steam, Deluging Water", "Wild Spirit, Exuding Steam, Desirous Blood", "Flame Licked, Wild Spirit, Exuding Steam"],
-      category: "topGear",
-      type: "selector",
-    }, */
-    topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
-    healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
-    lariatGems: { value: 4, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
-    chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector", gameType: "Retail" },
+    catalystLimit: { value: 1, options: [1, 2, 3, 4], category: "topGear", type: "selector" },
+    upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector" },
+
+    topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector" },
+    healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry" },
+    lariatGems: { value: 4, options: [], category: "embellishments", type: "Entry" },
+    chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector" },
     
     gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
@@ -53,9 +50,11 @@ const initialState : RootState = {
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
-    reforgeSetting: {value: "Smart", options: ["Smart", "Thorough"], category: "topGear", type: "selector", gameType: "Classic"},
+    reforgeSetting: {value: "Smart", options: ["Smart", "Thorough", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
     numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
     metaGem: {value: "Ember Shadowspirit Diamond", options: ["Ember Shadowspirit Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
+    professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting", "Leatherworking", "Mining", "Skinning", "Tailoring"], category: "topGear", type: "selector", gameType: "Classic"},
+    professionTwo: {value: "Engineering", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting", "Leatherworking", "Mining", "Skinning", "Tailoring"], category: "topGear", type: "selector", gameType: "Classic"},
 
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.

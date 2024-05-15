@@ -160,7 +160,6 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
-    console.log(itemLevel);
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
@@ -185,7 +184,8 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
 
   // Crafted
   if (source.instanceId === -4) {
-    const missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
+    let missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
+    if (source.encounterId === 4) missiveStats = missiveStats[0]; // For engineering we'll just use the first stat in their selection. 
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     let craftedSocket = false;
     //let craftedSocket = itemSocket || checkDefaultSocket(itemID);

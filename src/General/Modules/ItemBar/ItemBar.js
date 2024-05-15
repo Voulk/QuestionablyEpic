@@ -115,7 +115,7 @@ export default function ItemBar(props) {
           ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}, gameType) + (gameType === "Classic" ? " (" + key.itemLevel + ")" : "")}));
     
       
-      newItemList = newItemList.reduce((unique, o) => {
+      newItemList = newItemList.reduceRight((unique, o) => {
         if (!unique.some((obj) => obj.label === o.label)) {
           unique.push(o);
         }

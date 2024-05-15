@@ -139,12 +139,12 @@ const raidTrinketData: Effect[] = [
     name: "Jar of Ancient Remedies",
     effects: [
       { 
-        value: {359: 103}, // Spirit effect
+        value: {359: 103, 372: 116}, // Spirit effect
         stacks: 5,
         uptime: 0.75,
       },
       {
-        value: {359: 6420}, // Instant mana effect
+        value: {359: 6420, 372: 7260}, // Instant mana effect
         cooldown: 120,
       }
     ],
@@ -306,7 +306,7 @@ const otherTrinketData: Effect[] = [
       { // 
         value: {359: 1926}, 
         ppm: getEffectPPM(0.1, 50+5, 1.5),
-        stat: "Intellect", // Change to ProcIntellect
+        stat: "spellpower", // Change to ProcIntellect
         duration: 10,
       },
     ],

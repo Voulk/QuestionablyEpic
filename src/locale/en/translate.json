@@ -319,6 +319,14 @@
           "title": "Ruby Whelp Specialization",
           "tooltip": "If you've trained your Ruby Whelp Shell, then you can pick its training target here."
         },
+        "broodkeeperCloseTime": {
+          "title": "Broodkeeper Proximity Uptime %",
+          "tooltip": "The percentage of time you're standing next to your ally. 70% by default."
+        },
+        "groupBuffValuation": {
+          "title": "Ally Buffs Scaling",
+          "tooltip": "Pick between valuing buffs to allies at full or half value."
+        },
         "catalystLimit": {
           "title": "Catalyst Limit",
           "tooltip": "Pick the maximum number of Catalyst items Top Gear will put in a set."
@@ -373,6 +381,18 @@
         "metaGem": {
           "title": "Meta Gem",
           "tooltip": "More options coming soon!"
+        },
+        "professionOne": {
+          "title": "First Profession",
+          "tooltip": "Select which profession you have levelled if you'd like them included in the results."
+        },
+        "professionTwo": {
+          "title": "Second Profession",
+          "tooltip": "Select which profession you have levelled if you'd like them included in the results."
+        },
+        "reforgeSetting": {
+          "title": "Reforge Setting",
+          "tooltip": "Select how you'd like Reforges handled."
         }
 
         

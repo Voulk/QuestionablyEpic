@@ -17,6 +17,7 @@ import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
+import ManaSourcesComponent from "./ManaComponent";
 
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase"
 
@@ -175,6 +176,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
+    const manaSources = {}
 
     // Setup Slots / Set IDs.
   itemList.forEach(item => {
@@ -186,15 +188,15 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     if (gameType === "Classic") {
       console.log(statList);
       console.log(topSet.hardScore);
-      const manaSources = {}
       
-      manaSources.pool = getManaPool(statList, player.spec) + 22000; // Mana pot
-      manaSources.regen = (getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12;
+      
+      manaSources.pool = Math.round(getManaPool(statList, player.spec) + 22000); // Mana pot
+      manaSources.regen = Math.round((getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12);
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
       //console.log("Total mana spend: " + (regen + pool))
 
-      const totalMana = manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7;
-      console.log("Total Mana" + totalMana)
+      manaSources.totalMana =  Math.round(manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7);
+      console.log("Total Mana" + manaSources.totalMana)
 
     }
 
@@ -387,6 +389,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
           /* ----------------------------------------------------------------------------------------------  */}
            <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
+          {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
           <Grid item style={{ height: 60 }} xs={12} />
 
         </Grid>

@@ -61,7 +61,7 @@ export function initializeDruidSet() {
 // We want to run a CastProfile for each spell but we can optimize that slightly.
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
-export function scoreDruidSet(druidBaseline, statProfile, player, userSettings) {
+export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, tierSets = []) {
     let score = 0;
     const healingBreakdown = {};
     const fightLength = 6;
@@ -70,10 +70,12 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings) 
     const critPercentage = 1.04 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
     // Evaluate Stats
     // Spellpower
-    /*score = (totalHealing + statProfile.spellPower * druidBaseline.weights.spellPower) * 
-                (statProfile.crit / 178 / 100 + 1) *
-                (1.25 * statProfile.mastery / 178 / 100 + 1);
-    */
+
+    // Take care of any extras.
+    if (tierSets.includes("Druid T11-4")) {
+      statProfile.spirit += 540;
+    }
+
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
@@ -92,7 +94,8 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings) 
 
         fullSpell.forEach(spell => {
           const genericMult = 1.04 * (spellProfile.bonus ? spellProfile.bonus : 1);
-          const critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
+          let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
+          if (tierSets.includes("Druid T11-2") && spellProfile.spell === "Lifebloom") critBonus += 0.05;
           const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (critPercentage + critBonus) : 1;
           const additiveScaling = (spell.additiveScaling || 0) + 1
           const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;

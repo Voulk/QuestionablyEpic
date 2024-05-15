@@ -2,8 +2,8 @@
 
 export const CONSTANTS = {
     dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 0.58,
-    allyDPSPerPoint: 0.58 / 15500 * 300000,
+    allyStatWeight: 0.55, // This is a heavy underestimation. Maybe add a setting.
+    allyDPSPerPoint: 0.55 / 15500 * 300000,
     difficulties: {
         "LFR": 0,
         "LFRMax": 1,
@@ -15,7 +15,7 @@ export const CONSTANTS = {
         "mythicMax": 7,
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
-    seasonalItemConversion: 8, // 6 = S2, 7 = S3. This value is used to determine if an item can be catalyzed.
+    seasonalItemConversion: 9, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
 
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
     classicSpecs: ["Holy Paladin Classic", "Restoration Druid Classic", "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic"],

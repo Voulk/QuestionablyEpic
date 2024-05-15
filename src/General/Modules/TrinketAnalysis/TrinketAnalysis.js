@@ -276,7 +276,7 @@ export default function TrinketAnalysis(props) {
 
   for (var i = 0; i < finalDB.length; i++) {
     const trinket = finalDB[i];
-    const trinketName = getItemProp(trinket.id, "name", "Classic");
+    const trinketName = getItemProp(trinket.id, "name", gameType);
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,

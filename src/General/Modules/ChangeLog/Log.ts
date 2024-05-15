@@ -16,9 +16,46 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2.7",
+    update: 18,
+    date: "May 9 (Fixes)",
+    changes: [ 
+      "Upgrade Finder engineering items now only use the first missive stat given rather than both.",
+      "Adding a set item manually will now always use the season 4 piece instead of falling back to a season 1-3 piece.",
+    ]},
+  {
+    version: "10.2.6",
+    update: 18,
+    date: "May 3 (Fixes)",
+    changes: [ 
+      "Fixed a bug with the season 4 Paladin 4pc bonus.",
+    ]},
+  {
+    version: "10.2.6",
+    update: 18,
+    date: "April 28 (Minor)",
+    changes: [ 
+      "Added Engraved Spearhead.",
+      "Removed 535 version of Broodkeeper's Promise from the chart (it doesn't exist).",
+    ]},
+  {
+    version: "10.2.6",
+    update: 17,
+    date: "April 25 (Major)",
+    changes: [ 
+      "Re-enabled Catalyst conversions.",
+      "Wearing 2pc season 3 and 2pc season 4 sets will no longer grant double the set bonus.",
+      "Evoker: Fixed a bug where the new 2pc could be overvalued (it's still great).",
+      "Adventurer items can now be upgraded to 489.",
+      "New Setting: Ruby Whelp Shell training mode.",
+      "Fixed a bug where running upgrade finder without changing any sliders would set M+ items to 519 ilvl.",
+      "Added more trinkets to the trinket chart.",
+      "The Embellishment chart now obeys your 'Include Ally Stats' setting.",
+    ]},
+  {
     version: "10.2.6",
     update: 16,
-    date: "April 23",
+    date: "April 23 (Minor)",
     changes: [ 
       "Added WQ trinkets to trinket chart.",
       "Fixed bug with upgrading Explorer / Adventurer items.",
@@ -26,7 +63,7 @@ export const changeLog: entry[] = [
   {
     version: "10.2.6",
     update: 15,
-    date: "April 23",
+    date: "April 23 (Major)",
     changes: [ 
       "QE Live now supports Season 4.",
       "Upgrade Finder: Added a Crafted items tab.",
@@ -34,7 +71,7 @@ export const changeLog: entry[] = [
   {
     version: "10.2.6",
     update: 14,
-    date: "March 18",
+    date: "March 18 (Fixes)",
     changes: [ 
       "Upgrade Finder: Items are once again sorted by upgrade percentage.",
       "Upgrade Finder: Fixed dungeon headers not reporting upgrade count.",
@@ -42,7 +79,7 @@ export const changeLog: entry[] = [
   {
     version: "10.2.5",
     update: 13,
-    date: "March 14",
+    date: "March 14 (Major)",
     changes: [ 
       "Upgrade Finder revamped. Reports can now be shared.",
       "New Settings: Runes, Phials and Gems.",
@@ -52,14 +89,14 @@ export const changeLog: entry[] = [
     {
       version: "10.2.5",
       update: 12,
-      date: "February 21",
+      date: "February 21 (Fixes)",
       changes: [ 
         "Mistweaver Gem Fix.",
       ]},
   {
     version: "10.2.5",
     update: 11,
-    date: "January 17",
+    date: "January 17 (Minor)",
     changes: [ 
       "Minor general 10.2.5 updates.",
       "Updated Evoker gearing after the 10.2.5 Reversion buff.",
@@ -68,7 +105,7 @@ export const changeLog: entry[] = [
   {
     version: "10.2",
     update: 10,
-    date: "January 10",
+    date: "January 10 (Minor)",
     changes: [ 
       "Ulduar Timewalking: Added formulas for all trinkets.",
       "The trinket graph filter buttons have been updated.",
@@ -77,14 +114,14 @@ export const changeLog: entry[] = [
   {
     version: "10.2",
     update: 9,
-    date: "December 29",
+    date: "December 29 (Minor)",
     changes: [ 
       "Mistweaver: Added Tear of Morning playstyle.",
     ]},
   {
     version: "10.2",
     update: 8,
-    date: "December 26",
+    date: "December 26 (Minor)",
     changes: [ 
       "Timewalking: Added Skull of Gul'dan.",
       "Timewalking: Added some missing Legion timewalking items.",

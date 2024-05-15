@@ -132,8 +132,8 @@ export const getManaRegen = (currentStats, spec) => {
 }
 
 export const getManaPool = (currentStats, spec) => {
-    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02 * 1.15; // Meta + Furor 18635 - 280
-    else return (24777 + currentStats.intellect * 15) * 1.02;
+    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02; // Meta + Furor 18635 - 280
+    else return (23422 - 280 + currentStats.intellect * 15) * 1.02;
 }
 
 
@@ -142,10 +142,11 @@ export const getManaPool = (currentStats, spec) => {
 // Innervate currently only works for druid but we could add a setting.
 export const getAdditionalManaEffects = (currentStats, spec) => {
     let additionalManaPerSecond = 24777 * 0.05;
+    
     const manaSources = {additionalMP5: 0};
     const pool = getManaPool(currentStats, spec);
 
-
+    manaSources["Base Regen"] = 24777 * 0.05;
     const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
     manaSources["Replenishment"] = replenishment;
     additionalManaPerSecond += replenishment;
@@ -161,6 +162,7 @@ export const getAdditionalManaEffects = (currentStats, spec) => {
         manaSources["Innervate"] = (pool * 0.2 / 180 * 5);
 
         // Revitalize
+        manaSources["Revitalize"] = (pool * 0.01 * 5 / 60 * 5);
         additionalManaPerSecond += (pool * 0.01 * 5 / 60 * 5); // 15 mana, 5 times per minute
     }
 
