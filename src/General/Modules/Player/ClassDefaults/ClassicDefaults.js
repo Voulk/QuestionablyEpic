@@ -61,7 +61,7 @@ export function initializeDruidSet() {
 // We want to run a CastProfile for each spell but we can optimize that slightly.
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
-export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, tierSets = []) {
+export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, tierSets = [], shardOfWoe) {
     let score = 0;
     const healingBreakdown = {};
     const fightLength = 6;
@@ -75,7 +75,6 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     if (tierSets.includes("Druid T11-4")) {
       statProfile.spirit += 540;
     }
-
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
@@ -111,6 +110,11 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
               const targetCount = spell.targets ? spell.targets : 1;
               const tickCount = Math.round(spell.buffDuration / (adjTickRate));
               spellHealing = spellHealing * tickCount * targetCount;
+          }
+
+          if (spellProfile.spell === "Rejuvenation" && shardOfWoe && statProfile.haste >= 2032) {
+            // This represents 
+            spellHealing *= (1.2 * 1 / 6 + 5 / 6); // 20% more healing 1/6th of the time.
           }
           
           //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));

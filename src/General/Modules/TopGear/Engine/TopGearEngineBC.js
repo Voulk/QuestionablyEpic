@@ -440,7 +440,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
     
     if (player.spec === "Restoration Druid Classic") {
-      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList);
+      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList, builtSet.itemList.filter(item => item.id === 60233).length > 0);
     }
     else if (player.spec === "Holy Paladin Classic") {
       hardScore = scorePaladinSet(baseline, setStats, player, playerSettings);
