@@ -67174,30 +67174,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Ring of the Great Whale",
-        "id": 55261,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Ring of the Great Whale",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_ring_50naxxramas",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 308,
-        "stats": {
-            "intellect": 118,
-            "stamina": 177,
-            "spirit": 79,
-            "haste": 79
-        }
-    },
-    {
         "name": "Armbands of Change",
         "id": 55264,
         "quality": 3,
@@ -71541,30 +71517,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Ring of the Great Whale",
-        "id": 56293,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Ring of the Great Whale",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_ring_50naxxramas",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 346,
-        "stats": {
-            "intellect": 168,
-            "stamina": 252,
-            "spirit": 112,
-            "haste": 112
-        }
-    },
-    {
         "name": "Grace of the Herald",
         "id": 56295,
         "quality": 3,
@@ -73136,37 +73088,6 @@ export const classicItemDB = [
             "stamina": 454,
             "spirit": 186,
             "crit": 167
-        }
-    },
-    {
-        "name": "Rainsong",
-        "id": 56377,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Rainsong",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_elemental_mote_water01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 346,
-        "effect": {
-            "type": "trinket",
-            "name": "Rainsong"
-        },
-        "levelRange": [
-            333,
-            346
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 285
         }
     },
     {
@@ -94737,6 +94658,446 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Planetary Band of the Undertow",
+        "id": 634940,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "spirit": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Planetary Band of the Fireflash",
+        "id": 634941,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "crit": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Planetary Band of the Feverflare",
+        "id": 634942,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Planetary Band of the Wavecrest",
+        "id": 634943,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Undertow",
+        "id": 634970,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "spirit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Fireflash",
+        "id": 634971,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "crit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Feverflare",
+        "id": 634972,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "haste": 160,
+            "mastery": 160
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Wavecrest",
+        "id": 634973,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "mastery": 160,
+            "spirit": 160
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Undertow",
+        "id": 635060,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "spirit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Fireflash",
+        "id": 635061,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "crit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Feverflare",
+        "id": 635062,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "haste": 208,
+            "mastery": 208
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Wavecrest",
+        "id": 635063,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "mastery": 208,
+            "spirit": 208
+        }
+    },
+    {
         "name": "Helm of Eldritch Authority",
         "id": 63534,
         "quality": 4,
@@ -107108,6 +107469,446 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Planetary Band of the Undertow",
+        "id": 653730,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "spirit": 143,
+            "haste": 143
+        }
+    },
+    {
+        "name": "Planetary Band of the Fireflash",
+        "id": 653731,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "crit": 143,
+            "haste": 143
+        }
+    },
+    {
+        "name": "Planetary Band of the Feverflare",
+        "id": 653732,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "haste": 143,
+            "mastery": 143
+        }
+    },
+    {
+        "name": "Planetary Band of the Wavecrest",
+        "id": 653733,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Band of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_87",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "mastery": 143,
+            "spirit": 143
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Undertow",
+        "id": 653740,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "spirit": 181,
+            "haste": 181
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Fireflash",
+        "id": 653741,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "crit": 181,
+            "haste": 181
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Feverflare",
+        "id": 653742,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "haste": 181,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Gale Rouser Belt of the Wavecrest",
+        "id": 653743,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "mastery": 181,
+            "spirit": 181
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Undertow",
+        "id": 653840,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "spirit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Fireflash",
+        "id": 653841,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "crit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Feverflare",
+        "id": 653842,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "haste": 238,
+            "mastery": 238
+        }
+    },
+    {
+        "name": "Gale Rouser Leggings of the Wavecrest",
+        "id": 653843,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Gale Rouser Leggings of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_raiddruid_i_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "mastery": 238,
+            "spirit": 238
+        }
+    },
+    {
         "name": "",
         "id": 65781,
         "quality": 2,
@@ -113844,6 +114645,134 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Stormwake, the Tempest's Reach of the Undertow",
+        "id": 681270,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Stormwake, the Tempest's Reach of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_sword_1h_bwdraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 146,
+            "stamina": 0,
+            "spellpower": 1954,
+            "spirit": 97,
+            "haste": 97
+        }
+    },
+    {
+        "name": "Stormwake, the Tempest's Reach of the Fireflash",
+        "id": 681271,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Stormwake, the Tempest's Reach of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_sword_1h_bwdraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 146,
+            "stamina": 0,
+            "spellpower": 1954,
+            "crit": 97,
+            "haste": 97
+        }
+    },
+    {
+        "name": "Stormwake, the Tempest's Reach of the Feverflare",
+        "id": 681272,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Stormwake, the Tempest's Reach of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_sword_1h_bwdraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 146,
+            "stamina": 0,
+            "spellpower": 1954,
+            "haste": 97,
+            "mastery": 97
+        }
+    },
+    {
+        "name": "Stormwake, the Tempest's Reach of the Wavecrest",
+        "id": 681273,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Stormwake, the Tempest's Reach of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_sword_1h_bwdraid_d_02",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 146,
+            "stamina": 0,
+            "spellpower": 1954,
+            "mastery": 97,
+            "spirit": 97
+        }
+    },
+    {
         "name": "Stormwake, the Tempest's Reach",
         "id": 68127,
         "quality": 4,
@@ -116886,6 +117815,254 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Planetary Amulet of the Undertow",
+        "id": 698300,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "spirit": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Fireflash",
+        "id": 698301,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "crit": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Feverflare",
+        "id": 698302,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Wavecrest",
+        "id": 698303,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Planetary Drape of the Undertow",
+        "id": 698350,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "spirit": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Planetary Drape of the Fireflash",
+        "id": 698351,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "crit": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Planetary Drape of the Feverflare",
+        "id": 698352,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Planetary Drape of the Wavecrest",
+        "id": 698353,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 190,
+            "stamina": 0,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
         "name": "Vitreous Beak of Julak-Doom",
         "id": 69844,
         "quality": 4,
@@ -116908,6 +118085,254 @@ export const classicItemDB = [
             "hit": 86,
             "mastery": 105,
             "spellpower": 1954
+        }
+    },
+    {
+        "name": "Planetary Drape of the Undertow",
+        "id": 698810,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "spirit": 143,
+            "haste": 143
+        }
+    },
+    {
+        "name": "Planetary Drape of the Fireflash",
+        "id": 698811,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "crit": 143,
+            "haste": 143
+        }
+    },
+    {
+        "name": "Planetary Drape of the Feverflare",
+        "id": 698812,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "haste": 143,
+            "mastery": 143
+        }
+    },
+    {
+        "name": "Planetary Drape of the Wavecrest",
+        "id": 698813,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Drape of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "mastery": 143,
+            "spirit": 143
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Undertow",
+        "id": 698820,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "spirit": 143,
+            "haste": 143
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Fireflash",
+        "id": 698821,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "crit": 143,
+            "haste": 143
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Feverflare",
+        "id": 698822,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "haste": 143,
+            "mastery": 143
+        }
+    },
+    {
+        "name": "Planetary Amulet of the Wavecrest",
+        "id": 698823,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Planetary Amulet of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "item_icecrownnecklaced",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 215,
+            "stamina": 0,
+            "mastery": 143,
+            "spirit": 143
         }
     },
     {

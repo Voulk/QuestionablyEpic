@@ -222,4 +222,7 @@ export const translatedStat = {
   resilience: { // Classic
     en: "Resilience"
   },
+  spellpower: { // Classic
+    en: "Spell Power"
+  },
 };
