@@ -8,7 +8,7 @@ const checkHasItem = (itemList: Item[], itemID: number) => {
 
 // Returns an array of tips.
 // Note that
-export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType: contentTypes) => {
+export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType: contentTypes, gameType: gameTypes = "Retail") => {
     let advice: string[] = [];
     const topSet = report.itemSet;
     const itemList = topSet.itemList;
@@ -18,6 +18,9 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     if (differentials.length === 0) {
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
         by clicking on them in the top gear item select screen.")
+    }
+    if (gameType === "Classic") {
+        advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.62) + " - " + Math.round(topSet.hardScore / 60 * 0.82))
     }
     if (topSet.enchantBreakdown["phial"]) {
         advice.push("Recommended Phial: " + topSet.enchantBreakdown["phial"] + ".");
