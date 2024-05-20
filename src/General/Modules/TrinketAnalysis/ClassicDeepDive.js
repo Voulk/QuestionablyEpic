@@ -1,9 +1,12 @@
 
 import { getAllTrinketDataClassic } from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
 
-const convertSpiritToMP5 = (spiritAmount, intellect) => {
-    const regen = 0.001 + spiritAmount * Math.sqrt(intellect) * 0.016725 * 0.5;
-    return Math.round(regen);
+const convertSpiritToMP5 = (spiritAmount, intellect, spec) => {
+    const regen = 0.001 + spiritAmount * Math.sqrt(intellect) * 0.016725;
+
+    if (spec.includes("Holy Paladin")) return Math.round(regen * 0.8);
+    else return Math.round(regen * 0.5);
+    
 }
 
 const getTrinketData = (trinketName) => {
@@ -25,9 +28,9 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
     });
 
     if (trinketStats.spirit) {
-        trinketDescription.push("Effective MP5 at 4k int: " + convertSpiritToMP5(trinketStats.spirit, 4000));
-        trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000));
-        trinketDescription.push("Effective MP5 at 6k int: " + convertSpiritToMP5(trinketStats.spirit, 6000));
+        trinketDescription.push("Effective MP5 at 4k int: " + convertSpiritToMP5(trinketStats.spirit, 4000, player.spec));
+        trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
+        trinketDescription.push("Effective MP5 at 6k int: " + convertSpiritToMP5(trinketStats.spirit, 6000, player.spec));
     }
 
     return trinketDescription;

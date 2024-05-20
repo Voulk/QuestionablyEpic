@@ -2,7 +2,7 @@
 
 import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
-import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
@@ -58,10 +58,17 @@ describe("Test APL", () => {
             spell.healing = 0;
         })
 
+        castProfile.forEach(spell => {
+            spell.castTime = paladinSpells[spell.spell][0].castTime;
+            spell.hpc = 0;
+            spell.cost = 0;
+            spell.healing = 0;
+        })
+
         //const baseSpells = EVOKERSPELLDB;
         const testSuite = "Top Gear Scoring Function";
-        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
-        const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
+        const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
+        const playerData = { spec: "Holy Paladin", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -70,7 +77,7 @@ describe("Test APL", () => {
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            const data = runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile")
             
             console.log(data.weights);
 
@@ -80,7 +87,7 @@ describe("Test APL", () => {
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
         else if (testSuite === "Top Gear Scoring Function") {
-            const baseline = initializeDruidSet();
+            /*const baseline = initializeDruidSet();
             const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
             console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
@@ -88,7 +95,17 @@ describe("Test APL", () => {
             console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
             //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
 
-            buildStatChart(baseline, activeStats, testSettings);
+            buildStatChart(baseline, activeStats, testSettings); */
+
+            const baseline = initializePaladinSet();
+            const scoredSet = scorePaladinSet(baseline, activeStats, {}, testSettings)
+            console.log(scoredSet + "(" + scoredSet / 60 + ")")
+
+            //const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
+            //console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
+            //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
+
+            //buildStatChart(baseline, activeStats, testSettings);
         }
 
 
