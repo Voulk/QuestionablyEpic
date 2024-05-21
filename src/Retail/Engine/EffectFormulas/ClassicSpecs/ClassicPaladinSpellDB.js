@@ -144,6 +144,23 @@ export const CLASSICPALADINSPELLDB = {
         value: 1.2, // For handling Avenging Wrath: Might
         buffDuration: 20
     }],
+    "Divine Plea": [{
+        // Regrowth direct heal portion
+        spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
+        type: "resourceGain",
+        castTime: 0, 
+        cost: 0, 
+        return: 0.12, // Restores a percentage of total mana.
+        cooldown: 120,
+    }],
+    "Seal of Insight": [{ // Fake spell. Procs on auto attacks.
+        // Regrowth direct heal portion
+        spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
+        type: "resourceGainFlat",
+        castTime: 1.8, 
+        cost: 0, 
+        return: 937, // This is technically a percentage of *base* mana.
+    }],
 
 
     "Judgements of the Pure": [{

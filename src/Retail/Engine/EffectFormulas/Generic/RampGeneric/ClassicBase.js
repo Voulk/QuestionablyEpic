@@ -151,10 +151,18 @@ export const getAdditionalManaEffects = (currentStats, spec) => {
     manaSources["Replenishment"] = replenishment;
     additionalManaPerSecond += replenishment;
 
+    manaSources["Mana Potion"] = 22000 / 420 * 5;
+    additionalManaPerSecond += manaSources["Mana Potion"];
+
     if (spec.includes("Holy Paladin")) {
         // Divine Plea
         additionalManaPerSecond += (pool * 0.12 / 120 * 5);
         manaSources["Divine Plea"] = (pool * 0.12 / 120 * 5);
+
+        // Seal of Insight
+        manaSources["Seal of Insight"] = (937 * 8 / 60 * 5); // 8ppm
+        additionalManaPerSecond += manaSources["Seal of Insight"]; 
+        
     }
     else if (spec.includes("Restoration Druid")) {
         // Innervate

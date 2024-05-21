@@ -18,12 +18,13 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 4200,
-            spirit: 1800,
+            spirit: 1000,
             spellpower: 1800,
             haste: 1000,
             crit: 1000,
             mastery: 1000,
             stamina: 5000,
+            mp5: 0,
             critMult: 2,
         }
 
@@ -98,12 +99,28 @@ describe("Test APL", () => {
             buildStatChart(baseline, activeStats, testSettings); */
 
             const baseline = initializePaladinSet();
-            const scoredSet = scorePaladinSet(baseline, activeStats, {}, testSettings)
-            console.log(scoredSet + "(" + scoredSet / 60 + ")")
+            const scoredBaseline = scorePaladinSet(baseline, activeStats, {}, testSettings)
+            //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
-            //const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
-            //console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
-            //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
+            const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
+
+            const results = {};
+            stats.forEach(stat => {
+                // Change result to be casts agnostic.
+                let playerStats = JSON.parse(JSON.stringify(activeStats));
+                playerStats[stat] = playerStats[stat] + 10;
+                const newPlayerData = {...playerData, stats: playerStats};
+                const result = scorePaladinSet(baseline, playerStats, {}, testSettings)
+                console.log(result);
+                results[stat] = result;
+            });
+            const weights = {}
+        
+            stats.forEach(stat => {
+        
+                weights[stat] = Math.round(1000*(results[stat] - scoredBaseline)/(results['spellpower'] - scoredBaseline))/1000;
+            });
+            console.log(weights);
 
             //buildStatChart(baseline, activeStats, testSettings);
         }
@@ -117,7 +134,7 @@ describe("Test APL", () => {
 const buildStatChart = (baseline, activeStats, testSettings) => {
     const results = [];
     for (let i = 0; i < 2100; i += 10) {
-        const score = scoreDruidSet(baseline, {...activeStats, mastery: i}, {}, testSettings);
+        const score = scorePaladinSet(baseline, {...activeStats, spirit: i}, {}, testSettings);
         results.push(Math.round(score));
     }
     console.log(JSON.stringify(results));
