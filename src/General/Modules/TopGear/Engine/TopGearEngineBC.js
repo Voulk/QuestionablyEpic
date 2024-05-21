@@ -229,6 +229,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
     }
 
+    if (player.spec === "Restoration Druid Classic") {
+      // Check Haste breakpoints
+      const hasteSetups = [];
+      // {slotsReforged: [], haste: 0}
+
+      // Calculate the different haste levels the set can reach.
+      // 
+    }
+
     let enchants = {};
   
     let bonus_stats = {
