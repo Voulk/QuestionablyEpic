@@ -469,6 +469,24 @@ export default function ItemBar(props) {
           </Alert>
         </Snackbar>
       </Grid>
+      <Grid 
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+
+        spacing={0.5}
+        sx={{
+          paddingTop: "30px",
+          paddingBottom: "10px",
+      }}>
+        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
+        <Grid item>
+          <Button variant="outlined" color="primary">{"Pre-raid Gear"}</Button>
+          <Button variant="outlined" color="primary">{"359 Raid Gear"}</Button>
+          <Button variant="outlined" color="primary">{"372 Raid Gear"}</Button>
+        </Grid>
+      </Grid>
     </Paper>
   );
 }

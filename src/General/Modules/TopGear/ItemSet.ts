@@ -118,11 +118,12 @@ class ItemSet {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
     let setStats =  this.getStartingStats(gameType)
     let setSockets = 0;
-
+    
     for (let i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
 
       for (const [stat, value] of Object.entries(item.stats)) {
+        
         //if (stat in setStats) {
           //setStats[stat as keyof Stats] += value || 0;
           setStats[stat as keyof Stats] = (setStats[stat as keyof Stats] || 0) + value;

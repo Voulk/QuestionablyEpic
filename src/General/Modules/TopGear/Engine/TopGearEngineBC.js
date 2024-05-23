@@ -83,7 +83,7 @@ function setupPlayer(player, contentType, castModel) {
   return newPlayer;
 }
 
-export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, playerSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = []) {
+export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, playerSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = [], chunkNumber) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -138,17 +138,18 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
           const secondaryRank = ["spirit", "mastery", "crit"]
           // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
           if (itemStats.includes("haste")) {
+            
             const targetStat = secondaryRank.find(value => !itemStats.includes(value));
             const newItem = JSON.parse(JSON.stringify(item));
             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-              newItem.stats[targetStat] = Math.round(item.stats['haste'] * 0.4);
-              newItem.stats['haste'] = Math.round(item.stats['haste'] * 0.6);
-              newItem.uniqueHash = Math.random().toString(36).substring(7);
-              //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-              newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
-              reforgedItems.push(newItem);
-              //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
-
+            newItem.stats[targetStat] = Math.round(item.stats['haste'] * 0.4);
+            newItem.stats['haste'] = Math.round(item.stats['haste'] * 0.6);
+            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+            newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+            reforgedItems.push(newItem);
+            //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
+            
           }
           else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
             // Check the lowest value of the set and reforge that.
@@ -171,14 +172,27 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     itemList = itemList.concat(reforgedItems);
     }
 
-    let itemSets = createSets(itemList, wepCombos);
+    let itemSets = createSets(itemList, wepCombos, true);
 
-    console.log("Item Count: " + itemList.length);
-    console.log("Sets (Post-Reforge): " + itemSets.length);
+    // Auto-filter some sets
+    /*const filteredSets = []
+    for (var j = 0; j < itemSets.length; j++) {
+      itemSets[j] = itemSets[j].compileStats("Classic");
+      if (itemSets[j].setStats.haste > 1940) {
+        filteredSets.push(itemSets[j]);
+      }
+    }
+    console.log("Item Sets: " + itemSets.length);
+    console.log("Filtered sets: " + filteredSets.length);
+    if (filteredSets.length > 0) itemSets = filteredSets; */
+
+    //console.log("Item Count: " + itemList.length);
+    //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
     const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
     count = itemSets.length;
-    for (var i = 0; i < itemSets.length; i++) {
+    const chunkSize = count / 2;
+    for (var i = chunkNumber * chunkSize; i < Math.min(chunkSize * (chunkNumber + 1), count); i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
     }
     
@@ -229,14 +243,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
     }
 
-    if (player.spec === "Restoration Druid Classic") {
-      // Check Haste breakpoints
-      const hasteSetups = [];
-      // {slotsReforged: [], haste: 0}
-
-      // Calculate the different haste levels the set can reach.
-      // 
-    }
 
     let enchants = {};
   
@@ -284,6 +290,74 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       leech: player.statWeights[contentType]["leech"],
     };
     */
+
+    // Auto reforger
+    // Check if we can reach haste breakpoints. If we can, reforge those, then optimize what's left.
+    if (player.spec === "Restoration Druid Classic") {
+      /*
+      const baseStats = itemSet.setStats;
+      const baseHaste = itemSet.setStats.haste;
+      const secondaryRank = ["spirit", "mastery", "crit"]
+      const hasteRanges = [];
+      // Loop through each item, if no haste, add haste.
+      itemSet.itemList.forEach((item, index) => {
+
+        //const possibleReforges = []
+        console.log(JSON.stringify(item.stats));
+        if (item.stats.haste === undefined) {
+          const fromStat = secondaryRank.slice().reverse().find(value => Object.keys(item.stats).includes(value));
+          if (item.stats[fromStat]) hasteRanges.push({id: index, from: fromStat, value: Math.round(item.stats[fromStat] * 0.4)})
+        }
+
+      });
+      console.log("HASTE");
+      console.log(baseStats.haste);
+      console.log(JSON.stringify(hasteRanges));
+      // Check if we can make it to 2005
+      if ((baseHaste + hasteRanges.reduce((a, b) => a + b.value, 0)) >= 1930) {
+        // It is possible to form a high haste set. We can now make permanent changes to the item set since we'll go with this.
+
+        hasteRanges.sort((a, b) => (a.value < b.value ? 1 : -1));
+        // Greedy reforge crit pieces. Stop if > 1950. We're making changes to the set itself here.
+        hasteRanges.forEach(reforge => {
+          console.log("Checking crit");
+          if (reforge.from === "crit" && setStats.haste < 1930) {
+            setStats.haste += reforge.value;
+            setStats.crit -= reforge.value;
+            itemSet.itemList[reforge.id].flags.push("Reforged: Crit -> Haste")
+          }
+        });
+        // Next greedy reforge mastery pieces
+        hasteRanges.forEach(reforge => {
+          if (reforge.from === "mastery" && setStats.haste < 1930) {
+            setStats.haste += reforge.value;
+            setStats.mastery -= reforge.value;
+            itemSet.itemList[reforge.id].flags.push("Reforged: Mastery -> Haste")
+          }
+        });
+        hasteRanges.forEach(reforge => {
+          if (reforge.from === "spirit" && setStats.haste < 1930) {
+            setStats.haste += reforge.value;
+            setStats.mastery -= reforge.value;
+            itemSet.itemList[reforge.id].flags.push("Reforged: Spirit -> Haste")
+          }
+        });
+
+        // Check how far over the set is. See if we can make minor changes to fix it. 
+      }
+      else {
+        // We can't make a set with enough haste. Instead we'll just reforge normally while staying above 950 haste. 
+        console.log("CANT MAKE SET");
+      }
+
+
+
+      */
+      
+    }
+    // If we can't, optimize all pieces.
+
+
 
    let adjusted_weights = {...castModel.baseStatWeights}
     // Mana Profiles
@@ -509,8 +583,39 @@ function addBaseStats(stats, race, spec) {
 
 }
 
+function getSlotLengths(itemList, wepCombos) {
+  let slotLengths = {
+    Head: 0,
+    Neck: 0,
+    Shoulder: 0,
+    Back: 0,
+    Chest: 0,
+    Wrist: 0,
+    Hands: 0,
+    Waist: 0,
+    Legs: 0,
+    Feet: 0,
+    Finger: 0,
+    Trinket: 0,
+    Weapon: 0,
+    'Relics & Wands': 0,
+  };
 
-function createSets(itemList, rawWepCombos) {
+  for (var i = 0; i < itemList.length; i++) {
+    let slot = itemList[i].slot;
+    if (slot in slotLengths) {
+      slotLengths[slot] += 1;
+      splitItems[slot].push(itemList[i]);
+    }
+  }
+  slotLengths.Weapon = Object.keys(wepCombos).length;
+
+  return slotLengths;
+}
+
+
+function createSets(itemList, rawWepCombos, filter) {
+  const t0 = performance.now();
   const wepCombos = deepCopyFunction(rawWepCombos);
   let setCount = 0;
   let itemSets = [];
@@ -631,8 +736,14 @@ function createSets(itemList, rawWepCombos) {
                                         ];
                                         if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
                                         let sumSoft = sumScore(softScore);
-                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "Classic"));
-                                        setCount++;
+                                        let set = new ItemSet(setCount, includedItems, sumSoft, "Classic");
+                                        /*set.compileStats("Classic");
+                                        if (set.setStats.haste > 1940) {
+                                          itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "Classic"));
+                                          setCount++;
+                                        }*/
+                                        itemSets.push(set);
+
                                     }
                                   }
                                 }
@@ -655,6 +766,8 @@ function createSets(itemList, rawWepCombos) {
   }
 
   // console.log("Created " + itemSets.length + " item sets.");
+  console.log("Item Set Creation took " + (performance.now() - t0) + " milliseconds.");
   return itemSets;
 }
+
 
