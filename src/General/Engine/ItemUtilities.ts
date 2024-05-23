@@ -932,17 +932,16 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, contentType: contentTypes, gameType: gameTypes) {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number) {
   let itemDB = getItemDB(gameType);
-  player.clearActiveItems();
-
+  //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
   const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
 
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
-      (key.itemLevel === 359 || key.itemLevel === 346 /*|| key.itemLevel === 379*/) && 
+      (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372) /*|| key.itemLevel === 379*/) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
