@@ -16,6 +16,15 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "10.2.7 / 4.4",
+    update: 1,
+    date: "May 27 (Major)",
+    changes: [ 
+      "Cataclysm: Resto Druid.",
+      "Revamped Top Gear report visuals.",
+      "Revamped item selection cards."
+    ]},
+  {
     version: "10.2.7",
     update: 18,
     date: "May 9 (Fixes)",
