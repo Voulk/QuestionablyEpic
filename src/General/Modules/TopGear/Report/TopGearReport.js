@@ -174,6 +174,8 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
+    console.log(gameType);
+    console.log(statList);
     const manaSources = {}
 
     // Setup Slots / Set IDs.

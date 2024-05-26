@@ -142,8 +142,9 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             const targetStat = secondaryRank.find(value => !itemStats.includes(value));
             const newItem = JSON.parse(JSON.stringify(item));
             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-            newItem.stats[targetStat] = Math.round(item.stats['haste'] * 0.4);
-            newItem.stats['haste'] = Math.round(item.stats['haste'] * 0.6);
+            const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
+            newItem.stats[targetStat] = Math.round(reforgeAmount);
+            newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
             newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
@@ -156,9 +157,10 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
             
             const newItem = JSON.parse(JSON.stringify(item));
+            const reforgeAmount = Math.floor(item.stats[fromStat] * 0.4);
             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-            newItem.stats['haste'] = Math.round(item.stats[fromStat] * 0.4);
-            newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+            newItem.stats['haste'] = Math.round(reforgeAmount);
+            newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
             newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
@@ -192,7 +194,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
     count = itemSets.length;
     const chunkSize = count / 2;
-    for (var i = chunkNumber * chunkSize; i < Math.min(chunkSize * (chunkNumber + 1), count); i++) {
+    for (var i = 0; i < count; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
     }
     
@@ -417,7 +419,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         enchant_stats.haste += 50;
         enchants['Hands'] = "Haste"
       }
-      else {
+      else { 
         enchant_stats.mastery += 50;
         enchants['Hands'] = "Mastery"
       }
@@ -736,13 +738,13 @@ function createSets(itemList, rawWepCombos, filter) {
                                         ];
                                         if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
                                         let sumSoft = sumScore(softScore);
-                                        let set = new ItemSet(setCount, includedItems, sumSoft, "Classic");
+                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "Classic"));
+                                        setCount++;
                                         /*set.compileStats("Classic");
                                         if (set.setStats.haste > 1940) {
                                           itemSets.push(new ItemSet(setCount, includedItems, sumSoft, "Classic"));
                                           setCount++;
                                         }*/
-                                        itemSets.push(set);
 
                                     }
                                   }
