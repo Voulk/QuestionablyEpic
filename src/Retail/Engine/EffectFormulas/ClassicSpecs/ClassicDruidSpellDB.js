@@ -210,7 +210,7 @@ export const CLASSICDRUIDSPELLDB = {
 // Talents that aren't in the resto portion of the tree (Feral / Balance)
 const offspecTalents = {
 
-    furor: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+    furor: {points: 3, maxPoints: 3, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.manaPool *= (1 + 0.05 * points);
     }},
 
@@ -232,7 +232,8 @@ const offspecTalents = {
         buffSpell(spellDB["Swiftmend"], buffValue, "additive");
         buffSpell(spellDB["Lifebloom"], buffValue, "additive"); // TODO: Change to HoT only.
         buffSpell(spellDB["Wild Growth"], buffValue, "additive");
-        //buffSpell(spellDB["Regrowth"], buffValue, "additive", 1);
+        //buffSpell(spellDB["Regrowth"], buffValue, "additive");
+        spellDB["Regrowth"][1].additiveSlice = 0.05 * points;
 
     }},
 
@@ -244,7 +245,7 @@ const specTalents = {
         buffSpell(spellDB["Rejuvenation"], 0.02 * points, "additive");
     }}, 
 
-    naturalShapeshifter: {points: 2, maxPoints: 2, icon: "spell_nature_wispsplode", id: 17003, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    naturalShapeshifter: {points: 2, maxPoints: 2, icon: "spell_nature_wispsplode", id: 16833, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Tree of Life"][0].buffDuration += 6;
         spellDB["Tree of Life"][0].cost *= (1 - 0.1 * points);
         // Not included: Making Cat cheaper.
@@ -266,26 +267,27 @@ const specTalents = {
 
     improvedRejuvenation: {points: 3, maxPoints: 3, icon: "spell_nature_rejuvenation", id: 17113, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 0.05 * points, "additive");
+        buffSpell(spellDB["Swiftmend"], 0.05 * points, "additive");
     }}, 
     livingSeed: {points: 0, maxPoints: 3, icon: "ability_druid_giftoftheearthmother", id: 48496, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Regrowth"][0].statMods.critEffect = 2.6;
-        spellDB["Regrowth"][1].statMods.critEffect = 2.6;
-        spellDB["Swiftmend"][0].statMods.critEffect = 2.6;
-        spellDB["Healing Touch"][0].statMods.critEffect = 2.6;
-        spellDB["Nourish"][0].statMods.critEffect = 2.6;
+        spellDB["Regrowth"][0].statMods.critEffect = 2 + (0.2 * points);
+        spellDB["Regrowth"][1].statMods.critEffect = 2 + (0.2 * points);
+        spellDB["Swiftmend"][0].statMods.critEffect = 2 + (0.2 * points);
+        spellDB["Healing Touch"][0].statMods.critEffect = 2 + (0.2 * points);
+        spellDB["Nourish"][0].statMods.critEffect = 2 + (0.2 * points);
     }}, 
 
 
 
-    naturesBounty: {points: 3, maxPoints: 3, icon: "spell_nature_resistnature", id: 17074, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Regrowth"][0].statMods.crit = 0.6;
-        spellDB["Regrowth"][1].statMods.crit = 0.6;
+    naturesBounty: {points: 0, maxPoints: 3, icon: "spell_nature_resistnature", id: 17074, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Regrowth"][0].statMods.crit = 0.2 * points;
+        spellDB["Regrowth"][1].statMods.crit = 0.2 * points;
     }}, 
 
     empoweredTouch: {points: 2, maxPoints: 2, icon: "ability_druid_empoweredtouch", id: 33879, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // TODO: Model Lifebloom refresh properly.
         buffSpell(spellDB["Healing Touch"], 0.05 * points, "additive");
-        //buffSpell(spellDB["Regrowth"], 0.05 * points, "additive");
+        spellDB["Regrowth"][0].additiveSlice = 0.05 * points;
         buffSpell(spellDB["Nourish"], 0.05 * points, "additive");
     }}, 
 
@@ -294,8 +296,8 @@ const specTalents = {
             type: "classic periodic",
             buffType: "heal",
             buffDuration: 7,
-            coeff: spellDB["Swiftmend"][0].coeff * 0.12, //
-            flat: spellDB["Swiftmend"][0].flat * 0.12, //
+            coeff: spellDB["Swiftmend"][0].coeff * 0.04 * points, //
+            flat: spellDB["Swiftmend"][0].flat * 0.04 * points, //
             tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, hasteScaling: true}, 
             expectedOverheal: 0.4,
             targets: 3,

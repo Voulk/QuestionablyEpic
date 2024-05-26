@@ -408,9 +408,13 @@ export default function SequenceGenerator(props) {
   return (
     <div height="100%">
       <div className={classes.root}>
+      <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingBottom: "20px"}}>
+            <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
+          </Grid>
       <Grid item xs={6}>
             <Grid container spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
                 <Paper
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.24)",
@@ -609,9 +613,7 @@ export default function SequenceGenerator(props) {
           </Grid>
 
 
-          <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
-            <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
-          </Grid>
+
 
         {/*<div style={{ height: 50 }}>&nbsp;</div> */}
       </div>
