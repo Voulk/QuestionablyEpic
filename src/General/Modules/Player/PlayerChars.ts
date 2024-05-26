@@ -59,7 +59,7 @@ export function createPlayerChars(): PlayerChars {
 
       // Auto-add Classic Specs
       CONSTANTS.classicSpecs.forEach(spec => {
-        if (!(specsAdded.includes(spec))) {
+        if (!(specsAdded.includes(spec)) && spec === "Restoration Druid Classic") { // TODO: Remove as we add the other specs.
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
           autoAddItems(newChar, "Raid", "Classic");

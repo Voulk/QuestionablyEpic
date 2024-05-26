@@ -268,7 +268,7 @@ export const setupGems = (itemList, adjusted_weights) => {
         
       });
       gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
-      console.log(JSON.stringify(gemResults));
+
       for (let i = 0; i < mandatoryYellows; i++) {
         //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
         itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
@@ -297,3 +297,41 @@ export const setupGems = (itemList, adjusted_weights) => {
 
     return compiledGems
 }
+
+/*
+export function addOptimizedDruidSets(itemSets) {
+  for (let i = 0; i < itemSets.length; i++) {
+    const itemSet = itemSets[i];
+
+    // For each set, run smart reforging. 
+
+  }
+
+
+  const baseStats = itemSet.setStats;
+  const secondaryRank = ["spirit", "mastery", "crit"]
+  const hasteRanges = [];
+  const hasteSlots = {};
+  // Loop through each item, if no haste, add haste.
+  itemSet.itemList.forEach(item => {
+    //const possibleReforges = []
+    console.log(JSON.stringify(item.stats));
+    if (item.stats.haste === undefined) {
+      const fromStat = secondaryRank.slice().reverse().find(value => Object.keys(item.stats).includes(value));
+      if (item.stats[fromStat]) hasteRanges.push(Math.round(item.stats[fromStat] * 0.4));
+    }
+
+    /*if (item.stats.haste === 0) {
+      Object.keys(item.stats).forEach(statName => {
+        if (["spirit", "crit", "mastery"].includes(statName)) {
+          possibleReforges.push(Math.round(item.stats[statName] * 0.4));
+        }
+      })
+    }
+    //hasteRanges.push(possibleReforges);
+
+  });
+  console.log("HASTE");
+  console.log(baseStats.haste);
+  console.log(JSON.stringify(hasteRanges));
+}*/

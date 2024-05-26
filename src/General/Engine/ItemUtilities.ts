@@ -342,7 +342,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case "Holy Paladin Classic":
       return [0, 1, 4, 5, 6, 7, 8, 11];
     case "Restoration Druid Classic":
-      return [4, 5, 6, 10, 11, 13, 15];
+      return [4, 5, 10, 11, 13, 15];
     case "Restoration Shaman Classic":
       return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
@@ -932,23 +932,21 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, contentType: contentTypes, gameType: gameTypes) {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number) {
   let itemDB = getItemDB(gameType);
-  player.clearActiveItems();
-
+  //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
   const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
-
 
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
-      (key.itemLevel === 359 || key.itemLevel === 372 || key.itemLevel === 379) && 
+      (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372) /*|| key.itemLevel === 379*/) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
         key.slot === "Offhand" ||
-        key.slot === "Shield" ||
+        (key.slot === "Shield" && (player.spec === "Holy Paladin Classic" || player.spec === "Restoration Shaman Classic")) || 
         (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
         (key.itemClass === 2 && player.spec === "Holy Priest Classic")), // Wands
         );
@@ -956,14 +954,17 @@ export function autoAddItems(player: Player, contentType: contentTypes, gameType
   itemDB.forEach((item: any) => {
     const slot = getItemProp(item.id, "slot", gameType);
     if ((slot === 'Trinket' && item.levelRange) || 
-        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit)) {
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) && 
+        (!item.name.includes("of the") || item.name.includes("Undertow")) &&
+        (!item.name.includes("Gladiator")) && 
+        (!([62458, 59514].includes(item.id)))) {
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
       player.activeItems.push(newItem);
     }
 
   })
 
-  
+  player.activeItems.sort((a, b) => (a.level > b.level ? 1 : -1));
 }
 
 

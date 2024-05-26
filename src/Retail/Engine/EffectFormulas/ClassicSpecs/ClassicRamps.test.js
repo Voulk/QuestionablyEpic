@@ -2,7 +2,7 @@
 
 import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
-import { CLASSICPALADINSPELLDB as baseSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
@@ -18,12 +18,13 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 4200,
-            spirit: 1800,
+            spirit: 1000,
             spellpower: 1800,
             haste: 1000,
             crit: 1000,
             mastery: 1000,
             stamina: 5000,
+            mp5: 0,
             critMult: 2,
         }
 
@@ -58,10 +59,17 @@ describe("Test APL", () => {
             spell.healing = 0;
         })
 
+        castProfile.forEach(spell => {
+            spell.castTime = paladinSpells[spell.spell][0].castTime;
+            spell.hpc = 0;
+            spell.cost = 0;
+            spell.healing = 0;
+        })
+
         //const baseSpells = EVOKERSPELLDB;
         const testSuite = "Top Gear Scoring Function";
-        const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
-        const playerData = { spec: "Restoration Druid", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
+        const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
+        const playerData = { spec: "Holy Paladin", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -70,7 +78,7 @@ describe("Test APL", () => {
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile")
+            const data = runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile")
             
             console.log(data.weights);
 
@@ -80,7 +88,7 @@ describe("Test APL", () => {
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
         else if (testSuite === "Top Gear Scoring Function") {
-            const baseline = initializeDruidSet();
+            /*const baseline = initializeDruidSet();
             const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
             console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
@@ -88,7 +96,33 @@ describe("Test APL", () => {
             console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
             //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
 
-            buildStatChart(baseline, activeStats, testSettings);
+            buildStatChart(baseline, activeStats, testSettings); */
+
+            const baseline = initializePaladinSet();
+            const scoredBaseline = scorePaladinSet(baseline, activeStats, {}, testSettings)
+            //console.log(scoredSet + "(" + scoredSet / 60 + ")")
+
+            const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
+
+            const results = {};
+            stats.forEach(stat => {
+                // Change result to be casts agnostic.
+                let playerStats = JSON.parse(JSON.stringify(activeStats));
+                playerStats[stat] = playerStats[stat] + 10;
+                const newPlayerData = {...playerData, stats: playerStats};
+                const result = scorePaladinSet(baseline, playerStats, {}, testSettings)
+                console.log(result);
+                results[stat] = result;
+            });
+            const weights = {}
+        
+            stats.forEach(stat => {
+        
+                weights[stat] = Math.round(1000*(results[stat] - scoredBaseline)/(results['spellpower'] - scoredBaseline))/1000;
+            });
+            console.log(weights);
+
+            //buildStatChart(baseline, activeStats, testSettings);
         }
 
 
@@ -100,7 +134,7 @@ describe("Test APL", () => {
 const buildStatChart = (baseline, activeStats, testSettings) => {
     const results = [];
     for (let i = 0; i < 2100; i += 10) {
-        const score = scoreDruidSet(baseline, {...activeStats, mastery: i}, {}, testSettings);
+        const score = scorePaladinSet(baseline, {...activeStats, spirit: i}, {}, testSettings);
         results.push(Math.round(score));
     }
     console.log(JSON.stringify(results));

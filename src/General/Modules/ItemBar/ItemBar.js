@@ -17,6 +17,7 @@ import {
   scoreItem,
   getItemAllocations,
   calcStatsAtLevel,
+  autoAddItems,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
+
 
 // Create and return an item. Could maybe be merged with the SimC createItem function?
 export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary, missives = "", gameType) => {
@@ -94,6 +96,14 @@ export default function ItemBar(props) {
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
+
+  const autoFillItems = (itemLevel, player) => {
+    if (player.activeItems.filter((item) => item.level === itemLevel).length > 0) return;
+    else {
+      autoAddItems(player, "Classic", itemLevel);
+      props.setItemList([...player.getActiveItems(activeSlot)]);
+    }
+  }
 
   const fillItems = (slotName, spec) => {
     const acceptableArmorTypes = getValidArmorTypes(spec);
@@ -469,6 +479,24 @@ export default function ItemBar(props) {
           </Alert>
         </Snackbar>
       </Grid>
+      {gameType === "Classic" ? <Grid 
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+
+        spacing={1}
+        sx={{
+          paddingTop: "30px",
+          paddingBottom: "10px",
+      }}>
+        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
+        <Grid item>
+          <Button variant="outlined" color="primary" onClick={() => autoFillItems(346, props.player)}>{"Pre-raid Gear"}</Button>
+          <Button variant="outlined" color="primary" onClick={() => autoFillItems(359, props.player)}>{"359 Raid Gear"}</Button>
+          <Button variant="outlined" color="primary" onClick={() => autoFillItems(372, props.player)}>{"372 Raid Gear"}</Button>
+        </Grid>
+      </Grid> : null }
     </Paper>
   );
 }

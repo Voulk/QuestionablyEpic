@@ -344,7 +344,7 @@ export default function TrinketAnalysis(props) {
         <Grid item xs={12}>
           <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
             <Tab label={"Trinkets at a Glance"} />
-            <Tab label={"Trinket Deep Dive"} />
+            {gameType === "Retail" ? <Tab label={"Trinket Deep Dive"} /> : null}
           </Tabs>
 
           <TabPanel value={tabIndex} index={0}>

@@ -89,6 +89,7 @@ export const CLASSICPALADINSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         buffDuration: 3,
+        flat: 0,
         coeff: 0.0504, // Estimated. Check it in Beta.
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
@@ -142,6 +143,23 @@ export const CLASSICPALADINSPELLDB = {
         buffType: 'allIncrease',
         value: 1.2, // For handling Avenging Wrath: Might
         buffDuration: 20
+    }],
+    "Divine Plea": [{
+        // Regrowth direct heal portion
+        spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
+        type: "resourceGain",
+        castTime: 0, 
+        cost: 0, 
+        return: 0.12, // Restores a percentage of total mana.
+        cooldown: 120,
+    }],
+    "Seal of Insight": [{ // Fake spell. Procs on auto attacks.
+        // Regrowth direct heal portion
+        spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
+        type: "resourceGainFlat",
+        castTime: 1.8, 
+        cost: 0, 
+        return: 937, // This is technically a percentage of *base* mana.
     }],
 
 
