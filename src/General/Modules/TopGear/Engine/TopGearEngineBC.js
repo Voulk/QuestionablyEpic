@@ -119,7 +119,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
              // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
               newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
               newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
-              newItem.uniqueHash = Math.random().toString(36).substring(7);
+              //newItem.uniqueHash = Math.random().toString(36).substring(7);
               //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
               newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
 
@@ -142,7 +142,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
             newItem.stats[targetStat] = Math.round(reforgeAmount);
             newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
-            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
             newItem.flags.push("ItemReforged");
@@ -160,7 +160,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
             newItem.stats['haste'] = Math.round(reforgeAmount);
             newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
-            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
             newItem.flags.push("ItemReforged");

@@ -194,7 +194,7 @@ class CastModel {
           intellect: 1.9,
           crit: 0.701,
           mastery: 0.801,
-          haste: 0.1,
+          haste: 0.5,
           mp5: 1.46,
           spirit: 0.791,
         };
@@ -209,10 +209,11 @@ class CastModel {
       this.baseStatWeights = {
         spellpower: 1,
         intellect: 1.4,
-        spirit: 0.5,
+        spirit: 0.8,
         mastery: 0.55,
         crit: 0.49,
         haste: 0.72,
+        mp5: 1.4,
       };
     } 
     else if (spec === "Discipline Priest Classic") {
