@@ -2,20 +2,17 @@ import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
 import Item from "../../Player/Item";
 import React, { useState, useEffect } from "react";
-import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
 
 import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import ClassicPlayer from "../../Player/ClassicPlayer";
-import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
-import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction, setupGems } from "./TopGearEngineShared"
+import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
-import { gemDB } from "Databases/GemDB";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -148,7 +145,9 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+            newItem.flags.push("ItemReforged");
             reforgedItems.push(newItem);
+
             //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
             
           }
@@ -164,6 +163,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
+            newItem.flags.push("ItemReforged");
             reforgedItems.push(newItem);
             //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
           }
@@ -219,6 +219,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     } else {
       let result = new TopGearResult(itemSets[0], differentials);
       result.itemsCompared = count;
+      result.id = generateReportCode();
       return result;
     }
 }
@@ -358,7 +359,28 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
     // If we can't, optimize all pieces.
+    itemSet.itemList.forEach((item, index) => {
+      if (item.flags.includes("ItemReforged")) {
+        // Do nothing
+      }
+      else {
+        const secondaryRank = ["spirit", "mastery", "crit"]
+        const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+        const fromStat = secondaryRank.slice().reverse().findIndex(value => itemStats.includes(value));
+        const toStat = secondaryRank.findIndex(value => !itemStats.includes(value));
 
+        if (fromStat > toStat) {
+          const reforgeValue = Math.round(item.stats[secondaryRank[fromStat]] * 0.4);
+          setStats[secondaryRank[fromStat]] -= reforgeValue;
+          setStats[secondaryRank[toStat]] += reforgeValue;
+          item.flags.push("Reforged: " + secondaryRank[fromStat] + " -> " + secondaryRank[toStat]);
+          item.flags.push("ItemReforged");
+        }
+
+
+
+      }
+    });
 
 
    let adjusted_weights = {...castModel.baseStatWeights}

@@ -36,9 +36,11 @@ export default function TopSetStatsPanel(props) {
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
   function printStat(stat, value, spec) {
-    if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
+    if (value > 100) return t(stat) + ": " + Math.floor(value);
+    else if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
-    } else return t(stat) + ": " + Math.floor(value);
+    } 
+    else return t(stat) + ": " + Math.floor(value);
   }
 
   function addMods(spec, stat, value) {

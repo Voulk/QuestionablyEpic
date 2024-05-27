@@ -704,7 +704,7 @@ export default function TopGear(props: any) {
         <div
           style={{
             display: "flex",
-            width: "90%",
+            width: "100%",
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignItems: "center",
@@ -713,10 +713,10 @@ export default function TopGear(props: any) {
           <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
-          <div>
-            <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
+          <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {getErrorMessage()}
             </Typography>
+          <div>
             <Button 
               variant="contained" 
               color="primary" 

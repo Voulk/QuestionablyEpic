@@ -103,6 +103,8 @@ function TopGearReport(props) {
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
     if (result && result.new) {
+      
+      
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
@@ -174,8 +176,6 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-    console.log(gameType);
-    console.log(statList);
     const manaSources = {}
 
     // Setup Slots / Set IDs.
