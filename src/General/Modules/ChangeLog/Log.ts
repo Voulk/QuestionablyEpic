@@ -18,11 +18,12 @@ export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
     update: 1,
-    date: "May 27 (Major)",
+    date: "May 28 (Major)",
     changes: [ 
       "Cataclysm: Resto Druid.",
       "Revamped Top Gear report visuals.",
-      "Revamped item selection cards."
+      "Revamped item selection cards.",
+      "Added help button",
     ]},
   {
     version: "10.2.7",

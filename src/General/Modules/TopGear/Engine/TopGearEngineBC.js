@@ -205,7 +205,9 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     let differentials = [];
     let primeSet = itemSets[0];
     for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
-      differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
+      const differential = buildDifferential(itemSets[i], primeSet, newPlayer, contentType);
+      if (differential.items.length > 0 || differential.gems.length > 0) differentials.push(differential);
+
     }
     //itemSets[0].printSet()
 

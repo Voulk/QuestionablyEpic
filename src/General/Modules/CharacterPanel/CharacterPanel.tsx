@@ -125,7 +125,7 @@ export default function CharacterPanel(props: Props) {
         margin: "auto",
         width: "80%",
         borderStyle: props.quickCompare === true || simcStatus === "Good" || simcStatus === "Missing" ? "none" : "solid",
-        borderColor: props.quickCompare === true || simcStatus === "Good" || simcStatus === "Missing" ? "transparent" : "red",
+        borderColor: props.quickCompare === true || gameType === "Classic" || simcStatus === "Good" || simcStatus === "Missing" ? "transparent" : "red",
         borderWidth: props.quickCompare === true || simcStatus === "Good" || simcStatus === "Missing" ? "0px" : "2px",
       }}
     >

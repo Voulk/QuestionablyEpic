@@ -224,6 +224,7 @@ export default function ItemCard(props: ItemCardProps) {
                 itemLevel={itemLevel}
                 upgradeItem={props.upgradeItem}
                 item={item}
+                gameType={gameType}
               />
             </Grid>
           </Grid>
