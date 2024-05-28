@@ -197,10 +197,10 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     for (var i = 0; i < count; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
     }
-    
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
+    
     // Build Differentials
     let differentials = [];
     let primeSet = itemSets[0];
@@ -284,7 +284,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       mastery: 0,
       mp5: 0,
     }
-  
+
     /*
     let adjusted_weights = {
       intellect: 1,
@@ -368,14 +368,14 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       else {
         const secondaryRank = ["spirit", "mastery", "crit"]
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
-        const fromStat = secondaryRank.slice().reverse().findIndex(value => itemStats.includes(value));
-        const toStat = secondaryRank.findIndex(value => !itemStats.includes(value));
+        const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+        const toStat = secondaryRank.find(value => !itemStats.includes(value));
 
-        if (fromStat > toStat) {
-          const reforgeValue = Math.round(item.stats[secondaryRank[fromStat]] * 0.4);
-          setStats[secondaryRank[fromStat]] -= reforgeValue;
-          setStats[secondaryRank[toStat]] += reforgeValue;
-          item.flags.push("Reforged: " + secondaryRank[fromStat] + " -> " + secondaryRank[toStat]);
+        if (fromStat && toStat && secondaryRank.indexOf(fromStat) > secondaryRank.indexOf(toStat)) {
+          const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
+          setStats[fromStat] -= reforgeValue;
+          setStats[toStat] += reforgeValue;
+          item.flags.push("Reforged: " + fromStat + " -> " + toStat);
           item.flags.push("ItemReforged");
         }
 
@@ -383,7 +383,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
       }
     });
-
 
    let adjusted_weights = {...castModel.baseStatWeights}
     // Mana Profiles
@@ -545,7 +544,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
     //setStats = mergeBonusStats(effectStats);
     compileStats(setStats, compiledEffects);
-
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
       // 
@@ -574,10 +572,13 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         }
       }
     }
-    //console.log("END SCORE: " + hardScore);
+    console.log("END SCORE: " + hardScore);
+    console.log(JSON.stringify(setStats));
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
+    console.log(JSON.stringify(builtSet));
+    console.log(hardScore);
     return builtSet; // Temp
   }
 
