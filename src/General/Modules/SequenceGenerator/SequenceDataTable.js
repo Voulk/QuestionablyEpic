@@ -13,6 +13,7 @@ import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
+import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicChartGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
@@ -25,6 +26,12 @@ function buildChartData(spec, stats, talents) {
     return buildDiscChartData(stats, talents);
   } else if (spec === "Preservation Evoker") {
     return buildEvokerChartData(stats, talents);
+  }
+  else if (spec === "Restoration Druid Classic") {
+    return buildClassicChartData(stats, "Restoration Druid")
+  }
+  else if (spec === "Holy Paladin Classic") {
+    return buildClassicChartData(stats, "Holy Paladin")
   }
   else {
     return [];
@@ -50,6 +57,7 @@ export default function SequenceDataTable(props) {
             <TableCell style={{ fontWeight: 'bold' }}>Spell Combo</TableCell>
             <TableCell align="right">Healing</TableCell>
             <TableCell align="right">HPM</TableCell>
+            <TableCell align="right">HPCT</TableCell>
             <TableCell align="right">DPS</TableCell>
           </TableRow>
         </TableHead>
@@ -80,6 +88,7 @@ export default function SequenceDataTable(props) {
                               </TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{row.hpm}</TableCell>
+                              <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>
                               <TableCell align="right">{row.dps}</TableCell>
                             </TableRow>
                           );

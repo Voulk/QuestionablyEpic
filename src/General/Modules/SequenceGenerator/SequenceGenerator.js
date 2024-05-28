@@ -5,6 +5,10 @@ import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@m
 import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
 import StatPanel from "./SeqStatPanel";
+
+import { RootState } from "Redux/Reducers/RootReducer";
+import { useSelector } from "react-redux";
+
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
@@ -12,6 +16,9 @@ import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas
 import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
 import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
+
+// Classic
+import { runCastSequence as classicSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
@@ -22,6 +29,10 @@ import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engi
 import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
+
+// Classic
+import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
@@ -70,6 +81,8 @@ const getSpellDB = (spec) => {
   if (spec === "Restoration Druid") return DRUIDSPELLDB;
   if (spec === "Mistweaver Monk") return MONKSPELLS;
   if (spec === "Holy Priest") return HOLYPRIESTSPELLDB;
+  if (spec === "Restoration Druid Classic") return CLASSICDRUIDSPELLDB;
+  if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
 };
 
 const getTalentDB = (spec) => {
@@ -80,6 +93,8 @@ const getTalentDB = (spec) => {
   if (spec === "Restoration Druid") return druidTalents;
   if (spec === "Mistweaver Monk") return monkTalents;
   if (spec === "Holy Priest") return holyPriestTalents;
+  if (spec === "Restoration Druid Classic") return classicDruidTalents;
+  if (spec === "Holy Paladin Classic") return classicPaladinTalents;
 };
 
 const saveStats = (newStats) => {
@@ -87,17 +102,23 @@ const saveStats = (newStats) => {
 }
 
 const getSpecSettings = (spec) => {
+  const baseSettings = {
+    includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+  }
   if (spec === "Preservation Evoker") {
-    return { twoPc: { value: "Yes", options: ["Yes", "No"] }, includeOverheal: { value: "Yes", options: ["Yes", "No"] } };
-  } else if (spec === "Discipline Priest") {
-    return {
-      includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
-      openWithDoT: { title: "Open with DoT active", value: "Yes", options: ["Yes", "No"] },
-      numEnemyTargets: { title: "Num Enemy Targets", value: 1, options: [1, 2, 3, 4, 5] },
-      execute: { title: "Execute", value: "Ignore", options: ["Ignore", "20% of the time", "Always"] },
-    };
-  } else {
-    return {};
+    return baseSettings;
+  } 
+  else if (spec === "Discipline Priest") {
+      return {
+        ...baseSettings, 
+          includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+          openWithDoT: { title: "Open with DoT active", value: "Yes", options: ["Yes", "No"] },
+          numEnemyTargets: { title: "Num Enemy Targets", value: 1, options: [1, 2, 3, 4, 5] },
+          execute: { title: "Execute", value: "Ignore", options: ["Ignore", "20% of the time", "Always"] },
+        };
+      }
+  else {
+    return baseSettings;
   }
 };
 
@@ -111,15 +132,18 @@ const compressSettings = (settings) => {
 
 const getSequence = (spec) => {
   if (spec === "Preservation Evoker") return evokerSequence;
-  if (spec === "Discipline Priest") return discSequence;
-  if (spec === "Restoration Shaman") return shamanSequence;
-  if (spec === "Holy Paladin") return paladinSequence;
-  if (spec === "Restoration Druid") return druidSequence;
-  if (spec === "Mistweaver Monk") return monkSequence;
-  if (spec === "Holy Priest") return holyPriestSequence;
+  else if (spec === "Discipline Priest") return discSequence;
+  else if (spec === "Restoration Shaman") return shamanSequence;
+  else if (spec === "Holy Paladin") return paladinSequence;
+  else if (spec === "Restoration Druid") return druidSequence;
+  else if (spec === "Mistweaver Monk") return monkSequence;
+  else if (spec === "Holy Priest") return holyPriestSequence;
+  else if (spec.includes("Classic")) return classicSequence;
+  else console.error("Invalid Spec");
+
 };
 
-const setupSequences = (len = 2) => {
+const setupSequences = (len = 1) => {
   const seqArray = [];
 
   for (let i = 0; i < len; i++) {
@@ -136,14 +160,16 @@ const roundN = (num, places) => {
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
-
+  const gameType = useSelector((state) => state.gameType);
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
   const classes = useStyles();
   const [seq, setSeq] = useState([]);
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
-  const [activeStats, setActiveStats] = useState({ intellect: 14500, haste: 2000, crit: 3300, mastery: 6500, versatility: 1200, stamina: 16000 });
+  const [activeStats, setActiveStats] = useState(selectedSpec.includes("Classic") ? 
+                                { spellpower: 1700, intellect: 3500, haste: 2000, crit: 3300, mastery: 3000, spirit: 1000 } :
+                                { intellect: 14500, haste: 2000, crit: 3300, mastery: 6500, versatility: 1200, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
   const [result, setResult] = useState({ totalDamage: 0, totalHealing: 0, hpm: 0 });
@@ -193,7 +219,7 @@ export default function SequenceGenerator(props) {
     for (let i = 0; i < sequences.length; i++) {
       temp.push(JSON.parse(JSON.stringify(sequence)));
       const simFunc = getSequence(selectedSpec);
-      const sim = simFunc(sequences[i].spells, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
+      const sim = simFunc(sequences[i].spells, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true, spec: selectedSpec }, ...compressSettings(seqSettings) }, talents);
       temp[i].spells = sequences[i].spells;
       temp[i].data = {hps: roundN(sim.hps, 0), hpm: roundN(sim.hpm, 2), dps: roundN(sim.dps, 0)};
       // multiple state updates get bundled by react into one update
@@ -211,7 +237,7 @@ export default function SequenceGenerator(props) {
   
   const updateSequence = (sequence) => {
     const simFunc = getSequence(selectedSpec);
-    const sim = simFunc(sequence, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
+    const sim = simFunc(sequence, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true, spec: selectedSpec  }, ...compressSettings(seqSettings) }, talents);
 
     // multiple state updates get bundled by react into one update
     setSeq(sequence);
@@ -221,7 +247,7 @@ export default function SequenceGenerator(props) {
   }; 
 
   const runIterations = (sequence, simFunc) => {
-    const iter = 500;
+    const iter = 1;
     const results = { totalHealing: 0, totalDamage: 0, manaSpent: 0, hpm: 0 };
     let finalReport = [];
 
@@ -229,7 +255,7 @@ export default function SequenceGenerator(props) {
       //const baseline = runCastSequence(sequence, activeStats, settings, talents)
 
       //const simFunc = getSequence(selectedSpec);
-      const sim = simFunc(sequence, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true }, ...compressSettings(seqSettings) }, talents);
+      const sim = simFunc(sequence, activeStats, { ...{ reporting: true, harshDiscipline: true, advancedReporting: true, spec: selectedSpec  }, ...compressSettings(seqSettings) }, talents);
 
       results.totalHealing += sim.totalHealing;
       results.manaSpent += sim.manaSpent;
@@ -382,8 +408,40 @@ export default function SequenceGenerator(props) {
   return (
     <div height="100%">
       <div className={classes.root}>
-        <Grid container spacing={1}>
-          <Grid item xs={6}>
+      <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingBottom: "20px"}}>
+            <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
+          </Grid>
+      <Grid item xs={6}>
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                <Paper
+                  style={{
+                    border: "1px solid rgba(255, 255, 255, 0.24)",
+                    padding: "0px 8px 8px 8px",
+                  }}
+                  elevation={0}
+                >
+                  <Grid container spacing={1}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
+                        {"Sequences"}
+                      </Typography>
+                    </Grid>
+
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                      {sequences.map((s, i) => (
+                        <SequenceObject index={i} seq={s} data={s.data} db={spellDB} isSelected={selectedSeq===i} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
+                      ))}
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Grid>
+
+        <Grid container spacing={1} style={{paddingTop: "10px"}}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
             <Paper
               style={{
                 border: "1px solid rgba(255, 255, 255, 0.24)",
@@ -406,6 +464,7 @@ export default function SequenceGenerator(props) {
                             <SpellIcon
                               spell={spellDB[spell][0].spellData}
                               spec={selectedSpec}
+                              gameType={gameType}
                               iconType={"Spell"}
                               draggable
                               onDragStart={(e) => {
@@ -434,6 +493,7 @@ export default function SequenceGenerator(props) {
                               <SpellIcon
                                 spell={talentDB[spell]}
                                 spec={selectedSpec}
+                                gameType={gameType}
                                 iconType={"Talent"}
                                 width={25}
                                 //onDragStart={(e) => { dragStart(e, spell) }}
@@ -519,9 +579,7 @@ export default function SequenceGenerator(props) {
             </Paper>
           </Grid>
 
-          <Grid item xs={6}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                 <Paper
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.24)",
@@ -532,56 +590,30 @@ export default function SequenceGenerator(props) {
                   <Grid container spacing={1}>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Sequences"}
+                        {"Combat Log"}
                       </Typography>
                     </Grid>
-
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      {sequences.map((s, i) => (
-                        <SequenceObject index={i} seq={s} data={s.data} db={spellDB} isSelected={selectedSeq===i} spec={selectedSpec} setSelectedSeq={setSelectedSeq} />
-                      ))}
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Paper
-                  style={{
-                    border: "1px solid rgba(255, 255, 255, 0.24)",
-                    padding: "0px 8px 8px 8px",
-                  }}
-                  elevation={0}
-                >
-                  <Grid container spacing={1}>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                      <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
-                        {"Results"}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12}>
+                    {/*<Grid item xs={12}>
                       <Paper style={{ backgroundColor: "#525252", padding: 16 }} elevation={0}>
                         <p style={{ color: "whitesmoke", paddingTop: "10px" }}>
                           {"Damage: " + result.totalDamage.toLocaleString("en-US") + ". Healing: " + result.totalHealing.toLocaleString("en-US") + ". HPM: " + Math.round(100 * result.hpm) / 100}
                         </p>
                       </Paper>
-                    </Grid>
+                      </Grid> */}
                     {/* Combat Log */}
                     <Grid item xs={12}>
                       <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={8} maxRows={8} fullWidth disabled style={{ whiteSpace: "pre-line" }} />
                     </Grid>
                   </Grid>
                 </Paper>
+                <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
+                  <StatPanel setActiveStats={setActiveStats} stats={activeStats} />
+                </Grid>
               </Grid>
-            </Grid>
           </Grid>
-          <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
-            <StatPanel setActiveStats={setActiveStats} />
-          </Grid>
-          <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{paddingTop: "20px"}}>
-            <SequenceDataTable data={""} spec={selectedSpec} stats={activeStats} talents={talentDB} />
-          </Grid>
-        </Grid>
+
+
+
 
         {/*<div style={{ height: 50 }}>&nbsp;</div> */}
       </div>

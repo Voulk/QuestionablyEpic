@@ -81,14 +81,14 @@ class CastModel {
         spellList = druidDefaultSpellData(contentType);
         specialQueries = druidDefaultSpecialQueries(contentType);
         this.baseStatWeights = druidDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 50000);
       }
       else if (modelID === "Balanced") {
         this.modelName = "Balanced";
         spellList = druidBalancedSpellData(contentType);
         specialQueries = druidBalancedSpecialQueries(contentType);
         this.baseStatWeights = druidBalancedStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 14000);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
 
       }
 
@@ -166,7 +166,7 @@ class CastModel {
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 14000 : 17500);
+        this.fightInfo.dps = (contentType === "Raid" ? 14000 : 90000);
       }
 
 
@@ -175,7 +175,7 @@ class CastModel {
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 13500);
+      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
     } 
     else if (spec === SPEC.PRESEVOKER) {
       // TODO
@@ -183,13 +183,21 @@ class CastModel {
       spellList = evokerDefaultSpellData(contentType);
       specialQueries = evokerDefaultSpecialQueries(contentType);
       this.baseStatWeights = evokerDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 18000);
+      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
     } 
     
     // Burning Crusade Profiles
     else if (spec === "Restoration Druid Classic") {
       spellList = this.getClassicDruid();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+        this.baseStatWeights = {
+          spellpower: 1,
+          intellect: 1.9,
+          crit: 0.701,
+          mastery: 0.801,
+          haste: 0.3,
+          mp5: 1.46,
+          spirit: 0.791,
+        };
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
       this.baseStatWeights = druidDefaultStatWeights(contentType);
@@ -198,7 +206,15 @@ class CastModel {
       this.baseStatWeights = druidDefaultStatWeights(contentType);
     } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.baseStatWeights = {
+        spellpower: 1,
+        intellect: 1.4,
+        spirit: 0.8,
+        mastery: 0.55,
+        crit: 0.49,
+        haste: 0.72,
+        mp5: 1.4,
+      };
     } 
     else if (spec === "Discipline Priest Classic") {
       spellList = this.getClassicPriest();

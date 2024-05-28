@@ -177,9 +177,9 @@ export function SequenceObject(props) {
                       </Grid>
                     </Grid>
                   </Grid>
-                  <Grid item>
+                  {/*<Grid item>
                     <Counter />
-                  </Grid>
+                    </Grid> */}
                 </Grid>
               </Grid>
 
@@ -204,6 +204,7 @@ export function SequenceObject(props) {
                         spell={spellDB[spell][0].spellData}
                         spec={selectedSpec}
                         iconType={"Spell"}
+                        gameType={props.gameType}
                         draggable
                         onDragStart={(e) => {
                           dragStart(e, index);
@@ -212,7 +213,7 @@ export function SequenceObject(props) {
                           e.preventDefault();
                           removeSpellAtIndex(index, e);
                         }}
-                        style={{ display: "flex", width: "25px", height: "25px" }}
+                        style={{ display: "flex", width: "30px", height: "30px" }}
                       />
                     </Grid>
                   ))}

@@ -1,8 +1,9 @@
 import { itemDB } from "Databases/ItemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
-import { ClassicItemDB } from "Databases/ClassicItemDB";
+import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
+import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "./SPECS";
@@ -40,11 +41,11 @@ export function getValidArmorTypes(spec: string) {
     case SPEC.DISCPRIEST:
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
-      return [0, 1, 2, 3, 4, 6, 7]; // Misc + Plate + Shields
+      return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 1, 2, 8]; // Misc + Plate + Shields
+      return [0, 2, 8, 11]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
-      return [0, 1, 2, 3, 6, 9]; // Misc + Plate + Shields
+      return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
     case "Holy Priest Classic":
       return [0, 1]; // Misc + Plate + Shields
     default:
@@ -96,21 +97,21 @@ export function getValidWeaponTypes(spec: string, slot: string) {
         case SPEC.MISTWEAVERMONK:
           return [0, 4, 6, 7, 10, 13];
         case SPEC.HOLYPALADIN:
-          return [0, 1, 4, 5, 6, 7, 8];
+          return [0, 1, 4, 5, 6, 7, 8, 11];
         case SPEC.PRESEVOKER:
           return [0, 4, 5, 7, 10, 13, 15];
         case SPEC.RESTOSHAMAN:
-          return [0, 1, 4, 5, 10, 13, 15];
+          return [0, 1, 4, 5, 10,  13, 15];
         case SPEC.HOLYPRIEST:
           return [4, 10, 15, 19];
         case SPEC.DISCPRIEST:
           return [4, 10, 15, 19];
         case "Holy Paladin Classic":
-          return [0, 1, 4, 5, 6, 7, 8];
+          return [0, 1, 4, 5, 6, 7, 8, 11];
         case "Restoration Druid Classic":
-          return [4, 5, 6, 10, 13, 15];
+          return [4, 5, 6, 10, 11, 13, 15];
         case "Restoration Shaman Classic":
-          return [0, 1, 4, 5, 10, 13, 15];
+          return [0, 1, 4, 5, 10, 11, 13, 15];
         case "Holy Priest Classic":
           return [4, 10, 15, 19];
         default:
@@ -339,11 +340,11 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.DISCPRIEST:
       return [4, 10, 15, 19];
     case "Holy Paladin Classic":
-      return [0, 1, 4, 5, 6, 7, 8];
+      return [0, 1, 4, 5, 6, 7, 8, 11];
     case "Restoration Druid Classic":
-      return [4, 5, 6, 10, 13, 15];
+      return [4, 5, 10, 11, 13, 15];
     case "Restoration Shaman Classic":
-      return [0, 1, 4, 5, 6, 10, 13, 15];
+      return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
       return [4, 10, 15, 19];
     default:
@@ -393,9 +394,11 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
 }
 
 export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number) {
+
   let temp = itemList.filter(function (item) {
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     //console.log("loc: " + loc + " vs " + item.dropLoc + " diff: " + difficulty + " vs " + item.dropDifficulty + " source: " + sourceInstance + " vs " + item.source.instanceId + " boss: " + sourceBoss + " vs " + item.source.encounterId)
+    
     return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
   return temp;
@@ -449,7 +452,7 @@ function sortItems(container: any[]) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  return gameType === "Retail" ? itemDB : ClassicItemDB;
+  return gameType === "Retail" ? itemDB : classicItemDB;
 }
 
 export function getDifferentialByID(diffList: any, id: number, level: number) {
@@ -485,8 +488,8 @@ export function getTranslatedItemName(id: number, lang: string, effect: any, gam
   } */
   //else {
     // @ts-ignore
-
-  if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
+  if (gameType === "Classic") return classicItemDB.filter((item) => item.id === id)[0].names[lang];
+  else if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
   else return "Unknown Item";
 }
 
@@ -562,8 +565,9 @@ export function getItemProp(id: number, prop: string, gameType: gameTypes = "Ret
 // Add some support for missing icons.
 export function getItemIcon(id: number, gameType = "Retail") {
   const item = getItem(id, gameType);
+
   if (gameType === "Classic" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
-  else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
+  if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
@@ -599,8 +603,8 @@ export function checkDefaultSocket(id: number) {
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
-export function getItemAllocations(id: number, missiveStats: any[] = []) {
-  const item = getItem(id);
+export function getItemAllocations(id: number, missiveStats: any[] = [], gameType: gameTypes = "Retail") {
+  const item = getItem(id, gameType);
 
   let statArray: Stats = {};
   if (item) {
@@ -744,25 +748,41 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
   return wep_list.slice(0, 9);
 } */
 
+export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAllocations: any) {
+  let combat_mult = 0;
+
+  let stats: Stats = {}; 
+
+  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
+  //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
+  //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
+  combat_mult = 1;
+
+  // These stats should be precise, and never off by one.
+  for (var key in statAllocations) {
+    let allocation = statAllocations[key];
+
+    if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
+      //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+    } 
+    else if (key === "intellect") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
+    } else if (key === "stamina") {
+      // todo
+    }
+  }
+
+  return stats;
+}
+
 // Calculates the intellect and secondary stats an item should have at a given item level.
 // This uses the RandPropPointsByLevel and CombatMultByLevel tables and returns a dictionary object of stats.
 // Stat allocations are passed to the function from our Item Database.
 export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocations: any, tertiary: string) {
   let combat_mult = 0;
 
-  /*let stats = {
-    intellect: 0,
-    stamina: 0,
-    haste: 0,
-    mastery: 0,
-    versatility: 0,
-    crit: 0,
-    leech: 0,
-    hps: 0,
-    dps: 0,
-    bonus_stats: {},
-  }; */
-  let stats: Stats = {}; // TODO: Try and remove leech here.
+  let stats: Stats = {}; 
 
   let rand_prop = randPropPoints[itemLevel]["slotValues"][getItemCat(slot)];
   if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -772,7 +792,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "versatility"].includes(key) && allocation > 0) {
+    if (["haste", "crit", "mastery", "versatility", "spirit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
     } 
@@ -802,7 +822,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
 export function buildStatString(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -823,6 +843,40 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
         ? statsList[ind]["val"] +
           " " +
           statName +
+          " / " 
+        : "";
+  }
+
+  // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
+  //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
+  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  
+
+  return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
+}
+
+export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: string = "en") {
+  let statString = "";
+  let statsList = [];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
+  for (const [statkey, statvalue] of Object.entries(stats)) {
+    if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
+  }
+
+  statsList = statsList.sort(function (a: any, b: any) {
+    return b.val - a.val;
+  });
+
+  //if (stats.intellect) statString = stats.intellect + " Int / ";
+
+  for (var ind in statsList) {
+    const statKey: string = statsList[ind]["key"];
+    // @ts-ignore
+    const statName: string = statKey in translatedStat ? translatedStat[statKey][lang] : "";
+
+    statString +=
+      statsList[ind]["val"] > 0
+        ? statName +
           " / " 
         : "";
   }
@@ -877,6 +931,41 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
   return stats;
 }
 
+// It is useful to have some items to work with.
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number) {
+  let itemDB = getItemDB(gameType);
+  //player.clearActiveItems();
+  const acceptableArmorTypes = getValidArmorTypes(player.spec);
+  const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+
+  itemDB = itemDB.filter(
+    (key: any) =>
+      (!("classReq" in key) || key.classReq.includes(player.spec)) &&
+      (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372) /*|| key.itemLevel === 379*/) && 
+      (key.slot === "Back" ||
+        (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
+        key.slot === "Holdable" ||
+        key.slot === "Offhand" ||
+        (key.slot === "Shield" && (player.spec === "Holy Paladin Classic" || player.spec === "Restoration Shaman Classic")) || 
+        (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
+        (key.itemClass === 2 && player.spec === "Holy Priest Classic")), // Wands
+        );
+  
+  itemDB.forEach((item: any) => {
+    const slot = getItemProp(item.id, "slot", gameType);
+    if ((slot === 'Trinket' && item.levelRange) || 
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) && 
+        (!item.name.includes("of the") || item.name.includes("Undertow") || item.name.includes("Boy Emperor")) &&
+        (!item.name.includes("Gladiator")) && 
+        (!([62458, 59514].includes(item.id)))) {
+      const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
+      player.activeItems.push(newItem);
+    }
+
+  })
+
+  player.activeItems.sort((a, b) => (a.level > b.level ? 1 : -1));
+}
 
 
 // Return an item score.
@@ -884,7 +973,9 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 // Special effects, sockets and leech are then added afterwards.
 export function scoreItem(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
-  let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
+  let bonus_stats: Stats = gameType === "Retail" ? {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0} :
+                                                    {mastery: 0, crit: 0, spellpower: 0, intellect: 0, haste: 0, hps: 0, mana: 0, spirit: 0};
+
   let item_stats = { ...item.stats };
   // Calculate Effect.
   if (item.effect) {
@@ -914,13 +1005,15 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Multiply the item's stats by our stat weights.
+  
   let sumStats = compileStats(item_stats, bonus_stats);
   //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
-
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];
       score += statSum * player.getStatWeight(contentType, stat);
+
+      
     }
   }
 
@@ -947,11 +1040,11 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   }
 
   // Classic specific sockets
-  /*
-  if (item.sockets) {
-    socketItem(item, player.statWeights["Raid"]);
-    score += item.socketedGems["score"];
-  } */
+
+  if (gameType === "Classic" && item.classicSockets.sockets.length > 0) {
+    //socketItem(item, player.statWeights["Raid"]);
+    score += (item.classicSockets.sockets.length * player.getStatWeight('raid', 'intellect') * 40);
+  } 
 
   return Math.round(100 * score) / 100;
 }

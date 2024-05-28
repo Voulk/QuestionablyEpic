@@ -17,6 +17,7 @@ import {
   scoreItem,
   getItemAllocations,
   calcStatsAtLevel,
+  autoAddItems,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -46,14 +47,15 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
+
 // Create and return an item. Could maybe be merged with the SimC createItem function?
-export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary, missives = "") => {
+export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary, missives = "", gameType) => {
 
   //let player = props.player;
   let item = "";
 
-  const itemSlot = getItemProp(itemID, "slot");
-  const isCrafted = getItemProp(itemID, "crafted");
+  const itemSlot = getItemProp(itemID, "slot", gameType);
+  const isCrafted = getItemProp(itemID, "crafted", gameType);
 
   if (isCrafted) {
     // Item is a legendary and gets special handling.
@@ -73,10 +75,9 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     item.bonusIDS = bonusString;
     item.guessItemQuality();
   } else {
-    item = new Item(itemID, itemName, getItemProp(itemID, "slot"), itemSocket, itemTertiary, 0, itemLevel, "");
-    if (item.slot === "Neck" && itemSocket) item.socket = 3;
-    item.guessItemQuality();
-    console.log(item);
+    item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "", gameType);
+    //item.guessItemQuality();
+    item.quality = getItemProp(itemID, "quality", gameType);
   }
   //item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
 
@@ -96,9 +97,18 @@ export default function ItemBar(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
 
+  const autoFillItems = (itemLevel, player) => {
+    if (player.activeItems.filter((item) => item.level === itemLevel).length > 0) return;
+    else {
+      autoAddItems(player, "Classic", itemLevel);
+      props.setItemList([...player.getActiveItems(activeSlot)]);
+    }
+  }
+
   const fillItems = (slotName, spec) => {
     const acceptableArmorTypes = getValidArmorTypes(spec);
     const acceptableWeaponTypes = getValidWeaponTypesBySpec(spec);
+
     let newItemList = [];
     const db = getItemDB(gameType);
 
@@ -112,17 +122,16 @@ export default function ItemBar(props) {
           key.slot === "Shield" ||
           (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
           (key.itemClass === 2 && spec === "Holy Priest Classic")), // Wands
-    ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}) }));
-
-    newItemList = newItemList.reduceRight((unique, o) => {
-      if (!unique.some((obj) => obj.label === o.label)) {
-        unique.push(o);
-      }
-      return unique;
-    }, []);
-
+          ).map((key) => newItemList.push({ value: key.id, label: getTranslatedItemName(key.id, currentLanguage, {}, gameType) + (gameType === "Classic" ? " (" + key.itemLevel + ")" : "")}));
+    
+      
+      newItemList = newItemList.reduceRight((unique, o) => {
+        if (!unique.some((obj) => obj.label === o.label)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
     newItemList.sort((a, b) => (a.label > b.label ? 1 : -1));
-
     return newItemList;
   };
 
@@ -144,9 +153,6 @@ export default function ItemBar(props) {
   const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
 
-
-
-
   const handleClosePop = () => {
     setAnchorEl(null);
   };
@@ -167,8 +173,8 @@ export default function ItemBar(props) {
     let player = props.player;
     //let item = "";
 
-    if (gameType === "Retail") {
-      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary, missives)
+    if (true) { // Formerly Retail check. TODO.
+      const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary, missives, gameType);
 
       if (item) {
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
@@ -183,7 +189,6 @@ export default function ItemBar(props) {
         setItemTertiary("");
       }
           
-
     };
 
   };
@@ -258,8 +263,8 @@ export default function ItemBar(props) {
   const availableFields = {
     name: true,
     itemLevel: true,
-    socket: true,
-    tertiaries: !(isItemCrafted),
+    socket: gameType === "Retail",
+    tertiaries: !(isItemCrafted) && gameType === "Retail",
     missives: isItemCrafted,
   }
 
@@ -351,7 +356,7 @@ export default function ItemBar(props) {
                 onChange={(e) => itemLevelChanged(e.target.value)}
                 value={itemLevel}
                 label={t("QuickCompare.ItemLevel")}
-                disabled={itemID === "" || gameType !== "Retail" ? true : false}
+                disabled={(itemID === "" || gameType === "Classic") ? true : false}
                 onInput={(e) => {
                   e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                 }}
@@ -474,6 +479,24 @@ export default function ItemBar(props) {
           </Alert>
         </Snackbar>
       </Grid>
+      {gameType === "Classic" ? <Grid 
+        container
+        justifyContent="center"
+        alignItems="center"
+        direction="column"
+
+        spacing={1}
+        sx={{
+          paddingTop: "30px",
+          paddingBottom: "10px",
+      }}>
+        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
+        <Grid item>
+          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(346, props.player)}>{"346 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(359, props.player)}>{"359 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(372, props.player)}>{"372 Gear"}</Button>
+        </Grid>
+      </Grid> : null }
     </Paper>
   );
 }

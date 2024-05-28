@@ -1,6 +1,12 @@
 
 
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
+import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
+import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -11,30 +17,128 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 16000 * 1.1,
-            haste: 2000,
-            crit: 5400,
-            mastery: 6700,
-            versatility: 2000 + 300,
-            stamina: 29000,
+            intellect: 4200,
+            spirit: 1000,
+            spellpower: 1800,
+            haste: 1000,
+            crit: 1000,
+            mastery: 1000,
+            stamina: 5000,
+            mp5: 0,
             critMult: 2,
         }
-    
+
+        const castProfile = [
+            {spell: "Judgement", cpm: 1, hpc: 0},
+            {spell: "Holy Light", cpm: 14, fillerSpell: true},
+            {spell: "Flash of Light", cpm: 2.2},
+            {spell: "Holy Shock", cpm: 9.5},
+            {spell: "Holy Radiance", cpm: 4.5},
+            {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3},
+        ]
+
+        const druidCastProfile = [
+            //{spell: "Tranquility", cpm: 0.3},
+            {spell: "Swiftmend", cpm: 3.4},
+            {spell: "Wild Growth", cpm: 3.5},
+            {spell: "Rejuvenation", cpm: 12 * (144 / 180), fillerSpell: true, castOverride: 1.0},
+            {spell: "Nourish", cpm: 8.5},
+            {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
+            {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
+            {spell: "Rolling Lifebloom", cpm: 6, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
+
+            // Tree of Life casts
+            {spell: "Lifebloom", cpm: 13 * (36 / 180)}, // Tree of Life - Single stacks
+            {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true} // Tree of Life OOC Regrowths
+        ]
+        
+        druidCastProfile.forEach(spell => {
+            spell.castTime = druidSpells[spell.spell][0].castTime;
+            spell.hpc = 0;
+            spell.cost = 0;
+            spell.healing = 0;
+        })
+
+        castProfile.forEach(spell => {
+            spell.castTime = paladinSpells[spell.spell][0].castTime;
+            spell.hpc = 0;
+            spell.cost = 0;
+            spell.healing = 0;
+        })
+
         //const baseSpells = EVOKERSPELLDB;
-        //const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100};
+        const testSuite = "Top Gear Scoring Function";
+        const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
+        const playerData = { spec: "Holy Paladin", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
-        //const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
-        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
-        //console.log(data);
+        if (testSuite === "APL") {
+            const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
+            
+        }
+        else if (testSuite === "Stat") {
+            //console.log(getTalentedSpellDB("Restoration Druid"));
+            //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
+            const data = runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile")
+            
+            console.log(data.weights);
 
-        //const data = runAPLSuites(playerData, reversionProfile, runCastSequence);
-        //const data = runStatDifferentialSuite(playerData, reversionProfile, runCastSequence)
-        //console.log(data);
+        }
+        else if (testSuite === "CastProfile") {
+            //runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+            runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+        }
+        else if (testSuite === "Top Gear Scoring Function") {
+            /*const baseline = initializeDruidSet();
+            const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
+            console.log(scoredSet + "(" + scoredSet / 60 + ")")
+
+            const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
+            console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
+            //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
+
+            buildStatChart(baseline, activeStats, testSettings); */
+
+            const baseline = initializePaladinSet();
+            const scoredBaseline = scorePaladinSet(baseline, activeStats, {}, testSettings)
+            //console.log(scoredSet + "(" + scoredSet / 60 + ")")
+
+            const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
+
+            const results = {};
+            stats.forEach(stat => {
+                // Change result to be casts agnostic.
+                let playerStats = JSON.parse(JSON.stringify(activeStats));
+                playerStats[stat] = playerStats[stat] + 10;
+                const newPlayerData = {...playerData, stats: playerStats};
+                const result = scorePaladinSet(baseline, playerStats, {}, testSettings)
+                console.log(result);
+                results[stat] = result;
+            });
+            const weights = {}
+        
+            stats.forEach(stat => {
+        
+                weights[stat] = Math.round(1000*(results[stat] - scoredBaseline)/(results['spellpower'] - scoredBaseline))/1000;
+            });
+            console.log(weights);
+
+            //buildStatChart(baseline, activeStats, testSettings);
+        }
+
 
         expect(true).toEqual(true);
     })
 
 });
+
+const buildStatChart = (baseline, activeStats, testSettings) => {
+    const results = [];
+    for (let i = 0; i < 2100; i += 10) {
+        const score = scorePaladinSet(baseline, {...activeStats, spirit: i}, {}, testSettings);
+        results.push(Math.round(score));
+    }
+    console.log(JSON.stringify(results));
+}
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.

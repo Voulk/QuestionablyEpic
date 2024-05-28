@@ -214,7 +214,6 @@ export const triggerGlimmerOfLight = (state, glimmerSource = "Glimmer of Light",
     const glimmerTargets = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
     if (glimmerTargets > 0) {
         const glimmerMult = (1 + 0.1 * state.talents.gloriousDawn.points) * specialMult;
-
         const glimmerOfLight = {
             name: "Glimmer of Light",
             coeff: 1.6416 * (1 + glimmerTargets * 0.04) * glimmerMult / glimmerTargets, // This is split between all targets

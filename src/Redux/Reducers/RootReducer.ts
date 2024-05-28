@@ -42,10 +42,20 @@ const initialState : RootState = {
     lariatGems: { value: 4, options: [], category: "embellishments", type: "Entry" },
     chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector" },
     
-    gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector"}, // TODO: Add a "Keep current".
-    runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector"},
-    phialChoice: {value: "Automatic", options: ["Automatic", "Corrupting Rage", "Tepid Versatility"], category: "topGear", type: "selector"},
-    chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector" },
+    gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
+    runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
+    phialChoice: {value: "Automatic", options: ["Automatic", "Corrupting Rage", "Tepid Versatility"], category: "topGear", type: "selector", gameType: "Retail"},
+    chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
+
+
+    // Classic Settings
+    manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
+    reforgeSetting: {value: "Smart", options: ["Smart", "Thorough", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
+    numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
+    metaGem: {value: "Ember Shadowspirit Diamond", options: ["Ember Shadowspirit Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
+    professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
+    professionTwo: {value: "Engineering", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
+
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
 };
