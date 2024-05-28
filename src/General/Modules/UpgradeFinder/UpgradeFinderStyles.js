@@ -37,7 +37,7 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
     backgroundImage: `url(${require("Images/Bosses/Amirdrassil/AmirdrassilRaid.png")})`,
     ...commonTabStyles,
   },
-  raidBCHeaderStyle: {
+  classicRaidHeaderStyle: {
     backgroundImage: `url(${require("../../../Images/Classic/RaidHeader.jpg")})`,
     ...commonTabStyles,
     borderRadius: "4px 0px 0px 4px",

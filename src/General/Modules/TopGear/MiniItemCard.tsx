@@ -1,10 +1,10 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, IconButton, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatString, buildStatStringSlim,  getItemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./MiniItemCard.css";
-import socketImage from "Images/Resources/EmptySocket.png";
+
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
@@ -13,6 +13,11 @@ import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 import Item from "../Player/Item";
+
+import socketImage from "Images/Resources/EmptySocket.png";
+import blueSocket from "Images/Resources/socketBlue.png";
+import redSocket from "Images/Resources/socketRed.png";
+import yellowSocket from "Images/Resources/socketYellow.png";
 
 
 const useStyles = makeStyles({
@@ -26,8 +31,8 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderRadius: 3,
     borderColor: "Goldenrod",
-    backgroundColor: "#494a3d",
-    borderWidth: "2px",
+    backgroundColor: "#515144",
+    borderWidth: "3px",
   },
   catalyst: {
     borderColor: "plum",
@@ -67,11 +72,13 @@ const GetItemTags: React.FC<{ showTags: any; isVault: boolean, t: any }> = ({ sh
       {showTags.tier ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null}
       {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
       {showTags.catalyst ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null}
+    
+
   </div>
   )
 }
 
-const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
+/*const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
   if (!item.socket) {
     return null; // No sockets, return null or another default content
   }
@@ -85,7 +92,46 @@ const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
       ))}
     </div>
   );
-};
+}; */
+
+const GetSockets: React.FC<{ item: Item, gameType: gameTypes }> = ({ item, gameType }) => {
+  let socket = [];
+  // Retail sockets: 1-3 Prismatic gems
+  if (gameType === "Retail") {
+    return (
+      <div style={{ verticalAlign: "middle" }}>
+        {Array.from({ length: item.socket }).map((_, index) => (
+          <div key={index} style={{ marginRight: 4, display: "inline" }}>
+            <img src={socketImage} width={15} height={15} alt={`Socket ${index + 1}`} />
+          </div>
+        ))}
+      </div>
+    );
+  }
+  else if (gameType === "Classic") {
+    // We probably want some way to tell them what we actually socketed but maybe we'll use tooltip for that.
+    if (item.classicSockets) {
+      for (let i = 0; i < item.classicSockets.sockets.length; i++) {
+        const color: string = item.classicSockets.sockets[i];
+
+        let sock = null;
+        if (color === "blue") sock = blueSocket;
+        else if (color === "red") sock = redSocket;
+        else if (color === "yellow") sock = yellowSocket;
+        else if (color === "meta") sock = socketImage;
+        else if (color === "prismatic") sock = socketImage;
+        else if (color === "cogwheel") sock = socketImage;
+        socket.push(
+          <div style={{ marginRight: 4, display: "inline" }}>
+            <img src={sock} width={15} height={15} alt="Socket" />
+          </div>,
+        );
+      }
+    }
+  }
+
+  return <div style={{ verticalAlign: "middle" }}>{socket}</div>;
+}
 
 interface ItemCardProps {
   // Define your prop types here
@@ -107,7 +153,7 @@ export default function ItemCard(props: ItemCardProps) {
   const itemKey: number = props.itemKey;
   const item: Item = props.item;
   const itemLevel: number = item.level;
-  const statString: string = buildStatString(item.stats, item.effect, currentLanguage);
+  const statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
@@ -164,7 +210,7 @@ export default function ItemCard(props: ItemCardProps) {
   }
 
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+    <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
       <div style={{ position: "relative" }}>
         <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
@@ -178,6 +224,7 @@ export default function ItemCard(props: ItemCardProps) {
                 itemLevel={itemLevel}
                 upgradeItem={props.upgradeItem}
                 item={item}
+                gameType={gameType}
               />
             </Grid>
           </Grid>
@@ -197,7 +244,7 @@ export default function ItemCard(props: ItemCardProps) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <WowheadTooltip type={item.slot === "Trinket" ? "item" : "none"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={currentLanguage}>
+                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} domain={gameType === "Retail" ? currentLanguage : "cata"}>
                       <img
                         alt="img"
                         width={44}
@@ -205,13 +252,15 @@ export default function ItemCard(props: ItemCardProps) {
                         src={getItemIcon(item.id, gameType)}
                         style={{
                           borderRadius: 4,
-                          borderWidth: "1px",
+                          borderWidth: "2px",
                           borderStyle: "solid",
                           borderColor: itemQuality,
+                          zIndex:-1,
+                          opacity: 0.999,
                         }}
                       />
                     </WowheadTooltip>
-                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {itemLevel} </div>
+                    <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "14px", textShadow: "1px 1px 20px black" }}> {itemLevel} </div>
                   </div>
                 </CardContent>
               </Grid>
@@ -225,6 +274,7 @@ export default function ItemCard(props: ItemCardProps) {
                           style={{
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
+                            fontSize: itemName.length > 28 ? "13px" : "14px",
                           }}
                         >
                           {itemName}
@@ -259,7 +309,7 @@ export default function ItemCard(props: ItemCardProps) {
                   <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" style={{ marginTop: 2 }}>
                     <Grid item xs={11}>
                       <div style={{ display: "inline-flex", marginLeft: 4, height: 15, verticalAlign: "middle" }}>
-                        <GetSockets item={item} />
+                        <GetSockets item={item} gameType={gameType} />
                         <Typography variant="subtitle2" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
                           {statString}
                         </Typography>

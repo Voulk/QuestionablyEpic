@@ -25,6 +25,8 @@ import { Item } from "General/Modules/Player/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
+import TopGearReforgePanel from "./TopGearReforgePanel";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 type ShortReport = {
   id: string;
@@ -149,6 +151,9 @@ export default function TopGear(props: any) {
   const currentLanguage = i18n.language;
   const classes = useStyles();
 
+  const [reforgeFromList, setReforgeFromList] = useState([]);
+  const [reforgeToList, setReforgeToList] = useState([]);
+
   const contentType = useSelector((state: RootState) => state.contentType);
   const gameType = useSelector((state: RootState) => state.gameType);
   const playerSettings = useSelector((state: RootState) => state.playerSettings);
@@ -164,7 +169,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = patronCaps[patronStatus] ? patronCaps[patronStatus] : 30; // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 8 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -227,8 +232,64 @@ export default function TopGear(props: any) {
     return topgearOk;
   };
 
-  const checkSlots = (): string[] => {
+  const getCombinations = (): number => {
+    let itemList = props.player.getSelectedItems();
+    let missingSlots = [];
+    let errorMessage = "";
+    let slotLengths: { [key: string]: number } = {
+      Head: 0,
+      Neck: 0,
+      Shoulder: 0,
+      Back: 0,
+      Chest: 0,
+      Wrist: 0,
+      Hands: 0,
+      Waist: 0,
+      Legs: 0,
+      Feet: 0,
+      Finger: 0,
+      Trinket: 0,
+      "2H Weapon" : 0,
+      "1H Weapon" : 0,
+      "Offhand" : 0,
+    };
+
+    for (var i = 0; i < itemList.length; i++) {
+      let slot = itemList[i].slot;
+      if (slot in slotLengths || slot === "Shield") {
+        if (!itemList[i].vaultItem) {
+           if (slot === "Shield") slotLengths["Offhand"] += 1;
+           else slotLengths[slot] += 1;
+        }
+
+        reforgeFromList.forEach((reforgeFrom) => {
+          if (itemList[i].stats[reforgeFrom] > 0) {
+            // Get possible reforge to options
+            const options = 2 - Object.keys(itemList[i].stats).filter((stat: any) => reforgeToList.includes(stat)).length;
+            //console.log("Item has stats: " + JSON.stringify(itemList[i].stats) + " and thus has: " + reforgeFrom + ". Added: " + options +" versions");
+            slotLengths[slot] += options;
+          }
+      })
+      }
+    }
+
+    let iterations = 1;
+    // Count iterations
+    for (const key in slotLengths) {
+      if (Object.prototype.hasOwnProperty.call(slotLengths, key)) {
+        if (key === "Finger" || key === "Trinket") iterations *= (slotLengths[key] * (slotLengths[key] -1) / 2);
+        else iterations *= (slotLengths[key] > 0? slotLengths[key] : 1);
+      }
+    }
+    console.log("Item count TG" + Object.values(slotLengths).reduce((total, value) => total + value, 0));
+    console.log(iterations);
+    return iterations;
+    
+  }
+
+  const checkSlots = (gameType: gameTypes): string[] => {
        /* ------------------ Check that the player has selected an item in every slot. ----------------- */
+       getCombinations();
        let itemList = props.player.getSelectedItems();
        let missingSlots = [];
        let errorMessage = "";
@@ -249,7 +310,9 @@ export default function TopGear(props: any) {
          "1H Weapon" : 0,
          "Offhand" : 0,
        };
-   
+       if (gameType === "Classic") {
+         slotLengths["Relics & Wands"] = 0;
+       }
        for (var i = 0; i < itemList.length; i++) {
          let slot = itemList[i].slot;
          if (slot in slotLengths || slot === "Shield") {
@@ -288,22 +351,22 @@ export default function TopGear(props: any) {
   }
 
   const getErrorMessage = () => {
-    const missingSlots = checkSlots();
+    const missingSlots = checkSlots(gameType);
 
     let errorMessage = "Add ";
     if (missingSlots.length > 10) {
-      return "Add SimC String"
+      return "Add Import String"
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield"].includes(slot))) errorMessage += slot + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += slot + ", ";
         
       })
 
       if ((missingSlots.includes("2H Weapon") && (missingSlots.includes("1H Weapon") || (missingSlots.includes("Offhand") || missingSlots.includes("Shield"))))) {
-
         errorMessage += " Weapon, " 
       }
+      if (missingSlots.includes("Relics & Wands")) errorMessage += " Relic or Wand, ";
 
       return errorMessage.slice(0, -2);
     }
@@ -355,7 +418,8 @@ export default function TopGear(props: any) {
                   setStats: report.itemSet.setStats,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
-                  firstSocket: report.itemSet.firstSocket
+                  firstSocket: report.itemSet.firstSocket,
+                  hardScore: report.itemSet.hardScore,
                 },
         player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName}
       
@@ -366,9 +430,11 @@ export default function TopGear(props: any) {
         let newItem: ReportItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
         if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
         if (item.socket) newItem.socket = item.socket;
+        if (item.socketedGems) newItem.socketedGems = item.socketedGems;
         if (item.vaultItem) newItem.vaultItem = item.vaultItem;
         if (item.quality) newItem.quality = item.quality;
         if (item.effect) newItem.effect = item.effect;
+        if (item.flags) newItem.flags = item.flags;
   
         shortReport.itemSet.itemList.push(newItem)
         }
@@ -448,15 +514,24 @@ export default function TopGear(props: any) {
           setBtnActive(true);
         });
     } else if (gameType === "Classic") {
+      console.log("Initiating Top Gear Classic");
+      const reforgeOn = !(getSetting(playerSettings, "reforgeSetting") === "Dont reforge");
       const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+      
       let instance = new worker();
       instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-        .then((result: TopGearResult) => {
+        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, reforgeOn, reforgeFromList, reforgeToList)
+        .then((result: TopGearResult | null) => {
+          if (result) {
           //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          props.setTopResult(result);
+          const shortResult = shortenReport(result, props.player);
+          if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
+          props.setTopResult(shortResult);
+
           instance.terminate();
           history.push("/report/");
+          }
+
         })
         .catch((err: Error) => {
           // If top gear crashes for any reason, log the error and then terminate the worker.
@@ -486,6 +561,35 @@ export default function TopGear(props: any) {
       }
     }
   };
+
+  const changeReforgeFrom = (buttonClicked: "string") => {
+    if (reforgeFromList.includes(buttonClicked)) {
+      reforgeFromList.splice(reforgeFromList.indexOf(buttonClicked), 1);
+      setReforgeFromList([...reforgeFromList]);
+
+    } 
+    else {
+      if (reforgeFromList.length < 2) {
+        reforgeFromList.push(buttonClicked);
+        setReforgeFromList([...reforgeFromList]);
+      }
+    }
+  }
+
+  const changeReforgeTo = (buttonClicked: "string") => {
+    if (reforgeToList.includes(buttonClicked)) {
+      console.log("Button is in array, removing");
+      reforgeToList.splice(reforgeToList.indexOf(buttonClicked), 1);
+      setReforgeToList([...reforgeToList]);
+
+    } 
+    else {
+      if (reforgeToList.length < 2) {
+        reforgeToList.push(buttonClicked);
+        setReforgeToList([...reforgeToList]);
+      }
+    }
+  }
 
   const selectedItemCount = props.player.getSelectedItems().length || 0;
 
@@ -550,11 +654,15 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-
+        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Thorough"? 
+        <Grid item xs={12}>
+          <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
+        </Grid>
+        : null}
         {props.player.activeItems.length > 0 ? (
           slotList.map((key, index) => {
             return (
-              <Grid item xs={12} key={index}>
+              <Grid item lg={12} xl={12} xs={12} key={index}>
                 <Typography color="primary" variant="h5">
                   {key.label}
                 </Typography>
@@ -596,7 +704,7 @@ export default function TopGear(props: any) {
         <div
           style={{
             display: "flex",
-            width: "90%",
+            width: "100%",
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignItems: "center",
@@ -605,15 +713,15 @@ export default function TopGear(props: any) {
           <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
-          <div>
-            <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
+          <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {getErrorMessage()}
             </Typography>
+          <div>
             <Button 
               variant="contained" 
               color="primary" 
               style={{ height: "64%", width: "180px" }} 
-              disabled={checkSlots().length > 0 || !btnActive}  //
+              disabled={checkSlots(gameType).length > 0 || !btnActive}  //
               onClick={unleashTopGear}> 
               {t("TopGear.GoMsg")}
             </Button>

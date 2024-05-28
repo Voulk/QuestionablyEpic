@@ -1,3 +1,4 @@
+import { getManaPool, getManaRegen, getAdditionalManaEffects, applyRaidBuffs } from './ClassicBase';
 
 
 // Run Spell Combos
@@ -40,6 +41,59 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 
         console.log(weights); 
         return weights;
+}
+
+export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteType) {
+    // Weights
+    const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste'];
+    const fightLength = 420;
+
+    const baseline = suiteType === "APL" ? runSuite(playerData, aplList, runCastSequence, "APL") : runCastProfileSuite(playerData, aplList, runCastSequence);
+    
+    const baselineHPS = baseline.avgHPS;
+    const baselineHealing = baseline.totalHealing;
+    const baselineHPM = baseline.fillerHPM; // baseline.avgHPM; // Change to only use filler spells.
+
+    const baselineMana = getManaRegen(playerData.stats, playerData.spec) * 12 * 7;
+    const baselinePool = getManaPool(playerData.stats, playerData.spec);
+
+    const results = {};
+    stats.forEach(stat => {
+        // Change result to be casts agnostic.
+        let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+        playerStats[stat] = playerStats[stat] + 10;
+        console.log(playerStats)
+        const newPlayerData = {...playerData, stats: playerStats};
+        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).avgHPS;
+        results[stat] = result;
+    });
+    const weights = {}
+
+    stats.forEach(stat => {
+
+        weights[stat] = Math.round(1000*(results[stat] - baselineHPS)/(results['spellpower'] - baselineHPS))/1000;
+    });
+
+    const intRegen = getManaRegen({...playerData.stats, 'intellect': playerData.stats['intellect'] + 10}, playerData.spec) * 12 * 7;
+    const intManaPool = getManaPool({...playerData.stats, 'intellect': playerData.stats['intellect'] + 10}, playerData.spec) - baselinePool;
+    weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
+
+
+    // Compute Mana averages
+
+    const spiritRegen = getManaRegen({...playerData.stats, 'spirit': playerData.stats['spirit'] + 10}, playerData.spec) * 12 * 7;
+    console.log("Gained X mana from spirit" + (spiritRegen - baselineMana) + " and 1 mana = " + baselineHPM + " healing");
+    weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
+    //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / 10)/1000;
+    weights['mp5'] = Math.round(1000*(10 * baselineHPM / 5) / (results['spellpower'] - baselineHPS))/1000;
+
+    // To return:
+    // A baseline profile (to use for haste weights and mana)
+    // Weights for Crit, Mastery and spellpower.
+    // To form a set score we'll do the following:
+    // - Filler HPM: Filler Spell + (SP x SP weight) + (...crit / mast x crit / mast weight) / fillerCost
+    // - Crit / mast / sp valuation is just a simple effective HPW x stat
+    return {weights: weights, baseline: baseline};
 }
 
 // The stat differential suite takes the stat profile stored on the APL and varies them by +-1000 and then stores the result. 
@@ -101,7 +155,7 @@ function runComparisonSuites(playerData, profiles, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 2600;
+    const iterations = 1000; //2600;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -141,7 +195,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     if (type === "APL") singleReport = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents, profile.apl);
     else if (type === "Sequence") singleReport = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents);
 
-
+    
     simData.minHPS = Math.min(...hps)
     simData.maxHPS = Math.max(...hps)
     simData.avgHPS = hps.reduce((acc, current) => acc + current, 0) / iterations;
@@ -149,7 +203,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     simData.elapsedTime = Math.round(1000*elapsedTime.reduce((acc, current) => acc + current, 0) / iterations)/1000;
     simData.maxTime = Math.round(1000*Math.max(...elapsedTime))/1000;
 
-    simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
+    if (singleReport.advancedReport) simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
     simData.sampleReport = singleReport;
     return simData;
 }
@@ -182,4 +236,57 @@ function calculateBuffUptime(data) {
     }
 
     return buffUptimes;
+}
+
+export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence, reporting = false) => {
+    const castProfile = JSON.parse(JSON.stringify(incCastProfile));
+    const totalCastTime = castProfile.reduce((acc, spell) => acc + (spell.castOverride ? spell.castOverride : Math.max(spell.castTime, 1.5)) * spell.cpm, 0);
+    let fillerHPM = 0;
+    castProfile.forEach(cast => {
+        const data = runSpellComboSuite(playerData, {seq: [cast.spell], talents: {}}, runCastSequence)
+        cast.cpm = cast.cpm /** (playerData.stats.haste / 128 / 100 + 1)*/;
+        cast.hpc = data.sampleReport.totalHealing;
+        cast.cost = cast.freeCast ? 0 : data.sampleReport.manaSpent;
+        cast.healing = cast.hpc * cast.cpm;
+
+        if (cast.fillerSpell) fillerHPM = cast.hpc / cast.cost;
+    });
+
+
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+    const totalHealing = castProfile.reduce((acc, spell) => acc + spell.healing, 0);
+
+    // We don't want to run this every iteration since it adds expense.
+    if (reporting) {
+    // Over a fight
+    const fightLength = 420;
+    // Our stats are already buffed in the main profile, but that doesn't help us here where we're independently calculating our mana so we'll apply them again.
+    const buffedStats = applyRaidBuffs({}, {...playerData.stats});
+
+    const manaPool = getManaPool(buffedStats, playerData.spec) * 1.06;
+    const regenPer5 = (getManaRegen(buffedStats, playerData.spec) + getAdditionalManaEffects(buffedStats, playerData.spec.replace(" Classic", "")).additionalMP5);
+    const usagePer5 = costPerMinute / 12;
+
+    console.log(regenPer5, " " , usagePer5, " ", manaPool);
+    console.log("Time to oom: " + Math.round(manaPool / (usagePer5 - regenPer5) * 5) + "s");
+    console.log("Profile HPS: " + totalHealing / 60);
+    console.log("Time spent casting" + totalCastTime);
+    console.log("Total Healing" + totalHealing);
+
+    const healingBreakdown = {}
+    castProfile.forEach(spell => {
+        healingBreakdown[spell.spell] = (healingBreakdown[spell.spell] || 0) + Math.round(spell.healing / totalHealing * 10000) / 100;
+    })
+    console.log(healingBreakdown);
+    }
+
+
+    return {
+        totalHealing: totalHealing,
+        avgHPS: totalHealing / totalCastTime,
+        avgHPM: totalHealing / costPerMinute,
+        manaSpend: costPerMinute,
+        fillerHPM: fillerHPM,
+        sampleProfile: castProfile,
+    }
 }

@@ -5,6 +5,9 @@ import { getTranslatedItemName, buildStatString, getItemIcon, getPrimordialImage
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import "./ItemCard.css";
 import socketImage from "../../../Images/Resources/EmptySocket.png";
+import blueSocket from "../../../Images/Resources/socketBlue.png"
+import redSocket from "../../../Images/Resources/socketRed.png"
+import yellowSocket from "../../../Images/Resources/socketYellow.png"
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
@@ -54,6 +57,43 @@ const useStyles = makeStyles({
   }
 });
 
+function getSockets(item, gameType)  {
+  let socket = [];
+  // Retail sockets: 1-3 Prismatic gems
+  if (gameType === "Retail") {
+    if (item.socket) {
+      for (let i = 0; i < item.socket; i++) {
+        socket.push(
+          <div style={{ marginRight: 4, display: "inline" }}>
+            <img src={socketImage} width={15} height={15} alt="Socket" />
+          </div>,
+        );
+      }
+    }
+  }
+  else if (gameType === "Classic") {
+    // We probably want some way to tell them what we actually socketed but maybe we'll use tooltip for that.
+    if (item.classicSockets) {
+      for (let i = 0; i < item.classicSockets.length; i++) {
+        const color = item.classicSockets[i];
+        let sock = null;
+        if (color === "blue") sock = blueSocket;
+        else if (color === "red") sock = redSocket;
+        else if (color === "yellow") sock = yellowSocket;
+        else if (color === "meta") sock = socketImage;
+        else if (color === "prismatic") sock = socketImage;
+        socket.push(
+          <div style={{ marginRight: 4, display: "inline" }}>
+            <img src={sock} width={15} height={15} alt="Socket" />
+          </div>,
+        );
+      }
+    }
+  }
+
+  return <div style={{ verticalAlign: "middle" }}>{socket}</div>;
+}
+
 export default function ItemCard(props) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
@@ -70,30 +110,15 @@ export default function ItemCard(props) {
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
-  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
+  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
   let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item.stats && item.stats.leech !== 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null;
-  let socket = [];
+  let socket = getSockets(item, gameType);
 
   const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.isEquipped && isVault ? 'selectedVault' : item.isEquipped ? 'selected' : isVault ? 'vault' : 'root';
 
-  if (item.id === 203460) {
-    const gemCombo = props.primGems;
-    const gemData = buildPrimGems(gemCombo);
-    socket = gemData.socket;
-    gemString = gemData.string;
-  } else if (item.socket) {
-    for (let i = 0; i < item.socket; i++) {
-      socket.push(
-        <div style={{ marginRight: 4, display: "inline" }}>
-          <img src={socketImage} width={15} height={15} alt="Socket" />
-        </div>,
-      );
-    }
-    socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
-  }
   /*
   const socket = item.socket ? (
     <div style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }}>
@@ -230,6 +255,7 @@ export default function ItemCard(props) {
                 itemLevel={item.level}
                 upgradeItem={props.upgradeItem}
                 item={item}
+                gameType={gameType}
 
               />
             </Grid>

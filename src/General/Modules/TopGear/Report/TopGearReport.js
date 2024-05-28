@@ -17,6 +17,9 @@ import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
+import ManaSourcesComponent from "./ManaComponent";
+
+import { getManaRegen, getManaPool, getAdditionalManaEffects } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase"
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -100,12 +103,14 @@ function TopGearReport(props) {
   /* ----------------------------- On Component load get player image ----------------------------- */
   useEffect(() => {
     if (result && result.new) {
+      
+      
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
-      else if (process.env.PUBLIC_URL.includes("dev")) {
-        window.history.pushState('QE Live Report', 'Title', 'dev/report/' + result.id);
+      else if (process.env.PUBLIC_URL.includes("ptr")) {
+        window.history.pushState('QE Live Report', 'Title', 'dev/ptr/' + result.id);
       }
       else {
         // Call Error
@@ -139,8 +144,6 @@ function TopGearReport(props) {
     )
     //return fetchReport("pbnzfwyv");
   }
-
-
 }
 
 function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
@@ -155,7 +158,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
   let itemList = {};
   let statList = {};
   
-
+  
 
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -165,7 +168,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
 
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
-    const advice = getDynamicAdvice(result, player, result.contentType);
+    const advice = getDynamicAdvice(result, player, result.contentType, gameType);
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
@@ -173,13 +176,25 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     contentType = result.contentType;
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
-    
+    const manaSources = {}
+
     // Setup Slots / Set IDs.
-    itemList.forEach(item => {
-      item.slot = getItemProp(item.id, "slot")
-      item.setID = getItemProp(item.id, "itemSetId")
+  itemList.forEach(item => {
+      item.slot = getItemProp(item.id, "slot", gameType)
+      item.setID = getItemProp(item.id, "itemSetId", gameType)
     })
 
+
+    if (gameType === "Classic") {
+      manaSources.pool = Math.round(getManaPool(statList, player.spec) + 22000); // Mana pot
+      manaSources.regen = Math.round((getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12);
+      manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
+      //console.log("Total mana spend: " + (regen + pool))
+
+      manaSources.totalMana =  Math.round(manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7);
+      console.log("Total Mana" + manaSources.totalMana)
+
+    }
 
     // Build Vault items
     // Take the top set, and every differential, and if it contains a vault item we haven't included yet, include it with the score differential compared to our *current* set.
@@ -213,8 +228,8 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
       <div style={{ height: 96 }} />
       {resultValid ? (
         <Grid container spacing={1}>
-          <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like big trinkets can be excellent pick ups since competition for them can be fierce.", 
-            "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} />
+          {/*<ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like Pip's Emerald Friendship Badge can be excellent pick ups since competition for them can be fierce.", 
+            "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} /> */}
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>
               <div
@@ -370,6 +385,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
           /* ----------------------------------------------------------------------------------------------  */}
            <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
+          {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
           <Grid item style={{ height: 60 }} xs={12} />
 
         </Grid>

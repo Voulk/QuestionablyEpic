@@ -4,8 +4,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
-import RetailSettings from "./Modules/RetailSettings";
-import BurningCrusadeSettings from "./Modules/BurningCrusadeSettings";
+import RetailSettings from "./RetailSettings";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
 
@@ -36,9 +35,6 @@ export default function Settings(props : any) {
   const gameType = useSelector((state: RootState) => state.gameType);
 
   /* ------------------------------- Burning Crusade Settings Shown ------------------------------- */
-  const burningCrusadeSettingsShown = {
-    // Nothing Yet
-  };
 
   return (
     <div className={classes.root}>
@@ -51,15 +47,12 @@ export default function Settings(props : any) {
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
-          {gameType === "Retail" ? (
             <RetailSettings
               player={props.player}
               contentType={props.contentType}
               singleUpdate={props.singleUpdate}
             />
-          ) : (
-            <BurningCrusadeSettings player={props.player} userSettings={props.userSettings} editSettings={props.editSettings} {...burningCrusadeSettingsShown} />
-          )}
+
         </AccordionDetails>
       </Accordion>
     </div>

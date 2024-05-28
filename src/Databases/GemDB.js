@@ -11,6 +11,42 @@
 
 export const gemDB = [
   {
+    id: 52236,
+    rarity: "rare",
+    name: {
+      en: "Purified Demonseye",
+    },
+    icon: "inv_misc_cutgemsuperior3",
+    stats: { intellect: 20, spirit: 20 },
+  },
+  {
+    id: 52296,
+    rarity: "rare",
+    name: {
+      en: "Ember Shadowspirit Diamond",
+    },
+    icon: "inv_misc_metagem_b",
+    stats: { intellect: 54 },
+  },
+  {
+    id: 52207,
+    rarity: "rare",
+    name: {
+      en: "Brilliant Inferno Ruby",
+    },
+    icon: "inv_misc_cutgemsuperior6",
+    stats: { intellect: 40 },
+  },
+  {
+    id: 52208,
+    rarity: "rare",
+    name: {
+      en: "Reckless Ember Topaz",
+    },
+    icon: "inv_misc_cutgemsuperior4",
+    stats: { intellect: 20, haste: 20 },
+  },
+  {
     id: 192932,
     element: "Fire",
     quality: 3,

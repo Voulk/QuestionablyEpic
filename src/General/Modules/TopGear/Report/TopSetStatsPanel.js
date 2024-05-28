@@ -25,19 +25,22 @@ export default function TopSetStatsPanel(props) {
           ["Bonus DPS", statList.dps],
         ]
       : [
-          ["Bonus Healing", statList.bonushealing],
+          ["Spellpower", statList.spellpower],
           ["Intellect", statList.intellect],
           ["Spirit", statList.spirit],
-          ["MP5", statList.mp5],
-          ["Crit", statList.spellcrit / STATPERONEPERCENT.Classic.CRIT + statList.intellect / 79.4],
-          ["Haste", statList.spellhaste / STATPERONEPERCENT.Classic.HASTE],
+          ["Crit", statList.crit / STATPERONEPERCENT.Classic.CRIT + statList.intellect * 0.000015410500055],
+          ["Haste", statList.haste],
+          ["Mastery", statList.mastery],
+          ["Mana Regen", statList.mp5],
         ];
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
   function printStat(stat, value, spec) {
-    if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
+    if (value > 100) return t(stat) + ": " + Math.floor(value);
+    else if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
-    } else return t(stat) + ": " + Math.floor(value);
+    } 
+    else return t(stat) + ": " + Math.floor(value);
   }
 
   function addMods(spec, stat, value) {

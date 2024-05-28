@@ -16,7 +16,7 @@ export const CONSTRAINTS = {
     },
     Shared: {
         topGearMaxItems: 32, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
-        topGearDifferentials: 8, // Number of competitive alternatives to show.
+        topGearDifferentials: 12, // Number of competitive alternatives to show.
     }
 
 }

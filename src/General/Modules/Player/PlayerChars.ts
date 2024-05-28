@@ -4,6 +4,8 @@ import ClassicPlayer from "./ClassicPlayer";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
+import { autoAddItems } from "General/Engine/ItemUtilities";
+
 // On app start, load player data.
 // First, we will check if they are signed in and have character data.
 // If they do, load that, if they don't, we will try their localstorage instead.
@@ -57,9 +59,10 @@ export function createPlayerChars(): PlayerChars {
 
       // Auto-add Classic Specs
       CONSTANTS.classicSpecs.forEach(spec => {
-        if (!(specsAdded.includes(spec))) {
+        if (!(specsAdded.includes(spec)) && spec === "Restoration Druid Classic") { // TODO: Remove as we add the other specs.
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
+          autoAddItems(newChar, "Raid", "Classic");
           charArray.push(newChar);
         }
     })

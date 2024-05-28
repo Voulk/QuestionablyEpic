@@ -3,6 +3,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
 import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
+import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -47,18 +48,29 @@ export default function ItemCardReport(props) {
   const { t, i18n } = useTranslation();
   const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
-  const statString = gameType === "Classic" ? "" : buildStatString(item.stats, item.effect, currentLanguage);
+  const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
-  let gemString = gameType === "Classic" ? props.gems : "&gems=" + item.gemString;
+  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage) ;
+  let gemString = gameType === "Classic" ? "&gems=" + item.socketedGems.join(':') : "&gems=" + item.gemString;
   const socketImage = getGemIcon(enchants["Gems"]);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
-
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
+  
+  let reforgeText = null;
+  let reforgeID = null;
+  if (gameType === "Classic" && item.flags.filter(flag => flag.includes("Reforged")).length > 0) {
+    const reforge = item.flags.filter(flag => flag.includes("Reforged"))[0];
+
+    reforgeText = /*gameType === "Classic" && item.flags && item.flags.includes("reforge") ?*/ <div style={{ fontSize: 12, color: "orange" }}>{item.flags.filter(flag => flag.includes("Reforged"))[0]}</div> /*: null;*/
+    reforgeID = reforgeIDs[reforge];
+  }
+
+  
+
   const itemQuality = (itemLevel, itemID) => {
     if (gameType !== "Retail") {
       const quality = getItemProp(itemID, "quality", gameType);
@@ -85,7 +97,8 @@ export default function ItemCardReport(props) {
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     gemString = gemData.string;
-  } else if (item.socket) {
+  } 
+  else if (item.socket) {
     let socketCount = item.socket;
 
     if (props.firstSlot) {
@@ -109,6 +122,16 @@ export default function ItemCardReport(props) {
       );
     }
     socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
+  }
+  else if (item.socketedGems) {
+    item.socketedGems.forEach(gem => {
+      socket.push(
+      <div style={{ display: "inline", marginRight: "5px" }}>
+        <Tooltip title={capitalizeFirstLetter(getGemProp(gem, "name"))} arrow>
+          <img src={getGemIcon(gem)} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+        </Tooltip>
+    </div>);
+    })
   }
   /*
   const socket = item.socket ? (
@@ -141,9 +164,9 @@ export default function ItemCardReport(props) {
   return (
     <Grid item xs={12}>
       <Card
-        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
+        className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.52)" }}
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.27)" }} // 52
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -155,7 +178,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} gems={gemString}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} forg={reforgeID ? reforgeID : 0} domain={wowheadDom} gems={gemString}>
                     <img
                       alt="img"
                       width={44}
@@ -163,17 +186,17 @@ export default function ItemCardReport(props) {
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
-                        borderWidth: "1px",
+                        borderWidth: "2px",
                         borderStyle: "solid",
                         borderColor: itemQuality(itemLevel, item.id),
                       }}
                     />
                   </WowheadTooltip>
-                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "12px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
+                  <div style={{ position: "absolute", bottom: "4px", right: "4px", fontWeight: "bold", fontSize: "14px", textShadow: "1px 1px 4px black" }}> {item.level} </div>
                 </div>
               </CardContent>
             </Grid>
-            <Divider orientation="vertical" flexItem />
+            {/*<Divider orientation="vertical" flexItem /> */}
             <CardContent style={{ padding: 2, width: "100%" }}>
               <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
@@ -193,13 +216,22 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
-                  <Grid item>
-                    <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {statString} {socket}
-                    </Typography>
+                <Grid container spacing={0}>
+                  <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
+                    <Grid item>
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
+                      {socket} 
+                      </Typography>
+                    </Grid>
+                    <Grid item>{enchantCheck(item)}</Grid> 
                   </Grid>
-                  <Grid item>{enchantCheck(item)}</Grid>
+                  <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
+                    <Grid item>
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
+                         {reforgeText} 
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
             </CardContent>

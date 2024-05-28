@@ -236,174 +236,104 @@ export const tierSets = [
   /*                           Restoration Druid Tier 4 [Marlorne Raiment]                          */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Dreamwalker Regalia", de: "Dreamwalker Regalia", fr: "Dreamwalker Regalia", ru: "Dreamwalker Regalia", ch: "Dreamwalker Regalia" },
+    name: { en: "Stormrider's Vestments" },
     spec: "Restoration Druid",
     slots: {
-      head: { id: 43754, icon: require("Images/Classic/TierSetIcons/inv_helmet_15.jpg").default },
-      shoulder: { id: 29089, icon: require("Images/Classic/TierSetIcons/inv_shoulder_44.jpg").default },
-      chest: { id: 29087, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_11.jpg").default },
-      hands: { id: 29090, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_44.jpg").default },
-      legs: { id: 29088, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_22.jpg").default },
+      head: { id: 65195 },
+      shoulder: { id: 65198 },
+      chest: { id: 65197 },
+      hands: { id: 65194 },
+      legs: { id: 65196 },
     },
     twoSet: {
       effect: {
-        en: "(2) The cost of your Lifebloom is reduced by 5%.",
-        de: "(2) The cost of your Lifebloom is reduced by 5%.",
-        fr: "(2) The cost of your Lifebloom is reduced by 5%.",
-        ru: "(2) The cost of your Lifebloom is reduced by 5%.",
-        ch: "(2) The cost of your Lifebloom is reduced by 5%.",
+        en: "(2) Increases the crit chance of the periodic portion of Lifebloom by 5%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
-        de: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
-        fr: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
-        ru: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
-        cn: "(4) Your Nourish heals for an additional 5% for each HoT present on the target.",
+        en: "(4) Grants 540 Spirit for 6s while you have the Harmony buff.",
       },
       hps: 300,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                              Restoration Druid Tier 8 (Ulduar)                                 */
+  /*                              Restoration Druid Tier 5                                */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Nightsong Regalia", de: "Nightsong Regalia", fr: "Nightsong Regalia", ru: "Nightsong Regalia", ch: "Nightsong Regalia" },
+    name: { en: "Obsidian Arborweave Vestments" },
     spec: "Restoration Druid",
     slots: {
-      head: { id: 30219, icon: require("Images/Classic/TierSetIcons/inv_helmet_85.jpg").default },
-      shoulder: { id: 30221, icon: require("Images/Classic/TierSetIcons/inv_shoulder_48.jpg").default },
-      chest: { id: 30216, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_12.jpg").default },
-      hands: { id: 30217, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_48.jpg").default },
-      legs: { id: 30220, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_23.jpg").default },
+      head: { id: 71492 },
+      shoulder: { id: 71495 },
+      chest: { id: 71494 },
+      hands: { id: 71491 },
+      legs: { id: 71493 },
     },
     twoSet: {
       effect: {
-        en: "(2) Increases the healing done by Swiftmend by 10%.",
-        de: "(2) Increases the healing done by Swiftmend by 10%.",
-        fr: "(2) Increases the healing done by Swiftmend by 10%.",
-        ru: "(2) Increases the healing done by Swiftmend by 10%.",
-        ch: "(2) Increases the healing done by Swiftmend by 10%.",
+        en: "(2) Lifebloom periodic healing has a 40% chance to restore 1% of base mana.",
       },
-      hps: 100,
+      hps: 0,
     },
     fourSet: {
       effect: {
-        en: "(4) Your Rejuvenation also provides an instant heal for your target.",
-        de: "(4) Your Rejuvenation also provides an instant heal for your target.",
-        fr: "(4) Your Rejuvenation also provides an instant heal for your target.",
-        ru: "(4) Your Rejuvenation also provides an instant heal for your target.",
-        cn: "(4) Your Rejuvenation also provides an instant heal for your target.",
+        en: "(4) Your Swiftmend also heals an injured target within 15 yards.",
       },
-      hps: 300,
+      hps: 0,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                     Restoration Druid Tier 9 (ToC)                             */
+  /*                                     Restoration Druid Tier 13                             */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Malfurion's Garb", de: "Malfurion's Garb", fr: "Malfurion's Garb", ru: "Malfurion's Garb", ch: "Malfurion's Garb" },
+    name: { en: "Deep Earth Vestments" },
     spec: "Restoration Druid",
     slots: {
-      head: { id: 31037, icon: require("Images/Classic/TierSetIcons/inv_helmet_94.jpg").default },
-      shoulder: { id: 31047, icon: require("Images/Classic/TierSetIcons/inv_shoulder_58.jpg").default },
-      chest: { id: 31041, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_15.jpg").default },
-      hands: { id: 31032, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_58.jpg").default },
-      legs: { id: 31045, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_26.jpg").default },
+      head: { id: 78690 },
+      shoulder: { id: 78740 },
+      chest: { id: 78660 },
+      hands: { id: 78680 },
+      legs: { id: 78710 },
     },
     twoSet: {
       effect: {
-        en: "(2) Increases the critical strike effect of Nourish by 5%.",
-        de: "(2) Increases the critical strike effect of Nourish by 5%.",
-        fr: "(2) Increases the critical strike effect of Nourish by 5%.",
-        ru: "(2) Increases the critical strike effect of Nourish by 5%.",
-        ch: "(2) Increases the critical strike effect of Nourish by 5%.",
+        en: "(2) Reduces the mana cost of Healing Touch and Rejuvenation by 5%.",
       },
-      hps: 100,
+      hps: 0,
     },
     fourSet: {
       effect: {
-        en: "(4) Your Rejuvenation ability can now crit.",
-        de: "(4) Your Rejuvenation ability can now crit.",
-        fr: "(4) Your Rejuvenation ability can now crit.",
-        ru: "(4) Your Rejuvenation ability can now crit.",
-        cn: "(4) Your Rejuvenation ability can now crit.",
+        en: "(4) Your Rejuvenation and Regrowth HoTs have a 10% chance to have double the duration.",
       },
-      hps: 300,
+      hps: 0,
     },
   },
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                     Restoration Druid Tier 10 (ICC)                             */
+  /*                                       Holy Paladin Tier 11                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Lasherweave Garb", de: "Lasherweave Garb", fr: "Lasherweave Garb", ru: "Lasherweave Garb", ch: "Lasherweave Garb" },
-    spec: "Restoration Druid",
-    slots: {
-      head: { id: 31037, icon: require("Images/Classic/TierSetIcons/inv_helmet_94.jpg").default },
-      shoulder: { id: 31047, icon: require("Images/Classic/TierSetIcons/inv_shoulder_58.jpg").default },
-      chest: { id: 31041, icon: require("Images/Classic/TierSetIcons/inv_chest_leather_15.jpg").default },
-      hands: { id: 31032, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_58.jpg").default },
-      legs: { id: 31045, icon: require("Images/Classic/TierSetIcons/inv_pants_leather_26.jpg").default },
-    },
-    twoSet: {
-      effect: {
-        en: "(2) The healing granted by Wild Growth reduces 30% less over time.",
-        de: "(2) The healing granted by Wild Growth reduces 30% less over time.",
-        fr: "(2) The healing granted by Wild Growth reduces 30% less over time.",
-        ru: "(2) The healing granted by Wild Growth reduces 30% less over time.",
-        ch: "(2) The healing granted by Wild Growth reduces 30% less over time.",
-      },
-      hps: 100,
-    },
-    fourSet: {
-      effect: {
-        en: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
-        de: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
-        fr: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
-        ru: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
-        cn: "(4) Each time your Rejuvenation heals it has a 2% chance to jump to a new target at full duration.",
-      },
-      hps: 300,
-    },
-  },
-
-  /* ---------------------------------------------------------------------------------------------- */
-  /*                                       Holy Paladin Tier 7                                      */
-  /* ---------------------------------------------------------------------------------------------- */
-  {
-    name: { en: "Heroes' Redemption Regalia", de: "Heroes' Redemption Regalia", fr: "Heroes' Redemption Regalia", ru: "Heroes' Redemption Regalia", ch: "Heroes' Redemption Regalia" },
+    name: { en: "Reinforced Sapphirium Regalia" },
     spec: "Holy Paladin",
     slots: {
-      head: { id: 29061, icon: require("Images/Classic/TierSetIcons/inv_helmet_77.jpg").default },
-      shoulder: { id: 29064, icon: require("Images/Classic/TierSetIcons/inv_shoulder_40.jpg").default },
-      chest: { id: 29062, icon: require("Images/Classic/TierSetIcons/inv_chest_plate18.jpg").default },
-      wrist: { id: -1, icon: -1 },
-      hands: { id: 29065, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_40.jpg").default },
-      waist: { id: -1, icon: -1 },
-      legs: { id: 29063, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_22.jpg").default },
-      boots: { id: -1, icon: -1 },
+      head: { id: 60359 },
+      shoulder: { id: 60362 },
+      chest: { id: 60360 },
+      hands: { id: 60363 },
+      legs: { id: 60361 },
     },
     twoSet: {
       effect: {
-        en: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
-        de: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
-        fr: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
-        ru: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
-        ch: "(2) Your Holy Shock gains an additional 10% chance to critically strike.",
+        en: "(2) Increases the crit chance of your Holy Light by 5%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) The cost of your Holy Light is reduced by 5%.",
-        de: "(4) The cost of your Holy Light is reduced by 5%.",
-        fr: "(4) The cost of your Holy Light is reduced by 5%.",
-        ru: "(4) The cost of your Holy Light is reduced by 5%.",
-        cn: "(4) The cost of your Holy Light is reduced by 5%.",
+        en: "(4) Grants 540 Spirit for 6s after you cast Holy Shock.",
       },
       hps: 300,
     },

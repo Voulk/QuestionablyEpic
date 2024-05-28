@@ -5,6 +5,22 @@ export default function bossHeaders(props, style, QEmodule) {
 
   // temp fix for Upgrade Finder, will need to redo boss ids
   if (QEmodule === "UpgradeFinder") {
+    if (props === 156) { source = require("Images/Classic/Raid/Tier11/bossHalfusWyrmbreaker.png")}
+    if (props === 157) { source = require("Images/Classic/Raid/Tier11/bossValiona.png")}
+    if (props === 158) { source = require("Images/Classic/Raid/Tier11/bossAscendentCouncil.png")}
+    if (props === 167) { source = require("Images/Classic/Raid/Tier11/bossChogall.png")}
+    if (props === 168) { source = require("Images/Classic/Raid/Tier11/bossSinestra.png")}
+
+    if (props === 169) { source = require("Images/Classic/Raid/Tier11/bossOmnotron.png")}
+    if (props === 170) { source = require("Images/Classic/Raid/Tier11/bossMagmaw.png")}
+    if (props === 171) { source = require("Images/Classic/Raid/Tier11/bossAtramedes.png")}
+    if (props === 172) { source = require("Images/Classic/Raid/Tier11/bossChimaeron.png")}
+    if (props === 173) { source = require("Images/Classic/Raid/Tier11/bossMaloriak.png")}
+    if (props === 174) { source = require("Images/Classic/Raid/Tier11/bossNefarian.png")}
+
+    if (props === 154) { source = require("Images/Classic/Raid/Tier11/bossNezir.png")}
+    if (props === 155) { source = require("Images/Classic/Raid/Tier11/bossAlakir.png")}
+
     if (props === 2468) {
       source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-Antros.png");
     }
@@ -42,68 +58,6 @@ export default function bossHeaders(props, style, QEmodule) {
       source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-BazualTheDradedFlame.png");
     }
     //
-
-    if (props === 2418) {
-      source = require("Images/Bosses/CastleNathria/ArtificerXymox/ArtificerXymoxEJ.png");
-    }
-    if (props === 2429) {
-      source = require("Images/Bosses/CastleNathria/HuntsmanAltimor/HuntsmanAltimorEJ.png");
-    }
-    if (props === 2428) {
-      source = require("Images/Bosses/CastleNathria/HungeringDestroyer/HungeringDestroyerEJ.png");
-    }
-    if (props === 2420) {
-      source = require("Images/Bosses/CastleNathria/LadyInervaDarkvein/LadyInervaDarkveinEJ.png");
-    }
-    if (props === 2426) {
-      source = require("Images/Bosses/CastleNathria/TheCouncilOfBlood/TheCouncilOfBloodEJ.png");
-    }
-    if (props === 2424) {
-      source = require("Images/Bosses/CastleNathria/SireDenathrius/SireDenathriusEJ.png");
-    }
-    if (props === 2425) {
-      source = require("Images/Bosses/CastleNathria/StoneLegionGenerals/StoneLegionGeneralsEJ.png");
-    }
-    if (props === 2393) {
-      source = require("Images/Bosses/CastleNathria/Shriekwing/ShriekwingEJ.png");
-    }
-    if (props === 2394) {
-      source = require("Images/Bosses/CastleNathria/Sludgefist/SludgefistEJ.png");
-    }
-    if (props === 2422) {
-      source = require("Images/Bosses/CastleNathria/SunKingsSalvation/SunKingsSalvationEJ.png");
-    }
-
-    if (props === 2435) {
-      source = require("Images/Bosses/SanctumOfDomination/TheTarragrue/UI-EJ-BOSS-Tarragrue.png");
-    }
-    if (props === 2442) {
-      source = require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/UI-EJ-BOSS-EyeoftheJailer.png");
-    }
-    if (props === 2439) {
-      source = require("Images/Bosses/SanctumOfDomination/TheNine/UI-EJ-BOSS-TheNine.png");
-    }
-    if (props === 2444) {
-      source = require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/UI-EJ-BOSS-RemnantofNerzhul.png");
-    }
-    if (props === 2445) {
-      source = require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/UI-EJ-BOSS-SoulrenderDormazain.png");
-    }
-    if (props === 2443) {
-      source = require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/UI-EJ-BOSS-PainsmithRaznal.png");
-    }
-    if (props === 2446) {
-      source = require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/UI-EJ-BOSS-GuardianoftheFirstOnes.png");
-    }
-    if (props === 2447) {
-      source = require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/UI-EJ-BOSS-FatescribeRoh-Talo.png");
-    }
-    if (props === 2440) {
-      source = require("Images/Bosses/SanctumOfDomination/Kelthuzad/UI-EJ-BOSS-KelThuzadShadowlands.png");
-    }
-    if (props === 2441) {
-      source = require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusEJ.png");
-    }
 
     if (props === 2458) {
       source = require("Images/Bosses/SepulcherOfTheFirstOnes/EJ/UI-EJ-BOSS-VigilantGuardian.png");
@@ -219,46 +173,6 @@ export default function bossHeaders(props, style, QEmodule) {
     }
     if (props === 2402) {
       source = require("Images/Bosses/CastleNathria/SunKingsSalvation/SunKingsSalvationEJ.png");
-    }
-
-    if (props === 2423) {
-      source = require("Images/Bosses/SanctumOfDomination/TheTarragrue/UI-EJ-BOSS-Tarragrue.png");
-    }
-
-    if (props === 2433) {
-      source = require("Images/Bosses/SanctumOfDomination/TheEyeOfTheJailer/UI-EJ-BOSS-EyeoftheJailer.png");
-    }
-
-    if (props === 2429) {
-      source = require("Images/Bosses/SanctumOfDomination/TheNine/UI-EJ-BOSS-TheNine.png");
-    }
-
-    if (props === 2432) {
-      source = require("Images/Bosses/SanctumOfDomination/RemnantOfNerzhul/UI-EJ-BOSS-RemnantofNerzhul.png");
-    }
-
-    if (props === 2434) {
-      source = require("Images/Bosses/SanctumOfDomination/SoulrenderDormazain/UI-EJ-BOSS-SoulrenderDormazain.png");
-    }
-
-    if (props === 2430) {
-      source = require("Images/Bosses/SanctumOfDomination/PainsmithRaznal/UI-EJ-BOSS-PainsmithRaznal.png");
-    }
-
-    if (props === 2436) {
-      source = require("Images/Bosses/SanctumOfDomination/GuardianOfTheFirstOnes/UI-EJ-BOSS-GuardianoftheFirstOnes.png");
-    }
-
-    if (props === 2431) {
-      source = require("Images/Bosses/SanctumOfDomination/FatescribeRohKalo/UI-EJ-BOSS-FatescribeRoh-Talo.png");
-    }
-
-    if (props === 2422) {
-      source = require("Images/Bosses/SanctumOfDomination/Kelthuzad/UI-EJ-BOSS-KelThuzadShadowlands.png");
-    }
-
-    if (props === 2435) {
-      source = require("Images/Bosses/SanctumOfDomination/SylvanusWindrunner/SylvanusEJ.png");
     }
 
     // Vigilant Guardian
