@@ -20,7 +20,10 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
         by clicking on them in the top gear item select screen.")
     }
     if (gameType === "Classic") {
-        advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.62) + " - " + Math.round(topSet.hardScore / 60 * 0.82))
+        advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.62) + " - " + Math.round(topSet.hardScore / 60 * 0.82) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
+        advice.push("Power Torrent is a very powerful weapon enchant but is expensive. It's ok to wear Heartsong until you have a good weapon.")
+        if (strippedPlayer.spec === "Restoration Druid Classic") advice.push("Resto Druid has a haste breakpoint at 2005 haste, however this is only a small upgrade over \
+                    spending those stats elsewhere. As a result, best in slot sets should expect to hit it, but don't be too surprised if QE Live doesn't reforge your set that way until you have some good items.");
     }
     if (topSet.enchantBreakdown["phial"]) {
         advice.push("Recommended Phial: " + topSet.enchantBreakdown["phial"] + ".");

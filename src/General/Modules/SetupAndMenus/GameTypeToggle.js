@@ -10,12 +10,12 @@ import makeStyles from '@mui/styles/makeStyles';
 import { toggleContent } from "Redux/Actions";
 
 import RetailLogo from "../../../Images/Logos/Logo_Dragonflight.png";
-import ClassicLogo from "../../../Images/Logos/Logo_CataclysmComingSoon.png";
+import ClassicLogo from "../../../Images/Logos/CataLogoAlpha.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down('md')]: {
-      minWidth: 175,
+      minWidth: 175, 
       padding: 4,
       opacity: 0.3,
     },
@@ -97,7 +97,7 @@ export default function GameTypeSwitch(props) {
       <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={ClassicLogo} alt={t("Wrath of the Lich King")} />
+            <img src={ClassicLogo} alt={t("Cataclysm")} />
           </div>
         </Tooltip>
       </ToggleButton>

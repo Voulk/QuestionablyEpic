@@ -463,6 +463,12 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchants['CombinedWeapon'] = "Power Torrent"
       enchants['1H Weapon'] = "Power Torrent"
       enchants['2H Weapon'] = "Power Torrent"
+
+      if (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0) {
+        enchant_stats.intellect += 40;
+        enchants['Offhand'] = "Superior Intellect"
+        enchants['Shield'] = "Superior Intellect"
+      }
     }
     // Flasks and profession stuff.
     enchant_stats.intellect += 300;

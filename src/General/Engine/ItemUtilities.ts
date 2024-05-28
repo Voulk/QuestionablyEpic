@@ -955,7 +955,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     const slot = getItemProp(item.id, "slot", gameType);
     if ((slot === 'Trinket' && item.levelRange) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) && 
-        (!item.name.includes("of the") || item.name.includes("Undertow")) &&
+        (!item.name.includes("of the") || item.name.includes("Undertow") || item.name.includes("Boy Emperor")) &&
         (!item.name.includes("Gladiator")) && 
         (!([62458, 59514].includes(item.id)))) {
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);

@@ -109,6 +109,7 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
               const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
               const targetCount = spell.targets ? spell.targets : 1;
               const tickCount = Math.round(spell.buffDuration / (adjTickRate));
+              if (spellProfile.spell === "Lifebloom") 
               spellHealing = spellHealing * tickCount * targetCount;
           }
 
