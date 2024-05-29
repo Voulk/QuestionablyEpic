@@ -98,11 +98,9 @@ export default function ItemBar(props) {
   const gameType = useSelector((state) => state.gameType);
 
   const autoFillItems = (itemLevel, player) => {
-    if (player.activeItems.filter((item) => item.level === itemLevel).length > 0) return;
-    else {
-      autoAddItems(player, "Classic", itemLevel);
-      props.setItemList([...player.getActiveItems(activeSlot)]);
-    }
+
+    autoAddItems(player, "Classic", itemLevel);
+    props.setItemList([...player.getActiveItems(activeSlot)]);
   }
 
   const fillItems = (slotName, spec) => {

@@ -286,6 +286,7 @@
         "trinkets": "Trinkets",
         "upgradeFinder": "Upgrade Finder",
         "embellishments": "Embellishments",
+        "enchants": "Enchants",
 
         "enchantItems": {
           "title": "Enchant Items",
@@ -377,6 +378,14 @@
         "wristEnchant": {
           "title": "Wrist Enchant",
           "tooltip": "While intellect is always better, it's also very expensive which can be prohibitive during early gearing."
+        },
+        "bootsEnchant": {
+          "title": "Boot Enchant",
+          "tooltip": "While lavawalker is generally better, it's ok to use a haste enchant in early gearing to help reach breakpoints."
+        },
+        "gloveEnchant": {
+          "title": "Glove Enchant",
+          "tooltip": ""
         },
 
         "numManaTides": {

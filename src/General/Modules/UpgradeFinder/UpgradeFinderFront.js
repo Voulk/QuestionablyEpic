@@ -296,6 +296,7 @@ export default function UpgradeFinderFront(props) {
 
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
+
       const result = runUpgradeFinder(player, contentType, currentLanguage, ufSettings, userSettings);
       const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
       result.id = shortReport.id;
@@ -309,7 +310,7 @@ export default function UpgradeFinderFront(props) {
     else if (gameType === "Classic") {
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
       const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
-      console.log(ufSettings);
+
       result.id = shortReport.id;
       //sendReport(shortReport);
       shortReport.new = true;

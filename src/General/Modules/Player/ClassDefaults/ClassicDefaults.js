@@ -43,7 +43,6 @@ export function initializeDruidSet() {
     const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: druidTalents, spec: "Restoration Druid"});
   
     druidCastProfile.forEach(spell => {
-      console.log("Spell cost: " + spell.spell + " "  + adjSpells[spell.spell][0].cost)
       spell.castTime = druidSpells[spell.spell][0].castTime;
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;

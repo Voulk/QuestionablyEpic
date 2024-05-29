@@ -167,7 +167,6 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
 
     if (getSetting(userSettings, 'gemSettings') === ("Precise")) { // Add setting here.
       if (gemPoss.length > 0) {
-        console.log(gemPoss);
         gemPoss.forEach(gem => {
           resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
         });
