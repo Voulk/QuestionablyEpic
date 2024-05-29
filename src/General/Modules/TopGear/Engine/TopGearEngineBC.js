@@ -110,27 +110,32 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
         const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
+
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
-        itemStats.forEach(fromStat => {
-          // for each stat, add one version that trades a portion of it for another.
-          if (reforgeSetting === "Thorough" && reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
-            itemReforgeOptions.forEach(targetStat => {
-              const newItem = JSON.parse(JSON.stringify(item));
-             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-              newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
-              newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
-              //newItem.uniqueHash = Math.random().toString(36).substring(7);
-              //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-              newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+        if (reforgeSetting === "Thorough") {
+          itemStats.forEach(fromStat => {
+            // for each stat, add one version that trades a portion of it for another.
+            if (reforgeFromOptions.includes(fromStat)) {
+              itemReforgeOptions.forEach(targetStat => {
 
-              reforgedItems.push(newItem);
-            })
-          }
+                const newItem = JSON.parse(JSON.stringify(item));
+               // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+                newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
+                newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+                //newItem.uniqueHash = Math.random().toString(36).substring(7);
+                console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+                newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+                newItem.flags.push("ItemReforged");
+  
+                reforgedItems.push(newItem);
+              })
+            }
+  
+          });
+        }
 
-        });
-        
         // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
-        if (reforgeSetting === "Smart") {
+        else if (reforgeSetting === "Smart") {
 
           const secondaryRank = ["spirit", "mastery", "crit"]
           // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
@@ -169,9 +174,9 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
           }
         }
         
-    })
-    
+    });
     itemList = itemList.concat(reforgedItems);
+    
     }
 
     let itemSets = createSets(itemList, wepCombos, true);
@@ -361,25 +366,27 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
     // If we can't, optimize all pieces.
-    itemSet.itemList.forEach((item, index) => {
-      if (item.flags.includes("ItemReforged")) {
-        // Do nothing
-      }
-      else {
-        const secondaryRank = ["spirit", "mastery", "crit"]
-        const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
-        const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
-        const toStat = secondaryRank.find(value => !itemStats.includes(value));
-
-        if (fromStat && toStat && secondaryRank.indexOf(fromStat) > secondaryRank.indexOf(toStat)) {
-          const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
-          setStats[fromStat] -= reforgeValue;
-          setStats[toStat] += reforgeValue;
-          item.flags.push("Reforged: " + fromStat + " -> " + toStat);
-          item.flags.push("ItemReforged");
+    if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
+      itemSet.itemList.forEach((item, index) => {
+        if (item.flags.includes("ItemReforged")) {
+          // Do nothing
         }
-      }
-    });
+        else {
+          const secondaryRank = ["spirit", "mastery", "crit"]
+          const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+          const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+          const toStat = secondaryRank.find(value => !itemStats.includes(value));
+
+          if (fromStat && toStat && secondaryRank.indexOf(fromStat) > secondaryRank.indexOf(toStat)) {
+            const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
+            setStats[fromStat] -= reforgeValue;
+            setStats[toStat] += reforgeValue;
+            item.flags.push("Reforged: " + fromStat + " -> " + toStat);
+            item.flags.push("ItemReforged");
+          }
+        }
+      });
+  }
 
    let adjusted_weights = {...castModel.baseStatWeights}
     // Mana Profiles

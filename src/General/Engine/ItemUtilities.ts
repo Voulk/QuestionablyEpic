@@ -959,7 +959,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (!item.name.includes("Gladiator")) && 
         (!([62458, 59514].includes(item.id)))) {
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
-      player.activeItems.push(newItem);
+      if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
+      //player.activeItems.push(newItem);
     }
 
   })
