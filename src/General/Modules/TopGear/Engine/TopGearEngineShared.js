@@ -1,5 +1,5 @@
 
-const softSlice = 3000;
+const softSlice = 25;
 import { gemDB } from "Databases/GemDB";
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 

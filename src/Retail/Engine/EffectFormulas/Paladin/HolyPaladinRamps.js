@@ -838,7 +838,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
-            console.log("Adding prebuff: " + buffName)
             if (buffName === "Infusion of Light") addBuff(state, paladinSpells["Holy Shock"][1], "Infusion of Light");
             else if (buffName === "Barrier of Faith") addBuff(state, paladinSpells["Barrier of Faith"][1], "Barrier of Faith");
             else if (buffName === "Glimmer of Light 8") {

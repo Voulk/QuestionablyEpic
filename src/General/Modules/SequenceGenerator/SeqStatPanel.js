@@ -21,7 +21,6 @@ const StatPanel = (props) => {
 
   // Event handler for the Save button (you can replace the console.log with your save function)
   const handleSave = () => {
-    console.log('Saving stats:', stats);
     props.setActiveStats(stats);
     // Add your save logic here
   };

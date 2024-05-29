@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 3,
+    date: "May 29 (Minor)",
+    changes: [ 
+      "Cataclysm: Auto-fill can now be used after importing.",
+      "Bugfix: Fixed dungeon dropdowns in Dragonflight Upgrade Finder."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 2,
     date: "May 28 (Minor)",
     changes: [ 

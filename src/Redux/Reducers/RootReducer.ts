@@ -55,8 +55,9 @@ const initialState : RootState = {
     metaGem: {value: "Ember Shadowspirit Diamond", options: ["Ember Shadowspirit Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     professionTwo: {value: "Engineering", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
-    wristEnchant: {value: "Haste (cheaper)", options: ["Haste (cheaper)", "Intellect (better)"], category: "topGear", type: "selector", gameType: "Classic"},
-    //gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "topGear", type: "selector", gameType: "Classic"},
+    wristEnchant: {value: "Haste (cheaper)", options: ["Haste (cheaper)", "Intellect (better)"], category: "enchants", type: "selector", gameType: "Classic"},
+    gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
+    bootsEnchant: {value: "Haste (cheaper)", options: ["Haste (cheaper)", "Lavawalker"], category: "enchants", type: "selector", gameType: "Classic"},
 
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.

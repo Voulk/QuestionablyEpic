@@ -141,7 +141,7 @@ const sendReport = (shortReport: ShortReport) => {
   
   fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
   //.then(response => response.text())
-  .then(response => console.log(response));
+  .then(response => console.log(""));
   //.then(data => this.setState({ postId: data.id }));
 }
 
