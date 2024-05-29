@@ -59,6 +59,7 @@ interface SettingValue {
     options: any[];
     category: string;
     type: string;
+    gameType: gameTypes;
   }
 
 interface PlayerSettings {
