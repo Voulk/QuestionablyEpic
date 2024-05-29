@@ -374,6 +374,11 @@
           "tooltip": "Pick a more or less aggressive mana profile."
         },
 
+        "wristEnchant": {
+          "title": "Wrist Enchant",
+          "tooltip": "While intellect is always better, it's also very expensive which can be prohibitive during early gearing."
+        },
+
         "numManaTides": {
           "title": "Mana Tide #",
           "tooltip": "Select the number of Resto Shamans in your raid, not the number of times they'll drop the totem."

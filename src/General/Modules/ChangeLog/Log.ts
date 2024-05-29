@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 2,
+    date: "May 28 (Minor)",
+    changes: [ 
+      "Cataclysm: Added Haste wrist setting.",
+      "Fixed retail settings."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 1,
     date: "May 28 (Major)",
     changes: [ 

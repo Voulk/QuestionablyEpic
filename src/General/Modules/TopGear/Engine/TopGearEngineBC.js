@@ -378,9 +378,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           item.flags.push("Reforged: " + fromStat + " -> " + toStat);
           item.flags.push("ItemReforged");
         }
-
-
-
       }
     });
 
@@ -432,9 +429,13 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         enchant_stats.intellect += 130;
         enchants['Wrist'] = "Draconic Embossment";
       }
-      else {
+      else if (getSetting(playerSettings, "wristEnchant") === "Intellect (better)") {
         enchant_stats.intellect += 50;
         enchants['Wrist'] = "Mighty Intellect";
+      }
+      else {
+        enchant_stats.haste += 50;
+        enchants['Wrist'] = "Speed";
       }
 
   
@@ -572,13 +573,11 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         }
       }
     }
-    console.log("END SCORE: " + hardScore);
-    console.log(JSON.stringify(setStats));
+
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
-    console.log(JSON.stringify(builtSet));
-    console.log(hardScore);
+
     return builtSet; // Temp
   }
 
