@@ -437,7 +437,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
 
   
-      if (player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
+      if (getSetting(playerSettings, "gloveEnchant") === "Haste") {//player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
         enchant_stats.haste += 50;
         enchants['Hands'] = "Haste"
       }
@@ -450,8 +450,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.spirit += 55;
       enchants['Legs'] = "Powerful Ghostly Spellthread"
   
-      enchant_stats.mastery += 35;
-      enchants['Feet'] = "Lavawalker" // Spirit version available but not great.
+      if (getSetting(playerSettings, "bootsEnchant") === "Haste (cheaper)") {
+        enchant_stats.haste += 50;
+        enchants['Feet'] = "Haste";
+      }
+      else {
+        enchant_stats.mastery += 35;
+        enchants['Feet'] = "Lavawalker"
+      }
+
   
       if ("profession" === "Enchanting") // todo 
       {
