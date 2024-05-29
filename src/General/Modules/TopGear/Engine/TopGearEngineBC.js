@@ -123,7 +123,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
                 newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
                 newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
                 //newItem.uniqueHash = Math.random().toString(36).substring(7);
-                console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+                //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
                 newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
                 newItem.flags.push("ItemReforged");
   

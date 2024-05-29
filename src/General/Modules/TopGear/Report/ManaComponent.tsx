@@ -3,7 +3,6 @@ import { Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
 
 const ManaSourcesComponent = ({ manaSources }) => {
   const { pool, regen, additional, totalMana } = manaSources;
-    console.log(manaSources);
   return (
     <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "#00FFFF", backgroundColor: "#304478"}}>
     <div>
