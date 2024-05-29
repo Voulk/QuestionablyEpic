@@ -130,6 +130,11 @@ class ItemSet {
     let setStats =  this.getStartingStats(gameType)
     let setSockets = 0;
     
+    if (gameType === "Classic") {
+      // Replace every item with a duplicate.
+      this.itemList = this.itemList.map(item => JSON.parse(JSON.stringify(item)));
+    }
+
     for (let i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
 

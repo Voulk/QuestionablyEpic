@@ -241,7 +241,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         if ([ 1196, 1197, 1198, 1199, 1201, 1202, 1204, 1203].includes(encounter) || primarySource === 1205) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
-          item.dropLoc = "Mythic+";
+          item.dropLoc = "Dungeon";
           item.dropDifficulty = playerSettings.dungeon;
           item.dropDifficultyTxt = "";
           item.quality = 4;

@@ -239,12 +239,14 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline, professions) {
     // Get Base Stats
+    
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
     let tierList = [];
+    
 
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
@@ -278,17 +280,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       haste: 0,
     };
 
-    // Talents
-    let gemStats = {
-      intellect: 0,
-      spellpower: 0,
-      spirit: 0,
-      haste: 0,
-      crit: 0,
-      stamina: 0,
-      mastery: 0,
-      mp5: 0,
-    }
 
     /*
     let adjusted_weights = {
