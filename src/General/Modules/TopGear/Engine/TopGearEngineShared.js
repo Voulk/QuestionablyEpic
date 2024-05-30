@@ -275,6 +275,11 @@ export const setupGems = (itemList, adjusted_weights) => {
       item.socketedGems.forEach(gemID => {
         socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
       });
+      if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => element === item.classicSockets.sockets[index])) {
+        // Socket bonus
+        console.log("WE HAVE A MATCH: " + JSON.stringify(item.classicSockets.bonus));
+        socketedGemStats.push(item.classicSockets.bonus);
+      }
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
         socketedGemStats.push({haste: 208});
