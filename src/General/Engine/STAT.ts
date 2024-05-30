@@ -55,7 +55,7 @@ export const STATCONVERSION = {
       "Restoration Druid": 0.5,
       "Mistweaver Monk": 4.2,
       "Holy Paladin": 1.5,
-      "Holy Priest": 1.125,
+      "Holy Priest": 0.95625,
       "Discipline Priest": 1.35,
       "Restoration Shaman": 3,
     } as Record<string, number>,
