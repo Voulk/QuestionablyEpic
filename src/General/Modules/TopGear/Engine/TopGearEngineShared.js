@@ -248,7 +248,7 @@ export const setupGems = (itemList, adjusted_weights) => {
             let newScore = newSockets.reduce((accumulator, socket) => accumulator + socketScores[gemIDS[socket]] || 0, 0);
 
             // Check if adding the yellow socket gives us a bonus.
-            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index]);
+            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index] || sockets[index] === "prismatic");
 
             if (socketBonus && item.classicSockets.bonus) {
               newScore += scoreSocketBonus(item.classicSockets.bonus);
@@ -275,11 +275,12 @@ export const setupGems = (itemList, adjusted_weights) => {
       item.socketedGems.forEach(gemID => {
         socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
       });
-      if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => element === item.classicSockets.sockets[index])) {
+
+      if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {
         // Socket bonus
-        console.log("WE HAVE A MATCH: " + JSON.stringify(item.classicSockets.bonus));
-        socketedGemStats.push(item.classicSockets.bonus);
+        if (item.classicSockets.bonus) socketedGemStats.push(item.classicSockets.bonus);
       }
+
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
         socketedGemStats.push({haste: 208});
