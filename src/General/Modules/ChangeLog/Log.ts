@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 4,
+    date: "May 30 (Minor)",
+    changes: [ 
+      "Cataclysm: Socket bonuses now correctly added to each set.",
+      "Cataclysm: Prismatic gems are now correctly ignored for the sake of socket bonuses.",
+      "Cataclysm: Fixed an issue where imports could fail with non-socketed belt items."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 3,
     date: "May 29 (Minor)",
     changes: [ 

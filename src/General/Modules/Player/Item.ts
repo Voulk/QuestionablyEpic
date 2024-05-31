@@ -75,7 +75,7 @@ export class Item {
       // Adjust allocations for sockets.
       const itemAllocations = getItemAllocations(id, [], gameType);
 
-      if (slot === "Waist") this.classicSockets.sockets = [...sockets.gems, 'prismatic'];
+      if (slot === "Waist") this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
  
       this.stats = getItemProp(id, "stats", "Classic");
       //this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
