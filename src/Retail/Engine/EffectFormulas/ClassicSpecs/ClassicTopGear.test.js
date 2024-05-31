@@ -26,11 +26,11 @@ describe("Top Gear Test", () => {
 
         expect(true).toEqual(true);
 
-        /*
+        
         let wepCombos = buildNewWepCombos(player, true);
 
-        const result = runTopGearBC(itemList, wepCombos, player, "Raid", 0, "en", store.getState().playerSettings, castModel, true, [], [])
-        
+        //const result = runTopGearBC(itemList, wepCombos, player, "Raid", 0, "en", store.getState().playerSettings, castModel, true, [], [])
+        /*
         //console.log(JSON.stringify(result.differentials.map(differentials => differentials.items.map(item => item.name))));
 
         result.itemSet.itemList.forEach(item => {
