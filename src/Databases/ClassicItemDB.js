@@ -86339,6 +86339,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -86369,6 +86370,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 301,
             "stamina": 541,
@@ -86399,6 +86401,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -86429,6 +86432,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -86461,6 +86465,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -88111,6 +88116,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -88143,6 +88149,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -88173,6 +88180,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 301,
             "stamina": 541,
@@ -88203,6 +88211,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -88235,6 +88244,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -99606,6 +99616,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -99636,6 +99647,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 260,
             "stamina": 480,
@@ -99666,6 +99678,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -99696,6 +99709,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -99728,6 +99742,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -100226,6 +100241,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -100258,6 +100274,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -100288,6 +100305,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 260,
             "stamina": 480,
@@ -100318,6 +100336,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -100350,6 +100369,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -101991,6 +102011,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -102021,6 +102042,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -102051,6 +102073,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 260,
             "stamina": 480,
@@ -102083,6 +102106,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -102113,6 +102137,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -102299,6 +102324,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -102330,6 +102356,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -102360,6 +102387,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -102390,6 +102418,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 260,
             "stamina": 480,
@@ -102422,6 +102451,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 218,
             "stamina": 357,
@@ -107958,6 +107988,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -107988,6 +108019,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -108018,6 +108050,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 301,
             "stamina": 541,
@@ -108050,6 +108083,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -108080,6 +108114,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -108420,6 +108455,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -108450,6 +108486,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -108480,6 +108517,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 321,
             "stamina": 541,
@@ -108540,6 +108578,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 301,
             "stamina": 541,
@@ -108572,6 +108611,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 248,
             "stamina": 402,
@@ -121029,6 +121069,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -121059,6 +121100,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -121089,6 +121131,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -121119,6 +121162,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -121151,6 +121195,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -122408,6 +122453,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -122440,6 +122486,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -122470,6 +122517,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -122500,6 +122548,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -122532,6 +122581,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -123746,6 +123796,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -123776,6 +123827,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -123806,6 +123858,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -123838,6 +123891,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -123868,6 +123922,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -124208,6 +124263,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -124238,6 +124294,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -124268,6 +124325,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -124328,6 +124386,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -124360,6 +124419,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -126476,6 +126536,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 263,
             "stamina": 425,
@@ -126506,6 +126567,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 322,
             "stamina": 573,
@@ -126536,6 +126598,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 342,
             "stamina": 573,
@@ -126566,6 +126629,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 342,
             "stamina": 573,
@@ -126598,6 +126662,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 263,
             "stamina": 425,
@@ -127096,6 +127161,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 342,
             "stamina": 573,
@@ -127128,6 +127194,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 263,
             "stamina": 425,
@@ -127158,6 +127225,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 322,
             "stamina": 573,
@@ -127188,6 +127256,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 342,
             "stamina": 573,
@@ -127220,6 +127289,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 263,
             "stamina": 425,
@@ -137039,6 +137109,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 319,
             "stamina": 508,
@@ -137069,6 +137140,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 395,
             "stamina": 683,
@@ -137099,6 +137171,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 415,
             "stamina": 683,
@@ -137129,6 +137202,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 415,
             "stamina": 683,
@@ -137161,6 +137235,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 319,
             "stamina": 508,
@@ -137862,6 +137937,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 415,
             "stamina": 683,
@@ -137894,6 +137970,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 319,
             "stamina": 508,
@@ -137924,6 +138001,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 395,
             "stamina": 683,
@@ -137954,6 +138032,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 415,
             "stamina": 683,
@@ -137986,6 +138065,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 319,
             "stamina": 508,
@@ -146641,6 +146721,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -146671,6 +146752,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -146701,6 +146783,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 454,
             "stamina": 771,
@@ -146733,6 +146816,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -146763,6 +146847,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -147546,6 +147631,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -147576,6 +147662,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -147606,6 +147693,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -147636,6 +147724,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 454,
             "stamina": 771,
@@ -147668,6 +147757,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -149181,6 +149271,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -149211,6 +149302,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -149241,6 +149333,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 454,
             "stamina": 771,
@@ -149273,6 +149366,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -149303,6 +149397,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Paladin",
+        "itemSetId": 918,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -149730,6 +149825,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 362,
             "stamina": 573,
@@ -149760,6 +149856,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -149790,6 +149887,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 474,
             "stamina": 771,
@@ -149820,6 +149918,7 @@ export const classicItemDB = [
             ]
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 454,
             "stamina": 771,
@@ -149852,6 +149951,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 923,
         "stats": {
             "intellect": 362,
             "stamina": 573,
