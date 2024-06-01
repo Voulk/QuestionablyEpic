@@ -357,7 +357,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
     // If we can't, optimize all pieces.
-    if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
+    if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {
         if (item.flags.includes("ItemReforged")) {
           // Do nothing

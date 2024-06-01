@@ -115,7 +115,6 @@ function TopGearReport(props) {
       else {
         // Call Error
       }
-  
     }
 
     if (result !== null && checkResult(result)) {
@@ -147,6 +146,7 @@ function TopGearReport(props) {
 }
 
 function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
+
   const boxWidth = gameType === "Classic" ? "60%" : "60%";
 
   let resultValid = true;
@@ -169,6 +169,7 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
     const advice = getDynamicAdvice(result, player, result.contentType, gameType);
+    const gameType = player.spec.includes("Classic") ? "Classic" : "Retail";
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
