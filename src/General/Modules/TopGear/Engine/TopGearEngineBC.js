@@ -423,7 +423,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.intellect += 50;
       enchants['Back'] = "Greater Intellect"; // Tailoring version available.
 
-      if (professions.includes("Inscription")) {
+      if (professions.includes("Leatherworking")) {
         enchant_stats.intellect += 130;
         enchants['Wrist'] = "Draconic Embossment";
       }
@@ -547,7 +547,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
       return acc;
     }, {});
-
+    // Override
+    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0;
     //setStats = mergeBonusStats(effectStats);
     compileStats(setStats, compiledEffects);
     applyRaidBuffs({}, setStats);

@@ -110,6 +110,16 @@ function processItem(line, player, contentType, type) {
     else if (info.includes("unique=")) suffixAllocation = parseInt(info.split("=")[1]);
   }
 
+  if (itemID === 63494 || itemID === 63497 || itemID === 63506 || itemID === 65373 || itemID === 65374 ||
+      itemID === 65384 || itemID === 68127 || itemID === 69830 || itemID === 69835 || itemID === 69881 ||
+      itemID === 69882) 
+  {
+    if (suffix === 230 || suffix === 262  || suffix === 268) itemID = parseInt(itemID.toString() + "2") // Feverflare
+    else if (suffix === 231 || suffix === 263 || suffix === 269) itemID = parseInt(itemID.toString() + "0") // Undertow
+    else if (suffix === 232 || suffix === 264  || suffix === 270) itemID = parseInt(itemID.toString() + "3") // Wavecrest
+    else if (suffix === 229 || suffix === 261  || suffix === 267) itemID = parseInt(itemID.toString() + "1") // Fireflash
+  }
+
   // Grab the items base level from our item database.
   itemLevel = getItemProp(itemID, "itemLevel", "Classic");
   itemSlot = getItemProp(itemID, "slot", "Classic");
