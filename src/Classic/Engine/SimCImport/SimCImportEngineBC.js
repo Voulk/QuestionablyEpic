@@ -127,7 +127,7 @@ function processItem(line, player, contentType, type) {
   // Process Item Suffix
   
   if (suffix && suffixAllocation) {
-    itemBonusStats = getSuffixAllocation(suffix, suffixAllocation);
+    //itemBonusStats = getSuffixAllocation(suffix, suffixAllocation);
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
