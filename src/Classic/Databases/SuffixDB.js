@@ -22,4 +22,6 @@ export const suffixDB = {
     51: {intellect: 0.3193, spelldamage: 0.8501, spellcrit: 0.4106}, // Mind
     53: {stamina: 0.3193, intellect: 0.4106, spelldamage: 0.8501}, // Vision
     58: {stamina: 0.5259, stamina: 0.5259, spelldamage: 0.6153}, // Sun
+
+    //230: Feverflare
 }

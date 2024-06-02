@@ -112,7 +112,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
         const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
 
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
-        if (reforgeSetting === "Thorough") {
+        if (reforgeSetting === "Manual") {
           itemStats.forEach(fromStat => {
             // for each stat, add one version that trades a portion of it for another.
             if (reforgeFromOptions.includes(fromStat)) {
@@ -357,7 +357,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
     // If we can't, optimize all pieces.
-    if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
+    if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {
         if (item.flags.includes("ItemReforged")) {
           // Do nothing
@@ -423,7 +423,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.intellect += 50;
       enchants['Back'] = "Greater Intellect"; // Tailoring version available.
 
-      if (professions.includes("Inscription")) {
+      if (professions.includes("Leatherworking")) {
         enchant_stats.intellect += 130;
         enchants['Wrist'] = "Draconic Embossment";
       }
@@ -547,7 +547,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
       return acc;
     }, {});
-
+    // Override
+    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0;
     //setStats = mergeBonusStats(effectStats);
     compileStats(setStats, compiledEffects);
     applyRaidBuffs({}, setStats);
@@ -556,6 +557,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       setStats.intellect *= 1.06;
       // mana Pool
       //setStats.crit += 4 * 179;
+
+      // Set cleanup
+      // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.
+      if (itemSet.itemList.filter(item => item.id === 32494).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
+        setStats.haste -= 208;
+        setStats.mastery += 208;
+        itemSet.itemList.filter(item => item.id === 32494)[0].socketedGems = [59496, 59480];
+      
+      }
     }
     
     if (player.spec === "Restoration Druid Classic") {

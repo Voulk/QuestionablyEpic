@@ -46,7 +46,7 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
 const getTrinketOpinion = (trinketName, spec) => {
 
     if (trinketName === "Tyrande's Favorite Doll") return "An extremely powerful pre-raid trinket that you'll use for a very long time. Worth the farm."
-    else if (trinketName === "Shard of Woe") return "Note that the valuation is based on the pre-nerf version of the trinket. It will be updated if we're actually getting the post-nerf version."
+    else if (trinketName === "Shard of Woe") return "This is the POST NERF version of Shard of Woe. Sadly it doesn't look like we're getting the proper version."
     else if (trinketName === "Vibrant Alchemist Stone") {
         if (spec === "Restoration Druid Classic") return "Alch Stone is a solid pre-raid option, but note a lot of its value comes from helping you hit a haste breakpoint which isn't fully reflected in the score";
     }

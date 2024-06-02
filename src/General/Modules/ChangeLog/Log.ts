@@ -18,6 +18,16 @@ export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
     update: 4,
+    date: "June 1 (Minor)",
+    changes: [ 
+      "Cataclysm: Cogwheel sockets are now more dynamic around haste breakpoints.",
+      "Cataclysm: Added import support for Throne gear.",
+      "Cataclysm: Swapped Shard of Woe to its post-nerf form.",
+      "Improved Report loading when your selected game doesn't match the reports."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
+    update: 4,
     date: "May 30 (Minor)",
     changes: [ 
       "Cataclysm: Socket bonuses now correctly added to each set.",
@@ -30,14 +40,14 @@ export const changeLog: entry[] = [
     date: "May 29 (Minor)",
     changes: [ 
       "Cataclysm: Auto-fill can now be used after importing.",
-      "Bugfix: Fixed dungeon dropdowns in Dragonflight Upgrade Finder."
+      "Dragonflight: Fixed dungeon dropdowns in Upgrade Finder."
     ]},
   {
     version: "10.2.7 / 4.4",
     update: 2,
     date: "May 28 (Minor)",
     changes: [ 
-      "Cataclysm: Added Haste wrist setting.",
+      "Cataclysm: Added Haste enchant wrist setting.",
       "Fixed retail settings."
     ]},
   {
