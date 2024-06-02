@@ -162,7 +162,7 @@ export function initializePaladinSet() {
     //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
 
     // Divine Favor
-    // Divine Favor has an ~11% uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
+    // Divine Favor has an ~1/6 uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
   ]
 
   castProfile.forEach(spell => {
@@ -185,7 +185,7 @@ export function initializePaladinSet() {
 export function scorePaladinSet(baseline, statProfile, player, userSettings, tierSets = []) {
   let score = 0;
   const healingBreakdown = {};
-  const fightLength = 420;
+  const fightLength = 6;
   console.log("Trying to score Paladin Set")
   console.log(statProfile);
   const state = {t: 0, holyPower: 3, spec: "Holy Paladin", currentStats: statProfile, healingDone: {}, activeBuffs: [],  healingAura: 1, settings: {reporting: false}};
@@ -205,7 +205,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   //console.log("Rejuv cost: " + fillerCost);
   //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
   const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost;
-
+  console.log("Filler CPM: " + fillerCPM + " (Cost: " + fillerCost + ")" + " (Total Mana: " + totalManaPool + ")" + "Cost per min" + baseline.costPerMinute);
   // Evaluate Stats
   // Spellpower
 
@@ -246,7 +246,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
           // Mastery
           if (spell.secondaries.includes("mastery")) {
             const absorbVal = spellHealing /*/ (1 - spell.expectedOverheal) */* (getMastery(statProfile, "Holy Paladin") - 1);
-            console.log("Mastery value of " + absorbVal + " on healing of " + spellHealing);
+            //console.log("Mastery value of " + absorbVal + " on healing of " + spellHealing);
             healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + absorbVal;
             spellTotalHealing += absorbVal;
             score += absorbVal;
@@ -277,6 +277,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
 
       // Filler mana
       if (spellProfile.fillerSpell) {
+        console.log("Total Healing: " + spellTotalHealing + " cost: " + spellProfile.cost + " cpm: " + spellProfile.cpm);
         fillerHPM = spellTotalHealing / (spellProfile.cost) / spellProfile.cpm;
       }
       
