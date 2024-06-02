@@ -118,7 +118,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
-      displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+      displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage);
     }
     else {
       // No result queued. Check URL for report code and load that.
@@ -130,7 +130,7 @@ function TopGearReport(props) {
 
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, result.player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage);
+    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage);
   }
   else {
     return   (  <div
@@ -145,9 +145,9 @@ function TopGearReport(props) {
   }
 }
 
-function displayReport(result, player, contentType, currentLanguage, gameType, t, backgroundImage, setBackgroundImage) {
+function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage) {
 
-  const boxWidth = gameType === "Classic" ? "60%" : "60%";
+  const boxWidth = "60%";
 
   let resultValid = true;
   //let result = props.result;
@@ -168,8 +168,9 @@ function displayReport(result, player, contentType, currentLanguage, gameType, t
 
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
+  const gameType = player.spec.includes("Classic") ? "Classic" : "Retail";
     const advice = getDynamicAdvice(result, player, result.contentType, gameType);
-    const gameType = player.spec.includes("Classic") ? "Classic" : "Retail";
+    
     topSet = result.itemSet;
     enchants = topSet.enchantBreakdown;
     differentials = result.differentials;
