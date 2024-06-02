@@ -119,7 +119,7 @@ const raidTrinketData: Effect[] = [
     name: "Shard of Woe",
     effects: [
       { 
-        value: {379: 410}, // TODO: Check it's not 205 for Nat / Holy spells.
+        value: {379: 205}, // TODO: Check it's not 205 for Nat / Holy spells.
       },
       {
         value: {379: 1935},
@@ -129,7 +129,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      const cpm = 22; // TODO: Pull from castmodel.
+      const cpm = 32; // TODO: Pull from castmodel.
       bonus_stats.mp5 = data[0].value[itemLevel] * cpm / 12;
       bonus_stats.haste = data[1].value[itemLevel] * data[1].duration / data[1].cooldown;
       return bonus_stats;
