@@ -654,7 +654,7 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Thorough"? 
+        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Manual"? 
         <Grid item xs={12}>
           <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
         </Grid>
