@@ -17,10 +17,18 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 5,
+    date: "June 4 (Minor)",
+    changes: [ 
+      "Cataclysm: Smart Reforge should now be more consistent on weapons.",
+      "Cataclysm: Cogwheel sockets are now more dynamic around haste breakpoints.",
+      "Cataclysm: Disabled character creation for specs that aren't implemented yet."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 4,
     date: "June 1 (Minor)",
     changes: [ 
-      "Cataclysm: Cogwheel sockets are now more dynamic around haste breakpoints.",
       "Cataclysm: Added import support for Throne gear.",
       "Cataclysm: Swapped Shard of Woe to its post-nerf form.",
       "Improved Report loading when your selected game doesn't match the reports."
