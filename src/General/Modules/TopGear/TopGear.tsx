@@ -169,7 +169,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 8 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -654,7 +654,7 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Thorough"? 
+        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Manual"? 
         <Grid item xs={12}>
           <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
         </Grid>

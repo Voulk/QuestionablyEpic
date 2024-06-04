@@ -12,7 +12,7 @@ import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
-
+import { buildNewWepCombos } from "General/Engine/ItemUtilities";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -67,6 +67,38 @@ export function expensive(time) {
     count = 0;
   while (Date.now() - start < time) count++;
   return count;
+}
+
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
+export function buildDistinctWepCombos(itemList) {
+  let wep_list = [];
+  let main_hands = itemList.filter(item => item.slot.includes("1H"));
+  let off_hands = itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield");
+  let two_handers = itemList.filter(item => item.slot.includes("2H"));
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push([two_handers[j]]);
+  }
+
+  return combos
 }
 
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
@@ -178,8 +210,8 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     itemList = itemList.concat(reforgedItems);
     
     }
-
-    let itemSets = createSets(itemList, wepCombos, true);
+    let wepCombosNew = buildDistinctWepCombos(itemList);
+    let itemSets = createSets(itemList, wepCombosNew, true);
 
     // Auto-filter some sets
     /*const filteredSets = []
@@ -560,10 +592,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
       // Set cleanup
       // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.
-      if (itemSet.itemList.filter(item => item.id === 32494).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
+      if (itemSet.itemList.filter(item => item.id === 59453).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
         setStats.haste -= 208;
         setStats.mastery += 208;
-        itemSet.itemList.filter(item => item.id === 32494)[0].socketedGems = [59496, 59480];
+        itemSet.itemList.filter(item => item.id === 59453)[0].socketedGems = [52296, 59496, 59480];
       
       }
     }
