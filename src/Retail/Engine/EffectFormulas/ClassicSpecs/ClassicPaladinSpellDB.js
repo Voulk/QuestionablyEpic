@@ -89,7 +89,7 @@ export const CLASSICPALADINSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         buffDuration: 3,
-        flat: 0,
+        flat: 473,
         coeff: 0.0504, // Estimated. Check it in Beta.
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,

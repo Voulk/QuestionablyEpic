@@ -153,13 +153,17 @@ export function initializePaladinSet() {
 }
   const castProfile = [
     //{spell: "Judgement", cpm: 1, hpc: 0},
+
     {spell: "Holy Light", cpm: 9.5, fillerSpell: true, hastedCPM: true},
     {spell: "Flash of Light", cpm: 2.2, hastedCPM: true},
     {spell: "Holy Shock", cpm: 9.5, hastedCPM: true},
     {spell: "Holy Radiance", cpm: 4.5, hastedCPM: true},
     {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3, hastedCPM: true},
     {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
+
     //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
+
+    // Test
 
     // Divine Favor
     // Divine Favor has an ~1/6 uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
