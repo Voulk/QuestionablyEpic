@@ -134,8 +134,8 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
           });
         }
 
-        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
-        else if (reforgeSetting === "Smart") {
+        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit. It isn't necessary on every spec.
+        else if (reforgeSetting === "Smart" && player.spec === "Restoration Druid Classic") {
 
           const secondaryRank = ["spirit", "mastery", "crit"]
           // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
@@ -363,7 +363,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = ["spirit", "mastery", "crit"]
+          const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit"] : ["spirit", "crit", "mastery"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));

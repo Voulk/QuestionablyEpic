@@ -242,7 +242,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
               const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
               
               const tickCount = Math.round(spell.buffDuration / (adjTickRate));
-              spellHealing = spellHealing * tickCount * targetCount;
+              spellHealing = spellHealing * tickCount// * targetCount;
           }
 
           spellHealing = spellHealing * cpm;
@@ -288,9 +288,11 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   })
   
     Object.keys(healingBreakdown).forEach(spell => {
-      healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
+      const filteredSpells = baseline.castProfile.filter(spellName => spellName.spell === spell);
+    const cpm = filteredSpells.length > 0 ? filteredSpells[0].cpm : 0;
+      healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%) - " + Math.round(healingBreakdown[spell] / 60) + " HPS - " + cpm + " CPM";
     })
-    console.log(healingBreakdown); 
+    console.log(JSON.stringify(healingBreakdown)); 
   
     // Mana
     console.log("Filler HPM: " + fillerHPM);
