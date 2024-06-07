@@ -232,6 +232,8 @@ export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLang
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
+
+    return itemSets;
     
     // Build Differentials
     let differentials = [];

@@ -28,6 +28,7 @@ import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInf
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineBC";
+import { buildDifferential, generateReportCode } from "./Engine/TopGearEngineShared";
 
 type ShortReport = {
   id: string;
@@ -539,15 +540,30 @@ export default function TopGear(props: any) {
             
             const mergedResults: any[] = results.flat();
             
-
+            console.log(mergedResults);
             mergedResults.sort((a, b) => {
               // Define your sorting logic here
               // For example, if each result is an object with a 'score' property:
-              return b.itemSet.hardScore - a.itemSet.hardScore; // Sort in descending order of score
+              return b.hardScore - a.hardScore; // Sort in descending order of score
             });
             console.log(mergedResults);
+
+            // Build Differentials
+            let differentials = [];
+            let primeSet = mergedResults[0];
+            for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, mergedResults.length); i++) {
+              const differential = buildDifferential(mergedResults[i], primeSet, props.player, contentType);
+              if (differential.items.length > 0 || differential.gems.length > 0) differentials.push(differential);
+
+            }
+            //itemSets[0].printSet()
+
+            let result = new TopGearResult(mergedResults[0], differentials, "Raid");
+            result.itemsCompared = 999;
+            result.id = generateReportCode();
+
             
-            const shortResult = shortenReport(mergedResults[0], props.player);
+            const shortResult = shortenReport(result, props.player);
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);
             
