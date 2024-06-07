@@ -27,6 +27,7 @@ import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { prepareTopGear } from "./Engine/TopGearEngineBC";
 
 type ShortReport = {
   id: string;
@@ -514,37 +515,78 @@ export default function TopGear(props: any) {
           setBtnActive(true);
         });
     } else if (gameType === "Classic") {
-      console.log("Initiating Top Gear Classic");
-      const reforgeOn = !(getSetting(playerSettings, "reforgeSetting") === "Dont reforge");
-      const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
-      
-      let instance = new worker();
-      instance
-        .runTopGearBC(itemList, wepCombos, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel, reforgeOn, reforgeFromList, reforgeToList)
-        .then((result: TopGearResult | null) => {
-          if (result) {
-          //apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
-          const shortResult = shortenReport(result, props.player);
-          if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
-          props.setTopResult(shortResult);
+        console.log("Initiating Top Gear Classic");
+        const reforgeOn = !(getSetting(playerSettings, "reforgeSetting") === "Dont reforge");
+        const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+        const t0 = performance.now();
+        // Start multiple workers and run TopGearBC with each worker
+        // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.
+        const itemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
+        const workerPromises = []
+        const workerCount = 4;
+        const chunkSize = itemSets.length / workerCount;
+        console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize);
+        const t1 = performance.now();
+        for (let i = 0; i < workerCount; i++) {
+          // Create itemSet chunk.
+          workerPromises.push(runTopGearWorker(i, worker, itemSets.slice(i * chunkSize, (i + 1) * chunkSize), strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel));
+        }
+        console.log("Thread Spins took " + (performance.now() - t1) + " milliseconds.");
+        // Wait for all worker promises to resolve
+        Promise.all(workerPromises)
+        .then(results => {
+            // TODO: Merge results then sort.
+            
+            const mergedResults: any[] = results.flat();
+            
 
-          instance.terminate();
-          history.push("/report/");
-          }
-
+            mergedResults.sort((a, b) => {
+              // Define your sorting logic here
+              // For example, if each result is an object with a 'score' property:
+              return b.itemSet.hardScore - a.itemSet.hardScore; // Sort in descending order of score
+            });
+            console.log(mergedResults);
+            
+            const shortResult = shortenReport(mergedResults[0], props.player);
+            if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
+            props.setTopResult(shortResult);
+            
+            /*mergedResults.forEach(result => {
+                if (result) {
+                    const shortResult = shortenReport(result, props.player);
+                    if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
+                    props.setTopResult(shortResult);
+                }
+            }); */
+            const t2 = performance.now();
+            console.log("Operation took " + (t2 - t0) + " milliseconds.");
+            history.push("/report/");
         })
-        .catch((err: Error) => {
-          // If top gear crashes for any reason, log the error and then terminate the worker.
-          reportError("", "Classic Top Gear Crash", err, strippedPlayer.spec);
-          setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
-          instance.terminate();
-          setBtnActive(true);
+        .catch(error => {
+            console.error("Error running TopGearBC:", error);
         });
-    } else {
+      } 
+     else {
       /* ---------------------------------------- Return error. --------------------------------------- */
       reportError("", "Top Gear Invalid Game Type", "", gameType);
     }
   };
+
+  function runTopGearWorker(i, worker, itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel) {
+    return new Promise((resolve, reject) => {
+        const instance = new worker();
+        instance
+            .runTopGearBC(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
+            .then(result => {
+                instance.terminate();
+                resolve(result);
+            })
+            .catch(error => {
+                instance.terminate();
+                reject(error);
+            });
+    });
+  }
 
   const unleashTopGear = () => {
     /* ----------------------- Call to the Top Gear Engine. Lock the app down. ---------------------- */
