@@ -191,7 +191,7 @@
         "TopGear": "Find your best gear set",
         "EmbellishmentAnalysis": "See all Embellishment effects at once",
         "FightAnalysis": "",
-        "TrinketAnalysis": "A multiple item level trinket graph",
+        "TrinketAnalysis": "Check out how strong trinkets are at different item levels",
         "UpgradeFinder": "Find your next piece of gear",
         "SequenceSandbox": "Details coming soon",
         "OneShot": "Mythic+ Damage Calculator"
@@ -199,7 +199,7 @@
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
-      "SequenceSandbox": "Sequence Sandbox (Pre-Alpha)",
+      "SequenceSandbox": "Spell Information (Alpha)",
       "OneShot": "One Shot (Beta)"
     },
     "Name": "Name",
@@ -286,6 +286,7 @@
         "trinkets": "Trinkets",
         "upgradeFinder": "Upgrade Finder",
         "embellishments": "Embellishments",
+        "enchants": "Enchants",
 
         "enchantItems": {
           "title": "Enchant Items",
@@ -372,6 +373,19 @@
         "manaProfile": {
           "title": "Mana Profile",
           "tooltip": "Pick a more or less aggressive mana profile."
+        },
+
+        "wristEnchant": {
+          "title": "Wrist Enchant",
+          "tooltip": "While intellect is always better, it's also very expensive which can be prohibitive during early gearing."
+        },
+        "bootsEnchant": {
+          "title": "Boot Enchant",
+          "tooltip": "While lavawalker is generally better, it's ok to use a haste enchant in early gearing to help reach breakpoints."
+        },
+        "gloveEnchant": {
+          "title": "Glove Enchant",
+          "tooltip": ""
         },
 
         "numManaTides": {

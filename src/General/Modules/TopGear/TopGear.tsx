@@ -141,7 +141,7 @@ const sendReport = (shortReport: ShortReport) => {
   
   fetch('https://questionablyepic.com/api/addReport.php', requestOptions)
   //.then(response => response.text())
-  .then(response => console.log(response));
+  .then(response => console.log(""));
   //.then(data => this.setState({ postId: data.id }));
 }
 
@@ -169,7 +169,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 8 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -359,7 +359,7 @@ export default function TopGear(props: any) {
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += slot + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += getTranslatedSlotName(slot.toLowerCase(), currentLanguage) + ", ";
         
       })
 
@@ -654,7 +654,7 @@ export default function TopGear(props: any) {
         <Grid item xs={12}>
           <ItemBar player={props.player} setItemList={setItemList} />
         </Grid>
-        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Thorough"? 
+        {gameType === "Classic" && getSetting(playerSettings, "reforgeSetting") === "Manual"? 
         <Grid item xs={12}>
           <TopGearReforgePanel changeReforgeFrom={changeReforgeFrom} changeReforgeTo={changeReforgeTo} reforgeFrom={reforgeFromList} reforgeTo={reforgeToList} />
         </Grid>
@@ -704,7 +704,7 @@ export default function TopGear(props: any) {
         <div
           style={{
             display: "flex",
-            width: "90%",
+            width: "100%",
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignItems: "center",
@@ -713,10 +713,10 @@ export default function TopGear(props: any) {
           <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
-          <div>
-            <Typography variant="subtitle2" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
+          <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
               {getErrorMessage()}
             </Typography>
+          <div>
             <Button 
               variant="contained" 
               color="primary" 

@@ -15,8 +15,19 @@ import { useSelector } from "react-redux";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { patronColor } from "./PatronColors";
+import { styled } from "@mui/system";
 
 // import ReactGA from "react-ga";n
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  border: "1px solid #ffffff3b",
+  "&:hover": {
+    color: "white",
+    border: "1px solid #ffffff3b",
+    backgroundColor: "rgb(255, 255, 255, 0.08)",
+  },
+}));
 
 const useStyles = makeStyles((theme) => ({
   qeLogo: {
@@ -154,13 +165,11 @@ export default function QEHeader(props) {
                     allChars={props.allChars}
                   />
                 </Grid>
-                {/*<Grid item>
-                  <Link to={"https://questionablyepic.com"}>
-                    <Tooltip title={"Guides"} arrow>
-                        <div>Guides</div>
-                    </Tooltip>
-                  </Link>
-                </Grid> */}
+                <Grid item>
+                  <StyledButton color={"white"} variant="outlined" onClick={() => window.open("https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide", "_blank")}>
+                    {"Help"}
+                  </StyledButton>
+                </Grid>
                 {/*<Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid> */}

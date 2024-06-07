@@ -100,16 +100,27 @@ class ItemSet {
   // }
 
   getStartingStats(gameType: gameTypes): Stats {
-      const stats: Stats = {}
+      const stats: Stats = gameType === "Retail" ? {
+        intellect: 2091,
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 0,
+        leech: 0,
+        hps: 0,
+        dps: 0,
+        mana: 0, // Evoker 2091
+        allyStats: 0,
+      } :
+      {
+        spellpower: 0,
+        intellect: 156, // Technically changes per race.
+        spirit: 173, // Technically changes per race.
+        mp5: 0,
+      }
       if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 2091;
       else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 2087;
       else if (this.spec === "Mistweaver Monk") stats.intellect = 2086;
-      else if (this.spec.includes("Classic"))  {
-        stats.spellpower = 0;
-        stats.intellect = 156; // Technically changes per race.
-        stats.spirit = 173; // Technically changes per race.
-        stats.mp5 = 0;
-      }
       return stats
   }
 
@@ -119,6 +130,11 @@ class ItemSet {
     let setStats =  this.getStartingStats(gameType)
     let setSockets = 0;
     
+    if (gameType === "Classic") {
+      // Replace every item with a duplicate.
+      this.itemList = this.itemList.map(item => JSON.parse(JSON.stringify(item)));
+    }
+
     for (let i = 0; i < this.itemList.length; i++) {
       let item = this.itemList[i];
 

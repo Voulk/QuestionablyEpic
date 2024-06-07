@@ -11,6 +11,33 @@
 
 export const gemDB = [
   {
+    id: 59480,
+    rarity: "epic",
+    name: {
+      en: "Fractured Cogwheel",
+    },
+    icon: "inv_misc_enggizmos_30",
+    stats: { mastery: 208 },
+  },
+  {
+    id: 59479,
+    rarity: "epic",
+    name: {
+      en: "Quick Cogwheel",
+    },
+    icon: "inv_misc_enggizmos_30",
+    stats: { haste: 208 },
+  },
+  {
+    id: 59496,
+    rarity: "epic",
+    name: {
+      en: "Sparkling Cogwheel",
+    },
+    icon: "inv_misc_enggizmos_30",
+    stats: { spirit: 208 },
+  },
+  {
     id: 52236,
     rarity: "rare",
     name: {

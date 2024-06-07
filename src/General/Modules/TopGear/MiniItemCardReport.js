@@ -164,7 +164,7 @@ export default function ItemCardReport(props) {
   return (
     <Grid item xs={12}>
       <Card
-        className={isVault ? classes.vault : !item.isEquipped && item.slot != "CombinedWeapon" ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
+        className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
         style={{ backgroundColor: "rgba(34, 34, 34, 0.27)" }} // 52
       >

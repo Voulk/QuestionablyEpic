@@ -17,12 +17,56 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 5,
+    date: "June 4 (Minor)",
+    changes: [ 
+      "Cataclysm: Smart Reforge should now be more consistent on weapons.",
+      "Cataclysm: Cogwheel sockets are now more dynamic around haste breakpoints.",
+      "Cataclysm: Disabled character creation for specs that aren't implemented yet."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
+    update: 4,
+    date: "June 1 (Minor)",
+    changes: [ 
+      "Cataclysm: Added import support for Throne gear.",
+      "Cataclysm: Swapped Shard of Woe to its post-nerf form.",
+      "Improved Report loading when your selected game doesn't match the reports."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
+    update: 4,
+    date: "May 30 (Minor)",
+    changes: [ 
+      "Cataclysm: Socket bonuses now correctly added to each set.",
+      "Cataclysm: Prismatic gems are now correctly ignored for the sake of socket bonuses.",
+      "Cataclysm: Fixed an issue where imports could fail with non-socketed belt items."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
+    update: 3,
+    date: "May 29 (Minor)",
+    changes: [ 
+      "Cataclysm: Auto-fill can now be used after importing.",
+      "Dragonflight: Fixed dungeon dropdowns in Upgrade Finder."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
+    update: 2,
+    date: "May 28 (Minor)",
+    changes: [ 
+      "Cataclysm: Added Haste enchant wrist setting.",
+      "Fixed retail settings."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 1,
-    date: "May 27 (Major)",
+    date: "May 28 (Major)",
     changes: [ 
       "Cataclysm: Resto Druid.",
       "Revamped Top Gear report visuals.",
-      "Revamped item selection cards."
+      "Revamped item selection cards.",
+      "Added help button",
     ]},
   {
     version: "10.2.7",

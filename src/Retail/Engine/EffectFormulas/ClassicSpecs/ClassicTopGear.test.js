@@ -11,7 +11,7 @@ describe("Top Gear Test", () => {
     test("Top Gear Test", () => {
         const itemIDList = [68777,67131,67130,64904,64673,64672,64645,64489,62431,62420,62050,60280,60278,59453,59220,58484,58189,56561,56297,56361,56405, 60276]; // 
         const itemList = [];
-        const player = new Player("Voulk", "Restoration Druid Classic", 99, "NA", "Stonemaul", "Night Elf");
+        const player = new Player("Voulk", "Holy Paladin Classic", 99, "NA", "Stonemaul", "Night Elf");
         const store = createStore(rootReducer, /* preloadedState, */ composeWithDevTools());
         const gameType = "Classic";
         const resultData = [];
@@ -26,11 +26,12 @@ describe("Top Gear Test", () => {
 
         expect(true).toEqual(true);
 
-        /*
+        
         let wepCombos = buildNewWepCombos(player, true);
 
+        /*
         const result = runTopGearBC(itemList, wepCombos, player, "Raid", 0, "en", store.getState().playerSettings, castModel, true, [], [])
-        
+
         //console.log(JSON.stringify(result.differentials.map(differentials => differentials.items.map(item => item.name))));
 
         result.itemSet.itemList.forEach(item => {

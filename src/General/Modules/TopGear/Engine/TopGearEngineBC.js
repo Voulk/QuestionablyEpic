@@ -2,20 +2,17 @@ import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
 import Item from "../../Player/Item";
 import React, { useState, useEffect } from "react";
-import { STATPERONEPERCENT, BASESTAT, STATDIMINISHINGRETURNS } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
 
 import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import ClassicPlayer from "../../Player/ClassicPlayer";
-import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
-import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction, setupGems } from "./TopGearEngineShared"
+import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
-
-import { gemDB } from "Databases/GemDB";
+import { buildNewWepCombos } from "General/Engine/ItemUtilities";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -72,6 +69,38 @@ export function expensive(time) {
   return count;
 }
 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// composite "fake item". Top Gear can then separate them after combinations have been built.
+export function buildDistinctWepCombos(itemList) {
+  let wep_list = [];
+  let main_hands = itemList.filter(item => item.slot.includes("1H"));
+  let off_hands = itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield");
+  let two_handers = itemList.filter(item => item.slot.includes("2H"));
+  let combos = []
+
+  for (let i = 0; i < main_hands.length; i++) {
+    // Some say j is the best variable for a nested loop, but are they right?
+    let main_hand = main_hands[i];
+    for (let k = 0; k < off_hands.length; k++) {
+      let off_hand = off_hands[k];
+
+      if (main_hand.vaultItem && off_hand.vaultItem) {
+        // If both main hand and off hand are vault items, then we can't make a combination out of them.
+        continue;
+      } else {
+        const combo = [main_hand, off_hand];
+        combos.push(combo);
+      }
+    }
+  }
+
+  for (let j = 0; j < two_handers.length; j++) {
+    combos.push([two_handers[j]]);
+  }
+
+  return combos
+}
+
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
@@ -113,27 +142,32 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
       itemList.forEach(item => {
         const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
         const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
+
         //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
-        itemStats.forEach(fromStat => {
-          // for each stat, add one version that trades a portion of it for another.
-          if (reforgeSetting === "Thorough" && reforgeFromOptions.includes(fromStat) /*&& (item.name === "Dorian's Lost Necklace" || item.name === "Stormrider's Cover"|| item.name === "Stormrider's Vestment")*/) {
-            itemReforgeOptions.forEach(targetStat => {
-              const newItem = JSON.parse(JSON.stringify(item));
-             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-              newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
-              newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
-              newItem.uniqueHash = Math.random().toString(36).substring(7);
-              //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-              newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+        if (reforgeSetting === "Manual") {
+          itemStats.forEach(fromStat => {
+            // for each stat, add one version that trades a portion of it for another.
+            if (reforgeFromOptions.includes(fromStat)) {
+              itemReforgeOptions.forEach(targetStat => {
 
-              reforgedItems.push(newItem);
-            })
-          }
+                const newItem = JSON.parse(JSON.stringify(item));
+               // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+                newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
+                newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+                //newItem.uniqueHash = Math.random().toString(36).substring(7);
+                //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+                newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+                newItem.flags.push("ItemReforged");
+  
+                reforgedItems.push(newItem);
+              })
+            }
+  
+          });
+        }
 
-        });
-        
-        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
-        if (reforgeSetting === "Smart") {
+        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit. It isn't necessary on every spec.
+        else if (reforgeSetting === "Smart" && player.spec === "Restoration Druid Classic") {
 
           const secondaryRank = ["spirit", "mastery", "crit"]
           // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
@@ -145,10 +179,12 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
             newItem.stats[targetStat] = Math.round(reforgeAmount);
             newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
-            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+            newItem.flags.push("ItemReforged");
             reforgedItems.push(newItem);
+
             //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
             
           }
@@ -161,20 +197,21 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
             newItem.stats['haste'] = Math.round(reforgeAmount);
             newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
-            newItem.uniqueHash = Math.random().toString(36).substring(7);
+            //newItem.uniqueHash = Math.random().toString(36).substring(7);
             //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
             newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
+            newItem.flags.push("ItemReforged");
             reforgedItems.push(newItem);
             //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
           }
         }
         
-    })
-    
+    });
     itemList = itemList.concat(reforgedItems);
+    
     }
-
-    let itemSets = createSets(itemList, wepCombos, true);
+    let wepCombosNew = buildDistinctWepCombos(itemList);
+    let itemSets = createSets(itemList, wepCombosNew, true);
 
     // Auto-filter some sets
     /*const filteredSets = []
@@ -197,15 +234,17 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     for (var i = 0; i < count; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
     }
-    
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
+    
     // Build Differentials
     let differentials = [];
     let primeSet = itemSets[0];
     for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
-      differentials.push(buildDifferential(itemSets[i], primeSet, newPlayer, contentType));
+      const differential = buildDifferential(itemSets[i], primeSet, newPlayer, contentType);
+      if (differential.items.length > 0 || differential.gems.length > 0) differentials.push(differential);
+
     }
     //itemSets[0].printSet()
 
@@ -219,6 +258,7 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     } else {
       let result = new TopGearResult(itemSets[0], differentials);
       result.itemsCompared = count;
+      result.id = generateReportCode();
       return result;
     }
 }
@@ -231,12 +271,14 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline, professions) {
     // Get Base Stats
+    
     let builtSet = itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
     let tierList = [];
+    
 
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
@@ -270,18 +312,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       haste: 0,
     };
 
-    // Talents
-    let gemStats = {
-      intellect: 0,
-      spellpower: 0,
-      spirit: 0,
-      haste: 0,
-      crit: 0,
-      stamina: 0,
-      mastery: 0,
-      mp5: 0,
-    }
-  
+
     /*
     let adjusted_weights = {
       intellect: 1,
@@ -358,8 +389,27 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
     // If we can't, optimize all pieces.
+    if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
+      itemSet.itemList.forEach((item, index) => {
+        if (item.flags.includes("ItemReforged")) {
+          // Do nothing
+        }
+        else {
+          const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit"] : ["spirit", "crit", "mastery"];
+          const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+          const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+          const toStat = secondaryRank.find(value => !itemStats.includes(value));
 
-
+          if (fromStat && toStat && secondaryRank.indexOf(fromStat) > secondaryRank.indexOf(toStat)) {
+            const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
+            setStats[fromStat] -= reforgeValue;
+            setStats[toStat] += reforgeValue;
+            item.flags.push("Reforged: " + fromStat + " -> " + toStat);
+            item.flags.push("ItemReforged");
+          }
+        }
+      });
+  }
 
    let adjusted_weights = {...castModel.baseStatWeights}
     // Mana Profiles
@@ -405,17 +455,21 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.intellect += 50;
       enchants['Back'] = "Greater Intellect"; // Tailoring version available.
 
-      if (professions.includes("Inscription")) {
+      if (professions.includes("Leatherworking")) {
         enchant_stats.intellect += 130;
         enchants['Wrist'] = "Draconic Embossment";
       }
-      else {
+      else if (getSetting(playerSettings, "wristEnchant") === "Intellect (better)") {
         enchant_stats.intellect += 50;
         enchants['Wrist'] = "Mighty Intellect";
       }
+      else {
+        enchant_stats.haste += 50;
+        enchants['Wrist'] = "Speed";
+      }
 
   
-      if (player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
+      if (getSetting(playerSettings, "gloveEnchant") === "Haste") {//player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
         enchant_stats.haste += 50;
         enchants['Hands'] = "Haste"
       }
@@ -428,8 +482,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.spirit += 55;
       enchants['Legs'] = "Powerful Ghostly Spellthread"
   
-      enchant_stats.mastery += 35;
-      enchants['Feet'] = "Lavawalker" // Spirit version available but not great.
+      if (getSetting(playerSettings, "bootsEnchant") === "Haste (cheaper)") {
+        enchant_stats.haste += 50;
+        enchants['Feet'] = "Haste";
+      }
+      else {
+        enchant_stats.mastery += 35;
+        enchants['Feet'] = "Lavawalker"
+      }
+
   
       if ("profession" === "Enchanting") // todo 
       {
@@ -441,6 +502,12 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchants['CombinedWeapon'] = "Power Torrent"
       enchants['1H Weapon'] = "Power Torrent"
       enchants['2H Weapon'] = "Power Torrent"
+
+      if (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0) {
+        enchant_stats.intellect += 40;
+        enchants['Offhand'] = "Superior Intellect"
+        enchants['Shield'] = "Superior Intellect"
+      }
     }
     // Flasks and profession stuff.
     enchant_stats.intellect += 300;
@@ -512,16 +579,25 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
       return acc;
     }, {});
-
+    // Override
+    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0;
     //setStats = mergeBonusStats(effectStats);
     compileStats(setStats, compiledEffects);
-
     applyRaidBuffs({}, setStats);
     if (player.getSpec() === "Restoration Druid Classic") {
       // 
       setStats.intellect *= 1.06;
       // mana Pool
       //setStats.crit += 4 * 179;
+
+      // Set cleanup
+      // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.
+      if (itemSet.itemList.filter(item => item.id === 59453).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
+        setStats.haste -= 208;
+        setStats.mastery += 208;
+        itemSet.itemList.filter(item => item.id === 59453)[0].socketedGems = [52296, 59496, 59480];
+      
+      }
     }
     
     if (player.spec === "Restoration Druid Classic") {
@@ -544,10 +620,11 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         }
       }
     }
-    //console.log("END SCORE: " + hardScore);
+
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
+
     return builtSet; // Temp
   }
 

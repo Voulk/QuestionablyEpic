@@ -3,7 +3,6 @@ import { fightDuration } from "General/Modules/CooldownPlanner/Functions/Functio
 
 export default function createGnarlrootEvents(bossID, difficulty, damageTakenData, debuffs, starttime, enemyHealth, enemyCasts, buffData, friendlyHealth, enemyEnergy, endTime, enemyDebuffData) {
   let events = [];
-  console.log(enemyDebuffData);
 
   events.push({ time: "00:00", bossAbility: "Phase 1" }); // Push Phase 1 Object into events
 

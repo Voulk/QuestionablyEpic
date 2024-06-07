@@ -1,5 +1,5 @@
 
-const softSlice = 3000;
+const softSlice = 25;
 import { gemDB } from "Databases/GemDB";
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
@@ -186,22 +186,17 @@ export const setupGems = (itemList, adjusted_weights) => {
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
 
+    const gemResults = [];
+    const redGemItemIndex = [];
+    const gemScores = {};
 
-      // We will optimize yellow gems in three steps:
-      // - Cycle through gear and check if there are red / yellow, yellow / yellow or pure yellow sockets. If we've found enough to fulfill our quota, stop. Else:
-      // - Place them in red sockets. If we've found enough to fulfill our quota, stop. Else:
-      // - Place them anywhere. Your gear sucks, unlucky.
-      const gemResults = [];
-      const redGemItemIndex = [];
-      const gemScores = {};
-
-      const scoreSocketBonus = (bonus) => {
-        let score = 0;
-        Object.entries(bonus).forEach(([key, value]) => {
-          score = adjusted_weights[key] * value
-        });
-        return score;
-      }
+    const scoreSocketBonus = (bonus) => {
+      let score = 0;
+      Object.entries(bonus).forEach(([key, value]) => {
+        score = adjusted_weights[key] * value
+      });
+      return score;
+    }
 
       // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
       itemList.forEach((item, index) => {
@@ -253,7 +248,7 @@ export const setupGems = (itemList, adjusted_weights) => {
             let newScore = newSockets.reduce((accumulator, socket) => accumulator + socketScores[gemIDS[socket]] || 0, 0);
 
             // Check if adding the yellow socket gives us a bonus.
-            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index]);
+            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index] || sockets[index] === "prismatic");
 
             if (socketBonus && item.classicSockets.bonus) {
               newScore += scoreSocketBonus(item.classicSockets.bonus);
@@ -280,10 +275,18 @@ export const setupGems = (itemList, adjusted_weights) => {
       item.socketedGems.forEach(gemID => {
         socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
       });
+
+      if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {
+        // Socket bonus
+        if (item.classicSockets.bonus) socketedGemStats.push(item.classicSockets.bonus);
+      }
+
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
         socketedGemStats.push({haste: 208});
         socketedGemStats.push({spirit: 208});
+        item.socketedGems.push(59479);
+        item.socketedGems.push(59496);
       }
 
       // Check bonus. We can maybe do this doing the prior step and just flag it.

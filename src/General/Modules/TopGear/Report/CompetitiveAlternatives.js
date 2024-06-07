@@ -165,7 +165,7 @@ function CompetitiveAlternatives(props) {
                               fontSize: 14,
                             }}
                           >
-                            {key.rawDifference + " HPS (" + roundTo(key.scoreDifference, 2) + "%)"}
+                            {(gameType === "Classic" ? Math.round(key.rawDifference / 60) : key.rawDifference) + " HPS (" + roundTo(key.scoreDifference, 2) + "%)"}
                           </Typography>
                         </Grid>
                       </Grid>
