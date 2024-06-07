@@ -156,9 +156,9 @@ export function initializePaladinSet() {
 
     {spell: "Holy Light", cpm: 9.5, fillerSpell: true, hastedCPM: true},
     {spell: "Flash of Light", cpm: 2.2, hastedCPM: true},
-    {spell: "Holy Shock", cpm: 9.5, hastedCPM: true},
-    {spell: "Holy Radiance", cpm: 4.5, hastedCPM: true},
-    {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3, hastedCPM: true},
+    {spell: "Holy Shock", cpm: 8.5, hastedCPM: true},
+    {spell: "Holy Radiance", cpm: 4, hastedCPM: true},
+    {spell: "Light of Dawn", cpm: (8.5 + 4)/3, hastedCPM: true},
     {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
 
     //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
@@ -220,7 +220,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       fullSpell.forEach(spell => {
         if (spell.type === "heal" || spell.type === "classic periodic") {
           const genericMult = 1.05 * 1.06 * 1.09 * (spellProfile.bonus ? spellProfile.bonus : 1); // Seal of Insight, Divinity, Conviction
-          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : (spellProfile.cpm)) * baseHastePercentage;
+          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : 0) // (spellProfile.cpm)) * baseHastePercentage;
           const targetCount = spell.targets ? spell.targets : 1;
           let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
           if (tierSets.includes("Paladin T11-2") && spellName === "Holy Light") critBonus += 0.05;
