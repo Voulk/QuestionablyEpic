@@ -359,7 +359,7 @@ export default function TopGear(props: any) {
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += slot + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += getTranslatedSlotName(slot.toLowerCase(), currentLanguage) + ", ";
         
       })
 
