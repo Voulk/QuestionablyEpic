@@ -39,12 +39,14 @@ export const generateReportCode = () => {
       rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
     };
   
-    for (var x = 0; x < primeList.length; x++) {
+    for (var x = 0; x < diffList.length; x++) {
       // Check if the other set has the corresponding slot.
       if ((primeList[x].slot === "Offhand" && !diffList[x])) {
         // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
         continue;
       }
+
+      /*
       if (diffList[x] && primeList[x].uniqueHash !== diffList[x].uniqueHash) {
         differentials.items.push(diffList[x]);
         doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
@@ -53,6 +55,10 @@ export const generateReportCode = () => {
         if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
           differentials.items.push(diffList[x - 1]);
         }
+      } */
+      if (!(primeList.some(item => item.uniqueHash === diffList[x].uniqueHash))) {
+        differentials.items.push(diffList[x]);
+        // The item is in both sets.
       }
     }
   
@@ -185,9 +191,10 @@ export const setupGems = (itemList, adjusted_weights) => {
 
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
+    const topGearGems = {};  // {itemID: [gems]}
+
 
     const gemResults = [];
-    const redGemItemIndex = [];
     const gemScores = {};
 
     const scoreSocketBonus = (bonus) => {
@@ -289,7 +296,8 @@ export const setupGems = (itemList, adjusted_weights) => {
         item.socketedGems.push(59496);
       }
 
-      // Check bonus. We can maybe do this doing the prior step and just flag it.
+      topGearGems[item.id] = item.socketedGems;
+      item.socketedGems = [];
     });
     const compiledGems = socketedGemStats.reduce((acc, obj) => {
       for (const [key, value] of Object.entries(obj)) {
@@ -298,7 +306,10 @@ export const setupGems = (itemList, adjusted_weights) => {
       return acc;
     }, {});
 
-    return compiledGems
+    // Remove gems from items and add to dictionary instead.
+    
+
+    return {stats: compiledGems, gems: topGearGems};
 }
 
 /*

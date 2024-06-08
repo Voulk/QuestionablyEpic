@@ -19,7 +19,7 @@ import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 3000;
+const softSlice = 1500;
 const DR_CONST = 0.00196669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
@@ -489,7 +489,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
-    compileStats(setStats, compiledGems);
+    builtSet.gems = compiledGems.gems;
+    compileStats(setStats, compiledGems.stats);
 
     if (true) {
       enchant_stats.intellect += 60;

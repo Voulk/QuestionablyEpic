@@ -181,9 +181,10 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     const manaSources = {}
 
     // Setup Slots / Set IDs.
-  itemList.forEach(item => {
+    itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
+      item.socketedGems = (topSet.gems && item.id in topSet.gems) ? topSet.gems[item.id] : [];
     })
 
 
