@@ -268,12 +268,6 @@ function compileSetStats(itemSet) {
     mp5: 0
   }
 
-    
-
-    // Replace every item with a duplicate. This is actually quite slow and we should change it.
-    //itemSet.itemList = itemSet.itemList.map(item => JSON.parse(JSON.stringify(item)));
-
-
     for (let i = 0; i < itemSet.itemList.length; i++) {
       let item = itemSet.itemList[i];
 
@@ -454,7 +448,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit"] : ["spirit", "crit", "mastery"];
+          const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit"] : ["haste", "spirit", "crit", "mastery"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
