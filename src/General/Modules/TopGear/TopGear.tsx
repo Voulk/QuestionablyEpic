@@ -525,7 +525,7 @@ export default function TopGear(props: any) {
         // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.
         const itemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
         const workerPromises = []
-        const workerCount = 4;
+        const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
         const chunkSize = itemSets.length / workerCount;
         console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize);
         const t1 = performance.now();

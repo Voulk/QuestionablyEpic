@@ -243,7 +243,7 @@ export const setupGems = (itemList, adjusted_weights) => {
         const sockets = item.classicSockets.sockets;
         let itemIndex = 0;
         sockets.forEach((socket, socketIndex) => {
-          if (/*sockets[socketIndex] === "yellow" ||*/ sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
+          if (item.socketedGems[socketIndex] === 52208 || sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
           else {
             let score = 0;
             // The socket isn't yellow, try and make it orange.
@@ -270,7 +270,6 @@ export const setupGems = (itemList, adjusted_weights) => {
         
       });
       gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
-
       for (let i = 0; i < mandatoryYellows; i++) {
         //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
         itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
