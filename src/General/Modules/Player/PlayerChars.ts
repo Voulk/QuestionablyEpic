@@ -30,7 +30,7 @@ export function createPlayerChars(): PlayerChars {
       let index = 0;
       if (playerChars.length !== 0) {
         playerChars.forEach(function (player: any) {
-          if (player.gameType === "Classic" || player.gameType === "BurningCrusade") {
+          if (false) {//player.gameType === "Classic" || player.gameType === "BurningCrusade") {
             //charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
           }
           else {

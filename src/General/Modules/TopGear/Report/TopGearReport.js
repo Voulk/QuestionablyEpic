@@ -110,7 +110,7 @@ function TopGearReport(props) {
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
-        window.history.pushState('QE Live Report', 'Title', 'dev/ptr/' + result.id);
+        window.history.pushState('QE Live Report', 'Title', 'ptr/report' + result.id);
       }
       else {
         // Call Error
@@ -179,11 +179,13 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
     const manaSources = {}
+    console.log(topSet);
 
     // Setup Slots / Set IDs.
-  itemList.forEach(item => {
+    itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
+      item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
     })
 
 
