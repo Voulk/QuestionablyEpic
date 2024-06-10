@@ -448,7 +448,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit"] : ["haste", "spirit", "crit", "mastery"];
+          const secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit"] : ["haste", "spirit", "crit", "mastery"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));

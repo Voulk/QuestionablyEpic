@@ -941,7 +941,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
-      (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372) /*|| key.itemLevel === 379*/) && 
+      (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -957,7 +957,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
-        (!([62458, 59514].includes(item.id)))) {
+        (!([62458, 59514, 68711, 62472].includes(item.id)))) { // X, Y and two Mandala since there's 3x versions of it.
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);

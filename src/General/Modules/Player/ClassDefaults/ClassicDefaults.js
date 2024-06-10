@@ -190,8 +190,6 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   let score = 0;
   const healingBreakdown = {};
   const fightLength = 6;
-  console.log("Trying to score Paladin Set")
-  console.log(statProfile);
   const state = {t: 0, holyPower: 3, spec: "Holy Paladin", currentStats: statProfile, healingDone: {}, activeBuffs: [],  healingAura: 1, settings: {reporting: false}};
   const spellpower = statProfile.intellect + statProfile.spellpower;
   const critPercentage = statProfile.crit / 179 / 100 + 1;
@@ -220,7 +218,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       fullSpell.forEach(spell => {
         if (spell.type === "heal" || spell.type === "classic periodic") {
           const genericMult = 1.05 * 1.06 * 1.09 * (spellProfile.bonus ? spellProfile.bonus : 1); // Seal of Insight, Divinity, Conviction
-          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : 0) // (spellProfile.cpm)) * baseHastePercentage;
+          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : (spellProfile.cpm)) * baseHastePercentage;
           const targetCount = spell.targets ? spell.targets : 1;
           let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
           if (tierSets.includes("Paladin T11-2") && spellName === "Holy Light") critBonus += 0.05;

@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 6,
+    date: "June 4 (Major)",
+    changes: [ 
+      "Cataclysm: Greatly increased the speed of Resto Druid Top Gear.",
+      "Cataclysm: Fixed the stat allocation on non-plate 372 Affix belts.",
+      "Cataclysm: Fixed a few affix item imports."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 5,
     date: "June 4 (Minor)",
     changes: [ 
