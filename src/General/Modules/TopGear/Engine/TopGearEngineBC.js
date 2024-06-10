@@ -178,6 +178,8 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           newItem.flags.push("ItemReforged");
           reforgedItems.push(newItem);
 
+          
+
           //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
           
         }
