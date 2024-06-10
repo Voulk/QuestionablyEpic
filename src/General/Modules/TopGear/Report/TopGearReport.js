@@ -186,6 +186,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
       item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
+      if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
     })
 
 
