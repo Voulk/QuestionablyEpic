@@ -122,14 +122,23 @@ export const CLASSICPALADINSPELLDB = {
         tags: ['Holy Power Spender'],
     }],
     "Judgement": [{
-        // Regrowth direct heal portion
         spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
         type: "damage",
         castTime: 0, 
         cost: 5, 
         flat: 1,
-        coeff: 1, // Adjust this per Holy Power. 
+        coeff: 1, 
         cooldownData: {cooldown: 6, activeCooldown: 0},
+        secondaries: ['crit'] 
+    }],
+    "Crusader Strike": [{
+        spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
+        type: "damage",
+        castTime: 0, 
+        cost: 4.5, 
+        flat: 1,
+        coeff: 1, 
+        cooldownData: {cooldown: 4.5, activeCooldown: 0},
         secondaries: ['crit'] 
     }],
     "Avenging Wrath": [{

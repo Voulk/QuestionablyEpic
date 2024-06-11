@@ -157,12 +157,13 @@ export function initializePaladinSet() {
   const castProfile = [
     //{spell: "Judgement", cpm: 1, hpc: 0},
 
-    {spell: "Holy Light", cpm: 9.5, fillerSpell: true, hastedCPM: true},
+    {spell: "Holy Light", cpm: 4, fillerSpell: true, hastedCPM: true},
     {spell: "Flash of Light", cpm: 2.2, hastedCPM: true},
     {spell: "Holy Shock", cpm: 8.5, hastedCPM: true},
-    {spell: "Holy Radiance", cpm: 4, hastedCPM: true},
-    {spell: "Light of Dawn", cpm: (8.5 + 4)/3, hastedCPM: true},
+    {spell: "Holy Radiance", cpm: 6, fillerSpell: true, hastedCPM: true},
+    {spell: "Light of Dawn", cpm: (8.5 + 4 + 4)/3, hastedCPM: true},
     {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
+    {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
 
     //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
 
@@ -184,7 +185,6 @@ export function initializePaladinSet() {
   const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
   //console.log(JSON.stringify(adjSpells));
   console.log("Initialized Paladin Set")
-  console.log({ castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute })
   return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
 }
 
@@ -205,7 +205,8 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
                 getAdditionalManaEffects(statProfile, "Holy Paladin").additionalMP5 +
                 (statProfile.mp5 || 0)) * 12 * fightLength;
   const totalManaPool = manaPool + regen;
-  const fillerCost = baseline.castProfile.filter(spell => spell.spell === "Holy Light")[0]['cost'] // This could be more efficient;
+  const fillerCost = baseline.castProfile.filter(spell => spell.spell === "Holy Light")[0]['cost'] +
+                      baseline.castProfile.filter(spell => spell.spell === "Holy Radiance")[0]['cost']// This could be more efficient;
   //console.log(totalManaPool);
   //console.log("Rejuv cost: " + fillerCost);
   //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
@@ -221,7 +222,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       fullSpell.forEach(spell => {
         if (spell.type === "heal" || spell.type === "classic periodic") {
           const genericMult = 1.05 * 1.06 * 1.09 * (spellProfile.bonus ? spellProfile.bonus : 1); // Seal of Insight, Divinity, Conviction
-          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : (spellProfile.cpm)) * baseHastePercentage;
+          const cpm = (spellProfile.fillerSpell ? (fillerCPM + spellProfile.cpm) : (spellProfile.cpm)) * baseHastePercentage;
           const targetCount = spell.targets ? spell.targets : 1;
           let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
           if (tierSets.includes("Paladin T11-2") && spellName === "Holy Light") critBonus += 0.05;
@@ -282,7 +283,6 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
 
       // Filler mana
       if (spellProfile.fillerSpell) {
-        console.log("Total Healing: " + spellTotalHealing + " cost: " + spellProfile.cost + " cpm: " + spellProfile.cpm);
         fillerHPM = spellTotalHealing / (spellProfile.cost) / spellProfile.cpm;
       }
       
@@ -290,13 +290,13 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   
     Object.keys(healingBreakdown).forEach(spell => {
       const filteredSpells = baseline.castProfile.filter(spellName => spellName.spell === spell);
-    const cpm = filteredSpells.length > 0 ? filteredSpells[0].cpm : 0;
+      const cpm = filteredSpells.length > 0 ? filteredSpells[0].cpm : 0;
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%) - " + Math.round(healingBreakdown[spell] / 60) + " HPS - " + cpm + " CPM";
     })
     console.log(JSON.stringify(healingBreakdown)); 
   
     // Mana
-    console.log("Filler HPM: " + fillerHPM);
+    //console.log("Filler HPM: " + fillerHPM);
     //const spiritRegen = getManaRegen({...playerData.stats, 'spirit': statProfile.spirit}, playerData.spec) * 12 * 7;
     //score += spiritRegen
 
