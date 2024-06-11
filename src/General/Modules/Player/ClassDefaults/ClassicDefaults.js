@@ -199,6 +199,11 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   const baseHastePercentage = (statProfile.haste / 128 / 100 + 1) * 1.05 * 1.09 * 1.03; // Haste buff, JotP, SoL
   let fillerHPM = 0;
 
+  // Take care of any extras.
+  if (tierSets.includes("Paladin T11-4")) {
+    statProfile.spirit += 540;
+  }
+
   // Calculate filler CPM
   const manaPool = getManaPool(statProfile, "Holy Paladin");
   const regen = (getManaRegen(statProfile, "Holy Paladin") + 
