@@ -114,10 +114,11 @@ function processItem(line, player, contentType, type) {
       itemID === 65384 || itemID === 68127 || itemID === 69830 || itemID === 69835 || itemID === 69881 ||
       itemID === 69882) 
   {
-    if (suffix === 230 || suffix === 262  || suffix === 268) itemID = parseInt(itemID.toString() + "2") // Feverflare
-    else if (suffix === 231 || suffix === 263 || suffix === 269) itemID = parseInt(itemID.toString() + "0") // Undertow
-    else if (suffix === 232 || suffix === 264  || suffix === 270) itemID = parseInt(itemID.toString() + "3") // Wavecrest
-    else if (suffix === 229 || suffix === 261  || suffix === 267) itemID = parseInt(itemID.toString() + "1") // Fireflash
+    // Dear god please replace this with a renovation of suffixDB.
+    if ([230, 262, 268, 186, 192, 213].includes(suffix)) itemID = parseInt(itemID.toString() + "2") // Feverflare
+    else if ([187, 193, 214, 231, 263, 269, 282, 286].includes(suffix)) itemID = parseInt(itemID.toString() + "0") // Undertow
+    else if ([132, 188, 194, 215, 232, 264, 270, 283, 287].includes(suffix)) itemID = parseInt(itemID.toString() + "3") // Wavecrest
+    else if ([191, 212, 229, 267, 271, 280, 284].includes(suffix)) itemID = parseInt(itemID.toString() + "1") // Fireflash
   }
 
   // Grab the items base level from our item database.

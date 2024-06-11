@@ -17855,39 +17855,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Mortalis",
-        "id": 47518,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Mortalis",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_sword_137",
-        "itemClass": 2,
-        "itemSubClass": 7,
-        "slot": "1H Weapon",
-        "itemLevel": 258,
-        "sockets": {
-            "gems": [
-                "yellow"
-            ],
-            "bonus": {
-                "spellpower": 5
-            }
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 118,
-            "spellpower": 879,
-            "haste": 39,
-            "crit": 58
-        }
-    },
-    {
         "name": "Cord of the Tenebrous Mist",
         "id": 46972,
         "quality": 4,
@@ -22876,6 +22843,39 @@ export const classicItemDB = [
             "de": ""
         },
         "icon": "inv_sword_144",
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "slot": "1H Weapon",
+        "itemLevel": 258,
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "spellpower": 5
+            }
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 118,
+            "spellpower": 879,
+            "haste": 39,
+            "crit": 58
+        }
+    },
+    {
+        "name": "Mortalis",
+        "id": 47518,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Mortalis",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_sword_137",
         "itemClass": 2,
         "itemSubClass": 7,
         "slot": "1H Weapon",
@@ -42846,6 +42846,40 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Dying Light",
+        "id": 50181,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Dying Light",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_staff_106",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 264,
+        "sockets": {
+            "gems": [
+                "yellow",
+                "blue"
+            ],
+            "bonus": {
+                "spellpower": 7
+            }
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 293,
+            "spellpower": 928,
+            "spirit": 121,
+            "haste": 121
+        }
+    },
+    {
         "name": "Maghia's Misguided Quill",
         "id": 49686,
         "quality": 4,
@@ -42870,29 +42904,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "spirit": 1000
-        }
-    },
-    {
-        "name": "Trauma",
-        "id": 50028,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Trauma",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_mace_118",
-        "itemClass": 2,
-        "itemSubClass": 4,
-        "slot": "1H Weapon",
-        "itemLevel": 264,
-        "stats": {
-            "intellect": 0,
-            "stamina": 99,
-            "spellpower": 928
         }
     },
     {
@@ -44022,6 +44033,29 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Trauma",
+        "id": 50028,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Trauma",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_118",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 264,
+        "stats": {
+            "intellect": 0,
+            "stamina": 99,
+            "spellpower": 928
+        }
+    },
+    {
         "name": "Bloodsunder's Bracers",
         "id": 50030,
         "quality": 4,
@@ -44895,40 +44929,6 @@ export const classicItemDB = [
             "stamina": 231,
             "haste": 84,
             "spirit": 108
-        }
-    },
-    {
-        "name": "Dying Light",
-        "id": 50181,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Dying Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_staff_106",
-        "itemClass": 2,
-        "itemSubClass": 10,
-        "slot": "2H Weapon",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "yellow",
-                "blue"
-            ],
-            "bonus": {
-                "spellpower": 7
-            }
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 293,
-            "spellpower": 928,
-            "spirit": 121,
-            "haste": 121
         }
     },
     {
@@ -47512,6 +47512,39 @@ export const classicItemDB = [
             "spellpower": 992,
             "spirit": 130,
             "haste": 130
+        }
+    },
+    {
+        "name": "Lockjaw",
+        "id": 51875,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lockjaw",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_118",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 264,
+        "sockets": {
+            "gems": [
+                "red"
+            ],
+            "bonus": {
+                "spellpower": 5
+            }
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 117,
+            "spellpower": 928,
+            "haste": 51,
+            "spirit": 58
         }
     },
     {
@@ -62437,39 +62470,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Lockjaw",
-        "id": 51875,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Lockjaw",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_mace_118",
-        "itemClass": 2,
-        "itemSubClass": 4,
-        "slot": "1H Weapon",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "red"
-            ],
-            "bonus": {
-                "spellpower": 5
-            }
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 117,
-            "spellpower": 928,
-            "haste": 51,
-            "spirit": 58
-        }
-    },
-    {
         "name": "Kilt of Untreated Wounds",
         "id": 51882,
         "quality": 4,
@@ -63360,6 +63360,44 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Sea Star",
+        "id": 55256,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Sea Star",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_datacrystal05",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 308,
+        "effect": {
+            "type": "trinket",
+            "name": "Sea Star"
+        },
+        "levelRange": [
+            333,
+            346
+        ],
+        "sources": [
+            {
+                "encounterId": 65,
+                "instanceId": -1,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "spirit": 200
+        }
+    },
+    {
         "name": "Figurine - Demon Panther",
         "id": 52199,
         "quality": 3,
@@ -63553,6 +63591,37 @@ export const classicItemDB = [
         "stats": {
             "intellect": 285,
             "stamina": 0
+        }
+    },
+    {
+        "name": "Rainsong",
+        "id": 55854,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Rainsong",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_elemental_mote_water01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 316,
+        "effect": {
+            "type": "trinket",
+            "name": "Rainsong"
+        },
+        "levelRange": [
+            333,
+            346
+        ],
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "spirit": 215
         }
     },
     {
@@ -64228,75 +64297,6 @@ export const classicItemDB = [
             "stamina": 114,
             "crit": 45,
             "haste": 53
-        }
-    },
-    {
-        "name": "Sea Star",
-        "id": 55256,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Sea Star",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_datacrystal05",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 308,
-        "effect": {
-            "type": "trinket",
-            "name": "Sea Star"
-        },
-        "levelRange": [
-            333,
-            346
-        ],
-        "sources": [
-            {
-                "encounterId": 65,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 200
-        }
-    },
-    {
-        "name": "Rainsong",
-        "id": 55854,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Rainsong",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_elemental_mote_water01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 316,
-        "effect": {
-            "type": "trinket",
-            "name": "Rainsong"
-        },
-        "levelRange": [
-            333,
-            346
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 215
         }
     },
     {
@@ -78980,12 +78980,12 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Einhorn's Galoshes",
+        "name": "Quickstep Galoshes",
         "id": 59234,
         "quality": 4,
         "names": {
             "cn": "",
-            "en": "Einhorn's Galoshes",
+            "en": "Quickstep Galoshes",
             "ru": "",
             "es": "",
             "fr": "",
@@ -79168,12 +79168,12 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Finkle's Mixer Upper",
+        "name": "Pip's Solution Agitator",
         "id": 59314,
         "quality": 4,
         "names": {
             "cn": "",
-            "en": "Finkle's Mixer Upper",
+            "en": "Pip's Solution Agitator",
             "ru": "",
             "es": "",
             "fr": "",
@@ -89564,30 +89564,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "",
-        "id": 65752,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_orb_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Offhand",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 123,
-            "stamina": 184,
-            "spirit": 82,
-            "mastery": 82
-        }
-    },
-    {
         "name": "Vicious Gladiator's Emblem of Cruelty",
         "id": 61026,
         "quality": 4,
@@ -89931,174 +89907,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "",
-        "id": 65756,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gauntlets_23",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Hands",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "crit": 106,
-            "mastery": 111
-        }
-    },
-    {
-        "name": "",
-        "id": 65757,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_pants_06",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "slot": "Legs",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 220,
-            "stamina": 331,
-            "crit": 160,
-            "mastery": 125
-        }
-    },
-    {
-        "name": "",
-        "id": 65758,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_10",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Wrist",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 123,
-            "stamina": 184,
-            "spirit": 78,
-            "crit": 84
-        }
-    },
-    {
-        "name": "",
-        "id": 65759,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_boots_09",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Feet",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "spirit": 109,
-            "haste": 109
-        }
-    },
-    {
-        "name": "",
-        "id": 65762,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cape_14",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Back",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 123,
-            "stamina": 184,
-            "haste": 66,
-            "mastery": 91
-        }
-    },
-    {
-        "name": "",
-        "id": 65763,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shirt_04",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "slot": "Chest",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 220,
-            "stamina": 331,
-            "haste": 147,
-            "mastery": 147
-        }
-    },
-    {
-        "name": "",
-        "id": 65765,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_helmet_33",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Head",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 220,
-            "stamina": 331,
-            "crit": 112,
-            "haste": 167
-        }
-    },
-    {
         "name": "Firm Grips",
         "id": 61434,
         "quality": 2,
@@ -90120,30 +89928,6 @@ export const classicItemDB = [
             "stamina": 230,
             "crit": 85,
             "mastery": 112
-        }
-    },
-    {
-        "name": "",
-        "id": 65767,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_helmet_33",
-        "itemClass": 4,
-        "itemSubClass": 3,
-        "slot": "Head",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 220,
-            "stamina": 331,
-            "spirit": 140,
-            "haste": 151
         }
     },
     {
@@ -92314,30 +92098,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "",
-        "id": 65768,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_02",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Waist",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "spirit": 93,
-            "crit": 118
-        }
-    },
-    {
         "name": "Diamant's Ring of Temperance",
         "id": 62352,
         "quality": 3,
@@ -93638,30 +93398,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "",
-        "id": 65772,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_10",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Wrist",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 123,
-            "stamina": 184,
-            "hit": 91,
-            "haste": 66
-        }
-    },
-    {
         "name": "Twilight's Hammer Belt",
         "id": 63101,
         "quality": 3,
@@ -94792,6 +94528,318 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Tempest Keeper Belt of the Undertow",
+        "id": 634950,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "spirit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Fireflash",
+        "id": 634951,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "crit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Feverflare",
+        "id": 634952,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "haste": 160,
+            "mastery": 160
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Wavecrest",
+        "id": 634953,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "mastery": 160,
+            "spirit": 160
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Undertow",
+        "id": 634960,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "spirit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Fireflash",
+        "id": 634961,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "crit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Feverflare",
+        "id": 634962,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "haste": 160,
+            "mastery": 160
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Wavecrest",
+        "id": 634963,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "mastery": 160,
+            "spirit": 160
+        }
+    },
+    {
         "name": "Gale Rouser Belt of the Undertow",
         "id": 634970,
         "quality": 4,
@@ -94948,6 +94996,482 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Soul Breath Belt of the Undertow",
+        "id": 634980,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "spirit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Fireflash",
+        "id": 634981,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "crit": 160,
+            "haste": 160
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Feverflare",
+        "id": 634982,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "haste": 160,
+            "mastery": 160
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Wavecrest",
+        "id": 634983,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 233,
+            "stamina": 0,
+            "mastery": 160,
+            "spirit": 160
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Undertow",
+        "id": 635040,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "spirit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Fireflash",
+        "id": 635041,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "crit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Feverflare",
+        "id": 635042,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "haste": 208,
+            "mastery": 208
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Wavecrest",
+        "id": 635043,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "mastery": 208,
+            "spirit": 208
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Undertow",
+        "id": 635050,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "spirit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Fireflash",
+        "id": 635051,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "crit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Feverflare",
+        "id": 635052,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "haste": 208,
+            "mastery": 208
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Wavecrest",
+        "id": 635053,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "mastery": 208,
+            "spirit": 208
+        }
+    },
+    {
         "name": "Gale Rouser Leggings of the Undertow",
         "id": 635060,
         "quality": 4,
@@ -95082,6 +95606,166 @@ export const classicItemDB = [
         "icon": "inv_pants_leather_raiddruid_i_01",
         "itemClass": 4,
         "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "mastery": 208,
+            "spirit": 208
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Undertow",
+        "id": 635070,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "spirit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Fireflash",
+        "id": 635071,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "crit": 208,
+            "haste": 208
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Feverflare",
+        "id": 635072,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 301,
+            "stamina": 0,
+            "haste": 208,
+            "mastery": 208
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Wavecrest",
+        "id": 635073,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
         "slot": "Legs",
         "itemLevel": 359,
         "sources": [
@@ -103782,12 +104466,12 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Finkle's Mixer Upper",
+        "name": "Pip's Solution Agitator",
         "id": 65064,
         "quality": 4,
         "names": {
             "cn": "",
-            "en": "Finkle's Mixer Upper",
+            "en": "Pip's Solution Agitator",
             "ru": "",
             "es": "",
             "fr": "",
@@ -103962,12 +104646,12 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Einhorn's Galoshes",
+        "name": "Quickstep Galoshes",
         "id": 65069,
         "quality": 4,
         "names": {
             "cn": "",
-            "en": "Einhorn's Galoshes",
+            "en": "Quickstep Galoshes",
             "ru": "",
             "es": "",
             "fr": "",
@@ -107657,8 +108341,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 266,
             "stamina": 0,
-            "spirit": 181,
-            "haste": 181
+            "spirit": 180,
+            "haste": 180
         }
     },
     {
@@ -107696,8 +108380,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 266,
             "stamina": 0,
-            "crit": 181,
-            "haste": 181
+            "crit": 180,
+            "haste": 180
         }
     },
     {
@@ -107735,8 +108419,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 266,
             "stamina": 0,
-            "haste": 181,
-            "mastery": 181
+            "haste": 180,
+            "mastery": 180
         }
     },
     {
@@ -107774,8 +108458,636 @@ export const classicItemDB = [
         "stats": {
             "intellect": 266,
             "stamina": 0,
+            "mastery": 180,
+            "spirit": 180
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Undertow",
+        "id": 653750,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "spirit": 181,
+            "haste": 181
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Fireflash",
+        "id": 653751,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "crit": 181,
+            "haste": 181
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Feverflare",
+        "id": 653752,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "haste": 181,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Tempest Keeper Belt of the Wavecrest",
+        "id": 653753,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
             "mastery": 181,
             "spirit": 181
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Undertow",
+        "id": 653760,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "spirit": 180,
+            "haste": 180
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Fireflash",
+        "id": 653761,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "crit": 180,
+            "haste": 180
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Feverflare",
+        "id": 653762,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "haste": 180,
+            "mastery": 180
+        }
+    },
+    {
+        "name": "Soul Breath Belt of the Wavecrest",
+        "id": 653763,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_cloth_raidpriest_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "mastery": 180,
+            "spirit": 180
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Undertow",
+        "id": 653770,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "spirit": 180,
+            "haste": 180
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Fireflash",
+        "id": 653771,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "crit": 180,
+            "haste": 180
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Feverflare",
+        "id": 653772,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "haste": 180,
+            "mastery": 180
+        }
+    },
+    {
+        "name": "Lightning Well Belt of the Wavecrest",
+        "id": 653773,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Belt of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 154,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 266,
+            "stamina": 0,
+            "mastery": 180,
+            "spirit": 180
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Undertow",
+        "id": 653830,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "spirit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Fireflash",
+        "id": 653831,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "crit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Feverflare",
+        "id": 653832,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "haste": 238,
+            "mastery": 238
+        }
+    },
+    {
+        "name": "Soul Breath Leggings of the Wavecrest",
+        "id": 653833,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Soul Breath Leggings of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_raidmage_i_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "mastery": 238,
+            "spirit": 238
         }
     },
     {
@@ -107939,27 +109251,323 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "",
-        "id": 65781,
-        "quality": 2,
+        "name": "Tempest Keeper Leggings of the Undertow",
+        "id": 653850,
+        "quality": 4,
         "names": {
             "cn": "",
-            "en": "",
+            "en": "Tempest Keeper Leggings of the Undertow",
             "ru": "",
             "es": "",
             "fr": "",
             "de": ""
         },
-        "icon": "inv_jewelry_amulet_03",
+        "icon": "inv_pants_plate_raidpaladin_i_01",
         "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Neck",
-        "itemLevel": 312,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
         "stats": {
-            "intellect": 123,
-            "stamina": 184,
-            "spirit": 90,
-            "mastery": 68
+            "intellect": 345,
+            "stamina": 0,
+            "spirit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Fireflash",
+        "id": 653851,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "crit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Feverflare",
+        "id": 653852,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "haste": 238,
+            "mastery": 238
+        }
+    },
+    {
+        "name": "Tempest Keeper Leggings of the Wavecrest",
+        "id": 653853,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Tempest Keeper Leggings of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_raidpaladin_i_01",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "mastery": 238,
+            "spirit": 238
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Undertow",
+        "id": 653860,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "spirit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Fireflash",
+        "id": 653861,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "crit": 238,
+            "haste": 238
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Feverflare",
+        "id": 653862,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "haste": 238,
+            "mastery": 238
+        }
+    },
+    {
+        "name": "Lightning Well Legguards of the Wavecrest",
+        "id": 653863,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lightning Well Legguards of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_raidshaman_i_01",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 372,
+        "sources": [
+            {
+                "encounterId": 155,
+                "instanceId": 74,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red",
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "stats": {
+            "intellect": 345,
+            "stamina": 0,
+            "mastery": 238,
+            "spirit": 238
         }
     },
     {
@@ -109764,78 +111372,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "",
-        "id": 65748,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shoulder_09",
-        "itemClass": 4,
-        "itemSubClass": 3,
-        "slot": "Shoulder",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "haste": 90,
-            "mastery": 120
-        }
-    },
-    {
-        "name": "",
-        "id": 65749,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_pants_06",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Legs",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 220,
-            "stamina": 331,
-            "crit": 155,
-            "mastery": 132
-        }
-    },
-    {
-        "name": "",
-        "id": 65750,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_chest_cloth_24",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Chest",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 220,
-            "stamina": 331,
-            "hit": 151,
-            "mastery": 140
-        }
-    },
-    {
         "name": "Fireball Treads",
         "id": 65774,
         "quality": 3,
@@ -109905,78 +111441,6 @@ export const classicItemDB = [
             "stamina": 373,
             "crit": 178,
             "mastery": 145
-        }
-    },
-    {
-        "name": "",
-        "id": 65777,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_boots_09",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "slot": "Feet",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "spirit": 121,
-            "haste": 88
-        }
-    },
-    {
-        "name": "",
-        "id": 65783,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_02",
-        "itemClass": 4,
-        "itemSubClass": 3,
-        "slot": "Waist",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "spirit": 117,
-            "crit": 96
-        }
-    },
-    {
-        "name": "",
-        "id": 65785,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_boots_09",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Feet",
-        "itemLevel": 312,
-        "stats": {
-            "intellect": 164,
-            "stamina": 245,
-            "hit": 93,
-            "haste": 118
         }
     },
     {
@@ -112386,12 +113850,12 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Finkle's Twinkle",
+        "name": "Auto-Decoding Band",
         "id": 66890,
         "quality": 3,
         "names": {
             "cn": "",
-            "en": "Finkle's Twinkle",
+            "en": "Auto-Decoding Band",
             "ru": "",
             "es": "",
             "fr": "",
@@ -113232,28 +114696,51 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Sealing Heartstaff",
-        "id": 67098,
+        "name": "Belt of Redeemed Fate",
+        "id": 67103,
         "quality": 3,
         "names": {
             "cn": "",
-            "en": "Sealing Heartstaff",
+            "en": "Belt of Redeemed Fate",
             "ru": "",
             "es": "",
             "fr": "",
             "de": ""
         },
-        "icon": "inv_staff_116",
-        "itemClass": 2,
-        "itemSubClass": 10,
-        "slot": "2H Weapon",
-        "itemLevel": 292,
+        "icon": "inv_belt_26",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 300,
         "stats": {
-            "intellect": 183,
-            "stamina": 275,
-            "haste": 131,
-            "mastery": 107,
-            "spellpower": 1048
+            "intellect": 146,
+            "stamina": 219,
+            "spirit": 97,
+            "mastery": 97
+        }
+    },
+    {
+        "name": "Torchlight Wand",
+        "id": 67104,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Torchlight Wand",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_wand_1h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "slot": "Relics & Wands",
+        "itemLevel": 300,
+        "stats": {
+            "intellect": 62,
+            "stamina": 93,
+            "spirit": 41,
+            "haste": 41
         }
     },
     {
@@ -113285,27 +114772,27 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Waistguard of New Days",
-        "id": 67099,
+        "name": "Elementbinder Grips",
+        "id": 67105,
         "quality": 3,
         "names": {
             "cn": "",
-            "en": "Waistguard of New Days",
+            "en": "Elementbinder Grips",
             "ru": "",
             "es": "",
             "fr": "",
             "de": ""
         },
-        "icon": "inv_belt_plate_dungeonplate_c_03",
+        "icon": "inv_gauntlets_mail_dungeonmail_c_03",
         "itemClass": 4,
-        "itemSubClass": 4,
-        "slot": "Waist",
-        "itemLevel": 292,
+        "itemSubClass": 3,
+        "slot": "Hands",
+        "itemLevel": 300,
         "stats": {
-            "intellect": 136,
-            "stamina": 204,
-            "spirit": 90,
-            "crit": 90
+            "intellect": 146,
+            "stamina": 219,
+            "spirit": 97,
+            "crit": 97
         }
     },
     {
@@ -113330,6 +114817,55 @@ export const classicItemDB = [
             "stamina": 153,
             "spirit": 68,
             "crit": 68
+        }
+    },
+    {
+        "name": "Sealing Heartstaff",
+        "id": 67098,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Sealing Heartstaff",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_staff_116",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 292,
+        "stats": {
+            "intellect": 183,
+            "stamina": 275,
+            "haste": 131,
+            "mastery": 107,
+            "spellpower": 1048
+        }
+    },
+    {
+        "name": "Waistguard of New Days",
+        "id": 67099,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Waistguard of New Days",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 292,
+        "stats": {
+            "intellect": 136,
+            "stamina": 204,
+            "spirit": 90,
+            "crit": 90
         }
     },
     {
@@ -113381,78 +114917,6 @@ export const classicItemDB = [
             "stamina": 275,
             "spirit": 107,
             "crit": 131
-        }
-    },
-    {
-        "name": "Belt of Redeemed Fate",
-        "id": 67103,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Belt of Redeemed Fate",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_26",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Waist",
-        "itemLevel": 300,
-        "stats": {
-            "intellect": 146,
-            "stamina": 219,
-            "spirit": 97,
-            "mastery": 97
-        }
-    },
-    {
-        "name": "Torchlight Wand",
-        "id": 67104,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Torchlight Wand",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_1h_cataclysm_c_02",
-        "itemClass": 2,
-        "itemSubClass": 19,
-        "slot": "Relics & Wands",
-        "itemLevel": 300,
-        "stats": {
-            "intellect": 62,
-            "stamina": 93,
-            "spirit": 41,
-            "haste": 41
-        }
-    },
-    {
-        "name": "Elementbinder Grips",
-        "id": 67105,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Elementbinder Grips",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gauntlets_mail_dungeonmail_c_03",
-        "itemClass": 4,
-        "itemSubClass": 3,
-        "slot": "Hands",
-        "itemLevel": 300,
-        "stats": {
-            "intellect": 146,
-            "stamina": 219,
-            "spirit": 97,
-            "crit": 97
         }
     },
     {
@@ -150346,11 +151810,11 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 1,
         "slot": "Back",
-        "itemLevel": 377,
+        "itemLevel": 339,
         "stats": {
-            "intellect": 225,
-            "stamina": 338,
-            "mastery": 150
+            "intellect": 158,
+            "stamina": 237,
+            "mastery": 105
         }
     },
     {
@@ -150369,16 +151833,16 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 11,
         "slot": "Relics & Wands",
-        "itemLevel": 377,
+        "itemLevel": 339,
         "sockets": {
             "gems": [
                 "prismatic"
             ]
         },
         "stats": {
-            "intellect": 127,
-            "stamina": 190,
-            "crit": 84
+            "intellect": 89,
+            "stamina": 133,
+            "crit": 59
         }
     },
     {
@@ -150397,11 +151861,11 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Finger",
-        "itemLevel": 377,
+        "itemLevel": 339,
         "stats": {
-            "intellect": 225,
-            "stamina": 338,
-            "spirit": 150
+            "intellect": 158,
+            "stamina": 237,
+            "spirit": 105
         }
     },
     {
@@ -150420,7 +151884,7 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 11,
         "slot": "Relics & Wands",
-        "itemLevel": 377,
+        "itemLevel": 339,
         "sockets": {
             "gems": [
                 "prismatic"
@@ -150428,8 +151892,8 @@ export const classicItemDB = [
         },
         "stats": {
             "intellect": 0,
-            "stamina": 190,
-            "crit": 84
+            "stamina": 133,
+            "crit": 59
         }
     },
     {
@@ -150517,11 +151981,11 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Neck",
-        "itemLevel": 377,
+        "itemLevel": 339,
         "stats": {
-            "intellect": 225,
-            "stamina": 338,
-            "haste": 150
+            "intellect": 158,
+            "stamina": 237,
+            "haste": 105
         }
     },
     {
@@ -150540,7 +152004,7 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 11,
         "slot": "Relics & Wands",
-        "itemLevel": 377,
+        "itemLevel": 339,
         "sockets": {
             "gems": [
                 "prismatic"
@@ -150548,8 +152012,8 @@ export const classicItemDB = [
         },
         "stats": {
             "intellect": 0,
-            "stamina": 190,
-            "crit": 84
+            "stamina": 133,
+            "crit": 59
         }
     },
     {
@@ -165696,6 +167160,31 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "The Horseman's Seal",
+        "id": 211844,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "The Horseman's Seal",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_bag_28_halloween",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 232,
+        "stats": {
+            "intellect": 51,
+            "stamina": 50,
+            "spellpower": 78,
+            "haste": 48,
+            "hit": 39
+        }
+    },
+    {
         "name": "Wicked Witch's Band",
         "id": 211847,
         "quality": 4,
@@ -165720,28 +167209,156 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "The Horseman's Seal",
-        "id": 211844,
-        "quality": 4,
+        "name": "Vicious Eyeball of Dominance",
+        "id": 226178,
+        "quality": 3,
         "names": {
             "cn": "",
-            "en": "The Horseman's Seal",
+            "en": "Vicious Eyeball of Dominance",
             "ru": "",
             "es": "",
             "fr": "",
             "de": ""
         },
-        "icon": "inv_misc_bag_28_halloween",
+        "icon": "inv_shield_56",
+        "itemClass": 4,
+        "itemSubClass": 11,
+        "slot": "Relics & Wands",
+        "itemLevel": 377,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 127,
+            "stamina": 190,
+            "crit": 84
+        }
+    },
+    {
+        "name": "Vicious Jawbone of Conquest",
+        "id": 226179,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Vicious Jawbone of Conquest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shield_56",
+        "itemClass": 4,
+        "itemSubClass": 11,
+        "slot": "Relics & Wands",
+        "itemLevel": 377,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 190,
+            "crit": 84
+        }
+    },
+    {
+        "name": "Vicious Charm of Triumph",
+        "id": 226180,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Vicious Charm of Triumph",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shield_56",
+        "itemClass": 4,
+        "itemSubClass": 11,
+        "slot": "Relics & Wands",
+        "itemLevel": 377,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 190,
+            "crit": 84
+        }
+    },
+    {
+        "name": "Vicious Embersilk Cape",
+        "id": 226182,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Vicious Embersilk Cape",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 377,
+        "stats": {
+            "intellect": 225,
+            "stamina": 338,
+            "mastery": 150
+        }
+    },
+    {
+        "name": "Vicious Amberjewel Band",
+        "id": 226184,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Vicious Amberjewel Band",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_79",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Finger",
-        "itemLevel": 232,
+        "itemLevel": 377,
         "stats": {
-            "intellect": 51,
-            "stamina": 50,
-            "spellpower": 78,
-            "haste": 48,
-            "hit": 39
+            "intellect": 225,
+            "stamina": 338,
+            "spirit": 150
+        }
+    },
+    {
+        "name": "Vicious Amberjewel Pendant",
+        "id": 226188,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Vicious Amberjewel Pendant",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_44",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 377,
+        "stats": {
+            "intellect": 225,
+            "stamina": 338,
+            "haste": 150
         }
     }
 ]

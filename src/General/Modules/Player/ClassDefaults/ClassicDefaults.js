@@ -3,9 +3,8 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
-import { runHeal } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
-
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
@@ -65,6 +64,9 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     const healingBreakdown = {};
     const fightLength = 6;
 
+    const hasteSetting = getSetting(userSettings, "hasteBuff");
+    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
+
     const spellpower = statProfile.intellect + statProfile.spellpower;
     const critPercentage = 1.04 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
     // Evaluate Stats
@@ -104,8 +106,9 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
           
           // Handle HoT
           if (spell.type === "classic periodic") {
-              const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(statProfile, "Classic");
+              const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
               const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+              
               const targetCount = spell.targets ? spell.targets : 1;
               const tickCount = Math.round(spell.buffDuration / (adjTickRate));
               if (spellProfile.spell === "Rolling Lifebloom") spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
@@ -153,16 +156,20 @@ export function initializePaladinSet() {
 }
   const castProfile = [
     //{spell: "Judgement", cpm: 1, hpc: 0},
-    {spell: "Holy Light", cpm: 0, fillerSpell: true, hastedCPM: true},
+
+    {spell: "Holy Light", cpm: 9.5, fillerSpell: true, hastedCPM: true},
     {spell: "Flash of Light", cpm: 2.2, hastedCPM: true},
     {spell: "Holy Shock", cpm: 8.5, hastedCPM: true},
     {spell: "Holy Radiance", cpm: 4, hastedCPM: true},
     {spell: "Light of Dawn", cpm: (8.5 + 4)/3, hastedCPM: true},
     {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
+
     //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
 
+    // Test
+
     // Divine Favor
-    // Divine Favor has an ~11% uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
+    // Divine Favor has an ~1/6 uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
   ]
 
   castProfile.forEach(spell => {
@@ -185,9 +192,7 @@ export function initializePaladinSet() {
 export function scorePaladinSet(baseline, statProfile, player, userSettings, tierSets = []) {
   let score = 0;
   const healingBreakdown = {};
-  const fightLength = 420;
-  console.log("Trying to score Paladin Set")
-  console.log(statProfile);
+  const fightLength = 6;
   const state = {t: 0, holyPower: 3, spec: "Holy Paladin", currentStats: statProfile, healingDone: {}, activeBuffs: [],  healingAura: 1, settings: {reporting: false}};
   const spellpower = statProfile.intellect + statProfile.spellpower;
   const critPercentage = statProfile.crit / 179 / 100 + 1;
@@ -205,7 +210,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   //console.log("Rejuv cost: " + fillerCost);
   //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
   const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost;
-
+  console.log("Filler CPM: " + fillerCPM + " (Cost: " + fillerCost + ")" + " (Total Mana: " + totalManaPool + ")" + "Cost per min" + baseline.costPerMinute);
   // Evaluate Stats
   // Spellpower
 
@@ -216,7 +221,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       fullSpell.forEach(spell => {
         if (spell.type === "heal" || spell.type === "classic periodic") {
           const genericMult = 1.05 * 1.06 * 1.09 * (spellProfile.bonus ? spellProfile.bonus : 1); // Seal of Insight, Divinity, Conviction
-          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : 0) // (spellProfile.cpm)) * baseHastePercentage;
+          const cpm = (spellProfile.fillerSpell ? (fillerCPM) : (spellProfile.cpm)) * baseHastePercentage;
           const targetCount = spell.targets ? spell.targets : 1;
           let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
           if (tierSets.includes("Paladin T11-2") && spellName === "Holy Light") critBonus += 0.05;
@@ -238,7 +243,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
               const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
               
               const tickCount = Math.round(spell.buffDuration / (adjTickRate));
-              spellHealing = spellHealing * tickCount * targetCount;
+              spellHealing = spellHealing * tickCount// * targetCount;
           }
 
           spellHealing = spellHealing * cpm;
@@ -246,7 +251,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
           // Mastery
           if (spell.secondaries.includes("mastery")) {
             const absorbVal = spellHealing /*/ (1 - spell.expectedOverheal) */* (getMastery(statProfile, "Holy Paladin") - 1);
-            console.log("Mastery value of " + absorbVal + " on healing of " + spellHealing);
+            //console.log("Mastery value of " + absorbVal + " on healing of " + spellHealing);
             healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + absorbVal;
             spellTotalHealing += absorbVal;
             score += absorbVal;
@@ -277,15 +282,18 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
 
       // Filler mana
       if (spellProfile.fillerSpell) {
+        console.log("Total Healing: " + spellTotalHealing + " cost: " + spellProfile.cost + " cpm: " + spellProfile.cpm);
         fillerHPM = spellTotalHealing / (spellProfile.cost) / spellProfile.cpm;
       }
       
   })
   
     Object.keys(healingBreakdown).forEach(spell => {
-      healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
+      const filteredSpells = baseline.castProfile.filter(spellName => spellName.spell === spell);
+    const cpm = filteredSpells.length > 0 ? filteredSpells[0].cpm : 0;
+      healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%) - " + Math.round(healingBreakdown[spell] / 60) + " HPS - " + cpm + " CPM";
     })
-    console.log(healingBreakdown); 
+    console.log(JSON.stringify(healingBreakdown)); 
   
     // Mana
     console.log("Filler HPM: " + fillerHPM);
