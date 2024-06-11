@@ -421,6 +421,7 @@ export default function TopGear(props: any) {
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
                   socketedGems: report.itemSet.gems || [],
+                  reforges: report.itemSet.reforges || {},
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                 },
@@ -527,13 +528,13 @@ export default function TopGear(props: any) {
         const workerPromises = []
         const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
         const chunkSize = itemSets.length / workerCount;
-        console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize);
+        console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
         const t1 = performance.now();
         for (let i = 0; i < workerCount; i++) {
           // Create itemSet chunk.
           workerPromises.push(runTopGearWorker(i, worker, itemSets.slice(i * chunkSize, (i + 1) * chunkSize), strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel));
         }
-        console.log("Thread Spins took " + (performance.now() - t1) + " milliseconds.");
+        //console.log("Thread Spins took " + (performance.now() - t1) + " milliseconds.");
         // Wait for all worker promises to resolve
         Promise.all(workerPromises)
         .then(results => {
@@ -541,13 +542,12 @@ export default function TopGear(props: any) {
             
             const mergedResults: any[] = results.flat();
             
-            console.log(mergedResults);
             mergedResults.sort((a, b) => {
               // Define your sorting logic here
               // For example, if each result is an object with a 'score' property:
               return b.hardScore - a.hardScore; // Sort in descending order of score
             });
-            console.log(mergedResults);
+
 
             // Build Differentials
             let differentials = [];
@@ -637,7 +637,6 @@ export default function TopGear(props: any) {
 
   const changeReforgeTo = (buttonClicked: "string") => {
     if (reforgeToList.includes(buttonClicked)) {
-      console.log("Button is in array, removing");
       reforgeToList.splice(reforgeToList.indexOf(buttonClicked), 1);
       setReforgeToList([...reforgeToList]);
 

@@ -126,10 +126,6 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
   //const reforgeFromOptions = ["crit", "mastery", ];
   //const reforgeOptions = ["haste", "spirit"];
-  /*if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
-    reforgeFromOptions = [ "haste"];
-    reforgeToOptions = ["crit", "mastery", "spirit"];
-  } */
 
   if (reforgingOn) {
     itemList.forEach(item => {
@@ -178,6 +174,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           newItem.flags.push("ItemReforged");
           reforgedItems.push(newItem);
 
+  
           //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
           
         }
@@ -342,6 +339,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
 
     let enchants = {};
+    const reforges = {};
   
     let bonus_stats = {
         intellect: 0,
@@ -448,7 +446,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit"] : ["haste", "spirit", "crit", "mastery"];
+          const secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit"] : ["haste", "spirit", "crit", "mastery"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -457,8 +455,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
             const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
             setStats[fromStat] -= reforgeValue;
             setStats[toStat] += reforgeValue;
-            item.flags.push("Reforged: " + fromStat + " -> " + toStat);
-            item.flags.push("ItemReforged");
+            //item.flags.push("Reforged: " + fromStat + " -> " + toStat);
+            //item.flags.push("ItemReforged");
+            reforges[item.id] = "Reforged: " + fromStat + " -> " + toStat;
+
           }
         }
       });
@@ -674,7 +674,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         }
       }
     }
-
+    builtSet.reforges = reforges;
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;

@@ -407,6 +407,10 @@
         "reforgeSetting": {
           "title": "Reforge Setting",
           "tooltip": "Select how you'd like Reforges handled."
+        },
+        "hasteBuff": {
+          "title": "Haste Buff",
+          "tooltip": "Pick which haste buffs you have active to in raid. Haste Aura is 5% and applies to all players. Dark Intent is 3% but only applies to one target.."
         }
 
         
