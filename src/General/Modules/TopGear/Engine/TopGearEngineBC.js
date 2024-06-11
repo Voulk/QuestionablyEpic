@@ -8,7 +8,7 @@ import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import ClassicPlayer from "../../Player/ClassicPlayer";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
-import { compileStats, buildDifferential, pruneItems, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
+import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
 import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
@@ -19,7 +19,7 @@ import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 3000;
+const softSlice = 1500;
 const DR_CONST = 0.00196669230769231;
 const DR_CONSTLEECH = 0.04322569230769231;
 
@@ -112,7 +112,103 @@ function setupPlayer(player, contentType, castModel) {
   return newPlayer;
 }
 
-export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHPS, currentLanguage, playerSettings, castModel, reforgingOn = true, reforgeFromOptions = [], reforgeToOptions = [], chunkNumber) {
+// This function will build our sets for us. 
+export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn, reforgeFromOptions, reforgeToOptions) {
+  let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
+   
+  // == Handle Reforging ==
+  // The comprehensive way to Reforge is to test every variation. There are five for each item, ignoring DPS-centric stats.
+  // You can't reforge to a stat already on an item. So your combinations are:
+  // - Stat A -> Stat C or Stat D
+  // - Stat B -> Stat C or stat D
+  // - No reforge at all.
+  let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
+  const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
+  //const reforgeFromOptions = ["crit", "mastery", ];
+  //const reforgeOptions = ["haste", "spirit"];
+
+  if (reforgingOn) {
+    itemList.forEach(item => {
+      const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+      const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
+
+      //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
+      if (reforgeSetting === "Manual") {
+        itemStats.forEach(fromStat => {
+          // for each stat, add one version that trades a portion of it for another.
+          if (reforgeFromOptions.includes(fromStat)) {
+            itemReforgeOptions.forEach(targetStat => {
+
+              const newItem = JSON.parse(JSON.stringify(item));
+             // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+              newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
+              newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
+              //newItem.uniqueHash = Math.random().toString(36).substring(7);
+              //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+              newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
+              newItem.flags.push("ItemReforged");
+
+              reforgedItems.push(newItem);
+            })
+          }
+
+        });
+      }
+
+      // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit. It isn't necessary on every spec.
+      else if (reforgeSetting === "Smart" && player.spec === "Restoration Druid Classic") {
+
+        const secondaryRank = ["spirit", "mastery", "crit"]
+        // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
+        if (itemStats.includes("haste")) {
+          
+          const targetStat = secondaryRank.find(value => !itemStats.includes(value));
+          const newItem = JSON.parse(JSON.stringify(item));
+          // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+          const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
+          newItem.stats[targetStat] = Math.round(reforgeAmount);
+          newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
+          //newItem.uniqueHash = Math.random().toString(36).substring(7);
+          //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+          newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+          newItem.flags.push("ItemReforged");
+          reforgedItems.push(newItem);
+
+  
+          //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
+          
+        }
+        else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
+          // Check the lowest value of the set and reforge that.
+          const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+          
+          const newItem = JSON.parse(JSON.stringify(item));
+          const reforgeAmount = Math.floor(item.stats[fromStat] * 0.4);
+          // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+          newItem.stats['haste'] = Math.round(reforgeAmount);
+          newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
+          //newItem.uniqueHash = Math.random().toString(36).substring(7);
+          //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+          newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
+          newItem.flags.push("ItemReforged");
+          reforgedItems.push(newItem);
+          //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
+        }
+      }
+      
+  });
+
+  itemList = itemList.concat(reforgedItems);
+  console.log("Total item count: " + itemList.length);
+  
+  }
+  let wepCombosNew = buildDistinctWepCombos(itemList);
+  let itemSets = createSets(itemList, wepCombosNew, true);
+
+  return itemSets;
+}
+
+export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -120,123 +216,21 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
     let count = 0;
 
     const newPlayer = setupPlayer(player, contentType, castModel);
-    let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
-   
-
-    // == Handle Reforging ==
-    // The comprehensive way to Reforge is to test every variation. There are five for each item, ignoring DPS-centric stats.
-    // You can't reforge to a stat already on an item. So your combinations are:
-    // - Stat A -> Stat C or Stat D
-    // - Stat B -> Stat C or stat D
-    // - No reforge at all.
-    let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
-    const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
-    //const reforgeFromOptions = ["crit", "mastery", ];
-    //const reforgeOptions = ["haste", "spirit"];
-    /*if (getSetting(playerSettings, "reforgeSetting") === "Smart" && player.spec === "Restoration Druid Classic") {
-      reforgeFromOptions = [ "haste"];
-      reforgeToOptions = ["crit", "mastery", "spirit"];
-    } */
-
-    if (reforgingOn) {
-      itemList.forEach(item => {
-        const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
-        const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
-
-        //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
-        if (reforgeSetting === "Manual") {
-          itemStats.forEach(fromStat => {
-            // for each stat, add one version that trades a portion of it for another.
-            if (reforgeFromOptions.includes(fromStat)) {
-              itemReforgeOptions.forEach(targetStat => {
-
-                const newItem = JSON.parse(JSON.stringify(item));
-               // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-                newItem.stats[targetStat] = Math.round(item.stats[fromStat] * 0.4);
-                newItem.stats[fromStat] = Math.round(item.stats[fromStat] * 0.6);
-                //newItem.uniqueHash = Math.random().toString(36).substring(7);
-                //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-                newItem.flags.push("Reforged: " +  fromStat + " -> " + targetStat)
-                newItem.flags.push("ItemReforged");
-  
-                reforgedItems.push(newItem);
-              })
-            }
-  
-          });
-        }
-
-        // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit.
-        else if (reforgeSetting === "Smart") {
-
-          const secondaryRank = ["spirit", "mastery", "crit"]
-          // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
-          if (itemStats.includes("haste")) {
-            
-            const targetStat = secondaryRank.find(value => !itemStats.includes(value));
-            const newItem = JSON.parse(JSON.stringify(item));
-            // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-            const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
-            newItem.stats[targetStat] = Math.round(reforgeAmount);
-            newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
-            //newItem.uniqueHash = Math.random().toString(36).substring(7);
-            //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-            newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
-            newItem.flags.push("ItemReforged");
-            reforgedItems.push(newItem);
-
-            //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
-            
-          }
-          else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
-            // Check the lowest value of the set and reforge that.
-            const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
-            
-            const newItem = JSON.parse(JSON.stringify(item));
-            const reforgeAmount = Math.floor(item.stats[fromStat] * 0.4);
-            // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-            newItem.stats['haste'] = Math.round(reforgeAmount);
-            newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
-            //newItem.uniqueHash = Math.random().toString(36).substring(7);
-            //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-            newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
-            newItem.flags.push("ItemReforged");
-            reforgedItems.push(newItem);
-            //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
-          }
-        }
-        
-    });
-    itemList = itemList.concat(reforgedItems);
-    
-    }
-    let wepCombosNew = buildDistinctWepCombos(itemList);
-    let itemSets = createSets(itemList, wepCombosNew, true);
-
-    // Auto-filter some sets
-    /*const filteredSets = []
-    for (var j = 0; j < itemSets.length; j++) {
-      itemSets[j] = itemSets[j].compileStats("Classic");
-      if (itemSets[j].setStats.haste > 1940) {
-        filteredSets.push(itemSets[j]);
-      }
-    }
-    console.log("Item Sets: " + itemSets.length);
-    console.log("Filtered sets: " + filteredSets.length);
-    if (filteredSets.length > 0) itemSets = filteredSets; */
 
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
     const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
     count = itemSets.length;
-    const chunkSize = count / 2;
+
     for (var i = 0; i < count; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
     }
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
+
+    return itemSets;
     
     // Build Differentials
     let differentials = [];
@@ -264,7 +258,55 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 }
 
 
+function compileSetStats(itemSet) {
+  let setStats = {spellpower: 0,
+    intellect: 156, // Technically changes per race.
+    spirit: 173, // Technically changes per race.
+    mp5: 0
+  }
 
+    for (let i = 0; i < itemSet.itemList.length; i++) {
+      let item = itemSet.itemList[i];
+
+      for (const [stat, value] of Object.entries(item.stats)) {
+        
+        //if (stat in setStats) {
+          //setStats[stat as keyof Stats] += value || 0;
+          setStats[stat] = (setStats[stat] || 0) + value;
+        //}
+
+      }
+      
+      
+      if (item.uniqueEquip) itemSet.uniques[item.uniqueEquip] = (itemSet.uniques[item.uniqueEquip] || 0) + 1;
+
+      if (item.setID) {
+        itemSet.sets[item.setID] = (item.setID in itemSet.sets) ? itemSet.sets[item.setID] + 1 : 1;
+      }
+  
+      if (item.effect) {
+        let effect = item.effect;
+        effect.level = item.level;
+        itemSet.effectList.push(effect);
+      }
+    }
+
+
+    itemSet.setStats = setStats;
+
+    return itemSet;
+
+}
+
+
+export function pruneItems(itemSets) {
+  return itemSets.slice(0, softSlice);
+  }
+
+
+function verifySet(itemSet) {
+  return true;
+}
 
 
 // A true evaluation function on a set.
@@ -272,13 +314,22 @@ export function runTopGearBC(rawItemList, wepCombos, player, contentType, baseHP
 function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline, professions) {
     // Get Base Stats
     
-    let builtSet = itemSet.compileStats("Classic");
+    let builtSet = compileSetStats(itemSet);// itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
+
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
     let tierList = [];
     
+    /*if (player.spec === "Restoration Druid Classic") { // && setStats.haste < 1800 && setStats.haste > 1400) {
+      // Override test to stop evaluation on a set if it's not looking good.
+      builtSet.hardScore = 0;
+      builtSet.setStats = setStats;
+      builtSet.enchantBreakdown = {};
+  
+      return builtSet; // Temp
+    } */
 
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
@@ -287,8 +338,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
     }
 
-
     let enchants = {};
+    const reforges = {};
   
     let bonus_stats = {
         intellect: 0,
@@ -395,7 +446,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = ["spirit", "mastery", "crit"]
+          const secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit"] : ["haste", "spirit", "crit", "mastery"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -404,8 +455,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
             const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
             setStats[fromStat] -= reforgeValue;
             setStats[toStat] += reforgeValue;
-            item.flags.push("Reforged: " + fromStat + " -> " + toStat);
-            item.flags.push("ItemReforged");
+            //item.flags.push("Reforged: " + fromStat + " -> " + toStat);
+            //item.flags.push("ItemReforged");
+            reforges[item.id] = "Reforged: " + fromStat + " -> " + toStat;
+
           }
         }
       });
@@ -430,7 +483,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
-    compileStats(setStats, compiledGems);
+    builtSet.gems = compiledGems.gems;
+    compileStats(setStats, compiledGems.stats);
 
     if (true) {
       enchant_stats.intellect += 60;
@@ -620,7 +674,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         }
       }
     }
-
+    builtSet.reforges = reforges;
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
     builtSet.enchantBreakdown = enchants;
@@ -731,6 +785,8 @@ function createSets(itemList, rawWepCombos, filter) {
     WeaponSet: [],
     'Relics & Wands': [],
   };
+
+  // Test
 
   for (var i = 0; i < itemList.length; i++) {
     let slot = itemList[i].slot;

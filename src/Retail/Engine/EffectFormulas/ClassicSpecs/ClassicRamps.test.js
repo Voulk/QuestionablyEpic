@@ -17,8 +17,8 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 4200,
-            spirit: 1000,
+            intellect: 4900,
+            spirit: 1800,
             spellpower: 1800,
             haste: 1000,
             crit: 1000,
@@ -103,7 +103,8 @@ describe("Test APL", () => {
             //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
             const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
-
+            console.log(scoredBaseline);
+            
             const results = {};
             stats.forEach(stat => {
                 // Change result to be casts agnostic.
@@ -120,7 +121,7 @@ describe("Test APL", () => {
         
                 weights[stat] = Math.round(1000*(results[stat] - scoredBaseline)/(results['spellpower'] - scoredBaseline))/1000;
             });
-            console.log(weights);
+            console.log(weights); 
 
             //buildStatChart(baseline, activeStats, testSettings);
         }

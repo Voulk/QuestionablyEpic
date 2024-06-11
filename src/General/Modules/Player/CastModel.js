@@ -208,12 +208,12 @@ class CastModel {
       spellList = this.getClassicPaladin();
       this.baseStatWeights = {
         spellpower: 1,
-        intellect: 1.4,
-        spirit: 0.8,
-        mastery: 0.55,
-        crit: 0.49,
-        haste: 0.72,
-        mp5: 1.4,
+        intellect: 1.645,
+        crit: 0.785,
+        mastery: 0.398,
+        haste: 1.083,
+        spirit: 1.123,
+        mp5: 1.199
       };
     } 
     else if (spec === "Discipline Priest Classic") {
