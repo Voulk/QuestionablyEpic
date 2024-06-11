@@ -94430,8 +94430,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "spirit": 127,
-            "haste": 127
+            "spirit": 126,
+            "haste": 126
         }
     },
     {
@@ -94461,8 +94461,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "crit": 127,
-            "haste": 127
+            "crit": 126,
+            "haste": 126
         }
     },
     {
@@ -94492,8 +94492,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "haste": 127,
-            "mastery": 127
+            "haste": 126,
+            "mastery": 126
         }
     },
     {
@@ -94523,8 +94523,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "mastery": 127,
-            "spirit": 127
+            "mastery": 126,
+            "spirit": 126
         }
     },
     {
@@ -119345,8 +119345,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "spirit": 127,
-            "haste": 127
+            "spirit": 126,
+            "haste": 126
         }
     },
     {
@@ -119376,8 +119376,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "crit": 127,
-            "haste": 127
+            "crit": 126,
+            "haste": 126
         }
     },
     {
@@ -119407,8 +119407,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "haste": 127,
-            "mastery": 127
+            "haste": 126,
+            "mastery": 126
         }
     },
     {
@@ -119438,8 +119438,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "mastery": 127,
-            "spirit": 127
+            "mastery": 126,
+            "spirit": 126
         }
     },
     {
@@ -119469,8 +119469,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "spirit": 127,
-            "haste": 127
+            "spirit": 126,
+            "haste": 126
         }
     },
     {
@@ -119500,8 +119500,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "crit": 127,
-            "haste": 127
+            "crit": 126,
+            "haste": 126
         }
     },
     {
@@ -119531,8 +119531,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "haste": 127,
-            "mastery": 127
+            "haste": 126,
+            "mastery": 126
         }
     },
     {
@@ -119562,8 +119562,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 190,
             "stamina": 0,
-            "mastery": 127,
-            "spirit": 127
+            "mastery": 126,
+            "spirit": 126
         }
     },
     {
