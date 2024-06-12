@@ -298,7 +298,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       const cpm = filteredSpells.length > 0 ? filteredSpells[0].cpm : 0;
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%) - " + Math.round(healingBreakdown[spell] / 60) + " HPS - " + cpm + " CPM";
     })
-    console.log(JSON.stringify(healingBreakdown)); 
+    //console.log(JSON.stringify(healingBreakdown)); 
   
     // Mana
     //console.log("Filler HPM: " + fillerHPM);

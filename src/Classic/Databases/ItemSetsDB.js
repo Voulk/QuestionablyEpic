@@ -32,7 +32,7 @@ export const itemSets = [
     /*                                         Paladin T11                                        */
     /* ---------------------------------------------------------------------------------------------- */
 
-    id: 928,
+    id: 933,
     class: "Paladin",
     setBonuses: {
       2: "Paladin T11-2", 
@@ -48,7 +48,6 @@ export const itemSets = [
     class: "Druid",
     setBonuses: {
       2: "PVP 2pc", 
-      4: "PVP 2pc", 
     },
   },
   {
@@ -56,11 +55,11 @@ export const itemSets = [
     /*                                             Generic PVP                                        */
     /* ---------------------------------------------------------------------------------------------- */
 
-    id: 923, // PVP
+    id: 918, // PVP
     class: "Paladin",
     setBonuses: {
       2: "PVP 2pc", 
-      4: "PVP 2pc", 
+ 
     },
   },
 ];
