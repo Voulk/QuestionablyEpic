@@ -21,8 +21,6 @@ export default function TopSetStatsPanel(props) {
           ["Mastery", getMasteryPercentage(statList.mastery, props.spec)],
           ["Versatility", statList.versatility / STATPERONEPERCENT.Retail.VERSATILITY],
           ["Leech", statList.leech / STATPERONEPERCENT.Retail.LEECH],
-          ["Bonus HPS", statList.hps],
-          ["Bonus DPS", statList.dps],
         ]
       : [
           ["Spellpower", statList.spellpower],
@@ -31,12 +29,11 @@ export default function TopSetStatsPanel(props) {
           ["Crit", statList.crit],
           ["Haste", statList.haste],
           ["Mastery", statList.mastery],
-          ["Mana Regen", statList.mp5],
         ];
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
   function printStat(stat, value, spec) {
-    if (value > 100) return t(stat) + ": " + Math.floor(value);
+    if (value > 2) return t(stat) + ": " + Math.floor(value);
     else if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
     } 

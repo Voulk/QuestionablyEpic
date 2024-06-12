@@ -343,116 +343,54 @@ export const tierSets = [
   /*                                       Holy Paladin Tier 8                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Aegis Regalia", de: "Aegis Regalia", fr: "Aegis Regalia", ru: "Aegis Regalia", ch: "Aegis Regalia" },
+    name: { en: "Regalia of Immolation" },
     spec: "Holy Paladin",
     slots: {
-      head: { id: 30136, icon: require("Images/Classic/TierSetIcons/inv_helmet_78.jpg").default },
-      shoulder: { id: 30138, icon: require("Images/Classic/TierSetIcons/inv_shoulder_41.jpg").default },
-      chest: { id: 30134, icon: require("Images/Classic/TierSetIcons/inv_chest_plate19.jpg").default },
-      wrist: { id: -1, icon: -1 },
-      hands: { id: 30135, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_41.jpg").default },
-      waist: { id: -1, icon: -1 },
-      legs: { id: 30137, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_23.jpg").default },
-      boots: { id: -1, icon: -1 },
+      head: { id: 71093 },
+      shoulder: { id: 71095 },
+      chest: { id: 71091 },
+      hands: { id: 71092 },
+      legs: { id: 71094 },
     },
     twoSet: {
       effect: {
-        en: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
-        de: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
-        fr: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
-        ru: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
-        ch: "(2) Your Holy Shock crits place a HoT on the target, healing for 15% of the Holy Shock's heal amount over 9 sec.",
+        en: "(2) Healing with Holy Shock has a 40% chance to grant you 6% of your base mana.",
       },
-      hps: 100,
+      hps: 0,
     },
     fourSet: {
       effect: {
-        en: "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
-        de:
-        "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
-        fr:
-        "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
-        ru:
-        "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
-        ch: "Your Sacred Shield can now trigger every 4 seconds instead of every 6.",
+        en: "Your Divine Light, Flash of Light, and Holy Light spells also heal an injured target within 15 yards for 10% of the amount healed.",
       },
-      hps: 300,
+      hps: 0,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                      Holy Paladin Tier 9                                       */
+  /*                                      Holy Paladin Tier 13                                       */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Liadrin's Garb", de: "Liadrin's Garb", fr: "Liadrin's Garb", ru: "Liadrin's Garb", ch: "Liadrin's Garb" },
+    name: { en: "Regalia of Radiant Glory" },
     spec: "Holy Paladin",
     slots: {
-      head: { id: 30988, icon: require("Images/Classic/TierSetIcons/inv_helmet_96.jpg").default },
-      shoulder: { id: 30996, icon: require("Images/Classic/TierSetIcons/inv_shoulder_60.jpg").default },
-      chest: { id: 30992, icon: require("Images/Classic/TierSetIcons/inv_chest_plate_22.jpg").default },
-      wrist: { id: 34432, icon: require("Images/Classic/TierSetIcons/inv_bracer_02.jpg").default },
-      hands: { id: 30983, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_60.jpg").default },
-      waist: { id: 34487, icon: require("Images/Classic/TierSetIcons/inv_belt_27.jpg").default },
-      legs: { id: 30994, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_26.jpg").default },
-      boots: { id: 34559, icon: require("Images/Classic/TierSetIcons/inv_boots_chain_08.jpg").default },
-    },
-    twoSet: {
-      effect: {
-        en: "(2) Increases the duration of your judgements by 10s.",
-        de: "(2) Increases the duration of your judgements by 10s.",
-        fr: "(2) Increases the duration of your judgements by 10s.",
-        ru: "(2) Increases the duration of your judgements by 10s.",
-        ch: "(2) Increases the duration of your judgements by 10s.",
-      },
-      hps: 100,
-    },
-    fourSet: {
-      effect: {
-        en: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
-        de: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
-        fr: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
-        ru: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
-        ch: "(4) Increases Flash of Lights HoT component on Sacred Shield by 100%.",
-      },
-      hps: 300,
-    },
-  },
+      head: { id: 76767 },
+      shoulder: { id: 76769 },
+      chest: { id: 76765 },
+      hands: { id: 76766 },
+      legs: { id: 76768 },
 
-    /* ---------------------------------------------------------------------------------------------- */
-  /*                                      Holy Paladin Tier 10                                       */
-  /* ---------------------------------------------------------------------------------------------- */
-  {
-    name: { en: "Lightsworn Garb", de: "Lightsworn Garb", fr: "Lightsworn Garb", ru: "Lightsworn Garb", ch: "Lightsworn Garb" },
-    spec: "Holy Paladin",
-    slots: {
-      head: { id: 30988, icon: require("Images/Classic/TierSetIcons/inv_helmet_96.jpg").default },
-      shoulder: { id: 30996, icon: require("Images/Classic/TierSetIcons/inv_shoulder_60.jpg").default },
-      chest: { id: 30992, icon: require("Images/Classic/TierSetIcons/inv_chest_plate_22.jpg").default },
-      wrist: { id: 34432, icon: require("Images/Classic/TierSetIcons/inv_bracer_02.jpg").default },
-      hands: { id: 30983, icon: require("Images/Classic/TierSetIcons/inv_gauntlets_60.jpg").default },
-      waist: { id: 34487, icon: require("Images/Classic/TierSetIcons/inv_belt_27.jpg").default },
-      legs: { id: 30994, icon: require("Images/Classic/TierSetIcons/inv_pants_plate_26.jpg").default },
-      boots: { id: 34559, icon: require("Images/Classic/TierSetIcons/inv_boots_chain_08.jpg").default },
     },
     twoSet: {
       effect: {
-        en: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
-        de: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
-        fr: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
-        ru: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
-        ch: "(2) While Divine Illumination is active your healing spells are 35% stronger.",
+        en: "(2) After using Divine Favor, the mana cost of your healing spells is reduced by 25% for 15 sec.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
-        de: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
-        fr: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
-        ru: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
-        ch: "Your Holy Shock spell causes the next Holy Light you cast within 10 sec to have 0.3 sec reduced cast time.",
+        en: "(4) Increases the healing done by your Holy Radiance spell by 5%.",
       },
-      hps: 300,
+      hps: 0,
     },
   },
 ];
