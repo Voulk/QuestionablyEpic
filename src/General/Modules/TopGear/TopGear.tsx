@@ -27,7 +27,7 @@ import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { prepareTopGear } from "./Engine/TopGearEngineBC";
+import { prepareTopGear } from "./Engine/TopGearEngineClassic";
 import { buildDifferential, generateReportCode } from "./Engine/TopGearEngineShared";
 
 type ShortReport = {
@@ -520,7 +520,7 @@ export default function TopGear(props: any) {
     } else if (gameType === "Classic") {
         console.log("Initiating Top Gear Classic");
         const reforgeOn = !(getSetting(playerSettings, "reforgeSetting") === "Dont reforge");
-        const worker = require("workerize-loader!./Engine/TopGearEngineBC"); // eslint-disable-line import/no-webpack-loader-syntax
+        const worker = require("workerize-loader!./Engine/TopGearEngineClassic"); // eslint-disable-line import/no-webpack-loader-syntax
         const t0 = performance.now();
         // Start multiple workers and run TopGearBC with each worker
         // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.

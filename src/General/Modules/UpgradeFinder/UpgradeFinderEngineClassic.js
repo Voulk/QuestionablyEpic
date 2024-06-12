@@ -1,6 +1,6 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import Item from "../Player/Item";
-import { runTopGearBC } from "../TopGear/Engine/TopGearEngineBC";
+import { runTopGearBC } from "../TopGear/Engine/TopGearEngineClassic";
 import {
   calcStatsAtLevel,
   getItemAllocations,
