@@ -650,7 +650,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         setStats.haste -= 208;
         setStats.mastery += 208;
         //itemSet.itemList.filter(item => item.id === 59453)[0].socketedGems = [52296, 59496, 59480];
-        topGearGems[59453] = [52296, 59496, 59480];
+        builtSet.gems[59453] = [52296, 59496, 59480];
       
       }
     }
