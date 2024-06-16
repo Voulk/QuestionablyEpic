@@ -18,11 +18,11 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 4900,
-            spirit: 1800,
+            spirit: 1500,
             spellpower: 1800,
-            haste: 1000,
-            crit: 1000,
-            mastery: 1000,
+            haste: 1500,
+            crit: 1500,
+            mastery: 1500,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
@@ -30,10 +30,10 @@ describe("Test APL", () => {
 
         const castProfile = [
             {spell: "Judgement", cpm: 1, hpc: 0},
-            {spell: "Holy Light", cpm: 14, fillerSpell: true},
-            {spell: "Flash of Light", cpm: 2.2},
-            {spell: "Holy Shock", cpm: 9.5},
-            {spell: "Holy Radiance", cpm: 4.5},
+            {spell: "Holy Light", cpm: 0, fillerSpell: true},
+            {spell: "Flash of Light", cpm: 0},
+            {spell: "Holy Shock", cpm: 0},
+            {spell: "Holy Radiance", cpm: 0},
             {spell: "Light of Dawn", cpm: (9.5 + 4.5)/3},
         ]
 

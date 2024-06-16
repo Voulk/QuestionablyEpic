@@ -406,11 +406,11 @@
         },
         "reforgeSetting": {
           "title": "Reforge Setting",
-          "tooltip": "Select how you'd like Reforges handled."
+          "tooltip": "Select how you'd like Reforges handled. Smart takes care of it for you at quite a high accuracy rate. Manual lets you pick specific reforges yourself."
         },
         "hasteBuff": {
-          "title": "Haste Buff",
-          "tooltip": "Pick which haste buffs you have active to in raid. Haste Aura is 5% and applies to all players. Dark Intent is 3% but only applies to one target.."
+          "title": "Haste Buffs",
+          "tooltip": "Pick which haste buffs you have active to in raid. Haste Aura is provided my Moonkin, Shadow Priest and Shaman and applies to the entire raid. Dark Intent is 3% but only applies to one target."
         }
 
         

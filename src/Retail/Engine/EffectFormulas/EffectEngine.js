@@ -13,10 +13,7 @@ import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
 // Classic
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
-import { getDruidTierSet } from "Classic/Engine/EffectFormulas/Druid/DruidTierSets";
-import { getShamanTierSet } from "Classic/Engine/EffectFormulas/Shaman/ShamanTierSets";
-import { getPaladinTierSet } from "Classic/Engine/EffectFormulas/Paladin/PaladinTierSets";
-import { getPriestTierSet } from "Classic/Engine/EffectFormulas/Priest/PriestTierSets";
+import { getClassicTierSet } from "Classic/Engine/EffectFormulas/ClassicTierSets";
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
 
 
@@ -92,44 +89,15 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // Includes Tier Set bonuses, trinkets, and special effects on items that aren't just pure stats. 
   else if (gameType === "Classic") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
-      switch (player.spec) {
-        case "Holy Priest Classic":
-          bonus_stats = getPriestTierSet(effectName, player);
-          break;
-        case "Restoration Druid Classic":
-          bonus_stats = getDruidTierSet(effectName, player);
-          break;
-        case "Holy Paladin Classic":
-          bonus_stats = getPaladinTierSet(effectName, player);
-          break;
-        case "Restoration Shaman Classic":
-          bonus_stats = getShamanTierSet(effectName, player);
-          break;
-        default:
-          break;
+        bonus_stats = getClassicTierSet(effectName, player);
         // Call error
       }
-    } 
     else if (effectType === "set bonus") {
       // Generic bonuses like Tailoring etc.
       bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffectClassic(effectName, player, itemLevel, userSettings);
-    }
-    else if (effectType === "relic") {
-      switch (player.spec) {
-        case "Restoration Shaman Classic":
-          bonus_stats = getShamanRelic(effectName, player, userSettings);
-          break;
-        case "Restoration Druid Classic":
-          bonus_stats = getDruidRelic(effectName, player, userSettings);
-          break;
-        case "Holy Paladin Classic":
-          bonus_stats = getPaladinRelic(effectName, player, userSettings);
-          break;
-      }
-
     }
     if (effect.type === "special") {
       bonus_stats = getGenericEffectBC(effectName, player, contentType);

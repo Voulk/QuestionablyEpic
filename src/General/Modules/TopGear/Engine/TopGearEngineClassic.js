@@ -334,7 +334,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
-        tierList = getItemSet(set, setBonuses[set]);
+        tierList = tierList.concat(getItemSet(set, setBonuses[set]));
       }
     }
 
@@ -649,7 +649,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       if (itemSet.itemList.filter(item => item.id === 59453).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
         setStats.haste -= 208;
         setStats.mastery += 208;
-        itemSet.itemList.filter(item => item.id === 59453)[0].socketedGems = [52296, 59496, 59480];
+        //itemSet.itemList.filter(item => item.id === 59453)[0].socketedGems = [52296, 59496, 59480];
+        builtSet.gems[59453] = [52296, 59496, 59480];
       
       }
     }
@@ -658,7 +659,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList, builtSet.itemList.filter(item => item.id === 60233).length > 0);
     }
     else if (player.spec === "Holy Paladin Classic") {
-      hardScore = scorePaladinSet(baseline, setStats, player, playerSettings);
+      hardScore = scorePaladinSet(baseline, setStats, player, playerSettings, tierList);
     }
     else {
       console.log("DOING OLD SCORING");

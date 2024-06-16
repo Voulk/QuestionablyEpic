@@ -29,6 +29,13 @@ const GLOBALCONST = {
         "Mistweaver Monk": 0, 
     },
 
+    baseMana: {
+        "Holy Paladin": 23422,
+        "Restoration Druid": 18355,
+        "Discipline Priest": 0,
+        "Holy Priest": 0,
+    }
+
 
 
 }
@@ -141,12 +148,13 @@ export const getManaPool = (currentStats, spec) => {
 // Returns the equivalent MP5 from external mana effects.
 // Innervate currently only works for druid but we could add a setting.
 export const getAdditionalManaEffects = (currentStats, spec) => {
-    let additionalManaPerSecond = 24777 * 0.05;
+    const baseMana = spec.includes("Holy Paladin") ? 23422 : 18355;
+    let additionalManaPerSecond = baseMana * 0.05;
     
     const manaSources = {additionalMP5: 0};
     const pool = getManaPool(currentStats, spec);
 
-    manaSources["Base Regen"] = 24777 * 0.05;
+    manaSources["Base Regen"] = additionalManaPerSecond;
     const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
     manaSources["Replenishment"] = replenishment;
     additionalManaPerSecond += replenishment;

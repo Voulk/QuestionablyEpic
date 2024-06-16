@@ -1,6 +1,6 @@
 import Player from "General/Modules/Player/Player";
 
-export const getDruidTierSet = (effectName: string, player: Player) => {
+export const getClassicTierSet = (effectName: string, player: Player) => {
   // These are going to be moved to a proper file soon.
 
 
