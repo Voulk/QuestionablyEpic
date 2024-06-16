@@ -2,6 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
+import { CLASSICPRIESTSPELLDB } from "./ClassicPriestSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
@@ -50,6 +51,9 @@ const CLASSICCONSTANTS = {
 const getSpellDB = (spec) => {
     if (spec === "Restoration Druid" || spec === "Resto Druid") return CLASSICDRUIDSPELLDB;
     else if (spec === "Holy Paladin") return CLASSICPALADINSPELLDB;
+    else if (spec === "Discipline Priest") return CLASSICPRIESTSPELLDB;
+    else if (spec === "Holy Priest") return CLASSICPRIESTSPELLDB;
+    else return {};
 }
 
 
