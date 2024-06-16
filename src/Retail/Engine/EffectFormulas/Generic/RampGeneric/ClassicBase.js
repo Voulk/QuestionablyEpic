@@ -29,6 +29,13 @@ const GLOBALCONST = {
         "Mistweaver Monk": 0, 
     },
 
+    baseMana: {
+        "Holy Paladin": 23422,
+        "Restoration Druid": 18355,
+        "Discipline Priest": 0,
+        "Holy Priest": 0,
+    }
+
 
 
 }
