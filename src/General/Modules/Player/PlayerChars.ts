@@ -69,6 +69,10 @@ export function createPlayerChars(): PlayerChars {
 
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
+      if (this.activeChar > this.allChar.length - 1) {
+        // We have a mismatch because they've selected a character that doesn't exist. We'll auto select the lowest character that matches their game type.
+        this.activeChar = charArray.findIndex(char => char.gameType === (ls.get<string>("gameType") || "Retail"));
+      }
       this.setupChars();
       return this;
     },

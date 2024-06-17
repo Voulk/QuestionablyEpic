@@ -121,7 +121,6 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 const getClassicTrinketScore = (id, player) => {
   const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-  if (item.id === 68777) console.log(item);
   
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
