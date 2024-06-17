@@ -38,8 +38,17 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Discipline Priest"};
     const sequences = [
         {cat: "Base Spells", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
-
-
+        {cat: "Base Spells", tag: "Prayer of Mending", seq: ["Prayer of Mending"], preBuffs: []},
+        {cat: "Base Spells", tag: "Prayer of Healing", seq: ["Prayer of Healing"], preBuffs: []},
+        {cat: "Base Spells", tag: "Flash Heal", seq: ["Flash Heal"], preBuffs: []},
+        {cat: "Base Spells", tag: "Renew", seq: ["Renew"], preBuffs: []},
+        {cat: "Base Spells", tag: "Penance (Defensive)", seq: ["Penance D"], preBuffs: []},
+        
+        {cat: "DPS Spells", tag: "Smite", seq: ["Smite"], preBuffs: []},
+        {cat: "DPS Spells", tag: "Holy Fire", seq: ["Holy Fire"], preBuffs: []},
+       
+        {cat: "DPS Spells", tag: "Penance (Offensive)", seq: ["Penance"], preBuffs: []},
+        
         //{cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
 
     ]
