@@ -53,7 +53,7 @@ const initialState : RootState = {
     reforgeSetting: {value: "Smart", options: ["Smart", "Manual", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
     hasteBuff: {value: "Haste Aura", options: ["No Buff", "Haste Aura", "Haste Aura + Dark Intent"], category: "topGear", type: "selector", gameType: "Classic"},
     numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
-    metaGem: {value: "Ember Shadowspirit Diamond", options: ["Ember Shadowspirit Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
+    metaGem: {value: "Ember Shadowspirit", options: ["Ember Shadowspirit"], category: "topGear", type: "selector", gameType: "Classic"},
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     professionTwo: {value: "Engineering", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     wristEnchant: {value: "Haste (cheaper)", options: ["Haste (cheaper)", "Intellect (better)"], category: "enchants", type: "selector", gameType: "Classic"},

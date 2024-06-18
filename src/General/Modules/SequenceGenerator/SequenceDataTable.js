@@ -33,6 +33,12 @@ function buildChartData(spec, stats, talents) {
   else if (spec === "Holy Paladin Classic") {
     return buildClassicChartData(stats, "Holy Paladin")
   }
+  else if (spec === "Discipline Priest Classic") {
+    return buildClassicChartData(stats, "Discipline Priest")
+  }
+  else if (spec === "Holy Priest Classic") {
+    return buildClassicChartData(stats, "Holy Priest")
+  }
   else {
     return [];
   }

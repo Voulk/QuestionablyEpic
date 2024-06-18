@@ -5,7 +5,7 @@ import { Item } from "General/Modules/Player/Item"
 import { createStore } from 'redux';
 import rootReducer from "Redux/Reducers/RootReducer";
 import { composeWithDevTools } from '@redux-devtools/extension';
-import { runTopGearBC } from "General/Modules/TopGear/Engine/TopGearEngineBC"
+import { runTopGearBC } from "General/Modules/TopGear/Engine/TopGearEngineClassic"
 
 describe("Top Gear Test", () => {
     test("Top Gear Test", () => {
