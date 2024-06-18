@@ -59,7 +59,7 @@ export function createPlayerChars(): PlayerChars {
 
       // Auto-add Classic Specs
       CONSTANTS.classicSpecs.forEach(spec => {
-        if (!(specsAdded.includes(spec)) && (spec === "Restoration Druid Classic"/* || spec === "Holy Paladin Classic"*/)) { // TODO: Remove as we add the other specs.
+        if (!(specsAdded.includes(spec)) && (spec === "Restoration Druid Classic" || spec === "Holy Paladin Classic"/* || spec === "Discipline Priest Classic"*/)) { // TODO: Remove as we add the other specs.
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
           autoAddItems(newChar, "Raid", "Classic");
@@ -69,6 +69,10 @@ export function createPlayerChars(): PlayerChars {
 
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
+      if (this.activeChar > this.allChar.length - 1) {
+        // We have a mismatch because they've selected a character that doesn't exist. We'll auto select the lowest character that matches their game type.
+        this.activeChar = charArray.findIndex(char => char.gameType === (ls.get<string>("gameType") || "Retail"));
+      }
       this.setupChars();
       return this;
     },

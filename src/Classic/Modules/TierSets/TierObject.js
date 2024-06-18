@@ -71,16 +71,16 @@ export default function TierObject(props) {
             <Grid item xs={12} style={{ marginTop: 4 }}>
               {/* --------------------------------------- Set Icons --------------------------------------- */}
               <Grid container spacing={1} direction="row" justifyContent="center" alignItems="center">
-                {Object.keys(set.slots)
-                  .filter((filter) => set.slots[filter].id > 0)
+                {set.slots
+                  //.filter((filter) => set.slots[filter].id > 0)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <WowheadTooltip type="item" id={set.slots[key].id} domain={"wotlk-" + currentLanguage}>
+                      <WowheadTooltip type="item" id={key} domain={"cata-" + currentLanguage}>
                         <img
                           height={40}
                           width={40}
-                          src={getItemIcon(set.slots[key].id, "Classic")}
-                          alt={set.slots[key].id}
+                          src={getItemIcon(key, "Classic")}
+                          alt={key}
                           style={{
                             borderRadius: 4,
                             borderWidth: "1px",

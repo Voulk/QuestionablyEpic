@@ -33,6 +33,7 @@ import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerR
 // Classic
 import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
+import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
@@ -75,26 +76,35 @@ const useStyles = makeStyles((theme) => ({
 
 const getSpellDB = (spec) => {
   if (spec === "Preservation Evoker") return EVOKERSPELLDB;
-  if (spec === "Discipline Priest") return DISCSPELLS;
-  if (spec === "Restoration Shaman") return SHAMANSPELLDB;
-  if (spec === "Holy Paladin") return PALADINSPELLDB;
-  if (spec === "Restoration Druid") return DRUIDSPELLDB;
-  if (spec === "Mistweaver Monk") return MONKSPELLS;
-  if (spec === "Holy Priest") return HOLYPRIESTSPELLDB;
-  if (spec === "Restoration Druid Classic") return CLASSICDRUIDSPELLDB;
-  if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
+  else if (spec === "Discipline Priest") return DISCSPELLS;
+  else if (spec === "Restoration Shaman") return SHAMANSPELLDB;
+  else if (spec === "Holy Paladin") return PALADINSPELLDB;
+  else if (spec === "Restoration Druid") return DRUIDSPELLDB;
+  else if (spec === "Mistweaver Monk") return MONKSPELLS;
+  else if (spec === "Holy Priest") return HOLYPRIESTSPELLDB;
+
+  // Classic
+  else if (spec === "Restoration Druid Classic") return CLASSICDRUIDSPELLDB;
+  else if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
+  else if (spec === "Discipline Priest Classic") return CLASSICPRIESTSPELLDB;
+  else if (spec === "Holy Priest Classic") return CLASSICPRIESTSPELLDB;
 };
 
 const getTalentDB = (spec) => {
   if (spec === "Preservation Evoker") return evokerTalents;
-  if (spec === "Discipline Priest") return discTalents;
-  if (spec === "Restoration Shaman") return null;
-  if (spec === "Holy Paladin") return palaTalents;
-  if (spec === "Restoration Druid") return druidTalents;
-  if (spec === "Mistweaver Monk") return monkTalents;
-  if (spec === "Holy Priest") return holyPriestTalents;
-  if (spec === "Restoration Druid Classic") return classicDruidTalents;
-  if (spec === "Holy Paladin Classic") return classicPaladinTalents;
+  else if (spec === "Discipline Priest") return discTalents;
+  else if (spec === "Restoration Shaman") return null;
+  else if (spec === "Holy Paladin") return palaTalents;
+  else if (spec === "Restoration Druid") return druidTalents;
+  else if (spec === "Mistweaver Monk") return monkTalents;
+  else if (spec === "Holy Priest") return holyPriestTalents;
+
+  // Classic
+  else if (spec === "Restoration Druid Classic") return classicDruidTalents;
+  else if (spec === "Holy Paladin Classic") return classicPaladinTalents;
+  else if (spec === "Discipline Priest Classic") return classicDiscTalents;
+  else if (spec === "Holy Priest Classic") return classicHolyTalents;
+  else return null;
 };
 
 const saveStats = (newStats) => {

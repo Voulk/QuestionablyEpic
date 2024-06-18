@@ -129,7 +129,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      const cpm = 32; // TODO: Pull from castmodel.
+      const cpm = player.spec === "Holy Paladin Classic" ? 25.4 : 31.8; // TODO: Pull from castmodel.
       bonus_stats.mp5 = data[0].value[itemLevel] * cpm / 12;
       bonus_stats.haste = data[1].value[itemLevel] * data[1].duration / data[1].cooldown;
       return bonus_stats;
