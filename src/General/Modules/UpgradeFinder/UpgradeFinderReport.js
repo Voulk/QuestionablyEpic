@@ -164,14 +164,19 @@ export default function UpgradeFinderReport(props) {
                 <Tab className={gameType === "Retail" ? classes.raidHeaderStyle : classes.classicRaidHeaderStyle} label={t("Raid")} {...a11yProps(0)} />
                 {/* Mythic Plus */}
                 <Tab className={classes.mythicPlusHeaderStyle} label={t("Dungeon")} {...a11yProps(1)} />
-                {/* PVP */}
-                {/* <Tab className={classes.pvpHeaderStyle} label={t("UpgradeFinder.PvP")} {...a11yProps(2)} /> */}
-                {/* Crafted Gear */}
-                <Tab className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
-                {/* World Bosses */}
-                <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
+
+                {/* Render Crafted Gear tab only if gameType is Retail */}
+                {gameType === "Retail" && (
+                  <Tab className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
+                )}
+
+                {/* Render World Bosses tab only if gameType is Retail */}
+                {gameType === "Retail" && (
+                  <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
+                )}
+
                 {/* Slots */}
-                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(4)} />
+                <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(gameType === "Retail" ? 4 : 2)} />
               </Tabs>
             </AppBar>
           </Grid>
@@ -239,7 +244,7 @@ export default function UpgradeFinderReport(props) {
 
           {/* Slots */}
           <Grid item xs={12}>
-            <UFTabPanel value={tabValue} index={4}>
+            <UFTabPanel value={tabValue} index={gameType === "Retail" ? 4 : 2}>
               <div className={classes.panel}>
                 <Grid container>
                   <SlotsContainer spec={result.spec} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
