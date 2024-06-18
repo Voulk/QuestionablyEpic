@@ -22,18 +22,20 @@ const GLOBALCONST = {
 
     masteryMod: {
         "Restoration Druid": 1.25,
-        "Discipline Priest": 1, 
+        "Discipline Priest": 2.5, 
         "Holy Paladin": 1.5,
-        "Holy Priest": 1,
-        "Restoration Shaman": 1, 
-        "Mistweaver Monk": 0, 
+        "Holy Priest": 1.25,
+        "Restoration Shaman": 3, 
+        "Mistweaver Monk": 1, 
     },
 
     baseMana: {
         "Holy Paladin": 23422,
         "Restoration Druid": 18355,
-        "Discipline Priest": 0,
-        "Holy Priest": 0,
+        "Discipline Priest": 20590,
+        "Holy Priest": 20590,
+        "Restoration Shaman": 23430,
+        "Mistweaver Monk": 0,
     }
 
 
@@ -100,8 +102,6 @@ export const applyRaidBuffs = (state, stats) => {
     // 5% spell haste
     //stats.haste += 5 * 128;
 
-
-
     // 5% base stats - The added intellect also becomes spell power.
     stats.intellect *= 1.05;
     stats.spirit *= 1.05;
@@ -134,13 +134,25 @@ export const getManaRegen = (currentStats, spec) => {
     const inCombatRegen = {
         "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
         "Restoration Druid": 0.5,
+        "Discipline Priest": 0.5,
+        "Holy Priest": 0.8,
+        "Restoration Shaman": 0.5,
     }
-    return (/*1171*/0.001 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
+    return (0.001 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
 }
 
 export const getManaPool = (currentStats, spec) => {
-    if (spec.includes("Restoration Druid")) return (18355 + currentStats.intellect * 15) * 1.02; // Meta + Furor 18635 - 280
-    else return (23422 - 280 + currentStats.intellect * 15) * 1.02;
+    if (spec.includes("Restoration Druid")) return (GLOBALCONST.baseMana[spec] + currentStats.intellect * 15) * 1.02; 
+    else {
+        const baseManaPool = (GLOBALCONST.baseMana[spec] - 280 + currentStats.intellect * 15) * 1.02; // Includes meta gem
+        return baseManaPool;
+    }
+
+
+    // Right now we're handling things like Furor outside of this function. 
+    /*
+    if (spec.includes("Restoration Druid")) return (baseManaPool) * 1.02; // Meta + Furor 18635 - 280
+    else return (baseManaPool) * 1.02;*/
 }
 
 
@@ -148,7 +160,7 @@ export const getManaPool = (currentStats, spec) => {
 // Returns the equivalent MP5 from external mana effects.
 // Innervate currently only works for druid but we could add a setting.
 export const getAdditionalManaEffects = (currentStats, spec) => {
-    const baseMana = spec.includes("Holy Paladin") ? 23422 : 18355;
+    const baseMana = GLOBALCONST.baseMana[spec];
     let additionalManaPerSecond = baseMana * 0.05;
     
     const manaSources = {additionalMP5: 0};
@@ -184,6 +196,14 @@ export const getAdditionalManaEffects = (currentStats, spec) => {
         // Revitalize
         manaSources["Revitalize"] = (pool * 0.01 * 5 / 60 * 5);
         additionalManaPerSecond += (pool * 0.01 * 5 / 60 * 5); // 15 mana, 5 times per minute
+    }
+    else if (spec.includes("Discipline Priest")) {
+        // Rapture
+        const rapture = (pool * 0.06 / 12 * 5); // 6% of base mana, every 12 seconds.
+        manaSources["Rapture"] = rapture;
+        additionalManaPerSecond += rapture;
+
+        // Archangel / Evang
     }
 
     manaSources.additionalMP5 = additionalManaPerSecond;

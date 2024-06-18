@@ -485,53 +485,56 @@ export default function UpgradeFinderFront(props) {
           </Grid>
         )}
         {/* Crafted Items */}
-<Grid item xs={12}>
-  <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
-    <div style={{ padding: 8 }}>
-      <Grid container justifyContent="center" spacing={1}>
-        <Grid item xs={12}>
-          <Typography color="primary" align="center" variant="h5">
-            {"Crafted Gear"}
-          </Typography>
+        {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Typography align="center">{"Pick crafted stats and item level"}</Typography>
-          </Grid>
-        </Grid>
-      </Grid>
+            <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
+              <div style={{ padding: 8 }}>
+                <Grid container justifyContent="center" spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography color="primary" align="center" variant="h5">
+                      {"Crafted Gear"}
+                    </Typography>
+                    <Grid item xs={12}>
+                      <Typography align="center">{"Pick crafted stats and item level"}</Typography>
+                    </Grid>
+                  </Grid>
+                </Grid>
 
-      <Grid container justifyContent="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
-        {/* Add TextField component here */}
-        <Grid item xs={3} style={{ textAlign: "center" }}>
-          <TextField
-            select
-            label="Secondaries"
-            value={ufSettings.craftedStats} // Provide value and onChange handler as per your requirement
-            onChange={changeCraftedStats} // Provide your handleChange function
-            variant="outlined"
-            fullWidth
-          >
-            {craftedOptions.map((option => {
-              return <MenuItem key={option} value={option}>{option}</MenuItem>
-            }))}
-          </TextField>
-        </Grid>
+            <Grid container justifyContent="center" spacing={1} style={{ marginTop: "10px 10px 0px 10px" }}>
+              {/* Add TextField component here */}
+              <Grid item xs={3} style={{ textAlign: "center" }}>
+                <TextField
+                  select
+                  label="Secondaries"
+                  value={ufSettings.craftedStats} // Provide value and onChange handler as per your requirement
+                  onChange={changeCraftedStats} // Provide your handleChange function
+                  variant="outlined"
+                  fullWidth
+                >
+                  {craftedOptions.map((option => {
+                    return <MenuItem key={option} value={option}>{option}</MenuItem>
+                  }))}
+                </TextField>
+              </Grid>
 
-        <Grid item style={{ textAlign: "center" }} xs={8}>
-          <UpgradeFinderSlider
-            className={classes.slider}
-            style={{ color: "#af5050" }}
-            defaultValue={4}
-            step={null}
-            valueLabelDisplay="off"
-            marks={craftedItemLevels}
-            max={5}
-            change={setCraftedLevel}
-          />
-        </Grid>
-      </Grid>
-    </div>
-  </Paper>
-</Grid>
+            <Grid item style={{ textAlign: "center" }} xs={8}>
+              <UpgradeFinderSlider
+                className={classes.slider}
+                style={{ color: "#af5050" }}
+                defaultValue={4}
+                step={null}
+                valueLabelDisplay="off"
+                marks={craftedItemLevels}
+                max={5}
+                change={setCraftedLevel}
+              />
+            </Grid>
+          </Grid> 
+
+          
+        </div>
+      </Paper>
+    </Grid> ) : null}
         {/* ------------------------------- PvP Section ------------------------------ */}
         {/*<Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>

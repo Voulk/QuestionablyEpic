@@ -4,6 +4,8 @@
 import { getSpellRaw, runCastSequence } from "./ClassicRamps";
 import { CLASSICDRUIDSPELLDB, druidTalents } from "./ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB, paladinTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "./ClassicPriestSpellDB";
+
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { buildChartEntry } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ChartUtilities";
@@ -20,10 +22,64 @@ export const buildClassicChartData = (activeStats, spec) => {
     else if (spec === "Holy Paladin") {
         return buildClassicPaladinChartData(activeStats, paladinTalents);
     }
+    else if (spec === "Discipline Priest") {
+        return buildClassicDiscChartData(activeStats, classicDiscTalents);
+    }
 
     else {
         console.error("invalid spec");
     }
+}
+
+export const buildClassicDiscChartData = (activeStats, baseTalents) => {
+    //
+    let results = [];
+
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Discipline Priest"};
+    const sequences = [
+        {cat: "Base Spells", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
+        {cat: "Base Spells", tag: "Prayer of Mending", seq: ["Prayer of Mending"], preBuffs: []},
+        {cat: "Base Spells", tag: "Prayer of Healing", seq: ["Prayer of Healing"], preBuffs: []},
+        {cat: "Base Spells", tag: "Flash Heal", seq: ["Flash Heal"], preBuffs: []},
+        {cat: "Base Spells", tag: "Renew", seq: ["Renew"], preBuffs: []},
+        {cat: "Base Spells", tag: "Penance (Defensive)", seq: ["Penance D"], preBuffs: []},
+        
+        {cat: "DPS Spells", tag: "Smite", seq: ["Smite"], preBuffs: []},
+        {cat: "DPS Spells", tag: "Holy Fire", seq: ["Holy Fire"], preBuffs: []},
+       
+        {cat: "DPS Spells", tag: "Penance (Offensive)", seq: ["Penance"], preBuffs: []},
+        
+        //{cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
+
+    ]
+
+    sequences.forEach(sequence => {
+        const newSeq = sequence.seq;
+        const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
+        const spellData = {id: 0, icon: CLASSICPRIESTSPELLDB[newSeq[0]] ? CLASSICPRIESTSPELLDB[newSeq[0]][0].spellData.icon : ""};
+        const cat = sequence.cat;
+
+        if (cat === "Package") {
+            // All auto based.
+            Object.keys(sequence.details).forEach(spellName => {
+                const value = sequence.details[spellName];
+                for (let i = 0; i < value; i++) {
+                    newSeq.push(spellName);
+                }
+            })
+            
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        }
+        else {
+            // All sequence based.
+            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
+
+            
+
+        };  
+    }); 
+
+    return results;
 }
 
 export const buildClassicPaladinChartData = (activeStats, baseTalents) => {

@@ -73,7 +73,7 @@ const specImages: { [key: string]: string } = {
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
 
-  "Holy Paladin Classic": require("Images/PaladinSmall.png"),
+  "Holy Paladin Classic": require("Images/classicon_paladin.jpg"),
   "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
