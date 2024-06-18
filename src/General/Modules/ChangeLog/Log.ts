@@ -18,6 +18,14 @@ export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
     update: 6,
+    date: "June 18 (Bugfix)",
+    changes: [ 
+      "Cataclysm: Added Holy Paladin",
+      "Fixed a bug with character creation that could cause results to look funny until you refreshed."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
+    update: 6,
     date: "June 9 (Major)",
     changes: [ 
       "Cataclysm: Greatly increased the speed of Resto Druid Top Gear.",

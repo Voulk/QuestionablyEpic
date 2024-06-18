@@ -137,15 +137,15 @@ export function createPlayerChars(): PlayerChars {
     },
   
     addChar(name, spec, region, realm, race, gameType) {
-      if (gameType === "Classic" || gameType === "BurningCrusade") {
+      /*if (gameType === "Classic" || gameType === "BurningCrusade") {
         this.allChar.push(new ClassicPlayer(name, spec, this.allChar.length, region, realm, race));
-      }
-      else {
-        let newChar = new Player(name, spec, this.allChar.length, region, realm, race);
-        newChar.setPlayerAvatars();
-        if (spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, []);
-        this.allChar.push(newChar);
-      }
+      } */
+
+      let newChar = new Player(name, spec, this.allChar.length, region, realm, race, "default", gameType);
+      newChar.setPlayerAvatars();
+      if (spec === "Discipline Priest") newChar.getActiveModel("Raid").setRampInfo(newChar.activeStats, []);
+      this.allChar.push(newChar);
+
       this.saveAllChar();
     },
   

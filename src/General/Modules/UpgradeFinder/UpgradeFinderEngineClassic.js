@@ -1,19 +1,14 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import Item from "../Player/Item";
-import { runTopGearBC } from "../TopGear/Engine/TopGearEngineClassic";
+import { runTopGearBC, prepareTopGear } from "../TopGear/Engine/TopGearEngineClassic";
 import {
-  calcStatsAtLevel,
-  getItemAllocations,
-  scoreItem,
   getValidArmorTypes,
   getValidWeaponTypes,
-  getItem,
   filterItemListByType,
   getItemProp,
 } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
-import { itemLevels } from "../../../Databases/itemLevelsDB";
 
 /*
 The core Upgrade Finder loop is as follows:
@@ -119,19 +114,20 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
   // TEMP VARIABLES
   //const playerSettings = {raid: 3, dungeon: 15, pvp: 4};
   //
-
   const completedItemList = [];
 
   console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.castModel[contentType];
-
+  const itemSets = prepareTopGear(baseItemList, player, userSettings, true, [], []);
 
   const baseHPS = player.getHPS(contentType);
-  const baseSet = runTopGearBC(baseItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
-  const baseScore = baseSet.itemSet.hardScore;
+  const baseSet = runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
 
+  const baseScore = baseSet.hardScore;
+  console.log(baseScore);
+  console.log("=======")
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
   //console.log(baseSet);
   console.log(itemPoss)
@@ -237,14 +233,16 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   newItemList.push(item);
 
   //console.log(player);
-  const wepList = buildNewWepCombosUF(player, newItemList);
+  const itemSets = prepareTopGear(newItemList, player, userSettings, true, [], []);
+  //const wepList = buildNewWepCombosUF(player, newItemList);
   
-  const newTGSet = runTopGearBC(newItemList, wepList, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false);
-
-  const newScore = newTGSet.itemSet.hardScore;
+  const newTGSet = runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
+  console.log(newTGSet);
+  const newScore = newTGSet.hardScore;
+  console.log(newScore);
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100 / 60;
-
+  console.log(baseScore);
   return { item: item.id, level: item.level, score: differential, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, };
 }
 
