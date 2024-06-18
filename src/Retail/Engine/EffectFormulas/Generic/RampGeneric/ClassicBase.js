@@ -142,8 +142,12 @@ export const getManaRegen = (currentStats, spec) => {
 }
 
 export const getManaPool = (currentStats, spec) => {
-    const baseManaPool = (GLOBALCONST.baseMana[spec] + currentStats.intellect * 15) * 1.02; // Includes meta gem
-    return baseManaPool;
+    if (spec.includes("Restoration Druid")) return (GLOBALCONST.baseMana[spec] + currentStats.intellect * 15) * 1.02; 
+    else {
+        const baseManaPool = (GLOBALCONST.baseMana[spec] - 280 + currentStats.intellect * 15) * 1.02; // Includes meta gem
+        return baseManaPool;
+    }
+
 
     // Right now we're handling things like Furor outside of this function. 
     /*
