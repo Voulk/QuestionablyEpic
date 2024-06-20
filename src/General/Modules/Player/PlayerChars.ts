@@ -62,7 +62,6 @@ export function createPlayerChars(): PlayerChars {
         if (!(specsAdded.includes(spec)) && (spec === "Restoration Druid Classic" || spec === "Holy Paladin Classic"/* || spec === "Discipline Priest Classic"*/)) { // TODO: Remove as we add the other specs.
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
-          autoAddItems(newChar, "Raid", "Classic");
           charArray.push(newChar);
         }
     })

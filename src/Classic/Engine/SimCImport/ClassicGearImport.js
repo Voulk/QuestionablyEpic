@@ -5,7 +5,7 @@ import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
 
-export function runBCSimC(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput) {
+export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -31,7 +31,11 @@ export function runBCSimC(simCInput, player, contentType, setErrorMessage, snack
         processItem(line, player, contentType);
       }
     }
-    autoAddItems(player, "Raid", "Classic");
+
+    player.savedPTRString = simCInput;
+    allPlayers.updatePlayerChar(player);
+    allPlayers.saveAllChar();
+
     snackHandler();
     closeDialog();
     clearSimCInput("");
@@ -116,7 +120,7 @@ function processItem(line, player, contentType, type) {
   {
     // Dear god please replace this with a renovation of suffixDB.
     if ([230, 262, 268, 186, 192, 213].includes(suffix)) itemID = parseInt(itemID.toString() + "2") // Feverflare
-    else if ([187, 193, 214, 231, 263, 269, 282, 286].includes(suffix)) itemID = parseInt(itemID.toString() + "0") // Undertow
+    else if ([131, 187, 193, 214, 231, 263, 269, 282, 286].includes(suffix)) itemID = parseInt(itemID.toString() + "0") // Undertow
     else if ([132, 188, 194, 215, 232, 264, 270, 283, 287].includes(suffix)) itemID = parseInt(itemID.toString() + "3") // Wavecrest
     else if ([191, 212, 229, 267, 271, 280, 284].includes(suffix)) itemID = parseInt(itemID.toString() + "1") // Fireflash
   }

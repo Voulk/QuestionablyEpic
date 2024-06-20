@@ -16,8 +16,6 @@ import {
 } from "./ItemUtilities";
 import SPEC from "../Engine/SPECS";
 import each from "jest-each";
-import ClassicItem from "General/Modules/Player/ClassicItem";
-import ClassicPlayer from "General/Modules/Player/ClassicPlayer";
 
 
 describe("Make sure Items Exist", () => {

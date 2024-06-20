@@ -528,7 +528,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         enchants['Hands'] = "Haste"
       }
       else { 
-        enchant_stats.mastery += 50;
+        enchant_stats.mastery += 65;
         enchants['Hands'] = "Mastery"
       }
 
@@ -839,7 +839,8 @@ function createSets(itemList, rawWepCombos, filter) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
                             if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
-                                finger < finger2) {
+                                finger < finger2 &&
+                                (!splitItems.Finger[finger].name.includes("Planetary Band") || !splitItems.Finger[finger2].name.includes("Planetary Band"))) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 
