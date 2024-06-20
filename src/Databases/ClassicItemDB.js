@@ -68514,7 +68514,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "inv_shield_cataclysm_c_01 ",
+        "icon": "inv_shield_cataclysm_c_01-",
         "itemClass": 4,
         "itemSubClass": 6,
         "slot": "Shield",
@@ -72011,7 +72011,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "inv_shield_cataclysm_c_01 ",
+        "icon": "inv_shield_cataclysm_c_01-",
         "itemClass": 4,
         "itemSubClass": 6,
         "slot": "Shield",
