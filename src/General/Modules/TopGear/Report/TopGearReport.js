@@ -191,11 +191,11 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
 
 
     if (gameType === "Classic") {
-      manaSources.pool = Math.round(getManaPool(statList, player.spec) + 22000); // Mana pot
+      manaSources.pool = Math.round(getManaPool(statList, player.spec.replace(" Classic", "")) + 22000); // Mana pot
       manaSources.regen = Math.round((getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12);
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
       //console.log("Total mana spend: " + (regen + pool))
-
+      console.log(manaSources);
       manaSources.totalMana =  Math.round(manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7);
       console.log("Total Mana" + manaSources.totalMana)
 

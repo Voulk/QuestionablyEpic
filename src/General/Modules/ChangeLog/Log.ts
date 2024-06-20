@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 7,
+    date: "June 20",
+    changes: [ 
+      "Cataclysm: Import strings will now save between sessions as they already do for retail.",
+      "Cataclysm: Top Gear will no longer create sets with two Planetary Bands.",
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 6,
     date: "June 18 (Bugfix)",
     changes: [ 

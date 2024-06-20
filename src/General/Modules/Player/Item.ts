@@ -72,6 +72,7 @@ export class Item {
       this.classicSockets.sockets = sockets? sockets.gems : [];
       this.classicSockets.bonus = sockets ? sockets.bonus : {};
       this.quality = getItemProp(id, "quality", gameType);
+      this.name = getItemProp(id, "name", gameType);
       // Adjust allocations for sockets.
       const itemAllocations = getItemAllocations(id, [], gameType);
 
