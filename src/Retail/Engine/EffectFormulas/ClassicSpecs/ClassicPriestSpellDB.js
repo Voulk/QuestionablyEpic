@@ -15,18 +15,19 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 34, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.87, 
+        flat: 8863,
         expectedOverheal: 0.07,
-        secondaries: ['mastery'],
+        cooldownData: {cooldown: 3},
+        secondaries: [],
     }],
     "Prayer of Healing": [{
         spellData: {id: 596, icon: "spell_holy_prayerofhealing02", cat: "heal"},
         type: "heal",
         castTime: 2.5, 
         cost: 26, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.34000000358, 
+        flat: 3175,
         expectedOverheal: 0.37,
         targets: 5,
         secondaries: ['crit'],
@@ -36,10 +37,10 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 18, 
-        coeff: 0, 
+        coeff: 0.8069999814, 
         flat: 0,
         expectedOverheal: 0.1,
-        ticks: 6,
+        targets: 3, // Effectively jumps
         secondaries: ['crit'],
     }],
     "Flash Heal": [{
@@ -47,8 +48,8 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         cost: 28, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.72500002384, 
+        flat: 6781,
         expectedOverheal: 0.1,
         secondaries: ['crit'],
     }],
@@ -57,8 +58,8 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 17, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.13099999726, 
+        flat: 1224,
         expectedOverheal: 0.1,
         secondaries: ['crit'],
     }],
@@ -67,8 +68,8 @@ export const CLASSICPRIESTSPELLDB = {
         type: "damage",
         castTime: 2.5, 
         cost: 15, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.8560000062, 
+        flat: 693,
         secondaries: ['crit'],
     }],
     "Holy Fire": [{
@@ -76,28 +77,50 @@ export const CLASSICPRIESTSPELLDB = {
         type: "damage",
         castTime: 2, 
         cost: 15, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 1.11000001431,
+        flat: 1024, 
         secondaries: ['crit'],
-    }],
+    },
+    {
+        type: "classic periodic",
+        buffType: "damage",
+        buffDuration: 7,
+        coeff: 0.03119999915, // The coefficient for a single regrowth tick.
+        flat: 51,
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0}
+    }
+],
     "Penance": [{
-        spellData: {id: 0, icon: "spell_holy_penance", cat: "damage"},
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage"},
         type: "damage",
         castTime: 2, 
         cost: 14, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.458, 
+        flat: 746,
         secondaries: ['crit'],
-    }],
+    },
+],
     "Penance D": [{
-        spellData: {id: 0, icon: "spell_holy_penance", cat: "heal"},
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
         type: "heal",
         castTime: 0, 
         cost: 14, 
-        coeff: 0, 
-        flat: 0,
+        coeff: 0.321, 
+        flat: 3006,
         expectedOverheal: 0.1,
         secondaries: ['crit'],
+    },
+    {
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 2,
+        coeff: 0.321, // The coefficient for a single regrowth tick.
+        flat: 3006,
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
+        expectedOverheal: 0.1,
+        secondaries: ['crit']
     }],
 
 }
@@ -109,6 +132,33 @@ const offspecTalents = {
 
 
 const discTalents = {
+    improvedPowerWordShield: {points: 2, maxPoints: 2, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        buffSpell(spellDB["Power Word: Shield"], 0.1 * points, "additive");
+    }},
+
+    twinDisciplines: {points: 3, maxPoints: 3, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // NYI
+        state.genericBonus.healing *= 1 + (0.02 * points);
+        state.genericBonus.damage *= 1 + (0.02 * points)
+    }},
+
+    mentalAgility: {points: 3, maxPoints: 3, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        Object.keys(spellDB).forEach(spellName => {
+            if (spellDB[spellName][0].castTime === 0) spellDB[spellName][0].cost *= (1 - 0.033 * points);
+        });
+    }},
+
+    soulWarding: {points: 3, maxPoints: 3, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Power Word: Shield"][0].cooldownData.cooldown -= points;
+    }},
+
+    atonement: {points: 1, maxPoints: 1, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+
+        spellDB["Smite"][0].damageToHeal = true;
+        spellDB["Holy Fire"][0].damageToHeal = true;
+        spellDB["Holy Fire"][1].damageToHeal = true;
+    }},
+
 
 }
 
