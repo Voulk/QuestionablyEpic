@@ -19,7 +19,7 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 8863,
         expectedOverheal: 0.07,
         cooldownData: {cooldown: 3},
-        secondaries: [],
+        secondaries: ["mastery"],
     }],
     "Prayer of Healing": [{
         spellData: {id: 596, icon: "spell_holy_prayerofhealing02", cat: "heal"},
@@ -71,6 +71,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0.8560000062, 
         flat: 693,
         secondaries: ['crit'],
+        statMod: {critEffect: 1.5},
     }],
     "Holy Fire": [{
         spellData: {id: 14914, icon: "spell_holy_searinglight", cat: "damage"},
@@ -80,6 +81,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 1.11000001431,
         flat: 1024, 
         secondaries: ['crit'],
+        statMod: {critEffect: 1.5},
     },
     {
         type: "classic periodic",

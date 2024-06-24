@@ -14,12 +14,11 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
   let score = 0;
   const healingBreakdown = {};
   const fightLength = 6;
-  console.log(userSettings);
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
   const spellpower = statProfile.intellect + statProfile.spellpower;
-  const critPercentage = 1.04 + getCritPercentage(statProfile, "Discipline Priest"); // +4% crit
+  const critPercentage = 1 + getCritPercentage(statProfile, "Discipline Priest"); // +4% crit
   // Evaluate Stats
   // Spellpower
 
@@ -34,25 +33,31 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
                 getAdditionalManaEffects(statProfile, "Discipline Priest").additionalMP5 +
                 (statProfile.mp5 || 0)) * 12 * fightLength;
   const totalManaPool = manaPool + regen;
-  const fillerCost = baseline.castProfile.filter(spell => spell.spell === "Power Word: Shield")[0]['cost'] // This could be more efficient;
+  const fillerCost = 0 // baseline.castProfile.filter(spell => spell.spell === "Prayer of Healing")[0]['cost'] // This could be more efficient;
 
   const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost;
 
   baseline.castProfile.forEach(spellProfile => {
       const fullSpell = baseline.spellDB[spellProfile.spell];
+      const spellName = spellProfile.spell;
 
       fullSpell.forEach(spell => {
         const genericMult = 1.04 * (spellProfile.bonus ? spellProfile.bonus : 1);
         let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
         if (tierSets.includes("Druid T11-2") && spellProfile.spell === "Lifebloom") critBonus += 0.05;
         const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (critPercentage + critBonus) : 1;
-        const additiveScaling = (spell.additiveScaling || 0) + 1
-        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;
-        let spellHealing = (spell.flat + spell.coeff * spellpower) *
+        const additiveScaling = (spell.additiveScaling || 0) + 1;
+
+        // Regular mastery scaling (PW:S)
+        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? getMastery(statProfile, "Discipline Priest") : 1;
+        
+        let spellThroughput = (spell.flat + spell.coeff * spellpower) *
                             (critMult) * // Add base crit
                             (masteryMult) *
                             genericMult;
-        
+
+
+      
         // Handle HoT
         if (spell.type === "classic periodic") {
             const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
@@ -60,14 +65,30 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
             
             const targetCount = spell.targets ? spell.targets : 1;
             const tickCount = Math.round(spell.buffDuration / (adjTickRate));
-            if (spellProfile.spell === "Rolling Lifebloom") spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
-            else spellHealing = spellHealing * tickCount * targetCount;
+
+            spellHealing = spellHealing * tickCount * targetCount;
         }
 
+        if (spell.type === "heal") {
+          const masteryMultiplier = ((spellName === "Prayer of Healing" && spell.type === "heal")) ? 1 : 0; // TODO: Crit heals
+          const absorbVal = spellThroughput /*/ (1 - spell.expectedOverheal) */* (getMastery(statProfile, "Discipline Priest") - 1) * masteryMultiplier;
+          healingBreakdown["Divine Aegis"] = (healingBreakdown["Divine Aegis"] || 0) + absorbVal;
+
+          healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellThroughput * spellProfile.cpm);
+          score += spellProfile.fillerSpell ? ((spellHealing + absorbVal) * fillerCPM) : ((spellHealing + absorbVal) * spellProfile.cpm);
+        } 
+        else if (spell.type === "damage") {
+          if (spell.damageToHeal) {
+            // Atonement
+            const atonementHealing = (spellThroughput * spellProfile.cpm)
+            healingBreakdown["Atonement"] = (healingBreakdown["Atonement"] || 0) + atonementHealing;
+            score += atonementHealing; // Can we just add up score at the end from healing breakdown?
+            // TODO: Add damageBreakdown.
+          }
+        }
         
         //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
-        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellHealing * spellProfile.cpm);
-        score += spellProfile.fillerSpell ? (spellHealing * fillerCPM) : (spellHealing * spellProfile.cpm);
+
 
       //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
       })
@@ -95,11 +116,13 @@ export function initializeDiscSet() {
 }
   const discCastProfile = [
     //{spell: "Tranquility", cpm: 0.3},
-    {spell: "Power Word: Shield", cpm: 3.5},
+    //{spell: "Power Word: Shield", cpm: 3.5},
+    //{spell: "Prayer of Healing", cpm: 3.5},
+    {spell: "Smite", cpm: 5},
   ]
 
   const adjSpells = getTalentedSpellDB("Discipline Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: discTalents, spec: "Discipline Priest", genericBonus: {damage: 1, healing: 1}});
-  console.log(adjSpells["Power Word: Shield"]);
+
   discCastProfile.forEach(spell => {
     spell.castTime = discSpells[spell.spell][0].castTime;
     spell.hpc = 0;
