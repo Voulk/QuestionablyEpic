@@ -20,6 +20,7 @@ export const CLASSICPRIESTSPELLDB = {
         expectedOverheal: 0.07,
         cooldownData: {cooldown: 3},
         secondaries: ["mastery"],
+        absorb: true,
     }],
     "Prayer of Healing": [{
         spellData: {id: 596, icon: "spell_holy_prayerofhealing02", cat: "heal"},
@@ -28,7 +29,7 @@ export const CLASSICPRIESTSPELLDB = {
         cost: 26, 
         coeff: 0.34000000358, 
         flat: 3175,
-        expectedOverheal: 0.37,
+        expectedOverheal: 0.45,
         targets: 5,
         secondaries: ['crit'],
     }],
@@ -124,6 +125,21 @@ export const CLASSICPRIESTSPELLDB = {
         expectedOverheal: 0.1,
         secondaries: ['crit']
     }],
+    "Divine Hymn": [
+    {
+        castTime: 8, 
+        cost: 36, 
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 8,
+        coeff: 0.429, // The coefficient for a single regrowth tick.
+        flat: 3023,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
+        expectedOverheal: 0.1,
+        targets: 5,
+        secondaries: ['crit']
+    }],
 
 }
 
@@ -155,11 +171,19 @@ const discTalents = {
     }},
 
     atonement: {points: 1, maxPoints: 1, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
         spellDB["Smite"][0].damageToHeal = true;
         spellDB["Holy Fire"][0].damageToHeal = true;
         spellDB["Holy Fire"][1].damageToHeal = true;
     }},
+
+    divineFury: {points: 3, maxPoints:3, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        const reduction = [0.15, 0.3, 0.5][points];
+        spellDB["Smite"][0].castTime -= reduction;
+        spellDB["Holy Fire"][0].castTime -= reduction;
+        //spellDB["Heal"][0].castTime -= reduction;
+        //spellDB["Greater Heal"][0].castTime -= reduction;
+    }},
+
 
 
 }
@@ -168,10 +192,23 @@ const holyTalents = {
 
 }
 
-const glyphs = {
-    glyphOfHolyShock: {points: 1, maxPoints: 1, icon: "spell_holy_searinglight", id: 63224, select: true, tier: 1, runFunc: function (state, spellDB, points) {
 
+const glyphs = {
+    glyphOfPrayerOfHealing: {points: 0, maxPoints: 1, icon: "spell_holy_searinglight", id: 63224, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        const healOverTimeEffect = {        
+            type: "classic periodic",
+            buffType: "heal",
+            buffDuration: 6,
+            coeff: 0.34000000358 * 0.1, // This ticks twice for 20% total
+            flat: 3175 * 0.1,
+            tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
+            secondaries: ['crit'], // This effectively has crit scaling because the casting Prayer of Healing does. It can't double dip though.
+            ignoreEffects: true};
+
+        spellDB["Prayer of Healing"].push(healOverTimeEffect);
     }},
+
+    
 
     glyphOfDivineFavor: {points: 1, maxPoints: 1, icon: "spell_holy_divineillumination", id: 54937, select: true, tier: 1, runFunc: function (state, spellDB, points) {
 
