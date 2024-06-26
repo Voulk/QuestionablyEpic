@@ -33,11 +33,17 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
                 getAdditionalManaEffects(statProfile, "Discipline Priest").additionalMP5 +
                 (statProfile.mp5 || 0)) * 12 * fightLength;
   const totalManaPool = manaPool + regen;
-  const fillerCost = baseline.castProfile.filter(spell => spell.spell === "Prayer of Healing")[0]['cost'] // This could be more efficient;
+
+  // Build filler
+  //const fillerCost = baseline.castProfile.filter(spell => spell.spell === "Prayer of Healing")[0]['cost']  // This could be more efficient;
+  let fillerCost = 0;
+  baseline.castProfile.filter(spell => spell.fillerSpell).forEach(spell => {
+    fillerCost += spell.cost * spell.fillerRatio
+  });
 
   const baseHastePerc = (statProfile.haste / 128 / 100 + 1) * 1.05 * 1.02; // Haste buff, +2% haste. Consider: haste buff on PW:S
   const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost;
-  console.log("Filler: " + fillerCPM);
+
   baseline.castProfile.forEach(spellProfile => {
       const fullSpell = baseline.spellDB[spellProfile.spell];
       const spellName = spellProfile.spell;
@@ -53,7 +59,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
         const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (spellCritPercentage * critEffect + (1 - critPercentage)) : 1;
         
         const additiveScaling = (spell.additiveScaling || 0) + 1;
-        const cpm = spellProfile.fillerSpell ? fillerCPM : (spellProfile.cpm * (spellProfile.hastedCPM ? baseHastePerc : 1));
+        const cpm = (spellProfile.cpm + ( spellProfile.fillerSpell ? (fillerCPM * spellProfile.fillerRatio) : 0)) * (spellProfile.hastedCPM ? baseHastePerc : 1);
         // Regular mastery scaling (PW:S)
         const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? getMastery(statProfile, "Discipline Priest") : 1;
         const targetCount = spell.targets ? spell.targets : 1;
@@ -68,7 +74,6 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
                             genericMult *
                             ((1 - spell.expectedOverheal) || 1);
 
-        console.log(spellName + " EXPECTED OVERHEALING: " + spell.expectedOverheal)
         // Handle HoT
         if (spell.type === "classic periodic") {
             const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
@@ -137,11 +142,11 @@ export function initializeDiscSet() {
     critMult: 2,
 }
   const discCastProfile = [
-    {spell: "Power Word: Shield", cpm: 7, hastedCPM: true},
-    {spell: "Prayer of Healing", cpm: 10, hastedCPM: true, fillerSpell: true},
+    {spell: "Power Word: Shield", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.34},
+    {spell: "Prayer of Healing", cpm: 6, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
     {spell: "Penance D", cpm: 7},
     {spell: "Smite", cpm: 10, hastedCPM: true},
-    {spell: "Holy Fire", cpm: 5, hastedCPM: true},
+    {spell: "Holy Fire", cpm: 5, hastedCPM: false},
     {spell: "Divine Hymn", cpm: 1/6},
     {spell: "Prayer of Mending", cpm: 2},
   ]
