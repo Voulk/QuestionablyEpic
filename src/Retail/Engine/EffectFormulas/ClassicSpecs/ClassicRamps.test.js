@@ -5,9 +5,10 @@ import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/C
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
-import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { runCastSequence} from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -105,7 +106,12 @@ describe("Test APL", () => {
 
             const baseline = spec === "Discipline Priest" ? initializeDiscSet() : initializePaladinSet();
             const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scorePaladinSet;
-            const scoredBaseline = scoreFunction(baseline, activeStats, {}, testSettings);
+
+            let playerStats = JSON.parse(JSON.stringify(activeStats));
+            playerStats['intellect'] *= 1.15;
+            applyRaidBuffs({}, playerStats);
+
+            const scoredBaseline = scoreFunction(baseline, playerStats, {}, testSettings);
             //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
             const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
@@ -116,6 +122,9 @@ describe("Test APL", () => {
                 // Change result to be casts agnostic.
                 let playerStats = JSON.parse(JSON.stringify(activeStats));
                 playerStats[stat] = playerStats[stat] + 10;
+                playerStats['intellect'] *= 1.15;
+                applyRaidBuffs({}, playerStats);
+                console.log(playerStats);
                 const newPlayerData = {...playerData, stats: playerStats};
                 const result = scoreFunction(baseline, playerStats, {}, testSettings)
                 console.log(result);

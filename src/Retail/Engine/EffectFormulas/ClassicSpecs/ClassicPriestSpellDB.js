@@ -72,7 +72,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0.8560000062, 
         flat: 693,
         secondaries: ['crit'],
-        statMod: {critEffect: 1.5},
+        statMods: {critEffect: 1.5},
     }],
     "Holy Fire": [{
         spellData: {id: 14914, icon: "spell_holy_searinglight", cat: "damage"},
@@ -82,7 +82,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 1.11000001431,
         flat: 1024, 
         secondaries: ['crit'],
-        statMod: {critEffect: 1.5},
+        statMods: {critEffect: 1.5},
     },
     {
         type: "classic periodic",
@@ -182,6 +182,11 @@ const discTalents = {
         spellDB["Holy Fire"][0].castTime -= reduction;
         //spellDB["Heal"][0].castTime -= reduction;
         //spellDB["Greater Heal"][0].castTime -= reduction;
+    }},
+
+   renewedHope: {points: 2, maxPoints: 2, icon: "", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Penance D"][0].statMods = {crit: 0.05 * points};
+
     }},
 
 

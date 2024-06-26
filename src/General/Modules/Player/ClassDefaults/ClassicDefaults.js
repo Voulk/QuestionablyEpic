@@ -17,7 +17,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
-  const spellpower = statProfile.intellect + statProfile.spellpower + 532; // Inner Fire
+  const spellpower = /*statProfile.intellect + */ statProfile.spellpower + 532; // Inner Fire
   const critPercentage = getCritPercentage(statProfile, "Discipline Priest"); // +4% crit
   // Evaluate Stats
   // Spellpower
@@ -55,7 +55,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
 
         // Handle Crit
         let spellCritPercentage = critPercentage + ((spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0);
-        const critEffect = ('statMod' in spell && spell.statMod.critEffect) ? spell.statMod.critEffect : 2;
+        const critEffect = ('statMods' in spell && spell.statMods.critEffect) ? spell.statMods.critEffect : 2;
         const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (spellCritPercentage * critEffect + (1 - critPercentage)) : 1;
         
         const additiveScaling = (spell.additiveScaling || 0) + 1;
