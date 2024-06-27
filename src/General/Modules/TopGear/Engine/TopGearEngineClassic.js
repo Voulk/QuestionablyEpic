@@ -11,7 +11,7 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
-import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 import { buildNewWepCombos } from "General/Engine/ItemUtilities";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
@@ -220,7 +220,7 @@ export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLang
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
+    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
     count = itemSets.length;
 
     for (var i = 0; i < count; i++) {
@@ -540,9 +540,12 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         enchant_stats.haste += 50;
         enchants['Feet'] = "Haste";
       }
-      else {
+      else if (getSetting(playerSettings, "bootsEnchant") === "Lavawalker") {
         enchant_stats.mastery += 35;
         enchants['Feet'] = "Lavawalker"
+      }
+      else {
+        enchants['Feet'] = "Earthen Vitality"
       }
 
   
@@ -633,33 +636,33 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       }
       return acc;
     }, {});
+
     // Override
-    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0;
-    //setStats = mergeBonusStats(effectStats);
+    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0; // We'll handle Shard separately but proc-based haste is mostly useless for resto druid.
     compileStats(setStats, compiledEffects);
+
     applyRaidBuffs({}, setStats);
-    if (player.getSpec() === "Restoration Druid Classic") {
-      // 
+
+    // SCORING FUNCTIONS
+    if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
-      // mana Pool
-      //setStats.crit += 4 * 179;
 
       // Set cleanup
       // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.
       if (itemSet.itemList.filter(item => item.id === 59453).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
         setStats.haste -= 208;
         setStats.mastery += 208;
-        //itemSet.itemList.filter(item => item.id === 59453)[0].socketedGems = [52296, 59496, 59480];
         builtSet.gems[59453] = [52296, 59496, 59480];
-      
       }
-    }
-    
-    if (player.spec === "Restoration Druid Classic") {
+
       hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList, builtSet.itemList.filter(item => item.id === 60233).length > 0);
     }
     else if (player.spec === "Holy Paladin Classic") {
       hardScore = scorePaladinSet(baseline, setStats, player, playerSettings, tierList);
+    }
+    else if (player.spec === "Discipline Priest Classic") {
+      setStats.intellect *= 1.15; // Spec passive.
+      hardScore = scoreDiscSet(baseline, setStats, player, playerSettings, tierList);
     }
     else {
       console.log("DOING OLD SCORING");

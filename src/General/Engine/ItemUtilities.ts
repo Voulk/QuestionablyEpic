@@ -39,6 +39,8 @@ export function getValidArmorTypes(spec: string) {
       return [0, 3]; // Misc + Mail
     case SPEC.HOLYPRIEST:
     case SPEC.DISCPRIEST:
+    case "Holy Priest Classic":
+    case "Discipline Priest Classic":
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
       return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
@@ -46,8 +48,6 @@ export function getValidArmorTypes(spec: string) {
       return [0, 2, 8, 11]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
       return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
-    case "Holy Priest Classic":
-      return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
   }
@@ -346,6 +346,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case "Restoration Shaman Classic":
       return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
+    case "Discipline Priest Classic":
       return [4, 10, 15, 19];
     default:
       return [-1, 0];

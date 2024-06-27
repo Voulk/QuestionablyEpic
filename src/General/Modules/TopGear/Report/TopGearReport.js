@@ -71,6 +71,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
       case "Holy Priest Classic":
         return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
+      case "Discipline Priest Classic":
         return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
         return require("Images/Classes/Druid/icon-druid.png");
