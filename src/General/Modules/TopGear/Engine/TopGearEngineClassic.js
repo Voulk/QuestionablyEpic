@@ -536,13 +536,13 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats.spirit += 55;
       enchants['Legs'] = "Powerful Ghostly Spellthread"
   
-      if (getSetting(playerSettings, "bootsEnchant") === "Haste (cheaper)") {
-        enchant_stats.haste += 50;
-        enchants['Feet'] = "Haste";
-      }
-      else if (getSetting(playerSettings, "bootsEnchant") === "Lavawalker") {
+      if (getSetting(playerSettings, "bootsEnchant") === "Lavawalker") {
         enchant_stats.mastery += 35;
         enchants['Feet'] = "Lavawalker"
+      }
+      else if (getSetting(playerSettings, "bootsEnchant") === "Haste (cheaper)") {
+        enchant_stats.haste += 50;
+        enchants['Feet'] = "Haste";
       }
       else {
         enchants['Feet'] = "Earthen Vitality"
