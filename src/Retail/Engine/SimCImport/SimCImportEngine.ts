@@ -63,7 +63,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
   let lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
-  if (checkSimCValid(lines.slice(1, 8), lines.length, player.getSpec(), setErrorMessage)) {
+  if (checkSimCValid(lines.slice(0, 8), lines.length, player.getSpec(), setErrorMessage)) {
     player.clearActiveItems();
 
     /* Loop through our SimC string. 
@@ -134,28 +134,32 @@ function checkSimCValid(simCHeader: string[], length: number, playerClass: strin
     version: boolean;
     level: boolean;
     length: boolean;
+    gameType: boolean;
   } = {
     class: false,
     version: true, // Note that version is not actually checked right now. There's generally just not a lot of need unless there are breaking addon changes.
     level: true,
     length: length < 600, // This really only prevents abuse cases since 600 is a very long regular SimC string.
+    gameType: true,
   };
   let errorMessage = "";
 
   for (var i = 0; i < simCHeader.length; i++) {
     let line = simCHeader[i];
-
+    console.log(line);
     // Check that the player class matches. This is actually quite a common error since people swap characters but don't swap in QE Live.
     if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
     else if (line.split("=")[0] === "level" && (line.split("=")[1] === "60" || line.split("=")[1] === "70")) checks.level = true;
+    if (line.includes("QE Live Gear Importer")) checks.gameType = false;
   }
-
+  console.log(checks);
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
   if (!checks.level) errorMessage += "QE Live is designed for level 70 characters. ";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
+  if (!checks.gameType) errorMessage += "This is a Cataclysm string but you have a Dragonflight character selected!";
 
   setErrorMessage(errorMessage);
-  return checks.class && checks.version && checks.level && checks.length;
+  return checks.class && checks.version && checks.level && checks.length && checks.gameType;
 }
 
 /* 

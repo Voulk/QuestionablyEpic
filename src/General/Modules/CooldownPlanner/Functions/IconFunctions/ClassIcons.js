@@ -169,8 +169,7 @@ export default function classIcons(props, style) {
   if (iconName === "" || iconName === undefined) {
     return null;
   }
-  console.log(iconName);
-  console.log(src);
+
   return (
     // <div>
     <img style={{ ...style }} src={src} alt={alt} />
