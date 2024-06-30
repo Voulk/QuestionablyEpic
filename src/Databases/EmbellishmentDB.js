@@ -1,5 +1,42 @@
 export const embellishmentDB = [
   {
+    id: 215133,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // All
+    name: {
+      en: "Binding of Binding",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Binding of Binding",
+      rank: 0,
+    },
+  },
+  {
+    id: 219495,
+    icon: "inv_misc_emberweavebandage",
+    armorType: 0, // All
+    name: {
+      en: "Blessed Weapon Grip",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Blessed Weapon Grip",
+      rank: 0,
+    },
+  },
+
+  ///
+
+  {
     id: 193001,
     icon: "inv_10_jewelcrafting_necklace_necklace1_color3",
     armorType: 0, // All
