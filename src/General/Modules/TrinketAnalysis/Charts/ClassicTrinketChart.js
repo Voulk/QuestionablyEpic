@@ -148,7 +148,7 @@ export default class BCChart extends PureComponent {
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
             }}
-            labelFormatter={(timeStr) => getShortenedItemName(timestr)} //getTranslatedItemName(timeStr, currentLanguage, "", "Classic")}
+            labelFormatter={(timeStr) => getShortenedItemName(timeStr)} //getTranslatedItemName(timeStr, currentLanguage, "", "Classic")}
             formatter={(value, name, props) => {
               {
                 if (value > 0) {
@@ -168,14 +168,10 @@ export default class BCChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {/*<Bar dataKey={"i161"} fill={"#eee8aa"} stackId="a" /> */}
-          {/*<Bar dataKey={"i174"} fill={"#9BB5DD"} stackId="a" /> */}
+
           <Bar dataKey={"Normal"} fill={"#1f78b4"} stackId="a" /> 
           <Bar dataKey={"Heroic"} fill={"#33a02c"} stackId="a" />   
-  ,
-          {/*[""].map((key, i) => (
-            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
-          ))*/}
+
         </BarChart>
       </ResponsiveContainer>
     );

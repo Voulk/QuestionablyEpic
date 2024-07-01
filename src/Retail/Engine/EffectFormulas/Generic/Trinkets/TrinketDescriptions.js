@@ -18,6 +18,31 @@ const trinketCategories = {
 
 }
 
+
+export const buildRetailEffectTooltip = (trinketName, player, itemLevel) => {
+    const trinketDescription = [trinketName + " (" + itemLevel + ")"];
+    trinketDescription.push("")
+
+    const trinketData = getTrinketData(trinketName);
+    if (trinketData === undefined) return [];
+    const trinketEffects = trinketData.effects;
+
+    const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, {})
+    console.log(trinketData);
+    if (trinketEffects[0].ppm && trinketEffects[0].stat) {
+        // We're dealing with a stat proc trinket.
+        trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
+    }
+
+    Object.keys(trinketStats).forEach((statName) => {    
+        trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
+    });
+
+    return trinketDescription;
+
+}
+
+
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
     const itemLevel = 528;
