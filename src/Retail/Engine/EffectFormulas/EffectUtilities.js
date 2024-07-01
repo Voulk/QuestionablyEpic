@@ -32,6 +32,19 @@ export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
     return diminishedValue * uptime;
 }
 
+// This is specifically for effects that can roll any secondary.
+export function runGenericRandomPPMTrinket(effect, itemLevel, setStats = {}) {
+  const bonus_stats = {};
+  const rawValue = processedValue(effect, itemLevel);
+  const uptime = convertPPMToUptime(effect.ppm, effect.duration);
+
+  ["versatility", "crit", "mastery", "haste"].forEach((stat) => {
+    bonus_stats[stat] = getDiminishedValue(stat, rawValue, setStats[stat] || 0) * uptime * 0.25;
+  });
+
+  return bonus_stats;
+}
+
 // Most stat trinkets should not be hasted so this function is mostly a catch for if they mess it up.
 export function runGenericPPMTrinketHasted(effect, itemLevel, hastePerc, setStats = {}) {
   const rawValue = processedValue(effect, itemLevel);

@@ -7,6 +7,7 @@ import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
+import { STATCONVERSION } from "General/Engine/STAT"
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -186,7 +187,7 @@ const getActiveAtone = (atoneApp, timer) => {
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
     const atonementBaseTransfer = 0.4;
-    return atonementBaseTransfer * (1.108 + mastery / 180 * DISCCONSTANTS.masteryMod / 100);
+    return atonementBaseTransfer * (1.108 + mastery / STATCONVERSION.MASTERY * DISCCONSTANTS.masteryMod / 100);
 }
 
 

@@ -84,7 +84,7 @@ export const buildEvokerChartData = (activeStats) => {
             // All sequence based.
             const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
             if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
-            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell));
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence));
 
             
 

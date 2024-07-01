@@ -2,15 +2,16 @@
 import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
+import { STATCONVERSION } from "General/Engine/STAT"
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 180,
-        mastery: 180,
-        vers: 205,
-        haste: 170,
-        leech: 110,
+        crit: STATCONVERSION.CRIT,
+        mastery: STATCONVERSION.MASTERY,
+        vers: STATCONVERSION.VERSATILITY,
+        haste: STATCONVERSION.HASTE,
+        leech: STATCONVERSION.LEECH,
     }
 
 }
@@ -379,7 +380,7 @@ export const getCurrentStats = (statArray, buffs) => {
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100;
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / STATCONVERSION.HASTE / 100 + 1) * buff.value)-1) * STATCONVERSION.HASTE * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
@@ -388,7 +389,7 @@ export const getCurrentStats = (statArray, buffs) => {
 
 // Returns the players current haste percentage. 
 export const getHaste = (stats, gameType = "Retail") => {
-    if (gameType === "Retail") return 1 + stats.haste / 170 / 100;
+    if (gameType === "Retail") return 1 + stats.haste / STATCONVERSION.HASTE / 100;
     else {
         return (1 + stats.haste / 128.057006835937500 / 100); // Haste buff. TODO: Add setting for the 5% buff but it's very common.
         
@@ -396,7 +397,7 @@ export const getHaste = (stats, gameType = "Retail") => {
 }
 
 export const getCrit = (stats) => {
-    return 1.05 + stats.crit / 180 / 100;
+    return 1.05 + stats.crit / STATCONVERSION.CRIT / 100;
 }
 
 export const addReport = (state, entry) => {
