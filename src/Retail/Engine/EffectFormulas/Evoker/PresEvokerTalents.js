@@ -49,7 +49,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
             type: "heal",
             school: "red",
-            coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
+            coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.8 * EVOKERCONSTANTS.auraDamageBuff),
             expectedOverheal: 0.15,
             targets: 1,
             secondaries: ['crit', 'vers']
@@ -134,15 +134,20 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         secondaries: ['crit', 'vers', 'mastery']
     });
     // Panacea doesn't scale with Lush Growth.
-    if (talents.panacea) evokerSpells['Emerald Blossom'].push({
-        name: "Panacea",
-        type: "heal",
-        school: "green",
-        coeff: 2.5,
-        targets: 1,
-        expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers', 'mastery']
-    })
+    if (talents.panacea) {
+        const panacea = {
+                name: "Panacea",
+                type: "heal",
+                school: "green",
+                coeff: 1.25,
+                targets: 1,
+                expectedOverheal: 0.3,
+                secondaries: ['crit', 'vers', 'mastery']
+            }
+        evokerSpells['Emerald Blossom'].push(panacea);
+        evokerSpells['Verdant Embrace'].push(panacea);
+    }
+
     if (talents.fieldOfDreams) evokerSpells['Emerald Blossom'].push({
         type: "castSpell",
         storedSpell: "Emerald Blossom",
@@ -213,6 +218,8 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         })
     }
 
+    //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
 
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
@@ -311,12 +318,25 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
 
 // Apply Chronowarden talents
 export const applyChronowarden = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
-
     // Chronoflame
 
     // Temporal Burst
 
     // Reverberations
+    evokerSpells["Spiritbloom"].push({
+            // Dream Breath heals for more per charge tier and also has a lower cooldown.
+            name: "Spiritbloom (HoT)",
+            type: "buff",
+            buffType: "heal",
+            buffDuration: 8,
+            tickData: {tickRate: 2, canPartialTick: false, hasteScaling: false},
+            tickRate: 2,
+            coeff: evokerSpells["Spiritbloom"][0].coeff * 0.3 / 4, 
+            targets: [1, 2, 3, 4], 
+            expectedOverheal: 0.3,
+            secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
+    })
+
 
     // Primacy
 
@@ -335,5 +355,20 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
 }
 
 export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
+
+    // Consume Flame
+    evokerSpells["Engulf"].push({
+        // Consumes 4s of Dream Breath HoT and heals for 3x the amount. Sqrt scaling. 
+        name: "Consume Flame",
+        type: "heal",
+        school: "red",
+        coeff: evokerSpells["Dream Breath"][2].coeff * 2, // Swap to x3 if we remove HoT.
+        targets: 20,
+        expectedOverheal: 0.5,
+        tags: ['sqrt'],
+        sqrtMin: 5,
+        secondaries: ['vers', 'mastery', 'crit']
+
+    })
 
 }

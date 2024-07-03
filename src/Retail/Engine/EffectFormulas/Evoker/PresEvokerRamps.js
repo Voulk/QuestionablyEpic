@@ -72,7 +72,7 @@ const EVOKERCONSTANTS = {
         canStack: true,
         stacks: 1,
         maxStacks: 4,
-        value: 0.05,
+        value: 0.1,
         buffDuration: 999,
         buffType: 'special',
     },
@@ -153,10 +153,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     
     // Grace Period
     if (talents.gracePeriod) {
-        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.075);
+        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.1);
         else {
             const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
-            mult *= (1 + talents.gracePeriod * 0.075 * buffsActive / 20);
+            mult *= (1 + talents.gracePeriod * 0.1 * buffsActive / 20);
 
         }
     }   

@@ -85,7 +85,7 @@ export const EVOKERSPELLDB = {
         cooldownData: {cooldown: 30, hasted: false}, 
         coeff: 5.085,
         targets: [1, 2, 3, 4], // 
-        expectedOverheal: 0.5,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Dream Breath": [{  
@@ -125,7 +125,7 @@ export const EVOKERSPELLDB = {
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
     "Emerald Blossom": [{
-        // Instant, 3 Essence cost, heals 3 targets after a 2s delay.
+        // Instant, 3 Essence cost, heals 3-5 targets after a 1.5s delay.
         // This hooks into a lot of different talents.
         spellData: {id: 355913, icon: "ability_evoker_emeraldblossom", cat: "heal"},
         type: "heal",
@@ -135,7 +135,7 @@ export const EVOKERSPELLDB = {
         delay: 1.5, // The number of seconds before the spell heals.
         targets: 3,
         essence: 3,
-        cost: 4.8,
+        cost: 4.42,
         coeff: 1.5,
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
@@ -416,6 +416,19 @@ export const EVOKERSPELLDB = {
             
             }
         }],
+    // Engulf (Defensive)
+    "Engulf": [{ 
+        // Can be used for DPS or Healing. This is the healing version but both can be included either together or separately (the latter might be more efficient).
+        spellData: {id: 443328, icon: "inv_ability_flameshaperevoker_engulf", cat: "heal"},
+        name: "Engulf",
+        type: "heal",
+        school: 'red',
+        castTime: 0,
+        cost: 5.0,
+        coeff: 4.25,
+        expectedOverheal: 0.24,
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
 }
 
 
@@ -434,7 +447,7 @@ export const evokerTalents = {
     essenceBurst: {points: 1, maxPoints: 1, icon: "ability_evoker_essenceburst", id: 359618, select: true, tier: 1}, // Living Flame has a 20% chance to make your next Essence ability free.
     rewind: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1}, // Raid cooldown.
     spiritbloom: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1},
-    lifeGiversFlame: {points: 0, maxPoints: 2, icon: "item_sparkofragnoros", id: 371441, select: true, tier: 1}, // Fire Breath heals a nearby ally for 40/80% of damage done.
+    lifeGiversFlame: {points: 0, maxPoints: 1, icon: "item_sparkofragnoros", id: 371441, select: true, tier: 1}, // Fire Breath heals a nearby ally for 40/80% of damage done.
     timeDilation: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 1}, // ST defensive
 
     // Tier 2
@@ -459,7 +472,8 @@ export const evokerTalents = {
     fontOfMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", id: 375783, select: true, tier: 3}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "inv_elemental_mote_mana", id: 372233, select: true, tier: 3}, // makes Disintegrate deals more damage and grants mana over it's duration.
     renewingBreath: {points: 2, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
-    gracePeriod: {points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
+    titansGift: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3},
+    gracePeriod: {points: 0, maxPoints: 21, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
     timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
     dreamFlight: {points: 1, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 
     stasis: {points: 1, maxPoints: 1, icon: "", id: 0, select: false, tier: 3},
@@ -477,4 +491,8 @@ export const evokerTalents = {
     bountifulBloom: {points: 1, maxPoints: 1, icon: "ability_evoker_emeraldblossom", id: 370886, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     panacea: {points: 1, maxPoints: 1, icon: "ability_druid_protectionofthegrove", id: 387761, select: true, tier: 4}, // Emerald Blossom heals +2 targets.
     protractedTalons: {points: 0, maxPoints: 1, icon: "ability_evoker_azurestrike", id: 369909, select: true, tier: 4}, // Azure Strike hits an additional target.
+
+    // Hero Talents
+
+
 };
