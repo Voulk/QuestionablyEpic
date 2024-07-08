@@ -15,7 +15,7 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     //const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
     const differentials = report.differentials;
     // General Advice
-    if (differentials.length === 0) {
+    if (differentials.length === 0 && gameType === "Retail") {
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
         by clicking on them in the top gear item select screen.")
     }

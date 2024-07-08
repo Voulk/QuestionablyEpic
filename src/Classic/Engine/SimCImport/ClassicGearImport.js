@@ -119,10 +119,10 @@ function processItem(line, player, contentType, type) {
       itemID === 69882) 
   {
     // Dear god please replace this with a renovation of suffixDB.
-    if ([230, 262, 268, 186, 192, 213].includes(suffix)) itemID = parseInt(itemID.toString() + "2") // Feverflare
+    if ([138, 186, 192, 213, 230, 262, 268, 186, 192, 213].includes(suffix)) itemID = parseInt(itemID.toString() + "2") // Feverflare
     else if ([131, 187, 193, 214, 231, 263, 269, 282, 286].includes(suffix)) itemID = parseInt(itemID.toString() + "0") // Undertow
     else if ([132, 188, 194, 215, 232, 264, 270, 283, 287].includes(suffix)) itemID = parseInt(itemID.toString() + "3") // Wavecrest
-    else if ([191, 212, 229, 267, 271, 280, 284].includes(suffix)) itemID = parseInt(itemID.toString() + "1") // Fireflash
+    else if ([130, 191, 212, 229, 267, 271, 280, 284].includes(suffix)) itemID = parseInt(itemID.toString() + "1") // Fireflash
   }
 
   // Grab the items base level from our item database.
