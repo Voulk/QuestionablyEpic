@@ -4,12 +4,17 @@ import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, r
 import { paladinShockProfile } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDefaultAPL"
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
-import { runCastSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
+import { runCastSequence} from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
-import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
+// We should really encapsulate all spec information into single objects.
+// {spec: "Discipline Priest", spells: XDB, talents: xTalents, scoringFunction: scoreDiscSet, initializeFunction: initializeDiscSet, castProfile: X}
+// and so on. Very messy right now.
 
 describe("Test APL", () => {
     test("Test APL", () => {
@@ -67,9 +72,10 @@ describe("Test APL", () => {
         })
 
         //const baseSpells = EVOKERSPELLDB;
+        const spec = "Discipline Priest"
         const testSuite = "Top Gear Scoring Function";
-        const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true};
-        const playerData = { spec: "Holy Paladin", spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
+        const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
+        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -98,8 +104,14 @@ describe("Test APL", () => {
 
             buildStatChart(baseline, activeStats, testSettings); */
 
-            const baseline = initializePaladinSet();
-            const scoredBaseline = scorePaladinSet(baseline, activeStats, {}, testSettings)
+            const baseline = spec === "Discipline Priest" ? initializeDiscSet() : initializePaladinSet();
+            const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scorePaladinSet;
+
+            let playerStats = JSON.parse(JSON.stringify(activeStats));
+            playerStats['intellect'] *= 1.15;
+            applyRaidBuffs({}, playerStats);
+
+            const scoredBaseline = scoreFunction(baseline, playerStats, {}, testSettings);
             //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
             const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
@@ -110,8 +122,11 @@ describe("Test APL", () => {
                 // Change result to be casts agnostic.
                 let playerStats = JSON.parse(JSON.stringify(activeStats));
                 playerStats[stat] = playerStats[stat] + 10;
+                playerStats['intellect'] *= 1.15;
+                applyRaidBuffs({}, playerStats);
+                console.log(playerStats);
                 const newPlayerData = {...playerData, stats: playerStats};
-                const result = scorePaladinSet(baseline, playerStats, {}, testSettings)
+                const result = scoreFunction(baseline, playerStats, {}, testSettings)
                 console.log(result);
                 results[stat] = result;
             });

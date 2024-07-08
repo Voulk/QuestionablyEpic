@@ -155,6 +155,27 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  {
+    name: "Theralion's Mirror",
+    effects: [
+      { 
+        value: {359: 1926, 372: 2178}, // Spirit effect
+        stat: "mastery",
+        ppm: getEffectPPM(0.1, 100, 1.5),
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericTrinket(data[0], itemLevel);
+      bonus_stats.mastery *= data[0].specMod[player.spec];
+
+      return getGenericTrinket(data[0], itemLevel);
+    }
+  },
 
 
 ]

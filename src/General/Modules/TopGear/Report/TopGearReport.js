@@ -71,6 +71,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
       case "Holy Priest Classic":
         return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
+      case "Discipline Priest Classic":
         return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
         return require("Images/Classes/Druid/icon-druid.png");
@@ -97,7 +98,6 @@ function TopGearReport(props) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const gameType = useSelector((state) => state.gameType);
   const location = useLocation();
   
   /* ----------------------------- On Component load get player image ----------------------------- */
@@ -146,7 +146,6 @@ function TopGearReport(props) {
 }
 
 function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage) {
-
   const boxWidth = "60%";
 
   let resultValid = true;
@@ -265,7 +264,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                             //.filter((key) => key.slot === "Head" || key.slot === "Neck" || key.slot === "Back" || key.slot === "Shoulder" || key.slot === "Chest" || key.slot === "Wrist" || key.slot === "1H Weapon" || key.slot === "Offhands" || key.slot === "2H Weapon")
                             .filter((key => ["Head", "Neck", "Back", "Shoulder", "Chest", "Wrist", "1H Weapon", "2H Weapon", "Offhands", "Offhand", "Shield"].includes(key.slot)))
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot} primGems={topSet.primGems || ""} gameType={gameType} />
                             ))}
                           {/*newWeaponCombos.map((item, index) => (
                             <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  />
@@ -285,7 +284,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                               (key) => ["Hands", "Waist", "Legs", "Feet", "Finger", "Trinket", "Relics & Wands"].includes(key.slot)
                             )
                             .map((item, index) => (
-                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} />
+                              <ItemCardReport key={index} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  primGems={topSet.primGems || ""} gameType={gameType} />
                             ))}
                         </Grid>
                       </Grid>

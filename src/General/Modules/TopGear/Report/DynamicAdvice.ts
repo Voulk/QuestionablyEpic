@@ -15,12 +15,13 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     //const trinkets = itemList.filter((item: Item) => item.slot === "Trinket");
     const differentials = report.differentials;
     // General Advice
-    if (differentials.length === 0) {
+    if (differentials.length === 0 && gameType === "Retail") {
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
         by clicking on them in the top gear item select screen.")
     }
     if (gameType === "Classic") {
-        advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.5) + " - " + Math.round(topSet.hardScore / 60 * 0.75) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
+        if (strippedPlayer.spec === "Discipline Priest Classic") advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.85) + " - " + Math.round(topSet.hardScore / 60 * 1) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
+        else advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.5) + " - " + Math.round(topSet.hardScore / 60 * 0.75) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
         advice.push("Power Torrent is a very powerful weapon enchant but is expensive. It's ok to wear Heartsong until you have a good weapon.")
         if (strippedPlayer.spec === "Restoration Druid Classic") advice.push("Resto Druid has a haste breakpoint at 2005 haste, however this is only a small upgrade over \
                     spending those stats elsewhere. As a result, best in slot sets should expect to hit it, but don't be too surprised if QE Live doesn't reforge your set that way until you have some good items.");

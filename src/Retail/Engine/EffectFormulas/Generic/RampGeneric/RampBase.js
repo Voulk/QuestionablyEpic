@@ -71,7 +71,7 @@ export const spendSpellCost = (spell, state) => {
 }
 
 // Runs a classic era periodic spell.
-const runPeriodic = (state, spell, spellName, runHeal) => {
+const runPeriodic = (state, spell, spellName, runHeal, runDamage) => {
     // Calculate tick count
     let tickCount = 0;
     const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(state.currentStats, "Classic");
@@ -81,7 +81,8 @@ const runPeriodic = (state, spell, spellName, runHeal) => {
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
-        runHeal(state, spell, spellName + " (HoT)");
+        if (spell.buffType === "heal") runHeal(state, spell, spellName + " (HoT)");
+        else if (spell.buffType === "damage") runDamage(state, spell, spellName + " (DoT)");
     }
 }
 
@@ -131,7 +132,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
             // In classic we don't need to worry about hots and dots changing 
             else if (spell.type === "classic periodic") {
-                runPeriodic(state, spell, spellName, runHeal);
+                runPeriodic(state, spell, spellName, runHeal, runDamage);
             }
             
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.

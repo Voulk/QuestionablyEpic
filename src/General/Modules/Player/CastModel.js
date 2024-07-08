@@ -218,7 +218,15 @@ class CastModel {
     } 
     else if (spec === "Discipline Priest Classic") {
       spellList = this.getClassicPriest();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.baseStatWeights = {
+        spellpower: 1,
+        intellect: 2.668,
+        crit: 0.545,
+        mastery: 0.461,
+        haste: 0.914,
+        spirit: 0.711,
+        mp5: 1.028
+      }
     } else {
       spellList = {};
       specialQueries = {};

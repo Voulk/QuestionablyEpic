@@ -199,11 +199,19 @@ export const getAdditionalManaEffects = (currentStats, spec) => {
     }
     else if (spec.includes("Discipline Priest")) {
         // Rapture
-        const rapture = (pool * 0.06 / 12 * 5); // 6% of base mana, every 12 seconds.
+        const rapture = (pool * 0.07 / 12 * 5); // 7% of total mana, every 12 seconds.
         manaSources["Rapture"] = rapture;
         additionalManaPerSecond += rapture;
 
         // Archangel / Evang
+        const archangel = (pool * 0.01 / 30 * 5); // 1% of total mana, every 30s
+        manaSources["Archangel"] = archangel;
+        additionalManaPerSecond += archangel;
+
+        // Shadowfiend - 10 swings (check haste scaling)
+        const fiend = (pool * 0.03 * 13 / 360 * 5); // 3% of total mana, 10 x 1.3 times, once per fight.
+        manaSources["Shadowfiend"] = fiend;
+        additionalManaPerSecond += fiend;
     }
 
     manaSources.additionalMP5 = additionalManaPerSecond;
