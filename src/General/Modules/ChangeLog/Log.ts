@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "10.2.7 / 4.4",
+    update: 8,
+    date: "July 8",
+    changes: [ 
+      "Fixed a bug where Top Gear reports could show invalid items when viewed by other people.",
+      "Cataclysm: Fixed warning about items not being included when they were.",
+      "Cataclysm: Included a few more suffix bonus IDs for imports."
+    ]},
+  {
+    version: "10.2.7 / 4.4",
     update: 7,
     date: "June 20",
     changes: [ 
