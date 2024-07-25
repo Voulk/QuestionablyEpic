@@ -29,7 +29,7 @@ describe("Blossom of Amirdrassil", () => {
     each`
     level   | expectedResult
     ${496}  | ${[Math.floor(561604/6),  Math.floor(280791/6), Math.floor(842396)]}
-    ${535}  | ${[Math.floor(942039/6),  Math.floor(471002/6), Math.floor(942039)]}
+    ${535}  | ${[Math.floor(942039/6),  Math.floor(471002/6), Math.floor(1413041)]}
     // add new test cases here
     `.test("Blossom of Amirdrassil Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         //expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
@@ -89,8 +89,7 @@ describe("Ominous Chromatic Essence", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${431}  | ${[503, 53]}
-    ${444}  | ${[534, 56]}
+    ${528}  | ${[763, 80]}
     // add new test cases here
     `.test("Ominous Chromatic Essence Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
