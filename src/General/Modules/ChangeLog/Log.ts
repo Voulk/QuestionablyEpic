@@ -16,6 +16,14 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.0 / 4.4",
+    update: 1,
+    date: "July 25",
+    changes: [ 
+      "Added light prepatch support.",
+
+    ]},
+  {
     version: "10.2.7 / 4.4",
     update: 8,
     date: "July 8",

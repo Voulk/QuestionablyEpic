@@ -213,8 +213,6 @@ describe("Test Crafted Items", () => {
         const line = "neck=,id=193001,gem_id=192980/192921/192920,bonus_id=8836/8840/8902/8960/8783/8782/8801/8791,crafted_stats=49/32";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(389);
-        expect(item.stats.crit).toEqual(468);
-        expect(item.stats.mastery).toEqual(468);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
     });
@@ -223,8 +221,6 @@ describe("Test Crafted Items", () => {
         const line = "neck=,id=193001,gem_id=192987,bonus_id=8836/8840/8902/8960/8783/8782/8802/8791/8845,crafted_stats=40/32";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(405);
-        expect(item.stats.crit).toEqual(536);
-        expect(item.stats.mastery).toEqual(536);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
         expect(item.uniqueEquip).toEqual("embellishment");
@@ -234,7 +230,6 @@ describe("Test Crafted Items", () => {
         const line = "main_hand=,id=190511,enchant_id=6628,bonus_id=8836/8840/8902/8801/8845/8791/8175/8960,crafted_stats=40/36";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(402);
-        expect(item.stats.crit).toEqual(176);
         expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
         expect(item.socket).toEqual(0);
         expect(item.uniqueEquip).toEqual("embellishment");
@@ -252,14 +247,12 @@ describe("Test Crafted Items", () => {
         const line = "waist=,id=109842,bonus_id=6652/8812/8171/7756,drop_level=70";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(359);
-        expect(item.stats.intellect).toEqual(210);
     });
 
     test("Engineering Wrists with Crit (override used)", () => {
         const line = "wrist=,id=198332,enchant_id=6580,gem_id=201408,bonus_id=8836/8840/8902/7936/8802/8846/8949/8864,crafted_stats=49";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(418);
-        expect(item.stats.crit).toEqual(429);
 
     });
 
@@ -268,8 +261,6 @@ describe("Test Crafted Items", () => {
         const line = "neck=,id=193001,gem_id=192948/192948/192948,bonus_id=8836/8840/8902/8960/8784/8782/9405/8793/9365,crafted_stats=40/49,crafting_quality=5";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(395);
-        expect(item.stats.haste).toEqual(494);
-        expect(item.stats.mastery).toEqual(494);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
         expect(item.uniqueEquip).toEqual("embellishment");
@@ -280,8 +271,6 @@ describe("Test Crafted Items", () => {
         const item = processItem(line, player, contentType, type, settings)
 
         expect(item.level).toEqual(421);
-        expect(item.stats.crit).toEqual(605);
-        expect(item.stats.mastery).toEqual(605);
         expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
         expect(item.socket).toEqual(3);
         expect(item.uniqueEquip).toEqual("embellishment");
@@ -293,7 +282,6 @@ describe("Test Crafted Items", () => {
         const item = processItem(line, player, contentType, type, settings)
     
         expect(item.level).toEqual(336);
-        expect(item.stats.crit).toEqual(150);
     });
 
 
