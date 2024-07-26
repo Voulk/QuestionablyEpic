@@ -1,5 +1,5 @@
 
-import { addReport, getHaste, getCurrentStats } from "./RampBase"
+import { addReport, getHaste, getCurrentStats, getCrit } from "./RampBase"
 
 
 export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
@@ -60,7 +60,30 @@ const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
     }
 
     if (buff.onTick) buff.onTick(state, buff, runSpell, spellDB);
-    
+    if (buff.critExtension) {
+        // If the heal / damage crits, we'll extend the buff by the crit extension. These are often capped so we'll support that too.
+        // Examples: Reversion.
+        const roll = Math.random();
+        const didCrit = roll <= (getCrit(state.currentStats) - 1);
+        //console.log("Roll: " + roll + " Crit: " + getCrit(state.currentStats));
+        if (didCrit) {
+            if ('extensionCount' in buff) {
+                if (buff.extensionCount < buff.critExtension.maxExtension) {
+                    buff.extensionCount += 1;
+                    buff.expiration += buff.critExtension.extension;
+                    //console.log("Extending HoT again");
+                }
+                else {
+                    //console.log("Tried to extend but already at cap");
+                }
+            }
+            else {
+                buff.extensionCount = 1;
+                //console.log("Extending HoT");
+                buff.expiration += buff.critExtension.extension;
+            }
+        }
+    }
 }
 
 /** Check if a specific buff is active and returns the value of it.
@@ -201,6 +224,7 @@ export const addBuff = (state, spell, spellName) => {
         }
         // Run a function when the spell ticks. Examples: Lux Soil, Reversion. NYI.
         if (spell.tickData.onTick) newBuff.onTick = spell.tickData.onTick;
+        if (spell.critExtension) newBuff.critExtension = spell.critExtension;
         // The spell does something on application. Note that standard "heals on application" shouldn't be applied here. This is for special effects.
         if (spell.onApplication) spell.onApplication(state, spell, newBuff);
         

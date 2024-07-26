@@ -263,7 +263,7 @@ const setupEchoSpells = (evokerSpells) => {
             }
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
-                echoSpell[0].runFunc = spellData[0].runFunc;
+                //echoSpell[0].runFunc = spellData[0].runFunc;
                 if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Temporal Compression") echoSpell.pop();
                 // TODO: Remove Temporal Compression.
             }
@@ -430,10 +430,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
                     // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
                     // Possibly just use Lodash or something here. 
-                    if (spellName === "Reversion") {
+                    /*if (spellName === "Reversion") {
                         echoSpell[0].onApplication = evokerSpells["Reversion"][0].onApplication;
                         echoSpell[0].runFunc= evokerSpells["Reversion"][0].runFunc;
-                    }
+                    }*/
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells, triggerEssenceBurst, runHeal, runDamage)
 
                 }

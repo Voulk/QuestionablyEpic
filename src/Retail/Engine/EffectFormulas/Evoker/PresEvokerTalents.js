@@ -319,7 +319,12 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     return evokerSpells;
 }
 
-// Apply Chronowarden talents
+// The value of Chronowarden is:
+// - Spiritbloom HoT
+// - Dream Breath extension
+// - Temporal Burst
+// - Golden Opportunity (20% increase to Echo effectiveness)
+// - Afterimage
 export const applyChronowarden = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
     // Chronoflame
 
@@ -327,7 +332,6 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
 
     // Reverberations
     evokerSpells["Spiritbloom"].push({
-            // Dream Breath heals for more per charge tier and also has a lower cooldown.
             name: "Spiritbloom (HoT)",
             type: "buff",
             buffType: "heal",
@@ -357,24 +361,14 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
     // Afterimage
 }
 
+// The value of Flameshaper is:
+// - Engulf + Consume Flame (including in Stasis and any DB increases).
+// - Expanded Lungs
+// - Conduit of Flame (lol)
+// - Titanic Precision
 export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
 
-    // Consume Flame
-    /*evokerSpells["Engulf"].push({
-        // Consumes 4s of Dream Breath HoT and heals for 3x the amount. Sqrt scaling. 
-        name: "Consume Flame",
-        type: "heal",
-        school: "red",
-        coeff: evokerSpells["Dream Breath"][2].coeff * 2, // Swap to x3 if we remove HoT.
-        targets: 20,
-        expectedOverheal: 0.5,
-        tags: ['sqrt'],
-        sqrtMin: 5,
-        secondaries: ['vers', 'mastery', 'crit']
-
-    }); */
-
-    // Travelling Flame
+    // Travelling Flame + Consume
     evokerSpells["Engulf"].push(
         {
             type: "function",
@@ -408,7 +402,10 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
     // Expanded Lungs
     // Check if 0 should also be buffed.
     if (true) {
-        evokerSpells["Dream Breath"][1].coeff *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[0] *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[1] *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[2] *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[3] *= 1.2;
         evokerSpells["Dream Breath"][2].coeff *= 1.2;
     }
 

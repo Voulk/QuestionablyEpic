@@ -175,21 +175,24 @@ export const EVOKERSPELLDB = {
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "heal"},
         name: "Reversion (HoT)",
         type: "buff",
-        buffType: "function",
+        buffType: "heal",
         school: "bronze",
         tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
         coeff: 0.342,
         cost: 2.0,
         cooldownData: {cooldown: 8, hasted: true}, 
+        critExtension: {extension: 2, maxExtension: 3},
         buffDuration: 12,
+        secondaries: ['crit', 'vers', 'mastery'],
+        expectedOverheal: 0.45,
         /*onApplication: function (state, spell, buff) {
             const newDuration = (state.t + spell.castTime + (spell.buffDuration / (1 - (getCrit(state.currentStats)-1))));
             buff.expiration = newDuration;
 
             return buff;
         },*/
-        runFunc: function (state, spell, buff, partial = 1) {
+        /*runFunc: function (state, spell, buff, partial = 1) {
             const hotHeal = { type: "heal", coeff: spell.coeff * partial, expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
 
             runHeal(state, hotHeal, spell.name)
@@ -217,7 +220,7 @@ export const EVOKERSPELLDB = {
 
                 }
             }
-        }
+        }*/
 
     }],
     "Temporal Anomaly": [
