@@ -68,7 +68,7 @@ export const EVOKERSPELLDB = {
         castTime: 0,
         onGCD: true,
         cost: 3.0,
-        coeff: 4.18,
+        coeff: 5.016,
         cooldownData: {cooldown: 18, hasted: true}, 
         expectedOverheal: 0.5,
         secondaries: ['crit', 'vers', 'mastery']
@@ -81,9 +81,9 @@ export const EVOKERSPELLDB = {
         school: "green",
         castTime: [1, 1.75, 2.5, 3.25],
         empowered: true,
-        cost: 3.8,
+        cost: 4.2,
         cooldownData: {cooldown: 30, hasted: false}, 
-        coeff: 5.085,
+        coeff: 6.102,
         targets: [1, 2, 3, 4], // 
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers', 'mastery']
@@ -465,7 +465,7 @@ export const evokerTalents = {
     lifebind: {points: 1, maxPoints: 1, icon: "ability_evoker_hoverred", id: 373270, select: true, tier: 2}, // Rescue binds you to your ally, causing any healing either partner receives to splash for 40% on the other.
     callOfYsera: {points: 1, maxPoints: 1, icon: "4096390", id: 373835, select: true, tier: 2}, // Rescue increases the effectiveness of your next Dream Breath by 40% or Living Flame by 100%.
 
-    ancientFlame: {points: 1, maxPoints: 1, icon: "ability_evoker_rescue", id: 99998, select: false},
+    
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Needs testing.
     sacralEmpowerment: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
     exhilaratingBurst: {points: 1, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
@@ -481,6 +481,7 @@ export const evokerTalents = {
 
     rescue: {points: 0, maxPoints: 1, icon: "ability_evoker_rescue", id: 360995, select: false},
     //rescue: {points: 0, maxPoints: 1, icon: "", id: 0, select: true},
+    ancientFlame: {points: 1, maxPoints: 1, icon: "ability_evoker_rescue", id: 99998, select: true, tier: 4},
     innateMagic: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 375520, select: true, tier: 4}, // Essence regens 5% faster (2 charges).
     enkindled: {points: 0, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
     scarletAdaptation: {points: 0, maxPoints: 1, icon: "inv_bijou_red", id: 372469, select: true, tier: 4}, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.

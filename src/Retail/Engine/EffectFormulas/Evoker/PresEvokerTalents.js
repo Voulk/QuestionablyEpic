@@ -1,4 +1,6 @@
-import { getHealth } from "../Generic/RampGeneric/RampBase";
+import { getHealth, getHaste } from "../Generic/RampGeneric/RampBase";
+import { addBuff } from "../Generic/RampGeneric/BuffBase";
+import { runHeal } from "./PresEvokerRamps"
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -188,7 +190,8 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             stacks: 0,
             canStack: false,
             buffDuration: 15,
-            buffType: 'special',
+            buffType: 'spellSpeed',
+            buffSpell: ["Living Flame", "Living Flame D"],
             unique: true,
             value: 0.4,
         }
@@ -357,7 +360,7 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
 export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
 
     // Consume Flame
-    evokerSpells["Engulf"].push({
+    /*evokerSpells["Engulf"].push({
         // Consumes 4s of Dream Breath HoT and heals for 3x the amount. Sqrt scaling. 
         name: "Consume Flame",
         type: "heal",
@@ -369,6 +372,61 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
         sqrtMin: 5,
         secondaries: ['vers', 'mastery', 'crit']
 
-    })
+    }); */
 
+    // Travelling Flame
+    evokerSpells["Engulf"].push(
+        {
+            type: "function",
+            runFunc: function (state) {
+                const temp = state.activeBuffs.filter(buff => buff.name === "Dream Breath");
+                if (temp.length > 0) {
+                    const expiationDuration = 4;
+                    const consumeBuff = 3; // 300%
+                    const buff = temp[0]; // TODO: Grab the most powerful Dream Breath instead of the first one found.
+ 
+                    const ticks = Math.min(expiationDuration, (buff.expiration - state.t)) / buff.tickRate * getHaste(state.currentStats); // TODO: Add Haste
+                    const attSpell = {...buff.attSpell};
+                    attSpell.coeff *= ticks;
+ 
+                    runHeal(state, attSpell, "Consume Flame");
+ 
+                    buff.expiration -= expiationDuration + 8; // Travelling Flame adds 8s.
+
+                    // Travelling Flame
+                    // Add another full duration Dream Breath HoT
+                    addBuff(state, evokerSpells["Dream Breath"][2], "Dream Breath");
+
+
+                    /*if (state.t > buff.expiration) {
+                        removeBuffStack(state.activeBuffs, "Dream Breath");
+                    } */
+                }
+            }
+        });
+
+    // Expanded Lungs
+    // Check if 0 should also be buffed.
+    if (true) {
+        evokerSpells["Dream Breath"][1].coeff *= 1.2;
+        evokerSpells["Dream Breath"][2].coeff *= 1.2;
+    }
+
+    // Red Hot
+    evokerSpells["Engulf"][0].coeff *= 1.2;
+    evokerSpells["Engulf"][0].charges = 2;
+
+
+    evokerSpells['Engulf'].push({
+        name: "Burning Adrenaline",
+        type: "buff",
+        stacks: 1,
+        canStack: true,
+        maxStacks: 2,
+        buffDuration: 15,
+        buffType: 'spellSpeed',
+        buffSpell: ["All"],
+        unique: true,
+        value: 1.3,
+    });
 }

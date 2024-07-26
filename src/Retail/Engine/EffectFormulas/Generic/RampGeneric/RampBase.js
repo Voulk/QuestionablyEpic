@@ -302,8 +302,8 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 
 
 // TODO: Add support to have more than one effect a spell.
-const hasCastTimeBuff = (buffs, spellName) => {
-    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell.includes(spellName));
+const hasCastTimeBuff = (buffs, spellName, castTime) => {
+    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && (buff.buffSpell.includes(spellName) || buff.buffSpell.includes("All")));
     if (buff.length > 0) {
         if (buff[0].buffType === "spellSpeed") return castTime / buff[0].spellSpeed;
         else if (buff[0].buffType === "spellSpeedFlat") return castTime - buff[0].spellSpeed
@@ -321,14 +321,14 @@ export const getSpellCastTime = (spell, state, currentStats) => {
         if (spell.empowered) {
             if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
                 const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
-                castTime *= (1 - 0.05 * buffStacks)
+                castTime *= (1 - 0.1 * buffStacks)
                 if (buffStacks === 4) triggerTemporal(state);
             }
             castTime = castTime / getHaste(currentStats, "Retail"); // Empowered spells do scale with haste.
         } 
 
         else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
-        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name) / getHaste(currentStats, state.gameType);
+        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name, castTime) / getHaste(currentStats, state.gameType);
         //else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
         else castTime = castTime / getHaste(currentStats, state.gameType);
 

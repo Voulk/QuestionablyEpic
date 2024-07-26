@@ -38,6 +38,7 @@ export const buildEvokerChartData = (activeStats) => {
         {cat: "Base Spells", tag: "Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: []},
         {cat: "Base Spells", tag: "Temporal Anomaly", seq: ["Temporal Anomaly"], preBuffs: []}, 
         {cat: "Base Spells", tag: "Reversion", seq: ["Reversion"], preBuffs: [], iterations: 2000},
+        {cat: "Base Spells", tag: "Engulf", seq: ["Engulf"], preBuffs: []},
 
         {cat: "Base Spells", tag: "Verdant Embrace -> Dream Breath", seq: ["Verdant Embrace", "Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: []},
