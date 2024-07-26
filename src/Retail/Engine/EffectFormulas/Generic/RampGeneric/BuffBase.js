@@ -228,7 +228,6 @@ export const addBuff = (state, spell, spellName) => {
         // The spell does something on application. Note that standard "heals on application" shouldn't be applied here. This is for special effects.
         if (spell.onApplication) spell.onApplication(state, spell, newBuff);
         
-
         state.activeBuffs.push(newBuff)
 
     }

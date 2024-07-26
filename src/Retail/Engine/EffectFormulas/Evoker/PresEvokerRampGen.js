@@ -39,7 +39,9 @@ export const buildEvokerChartData = (activeStats) => {
         {cat: "Base Spells", tag: "Temporal Anomaly", seq: ["Temporal Anomaly"], preBuffs: []}, 
         {cat: "Base Spells", tag: "Reversion", seq: ["Reversion"], preBuffs: [], iterations: 2000},
         {cat: "Base Spells", tag: "Engulf", seq: ["Engulf"], preBuffs: []},
-        {cat: "Base Spells", tag: "Engulf", seq: ["Engulf"], preBuffs: []},
+        {cat: "Base Spells", tag: "Consume Flame", seq: ["Engulf"], preBuffs: ["Dream Breath"], filterSpell: "Consume Flame"},
+        {cat: "Base Spells", tag: "Consume Flame (CoY)", seq: ["Engulf"], preBuffs: ["Dream Breath"], filterSpell: "Consume Flame", multiplier: 1.4},
+        {cat: "Base Spells", tag: "Consume Flame (CoY + 4pc)", seq: ["Engulf"], preBuffs: ["Dream Breath"], filterSpell: "Consume Flame", multiplier: 1.4 * 1.4},
 
         {cat: "Base Spells", tag: "Verdant Embrace -> Dream Breath", seq: ["Verdant Embrace", "Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: []},
@@ -84,7 +86,7 @@ export const buildEvokerChartData = (activeStats) => {
         }
         else {
             // All sequence based.
-            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
+            const filterSpell = sequence.filterSpell ? sequence.filterSpell : sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
             if (sequence.cat === "Lifebind Ramps") talents = { ...talents, lifebind: { ...talents.lifebind, points: 1 } };
             results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence));
 

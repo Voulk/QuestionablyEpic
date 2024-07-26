@@ -337,6 +337,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             else if (buffName === "Echo 8") {
                 for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
             }
+            else if (buffName === "Dream Breath") {
+                console.log(evokerSpells["Dream Breath"][2])
+                addBuff(state, evokerSpells["Dream Breath"][2], "Dream Breath");
+            }
         })
 
     }

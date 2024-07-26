@@ -1,4 +1,4 @@
-import { getHealth, getHaste } from "../Generic/RampGeneric/RampBase";
+import { getHealth, getHaste, getSqrt } from "../Generic/RampGeneric/RampBase";
 import { addBuff } from "../Generic/RampGeneric/BuffBase";
 import { runHeal } from "./PresEvokerRamps"
 
@@ -380,10 +380,11 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
                     const buff = temp[0]; // TODO: Grab the most powerful Dream Breath instead of the first one found.
  
                     const ticks = Math.min(expiationDuration, (buff.expiration - state.t)) / buff.tickRate * getHaste(state.currentStats); // TODO: Add Haste
-                    const attSpell = {...buff.attSpell};
-                    attSpell.coeff *= ticks;
- 
-                    runHeal(state, attSpell, "Consume Flame");
+                    const attSpell = JSON.parse(JSON.stringify(buff.attSpell));
+                    const consumeHeal = { type: "heal", coeff: attSpell.coeff * consumeBuff * ticks * getSqrt(20, 5), expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
+                    //attSpell.coeff = attSpell.coeff * consumeBuff * ticks// ;
+                    
+                    runHeal(state, consumeHeal, "Consume Flame");
  
                     buff.expiration -= expiationDuration + 8; // Travelling Flame adds 8s.
 
