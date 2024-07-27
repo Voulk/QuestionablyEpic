@@ -105,10 +105,11 @@ export const getBuffStacks = (buffs, buffName) => {
 }
 
 /**  Extend any buffs named @spellName by @extension seconds. */
-export const extendBuff = (activeBuffs, timer, spellName, extension) => {
+export const extendBuff = (activeBuffs, timer, spellNames, extension) => {
     activeBuffs.forEach((buff) => {
-        if (buff.name === spellName) {
+        if (spellNames.includes(buff.name)) {
             buff.expiration += extension;
+            console.log("Extended " + buff.name);
         }
     });
 }

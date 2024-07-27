@@ -13,6 +13,8 @@ import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
+import { buildDruidChartData } from "Retail/Engine/EffectFormulas/Druid/DruidRampGen";
+
 import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicChartGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
@@ -26,6 +28,9 @@ function buildChartData(spec, stats, talents) {
     return buildDiscChartData(stats, talents);
   } else if (spec === "Preservation Evoker") {
     return buildEvokerChartData(stats, talents);
+  }
+  else if (spec === "Restoration Druid") {
+    return buildDruidChartData(stats, talents);
   }
   else if (spec === "Restoration Druid Classic") {
     return buildClassicChartData(stats, "Restoration Druid")

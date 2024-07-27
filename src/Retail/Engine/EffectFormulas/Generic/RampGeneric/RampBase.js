@@ -1,5 +1,5 @@
 // 
-import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks } from "./BuffBase";
+import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks, extendBuff } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
@@ -156,7 +156,13 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
                     addBuff(state, spell, spellName);
                 }
                 
-            } 
+            }
+            else if (spell.type === "buffExtension") {
+                extendBuff(state.activeBuffs, 0, spell.extensionList, spell.extensionDuration)
+            }
+            else {
+                console.error("Spell Type Error: " + spell.type);
+            }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
             if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
