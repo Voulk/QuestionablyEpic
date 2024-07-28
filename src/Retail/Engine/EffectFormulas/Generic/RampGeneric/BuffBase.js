@@ -50,7 +50,8 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
 const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
     if (buff.buffType === "heal") {
         const spell = buff.attSpell;
-        runHeal(state, spell, buff.name + " (HoT)")
+        console.log(buff);
+        runHeal(state, spell, buff.name + " (HoT)", buff.target || 0)
     }
     else if (buff.buffType === "damage") {
         const spell = buff.attSpell;

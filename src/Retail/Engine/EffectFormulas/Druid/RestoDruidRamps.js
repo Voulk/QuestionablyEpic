@@ -134,24 +134,36 @@ const getHealingMult = (state, t, spellName, talents) => {
 }
 
 
-export const runHeal = (state, spell, spellName, compile = true) => {
+export const runHeal = (state, spell, spellName, targetNum = 0) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
+
+    // Calculate Mastery
+    // Druid mastery is based on the number of mastery stacks on the target.
+    // For this reason we will track specific targets on our spells.
+    // For direct spells like Regrowth, it might be fairer to use an average instead. 
+    if (spellName.includes("Rejuvenation")) {
+        // Check stacks on target.
+        console.log(spellName);
+        state.activeBuffs.filter(buff => buff.target === targetNum).length;
+        console.log("Active HoTs: " + state.activeBuffs.filter(buff => buff.target === targetNum).length);
+        
+    } // TODO: Generate target at start of cast so that direct and HoT portions don't end up on different people etc.
+   
 
     const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, DRUIDCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
-    //if (cloudburstActive) cloudburstHealing = (healingVal / (1 - spell.expectedOverheal)) * DRUIDCONSTANTS.CBT.transferRate * (1 - DRUIDCONSTANTS.CBT.expectedOverhealing);
-    //console.log(spellName + ": " + healingVal + ". t:" + targetMult + ". HealingM: " + healingMult);
+
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 
 
     // Compile healing and add report if necessary.
-    if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
+    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
     if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
     else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
@@ -165,7 +177,7 @@ export const runDamage = (state, spell, spellName, atonementApp, compile = true)
     const damageVal = getSpellRaw(spell, state.currentStats, DRUIDCONSTANTS) * damMultiplier;
     
     // This is stat tracking, the atonement healing will be returned as part of our result.
-    if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
+    state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
     return damageVal;
 }

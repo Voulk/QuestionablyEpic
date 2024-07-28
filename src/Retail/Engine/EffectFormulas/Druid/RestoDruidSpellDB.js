@@ -27,6 +27,7 @@ export const DRUIDSPELLDB = {
         cost: 3.4, 
         coeff: 2.076 * 1.44, 
         expectedOverheal: 0.2,
+        flags: {targeted: true},
         secondaries: ['crit', 'vers', 'mastery'] 
     },
     {
@@ -37,6 +38,7 @@ export const DRUIDSPELLDB = {
         coeff: 0.0864 * 1.44, // The coefficient for a single regrowth tick.
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,
+        flags: {targeted: true},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Swiftmend": [{
@@ -59,22 +61,22 @@ export const DRUIDSPELLDB = {
         type: "buff",
         buffType: "function",
         runFunc: function (state, spell, buff, partialTickPercentage) {
+
             // Wild Growth caught a 4% nerf in Dragonflight, and this is applied to the decayrate also.
             // Unstoppable Growth is a 15/30% reduction to the Decay rate.
-
             const decayRate = 0.07 * 0.96 * (1 - state.talents.unstoppableGrowth.points * 0.15) / (buff.expiration - buff.startTime);
             const t = state.t - buff.startTime;
             const wildGrowthAura = 1.44;
             
             // The Wild Growth aura is applied at the end, after the decay has been applied.
-            const netCoeff = ((spell.coeff) - decayRate * t) * wildGrowthAura;
+            const netCoeff = ((spell.coeff) - decayRate * t) * spell.specialMod;
 
             const wgCast = {
                 name: "Wild Growth",
                 coeff: netCoeff, 
-                targets: 1, //spell.targets, // TODO
-                expectedOverheal: 0, // TODO
-                secondaries: [/*"vers"*/], // TODO
+                targets: spell.targets,
+                expectedOverheal: spell.expectedOverheal, 
+                secondaries: spell.secondaries,
                 type: "heal",
             }
             
@@ -83,11 +85,12 @@ export const DRUIDSPELLDB = {
         },
         tickData: {tickRate: 1, canPartialTick: true, tickOnCast: false}, 
         buffDuration: 7,
-        targets: 6, // Talent to increase to 6.
-        coeff: 0.168, //0.1344, // This is the base coefficient before decay.
+        targets: 5, // Talent to increase to 6.
+        coeff: 0.168, //0.1344, // This is the base coefficient before decay. The 0.1344 listed in places appears to just be an average, but not the base coefficient.
+        specialMod: 1.44, // Aura buff + any extras.
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: [/*'crit', 'vers', 'mastery'*/] // Rejuv also scales with haste, but this is handled elsewhere.
+        secondaries: ['crit', 'vers', 'mastery']
     }],
     "Flourish": [{
         // Two portions: extends active HoTs, and then increases tick rate.
@@ -197,6 +200,11 @@ const classTalents = {
 }
 
 const specTalents = {
+
+
+    improvedWildGrowth: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB["Wild Growth"][0].targets += 1;
+    }}, 
 
     // Handled in WG formula.
     unstoppableGrowth: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {

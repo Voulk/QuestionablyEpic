@@ -32,11 +32,11 @@ export const buildDruidChartData = (activeStats) => {
     let talents = {...druidTalents};
 
     const sequences = [
-        {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
+        
         /*
         {cat: "Base Spells", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: []},
         {cat: "Base Spells", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
-        
+        {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
         {cat: "Base Spells", tag: "Efflorescence", seq: ["Efflorescence"], preBuffs: []},
         {cat: "Base Spells", tag: "Cenarion Ward", seq: ["Cenarion Ward"], preBuffs: []},
         {cat: "Base Spells", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
