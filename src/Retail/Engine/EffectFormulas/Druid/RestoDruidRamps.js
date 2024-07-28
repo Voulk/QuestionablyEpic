@@ -10,10 +10,10 @@ const DRUIDCONSTANTS = {
     
     masteryMod: 0.5, 
     masteryEfficiency: 0.80, 
-    baseMana: 250000,
+    baseMana: 2500000, // 2.5m
 
-    auraHealingBuff: 0.98,
-    auraDamageBuff: 1.71,
+    auraHealingBuff: 1,
+    auraDamageBuff: 1,
     enemyTargets: 1, 
     echoExceptionSpells: [], // These are spells that do not consume or otherwise interact with our Echo buff.
 
@@ -195,9 +195,6 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
         talents[key] = value.points;
     } */
 
-    // Add base Mastery bonus.
-    // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
-    stats.mastery += 180;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
         talents: talents, reporting: true, heroSpec: "Keeper of the Grove"};

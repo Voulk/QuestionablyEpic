@@ -29,14 +29,17 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
     const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType == "function" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
     expiringHots.forEach(buff => {
         if (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") {
+            
             const tickRate = buff.tickRate / getHaste(state.currentStats)
             const partialTickPercentage = 1-((buff.next - state.t) / tickRate);
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
+            if (partialTickPercentage > 0.01) { // We don't need to trigger a partial tick if it happens at the same time stamp.
+                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
+                else if (buff.buffType === "heal") runHeal(state, spell, buff.name + "(hot)");
+                else if (buff.buffType === "function") buff.attFunction(state, spell, buff, partialTickPercentage);
+            }
 
-            if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-            else if (buff.buffType === "heal") runHeal(state, spell, buff.name + "(hot)");
-            else if (buff.buffType === "function") buff.attFunction(state, spell, buff, partialTickPercentage);
         }
         else if (buff.runEndFunc) buff.runFunc(state, buff);
     })
@@ -109,7 +112,6 @@ export const extendBuff = (activeBuffs, timer, spellNames, extension) => {
     activeBuffs.forEach((buff) => {
         if (spellNames.includes(buff.name)) {
             buff.expiration += extension;
-            console.log("Extended " + buff.name);
         }
     });
 }

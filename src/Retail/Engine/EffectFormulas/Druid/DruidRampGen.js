@@ -32,16 +32,19 @@ export const buildDruidChartData = (activeStats) => {
     let talents = {...druidTalents};
 
     const sequences = [
+        {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
+        /*
         {cat: "Base Spells", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: []},
         {cat: "Base Spells", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
-        {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
+        
         {cat: "Base Spells", tag: "Efflorescence", seq: ["Efflorescence"], preBuffs: []},
         {cat: "Base Spells", tag: "Cenarion Ward", seq: ["Cenarion Ward"], preBuffs: []},
         {cat: "Base Spells", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
+        {cat: "Base Spells", tag: "Grove Guardians", seq: ["Grove Guardians"], preBuffs: []},
         
         {cat: "Ramps", tag: "10x Rej -> SM -> WG -> Flourish -> 8x Reg", seq: ["Efflorescence", "Rejuvenation x 10", "Swiftmend", "Wild Growth", "Flourish", "Regrowth x 8"], preBuffs: []},
         {cat: "Ramps", tag: "8x Rej -> SM -> WG -> 6x Reg", seq: ["Efflorescence", "Rejuvenation x 8", "Swiftmend", "Wild Growth", "Regrowth x 6"], preBuffs: []},
-
+        */
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
         //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
     ]

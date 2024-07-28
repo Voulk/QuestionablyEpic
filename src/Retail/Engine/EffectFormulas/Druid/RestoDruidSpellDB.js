@@ -1,3 +1,4 @@
+import { RFC_2822 } from "moment";
 import { runHeal } from "./RestoDruidRamps";
 
 // Add onTick, onExpiry functions to spells.
@@ -57,20 +58,23 @@ export const DRUIDSPELLDB = {
         cost: 2.2, // 5500
         type: "buff",
         buffType: "function",
-        runFunc: function (state, spell, buff) {
-            const decayRate = 0.07 / (buff.expiration - buff.startTime);
+        runFunc: function (state, spell, buff, partialTickPercentage) {
+            // Wild Growth caught a 4% nerf in Dragonflight, and this is applied to the decayrate also.
+            // Unstoppable Growth is a 15/30% reduction to the Decay rate.
+
+            const decayRate = 0.07 * 0.96 * (1 - state.talents.unstoppableGrowth.points * 0.15) / (buff.expiration - buff.startTime);
             const t = state.t - buff.startTime;
             const wildGrowthAura = 1.44;
-
-            const decay = spell.coeff - decayRate * t;
-            const netCoeff = decay * wildGrowthAura;
+            
+            // The Wild Growth aura is applied at the end, after the decay has been applied.
+            const netCoeff = ((spell.coeff) - decayRate * t) * wildGrowthAura;
 
             const wgCast = {
                 name: "Wild Growth",
                 coeff: netCoeff, 
-                targets: spell.targets, // TODO
+                targets: 1, //spell.targets, // TODO
                 expectedOverheal: 0, // TODO
-                secondaries: ["vers"], // TODO
+                secondaries: [/*"vers"*/], // TODO
                 type: "heal",
             }
             
@@ -80,14 +84,14 @@ export const DRUIDSPELLDB = {
         tickData: {tickRate: 1, canPartialTick: true, tickOnCast: false}, 
         buffDuration: 7,
         targets: 6, // Talent to increase to 6.
-        coeff: 0.1344, // This is the base coefficient before decay.
+        coeff: 0.168, //0.1344, // This is the base coefficient before decay.
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+        secondaries: [/*'crit', 'vers', 'mastery'*/] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
     "Flourish": [{
         // Two portions: extends active HoTs, and then increases tick rate.
-        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "heal"},
+        spellData: {id: 197721, icon: "spell_druid_wildburst", cat: "cooldown"},
         type: "buffExtension",
         castTime: 0, 
         cost: 0, 
@@ -128,7 +132,60 @@ export const DRUIDSPELLDB = {
             targets: 3,
             secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
+    "Incarnation: Tree of Life": [{
+        // All healing +15%
+        // Rejuv: +50%, -30% cost
+        // Regrowth: Instant
+        // Wild Growth: +2 targets
+        spellData: {id: 33891, icon: "ability_druid_improvedtreeform", cat: "cooldown"},
+        type: "buff",
+        buffType: "special",
+        buffDuration: 30,
+        castTime: 0, 
+        cost: 0, 
+    },
+    ],
+    "Grove Guardians": [{
+        // GG Swiftmend portion
+        spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        charges: 3, 
+        cost: 1.2, 
+        coeff: 1.36, 
+        expectedOverheal: 0.1,
+        secondaries: ['crit', 'vers', 'mastery'] 
+    },
+    { // WG Portion. Technically a talent.
+        type: "buff",
+        buffType: "function",
+        runFunc: function (state, spell, buff) {
+            const decayRate = 0.07 / (buff.expiration - buff.startTime);
+            const t = state.t - buff.startTime;
+            const wildGrowthAura = 1;
 
+            const decay = spell.coeff - decayRate * t;
+            const netCoeff = decay * wildGrowthAura;
+            const wgCast = {
+                name: "Wild Growth",
+                coeff: netCoeff, 
+                targets: spell.targets, // TODO
+                expectedOverheal: 0, // TODO
+                secondaries: ["vers"], // TODO
+                type: "heal",
+            }
+            
+            runHeal(state, wgCast, "Wild Growth", true);
+
+        },
+        tickData: {tickRate: 1, canPartialTick: true, tickOnCast: false}, 
+        buffDuration: 7,
+        targets: 5, 
+        coeff: 0.1344, // This is the base coefficient before decay.
+        expectedOverheal: 0,
+        flags: {targeted: true},
+        secondaries: [/*'crit', 'vers', 'mastery'*/] // Rejuv also scales with haste, but this is handled elsewhere.
+    }],
 
 }
 
@@ -141,6 +198,10 @@ const classTalents = {
 
 const specTalents = {
 
+    // Handled in WG formula.
+    unstoppableGrowth: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+
+    }}, 
 
     // This occurs in 3 2 second ticks. We'll watch this one closely on logs but functionally it usually represents a full 6s extension. 
     // Note that if we were to reduce this rate it should be by chance rather than cutting the extension.
