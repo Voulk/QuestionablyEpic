@@ -1,5 +1,5 @@
-import { RFC_2822 } from "moment";
 import { runHeal } from "./RestoDruidRamps";
+
 
 // Add onTick, onExpiry functions to spells.
 export const DRUIDSPELLDB = {
@@ -16,6 +16,7 @@ export const DRUIDSPELLDB = {
         buffDuration: 12,
         coeff: 0.2465 * 2.1,
         expectedOverheal: 0.2,
+        targeting: {type: "friendly", count: 1, behavior: "avoidSame"},
         flags: {targeted: true},
         secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
@@ -60,6 +61,7 @@ export const DRUIDSPELLDB = {
         cost: 2.2, // 5500
         type: "buff",
         buffType: "function",
+        targeting: {type: "friendly", count: 5, behavior: "random"},
         runFunc: function (state, spell, buff, partialTickPercentage) {
 
             // Wild Growth caught a 4% nerf in Dragonflight, and this is applied to the decayrate also.

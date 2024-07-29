@@ -3,7 +3,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-    getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
+    getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
 
 const DRUIDCONSTANTS = {
@@ -139,24 +139,30 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     // Pre-heal processing
     const currentStats = state.currentStats;
 
-    // Calculate Mastery
-    // Druid mastery is based on the number of mastery stacks on the target.
-    // For this reason we will track specific targets on our spells.
-    // For direct spells like Regrowth, it might be fairer to use an average instead. 
-    if (spellName.includes("Rejuvenation")) {
-        // Check stacks on target.
-        console.log(spellName);
-        state.activeBuffs.filter(buff => buff.target === targetNum).length;
-        console.log("Active HoTs: " + state.activeBuffs.filter(buff => buff.target === targetNum).length);
-        
-    } // TODO: Generate target at start of cast so that direct and HoT portions don't end up on different people etc.
-   
-
     const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     const healingVal = getSpellRaw(spell, currentStats, DRUIDCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
+    // Calculate Mastery
+    // Druid mastery is based on the number of mastery stacks on the target.
+    // For this reason we will track specific targets on our spells.
+    // For direct spells like Regrowth, it might be fairer to use an average instead. 
+    let masteryStacks = 0;
+    if (spellName === "Wild Growth") {
+        // Check avg stack counts. Could also just take a mastery average across the raid.
+        
+        // This calculates an average stack count. We know it'll always benefit from itself, and then we'll take an average of other HoTs across the raid.
+        masteryStacks = state.activeBuffs.filter(buff => ["Wild Growth"].includes(buff.name)).length +
+                                state.activeBuffs.filter(buff => ["Rejuvenation"].includes(buff.name)).length / 20;
 
+    }
+    if (["Rejuvenation (HoT)"].includes(spellName)) {
+        // Check stacks on target.
+        masteryStacks = state.activeBuffs.filter(buff => buff.target.includes(targetNum)).length;
+        
+    } // TODO: Generate target at start of cast so that direct and HoT portions don't end up on different people etc.
+
+    healingVal *= (1+getMastery(currentStats, DRUIDCONSTANTS) * masteryStacks);
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
@@ -209,7 +215,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
 
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-        talents: talents, reporting: true, heroSpec: "Keeper of the Grove"};
+        talents: talents, reporting: true, heroSpec: "Keeper of the Grove", currentTarget: 0};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)

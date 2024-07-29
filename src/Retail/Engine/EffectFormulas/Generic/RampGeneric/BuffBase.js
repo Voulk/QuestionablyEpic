@@ -208,7 +208,8 @@ export const addBuff = (state, spell, spellName) => {
         }
 
         // If the target of the buff is relevant to its functionality. Generate one.
-        if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
+        //if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
+        newBuff.target = state.currentTarget || [];
 
         // Check if any buffs affect the spell. If they do we'll have to adjust the coefficient.
         // Examples: Dream Breath (Call of Ysera).

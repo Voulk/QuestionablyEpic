@@ -106,6 +106,8 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
         if (canProceed) {
             // The spell casts a different spell. 
+            const target = fullSpell[0].flags && fullSpell[0].flags.targeted ? generateSpellTarget(state, fullSpell[0], spellName) : [];
+            if (target) state.currentTarget = target;
             if (spell.type === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
                 const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
@@ -184,7 +186,50 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
     // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
+    state.currentTarget = [];
 
+}
+
+
+// Options:
+// - avoidSame - Used for buff spells to avoid re-casting them on the same target.
+// - random - A purely random selection. Multi-target spells will avoid hitting the same target.
+// Note that most spells won't need explicit targeting to begin with. It is only relevant in cases like Resto Druid where who the buff is on is of particular importance.
+export const generateSpellTarget = (state, spell, spellName) => {
+    // Attempt to find unique target for HoT.
+    const filteredBuffs = state.activeBuffs.filter(buff => buff.name === spellName)
+
+    // Create an array of possible targets from 1 to 20. We could add better support for M+ by capping this at 5.
+    const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
+    // Get all the 'target' values from the input array
+    // These are all targets that already have the buff we're looking to apply.
+    const targets = new Set(filteredBuffs.map(obj => obj.target));
+
+    if (spell.targeting.behavior === "random") {
+        shuffleArray(numbers);
+        console.log("Applying buff to " + JSON.stringify(numbers.slice(0, spell.targeting.count)));
+        return numbers.slice(0, spell.targeting.count);
+    }
+
+    // Find the smallest number that isn't in the 'targets'
+    for (let num of numbers) {
+        if (!targets.has(num)) {
+            addReport(state, "Adding Buff: " + spellName + " to target " + num);
+            return [num];
+        }
+    }
+    // If all buffs are taken, return 0 instead. The technically correct answer here would be to check for the shortest buff while we're finding the smallest
+    // number and return that but we'll leave that for another time. Note that it's a very minor optimization. 
+    return [];
+
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
 }
 
 export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
@@ -364,6 +409,10 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
 
     return mult;
+}
+
+export const getMastery = (stats, specConstants) => {
+    return (specConstants.masteryMod / 100 * 8 + stats.mastery / STATCONVERSION.MASTERY / 100 * specConstants.masteryMod / 100);
 }
 
 /**
