@@ -51,6 +51,11 @@ export const spendSpellCost = (spell, state, spellName = "") => {
 
             // Special mana mods
             if (spellName.includes("Rejuvenation") && checkBuffActive(state.activeBuffs, "Incarnation: Tree of Life")) cost *= 0.7;
+            if (spellName.includes("Regrowth" && state.talents.abundance.points > 0)) {
+                // Reduce price of Regrowth by 8% per active Rejuv, to a maximum of 12 stacks (96% reduction).
+                const abundanceStacks = state.activeBuffs.filter(buff => buff.name === "Rejuvenation").length;
+                cost *= 1 - Math.min(abundanceStacks * 0.08, 0.96);
+            }
 
             state.manaSpent += spell[0].cost;
             state.manaPool = (state.manaPool || 0) - spell[0].cost;

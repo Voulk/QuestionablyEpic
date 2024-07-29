@@ -259,6 +259,19 @@ const specTalents = {
     germination: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].buffDuration += 2;
     }}, 
+
+    soulOfTheForest: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        
+        spellDB['Swiftmend'].push({
+            name: "Soul of the Forest",
+            type: "buff",
+            stacks: false,
+            buffDuration: 20,
+            buffType: 'spellAmpMulti',
+            buffedSpells: {"Rejuvenation": 3, "Regrowth": 3, "Wild Growth": 1.5},
+            })
+    }}, 
+
 }
 
 export const druidTalents = {

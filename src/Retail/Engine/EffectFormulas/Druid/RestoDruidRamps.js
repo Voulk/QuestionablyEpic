@@ -172,6 +172,13 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 
+    // Abundance
+    if (spellName.includes("Regrowth" && state.talents.abundance.points > 0)) {
+        // Reduce price of Regrowth by 8% per active Rejuv, to a maximum of 12 stacks (96% reduction).
+        const abundanceStacks = state.activeBuffs.filter(buff => buff.name === "Rejuvenation").length;
+        const crit = getCrit(currentStats);
+        healingVal *= Math.max(abundanceStacks * 0.08 + crit, 2) / crit;
+    }
 
     // Compile healing and add report if necessary.
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;

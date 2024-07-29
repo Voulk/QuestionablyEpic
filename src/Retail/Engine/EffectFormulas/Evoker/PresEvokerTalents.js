@@ -181,7 +181,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             buffDuration: 999,
             buffType: 'spellAmp',
             value: 1.4,
-    })
+        })
     }
     if (talents.ancientFlame) {
         const ancientFlame = {

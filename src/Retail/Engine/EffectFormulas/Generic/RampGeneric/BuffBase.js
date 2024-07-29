@@ -217,6 +217,11 @@ export const addBuff = (state, spell, spellName) => {
             const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName)[0];
             spell.coeff = spell.coeff * spellAmp.value;
         }
+        else if (state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && buff.buffedSpells[spell.name]).length > 0) {
+            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && buff.buffedSpells[spellName])[0];
+            spell.coeff = spell.coeff * spellAmp.buffedSpells[spellName];
+            removeBuffStack(state.activeBuffs, spellAmp.name);
+        }
 
         // The spell will run a function on tick.
         if (spell.buffType === "function") {
@@ -241,7 +246,7 @@ export const addBuff = (state, spell, spellName) => {
     // Buffs that increase the healing of all spells could be handled here in future, but aren't currently. Those are generally much easier.
 
     // Buffs here support stacking and maxStacks properties.
-    else if (spell.buffType === "spellAmp") {
+    else if (spell.buffType === "spellAmp" || spell.buffType === "spellAmpMulti") {
         
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
@@ -249,7 +254,7 @@ export const addBuff = (state, spell, spellName) => {
 
         // Buff doesn't exist already. We'll add the buff new.
         if (buffStacks === 0) {
-            newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName}
+            newBuff = {...newBuff, value: spell.value || 1, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName || spellName.buffedSpells}
             state.activeBuffs.push(newBuff);
         }
         // The buff does already exist. We can just add a stack.
