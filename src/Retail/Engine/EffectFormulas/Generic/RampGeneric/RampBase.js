@@ -37,7 +37,7 @@ export const spellCleanup = (spell, state) => {
 }
 
 // TODO: Generalize secondary spell costs and then flatten this function. 
-export const spendSpellCost = (spell, state) => {
+export const spendSpellCost = (spell, state, spellName = "") => {
     if ('essence' in spell[0]) {
         if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
@@ -47,6 +47,11 @@ export const spendSpellCost = (spell, state) => {
         }
         else {
             // Essence buff is not active. Spend Essence and mana.
+            let cost = spell[0].cost || 0;
+
+            // Special mana mods
+            if (spellName.includes("Rejuvenation") && checkBuffActive(state.activeBuffs, "Incarnation: Tree of Life")) cost *= 0.7;
+
             state.manaSpent += spell[0].cost;
             state.manaPool = (state.manaPool || 0) - spell[0].cost;
             state.essence -= spell[0].essence;
@@ -265,7 +270,7 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     // Check if the spell has a custom GCD. 
     const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
     const GCD = fullSpell[0].customGCD || 1.5;
-    const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
+    const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats, castState.queuedSpell);
     const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats, state.gameType), GCDCap) : castTime;
 
     state.execTime += effectiveCastTime;
@@ -365,7 +370,7 @@ const hasCastTimeBuff = (buffs, spellName, castTime) => {
 
 
 // TODO: Remove empowered section and turn Temporal Compression into a type of cast speed buff.
-export const getSpellCastTime = (spell, state, currentStats) => {
+export const getSpellCastTime = (spell, state, currentStats, spellName) => {
     if ('castTime' in spell) {
         let castTime = spell.castTime;
     
@@ -377,6 +382,9 @@ export const getSpellCastTime = (spell, state, currentStats) => {
             }
             castTime = castTime / getHaste(currentStats, "Retail"); // Empowered spells do scale with haste.
         } 
+
+        // Special cases
+        else if (spellName === "Regrowth" && checkBuffActive(state.activeBuffs, "Incarnation: Tree of Life")) castTime = 0;
 
         else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
         else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name, castTime) / getHaste(currentStats, state.gameType);

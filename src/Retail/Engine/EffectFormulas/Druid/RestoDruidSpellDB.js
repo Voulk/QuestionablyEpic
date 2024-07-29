@@ -68,7 +68,7 @@ export const DRUIDSPELLDB = {
             // Unstoppable Growth is a 15/30% reduction to the Decay rate.
             const decayRate = 0.07 * 0.96 * (1 - state.talents.unstoppableGrowth.points * 0.15) / (buff.expiration - buff.startTime);
             const t = state.t - buff.startTime;
-            const wildGrowthAura = 1.44;
+            const inTree = state.activeBuffs.filter(x => x.name === "Incarnation: Tree of Life").length > 0;
             
             // The Wild Growth aura is applied at the end, after the decay has been applied.
             const netCoeff = ((spell.coeff) - decayRate * t) * spell.specialMod;
@@ -76,7 +76,7 @@ export const DRUIDSPELLDB = {
             const wgCast = {
                 name: "Wild Growth",
                 coeff: netCoeff, 
-                targets: spell.targets,
+                targets: spell.targets + (inTree ? 2 : 0),
                 expectedOverheal: spell.expectedOverheal, 
                 secondaries: spell.secondaries,
                 type: "heal",
@@ -195,8 +195,45 @@ export const DRUIDSPELLDB = {
 }
 
 const classTalents = {
-    improvedRejuvenation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    improvedRejuvenation: {points: 1, maxPoints: 1, icon: "spell_nature_rejuvenation", id: 231040, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].buffDuration += 3;
+    }}, 
+    lycarasTeachings: {points: 2, maxPoints: 2, icon: "inv_trinket_ardenweald_02_green", id: 378988, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        // While Lycara's is permanent, we'll add it as a buff so that we can correctly multiply it with other sources of haste.
+        // No support right now for other forms.
+        const buff = {
+            name: "Lycara's Teachings",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'statsMult',
+            stat: 'haste',
+            value: (0.03 * points + 1)
+        };
+        addBuff(state, buff, "Lycara's Teachings")
+    }}, 
+    risingLight: {points: 1, maxPoints: 1, icon: "spell_druid_equinox", id: 417712, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        // We could add a setting to swap between healing and versatility but most content happens at night.
+        const buff = {
+            name: "Rising Light",
+            type: "buff",
+            stacks: false,
+            buffDuration: 999,
+            buffType: 'statsMult',
+            stat: 'versatility',
+            value: (2 * STATCONVERSION.VERSATILITY)
+        };
+        addBuff(state, buff, "Rising Light")
+    }}, 
+    loreOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_nature_starfall", id: 449185, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const percIncrease = (0.03 * points + 1)
+        spellDB["Wild Growth"][0].specialMod *= percIncrease;
+        spellDB["Rejuvenation"][0].coeff *= percIncrease;
+    }}, 
+
+    // Handled in healingMult since we don't really want to modify our CONSTANTS.
+    nurturingInstinct: {points: 2, maxPoints: 2, icon: "spell_nature_starfall", id: 33873, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    
     }}, 
 
 }
@@ -204,22 +241,22 @@ const classTalents = {
 const specTalents = {
 
 
-    improvedWildGrowth: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    improvedWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 328025, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB["Wild Growth"][0].targets += 1;
     }}, 
 
     // Handled in WG formula.
-    unstoppableGrowth: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    unstoppableGrowth: {points: 2, maxPoints: 2, icon: "ability_druid_flourish", id: 382559, select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
     }}, 
 
     // This occurs in 3 2 second ticks. We'll watch this one closely on logs but functionally it usually represents a full 6s extension. 
     // Note that if we were to reduce this rate it should be by chance rather than cutting the extension.
-    nurturingDormancy: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    nurturingDormancy: {points: 1, maxPoints: 1, icon: "ability_druid_replenish", id: 392099, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].buffDuration += 4;
     }}, 
 
-    germination: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    germination: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].buffDuration += 2;
     }}, 
 }

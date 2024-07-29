@@ -128,8 +128,13 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (state, t, spellName, talents) => {
-    let mult = DRUIDCONSTANTS.auraHealingBuff;
+    let mult = DRUIDCONSTANTS.auraHealingBuff *= 1.06; // Not taking Nurt is trolling so we won't even check for it. 
+    const treeActive = state.activeBuffs.filter(buff => buff.name === "Incarnation: Tree of Life").length > 0;
+
+    if (treeActive) mult *= 1.15; // Not affected by tree: External healing sources (not included anyway), Ysera's Gift
+    if (spellName.includes("Rejuvenation")) mult *= treeActive ? 1.5 : 1;
     
+
     return mult;
 }
 
@@ -284,7 +289,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
             const fullSpell = druidSpells[castState.queuedSpell];
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
             addReport(state, `Casting ${spellName}`);
-            spendSpellCost(fullSpell, state);
+            spendSpellCost(fullSpell, state, spellName);
  
             runSpell(fullSpell, state, spellName, druidSpells, null, runHeal, runDamage);
 
