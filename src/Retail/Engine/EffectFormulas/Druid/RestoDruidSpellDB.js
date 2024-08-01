@@ -1,4 +1,6 @@
 import { runHeal } from "./RestoDruidRamps";
+import { addBuff } from "../Generic/RampGeneric/BuffBase"
+import { STATCONVERSION } from "General/Engine/STAT"
 
 
 // Add onTick, onExpiry functions to spells.
@@ -18,7 +20,7 @@ export const DRUIDSPELLDB = {
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "avoidSame"},
         flags: {targeted: true},
-        secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+        secondaries: ['crit', 'versatility'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
     "Regrowth": [{
         // Regrowth direct heal portion
@@ -29,7 +31,7 @@ export const DRUIDSPELLDB = {
         coeff: 2.076 * 1.44, 
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: ['crit', 'vers', 'mastery'] 
+        secondaries: ['crit', 'versatility'] 
     },
     {
         // Regrowth HoT portion
@@ -40,7 +42,7 @@ export const DRUIDSPELLDB = {
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit', 'versatility']
     }],
     "Swiftmend": [{
         // Regrowth direct heal portion
@@ -50,7 +52,7 @@ export const DRUIDSPELLDB = {
         cost: 1.4, 
         coeff: 6.1824, 
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers', 'mastery'] 
+        secondaries: ['crit', 'versatility'] 
     },
     ],
     "Wild Growth": [
@@ -92,7 +94,7 @@ export const DRUIDSPELLDB = {
         specialMod: 1.44, // Aura buff + any extras.
         expectedOverheal: 0.2,
         flags: {targeted: true},
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit', 'versatility']
     }],
     "Flourish": [{
         // Two portions: extends active HoTs, and then increases tick rate.
@@ -101,12 +103,12 @@ export const DRUIDSPELLDB = {
         castTime: 0, 
         cost: 0, 
         extensionList: ["Rejuvenation", "Regrowth", "Wild Growth", "Cenarion Ward", "Spring Blossoms", "Adaptive Swarm", "Lifebloom"],
-        extensionDuration: 6,
+        extensionDuration: 8,
     },
     {
         type: "buff",
         buffType: "periodicSpeed",
-        buffDuration: 6,
+        buffDuration: 8,
         value: 1.25,
     }],
     "Cenarion Ward": [
@@ -121,7 +123,7 @@ export const DRUIDSPELLDB = {
             coeff: 0.79,
             expectedOverheal: 0.2,
             flags: {targeted: true},
-            secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+            secondaries: ['crit', 'versatility'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
     "Efflorescence": [
         {
@@ -135,7 +137,7 @@ export const DRUIDSPELLDB = {
             coeff: 0.233,
             expectedOverheal: 0.3,
             targets: 3,
-            secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+            secondaries: ['crit', 'versatility'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
     "Incarnation: Tree of Life": [{
         // All healing +15%
@@ -159,7 +161,7 @@ export const DRUIDSPELLDB = {
         cost: 1.2, 
         coeff: 1.36, 
         expectedOverheal: 0.1,
-        secondaries: ['crit', 'vers', 'mastery'] 
+        secondaries: ['crit', 'versatility'] 
     },
     { // WG Portion. Technically a talent.
         type: "buff",
@@ -176,7 +178,7 @@ export const DRUIDSPELLDB = {
                 coeff: netCoeff, 
                 targets: spell.targets, // TODO
                 expectedOverheal: 0, // TODO
-                secondaries: ["vers"], // TODO
+                secondaries: ["crit", "versatility"], // TODO
                 type: "heal",
             }
             
@@ -232,35 +234,27 @@ const classTalents = {
     }}, 
 
     // Handled in healingMult since we don't really want to modify our CONSTANTS.
-    nurturingInstinct: {points: 2, maxPoints: 2, icon: "spell_nature_starfall", id: 33873, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    nurturingInstinct: {points: 2, maxPoints: 2, icon: "ability_druid_healinginstincts", id: 33873, select: true, tier: 4, runFunc: function (state, spellDB, points) {
     
     }}, 
 
 }
 
 const specTalents = {
-
-
-    improvedWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 328025, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    abundance: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // Handled elsewhere.
+    }}, 
+    
+    improvedWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 328025, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         spellDB["Wild Growth"][0].targets += 1;
     }}, 
 
     // Handled in WG formula.
-    unstoppableGrowth: {points: 2, maxPoints: 2, icon: "ability_druid_flourish", id: 382559, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    unstoppableGrowth: {points: 2, maxPoints: 2, icon: "ability_druid_flourish", id: 382559, select: true, tier: 2, runFunc: function (state, spellDB, points) {
 
     }}, 
 
-    // This occurs in 3 2 second ticks. We'll watch this one closely on logs but functionally it usually represents a full 6s extension. 
-    // Note that if we were to reduce this rate it should be by chance rather than cutting the extension.
-    nurturingDormancy: {points: 1, maxPoints: 1, icon: "ability_druid_replenish", id: 392099, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB["Rejuvenation"][0].buffDuration += 4;
-    }}, 
-
-    germination: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB["Rejuvenation"][0].buffDuration += 2;
-    }}, 
-
-    soulOfTheForest: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    soulOfTheForest: {points: 1, maxPoints: 1, icon: "ability_druid_manatree", id: 158478, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         
         spellDB['Swiftmend'].push({
             name: "Soul of the Forest",
@@ -270,6 +264,36 @@ const specTalents = {
             buffType: 'spellAmpMulti',
             buffedSpells: {"Rejuvenation": 3, "Regrowth": 3, "Wild Growth": 1.5},
             })
+    }}, 
+
+    // This occurs in 3 2 second ticks. We'll watch this one closely on logs but functionally it usually represents a full 6s extension. 
+    // Note that if we were to reduce this rate it should be by chance rather than cutting the extension.
+    nurturingDormancy: {points: 0, maxPoints: 1, icon: "ability_druid_replenish", id: 392099, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        spellDB["Rejuvenation"][0].buffDuration += 4;
+    }}, 
+
+    germination: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        spellDB["Rejuvenation"][0].buffDuration += 2;
+    }}, 
+
+
+    germination: {points: 1, maxPoints: 1, icon: "spell_druid_germination", id: 155675, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        spellDB["Rejuvenation"][0].buffDuration += 2;
+    }}, 
+
+
+    // Keeper of the Grove
+    cenariusMight: {points: 1, maxPoints: 1, icon: "achievement_reputation_guardiansofcenarius", id: 455797, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        const buff = {
+            name: "Cenarius's Might",
+            type: "buff",
+            stacks: false,
+            buffDuration: 6,
+            buffType: 'statsMult',
+            stat: 'haste',
+            value: 1.12
+        };
+        addBuff(state, buff, "Cenarius's Might")
     }}, 
 
 }

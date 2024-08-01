@@ -494,7 +494,7 @@ export default function SequenceGenerator(props) {
                   <Typography variant="h6" align="left" style={{ width: "100%" }} color="primary">
                     {"Talents"}
                   </Typography>
-                  {[1, 2, 3, 4].map((tier, i) => (
+                  {[1, 2, 3, 4, 5, 6].map((tier, i) => (
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Grid container spacing={1}>
                         {talentList.map((spell, j) =>

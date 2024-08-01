@@ -51,7 +51,7 @@ export const spendSpellCost = (spell, state, spellName = "") => {
 
             // Special mana mods
             if (spellName.includes("Rejuvenation") && checkBuffActive(state.activeBuffs, "Incarnation: Tree of Life")) cost *= 0.7;
-            if (spellName.includes("Regrowth" && state.talents.abundance.points > 0)) {
+            if (spellName.includes("Regrowth" && state.talents.abundance && state.talents.abundance.points > 0)) {
                 // Reduce price of Regrowth by 8% per active Rejuv, to a maximum of 12 stacks (96% reduction).
                 const abundanceStacks = state.activeBuffs.filter(buff => buff.name === "Rejuvenation").length;
                 cost *= 1 - Math.min(abundanceStacks * 0.08, 0.96);
@@ -116,7 +116,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
         if (canProceed) {
             // The spell casts a different spell. 
-            const target = fullSpell[0].flags && fullSpell[0].flags.targeted ? generateSpellTarget(state, fullSpell[0], spellName) : [];
+            const target = fullSpell[0].targeting ? generateSpellTarget(state, fullSpell[0], spellName) : [];
             if (target) state.currentTarget = target;
             if (spell.type === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
@@ -195,6 +195,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
     // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+    if (["Rejuvenation", "Regrowth", "Wild Growth"].includes(spellName)) state.activeBuffs = removeBuffStack(state.activeBuffs, "Soul of the Forest");
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
     state.currentTarget = [];
 
@@ -214,11 +215,11 @@ export const generateSpellTarget = (state, spell, spellName) => {
 
     // Get all the 'target' values from the input array
     // These are all targets that already have the buff we're looking to apply.
-    const targets = new Set(filteredBuffs.map(obj => obj.target));
+    const targets = new Set(filteredBuffs.flatMap(obj => obj.target));
 
     if (spell.targeting.behavior === "random") {
         shuffleArray(numbers);
-        console.log("Applying buff to " + JSON.stringify(numbers.slice(0, spell.targeting.count)));
+        //console.log("Applying buff to " + JSON.stringify(numbers.slice(0, spell.targeting.count)));
         return numbers.slice(0, spell.targeting.count);
     }
 
@@ -226,6 +227,8 @@ export const generateSpellTarget = (state, spell, spellName) => {
     for (let num of numbers) {
         if (!targets.has(num)) {
             addReport(state, "Adding Buff: " + spellName + " to target " + num);
+            //console.log(targets);
+            //console.log("Adding Buff: " + spellName + " to target " + num);
             return [num];
         }
     }
@@ -416,7 +419,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
     
-    if (stats.includes("vers")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
+    if (stats.includes("vers") || stats.includes("versatility")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);

@@ -128,13 +128,12 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (state, t, spellName, talents) => {
-    let mult = DRUIDCONSTANTS.auraHealingBuff *= 1.06; // Not taking Nurt is trolling so we won't even check for it. 
+    let mult = DRUIDCONSTANTS.auraHealingBuff * 1.06; // Not taking Nurt is trolling so we won't even check for it. 
     const treeActive = state.activeBuffs.filter(buff => buff.name === "Incarnation: Tree of Life").length > 0;
 
-    if (treeActive) mult *= 1.15; // Not affected by tree: External healing sources (not included anyway), Ysera's Gift
-    if (spellName.includes("Rejuvenation")) mult *= treeActive ? 1.5 : 1;
-    
-
+    if (treeActive) mult *= 1.1; // Not affected by tree: External healing sources (not included anyway), Ysera's Gift
+    if (spellName.includes("Rejuvenation")) mult *= treeActive ? 1.4 : 1;
+    if (spellName === "Regrowth" && checkBuffActive(state.activeBuffs, "Soul of the Forest")) mult *= 3; // This cannot buff the HoT portion or we would double dip.
     return mult;
 }
 
@@ -146,7 +145,7 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
 
     const healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
-    const healingVal = getSpellRaw(spell, currentStats, DRUIDCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
+    let healingVal = getSpellRaw(spell, currentStats, DRUIDCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     
     // Calculate Mastery
     // Druid mastery is based on the number of mastery stacks on the target.
@@ -158,12 +157,15 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
         
         // This calculates an average stack count. We know it'll always benefit from itself, and then we'll take an average of other HoTs across the raid.
         masteryStacks = state.activeBuffs.filter(buff => ["Wild Growth"].includes(buff.name)).length +
-                                state.activeBuffs.filter(buff => ["Rejuvenation"].includes(buff.name)).length / 20;
+                                state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Cenarion Ward"].includes(buff.name)).length / 20;
 
     }
-    if (["Rejuvenation (HoT)"].includes(spellName)) {
+    if (["Rejuvenation (HoT)", "Regrowth", "Cenarion Ward"].includes(spellName)) {
         // Check stacks on target.
-        masteryStacks = state.activeBuffs.filter(buff => buff.target.includes(targetNum)).length;
+        //console.log([1].includes(parseInt(targetNum)));
+        //console.log("|" + typeof(targetNum) + "|");
+        masteryStacks = state.activeBuffs.filter(buff => buff.target && buff.target.includes(parseInt(targetNum))).length;
+        //console.log(spellName + ": Mastery mult: " + (1+getMastery(currentStats, DRUIDCONSTANTS) * masteryStacks) + " at " + masteryStacks + " for target: " + targetNum)
         
     } // TODO: Generate target at start of cast so that direct and HoT portions don't end up on different people etc.
 
@@ -173,11 +175,11 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 
     // Abundance
-    if (spellName.includes("Regrowth" && state.talents.abundance.points > 0)) {
+    if (spellName.includes("Regrowth") && state.talents.abundance.points > 0) {
         // Reduce price of Regrowth by 8% per active Rejuv, to a maximum of 12 stacks (96% reduction).
         const abundanceStacks = state.activeBuffs.filter(buff => buff.name === "Rejuvenation").length;
         const crit = getCrit(currentStats);
-        healingVal *= Math.max(abundanceStacks * 0.08 + crit, 2) / crit;
+        healingVal *= Math.min(abundanceStacks * 0.08 + crit, 2) / crit;
     }
 
     // Compile healing and add report if necessary.
@@ -254,7 +256,15 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
     //addBuff(state, yserasGift, "Ysera's Gift");
 
     // Extra Settings
-    if (settings.masteryEfficiency) DRUIDCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
+    //if (settings.masteryEfficiency) DRUIDCONSTANTS.masteryEfficiency = settings.masteryEfficiency;
+    if (settings.preBuffs) {
+        // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
+        settings.preBuffs.forEach(buffName => {
+            if (buffName === "Soul of the Forest") addBuff(state, druidSpells["Swiftmend"][1], "Soul of the Forest");
+            else if (buffName === "Incarnation: Tree of Life") addBuff(state, druidSpells["Incarnation: Tree of Life"][0], "Incarnation: Tree of Life");
+        })
+
+    }
 
     const seq = [...sequence];
 

@@ -50,7 +50,6 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
 const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
     if (buff.buffType === "heal") {
         const spell = buff.attSpell;
-        console.log(buff);
         runHeal(state, spell, buff.name + " (HoT)", buff.target || 0)
     }
     else if (buff.buffType === "damage") {
@@ -217,10 +216,10 @@ export const addBuff = (state, spell, spellName) => {
             const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName)[0];
             spell.coeff = spell.coeff * spellAmp.value;
         }
-        else if (state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && buff.buffedSpells[spell.name]).length > 0) {
-            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && buff.buffedSpells[spellName])[0];
-            spell.coeff = spell.coeff * spellAmp.buffedSpells[spellName];
-            removeBuffStack(state.activeBuffs, spellAmp.name);
+        else if (state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && spellName in buff.buffedSpellName).length > 0) { 
+            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && spellName in buff.buffedSpellName)[0];
+            spell.coeff = spell.coeff * spellAmp.buffedSpellName[spellName];
+            
         }
 
         // The spell will run a function on tick.
@@ -254,7 +253,7 @@ export const addBuff = (state, spell, spellName) => {
 
         // Buff doesn't exist already. We'll add the buff new.
         if (buffStacks === 0) {
-            newBuff = {...newBuff, value: spell.value || 1, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName || spellName.buffedSpells}
+            newBuff = {...newBuff, value: spell.value || 1, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName || spell.buffedSpells}
             state.activeBuffs.push(newBuff);
         }
         // The buff does already exist. We can just add a stack.
