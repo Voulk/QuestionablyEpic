@@ -102,8 +102,8 @@ export const DRUIDSPELLDB = {
         type: "buffExtension",
         castTime: 0, 
         cost: 0, 
-        extensionList: ["Rejuvenation", "Regrowth", "Wild Growth", "Cenarion Ward", "Spring Blossoms", "Adaptive Swarm", "Lifebloom"],
-        extensionDuration: 8,
+        extensionList: ["Rejuvenation", "Regrowth", "Wild Growth", "Cenarion Ward", "Spring Blossoms", "Lifebloom"],
+        extensionDuration: 6,
     },
     {
         type: "buff",
@@ -301,7 +301,7 @@ const specTalents = {
 
 
     // Keeper of the Grove
-    cenariusMight: {points: 1, maxPoints: 1, icon: "achievement_reputation_guardiansofcenarius", id: 455797, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+    cenariusMight: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "achievement_reputation_guardiansofcenarius", id: 455797, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         const buff = {
             name: "Cenarius's Might",
             type: "buff",
@@ -313,7 +313,7 @@ const specTalents = {
         };
         spellDB["Swiftmend"].push(buff);
     }}, 
-    dreamPetal: {points: 1, maxPoints: 1, icon: "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly", id: 433831, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+    dreamPetal: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly", id: 433831, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         // This technically functions off the next rejuv cast.
         const petal = {
             name: "Dream Petal",
@@ -329,11 +329,31 @@ const specTalents = {
     }}, 
 
     // Adds one petal. Handled above.
-    powerOfTheDream: {points: 1, maxPoints: 1, icon: "ability_xavius_dreamsimulacrum", id: 434220, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+    powerOfTheDream: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "ability_xavius_dreamsimulacrum", id: 434220, select: true, tier: 5, runFunc: function (state, spellDB, points) {
 
     }}, 
 
-    harmonyOfTheGrove: {points: 1, maxPoints: 1, icon: "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly", id: 433831, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+    // + healing on specific spells while GG active. Handled in ramps.
+    powerOfNature: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "spell_nature_naturesblessing", id: 428859, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+
+    }}, 
+
+    grovesInspiration: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "ability_druid_protectionofthegrove", id: 429402, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        spellDB["Wild Growth"][0].specialMod *= 1.09;
+        spellDB["Regrowth"][0].coeff *= 1.09;
+        spellDB["Swiftmend"][0].coeff *= 1.09;
+    }}, 
+
+    // + healing on specific spells while GG active. Handled in ramps.
+    bounteousBloom: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "inv_herbalism_70_dreamleaf", id: 429215, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        spellDB["Grove Guardians"].forEach(slice => {
+            if (slice.name.includes("Nourish") || slice.name.includes("Wild Growth") || slice.name.includes("Swiftmend")) {
+                slice.coeff *= 1.3;
+            }
+        })
+    }}, 
+
+    harmonyOfTheGrove: {points: 1, maxPoints: 1, heroTree: "Keeper of the Grove", icon: "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly", id: 433831, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         // This technically functions off the next rejuv cast.
         const petal = {
             name: "Dream Petal",

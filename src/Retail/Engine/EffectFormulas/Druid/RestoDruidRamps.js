@@ -136,6 +136,8 @@ const getHealingMult = (state, t, spellName, talents) => {
     if (treeActive) mult *= 1.1; // Not affected by tree: External healing sources (not included anyway), Ysera's Gift
     if (spellName.includes("Rejuvenation")) mult *= treeActive ? 1.4 : 1;
     if (spellName === "Regrowth" && checkBuffActive(state.activeBuffs, "Soul of the Forest")) mult *= 3; // This cannot buff the HoT portion or we would double dip.
+    if (state.talents.harmonyOfTheGrove.points) mult *= (1 + numGGActive * 0.05);
+    if (state.talents.powerOfNature.points && ["Efflorescence", "Rejuvenation", "Lifebloom"].includes(spellName)) mult *= (1 + numGGActive * 0.1);
     return mult;
 }
 
@@ -162,7 +164,7 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
                                 state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Cenarion Ward"].includes(buff.name)).length / 20;
 
     }
-    if (["Rejuvenation (HoT)", "Regrowth", "Regrowth (HoT)", "Cenarion Ward", "Swiftmend", "Grove Guardians (HoT)"].includes(spellName)) {
+    if (["Rejuvenation", "Regrowth", "Regrowth", "Cenarion Ward", "Swiftmend", "Grove Guardians"].includes(spellName)) {
         // Check stacks on target.
         //console.log([1].includes(parseInt(targetNum)));
         //console.log("|" + typeof(targetNum) + "|");

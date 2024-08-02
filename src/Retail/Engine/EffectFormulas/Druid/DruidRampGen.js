@@ -30,7 +30,9 @@ export const buildDruidChartData = (activeStats) => {
 
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     let talents = {...druidTalents};
-
+    Object.keys(talents).forEach(talentName => {
+        if (talents[talentName].heroTree === "Keeper of the Grove") talents[talentName].points = 1;
+    })
     const sequences = [
         /*
         {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
@@ -53,7 +55,7 @@ export const buildDruidChartData = (activeStats) => {
         {cat: "Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Incarnation: Tree of Life"]},
         */
         {cat: "Ramps", iterations: 2, includeStats: true, tag: "Tree 12x Rej -> SM -> WG -> Flourish -> 10x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 12", "Grove Guardians x 3", "Swiftmend", "Wild Growth", "Flourish", "Regrowth x 10"], preBuffs: []},
-        //{cat: "Ramps", tag: "Tree 8x Rej -> SM -> WG -> 6x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 8", "Swiftmend", "Wild Growth", "Regrowth x 6"], preBuffs: []},
+        //{cat: "Ramps", tag: "6x Rej -> SM -> WG -> 6x Reg", seq: ["Rejuvenation x 6", "Swiftmend", "Wild Growth", "Regrowth x 6"], preBuffs: []},
         
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
         //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},
