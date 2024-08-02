@@ -130,7 +130,9 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
 const getHealingMult = (state, t, spellName, talents) => {
     let mult = DRUIDCONSTANTS.auraHealingBuff * 1.06; // Not taking Nurt is trolling so we won't even check for it. 
     const treeActive = state.activeBuffs.filter(buff => buff.name === "Incarnation: Tree of Life").length > 0;
+    const numGGActive = state.activeBuffs.filter(buff => buff.name === "Grove Guardians").length;
 
+    
     if (treeActive) mult *= 1.1; // Not affected by tree: External healing sources (not included anyway), Ysera's Gift
     if (spellName.includes("Rejuvenation")) mult *= treeActive ? 1.4 : 1;
     if (spellName === "Regrowth" && checkBuffActive(state.activeBuffs, "Soul of the Forest")) mult *= 3; // This cannot buff the HoT portion or we would double dip.
@@ -152,7 +154,7 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     // For this reason we will track specific targets on our spells.
     // For direct spells like Regrowth, it might be fairer to use an average instead. 
     let masteryStacks = 0;
-    if (spellName === "Wild Growth") {
+    if (spellName === "Wild Growth" || spellName === "Wild Growth (HoT)") {
         // Check avg stack counts. Could also just take a mastery average across the raid.
         
         // This calculates an average stack count. We know it'll always benefit from itself, and then we'll take an average of other HoTs across the raid.
@@ -160,13 +162,13 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
                                 state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Cenarion Ward"].includes(buff.name)).length / 20;
 
     }
-    if (["Rejuvenation (HoT)", "Regrowth", "Cenarion Ward"].includes(spellName)) {
+    if (["Rejuvenation (HoT)", "Regrowth", "Regrowth (HoT)", "Cenarion Ward", "Swiftmend", "Grove Guardians (HoT)"].includes(spellName)) {
         // Check stacks on target.
         //console.log([1].includes(parseInt(targetNum)));
         //console.log("|" + typeof(targetNum) + "|");
         masteryStacks = state.activeBuffs.filter(buff => buff.target && buff.target.includes(parseInt(targetNum))).length;
         //console.log(spellName + ": Mastery mult: " + (1+getMastery(currentStats, DRUIDCONSTANTS) * masteryStacks) + " at " + masteryStacks + " for target: " + targetNum)
-        
+        if (spell.masteryMod) masteryStacks *= spell.masteryMod;
     } // TODO: Generate target at start of cast so that direct and HoT portions don't end up on different people etc.
 
     healingVal *= (1+getMastery(currentStats, DRUIDCONSTANTS) * masteryStacks);
@@ -183,9 +185,9 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     }
 
     // Compile healing and add report if necessary.
-    state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
-    if (targetMult > 1) addReport(state, `${spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
-    else addReport(state, `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+    state.healingDone[spell.name || spellName] = (state.healingDone[spell.name || spellName] || 0) + healingVal;
+    if (targetMult > 1) addReport(state, `${spell.name || spellName} healed for ${Math.round(healingVal)} (tar: ${targetMult}, Exp OH: ${spell.expectedOverheal * 100}%)`)
+    else addReport(state, `${spell.name || spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
 
     return healingVal;
 }

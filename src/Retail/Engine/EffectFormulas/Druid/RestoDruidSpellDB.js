@@ -155,15 +155,32 @@ export const DRUIDSPELLDB = {
     "Grove Guardians": [{
         // GG Swiftmend portion
         spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
+        name: "Grove Guardians - Swiftmend",
         type: "heal",
         castTime: 0,
         charges: 3, 
         cost: 1.2, 
+        offGCD: true,
         coeff: 1.36, 
         expectedOverheal: 0.1,
+        targeting: {type: "friendly", count: 1, behavior: "random"},
         secondaries: ['crit', 'versatility'] 
     },
-    { // WG Portion. Technically a talent.
+    {
+        // Nourish casting portion.
+        name: "Grove Guardians - Nourish",
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 15,
+        coeff: 0.425, // The coefficient for a single regrowth tick.
+        masteryMod: 3,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.4,
+        targeting: {type: "friendly", count: 1, behavior: "random"}, // Could add a rerollEachTick flag.
+        secondaries: ['crit', 'versatility']
+    }
+    /*{ // WG Portion. Technically a talent.
+        
         type: "buff",
         buffType: "function",
         runFunc: function (state, spell, buff) {
@@ -191,8 +208,9 @@ export const DRUIDSPELLDB = {
         coeff: 0.1344, // This is the base coefficient before decay.
         expectedOverheal: 0,
         flags: {targeted: true},
-        secondaries: [/*'crit', 'vers', 'mastery'*/] // Rejuv also scales with haste, but this is handled elsewhere.
-    }],
+        secondaries: ['crit', 'vers', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+    }*/
+],
 
 }
 
@@ -293,9 +311,42 @@ const specTalents = {
             stat: 'haste',
             value: 1.12
         };
-        addBuff(state, buff, "Cenarius's Might")
+        spellDB["Swiftmend"].push(buff);
+    }}, 
+    dreamPetal: {points: 1, maxPoints: 1, icon: "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly", id: 433831, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // This technically functions off the next rejuv cast.
+        const petal = {
+            name: "Dream Petal",
+            type: "heal",
+            coeff: 1.2 * (state.talents.powerOfTheDream.points ? 3 : 2), // Each petal heals for 120% spell power. 
+            expectedOverheal: 0.2,
+            targets: 3,
+            masteryType: "split", // We'll take a mastery average when calculating value.
+            secondaries: ['crit', 'versatility'] 
+        }
+
+        spellDB["Grove Guardians"].push(petal);
     }}, 
 
+    // Adds one petal. Handled above.
+    powerOfTheDream: {points: 1, maxPoints: 1, icon: "ability_xavius_dreamsimulacrum", id: 434220, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+
+    }}, 
+
+    harmonyOfTheGrove: {points: 1, maxPoints: 1, icon: "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly", id: 433831, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // This technically functions off the next rejuv cast.
+        const petal = {
+            name: "Dream Petal",
+            type: "heal",
+            coeff: 1.2 * (state.talents.powerOfTheDream.points ? 3 : 2), // Each petal heals for 120% spell power. 
+            expectedOverheal: 0.2,
+            targets: 3,
+            masteryType: "split", // We'll take a mastery average when calculating value.
+            secondaries: ['crit', 'versatility'] 
+        }
+
+        spellDB["Grove Guardians"].push(petal);
+    }}, 
 }
 
 export const druidTalents = {

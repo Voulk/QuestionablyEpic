@@ -285,7 +285,8 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     castState.spellFinish = state.t + castTime - 0.01;
 
     // These could be semi-replaced by effectiveCastTime. TODO.
-    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + effectiveCastTime;
+    if (fullSpell[0].castTime === 0 && fullSpell[0].offGCD) castState.nextSpell = state.t + 0.01;
+    else if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + effectiveCastTime;
     else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
     else castState.nextSpell = state.t + castTime;
 
@@ -428,7 +429,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
 }
 
 export const getMastery = (stats, specConstants) => {
-    return (specConstants.masteryMod / 100 * 8 + stats.mastery / STATCONVERSION.MASTERY / 100 * specConstants.masteryMod / 100);
+    return (specConstants.masteryMod / 100 * 8 + stats.mastery / STATCONVERSION.MASTERY * specConstants.masteryMod / 100);
 }
 
 /**

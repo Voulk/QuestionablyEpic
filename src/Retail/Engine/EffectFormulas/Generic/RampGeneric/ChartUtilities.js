@@ -28,7 +28,7 @@ const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, t
             data.spellValues[key] += value;
         }
     }
-
+    console.log(data)
     // After the sequence has run, check for a filter function.
     // - If no filter, return result.
     // - If filter, filter the healing first, then return. 

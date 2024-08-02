@@ -52,7 +52,7 @@ export const buildDruidChartData = (activeStats) => {
         {cat: "Tree of Life", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: ["Incarnation: Tree of Life"]},
         {cat: "Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Incarnation: Tree of Life"]},
         */
-        {cat: "Ramps", includeStats: true, tag: "Tree 12x Rej -> SM -> WG -> Flourish -> 10x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 12", "Swiftmend", "Wild Growth", "Flourish", "Regrowth x 10"], preBuffs: []},
+        {cat: "Ramps", iterations: 2, includeStats: true, tag: "Tree 12x Rej -> SM -> WG -> Flourish -> 10x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 12", "Grove Guardians x 3", "Swiftmend", "Wild Growth", "Flourish", "Regrowth x 10"], preBuffs: []},
         //{cat: "Ramps", tag: "Tree 8x Rej -> SM -> WG -> 6x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 8", "Swiftmend", "Wild Growth", "Regrowth x 6"], preBuffs: []},
         
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
