@@ -171,7 +171,7 @@ export default function AddNewChar(props) {
                 <InputLabel id="NewClassSelector">{t("Select Class")}</InputLabel>
                 <Select label={t("Select Class")} value={healClass} onChange={handleChangeSpec}>
                   {Object.getOwnPropertyNames(availableClasses)
-                    .filter((filter) => gameType === availableClasses[filter].gameType && (filter !== "Restoration Shaman Classic" && filter !== "Holy Priest Classic" && filter !== "Discipline Priest Classic"))
+                    .filter((filter) => gameType === availableClasses[filter].gameType && (filter !== "Restoration Shaman Classic" && filter !== "Holy Priest Classic"))
                     .map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
