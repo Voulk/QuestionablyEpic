@@ -36,7 +36,7 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
             spell.coeff = spell.coeff * partialTickPercentage;
             if (partialTickPercentage > 0.01) { // We don't need to trigger a partial tick if it happens at the same time stamp.
                 if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-                else if (buff.buffType === "heal") runHeal(state, spell, buff.name + "(hot)");
+                else if (buff.buffType === "heal") runHeal(state, spell, buff.name/* + "(hot)"*/, buff.target || 0);
                 else if (buff.buffType === "function") buff.attFunction(state, spell, buff, partialTickPercentage);
             }
 
@@ -50,7 +50,7 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
 const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
     if (buff.buffType === "heal") {
         const spell = buff.attSpell;
-        runHeal(state, spell, buff.name + " (HoT)", buff.target || 0)
+        runHeal(state, spell, buff.name/* + " (HoT)"*/, buff.target || 0)
     }
     else if (buff.buffType === "damage") {
         const spell = buff.attSpell;

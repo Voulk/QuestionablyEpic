@@ -92,7 +92,7 @@ const runPeriodic = (state, spell, spellName, runHeal, runDamage) => {
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
-        if (spell.buffType === "heal") runHeal(state, spell, spellName/* + " (HoT)"*/);
+        if (spell.buffType === "heal") runHeal(state, spell, spellName + " (HoT)");
         else if (spell.buffType === "damage") runDamage(state, spell, spellName + " (DoT)");
     }
 }

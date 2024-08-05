@@ -156,15 +156,15 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     // For this reason we will track specific targets on our spells.
     // For direct spells like Regrowth, it might be fairer to use an average instead. 
     let masteryStacks = 0;
-    if (spellName === "Wild Growth" || spellName === "Wild Growth (HoT)") {
+    if (spellName === "Wild Growth") {
         // Check avg stack counts. Could also just take a mastery average across the raid.
         
         // This calculates an average stack count. We know it'll always benefit from itself, and then we'll take an average of other HoTs across the raid.
-        masteryStacks = state.activeBuffs.filter(buff => ["Wild Growth"].includes(buff.name)).length +
-                                state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Cenarion Ward"].includes(buff.name)).length / 20;
+        masteryStacks = state.activeBuffs.filter(buff => ["Wild Growth", "Dream Petal"].includes(buff.name)).length +
+                                state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Cenarion Ward", "Spring Blossoms"].includes(buff.name)).length / 20;
 
     }
-    if (["Rejuvenation", "Regrowth", "Regrowth", "Cenarion Ward", "Swiftmend", "Grove Guardians"].includes(spellName)) {
+    else if (["Rejuvenation", "Regrowth", "Cenarion Ward", "Swiftmend", "Grove Guardians - Nourish", "Grove Guardians - Swiftmend"].includes(spellName)) {
         // Check stacks on target.
         //console.log([1].includes(parseInt(targetNum)));
         //console.log("|" + typeof(targetNum) + "|");
@@ -174,7 +174,8 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     } // TODO: Generate target at start of cast so that direct and HoT portions don't end up on different people etc.
 
     healingVal *= (1+getMastery(currentStats, DRUIDCONSTANTS) * masteryStacks);
-    
+    //console.log(spellName + ": Mastery mult: " + (1+getMastery(currentStats, DRUIDCONSTANTS) * masteryStacks) + " at " + masteryStacks + " for target: " + targetNum)
+
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 

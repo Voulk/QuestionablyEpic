@@ -71,7 +71,7 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
             weights[stat] = Math.round(1000*(results[stat] - baseResult.hps) / (results['intellect'] - baseResult.hps))/1000;
         });
 
-        //console.log(weights); 
+        console.log(weights); 
 
         result = baseResult;
 

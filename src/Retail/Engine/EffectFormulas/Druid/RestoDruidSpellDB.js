@@ -30,7 +30,7 @@ export const DRUIDSPELLDB = {
         cost: 3.4, 
         coeff: 2.076 * 1.44, 
         expectedOverheal: 0.2,
-        flags: {targeted: true},
+        targeting: {type: "friendly", count: 1, behavior: "random"},
         secondaries: ['crit', 'versatility'] 
     },
     {
@@ -41,7 +41,7 @@ export const DRUIDSPELLDB = {
         coeff: 0.0864 * 1.44, // The coefficient for a single regrowth tick.
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,
-        flags: {targeted: true},
+        targeting: {type: "friendly", count: 1, behavior: "random"},
         secondaries: ['crit', 'versatility']
     }],
     "Swiftmend": [{
@@ -154,7 +154,7 @@ export const DRUIDSPELLDB = {
     ],
     "Grove Guardians": [{
         // GG Swiftmend portion
-        spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
+        spellData: {id: 102693, icon: "ability_druid_forceofnature", cat: "heal"},
         name: "Grove Guardians - Swiftmend",
         type: "heal",
         castTime: 0,
