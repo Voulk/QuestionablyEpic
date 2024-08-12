@@ -26,8 +26,9 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel) => {
     const trinketData = getTrinketData(trinketName);
     if (trinketData === undefined) return [];
     const trinketEffects = trinketData.effects;
-
-    const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, {})
+    const settings = {}
+    const additionalData = {contentType: "Raid", settings: settings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}};
+    const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     console.log(trinketData);
     if (trinketEffects[0].ppm && trinketEffects[0].stat) {
         // We're dealing with a stat proc trinket.

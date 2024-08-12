@@ -309,7 +309,7 @@ const specTalents = {
             buffDuration: 6,
             buffType: 'statsMult',
             stat: 'haste',
-            value: 1.12
+            value: 1.10
         };
         spellDB["Swiftmend"].push(buff);
     }}, 

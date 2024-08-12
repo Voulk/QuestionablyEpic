@@ -29,5 +29,39 @@ export const raidTrinketData = [
           return bonus_stats;
         }
       },
+      { 
+        // Actually absorbs 20% of your healing done until it reaches the cap.
+        // Bursts immediately upon reaching it. 
+        // Targeting TBA but won't hit full health players.
+        name: "Creeping Coagulum",
+        description: "Hello",
+        effects: [
+          {  // Heal effect but used in different ways.
+            coefficient: 317.3604, 
+            table: -9,
+            secondaries: ['versatility', 'crit'], // Crit confirmed.
+            targets: 5,
+            efficiency: 0.85, 
+            cooldown: 90,
+          },
+          {  // The damage portion. Currently unused.
+            coefficient: 2.260543,
+            table: -9,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          const s1 = processedValue(data[0], itemLevel)
+          const healingConsumed = s1 * 40 / 100;
+          const healingDealt = (s1 + (s1 * 40 * 0.01*(1 + 3 / 100)))/5;
+
+          bonus_stats.hps = (healingDealt * data[0].targets * data[0].efficiency * player.getStatMults(data[0].secondaries) - healingConsumed) / data[0].cooldown;
+
+
+          // Damage portion bugged beyond belief. Not implementing yet as a result.
+    
+          return bonus_stats;
+        }
+      },
 
 ];
