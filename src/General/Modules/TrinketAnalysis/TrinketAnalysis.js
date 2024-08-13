@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
-  
+
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
   item.softScore = scoreTrinket(item, player, contentType, "Retail", playerSettings);
@@ -80,8 +80,8 @@ const setupItemCardData = (trinketList, contentType, player, playerSettings) => 
   const itemData = [];
   const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType)}
   trinketList.forEach((trinket) => {
-    const data = getTrinketDescription(trinket.name, player, additionalData);
-    //const data = null;
+    //const data = getTrinketDescription(trinket.name, player, additionalData);
+    const data = null;
     if (data) {
       data.name = trinket.name;
       data.id = trinket.id;
@@ -303,7 +303,7 @@ export default function TrinketAnalysis(props) {
 
     } else {
         for (var x = 0; x < itemLevels.length; x++) {
-          console.log(itemLevels[x]);
+
           trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
         }
         trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1]);

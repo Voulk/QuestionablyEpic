@@ -63,5 +63,54 @@ export const raidTrinketData = [
           return bonus_stats;
         }
       },
+      { 
+        // Possible conditions to get the buff:
+        // -- Jump 3 times
+        // -- Stand in a portal for a second or two. It spawns close-ish.
+        // -- Spawns an orb that you have to chase.
+        name: "Treacherous Transmitter",
+        effects: [
+          {  // Intellect effect
+            coefficient: 2.354015,
+            table: -1,
+            duration: 15,
+            cooldown: 90,
+            penalty: 0.3,
+          },
+
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * (1 - data[0].penalty);
+    
+          return bonus_stats;
+        }
+      },
+      { // Might be worth adding options for "Avg Int stacks" and auto calc the other.
+        name: "Ovi'nax's Mercurial Egg",
+        effects: [
+          {  // Intellect effect
+            coefficient: 0.024938,
+            table: -1,
+            avgStacks: 15,
+          },
+          {  // Secondary effect
+            coefficient: 0.05418,
+            table: -7,
+            avgStacks: 15,
+          },
+
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          const bestStat = player.getHighestStatWeight(additionalData.contentType);
+          const processedData = {intellect: processedValue(data[0], itemLevel), secondary: processedValue(data[1], itemLevel)};
+          bonus_stats.intellect = processedData.intellect * data[0].avgStacks;
+          bonus_stats[bestStat] = processedData.secondary * data[1].avgStacks;
+    
+          return bonus_stats;
+        }
+      },
 
 ];

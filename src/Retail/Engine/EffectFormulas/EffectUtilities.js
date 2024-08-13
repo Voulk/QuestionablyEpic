@@ -57,7 +57,7 @@ export function runGenericPPMTrinketHasted(effect, itemLevel, hastePerc, setStat
 // TODO.
 export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
   const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
-                  * (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1);
+                  * (castModel ? (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1) : 1);
   return value;
 }
 

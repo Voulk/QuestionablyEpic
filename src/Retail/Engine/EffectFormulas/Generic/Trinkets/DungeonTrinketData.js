@@ -85,7 +85,7 @@ export const dungeonTrinketData =
           let bonus_stats = {};
           const bestStat = player.getHighestStatWeight(additionalData.contentType)
           bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
-          console.log(itemLevel + " Changeling: " + bonus_stats.haste);
+
           return bonus_stats;
         }
       },
@@ -196,6 +196,90 @@ export const dungeonTrinketData =
 
           // When you wear the trinket, you also give a stat buff to others wearing it. This is a good chance for a setting.
           //bonus_stats.allyStats = runGenericOnUseTrinket(data[1], itemLevel) * 4;
+
+          return bonus_stats;
+        }
+      },
+      { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+        name: "Mereldar's Toll",
+        description: "",
+        effects: [
+          { // Damage Effect.
+            coefficient: 28.25688 * 0.66, 
+            table: -9,
+            cooldown: 90,
+          },
+          { // Vers Buff
+            coefficient: 0.504093, 
+            table: -7,
+            duration: 10,
+            cooldown: 90,
+            targets: 5
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          bonus_stats.dps = processedValue(data[0], itemLevel) / data[0].cooldown;
+          bonus_stats.allyStats = runGenericOnUseTrinket(data[1], itemLevel, null) * data[1].targets;
+
+          return bonus_stats;
+        }
+      },
+      {
+        name: "Siphoning Phylactery Shard",
+        effects: [
+          {  // Heal effect
+            coefficient: 89.08621,
+            table: -9,
+            secondaries: ['versatility'],
+            efficiency: {Raid: 0.4, Dungeon: 0.45}, // The efficiency on this is god awful.
+            cooldown: 30,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+    
+          return bonus_stats;
+        }
+      },
+      {
+        name: "Gale of Shadows",
+        effects: [
+          {  // Int
+            coefficient: 0.029,
+            table: -1,
+            stacks: 20,
+            specMod: {"Restoration Druid": 1, "Holy Priest": 1, "Restoration Shaman": 1, "Holy Paladin": 1, "Mistweaver Monk": 1, 
+                      "Preservation Evoker": 1, "Discipline Priest": 1} // Double check Lightsmith
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].stacks * data[0].specMod[player.spec];
+    
+          return bonus_stats;
+        }
+      },
+      { // Last 30s, multiple can be up at once. Grabbing multiple orbs just refreshes the buff though.
+        name: "Entropic Skardyn Core",
+        description: "",
+        effects: [
+          {
+            coefficient: 1.124436, 
+            table: -1,
+            duration: 15,
+            ppm: 2,
+            stat: "intellect",
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
           return bonus_stats;
         }
