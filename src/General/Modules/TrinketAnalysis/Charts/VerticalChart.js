@@ -172,7 +172,7 @@ export default class VerticalChart extends PureComponent {
             }
           }}
         >
-          <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
+          <XAxis type="number" stroke="#f5f5f5" axisLine={false} scale="linear" />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
             cursor={false}

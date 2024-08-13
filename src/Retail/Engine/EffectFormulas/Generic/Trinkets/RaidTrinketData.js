@@ -112,5 +112,32 @@ export const raidTrinketData = [
           return bonus_stats;
         }
       },
+      { // -- Can gain stacks while the active is going.
+        name: "Spymaster's Web",
+        effects: [
+          {  // Passive Int
+            coefficient: 0.014709,
+            table: -1,
+          },
+          {  // On-use Int
+            coefficient: 0.141408,
+            table: -1,
+            duration: 20,
+            cooldown: 60, // Technically 20
+          },
+
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          // You can kind of curate this to your preferred cooldown curve.
+          if (player.spec === "Restoration Druid") {
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
+            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.4)}, itemLevel, additionalData.castModel);
+          }
+    
+          return bonus_stats;
+        }
+      },
 
 ];

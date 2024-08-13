@@ -284,6 +284,27 @@ export const dungeonTrinketData =
           return bonus_stats;
         }
       },
+      { // Gives you a buff that lasts 1 minute and then spawns a spider which is effectively just a DoT. They soft stack in that you can have multiple up at once.
+        // Hypothetically it's a 2.5 stack average but I am not convinced.
+        name: "Ara'Kara Sacbrood",
+        description: "",
+        effects: [
+          {
+            coefficient: 0.204476, 
+            table: -1,
+            duration: 60, // Yes really
+            ppm: 2.5,
+            stat: "intellect",
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60 * 0.7; // Check on a log.
+
+          return bonus_stats;
+        }
+      },
 
 
 ]; 
