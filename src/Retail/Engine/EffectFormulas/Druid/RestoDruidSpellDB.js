@@ -11,7 +11,7 @@ export const DRUIDSPELLDB = {
         // The number of rejuv ticks is (5 x haste) + 1.
         spellData: {id: 361469, icon: "spell_nature_rejuvenation", cat: "heal"},
         castTime: 0,
-        cost: 2.2, // 5500
+        cost: 2.1, // 5500
         type: "buff",
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: true, tickOnCast: true}, 
@@ -28,7 +28,7 @@ export const DRUIDSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         cost: 3.4, 
-        coeff: 2.076 * 1.44, 
+        coeff: 2.076 * 1.22, 
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "random"},
         secondaries: ['crit', 'versatility'] 
@@ -38,7 +38,7 @@ export const DRUIDSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: 12,
-        coeff: 0.0864 * 1.44, // The coefficient for a single regrowth tick.
+        coeff: 0.0864 * 1.22, // The coefficient for a single regrowth tick.
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "random"},
@@ -50,7 +50,7 @@ export const DRUIDSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 1.4, 
-        coeff: 6.1824, 
+        coeff: 6.1824 * 0.9, 
         expectedOverheal: 0.3,
         secondaries: ['crit', 'versatility'] 
     },
@@ -172,7 +172,7 @@ export const DRUIDSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: 15,
-        coeff: 0.425, // The coefficient for a single regrowth tick.
+        coeff: 0.3825, // The coefficient for a single regrowth tick.
         masteryMod: 3,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.4,
