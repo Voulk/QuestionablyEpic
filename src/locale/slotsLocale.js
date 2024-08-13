@@ -92,7 +92,7 @@ export const slotNameLocale = [
   {
     name: {
       en: "Off-Hands",
-      fr: "Lié quand ramassé",
+      fr: "Main gauche",
       de: "Schildhand",
       ru: "Левая рука",
       ch: "",
@@ -152,7 +152,7 @@ export const slotNameLocale = [
   {
     name: {
       en: "Weapons",
-      fr: "Main Gauche",
+      fr: "Armes",
       de: "Waffen",
       ru: "Оружие",
       ch: "",
