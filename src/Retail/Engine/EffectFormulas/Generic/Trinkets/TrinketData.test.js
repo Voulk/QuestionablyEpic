@@ -38,3 +38,62 @@ describe("Cirral Concoctory", () => {
         expect(processedValue(effect[4], level)).toBe(expectedResult[4]);
     });
 }); 
+
+describe("Ovi'nax's Mercurial Egg", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    // Coeff #2 is used for both the mastery and crit procs and they have the same name.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Ovi'nax's Mercurial Egg");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${616}  | ${[145, 140]}
+    // add new test cases here
+    `.test("Ovi'nax's Mercurial Egg Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+}); 
+
+describe("Spymaster's Web", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    // Coeff #2 is used for both the mastery and crit procs and they have the same name.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Spymaster's Web");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${619}  | ${[88, 846]}
+    // add new test cases here
+    `.test("Spymaster's Web Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+}); 
+
+describe("Treacherous Transmitter", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    // Coeff #2 is used for both the mastery and crit procs and they have the same name.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Treacherous Transmitter");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${616}  | ${[13708]}
+    // add new test cases here
+    `.test("Treacherous Transmitter Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
+    });
+}); 
+
+describe("Gruesome Syringe", () => {
+    // Raw trinket values are compared to our spell data. Efficiency excluded.
+    // Coeff #2 is used for both the mastery and crit procs and they have the same name.
+    const activeTrinket = dungeonTrinketData.find((trinket) => trinket.name === "Gruesome Syringe");
+    const effect = activeTrinket.effects;
+    each`
+    level   | expectedResult
+    ${616}  | ${[251029, 4401]}
+    // add new test cases here
+    `.test("Gruesome Syringe Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
+        expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
+        expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
+    });
+}); 
