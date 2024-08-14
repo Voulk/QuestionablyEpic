@@ -24,7 +24,7 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
       const secondaryAverage = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel)
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.intellect = runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
 
       ["versatility", "crit" , "haste", "mastery"].forEach(stat => {
         bonus_stats[stat] = secondaryAverage;
