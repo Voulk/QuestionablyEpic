@@ -19,7 +19,6 @@ export const DRUIDSPELLDB = {
         coeff: 0.2465 * 2.1,
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "avoidSame"},
-        flags: {targeted: true},
         secondaries: ['crit', 'versatility'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
     "Regrowth": [{
