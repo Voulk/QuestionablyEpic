@@ -16,7 +16,7 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
-    version: "11.0.0 / 4.4",
+    version: "11.0.2 / 4.4",
     update: 2,
     date: "July 25",
     changes: [ 
