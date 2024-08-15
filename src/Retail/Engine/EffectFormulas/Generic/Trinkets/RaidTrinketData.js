@@ -69,6 +69,7 @@ export const raidTrinketData = [
         // -- Stand in a portal for a second or two. It spawns close-ish.
         // -- Spawns an orb that you have to chase.
         name: "Treacherous Transmitter",
+        description: "Complete 1 of 3 mini-games to get the buff. Jump 3 times, stand in a portal for a second or two, or chase an orb.",
         effects: [
           {  // Intellect effect
             coefficient: 2.354015,

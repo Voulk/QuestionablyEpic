@@ -1,5 +1,6 @@
 
-
+import { checkRoll, getTalentPoints, getCurrentStats} from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { runHeal } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
 
 export const HOLYPRIESTSPELLDB = {
     "Smite": [{
@@ -98,16 +99,57 @@ export const HOLYPRIESTSPELLDB = {
     }], 
     "Prayer of Mending": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
-        type: "heal",
+        type: "function",
         castTime: 0,
         cost: 10,
         coeff: 0.61,
-        targets: 5, // Bounces
+        bounces: 5, 
         expectedOverheal: 0.2,
         cooldownData: {cooldown: 12, hasted: true}, 
+        runFunc: function (state, spell) {
+            // Prayer of Mending is a slightly weird spell where it's a direct heal that will expel charges.
+            // We'll handle it in a function so that we can be very flexible with attached effects.
+            for (let i = spell.bounces; i > 0; i--) {
+                const pomHeal = {
+                    name: "Prayer of Mending",
+                    coeff: spell.coeff, 
+                    targets: 1,
+                    expectedOverheal: spell.expectedOverheal, 
+                    secondaries: spell.secondaries,
+                    type: "heal",
+                }
+                if (getTalentPoints(state.talents, "divineService")) pomHeal.coeff *= (1 + (0.04 * spell.bounces - 1));
+                if (getTalentPoints(state.talents, "sayYourPrayers") && checkRoll(0.15)) {
+                    // 15% to not consume a stack (that is, i - 1)
+                    i += 1;
+                }
+                runHeal(state, pomHeal, "Prayer of Mending", true);
+            }
+        },
         school: "holy",
         secondaries: ['crit', 'vers', 'mastery'],
     }], 
+    "Halo": 
+    // 
+        [{
+            spellData: {id: 120517, icon: "ability_priest_halo", cat: "heal"},
+            type: "damage",
+            castTime: 1.5,
+            cost: 2.7,
+            coeff: 1.442,
+            cooldownData: {cooldown: 40, hasted: false}, 
+            school: "holy",
+            secondaries: ['crit', 'vers'],
+        },
+        {
+            type: "heal",
+            coeff: 1.61,
+            targets: 15,
+            secondaries: ['crit', 'vers', 'mastery'],
+            tags: ['sqrt'],
+            sqrtMin: 6,
+            expectedOverheal: 0.5,
+        }],
 }
 
 // Maybe split to a shared file for Disc?
@@ -124,22 +166,76 @@ const specTalents = {
 
     prayersOfTheVirtuous: {points: 2, maxPoints: 2, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
 
-        spellDB["Prayer of Mending"][0].targets += points;
+        spellDB["Prayer of Mending"][0].bounces += points;
     }}, 
     sayYourPrayers: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
-        spellDB["Prayer of Mending"][0].targets *= 1.15;
+        // Handled in the PoM spell function.
     }}, 
     divineService: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Prayer of Mending"][0].coeff *= (1 + (0.04 * spellDB["Prayer of Mending"][0].targets / 2));
+        // Handled in the PoM spell function.
     }}, 
     crisisManagement: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Flash Heal"][0].statMods.crit = (0.075 * points);
         spellDB["Heal"][0].statMods.crit = (0.075 * points)
     }}, 
+
+    voiceOfHarmony: {points: 2, maxPoints: 2, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        const cdReductionBase = {
+            type: "cooldownReduction",
+            cooldownReduction: 2 * points,
+            targetSpell: "",
+        };
+
+        spellDB["Circle of Healing"].push({...cdReductionBase, targetSpell: "Holy Word: Sanctify"});
+        spellDB["Prayer of Mending"].push({...cdReductionBase, targetSpell: "Holy Word: Serenity"});
+        spellDB["Holy Fire"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
+        spellDB["Holy Nova"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
+    }},
+
+    epiphany: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        const cdReductionBase = {
+            type: "cooldownReduction",
+            cooldownReduction: 99,
+            chance: 0.125 * points,
+            targetSpell: "Prayer of Mending",
+        };
+
+        spellDB["Holy Word: Sanctify"].push(cdReductionBase);
+        spellDB["Holy Word: Serenity"].push(cdReductionBase);
+        spellDB["Holy Word: Chastise"].push(cdReductionBase);
+    }},
+ 
 }
 
 export const baseTalents = {
     ...classTalents,
     ...specTalents,
 };
+
+
+export const runHolyPriestCastProfile = (playerData) => {
+    const castProfile = [
+        {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        //{spell: "Prayer of Mending", cpm: 2},
+      ]
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
+                    talents: playerData.talents, reporting: true, heroSpec: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
+    // Fill in missing casts like Holy Words. Adjust any others that are impacted.
+
+
+    // Run healing
+    castProfile.forEach(spellProfile => {
+        const fullSpell = playerData.spellDB[spellProfile.spell];
+        const spellName = spellProfile.spell;
+
+        fullSpell.forEach(spell => {
+            if (spell.type === "heal") {
+                const value = runHeal(state, spell, spellName) // * spellprofile.cpm;
+               console.log(spellName + " " + value);
+            }
+
+        });
+
+
+    })
+}

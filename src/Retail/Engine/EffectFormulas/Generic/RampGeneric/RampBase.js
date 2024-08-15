@@ -238,6 +238,11 @@ export const generateSpellTarget = (state, spell, spellName) => {
 
 }
 
+export function checkRoll(chance) {
+    const roll = Math.random();
+    return roll <= spell.chance;     
+}
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

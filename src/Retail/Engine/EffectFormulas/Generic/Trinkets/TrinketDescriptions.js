@@ -21,7 +21,7 @@ const trinketCategories = {
 
 export const buildRetailEffectTooltip = (trinketName, player, itemLevel) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
-    trinketDescription.push("")
+    
 
     const trinketData = getTrinketData(trinketName);
     if (trinketData === undefined) return [];
@@ -29,7 +29,8 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel) => {
     const settings = {}
     const additionalData = {contentType: "Raid", settings: settings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}};
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
-
+    if (trinketData.description) trinketDescription.push(trinketData.description);
+    trinketDescription.push("")
     if (trinketEffects[0].ppm && trinketEffects[0].stat) {
         // We're dealing with a stat proc trinket.
         trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));

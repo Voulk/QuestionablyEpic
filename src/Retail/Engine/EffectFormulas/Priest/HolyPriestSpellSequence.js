@@ -225,8 +225,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
-            if (buffName === "Soul of the Forest") addBuff(state, druidSpells["Swiftmend"][1], "Soul of the Forest");
-            else if (buffName === "Incarnation: Tree of Life") addBuff(state, druidSpells["Incarnation: Tree of Life"][0], "Incarnation: Tree of Life");
+
         })
 
     }

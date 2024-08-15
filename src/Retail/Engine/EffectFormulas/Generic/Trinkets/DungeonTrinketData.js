@@ -233,7 +233,7 @@ export const dungeonTrinketData =
             coefficient: 89.08621,
             table: -9,
             secondaries: ['versatility'],
-            efficiency: {Raid: 0.4, Dungeon: 0.45}, // The efficiency on this is god awful.
+            efficiency: {Raid: 0.35, Dungeon: 0.4}, // The efficiency on this is god awful.
             cooldown: 30,
           },
         ],
