@@ -240,7 +240,7 @@ export const generateSpellTarget = (state, spell, spellName) => {
 
 export function checkRoll(chance) {
     const roll = Math.random();
-    return roll <= spell.chance;     
+    return roll <= chance;     
 }
 
 function shuffleArray(array) {

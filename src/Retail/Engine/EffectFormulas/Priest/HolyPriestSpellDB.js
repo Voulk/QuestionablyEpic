@@ -109,6 +109,7 @@ export const HOLYPRIESTSPELLDB = {
         runFunc: function (state, spell) {
             // Prayer of Mending is a slightly weird spell where it's a direct heal that will expel charges.
             // We'll handle it in a function so that we can be very flexible with attached effects.
+            let totalHealing = 0;
             for (let i = spell.bounces; i > 0; i--) {
                 const pomHeal = {
                     name: "Prayer of Mending",
@@ -123,8 +124,9 @@ export const HOLYPRIESTSPELLDB = {
                     // 15% to not consume a stack (that is, i - 1)
                     i += 1;
                 }
-                runHeal(state, pomHeal, "Prayer of Mending", true);
+                totalHealing += runHeal(state, pomHeal, "Prayer of Mending", true);
             }
+            return totalHealing; // Only used in cast profiles.
         },
         school: "holy",
         secondaries: ['crit', 'vers', 'mastery'],
@@ -212,15 +214,29 @@ export const baseTalents = {
     ...specTalents,
 };
 
+const getCPM = (profile, spellName) => {
+    return profile.filter(spell => spell.spell === spellName)[0].cpm || 0;
+}
 
 export const runHolyPriestCastProfile = (playerData) => {
+    const fightLength = 300;
+    let totalHealing = 0;
     const castProfile = [
         {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        {spell: "Prayer of Healing", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        {spell: "Prayer of Mending", cpm: 4.5, hastedCPM: true},
+        {spell: "Renew", cpm: 0},
+        {spell: "Holy Word: Sanctify", cpm: 0},
         //{spell: "Prayer of Mending", cpm: 2},
       ]
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: playerData.talents, reporting: true, heroSpec: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
+    
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
+    // Our Sanctify CPM is basically equal to 1 (2 w/ Miracle Worker) + fightLength / (60 - avgCDR)
+    const averageSancCPM = 1 + getCPM(castProfile, "Prayer of Healing") * 6 / 60 + getCPM(castProfile, "Renew") * 2 / 60;
+    castProfile.filter(spell => spell.spell === "Holy Word: Sanctify")[0].cpm = averageSancCPM;
+
 
 
     // Run healing
@@ -229,13 +245,22 @@ export const runHolyPriestCastProfile = (playerData) => {
         const spellName = spellProfile.spell;
 
         fullSpell.forEach(spell => {
-            if (spell.type === "heal") {
-                const value = runHeal(state, spell, spellName) // * spellprofile.cpm;
-               console.log(spellName + " " + value);
+            if (spell.type === "heal" && spellProfile.cpm > 0) {
+                const value = runHeal(state, spell, spellName) * spellProfile.cpm;
+                totalHealing += value;
+                console.log(spellName + " " + value + " CPM: " + spellProfile.cpm);
+            }
+            else if (spell.type === "function") {
+                if (spellName === "Prayer of Mending") {
+                    const value = spell.runFunc(state, spell) * spellProfile.cpm;
+                    totalHealing += value;
+                    console.log(spellName + " " + value + " CPM: " + spellProfile.cpm);
+                }
             }
 
         });
 
 
     })
+    console.log("HPS: " + totalHealing / 60);
 }

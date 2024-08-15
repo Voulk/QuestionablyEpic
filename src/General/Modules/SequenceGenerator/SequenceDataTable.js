@@ -14,6 +14,7 @@ import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEv
 import { buildDiscChartData } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
 import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
 import { buildDruidChartData } from "Retail/Engine/EffectFormulas/Druid/DruidRampGen";
+import { buildHolyPriestChartData } from "Retail/Engine/EffectFormulas/Priest/HolyPriestRampGen";
 
 import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicChartGen";
 
@@ -31,6 +32,9 @@ function buildChartData(spec, stats, talents) {
   }
   else if (spec === "Restoration Druid") {
     return buildDruidChartData(stats, talents);
+  }
+  else if (spec === "Holy Priest") {
+    return buildHolyPriestChartData(stats, talents);
   }
   else if (spec === "Restoration Druid Classic") {
     return buildClassicChartData(stats, "Restoration Druid")
