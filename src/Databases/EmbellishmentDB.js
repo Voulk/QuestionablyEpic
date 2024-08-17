@@ -37,8 +37,8 @@ export const embellishmentDB = [
   ///
 
   {
-    id: 193001,
-    icon: "inv_10_jewelcrafting_necklace_necklace1_color3",
+    id: 219489,
+    icon: "inv_leather_outdoorarathor_d_01_boot",
     armorType: 2, // Leather
     name: {
       en: "Waders of the Unifying Flame",
@@ -55,8 +55,8 @@ export const embellishmentDB = [
   },
   {
     id: 219502,
-    icon: "inv_mail_dragondungeon_c_01_boot",
-    armorType: 2, // Mail
+    icon: "inv_belt_leather_undergroundquest_b_01",
+    armorType: 2, // Leather - Damage taken portion need testing
     name: {
       en: "Adrenal Surge Clasp",
       de: "",
@@ -71,7 +71,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 191532,
+    id: 443764,
     icon: "inv_misc_food_legion_gooamber_drop",
     armorType: 3, // 2pc set
     name: {
@@ -88,11 +88,11 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 193468,
-    icon: "inv_misc_blacksaberonfang",
+    id: 443773,
+    icon: "spell_nature_stormreach",
     armorType: 2, // 2pc
     name: {
-      en: "Fury of the Stormrook",
+      en: "Fury of the Stormrook (2pc)",
       de: "",
       fr: "",
       ru: "",
@@ -106,8 +106,8 @@ export const embellishmentDB = [
   },
   {
     id: 215134,
-    icon: "inv_cloth_dragonquest_b_01_boot",
-    armorType: 1, 
+    icon: "inv_11_0_arathor_necklace_02_color5",
+    armorType: 0, 
     name: {
       en: "Fractured Gemstone Locket",
       de: "",
@@ -141,7 +141,7 @@ export const embellishmentDB = [
   {
     id: 213773,
     icon: "inv_cloth_raidmageprimalist_d_01_bracer",
-    armorType: 1, // Cloth
+    armorType: 0, 
     name: {
       en: "Prismatic Null Stone",
       de: "",
@@ -156,8 +156,8 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 193520,
-    icon: "inv_cloth_dragonquest_b_01_shoulder",
+    id: 222810,
+    icon: "inv_10_tailoring_silkrare_color3",
     armorType: 1, // Cloth - Damaging Spells only
     name: {
       en: "Woven Dusk (2pc)",
@@ -173,9 +173,9 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 193465,
-    icon: "inv_mail_raidhunterprimalist_d_01_glove",
-    armorType: 1, // Mail
+    id: 222807,
+    icon: "inv_10_tailoring_silkrare_color2",
+    armorType: 1, // Cloth
     name: {
       en: "Woven Dawn (2pc)",
       de: "",
@@ -190,26 +190,9 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 193457,
-    icon: "inv_belt_leather_raidrogueprimalist_d_01",
-    armorType: 2, // Leather
-    name: {
-      en: "Playful Spirit's Fur (2pc)",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
-    effect: {
-      type: "embellishment",
-      name: "Playful Spirit's Fur",
-      rank: 0, // Requires 2pc
-    },
-  },
-  {
-    id: 222871,
-    icon: "inv_cloth_dragonquest_b_01_pant",
-    armorType: 0, // Cloth
+    id: 222873,
+    icon: "inv_10_tailoring_tailoringconsumable_color3",
+    armorType: 0, 
     pieces: 2,
     name: {
       en: "Duskthread Lining",
@@ -225,9 +208,9 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 222868,
-    icon: "inv_belt_plate_challengedeathknight_d_01",
-    armorType: 4, // Plate  
+    id: 222870,
+    icon: "inv_10_tailoring_tailoringconsumable_color2",
+    armorType: 0, 
     name: {
       en: "Dawnthread Lining",
       de: "",
@@ -242,9 +225,9 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 226022,
-    icon: "inv_leather_dragondungeon_c_01_boot",
-    armorType: 2, // Leather
+    id: 226024,
+    icon: "inv_inscriptions_darkmoonsigil_purple",
+    armorType: 0, 
     name: {
       en: "Darkmoon Sigil: Ascension",
       de: "",
@@ -259,9 +242,9 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 226028,
-    icon: "creatureportrait_blackrockv2_shieldgong",
-    armorType: 5, // Shields
+    id: 226030,
+    icon: "inv_inscriptions_darkmoonsigil_teal",
+    armorType: 0, 
     name: {
       en: "Darkmoon Sigil: Symbiosis",
       de: "",
@@ -276,8 +259,8 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 226031,
-    icon: "inv_gizmo_runichealthinjector",
+    id: 226033,
+    icon: "inv_inscriptions_darkmoonsigil_blue",
     armorType: 0, // Extra
     name: {
       en: "Darkmoon Sigil: Vivacity",

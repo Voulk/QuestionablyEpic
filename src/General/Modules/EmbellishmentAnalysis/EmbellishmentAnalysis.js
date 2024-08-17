@@ -158,7 +158,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r522 //gem.r5;
+  return gem.r636 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -197,7 +197,7 @@ export default function EmbellishmentAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [486, 493, 499, 506, 513, 519, 522];
+  const itemLevels = [600, 606, 612, 618, 624, 630, 636 ];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
