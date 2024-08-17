@@ -21,6 +21,34 @@ export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) =>
 }
 
 export const embellishmentData = [
+  // ---------- THE WAR WITHIN
+  {
+    /* -------------------- */
+    /* Binding of Binding                      
+    /* -------------------- */
+
+    name: "Binding of Binding",
+    effects: [
+      { 
+        coefficient: 0.612175 / 4, // Check this. I guess it scales with num gem types they have?
+        table: -7,
+        duration: 15, 
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // TODO Add top gear support for auto-generating gems.
+      const statAvg = runGenericPPMTrinket(data[0], itemLevel);
+
+      bonus_stats.allyStats = statAvg;
+
+      return bonus_stats;
+    }
+  },
+
+
+  // ---------- DRAGONFLIGHT
   {
     /* -------------------- */
     /* Flourishing Dream Helm                       
