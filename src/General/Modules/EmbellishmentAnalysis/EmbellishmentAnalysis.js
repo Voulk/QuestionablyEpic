@@ -15,7 +15,7 @@ import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
 import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";
 import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
-
+import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 // 
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
@@ -221,12 +221,14 @@ export default function EmbellishmentAnalysis(props) {
     let gemAtLevels = {
       id: domGem.id,
       name: domGem.name["en"],
+      tooltip: []
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
       if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
+    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 636)
     activeGems.push(gemAtLevels);
   }
 

@@ -110,6 +110,7 @@ export const embellishmentData = [
         duration: 12, 
         ppm: 2.5,
         efficiency: 0.85,
+        stat: "haste",
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
