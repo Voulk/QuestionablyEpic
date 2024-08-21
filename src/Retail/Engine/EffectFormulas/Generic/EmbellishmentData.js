@@ -30,8 +30,8 @@ export const embellishmentData = [
     name: "Binding of Binding",
     effects: [
       { 
-        coefficient: 0.612175 / 4, // Check this. I guess it scales with num gem types they have?
-        table: -72,
+        coefficient: 0.612175, // Check this. I guess it scales with num gem types they have?
+        table: -571,
         duration: 15, 
         ppm: 2,
       },
@@ -51,14 +51,14 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.204581,
-        table: -7,
+        table: -571,
         duration: 15, 
         ppm: 2,
         efficiency: 0.7,
       },
       { 
         coefficient: 0.040916,
-        table: -7,
+        table: -571,
         duration: 15, 
         ppm: 2,
       },
@@ -78,14 +78,14 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.181946,
-        table: -7,
+        table: -571,
         duration: 12, 
         ppm: 3,
         efficiency: 0.7,
       },
       { 
         coefficient: 0.022634,
-        table: -7,
+        table: -571,
         duration: 15, 
         ppm: 3,
         targets: 2,
@@ -93,7 +93,6 @@ export const embellishmentData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
       const bestStat = player.getHighestStatWeight(additionalData.contentType);
       bonus_stats[bestStat] = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
       bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel) * data[0].efficiency * data[1].targets;
@@ -106,7 +105,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.54462,
-        table: -7,
+        table: -571,
         duration: 12, 
         ppm: 2.5,
         efficiency: 0.85,
@@ -126,7 +125,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.02455, 
-        table: -72,
+        table: -571,
         uptime: 0.95
       },
     ],
@@ -143,7 +142,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0, 
-        table: -7,
+        table: -571,
         ppm: 1.2,
         duration: 30,
         stat: "haste",
@@ -162,7 +161,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0, 
-        table: -7,
+        table: -571,
         ppm: 1.2,
         duration: 30,
         stat: "mastery",
@@ -181,7 +180,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.131628, 
-        table: -7,
+        table: -571,
         uptime: 0.8,
       },
     ],
@@ -189,7 +188,7 @@ export const embellishmentData = [
       let bonus_stats = {};
 
       bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].uptime;
-
+      console.log("Duskthread" + JSON.stringify(bonus_stats));
       return bonus_stats;
     }
   },
@@ -198,7 +197,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.131628, 
-        table: -7,
+        table: -571,
         uptime: 0.8,
       },
     ],
@@ -206,7 +205,7 @@ export const embellishmentData = [
       let bonus_stats = {};
 
       bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].uptime;
-
+      console.log("Dawnthread" + JSON.stringify(bonus_stats));
       return bonus_stats;
     }
   },
@@ -215,7 +214,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.025246, // 0.034796 at -9 in the spell data too.
-        table: -7,
+        table: -571,
         maxStacks: 10,
         timer: 8,
       },
@@ -240,7 +239,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.039349, // 0.088359 at -9 in the spell data too.
-        table: -7,
+        table: -571,
         maxStacks: 5,
         timer: 10,
       },
@@ -273,7 +272,7 @@ export const embellishmentData = [
     effects: [
       { 
         coefficient: 0.14016,
-        table: -7,
+        table: -571,
         ppm: 20,
         duration: 15,
         stat: "versatility"

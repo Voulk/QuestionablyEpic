@@ -193,7 +193,6 @@ export const embellishmentDB = [
     id: 222873,
     icon: "inv_10_tailoring_tailoringconsumable_color3",
     armorType: 0, 
-    pieces: 2,
     name: {
       en: "Duskthread Lining",
       de: "",

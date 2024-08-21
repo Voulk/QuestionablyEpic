@@ -5,13 +5,14 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 export const raidTrinketData = [
     { // While the buffs appear in the same stack, they are individual buffs. This does mean it's impossible to lose any value if you get an int proc while you already have one.
         name: "Gruesome Syringe",
+        description: "The problem with Gruesome Syringe is that the backup prize of an int proc if nobody drops low is much stronger than the heal proc but you're unlikely to get the int when you need it.",
         effects: [
           {  // Heal effect
             coefficient: 63.84857, 
             table: -8,
             secondaries: ['versatility', 'crit'], // Crit?
             ppm: 6,
-            percentProcced: 0.5,
+            percentProcced: 0.75,
             efficiency: {Raid: 0.95, Dungeon: 0.95}, // This procs on lower health targets, so efficiency should be very high.
           },
           {  // Intellect effect
@@ -41,7 +42,7 @@ export const raidTrinketData = [
             table: -9,
             secondaries: ['versatility', 'crit'], // Crit confirmed.
             targets: 5,
-            efficiency: 0.85, 
+            efficiency: 0.80, 
             cooldown: 90,
           },
           {  // The damage portion. Currently unused.
