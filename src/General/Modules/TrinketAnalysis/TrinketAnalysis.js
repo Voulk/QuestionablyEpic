@@ -16,7 +16,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import { getTrinketDescription } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
+import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
 
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
   let itemAllocations = getItemAllocations(id);
-  
+
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
   item.softScore = scoreTrinket(item, player, contentType, "Retail", playerSettings);
@@ -80,8 +80,8 @@ const setupItemCardData = (trinketList, contentType, player, playerSettings) => 
   const itemData = [];
   const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType)}
   trinketList.forEach((trinket) => {
-    const data = getTrinketDescription(trinket.name, player, additionalData);
-    //const data = null;
+    //const data = getTrinketDescription(trinket.name, player, additionalData);
+    const data = null;
     if (data) {
       data.name = trinket.name;
       data.id = trinket.id;
@@ -252,7 +252,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [476, 483, 486, 489, 496, 502, 509, 515, 519, 522, 528, 535];
+  const itemLevels = [584, 590, 597, 603, 610, 616, 619, 623, 626, 629, 632, 639];
 
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -297,14 +297,16 @@ export default function TrinketAnalysis(props) {
       else {
         trinketAtLevels["normal"] = trinketScore;
         trinketAtLevels["normalilvl"] = trinket.itemLevel;
-        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
+        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.itemLevel);
         activeTrinkets.push(trinketAtLevels);
       }
 
     } else {
         for (var x = 0; x < itemLevels.length; x++) {
+
           trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
         }
+        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1]);
         activeTrinkets.push(trinketAtLevels);
     }
   }
@@ -317,7 +319,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Ominous Chromatic Essence and Whispering Incarnate Icon assume others in your group are wearing them too. Rashok's is still quite good, but most of its power is in buffing allies now. There are much stronger trinkets for personal throughput. There are settings for all of the above in the settings panel beneath your character."  :
+  const trinketText = gameType === "Retail" ? "Tuning is ongoing. All results subject to change."  :
                                               "";
 
   return (
@@ -343,7 +345,7 @@ export default function TrinketAnalysis(props) {
         <Grid item xs={12}>
           <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
             <Tab label={"Trinkets at a Glance"} />
-            {gameType === "Retail" ? <Tab label={"Trinket Deep Dive"} /> : null}
+            {gameType === "" ? <Tab label={"Trinket Deep Dive"} /> : null}
           </Tabs>
 
           <TabPanel value={tabIndex} index={0}>

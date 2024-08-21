@@ -27,7 +27,6 @@ const CLASSICCONSTANTS = {
         "Restoration Shaman": 1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 1, // Soon :)
     },
-
     auraDamageBuff: 1,
     enemyTargets: 1, 
 
@@ -60,7 +59,7 @@ const getSpellDB = (spec) => {
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  */
 const getDamMult = (state, buffs, t, spellName, talents) => {
-    let mult = CLASSICCONSTANTS.auraDamageBuff;
+    let mult = CLASSICCONSTANTS.auraDamageBuff * state.genericBonus.damage;
 
 
     return mult;
@@ -71,7 +70,7 @@ const getDamMult = (state, buffs, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (state, t, spellName, talents) => {
-    let mult = CLASSICCONSTANTS.auraHealingBuff[state.spec];
+    let mult = CLASSICCONSTANTS.auraHealingBuff[state.spec] * state.genericBonus.healing;
 
     if (checkBuffActive(state.activeBuffs, "Tree of Life")) mult *= 1.15;
 
@@ -134,6 +133,17 @@ export const runHeal = (state, spell, spellName, compile = true) => {
             addReport(state, `Illuminated Healing absorbed ${Math.round(absorbVal)} (Exp OH: 0%)`)
         }
     }
+    else if (state.spec === "Discipline Priest") {
+        // Mastery procs on Prayer of Healing (direct only) and all crits. It functions off raw healing, not overhealing.
+        // TODO: PW:S: only auto pass the absorb.
+        const successfulRoll = false; // Math.random() < getCrit(state.currentStats, state.spec);
+        if (spellName === "Power Word: Shield" || (spellName === "Prayer of Healing" && spell.type === "heal") || successfulRoll) {
+            const masteryVal = healingVal * (getMastery(state.currentStats, state.spec) - 1);
+            state.healingDone["Divine Aegis"] = (state.healingDone["Divine Aegis"] || 0) + masteryVal;
+            addReport(state, `Divine Aegis for ${Math.round(masteryVal)} (Exp OH: ${spell.expectedOverheal * 100}%)`)
+        }
+        
+    }
 
     
 
@@ -143,8 +153,10 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 export const runDamage = (state, spell, spellName, compile = true) => {
 
     const damMultiplier = getDamMult(state, state.activeBuffs, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    const damageVal = getSpellRaw(spell, state.currentStats, CLASSICCONSTANTS) * damMultiplier;
-    
+    const damageVal = getSpellRaw(spell, state.currentStats, state.spec, 0, false) * damMultiplier;
+
+    if (spell.damageToHeal) state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal;
+
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
@@ -177,7 +189,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, execTime: 0, manaSpent: 0, settings: settings, 
                     talents: talents, reporting: true, spec: settings.spec.replace(" Classic", ""), manaPool: 100000, 
-                    healingAura: CLASSICCONSTANTS.auraHealingBuff[settings.spec], gameType: "Classic"};
+                    genericBonus: {healing: 1, damage: 1}, gameType: "Classic"};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)

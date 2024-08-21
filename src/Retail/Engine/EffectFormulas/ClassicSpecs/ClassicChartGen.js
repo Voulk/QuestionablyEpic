@@ -38,7 +38,7 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Discipline Priest"};
     const sequences = [
         {cat: "Base Spells", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
-        {cat: "Base Spells", tag: "Prayer of Mending", seq: ["Prayer of Mending"], preBuffs: []},
+        {cat: "Base Spells", tag: "Prayer of Mending (2 jumps)", seq: ["Prayer of Mending"], preBuffs: []},
         {cat: "Base Spells", tag: "Prayer of Healing", seq: ["Prayer of Healing"], preBuffs: []},
         {cat: "Base Spells", tag: "Flash Heal", seq: ["Flash Heal"], preBuffs: []},
         {cat: "Base Spells", tag: "Renew", seq: ["Renew"], preBuffs: []},
@@ -68,7 +68,8 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
                 }
             })
             
-            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        }
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        
+        }
         else {
             // All sequence based.
             const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;

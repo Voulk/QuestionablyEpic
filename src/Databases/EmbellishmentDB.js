@@ -1,10 +1,10 @@
 export const embellishmentDB = [
   {
-    id: 193001,
-    icon: "inv_10_jewelcrafting_necklace_necklace1_color3",
+    id: 215133,
+    icon: "inv_ringwod_d3_4",
     armorType: 0, // All
     name: {
-      en: "Elemental Lariat",
+      en: "Binding of Binding",
       de: "",
       fr: "",
       ru: "",
@@ -12,16 +12,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Elemental Lariat",
+      name: "Binding of Binding",
       rank: 0,
     },
   },
   {
-    id: 193460,
-    icon: "inv_mail_dragondungeon_c_01_boot",
-    armorType: 3, // Mail
+    id: 219495,
+    icon: "inv_misc_emberweavebandage",
+    armorType: 0, // All
     name: {
-      en: "Venom-Steeped Stompers",
+      en: "Blessed Weapon Grip",
       de: "",
       fr: "",
       ru: "",
@@ -29,16 +29,53 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Venom-Steeped Stompers",
+      name: "Blessed Weapon Grip",
+      rank: 0,
+    },
+  },
+
+  ///
+
+  {
+    id: 193001,
+    icon: "inv_10_jewelcrafting_necklace_necklace1_color3",
+    armorType: 2, // Leather
+    name: {
+      en: "Waders of the Unifying Flame",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Waders of the Unifying Flame",
+      rank: 0,
+    },
+  },
+  {
+    id: 219502,
+    icon: "inv_mail_dragondungeon_c_01_boot",
+    armorType: 2, // Mail
+    name: {
+      en: "Adrenal Surge Clasp",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Adrenal Surge Clasp",
       rank: 0,
     },
   },
   {
     id: 191532,
     icon: "inv_misc_food_legion_gooamber_drop",
-    armorType: 0, // All
+    armorType: 3, // 2pc set
     name: {
-      en: "Potion Absorption Inhibitor",
+      en: "Embrace of the Cinderbee",
       de: "",
       fr: "",
       ru: "",
@@ -46,16 +83,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Potion Absorption Inhibitor",
+      name: "Embrace of the Cinderbee",
       rank: 0,
     },
   },
   {
     id: 193468,
     icon: "inv_misc_blacksaberonfang",
-    armorType: 0, // All
+    armorType: 2, // 2pc
     name: {
-      en: "Fang Adornments",
+      en: "Fury of the Stormrook",
       de: "",
       fr: "",
       ru: "",
@@ -63,16 +100,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Fang Adornments",
+      name: "Fury of the Stormrook",
       rank: 0,
     },
   },
   {
-    id: 193532,
+    id: 215134,
     icon: "inv_cloth_dragonquest_b_01_boot",
     armorType: 1, 
     name: {
-      en: "Blue Dragon Soles",
+      en: "Fractured Gemstone Locket",
       de: "",
       fr: "",
       ru: "",
@@ -80,16 +117,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Blue Dragon Soles",
+      name: "Fractured Gemstone Locket",
       rank: 0,
     },
   },
   {
-    id: 193526,
+    id: 221943,
     icon: "inv_shoulder_cloth_dragondungeon_c_01",
-    armorType: 1,
+    armorType: 0,
     name: {
-      en: "Amice of the Blue",
+      en: "Energy Redistribution Beacon",
       de: "",
       fr: "",
       ru: "",
@@ -97,16 +134,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Amice of the Blue",
+      name: "Energy Redistribution Beacon",
       rank: 0,
     },
   },
   {
-    id: 193530,
+    id: 213773,
     icon: "inv_cloth_raidmageprimalist_d_01_bracer",
     armorType: 1, // Cloth
     name: {
-      en: "Allied Wristguards of Time Dilation",
+      en: "Prismatic Null Stone",
       de: "",
       fr: "",
       ru: "",
@@ -114,16 +151,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Rallied to Victory",
+      name: "Prismatic Null Stone",
       rank: 0,
     },
   },
   {
     id: 193520,
     icon: "inv_cloth_dragonquest_b_01_shoulder",
-    armorType: 1, // Cloth
+    armorType: 1, // Cloth - Damaging Spells only
     name: {
-      en: "Azureweave Vestments (2pc)",
+      en: "Woven Dusk (2pc)",
       de: "",
       fr: "",
       ru: "",
@@ -131,16 +168,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Azureweave Vestments",
+      name: "Woven Dusk",
       rank: 0, // Requires 2pc
     },
   },
   {
     id: 193465,
     icon: "inv_mail_raidhunterprimalist_d_01_glove",
-    armorType: 3, // Mail
+    armorType: 1, // Mail
     name: {
-      en: "Horizon Strider's Garments (2pc)",
+      en: "Woven Dawn (2pc)",
       de: "",
       fr: "",
       ru: "",
@@ -148,7 +185,7 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Horizon Strider's Garments",
+      name: "Woven Dawn",
       rank: 0, // Requires 2pc
     },
   },
@@ -170,12 +207,12 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 193537,
+    id: 222871,
     icon: "inv_cloth_dragonquest_b_01_pant",
-    armorType: 1, // Cloth
+    armorType: 0, // Cloth
     pieces: 2,
     name: {
-      en: "Woven Chronocloth (2pc)",
+      en: "Duskthread Lining",
       de: "",
       fr: "",
       ru: "",
@@ -183,16 +220,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Woven Chronocloth",
+      name: "Duskthread Lining",
       rank: 0, // Requires 2pc
     },
   },
   {
-    id: 191623,
+    id: 222868,
     icon: "inv_belt_plate_challengedeathknight_d_01",
     armorType: 4, // Plate  
     name: {
-      en: "Unstable Frostfire Belt",
+      en: "Dawnthread Lining",
       de: "",
       fr: "",
       ru: "",
@@ -200,16 +237,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Unstable Frostfire Belt",
+      name: "Dawnthread Lining",
       rank: 0, 
     },
   },
   {
-    id: 193452,
+    id: 226022,
     icon: "inv_leather_dragondungeon_c_01_boot",
     armorType: 2, // Leather
     name: {
-      en: "Toxic Thorn Footwraps",
+      en: "Darkmoon Sigil: Ascension",
       de: "",
       fr: "",
       ru: "",
@@ -217,16 +254,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Toxic Thorn Footwraps",
+      name: "Darkmoon Sigil: Ascension",
       rank: 0, 
     },
   },
   {
-    id: 192081,
+    id: 226028,
     icon: "creatureportrait_blackrockv2_shieldgong",
     armorType: 5, // Shields
     name: {
-      en: "Shield of the Hearth",
+      en: "Darkmoon Sigil: Symbiosis",
       de: "",
       fr: "",
       ru: "",
@@ -234,16 +271,16 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Shield of the Hearth",
+      name: "Darkmoon Sigil: Symbiosis",
       rank: 0, 
     },
   },
   {
-    id: 198258,
+    id: 226031,
     icon: "inv_gizmo_runichealthinjector",
     armorType: 0, // Extra
     name: {
-      en: "Magazine of Healing Darts",
+      en: "Darkmoon Sigil: Vivacity",
       de: "",
       fr: "",
       ru: "",
@@ -251,10 +288,11 @@ export const embellishmentDB = [
     },
     effect: {
       type: "embellishment",
-      name: "Magazine of Healing Darts",
+      name: "Darkmoon Sigil: Vivacity",
       rank: 0, 
     },
   },
+  /*
   {
     id: 204710, //406254,
     icon: "inv_10_skinning_craftedoptionalreagent_shadowflamearmorpatch",
@@ -492,7 +530,7 @@ export const embellishmentDB = [
       name: "Spore Keeper's Baton",
       rank: 0, 
     },
-  },*/
+  },
   {
     id: 208187,
     icon: "inv_trinket_ardenweald_01_orange", 

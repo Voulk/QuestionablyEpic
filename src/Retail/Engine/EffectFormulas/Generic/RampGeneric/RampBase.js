@@ -1,16 +1,17 @@
 // 
-import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks } from "./BuffBase";
+import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks, extendBuff } from "./BuffBase";
 import { getEssenceBuff, triggerTemporal } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
+import { STATCONVERSION } from "General/Engine/STAT"
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 180,
-        mastery: 180,
-        vers: 205,
-        haste: 170,
-        leech: 110,
+        crit: STATCONVERSION.CRIT,
+        mastery: STATCONVERSION.MASTERY,
+        vers: STATCONVERSION.VERSATILITY,
+        haste: STATCONVERSION.HASTE,
+        leech: STATCONVERSION.LEECH,
     }
 
 }
@@ -36,7 +37,7 @@ export const spellCleanup = (spell, state) => {
 }
 
 // TODO: Generalize secondary spell costs and then flatten this function. 
-export const spendSpellCost = (spell, state) => {
+export const spendSpellCost = (spell, state, spellName = "") => {
     if ('essence' in spell[0]) {
         if (checkBuffActive(state.activeBuffs, "Essence Burst")) {
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Essence Burst");
@@ -46,6 +47,16 @@ export const spendSpellCost = (spell, state) => {
         }
         else {
             // Essence buff is not active. Spend Essence and mana.
+            let cost = spell[0].cost || 0;
+
+            // Special mana mods
+            if (spellName.includes("Rejuvenation") && checkBuffActive(state.activeBuffs, "Incarnation: Tree of Life")) cost *= 0.7;
+            if (spellName.includes("Regrowth" && state.talents.abundance && state.talents.abundance.points > 0)) {
+                // Reduce price of Regrowth by 8% per active Rejuv, to a maximum of 12 stacks (96% reduction).
+                const abundanceStacks = state.activeBuffs.filter(buff => buff.name === "Rejuvenation").length;
+                cost *= 1 - Math.min(abundanceStacks * 0.08, 0.96);
+            }
+
             state.manaSpent += spell[0].cost;
             state.manaPool = (state.manaPool || 0) - spell[0].cost;
             state.essence -= spell[0].essence;
@@ -71,7 +82,7 @@ export const spendSpellCost = (spell, state) => {
 }
 
 // Runs a classic era periodic spell.
-const runPeriodic = (state, spell, spellName, runHeal) => {
+const runPeriodic = (state, spell, spellName, runHeal, runDamage) => {
     // Calculate tick count
     let tickCount = 0;
     const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : getHaste(state.currentStats, "Classic");
@@ -81,7 +92,8 @@ const runPeriodic = (state, spell, spellName, runHeal) => {
 
     // Run heal
     for (let i = 0; i < tickCount; i++) {
-        runHeal(state, spell, spellName + " (HoT)");
+        if (spell.buffType === "heal") runHeal(state, spell, spellName + " (HoT)");
+        else if (spell.buffType === "damage") runDamage(state, spell, spellName + " (DoT)");
     }
 }
 
@@ -104,6 +116,8 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
         if (canProceed) {
             // The spell casts a different spell. 
+            const target = fullSpell[0].targeting ? generateSpellTarget(state, fullSpell[0], spellName) : [];
+            if (target) state.currentTarget = target;
             if (spell.type === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
                 const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
@@ -131,7 +145,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
             // In classic we don't need to worry about hots and dots changing 
             else if (spell.type === "classic periodic") {
-                runPeriodic(state, spell, spellName, runHeal);
+                runPeriodic(state, spell, spellName, runHeal, runDamage);
             }
             
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
@@ -154,7 +168,13 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
                     addBuff(state, spell, spellName);
                 }
                 
-            } 
+            }
+            else if (spell.type === "buffExtension") {
+                extendBuff(state.activeBuffs, 0, spell.extensionList, spell.extensionDuration)
+            }
+            else {
+                console.error("Spell Type Error: " + spell.type);
+            }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
             if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
@@ -175,8 +195,59 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
     // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
+    if (["Rejuvenation", "Regrowth", "Wild Growth"].includes(spellName)) state.activeBuffs = removeBuffStack(state.activeBuffs, "Soul of the Forest");
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
+    state.currentTarget = [];
 
+}
+
+
+// Options:
+// - avoidSame - Used for buff spells to avoid re-casting them on the same target.
+// - random - A purely random selection. Multi-target spells will avoid hitting the same target.
+// Note that most spells won't need explicit targeting to begin with. It is only relevant in cases like Resto Druid where who the buff is on is of particular importance.
+export const generateSpellTarget = (state, spell, spellName) => {
+    // Attempt to find unique target for HoT.
+    const filteredBuffs = state.activeBuffs.filter(buff => buff.name === spellName)
+
+    // Create an array of possible targets from 1 to 20. We could add better support for M+ by capping this at 5.
+    const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
+    // Get all the 'target' values from the input array
+    // These are all targets that already have the buff we're looking to apply.
+    const targets = new Set(filteredBuffs.flatMap(obj => obj.target));
+
+    if (spell.targeting.behavior === "random") {
+        shuffleArray(numbers);
+        //console.log("Applying buff to " + JSON.stringify(numbers.slice(0, spell.targeting.count)));
+        return numbers.slice(0, spell.targeting.count);
+    }
+
+    // Find the smallest number that isn't in the 'targets'
+    for (let num of numbers) {
+        if (!targets.has(num)) {
+            addReport(state, "Adding Buff: " + spellName + " to target " + num);
+            //console.log(targets);
+            //console.log("Adding Buff: " + spellName + " to target " + num);
+            return [num];
+        }
+    }
+    // If all buffs are taken, return 0 instead. The technically correct answer here would be to check for the shortest buff while we're finding the smallest
+    // number and return that but we'll leave that for another time. Note that it's a very minor optimization. 
+    return [];
+
+}
+
+export function checkRoll(chance) {
+    const roll = Math.random();
+    return roll <= chance;     
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
 }
 
 export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
@@ -212,14 +283,15 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
     // Check if the spell has a custom GCD. 
     const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
     const GCD = fullSpell[0].customGCD || 1.5;
-    const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats);
+    const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats, castState.queuedSpell);
     const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats, state.gameType), GCDCap) : castTime;
 
     state.execTime += effectiveCastTime;
     castState.spellFinish = state.t + castTime - 0.01;
 
     // These could be semi-replaced by effectiveCastTime. TODO.
-    if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + effectiveCastTime;
+    if (fullSpell[0].castTime === 0 && fullSpell[0].offGCD) castState.nextSpell = state.t + 0.01;
+    else if (fullSpell[0].castTime === 0) castState.nextSpell = state.t + effectiveCastTime;
     else if (fullSpell[0].channel) { castState.nextSpell = state.t + castTime; castState.spellFinish = state.t }
     else castState.nextSpell = state.t + castTime;
 
@@ -300,8 +372,8 @@ export const getSpellCooldown = (state, spellDB, spellName) => {
 
 
 // TODO: Add support to have more than one effect a spell.
-const hasCastTimeBuff = (buffs, spellName) => {
-    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && buff.buffSpell.includes(spellName));
+const hasCastTimeBuff = (buffs, spellName, castTime) => {
+    const buff = buffs.filter( buff => (buff.buffType === "spellSpeed" || buff.buffType === "spellSpeedFlat") && (buff.buffSpell.includes(spellName) || buff.buffSpell.includes("All")));
     if (buff.length > 0) {
         if (buff[0].buffType === "spellSpeed") return castTime / buff[0].spellSpeed;
         else if (buff[0].buffType === "spellSpeedFlat") return castTime - buff[0].spellSpeed
@@ -312,21 +384,24 @@ const hasCastTimeBuff = (buffs, spellName) => {
 
 
 // TODO: Remove empowered section and turn Temporal Compression into a type of cast speed buff.
-export const getSpellCastTime = (spell, state, currentStats) => {
+export const getSpellCastTime = (spell, state, currentStats, spellName) => {
     if ('castTime' in spell) {
         let castTime = spell.castTime;
     
         if (spell.empowered) {
             if (checkBuffActive(state.activeBuffs, "Temporal Compression")) {
                 const buffStacks = getBuffStacks(state.activeBuffs, "Temporal Compression")
-                castTime *= (1 - 0.05 * buffStacks)
+                castTime *= (1 - 0.1 * buffStacks)
                 if (buffStacks === 4) triggerTemporal(state);
             }
             castTime = castTime / getHaste(currentStats, "Retail"); // Empowered spells do scale with haste.
         } 
 
+        // Special cases
+        else if (spellName === "Regrowth" && checkBuffActive(state.activeBuffs, "Incarnation: Tree of Life")) castTime = 0;
+
         else if (castTime === 0 && spell.onGCD === true) castTime = 0; //return 1.5 / getHaste(currentStats);
-        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name) / getHaste(currentStats, state.gameType);
+        else if (hasCastTimeBuff(state.activeBuffs, spell.name)) castTime = hasCastTimeBuff(state.activeBuffs, spell.name, castTime) / getHaste(currentStats, state.gameType);
         //else if ('name' in spell && spell.name.includes("Living Flame") && checkBuffActive(state.activeBuffs, "Ancient Flame")) castTime = castTime / getHaste(currentStats) / 1.4;
         else castTime = castTime / getHaste(currentStats, state.gameType);
 
@@ -350,12 +425,16 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
 
     
-    if (stats.includes("vers")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
+    if (stats.includes("vers") || stats.includes("versatility")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
     if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
 
     return mult;
+}
+
+export const getMastery = (stats, specConstants) => {
+    return (specConstants.masteryMod / 100 * 8 + stats.mastery / STATCONVERSION.MASTERY * specConstants.masteryMod / 100);
 }
 
 /**
@@ -378,7 +457,7 @@ export const getCurrentStats = (statArray, buffs) => {
     const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
     multBuffs.forEach(buff => {
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 170 / 100 + 1) * buff.value)-1) * 170 * 100;
+        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / STATCONVERSION.HASTE / 100 + 1) * buff.value)-1) * STATCONVERSION.HASTE * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
 
@@ -387,7 +466,7 @@ export const getCurrentStats = (statArray, buffs) => {
 
 // Returns the players current haste percentage. 
 export const getHaste = (stats, gameType = "Retail") => {
-    if (gameType === "Retail") return 1 + stats.haste / 170 / 100;
+    if (gameType === "Retail") return 1 + stats.haste / STATCONVERSION.HASTE / 100;
     else {
         return (1 + stats.haste / 128.057006835937500 / 100); // Haste buff. TODO: Add setting for the 5% buff but it's very common.
         
@@ -395,7 +474,7 @@ export const getHaste = (stats, gameType = "Retail") => {
 }
 
 export const getCrit = (stats) => {
-    return 1.05 + stats.crit / 180 / 100;
+    return 1.05 + stats.crit / STATCONVERSION.CRIT / 100;
 }
 
 export const addReport = (state, entry) => {

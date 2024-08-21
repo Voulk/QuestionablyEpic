@@ -32,7 +32,7 @@ export default function SourceToggle(props) {
           <div style={{ display: "inline-flex" }}>
             <img
               style={{ height: 18, width: 18, margin: "2px 5px 0px 0px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }}
-              src={require("Images/achievement_raid_torghastraid.jpg")}
+              src={require("Images/Logos/RaidLogo.jpg")}
               alt={"Raids"}
             />
             <Typography variant="button">{"Raids"}</Typography>

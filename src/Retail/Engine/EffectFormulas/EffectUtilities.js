@@ -32,6 +32,19 @@ export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
     return diminishedValue * uptime;
 }
 
+// This is specifically for effects that can roll any secondary.
+export function runGenericRandomPPMTrinket(effect, itemLevel, setStats = {}) {
+  const bonus_stats = {};
+  const rawValue = processedValue(effect, itemLevel);
+  const uptime = convertPPMToUptime(effect.ppm, effect.duration);
+
+  ["versatility", "crit", "mastery", "haste"].forEach((stat) => {
+    bonus_stats[stat] = getDiminishedValue(stat, rawValue, setStats[stat] || 0) * uptime * 0.25;
+  });
+
+  return bonus_stats;
+}
+
 // Most stat trinkets should not be hasted so this function is mostly a catch for if they mess it up.
 export function runGenericPPMTrinketHasted(effect, itemLevel, hastePerc, setStats = {}) {
   const rawValue = processedValue(effect, itemLevel);
@@ -43,9 +56,8 @@ export function runGenericPPMTrinketHasted(effect, itemLevel, hastePerc, setStat
 // Other trinkets are generic on-use stat trinkets. These usually don't need anything special either and can be genericized. 
 // TODO.
 export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
-
   const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
-                  * (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1);
+                  * (castModel ? (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1) : 1);
   return value;
 }
 
@@ -187,6 +199,12 @@ export function getScalarValue(table, itemLevel) {
   } 
   else if (table === -8) {
     return randPropPoints[itemLevel]["p1"]; // This is the damage_replace_stat column in SimC.
+  } 
+  else if (table === -10) { // Used for mana effects. 
+    return randPropPoints[itemLevel]["slotValues"][0]; // 
+  } 
+  else if (table === -2) { // This is used rarely for mana effects like Master Shapeshifter. It is a level scaled value.
+    return 2625000; // Lv80.
   } 
 
   else {

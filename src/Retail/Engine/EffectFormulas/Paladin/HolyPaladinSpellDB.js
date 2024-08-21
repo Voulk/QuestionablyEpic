@@ -1,6 +1,7 @@
 import { getHaste, getHealth } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, getBuffStacks, addBuff, removeBuff } from "../Generic/RampGeneric/BuffBase";
 import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps";
+import { STATCONVERSION } from "General/Engine/STAT"
 
 // This is the Disc spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 
@@ -792,7 +793,7 @@ export const baseTalents = {
     avengingCrusader: {points: 0, maxPoints: 1, icon: "ability_paladin_veneration", id: 216331, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
     might: {points: 1, maxPoints: 1, icon: "spell_holy_avenginewrath", id: 384442, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Avenging Wrath'][0].value = (15 * 170);
+        spellDB['Avenging Wrath'][0].value = (15 * STATCONVERSION.CRIT);
     }},
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.

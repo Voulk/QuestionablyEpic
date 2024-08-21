@@ -39,6 +39,8 @@ export function getValidArmorTypes(spec: string) {
       return [0, 3]; // Misc + Mail
     case SPEC.HOLYPRIEST:
     case SPEC.DISCPRIEST:
+    case "Holy Priest Classic":
+    case "Discipline Priest Classic":
       return [0, 1]; // Misc + Cloth
     case "Holy Paladin Classic":
       return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
@@ -46,8 +48,6 @@ export function getValidArmorTypes(spec: string) {
       return [0, 2, 8, 11]; // Misc + Plate + Shields
     case "Restoration Shaman Classic":
       return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
-    case "Holy Priest Classic":
-      return [0, 1]; // Misc + Plate + Shields
     default:
       return [-1];
   }
@@ -346,6 +346,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case "Restoration Shaman Classic":
       return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
+    case "Discipline Priest Classic":
       return [4, 10, 15, 19];
     default:
       return [-1, 0];
@@ -941,6 +942,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
+      (!("class" in key) || player.spec.includes(key.class)) &&
       (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
@@ -957,7 +959,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
-        (!([62458, 59514, 68711, 62472].includes(item.id)))) { // X, Y and two Mandala since there's 3x versions of it.
+        (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327].includes(item.id)))) { // X, Y and two Mandala since there's 3x versions of it.
       const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
@@ -1073,7 +1075,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) / 15000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) / 60000 * player.getHPS(contentType);
     }
   }
 

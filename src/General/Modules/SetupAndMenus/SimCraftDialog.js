@@ -14,7 +14,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
-import { runBCSimC } from "../../../Classic/Engine/SimCImport/SimCImportEngineBC";
+import { runClassicGearImport } from "../../../Classic/Engine/SimCImport/ClassicGearImport";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/system";
 
@@ -55,7 +55,7 @@ export default function SimCraftInput(props) {
 
   const handleSubmit = () => {
       if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault); // Add autoUpgradeVault here.
-      else runBCSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC);
+      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars);
   };
 
   return (

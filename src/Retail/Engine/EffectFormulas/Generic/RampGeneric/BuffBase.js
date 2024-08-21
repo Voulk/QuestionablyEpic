@@ -1,5 +1,5 @@
 
-import { addReport, getHaste, getCurrentStats } from "./RampBase"
+import { addReport, getHaste, getCurrentStats, getCrit } from "./RampBase"
 
 
 export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
@@ -29,14 +29,17 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
     const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType == "function" || buff.runEndFunc) && state.t >= buff.expiration && buff.canPartialTick})
     expiringHots.forEach(buff => {
         if (buff.buffType === "heal" || buff.buffType === "damage" || buff.buffType === "function") {
+            
             const tickRate = buff.tickRate / getHaste(state.currentStats)
             const partialTickPercentage = 1-((buff.next - state.t) / tickRate);
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
+            if (partialTickPercentage > 0.01) { // We don't need to trigger a partial tick if it happens at the same time stamp.
+                if (buff.buffType === "damage") runDamage(state, spell, buff.name);
+                else if (buff.buffType === "heal") runHeal(state, spell, buff.name/* + "(hot)"*/, buff.target || 0);
+                else if (buff.buffType === "function") buff.attFunction(state, spell, buff, partialTickPercentage);
+            }
 
-            if (buff.buffType === "damage") runDamage(state, spell, buff.name);
-            else if (buff.buffType === "heal") runHeal(state, spell, buff.name + "(hot)");
-            else if (buff.buffType === "function") buff.attFunction(state, spell, buff, partialTickPercentage);
         }
         else if (buff.runEndFunc) buff.runFunc(state, buff);
     })
@@ -47,7 +50,7 @@ export const runBuffs = (state, stats, spellDB, runHeal, runDamage) => {
 const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
     if (buff.buffType === "heal") {
         const spell = buff.attSpell;
-        runHeal(state, spell, buff.name + " (HoT)")
+        runHeal(state, spell, buff.name/* + " (HoT)"*/, buff.target || 0)
     }
     else if (buff.buffType === "damage") {
         const spell = buff.attSpell;
@@ -60,7 +63,30 @@ const tickBuff = (state, buff, spellDB, runHeal, runDamage) => {
     }
 
     if (buff.onTick) buff.onTick(state, buff, runSpell, spellDB);
-    
+    if (buff.critExtension) {
+        // If the heal / damage crits, we'll extend the buff by the crit extension. These are often capped so we'll support that too.
+        // Examples: Reversion.
+        const roll = Math.random();
+        const didCrit = roll <= (getCrit(state.currentStats) - 1);
+        //console.log("Roll: " + roll + " Crit: " + getCrit(state.currentStats));
+        if (didCrit) {
+            if ('extensionCount' in buff) {
+                if (buff.extensionCount < buff.critExtension.maxExtension) {
+                    buff.extensionCount += 1;
+                    buff.expiration += buff.critExtension.extension;
+                    //console.log("Extending HoT again");
+                }
+                else {
+                    //console.log("Tried to extend but already at cap");
+                }
+            }
+            else {
+                buff.extensionCount = 1;
+                //console.log("Extending HoT");
+                buff.expiration += buff.critExtension.extension;
+            }
+        }
+    }
 }
 
 /** Check if a specific buff is active and returns the value of it.
@@ -82,9 +108,9 @@ export const getBuffStacks = (buffs, buffName) => {
 }
 
 /**  Extend any buffs named @spellName by @extension seconds. */
-export const extendBuff = (activeBuffs, timer, spellName, extension) => {
+export const extendBuff = (activeBuffs, timer, spellNames, extension) => {
     activeBuffs.forEach((buff) => {
-        if (buff.name === spellName) {
+        if (spellNames.includes(buff.name)) {
             buff.expiration += extension;
         }
     });
@@ -181,13 +207,19 @@ export const addBuff = (state, spell, spellName) => {
         }
 
         // If the target of the buff is relevant to its functionality. Generate one.
-        if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
+        //if ('flags' in spell && spell.flags.targeted) newBuff.target = generateBuffTarget(state, spell);
+        newBuff.target = state.currentTarget || [];
 
         // Check if any buffs affect the spell. If they do we'll have to adjust the coefficient.
         // Examples: Dream Breath (Call of Ysera).
         if (state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName).length > 0) {
             const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmp" && buff.buffedSpellName === spellName)[0];
             spell.coeff = spell.coeff * spellAmp.value;
+        }
+        else if (state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && spellName in buff.buffedSpellName).length > 0) { 
+            const spellAmp = state.activeBuffs.filter(buff => buff.buffType === "spellAmpMulti" && spellName in buff.buffedSpellName)[0];
+            spell.coeff = spell.coeff * spellAmp.buffedSpellName[spellName];
+            
         }
 
         // The spell will run a function on tick.
@@ -201,10 +233,10 @@ export const addBuff = (state, spell, spellName) => {
         }
         // Run a function when the spell ticks. Examples: Lux Soil, Reversion. NYI.
         if (spell.tickData.onTick) newBuff.onTick = spell.tickData.onTick;
+        if (spell.critExtension) newBuff.critExtension = spell.critExtension;
         // The spell does something on application. Note that standard "heals on application" shouldn't be applied here. This is for special effects.
         if (spell.onApplication) spell.onApplication(state, spell, newBuff);
         
-
         state.activeBuffs.push(newBuff)
 
     }
@@ -213,7 +245,7 @@ export const addBuff = (state, spell, spellName) => {
     // Buffs that increase the healing of all spells could be handled here in future, but aren't currently. Those are generally much easier.
 
     // Buffs here support stacking and maxStacks properties.
-    else if (spell.buffType === "spellAmp") {
+    else if (spell.buffType === "spellAmp" || spell.buffType === "spellAmpMulti") {
         
         // Check if buff already exists, if it does add a stack.
         const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === spell.name}).length;
@@ -221,7 +253,7 @@ export const addBuff = (state, spell, spellName) => {
 
         // Buff doesn't exist already. We'll add the buff new.
         if (buffStacks === 0) {
-            newBuff = {...newBuff, value: spell.value, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName}
+            newBuff = {...newBuff, value: spell.value || 1, stacks: spell.stacks || 1, canStack: spell.canStack, buffedSpellName: spell.buffedSpellName || spell.buffedSpells}
             state.activeBuffs.push(newBuff);
         }
         // The buff does already exist. We can just add a stack.
