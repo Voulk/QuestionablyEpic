@@ -32,7 +32,7 @@ describe("Cirral Concoctory", () => {
     ${597}  | ${[4436, 2235, 1118, 0, 39238]}
     // add new test cases here
     `.test("Cirral Concoctory Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level, 1)).toBe(expectedResult[0]);
+        expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
         expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
         expect(processedValue(effect[4], level)).toBe(expectedResult[4]);
@@ -93,7 +93,7 @@ describe("Gruesome Syringe", () => {
     ${616}  | ${[251029, 4401]}
     // add new test cases here
     `.test("Gruesome Syringe Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
+        expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
     });
 }); 

@@ -12,7 +12,7 @@ export const raidTrinketData = [
             table: -8,
             secondaries: ['versatility', 'crit'], // Crit?
             ppm: 6,
-            percentProcced: 0.75,
+            percentProcced: 0.9,
             efficiency: {Raid: 0.95, Dungeon: 0.95}, // This procs on lower health targets, so efficiency should be very high.
           },
           {  // Intellect effect
@@ -95,12 +95,12 @@ export const raidTrinketData = [
           {  // Intellect effect
             coefficient: 0.024938,
             table: -1,
-            avgStacks: 15,
+            avgStacks: 22,
           },
           {  // Secondary effect
             coefficient: 0.05418,
             table: -7,
-            avgStacks: 15,
+            avgStacks: 5,
           },
 
         ],

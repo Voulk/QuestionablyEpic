@@ -94,6 +94,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const bestStat = player.getHighestStatWeight(additionalData.contentType);
+
+      console.log("Bee: " + processedValue(data[0], itemLevel));
       bonus_stats[bestStat] = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
       bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel) * data[0].efficiency * data[1].targets;
 
@@ -181,14 +183,14 @@ export const embellishmentData = [
       { 
         coefficient: 0.131628, 
         table: -571,
-        uptime: 0.8,
+        uptime: 0.6,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].uptime;
-      console.log("Duskthread" + JSON.stringify(bonus_stats));
+      console.log("Duskthread" + processedValue(data[0], itemLevel));
       return bonus_stats;
     }
   },
@@ -198,7 +200,7 @@ export const embellishmentData = [
       { 
         coefficient: 0.131628, 
         table: -571,
-        uptime: 0.8,
+        uptime: 0.6,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -212,8 +214,8 @@ export const embellishmentData = [
   { // Stacking stat buff
     name: "Darkmoon Sigil: Ascension",
     effects: [
-      { 
-        coefficient: 0.025246, // 0.034796 at -9 in the spell data too.
+      { // Gives 89 of a random stat
+        coefficient: 0.021938, // 0.025246 appears to be the trinket, // 0.034796 at -9 in the spell data too, 0.007428
         table: -571,
         maxStacks: 10,
         timer: 8,
@@ -226,9 +228,10 @@ export const embellishmentData = [
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
+      console.log(processedValue(data[0], itemLevel));
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
-        bonus_stats[stat] = processedValue(data[0], itemLevel) * averageStacks / 4;
+        bonus_stats[stat] = 89 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
       })
 
       return bonus_stats;
@@ -238,7 +241,7 @@ export const embellishmentData = [
     name: "Darkmoon Sigil: Symbiosis",
     effects: [
       { 
-        coefficient: 0.039349, // 0.088359 at -9 in the spell data too.
+        coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
         table: -571,
         maxStacks: 5,
         timer: 10,
@@ -248,6 +251,7 @@ export const embellishmentData = [
       let bonus_stats = {};
 
       const fightLength = additionalData.castModel.fightInfo.fightLength
+      console.log("Sym: " + processedValue(data[0], itemLevel));
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
@@ -273,7 +277,7 @@ export const embellishmentData = [
       { 
         coefficient: 0.14016,
         table: -571,
-        ppm: 20,
+        ppm: 2,
         duration: 15,
         stat: "versatility"
       },

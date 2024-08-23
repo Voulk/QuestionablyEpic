@@ -70,7 +70,7 @@ export default class EmbelChart extends PureComponent {
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
-    console.log(data);
+
     const db = this.props.db;
     const barColours = this.props.theme;
     let arr = [];

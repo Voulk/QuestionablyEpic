@@ -209,8 +209,8 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
       gemCount -= 1;
       gemArray.push(192982)
     }
-    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
-    bonus_stats.mastery = (bonus_stats.mastery || 0) + 33 * (gemCount);
+    bonus_stats.crit = (bonus_stats.crit || 0) + 147 * (gemCount);
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 49 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
