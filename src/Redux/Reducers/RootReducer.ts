@@ -39,7 +39,7 @@ const initialState : RootState = {
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
     healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
-    lariatGems: { value: 4, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
+    socketedGems: { value: 4, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
     chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector", gameType: "Retail" },
     
     gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".

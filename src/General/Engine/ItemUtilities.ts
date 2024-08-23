@@ -209,8 +209,8 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
       gemCount -= 1;
       gemArray.push(192982)
     }
-    bonus_stats.crit = (bonus_stats.crit || 0) + 70 * (gemCount);
-    bonus_stats.mastery = (bonus_stats.mastery || 0) + 33 * (gemCount);
+    bonus_stats.crit = (bonus_stats.crit || 0) + 147 * (gemCount);
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 49 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
@@ -933,7 +933,7 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number) {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
   let itemDB = getItemDB(gameType);
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
@@ -943,24 +943,38 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
-      (key.itemLevel === itemLevel || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
+      (gameType === "Classic" || itemLevel > 400) &&
+      (key.itemLevel === itemLevel || gameType === "Retail" || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
         key.slot === "Offhand" ||
-        (key.slot === "Shield" && (player.spec === "Holy Paladin Classic" || player.spec === "Restoration Shaman Classic")) || 
+        (key.slot === "Shield" && (player.spec.includes("Holy Paladin") || player.spec.includes("Restoration Shaman"))) || 
         (key.itemClass === 2 && acceptableWeaponTypes.includes(key.itemSubClass)) ||
         (key.itemClass === 2 && player.spec === "Holy Priest Classic")), // Wands
         );
-  
+
   itemDB.forEach((item: any) => {
+    let sourceCheck = true;
+    if (source !== "") {
+      const sources = getItemProp(item.id, "sources", gameType)[0];
+      console.log(sources);
+      // Check the item drops from the expected location.
+      if (source === "Palace" && sources) sourceCheck = sources.instanceId === 1273;
+      if (source === "S1 Dungeons"&& sources) sourceCheck = sources.instanceId === -1; // TODO
+      else if (!sources) sourceCheck = false;
+    }
     const slot = getItemProp(item.id, "slot", gameType);
-    if ((slot === 'Trinket' && item.levelRange) || 
-        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) && 
+    if (
+        ((slot === 'Trinket' && item.levelRange) || 
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit)) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
-        (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327].includes(item.id)))) { // X, Y and two Mandala since there's 3x versions of it.
-      const newItem = new Item(item.id, item.name, slot, 0, "", 0, item.itemLevel, "", gameType);
+        (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327].includes(item.id)))
+        && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
+      const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
+
+      console.log("Item Passes: " + item.name);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }

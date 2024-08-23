@@ -15,7 +15,7 @@ import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
 import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";
 import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
-
+import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 // 
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
@@ -150,7 +150,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
     score = getEstimatedHPS(effect, player, contentType, playerSettings) + getEstimatedDPS(effect, player, contentType, playerSettings);
   }
 
-  if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
+  //if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
 
   return Math.max(score, 0);
 
@@ -158,7 +158,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r522 //gem.r5;
+  return gem.r636 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -197,7 +197,7 @@ export default function EmbellishmentAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [486, 493, 499, 506, 513, 519, 522];
+  const itemLevels = [600, 606, 612, 618, 624, 630, 636 ];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -221,12 +221,14 @@ export default function EmbellishmentAnalysis(props) {
     let gemAtLevels = {
       id: domGem.id,
       name: domGem.name["en"],
+      tooltip: []
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
       if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
+    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 636)
     activeGems.push(gemAtLevels);
   }
 

@@ -30,8 +30,8 @@ export const embellishmentData = [
     name: "Binding of Binding",
     effects: [
       { 
-        coefficient: 0.612175 / 4, // Check this. I guess it scales with num gem types they have?
-        table: -7,
+        coefficient: 0.612175, // Check this. I guess it scales with num gem types they have?
+        table: -571,
         duration: 15, 
         ppm: 2,
       },
@@ -42,6 +42,250 @@ export const embellishmentData = [
       const statAvg = runGenericPPMTrinket(data[0], itemLevel);
 
       bonus_stats.allyStats = statAvg;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Waders of the Unifying Flame",
+    effects: [
+      { 
+        coefficient: 0.204581,
+        table: -571,
+        duration: 15, 
+        ppm: 2,
+        efficiency: 0.7,
+      },
+      { 
+        coefficient: 0.040916,
+        table: -571,
+        duration: 15, 
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const bestStat = player.getHighestStatWeight(additionalData.contentType);
+      bonus_stats[bestStat] = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel) * data[0].efficiency;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Embrace of the Cinderbee",
+    effects: [
+      { 
+        coefficient: 0.181946,
+        table: -571,
+        duration: 12, 
+        ppm: 3,
+        efficiency: 0.7,
+      },
+      { 
+        coefficient: 0.022634,
+        table: -571,
+        duration: 15, 
+        ppm: 3,
+        targets: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const bestStat = player.getHighestStatWeight(additionalData.contentType);
+
+      console.log("Bee: " + processedValue(data[0], itemLevel));
+      bonus_stats[bestStat] = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel) * data[0].efficiency * data[1].targets;
+
+      return bonus_stats;
+    }
+  },
+  { // 2pc set. Coefficient is likely doubled.
+    name: "Fury of the Stormrook",
+    effects: [
+      { 
+        coefficient: 0.54462,
+        table: -571,
+        duration: 12, 
+        ppm: 2.5,
+        efficiency: 0.85,
+        stat: "haste",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
+
+      return bonus_stats;
+    }
+  },
+  { // This basically just gives out stat with high uptime for each gem you have socketed.
+    name: "Fractured Gemstone Locket",
+    effects: [
+      { 
+        coefficient: 0.02455, 
+        table: -571,
+        uptime: 0.95
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.allyStats = processedValue(data[0], itemLevel) * data[0].uptime * getSetting(additionalData.settings, "socketedGems");
+
+      return bonus_stats;
+    }
+  },
+  { // DPS Spells
+    name: "Woven Dusk",
+    effects: [
+      { 
+        coefficient: 0, 
+        table: -571,
+        ppm: 1.2,
+        duration: 30,
+        stat: "haste",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
+
+      return bonus_stats;
+    }
+  },
+  { // Healing Spells
+    name: "Woven Dawn",
+    effects: [
+      { 
+        coefficient: 0, 
+        table: -571,
+        ppm: 1.2,
+        duration: 30,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { // Vers while above 80% health. Need to check if heartbeat or cooldown.
+    name: "Duskthread Lining",
+    effects: [
+      { 
+        coefficient: 0.131628, 
+        table: -571,
+        uptime: 0.6,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].uptime;
+      console.log("Duskthread" + processedValue(data[0], itemLevel));
+      return bonus_stats;
+    }
+  },
+  { // Crit while above 80% health. Need to check if heartbeat or cooldown.
+    name: "Dawnthread Lining",
+    effects: [
+      { 
+        coefficient: 0.131628, 
+        table: -571,
+        uptime: 0.6,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].uptime;
+      console.log("Dawnthread" + JSON.stringify(bonus_stats));
+      return bonus_stats;
+    }
+  },
+  { // Stacking stat buff
+    name: "Darkmoon Sigil: Ascension",
+    effects: [
+      { // Gives 89 of a random stat
+        coefficient: 0.021938, // 0.025246 appears to be the trinket, // 0.034796 at -9 in the spell data too, 0.007428
+        table: -571,
+        maxStacks: 10,
+        timer: 8,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const fightLength = additionalData.castModel.fightInfo.fightLength
+      // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
+      // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
+      const averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
+      console.log(processedValue(data[0], itemLevel));
+      
+      ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
+        bonus_stats[stat] = 89 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
+      })
+
+      return bonus_stats;
+    }
+  },
+  { // Stacking vers buff
+    name: "Darkmoon Sigil: Symbiosis",
+    effects: [
+      { 
+        coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
+        table: -571,
+        maxStacks: 5,
+        timer: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const fightLength = additionalData.castModel.fightInfo.fightLength
+      console.log("Sym: " + processedValue(data[0], itemLevel));
+      // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
+      // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
+      const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
+      
+      bonus_stats.versatility = processedValue(data[0], itemLevel) * averageStacks;
+
+
+      return bonus_stats;
+    }
+  },
+  { // NOT YET FULLY IMPLEMENTED
+    /*
+      -- Weapons only --
+      Can have multiple buffs active at a time
+      Fire / Shadow damage gives haste
+      Nature / Frost damage gives crit
+      Holy / Arcane damage gives mastery
+      Multischool damage gives vers
+
+    */
+    name: "Darkmoon Sigil: Vivacity",
+    effects: [
+      { 
+        coefficient: 0.14016,
+        table: -571,
+        ppm: 2,
+        duration: 15,
+        stat: "versatility"
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel)
 
       return bonus_stats;
     }

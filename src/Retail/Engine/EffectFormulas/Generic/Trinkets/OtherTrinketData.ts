@@ -77,19 +77,17 @@ export const otherTrinketData = [
   },
   { // Is this 100% uptime?
     name: "Unstable Power Suit Core",
-    description: "",
+    description: "UNTESTED!",
     effects: [
       {
         coefficient: 0.525141, 
         table: -7,
-        duration: 15,
-        ppm: 2,
-        stat: "crit",
+        uptime: 20/30, // Buff for 10-30s, 30s refresh.
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-      const secValue = processedValue(data[0], itemLevel);
+      const secValue = processedValue(data[0], itemLevel) * data[0].uptime!;
       bonus_stats.versatility = secValue / 4;
       bonus_stats.crit = secValue / 4;
       bonus_stats.haste = secValue / 4;
@@ -133,6 +131,26 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.hps = processedValue(data[0], itemLevel) * data[0].efficiency / data[0].cooldown;
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Algari Alchemist Stone",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.277491, 
+        table: -1,
+        duration: 15,
+        ppm: 1,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
       return bonus_stats;
     }

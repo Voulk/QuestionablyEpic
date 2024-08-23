@@ -97,9 +97,9 @@ export default function ItemBar(props) {
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
 
-  const autoFillItems = (itemLevel, player) => {
+  const autoFillItems = (itemLevel, player, gameType, source = "") => {
 
-    autoAddItems(player, "Classic", itemLevel);
+    autoAddItems(player, gameType, itemLevel, source);
     props.setItemList([...player.getActiveItems(activeSlot)]);
   }
 
@@ -490,11 +490,30 @@ export default function ItemBar(props) {
       }}>
         <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
         <Grid item>
-          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(346, props.player)}>{"346 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(359, props.player)}>{"359 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(372, props.player)}>{"372 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(346, props.player, "Classic")}>{"346 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(359, props.player, "Classic")}>{"359 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(372, props.player, "Classic")}>{"372 Gear"}</Button>
         </Grid>
-      </Grid> : null }
+      </Grid> : 
+       <Grid 
+       container
+       justifyContent="center"
+       alignItems="center"
+       direction="column"
+
+       spacing={1}
+       sx={{
+         paddingTop: "30px",
+         paddingBottom: "10px",
+     }}>
+       <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
+       <Grid item>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(626, props.player, "Retail", "Palace")}>{"Palace Heroic"}</Button>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Palace")}>{"Palace Mythic"}</Button>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Dungeons")}>{"S1 Dungeons"}</Button>
+
+       </Grid>
+     </Grid>}
     </Paper>
   );
 }

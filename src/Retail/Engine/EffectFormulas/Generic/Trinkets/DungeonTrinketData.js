@@ -128,10 +128,10 @@ export const dungeonTrinketData =
         }
       },
       {
-        // Possible Buffs:
-        // - Int buff
+        // Cirral Concoctory procs on allies and so gives them buffs. It can also proc on yourself but it's just as likely as hitting anyone else. Support trinket.
+        // - Int buff (only meaningful proc)
         // - All Terts buff
-        // - Crit buff / Mastery Buff (same name)
+        // - Secondary Buff (same name - crit / mast seen but likely all four)
         // - Sundered: High chance for heals to do more healing / Chance to deal damage when hit (tank, not seen) / chance for damage to deal more damage (DPS, not seen)
         // - Mana (not seen)
         // Assumption is even distribution with sundered taking 1 slot. Target is chosen first, then buff. 
@@ -230,10 +230,10 @@ export const dungeonTrinketData =
         name: "Siphoning Phylactery Shard",
         effects: [
           {  // Heal effect
-            coefficient: 89.08621,
+            coefficient: 89.08621 - 44.53448,
             table: -9,
             secondaries: ['versatility'],
-            efficiency: {Raid: 0.35, Dungeon: 0.4}, // The efficiency on this is god awful.
+            efficiency: {Raid: 0.4, Dungeon: 0.45}, // The efficiency on this is god awful.
             cooldown: 30,
           },
         ],
@@ -249,7 +249,7 @@ export const dungeonTrinketData =
         name: "Gale of Shadows",
         effects: [
           {  // Int
-            coefficient: 0.029,
+            coefficient: 0.026496, //0.029,
             table: -1,
             stacks: 20,
             specMod: {"Restoration Druid": 1, "Holy Priest": 1, "Restoration Shaman": 1, "Holy Paladin": 1, "Mistweaver Monk": 1, 
@@ -266,7 +266,7 @@ export const dungeonTrinketData =
       },
       { // Last 30s, multiple can be up at once. Grabbing multiple orbs just refreshes the buff though.
         name: "Entropic Skardyn Core",
-        description: "",
+        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack.",
         effects: [
           {
             coefficient: 1.124436, 
@@ -279,15 +279,15 @@ export const dungeonTrinketData =
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
 
-          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.9;
 
           return bonus_stats;
         }
       },
       { // Gives you a buff that lasts 1 minute and then spawns a spider which is effectively just a DoT. They soft stack in that you can have multiple up at once.
         // Hypothetically it's a 2.5 stack average but I am not convinced.
-        name: "Ara'Kara Sacbrood",
-        description: "",
+        name: "Ara-Kara Sacbrood",
+        description: "Buff lasts 60s and you can expect to have 2-3 up at almost all times.",
         effects: [
           {
             coefficient: 0.204476, 
@@ -300,7 +300,7 @@ export const dungeonTrinketData =
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
 
-          bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60 * 0.7; // Check on a log.
+          bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // Check on a log.
 
           return bonus_stats;
         }
