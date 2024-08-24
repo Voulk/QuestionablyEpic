@@ -1,5 +1,7 @@
 import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
+import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
+import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
   { // 
@@ -171,6 +173,15 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       // Secondaries
+      const secondaryBudget = 6666;
+      const randProp = randPropPoints[itemLevel]["slotValues"][1];
+      const combatMult = combat_ratings_mult_by_ilvl[itemLevel]
+      const chosenSecondaries = getSetting(additionalData.settings, 'pheromoneSecreter')//.split("/")
+      const secondaries = Math.round(randProp * secondaryBudget * 0.0001 * combatMult)
+
+      chosenSecondaries.replace(/ /g, "").split("/").forEach(stat => {
+        bonus_stats[stat] = Math.round(secondaries / 2);
+      });
 
       // Intellect
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);

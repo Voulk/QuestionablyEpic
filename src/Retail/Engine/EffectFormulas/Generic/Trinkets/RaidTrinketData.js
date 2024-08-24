@@ -23,9 +23,9 @@ export const raidTrinketData = [
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          
+          console.log(additionalData.settings);
           const percentHealProc = getSetting(additionalData.settings, "syringeHealProcs") / 100;
-
+          
           bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType) * percentHealProc;
           bonus_stats.intellect = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm * 1.13 * (1 - percentHealProc) / 60;
     

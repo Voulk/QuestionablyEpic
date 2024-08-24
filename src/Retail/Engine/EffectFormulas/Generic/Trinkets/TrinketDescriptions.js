@@ -20,15 +20,15 @@ const trinketCategories = {
 }
 
 
-export const buildRetailEffectTooltip = (trinketName, player, itemLevel) => {
+export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerSettings) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     
 
     const trinketData = getTrinketData(trinketName);
     if (trinketData === undefined) return [];
     const trinketEffects = trinketData.effects;
-    const settings = {}
-    const additionalData = {contentType: "Raid", settings: settings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}};
+
+    const additionalData = {contentType: "Raid", settings: playerSettings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}};
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     if (trinketData.description) trinketDescription.push(trinketData.description);
     trinketDescription.push("")
