@@ -120,26 +120,26 @@ describe("Test Curve IDs", () => {
     
 })
 
-describe("Test S3 Items", () => {
+describe("Test TWW Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
 
-    test("Sea Star 450", () => {
-        const line = "trinket1=,id=133201,bonus_id=9555/9639/6652/9144/9836/8767";
+    test("World Quest Item", () => {
+        const line = "shoulder=,id=224687,bonus_id=10297/6652/1701/1643/10254";
         const item = processItem(line, player, contentType, type, settings)
-        //expect(item.stats.versatility).toEqual(77);
-        expect(item.level).toEqual(450)
-    });
-    test("Throne of Tides - Cloth 489", () => {
-        const line = "head=,id=133182,bonus_id=9639/6652/9599/9506/9144/9576/9919/8767";
-        const item = processItem(line, player, contentType, type, settings)
-        //expect(item.stats.versatility).toEqual(77);
-        expect(item.level).toEqual(489)
+        expect(item.stats.mastery).toEqual(600);
+        expect(item.stats.haste).toEqual(450);
+        expect(item.level).toEqual(571)
     });
 
-
-    "head=,id=133182,bonus_id=9639/6652/9599/9506/9144/9576/9919/8767"
+    test("Dungeon Drop while leveling", () => {
+        const line = "hands=,id=221162,bonus_id=10385/10387/6652,drop_level=77";
+        const item = processItem(line, player, contentType, type, settings)
+        expect(item.stats.versatility).toEqual(594);
+        expect(item.stats.haste).toEqual(351);
+        expect(item.level).toEqual(535)
+    });
     
 
 })

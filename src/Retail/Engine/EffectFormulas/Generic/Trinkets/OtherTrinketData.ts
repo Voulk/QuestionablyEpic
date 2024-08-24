@@ -101,7 +101,7 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 36.23988, 
+        coefficient: 53.4756, 
         table: -9,
         efficiency: 0.9,
         secondaries: ["crit", "haste", "versatility"], // Crit untested
@@ -121,7 +121,7 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 123.8048, 
+        coefficient: 123.8048, // Check this: 92.10533
         table: -9,
         efficiency: 0.95,
         cooldown: 60,
@@ -150,6 +150,29 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Nerubian Pheromone Secreter",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.535705, 
+        table: -1,
+        duration: 20,
+        ppm: 1, // ICD of 20s
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      // Secondaries
+
+      // Intellect
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
 
       return bonus_stats;
