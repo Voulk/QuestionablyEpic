@@ -11,7 +11,7 @@ describe("Elemental Lariat Data Check", () => {
 
     each`
     level   | expectedResult
-    ${447}  | ${667}
+    ${447}  | ${872}
     // add new test cases here
     `.test("Elemental Lariat Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(true).toEqual(true);

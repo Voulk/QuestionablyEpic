@@ -46,7 +46,8 @@ export default function ItemCardReport(props) {
   const item = props.item;
   const enchants = props.enchants;
   const { t, i18n } = useTranslation();
-  const gameType = useSelector((state) => state.gameType);
+  const gameType = props.gameType;
+  //const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;

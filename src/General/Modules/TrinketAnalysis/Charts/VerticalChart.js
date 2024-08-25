@@ -131,9 +131,14 @@ export default class VerticalChart extends PureComponent {
             </WowheadTooltip>
             <StyledTooltip title={
               <div>
-                {getTooltip(data, payload.value).map((key) => {
+                {getTooltip(data, payload.value).map((key, index) => {
                   return (
-                    <span key={key}/* style={{ fontWeight: "bold" }}*/>
+                    <span key={key}/* style={{ fontWeight: "bold" }}*/
+                    style={{ 
+                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available") ? "bold" : "normal", // Make the first entry bold
+                      color: index === 0 ? "yellow" : "inherit" // Change color of the first entry (red as an example)
+                    }}
+                    >
                       {key}
                       <br />
                     </span>

@@ -54,7 +54,7 @@ export const dungeonTrinketData =
         name: "Burin of the Candle King",
         effects: [
           {  // Heal effect
-            coefficient: 169.529, // 371.7325,
+            coefficient: 250.157, // 371.7325,
             table: -9,
             secondaries: ['versatility'],
             efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
@@ -93,7 +93,7 @@ export const dungeonTrinketData =
         name: "Scrapsinger's Symphony",
         effects: [
           {  // Heal effect
-            coefficient: 28.9919,
+            coefficient: 42.7805,
             table: -9,
             secondaries: ['versatility', 'haste'],
             efficiency: {Raid: 0.92, Dungeon: 0.84}, // This is an absorb so you won't lose much value.
@@ -110,6 +110,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Corrupted Egg Shell",
+        description: "Does NOT have any passive stat on it. Niche at best for one-shot protection in high M+ - useless in ALL other scenarios.",
         effects: [
           {  // Heal effect
             coefficient: 817.645,
@@ -150,11 +151,11 @@ export const dungeonTrinketData =
             table: -7,
           },
           {  // Probably damage proc
-            coefficient: 4.026929,
+            coefficient: 5.9422,
             table: -9,
           },
           {  // Heal proc
-            coefficient: 6.03998,
+            coefficient: 8.9126,
             table: -9,
           },
           {  // Mana proc?
@@ -205,7 +206,7 @@ export const dungeonTrinketData =
         description: "",
         effects: [
           { // Damage Effect.
-            coefficient: 28.25688 * 0.66, 
+            coefficient: 41.6959 * 0.66, 
             table: -9,
             cooldown: 90,
           },

@@ -1,10 +1,12 @@
 import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
+import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
+import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
   { // 
     name: "Imperfect Ascendancy Serum",
-    description: "",
+    description: "Has a short cast time on use.",
     effects: [
       {
         coefficient: 0.300226, 
@@ -77,7 +79,7 @@ export const otherTrinketData = [
   },
   { // Is this 100% uptime?
     name: "Unstable Power Suit Core",
-    description: "UNTESTED!",
+    description: "Will need to be double checked on live since it wasn't available on Beta.",
     effects: [
       {
         coefficient: 0.525141, 
@@ -101,7 +103,7 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 36.23988, 
+        coefficient: 53.4756, 
         table: -9,
         efficiency: 0.9,
         secondaries: ["crit", "haste", "versatility"], // Crit untested
@@ -118,10 +120,10 @@ export const otherTrinketData = [
   },
   { 
     name: "Goldenglow Censer",
-    description: "",
+    description: "Fairly weak in overall power but does offer some light life-saving potential that could be useful in some scenarios.",
     effects: [
       {
-        coefficient: 123.8048, 
+        coefficient: 123.8048, // Check this: 92.10533
         table: -9,
         efficiency: 0.95,
         cooldown: 60,
@@ -151,6 +153,40 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Nerubian Pheromone Secreter",
+    description: "You can pick which two secondaries you'd like the trinket to have. When it procs you'll need to gather the three pheromones to get the full effect.",
+    setting: true,
+    effects: [
+      {
+        coefficient: 0.535705, 
+        table: -1,
+        duration: 20,
+        ppm: 1, // ICD of 20s
+        stacks: 2.7,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      // Secondaries
+      const secondaryBudget = 6666;
+      const randProp = randPropPoints[itemLevel]["slotValues"][1];
+      const combatMult = combat_ratings_mult_by_ilvl[itemLevel]
+      const chosenSecondaries = getSetting(additionalData.settings, 'pheromoneSecreter')//.split("/")
+      const secondaries = Math.round(randProp * secondaryBudget * 0.0001 * combatMult)
+
+      chosenSecondaries.replace(/ /g, "").split("/").forEach(stat => {
+        bonus_stats[stat] = Math.round(secondaries / 2);
+      });
+
+      // Intellect
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * data[0].stacks! * 0.95;
 
       return bonus_stats;
     }

@@ -173,7 +173,7 @@ const raidTrinketData: Effect[] = [
       bonus_stats = getGenericTrinket(data[0], itemLevel);
       bonus_stats.mastery *= data[0].specMod[player.spec];
 
-      return getGenericTrinket(data[0], itemLevel);
+      return bonus_stats;
     }
   },
 
