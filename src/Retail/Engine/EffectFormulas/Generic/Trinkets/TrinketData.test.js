@@ -29,7 +29,7 @@ describe("Cirral Concoctory", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${597}  | ${[4436, 2235, 1118, 0, 39238]}
+    ${597}  | ${[4436, 2235, 1118, 0, 57899]}
     // add new test cases here
     `.test("Cirral Concoctory Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level, 1, 'ceil')).toBe(expectedResult[0]);
@@ -90,7 +90,7 @@ describe("Gruesome Syringe", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${616}  | ${[251029, 4401]}
+    ${616}  | ${[370419, 4401]}
     // add new test cases here
     `.test("Gruesome Syringe Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level)).toBe(expectedResult[0]);
