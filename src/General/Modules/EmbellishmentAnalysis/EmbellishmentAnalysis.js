@@ -150,7 +150,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
     score = getEstimatedHPS(effect, player, contentType, playerSettings) + getEstimatedDPS(effect, player, contentType, playerSettings);
   }
 
-  //if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
+  if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
 
   return Math.max(score, 0);
 
@@ -228,7 +228,7 @@ export default function EmbellishmentAnalysis(props) {
       if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
-    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 636)
+    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 636, playerSettings)
     activeGems.push(gemAtLevels);
   }
 

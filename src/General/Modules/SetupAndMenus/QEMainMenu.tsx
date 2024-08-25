@@ -87,8 +87,8 @@ export default function QEMainMenu(props: Props) {
     gameType === "Retail"
       ? [
           // Gearing
-          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
-          { route: "/upgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/topgear", disabled: true, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
+          { route: "/upgradeFinder", disabled: true, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis", glow: false },
           { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare", glow: false },
@@ -96,7 +96,7 @@ export default function QEMainMenu(props: Props) {
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
           //{ route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot", glow: false },
           //{ route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis", glow: false },
-          { route: "/sequenceGen", disabled: false, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox", glow: false },
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile", glow: false },
         ]
       : [

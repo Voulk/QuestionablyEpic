@@ -73,6 +73,7 @@ export const embellishmentDB = [
   {
     id: 443764,
     icon: "inv_misc_food_legion_gooamber_drop",
+    pieces: 2,
     armorType: 3, // 2pc set
     name: {
       en: "Embrace of the Cinderbee",

@@ -33,7 +33,7 @@ const initialState : RootState = {
     //idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
 
     // TWW Trinkets
-    creepingCoagOverheal: { value: 20, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    creepingCoagOverheal: { value: 28, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     ovinaxAverageIntStacks: { value: 18, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry",gameType: "Retail" },
@@ -50,7 +50,7 @@ const initialState : RootState = {
     upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector", gameType: "Retail" },
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
-    socketedGems: { value: 4, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
+    socketedGems: { value: 4, options: [0, 1, 2, 3, 4, 5, 6, 7, 8], category: "embellishments", type: "Entry", gameType: "Retail" },
     
     gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},

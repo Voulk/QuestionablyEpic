@@ -110,6 +110,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Corrupted Egg Shell",
+        description: "Does NOT have any passive stat on it. Niche at best for one-shot protection in high M+ - useless in ALL other scenarios.",
         effects: [
           {  // Heal effect
             coefficient: 817.645,

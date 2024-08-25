@@ -32,6 +32,8 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     if (trinketData.description) trinketDescription.push(trinketData.description);
     trinketDescription.push("")
+
+    trinketDescription.push("Effect Breakdown")
     if (trinketEffects[0].ppm && trinketEffects[0].stat) {
         // We're dealing with a stat proc trinket.
         trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
@@ -40,6 +42,12 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     Object.keys(trinketStats).forEach((statName) => {    
         trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
     });
+
+    if (trinketData.setting) {
+        trinketDescription.push("")
+
+        trinketDescription.push("Setting Available")
+    }
 
     return trinketDescription;
 

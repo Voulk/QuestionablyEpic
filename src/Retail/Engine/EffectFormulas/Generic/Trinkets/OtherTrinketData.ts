@@ -6,7 +6,7 @@ import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 export const otherTrinketData = [
   { // 
     name: "Imperfect Ascendancy Serum",
-    description: "",
+    description: "Has a short cast time on use.",
     effects: [
       {
         coefficient: 0.300226, 
@@ -79,7 +79,7 @@ export const otherTrinketData = [
   },
   { // Is this 100% uptime?
     name: "Unstable Power Suit Core",
-    description: "UNTESTED!",
+    description: "Will need to be double checked on live since it wasn't available on Beta.",
     effects: [
       {
         coefficient: 0.525141, 
@@ -120,7 +120,7 @@ export const otherTrinketData = [
   },
   { 
     name: "Goldenglow Censer",
-    description: "",
+    description: "Fairly weak in overall power but does offer some light life-saving potential that could be useful in some scenarios.",
     effects: [
       {
         coefficient: 123.8048, // Check this: 92.10533
@@ -159,13 +159,15 @@ export const otherTrinketData = [
   },
   { 
     name: "Nerubian Pheromone Secreter",
-    description: "",
+    description: "You can pick which two secondaries you'd like the trinket to have. When it procs you'll need to gather the three pheromones to get the full effect.",
+    setting: true,
     effects: [
       {
         coefficient: 0.535705, 
         table: -1,
         duration: 20,
         ppm: 1, // ICD of 20s
+        stacks: 2.7,
         stat: "intellect",
       },
     ],
@@ -184,7 +186,7 @@ export const otherTrinketData = [
       });
 
       // Intellect
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * data[0].stacks! * 0.95;
 
       return bonus_stats;
     }

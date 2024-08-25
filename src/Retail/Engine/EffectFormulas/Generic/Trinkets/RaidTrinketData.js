@@ -6,6 +6,7 @@ export const raidTrinketData = [
     { // While the buffs appear in the same stack, they are individual buffs. This does mean it's impossible to lose any value if you get an int proc while you already have one.
         name: "Gruesome Syringe",
         description: "The problem with Gruesome Syringe is that the backup prize of an int proc if nobody drops low is much stronger than the heal proc but you're unlikely to get the int when you need it.",
+        setting: true,
         effects: [
           {  // Heal effect
             coefficient: 94.21494, 
@@ -37,7 +38,8 @@ export const raidTrinketData = [
         // Bursts immediately upon reaching it. 
         // Targeting TBA but won't hit full health players.
         name: "Creeping Coagulum",
-        description: "Hello",
+        description: "Does reduce your healing done until it bursts but it's still fairly strong. DPS value is based on the raw overhealing done by the trinket, not the overhealing percentage.",
+        setting: true,
         effects: [
           {  // Heal effect but used in different ways.
             coefficient: 468.2967, 
@@ -54,7 +56,7 @@ export const raidTrinketData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           const s1 = processedValue(data[0], itemLevel)
-          const efficiency = 1 - getSetting(additionalData.settings, "creepingCoagOverheal") / 100;
+          const efficiency = 1 - getSetting(additionalData.settings, "creepingCoagOverheal") / 100 - (additionalData.contentType === "Dungeon" ? 0.15 : 0);
           const healingConsumed = s1 * 40 / 100;
           const healingDealt = (s1 + (s1 * 40 * 0.01*(1 + 3 / 100)))/5;
 
@@ -79,7 +81,7 @@ export const raidTrinketData = [
             table: -1,
             duration: 15,
             cooldown: 90,
-            penalty: 0.3,
+            penalty: 0.16,
           },
 
         ],
@@ -93,6 +95,7 @@ export const raidTrinketData = [
       },
       { // Might be worth adding options for "Avg Int stacks" and auto calc the other.
         name: "Ovi'nax's Mercurial Egg",
+        setting: true,
         effects: [
           {  // Intellect effect
             coefficient: 0.024938,
@@ -122,6 +125,7 @@ export const raidTrinketData = [
       { // -- Can gain stacks while the active is going.
         name: "Spymaster's Web",
         description: "Spymaster's Web is an incredibly powerful on-use trinket that you can combine with your other cooldowns to handle burst damage. It does require you DPS though, so if you don't do that as part of your standard rotation then you'll need to tick the 'DPS' flag in the QE Live settings to assess its true value.",
+        setting: true,
         effects: [
           {  // Passive Int
             coefficient: 0.014709,
@@ -139,7 +143,11 @@ export const raidTrinketData = [
           let bonus_stats = {};
 
           // You can kind of curate this to your preferred cooldown curve.
-          if (player.spec === "Discipline Priest" || player.spec === "Preservation Evoker" || getSetting(additionalData.settings, "dpsFlag")) {
+          if (player.spec === "Discipline Priest" || player.spec === "Preservation Evoker") {
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
+            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (90 / 6.4), cooldown: 90}, itemLevel, additionalData.castModel);
+          }
+          if (getSetting(additionalData.settings, "dpsFlag")) {
             bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.4)}, itemLevel, additionalData.castModel);
           }
