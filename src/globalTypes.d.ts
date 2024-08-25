@@ -63,7 +63,7 @@ interface SettingValue {
   }
 
 interface PlayerSettings {
-    [key: string]: { value: any; options: any[]; category: string; type: string };
+    [key: string]: { value: any; options: any[]; category: string; type: string; gameType: gameTypes };
 }
 
 /*

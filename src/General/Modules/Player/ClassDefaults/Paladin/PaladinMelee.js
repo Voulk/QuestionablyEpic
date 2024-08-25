@@ -81,10 +81,10 @@ export const paladinMeleeStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.69,
-    crit: 0.81,
-    mastery: 0.7566,
-    versatility: 0.65,
+    haste: 0.74,
+    crit: 0.76,
+    mastery: 0.71,
+    versatility: 0.67,
     leech: 0.54,
     defaults: true,
   };

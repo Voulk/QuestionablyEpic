@@ -46,6 +46,6 @@ export const buildGenericHealProc = (data, itemLevel, player, additionalData, ca
 export const convertExpectedUptime = (effect, player, hasted) => {
     let ppm = effect.ppm;
     if (hasted) ppm = ppm * player.getStatPerc('haste');
-    const realUptime = Math.round(convertPPMToUptime(ppm, effect.duration) * 100);
+    const realUptime = Math.min(Math.round(convertPPMToUptime(ppm, effect.duration) * 100), 99);
     return realUptime + "%"; //data.effects[0].duration * data.effects[0].ppm / 60;
 }

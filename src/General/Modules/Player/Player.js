@@ -599,7 +599,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
 
       this.activeStats = {
-        intellect: 16500,
+        intellect: 60000,
         haste: 5200,
         crit: 2350,
         mastery: 4650,
@@ -617,7 +617,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Avenging Crusader", 2));
 
       this.activeStats = {
-        intellect: 16500,
+        intellect: 60000,
         haste: 4200,
         crit: 5400,
         mastery: 3800,
@@ -629,7 +629,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 16500,
+        intellect: 60000,
         haste: 1915,
         crit: 5000,
         mastery: 1950,
@@ -646,7 +646,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
 
       this.activeStats = {
-        intellect: 16500,
+        intellect: 60000,
         haste: 6000,
         crit: 4852,
         mastery: 1550,
@@ -660,7 +660,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 16500,
+        intellect: 60000,
         haste: 1910,
         crit: 5050,
         mastery: 4700,
@@ -672,7 +672,7 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
         this.activeStats = {
-          intellect: 16500,
+          intellect: 60000,
           haste: 2000,
           crit: 4000,
           mastery: 5800,
@@ -692,7 +692,7 @@ export class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 16500,
+        intellect: 60000,
         haste: 5050,
         crit: 4850,
         mastery: 1900,

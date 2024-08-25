@@ -2,16 +2,43 @@ import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 // import chroma from "chroma-js";
 import { getGemIcon, getEmbellishmentIcon, getTranslatedEmbellishment } from "General/Engine/ItemUtilities";
+import MuiTooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import HelpIcon from '@mui/icons-material/Help';
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import { styled } from "@mui/material/styles";
+
+const getTooltip = (data, id) => {
+  const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
+  return tooltip;
+}
+
+const StyledTooltip = styled(({ className, ...props }) => (
+  <MuiTooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  zIndex: theme.zIndex.tooltip + 1,
+  //margin: 4,
+  [`& .MuiTooltip-tooltip`]: {
+    //maxWidth: 150,
+    //height: 100,
+    //fontFamily: "'Grape Nuts', Helvetica",
+    backgroundColor: "rgba(0,0,25,0.9)",
+    //color: "deepskyblue", see sx value
+    margin: 4,
+    padding: 8,
+    whiteSpace: "pre-line"
+    //border: "solid yellow 1px"
+  }
+}));
 
 const getRankDiff = (rank, map2, prevRank) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */
   if (rank > 0) {
     // added a or 0 to handle NANs
     return map2["r" + rank] - map2["r" + prevRank] || 0;
-  } else if (rank == 411) {
+  } else if (rank == 600) {
     return map2["r" + rank];
   } else {
     return 0;
@@ -43,6 +70,7 @@ export default class EmbelChart extends PureComponent {
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
+
     const db = this.props.db;
     const barColours = this.props.theme;
     let arr = [];
@@ -52,15 +80,15 @@ export default class EmbelChart extends PureComponent {
       .map((key) => key[1])
       .map((map2) => {
         arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
-          // 486, 493, 499, 506, 513, 519, 522
+          // 600, 606, 612, 618, 624, 630, 636
           name: map2.id,
-          486: map2.r486,
-          493: getRankDiff(493, map2, 486),
-          499: getRankDiff(499, map2, 493),
-          506: getRankDiff(506, map2, 499),
-          513: getRankDiff(513, map2, 506),
-          519: getRankDiff(519, map2, 513),
-          522: getRankDiff(522, map2, 519),
+          600: map2.r600,
+          606: getRankDiff(606, map2, 600),
+          612: getRankDiff(612, map2, 606),
+          618: getRankDiff(618, map2, 612),
+          624: getRankDiff(624, map2, 618),
+          630: getRankDiff(630, map2, 624),
+          636: getRankDiff(636, map2, 630),
         });
       });
 
@@ -78,6 +106,23 @@ export default class EmbelChart extends PureComponent {
             <WowheadTooltip type="item" id={payload.value} level={522} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
+            <StyledTooltip title={
+              <div>
+                {getTooltip(data, payload.value).map((key) => {
+                  return (
+                    <span key={key}/* style={{ fontWeight: "bold" }}*/>
+                      {key}
+                      <br />
+                    </span>
+                  );
+                })}
+              </div>
+            }
+            style={{ display: "inline-block", lineHeight: "0px" }}>
+              <IconButton sx={{ color: 'goldenrod' }} size="small">
+                <HelpIcon fontSize="inherit" />
+              </IconButton>
+            </StyledTooltip>
           </foreignObject>
         </g>
       );
@@ -125,7 +170,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[486, 493, 499, 506, 513, 519, 522].map((key, i) => (
+          {[600, 606, 612, 618, 624, 630, 636].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

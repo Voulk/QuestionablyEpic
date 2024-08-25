@@ -149,14 +149,14 @@ function checkSimCValid(simCHeader: string[], length: number, playerClass: strin
 
     // Check that the player class matches. This is actually quite a common error since people swap characters but don't swap in QE Live.
     if (line !== "" && playerClass.toLowerCase().includes(line.split("=")[0].toLowerCase())) checks.class = true;
-    else if (line.split("=")[0] === "level" && (line.split("=")[1] === "60" || line.split("=")[1] === "70")) checks.level = true;
+    else if (line.split("=")[0] === "level" && (line.split("=")[1] === "80" || line.split("=")[1] === "70")) checks.level = true;
     if (line.includes("QE Live Gear Importer")) checks.gameType = false;
   }
 
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
-  if (!checks.level) errorMessage += "QE Live is designed for level 70 characters. ";
+  if (!checks.level) errorMessage += "QE Live is designed for level 80 characters. ";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
-  if (!checks.gameType) errorMessage += "This is a Cataclysm string but you have a Dragonflight character selected!";
+  if (!checks.gameType) errorMessage += "This is a Cataclysm string but you have a War Within character selected!";
 
   setErrorMessage(errorMessage);
   return checks.class && checks.version && checks.level && checks.length && checks.gameType;
