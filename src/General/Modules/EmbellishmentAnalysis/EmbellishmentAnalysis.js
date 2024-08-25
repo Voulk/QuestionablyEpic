@@ -256,13 +256,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth" style={{marginBottom: "10px"}}>
-            <Tab label={"Embellishments at a Glance"} />
-            <Tab label={"Embellishment Deep Dive"} />
-        </Tabs>
-
-        <TabPanel value={tabIndex} index={0}>
-        <InformationBox information="Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly for Cloth and Mail wearers." variant="yellow" />
+        <InformationBox information="They are still tuning Embellishments EVERY DAY. Embellishments that give Vers to your group will look undervalued on the HPS chart but can be great choices, particularly Binding of Binding." variant="yellow" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
@@ -280,14 +274,7 @@ export default function EmbellishmentAnalysis(props) {
           </Grid>
           
         </Grid>
-        </TabPanel>
 
-        <TabPanel value={tabIndex} index={1}>
-          <EmbellishmentDeepDive 
-            itemCardData={itemCardData}
-            tabIndex={tabIndex}
-          />
-        </TabPanel> 
       </Grid>
       </Grid>
     <div style={{ height: 200 }} />
